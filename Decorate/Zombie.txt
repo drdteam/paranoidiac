@@ -1,0 +1,125 @@
+//=========================
+// Zombie & Moaning Zombie
+//=========================
+
+actor HLZombie 7405
+{
+    spawnid 159
+	Monster
+//	Health 200
+	Health 150
+	Mass 100
+	Speed 7
+	Height 63
+	Radius 20
+	PainChance 128
+	Scale 0.32
+	MeleeDamage 2
+	BloodColor "DE FE 72"
+	SeeSound "halflife/monsters/zombie/sight"
+	PainSOund "halflife/monsters/zombie/pain"
+	DeathSound "halflife/monsters/zombie/pain"
+	ActiveSound "halflife/monsters/zombie/idle"
+	MeleeSound "halflife/monsters/zombie/hit"
+	maxdropoffheight 64
+	States
+	{
+	Spawn:
+		HLEI A 3 A_Look
+		Loop
+	See:
+		HLEW ABCDEFG 5 A_Chase
+		Goto See
+	Melee:
+		HLEA AB 3 A_FaceTarget
+		TNT1 A 0 A_PlaySound("halflife/monsters/zombie/attswing")
+		HLEA C 3 A_FaceTarget
+		HLEA D 3 A_MeleeAttack
+		HLEA E 3 A_FaceTarget
+		TNT1 A 0 A_PlaySound("halflife/monsters/zombie/attswing")
+		HLEA F 3 A_FaceTarget
+		HLEA G 3 A_MeleeAttack
+		HLEA HIJ 3 
+		Goto See
+	Pain:
+		HLEP A 8 A_Pain
+		Goto See
+	Death:
+		HLED A 3 A_Scream
+		HLED B 3 A_Fall
+		HLED CDEFGH 2
+		TNT1 A 0 A_PlaySound("halflife/weapons/bodydrop")
+		HLED HIJ 3
+		HLED K -1
+		Stop
+	XDeath:
+		TNT1 A 0 A_PlaySound("other/gibdeath")
+		TNT1 A 0 A_Fall
+	  	NULL AAAAAAAAAAAAAAAA 0 A_SpawnItemEx("XenGibs",random(5,-5),random(5,-5),random(10,40),random(1,7),random(1,7),random(5,13),random(0,359))
+		Stop
+	}
+}
+
+actor HLZombieMoan 7406
+{
+    spawnid 160
+	Monster
+//	Health 200
+	Health 150
+	Mass 100
+	Speed 7
+	Height 63
+	Radius 20
+	PainChance 128
+	Scale 0.32
+	MeleeDamage 2
+	BloodColor "DE FE 72"
+	SeeSound "halflife/monsters/zombie/sight"
+	PainSOund "halflife/monsters/zombie/pain"
+	DeathSound "halflife/monsters/zombie/pain"
+	ActiveSound "halflife/monsters/zombie/idle"
+	MeleeSound "halflife/monsters/zombie/hit"
+	maxdropoffheight 64
+	States
+	{
+	Spawn:
+		HLEI A 0
+		HLEI A 0 A_StopSoundEx("SoundSlot7")
+		HLEI A 3 A_Look
+		Goto Spawn+2
+	See:
+		TNT1 A 0 A_PlaySoundEx("halflife/monsters/zombie/moan","SoundSlot6",1,-1)
+		HLEW ABCDEFG 5 A_Chase
+		Goto See+1
+	Melee:
+		HLEA AB 3 A_FaceTarget
+		TNT1 A 0 A_PlaySound("halflife/monsters/zombie/attswing")
+		HLEA C 3 A_FaceTarget
+		HLEA D 3 A_MeleeAttack
+		HLEA E 3 A_FaceTarget
+		TNT1 A 0 A_PlaySound("halflife/monsters/zombie/attswing")
+		HLEA F 3 A_FaceTarget
+		HLEA G 3 A_MeleeAttack
+		HLEA HIJ 3 
+		Goto See+1
+	Pain:
+		TNT1 a 0 A_StopSoundEx("SoundSlot6")
+		HLEP A 8 A_Pain
+		Goto See
+	Death:
+		TNT1 a 0 A_StopSoundEx("SoundSlot6")
+		HLED A 3 A_Scream
+		HLED B 3 A_Fall
+		HLED CDEFGH 2
+		TNT1 A 0 A_PlaySound("halflife/weapons/bodydrop")
+		HLED HIJ 3
+		HLED K -1
+		Stop
+	XDeath:
+		TNT1 A 0 A_StopSoundEx("SoundSlot6")
+		TNT1 A 0 A_PlaySound("other/gibdeath")
+		TNT1 A 0 A_Fall
+	  	NULL AAAAAAAAAAAAAAAA 0 A_SpawnItemEx("XenGibs",random(5,-5),random(5,-5),random(10,40),random(1,7),random(1,7),random(5,13),random(0,359))
+		Stop
+	}
+}

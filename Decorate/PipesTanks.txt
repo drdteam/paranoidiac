@@ -1,0 +1,155 @@
+//=======================
+// Non-spawnable models
+// Pipes, tanks, valves
+//=======================
+
+ACTOR Pipe1 30229
+{
+	Radius 20
+	Height 58
+	Mass 0x7FFFFFF
+	+FLOORCLIP
+	+SOLID
+	States
+	{
+	Spawn:
+		POSS A 3
+		Loop
+	}
+}
+
+Actor Pipe1a : pipe1 30336
+{
+	Radius 20
+	Height 58
+}
+
+Actor Pipe2 : pipe1 30230
+{
+	Radius 20
+	Height 66
+}
+
+Actor Tank01 : pipe1 30231
+{
+	Radius 28
+	Height 86
+}
+
+Actor Tank02 : pipe1 30232
+{
+	Radius 15
+	Height 36
+
+}
+
+Actor Tank02a : pipe1 30314
+{
+	Radius 4
+	Height 36
+
+}
+
+Actor Valve1 : pipe1 30233
+{
+	Radius 24
+	Height 50
+}
+
+ACTOR Pipe3 : pipe1 30234
+{
+	Radius 10
+	Height 29
+}
+
+ACTOR Pipe3a : pipe1 30337
+{
+	Radius 10
+	Height 29
+}
+
+Actor Pipe4 : pipe1 30235
+{
+	Radius 10
+	Height 33
+}
+
+Actor propane1a : pipe1 30241
+{
+	Radius 20
+	Height 40
+}
+
+Actor propane1b : pipe1 30242
+{
+	Radius 20
+	Height 40
+}
+
+Actor propane1c : pipe1 30243
+{
+	Radius 20
+	Height 40
+}
+Actor propane2 : pipe1 30244
+{
+	Radius 10
+	Height 36
+}
+
+Actor tank03 : pipe1 30245
+{
+	Radius 6
+	Height 16
+}
+
+Actor tank04 : pipe1 30246
+{
+	Radius 72
+	Height 264
+}
+
+Actor tank04a : tank04 30312
+{
+	Radius 72
+	Height 264
+}
+
+Actor tank05 : pipe1 30247
+{
+	Radius 12
+	Height 36
+}
+
+Actor tank06 : pipe1 30248
+{
+	Radius 36
+	Height 128
+	scale 0.5 //Size scaled to 50%
+}
+
+Actor pipe5 : pipe1 30276
+{
+	Radius 8
+	Height 136
+}
+
+Actor pipe6 : pipe1 30277
+{
+	Radius 6
+	Height 68
+}
+
+ACTOR PipeMaze  30348
+{
+	Radius 64
+	Height 28
+	+NOGRAVITY
+	+SOLID
+	States
+	{
+	Spawn:
+		POSS A 3
+		Loop
+	}
+}

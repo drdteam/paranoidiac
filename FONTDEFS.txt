@@ -1,0 +1,32 @@
+HLSTAFONT
+   {
+       0 HLSNUM0
+       1 HLSNUM1
+       2 HLSNUM2
+       3 HLSNUM3
+       4 HLSNUM4
+       5 HLSNUM5
+       6 HLSNUM6
+       7 HLSNUM7
+       8 HLSNUM8
+       9 HLSNUM9
+       % HLSPRCNT
+       / HLSSLASH
+       - HLSMINUS    
+ }
+   
+
+HLBARFONT
+   {
+       0 HLSYNUM0
+       1 HLSYNUM1
+       2 HLSYNUM2
+       3 HLSYNUM3
+       4 HLSYNUM4
+       5 HLSYNUM5
+       6 HLSYNUM6
+       7 HLSYNUM7
+       8 HLSYNUM8
+       9 HLSYNUM9
+       - HLSYNUM-
+    }

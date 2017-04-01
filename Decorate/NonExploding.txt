@@ -1,0 +1,85 @@
+//================================================================
+// Non-Explosive barrels/trashcan (plastic & heavy metal), crates
+//================================================================
+
+ACTOR Barrel1 30103
+{
+    spawnid 183
+    Radius 8
+    Height 29
+    Mass 50
+    +FLOORCLIP
+    +PUSHABLE
+    +SHOOTABLE
+    +SOLID
+    +NOBLOOD
+	+NODAMAGE
+    States
+    {
+    Spawn:
+	POSS A 3
+	Loop
+    }
+}
+
+ACTOR Barrel2 : Barrel1 30104
+{
+    spawnid 184
+}
+
+ACTOR Barrel3 : Barrel1 30105
+{
+    spawnid 185
+    Radius 9
+    Height 29
+    Mass 200
+}
+
+ACTOR Trashcan1 : Barrel1 30106
+{
+    spawnid 186
+    Radius 10
+}
+
+ACTOR Xcrate03 30112
+{
+    spawnid 192
+    Health 30
+    Radius 32
+    Height 64
+    Mass 200
+    +FLOORCLIP
+    +PUSHABLE
+    +SOLID
+    +SHOOTABLE
+    +NODAMAGE
+    +NOBLOOD
+    States
+    {
+    Spawn:
+	POSS A 3
+	Loop
+    }
+}
+
+ACTOR Xcrate04 : Xcrate03 30113
+{
+    spawnid 193
+}
+
+ACTOR XMetalBox 30114
+{
+    Radius 34
+    Height 64
+    Mass 0x7FFFFFF
+    +SOLID
+    +NODAMAGE
+    +NOBLOOD
+	+NOGRAVITY
+    States
+    {
+    Spawn:
+	POSS A 3
+	Loop
+    }
+}

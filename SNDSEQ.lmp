@@ -1,0 +1,30 @@
+:PolyDoor
+	door		0
+	playuntildone	poly_start
+	stopsound	poly_end
+end
+
+:Door1
+	door		1
+	playuntildone   door1_start
+	stopsound	door1_end
+end
+
+:Door2
+	door		2
+	playuntildone	door2_swing
+	nostopcutoff
+end
+
+:Door3
+	door		3
+	platform    3
+	playuntildone   door3_start 
+	stopsound	door3_end       
+end
+
+:LiquidFill
+   platform     4
+   attenuation STATIC
+   playrepeat  LiquidFill
+end

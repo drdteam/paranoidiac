@@ -1,0 +1,906 @@
+//===========
+// Gargantua
+//===========
+
+actor HLGargantua 7421
+{
+    spawnid 164
+	Monster
+	Health 8000
+	Mass 0xFFFFFFFFF
+	Speed 18
+	Height 128
+	Radius 40
+	+BOSS
+	+NORADIUSDMG
+	PainChance 5
+	Scale 0.75
+	DamageFactor "Hornet", 0.0
+	BloodColor "DE FE 72"
+	Translation "192:207=%[1.0,0.0,0.0]:[2.0,0.0,0.0]"
+	SeeSound "halflife/monsters/gargantua/sight"
+	PainSound "halflife/monsters/gargantua/pain"
+	DeathSound "halflife/monsters/gargantua/death"
+	ActiveSound "halflife/monsters/gargantua/idle"
+	States
+	{
+	Spawn:
+		HL0I A 3 A_Look
+		Loop
+	See:
+		TNT1 A 0 A_JumpIfInventory("FlameToken",1,"FlameEnd")		//to stop the looping sound in case player dies while "Flame"
+		TNT1 A 0 A_JumpIfCloser(400,"Walk")				//if is close enough, the gargantua will walk instead of run
+		HL0R AB 4 A_Chase
+		HL0R C 3 A_Chase
+		TNT1 A 0 A_PlaySoundEx("halflife/monsters/gargantua/step","SoundSlot7")
+		HL0R DEF 3 A_Chase
+		TNT1 A 0 A_PlaySoundEx("halflife/monsters/gargantua/step","SoundSlot7")
+		HL0R G 3 A_Chase
+		Goto See+1
+	Walk:
+		TNT1 A 0 A_PlaySoundEx("halflife/monsters/gargantua/step","SoundSlot7")
+		HL0W ABCD 5 A_Chase
+		TNT1 A 0 A_PlaySoundEx("halflife/monsters/gargantua/step","SoundSlot7")
+		HL0W EFG 5 A_Chase
+		Goto See
+	Missile:
+		TNT1 A 0 A_JumpIfCloser(250,"Flame")
+		TNT1 A 0 A_Jump(255,"Boom","Hornets")
+	Boom:
+		HL0M A 7 A_FaceTarget
+		HL0N ABCCD 4 A_FaceTarget
+		TNT1 A 0 A_PlaySoundEx("halflife/monsters/gargantua/stomp","SoundSlot7",0,1)
+		TNT1 A 0 Radius_Quake(8,20,0,15,0)
+		HL0N E 23 A_SpawnItemEx("GargFloorBoomFake",10,0,0,0,0,0,0,32)
+		HL0N E 10 A_SpawnItemEx("GargFloorBoom",10,0,0,20,0,0,0,32)		//where it aimed first
+//		HL0N E 10 A_CustomMissile("GargFloorBoom",0,0,0)			//aimed at target
+		Goto See
+	Hornets:
+		HL0M ABC 7 A_FaceTarget
+		TNT1 A 0 A_FaceTarget
+		HL0M D 0 A_CustomMissile("HGruntHornet",70,-51)
+		HL0M D 5 A_CustomMissile("HGruntHornet",70,51)
+		TNT1 A 0 A_FaceTarget
+		HL0M D 0 A_CustomMissile("HGruntHornet",70,-51)
+		HL0M D 5 A_CustomMissile("HGruntHornet",70,51)
+		TNT1 A 0 A_FaceTarget
+		HL0M D 0 A_CustomMissile("HGruntHornet",70,-51)
+		HL0M D 5 A_CustomMissile("HGruntHornet",70,51)
+		TNT1 A 0 A_FaceTarget
+		HL0M D 0 A_CustomMissile("HGruntHornet",70,-51)
+		HL0M D 5 A_CustomMissile("HGruntHornet",70,51)
+		TNT1 A 0 A_FaceTarget
+		HL0M D 0 A_CustomMissile("HGruntHornet",70,-51)
+		HL0M D 5 A_CustomMissile("HGruntHornet",70,51)
+		TNT1 A 0 A_FaceTarget
+		HL0M D 0 A_CustomMissile("HGruntHornet",70,-51)
+		HL0M D 5 A_CustomMissile("HGruntHornet",70,51)
+		TNT1 A 0 A_FaceTarget
+		HL0M D 0 A_CustomMissile("HGruntHornet",70,-51)
+		HL0M D 5 A_CustomMissile("HGruntHornet",70,51)
+		TNT1 A 0 A_FaceTarget
+		HL0M D 0 A_CustomMissile("HGruntHornet",70,-51)
+		HL0M D 5 A_CustomMissile("HGruntHornet",70,51)
+		TNT1 A 0 A_FaceTarget
+		HL0M D 0 A_CustomMissile("HGruntHornet",70,-51)
+		HL0M D 5 A_CustomMissile("HGruntHornet",70,51)
+		HL0M CBA 6
+		Goto See
+	Flame:
+		TNT1 A 0 A_PlaySoundEx("halflife/monsters/gargantua/flameon","SoundSlot5")
+		HL0M ABC 5 A_FaceTarget
+		TNT1 A 0 A_PlaySoundEx("halflife/monsters/gargantua/flameloop","SoundSlot6",1)
+		TNT1 A 0 A_GiveInventory("FlameToken",1)
+	FlameLoop:
+		TNT1 A 0 A_FaceTarget
+		HL0M D 0 A_CustomMissile("HLGargFlame",70,-51)
+		HL0M D 1 A_CustomMissile("HLGargFlame",70,51)
+		TNT1 A 0 A_FaceTarget
+		HL0M D 0 A_CustomMissile("HLGargFlame",70,-51)
+		HL0M D 1 A_CustomMissile("HLGargFlame",70,51)
+		TNT1 A 0 A_FaceTarget
+		HL0M D 0 A_CustomMissile("HLGargFlame",70,-51)
+		HL0M D 1 A_CustomMissile("HLGargFlame",70,51)
+		TNT1 A 0 A_FaceTarget
+		HL0M D 0 A_CustomMissile("HLGargFlame",70,-51)
+		HL0M D 1 A_CustomMissile("HLGargFlame",70,51)
+		TNT1 A 0 A_FaceTarget
+		HL0M D 0 A_CustomMissile("HLGargFlame",70,-51)
+		HL0M D 1 A_CustomMissile("HLGargFlame",70,51)
+		TNT1 A 0 A_CPosRefire						//checks if player is dead (or out of LOS) and stop the attack
+		TNT1 A 0 A_JumpIfCloser(300,"FlameLoop")			//If still in range, will loop the attack
+	FlameEnd:
+		TNT1 A 0 A_StopSoundEx("SoundSlot6")
+		TNT1 A 0 A_TakeInventory("FlameToken",1)
+		TNT1 A 0 A_PlaySoundEx("halflife/monsters/gargantua/flameoff","SoundSlot5")
+		HL0M CBA 6
+		Goto See
+	Pain:
+		TNT1 A 0 A_Pain 						//will play the sound before the check
+		TNT1 A 0 A_JumpIfInventory("FlameToken",1,"FlameEnd")
+		HL0P A 7
+		Goto See
+	Death:
+		TNT1 A 0 A_StopSoundEx("SoundSlot6")
+		HL0D A 5 A_Scream
+		HL0D B 5 A_Fall
+		HL0D CD 5
+		HL0D EFGHIJKLMNN 4
+		HL0D OPQRS 4
+		TNT1 A 0 A_PlaySoundEx("halflife/monsters/gonarch/step","SoundSlot7")
+		HL0D TU 5
+		HL0D V 100
+		TNT1 A 0 A_PlaySound("halflife/weapons/explode2")
+		TNT1 AAAAAAAAAA 0 A_SpawnItemEx("GeneralExplosion",random(30,-30),random(30,-30),random(10,90),random(1,2),random(1,2),random(1,3),0,0)
+		TNT1 AAAAAAAAAAA 0 A_SpawnItemEx("gargantuagibs",random(30,-30),random(30,-30),random(10,60),random(1,7),random(1,7),random(5,18),random(0,359))
+		TNT1 AAAAAAAAAAA 0 A_SpawnItemEx("gargantuagibs",random(30,-30),random(30,-30),random(10,60),random(1,7),random(1,7),random(5,18),random(0,359))
+	  	TNT1 AAAAAAAAA 0 A_SpawnItemEx("XenGibs",random(5,-5),random(5,-5),random(10,40),random(1,7),random(1,7),random(5,13),random(0,359))
+		TNT1 A 40
+		Stop
+	XDeath:
+		TNT1 A 0 A_StopSoundEx("SoundSlot6")
+		HL0D A 6 A_Scream
+		HL0D BCDE 6
+		TNT1 A 2 A_SpawnItemEx("GargStrech1",0,0,0,0,0,0,0,32)
+		TNT1 A 2 A_SpawnItemEx("GargStrech2",0,0,0,0,0,0,0,32)
+		TNT1 A 2 A_SpawnItemEx("GargStrech3",0,0,0,0,0,0,0,32)
+		TNT1 A 2 A_SpawnItemEx("GargStrech4",0,0,0,0,0,0,0,32)
+		TNT1 A 2 A_SpawnItemEx("GargStrech5",0,0,0,0,0,0,0,32)
+		TNT1 A 2 A_SpawnItemEx("GargStrech6",0,0,0,0,0,0,0,32)
+		TNT1 A 2 A_SpawnItemEx("GargStrech7",0,0,0,0,0,0,0,32)
+		TNT1 A 2 A_SpawnItemEx("GargStrech8",0,0,0,0,0,0,0,32)
+		TNT1 A 0 A_PlaySound("halflife/weapons/explode2")
+		TNT1 AAAAAAAAAA 0 A_SpawnItemEx("GeneralExplosion",random(30,-30),random(30,-30),random(10,90),random(1,2),random(1,2),random(1,3),0,0)
+		TNT1 AAAAAAAAAAA 0 A_SpawnItemEx("gargantuagibs",random(30,-30),random(30,-30),random(10,60),random(1,7),random(1,7),random(5,18),random(0,359))
+		TNT1 AAAAAAAAAAA 0 A_SpawnItemEx("gargantuagibs",random(30,-30),random(30,-30),random(10,60),random(1,7),random(1,7),random(5,18),random(0,359))
+	  	TNT1 AAAAAAAAA 0 A_SpawnItemEx("XenGibs",random(5,-5),random(5,-5),random(10,40),random(1,7),random(1,7),random(5,13),random(0,359))
+		TNT1 A 40 A_Fall
+		Stop
+	}
+}
+
+//**********
+//	FX
+//**********
+
+Actor GargStrech1
+{
+	Translation "192:207=%[1.0,0.0,0.0]:[2.0,0.0,0.0]"
+	+NOCLIP
+	YScale 0.75
+	XScale 0.79
+	States
+	{
+	Spawn:
+		HL0D E 3
+		Stop
+	}
+}
+Actor GargStrech2 : GargStrech1
+{	XScale 0.83 }
+Actor GargStrech3 : GargStrech1
+{	XScale 0.87 }
+Actor GargStrech4 : GargStrech1
+{	XScale 0.91 }
+Actor GargStrech5 : GargStrech1
+{	XScale 0.95 }
+Actor GargStrech6 : GargStrech1
+{	XScale 0.99 }
+Actor GargStrech7 : GargStrech1
+{	XScale 1.03 }
+Actor GargStrech8 : GargStrech1
+{	XScale 1.1 }
+
+//********************
+//	Flame attack
+//********************
+
+Actor FlameToken : Inventory
+{
+	Inventory.MaxAmount 1
+}
+
+Actor HLGargFlame
+{
+	Radius 2
+	Height 4
+	Speed 16
+	PROJECTILE
+	RENDERSTYLE ADD
+	DamageType Fire
+	ALPHA 0.67
+	Scale 0.5
+	DONTHURTSHOOTER
+	+THRUGHOST
+	+DONTSPLASH
+	seesound "gargantua/flamestrm"
+	damage 2
+	Translation "48:63=200:193","64:79=213:220"
+	+STRIFEDAMAGE
+	States
+	{
+	Spawn:
+		TNT1 A 1 Bright
+		FRFX ABCD 1 Bright A_Explode(3,6)
+		FRFX D 0 Bright A_Lowgravity
+		FRFX EFG 1 Bright A_Explode(3,12)
+		FRFX HIJ 1 Bright A_Explode(3,24)
+		FRFX KLM 1 Bright A_Explode(3,48)
+		FRFX NO 1 Bright
+		stop
+	Death:
+		FRFX HIJ 2 Bright A_Explode(3,24)
+		FRFX KLM 2 Bright A_Explode(3,48)
+		FRFX NO 2 Bright
+		stop
+	}
+}
+
+//*******************
+//	Floor attack
+//*******************
+
+actor GargFloorBoom
+{
+	Projectile
+	Speed 16
+	Damage 15
+	+RIPPER
+	Scale 0.65
+	+FLOORHUGGER
+	RenderStyle Add
+	Alpha 0.9
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		X036 B 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 C 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 D 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 E 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 F 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 G 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 H 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 I 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 J 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 K 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 L 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 M 1 Bright Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 N 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 O 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 P 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 Q 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 R 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 S 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 T 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 U 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 V 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 W 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 X 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 Y 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		Loop
+	Death:
+		TNT1 A 1
+		Stop
+	}
+}
+
+Actor GargFloorBoomFake : GargFloorBoom			//stays still a little
+{
+	Speed 0
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		X036 B 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 C 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 D 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 E 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 F 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 G 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 H 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 I 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 J 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 K 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 L 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 M 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 N 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 O 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 P 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 Q 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 R 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 S 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 T 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 U 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 V 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 W 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 X 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 Y 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		Stop
+	}
+}
+
+Actor GargFXtraSpawner
+{
+	+NOCLIP
+	RenderStyle None
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		PLAY AAA 0 A_SpawnItemEx("GargFXtra",0,0,0,random(5,-5),random(5,-5),random(1,6),0)
+		Stop
+	}
+}
+
+Actor GargFXtra
+{
+	Projectile
+	Damage 0
+	+NOCLIP
+	Speed 0
+	Radius 1
+	+DONTBLAST
+	Height 1
+	Scale 0.15
+	RenderStyle Add
+	States
+	{
+	Spawn:
+		STAR P 3 Bright
+		STAR P 0 A_Jump(128,1)
+		Loop
+		STAR P 3 Bright
+		STAR P 1 Bright A_FadeOut
+		Wait
+	Death:
+		NULL A 1
+		Stop
+	}
+}
+
+//*********************
+//	Gargantua Gibs
+//*********************
+
+ACTOR gargantuagibblood : Blood
+{
+translation "176:183=224:231"
+Scale 0.5
+Gravity 0.4
+}
+
+ACTOR gargantuagibs
+{
+radius 6
+height 5
+-NOLIFTDROP
+-SOLID
++DROPOFF
++NOTELEPORT
++CORPSE
++CANNOTPUSH
+scale 0.25
+states
+     {
+	 Spawn:
+	 TNT1 A 0
+	 GGIB A 0 A_Gravity
+	 GGIB A 0 A_Jump (255,"Gib1","Gib2","Gib3","Gib4","Gib5","Gib6","Gib7","Gib8")
+	 Stop
+	Gib1:
+	 GGIB A 3 A_SpawnItem("gargantuagibblood",1)
+	 TNT1 A 0 A_CheckFloor("Gib1Crash")
+	 Goto "Gib1"
+	Gib2:
+	 GGIB B 3 A_SpawnItem("gargantuagibblood",1)
+	 TNT1 A 0 A_CheckFloor("Gib2Crash")
+	 Goto "Gib2"
+	Gib3:
+	 GGIB C 3 A_SpawnItem("gargantuagibblood",1)
+	 TNT1 A 0 A_CheckFloor("Gib3Crash")
+	 Goto "Gib3"
+	Gib4:
+	 GGIB D 3 A_SpawnItem("gargantuagibblood",1)
+	 TNT1 A 0 A_CheckFloor("Gib4Crash")
+	 Goto "Gib4"
+	Gib5:
+	 GGIB E 3 A_SpawnItem("gargantuagibblood",1)
+	 TNT1 A 0 A_CheckFloor("Gib5Crash")
+	 Goto "Gib5"
+	Gib6:
+	 GGIB F 3 A_SpawnItem("gargantuagibblood",1)
+	 TNT1 A 0 A_CheckFloor("Gib6Crash")
+	 Goto "Gib6"
+	Gib7:
+	 GGIB G 3 A_SpawnItem("gargantuagibblood",1)
+	 TNT1 A 0 A_CheckFloor("Gib7Crash")
+	 Goto "Gib7"
+	Gib8:
+	 GGIB H 3 A_SpawnItem("gargantuagibblood",1)
+	 TNT1 A 0 A_CheckFloor("Gib8Crash")
+	 Goto "Gib8"
+
+	Gib1Crash:
+	 GGIB A 300
+	 GGIB A 2 A_FadeOut
+	 Wait
+	Gib2Crash:
+	 GGIB B 300
+	 GGIB B 2 A_FadeOut
+	 Wait
+	Gib3Crash:
+	 GGIB C 300
+	 GGIB C 2 A_FadeOut
+	 Wait
+	Gib4Crash:
+	 GGIB D 300
+	 GGIB D 2 A_FadeOut
+	 Wait
+	Gib5Crash:
+	 GGIB E 300
+	 GGIB E 2 A_FadeOut
+	 Wait
+	Gib6Crash:
+	 GGIB F 300
+	 GGIB F 2 A_FadeOut
+	 Wait
+	Gib7Crash:
+	 GGIB G 300
+	 GGIB G 2 A_FadeOut
+	 Wait
+	Gib8Crash:
+	 GGIB H 300
+	 GGIB H 2 A_FadeOut
+	 Wait
+     }
+}
+
+
+
+
+
+//=================
+// Gargantua mature
+//=================
+
+Actor HLGargantua2	7445
+{	
+	Monster
+	Health 10000
+	Mass 0xFFFFFFFFF
+	Speed 21
+	Height 170
+	Radius 57
+	+BOSS
+	+NORADIUSDMG
+	PainChance 5
+	DamageFactor "Hornet", 0.0
+	BloodColor "DE FE 72"
+	SeeSound "halflife/monsters/gargantua/sight"
+	PainSound "halflife/monsters/gargantua/pain"
+	DeathSound "halflife/monsters/gargantua/death"
+	ActiveSound "halflife/monsters/gargantua/idle"
+	States
+	{
+	Spawn:
+		HL0I A 3 A_Look
+		Loop
+	See:
+		TNT1 A 0 A_JumpIfInventory("FlameToken",1,"FlameEnd")		//to stop the looping sound in case player dies while "Flame"
+		TNT1 A 0 A_JumpIfCloser(400,"Walk")				//if is close enough, the gargantua will walk instead of run
+		HL0R AB 4 A_Chase
+		HL0R C 3 A_Chase
+		TNT1 A 0 A_PlaySoundEx("halflife/monsters/gargantua/step","SoundSlot7")
+		HL0R DEF 3 A_Chase
+		TNT1 A 0 A_PlaySoundEx("halflife/monsters/gargantua/step","SoundSlot7")
+		HL0R G 3 A_Chase
+		Goto See+1
+	Walk:
+		TNT1 A 0 A_PlaySoundEx("halflife/monsters/gargantua/step","SoundSlot7")
+		HL0W ABCD 5 A_Chase
+		TNT1 A 0 A_PlaySoundEx("halflife/monsters/gargantua/step","SoundSlot7")
+		HL0W EFG 5 A_Chase
+		Goto See
+	Missile:
+		TNT1 A 0 A_JumpIfCloser(250,"Flame")
+		TNT1 A 0 A_Jump(255,"Boom","Hornets","EnergyBalls","EnergyBallsSeek")
+	Boom:
+		HL0M A 7 A_FaceTarget
+		HL0N ABCCD 4 A_FaceTarget
+		TNT1 A 0 A_PlaySoundEx("halflife/monsters/gargantua/stomp","SoundSlot7",0,1)
+		TNT1 A 0 Radius_Quake(8,20,0,15,0)
+		HL0N E 23 A_SpawnItemEx("GargFloorBoomFake",5,0,0,0,0,0,0,32)
+//		HL0N E 10 A_SpawnItemEx("GargFloorBoom",10,0,0,20,0,0,0,32)		//where it aimed first
+		HL0N E 10 A_CustomMissile("GargFloorBoomSeeker",0,0,0)			//aimed at target
+		Goto See
+	Hornets:
+		HL0M ABC 7 A_FaceTarget
+		TNT1 A 0 A_FaceTarget
+		HL0M D 0 A_CustomMissile("HGruntHornet",90,-66)
+		HL0M D 5 A_CustomMissile("HGruntHornet",90,66)
+		TNT1 A 0 A_FaceTarget
+		HL0M D 0 A_CustomMissile("HGruntHornet",90,-66)
+		HL0M D 5 A_CustomMissile("HGruntHornet",90,66)
+		TNT1 A 0 A_FaceTarget
+		HL0M D 0 A_CustomMissile("HGruntHornet",90,-66)
+		HL0M D 5 A_CustomMissile("HGruntHornet",90,66)
+		TNT1 A 0 A_FaceTarget
+		HL0M D 0 A_CustomMissile("HGruntHornet",90,-66)
+		HL0M D 5 A_CustomMissile("HGruntHornet",90,66)
+		TNT1 A 0 A_FaceTarget
+		HL0M D 0 A_CustomMissile("HGruntHornet",90,-66)
+		HL0M D 5 A_CustomMissile("HGruntHornet",90,66)
+		TNT1 A 0 A_FaceTarget
+		HL0M D 0 A_CustomMissile("HGruntHornet",90,-66)
+		HL0M D 5 A_CustomMissile("HGruntHornet",90,66)
+		TNT1 A 0 A_FaceTarget
+		HL0M D 0 A_CustomMissile("HGruntHornet",90,-66)
+		HL0M D 5 A_CustomMissile("HGruntHornet",90,66)
+		TNT1 A 0 A_FaceTarget
+		HL0M D 0 A_CustomMissile("HGruntHornet",90,-66)
+		HL0M D 5 A_CustomMissile("HGruntHornet",90,66)
+		TNT1 A 0 A_FaceTarget
+		HL0M D 0 A_CustomMissile("HGruntHornet",90,-66)
+		HL0M D 5 A_CustomMissile("HGruntHornet",90,66)
+		HL0M CBA 6
+		Goto See
+	Flame:
+		TNT1 A 0 A_PlaySoundEx("halflife/monsters/gargantua/flameon","SoundSlot5")
+		HL0M ABC 5 A_FaceTarget
+		TNT1 A 0 A_PlaySoundEx("halflife/monsters/gargantua/flameloop","SoundSlot6",1)
+		TNT1 A 0 A_GiveInventory("FlameToken",1)
+	FlameLoop:
+		TNT1 A 0 A_FaceTarget
+		HL0M D 0 A_CustomMissile("HLGargFlame",90,-66)
+		HL0M D 1 A_CustomMissile("HLGargFlame",90,66)
+		TNT1 A 0 A_FaceTarget
+		HL0M D 0 A_CustomMissile("HLGargFlame",90,-66)
+		HL0M D 1 A_CustomMissile("HLGargFlame",90,66)
+		TNT1 A 0 A_FaceTarget
+		HL0M D 0 A_CustomMissile("HLGargFlame",90,-66)
+		HL0M D 1 A_CustomMissile("HLGargFlame",90,66)
+		TNT1 A 0 A_FaceTarget
+		HL0M D 0 A_CustomMissile("HLGargFlame",90,-66)
+		HL0M D 1 A_CustomMissile("HLGargFlame",90,66)
+		TNT1 A 0 A_FaceTarget
+		HL0M D 0 A_CustomMissile("HLGargFlame",90,-66)
+		HL0M D 1 A_CustomMissile("HLGargFlame",90,66)
+		TNT1 A 0 A_CPosRefire						//checks if player is dead (or out of LOS) and stop the attack
+		TNT1 A 0 A_JumpIfCloser(300,"FlameLoop")			//If still in range, will loop the attack
+	FlameEnd:
+		TNT1 A 0 A_StopSoundEx("SoundSlot6")
+		TNT1 A 0 A_TakeInventory("FlameToken",1)
+		TNT1 A 0 A_PlaySoundEx("halflife/monsters/gargantua/flameoff","SoundSlot5")
+		HL0M CBA 6
+		Goto See
+
+
+	EnergyBalls:
+		HL0M AB 7 A_FaceTarget
+		TNT1 a 0 A_PlaySound("halflife/weapons/shockroachdischarge")
+		HL0M C 7 A_FaceTarget
+		TNT1 A 0 A_FaceTarget
+		HL0M D 0 A_CustomMissile("GargControllerFireball1",90,-66,0+random(8,-8))
+		HL0M D 5 A_CustomMissile("GargControllerFireball1",90,66,0+random(8,-8))
+		TNT1 A 0 A_FaceTarget
+		HL0M D 0 A_CustomMissile("GargControllerFireball1",90,-66,0+random(8,-8))
+		HL0M D 5 A_CustomMissile("GargControllerFireball1",90,66,0+random(8,-8))
+		TNT1 A 0 A_FaceTarget
+		HL0M D 0 A_CustomMissile("GargControllerFireball1",90,-66,0+random(8,-8))
+		HL0M D 5 A_CustomMissile("GargControllerFireball1",90,66,0+random(8,-8))
+		TNT1 A 0 A_FaceTarget
+		HL0M D 0 A_CustomMissile("GargControllerFireball1",90,-66,0+random(8,-8))
+		HL0M D 5 A_CustomMissile("GargControllerFireball1",90,66,0+random(8,-8))
+		TNT1 A 0 A_FaceTarget
+		HL0M D 0 A_CustomMissile("GargControllerFireball1",90,-66,0+random(8,-8))
+		HL0M D 5 A_CustomMissile("GargControllerFireball1",90,66,0+random(8,-8))
+		TNT1 A 0 A_FaceTarget
+		HL0M D 0 A_CustomMissile("GargControllerFireball1",90,-66,0+random(8,-8))
+		HL0M D 5 A_CustomMissile("GargControllerFireball1",90,66,0+random(8,-8))
+		TNT1 A 0 A_FaceTarget
+		HL0M D 0 A_CustomMissile("GargControllerFireball1",90,-66,0+random(8,-8))
+		HL0M D 5 A_CustomMissile("GargControllerFireball1",90,66,0+random(8,-8))
+		TNT1 A 0 A_FaceTarget
+		HL0M D 0 A_CustomMissile("GargControllerFireball1",90,-66,0+random(8,-8))
+		HL0M D 5 A_CustomMissile("GargControllerFireball1",90,66,0+random(8,-8))
+		TNT1 A 0 A_FaceTarget
+		HL0M D 0 A_CustomMissile("GargControllerFireball1",90,-66,0+random(8,-8))
+		HL0M D 5 A_CustomMissile("GargControllerFireball1",90,66,0+random(8,-8))
+		TNT1 A 0 A_FaceTarget
+		HL0M D 0 A_CustomMissile("GargControllerFireball1",90,-66,0+random(8,-8))
+		HL0M D 5 A_CustomMissile("GargControllerFireball1",90,66,0+random(8,-8))
+		TNT1 A 0 A_FaceTarget
+		HL0M D 0 A_CustomMissile("GargControllerFireball1",90,-66,0+random(8,-8))
+		HL0M D 5 A_CustomMissile("GargControllerFireball1",90,66,0+random(8,-8))
+		TNT1 A 0 A_FaceTarget
+		HL0M D 0 A_CustomMissile("GargControllerFireball1",90,-66,0+random(8,-8))
+		HL0M D 5 A_CustomMissile("GargControllerFireball1",90,66,0+random(8,-8))
+		TNT1 A 0 A_FaceTarget
+		HL0M D 0 A_CustomMissile("GargControllerFireball1",90,-66,0+random(8,-8))
+		HL0M D 5 A_CustomMissile("GargControllerFireball1",90,66,0+random(8,-8))
+		TNT1 A 0 A_FaceTarget
+		HL0M D 0 A_CustomMissile("GargControllerFireball1",90,-66,0+random(8,-8))
+		HL0M D 5 A_CustomMissile("GargControllerFireball1",90,66,0+random(8,-8))
+		TNT1 A 0 A_FaceTarget
+		HL0M D 0 A_CustomMissile("GargControllerFireball1",90,-66,0+random(8,-8))
+		HL0M D 5 A_CustomMissile("GargControllerFireball1",90,66,0+random(8,-8))
+		TNT1 A 0 A_FaceTarget
+		HL0M D 0 A_CustomMissile("GargControllerFireball1",90,-66,0+random(8,-8))
+		HL0M D 5 A_CustomMissile("GargControllerFireball1",90,66,0+random(8,-8))
+		HL0M CBA 6
+		Goto See
+	EnergyBallsSeek:
+		HL0M AB 7 A_FaceTarget
+		TNT1 a 0 A_PlaySound("halflife/weapons/shockroachdischarge")
+		HL0M C 7 A_FaceTarget
+		TNT1 A 0 A_FaceTarget
+		HL0M D 0 A_CustomMissile("GargControllerFireball2",90,-66,0+random(8,-8))
+		HL0M D 5 A_CustomMissile("GargControllerFireball2",90,66,0+random(8,-8))
+		HL0M DDDDDD 5 A_FaceTarget
+		TNT1 a 0 A_PlaySound("halflife/weapons/shockroachdischarge")
+		HL0M D 7 A_FaceTarget
+		HL0M D 0 A_CustomMissile("GargControllerFireball2",90,-66,0+random(8,-8))
+		HL0M D 5 A_CustomMissile("GargControllerFireball2",90,66,0+random(8,-8))
+		HL0M DDDDDD 5 A_FaceTarget
+		TNT1 a 0 A_PlaySound("halflife/weapons/shockroachdischarge")
+		HL0M D 7 A_FaceTarget
+		HL0M D 0 A_CustomMissile("GargControllerFireball2",90,-66,0+random(8,-8))
+		HL0M D 5 A_CustomMissile("GargControllerFireball2",90,66,0+random(8,-8))
+		HL0M CBA 6
+		Goto See
+	Pain:
+		TNT1 A 0 A_Pain 						//will play the sound before the check
+		TNT1 A 0 A_JumpIfInventory("FlameToken",1,"FlameEnd")
+		HL0P A 7
+		Goto See
+	Death:
+		TNT1 A 0 A_StopSoundEx("SoundSlot6")
+		HL0D A 5 A_Scream
+		HL0D B 5 A_Fall
+		HL0D CD 5
+		HL0D EFGHIJKLMNN 4
+		HL0D OPQRS 4
+		TNT1 A 0 A_PlaySoundEx("halflife/monsters/gonarch/step","SoundSlot7")
+		HL0D TU 5
+		HL0D V 100
+		TNT1 A 0 A_PlaySound("halflife/weapons/explode2")
+		TNT1 AAAAAAAAAA 0 A_SpawnItemEx("GeneralExplosion",random(30,-30),random(30,-30),random(10,150),random(1,2),random(1,2),random(1,3),0,0)
+		TNT1 AAAAAAAAAAA 0 A_SpawnItemEx("gargantuagibs",random(30,-30),random(30,-30),random(10,60),random(1,7),random(1,7),random(5,18),random(0,359))
+		TNT1 AAAAAAAAAAA 0 A_SpawnItemEx("gargantuagibs",random(30,-30),random(30,-30),random(10,60),random(1,7),random(1,7),random(5,18),random(0,359))
+	  	TNT1 AAAAAAAAA 0 A_SpawnItemEx("XenGibs",random(5,-5),random(5,-5),random(10,40),random(1,7),random(1,7),random(5,13),random(0,359))
+		TNT1 A 40
+		Stop
+	XDeath:
+		TNT1 A 0 A_StopSoundEx("SoundSlot6")
+		HL0D A 6 A_Scream
+		HL0D BCDE 6
+		TNT1 A 2 A_SpawnItemEx("Garg2Strech1",0,0,0,0,0,0,0,32)
+		TNT1 A 2 A_SpawnItemEx("Garg2Strech2",0,0,0,0,0,0,0,32)
+		TNT1 A 2 A_SpawnItemEx("Garg2Strech3",0,0,0,0,0,0,0,32)
+		TNT1 A 2 A_SpawnItemEx("Garg2Strech4",0,0,0,0,0,0,0,32)
+		TNT1 A 2 A_SpawnItemEx("Garg2Strech5",0,0,0,0,0,0,0,32)
+		TNT1 A 2 A_SpawnItemEx("Garg2Strech6",0,0,0,0,0,0,0,32)
+		TNT1 A 2 A_SpawnItemEx("Garg2Strech7",0,0,0,0,0,0,0,32)
+		TNT1 A 2 A_SpawnItemEx("Garg2Strech8",0,0,0,0,0,0,0,32)
+		TNT1 A 0 A_PlaySound("halflife/weapons/explode2")
+		TNT1 AAAAAAA 0 A_SpawnItemEx("GeneralExplosion",random(30,-30),random(30,-30),random(10,150),random(1,2),random(1,2),random(1,3),0,0)
+		TNT1 AAAAAAAAAAA 0 A_SpawnItemEx("gargantuagibs",random(30,-30),random(30,-30),random(10,60),random(1,7),random(1,7),random(5,18),random(0,359))
+		TNT1 AAAAAAAAAAA 0 A_SpawnItemEx("gargantuagibs",random(30,-30),random(30,-30),random(10,60),random(1,7),random(1,7),random(5,18),random(0,359))
+	  	TNT1 AAAAAAAAA 0 A_SpawnItemEx("XenGibs",random(5,-5),random(5,-5),random(10,40),random(1,7),random(1,7),random(5,13),random(0,359))
+		TNT1 A 40 A_Fall
+		Stop
+	}
+}
+
+
+//***************
+// Garg Mature fx
+//***************
+Actor Garg2Strech1
+{
+	+NOCLIP
+	YScale 1.0
+	XScale 1.05
+	States
+	{
+	Spawn:
+		HL0D E 3
+		Stop
+	}
+}
+Actor Garg2Strech2 : Garg2Strech1
+{	XScale 1.1 		}
+Actor Garg2Strech3 : Garg2Strech1
+{	XScale 1.15 	}
+Actor Garg2Strech4 : Garg2Strech1
+{	XScale 1.2 		}
+Actor Garg2Strech5 : Garg2Strech1
+{	XScale 1.25 	}
+Actor Garg2Strech6 : Garg2Strech1
+{	XScale 1.3 		}
+Actor Garg2Strech7 : Garg2Strech1
+{	XScale 1.35 	}
+Actor Garg2Strech8 : Garg2Strech1
+{	XScale 1.4 		}
+
+//******************************
+// Gargantua controller fireball
+//******************************
+Actor GargControllerFireball1
+{
+	Projectile
+	Speed 20
+	Damage 3
+	Radius 8
+	Height 12
+	Scale 0.5
+	RenderStyle Add
+	+FORCEXYBILLBOARD
+	DeathSound "halflife/weapons/gausshit2"
+	Alpha 0.9
+	States
+	{
+	Spawn:
+		X029 ABCDEFGHIJK 2 Bright
+		Loop
+	Death:
+		TNT1 AAAAAA 0 A_SpawnItemEx("ControllerFireballSpark",0,0,0,frandom(-1.1,1.1),frandom(-1.1,1.1),frandom(-1.1,1.1),random(0,359),32)
+		TNT1 ABC 5
+		Stop
+	}
+}
+
+
+//*******************************
+// Gargantua cont seeker fireball 
+//*******************************
+Actor GargControllerFireball2
+{
+	Projectile
+	Speed 12
+	Damage 15
+	Radius 8
+	Height 12
+	Scale 0.4
+	+FORCEXYBILLBOARD
+	DeathSound "halflife/weapons/gausshit1"
+	RenderStyle Add
+	Alpha 0.9
+	+SeekerMissile
+	States
+	{
+	Spawn:
+		X025 BCDEFGHIJKLMNOPQRSTUVWXY 2 Bright A_SeekerMissile(5,5)
+		Loop
+	Death:
+		TNT1 A 0 A_SpawnItemEx("CFB2SSpawner",0,0,0,0,0,0,0,32)
+		TNT1 ABC 5
+		Stop
+	}
+}
+
+
+//**********************
+// Garg mature floorfire
+//**********************
+actor GargFloorBoomSeeker
+{
+	Projectile
+	Speed 16
+	Damage 15
+	+RIPPER
+	+SeekerMissile
+	Scale 0.65
+	+FLOORHUGGER
+	RenderStyle Add
+	Alpha 0.9
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		X036 B 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 C 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 D 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 E 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 F 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 G 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 H 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		TNT1 A 0 A_SeekerMissile(10,10)
+		X036 I 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 J 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 K 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 L 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 M 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 N 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 O 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 P 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		TNT1 A 0 A_SeekerMissile(10,10)
+		X036 Q 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 R 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 S 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 T 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 U 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 V 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 W 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 X 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		X036 Y 1 Bright A_SpawnItemEx("GargFXtraSpawner",0,0,0,0,0,0,0)
+		TNT1 A 0 A_Explode(64,64,0)
+		TNT1 A 0 A_SeekerMissile(10,10)
+		Loop
+	Death:
+		TNT1 A 1
+		Stop
+	}
+}

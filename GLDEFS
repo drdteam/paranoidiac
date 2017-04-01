@@ -1,0 +1,1570 @@
+
+skybox HLSKY1 //Noon Sky
+{ 
+   DESERTN 
+   DESERTE
+   DESERTS
+   DESERTW
+   DESERTT
+   DESERTB
+} 
+
+skybox HLSKY2 //Evening Sky
+{ 
+   DESERT1N 
+   DESERT1E
+   DESERT1S
+   DESERT1W
+   DESERT1T
+   DESERT1B
+} 
+
+skybox HLSKY3 //Dusk Sky
+{ 
+   DESERT2N 
+   DESERT2E
+   DESERT2S
+   DESERT2W
+   DESERT2T
+   DESERT2B
+}
+
+skybox HLSKY4 //Night Sky
+{ 
+   DESERT3N 
+   DESERT3E
+   DESERT3S
+   DESERT3W
+   DESERT3T
+   DESERT3B
+}
+
+skybox HLSKY5 //Morning Sky
+{ 
+   DESERT4N 
+   DESERT4E
+   DESERT4S
+   DESERT4W
+   DESERT4T
+   DESERT4B
+}
+
+Glow
+{
+	Flats 
+	{ 
+   		NUKAGE1 
+   		NUKAGE2 
+   		NUKAGE3
+		XNUKE01
+	}
+}
+
+flickerlight BARREL_X1
+{
+    color 0.9 0.7 0.0
+    size 64
+    secondarySize 72
+    chance 0.3
+    offset 0 32 0
+}
+
+flickerlight BARREL_X2
+{
+    color 0.6 0.5 0.0
+    size 56
+    secondarySize 64
+    chance 0.3
+    offset 0 32 0
+}
+
+flickerlight BARREL_X3
+{
+    color 0.6 0.5 0.0
+    size 48
+    secondarySize 56
+    chance 0.3
+    offset 0 32 0
+}
+
+flickerlight BARREL_X4
+{
+    color 0.3 0.2 0.0
+    size 32
+    secondarySize 40
+    chance 0.3
+    offset 0 32 0
+}
+
+object ExplosiveItemBangBARREL
+{
+    frame CBNGA { light BARREL_X2  }
+    frame CBNGB { light BARREL_X2  }
+    frame CBNGC { light BARREL_X2  }
+    frame CBNGD { light BARREL_X1  }
+    frame CBNGE { light BARREL_X1  }
+    frame CBNGF { light BARREL_X1  }
+    frame CBNGG { light BARREL_X1  }
+    frame CBNGH { light BARREL_X1  }
+    frame CBNGI { light BARREL_X2  }
+    frame CBNGJ { light BARREL_X2  }
+    frame CBNGK { light BARREL_X2  }
+    frame CBNGL { light BARREL_X2  }
+    frame CBNGM { light BARREL_X3  }
+    frame CBNGN { light BARREL_X3  }
+    frame CBNGO { light BARREL_X3  }
+    frame CBNGP { light BARREL_X3  }
+    frame CBNGQ { light BARREL_X4  }
+    frame CBNGR { light BARREL_X4  }
+    frame CBNGS { light BARREL_X4  }
+}
+
+flickerlight CRATE_X1
+{
+    color 0.9 0.7 0.0
+    size 96
+    secondarySize 104
+    chance 0.3
+    offset 0 40 0
+}
+
+flickerlight CRATE_X2
+{
+    color 0.6 0.5 0.0
+    size 80
+    secondarySize 96
+    chance 0.3
+    offset 0 40 0
+}
+
+flickerlight CRATE_X3
+{
+    color 0.6 0.5 0.0
+    size 64
+    secondarySize 72
+    chance 0.3
+    offset 0 40 0
+}
+
+flickerlight CRATE_X4
+{
+    color 0.3 0.2 0.0
+    size 48
+    secondarySize 64
+    chance 0.3
+    offset 0 40 0
+}
+
+object ExplosiveItemBangCrate
+{
+    frame CBNGA { light CRATE_X2  }
+    frame CBNGB { light CRATE_X2  }
+    frame CBNGC { light CRATE_X2  }
+    frame CBNGD { light CRATE_X1  }
+    frame CBNGE { light CRATE_X1  }
+    frame CBNGF { light CRATE_X1  }
+    frame CBNGG { light CRATE_X1  }
+    frame CBNGH { light CRATE_X1  }
+    frame CBNGI { light CRATE_X2  }
+    frame CBNGJ { light CRATE_X2  }
+    frame CBNGK { light CRATE_X2  }
+    frame CBNGL { light CRATE_X2  }
+    frame CBNGM { light CRATE_X3  }
+    frame CBNGN { light CRATE_X3  }
+    frame CBNGO { light CRATE_X3  }
+    frame CBNGP { light CRATE_X3  }
+    frame CBNGQ { light CRATE_X4  }
+    frame CBNGR { light CRATE_X4  }
+    frame CBNGS { light CRATE_X4  }
+}
+
+pulselight ZENLIGHT1
+{
+    color 0.8 0.8 0.7
+    size 24
+    secondarySize 32
+    interval 4.0
+    offset 24 40 0
+}
+
+pulselight ZENLIGHT2
+{
+    color 0.8 0.8 0.7
+    size 24
+    secondarySize 32
+    interval 4.0
+    offset 24 36 0
+}
+
+pulselight ZENLIGHT3
+{
+    color 0.8 0.8 0.7
+    size 24
+    secondarySize 32
+    interval 4.0
+    offset 24 32 0
+}
+
+pulselight ZENLIGHTFADE1
+{
+    color 0.6 0.6 0.5
+    size 16
+    secondarySize 24
+    interval 4.0
+    offset 16 32 0
+}
+
+pulselight ZENLIGHTFADE2
+{
+    color 0.4 0.4 0.3
+    size 8
+    secondarySize 16
+    interval 4.0
+    offset 8 24 0
+}
+
+object ZenLight
+{
+    frame POSSA { light ZENLIGHT1 }
+    frame POSSB { light ZENLIGHT1 }
+    frame POSSC { light ZENLIGHT2 }
+    frame POSSD { light ZENLIGHT2 }
+    frame POSSE { light ZENLIGHT3 }
+    frame POSSF { light ZENLIGHT3 }
+    frame POSSG { light ZENLIGHT3 }
+    frame POSSH { light ZENLIGHT2 }
+    frame POSSI { light ZENLIGHT2 }
+    frame POSSJ { light ZENLIGHT1 }
+    frame POSSK { light ZENLIGHT1 }
+    
+    frame POSSL { light ZENLIGHTFADE1 }
+    frame POSSM { light ZENLIGHTFADE1 }
+    
+    frame POSSN { light ZENLIGHTFADE2 }
+    frame POSSO { light ZENLIGHTFADE2 }
+}
+
+//****
+//ZDooM spark replacement
+//****
+
+flickerlight NJSPARKY
+{
+    color 0.6 0.45 0.0
+    size 8
+    secondarySize 12
+    chance 0.8
+}
+
+object NJDownSpark
+{
+    frame SPKO { light NJSPARKY }
+}
+
+//****
+//Electrical spark for zapping Gargantua on Map07
+//****
+
+pulselight BIGBLUESPARKLIGHT
+{
+    color 0.5 1.0 1.0
+    size 128
+    secondarySize 160
+    interval 4.0
+    offset 0 0 0
+}
+
+object SparkFlare_BB1
+{
+    frame SPKB { light BIGBLUESPARKLIGHT }
+}
+
+object SparkFlare_BB2
+{
+    frame SPKB { light BIGBLUESPARKLIGHT }
+}
+
+object SparkFlare_BB3
+{
+    frame SPKB { light BIGBLUESPARKLIGHT }
+}
+
+object SparkFlare_BB4
+{
+    frame SPKB { light BIGBLUESPARKLIGHT }
+}
+
+object SparkFlare_BB5
+{
+    frame SPKB { light BIGBLUESPARKLIGHT }
+}
+
+object SparkFlare_BB6
+{
+    frame SPKB { light BIGBLUESPARKLIGHT }
+}
+
+//****
+//Dynamic lights for flares in Vacuum Tubes at the end of Map01
+//****
+
+flickerlight TANKSPARKEFFECT
+{
+    color 1.0 1.0 0.6
+    size 28
+    secondarySize 32
+    chance 0.1
+    offset 0 48 0
+}
+
+object NJTankSpark
+{
+    frame TBLU { light TANKSPARKEFFECT }
+}
+
+//****************************************************************//
+//Dynamic lights for projectiles, rocket explosions, weapons fire //
+//****************************************************************//
+
+flickerlight ImShootingAGun	//for barney and grunts
+{
+    color 1.0 0.8 0.0
+    size 40
+    secondarySize 45
+    chance 0.4
+    Offset 0 40 0
+}
+
+//===============
+// YellowLights
+// 1.0 0.8 0.0
+//===============
+
+flickerlight YellowBigFlicker1
+{
+    color 1.0 0.8 0.0
+    size 150
+    secondarySize 155
+    chance 0.4
+}
+flickerlight YellowBigFlicker2
+{
+    color 1.0 0.8 0.0
+    size 120
+    secondarySize 125
+    chance 0.4
+}
+flickerlight YellowBigFlicker3
+{
+    color 1.0 0.8 0.0
+    size 90
+    secondarySize 95
+    chance 0.4
+}
+
+//***************************************
+flickerlight YellowMediumFlicker1
+{
+    color 1.0 0.8 0.0
+    size 80
+    secondarySize 85
+    chance 0.4
+}
+flickerlight YellowMediumFlicker2
+{
+    color 1.0 0.8 0.0
+    size 60
+    secondarySize 65
+    chance 0.4
+}
+flickerlight YellowMediumFlicker3
+{
+    color 1.0 0.8 0.0
+    size 50
+    secondarySize 55
+    chance 0.4
+}
+
+//***************************************
+flickerlight YellowSmallFlicker1
+{
+    color 1.0 0.8 0.0
+    size 40
+    secondarySize 45
+    chance 0.4
+}
+flickerlight YellowSmallFlicker2
+{
+    color 1.0 0.8 0.0
+    size 20
+    secondarySize 25
+    chance 0.4
+}
+flickerlight YellowSmallFlicker3
+{
+    color 1.0 0.8 0.0
+    size 10
+    secondarySize 15
+    chance 0.4
+}
+//***************************************
+flickerlight FlamerYellowSmallFlicker1
+{
+    color 0.7 0.5 0.0
+    size 40
+    secondarySize 45
+    chance 0.4
+}
+flickerlight FlamerYellowSmallFlicker2
+{
+    color 0.7 0.5 0.0
+    size 20
+    secondarySize 25
+    chance 0.4
+}
+flickerlight FlamerYellowSmallFlicker3
+{
+    color 0.7 0.5 0.0
+    size 10
+    secondarySize 15
+    chance 0.4
+}
+flickerlight FlamerYellowSmallFlicker4
+{
+    color 0.9 0.7 0.0
+    size 20
+    secondarySize 25
+    chance 0.4
+}
+
+//***************************************
+//***************************************
+pointlight YellowBigPoint1
+{
+    color 1.0 0.8 0.0
+    size 140
+}
+pointlight YellowBigPoint2
+{
+    color 1.0 0.8 0.0
+    size 110
+}
+pointlight YellowBigPoint3
+{
+    color 1.0 0.8 0.0
+    size 80
+}
+
+//***************************************
+pointlight YellowMediumPoint1
+{
+    color 1.0 0.8 0.0
+    size 75
+}
+pointlight YellowMediumPoint2
+{
+    color 1.0 0.8 0.0
+    size 55
+}
+pointlight YellowMediumPoint3
+{
+    color 1.0 0.8 0.0
+    size 45
+}
+
+//***************************************
+pointlight YellowSmallPoint1
+{
+    color 1.0 0.8 0.0
+    size 30
+}
+pointlight YellowSmallPoint2
+{
+    color 1.0 0.8 0.0
+    size 20
+}
+pointlight YellowSmallPoint3
+{
+    color 1.0 0.8 0.0
+    size 10
+}
+
+//==============
+// GreenLights
+// 0.0 1.0 0.0
+//==============
+
+flickerlight GreenBigFlicker1
+{
+    color 0.0 1.0 0.0
+    size 150
+    secondarySize 155
+    chance 0.4
+}
+flickerlight GreenBigFlicker2
+{
+    color 0.0 1.0 0.0
+    size 120
+    secondarySize 125
+    chance 0.4
+}
+flickerlight GreenBigFlicker3
+{
+    color 0.0 1.0 0.0
+    size 90
+    secondarySize 95
+    chance 0.4
+}
+
+//***************************************
+flickerlight GreenMediumFlicker1
+{
+    color 0.0 1.0 0.0
+    size 80
+    secondarySize 85
+    chance 0.4
+}
+flickerlight GreenMediumFlicker2
+{
+    color 0.0 1.0 0.0
+    size 60
+    secondarySize 65
+    chance 0.4
+}
+flickerlight GreenMediumFlicker3
+{
+    color 0.0 1.0 0.0
+    size 50
+    secondarySize 55
+    chance 0.4
+}
+
+//***************************************
+flickerlight GreenSmallFlicker1
+{
+    color 0.0 1.0 0.0
+    size 40
+    secondarySize 45
+    chance 0.4
+}
+flickerlight GreenSmallFlicker2
+{
+    color 0.0 1.0 0.0
+    size 20
+    secondarySize 25
+    chance 0.4
+}
+flickerlight GreenSmallFlicker3
+{
+    color 0.0 1.0 0.0
+    size 10
+    secondarySize 15
+    chance 0.4
+}
+
+//***************************************
+//***************************************
+pointlight GreenBigPoint1
+{
+	color 0.0 1.0 0.0
+    size 140
+}
+pointlight GreenBigPoint2
+{
+	color 0.0 1.0 0.0
+    size 110
+}
+pointlight GreenBigPoint3
+{
+	color 0.0 1.0 0.0
+    size 80
+}
+
+//***************************************
+pointlight GreenMediumPoint1
+{
+	color 0.0 1.0 0.0
+    size 75
+}
+pointlight GreenMediumPoint2
+{
+	color 0.0 1.0 0.0
+    size 55
+}
+pointlight GreenMediumPoint3
+{
+	color 0.0 1.0 0.0
+    size 45
+}
+
+//***************************************
+pointlight GreenSmallPoint1
+{
+	color 0.0 1.0 0.0
+    size 30
+}
+pointlight GreenSmallPoint2
+{
+	color 0.0 1.0 0.0
+    size 20
+}
+pointlight GreenSmallPoint3
+{
+	color 0.0 1.0 0.0
+    size 10
+}
+
+//================
+// RedLight
+// 1.0 0.0 0.0
+//================
+
+flickerlight RedBigFlicker1
+{
+    color 1.0 0.0 0.0
+    size 150
+    secondarySize 155
+    chance 0.4
+}
+flickerlight RedBigFlicker2
+{
+    color 1.0 0.0 0.0
+    size 120
+    secondarySize 125
+    chance 0.4
+}
+flickerlight RedBigFlicker3
+{
+    color 1.0 0.0 0.0
+    size 90
+    secondarySize 95
+    chance 0.4
+}
+
+//***************************************
+flickerlight RedMediumFlicker1
+{
+    color 1.0 0.0 0.0
+    size 80
+    secondarySize 85
+    chance 0.4
+}
+flickerlight RedMediumFlicker2
+{
+    color 1.0 0.0 0.0
+    size 60
+    secondarySize 65
+    chance 0.4
+}
+flickerlight RedMediumFlicker3
+{
+    color 1.0 0.0 0.0
+    size 50
+    secondarySize 55
+    chance 0.4
+}
+
+//***************************************
+flickerlight RedSmallFlicker1
+{
+    color 1.0 0.0 0.0
+    size 40
+    secondarySize 45
+    chance 0.4
+}
+flickerlight RedSmallFlicker2
+{
+    color 1.0 0.0 0.0
+    size 20
+    secondarySize 25
+    chance 0.4
+}
+flickerlight RedSmallFlicker3
+{
+    color 1.0 0.0 0.0
+    size 10
+    secondarySize 15
+    chance 0.4
+}
+
+//***************************************
+//***************************************
+
+pointlight RedBigPoint1
+{
+    color 1.0 0.0 0.0
+    size 140
+}
+pointlight RedBigPoint2
+{
+    color 1.0 0.0 0.0
+    size 110
+}
+pointlight RedBigPoint3
+{
+    color 1.0 0.0 0.0
+    size 80
+}
+
+//***************************************
+pointlight RedMediumPoint1
+{
+    color 1.0 0.0 0.0
+    size 75
+}
+pointlight RedMediumPoint2
+{
+    color 1.0 0.0 0.0
+    size 55
+}
+pointlight RedMediumPoint3
+{
+    color 1.0 0.0 0.0
+    size 45
+}
+
+//***************************************
+pointlight RedSmallPoint1
+{
+    color 1.0 0.0 0.0
+    size 30
+}
+pointlight RedSmallPoint2
+{
+    color 1.0 0.0 0.0
+    size 20
+}
+pointlight RedSmallPoint3
+{
+    color 1.0 0.0 0.0
+    size 10
+}
+
+//=============
+// OrangeLight
+// 1.0 0.5 0.3
+//=============
+
+flickerlight OrangeBigFlicker1
+{
+    color 1.0 0.5 0.3
+    size 150
+    secondarySize 155
+    chance 0.4
+}
+flickerlight OrangeBigFlicker2
+{
+    color 1.0 0.5 0.3
+    size 120
+    secondarySize 125
+    chance 0.4
+}
+flickerlight OrangeBigFlicker3
+{
+    color 1.0 0.5 0.3
+    size 90
+    secondarySize 95
+    chance 0.4
+}
+
+//***************************************
+flickerlight OrangeMediumFlicker1
+{
+    color 1.0 0.5 0.3
+    size 80
+    secondarySize 85
+    chance 0.4
+}
+flickerlight OrangeMediumFlicker2
+{
+    color 1.0 0.5 0.3
+    size 60
+    secondarySize 65
+    chance 0.4
+}
+flickerlight OrangeMediumFlicker3
+{
+    color 1.0 0.5 0.3
+    size 50
+    secondarySize 55
+    chance 0.4
+}
+
+//***************************************
+flickerlight OrangeSmallFlicker1
+{
+    color 1.0 0.5 0.3
+    size 40
+    secondarySize 45
+    chance 0.4
+}
+flickerlight OrangeSmallFlicker2
+{
+    color 1.0 0.5 0.3
+    size 20
+    secondarySize 25
+    chance 0.4
+}
+flickerlight OrangeSmallFlicker3
+{
+    color 1.0 0.5 0.3
+    size 10
+    secondarySize 15
+    chance 0.4
+}
+
+//***************************************
+//***************************************
+pointlight OrangeBigPoint1
+{
+    color 1.0 0.5 0.3
+    size 140
+}
+pointlight OrangeBigPoint2
+{
+    color 1.0 0.5 0.3
+    size 110
+}
+pointlight OrangeBigPoint3
+{
+    color 1.0 0.5 0.3
+    size 80
+}
+
+//***************************************
+pointlight OrangeMediumPoint1
+{
+    color 1.0 0.5 0.3
+    size 75
+}
+pointlight OrangeMediumPoint2
+{
+    color 1.0 0.5 0.3
+    size 55
+}
+pointlight OrangeMediumPoint3
+{
+    color 1.0 0.5 0.3
+    size 45
+}
+
+//***************************************
+pointlight OrangeSmallPoint1
+{
+    color 1.0 0.5 0.3
+    size 30
+}
+pointlight OrangeSmallPoint2
+{
+    color 1.0 0.5 0.3
+    size 20
+}
+pointlight OrangeSmallPoint3
+{
+    color 1.0 0.5 0.3
+    size 10
+}
+
+//***************************
+// Controller's fireballs
+//***************************
+
+Object ControllerFireball1
+{
+	Frame X029 { Light YellowMediumPoint3 }
+	Frame TNT1A { Light YellowSmallFlicker1 }
+	Frame TNT1B { Light YellowSmallFlicker2 }
+	Frame TNT1C { Light YellowSmallFlicker3 }
+}
+
+Object ControllerFireball2
+{
+	Frame X025 { Light OrangeMediumPoint2 }
+	Frame TNT1A { Light OrangeMediumFlicker3 }
+	Frame TNT1B { Light OrangeSmallFlicker1 }
+	Frame TNT1C { Light OrangeSmallFlicker2 }
+}
+
+//***************************
+// Generic explosion fx
+//***************************
+
+Object ExploMediumBack1 
+{
+	Frame X004A { Light YellowSmallFlicker2 }
+	Frame X004B { Light YellowSmallFlicker1 }
+	Frame X004C { Light YellowSmallFlicker1 }
+	Frame X004D { Light YellowMediumFlicker3 }
+	Frame X004E { Light YellowMediumFlicker3 }
+	Frame X004F { Light YellowMediumFlicker2 }
+	Frame X004G { Light YellowMediumFlicker2 }
+	Frame X004H { Light YellowMediumFlicker1 }
+	Frame X004I { Light YellowMediumFlicker1 }
+	Frame X004J { Light YellowMediumFlicker2 }
+	Frame X004K { Light YellowMediumFlicker2 }
+	Frame X004L { Light YellowMediumFlicker3 }
+	Frame X004M { Light YellowMediumFlicker3 }
+	Frame X004N { Light YellowSmallFlicker1 }
+	Frame X004O { Light YellowSmallFlicker1 }
+	Frame X004P { Light YellowSmallFlicker2 }
+	Frame X004Q { Light YellowSmallFlicker3 }
+}
+
+Object ExploMediumBack2 
+{
+	Frame X005A { Light YellowSmallFlicker2 }
+	Frame X005B { Light YellowSmallFlicker2 }
+	Frame X005C { Light YellowSmallFlicker2 }
+	Frame X005D { Light YellowSmallFlicker2 }
+	Frame X005E { Light YellowSmallFlicker1 }
+	Frame X005F { Light YellowSmallFlicker1 }
+	Frame X005G { Light YellowSmallFlicker1 }
+	Frame X005H { Light YellowMediumFlicker3 }
+	Frame X005I { Light YellowMediumFlicker3 }
+	Frame X005J { Light YellowMediumFlicker3 }
+	Frame X005K { Light YellowMediumFlicker2 }
+	Frame X005L { Light YellowMediumFlicker2 }
+	Frame X005M { Light YellowMediumFlicker2 }
+	Frame X005N { Light YellowMediumFlicker1 }
+	Frame X005O { Light YellowMediumFlicker1 }
+	Frame X005P { Light YellowMediumFlicker2 }
+	Frame X005Q { Light YellowMediumFlicker2 }
+	Frame X005R { Light YellowMediumFlicker2 }
+	Frame X005S { Light YellowMediumFlicker3 }
+	Frame X005T { Light YellowMediumFlicker3 }
+	Frame X005U { Light YellowSmallFlicker1 }
+	Frame X005V { Light YellowSmallFlicker2 }
+	Frame X005W { Light YellowSmallFlicker2 }
+	Frame X005X { Light YellowSmallFlicker3 }
+}
+
+Object ExploMediumBack3
+{
+	Frame X006A { Light YellowSmallFlicker2 }
+	Frame X006B { Light YellowSmallFlicker1 }
+	Frame X006C { Light YellowSmallFlicker1 }
+	Frame X006D { Light YellowMediumFlicker3 }
+	Frame X006E { Light YellowMediumFlicker3 }
+	Frame X006F { Light YellowMediumFlicker2 }
+	Frame X006G { Light YellowMediumFlicker2 }
+	Frame X006H { Light YellowMediumFlicker1 }
+	Frame X006I { Light YellowMediumFlicker1 }
+	Frame X006J { Light YellowMediumFlicker2 }
+	Frame X006K { Light YellowMediumFlicker2 }
+	Frame X006L { Light YellowMediumFlicker3 }
+	Frame X006M { Light YellowMediumFlicker3 }
+	Frame X006N { Light YellowSmallFlicker1 }
+	Frame X006O { Light YellowSmallFlicker1 }
+	Frame X006P { Light YellowSmallFlicker2 }
+}
+
+Object ExploMediumBack4 
+{
+	Frame X015A { Light YellowSmallFlicker2 }
+	Frame X015B { Light YellowSmallFlicker2 }
+	Frame X015C { Light YellowSmallFlicker2 }
+	Frame X015D { Light YellowSmallFlicker2 }
+	Frame X015E { Light YellowSmallFlicker1 }
+	Frame X015F { Light YellowSmallFlicker1 }
+	Frame X015G { Light YellowSmallFlicker1 }
+	Frame X015H { Light YellowMediumFlicker3 }
+	Frame X015I { Light YellowMediumFlicker3 }
+	Frame X015J { Light YellowMediumFlicker3 }
+	Frame X015K { Light YellowMediumFlicker2 }
+	Frame X015L { Light YellowMediumFlicker2 }
+	Frame X015M { Light YellowMediumFlicker2 }
+	Frame X015N { Light YellowMediumFlicker1 }
+	Frame X015O { Light YellowMediumFlicker1 }
+	Frame X015P { Light YellowMediumFlicker2 }
+	Frame X015Q { Light YellowMediumFlicker2 }
+	Frame X015R { Light YellowMediumFlicker2 }
+	Frame X015S { Light YellowMediumFlicker3 }
+	Frame X015T { Light YellowMediumFlicker3 }
+	Frame X015U { Light YellowSmallFlicker1 }
+	Frame X015V { Light YellowSmallFlicker2 }
+	Frame X015W { Light YellowSmallFlicker2 }
+	Frame X015X { Light YellowSmallFlicker3 }
+}
+
+Object ExploMediumBackFloor1
+{
+	Frame EXP3A { Light YellowSmallFlicker1 }
+	Frame EXP3B { Light YellowMediumFlicker3 }
+	Frame EXP3C { Light YellowMediumFlicker2 }
+	Frame EXP3D { Light YellowMediumFlicker2 }
+	Frame EXP3E { Light YellowMediumFlicker2 }
+	Frame EXP3F { Light YellowMediumFlicker2 }
+	Frame EXP3G { Light YellowMediumFlicker2 }
+	Frame EXP3H { Light YellowMediumFlicker2 }
+	Frame EXP3I { Light YellowMediumFlicker2 }
+	Frame EXP3J { Light YellowMediumFlicker2 }
+	Frame EXP3K { Light YellowMediumFlicker3 }
+	Frame EXP3L { Light YellowMediumFlicker3 }
+	Frame EXP3M { Light YellowMediumFlicker3 }
+	Frame EXP3N { Light YellowMediumFlicker3 }
+	Frame EXP3O { Light YellowMediumFlicker3 }
+	Frame EXP3P { Light YellowMediumFlicker3 }
+	Frame EXP3Q { Light YellowSmallFlicker1 }
+	Frame EXP3R { Light YellowSmallFlicker1 }
+	Frame EXP3S { Light YellowSmallFlicker1 }
+	Frame EXP3T { Light YellowSmallFlicker2 }
+	Frame EXP3U { Light YellowSmallFlicker2 }
+	Frame EXP3V { Light YellowSmallFlicker2 }
+	Frame EXP3W { Light YellowSmallFlicker2 }
+	Frame EXP3X { Light YellowSmallFlicker3 }
+	Frame EXP3Y { Light YellowSmallFlicker3 }
+	Frame EXP3Z { Light YellowSmallFlicker3 }
+}
+
+Object ExploMediumBackFloor2
+{
+	Frame EXPLB { Light YellowSmallFlicker1 }
+	Frame EXPLC { Light YellowMediumFlicker3 }
+	Frame EXPLD { Light YellowMediumFlicker3 }
+	Frame EXPLE { Light YellowMediumFlicker2 }
+	Frame EXPLF { Light YellowMediumFlicker2 }
+	Frame EXPLG { Light YellowMediumFlicker1 }
+	Frame EXPLH { Light YellowMediumFlicker1 }
+	Frame EXPLI { Light YellowMediumFlicker1 }
+	Frame EXPLJ { Light YellowMediumFlicker2 }
+	Frame EXPLK { Light YellowMediumFlicker2 }
+	Frame EXPLL { Light YellowMediumFlicker2 }
+	Frame EXPLM { Light YellowMediumFlicker3 }
+	Frame EXPLN { Light YellowMediumFlicker3 }
+	Frame EXPLO { Light YellowMediumFlicker3 }
+	Frame EXPLP { Light YellowSmallFlicker1 }
+	Frame EXPLQ { Light YellowSmallFlicker1 }
+	Frame EXPLR { Light YellowSmallFlicker2 }
+	Frame EXPLS { Light YellowSmallFlicker2 }
+	Frame EXPLT { Light YellowSmallFlicker3 }
+	Frame EXPLU { Light YellowSmallFlicker3 }
+}
+
+Object ExploMediumBackFloor3
+{
+	FRAME BNG4A { Light YellowMediumFlicker3 }
+	FRAME BNG4B { Light YellowMediumFlicker2 }
+	FRAME BNG4C { Light YellowMediumFlicker2 }
+	FRAME BNG4D { Light YellowMediumFlicker1 }
+	FRAME BNG4E { Light YellowMediumFlicker1 }
+	FRAME BNG4F { Light YellowMediumFlicker1 }
+	FRAME BNG4G { Light YellowMediumFlicker1 }
+	FRAME BNG4H { Light YellowMediumFlicker2 }
+	FRAME BNG4I { Light YellowMediumFlicker2 }
+	FRAME BNG4J { Light YellowMediumFlicker2 }
+	FRAME BNG4K { Light YellowMediumFlicker3 }
+	FRAME BNG4L { Light YellowSmallFlicker1 }
+	FRAME BNG4M { Light YellowSmallFlicker2 }
+	FRAME BNG4N { Light YellowSmallFlicker2 }
+}
+
+//*****************************************************************
+Object ExploMediumBigBack1 
+{
+	Frame X004A { Light YellowSmallFlicker1 }
+	Frame X004B { Light YellowMediumFlicker3 }
+	Frame X004C { Light YellowMediumFlicker3 }
+	Frame X004D { Light YellowMediumFlicker2 }
+	Frame X004E { Light YellowMediumFlicker2 }
+	Frame X004F { Light YellowMediumFlicker1 }
+	Frame X004G { Light YellowMediumFlicker1 }
+	Frame X004H { Light YellowBigFlicker3 }
+	Frame X004I { Light YellowBigFlicker3 }
+	Frame X004J { Light YellowMediumFlicker1 }
+	Frame X004K { Light YellowMediumFlicker1 }
+	Frame X004L { Light YellowMediumFlicker2 }
+	Frame X004M { Light YellowMediumFlicker2 }
+	Frame X004N { Light YellowMediumFlicker3 }
+	Frame X004O { Light YellowMediumFlicker3 }
+	Frame X004P { Light YellowSmallFlicker1 }
+	Frame X004Q { Light YellowSmallFlicker2 }
+}
+
+Object ExploMediumBigBack2 
+{
+	Frame X005A { Light YellowSmallFlicker1 }
+	Frame X005B { Light YellowSmallFlicker1 }
+	Frame X005C { Light YellowSmallFlicker1 }
+	Frame X005D { Light YellowSmallFlicker1 }
+	Frame X005E { Light YellowMediumFlicker3 }
+	Frame X005F { Light YellowMediumFlicker3 }
+	Frame X005G { Light YellowMediumFlicker3 }
+	Frame X005H { Light YellowMediumFlicker2 }
+	Frame X005I { Light YellowMediumFlicker2 }
+	Frame X005J { Light YellowMediumFlicker2 }
+	Frame X005K { Light YellowMediumFlicker1 }
+	Frame X005L { Light YellowMediumFlicker1 }
+	Frame X005M { Light YellowMediumFlicker1 }
+	Frame X005N { Light YellowBigFlicker3 }
+	Frame X005O { Light YellowBigFlicker3 }
+	Frame X005P { Light YellowMediumFlicker1 }
+	Frame X005Q { Light YellowMediumFlicker1 }
+	Frame X005R { Light YellowMediumFlicker1 }
+	Frame X005S { Light YellowMediumFlicker2 }
+	Frame X005T { Light YellowMediumFlicker2 }
+	Frame X005U { Light YellowMediumFlicker3 }
+	Frame X005V { Light YellowSmallFlicker1 }
+	Frame X005W { Light YellowSmallFlicker1 }
+	Frame X005X { Light YellowSmallFlicker2 }
+}
+
+Object ExploMediumBigBack3
+{
+	Frame X006A { Light YellowSmallFlicker1 }
+	Frame X006B { Light YellowMediumFlicker3 }
+	Frame X006C { Light YellowMediumFlicker3 }
+	Frame X006D { Light YellowMediumFlicker2 }
+	Frame X006E { Light YellowMediumFlicker2 }
+	Frame X006F { Light YellowMediumFlicker1 }
+	Frame X006G { Light YellowMediumFlicker1 }
+	Frame X006H { Light YellowBigFlicker3 }
+	Frame X006I { Light YellowBigFlicker3 }
+	Frame X006J { Light YellowMediumFlicker1 }
+	Frame X006K { Light YellowMediumFlicker1 }
+	Frame X006L { Light YellowMediumFlicker2 }
+	Frame X006M { Light YellowMediumFlicker2 }
+	Frame X006N { Light YellowMediumFlicker3 }
+	Frame X006O { Light YellowMediumFlicker3 }
+	Frame X006P { Light YellowSmallFlicker1 }
+}
+
+Object ExploMediumBigBack4 
+{
+	Frame X015A { Light YellowSmallFlicker1 }
+	Frame X015B { Light YellowSmallFlicker1 }
+	Frame X015C { Light YellowSmallFlicker1 }
+	Frame X015D { Light YellowSmallFlicker1 }
+	Frame X015E { Light YellowMediumFlicker3 }
+	Frame X015F { Light YellowMediumFlicker3 }
+	Frame X015G { Light YellowMediumFlicker3 }
+	Frame X015H { Light YellowMediumFlicker2 }
+	Frame X015I { Light YellowMediumFlicker2 }
+	Frame X015J { Light YellowMediumFlicker2 }
+	Frame X015K { Light YellowMediumFlicker1 }
+	Frame X015L { Light YellowMediumFlicker1 }
+	Frame X015M { Light YellowMediumFlicker1 }
+	Frame X015N { Light YellowBigFlicker3 }
+	Frame X015O { Light YellowBigFlicker3 }
+	Frame X015P { Light YellowMediumFlicker1 }
+	Frame X015Q { Light YellowMediumFlicker1 }
+	Frame X015R { Light YellowMediumFlicker1 }
+	Frame X015S { Light YellowMediumFlicker2 }
+	Frame X015T { Light YellowMediumFlicker2 }
+	Frame X015U { Light YellowMediumFlicker3 }
+	Frame X015V { Light YellowSmallFlicker1 }
+	Frame X015W { Light YellowSmallFlicker1 }
+	Frame X015X { Light YellowSmallFlicker2 }
+}
+
+Object ExploMediumBigBackFloor1
+{
+	Frame EXP3A { Light YellowMediumFlicker3 }
+	Frame EXP3B { Light YellowMediumFlicker2 }
+	Frame EXP3C { Light YellowMediumFlicker1 }
+	Frame EXP3D { Light YellowMediumFlicker1 }
+	Frame EXP3E { Light YellowMediumFlicker1 }
+	Frame EXP3F { Light YellowMediumFlicker1 }
+	Frame EXP3G { Light YellowMediumFlicker1 }
+	Frame EXP3H { Light YellowBigFlicker3 }
+	Frame EXP3I { Light YellowBigFlicker3 }
+	Frame EXP3J { Light YellowMediumFlicker1 }
+	Frame EXP3K { Light YellowMediumFlicker2 }
+	Frame EXP3L { Light YellowMediumFlicker2 }
+	Frame EXP3M { Light YellowMediumFlicker2 }
+	Frame EXP3N { Light YellowMediumFlicker2 }
+	Frame EXP3O { Light YellowMediumFlicker2 }
+	Frame EXP3P { Light YellowMediumFlicker2 }
+	Frame EXP3Q { Light YellowMediumFlicker3 }
+	Frame EXP3R { Light YellowMediumFlicker3 }
+	Frame EXP3S { Light YellowMediumFlicker3 }
+	Frame EXP3T { Light YellowSmallFlicker1 }
+	Frame EXP3U { Light YellowSmallFlicker1 }
+	Frame EXP3V { Light YellowSmallFlicker1 }
+	Frame EXP3W { Light YellowSmallFlicker1 }
+	Frame EXP3X { Light YellowSmallFlicker2 }
+	Frame EXP3Y { Light YellowSmallFlicker2 }
+	Frame EXP3Z { Light YellowSmallFlicker2 }
+}
+
+Object ExploMediumBigBackFloor2
+{
+	Frame EXPLB { Light YellowMediumFlicker3 }
+	Frame EXPLC { Light YellowMediumFlicker2 }
+	Frame EXPLD { Light YellowMediumFlicker2 }
+	Frame EXPLE { Light YellowMediumFlicker1 }
+	Frame EXPLF { Light YellowMediumFlicker1 }
+	Frame EXPLG { Light YellowBigFlicker3 }
+	Frame EXPLH { Light YellowBigFlicker3 }
+	Frame EXPLI { Light YellowBigFlicker3 }
+	Frame EXPLJ { Light YellowMediumFlicker1 }
+	Frame EXPLK { Light YellowMediumFlicker1 }
+	Frame EXPLL { Light YellowMediumFlicker1 }
+	Frame EXPLM { Light YellowMediumFlicker2 }
+	Frame EXPLN { Light YellowMediumFlicker2 }
+	Frame EXPLO { Light YellowMediumFlicker2 }
+	Frame EXPLP { Light YellowMediumFlicker3 }
+	Frame EXPLQ { Light YellowMediumFlicker3 }
+	Frame EXPLR { Light YellowSmallFlicker1 }
+	Frame EXPLS { Light YellowSmallFlicker1 }
+	Frame EXPLT { Light YellowSmallFlicker2 }
+	Frame EXPLU { Light YellowSmallFlicker2 }
+}
+
+Object ExploMediumBigBackFloor3
+{
+	FRAME BNG4A { Light YellowMediumFlicker2 }
+	FRAME BNG4B { Light YellowMediumFlicker1 }
+	FRAME BNG4C { Light YellowMediumFlicker1 }
+	FRAME BNG4D { Light YellowBigFlicker3 }
+	FRAME BNG4E { Light YellowBigFlicker3 }
+	FRAME BNG4F { Light YellowBigFlicker3 }
+	FRAME BNG4G { Light YellowBigFlicker3 }
+	FRAME BNG4H { Light YellowMediumFlicker1 }
+	FRAME BNG4I { Light YellowMediumFlicker1 }
+	FRAME BNG4J { Light YellowMediumFlicker1 }
+	FRAME BNG4K { Light YellowMediumFlicker2 }
+	FRAME BNG4L { Light YellowMediumFlicker3 }
+	FRAME BNG4M { Light YellowSmallFlicker1 }
+	FRAME BNG4N { Light YellowSmallFlicker1 }
+}
+//*****************************************************************
+Object ExploBigBack1 
+{
+	Frame X004A { Light YellowMediumFlicker2 }
+	Frame X004B { Light YellowMediumFlicker1 }
+	Frame X004C { Light YellowMediumFlicker1 }
+	Frame X004D { Light YellowBigFlicker3 }
+	Frame X004E { Light YellowBigFlicker3 }
+	Frame X004F { Light YellowBigFlicker2 }
+	Frame X004G { Light YellowBigFlicker2 }
+	Frame X004H { Light YellowBigFlicker1 }
+	Frame X004I { Light YellowBigFlicker1 }
+	Frame X004J { Light YellowBigFlicker2 }
+	Frame X004K { Light YellowBigFlicker2 }
+	Frame X004L { Light YellowBigFlicker3 }
+	Frame X004M { Light YellowBigFlicker3 }
+	Frame X004N { Light YellowMediumFlicker1 }
+	Frame X004O { Light YellowMediumFlicker1 }
+	Frame X004P { Light YellowMediumFlicker2 }
+	Frame X004Q { Light YellowMediumFlicker3 }
+}
+
+Object ExploBigBack2 
+{
+	Frame X005A { Light YellowMediumFlicker3 }
+	Frame X005B { Light YellowMediumFlicker2 }
+	Frame X005C { Light YellowMediumFlicker2 }
+	Frame X005D { Light YellowMediumFlicker2 }
+	Frame X005E { Light YellowMediumFlicker2 }
+	Frame X005F { Light YellowMediumFlicker1 }
+	Frame X005G { Light YellowMediumFlicker1 }
+	Frame X005H { Light YellowBigFlicker3 }
+	Frame X005I { Light YellowBigFlicker3 }
+	Frame X005J { Light YellowBigFlicker3 }
+	Frame X005K { Light YellowBigFlicker2 }
+	Frame X005L { Light YellowBigFlicker2 }
+	Frame X005M { Light YellowBigFlicker2 }
+	Frame X005N { Light YellowBigFlicker1 }
+	Frame X005O { Light YellowBigFlicker1 }
+	Frame X005P { Light YellowBigFlicker2 }
+	Frame X005Q { Light YellowBigFlicker2 }
+	Frame X005R { Light YellowBigFlicker2 }
+	Frame X005S { Light YellowBigFlicker3 }
+	Frame X005T { Light YellowBigFlicker3 }
+	Frame X005U { Light YellowMediumFlicker1 }
+	Frame X005V { Light YellowMediumFlicker1 }
+	Frame X005W { Light YellowMediumFlicker2 }
+	Frame X005X { Light YellowMediumFlicker3 }
+}
+
+Object ExploBigBack3
+{
+	Frame X006A { Light YellowMediumFlicker2 }
+	Frame X006B { Light YellowMediumFlicker1 }
+	Frame X006C { Light YellowMediumFlicker1 }
+	Frame X006D { Light YellowBigFlicker3 }
+	Frame X006E { Light YellowBigFlicker3 }
+	Frame X006F { Light YellowBigFlicker2 }
+	Frame X006G { Light YellowBigFlicker2 }
+	Frame X006H { Light YellowBigFlicker1 }
+	Frame X006I { Light YellowBigFlicker1 }
+	Frame X006J { Light YellowBigFlicker2 }
+	Frame X006K { Light YellowBigFlicker2 }
+	Frame X006L { Light YellowBigFlicker3 }
+	Frame X006M { Light YellowBigFlicker3 }
+	Frame X006N { Light YellowMediumFlicker1 }
+	Frame X006O { Light YellowMediumFlicker1 }
+	Frame X006P { Light YellowMediumFlicker2 }
+}
+
+Object ExploBigBack4 
+{
+	Frame X015A { Light YellowMediumFlicker3 }
+	Frame X015B { Light YellowMediumFlicker2 }
+	Frame X015C { Light YellowMediumFlicker2 }
+	Frame X015D { Light YellowMediumFlicker2 }
+	Frame X015E { Light YellowMediumFlicker1 }
+	Frame X015F { Light YellowMediumFlicker1 }
+	Frame X015G { Light YellowMediumFlicker1 }
+	Frame X015H { Light YellowBigFlicker3 }
+	Frame X015I { Light YellowBigFlicker3 }
+	Frame X015J { Light YellowBigFlicker3 }
+	Frame X015K { Light YellowBigFlicker2 }
+	Frame X015L { Light YellowBigFlicker2 }
+	Frame X015M { Light YellowBigFlicker2 }
+	Frame X015N { Light YellowBigFlicker1 }
+	Frame X015O { Light YellowBigFlicker1 }
+	Frame X015P { Light YellowBigFlicker2 }
+	Frame X015Q { Light YellowBigFlicker2 }
+	Frame X015R { Light YellowBigFlicker2 }
+	Frame X015S { Light YellowBigFlicker3 }
+	Frame X015T { Light YellowBigFlicker3 }
+	Frame X015U { Light YellowMediumFlicker1 }
+	Frame X015V { Light YellowMediumFlicker2 }
+	Frame X015W { Light YellowMediumFlicker2 }
+	Frame X015X { Light YellowMediumFlicker3 }
+}
+
+Object ExploBigBackFloor1
+{
+	Frame EXP3A { Light YellowMediumFlicker1 }
+	Frame EXP3B { Light YellowBigFlicker3 }
+	Frame EXP3C { Light YellowBigFlicker2 }
+	Frame EXP3D { Light YellowBigFlicker2 }
+	Frame EXP3E { Light YellowBigFlicker2 }
+	Frame EXP3F { Light YellowBigFlicker2 }
+	Frame EXP3G { Light YellowBigFlicker2 }
+	Frame EXP3H { Light YellowBigFlicker1 }
+	Frame EXP3I { Light YellowBigFlicker1 }
+	Frame EXP3J { Light YellowBigFlicker2 }
+	Frame EXP3K { Light YellowBigFlicker2 }
+	Frame EXP3L { Light YellowBigFlicker2 }
+	Frame EXP3M { Light YellowBigFlicker3 }
+	Frame EXP3N { Light YellowBigFlicker3 }
+	Frame EXP3O { Light YellowBigFlicker3 }
+	Frame EXP3P { Light YellowBigFlicker3 }
+	Frame EXP3Q { Light YellowMediumFlicker1 }
+	Frame EXP3R { Light YellowMediumFlicker1 }
+	Frame EXP3S { Light YellowMediumFlicker1 }
+	Frame EXP3T { Light YellowMediumFlicker2 }
+	Frame EXP3U { Light YellowMediumFlicker2 }
+	Frame EXP3V { Light YellowMediumFlicker2 }
+	Frame EXP3W { Light YellowMediumFlicker2 }
+	Frame EXP3X { Light YellowMediumFlicker3 }
+	Frame EXP3Y { Light YellowMediumFlicker3 }
+	Frame EXP3Z { Light YellowMediumFlicker3 }
+}
+
+Object ExploBigBackFloor2
+{
+	Frame EXPLB { Light YellowMediumFlicker1 }
+	Frame EXPLC { Light YellowBigFlicker3 }
+	Frame EXPLD { Light YellowBigFlicker3 }
+	Frame EXPLE { Light YellowBigFlicker2 }
+	Frame EXPLF { Light YellowBigFlicker2 }
+	Frame EXPLG { Light YellowBigFlicker1 }
+	Frame EXPLH { Light YellowBigFlicker1 }
+	Frame EXPLI { Light YellowBigFlicker1 }
+	Frame EXPLJ { Light YellowBigFlicker2 }
+	Frame EXPLK { Light YellowBigFlicker2 }
+	Frame EXPLL { Light YellowBigFlicker2 }
+	Frame EXPLM { Light YellowBigFlicker3 }
+	Frame EXPLN { Light YellowBigFlicker3 }
+	Frame EXPLO { Light YellowBigFlicker3 }
+	Frame EXPLP { Light YellowMediumFlicker1 }
+	Frame EXPLQ { Light YellowMediumFlicker1 }
+	Frame EXPLR { Light YellowMediumFlicker2 }
+	Frame EXPLS { Light YellowMediumFlicker2 }
+	Frame EXPLT { Light YellowMediumFlicker3 }
+	Frame EXPLU { Light YellowMediumFlicker3 }
+}
+
+Object ExploBigBackFloor3
+{
+	FRAME BNG4A { Light YellowMediumFlicker1 }
+	FRAME BNG4B { Light YellowBigFlicker3 }
+	FRAME BNG4C { Light YellowBigFlicker2 }
+	FRAME BNG4D { Light YellowBigFlicker2 }
+	FRAME BNG4E { Light YellowBigFlicker1 }
+	FRAME BNG4F { Light YellowBigFlicker1 }
+	FRAME BNG4G { Light YellowBigFlicker1 }
+	FRAME BNG4H { Light YellowBigFlicker2 }
+	FRAME BNG4I { Light YellowBigFlicker2 }
+	FRAME BNG4J { Light YellowBigFlicker2 }
+	FRAME BNG4K { Light YellowBigFlicker3 }
+	FRAME BNG4L { Light YellowMediumFlicker1 }
+	FRAME BNG4M { Light YellowMediumFlicker3 }
+	FRAME BNG4N { Light YellowMediumFlicker3 }
+}
+
+//***************************
+// Gargantua fx
+//***************************
+
+Object GargControllerFireball1
+{
+	Frame X029 { Light YellowMediumPoint3 }
+	Frame TNT1A { Light YellowSmallFlicker1 }
+	Frame TNT1B { Light YellowSmallFlicker2 }
+	Frame TNT1C { Light YellowSmallFlicker3 }
+}
+
+Object GargControllerFireball2
+{
+	Frame X025 { Light OrangeMediumPoint2 }
+	Frame TNT1A { Light OrangeMediumFlicker3 }
+	Frame TNT1B { Light OrangeSmallFlicker1 }
+	Frame TNT1C { Light OrangeSmallFlicker2 }
+}
+
+Object GargFloorBoom
+{
+	Frame X036 { Light RedMediumPoint2 }
+}
+
+Object GargFloorBoomFake 
+{
+	Frame X036 { Light RedMediumPoint2 }
+}
+Object GargFloorBoomSeeker
+{
+	Frame X036 { Light RedMediumPoint2 }
+}
+
+//***************************
+// Vortigaunt fx
+//***************************
+Object VortiLightning
+{
+	Frame X098 { Light GreenMediumFlicker2 }
+}
+
+Object VortiPlasma
+{
+	Frame VPLS { Light GreenMediumFlicker3 }
+}
+Object VortiPlasma_Explode
+{
+	Frame VPLSA {Light GreenMediumFlicker2 }
+	Frame VPLSB {Light GreenMediumFlicker3 }
+	Frame VPLSC {Light GreenSmallFlicker1 }
+	Frame VPLSD {Light GreenSmallFlicker2 }
+	Frame VPLSE {Light GreenSmallFlicker3 }
+}
+
+//****************************************
+// Dummy item for light on player weapons
+//****************************************
+Object LighCheapHack
+{
+	Frame PLAYA { Light YellowMediumFlicker3 }
+	Frame PLAYB { Light YellowSmallFlicker1 }
+}
+
+//*************************
+// Teleport Fog & HEV Battery
+//*************************
+
+flickerlight TeleportFogLth7
+{
+    color 0.0 1.0 1.0
+    size 90
+    secondarySize 95
+    chance 0.4
+    offset 0 40 0
+}
+
+flickerlight TeleportFogLth6
+{
+    color 0.0 1.0 1.0
+    size 80
+    secondarySize 85
+    chance 0.4
+    offset 0 40 0
+}
+
+flickerlight TeleportFogLth5
+{
+    color 0.0 1.0 1.0
+    size 60
+    secondarySize 65
+    chance 0.4
+    offset 0 40 0
+}
+
+flickerlight TeleportFogLth4
+{
+    color 0.0 1.0 1.0
+    size 50
+    secondarySize 55
+    chance 0.4
+    offset 0 40 0
+}
+
+flickerlight TeleportFogLth3
+{
+    color 0.0 1.0 1.0
+    size 40
+    secondarySize 45
+    chance 0.4
+    offset 0 40 0
+}
+
+flickerlight TeleportFogLth2
+{
+    color 0.0 1.0 1.0
+    size 20
+    secondarySize 25
+    chance 0.4
+    offset 0 40 0
+}
+
+flickerlight TeleportFogLth1
+{
+    color 0.0 1.0 1.0
+    size 10
+    secondarySize 15
+    chance 0.4
+    offset 0 40 0
+}
+
+Pulselight HevBattLight
+{
+    color 0.0 1.0 1.0
+    size 2
+    secondarySize 6
+    interval 1.5
+    offset 0 10 0
+}
+
+Object HLTeleportFog 
+{
+	Frame HTELA { Light TeleportFogLth1 }
+	Frame HTELB { Light TeleportFogLth1 }
+	Frame HTELC { Light TeleportFogLth2 }
+	Frame HTELD { Light TeleportFogLth3 }
+	Frame HTELE { Light TeleportFogLth4 }
+	Frame HTELF { Light TeleportFogLth4 }
+	Frame HTELG { Light TeleportFogLth5 }
+	Frame HTELH { Light TeleportFogLth5 }
+	Frame HTELI { Light TeleportFogLth6 }
+	Frame HTELJ { Light TeleportFogLth6 }
+	Frame HTELK { Light TeleportFogLth7 }
+	Frame HTELL { Light TeleportFogLth6 }
+	Frame HTELM { Light TeleportFogLth6 }
+	Frame HTELN { Light TeleportFogLth6 }
+	Frame HTELO { Light TeleportFogLth5 }
+	Frame HTELP { Light TeleportFogLth5 }
+	Frame HTELQ { Light TeleportFogLth4 }
+	Frame HTELR { Light TeleportFogLth4 }
+	Frame HTELS { Light TeleportFogLth3 }
+	Frame HTELT { Light TeleportFogLth3 }
+	Frame HTELU { Light TeleportFogLth2 }
+	Frame HTELV { Light TeleportFogLth2 }
+	Frame HTELW { Light TeleportFogLth1 }
+	Frame HTELX { Light TeleportFogLth1 }
+	Frame HTELY { Light TeleportFogLth1 }
+}
+
+Object HEVbattery
+{	Frame POSS { Light HevBattLight }	}

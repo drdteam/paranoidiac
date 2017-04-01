@@ -1,0 +1,31 @@
+//Normal
+
+HLYellow1
+   {
+       #33300A  #AFA50A
+   Console:
+       #33300A  #665E04  0 127
+       #665E04  #AFA50A  128 256
+   }
+
+
+//Dull and reddish
+
+HLYellow2
+   {
+       #3D2400  #BD6F00
+   Console:
+       #3D2400  #7E4A00  0 127
+       #7E4A00  #BD6F00  128 256
+   }
+   
+
+//Brighter
+
+HLYellow3
+   {
+       #3F3A00  #FFEE00
+   Console:
+       #3F3A00  #9F9400  0 127
+       #9F9400  #FFEE00  128 256
+   }

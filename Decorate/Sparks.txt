@@ -1,0 +1,668 @@
+actor OMGOrangeSpark : SwitchableDecoration 31902
+{
+  height 2
+  radius 1
+  +NOCLIP
+  +NOSECTOR
+  +NOGRAVITY
+  +NOBLOCKMAP
+  +LOOKALLAROUND
+  States
+  {
+  spawn:
+  Active:
+    TNT1 A 0
+    TNT1 A 0 A_PlaySound("World/Spark")
+    TNT1 A 0 A_CheckSightOrRange(2560,"Inactive")
+    TNT1 A 0 A_Jump(256, 1, 2, 3, 4, 5, 6)
+    TNT1 A 1 A_SpawnItemEx("SparkFlare_O1", 0, 0, 0, 0, 0, 0, 0, 128)
+    goto SpawnSparks
+    TNT1 A 1 A_SpawnItemEx("SparkFlare_O2", 0, 0, 0, 0, 0, 0, 0, 128)
+    goto SpawnSparks
+    TNT1 A 1 A_SpawnItemEx("SparkFlare_O3", 0, 0, 0, 0, 0, 0, 0, 128)
+    goto SpawnSparks
+    TNT1 A 1 A_SpawnItemEx("SparkFlare_O4", 0, 0, 0, 0, 0, 0, 0, 128)
+    goto SpawnSparks
+    TNT1 A 1 A_SpawnItemEx("SparkFlare_O5", 0, 0, 0, 0, 0, 0, 0, 128)
+    goto SpawnSparks
+    TNT1 A 1 A_SpawnItemEx("SparkFlare_O6", 0, 0, 0, 0, 0, 0, 0, 128)
+    goto SpawnSparks
+  SpawnSparks:
+    TNT1 A 0 A_JumpIf(args[0] == 1, "SpawnUp")
+    TNT1 A 0 A_JumpIf(args[0] > 1, "SpawnSide")
+    goto SpawnDown
+  SpawnUp:
+    TNT1 AA 0 A_CustomMissile("Spark_O1", 0, 0, random(0, 359), 2, Random(67, 113))
+    TNT1 AA 0 A_CustomMissile("Spark_O2", 0, 0, random(0, 359), 2, Random(67, 113))
+    TNT1 AA 0 A_CustomMissile("Spark_O3", 0, 0, random(0, 359), 2, Random(67, 113))
+    TNT1 AA 0 A_CustomMissile("Spark_O4", 0, 0, random(0, 359), 2, Random(67, 113))
+    TNT1 AA 0 A_CustomMissile("Spark_O5", 0, 0, random(0, 359), 2, Random(67, 113))
+    TNT1 AA 0 A_CustomMissile("Spark_O6", 0, 0, random(0, 359), 2, Random(67, 113))
+    TNT1 AA 0 A_CustomMissile("Spark_O7", 0, 0, random(0, 359), 2, Random(67, 113))
+    TNT1 AA 0 A_CustomMissile("Spark_O8", 0, 0, random(0, 359), 2, Random(67, 113))
+    TNT1 AA 0 A_CustomMissile("Spark_O9", 0, 0, random(0, 359), 2, Random(67, 113))
+    TNT1 AA 0 A_CustomMissile("Spark_O10", 0, 0, random(0, 359), 2, Random(67, 113))
+    TNT1 AA 0 A_CustomMissile("Spark_O11", 0, 0, random(0, 359), 2, Random(67, 113))
+    TNT1 AA 0 A_CustomMissile("Spark_O12", 0, 0, random(0, 359), 2, Random(67, 113))
+    TNT1 AA 0 A_CustomMissile("Spark_O13", 0, 0, random(0, 359), 2, Random(67, 113))
+    TNT1 AA 0 A_CustomMissile("Spark_O14", 0, 0, random(0, 359), 2, Random(67, 113))
+    TNT1 AA 0 A_CustomMissile("Spark_O15", 0, 0, random(0, 359), 2, Random(67, 113))
+    TNT1 AA 0 A_CustomMissile("Spark_O16", 0, 0, random(0, 359), 2, Random(67, 113))
+    goto Inactive
+  SpawnDown:
+    TNT1 AA 0 A_CustomMissile("Spark_O1", 0, 0, random(0, 359), 2, Random (-67, -113))
+    TNT1 AA 0 A_CustomMissile("Spark_O2", 0, 0, random(0, 359), 2, Random (-67, -113))
+    TNT1 AA 0 A_CustomMissile("Spark_O3", 0, 0, random(0, 359), 2, Random (-67, -113))
+    TNT1 AA 0 A_CustomMissile("Spark_O4", 0, 0, random(0, 359), 2, Random (-67, -113))
+    TNT1 AA 0 A_CustomMissile("Spark_O5", 0, 0, random(0, 359), 2, Random (-67, -113))
+    TNT1 AA 0 A_CustomMissile("Spark_O6", 0, 0, random(0, 359), 2, Random (-67, -113))
+    TNT1 AA 0 A_CustomMissile("Spark_O7", 0, 0, random(0, 359), 2, Random (-67, -113))
+    TNT1 AA 0 A_CustomMissile("Spark_O8", 0, 0, random(0, 359), 2, Random (-67, -113))
+    TNT1 AA 0 A_CustomMissile("Spark_O9", 0, 0, random(0, 359), 2, Random (-67, -113))
+    TNT1 AA 0 A_CustomMissile("Spark_O10", 0, 0, random(0, 359), 2, Random (-67, -113))
+    TNT1 AA 0 A_CustomMissile("Spark_O11", 0, 0, random(0, 359), 2, Random (-67, -113))
+    TNT1 AA 0 A_CustomMissile("Spark_O12", 0, 0, random(0, 359), 2, Random (-67, -113))
+    TNT1 AA 0 A_CustomMissile("Spark_O13", 0, 0, random(0, 359), 2, Random (-67, -113))
+    TNT1 AA 0 A_CustomMissile("Spark_O14", 0, 0, random(0, 359), 2, Random (-67, -113))
+    TNT1 AA 0 A_CustomMissile("Spark_O15", 0, 0, random(0, 359), 2, Random (-67, -113))
+    TNT1 AA 0 A_CustomMissile("Spark_O16", 0, 0, random(0, 359), 2, Random (-67, -113))
+    goto Inactive
+  SpawnSide:
+    TNT1 AA 0 A_CustomMissile("Spark_O1", 0, 0, Random(-23, 23), 2, Random(157, 203))
+    TNT1 AA 0 A_CustomMissile("Spark_O2", 0, 0, Random(-23, 23), 2, Random(157, 203))
+    TNT1 AA 0 A_CustomMissile("Spark_O3", 0, 0, Random(-23, 23), 2, Random(157, 203))
+    TNT1 AA 0 A_CustomMissile("Spark_O4", 0, 0, Random(-23, 23), 2, Random(157, 203))
+    TNT1 AA 0 A_CustomMissile("Spark_O5", 0, 0, Random(-23, 23), 2, Random(157, 203))
+    TNT1 AA 0 A_CustomMissile("Spark_O6", 0, 0, Random(-23, 23), 2, Random(157, 203))
+    TNT1 AA 0 A_CustomMissile("Spark_O7", 0, 0, Random(-23, 23), 2, Random(157, 203))
+    TNT1 AA 0 A_CustomMissile("Spark_O8", 0, 0, Random(-23, 23), 2, Random(157, 203))
+    TNT1 AA 0 A_CustomMissile("Spark_O9", 0, 0, Random(-23, 23), 2, Random(157, 203))
+    TNT1 AA 0 A_CustomMissile("Spark_O10", 0, 0, Random(-23, 23), 2, Random(157, 203))
+    TNT1 AA 0 A_CustomMissile("Spark_O11", 0, 0, Random(-23, 23), 2, Random(157, 203))
+    TNT1 AA 0 A_CustomMissile("Spark_O12", 0, 0, Random(-23, 23), 2, Random(157, 203))
+    TNT1 AA 0 A_CustomMissile("Spark_O13", 0, 0, Random(-23, 23), 2, Random(157, 203))
+    TNT1 AA 0 A_CustomMissile("Spark_O14", 0, 0, Random(-23, 23), 2, Random(157, 203))
+    TNT1 AA 0 A_CustomMissile("Spark_O15", 0, 0, Random(-23, 23), 2, Random(157, 203))
+    TNT1 AA 0 A_CustomMissile("Spark_O16", 0, 0, Random(-23, 23), 2, Random(157, 203))
+    goto Inactive
+  Inactive:
+    TNT1 A -1
+    Loop
+  }
+}
+
+//Flares
+
+actor SparkFlare_W1
+{
+  height 0
+  radius 0
+  mass 0
+  +MISSILE
+  +NOBLOCKMAP
+  +NOCLIP
+  +NOGRAVITY
+  +NOINTERACTION
+  +FORCEXYBILLBOARD
+  renderstyle add
+  scale 0.25
+  states
+  {
+  Spawn:
+    SPKW A 1 Bright A_FadeOut(0.1)
+    Loop
+  }
+}
+
+actor SparkFlare_O1 : SparkFlare_W1 { States { Spawn: SPKO A 1 Bright A_FadeOut (0.1) Loop } }
+actor SparkFlare_O2 : SparkFlare_W1 { States { Spawn: SPKO B 1 Bright A_FadeOut (0.1) Loop } }
+actor SparkFlare_O3 : SparkFlare_W1 { States { Spawn: SPKO C 1 Bright A_FadeOut (0.1) Loop } }
+actor SparkFlare_O4 : SparkFlare_W1 { States { Spawn: SPKO D 1 Bright A_FadeOut (0.1) Loop } }
+actor SparkFlare_O5 : SparkFlare_W1 { States { Spawn: SPKO E 1 Bright A_FadeOut (0.1) Loop } }
+actor SparkFlare_O6 : SparkFlare_W1 { States { Spawn: SPKO F 1 Bright A_FadeOut (0.1) Loop } }
+
+//Sparks
+
+actor Spark_W1
+{
+  height 1
+  radius 2
+  mass 0
+  speed 0.25
+  +MISSILE
+  +NOBLOCKMAP
+  +FORCEXYBILLBOARD
+  renderstyle add
+  gravity 0.125
+  scale 0.025
+  states
+  {
+  Spawn:
+    SPKW E 1 Bright
+    Loop
+  Death:
+    SPKW E 1 Bright A_FadeOut(0.1)
+    Loop
+  }
+}
+
+actor Spark_W2 : Spark_W1  { Speed 0.5  }
+actor Spark_W3 : Spark_W1  { Speed 0.75 }
+actor Spark_W4 : Spark_W1  { Speed 1.0  }
+actor Spark_W5 : Spark_W1  { Speed 1.25 }
+actor Spark_W6 : Spark_W1  { Speed 1.5  }
+actor Spark_W7 : Spark_W1  { Speed 1.75 }
+actor Spark_W8 : Spark_W1  { Speed 2.0  }
+actor Spark_W9 : Spark_W1  { Speed 2.25 }
+actor Spark_W10 : Spark_W1 { Speed 2.5  }
+actor Spark_W11 : Spark_W1 { Speed 2.75 }
+actor Spark_W12 : Spark_W1 { Speed 3.0  }
+actor Spark_W13 : Spark_W1 { Speed 3.25 }
+actor Spark_W14 : Spark_W1 { Speed 3.5  }
+actor Spark_W15 : Spark_W1 { Speed 3.75 }
+actor Spark_W16 : Spark_W1 { Speed 4.0  }
+
+actor Spark_O1 : Spark_W1
+{
+  States
+  {
+  Spawn:
+    SPKO E 1 bright
+    Loop
+  Death:
+    SPKO E 1 bright A_FadeOut(0.1)
+    Loop
+  }
+}
+
+actor Spark_O2 : Spark_O1  { Speed 0.5  }
+actor Spark_O3 : Spark_O1  { Speed 0.75 }
+actor Spark_O4 : Spark_O1  { Speed 1.0  }
+actor Spark_O5 : Spark_O1  { Speed 1.25 }
+actor Spark_O6 : Spark_O1  { Speed 1.5  }
+actor Spark_O7 : Spark_O1  { Speed 1.75 }
+actor Spark_O8 : Spark_O1  { Speed 2.0  }
+actor Spark_O9 : Spark_O1  { Speed 2.25 }
+actor Spark_O10 : Spark_O1 { Speed 2.5  }
+actor Spark_O11 : Spark_O1 { Speed 2.75 }
+actor Spark_O12 : Spark_O1 { Speed 3.0  }
+actor Spark_O13 : Spark_O1 { Speed 3.25 }
+actor Spark_O14 : Spark_O1 { Speed 3.5  }
+actor Spark_O15 : Spark_O1 { Speed 3.75 }
+actor Spark_O16 : Spark_O1 { Speed 4.0  }
+
+//****
+//NJ Spark replacements
+//Thanks to Gez, LoganMTM, solarsnowfall and Randy Heit
+//****
+ 
+//Briefly showers sparks downwards
+ Actor NJDownSpark : SwitchableDecoration replaces Spark
+ {
+ 	Height 2
+ 	Radius 2
+ 	Scale 0.05
+ 	Renderstyle ADD
+ 	Alpha 0.8
+ 	+NOBLOCKMAP
+ 	+NOGRAVITY
+ 	+DONTSPLASH
+ 	+FORCEXYBILLBOARD
+ 	States
+ 	{
+ 		Spawn:
+ 		TNT1 A 1 A_SetTranslucent(0.8, 1)
+ 		TNT1 A 0 A_JumpIf(args[0] == 0, "ParamIsNull")
+ 		Inactive:
+ 		TNT1 A 1
+ 		Wait
+ 		
+ 		ParamIsNull:
+ 		TNT1 A 1 A_SetArg(0, 32)
+       		Goto Inactive  
+ 		
+ 		Inactive:
+ 		TNT1 A 1
+ 		Wait
+ 
+ 		Active:
+ 		SPKO D 1 Bright A_SetTranslucent(0.8, 1)
+ 		SPKO D 0 Bright A_PlaySound ("world/spark", CHAN_AUTO, 1.0, 0, 2) 
+ 		SPKO D 1 Bright A_SetArg(4, args[0])
+ 
+ 		Sparky:
+ 		SPKO D 0 Bright A_JumpIf(args[4] == 0, "EndOfSparky")
+ 		SPKO D 0 Bright A_SpawnItemEx("SparkyBall", Frandom(-1,1), Frandom(-1,1), Frandom(-1,1), Frandom(0,1), Frandom(0,1), Frandom(-5,1), Random(-90,90), SXF_NOCHECKPOSITION, 0)
+ 		SPKO D 0 Bright A_SetArg(4, args[4] - 1)
+ 		Goto Sparky
+ 		
+ 		EndOfSparky:
+ 		SPKO D 2 A_SetTranslucent(0.6, 1)
+ 		SPKO D 2 A_SetTranslucent(0.4, 1)
+ 		SPKO D 2 A_SetTranslucent(0.2, 1)
+ 		SPKO D 0 Thing_Deactivate(0)
+ 		Goto Spawn
+ 	}
+ }
+  
+ //sparks spawned by the downward sparker
+ 
+ ACTOR SparkyBall
+ {
+ Height 2
+ Radius 2
+ Speed 3
+ Scale .01
+ 
+ Renderstyle ADD
+ Alpha 0.8
+ 
+ gravity 0.125
+ 
+ +DONTSPLASH
+ +DROPOFF
+ +NOTELEPORT
+ +NOBLOCKMAP
+ +FORCEXYBILLBOARD
+ +NOCLIP
+ +CORPSE
+    
+ States
+  {
+  Spawn:
+  SPKO BEAC 1 BRIGHT
+  SPKO B 0 A_Jump(75,"Crash")
+  Loop
+  
+  Crash:
+  SPKO BEAC 1 BRIGHT A_FadeOut(0.1)
+  Loop
+  }
+ }
+
+//**** 
+//Gargantua Big Blue Spark
+//****
+
+actor BigBlueSpark : SwitchableDecoration 20012
+{
+  height 2
+  radius 1
+  +NOCLIP
+  +NOSECTOR
+  +NOGRAVITY
+  +NOBLOCKMAP
+  +LOOKALLAROUND
+  States
+  {
+  spawn:
+    TNT1 A 1 
+
+  Inactive:
+    TNT1 A -1
+    Loop
+
+  Active:
+    TNT1 A 0
+
+    TNT1 A 1 A_SpawnItemEx("SparkFlare_BB1", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 AA 0 A_CustomMissile("Spark_BB1", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 AA 1 A_CustomMissile("Spark_BB16", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 AA 0 A_CustomMissile("Spark_BB2", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 AA 1 A_CustomMissile("Spark_BB15", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 A 1 A_SpawnItemEx("SparkFlare_BB2", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 AA 0 A_CustomMissile("Spark_BB3", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 AA 1 A_CustomMissile("Spark_BB14", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 AA 0 A_CustomMissile("Spark_BB4", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 AA 1 A_CustomMissile("Spark_BB13", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 A 1 A_SpawnItemEx("SparkFlare_BB3", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 AA 0 A_CustomMissile("Spark_BB5", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 AA 1 A_CustomMissile("Spark_BB12", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 AA 0 A_CustomMissile("Spark_BB6", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 AA 1 A_CustomMissile("Spark_BB11", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 A 1 A_SpawnItemEx("SparkFlare_BB4", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_CustomMissile("Spark_BB7", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 A 1 A_CustomMissile("Spark_BB10", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 A 0 A_CustomMissile("Spark_BB8", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 A 1 A_CustomMissile("Spark_BB9", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 A 1 A_SpawnItemEx("SparkFlare_BB5", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_CustomMissile("Spark_BB9", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 A 1 A_CustomMissile("Spark_BB8", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 A 0 A_CustomMissile("Spark_BB10", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 A 1 A_CustomMissile("Spark_BB7", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 A 1 A_SpawnItemEx("SparkFlare_BB6", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_CustomMissile("Spark_BB11", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 A 1 A_CustomMissile("Spark_BB6", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 A 0 A_CustomMissile("Spark_BB12", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 A 1 A_CustomMissile("Spark_BB5", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 A 1 A_SpawnItemEx("SparkFlare_BB2", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_CustomMissile("Spark_BB13", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 A 1 A_CustomMissile("Spark_BB4", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 A 0 A_CustomMissile("Spark_BB14", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 A 1 A_CustomMissile("Spark_BB3", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 A 1 A_SpawnItemEx("SparkFlare_BB4", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_CustomMissile("Spark_BB15", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 A 1 A_CustomMissile("Spark_BB2", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    //and again
+    
+    TNT1 A 0 A_CustomMissile("Spark_BB16", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 A 1 A_CustomMissile("Spark_BB1", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 A 1 A_SpawnItemEx("SparkFlare_BB1", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 AA 0 A_CustomMissile("Spark_BB1", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 AA 1 A_CustomMissile("Spark_BB16", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 AA 0 A_CustomMissile("Spark_BB2", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 AA 1 A_CustomMissile("Spark_BB15", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 A 1 A_SpawnItemEx("SparkFlare_BB2", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 AA 0 A_CustomMissile("Spark_BB3", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 AA 1 A_CustomMissile("Spark_BB14", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 AA 0 A_CustomMissile("Spark_BB4", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 AA 1 A_CustomMissile("Spark_BB13", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 A 1 A_SpawnItemEx("SparkFlare_BB3", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 AA 0 A_CustomMissile("Spark_BB5", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 AA 1 A_CustomMissile("Spark_BB12", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 AA 0 A_CustomMissile("Spark_BB6", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 AA 1 A_CustomMissile("Spark_BB11", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 A 1 A_SpawnItemEx("SparkFlare_BB4", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_CustomMissile("Spark_BB7", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 A 1 A_CustomMissile("Spark_BB10", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 A 0 A_CustomMissile("Spark_BB8", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 A 1 A_CustomMissile("Spark_BB9", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 A 1 A_SpawnItemEx("SparkFlare_BB5", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_CustomMissile("Spark_BB9", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 A 1 A_CustomMissile("Spark_BB8", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 A 0 A_CustomMissile("Spark_BB10", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 A 1 A_CustomMissile("Spark_BB7", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 A 1 A_SpawnItemEx("SparkFlare_BB6", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_CustomMissile("Spark_BB11", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 A 1 A_CustomMissile("Spark_BB6", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 A 0 A_CustomMissile("Spark_BB12", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 A 1 A_CustomMissile("Spark_BB5", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 A 1 A_SpawnItemEx("SparkFlare_BB2", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_CustomMissile("Spark_BB13", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 A 1 A_CustomMissile("Spark_BB4", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 A 0 A_CustomMissile("Spark_BB14", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 A 1 A_CustomMissile("Spark_BB3", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 A 1 A_SpawnItemEx("SparkFlare_BB4", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_CustomMissile("Spark_BB15", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 A 1 A_CustomMissile("Spark_BB2", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 A 0 A_CustomMissile("Spark_BB16", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 A 1 A_CustomMissile("Spark_BB1", 0, 0, random(0, 359), 2, Random(-255, 255))    
+    
+    
+    //and again
+    
+    TNT1 A 0 A_CustomMissile("Spark_BB16", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 A 1 A_CustomMissile("Spark_BB1", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 A 1 A_SpawnItemEx("SparkFlare_BB1", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 AA 0 A_CustomMissile("Spark_BB1", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 AA 1 A_CustomMissile("Spark_BB16", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 AA 0 A_CustomMissile("Spark_BB2", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 AA 1 A_CustomMissile("Spark_BB15", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 A 1 A_SpawnItemEx("SparkFlare_BB2", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 AA 0 A_CustomMissile("Spark_BB3", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 AA 1 A_CustomMissile("Spark_BB14", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 AA 0 A_CustomMissile("Spark_BB4", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 AA 1 A_CustomMissile("Spark_BB13", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 A 1 A_SpawnItemEx("SparkFlare_BB3", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 AA 0 A_CustomMissile("Spark_BB5", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 AA 1 A_CustomMissile("Spark_BB12", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 AA 0 A_CustomMissile("Spark_BB6", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 AA 1 A_CustomMissile("Spark_BB11", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 A 1 A_SpawnItemEx("SparkFlare_BB4", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_CustomMissile("Spark_BB7", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 A 1 A_CustomMissile("Spark_BB10", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 A 0 A_CustomMissile("Spark_BB8", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 A 1 A_CustomMissile("Spark_BB9", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 A 1 A_SpawnItemEx("SparkFlare_BB5", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_CustomMissile("Spark_BB9", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 A 1 A_CustomMissile("Spark_BB8", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 A 0 A_CustomMissile("Spark_BB10", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 A 1 A_CustomMissile("Spark_BB7", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 A 1 A_SpawnItemEx("SparkFlare_BB6", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_CustomMissile("Spark_BB11", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 A 1 A_CustomMissile("Spark_BB6", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 A 0 A_CustomMissile("Spark_BB12", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 A 1 A_CustomMissile("Spark_BB5", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 A 1 A_SpawnItemEx("SparkFlare_BB2", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_CustomMissile("Spark_BB13", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 A 1 A_CustomMissile("Spark_BB4", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 A 0 A_CustomMissile("Spark_BB14", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 A 1 A_CustomMissile("Spark_BB3", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 A 1 A_SpawnItemEx("SparkFlare_BB4", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_CustomMissile("Spark_BB15", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 A 1 A_CustomMissile("Spark_BB2", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 A 0 A_CustomMissile("Spark_BB16", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 A 1 A_CustomMissile("Spark_BB1", 0, 0, random(0, 359), 2, Random(-255, 255))    
+    
+
+    //and again
+    
+    TNT1 A 0 A_CustomMissile("Spark_BB16", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 A 1 A_CustomMissile("Spark_BB1", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 A 1 A_SpawnItemEx("SparkFlare_BB1", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 AA 0 A_CustomMissile("Spark_BB1", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 AA 1 A_CustomMissile("Spark_BB16", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 AA 0 A_CustomMissile("Spark_BB2", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 AA 1 A_CustomMissile("Spark_BB15", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 A 1 A_SpawnItemEx("SparkFlare_BB2", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 AA 0 A_CustomMissile("Spark_BB3", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 AA 1 A_CustomMissile("Spark_BB14", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 AA 0 A_CustomMissile("Spark_BB4", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 AA 1 A_CustomMissile("Spark_BB13", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 A 1 A_SpawnItemEx("SparkFlare_BB3", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 AA 0 A_CustomMissile("Spark_BB5", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 AA 1 A_CustomMissile("Spark_BB12", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 AA 0 A_CustomMissile("Spark_BB6", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 AA 1 A_CustomMissile("Spark_BB11", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 A 1 A_SpawnItemEx("SparkFlare_BB4", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_CustomMissile("Spark_BB7", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 A 1 A_CustomMissile("Spark_BB10", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 A 0 A_CustomMissile("Spark_BB8", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 A 1 A_CustomMissile("Spark_BB9", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 A 1 A_SpawnItemEx("SparkFlare_BB5", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_CustomMissile("Spark_BB9", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 A 1 A_CustomMissile("Spark_BB8", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 A 0 A_CustomMissile("Spark_BB10", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 A 1 A_CustomMissile("Spark_BB7", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 A 1 A_SpawnItemEx("SparkFlare_BB6", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_CustomMissile("Spark_BB11", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 A 1 A_CustomMissile("Spark_BB6", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 A 0 A_CustomMissile("Spark_BB12", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 A 1 A_CustomMissile("Spark_BB5", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 A 1 A_SpawnItemEx("SparkFlare_BB2", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_CustomMissile("Spark_BB13", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 A 1 A_CustomMissile("Spark_BB4", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 A 0 A_CustomMissile("Spark_BB14", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 A 1 A_CustomMissile("Spark_BB3", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 A 1 A_SpawnItemEx("SparkFlare_BB4", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_CustomMissile("Spark_BB15", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 A 1 A_CustomMissile("Spark_BB2", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 A 0 A_CustomMissile("Spark_BB16", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 A 1 A_CustomMissile("Spark_BB1", 0, 0, random(0, 359), 2, Random(-255, 255))    
+
+
+    //and again - shorter this time
+    
+    TNT1 A 0 A_CustomMissile("Spark_BB16", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 A 1 A_CustomMissile("Spark_BB1", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 A 1 A_SpawnItemEx("SparkFlare_BB1", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 AA 0 A_CustomMissile("Spark_BB1", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 AA 1 A_CustomMissile("Spark_BB16", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 AA 0 A_CustomMissile("Spark_BB2", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 AA 1 A_CustomMissile("Spark_BB15", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 A 1 A_SpawnItemEx("SparkFlare_BB2", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 AA 0 A_CustomMissile("Spark_BB3", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 AA 1 A_CustomMissile("Spark_BB14", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 AA 0 A_CustomMissile("Spark_BB4", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 AA 1 A_CustomMissile("Spark_BB13", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 A 1 A_SpawnItemEx("SparkFlare_BB3", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 AA 0 A_CustomMissile("Spark_BB5", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 AA 1 A_CustomMissile("Spark_BB12", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 AA 0 A_CustomMissile("Spark_BB6", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 AA 1 A_CustomMissile("Spark_BB11", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    TNT1 A 1 A_SpawnItemEx("SparkFlare_BB4", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+    TNT1 A 0 A_CustomMissile("Spark_BB7", 0, 0, random(0, 359), 2, Random(-255, 255))
+    TNT1 A 1 A_CustomMissile("Spark_BB10", 0, 0, random(0, 359), 2, Random(-255, 255))
+    
+    goto Inactive
+
+  }
+}
+
+//Big Blue Spark Flares
+
+actor SparkFlare_BB1
+{
+  height 0
+  radius 0
+  mass 0
+  +MISSILE
+  +NOBLOCKMAP
+  +NOCLIP
+  +NOGRAVITY
+  +NOINTERACTION
+  +FORCEXYBILLBOARD
+  renderstyle add
+  scale 1.0
+  states
+  {
+  Spawn:
+    SPKB A 1 Bright A_FadeOut(0.1)
+    Loop
+  }
+}
+
+actor SparkFlare_BB2 : SparkFlare_BB1 { States { Spawn: SPKB B 1 Bright A_FadeOut (0.1) Loop } }
+actor SparkFlare_BB3 : SparkFlare_BB1 { States { Spawn: SPKB C 1 Bright A_FadeOut (0.1) Loop } }
+actor SparkFlare_BB4 : SparkFlare_BB1 { States { Spawn: SPKB D 1 Bright A_FadeOut (0.1) Loop } }
+actor SparkFlare_BB5 : SparkFlare_BB1 { States { Spawn: SPKB E 1 Bright A_FadeOut (0.1) Loop } }
+actor SparkFlare_BB6 : SparkFlare_BB1 { States { Spawn: SPKB F 1 Bright A_FadeOut (0.1) Loop } }
+
+//Big Blue Sparks
+
+actor Spark_BB1
+{
+  height 1
+  radius 2
+  mass 0
+  speed 0.5
+  +MISSILE
+  +NOBLOCKMAP
+  +FORCEXYBILLBOARD
+  +NOCLIP
+  +CORPSE
+  renderstyle add
+  gravity 0.125
+  scale 0.05
+  states
+  {
+  Spawn:
+    SPKB E 1 Bright
+    Loop
+  Crash:
+    SPKB E 1 Bright A_FadeOut(0.1)
+    Loop
+  }
+}
+
+actor Spark_BB2 : Spark_BB1  { Speed 0.5  }
+actor Spark_BB3 : Spark_BB1  { Speed 0.75 }
+actor Spark_BB4 : Spark_BB1  { Speed 1.0  }
+actor Spark_BB5 : Spark_BB1  { Speed 1.25 }
+actor Spark_BB6 : Spark_BB1  { Speed 1.5  }
+actor Spark_BB7 : Spark_BB1  { Speed 1.75 }
+actor Spark_BB8 : Spark_BB1  { Speed 2.0  }
+actor Spark_BB9 : Spark_BB1  { Speed 2.25 }
+actor Spark_BB10 : Spark_BB1 { Speed 2.5  }
+actor Spark_BB11 : Spark_BB1 { Speed 2.75 }
+actor Spark_BB12 : Spark_BB1 { Speed 3.0  }
+actor Spark_BB13 : Spark_BB1 { Speed 3.25 }
+actor Spark_BB14 : Spark_BB1 { Speed 3.5  }
+actor Spark_BB15 : Spark_BB1 { Speed 3.75 }
+actor Spark_BB16 : Spark_BB1 { Speed 4.0  }
+
+//Flares in Vacuum Tubes at the end of Map01
+
+ACTOR NJTankSpark : BlueTorch replaces BlueTorch
+{
+	scale 0.40
+	Renderstyle ADD
+	Alpha 0.9
+	+FORCEXYBILLBOARD
+	States
+	{
+	Spawn:
+		TBLU ABCD 2 BRIGHT
+		Loop
+	}
+}

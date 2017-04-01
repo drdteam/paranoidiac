@@ -1,0 +1,118 @@
+//=============================================
+// Non-spawnable models
+// Electrical Equipment: transformers, meters
+// Lights, Tesla Coil
+//=============================================
+
+ACTOR Transformer 30260
+{
+    Radius 12
+    Height 60
+    Mass 0x7FFFFFF
+    +FLOORCLIP
+    +SOLID
+    States
+    {
+    Spawn:
+	POSS A 3
+	Loop
+    }
+}
+
+ACTOR Meter1 30261
+{
+    Radius 4
+    Height 12
+	Mass 0x7FFFFFF
+    +NOGRAVITY
+	+SOLID
+    States
+    {
+    Spawn:
+	POSS A 3
+	Loop
+    }
+}
+
+ACTOR Meter2 30262
+{
+    Radius 16
+    Height 32
+    Mass 0x7FFFFFF
+    +NOGRAVITY
+    +SOLID
+    States
+    {
+    Spawn:
+	POSS A 3
+	Loop
+    }
+}
+
+ACTOR Transformer1 30263
+{
+    Radius 24
+    Height 88
+    Mass 0x7FFFFFF
+    +FLOORCLIP
+    +SOLID
+    States
+    {
+    Spawn:
+	POSS A 3
+	Loop
+    }
+}
+
+ACTOR Meter3 30264
+{
+    Radius 24
+    Height 48
+    Mass 0x7FFFFFF
+    +NOGRAVITY
+    +SOLID
+    States
+    {
+    Spawn:
+	POSS A 3
+	Loop
+    }
+}
+
+ACTOR light1 30274
+{
+	Radius 6
+	Height 8
+	+FLOORCLIP
+	+SOLID
+	+NoGravity
+	States
+	{
+	Spawn:
+		POSS A 3 Bright
+		Loop
+	}
+}
+
+ACTOR light2 : light1 30275
+{
+	Radius 16
+	Height 42
+	Mass 200
+	-nogravity
+}
+
+ACTOR Tesla 30308
+{
+	Radius 16
+	Height 72
+	Mass 0x7FFFFFF
+	+FLOORCLIP
+	+SOLID
+	States
+	{
+	Spawn:
+		POSS A 3
+		Loop
+	}
+}

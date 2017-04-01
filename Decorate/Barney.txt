@@ -1,0 +1,76 @@
+//=========
+// Barney
+//=========
+
+actor HLBarney 7414
+{
+    spawnid 162
+	Monster
+	Health 150
+	Speed 16
+	Height 63
+	Radius 20
+	PainChance 128
+	Scale 0.366
+	SeeSound "halflife/monsters/barney/sight"
+	PainSound "halflife/monsters/barney/pain"
+	DeathSound "halflife/monsters/barney/death"
+//	ActiveSound "halflife/monsters/barney/idle"
+	maxdropoffheight 64
+	dropitem "PistolPickup" 256
+	+FRIENDLY
+	-COUNTKILL
+	States
+	{
+	Spawn:
+		HLMI B 3 A_Look		//frame A is the regular pose with weapon in hand.
+		Loop
+	See:
+		HLMW ABCDEF 4 A_Chase
+		HLMW ABCDEF 4 A_Chase
+		TNT1 A 0 A_Jump(8,"SaySomething")
+		Loop
+	SaySomething:
+		TNT1 A 0 A_PlaySound("halflife/monsters/barney/idle")
+		Goto See
+	Missile:
+		TNT1 a 0 A_Jump(64,"Magnum")
+		HLMI AA 4 A_FaceTarget
+		HLMM ABC 4 A_FaceTarget
+		HLMM C 2 A_FaceTarget
+		TNT1 A 0 A_PlaySoundEx("halflife/weapons/pistol","SoundSlot5")
+		TNT1 AA 0 A_SpawnItemEx("GunSmallSmoke",20,2,52,0,0,0,0,0)
+		HLMM D 5 Light("ImShootingAGun") A_CustomBulletAttack(7,7,1,5,"BulletPuff")
+		HLMM CC 3 A_FaceTarget
+		TNT1 A 0 A_CPosRefire
+		Goto Missile+6
+	Magnum:
+		HLMI AA 4 A_FaceTarget
+		HLMM ABCC 4 A_FaceTarget
+		TNT1 A 0 A_PlaySoundEx("halflife/weapons/magnumshot","SoundSlot5")
+		TNT1 AA 0 A_SpawnItemEx("GunSmoke",20,2,52,0,0,0,0,0)
+		HLMM D 5 Light("ImShootingAGun") A_CustomBulletAttack(2,2,1,25,"BulletPuff")
+		HLMM CCCCC 8 A_FaceTarget
+		TNT1 A 0 A_PlaySoundEx("halflife/weapons/magnumshot","SoundSlot5")
+		TNT1 AA 0 A_SpawnItemEx("GunSmoke",20,2,52,0,0,0,0,0)
+		HLMM D 5 Light("ImShootingAGun") A_CustomBulletAttack(2,2,1,25,"BulletPuff")
+		HLMM CCCCC 8 A_FaceTarget
+		Goto See
+	Pain:
+		HLMP A 8 A_Pain
+		Goto See
+	Death:
+		HLMD A 2 A_Scream
+		HLMD B 2 A_Fall
+		HLMD CDEFG 3
+		TNT1 A 0 A_PlaySound("halflife/weapons/bodydrop")
+		HLMD H 3
+		HLMD I -1
+		Stop
+	XDeath:
+		NULL A 0 A_PlaySound("other/gibdeath")
+		NULL A 0 A_SpawnItemEx("BloodGibDropper",0,0,random(20,40),0,0,0,0,1)
+		NULL A 1 A_Fall
+		Stop
+	}
+}

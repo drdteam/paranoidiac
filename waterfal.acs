@@ -1,0 +1,28 @@
+#library "WATERFAL"
+#include "zcommon.acs"
+
+//////////////////////////////
+// Script 444: Waterfall	//
+//////////////////////////////
+
+str WFallParticles[10] = {
+   "WFallParticle1A", "WFallParticle1B",
+   "WFallParticle2A", "WFallParticle2B",
+   "WFallParticle3A", "WFallParticle3B",
+   "WFallParticle4A", "WFallParticle4B",
+   "WFallParticle5A", "WFallParticle5B"
+};
+
+script 444 (int size)
+{
+  int r;
+  for (r=0; r<size<<16; r+=random(4.0, 8.0))
+  {
+    Spawn(WFallParticles[random(0, 9)],
+      GetActorX(0) + random(-8.0, 8.0) + FixedMul(cos(GetActorAngle(0)), r),
+      GetActorY(0) + random(-8.0, 8.0) + FixedMul(sin(GetActorAngle(0)), r),
+      GetActorZ(0) + random(-8.0, 8.0),
+      0, 
+      GetActorAngle(0) >> 8);
+  }
+}

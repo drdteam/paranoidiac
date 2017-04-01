@@ -1,0 +1,2352 @@
+//  [PLEASE UPDATE LINE NUMBERS AFTER ADDING DEFINITIONS]
+//  Player's Handler: Line 15
+//  Weapons & Ammo: Line 40
+//  Powerups, pickups, keys: Line 264
+//  Vegetation: Line 329
+//  Exploding Items: Line 443
+//  Computers: Line 559
+//  Animated Monitor: Line 679
+//  Office/Toilet Items, Beds: Line 816
+//  Decorative Items (equipment, pipes, etc.): Line 1140
+//	Vortigaunt charge effect: Line 1876
+//	Vortigaunt projectile: Line 1932
+//	Zen life forms: Line 2014
+//  Barney, Otis, Scientists, Administrator: Line 2136
+
+///////////////////////
+//  Player's Handler //
+///////////////////////
+
+Model Handler2Standing
+{ 
+   Path "Models" 
+   Model 0 "military.md2" 
+   Skin 0 "euro2.png"
+   Scale 1.55 1.55 1.55
+   
+   Frame POSS A 0 "stand01"
+}
+
+Model Handler2Sitting
+{ 
+   Path "Models" 
+   Model 0 "military.md2" 
+   Skin 0 "euro2.png"
+   Scale 1.4 1.4 1.4
+   
+   Frame POSS A 0 "sit01"
+}
+
+///////////////////////
+//  Weapons & Ammo   //
+///////////////////////
+
+Model crowbar
+{ 
+   Path "Models" 
+   Model 0 "crowbar.md3" 
+   Skin 0 "crowbar.png"
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model ShotgunPickup
+{ 
+   Path "Models" 
+   Model 0 "shotgun.md3" 
+   Skin 0 "shotgun.png"
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model PShotgun
+{ 
+   Path "Models" 
+   Model 0 "shotgun.md3" 
+   Skin 0 "shotgun.png"
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model Pshell
+{ 
+   Path "Models" 
+   Model 0 "pshell.md3" 
+   Skin 0 "pshell.png"
+   Scale 0.75 0.75 0.75
+   
+   FrameIndex POSS A 0 0
+}
+
+Model Pshellbox
+{ 
+   Path "Models" 
+   Model 0 "pshellbox.md3" 
+   Skin 0 "pshellbox.png"
+   Scale 0.75 0.75 0.75
+   
+   FrameIndex POSS A 0 0
+}
+
+Model Pshotgun1
+{ 
+   Path "Models" 
+   Model 0 "shotgun1.md3" 
+   Skin 0 "shotgun.png"
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model M16Pickup
+{ 
+   Path "Models" 
+   Model 0 "9mmar.md3" 
+   Skin 0 "9mmar.png"
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model ARifle
+{ 
+   Path "Models" 
+   Model 0 "9mmar.md3" 
+   Skin 0 "9mmar.png"
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model ARClip
+{ 
+   Path "Models" 
+   Model 0 "9mmarclip.md3" 
+   Skin 0 "9mmarclip.png"
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model ARAmmo
+{ 
+   Path "Models" 
+   Model 0 "ammobox.md3" 
+   Skin 0 "ammobox.png"
+   Scale 0.8 0.8 0.8
+   
+   FrameIndex POSS A 0 0
+}
+
+Model M16Gren
+{ 
+   Path "Models" 
+   Model 0 "m16gren.md3" 
+   Skin 0 "m16grenade.png"
+   Scale 0.5 0.5 0.5
+   
+   FrameIndex POSS A 0 0
+}
+
+Model ARifle1
+{ 
+   Path "Models" 
+   Model 0 "9mmar1.md3" 
+   Skin 0 "9mmar.png"
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model PistolPickup
+{ 
+   Path "Models" 
+   Model 0 "beretta.md3" 
+   Skin 0 "beretta.png"
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model Beretta
+{ 
+   Path "Models" 
+   Model 0 "beretta.md3" 
+   Skin 0 "beretta.png"
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model bclip
+{ 
+   Path "Models" 
+   Model 0 "bclip.md3" 
+   Skin 0 "bclip.png"
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model R357Pickup
+{ 
+   Path "Models" 
+   Model 0 "python.md3" 
+   Skin 0 "python.png"
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model Python
+{ 
+   Path "Models" 
+   Model 0 "python.md3" 
+   Skin 0 "python.png"
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model pythonammo
+{ 
+   Path "Models" 
+   Model 0 "pythonammo.md3" 
+   Skin 0 "pythonammo.png"
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model PythonAmmo1
+{ 
+   Path "Models" 
+   Model 0 "pammo.md3" 
+   Skin 0 "pammo.png"
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model AmmoPack
+{ 
+   Path "Models" 
+   Model 0 "wbox.md3" 
+   Skin 0 "wbox.png"
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model RPGLauncher
+{ 
+   Path "Models" 
+   Model 0 "rlauncher.md3" 
+   Skin 0 "rlauncher.png"
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model RPGAmmo
+{ 
+   Path "Models" 
+   Model 0 "rpgammo.md3" 
+   Skin 0 "rpgammo.png"
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+}
+
+////////////////////////////////
+//  Powerups, pickups, keys   //
+////////////////////////////////
+
+Model HEVsuit
+
+{ 
+   Path "Models" 
+   Model 0 "hevsuit.md3" 
+   Skin 0 "hevsuit.png"
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model HEVBattery
+{ 
+   Path "Models" 
+   Model 0 "battery.md3" 
+   Skin 0 "battery.png"
+   Scale 0.8 0.8 0.8
+   
+   FrameIndex POSS A 0 0
+}
+
+Model key1
+{ 
+   Path "Models" 
+   Model 0 "key1.md3" 
+   Skin 0 "key1.png"
+   Scale 0.5 0.5 0.5
+   
+   FrameIndex POSS A 0 0
+}
+
+Model MedKit
+{ 
+   Path "Models" 
+   Model 0 "medkit.md3" 
+   Skin 0 "medkit.png"
+   Scale 0.8 0.8 0.8
+   
+   FrameIndex POSS A 0 0
+}
+
+Model gascan1
+{ 
+   Path "Models" 
+   Model 0 "gascan1.md3" 
+   Skin 0 "gascan1.jpg"
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model key2
+{ 
+   Path "Models" 
+   Model 0 "key2.md3" 
+   Skin 0 "key2.png"
+   Scale 0.5 0.5 0.5
+   
+   FrameIndex POSS A 0 0
+}
+
+//////////////////
+//  Vegetation  //
+//////////////////
+
+Model Palm1a
+{ 
+   Path "Models" 
+   Model 0 "palm1.md3" 
+   Skin 0 "palm1a.png"
+   Scale 20.0 20.0 20.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model Palm1b
+{ 
+   Path "Models" 
+   Model 0 "palm1.md3" 
+   Skin 0 "palm1b.png"
+   Scale 20.0 20.0 20.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model Palm2a
+{ 
+   Path "Models" 
+   Model 0 "palm2.md3" 
+   Skin 0 "palm2a.png"
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model Palm2b
+{ 
+   Path "Models" 
+   Model 0 "palm2.md3" 
+   Skin 0 "palm2b.png"
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model Palm3a
+{ 
+   Path "Models" 
+   Model 0 "palm3.md3" 
+   Skin 0 "palm3a.png"
+   Scale 0.5 0.5 0.5
+   
+   FrameIndex POSS A 0 0
+}
+
+Model Palm3b
+{ 
+   Path "Models" 
+   Model 0 "palm3.md3" 
+   Skin 0 "palm3b.png"
+   Scale 0.5 0.5 0.5
+   
+   FrameIndex POSS A 0 0
+}
+
+Model Palm3c
+{ 
+   Path "Models" 
+   Model 0 "palm3.md3" 
+   Skin 0 "palm3c.png"
+   Scale 0.5 0.5 0.5
+   
+   FrameIndex POSS A 0 0
+}
+
+Model Cactus
+{ 
+   Path "Models" 
+   Model 0 "cactus.md2" 
+   Skin 0 "cactus.png"
+   Scale 1.0 1.0 1.0
+   
+   Frame POSS A 0 "frame01"
+} 
+
+Model Fern
+{ 
+   Path "Models" 
+   Model 0 "fern.md2" 
+   Skin 0 "fern.png"
+   Scale 1.0 1.0 1.0
+   
+   Frame POSS A 0 "frame01"
+}
+
+Model Plant1
+{ 
+   Path "Models" 
+   Model 0 "plant1.md2" 
+   Skin 0 "plant1.png"
+   Scale 1.0 1.0 1.0
+   
+   Frame POSS A 0 "frame01"
+}
+
+Model Plant2
+{ 
+   Path "Models" 
+   Model 0 "plant2.md2" 
+   Skin 0 "plant2.png"
+   Scale 1.0 1.0 1.0
+   
+   Frame POSS A 0 "frame01"
+}
+
+///////////////////////
+//  Exploding Items  //
+///////////////////////
+
+Model Xbarrel1
+{ 
+   Path "Models" 
+   Model 0 "nbarrel1.md3" 
+   Skin 0 "nbarrel1.png"
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+   FrameIndex POSS B 0 1
+   FrameIndex POSS C 0 2
+   FrameIndex POSS D 0 3
+   FrameIndex POSS E 0 4
+   FrameIndex POSS F 0 5
+   FrameIndex POSS G 0 6
+}
+
+Model Xbarrel2
+{ 
+   Path "Models" 
+   Model 0 "nbarrel1.md3" 
+   Skin 0 "nbarrel2.png"
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+   FrameIndex POSS B 0 1
+   FrameIndex POSS C 0 2
+   FrameIndex POSS D 0 3
+   FrameIndex POSS E 0 4
+   FrameIndex POSS F 0 5
+   FrameIndex POSS G 0 6
+}
+
+Model Xbarrel3
+{ 
+   Path "Models" 
+   Model 0 "nbarrel1.md3" 
+   Skin 0 "nbarrel3.png"
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+   FrameIndex POSS B 0 1
+   FrameIndex POSS C 0 2
+   FrameIndex POSS D 0 3
+   FrameIndex POSS E 0 4
+   FrameIndex POSS F 0 5
+   FrameIndex POSS G 0 6
+}
+
+Model Xcrate01
+{ 
+   Path "Models" 
+   Model 0 "xcrate01.md3" 
+   Skin 0 "xcrate01.png"
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+   FrameIndex POSS B 0 1
+   FrameIndex POSS C 0 2
+   FrameIndex POSS D 0 3
+   FrameIndex POSS E 0 4
+   FrameIndex POSS F 0 5
+   FrameIndex POSS G 0 6
+}
+
+Model Xcrate02
+{ 
+   Path "Models" 
+   Model 0 "xcrate01.md3" 
+   Skin 0 "xcrate02.png"
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+   FrameIndex POSS B 0 1
+   FrameIndex POSS C 0 2
+   FrameIndex POSS D 0 3
+   FrameIndex POSS E 0 4
+   FrameIndex POSS F 0 5
+   FrameIndex POSS G 0 6
+}
+
+Model Xcrate03
+{ 
+   Path "Models" 
+   Model 0 "xcrate01.md3" 
+   Skin 0 "xcrate03.png"
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+   FrameIndex POSS B 0 1
+   FrameIndex POSS C 0 2
+   FrameIndex POSS D 0 3
+   FrameIndex POSS E 0 4
+   FrameIndex POSS F 0 5
+   FrameIndex POSS G 0 6
+}
+
+Model Xcrate04
+{ 
+   Path "Models" 
+   Model 0 "xcrate01.md3" 
+   Skin 0 "xcrate04.png"
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+   FrameIndex POSS B 0 1
+   FrameIndex POSS C 0 2
+   FrameIndex POSS D 0 3
+   FrameIndex POSS E 0 4
+   FrameIndex POSS F 0 5
+   FrameIndex POSS G 0 6
+}
+
+/////////////////
+//  Computers  //
+/////////////////
+
+Model Monitor
+{
+   Path "Models"
+   Model 0 "monitor.md3"
+   Skin 0 "monitor.jpg"
+   Scale 1.0 1.0 1.0
+   FrameIndex POSS A 0 0
+}
+
+Model Monitor1
+{
+   Path "Models"
+   Model 0 "monitor.md3"
+   Skin 0 "monitor1.png"
+   Scale 1.0 1.0 1.0
+   FrameIndex POSS A 0 0
+}
+
+Model Monitor2
+{
+   Path "Models"
+   Model 0 "monitor.md3"
+   Skin 0 "monitor2.png"
+   Scale 1.0 1.0 1.0
+   FrameIndex POSS A 0 0
+}
+
+Model Monitor3
+{
+   Path "Models"
+   Model 0 "monitor.md3"
+   Skin 0 "monitor3.png"
+   Scale 1.0 1.0 1.0
+   FrameIndex POSS A 0 0
+}
+
+Model keyboard1
+{ 
+   Path "Models" 
+   Model 0 "br_keyboard1.md3" 
+   Skin 0 "br_keyboard1.jpg"
+   Scale 0.25 0.25 0.25
+   
+   FrameIndex POSS A 0 0
+}
+
+Model keyboard3
+{ 
+   Path "Models" 
+   Model 0 "br_keyboard3.md3" 
+   Skin 0 "br_mousekeybd3.jpg"
+   Scale 0.25 0.25 0.25
+   
+   FrameIndex POSS A 0 0
+}
+
+Model flatpanel1
+{ 
+   Path "Models" 
+   Model 0 "br_monitor2.md3" 
+   Skin 0 "br_monitor1.png"
+   Scale 0.8 0.8 0.8
+   
+   FrameIndex POSS A 0 0
+}
+
+Model flatpanel2
+{ 
+   Path "Models" 
+   Model 0 "br_monitor2.md3" 
+   Skin 0 "br_monitor2.png"
+   Scale 0.8 0.8 0.8
+   
+   FrameIndex POSS A 0 0
+}
+
+Model flatpanel3
+{ 
+   Path "Models" 
+   Model 0 "br_monitor3.md3" 
+   Skin 0 "br_monitor3.png"
+   Scale 0.8 0.8 0.8
+   
+   FrameIndex POSS A 0 0
+}
+
+Model flatpanel4
+{ 
+   Path "Models" 
+   Model 0 "br_monitor3.md3" 
+   Skin 0 "br_monitor4.png"
+   Scale 0.8 0.8 0.8
+   
+   FrameIndex POSS A 0 0
+}
+
+Model flatpanel5
+{ 
+   Path "Models" 
+   Model 0 "br_monitor5.md3" 
+   Skin 0 "br_monitor1.png"
+   Scale 1.2 1.2 1.2
+   
+   FrameIndex POSS A 0 0
+}
+
+Model flatpanel6
+{ 
+   Path "Models" 
+   Model 0 "br_monitor5.md3" 
+   Skin 0 "br_monitor2.png"
+   Scale 1.2 1.2 1.2
+   
+   FrameIndex POSS A 0 0
+}
+
+//////////////////////
+// Animated Monitor //
+////////////////////// 
+
+Model flatpanel7
+{ 
+   Path "Models" 
+   Model 0 "br_monitor5.md3" 
+   Skin 0 "br_monitor5.jpg"
+   Scale 1.2 1.2 1.2
+   
+   FrameIndex POSS A 0 0
+}
+
+
+Model flatpanel7
+{ 
+   Path "Models" 
+   Model 1 "br_monitor5.md3" 
+   Skin 1 "br_monitor6.jpg"
+   Scale 1.2 1.2 1.2
+   
+   FrameIndex POSS B 1 0
+}
+
+Model flatpanel7
+{ 
+   Path "Models" 
+   Model 2 "br_monitor5.md3" 
+   Skin 2 "br_monitor7.jpg"
+   Scale 1.2 1.2 1.2
+   
+   FrameIndex POSS c 2 0
+}
+
+Model flatpanel7
+{ 
+   Path "Models" 
+   Model 3 "br_monitor5.md3" 
+   Skin 3 "br_monitor9.jpg"
+   Scale 1.2 1.2 1.2
+   
+   FrameIndex POSS D 3 0
+}
+
+/////////////////////////////////
+
+Model flatpanel8
+{ 
+   Path "Models" 
+   Model 0 "br_monitor5.md3" 
+   Skin 0 "br_monitor8.jpg"
+   Scale 1.2 1.2 1.2
+   
+   FrameIndex POSS A 0 0
+}
+
+Model flatpanel9
+{ 
+   Path "Models" 
+   Model 0 "br_monitor5.md3" 
+   Skin 0 "br_monitor10.jpg"
+   Scale 1.2 1.2 1.2
+   
+   FrameIndex POSS A 0 0
+}
+
+Model mouse3
+{ 
+   Path "Models" 
+   Model 0 "br_mouse3.md3" 
+   Skin 0 "br_mousekeybd3.jpg"
+   Scale 0.25 0.25 0.25
+   
+   FrameIndex POSS A 0 0
+}
+
+Model pc1
+{ 
+   Path "Models" 
+   Model 0 "br_pc1.md3" 
+   Skin 0 "br_pc1.jpg"
+   Scale 0.5 0.5 0.5
+   
+   FrameIndex POSS A 0 0
+}
+
+Model modem
+{ 
+   Path "Models" 
+   Model 0 "br_pc2.md3" 
+   Skin 0 "br_pc2.jpg"
+   Scale 0.75 0.75 0.75
+   
+   FrameIndex POSS A 0 0
+}
+
+Model pc3
+{ 
+   Path "Models" 
+   Model 0 "br_pc3.md3" 
+   Skin 0 "br_pc3.jpg"
+   Scale 0.5 0.5 0.5
+   
+   FrameIndex POSS A 0 0
+}
+
+Model server1
+{ 
+   Path "Models" 
+   Model 0 "br_server1.md3" 
+   Skin 0 "br_server1.jpg"
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model server2
+{ 
+   Path "Models" 
+   Model 0 "br_server2.md3" 
+   Skin 0 "br_server2.jpg"
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model server3
+{ 
+   Path "Models" 
+   Model 0 "br_server3.md3" 
+   Skin 0 "br_server3.jpg"
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+}
+
+/////////////////////////////////
+//  Office/Toilet Items, Beds  //
+/////////////////////////////////
+
+Model Toilet1
+{ 
+   Path "Models" 
+   Model 0 "toilet1.md2" 
+   Skin 0 "toilet1.png"
+   Scale 0.83 0.83 0.83
+   
+   Frame POSS A 0 "idle"
+}
+
+Model Toilet2
+{ 
+   Path "Models" 
+   Model 0 "toilet1.md2" 
+   Skin 0 "toilet2.png"
+   Scale 0.83 0.83 0.83
+   
+   Frame POSS A 0 "idle"
+}
+
+Model Urinal1
+{ 
+   Path "Models" 
+   Model 0 "urinal.md2" 
+   Skin 0 "urinal.png"
+   Scale 0.6 0.6 0.6
+   
+   Frame POSS A 0 "1"
+}
+
+Model HandDryer
+{ 
+   Path "Models" 
+   Model 0 "handdryer.md3" 
+   Skin 0 "handdryer.png"
+   Scale 1.5 1.5 1.5
+   
+   FrameIndex POSS A 0 0
+}
+
+Model Sink1
+{ 
+   Path "Models" 
+   Model 0 "sink1.md3" 
+   Skin 0 "sink1.png"
+   Scale 1.75 1.75 1.75
+   
+   FrameIndex POSS A 0 0
+}
+
+Model Sink2
+{ 
+   Path "Models" 
+   Model 0 "sink2.md3" 
+   Skin 0 "sink2.png"
+   Scale 2.2 2.2 2.2
+   
+   FrameIndex POSS A 0 0
+}
+
+Model SoapDispenser
+{ 
+   Path "Models" 
+   Model 0 "soapdisp.md3" 
+   Skin 0 "soapdisp.png"
+   Scale 1.5 1.5 1.5
+   
+   FrameIndex POSS A 0 0
+}
+
+Model ToiletStainless
+{ 
+   Path "Models" 
+   Model 0 "toiletst.md3" 
+   Skin 0 "toiletst.png"
+   Scale 1.8 1.8 1.8
+   
+   FrameIndex POSS A 0 0
+}
+
+Model ToiletPaper
+{ 
+   Path "Models" 
+   Model 0 "tpaper.md3" 
+   Skin 0 "tpaper09.png"
+   Scale 1.5 1.5 1.5
+   
+   FrameIndex POSS A 0 0
+}
+
+Model Trashcan1
+{ 
+   Path "Models" 
+   Model 0 "trashcan.md2" 
+   Skin 0 "trashcan.png"
+   Scale 1.0 1.0 1.0
+   
+   Frame POSS A 0 "idle"
+}
+
+Model Chair1
+{ 
+   Path "Models" 
+   Model 0 "chair1.md3" 
+   Skin 0 "chair1.png"
+   Scale 0.9 0.9 0.9
+   
+   FrameIndex POSS A 0 0
+} 
+
+Model Chair2
+{ 
+   Path "Models" 
+   Model 0 "chair2.md2" 
+   Skin 0 "chair2.png"
+   Scale 0.7 0.7 0.7
+   
+   Frame POSS A 0 "frame01"
+} 
+
+Model Chair3
+{ 
+   Path "Models" 
+   Model 0 "chair3.md2" 
+   Skin 0 "chair3.png"
+   Scale 1.0 1.0 1.0
+   
+   Frame POSS A 0 "frame01"
+} 
+
+Model Desk1
+{ 
+   Path "Models" 
+   Model 0 "desk1.md2" 
+   Skin 0 "desk1.png"
+   Scale 1.2 1.2 1.0
+   
+   Frame POSS A 0 "frame01"
+} 
+
+Model Desk2
+{ 
+   Path "Models" 
+   Model 0 "desk2.md3" 
+   Skin 0 "desk2.png"
+   Scale 0.8 0.8 0.8
+   
+   FrameIndex POSS A 0 0
+} 
+
+Model Desk3
+{ 
+   Path "Models" 
+   Model 0 "desk3.md3" 
+   Skin 0 "desk3.png"
+   Scale 0.8 0.8 0.8
+   
+   FrameIndex POSS A 0 0
+} 
+
+Model Desk4
+{ 
+   Path "Models" 
+   Model 0 "desk4.md3" 
+   Skin 0 "desk4.png"
+   Scale 0.8 0.8 0.8
+   
+   FrameIndex POSS A 0 0
+} 
+
+Model Desk5
+{ 
+   Path "Models" 
+   Model 0 "desk5.md3" 
+   Skin 0 "desk5.png"
+   Scale 0.8 0.8 0.8
+   
+   FrameIndex POSS A 0 0
+} 
+
+Model Desk6
+{ 
+   Path "Models" 
+   Model 0 "desk6.md3" 
+   Skin 0 "desk6.png"
+   Scale 0.8 0.8 0.8
+   
+   FrameIndex POSS A 0 0
+} 
+
+Model Armchair
+{ 
+   Path "Models" 
+   Model 0 "armchair.md2" 
+   Skin 0 "armchair.png"
+   Scale 1.0 1.0 1.0
+   
+   Frame POSS A 0 "frame01"
+}
+
+Model Sofa
+{ 
+   Path "Models" 
+   Model 0 "sofa.md2" 
+   Skin 0 "sofa.png"
+   Scale 1.0 1.0 1.0
+   
+   Frame POSS A 0 "frame01"
+}
+
+Model Desklamp1
+{ 
+   Path "Models" 
+   Model 0 "desklamp1.md3" 
+   Skin 0 "desklamp1.png"
+   Scale 0.4 0.4 0.4
+   
+   FrameIndex POSS A 0 0
+}
+
+Model Desklamp2
+{ 
+   Path "Models" 
+   Model 0 "desklamp2.md2" 
+   Skin 0 "desklamp2.png"
+   Scale 0.4 0.4 0.4
+   
+   Frame POSS A 0 "frame01"
+}
+
+Model Bed01
+{ 
+   Path "Models" 
+   Model 0 "br_frame1.md3" 
+   Skin 0 "br_frame1.png"
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model Bed02
+{ 
+   Path "Models" 
+   Model 0 "br_frame2.md3" 
+   Skin 0 "br_frame2.png"
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model Bed03
+{ 
+   Path "Models" 
+   Model 0 "br_frame1.md3" 
+   Skin 0 "br_frame2.png"
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model Bed04
+{ 
+   Path "Models" 
+   Model 0 "br_frame2.md3" 
+   Skin 0 "br_frame1.png"
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model FileCab2
+{ 
+   Path "Models" 
+   Model 0 "filec02.md2" 
+   Skin 0 "filecab.png"
+   Scale 0.75 0.75 0.5
+   
+   Frame POSS A 0 "frame01"
+}
+
+Model FileCab3
+{ 
+   Path "Models" 
+   Model 0 "filec03.md2" 
+   Skin 0 "filecab.png"
+   Scale 0.75 0.75 0.5
+   
+   Frame POSS A 0 "frame01"
+}
+
+Model DeerHead
+{ 
+   Path "Models" 
+   Model 0 "br_deer.md3" 
+   Skin 0 "br_deer.png"
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model VidCam1
+{ 
+   Path "Models" 
+   Model 0 "vidcam.md3" 
+   Skin 0 "vidcam.png"
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model VidCam2
+{ 
+   Path "Models" 
+   Model 0 "vidcam2.md3" 
+   Skin 0 "vidcam2.png"
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+}
+
+////////////////////////
+//  Decorative Items  //
+////////////////////////
+
+Model XMetalBox
+{ 
+   Path "Models" 
+   Model 0 "xcrate01.md2" 
+   Skin 0 "xmetalbox.png"
+   Scale 1.12 1.17 1.0
+
+   Frame POSS A 0 "frame01"
+}
+
+Model Barrel1
+{ 
+   Path "Models" 
+   Model 0 "br_barrel1.md3" 
+   Skin 0 "br_barrell.png"
+   Scale 2.0 2.0 2.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model Barrel2
+{ 
+   Path "Models" 
+   Model 0 "br_barrel2.md3" 
+   Skin 0 "br_barrell.png"
+   Scale 2.0 2.0 2.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model Barrel3
+{ 
+   Path "Models" 
+   Model 0 "utbarrel.md2" 
+   Skin 0 "utbarrel.png"
+   Scale 0.3 0.3 0.3
+      
+   Frame POSS A 0 "frame01"
+}
+
+Model Forklift1
+{ 
+   Path "Models" 
+   Model 0 "forktruck.md2" 
+   Skin 0 "forktruck.png"
+   Scale 1.2 1.2 1.2
+   
+   FrameIndex POSS A 0 0
+}
+
+Model Forklift2
+{ 
+   Path "Models" 
+   Model 0 "forklift.md3" 
+   Skin 0 "forklift.png"
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model Backhoe1
+{ 
+   Path "Models" 
+   Model 0 "backhoe.md3" 
+   Skin 0 "backhoe.png"
+   Scale 1.6 1.6 1.6
+   
+   FrameIndex POSS A 0 0
+}
+
+Model Bulldozer1
+{ 
+   Path "Models" 
+   Model 0 "bulldozer.md3" 
+   Skin 0 "bulldozer.png"
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model Toolbox1
+{ 
+   Path "Models" 
+   Model 0 "toolbox1.md3" 
+   Skin 0 "toolbox1.png"
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model Toolbox2
+{ 
+   Path "Models" 
+   Model 0 "toolbox2.md3" 
+   Skin 0 "toolbox2.png"
+   Scale 0.8 0.8 0.8
+   
+   FrameIndex POSS A 0 0
+}
+
+Model Trailer1
+{ 
+   Path "Models" 
+   Model 0 "trailer1.md3" 
+   Skin 0 "trailer1.png"
+   Scale 6.0 6.0 6.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model Trailer2
+{ 
+   Path "Models" 
+   Model 0 "trailer1.md3" 
+   Skin 0 "trailer2.png"
+   Scale 6.0 6.0 6.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model Generator1
+{ 
+   Path "Models" 
+   Model 0 "generator.md3" 
+   Skin 0 "generator.png"
+   Scale 1.5 1.5 1.5
+   
+   FrameIndex POSS A 0 0
+}
+
+Model Generator2
+{ 
+   Path "Models" 
+   Model 0 "generator2.md2" 
+   Skin 0 "generator2.png"
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model Generator3
+{ 
+   Path "Models" 
+   Model 0 "generator3.md3" 
+   Skin 0 "generator3.png"
+   Scale 0.5 0.5 0.5
+   
+   FrameIndex POSS A 0 0
+}
+
+Model Generator3a
+{ 
+   Path "Models" 
+   Model 0 "generator3.md3" 
+   Skin 0 "generator3.png"
+   Scale 0.5 0.5 0.5
+   
+   FrameIndex POSS A 0 0
+   FrameIndex POSS B 0 1
+   FrameIndex POSS C 0 2
+   FrameIndex POSS D 0 3
+   FrameIndex POSS E 0 4
+   FrameIndex POSS F 0 5
+   FrameIndex POSS G 0 6
+   FrameIndex POSS H 0 7
+   FrameIndex POSS I 0 8
+   FrameIndex POSS J 0 9
+   FrameIndex POSS K 0 10
+   FrameIndex POSS L 0 11
+}
+
+Model Generator4
+{ 
+   Path "Models" 
+   Model 0 "generator3.md3" 
+   Skin 0 "generator3.png"
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model Barrier1
+{ 
+   Path "Models" 
+   Model 0 "barrier1.md3" 
+   Skin 0 "barrier1.png"
+   Scale 1.8 1.8 1.8
+   
+   FrameIndex POSS A 0 0
+}
+
+Model Barrier2
+{ 
+   Path "Models" 
+   Model 0 "barrier1.md3" 
+   Skin 0 "barrier2.png"
+   Scale 1.8 1.8 1.8
+   
+   FrameIndex POSS A 0 0
+}
+
+Model Barrier3
+{ 
+   Path "Models" 
+   Model 0 "barrier1.md3" 
+   Skin 0 "barrier3.png"
+   Scale 1.8 1.8 1.8
+   
+   FrameIndex POSS A 0 0
+}
+
+Model Pipe1
+{ 
+   Path "Models" 
+   Model 0 "xpipe1.md3" 
+   Skin 0 "xptv.png"
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model Pipe1a
+{ 
+   Path "Models" 
+   Model 0 "xpipe1a.md3" 
+   Skin 0 "xptv.png"
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model Pipe2
+{ 
+   Path "Models" 
+   Model 0 "xpipe2.md2" 
+   Skin 0 "xptv.png"
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model Pipe3
+{ 
+   Path "Models" 
+   Model 0 "xpipe1.md3" 
+   Skin 0 "xptv.png"
+   Scale 0.5 0.5 0.5
+   
+   FrameIndex POSS A 0 0
+}
+
+Model Pipe3a
+{ 
+   Path "Models" 
+   Model 0 "xpipe1a.md3" 
+   Skin 0 "xptv.png"
+   Scale 0.5 0.5 0.5
+   
+   FrameIndex POSS A 0 0
+}
+
+Model Pipe4
+{ 
+   Path "Models" 
+   Model 0 "xpipe2.md2" 
+   Skin 0 "xptv.png"
+   Scale 0.5 0.5 0.5
+   
+   FrameIndex POSS A 0 0
+}
+
+Model Pipe5
+{ 
+   Path "Models" 
+   Model 0 "pipe5.md2" 
+   Skin 0 "pipe5.png"
+   Scale 0.75 0.75 0.75
+   
+   Frame POSS A 0 "frame01"
+}
+
+Model Pipe6
+{ 
+   Path "Models" 
+   Model 0 "pipe5.md2" 
+   Skin 0 "pipe5.png"
+   Scale 0.5 0.5 0.5
+   
+   Frame POSS A 0 "frame01"
+}
+
+Model Tank01
+{ 
+   Path "Models" 
+   Model 0 "xtank.md3" 
+   Skin 0 "xptv2.png"
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model Tank02
+{ 
+   Path "Models" 
+   Model 0 "xtank1.md2" 
+   Skin 0 "xptv.png"
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model Tank02a
+{ 
+   Path "Models" 
+   Model 0 "xtank1a.md2" 
+   Skin 0 "xptv.png"
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model Valve1
+{ 
+   Path "Models" 
+   Model 0 "xvalve1.md2" 
+   Skin 0 "xptv.png"
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model Radio1
+{ 
+   Path "Models" 
+   Model 0 "radio1.md3" 
+   Skin 0 "radio.png"
+   Scale 0.5 0.5 0.5
+   
+   FrameIndex POSS A 0 0
+}
+
+Model Radio2
+{ 
+   Path "Models" 
+   Model 0 "radio2.md3" 
+   Skin 0 "radio.png"
+   Scale 0.4 0.4 0.4
+   
+   FrameIndex POSS A 0 0
+}
+
+Model Radio3
+{ 
+   Path "Models" 
+   Model 0 "radio3.md3" 
+   Skin 0 "radio.png"
+   Scale 0.5 0.5 0.5
+   
+   FrameIndex POSS A 0 0
+}
+
+Model Radio4
+{ 
+   Path "Models" 
+   Model 0 "radio4.md3" 
+   Skin 0 "radio.png"
+   Scale 0.5 0.5 0.5
+   
+   FrameIndex POSS A 0 0
+}
+
+Model Radio5
+{ 
+   Path "Models" 
+   Model 0 "radio5.md3" 
+   Skin 0 "radio.png"
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model propane1a
+{ 
+   Path "Models" 
+   Model 0 "propane1.md3" 
+   Skin 0 "propane1a.png"
+   Scale 3.0 3.0 3.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model propane1b
+{ 
+   Path "Models" 
+   Model 0 "propane1.md3" 
+   Skin 0 "propane1b.png"
+   Scale 3.0 3.0 3.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model propane1c
+{ 
+   Path "Models" 
+   Model 0 "propane1.md3" 
+   Skin 0 "propane1c.png"
+   Scale 3.0 3.0 3.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model propane2
+{ 
+   Path "Models" 
+   Model 0 "propane2.md3" 
+   Skin 0 "propane2.png"
+   Scale 0.8 0.8 0.8
+   
+   FrameIndex POSS A 0 0
+}
+
+Model tank03
+{ 
+   Path "Models" 
+   Model 0 "tank03.md3" 
+   Skin 0 "tank03.png"
+   Scale 5.0 5.0 5.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model tank04
+{ 
+   Path "Models" 
+   Model 0 "tank04.md3" 
+   Skin 0 "tank04.png"
+   Scale 6.0 6.0 6.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model tank04a
+{ 
+   Path "Models" 
+   Model 0 "tank04a.md3" 
+   Skin 0 "tank04.png"
+   Scale 6.0 6.0 6.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model tank05
+{ 
+   Path "Models" 
+   Model 0 "tank05.md3" 
+   Skin 0 "tank05.png"
+   Scale 5.0 5.0 5.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model tank06
+{ 
+   Path "Models" 
+   Model 0 "tank04a.md3" 
+   Skin 0 "tank04.png"
+   Scale 6.0 6.0 6.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model transformer
+{ 
+   Path "Models" 
+   Model 0 "transformer.md3" 
+   Skin 0 "transformer.jpg"
+   Scale 1.5 1.5 1.5
+   
+   FrameIndex POSS A 0 0
+}
+
+Model transformer1
+{ 
+   Path "Models" 
+   Model 0 "transformer.md3" 
+   Skin 0 "transformer.jpg"
+   Scale 2.0 2.0 2.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model meter1
+{ 
+   Path "Models" 
+   Model 0 "meter1.md3" 
+   Skin 0 "meters.jpg"
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model meter2
+{ 
+   Path "Models" 
+   Model 0 "meter2.md3" 
+   Skin 0 "meters.jpg"
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model meter3
+{ 
+   Path "Models" 
+   Model 0 "meter2.md3" 
+   Skin 0 "meters.jpg"
+   Scale 1.5 1.5 1.5
+   
+   FrameIndex POSS A 0 0
+}
+
+Model loader1
+{ 
+   Path "Models" 
+   Model 0 "loader1.md3" 
+   Skin 0 "loader.png"
+   Scale 0.6 0.6 0.6
+   
+   FrameIndex POSS A 0 0
+}
+
+Model loader2
+{ 
+   Path "Models" 
+   Model 0 "loader2.md3" 
+   Skin 0 "loader.png"
+   Scale 0.6 0.6 0.6
+   
+   FrameIndex POSS A 0 0
+}
+
+Model Light1
+{ 
+   Path "Models" 
+   Model 0 "light1.md2" 
+   Skin 0 "light1.png"
+   Scale 0.7 0.7 0.7
+   
+   Frame POSS A 0 "frame01"
+}
+
+Model Light2
+{ 
+   Path "Models" 
+   Model 0 "light2.md2" 
+   Skin 0 "light2.png"
+   Scale 1.0 1.0 1.0
+   
+   Frame POSS A 0 "frame01"
+}
+
+Model girder1
+{ 
+   Path "Models" 
+   Model 0 "girder1.md2" 
+   Skin 0 "girder1.png"
+   Scale 1.0 1.0 1.0
+   
+   Frame POSS A 0 "frame01"
+}
+
+Model girder2
+{ 
+   Path "Models" 
+   Model 0 "girder2.md2" 
+   Skin 0 "girder2.png"
+   Scale 1.0 1.0 1.0
+   
+   Frame POSS A 0 "frame01"
+}
+
+Model apache
+{ 
+   Path "Models" 
+   Model 0 "apache.md3" 
+   Skin 0 "apache.png"
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model Osprey
+{ 
+   Path "Models" 
+   Model 0 "osprey1.md3" 
+   Skin 0 "osprey.png"
+   Scale 2.0 2.0 2.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model OspreyBlade
+{ 
+   Path "Models" 
+   Model 0 "osprey2.md3" 
+   Skin 0 "osprey.png"
+   Scale 2.0 2.0 2.0
+   Rotating
+   rotation-speed 10.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model Tesla
+{ 
+   Path "Models" 
+   Model 0 "br_tesla.md3" 
+   Skin 0 "br_tesla.png"
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model Tram
+{ 
+   Path "Models" 
+   Model 0 "tram2body.md3" 
+   Skin 0 "tram2.png"
+   Scale 0.8 0.8 0.8
+   
+   FrameIndex POSS A 0 0
+}
+
+Model Tram2
+{ 
+   Path "Models" 
+   Model 0 "tram2body.md3" 
+   Skin 0 "tram2.png"
+   
+   Model 1 "tram2barney.md3" 
+   Skin 1 "tram2.png"
+   
+   Model 2 "tram2scientist.md3" 
+   Skin 2 "tram2.png"
+   
+   Scale 0.8 0.8 0.8
+   
+   FrameIndex POSS A 0 0
+   FrameIndex POSS A 1 0
+   FrameIndex POSS A 2 0
+}
+
+Model TankGlass
+{ 
+   Path "Models" 
+   Model 0 "tankglass.md3" 
+   Skin 0 "tankglass.png"
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model Truck01
+{ 
+   Path "Models" 
+   Model 0 "truckresearch.md3" 
+   Skin 0 "truckresearch.png"
+   Scale 0.95 0.95 0.95
+   
+   FrameIndex POSS A 0 0
+}
+
+Model SUV1
+{ 
+   Path "Models" 
+   Model 0 "suv01.md3" 
+   Skin 0 "suv01.png"
+   Scale 0.95 0.95 0.95
+   
+   FrameIndex POSS A 0 0
+}
+
+Model SUVGlass
+{ 
+   Path "Models" 
+   Model 0 "suv01glass.md3" 
+   Skin 0 "suv01glass.png"
+   Scale 0.95 0.95 0.95
+   
+   FrameIndex POSS A 0 0
+}
+
+Model SUV2
+{ 
+   Path "Models" 
+   Model 0 "suv02.md3" 
+   Skin 0 "suv02.png"
+   Scale 0.95 0.95 0.95
+   
+   FrameIndex POSS A 0 0
+}
+
+Model OspreyDead
+{ 
+   Path "Models" 
+   Model 0 "osprey_dead.md3" 
+   Skin 0 "osprey_dead_gov.png"
+   Scale 1.6 1.6 1.6
+   
+   FrameIndex POSS A 0 0
+}
+
+Model SUV3
+{ 
+   Path "Models" 
+   Model 0 "suv01.md3" 
+   Skin 0 "suv01.png"
+   Scale 0.95 0.95 0.95
+   
+   FrameIndex POSS A 0 0
+}
+
+Model PipeMaze
+{ 
+   Path "Models" 
+   Model 0 "pipemaze.md3" 
+   Skin 0 "pipemaze.png"
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+}
+
+///////////////////////////////
+//	Vortigaunt charge effect //
+///////////////////////////////
+
+Model VortiLightning
+{ 
+   Path "Models" 
+   Model 0 "vorti.md2" 
+   Skin 0 "spark0.png"
+   Scale 0.5 0.5 0.5
+      
+   Frame X098 A 0 "frame00"
+   Frame X098 E 0 "frame01"
+   Frame X098 I 0 "frame02"
+   Frame X098 M 0 "frame03"
+}
+
+Model VortiLightning
+{ 
+   Path "Models" 
+   Model 1 "vorti.md2" 
+   Skin 1 "spark1.png"
+   Scale 0.5 0.5 0.5
+   
+   Frame X098 B 1 "frame00"
+   Frame X098 F 1 "frame01"
+   Frame X098 J 1 "frame02"
+   Frame X098 N 1 "frame03"
+}
+
+Model VortiLightning
+{ 
+   Path "Models" 
+   Model 2 "vorti.md2" 
+   Skin 2 "spark2.png"
+   Scale 0.5 0.5 0.5
+   
+   Frame X098 C 2 "frame00"
+   Frame X098 G 2 "frame01"
+   Frame X098 K 2 "frame02"
+   Frame X098 O 2 "frame03"
+}
+
+Model VortiLightning
+{ 
+   Path "Models" 
+   Model 3 "vorti.md2" 
+   Skin 3 "spark3.png"
+   Scale 0.5 0.5 0.5
+   
+   Frame X098 D 3 "frame00"
+   Frame X098 H 3 "frame01"
+   Frame X098 L 3 "frame02"
+   Frame X098 P 3 "frame03"
+}
+
+////////////////////////////
+//	Vortigaunt projectile //
+////////////////////////////
+
+model VortiPlasma
+{
+	PITCHFROMMOMENTUM
+	path "models"
+	
+	model 0 "plasma_fly.md3"
+	skin 0 "plasma_skin.png"
+	
+	Scale 1.0 1.0 1.0
+	
+	frameindex VPLS F 0 0
+	frameindex VPLS G 0 1
+}
+
+model VortiPlasma_Explode
+{
+	path "models"
+	
+	model 0 "plasma_boom.md3"
+	skin 0 "plasma_skin.png"
+	
+	Scale 1.0 1.0 1.0
+	
+	frameindex VPLS A 0 1
+	frameindex VPLS B 0 2
+	frameindex VPLS C 0 3
+	frameindex VPLS D 0 4
+	frameindex VPLS E 0 5
+}
+
+model VortiPlasma_Bolt1
+{
+	path "models"
+	
+	model 0 "bolt.md3"
+	skin 0 "bolt_skin.png"
+	
+	Scale 1.0 1.0 1.0
+	
+	frameindex VPLS A 0 0
+}
+
+model VortiPlasma_Bolt2
+{
+	path "models"
+	
+	model 0 "bolt.md3"
+	skin 0 "bolt_skin.png"
+	
+	Scale 1.0 1.0 1.0
+	
+	frameindex VPLS A 0 1
+}
+
+model VortiPlasma_Bolt3
+{
+	path "models"
+	
+	model 0 "bolt.md3"
+	skin 0 "bolt_skin.png"
+	
+	Scale 1.0 1.0 1.0
+	
+	frameindex VPLS A 0 2
+}
+
+model VortiPlasma_Bolt4
+{
+	path "models"
+	
+	model 0 "bolt.md3"
+	skin 0 "bolt_skin.png"
+	
+	Scale 1.0 1.0 1.0
+	
+	frameindex VPLS A 0 3
+}
+
+//////////////////////
+//	Zen life forms  //
+//////////////////////
+
+Model Fungus
+{ 
+   Path "Models" 
+   Model 0 "fungus1.md3" 
+   Skin 0 "fungus1.png"
+   Scale 0.5 0.5 0.5
+   
+   FrameIndex POSS A 0 0
+}
+
+Model HLBarnacle
+{
+   Path "models"
+   Model 0 "barnacle.md2"
+   Skin 0 "barnacle.png"
+   Scale 0.8 0.8 0.8
+   Frame POSS A 0 "idle01"
+   Frame POSS B 0 "idle02"
+   Frame POSS C 0 "idle03"
+   Frame POSS D 0 "spit01"
+   Frame POSS E 0 "spit02"
+   Frame POSS F 0 "spit03"
+   Frame POSS G 0 "spit04"
+   Frame POSS H 0 "spit05"
+   Frame POSS I 0 "spit06"
+   Frame POSS J 0 "pain01"
+}
+
+Model HLBarnacle
+{
+   Path "models"
+   Model 1 "barnacle.md2"
+   Skin 1 "barnacle2.png"
+   Scale 0.8 0.8 0.8
+   Frame POSS K 1 "death01"
+   Frame POSS L 1 "death02"
+   Frame POSS M 1 "death03"
+   Frame POSS N 1 "death04"
+   Frame POSS O 1 "death05"
+   Frame POSS P 1 "death06"
+   Frame POSS Q 1 "death07"
+   Frame POSS R 1 "death08"
+   Frame POSS S 1 "death09"
+}
+
+Model ZenHair
+{ 
+   Path "Models" 
+   Model 0 "zenhair.md2" 
+   Skin 0 "zenhair.png"
+   Scale 0.8 0.8 0.8
+   
+   Frame POSS A 0 "frame01"
+   Frame POSS B 0 "frame02"
+   Frame POSS C 0 "frame03"
+   Frame POSS D 0 "frame04"
+   Frame POSS E 0 "frame05"
+   Frame POSS F 0 "frame06"
+   Frame POSS G 0 "frame07"
+   Frame POSS H 0 "frame08"
+   Frame POSS I 0 "frame09"
+}
+
+Model ZenLight
+{ 
+   Path "Models" 
+   Model 0 "zenlight.md2" 
+   Skin 0 "zenlight.png"
+   Scale 0.8 0.8 0.8
+   
+   Frame POSS A 0 "frame01"
+   Frame POSS B 0 "frame02"
+   Frame POSS C 0 "frame03"
+   Frame POSS D 0 "frame04"
+   Frame POSS E 0 "frame05"
+   Frame POSS F 0 "frame06"
+   Frame POSS G 0 "frame07"
+   Frame POSS H 0 "frame08"
+   Frame POSS I 0 "frame09"
+   Frame POSS J 0 "frame10"
+   Frame POSS K 0 "frame11"
+   
+   Frame POSS L 0 "frame12"
+   Frame POSS M 0 "frame13"
+   Frame POSS N 0 "frame14"
+   Frame POSS O 0 "frame15"
+   Frame POSS P 0 "frame16"
+   Frame POSS Q 0 "frame17"
+}
+
+Model ZenTree
+{ 
+   Path "Models" 
+   Model 0 "zentree.md2" 
+   Skin 0 "zentree.png"
+   Scale 1.0 1.0 1.0
+   
+   Frame POSS A 0 "frame01"
+   Frame POSS B 0 "frame02"
+   Frame POSS C 0 "frame03"
+   Frame POSS D 0 "frame04"
+   Frame POSS E 0 "frame05"
+   Frame POSS F 0 "frame06"
+   Frame POSS G 0 "frame07"
+   Frame POSS H 0 "frame08"
+   Frame POSS I 0 "frame09"
+}
+
+Model HeadCrab
+{ 
+   Path "Models" 
+   Model 0 "dissected_headcrab.md3" 
+   Skin 0 "dissected_headcrab.png"
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+}
+
+/////////////////////////////
+//	Non-Player Characters  //
+/////////////////////////////
+
+Model Otis01
+{ 
+   Path "Models" 
+   Model 0 "otis2.md3" 
+   Skin 0 "otis.png"
+   Scale 1.05 1.05 1.05
+   
+   FrameIndex POSS A 0 0
+}
+
+Model Barney01
+{ 
+   Path "Models" 
+   Model 0 "barney2.md3" 
+   Skin 0 "barney.png"
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+}
+
+Model Admin01
+{ 
+   Path "Models" 
+   Model 0 "zimmerman_body.md3" 
+   Skin 0 "zimmerman.png"
+
+   Model 1 "zimmerman_chair.md3" 
+   Skin 1 "zimmerman.png"
+
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+   FrameIndex POSS A 1 0
+}
+
+
+Model Einstein01
+{ 
+   Path "Models" 
+   Model 0 "scientist_givenup_body.md3" 
+   Skin 0 "scientist_body.png"
+
+   Model 1 "scientist_givenup_head_einstein.md3" 
+   Skin 1 "scientist_head_einstein.png"
+
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+   FrameIndex POSS A 1 0
+}
+
+Model Luther01
+{ 
+   Path "Models" 
+   Model 0 "scientist_givenup_body.md3" 
+   Skin 0 "scientist_body.png"
+
+   Model 1 "scientist_givenup_head_luther.md3" 
+   Skin 1 "scientist_head_luther.png"
+
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+   FrameIndex POSS A 1 0
+}
+
+Model Slick01
+{ 
+   Path "Models" 
+   Model 0 "scientist_givenup_body.md3" 
+   Skin 0 "scientist_body.png"
+
+   Model 1 "scientist_givenup_head_slick.md3" 
+   Skin 1 "scientist_head_slick.png"
+
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+   FrameIndex POSS A 1 0
+}
+
+Model Walter01
+{ 
+   Path "Models" 
+   Model 0 "scientist_givenup_body.md3" 
+   Skin 0 "scientist_body.png"
+
+   Model 1 "scientist_givenup_head_walter.md3" 
+   Skin 1 "scientist_head_walter.png"
+
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+   FrameIndex POSS A 1 0
+}
+
+Model Walter01a
+{ 
+   Path "Models" 
+   Model 0 "scientist_givenup_body.md3" 
+   Skin 0 "scientist_body.png"
+
+   Model 1 "scientist_givenup_head_walter_nospecs.md3" 
+   Skin 1 "scientist_head_walter.png"
+
+   Scale 1.0 1.0 1.0
+   
+   FrameIndex POSS A 0 0
+   FrameIndex POSS A 1 0
+}
+
+Model Einstein02
+{ 
+   Path "Models" 
+   Model 0 "scientist_standing_body.md3" 
+   Skin 0 "scientist_body.png"
+
+   Model 1 "scientist_standing_einstein.md3" 
+   Skin 1 "scientist_head_einstein.png"
+
+   Scale 1.05 1.05 1.05
+   
+   FrameIndex POSS A 0 0
+   FrameIndex POSS A 1 0
+}
+
+Model Luther02
+{ 
+   Path "Models" 
+   Model 0 "scientist_standing_body.md3" 
+   Skin 0 "scientist_body.png"
+
+   Model 1 "scientist_standing_luther.md3" 
+   Skin 1 "scientist_head_luther.png"
+
+   Scale 1.05 1.05 1.05
+   
+   FrameIndex POSS A 0 0
+   FrameIndex POSS A 1 0
+}
+
+Model Slick02
+{ 
+   Path "Models" 
+   Model 0 "scientist_standing_body.md3" 
+   Skin 0 "scientist_body.png"
+
+   Model 1 "scientist_standing_slick.md3" 
+   Skin 1 "scientist_head_slick.png"
+
+   Scale 1.05 1.05 1.05
+   
+   FrameIndex POSS A 0 0
+   FrameIndex POSS A 1 0
+}
+
+Model Walter02
+{ 
+   Path "Models" 
+   Model 0 "scientist_standing_body.md3" 
+   Skin 0 "scientist_body.png"
+
+   Model 1 "scientist_standing_walter.md3" 
+   Skin 1 "scientist_head_walter.png"
+
+   Scale 1.05 1.05 1.05
+   
+   FrameIndex POSS A 0 0
+   FrameIndex POSS A 1 0
+}
+
+Model Walter02a
+{ 
+   Path "Models" 
+   Model 0 "scientist_standing_body.md3" 
+   Skin 0 "scientist_body.png"
+
+   Model 1 "scientist_standing_walter_nospecs.md3" 
+   Skin 1 "scientist_head_walter.png"
+
+   Scale 1.05 1.05 1.05
+   
+   FrameIndex POSS A 0 0
+   FrameIndex POSS A 1 0
+}
+
+Model OspreyBellmer
+{ 
+   Path "Models" 
+   Model 0 "osprey1.md3" 
+   Skin 0 "osprey.png"
+   Scale 2.0 2.0 2.0
+   
+   Model 1 "finale_body.md3"
+   Skin 1 "hevsuit.png"
+   Scale 2.0 2.0 2.0
+   
+   Model 2 "finale_head.md3"
+   Skin 2 "scientist_head_slick.png"
+   Scale 2.0 2.0 2.0
+      
+   NOINTERPOLATION
+   
+   FrameIndex POSS A 0 1
+   FrameIndex POSS A 1 1
+   FrameIndex POSS A 2 1
+   
+   FrameIndex POSS B 0 0
+   FrameIndex POSS B 1 0
+   FrameIndex POSS B 2 0
+   
+   
+}

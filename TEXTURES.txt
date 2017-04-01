@@ -1,0 +1,684 @@
+//Status bar
+
+graphic HLBAR, 640, 48
+{
+   XScale 2.0
+   YScale 2.0
+   Patch HLBAR, 0, 0
+}
+
+//Hintman
+
+graphic HINTMAN, 128, 128
+{
+   XScale 2.0
+   YScale 2.0
+   Patch HINTMAN, 0, 0
+}
+
+//Bright armour graphic
+
+graphic HLARM1, 32, 48
+{
+   XScale 2.0
+   YScale 2.0
+   Patch HLARM1, 0, 0
+}
+
+//ammo icons for status bar
+
+graphic HLAMMO, 24, 96
+{
+   XScale 4.0
+   YScale 4.0
+   Patch HLAMMO, 0, 0
+}
+
+//grenade icon for status bar mode
+
+graphic i_gren1, 24, 12
+{
+   XScale 4.0
+   YScale 4.0
+   Patch i_gren1, 0, 0
+}
+
+//Health cross for full screen
+
+graphic i_health, 32, 48
+{
+   XScale 2.0
+   YScale 2.0
+   Patch i_health, 0, 0
+}
+
+//Armour icons for full screen
+
+graphic i_arm1, 32, 48
+{
+   XScale 2.0
+   YScale 2.0
+   Patch i_arm1, 0, 0
+}
+
+graphic i_arm2, 32, 48
+{
+   XScale 2.0
+   YScale 2.0
+   Patch i_arm2, 0, 0
+}
+
+//Ammo icons for full screen
+
+graphic i_bul1, 12, 24
+{
+   XScale 2.0
+   YScale 2.0
+   Patch i_bul1, 0, 0
+}
+
+graphic i_bul2, 12, 24
+{
+   XScale 2.0
+   YScale 2.0
+   Patch i_bul2, 0, 0
+}
+
+graphic i_bul3, 12, 24
+{
+   XScale 2.0
+   YScale 2.0
+   Patch i_bul3, 0, 0
+}
+
+graphic i_shel1, 12, 24
+{
+   XScale 2.0
+   YScale 2.0
+   Patch i_shel1, 0, 0
+}
+
+
+graphic i_gren2, 12, 24
+{
+   XScale 2.0
+   YScale 2.0
+   Patch i_gren2, 0, 0
+}
+
+graphic i_rock2, 12, 24
+{
+   XScale 2.0
+   YScale 2.0
+   Patch i_rock2, 0, 0
+}
+
+//Vertical divider for full screen
+
+graphic divide, 4, 48
+{
+   XScale 2.0
+   YScale 2.0
+   Patch divide, 0, 0
+}
+
+//Paranoid logo for status bar
+
+graphic HLLOGO, 208, 32
+{
+   XScale 4.0
+   YScale 4.0
+   Patch HLLOGO, 0, 0
+}
+
+//frags panel for DM
+
+graphic HLFRAGS, 76, 48
+{
+   XScale 2.0
+   YScale 2.0
+   Patch HLFRAGS, 0, 0
+}
+
+//Weapon icons for status bar and althud
+
+graphic i_arifl1, 170, 48
+{
+   XScale 2.0
+   YScale 2.0
+   Patch i_arifl1, 0, 0
+}
+
+graphic i_cbar1, 170, 48
+{
+   XScale 2.0
+   YScale 2.0
+   Patch i_cbar1, 0, 0
+}
+
+graphic i_pist1, 170, 48
+{
+   XScale 2.0
+   YScale 2.0
+   Patch i_pist1, 0, 0
+}
+
+graphic i_pist2, 170, 48
+{
+   XScale 2.0
+   YScale 2.0
+   Patch i_pist2, 0, 0
+}
+
+graphic i_rlau1, 170, 48
+{
+   XScale 2.0
+   YScale 2.0
+   Patch i_rlau1, 0, 0
+}
+
+graphic i_sgun1, 170, 48
+{
+   XScale 2.0
+   YScale 2.0
+   Patch i_sgun1, 0, 0
+}
+
+//Status bar big numbers
+
+graphic HLSNUM0, 16, 24
+{
+   XScale 2.0
+   YScale 2.0
+   Patch HLSNUM0, 0, 0
+}
+
+graphic HLSNUM1, 16, 24
+{
+   XScale 2.0
+   YScale 2.0
+   Patch HLSNUM1, 0, 0
+}
+
+graphic HLSNUM2, 16, 24
+{
+   XScale 2.0
+   YScale 2.0
+   Patch HLSNUM2, 0, 0
+}
+
+graphic HLSNUM3, 16, 24
+{
+   XScale 2.0
+   YScale 2.0
+   Patch HLSNUM3, 0, 0
+}
+
+graphic HLSNUM4, 16, 24
+{
+   XScale 2.0
+   YScale 2.0
+   Patch HLSNUM4, 0, 0
+}
+
+graphic HLSNUM5, 16, 24
+{
+   XScale 2.0
+   YScale 2.0
+   Patch HLSNUM5, 0, 0
+}
+
+graphic HLSNUM6, 16, 24
+{
+   XScale 2.0
+   YScale 2.0
+   Patch HLSNUM6, 0, 0
+}
+
+graphic HLSNUM7, 16, 24
+{
+   XScale 2.0
+   YScale 2.0
+   Patch HLSNUM7, 0, 0
+}
+
+graphic HLSNUM8, 16, 24
+{
+   XScale 2.0
+   YScale 2.0
+   Patch HLSNUM8, 0, 0
+}
+
+graphic HLSNUM9, 16, 24
+{
+   XScale 2.0
+   YScale 2.0
+   Patch HLSNUM9, 0, 0
+}
+
+graphic HLSPRCNT, 16, 24
+{
+   XScale 2.0
+   YScale 2.0
+   Patch HLSPRCNT, 0, 0
+}
+
+graphic HLSSLASH, 16, 24
+{
+   XScale 2.0
+   YScale 2.0
+   Patch HLSSLASH, 0, 0
+}
+
+graphic hlsminus, 16, 24
+{
+   XScale 2.0
+   YScale 2.0
+   Patch hlsminus, 0, 0
+}
+
+//System number - small for ammo totals
+
+graphic HLSYNUM0, 4, 6
+{
+   XScale 2.0
+   YScale 2.0
+   Patch HLSYNUM0, 0, 0
+}
+
+graphic HLSYNUM1, 4, 6
+{
+   XScale 2.0
+   YScale 2.0
+   Patch HLSYNUM1, 0, 0
+}
+
+graphic HLSYNUM2, 4, 6
+{
+   XScale 2.0
+   YScale 2.0
+   Patch HLSYNUM2, 0, 0
+}
+
+graphic HLSYNUM3, 4, 6
+{
+   XScale 2.0
+   YScale 2.0
+   Patch HLSYNUM3, 0, 0
+}
+
+graphic HLSYNUM4, 4, 6
+{
+   XScale 2.0
+   YScale 2.0
+   Patch HLSYNUM4, 0, 0
+}
+
+graphic HLSYNUM5, 4, 6
+{
+   XScale 2.0
+   YScale 2.0
+   Patch HLSYNUM5, 0, 0
+}
+
+graphic HLSYNUM6, 4, 6
+{
+   XScale 2.0
+   YScale 2.0
+   Patch HLSYNUM6, 0, 0
+}
+
+graphic HLSYNUM7, 4, 6
+{
+   XScale 2.0
+   YScale 2.0
+   Patch HLSYNUM7, 0, 0
+}
+
+graphic HLSYNUM8, 4, 6
+{
+   XScale 2.0
+   YScale 2.0
+   Patch HLSYNUM8, 0, 0
+}
+
+graphic HLSYNUM9, 4, 6
+{
+   XScale 2.0
+   YScale 2.0
+   Patch HLSYNUM9, 0, 0
+}
+
+graphic "HLSYNUM-", 4, 6
+{
+   XScale 2.0
+   YScale 2.0
+   Patch "HLSYNUM-", 0, 0
+}
+
+//Remap intermission numbers to hi-res status bar font
+
+graphic WINUM0, 16, 24
+{
+   XScale 2.0
+   YScale 2.0
+   Patch HLSNUM0, 0, 0
+}
+
+graphic WINUM1, 16, 24
+{
+   XScale 2.0
+   YScale 2.0
+   Patch HLSNUM1, 0, 0
+}
+
+graphic WINUM2, 16, 24
+{
+   XScale 2.0
+   YScale 2.0
+   Patch HLSNUM2, 0, 0
+}
+
+graphic WINUM3, 16, 24
+{
+   XScale 2.0
+   YScale 2.0
+   Patch HLSNUM3, 0, 0
+}
+
+graphic WINUM4, 16, 24
+{
+   XScale 2.0
+   YScale 2.0
+   Patch HLSNUM4, 0, 0
+}
+
+graphic WINUM5, 16, 24
+{
+   XScale 2.0
+   YScale 2.0
+   Patch HLSNUM5, 0, 0
+}
+
+graphic WINUM6, 16, 24
+{
+   XScale 2.0
+   YScale 2.0
+   Patch HLSNUM6, 0, 0
+}
+
+graphic WINUM7, 16, 24
+{
+   XScale 2.0
+   YScale 2.0
+   Patch HLSNUM7, 0, 0
+}
+
+graphic WINUM8, 16, 24
+{
+   XScale 2.0
+   YScale 2.0
+   Patch HLSNUM8, 0, 0
+}
+
+graphic WINUM9, 16, 24
+{
+   XScale 2.0
+   YScale 2.0
+   Patch HLSNUM9, 0, 0
+}
+
+graphic WIPCNT, 16, 24
+{
+   XScale 2.0
+   YScale 2.0
+   Patch HLSPRCNT, 0, 0
+}
+
+graphic WISLASH, 16, 24
+{
+   XScale 2.0
+   YScale 2.0
+   Patch HLSSLASH, 0, 0
+}
+
+graphic wiminus, 16, 24
+{
+   XScale 2.0
+   YScale 2.0
+   Patch hlsminus, 0, 0
+}
+
+//Intermission colon (no colon on status bar)
+
+graphic wicolon, 6, 24
+{
+   XScale 2.0
+   YScale 2.0
+   Patch wicolon, 0, 0
+}
+
+//Other intermission graphics
+
+graphic wienter, 208, 24
+{
+   XScale 2.0
+   YScale 2.0
+   Patch wienter, 0, 0
+}
+
+graphic wif, 208, 24
+{
+   XScale 2.0
+   YScale 2.0
+   Patch wif, 0, 0
+}
+
+graphic wiosti, 120, 24
+{
+   XScale 2.0
+   YScale 2.0
+   Patch wiosti, 0, 0
+}
+
+graphic wiostk, 120, 24
+{
+   XScale 2.0
+   YScale 2.0
+   Patch wiostk, 0, 0
+}
+
+graphic wiosts, 120, 24
+{
+   XScale 2.0
+   YScale 2.0
+   Patch wiosts, 0, 0
+}
+
+//Message icons
+
+graphic MAIL01, 34, 37
+{
+   XScale 2.0
+   YScale 2.5
+   Patch MAIL01, 0, 0
+   Offset -13, -20
+}
+
+graphic MAIL02, 34, 37
+{
+   XScale 2.0
+   YScale 2.5
+   Patch MAIL02, 0, 0
+   Offset -13, -20
+}
+
+graphic MAIL03, 34, 37
+{
+   XScale 2.0
+   YScale 2.5
+   Patch MAIL03, 0, 0
+   Offset -13, -20
+}
+
+graphic MAIL04, 34, 37
+{
+   XScale 2.0
+   YScale 2.5
+   Patch MAIL04, 0, 0
+   Offset -13, -20
+}
+
+//Why does Doom have 2 secret graphics?
+
+graphic wiscrt2, 120, 24
+{
+   XScale 2.0
+   YScale 2.0
+   Patch wiosts, 0, 0
+}
+
+graphic witime, 120, 24
+{
+   XScale 2.0
+   YScale 2.0
+   Patch witime, 0, 0
+}
+
+graphic wisucks, 120, 24
+{
+   XScale 2.0
+   YScale 2.0
+   Patch wisucks, 0, 0
+}
+
+graphic wipar, 120, 24
+{
+   XScale 2.0
+   YScale 2.0
+   Patch wipar, 0, 0
+}
+
+//Dont think this is used by Zdoom anymore, but just in case...
+graphic wimstt, 120, 24
+{
+   XScale 2.0
+   YScale 2.0
+   Patch wimstt, 0, 0
+}
+
+//Menu stuff
+
+graphic M_DIFF, 112, 22
+{
+   XScale 2.0
+   YScale 2.0
+   Patch M_DIFF, 0, 0
+}
+
+graphic M_EASY, 112, 22
+{
+   XScale 2.0
+   YScale 2.0
+   Patch M_EASY, 0, 0
+}
+
+graphic M_LOADG, 112, 22
+{
+   XScale 2.0
+   YScale 2.0
+   Patch M_LOADG, 0, 0
+}
+
+graphic M_MED, 112, 22
+{
+   XScale 2.0
+   YScale 2.0
+   Patch M_MED, 0, 0
+}
+
+graphic M_NGAME, 112, 22
+{
+   XScale 2.0
+   YScale 2.0
+   Patch M_NGAME, 0, 0
+}
+
+graphic M_OPTION, 112, 22
+{
+   XScale 2.0
+   YScale 2.0
+   Patch M_OPTION, 0, 0
+}
+
+graphic M_PAUSE, 69, 22
+{
+   XScale 2.0
+   YScale 2.0
+   Patch M_PAUSE, 0, 0
+   Offset 0, 0
+}
+
+graphic M_QUITG, 112, 22
+{
+   XScale 2.0
+   YScale 2.0
+   Patch M_QUITG, 0, 0
+}
+
+graphic M_SAVEG, 112, 22
+{
+   XScale 2.0
+   YScale 2.0
+   Patch M_SAVEG, 0, 0
+}
+
+graphic M_SKULL1, 46, 46
+{
+   XScale 4.0
+   YScale 4.0
+   Patch M_SKULL1, 0, 0
+   Offset -64, -16 
+}
+
+graphic M_SKULL2, 46, 46
+{
+   XScale 4.0
+   YScale 4.0
+   Patch M_SKULL2, 0, 0
+   Offset -64, -16 
+}
+
+graphic M_DOOM, 620, 128
+{
+   XScale 2.0
+   YScale 2.0
+   Patch M_DOOM, 0, 0
+   Offset 178, 4 
+}
+
+graphic M_SKILL, 620, 128
+{
+   XScale 2.0
+   YScale 2.0
+   Patch M_SKILL, 0, 0
+   Offset 98, 76
+}
+
+//Keys
+
+graphic HLKEYBI, 160, 104
+{
+   XScale 20.0
+   YScale 20.0
+   Patch HLKEYBI, 0, 0
+   Offset -4, 0
+}
+
+graphic HLKEYRI, 160, 104
+{
+   XScale 20.0
+   YScale 20.0
+   Patch HLKEYRI, 0, 0
+   Offset -4, 0
+}

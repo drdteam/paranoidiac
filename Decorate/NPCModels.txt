@@ -1,0 +1,104 @@
+//==========================================
+// Non-Player Character Models: Controller,
+// Scientists, Administrator, Barney, Otis
+//==========================================
+
+ACTOR Handler2Standing 30315
+{
+	Radius 20
+	Height 56
+	+solid
+	States
+	{
+	Spawn:
+		POSS A 3
+		Loop
+	}
+}
+
+ACTOR Handler2Sitting 30316
+{
+	Radius 20
+	Height 40
+	+solid
+	States
+	{
+	Spawn:
+		POSS A 3
+		Loop
+	}
+}
+
+ACTOR Otis01 30321
+{
+	Radius 18
+	Height 64
+	Mass 200
+	+SHOOTABLE
+	+FLOORCLIP
+	+NORADIUSDMG
+	+NODAMAGE
+	+SOLID
+	+FLOORCLIP
+	+USESPECIAL
+	States
+	{
+	Spawn:
+		POSS A 3
+		Loop
+	}
+}
+
+ACTOR Barney01 : Otis01 30322
+{
+}
+
+ACTOR Admin01 : Otis01 30323
+{
+	Radius 22
+	Height 40
+}
+
+ACTOR Einstein01 : Otis01 30324 //Slumped over scientists
+{
+	Radius 18
+	Height 28
+}
+
+ACTOR Luther01 : Einstein01 30325
+{
+}
+
+ACTOR Slick01 : Einstein01 30326
+{
+}
+
+ACTOR Walter01 : Einstein01 30327
+{
+}
+
+ACTOR Walter01a : Einstein01 30328
+{
+}
+
+ACTOR Einstein02 : Einstein01 30329 //Standing scientists
+{
+	Radius 18
+	Height 56
+}
+
+ACTOR Luther02 : Einstein02 30330
+{
+}
+
+ACTOR Slick02 : Einstein02 30331
+{
+}
+
+ACTOR Walter02 : Einstein02 30332
+{
+}
+
+ACTOR Walter02a : Einstein02 30333
+{
+}

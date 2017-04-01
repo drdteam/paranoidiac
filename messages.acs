@@ -1,0 +1,406 @@
+#library "MESSAGES"
+#include "zcommon.acs"
+
+//Hint messages that are run when player uses the inventory item "MessageItem**"
+
+//Map02: Message 1
+
+Script 501 (void)
+
+{
+	//give the item back as using it removes it
+	GiveInventory ("MessageItem01", 1);
+	ambientsound ("radiostatic", 127);
+	ActivatorSound ("MAP2VOX1",127);
+	SetHUDSize (640, 480, 1);
+	SetFont ("HINTMAN");
+	HUDMessage (s:"A"; HUDMSG_PLAIN, 1, CR_UNTRANSLATED, 0.1, 30.1, 7.0);
+
+	SetFont ("smallfont");
+	HUDMessage (s:"\cCMessage From Controller:\nYou'll need to reach Dr. Zimmerman, the Sector Administrator, \nto get the System Override code.";
+	HUDMSG_PLAIN | HUDMSG_LOG, 2, CR_GOLD, 80.1, 30.1, 7.0);
+
+	//delay to stop quick repetition of the script
+	delay (8*35);
+	ambientsound ("radiostatic", 127);
+}
+
+//Map02: Message 2
+
+Script 502 (void)
+
+{
+	GiveInventory ("MessageItem02", 1);
+	ambientsound ("radiostatic", 127);
+	ActivatorSound ("MAP2VOX2",127);
+	SetHUDSize (640, 480, 1);
+
+	SetFont ("HINTMAN");
+	HUDMessage (s:"A"; HUDMSG_PLAIN, 1, CR_UNTRANSLATED, 0.1, 30.1, 5.0);
+
+	SetFont ("smallfont");
+	HUDMessage (s:"\cCMessage From Controller:\nShoot the undamaged fuse to disable the laser barrier.";
+	HUDMSG_PLAIN | HUDMSG_LOG, 2, CR_GOLD, 80.1, 30.1, 5.0);
+
+	delay (6*35);
+	ambientsound ("radiostatic", 127);
+}
+
+//Map02: Message 3
+
+Script 503 (void)
+
+{
+	GiveInventory ("MessageItem03", 1);
+	ambientsound ("radiostatic", 127);
+	ActivatorSound ("MAP2VOX3",127);
+	SetHUDSize (640, 480, 1);
+
+	SetFont ("HINTMAN");
+	HUDMessage (s:"A"; HUDMSG_PLAIN, 1, CR_UNTRANSLATED, 0.1, 30.1, 6.0);
+
+	SetFont ("smallfont");
+	HUDMessage (s:"\cCMessage From Controller:\nLook for a gasoline can in the Fuel Room, \nwhich is near the Flow Control Room.";
+	HUDMSG_PLAIN | HUDMSG_LOG, 2, CR_GOLD, 80.1, 30.1, 6.0);
+
+	delay (7*35);
+	ambientsound ("radiostatic", 127);
+}
+
+//Map02: Message 4
+
+Script 504 (void)
+
+{
+	GiveInventory ("MessageItem04", 1);
+	ambientsound ("radiostatic", 127);
+	ActivatorSound ("MAP2VOX4",127);
+	SetHUDSize (640, 480, 1);
+
+	SetFont ("HINTMAN");
+	HUDMessage (s:"A"; HUDMSG_PLAIN, 1, CR_UNTRANSLATED, 0.1, 30.1, 9.0);
+
+	SetFont ("smallfont");
+	HUDMessage (s:"\cCMessage From Controller:\nRaise the crane and jump on it to ride it to the top. \n\nIf you miss, use the switch to lower the crane and try again.";
+	HUDMSG_PLAIN | HUDMSG_LOG, 2, CR_GOLD, 80.1, 30.1, 9.0);
+
+	delay (9*35);
+	ambientsound ("radiostatic", 127);
+}
+
+//Map03: Message 1
+
+Script 505 (void)
+
+{
+	GiveInventory ("MessageItem05", 1);
+	ambientsound ("radiostatic", 127);
+	ActivatorSound ("MAP3VOX1",127);
+	SetHUDSize (640, 480, 1);
+
+	SetFont ("HINTMAN");
+	HUDMessage (s:"A"; HUDMSG_PLAIN, 1, CR_UNTRANSLATED, 0.1, 30.1, 18.0);
+
+	SetFont ("smallfont");
+	HUDMessage (s:"\cCMessage From Controller:\nThe security key is in Security Room B-102, \nwhich overlooks Storage Bay A2. \n\nUse the lift in Storage Bay A3 to reach the bridge \nover Storage Bay A2, which will take you to B-102.";
+	HUDMSG_PLAIN | HUDMSG_LOG, 2, CR_GOLD, 80.1, 30.1, 18.0);
+
+	delay (16*35);
+	ambientsound ("radiostatic", 127);
+}
+
+//Map03: Message 2
+
+Script 506 (void)
+
+{
+	GiveInventory ("MessageItem06", 1);
+	ambientsound ("radiostatic", 127);
+	ActivatorSound ("MAP3VOX2",127);
+	SetHUDSize (640, 480, 1);
+
+	SetFont ("HINTMAN");
+	HUDMessage (s:"A"; HUDMSG_PLAIN, 1, CR_UNTRANSLATED, 0.1, 30.1, 18.0);
+
+	SetFont ("smallfont");
+	HUDMessage (s:"\cCMessage From Controller:\nFind Hazardous Materials Bay B and exit to the East of the building. \n\nThe bay doors are operated from the control room overlooking HazMat Bay B. \n\nTo reach the control room, take the stairs from the Cafeteria.";
+	HUDMSG_PLAIN | HUDMSG_LOG, 2, CR_GOLD, 80.1, 30.1, 18.0);
+
+	delay (14*35);
+	ambientsound ("radiostatic", 127);
+}
+
+//Map03: Message 3
+
+Script 507 (void)
+
+{
+	GiveInventory ("MessageItem07", 1);
+	ambientsound ("radiostatic", 127);
+	ActivatorSound ("MAP3VOX3",127);
+	SetHUDSize (640, 480, 1);
+
+	SetFont ("HINTMAN");
+	HUDMessage (s:"A"; HUDMSG_PLAIN, 1, CR_UNTRANSLATED, 0.1, 30.1, 11.0);
+
+	SetFont ("smallfont");
+	HUDMessage (s:"\cCMessage From Controller:\nGo all the way to the rear of Supply Room D-301, \nand find a duct that will take you back to Sector C.";
+	HUDMSG_PLAIN | HUDMSG_LOG, 2, CR_GOLD, 80.1, 30.1, 11.0);
+
+	delay (10*35);
+	ambientsound ("radiostatic", 127);
+}
+
+//Map04: Message 1
+
+Script 508 (void)
+
+{
+	GiveInventory ("MessageItem08", 1);
+	ambientsound ("radiostatic", 127);
+	ActivatorSound ("MAP4VOX1",127);
+	SetHUDSize (640, 480, 1);
+
+	SetFont ("HINTMAN");
+	HUDMessage (s:"A"; HUDMSG_PLAIN, 1, CR_UNTRANSLATED, 0.1, 30.1, 12.0);
+
+	SetFont ("smallfont");
+	HUDMessage (s:"\cCMessage From Controller:\nWe just intercepted a Security Bulletin. \n\nDr. Zimmerman is being held in the Secure Holding Facility \nin the North-Eastern quadrant of this sector.";
+	HUDMSG_PLAIN | HUDMSG_LOG, 2, CR_GOLD, 80.1, 30.1, 12.0);
+
+	delay (10*35);
+	ambientsound ("radiostatic", 127);
+}
+
+//Map04: Message 2
+
+Script 509 (void)
+
+{
+	GiveInventory ("MessageItem09", 1);
+	ambientsound ("radiostatic", 127);
+	ActivatorSound ("MAP4VOX2",127);
+	SetHUDSize (640, 480, 1);
+
+	SetFont ("HINTMAN");
+	HUDMessage (s:"A"; HUDMSG_PLAIN, 1, CR_UNTRANSLATED, 0.1, 30.1, 15.0);
+
+	SetFont ("smallfont");
+	HUDMessage (s:"\cCMessage From Controller:\nBecause of the emergency, the security systems have \nautomatically electrified the gate and the perimeter fence. \n\nTo safely access the gate you'll need to switch off auxiliary power. \n\nYou'll need to get to the Turbine Control Room \nin the Western part of this sector.";
+	HUDMSG_PLAIN | HUDMSG_LOG, 2, CR_GOLD, 80.1, 30.1, 15.0);
+
+	delay (15*35);
+	ambientsound ("radiostatic", 127);
+}
+
+//Map04: Message 3
+
+Script 510 (void)
+
+{
+	GiveInventory ("MessageItem10", 1);
+	ambientsound ("radiostatic", 127);
+	ActivatorSound ("MAP4VOX3",127);
+	SetHUDSize (640, 480, 1);
+
+	SetFont ("HINTMAN");
+	HUDMessage (s:"A"; HUDMSG_PLAIN, 1, CR_UNTRANSLATED, 0.1, 30.1, 13.0);
+
+	SetFont ("smallfont");
+	HUDMessage (s:"\cCMessage From Controller:\nGate Control at the Secure Holding Facility has been restored. \n\nReturn to the Guard tower, reachable through the Storage Warehouse \nin the Eastern quadrant of this sector.";
+	HUDMSG_PLAIN | HUDMSG_LOG, 2, CR_GOLD, 80.1, 30.1, 13.0);
+
+	delay (10*35);
+	ambientsound ("radiostatic", 127);
+}
+
+//Map04: Message 4
+
+Script 519 (void)
+
+{
+	GiveInventory ("MessageItem19", 1);
+	ambientsound ("radiostatic", 127);
+	ActivatorSound ("MAP2VOX2",127);
+	SetHUDSize (640, 480, 1);
+
+	SetFont ("HINTMAN");
+	HUDMessage (s:"A"; HUDMSG_PLAIN, 1, CR_UNTRANSLATED, 0.1, 30.1, 5.0);
+
+	SetFont ("smallfont");
+	HUDMessage (s:"\cCMessage From Controller:\nShoot the undamaged fuse to disable the laser barrier.";
+	HUDMSG_PLAIN | HUDMSG_LOG, 2, CR_GOLD, 80.1, 30.1, 5.0);
+
+	delay (6*35);
+	ambientsound ("radiostatic", 127);
+}
+
+//Map08: Message 1
+
+Script 511 (void)
+
+{
+	GiveInventory ("MessageItem11", 1);
+	ambientsound ("radiostatic", 127);
+	ActivatorSound ("MAP8VOX1",127);
+	SetHUDSize (640, 480, 1);
+
+	SetFont ("HINTMAN");
+	HUDMessage (s:"A"; HUDMSG_PLAIN, 1, CR_UNTRANSLATED, 0.1, 30.1, 7.0);
+
+	SetFont ("smallfont");
+	HUDMessage (s:"\cCMessage From Controller:\nYou will probably find Dr. Zimmerman in \nthe sub-basement level of the Holding Facility.";
+	HUDMSG_PLAIN | HUDMSG_LOG, 2, CR_GOLD, 80.1, 30.1, 7.0);
+
+	delay (8*35);
+	ambientsound ("radiostatic", 127);
+}
+
+//Map05: Message 1
+
+Script 512 (void)
+
+{
+	GiveInventory ("MessageItem12", 1);
+	ambientsound ("radiostatic", 127);
+	ActivatorSound ("MAP5VOX1",127);
+	SetHUDSize (640, 480, 1);
+
+	SetFont ("HINTMAN");
+	HUDMessage (s:"A"; HUDMSG_PLAIN, 1, CR_UNTRANSLATED, 0.1, 30.1, 5.0);
+
+	SetFont ("smallfont");
+	HUDMessage (s:"\cCMessage From Controller:\nThere's a drainage tunnel near the dam \nthat will take you to the Research Labs.";
+	HUDMSG_PLAIN | HUDMSG_LOG, 2, CR_GOLD, 80.1, 30.1, 5.0);
+
+	delay (6*35);
+	ambientsound ("radiostatic", 127);
+}
+
+//Map05: Message 2
+
+Script 513 (void)
+
+{
+	GiveInventory ("MessageItem13", 1);
+	ambientsound ("radiostatic", 127);
+	ActivatorSound ("MAP5VOX2",127);
+	SetHUDSize (640, 480, 1);
+
+	SetFont ("HINTMAN");
+	HUDMessage (s:"A"; HUDMSG_PLAIN, 1, CR_UNTRANSLATED, 0.1, 30.1, 15.0);
+
+	SetFont ("smallfont");
+	HUDMessage (s:"\cCMessage From Controller:\nLook for Sergeant Harrison, the Security Officer. \nHe'll restore your security clearance. \n\nYou'll find him in the Office Block at the North-Western quadrant \nof this sector. Take the bridge over the storage warehouse.";
+	HUDMSG_PLAIN | HUDMSG_LOG, 2, CR_GOLD, 80.1, 30.1, 15.0);
+
+	delay (13*35);
+	ambientsound ("radiostatic", 127);
+}
+
+//Map05: Message 3
+
+Script 514 (void)
+
+{
+	GiveInventory ("MessageItem14", 1);
+	ambientsound ("radiostatic", 127);
+	ActivatorSound ("MAP5VOX3",127);
+	SetHUDSize (640, 480, 1);
+
+	SetFont ("HINTMAN");
+	HUDMessage (s:"A"; HUDMSG_PLAIN, 1, CR_UNTRANSLATED, 0.1, 30.1, 10.0);
+
+	SetFont ("smallfont");
+	HUDMessage (s:"\cCMessage From Controller:\nReturn to the Research Labs and use your \nsecurity clearance to gain access. \n\nTake the bridge over the storage warehouse.";
+	HUDMSG_PLAIN | HUDMSG_LOG, 2, CR_GOLD, 80.1, 30.1, 10.0);
+
+	delay (8*35);
+	ambientsound ("radiostatic", 127);
+}
+
+//Map06: Message 1
+
+Script 515 (void)
+
+{
+	GiveInventory ("MessageItem15", 1);
+	ambientsound ("radiostatic", 127);
+	ActivatorSound ("MAP6VOX1",127);
+	SetHUDSize (640, 480, 1);
+
+	SetFont ("HINTMAN");
+	HUDMessage (s:"A"; HUDMSG_PLAIN, 1, CR_UNTRANSLATED, 0.1, 30.1, 4.0);
+
+	SetFont ("smallfont");
+	HUDMessage (s:"\cCMessage From Controller:\nYou should be able to crawl under the door.";
+	HUDMSG_PLAIN | HUDMSG_LOG, 2, CR_GOLD, 80.1, 30.1, 4.0);
+
+	delay (5*35);
+	ambientsound ("radiostatic", 127);
+}
+
+//Map06: Message 2
+
+Script 516 (void)
+
+{
+	GiveInventory ("MessageItem16", 1);
+	ambientsound ("radiostatic", 127);
+	ActivatorSound ("MAP6VOX2",127);
+	SetHUDSize (640, 480, 1);
+
+	SetFont ("HINTMAN");
+	HUDMessage (s:"A"; HUDMSG_PLAIN, 1, CR_UNTRANSLATED, 0.1, 30.1, 8.0);
+
+	SetFont ("smallfont");
+	HUDMessage (s:"\cCMessage From Controller:\nThis is a timed switch that will temporarily \nraise the gate to the next reservoir chamber.";
+	HUDMSG_PLAIN | HUDMSG_LOG, 2, CR_GOLD, 80.1, 30.1, 8.0);
+
+	delay (7*35);
+	ambientsound ("radiostatic", 127);
+}
+
+//Map07: Message 1
+
+Script 517 (void)
+
+{
+	GiveInventory ("MessageItem17", 1);
+	ambientsound ("radiostatic", 127);
+	ActivatorSound ("MAP7VOX1",127);
+	SetHUDSize (640, 480, 1);
+
+	SetFont ("HINTMAN");
+	HUDMessage (s:"A"; HUDMSG_PLAIN, 1, CR_UNTRANSLATED, 0.1, 30.1, 5.0);
+
+	SetFont ("smallfont");
+	HUDMessage (s:"\cCMessage From Controller:\nKeep pressing the switch to fry that sucker.";
+	HUDMSG_PLAIN | HUDMSG_LOG, 2, CR_GOLD, 80.1, 30.1, 5.0);
+
+	delay (5*35);
+	ambientsound ("radiostatic", 127);
+}
+
+//Map07: Message 2
+
+Script 518 (void)
+
+{
+	GiveInventory ("MessageItem18", 1);
+	ambientsound ("radiostatic", 127);
+	ActivatorSound ("MAP7VOX2",127);
+	SetHUDSize (640, 480, 1);
+
+	SetFont ("HINTMAN");
+	HUDMessage (s:"A"; HUDMSG_PLAIN, 1, CR_UNTRANSLATED, 0.1, 30.1, 8.0);
+
+	SetFont ("smallfont");
+	HUDMessage (s:"\cCMessage From Controller:\nUse the terminal to upload the virus. \n\nWe have remotely disabled the critical security protocols.";
+	HUDMSG_PLAIN | HUDMSG_LOG, 2, CR_GOLD, 80.1, 30.1, 8.0);
+
+	delay (8*35);
+	ambientsound ("radiostatic", 127);
+}
+
+//Script 519 & MessageItem19 already assigned to Map04

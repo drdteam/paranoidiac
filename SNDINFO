@@ -1,0 +1,893 @@
+//=====
+//MUSIC
+//=====
+
+Music01 D_TITLE
+Music02 D_MAP02
+Music03 D_MAP03
+Music04 D_MAP04
+Music07 D_MAP07
+
+//======
+//SOUNDS
+//======
+
+tree/pain 	dstpain
+tree/attack	dsthit
+tree/swipe	dstmiss
+bustgrate bustmetl
+deactivated deactive
+gratedebris debris2
+hevlogon hevlogon
+hevcharge hevplus
+hevchargeused hevstop
+medcharge medshot1
+medchargeused medshot0
+powerrestored poweron
+radiostatic dsradst2
+comm_on comm_on
+keytype1 dskeyb1
+keytype2 dskeyb2
+keytype3 dskeyb3
+keytype4 dskeyb4
+resonancecascade cascade
+zap zap
+radiation_detected radetect
+accessdenied accessno
+accessgranted accesyes
+liquidfill liquid01
+chemical_detected hazchem1
+
+$rolloff zap 1024 2048
+
+play/osprey 			"sounds/osprey.wav"
+Steam/Loop STEMLOOP
+
+sw0deny	sw0deny
+switches/sw1light		sw1light
+switches/sw2cntrl		sw2cntrl
+switches/sw3buttn		sw3buttn
+
+$random weapons/rocklx
+{
+halflife/weapons/explode1 halflife/weapons/explode2 halflife/weapons/explode3
+halflife/weapons/hl2explo1 halflife/weapons/hl2explo2 halflife/weapons/hl2explo3 
+}
+
+$random world/spark		{ world/spark1  world/spark2  world/spark3 world/spark4 world/spark5 world/spark6 }
+world/spark1			spark1
+world/spark2			spark2
+world/spark3			spark3
+world/spark4			spark4
+world/spark5			spark5
+world/spark6			spark6
+
+//*********
+//BRIEFINGS
+//*********
+
+//---------------------------
+//Controller Briefing (Map01)
+//---------------------------
+
+brief01 brief01
+
+//--------------------
+//Controller Messages
+//--------------------
+
+map2vox1 map2vox1
+map2vox2 map2vox2
+map2vox3 map2vox3
+map2vox4 map2vox4
+map3vox1 map3vox1
+map3vox2 map3vox2
+map3vox3 map3vox3
+map4vox1 map4vox1
+map4vox2 map4vox2
+map4vox3 map4vox3
+map5vox1 map5vox1
+map5vox2 map5vox2
+map5vox3 map5vox3
+map6vox1 map6vox1
+map6vox2 map6vox2
+map7vox1 map7vox1
+map7vox2 map7vox2
+map8vox1 map8vox1
+
+//--------------------
+//Administrator (Map04)
+//--------------------
+
+admin01 admin01
+admin02 admin02
+admin03 admin03
+admin04 admin04
+admin05 admin05
+admin06 admin06
+admin07 admin07
+admin08 admin08
+
+//--------------------
+//Sgt. Harrison (Map05)
+//--------------------
+
+harris01 harris01
+harris02 harris02
+harris03 harris03
+harris04 harris04
+harris05 harris05
+harris06 harris06
+harris07 harris07
+harris08 harris08
+harris09 harris09
+harris10 harris10
+
+//********************
+//DOOR/PLATFORM SOUNDS
+//********************
+
+poly_start	polystrt
+poly_end	polyend
+door1_start	door1s
+door1_end	door1e
+door2_swing	door2
+door3_start	door3s
+door3_end	door3e
+
+//**************
+//AMBIENT SOUNDS
+//**************
+
+wren		wren1
+quail		quail1
+flies		flies
+cricket1	cricket
+cricket2	crickets
+siren		siren
+waterfall	watrfall
+crow		crow
+fire		fire
+frog		frog
+katydid		katydid
+engine		engine
+wind		wind
+comtalk1 comtalk1
+comtalk2 comtalk2
+deadsignal dedsignl
+fan1 fan1
+labdrone1 labdron1
+labdrone2 labdron2
+siren1 siren1
+techamb1 techamb1
+techamb2 techamb2
+modem dsmodem
+geiger geiger
+
+$volume cricket1 0.5
+$volume cricket2 0.25
+$volume katydid 0.25
+
+$rolloff cricket1 64 1600
+$rolloff cricket2 64 1200
+$rolloff katydid 64 1200
+$rolloff engine 64 1024
+
+; Ambient sounds
+
+$AMBIENT 1 Wren POINT RANDOM 10.0 5.0 15.0
+$AMBIENT 2 Quail POINT RANDOM 5.0 10.0 10.0
+$AMBIENT 3 Flies POINT 1.0 CONTINUOUS 127
+$AMBIENT 4 Cricket1 POINT RANDOM 5.0 10.0 10.0
+$AMBIENT 5 Cricket2 POINT RANDOM 5.0 10.0 10.0
+$AMBIENT 6 Siren POINT 1.0 CONTINUOUS 127
+$ambient 7 Waterfall POINT 1.0 CONTINUOUS 127
+$AMBIENT 8 Crow POINT RANDOM 10.0 5.0 15.0
+$AMBIENT 9 Fire POINT 1.0 CONTINUOUS 127
+$AMBIENT 10 Frog POINT RANDOM 5.0 10.0 10.0
+$AMBIENT 11 Katydid POINT RANDOM 5.0 10.0 10.0
+$AMBIENT 12 Engine POINT 1.0 CONTINUOUS 127
+$AMBIENT 13 Wind POINT 1.0 CONTINUOUS 127
+$AMBIENT 14 comtalk1 POINT 1.0 CONTINUOUS 127
+$AMBIENT 15 comtalk2 POINT 1.0 CONTINUOUS 127
+$AMBIENT 16 deadsignal POINT 1.0 CONTINUOUS 127
+$AMBIENT 17 fan1 POINT 1.0 CONTINUOUS 127
+$AMBIENT 18 labdrone1 POINT 1.0 CONTINUOUS 127
+$AMBIENT 19 labdrone2 POINT 1.0 CONTINUOUS 127
+$AMBIENT 20 Siren1 POINT 1.0 CONTINUOUS 127
+$AMBIENT 21 Techamb1 POINT 1.0 CONTINUOUS 127
+$AMBIENT 22 Techamb2 POINT 1.0 CONTINUOUS 127
+$AMBIENT 23 Modem POINT 1.0 CONTINUOUS 127
+$AMBIENT 24 Geiger POINT 1.0 CONTINUOUS 127
+
+//***********
+//MENU SOUNDS
+//***********
+
+menu/activate		dsmen01		// Activate a new menu
+menu/backup			dsmen02		// Backup to previous menu
+menu/prompt			dsmen03		// Activate a prompt "menu"
+menu/cursor			dsmen04		// Move cursor up/down
+menu/change			dsmen05		// Select new value for option
+menu/invalid		dsmen06		// Menu not available
+menu/dismiss		dsmen07		// Dismiss a prompt message
+menu/choose			dsmen08		// Choose a menu item
+menu/clear			dsmen09		// Close top menu
+
+//Sounds made on quitting the game
+
+menu/quit1	dsquit1
+menu/quit2	dsquit2
+
+$random menu/quit { menu/quit1 menu/quit2 }
+
+// The following entries are currently SVN only
+intermission/tick		dsint01    //countup
+intermission/cooptotal		dsint02    //dunno
+intermission/nextstage		dsint02    //total
+intermission/paststats		dsint03	   //on to next level
+intermission/pastcoopstats	dsint03    //on to next level coop
+intermission/pastdmstats	dsint03    //on to next level DM
+
+//**************
+//PLAYER SOUNDS
+//**************
+
+misc/health_pkup	medkit1
+misc/armor_pkup		HEVBatt1
+misc/ammo_pkup		ammopkup
+
+//****
+//Pain Sounds
+//****
+
+HLPlayerPain01		HLPPAI01
+HLPlayerPain02 		HLPPAI02
+HLPlayerPain03		HLPPAI03
+HLPlayerPain04		HLPPAI04
+HLPlayerPain05      HLPPAI05
+
+HLPlayerPain7501	HLPPA101
+
+HLPlayerPain5001	HLPPA201
+HLPlayerPain5002	HLPPA202
+
+HLPlayerPain2501	HLPPA301
+HLPlayerPain2502	HLPPA302
+HLPlayerPain2503	HLPPA303
+
+$playeralias	player	male	*pain100	HLPLayerPain100
+$playeralias	player	male	*pain75		HLPLayerPain75
+$playeralias	player	male	*pain50		HLPLayerPain50
+$playeralias	player	male	*pain25		HLPLayerPain25
+
+$playeralias	player	female	*pain100	HLPLayerPain100
+$playeralias	player	female	*pain75		HLPLayerPain75
+$playeralias	player	female	*pain50		HLPLayerPain50
+$playeralias	player	female	*pain25		HLPLayerPain25
+
+$playeralias	player	cyborg	*pain100	HLPLayerPain100
+$playeralias	player	cyborg	*pain75		HLPLayerPain75
+$playeralias	player	cyborg	*pain50		HLPLayerPain50
+$playeralias	player	cyborg	*pain25		HLPLayerPain25
+
+$random HLPLayerPain100 { HLPlayerPain01 HLPlayerPain02 HLPlayerPain03 HLPlayerPain04 HLPlayerPain05 }
+$random HLPLayerPain75 { HLPlayerPain01 HLPlayerPain02 HLPlayerPain03 HLPlayerPain7501 HLPlayerPain04 HLPlayerPain05 }
+$random HLPLayerPain50 { HLPlayerPain01 HLPlayerPain02 HLPlayerPain5001 HLPlayerPain03 HLPlayerPain04 HLPlayerPain5002 HLPlayerPain05 }
+$random HLPLayerPain25 { HLPlayerPain01 HLPlayerPain2501 HLPlayerPain02 HLPlayerPain03 HLPlayerPain2502 HLPlayerPain04 HLPlayerPain05 HLPlayerPain2503 }
+
+//****
+//Death Sounds
+//****
+
+//normal death
+
+HLPlayerDeath1		hlpdie01
+HLPlayerDeath2		hlpdie02
+HLPlayerDeath3		hlpdie03
+
+$random HLPlayerDeath	{ HLPlayerDeath1 HLPlayerDeath2 HLPlayerDeath3 }
+
+$playeralias	player	male	*death		HLPlayerDeath
+
+$playeralias	player	female	*death		HLPlayerDeath
+
+$playeralias	player	cyborg	*death		HLPlayerDeath
+
+//Hi-death
+
+HLPlayerXDeath1		hlpxdie1
+HLPlayerXDeath2		hlpxdie2
+HLPlayerXDeath3		hlpxdie3
+
+$random HLPlayerXDeath	{ HLPlayerXDeath1 HLPlayerXDeath2 HLPlayerXDeath3 }
+
+$playeralias	player	male	*xdeath		HLPlayerXDeath
+
+$playeralias	player	female	*xdeath		HLPlayerXDeath
+
+$playeralias	player	cyborg	*xdeath		HLPlayerXDeath
+
+//slop
+
+$playersound	player	male	*gibbed		hlpsplt1
+
+$playersound	player	female	*gibbed		hlpsplt1
+
+$playersound	player	cyborg	*gibbed		hlpsplt1
+
+//HEV Fail
+
+HLPlayerHEVFail1	hlpfail1
+HLPlayerHEVFail2	hlpfail2
+
+$random HLPlayerHEVFail		{ HLPlayerHEVFail1 HLPlayerHEVFail2 }
+
+//****
+//Landing and jumping sounds
+//****
+
+//landing grunt
+
+$playersound	player	male	*grunt		hlpoof
+
+$playersound	player	female	*grunt		hlpoof
+
+$playersound	player	cyborg	*grunt		hlpoof
+
+//landing impact noise
+
+$playersound	player	male	*land		hlpland
+
+//$playersound	player	female	*land		hlpland
+
+//$playersound	player	cyborg	*land		hlpland
+
+//jumping sound
+
+HLPlayerJump1		hlpjump1
+HLPlayerJump2		hlpjump2
+
+$random HLPlayerJump	{ HLPlayerJump1 HLPlayerJump2 }
+
+$playeralias	player	male	*jump		HLPlayerJump
+
+//$playeralias	player	female	*jump		HLPlayerJump
+
+//$playeralias	player	cyborg	*jump		HLPlayerJump
+
+//Fist sound - probably not needed
+
+$playersound	player	male	*fist		hlpnull
+
+$playersound	player	female	*fist		hlpnull
+
+$playersound	player	cyborg	*fist		hlpnull
+
+//****
+//Using stuff
+//****
+
+//Wall humping
+
+$playersound	player	male	*usefail	hlphump
+
+$playersound	player	female	*usefail	hlphump
+
+$playersound	player	cyborg	*usefail	hlphump
+
+//Puzzle Line didn't work - probably not needed
+
+$playersound	player	male	*puzzfail	hlppuzz1
+
+$playersound	player	female	*puzzfail	hlppuzz1
+
+$playersound	player	cyborg	*puzzfail	hlppuzz1
+
+//Puzzle Line did work - probably not needed
+
+PuzzleSuccess 		hlppuzz1  
+
+//Key door without key - probably not used
+
+misc/keytry		hlpktry
+
+//****
+//Underwater sounds
+//****
+
+$random *pain-drowning { *pain-drowning1 *pain-drowning2 }
+
+$playersound player male *gasp       		hlpgasp
+$playersound player male *dive       		hlpwin
+$playersound player male *surface    		hlpwout
+$playersound player male *pain-drowning1 	hlpgurp1
+$playersound player male *pain-drowning2 	hlpgurp2
+$playersound player male *death-drowning 	hlpdrown
+
+$playersound player female *gasp       		hlpgasp
+$playersound player female *dive       		hlpwin
+$playersound player female *surface    		hlpwout
+$playersound player female *pain-drowning1 	hlpgurp1
+$playersound player female *pain-drowning2 	hlpgurp2
+$playersound player female *death-drowning 	hlpdrown
+
+$playersound player cyborg *gasp       		hlpgasp
+$playersound player cyborg *dive       		hlpwin
+$playersound player cyborg *surface    		hlpwout
+$playersound player cyborg *pain-drowning1 	hlpgurp1
+$playersound player cyborg *pain-drowning2 	hlpgurp2
+$playersound player cyborg *death-drowning 	hlpdrown
+
+//Should have given up the cigarettes - player coughing sounds
+
+$playeralias   player Male      *poison      PlayerMaleCough
+$playeralias   player female    *poison      PlayerFemaleCough
+$playeralias   player other     *poison      PlayerCyborgCough
+
+PlayerMaleCough		hlpcoff
+PlayerFemaleCough	hlpcoff
+PlayerCyborgCough	hlpcoff
+
+//****
+//Sounds before donning HEV - shouldn't be needed
+//****
+
+HLPlayerScientistPain	HLPSPAI
+HLPlayerScientistDeath	HLPSDTH
+
+//***********
+//	WEAPONS
+//***********
+
+halflife/weapons/m357reload				"sounds/wepadd/357_reload1.wav"
+halflife/weapons/noammo					"sounds/wepadd/dryfire1.wav"
+halflife/weapons/noammogrenlaunch		"sounds/wepadd/gren_cock1.wav"
+halflife/weapons/reload1			"sounds/wepadd/reload1.wav"
+halflife/weapons/reload2			"sounds/wepadd/reload2.wav"
+halflife/weapons/reload3			"sounds/wepadd/reload3.wav"
+halflife/weapons/shotgunpump		"sounds/wepadd/scock1.wav"
+halflife/weapons/m357noammo			"Sounds/WepAdd/357_cock1.wav"
+halflife/weapons/m16cliprelease		"Sounds/WepAdd/cliprelease1.wav"
+halflife/weapons/m16clipinsert		"Sounds/WepAdd/clipinsert1.wav"
+
+$random halflife/weapons/ric
+{
+	halflife/weapons/ric1
+	halflife/weapons/ric2
+	halflife/weapons/ric3
+	halflife/weapons/ric4
+	halflife/weapons/ric5
+}
+
+halflife/weapons/ric1		"sounds/wepadd/ric1.wav"
+halflife/weapons/ric2		"sounds/wepadd/ric2.wav"
+halflife/weapons/ric3		"sounds/wepadd/ric3.wav"
+halflife/weapons/ric4		"sounds/wepadd/ric4.wav"
+halflife/weapons/ric5		"sounds/wepadd/ric5.wav"
+
+halflife/weapons/tport1			"sounds/halflife/weapons/beamstart2.wav"
+halflife/weapons/tport2			"sounds/halflife/weapons/beamstart7.wav"
+halflife/weapons/bodydrop		"sounds/halflife/weapons/bodydrop1.wav"
+halflife/weapons/gib			"sounds/halflife/weapons/bodysplat.wav"
+halflife/weapons/zap4			"sounds/halflife/weapons/zap4.wav"
+
+$random other/gibdeath { other/gibdeath1 other/gibdeath2 }
+
+other/gibdeath1		hlgib01
+other/gibdeath2		hlgib02
+
+halflife/weapons/noammo			"sounds/halflife/weapons/357_cock1.wav"
+halflife/weapons/magnumshot		"sounds/halflife/weapons/357_shot1.wav"
+halflife/weapons/bullethit		"sounds/halflife/weapons/bullet_hit2.wav"
+halflife/weapons/cbarhit		"sounds/halflife/weapons/cbar_hit1.wav"
+halflife/weapons/cbarhitmeat		"sounds/halflife/weapons/cbar_hitbod2.wav"
+halflife/weapons/egonoff		"sounds/halflife/weapons/egon_off1.wav"
+halflife/weapons/egonloop		"sounds/halflife/weapons/egon_run3.wav"
+halflife/weapons/egonon			"sounds/halflife/weapons/egon_windup2.wav"
+halflife/weapons/gausshit1		"sounds/halflife/weapons/electro4.wav"
+halflife/weapons/gausshit2		"sounds/halflife/weapons/electro5.wav"
+halflife/weapons/gausshit3		"sounds/halflife/weapons/electro6.wav"
+halflife/weapons/gaussshot		"sounds/halflife/weapons/gauss2.wav"
+halflife/weapons/explode1		"sounds/halflife/weapons/explode3.wav"
+halflife/weapons/explode2		"sounds/halflife/weapons/explode4.wav"
+halflife/weapons/explode3		"sounds/halflife/weapons/explode5.wav"
+halflife/weapons/grenadelaunch	"sounds/halflife/weapons/glauncher.wav"
+halflife/weapons/mineactivate		"sounds/halflife/weapons/mine_activate.wav"
+halflife/weapons/minecharge		"sounds/halflife/weapons/mine_charge.wav"
+halflife/weapons/minedeploy		"sounds/halflife/weapons/mine_deploy.wav"
+halflife/weapons/pistol			"sounds/halflife/weapons/pl_gun3.wav"
+halflife/weapons/rocketlaunch		"sounds/halflife/weapons/rocketfire1.wav"
+halflife/weapons/shotgunsingle	"sounds/halflife/weapons/sbarrel1.wav"
+halflife/weapons/shotgundouble	"sounds/halflife/weapons/dbarrel1.wav"
+
+halflife/weapons/displacerfire			"sounds/halflife/weapons/displacer_fire.wav"
+halflife/weapons/displacerimpact			"sounds/halflife/weapons/displacer_impact.wav"
+halflife/weapons/displacerself			"sounds/halflife/weapons/displacer_self.wav"
+halflife/weapons/displacerspin			"sounds/halflife/weapons/displacer_spin.wav"
+halflife/weapons/displacerspintic			"sounds/halflife/weapons/displacer_spin2.wav"
+halflife/weapons/displacerstart			"sounds/halflife/weapons/displacer_start.wav"
+halflife/weapons/displacertport1			"sounds/halflife/weapons/displacer_teleport.wav"
+halflife/weapons/displacertport2			"sounds/halflife/weapons/displacer_teleport_player.wav"
+halflife/weapons/knifeflesh				"sounds/halflife/weapons/knife_hit_flesh1.wav"
+halflife/weapons/shockroachdischarge		"sounds/halflife/weapons/shock_discharge.wav"
+halflife/weapons/shockroachraise			"sounds/halflife/weapons/shock_draw.wav"
+halflife/weapons/shockroachfire			"sounds/halflife/weapons/shock_fire.wav"
+halflife/weapons/shockroachhit			"sounds/halflife/weapons/shock_impact.wav"
+halflife/weapons/shockroachrecharge			"sounds/halflife/weapons/shock_recharge.wav"
+halflife/weapons/sporegrenadeshot			"sounds/halflife/weapons/splauncher_altfire.wav"
+halflife/weapons/sporegrenadebounce			"sounds/halflife/weapons/splauncher_bounce.wav"
+halflife/weapons/sporeshot				"sounds/halflife/weapons/splauncher_fire.wav"
+halflife/weapons/sporehit				"sounds/halflife/weapons/splauncher_impact.wav"
+
+$random halflife/weapons/machinegunshot
+{
+	halflife/weapons/machinegunshot1
+	halflife/weapons/machinegunshot2
+	halflife/weapons/machinegunshot2
+}
+
+halflife/weapons/machinegunshot1				"sounds/halflife/weapons/hks1.wav"
+halflife/weapons/machinegunshot2				"sounds/halflife/weapons/hks2.wav"
+halflife/weapons/machinegunshot3				"sounds/halflife/weapons/hks3.wav"
+
+$random halflife/weapons/randomexplo
+{
+halflife/weapons/explode1 halflife/weapons/explode2 halflife/weapons/explode3
+halflife/weapons/hl2explo1 halflife/weapons/hl2explo2 halflife/weapons/hl2explo3 
+}
+
+$rolloff halflife/weapons/randomexplo 200 3000
+
+halflife/weapons/combriflealtfire		"sounds/halflife/weapons/ar2_altfire.wav"
+halflife/weapons/combriflefire			"sounds/halflife/weapons/ar2_fire1.wav"
+halflife/weapons/hl2explo1			"sounds/halflife/weapons/explo1.wav"
+halflife/weapons/hl2explo2			"sounds/halflife/weapons/explo2.wav"
+halflife/weapons/hl2explo3			"sounds/halflife/weapons/explo3.wav"
+halflife/weapons/hl2pistolfire			"sounds/halflife/weapons/pistol_fire2.wav"
+halflife/weapons/hl2357fire			"sounds/halflife/weapons/357_fire2.wav"
+
+halflife/weapons/RPGFire         "sounds/halflife/weapons/rocketfire1.wav"
+
+$random halflife/weapons/Crowbarhit { halflife/weapons/Crowbarhit1 halflife/weapons/Crowbarhit2 }
+
+halflife/weapons/Crowbarhit1         "sounds/halflife/weapons/cbar_hit1.wav"
+halflife/weapons/Crowbarhit2         "sounds/halflife/weapons/cbar_hit2.wav"
+
+$random halflife/weapons/Crowbarhitbody
+{
+   halflife/weapons/Crowbarhitbody1
+   halflife/weapons/Crowbarhitbody2
+   halflife/weapons/Crowbarhitbody3
+}
+
+halflife/weapons/Crowbarhitbody1      "sounds/halflife/weapons/cbar_hitbod1.wav"
+halflife/weapons/Crowbarhitbody2      "sounds/halflife/weapons/cbar_hitbod2.wav"
+halflife/weapons/Crowbarhitbody3      "sounds/halflife/weapons/cbar_hitbod3.wav"
+halflife/weapons/CrowbarMiss         "sounds/halflife/weapons/cbar_miss1.wav"
+
+//***********
+//	ENEMIES
+//***********
+
+//------------
+//	Barnacle
+//------------
+barnacle/sight 		"sounds/halflife/monsters/balert1.wav"
+barnacle/pain  		"sounds/halflife/monsters/bpain.wav"
+
+$random barnacle/death 	{ barnacle/death1  barnacle/death2  barnacle/death3 }
+barnacle/death1		"sounds/halflife/monsters/bdie1.wav"
+barnacle/death2		"sounds/halflife/monsters/bdie2.wav"
+barnacle/death3		"sounds/halflife/monsters/bdie3.wav"
+
+$random barnacle/active 	{ barnacle/active1  barnacle/active2 }
+barnacle/active1	"sounds/halflife/monsters/bidle1.wav"
+barnacle/active2	"sounds/halflife/monsters/bidle2.wav"
+
+barnacle/attack 	"sounds/halflife/monsters/bspit1.wav"
+barnaclespitball/splat	"sounds/halflife/monsters/bspit2.wav"
+
+//----------
+//	Barney
+//----------
+
+$random barney/randomphrase	{barney/sentry1 barney/sentry2 barney/sentry3}
+
+barney/sentry1 sounds/barney/bsentry1.wav
+barney/sentry2 sounds/barney/bsentry2.wav
+barney/sentry3 sounds/barney/bsentry3.wav
+
+barney/airlock 	"sounds/barney/bairlock.wav"
+barney/nohev 	"sounds/barney/bnohev.wav"
+barney/yeshev 	"sounds/barney/byeshev.wav"
+
+halflife/monsters/barney/death		"sounds/halflife/monsters/HLM_die.wav"
+halflife/monsters/barney/sight		"sounds/Barney/bsentry1.wav"
+halflife/monsters/barney/pain		"sounds/halflife/monsters/HLM_pain.wav"
+$random halflife/monsters/barney/idle
+{
+	halflife/monsters/barney/idle1
+	halflife/monsters/barney/idle2
+	halflife/monsters/barney/idle3
+	halflife/monsters/barney/idle4
+}
+
+halflife/monsters/barney/idle1		"sounds/halflife/monsters/HLM_sit1.wav"
+halflife/monsters/barney/idle2		"sounds/halflife/monsters/HLM_sit2.wav"
+halflife/monsters/barney/idle3		"sounds/halflife/monsters/HLM_sit3.wav"
+halflife/monsters/barney/idle4		"sounds/halflife/monsters/HLM_idle.wav"
+
+//------------
+//	Bullsquid
+//------------
+halflife/monsters/bullsquid/death		"sounds/halflife/monsters/HLD_die.wav"
+halflife/monsters/bullsquid/growl		"sounds/halflife/monsters/HLD_grwl.wav"
+halflife/monsters/bullsquid/idle		"sounds/halflife/monsters/HLD_idle.wav"
+halflife/monsters/bullsquid/pain		"sounds/halflife/monsters/HLD_pain.wav"
+halflife/monsters/bullsquid/spitehit		"sounds/halflife/monsters/HLD_shit.wav"
+halflife/monsters/bullsquid/sight		"sounds/halflife/monsters/HLD_sit.wav"
+halflife/monsters/bullsquid/spit		"sounds/halflife/monsters/HLD_spit.wav"
+
+//-------------
+//	Controller
+//-------------
+halflife/monsters/controller/attack		"sounds/halflife/monsters/HLC_att.wav"
+halflife/monsters/controller/death		"sounds/halflife/monsters/HLC_die.wav"
+halflife/monsters/controller/idle		"sounds/halflife/monsters/HLC_idle.wav"
+halflife/monsters/controller/pain		"sounds/halflife/monsters/HLC_pain.wav"
+halflife/monsters/controller/sight		"sounds/halflife/monsters/HLC_sit.wav"
+
+//------------
+//	Gargantua
+//------------
+halflife/monsters/gargantua/flameon			"sounds/halflife/monsters/GRGNfon.wav"
+halflife/monsters/gargantua/flameloop			"sounds/halflife/monsters/GRGNfloo.wav"
+halflife/monsters/gargantua/flameoff			"sounds/halflife/monsters/GRGNfoff.wav"
+halflife/monsters/gargantua/stomp			"sounds/halflife/monsters/GRGNstmp.wav"
+halflife/monsters/gargantua/attack			"sounds/halflife/monsters/GRGNatt.wav"
+
+$random halflife/monsters/gargantua/sight { halflife/monsters/gargantua/sight1 halflife/monsters/gargantua/sight2 }
+$random halflife/monsters/gargantua/death { halflife/monsters/gargantua/death1 halflife/monsters/gargantua/death2 }
+$random halflife/monsters/gargantua/idle { halflife/monsters/gargantua/idle1 halflife/monsters/gargantua/idle2 }
+$random halflife/monsters/gargantua/pain { halflife/monsters/gargantua/pain1 halflife/monsters/gargantua/pain2 }
+$random halflife/monsters/gargantua/step { halflife/monsters/gargantua/step1 halflife/monsters/gargantua/step2 }
+
+halflife/monsters/gargantua/sight1			"sounds/halflife/monsters/GRGNsit1.wav"
+halflife/monsters/gargantua/sight2			"sounds/halflife/monsters/GRGNsit2.wav"
+halflife/monsters/gargantua/death1			"sounds/halflife/monsters/GRGNdie1.wav"
+halflife/monsters/gargantua/death2			"sounds/halflife/monsters/GRGNdie2.wav"
+halflife/monsters/gargantua/idle1			"sounds/halflife/monsters/GRGNidl1.wav"
+halflife/monsters/gargantua/idle2			"sounds/halflife/monsters/GRGNidl2.wav"
+halflife/monsters/gargantua/pain1			"sounds/halflife/monsters/GRGNpai1.wav"
+halflife/monsters/gargantua/pain2			"sounds/halflife/monsters/GRGNpai2.wav"
+halflife/monsters/gargantua/step1			"sounds/halflife/monsters/GRGNstp1.wav"
+halflife/monsters/gargantua/step2			"sounds/halflife/monsters/GRGNstp2.wav"
+
+//----------
+//	Gonarch [Note: Only "step" is currently used (by Gargantua Adult)]
+//----------
+halflife/monsters/gonarch/attack		"sounds/halflife/monsters/HLN_att.wav"
+halflife/monsters/gonarch/childdie		"sounds/halflife/monsters/HLN_cdie.wav"
+halflife/monsters/gonarch/death		"sounds/halflife/monsters/HLN_die.wav"
+halflife/monsters/gonarch/idle		"sounds/halflife/monsters/HLN_idle.wav"
+halflife/monsters/gonarch/pain		"sounds/halflife/monsters/HLN_pain.wav"
+halflife/monsters/gonarch/sight		"sounds/halflife/monsters/HLN_sit.wav"
+halflife/monsters/gonarch/spawnchild		"sounds/halflife/monsters/HLN_spaw.wav"
+halflife/monsters/gonarch/step		"sounds/halflife/monsters/HLN_step.wav"
+
+//-----------
+//	Headcrab
+//-----------
+halflife/monsters/headcrab/death		"sounds/halflife/monsters/HLB_die.wav"
+halflife/monsters/headcrab/meleehit		"sounds/halflife/monsters/HLB_hit.wav"
+halflife/monsters/headcrab/idle		"sounds/halflife/monsters/HLB_idle.wav"
+halflife/monsters/headcrab/jump		"sounds/halflife/monsters/HLB_jmp.wav"
+halflife/monsters/headcrab/pain		"sounds/halflife/monsters/HLB_pain.wav"
+halflife/monsters/headcrab/sight		"sounds/halflife/monsters/HLB_sit.wav"
+
+//---------------
+//	Hornet Grunt
+//---------------
+halflife/monsters/hornetgrunt/flybuzz		"sounds/halflife/monsters/HLO_buz.wav"
+halflife/monsters/hornetgrunt/death		"sounds/halflife/monsters/HLO_die.wav"
+halflife/monsters/hornetgrunt/flyhit		"sounds/halflife/monsters/HLO_hit.wav"
+halflife/monsters/hornetgrunt/idle		"sounds/halflife/monsters/HLO_idle.wav"
+halflife/monsters/hornetgrunt/pain		"sounds/halflife/monsters/HLO_pain.wav"
+halflife/monsters/hornetgrunt/flysight		"sounds/halflife/monsters/HLO_shot.wav"
+halflife/monsters/hornetgrunt/sight		"sounds/halflife/monsters/HLO_sit.wav"
+
+//-----------
+//	Houndeye
+//-----------
+halflife/monsters/houndeye/attackcharge		"sounds/halflife/monsters/HLA_att.wav"
+halflife/monsters/houndeye/attackblast		"sounds/halflife/monsters/HLA_blst.wav"
+halflife/monsters/houndeye/death		"sounds/halflife/monsters/HLA_die.wav"
+halflife/monsters/houndeye/pain			"sounds/halflife/monsters/HLA_pain.wav"
+halflife/monsters/houndeye/sight		"sounds/halflife/monsters/HLA_sit.wav"
+$random halflife/monsters/houndeye/idle
+{
+	halflife/monsters/houndeye/idle1
+	halflife/monsters/houndeye/idle2
+	halflife/monsters/houndeye/idle3
+	halflife/monsters/houndeye/idlefull
+}
+
+halflife/monsters/houndeye/idle1		"sounds/halflife/monsters/HLA_idl1.wav"
+halflife/monsters/houndeye/idle2		"sounds/halflife/monsters/HLA_idl2.wav"
+halflife/monsters/houndeye/idle3		"sounds/halflife/monsters/HLA_idl3.wav"
+halflife/monsters/houndeye/idlefull		"sounds/halflife/monsters/HLA_idle.wav"
+
+//--------------
+//	Human Grunt
+//--------------
+halflife/monsters/humangrunt/death		"sounds/halflife/monsters/HLP_die.wav"
+halflife/monsters/humangrunt/pain		"sounds/halflife/monsters/HLP_pain.wav"
+halflife/monsters/humangrunt/sight		"sounds/halflife/monsters/HLP_sit.wav"
+$random halflife/monsters/humangrunt/idle
+{
+	halflife/monsters/humangrunt/idle1
+	halflife/monsters/humangrunt/idle2
+}
+
+halflife/monsters/humangrunt/idle1		"sounds/halflife/monsters/HLP_idl1.wav"
+halflife/monsters/humangrunt/idle2		"sounds/halflife/monsters/HLP_idl2.wav"
+
+//------------
+//	Scientists
+//------------
+
+$random scientist/randomphrase	{scientist/greeting1 scientist/greeting2 scientist/greeting3 scientist/greeting4 scientist/greeting5 scientist/greeting6}
+
+scientist/greeting1 sounds/scientist/scgreet1.wav
+scientist/greeting2 sounds/scientist/scgreet2.wav
+scientist/greeting3 sounds/scientist/scgreet3.wav
+scientist/greeting4 sounds/scientist/scgreet4.wav
+scientist/greeting5 sounds/scientist/scgreet5.wav
+scientist/greeting6 sounds/scientist/scgreet6.wav
+
+$random scientist/panic
+{
+	scientist/panic1
+	scientist/panic2
+	scientist/panic3
+	scientist/panic4
+	scientist/panic5
+	scientist/panic6
+	scientist/panic7
+	scientist/panic8
+	scientist/panic9
+	scientist/panic10
+	scientist/panic11
+	scientist/panic12
+	scientist/panic13
+	scientist/panic14
+	scientist/panic15
+	scientist/panic16
+}
+
+scientist/panic1 sounds/scientist/scpanic1.wav
+scientist/panic2 sounds/scientist/scpanic2.wav
+scientist/panic3 sounds/scientist/scpanic3.wav
+scientist/panic4 sounds/scientist/scpanic4.wav
+scientist/panic5 sounds/scientist/scpanic5.wav
+scientist/panic6 sounds/scientist/scpanic6.wav
+scientist/panic7 sounds/scientist/scpanic7.wav
+scientist/panic8 sounds/scientist/scpanic8.wav
+scientist/panic9 sounds/scientist/scpanic9.wav
+scientist/panic10 sounds/scientist/scpani10.wav
+scientist/panic11 sounds/scientist/scpani11.wav
+scientist/panic12 sounds/scientist/scpani12.wav
+scientist/panic13 sounds/scientist/scpani13.wav
+scientist/panic14 sounds/scientist/scpani14.wav
+scientist/panic15 sounds/scientist/scpani15.wav
+scientist/panic16 sounds/scientist/scpani16.wav
+
+$random halflife/monsters/scientist/death
+{
+	halflife/monsters/scientist/death1
+	halflife/monsters/scientist/death2
+	halflife/monsters/scientist/death3
+	halflife/monsters/scientist/death4
+}
+
+$random halflife/monsters/scientist/idle
+{
+	halflife/monsters/scientist/idle1
+	halflife/monsters/scientist/idle2
+	halflife/monsters/scientist/idle3
+	halflife/monsters/scientist/idle4
+	halflife/monsters/scientist/idle5
+	halflife/monsters/scientist/idle6
+	halflife/monsters/scientist/idle7
+	halflife/monsters/scientist/idle8
+	halflife/monsters/scientist/idle9
+}
+
+$random halflife/monsters/scientist/pain
+{
+	halflife/monsters/scientist/pain1
+	halflife/monsters/scientist/pain2
+}
+
+$random halflife/monsters/scientist/sight
+{
+	halflife/monsters/scientist/sight1
+	halflife/monsters/scientist/sight2
+	halflife/monsters/scientist/sight3
+	halflife/monsters/scientist/sight4
+	halflife/monsters/scientist/sight5
+	halflife/monsters/scientist/sight6
+	halflife/monsters/scientist/sight7
+	halflife/monsters/scientist/sight8
+	halflife/monsters/scientist/sight9
+}
+
+halflife/monsters/scientist/death1		"sounds/halflife/monsters/HLR_die1.wav"
+halflife/monsters/scientist/death2		"sounds/halflife/monsters/HLR_die2.wav"
+halflife/monsters/scientist/death3		"sounds/halflife/monsters/HLR_die3.wav"
+halflife/monsters/scientist/death4		"sounds/halflife/monsters/HLR_die4.wav"
+halflife/monsters/scientist/idle1		"sounds/halflife/monsters/HLR_idl1.wav"
+halflife/monsters/scientist/idle2		"sounds/halflife/monsters/HLR_idl2.wav"
+halflife/monsters/scientist/idle3		"sounds/halflife/monsters/HLR_idl3.wav"
+halflife/monsters/scientist/idle4		"sounds/halflife/monsters/HLR_idl4.wav"
+halflife/monsters/scientist/idle5		"sounds/halflife/monsters/HLR_idl5.wav"
+halflife/monsters/scientist/idle6		"sounds/halflife/monsters/HLR_idl6.wav"
+halflife/monsters/scientist/idle7		"sounds/halflife/monsters/HLR_idl7.wav"
+halflife/monsters/scientist/idle8		"sounds/halflife/monsters/HLR_idl8.wav"
+halflife/monsters/scientist/idle9		"sounds/halflife/monsters/HLR_idl9.wav"
+halflife/monsters/scientist/pain1		"sounds/halflife/monsters/HLR_pai1.wav"
+halflife/monsters/scientist/pain2		"sounds/halflife/monsters/HLR_pai2.wav"
+halflife/monsters/scientist/sight1		"sounds/halflife/monsters/HLR_sit1.wav"
+halflife/monsters/scientist/sight2		"sounds/halflife/monsters/HLR_sit2.wav"
+halflife/monsters/scientist/sight3		"sounds/halflife/monsters/HLR_sit3.wav"
+halflife/monsters/scientist/sight4		"sounds/halflife/monsters/HLR_sit4.wav"
+halflife/monsters/scientist/sight5		"sounds/halflife/monsters/HLR_sit5.wav"
+halflife/monsters/scientist/sight6		"sounds/halflife/monsters/HLR_sit6.wav"
+halflife/monsters/scientist/sight7		"sounds/halflife/monsters/HLR_sit7.wav"
+halflife/monsters/scientist/sight8		"sounds/halflife/monsters/HLR_sit8.wav"
+halflife/monsters/scientist/sight9		"sounds/halflife/monsters/HLR_sit9.wav"
+
+//-------------
+//	Vortigaunt
+//-------------
+halflife/monsters/slave/death		"sounds/halflife/monsters/HLF_die.wav"
+halflife/monsters/slave/pain		"sounds/halflife/monsters/HLF_pain.wav"
+halflife/monsters/slave/sight		"sounds/halflife/monsters/HLF_sit.wav"
+$random halflife/monsters/slave/idle
+{
+	halflife/monsters/slave/idle1	
+	halflife/monsters/slave/idle2	
+}
+
+halflife/monsters/slave/idle1		"sounds/halflife/monsters/HLF_idl1.wav"
+halflife/monsters/slave/idle2		"sounds/halflife/monsters/HLF_idl2.wav"
+
+//---------
+//	Zombie
+//---------
+halflife/monsters/zombie/attack		"sounds/halflife/monsters/HLE_att.wav"
+halflife/monsters/zombie/hit		"sounds/halflife/monsters/HLE_hit.wav"
+halflife/monsters/zombie/attswing	"sounds/halflife/monsters/HLE_miss.wav"
+halflife/monsters/zombie/pain		"sounds/halflife/monsters/HLE_pain.wav"
+halflife/monsters/zombie/sight		"sounds/halflife/monsters/HLE_sit.wav"
+$random halflife/monsters/zombie/idle
+{
+	halflife/monsters/zombie/idle1
+	halflife/monsters/zombie/idle2
+}
+
+$random halflife/monsters/zombie/moan
+{
+	halflife/monsters/zombie/moan1
+	halflife/monsters/zombie/moan2
+	halflife/monsters/zombie/moan3
+	halflife/monsters/zombie/moan4
+}
+
+halflife/monsters/zombie/idle1		"sounds/halflife/monsters/HLE_idl1.wav"
+halflife/monsters/zombie/idle2		"sounds/halflife/monsters/HLE_idl2.wav"
+halflife/monsters/zombie/moan1		"sounds/halflife/monsters/HLE_moa1.wav"
+halflife/monsters/zombie/moan2		"sounds/halflife/monsters/HLE_moa2.wav"
+halflife/monsters/zombie/moan3		"sounds/halflife/monsters/HLE_moa3.wav"
+halflife/monsters/zombie/moan4		"sounds/halflife/monsters/HLE_moa4.wav"

@@ -1,0 +1,162 @@
+ACTOR Monitor 30228
+{
+	Radius 15
+	Height 20
+	Mass 450
+	Scale 0.25
+	+SOLID
+	+PUSHABLE
+	States
+	{
+	Spawn:
+		POSS A 3
+		Loop
+	}
+}
+
+ACTOR Monitor1 : Monitor 30345
+{
+	Radius 15
+	Height 20
+}
+
+ACTOR Monitor2 : Monitor 30346
+{
+	Radius 15
+	Height 20
+}
+
+ACTOR Monitor3 : Monitor 30347
+{
+	Radius 15
+	Height 20
+}
+
+ACTOR keyboard1 30290
+{
+	Radius 16
+	Height 4
+	+solid
+	+shootable
+	+noblood
+	+FLOORCLIP
+	States
+	{
+	Spawn:
+		POSS A 3
+		Loop
+	}
+}
+
+ACTOR keyboard3 : keyboard1 30291
+{
+	Radius 16
+	Height 4
+}
+
+ACTOR flatpanel1 : keyboard1 30292
+{
+	Radius 12
+	Height 20
+}
+
+ACTOR flatpanel2 : keyboard1 30293
+{
+	Radius 12
+	Height 20
+}
+
+ACTOR flatpanel3 : keyboard1 30294
+{
+	Radius 8
+	Height 16
+}
+
+ACTOR flatpanel4 : keyboard1 30295
+{
+	Radius 8
+	Height 16
+}
+
+ACTOR flatpanel5 : keyboard1 30296
+{
+	Radius 2
+	Height 32
+	+nogravity
+}
+
+ACTOR flatpanel6 : keyboard1 30297
+{
+	Radius 2
+	Height 32
+	+nogravity
+}
+
+ACTOR flatpanel7 : keyboard1 30298
+{
+	Radius 2
+	Height 32
+	+nogravity
+	States
+	{
+	Spawn:
+		POSS ABCD 105
+		Loop
+	}
+}
+
+ACTOR flatpanel8 : keyboard1 30299
+{
+	Radius 2
+	Height 32
+	+nogravity
+}
+
+ACTOR flatpanel9 : keyboard1 30300
+{
+	Radius 2
+	Height 32
+	+nogravity
+}
+
+ACTOR mouse3 : keyboard1 30301
+{
+	Radius 3
+	Height 4
+}
+
+ACTOR pc1 : keyboard1  30302
+{
+	Radius 12
+	Height 20
+}
+
+ACTOR modem : keyboard1 30303
+{
+	Radius 4
+	Height 6
+}
+
+ACTOR pc3 : keyboard1 30304
+{
+	Radius 12
+	Height 20
+}
+
+ACTOR server1 : keyboard1 30305
+{
+	Radius 20
+	Height 72
+}
+
+ACTOR server2 : keyboard1 30306
+{
+	Radius 20
+	Height 72
+}
+
+ACTOR server3 : keyboard1 30307
+{
+	Radius 20
+	Height 72
+}
