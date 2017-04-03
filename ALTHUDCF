@@ -1,0 +1,51 @@
+Pistol ""
+BFG9000 ""
+Chaingun ""
+Chainsaw ""
+Shotgun ""
+SuperShotgun ""
+RocketLauncher ""
+PlasmaRifle ""
+
+
+Pshotgun1 ""
+ARifle1 ""
+
+Health i_health
+
+
+Clip ""
+Shell ""
+RocketAmmo ""  //**DO NOT** change this one once the AR has its own grenade ammo
+Cell ""
+
+
+Crowbar i_cbar1
+Beretta i_pist1
+Python i_pist2
+Pshotgun i_sgun1
+ARifle i_arifl1
+RPGLauncher i_rlau1
+XBow i_xbow1
+GluonGun i_gluon1
+HornetGun i_hhand1
+
+Bclip i_bul1
+PythonAmmo i_bul2
+PShell i_shel1
+ARClip i_bul3
+M16Gren i_gren2
+RPGAmmo i_rock2
+XBow i_bul1			//Change when proper icon is inserted into file
+GluonGun i_bul1		//Change when proper icon is inserted into file
+HornetGun i_bul1	//Change when proper icon is inserted into file
+
+BlueCard BKEYB0
+RedCard RKEYB0
+YellowCard YKEYB0
+BlueSkull BSKUB0
+RedSkull RSKUB0
+YellowSkull YSKUB0
+
+Key1 HLKEYBI
+Key2 HLKEYRI

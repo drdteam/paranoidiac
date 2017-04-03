@@ -1,0 +1,80 @@
+actor HLBossBat 7800
+{
+	Monster
+	spawnid 173
+	Health 1600
+	Speed 24
+	Height 128
+	Radius 104
+	Mass 600
+	PainChance 30
+	+FLOAT
+	+NOGRAVITY
+	BloodColor "DE FE 72"
+	SeeSound "bossbat/sight"
+	PainSound "bossbat/pain"
+	DeathSound "bossbat/death"
+	ActiveSound "bossbat/active"
+	AttackSound "bossbat/attack"
+	Obituary "%o was iced by a Boss Bat."
+	States
+	{
+	Spawn:
+		HLSX ABCDEFG 2 A_Look
+		Loop
+	See:
+		HLSW ABCDEF 4 A_Chase
+		Loop
+	Missile:
+		HLSM ABC 4 A_FaceTarget
+		HLSM D 0 A_CustomMissile("IceBall",32,-24,0)
+		HLSM D 2 A_CustomMissile("IceBall",32,24,0)
+		HLSM D 4 A_CustomMissile("IceBall",8,0,0)
+		HLSM EF 4
+		Goto See
+	Pain:
+		HLSX B 8
+		Goto See
+	Death:
+		TNT1 A 0 A_Scream
+		HLSD A 2
+		Wait
+	Crash:
+		TNT1 A 0 A_PlaySound("halflife/weapons/bodydrop")
+		HLSD B 2 A_Fall
+		HLSD CDEFGHIJK 2
+		HLSD K -1
+		Stop
+	XDeath:
+		TNT1 A 0 A_PlaySound("other/gibdeath")
+		TNT1 A 0 A_Fall
+	  	NULL AAAAAAAAAAAAAA 0 A_SpawnItemEx("XenGibs",random(5,-5),random(5,-5),random(10,40),random(1,7),random(1,7),random(5,13),random(0,359))
+		Stop
+	}
+}
+
+ACTOR IceBall	//Based on Mancubus FireBalls
+{
+  Radius 6
+  Height 8
+  Speed 20
+  Damage 8
+  Projectile 
+  +RANDOMIZE
+  RenderStyle Add
+  Alpha 1
+  translation "0:255=%[0.0,0.0,0.0]:[0.25,1.0,1.5]"
+  SeeSound "fatso/attack"
+  DeathSound "fatso/shotx"
+  States
+  {
+  Spawn:
+    MANF AB 4 Bright
+    Loop
+  Death:
+    MISL B 8 Bright
+    MISL C 6 Bright
+    MISL D 4 Bright
+    Stop
+  }
+}

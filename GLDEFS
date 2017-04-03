@@ -1568,3 +1568,14 @@ Object HLTeleportFog
 
 Object HEVbattery
 {	Frame POSS { Light HevBattLight }	}
+
+skybox HLSKY6 fliptop//Xen Sky
+{ 
+   XEN01_N 
+   XEN01_E
+   XEN01_S
+   XEN01_W
+   XEN01_T
+   XEN01_B
+}
+

@@ -1,0 +1,180 @@
+//Radio Messages to Player
+
+//Map10: Message 1 (Col. Stinson; MAP10VX1)
+
+ACTOR MessageItem20 : CustomInventory
+{
+   Scale 0.25
+   inventory.maxamount 1
+   inventory.icon MAIL01
+   inventory.usesound "misc/chat"
+   +INVBAR
+   +undroppable
+   States
+   {
+     Spawn:
+     MAIL A 3
+     LOOP
+     Use:
+     TNT1 A 1 ACS_Execute (520, 0, 0, 0, 0)
+     Stop
+   }
+}
+
+//Map11: Message 1 (Col. Stinson; MAP11VX1)
+
+ACTOR MessageItem21 : MessageItem20
+{
+   inventory.icon MAIL01
+   States
+   {
+     Use:
+     TNT1 A 1 ACS_Execute (521, 0, 0, 0, 0)
+     Stop
+   }
+}
+
+//Map11: Message 2 (Otis) is not done through inventory, as it is via "live" interaction with NPC
+
+//Map12: Message 1 (Col. Stinson; MAP12VX1)
+
+ACTOR MessageItem22 : MessageItem20
+{
+   inventory.icon MAIL01
+   States
+   {
+     Use:
+     TNT1 A 1 ACS_Execute (522, 0, 0, 0, 0)
+     Stop
+   }
+}
+
+//Map12: Message 2 (UnderNet; MAP12VX2)
+
+ACTOR MessageItem23 : MessageItem20
+{
+   inventory.icon MAIL02
+   States
+   {
+     Use:
+     TNT1 A 1 ACS_Execute (523, 0, 0, 0, 0)
+     Stop
+   }
+}
+
+//Map13: Message 1 (Col. Stinson; MAP13VX1)
+
+ACTOR MessageItem24 : MessageItem20
+{
+   inventory.icon MAIL01
+   States
+   {
+     Use:
+     TNT1 A 1 ACS_Execute (524, 0, 0, 0, 0)
+     Stop
+   }
+}
+
+//Map13: Message 2 (UnderNet; MAP13VX2)
+
+ACTOR MessageItem25 : MessageItem20
+{
+   inventory.icon MAIL02
+   States
+   {
+     Use:
+     TNT1 A 1 ACS_Execute (525, 0, 0, 0, 0)
+     Stop
+   }
+}
+
+//Map14: Message 1 (Col. Stinson; MAP14VX1)
+
+ACTOR MessageItem26 : MessageItem20
+{
+   inventory.icon MAIL01
+   States
+   {
+     Use:
+     TNT1 A 1 ACS_Execute (526, 0, 0, 0, 0)
+     Stop
+   }
+}
+
+//Map14: Message 2 (Col. Stinson; MAP14VX2)
+
+ACTOR MessageItem27 : MessageItem20
+{
+   inventory.icon MAIL02
+   States
+   {
+     Use:
+     TNT1 A 1 ACS_Execute (527, 0, 0, 0, 0)
+     Stop
+   }
+}
+
+//Map15: Message 1 (Col. Stinson; MAP15VX1)
+
+ACTOR MessageItem28 : MessageItem20
+{
+   inventory.icon MAIL01
+   States
+   {
+     Use:
+     TNT1 A 1 ACS_Execute (528, 0, 0, 0, 0)
+     Stop
+   }
+}
+
+//Map16: Message 1 (Col. Stinson; MAP16VX1)
+
+ACTOR MessageItem29 : MessageItem20
+{
+   inventory.icon MAIL01
+   States
+   {
+     Use:
+     TNT1 A 1 ACS_Execute (529, 0, 0, 0, 0)
+     Stop
+   }
+}
+
+//Map16: Message 2 (UnderNet; MAP16VX2)
+
+ACTOR MessageItem30 : MessageItem20
+{
+   inventory.icon MAIL02
+   States
+   {
+     Use:
+     TNT1 A 1 ACS_Execute (530, 0, 0, 0, 0)
+     Stop
+   }
+}
+
+//Map16: Message 3 (Col. Stinson; MAP16VX3)
+
+ACTOR MessageItem31 : MessageItem20
+{
+   inventory.icon MAIL03
+   States
+   {
+     Use:
+     TNT1 A 1 ACS_Execute (531, 0, 0, 0, 0)
+     Stop
+   }
+}
+
+//Map17: Message 1 (Col. Stinson; MAP17VX1)
+
+ACTOR MessageItem32 : MessageItem20
+{
+   inventory.icon MAIL01
+   States
+   {
+     Use:
+     TNT1 A 1 ACS_Execute (532, 0, 0, 0, 0)
+     Stop
+   }
+}

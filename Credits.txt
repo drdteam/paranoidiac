@@ -1,0 +1,46 @@
+CREDITS FOR RESOURCES USED IN PARANOIAC:
+
+Texture		Author			Source File
+
+XGRASS01	Esa "Espi" Repo		ed4_rfo1.wad
+XGRASS02	Esa "Espi" Repo		ed4_rfo1.wad
+XGRASS03	Esa "Espi" Repo		ed4_rfo1.wad
+XGRASS05	Esa "Espi" Repo		ed4_rfo1.wad
+XGRASS06	Esa "Espi" Repo		ed4_rfo1.wad
+XMETL08		ralasterphecy		http://pre09.deviantart.net/e3e4/th/pre/i/2011/347/a/4/144_1_rusty_panel_1_by_ralasterphecy-d4j06e2.jpg
+XMETL09		Max Boughen		http://www.mb3d.co.uk/mb3d/Metal_Corrugated_and_Painted_Ground_Seamless_and_Tileable_High_Res_Textures_files/Steel_Panel_H_CM_1.jpg
+XMETL10		jojo-ojoj		http://jojo-ojoj.deviantart.com/art/Metal-seamless-texture-35-446131506
+XMETL11		hhh316			http://colorlava.com/wp-content/uploads/2012/11/Seamless-metal-texture-520x520.jpg
+XMETL12		Limited-Vision-Stock	http://orig07.deviantart.net/342f/f/2012/052/7/3/wall_metal_plate_1_by_limited_vision_stock-d4qii38.jpg
+XMONI31A-F				Bakal_image1_cellularimaging.perkinelmer.com.jpg
+XMONI32A-D				1-s2.0-S0378432009000682-gr1_ars.els-cdn.com.jpg
+XMONI33A-I				F5.large_jcs.biologists.org.jpg
+XPEBBLE1				river_rock3_wenaus.org.jpg
+XROCK03		Christopher Hodgson	cliff5_Christopher Hodgson.jpg
+XROCK04					Tileable stone texture (14)_seamless-pixels.blogspot.com
+XROCK05		John SoLo Susek		rock_2_John SoLo Susek.jpg
+XROCK11		Esa "Espi" Repo		ed4_rfo1.wad
+XROCK12		Esa "Espi" Repo		ed4_rfo1.wad
+XWATER06	
+
+MODEL SKINS (ROCKS):
+mossy_rock_40watt.biz.jpg
+MossyRock_spiralgraphics.biz.jpg
+512x512_seamless_texture_08_brown granite_picstopin.com.jpg
+Orange_Rock_Texture_LucidStudios.jpg
+rock_2_John SoLo Susek.jpg
+
+MODEL SKINS (TECH):
+For tech pillars: id Software, QUAKE IV
+For monitors: Gustaf Kylberg, Uppsala University (www.cb.uu.se)
+For console:	http://www.comarkcorp.comimagesproducts_lpmv420.png
+		http://www.comarkcorp.com/products/marine_computers.html
+		http://www.atakel.com/haber/isic-displays-declare-partnership-with-atakel/EN/
+		http://com-computer.blogspot.com/2011/04/hackerish-high-tech-military-style.html
+
+MODELS:
+Tech pillars: id Software, QUAKE IV
+
+Design & code for the orbiting islands and moving platforms: Ethan "GooberMan" Watson
+
+Sounds for the StukaBat: From Dissolution of Eternity Mission pack for Quake, Developed by Rogue Entertainment. Thanks to Ozymandias81 for finding them

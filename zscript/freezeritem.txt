@@ -1,0 +1,39 @@
+class PowerParanoicFreezer : PowerProtection
+{
+	Default
+	{
+		DamageFactor "Ice", 0.2;
+		Inventory.Icon "";
+	}
+	override void DoEffect()
+	{
+		if (Owner && Owner.Player)
+		{
+			if (Owner.Player.hazardcount >= 20 * 35)
+			{
+				Owner.Player.hazardcount = 20 * 35;
+			}
+		}
+		Super.DoEffect();
+	}	
+}
+
+class ParanoicFreezerItem : PowerupGiver
+{
+	Default
+	{
+		inventory.pickupmessage "Welcome to the frozen wastes of Cania! Try not to freeze to death!";
+		inventory.maxamount 0;
+		powerup.type "PowerParanoicFreezer";
+		powerup.duration 0x7FFFFFFD;
+		+INVENTORY.AUTOACTIVATE;
+		+INVENTORY.ALWAYSPICKUP;
+	}
+	states
+	{
+	Spawn:
+		PVIS A 6;
+		PVIS b 6 bright;
+		loop;
+	}
+}

@@ -37,3 +37,16 @@
 #include "Decorate/Scientists.txt"
 
 #include "Decorate/Explosion.txt"	//Always keep this instruction at the bottom of the list
+
+// paranoic
+#include "Decorate/OfficeRocks.txt"
+#include "Decorate/WeaponAmmo.txt"
+#include "Decorate/BabyHeadCrab.txt"
+#include "Decorate/Gonarch.txt"
+#include "Decorate/Nihilanth.txt"
+#include "Decorate/StukaBat.txt"
+#include "Decorate/BossBat.txt"
+#include "Decorate/MixedBag.txt"
+#include "Decorate/Messagex.txt"
+#include "Decorate/SUVGoBoom.txt"
+#include "Decorate/OspreyGoBoom.txt"

@@ -1,0 +1,279 @@
+#library "MESSAGES"
+#include "zcommon.acs"
+
+//Hint messages that are run when player uses the inventory item "MessageItem**"
+
+//Map10: Message 1 (Col. Stinson)
+
+Script 520 (void)
+
+{
+	//give the item back as using it removes it
+	GiveInventory ("MessageItem20", 1);
+	ambientsound ("radiostatic", 127);
+	ActivatorSound ("MAP10VX1",127);
+	SetHUDSize (640, 480, 1);
+	SetFont ("STINSON");
+	HUDMessage (s:"A"; HUDMSG_PLAIN, 1, CR_UNTRANSLATED, 0.1, 30.1, 42.0);
+
+	SetFont ("smallfont");
+	HUDMessage (s:"\Dr. Bellmer, my name is Colonel Stinson, with Legion: Earth. We don't have much time, \nso listen carefully. The mission to extract you from Black Mesa was compromised, \nand your Controller has gone AWOL, and possibly rogue. Unfortunately, we cannot \nmobilize a rescue mission yet, so you're on your own for now. Our surveillance \nindicates your crash site has only one way in or out. Therefore, your exit strategy \nis to return to Black Mesa while we attempt another extraction. Meanwhile, \ngovernment and alien forces will continue to hunt you. There's a cavern nearby \nwhere you can seek cover until we can .....";
+	HUDMSG_TYPEON | HUDMSG_LOG, 2, CR_GOLD, 80.1, 30.1, 4.6, 0.062, 0.05);
+
+	//delay to stop quick repetition of the script
+	delay (42*35);
+	ambientsound ("radiostatic", 127);
+}
+
+//Map11: Message 1 (Col. Stinson)
+
+Script 521 (void)
+
+{
+	GiveInventory ("MessageItem21", 1);
+	ambientsound ("radiostatic", 127);
+	ActivatorSound ("MAP11VX1",127);
+	SetHUDSize (640, 480, 1);
+
+	SetFont ("STINSON");
+	HUDMessage (s:"A"; HUDMSG_PLAIN, 1, CR_UNTRANSLATED, 0.1, 30.1, 18.0);
+
+	SetFont ("smallfont");
+	HUDMessage (s:"\Dr. Bellmer, you're at the employee in-processing facility. You may recall you went through \nhere when you began your mission. The monorail will take you to back to Sector C. \nWe'll try to regroup once you get there, and work out an effective way to extract you.";
+	HUDMSG_TYPEON | HUDMSG_LOG, 2, CR_GOLD, 80.1, 30.1, 2.1, 0.062, 0.05);
+
+	delay (18*35);
+	ambientsound ("radiostatic", 127);
+}
+
+//Map12: Message 1 (Col. Stinson)
+
+Script 522 (void)
+
+{
+	GiveInventory ("MessageItem22", 1);
+	ambientsound ("radiostatic", 127);
+	ActivatorSound ("MAP12VX1",127);
+	SetHUDSize (640, 480, 1);
+
+	SetFont ("STINSON");
+	HUDMessage (s:"A"; HUDMSG_PLAIN, 1, CR_UNTRANSLATED, 0.1, 30.1, 32.0);
+
+	SetFont ("smallfont");
+	HUDMessage (s:"\We didn't anticipate the total lockdown of Sector C. We can't send transport to your \ncurrent location because the winds make flying exceedingly treacherous. Proceed \nthrough the canyon until you reach the dam. There are two ways out at that point, \nand we'll figure out your best option. Meanwhile, you're probably wondering who we are. \nI'm sending you an UnderNet link that provides some background. As to why we're \ninterested in you, that will be revealed in due time.";
+	HUDMSG_TYPEON | HUDMSG_LOG, 2, CR_GOLD, 80.1, 30.1, 2.65, 0.062, 0.05);
+
+	delay (32*35);
+	ambientsound ("radiostatic", 127);
+}
+
+//Map12: Message 2 (UnderNet)
+
+Script 523 (void)
+
+{
+	GiveInventory ("MessageItem23", 1);
+	ambientsound ("radiostatic", 127);
+	ActivatorSound ("MAP12VX2",127);
+	SetHUDSize (640, 480, 1);
+
+	SetFont ("UNDERNET");
+	HUDMessage (s:"A"; HUDMSG_PLAIN, 1, CR_UNTRANSLATED, 0.1, 30.1, 39.0);
+
+	SetFont ("smallfont");
+	HUDMessage (s:"\Legion: Earth is an organization that was created to protect Earth from threats both \nextra-terrestrial and home-grown. In recent years, that threat has increased as a \nresult of Anomalous Materials research at the Black Mesa facility in the United States \nand by the European Space Consortium. The discovery of PortalTech, otherwise known as \nteleportation, has allowed both these agencies to collaborate with an alien species \nin a Borderworld known as Xen. We have evidence that human dealings with this species \nare paving the way for an invasion of Earth. Our mandate is to stop it.";
+	HUDMSG_TYPEON | HUDMSG_LOG, 2, CR_GOLD, 80.1, 30.1, 3.25, 0.062, 0.05);
+
+	delay (39*35);
+	ambientsound ("radiostatic", 127);
+}
+
+//Map13: Message 1 (Col. Stinson)
+
+Script 524 (void)
+
+{
+	GiveInventory ("MessageItem24", 1);
+	ambientsound ("radiostatic", 127);
+	ActivatorSound ("MAP13VX1",127);
+	SetHUDSize (640, 480, 1);
+
+	SetFont ("STINSON");
+	HUDMessage (s:"A"; HUDMSG_PLAIN, 1, CR_UNTRANSLATED, 0.1, 30.1, 29.0);
+
+	SetFont ("smallfont");
+	HUDMessage (s:"\Too bad you couldn't cross the dam and get out from there. It might have been easier \nto extract you from the East. Your best chance now is to take the sewers to the \nWeapons Test Lab. There's an open landing area there, and we can set a transport \nhelicopter down. Government forces control strategic points, while the Xen aliens \nroam freely elsewhere. Watch your back. I'm sending you another UnderNet link with \nmore information on us.";
+	HUDMSG_TYPEON | HUDMSG_LOG, 2, CR_GOLD, 80.1, 30.1, 2.01, 0.062, 0.05);
+
+	delay (29*35);
+	ambientsound ("radiostatic", 127);
+}
+
+//Map13: Message 2 (UnderNet)
+
+Script 525 (void)
+
+{
+	GiveInventory ("MessageItem25", 1);
+	ambientsound ("radiostatic", 127);
+	ActivatorSound ("MAP13VX2",127);
+	SetHUDSize (640, 480, 1);
+
+	SetFont ("UNDERNET");
+	HUDMessage (s:"A"; HUDMSG_PLAIN, 1, CR_UNTRANSLATED, 0.1, 30.1, 38.0);
+
+	SetFont ("smallfont");
+	HUDMessage (s:"\Legion: Earth was first aware of Xen and human collaboration about a year ago. Then, \nwe discovered that the European Space Consortium engineered an infiltration into \nBlack Mesa with the objective of sabotaging the research there. The operative, \none Dr. Rolf Bellmer, succeeded in corrupting vital data at Black Mesa. This gave \nthe Consortium an edge in the race to harness alien technology. But Dr. Bellmer was \na loose end, and the Consortium attempted to terminate him with extreme prejudice. \This attempt failed, but Dr. Bellmer continues to remain embattled.";
+	HUDMSG_TYPEON | HUDMSG_LOG, 2, CR_GOLD, 80.1, 30.1, 3.21, 0.062, 0.05);
+
+	delay (38*35);
+	ambientsound ("radiostatic", 127);
+}
+
+//Map14: Message 1 (Col. Stinson)
+
+Script 526 (void)
+
+{
+	GiveInventory ("MessageItem26", 1);
+	ambientsound ("radiostatic", 127);
+	ActivatorSound ("MAP14VX1",127);
+	SetHUDSize (640, 480, 1);
+
+	SetFont ("STINSON");
+	HUDMessage (s:"A"; HUDMSG_PLAIN, 1, CR_UNTRANSLATED, 0.1, 30.1, 13.0);
+
+	SetFont ("smallfont");
+	HUDMessage (s:"\Dr. Bellmer, follow these instructions carefully. When you exit the sewers, proceed \nto the East Gate. We'll have helicopter transport waiting there to get you out.";
+	HUDMSG_TYPEON | HUDMSG_LOG, 2, CR_GOLD, 80.1, 30.1, 2.94, 0.062, 0.05);
+
+	delay (13*35);
+	ambientsound ("radiostatic", 127);
+}
+
+//Map14: Message 2 (Col. Stinson)
+
+Script 527 (void)
+
+{
+	GiveInventory ("MessageItem27", 1);
+	ambientsound ("radiostatic", 127);
+	ActivatorSound ("MAP14VX2",127);
+	SetHUDSize (640, 480, 1);
+
+	SetFont ("STINSON");
+	HUDMessage (s:"A"; HUDMSG_PLAIN, 1, CR_UNTRANSLATED, 0.1, 30.1, 27.0);
+
+	SetFont ("smallfont");
+	HUDMessage (s:"\Damn! It seems your Controller is one step ahead of us. He has a lot to answer for; \nthose were good people we lost on that transport............................................ \nOkay, Plan B. You'll need to proceed through the Lambda Complex. The security key \nwill probably be in the Administrator's office. And make sure you collect the \nexperimental energy weapon they're developing before you head for Lambda.";
+	HUDMSG_TYPEON | HUDMSG_LOG, 2, CR_GOLD, 80.1, 30.1, 1.3, 0.062, 0.05);
+
+	delay (27*35);
+	ambientsound ("radiostatic", 127);
+}
+
+//Map15: Message 1 (Col. Stinson)
+
+Script 528 (void)
+
+{
+	GiveInventory ("MessageItem28", 1);
+	ambientsound ("radiostatic", 127);
+	ActivatorSound ("MAP15VX1",127);
+	SetHUDSize (640, 480, 1);
+
+	SetFont ("STINSON");
+	HUDMessage (s:"A"; HUDMSG_PLAIN, 1, CR_UNTRANSLATED, 0.1, 30.1, 18.0);
+
+	SetFont ("smallfont");
+	HUDMessage (s:"\The Lambda Complex is a series of labs. Be mindful of the freezer section and \ndon't stay in there for too long. Also, there's a rumor that your Controller \nmay be trying to recruit other scientists to his cause. Do not engage him. \nI repeat, do not engage your Controller.";
+	HUDMSG_TYPEON | HUDMSG_LOG, 2, CR_GOLD, 80.1, 30.1, 1.2, 0.062, 0.05);
+
+	delay (18*35);
+	ambientsound ("radiostatic", 127);
+}
+
+//Map16: Message 1 (Col. Stinson)
+
+Script 529 (void)
+
+{
+	GiveInventory ("MessageItem29", 1);
+	ambientsound ("radiostatic", 127);
+	ActivatorSound ("MAP16VX1",127);
+	SetHUDSize (640, 480, 1);
+
+	SetFont ("STINSON");
+	HUDMessage (s:"A"; HUDMSG_PLAIN, 1, CR_UNTRANSLATED, 0.1, 30.1, 21.0);
+
+	SetFont ("smallfont");
+	HUDMessage (s:"\You're approaching the core of the Lambda Complex. This is where they conduct \nexperiments on live specimens. We'll try to set a transport down on the helipad \nleading to the East entrance. But you'll need a security key to make it through \nthe checkpoint. I'm sending you a final UnderNet link that will make things clearer.";
+	HUDMSG_TYPEON | HUDMSG_LOG, 2, CR_GOLD, 80.1, 30.1, 1.0, 0.062, 0.05);
+
+	delay (21*35);
+	ambientsound ("radiostatic", 127);
+}
+
+//Map16: Message 2 (UnderNet)
+
+Script 530 (void)
+
+{
+	GiveInventory ("MessageItem30", 1);
+	ambientsound ("radiostatic", 127);
+	ActivatorSound ("MAP16VX2",127);
+	SetHUDSize (640, 480, 1);
+
+	SetFont ("UNDERNET");
+	HUDMessage (s:"A"; HUDMSG_PLAIN, 1, CR_UNTRANSLATED, 0.1, 30.1, 29.0);
+
+	SetFont ("smallfont");
+	HUDMessage (s:"\Dr. Rolf Bellmer has proven to be extremely resourceful, both as an undercover operative, \nand as a combat technician. Moreover, he possesses a rare combination of advanced scientific \nknowledge and survivor's instinct, which makes him an ideal candidate for recruitment to \nLegion: Earth. In addition, his time at Black Mesa will give us valuable insights into \noperations at that facility, and will allow us to hobble their efforts.";
+	HUDMSG_TYPEON | HUDMSG_LOG, 2, CR_GOLD, 80.1, 30.1, 2.3, 0.062, 0.05);
+
+	delay (29*35);
+	ambientsound ("radiostatic", 127);
+}
+
+//Map16: Message 3 (Col. Stinson)
+
+Script 531 (void)
+
+{
+	GiveInventory ("MessageItem31", 1);
+	ambientsound ("radiostatic", 127);
+	ActivatorSound ("MAP16VX3",127);
+	SetHUDSize (640, 480, 1);
+
+	SetFont ("STINSON");
+	HUDMessage (s:"A"; HUDMSG_PLAIN, 1, CR_UNTRANSLATED, 0.1, 30.1, 24.0);
+
+	SetFont ("smallfont");
+	HUDMessage (s:"\We think the security key is inside the central chamber where the Gargantua is in stasis. \nYou'll need to disable the laser barrier and drop into the chamber to retrieve the key. \nWith the malfunctioning door, the only way into the laser control room are the ducts. \nFind the Boiler Room next to the Fuel Storage area, and use the ventilation duct.";
+	HUDMSG_TYPEON | HUDMSG_LOG, 2, CR_GOLD, 80.1, 30.1, 2.6, 0.062, 0.05);
+
+	delay (24*35);
+	ambientsound ("radiostatic", 127);
+}
+
+//Map17: Message 1 (Col. Stinson)
+
+Script 532 (void)
+
+{
+	GiveInventory ("MessageItem32", 1);
+	ambientsound ("radiostatic", 127);
+	ActivatorSound ("MAP17VX1",127);
+	SetHUDSize (640, 480, 1);
+
+	SetFont ("STINSON");
+	HUDMessage (s:"A"; HUDMSG_PLAIN, 1, CR_UNTRANSLATED, 0.1, 30.1, 16.0);
+
+	SetFont ("smallfont");
+	HUDMessage (s:"\They've cut power to most sectors, and drained the fuel from the emergency generators. \nYou may find some fuel in the supply area in the North-East quadrant. But be careful: \nthe place is swarming with government and alien forces.";
+	HUDMSG_TYPEON | HUDMSG_LOG, 2, CR_GOLD, 80.1, 30.1, 1.7, 0.062, 0.05);
+
+	delay (16*35);
+	ambientsound ("radiostatic", 127);
+}
+

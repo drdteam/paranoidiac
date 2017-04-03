@@ -1,0 +1,102 @@
+[NOTE: These instructions also pertain to Paranoid, and not all may be applicable to Paranoiac.]
+
+A. WEAPONS
+
+1. Some weapons have a secondary-fire mode. Please customize your configuration to allow for a secondary fire (e.g., right-mouse button).
+2. The secondary-fire modes are as follows:
+
+* Beretta: twice the normal rate of fire
+* Shotgun: similar to double-barrel fire
+* M16 Assault Rifle: launches grenade
+* Cross-bow: Zoom
+* Gluon Gun: Reload
+* Hornet Gun: Rapid fire without homing projectiles
+
+3. All weapons except the crowbar and the rocket-propelled grenade launcher must periodically be reloaded. Be aware of this when planning an attack strategy. Please customize your configuration to allow for reloading.
+4. Both the Beretta and the Magnum "Python" 0.357 Caliber are in weapon slot 2. You can toggle between the two weapons by using the '2' key.
+5. The M16 Assault Rifle and Hornet Gun are in weapon slot 4. You can toggle between the two weapons by using the '4' key.
+
+B. FRIENDLY & NON-PLAYER CHARACTERS
+
+1. There are several types of benign and friendly characters in the game.
+2. The scientists are not threatening, and allow for some basic level of interaction. "Use" the scientists that are standing still to get some greeting messages.
+3. The security guards ("Barneys") are friendly, and will attack enemies on sight. "Use" the Barneys that are standing still to get some messages.
+4. You can take damage from Barneys if you get caught in a cross-fire between them and enemies.
+5. Some Barneys will follow you and attack enemies on sight. They are not too smart, so you may need to wait for them or hold doors open for them.
+
+C. GAMEPLAY
+
+1. The game is plot-driven. In other words, there is an overall mission, and several objectives that you must achieve in order to accomplish your mission.
+2. The maps are arranged in a hub, and you will return to maps that you previously visited.
+3. The maps are meant to be played in a specific order. If you use cheat codes (e.g., IDCLEV) to warp to maps, you will not be able to achieve some objectives, and you will probably not be able to complete the mission.
+4. Some maps may be played as stand-alone maps, and are playable with a "pistol start" (which is actually a no-weapon start in this game). These maps are Map04, Map05, Map06, Map07, and Maps10-23. Of course, if you play them as stand-alone maps, it is understood that you do not intend to complete the missions.
+5. Health is available either through field medical kits (which you pick up), or via wall-mounted medical stations (which you press to use), or via a portable medikit as an inventory item [Paranoiac, only].
+6. Armor is available first through an HEV suit, and subsequently either through HEV Batteries (which you pick up), or via wall-mounted HEV charging stations (which you press to use). [In Paranoiac, you start with the HEV suit, so you don't need to find one.]
+7. To make progress you will need to jump in some instances and crouch in other instances.
+8. To climb ladders just walk up to them and move forward.
+9. If you fall (or jump) too far down, you will take damage.
+10. When you are very low on health you will slow down and not be able to run.
+11. Throughout the game [Paranoid, only] you will find walkie-talkie radios. When you pick them up a message from the Controller (the person you work for) is put into your inventory. To hear the message, press the inventory activation key on your keyboard (the default is ENTER, but you may customize your configurations to use any other unused key). In Paranoiac, you'll automatically receive messages, which get put into your inventory. To scroll through your inventory use the appropriate key (the defaults are [ and ]).
+12. When you transition from one map to the next, your messages from the first map are removed from your inventory. [This is because, if you've reached the next map, you have no more need for the messages for the previous map.] You will acquire more messages in the next map.
+13. Some vent grates are breakable. Shoot them or hit them with your crowbar to break them.
+14. In the Xen levels there are small, clear pools outdoors. These are healing pools, and give up to 100 health points. They can be used repeatedly until the 100 health points are used up.
+
+D. HEADS UP DISPLAY
+
+Paranoid supports all HUD modes available in GZdoom.  
+
+1. There is a new status bar and a new full screen HUD.  Both of these have had the Paranoid weapons and ammo fully integrated in to them and also feature a Half-Life like on-screen damage flash.
+2. The Alt-HUD has been tailored to support Paranoid. However, due to this feature being less customizable than the other two modes it has certain limitations.  
+
+a) It does not feature the damage flash.
+
+b) The ammo held in the clip for the current weapon is displayed in a small print out in the bottom right of the screen near the other ammo and weapon information.  It is not fully integrated into the display as it is in the other modes.
+
+E. CO-OP GAMEPLAY
+
+1. Co-op starts are present, and some of the maps are playable in co-op. However, given the current game configurations, the mission cannot be completed from start to finish.
+2. In particular, the orbiting islands in MAP 19-21 and the moving platforms in MAP 23 are not properly set up for multiple riders.
+3. Similarly, the healing pools of MAP 19-21 are not set up for multiple users.
+4. Likewise, the 3 keys in Paranoiac are not set up to be used by multiple players.
+5. All of these issues will be resolved after the release of the single-player game, and a fully functional co-op game will be released.
+
+F. MINOR GLITCHES
+
+1. Several maps have minor visual glitches when the game is played in GZDooM v2.4.0 with hardware acceleration of graphics. These typically arise when there is a sloped sector under a 3D floor. The texture of the sloped sector and/or its sidedefs get "blacked out". Does not affect gameplay. These visual glitches generally diappear in GZDooM 2.5Pre-232-GF48AF60 (2017-03-31), although the sloped under-liquid areas of Maps 21 and 23 still show this glitch. If this bothers you, when you come to these areas temporarily switch to Legacy or Software sector lighting mode in your Display Options Configuration for OpenGL Renderer. Perhaps future versions of GZDooM will address this problem completely.
+2. The game was tested on GZDooM v2.4.0. Therefore, using other versions of GZDooM may give rise to other issues that are not present when v2.4.0 is used.
+3. The orbiting islands in MAP 19-21 and the moving platforms in MAP 23 are supposed to carry the player as a stationary actor (unless the player chooses to move, of course). It's not clear why, but the player does not remain perfectly stationary on the islands or platforms, especially when first jumping on. [It might have something to do with GZDooM having to constantly re-calculate the position of the moving objects and having to pass those coordinates to the player.] On the islands this is not a significant issue, as the islands are sufficiently large to allow the player to remain on them with minor adjustments. The moving platforms in MAP 23 are not too wide, and the player will need to make minor adjustments to his/her position to avoid falling off.
+
+[****SPOILER ALERT!!!!****]
+
+G. ENEMIES
+
+1. Headcrabs: Weakest enemy; easy to kill; most problematic when they swarm; are able to drop from considerable heights; can jump quite high.
+   TIP: Do not bother using a crowbar, as they are difficult to hit. Instead, use a Beretta or M16 Assault Rifle.
+2. HoundEye: Moderate attack strength; relatively weak; short-range attack only.
+   TIP: Single double-barrel blast with a shotgun at close range takes them out.
+3. Zombie: Moderate attack strength; relatively weak; melee attack only.
+   TIP: Use a crowbar on them to save ammo. Alternatively, single double-barrel blast with a shotgun at close range takes them out.
+4. Vortigaunt: Moderate attack strength; relatively weak; long-distance and melee attacks.
+   TIP: Use M16 Assault rifle or M16 grenade. Single double-barrel blast with a shotgun at close range takes them out.
+5. Bull Squid: Moderate attack strength; relatively weak; long-distance and melee attacks.
+   TIP: Use M16 Assault rifle or M16 grenade. Single double-barrel blast with a shotgun at close range takes them out.
+6. Controller: Moderate attack strength; relatively weak; long-distance multiple attack types, including player-tracking fireball.
+   TIP: Use M16 Assault rifle or Python. Single double-barrel blast with a shotgun at close range takes them out.
+7. Hornet Grunt: Moderate attack strength; relatively strong; long-distance player-tracking and melee attacks.
+   TIP: Single RPG rocket takes them out.
+8. Human Soldiers: Moderate attack strength; relatively weak; hit-scan, shotgun, grenade attacks
+   TIP: At long range use Beretta or Python; at medium range use M16 Assault rifle or grenade; at close range use double-barrel blast with a shotgun or Python.
+9. Gargantua (Juvenile): Moderate to severe attack strength; very tough; long-distance multiple attack types, including player-tracking hornets.
+   TIP: Use RPG rockets and M16 grenades first, then switch to Python, then M16 or Beretta, then shotgun.
+10. Gargantua (Adult): Moderate to severe attack strength; very tough; long-distance multiple attack types, including player-tracking hornets and fireballs.
+   TIP: Use RPG rockets and M16 grenades first, then switch to Python, then M16 or Beretta, then shotgun.
+11. StukaBat: Moderate attack strength; relatively weak; long-range attack only.
+   TIP: Single blast with a well-aimed R357 Python even at long range takes them out.
+12. BossBat: Moderate attack strength; moderatively tough; long-range attack only.
+   TIP: Single RPG rocket takes them out.
+13. Baby Headcrabs: Weakest enemy; easy to kill; most problematic when they swarm (and also because you're dealing with the Gonarch; can jump quite high.
+   TIP: Do not bother using a crowbar, as they are difficult to hit. Instead, use a Beretta or M16 Assault Rifle.
+14. Gonarch: Moderate to severe attack strength; very tough and periodically generates invulnerability field; long-distance acid attack, plus spawns baby headcrabs.
+   TIP: Use RPG rockets and M16 grenades.
+15. Nihilanth: Severe attack strength; very tough, and can only be damaged periodically; long-distance multiple attack types, including player-tracking fireballs.
+   TIP: Use Gluon Gun first, then RPG rockets and M16 grenades.

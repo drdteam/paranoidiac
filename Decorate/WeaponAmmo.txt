@@ -1,0 +1,1405 @@
+Actor ZoomToken : Inventory
+{	Inventory.MaxAmount 1	}
+
+Actor BoltHeld : Ammo
+{	Inventory.MaxAmount 5	}
+
+//=============
+// Cross-Bow
+//=============
+
+ACTOR XBow : Weapon 30019
+{
+	SpawnID 237
+	Radius 16
+	Height 8
+	+FLOORCLIP
+	+INVENTORY.IGNORESKILL
+	+NOALERT
+	Weapon.AmmoType1 "Xbowbolts"
+	Weapon.AmmoType2 "BoltHeld"
+	Weapon.AmmoGive1 5
+	Weapon.AmmoUse1 0
+	Inventory.PickupMessage "You got the crossbow! Snipe and impale!"
+	Inventory.PickupSound ""
+	weapon.upsound ""
+	Tag "Crossbow"
+	+NOAUTOFIRE
+	States
+	{
+	Spawn:
+		POSS A -1
+		Stop
+	Ready:
+		TNT1 A 0 A_JumpIfInventory("ReloadCheck",1,"Reload")
+		TNT1 A 0 A_JumpIfInventory("ZoomToken",1,"ReadyZoomed")
+		TNT1 A 0 A_JumpIfInventory("BoltHeld",1,"ReadyNormal")
+	ReadyNoAmmo:
+		HWXF D 2 A_WeaponReady(WRF_ALLOWRELOAD)
+		Goto Ready
+	ReadyNormal:
+		HWXI A 2 A_WeaponReady(WRF_ALLOWRELOAD)
+		Goto Ready
+	Deselect:
+		D016 A 0 A_TakeInventory("ZoomToken",1)
+		TNT1 N 0 A_ZoomFactor(1.0,1)
+		HWXI A 1 A_Lower
+		TNT1 AA 0 A_Lower
+		Goto Deselect+2
+	Select:
+		HWXI A 1 A_Raise
+		TNT1 AA 0 A_Raise
+		Loop
+	Fire:
+		TNT1 A 0 A_JumpIfInventory("BoltHeld",1,"FireSuccessful")
+		TNT1 A 0 A_JumpIfInventory("Xbowbolts",1,"Reload")
+	DryFire:
+		TNT1 A 0 A_JumpIfInventory("ZoomToken",1,"DryFireZoomed")
+		HWXF D 0 A_PlayWeaponSound("Weapons/DryFire")
+		HWXF D 8 A_WeaponReady(WRF_NOFIRE)
+		Goto Ready
+	DryFireZoomed:
+		R016 N 0 A_PlayWeaponSound("Weapons/DryFire")
+		R016 N 8 A_WeaponReady(WRF_NOFIRE)
+		Goto Ready
+
+	//------------------------------------------------------------------
+	Reload:
+		TNT1 A 0 A_JumpIfInventory("BoltHeld",5,"CantReloadStillHaveHeld")
+		TNT1 A 0 A_JumpIfInventory("Xbowbolts",1,"ReloadSuccessful")
+	CantReloadNoHeld:	//shows the bow string no longer retracted
+		HWXF D 5 A_WeaponReady(WRF_NOFIRE)
+		Goto Ready
+	CantReloadStillHaveHeld: // shows the bow string retracted as it still has at least one bolt ready to shoot
+		HWXI A 5 A_WeaponReady(WRF_NOFIRE)
+		Goto Ready
+	ReloadSuccessful:
+		D016 A 0 A_TakeInventory("ZoomToken",1)
+		R016 N 0 A_ZoomFactor(1.0,1)
+		TNT1 A 0 A_PlayWeaponSound("HLCrossbow/Reload")
+		HWXR ABCDEFG 3
+	ReloadSuccessfulLoop:
+		TNT1 A 0 A_TakeInventory("Xbowbolts",1)
+		TNT1 A 0 A_GiveInventory("BoltHeld",1)
+		TNT1 A 0 A_JumpIfInventory("BoltHeld",5,"ReloadSuccesfulEnd")
+		TNT1 A 0 A_JumpIfInventory("Xbowbolts",1,"ReloadSuccessfulLoop")
+	ReloadSuccesfulEnd:
+		TNT1 A 0 A_TakeInventory("ReloadCheck",32767)
+		HWXR GGGHIJKLMNOPQRSTUVWXYZ 3
+		HWXS AB 3
+		Goto Ready
+
+	FireSuccessful:
+		TNT1 A 0 A_JumpIfInventory("ZoomToken",1,"FireSuccessfulZoomed")
+		TNT1 A 0 A_TakeInventory("BoltHeld",1)
+		TNT1 A 0 A_PlayWeaponSound("HLCrossbow/Fire")
+		TNT1 A 0 A_FireCustomMissile("XbowBolt",0,0,4,3)
+		TNT1 A 0 A_SetPitch(pitch-2.8)
+		HWXF A 2
+		HWXF AAA 1 A_SetPitch(pitch+0.4)
+		HWXF BBCC 1 A_SetPitch(pitch+0.4)
+		HWXF D 2
+		TNT1 A 0 A_JumpIfInventory("BoltHeld",1,"EndFireAnimation")
+		Goto Reload
+	EndFireAnimation:
+		TNT1 A 0 A_PlayWeaponSound("HLCrossbow/Reload")
+		HWXF EFGHIJKLMNOPQRSTUVWXYZ 2
+		HWXG ABCD 2 A_WeaponReady
+		Goto Ready
+
+	//------------------------------------------------------------------
+	AltFire:
+		TNT1 A 0 A_JumpIfInventory("ZoomToken",1,"Dezoom")
+		TNT1 A 0 A_PlaySound("BS/Headhunter/ZoomIn",7)
+		R016 N 1 A_GiveInventory("ZoomToken",1)
+		R016 N 1 A_ZoomFactor(5.0)
+		Goto ReadyZoomed
+	ReadyZoomed:
+		R016 N 3 A_WeaponReady(WRF_ALLOWRELOAD)
+		Loop
+	Dezoom:
+		D016 A 0 A_PlaySound("BS/Headhunter/ZoomOut",7)
+		D016 A 0 A_TakeInventory("ZoomToken",1)
+		R016 N 2 A_ZoomFactor(1.0,1)
+		Goto Ready
+
+	FireSuccessfulZoomed:
+		TNT1 A 0 A_TakeInventory("BoltHeld",1)
+		TNT1 A 0 A_PlayWeaponSound("HLCrossbow/Fire")
+		TNT1 A 0 A_FireCustomMissile("XbowBolt",0,0,4,3)
+		TNT1 A 0 A_SetPitch(pitch-2.8)
+		R016 N 2
+		R016 NNN 1 A_SetPitch(pitch+0.4)
+		R016 NNNN 1 A_SetPitch(pitch+0.4)
+		R016 N 2
+		TNT1 A 0 A_JumpIfInventory("BoltHeld",1,"EndFireAnimationZoomed")
+		Goto ReadyZoomed
+	EndFireAnimationZoomed:
+		TNT1 A 0 A_PlayWeaponSound("HLCrossbow/Reload")
+		R016 NNNNNNNNNNNNNNNNNNNNNN 2
+		R016 NNNN 2 A_WeaponReady
+		Goto Ready
+	}
+}
+
+actor XBowBolts : Ammo 30020
+{
+	+FLOORCLIP
+	SpawnID 236
+	Radius 8
+	Height 4
+	inventory.pickupmessage "Picked up a clip of crossbow bolts"
+	inventory.icon "HWXPB0"
+	inventory.pickupsound "misc/w_pkup"
+	inventory.amount 5
+	inventory.maxamount 50
+	ammo.backpackamount 5
+	ammo.backpackmaxamount 50
+	states
+	{
+	Spawn:
+		POSS A -1
+		Stop
+	}
+}
+
+actor XBowBoltSingle : Ammo 30021
+{
+	+FLOORCLIP
+	SpawnID 235
+	Radius 8
+	Height 4
+	inventory.pickupmessage "Picked up a crossbow bolt"
+	inventory.icon "HWXPB0"
+	inventory.pickupsound "misc/w_pkup"
+	inventory.amount 1
+	inventory.maxamount 50
+	ammo.backpackamount 5
+	ammo.backpackmaxamount 50
+	states
+	{
+	Spawn:
+		POSS A -1
+		Stop
+	}
+}
+
+ACTOR XbowBolt : FastProjectile
+{
+	PROJECTILE
+	Radius 3
+	Height 5
+	Speed 80
+	Damage 50
+	DeathSound "weapons/crbreak"
+	Decal "BulletChip"
+	Scale 0.3
+	+BLOODSPLATTER
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		HWXB A 1
+		Loop
+	Xdeath:
+		TNT1 A 4 A_PlaySound("HLCrossbow/Hitbody",7)
+		Stop
+	Death:
+		TNT1 A 4 A_PlaySound("HLCrossbow/Hitwall",7)
+		Stop
+	}
+}
+
+Actor Missile : Rocket 30022
+
+{
+	SpawnID 234
+//	Speed 40
+}
+
+//=============
+// Gluon Gun
+// Developed by Major Cooke for AeOD; modified by DBThanatos & Kappes Buur
+//=============
+
+Actor GluonHeldAmmo : Inventory
+{
+	Inventory.MaxAmount 40
+}
+
+//***************************************************************
+
+Actor GluonGun : Weapon 30023
+{
+	SpawnID 233
+	Weapon.AmmoUse1 0
+	Weapon.AmmoType1 "AECell"
+	Weapon.AmmoGive1 40
+	Weapon.UpSound "weapons/plasma/draw"
+	Weapon.SelectionOrder 10333
+	Inventory.PickupMessage "You found the Gluon Gun."
+	Inventory.PickupSound "misc/w_pkup"
+	+INVENTORY.IGNORESKILL
+	+FLOORCLIP
+	Tag "Gluon gun"
+	Scale 0.8
+	States
+	{
+	Spawn:
+		POSS A 3
+		Loop
+
+	Select:
+		TNT1 A 0
+		TNT1 A 0
+		TNT1 A 0
+		RFLP A 1 A_Raise
+		RFLP AA 0 A_Raise
+		Loop
+	Deselect:
+		TNT1 A 0
+		TNT1 A 0 A_TakeInventory("GluonRunning",9999)
+		TNT1 A 0 A_TakeInventory("GluonSoundCountdown",9999)
+		RFLP A 1 A_Lower
+		RFLP AA 0 A_Lower
+		Loop
+
+	Ready:
+		RFLP A 0 A_TakeInventory("GluonRunning",9999)
+		RFLP A 0 A_TakeInventory("GluonSoundCountdown",9999)
+	ReadyLoop:
+		TNT1 A 0 A_JumpIfInventory("ReloadCheck",1,"Reload")
+		RFLP A 1 A_WeaponReady(WRF_ALLOWRELOAD)
+		Loop
+
+	Fire:
+		TNT1 A 0 A_JumpIfInventory("GluonHeldAmmo",1,"FireSuccesful") //First it checks if there's any ammo in the clip
+		Goto DryFire												//otherwise it goes to it's dry fire state
+
+	DryFire:	//This is reached when player tries to fire the weapon from scratch (AKA, not when player was
+				//firing the weapon and ran out of ammo, that one is defined separately)
+		RFLP A 0 A_PlaySound("Weapons/DryFire",6)	//plays the dry sound
+
+	DryRefire:	//this is to loop the section, if player keeps the fire key pressed, the weapon will do nothing.
+				//Instead, player has to release the fire key for the weapon to go to ready or reload if possible
+		RFLP A 10
+		RFLP A 2 A_ReFire("DryRefire")		//this is where it loops if player kept "fire" pressed
+		Goto Ready							//Otherwise, it goes to the ready state
+
+	DryFireAfterFiring:	//this is reached when player runs out of ammo after firing the weapon, it's different from the
+						//dry fire above, because this one plays the "gluon off" sound and stops the looping sound
+		RFLP A 0 A_PlaySound("Weapons/DryFire",6)				//plays the dry sound
+		RFLP A 0 A_StopSound(CHAN_WEAPON)					//stops the looping gluon sound
+		TNT1 A 0 A_PlayWeaponSound("weapons/gluonoff")		//and plays the gluon off sound
+
+	DryAfterFiringRefire:
+		RFLP A 10
+		RFLP A 2 A_ReFire("DryAfterFiringRefire")		//this is where it loops if player kept "fire" pressed
+		Goto Ready
+
+	FireSuccesful:
+		TNT1 A 0 A_GiveInventory("GluonSoundCountdown",5) //Gives some counters, this is used to know in which part of the animation we're at
+		RFLP A 0 Bright A_PlayWeaponSound("weapons/gluonstart")
+		TNT1 A 0 A_TakeInventory("GluonHeldAmmo",1)		//this is because the weapon doesnt actually use the "Cell" ammo, but the ammo held in the clip
+		RFLP A 0 Bright A_FireCustomMissile("GluonPrimaryBurst",0,0,4,2) //this is where it would use ammo, was it not for the line above
+		RFLP A 0 Bright A_FireCustomMissile("GluonFire4",0,0,4,2)
+		RFLP A 2 Bright A_FireCustomMissile("GluonFire5",0,0,4,2)
+
+		RFLP A 0 Bright A_ReFire("Shot2")
+		RFLP A 0 Bright A_PlayWeaponSound("weapons/gluonoff")
+		RFLP BA 3
+		Goto Ready
+	Hold:
+	Shot2:
+		TNT1 A 0 A_JumpIfInventory("GluonHeldAmmo",1,"Shot2Success")
+		Goto DryFireAfterFiring	//see the state definition for the explanation
+	Shot2Success:
+		TNT1 A 0 A_TakeInventory("GluonHeldAmmo",1)
+		RFLP A 0 Bright A_FireCustomMissile("GluonPrimaryBurst",0,0,4,2) //DBT self note: This one used ammo
+		RFLP A 0 Bright A_FireCustomMissile("GluonFire",0,0,4,2)
+		RFLP A 0 Bright A_FireCustomMissile("GluonFire2",0,0,4,2)
+		RFLP A 2 Bright A_FireCustomMissile("GluonFire3",0,0,4,2)
+		RFLP A 0 Bright A_FireCustomMissile("GluonPrimaryBurst",0,0,4,2) //DBT self note: This one used ammo
+		RFLP A 0 Bright A_FireCustomMissile("GluonFire4",0,0,4,2)
+		RFLP A 0 Bright A_FireCustomMissile("GluonFire5",0,0,4,2)
+		RFLP A 2 bright
+		RFLP A 0 A_ReFire("Shot3")
+		Goto Powerdown
+	Shot3:
+		TNT1 A 0 A_JumpIfInventory("GluonHeldAmmo",1,"Shot3Success")
+		Goto DryFireAfterFiring	//see the state definition for the explanation
+	Shot3Success:
+		TNT1 A 0 A_TakeInventory("GluonHeldAmmo",1)
+		RFLP A 0 Bright A_FireCustomMissile("GluonPrimaryBurst",0,1,4,2) //DBT self note: This one used ammo
+		RFLP A 0 Bright A_FireCustomMissile("GluonFire",0,0,4,2)
+		RFLP A 0 Bright A_FireCustomMissile("GluonFire2",0,0,4,2)
+		RFLP A 2 Bright A_FireCustomMissile("GluonFire3",0,0,4,2)
+		RFLP A 0 Bright A_FireCustomMissile("GluonPrimaryBurst",0,1,4,2) //DBT self note: This one used ammo
+		RFLP A 0 Bright A_FireCustomMissile("GluonFire4",0,0,4,2)
+		RFLP A 0 Bright A_FireCustomMissile("GluonFire5",0,0,4,2)
+		RFLP A 2 bright
+		RFLP A 0 A_ReFire("Shot4")
+		Goto Powerdown
+	Shot4:
+		TNT1 A 0 A_JumpIfInventory("GluonHeldAmmo",1,"Shot4Success")
+		Goto DryFireAfterFiring	//see the state definition for the explanation
+	Shot4Success:
+		TNT1 A 0 A_TakeInventory("GluonHeldAmmo",1)
+		RFLP A 0 Bright A_FireCustomMissile("GluonPrimaryBurst",0,1,4,2) //DBT self note: This one used ammo
+		RFLP A 0 Bright A_FireCustomMissile("GluonFire",0,0,4,2)
+		RFLP A 0 Bright A_FireCustomMissile("GluonFire2",0,0,4,2)
+		RFLP A 2 Bright A_FireCustomMissile("GluonFire3",0,0,4,2)
+		RFLP A 0 Bright A_FireCustomMissile("GluonPrimaryBurst",0,1,4,2) //DBT self note: This one used ammo
+		RFLP A 0 Bright A_FireCustomMissile("GluonFire4",0,0,4,2)
+		RFLP A 0 Bright A_FireCustomMissile("GluonFire5",0,0,4,2)
+		RFLP A 2 bright
+		RFLP A 0 A_ReFire("Shot5")
+		Goto Powerdown
+	Shot5:
+		TNT1 A 0 A_JumpIfInventory("GluonHeldAmmo",1,"Shot5Success")
+		Goto DryFireAfterFiring	//see the state definition for the explanation
+	Shot5Success:
+		TNT1 A 0 A_TakeInventory("GluonHeldAmmo",1)
+		RFLP A 0 Bright A_FireCustomMissile("GluonPrimaryBurst",0,1,4,2) //DBT self note: This one used ammo
+		RFLP A 0 Bright A_FireCustomMissile("GluonFire",0,0,4,2)
+		RFLP A 0 Bright A_FireCustomMissile("GluonFire2",0,0,4,2)
+		RFLP A 2 Bright A_FireCustomMissile("GluonFire3",0,0,4,2)
+		RFLP A 0 Bright A_FireCustomMissile("GluonPrimaryBurst",0,1,4,2) //DBT self note: This one used ammo
+		RFLP A 0 Bright A_FireCustomMissile("GluonFire4",0,0,4,2)
+		RFLP A 0 Bright A_FireCustomMissile("GluonFire5",0,0,4,2)
+		RFLP A 2 bright
+		RFLP A 0 A_ReFire("Shot6")
+		Goto Powerdown
+	Shot6:
+		TNT1 A 0 A_JumpIfInventory("GluonHeldAmmo",1,"Shot6Success")
+		Goto DryFireAfterFiring	//see the state definition for the explanation
+	Shot6Success:
+		TNT1 A 0 A_TakeInventory("GluonHeldAmmo",1)
+		RFLP A 0 Bright A_FireCustomMissile("GluonPrimaryBurst",0,1,4,2) //DBT self note: This one used ammo
+		RFLP A 0 Bright A_FireCustomMissile("GluonFire",0,0,4,2)
+		RFLP A 0 Bright A_FireCustomMissile("GluonFire2",0,0,4,2)
+		RFLP A 2 Bright A_FireCustomMissile("GluonFire3",0,0,4,2)
+		RFLP A 0 Bright A_FireCustomMissile("GluonPrimaryBurst",0,1,4,2) //DBT self note: This one used ammo
+		RFLP A 0 Bright A_FireCustomMissile("GluonFire4",0,0,4,2)
+		RFLP A 0 Bright A_FireCustomMissile("GluonFire5",0,0,4,2)
+		RFLP A 2 bright
+		RFLP A 0 A_ReFire("Shot7")
+		Goto Powerdown
+	Shot7:
+		TNT1 A 0 A_JumpIfInventory("GluonHeldAmmo",1,"Shot7Success")
+		Goto DryFireAfterFiring	//see the state definition for the explanation
+	Shot7Success:
+		TNT1 A 0 A_TakeInventory("GluonHeldAmmo",1)
+		RFLP A 0 Bright A_FireCustomMissile("GluonPrimaryBurst",0,1,4,2)	//DBT self note: This one used ammo
+		RFLP A 0 Bright A_FireCustomMissile("GluonFire",0,0,4,2)
+		RFLP A 0 Bright A_FireCustomMissile("GluonFire2",0,0,4,2)
+		RFLP A 2 Bright A_FireCustomMissile("GluonFire3",0,0,4,2)
+		RFLP A 0 Bright A_FireCustomMissile("GluonPrimaryBurst",0,1,4,2) 	//DBT self note: This one used ammo
+		RFLP A 0 Bright A_FireCustomMissile("GluonFire4",0,0,4,2)
+		RFLP A 0 Bright A_FireCustomMissile("GluonFire5",0,0,4,2)
+		RFLP A 2 Bright
+		TNT1 A 0 A_TakeInventory("GluonSoundCountdown",1)
+		TNT1 A 0 A_JumpIfInventory("GluonSoundCountdown",1,4)
+		TNT1 A 0 A_JumpIfInventory("GluonRunning",1,3)
+		TNT1 A 0 A_GiveInventory("GluonRunning",1)
+		RFLP A 0 Bright A_PlaySound("weapons/gluonrun", CHAN_WEAPON, 1, 1)
+		RFLP A 0 A_ReFire("Shot2")
+		Goto Powerdown
+	Powerdown:
+		RFLP A 0 A_StopSound(CHAN_WEAPON)
+		RFLP A 0 A_PlayWeaponSound("weapons/gluonoff")
+		RFLP A 3
+		Goto Ready
+
+	AltFire:		//since this weapon doesnt have alt fire, it can trigger reload, but if you dont want it like that, just remove ONLY this line
+	Reload:
+		TNT1 A 0 A_JumpIfInventory("GluonHeldAmmo",40,"NoNeed")
+		TNT1 A 0 A_JumpIfInventory("AECell",1,"ReloadPossible")
+		TNT1 A 0 A_JumpIfInventory("GluonGun",0,"Empty")
+//		RFLP A 10 A_PlayWeaponSound("halflife/weapons/noammo")
+//		HW2I A 10 A_PlayWeaponSound("halflife/weapons/noammo")
+		TNT1 A 0 A_TakeInventory("ReloadCheck",1)
+		Goto Ready
+	ReloadPossible:
+		RFLP A 5
+		RFLP ABCDEFGH 3
+		TNT1 A 0 A_PlayWeaponSound("halflife/weapons/reload1")
+		TNT1 A 0 A_JumpIfInventory("GluonHeldAmmo",40,"ReloadDone")
+		TNT1 A 0 A_JumpIfInventory("AECell",1,"StillPossible")
+		Goto "ReloadDone"
+	StillPossible:
+		TNT1 A 0 A_TakeInventory("AECell",1)
+		TNT1 A 0 A_GiveInventory("GluonHeldAmmo",1)
+		Goto "ReloadPossible"+10
+	ReloadDone:
+		TNT1 A 0 A_TakeInventory("ReloadCheck",1)
+		RFLP IJKLM 2
+		TNT1 A 0 A_PlayWeaponSound("halflife/weapons/reload2")
+		RFLP M 3
+		RFLP LKJI 2
+		RFLP HGFEDCBA 3
+		Goto Ready
+	NoNeed:
+		RFLP A 5 A_TakeInventory("ReloadCheck",1)
+		Goto Ready
+	Empty:
+		TNT1 A 0 A_TakeInventory("ReloadCheck",1)
+		RFLP A 5
+		RFLP ABCDEFGH 3
+		TNT1 A 0 A_PlayWeaponSound("halflife/weapons/noammo")
+		RFLP IJKLM 2
+		RFLP M 3
+		RFLP LKJI 2
+		RFLP HGFEDCBA 3
+		Goto Ready
+	}
+}
+
+Actor GluonRunning : Inventory { Inventory.MaxAmount 10 }
+
+Actor GluonSoundCountdown : Inventory { Inventory.MaxAmount 5 }
+
+//=========================================
+//The main projectiles fired. Their all parents of GluonPrimaryBurst with the only difference
+//being the outer-trail spawn locations. I'm going for a spiral after all...
+//Skip past GluonPrimaryBurst12 for the effects.
+//=========================================
+
+Actor GluonPrimaryBurst
+{
+	var int user_x;
+	var int user_y;
+	var int user_z;
+	var int user_life[2];
+	var int user_movement[2];
+	Speed 2
+	Damage (random(1,6))
+	Radius 2
+	Height 2
+	Scale .75
+	RenderStyle None
+	Projectile
+	+DONTREFLECT
+	+EXTREMEDEATH
+	+FORCERADIUSDMG
+	+NODAMAGETHRUST
+	+SEEKERMISSILE
+	+SKYEXPLODE
+	+EXPLODEONWATER
+	+NOTIMEFREEZE
+	DamageType "PlasmaDisint"
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx("GluonSpiral",0,0,8,velx,vely,velz,0,SXF_NOCHECKPOSITION|SXF_ABSOLUTEMOMENTUM|SXF_TRANSFERPOINTERS)
+		TNT1 A 0 A_SpawnItemEx("GluonFakeBurstDelay",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS)
+	Movement:
+		LPUF A 0 A_JumpIf(user_life[0]>=25000,"Death")
+	//This must be done multiple times, or else it will jump beyond walls. This could
+	//easily cause an engine overload.
+		LPUF A 0 A_Warp(AAPTR_DEFAULT,velx,vely,velz,0,WARPF_ABSOLUTEOFFSET,1)
+		Goto MoveOut
+
+		LPUF A 0 A_Warp(AAPTR_DEFAULT,velx,vely,velz,0,WARPF_ABSOLUTEOFFSET,1)
+		Goto MoveOut
+
+		LPUF A 0 A_Warp(AAPTR_DEFAULT,velx,vely,velz,0,WARPF_ABSOLUTEOFFSET,1)
+		Goto MoveOut
+
+		LPUF A 0 A_Warp(AAPTR_DEFAULT,velx,vely,velz,0,WARPF_ABSOLUTEOFFSET,1)
+		Goto MoveOut
+
+		LPUF A 0 A_Warp(AAPTR_DEFAULT,velx,vely,velz,0,WARPF_ABSOLUTEOFFSET,1)
+		Goto MoveOut
+
+		LPUF A 0 A_JumpIf(user_life[0]>=400,3)
+		LPUF A 0 A_CheckSight(2)
+		LPUF A 0 A_SpawnItemEx("GluonTrailV2",velx+frandom(-1.0,1.0),0,velz+frandom(-1.0,1.0),0,0,0,0,SXF_NOCHECKPOSITION|SXF_ABSOLUTEMOMENTUM)
+		LPUF A 0 A_SetUserArray("user_life",0,user_life[0]+1)
+		Loop
+	MoveOut:
+		TNT1 AAAAA 1
+		Goto Movement
+	Death:
+		TNT1 A 0 A_Explode(random(40,60),75,0)
+		TNT1 A 0 A_CustomMissile("GluonTrail",0,0,0)
+		TNT1 A 1 A_CustomMissile("RipperEffect",0,0,0,6)
+		Stop
+	}
+}
+
+Actor GluonFakeBurst //: FastProjectile
+{
+	var int user_x;
+	var int user_y;
+	var int user_z;
+	var int user_life[2];
+	var int user_movement[2];
+	Speed 2
+	Damage 0
+	Radius 2
+	Height 2
+	Scale .75
+	RenderStyle None
+	Projectile
+	+PAINLESS
+	+BLOODLESSIMPACT
+	+DONTSPLASH
+	+DONTREFLECT
+	+EXTREMEDEATH
+	+FORCERADIUSDMG
+	+NODAMAGETHRUST
+	+SEEKERMISSILE
+	+SKYEXPLODE
+	+EXPLODEONWATER
+	+NOTIMEFREEZE
+	DamageType "PlasmaDisint"
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx("GluonSpiral",0,0,8,velx,vely,velz,0,SXF_NOCHECKPOSITION|SXF_ABSOLUTEMOMENTUM|SXF_TRANSFERPOINTERS)
+	Movement:
+		LPUF A 0 A_JumpIf(user_life[0]>=20000,"Death")
+		LPUF A 0 A_Warp(AAPTR_DEFAULT,velx,vely,velz,0,WARPF_ABSOLUTEOFFSET,1)
+		Goto MoveOut
+
+		LPUF A 0 A_Warp(AAPTR_DEFAULT,velx,vely,velz,0,WARPF_ABSOLUTEOFFSET,1)
+		Goto MoveOut
+
+		LPUF A 0 A_Warp(AAPTR_DEFAULT,velx,vely,velz,0,WARPF_ABSOLUTEOFFSET,1)
+		Goto MoveOut
+
+		LPUF A 0 A_Warp(AAPTR_DEFAULT,velx,vely,velz,0,WARPF_ABSOLUTEOFFSET,1)
+		Goto MoveOut
+
+		LPUF A 0 A_Warp(AAPTR_DEFAULT,velx,vely,velz,0,WARPF_ABSOLUTEOFFSET,1)
+		Goto MoveOut
+
+		LPUF A 0 A_JumpIf(user_life[0]>=4000,3)
+		LPUF A 0 A_CheckSight(2)
+		LPUF A 0 A_SpawnItemEx("GluonTrailV2",velx+frandom(-1.0,1.0),0,velz+frandom(-1.0,1.0),0,0,0,0,SXF_NOCHECKPOSITION|SXF_ABSOLUTEMOMENTUM)
+		LPUF A 0 A_SetUserArray("user_life",0,user_life[0]+1)
+		Loop
+	MoveOut:
+	Death:
+		TNT1 A 1
+		Stop
+	}
+}
+
+Actor GluonFakeBurstDelay
+{
+	+NOINTERACTION
+	+NOTIMEFREEZE
+	RenderStyle None
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 1
+		TNT1 A 0 A_GiveInventory("GluonFakeBurstSpawn",1,AAPTR_TARGET)
+		Stop
+	}
+}
+
+Actor GluonFakeBurstSpawn : CustomInventory
+{
+	+NOTIMEFREEZE
+	+INVENTORY.ALWAYSPICKUP
+	States
+	{
+	Pickup:
+		TNT1 A 0 A_FireCustomMissile("GluonFakeBurst",0,0,4,2)
+		Stop
+	}
+}
+
+Actor GluonSpiral
+{
+	var int user_count;
+	var int user_life;
+	Projectile
+	+DONTREFLECT
+	+PAINLESS
+	+BLOODLESSIMPACT
+	+NOTIMEFREEZE
+	Damage 0
+	Radius 5
+	Height 5
+	Speed 5
+	WeaveIndexZ 16
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		Goto Jumping
+	Jumping:
+		TNT1 A 0 A_JumpIfInventory("GluonTrailToken",14,"T14",AAPTR_TARGET)
+		TNT1 A 0 A_JumpIfInventory("GluonTrailToken",13,"T13",AAPTR_TARGET)
+		TNT1 A 0 A_JumpIfInventory("GluonTrailToken",12,"T12",AAPTR_TARGET)
+		TNT1 A 0 A_JumpIfInventory("GluonTrailToken",11,"T11",AAPTR_TARGET)
+		TNT1 A 0 A_JumpIfInventory("GluonTrailToken",10,"T10",AAPTR_TARGET)
+		TNT1 A 0 A_JumpIfInventory("GluonTrailToken",9,"T9",AAPTR_TARGET)
+		TNT1 A 0 A_JumpIfInventory("GluonTrailToken",8,"T8",AAPTR_TARGET)
+		TNT1 A 0 A_JumpIfInventory("GluonTrailToken",7,"T7",AAPTR_TARGET)
+		TNT1 A 0 A_JumpIfInventory("GluonTrailToken",6,"T6",AAPTR_TARGET)
+		TNT1 A 0 A_JumpIfInventory("GluonTrailToken",5,"T5",AAPTR_TARGET)
+		TNT1 A 0 A_JumpIfInventory("GluonTrailToken",4,"T4",AAPTR_TARGET)
+		TNT1 A 0 A_JumpIfInventory("GluonTrailToken",3,"T3",AAPTR_TARGET)
+		TNT1 A 0 A_JumpIfInventory("GluonTrailToken",2,"T2",AAPTR_TARGET)
+		TNT1 A 0 A_JumpIfInventory("GluonTrailToken",1,"T1",AAPTR_TARGET)
+		Goto TokenUp
+	T14:
+		TNT1 A 0 A_TakeInventory("GluonTrailToken",1000,0,AAPTR_TARGET)
+		TNT1 AAAAA 0 A_Weave(-1,-1,1,1)
+	T13:
+		TNT1 AAAAA 0 A_Weave(-1,-1,1,1)
+	T12:
+		TNT1 AAAAA 0 A_Weave(-1,-1,1,1)
+	T11:
+		TNT1 AAAAA 0 A_Weave(-1,-1,1,1)
+	T10:
+		TNT1 AAAAA 0 A_Weave(-1,-1,1,1)
+	T9:
+		TNT1 AAAAA 0 A_Weave(-1,-1,1,1)
+	T8:
+		TNT1 AAAAA 0 A_Weave(-1,-1,1,1)
+	T7:
+		TNT1 AAAAA 0 A_Weave(-1,-1,1,1)
+	T6:
+		TNT1 AAAAA 0 A_Weave(-1,-1,1,1)
+	T5:
+		TNT1 AAAAA 0 A_Weave(-1,-1,1,1)
+	T4:
+		TNT1 AAAAA 0 A_Weave(-1,-1,1,1)
+	T3:
+		TNT1 AAAAA 0 A_Weave(-1,-1,1,1)
+	T2:
+		TNT1 AAAAA 0 A_Weave(-1,-1,1,1)
+	T1:
+		TNT1 AAAAA 0 A_Weave(-1,-1,1,1)
+	TokenUp:
+		TNT1 A 0 A_GiveInventory("GluonTrailToken",1,AAPTR_TARGET)
+	Moving:
+		TNT1 A 0 A_Warp(AAPTR_DEFAULT,velx,vely,velz,0,WARPF_ABSOLUTEOFFSET|WARPF_INTERPOLATE,1)
+		Goto Death
+
+		TNT1 A 0 A_Weave(1,1,1,1)
+		TNT1 A 0 A_SpawnItemEx("GluonTrailV3",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+		TNT1 A 0 A_SetUserVar("user_life",user_life+1)
+		TNT1 A 0 A_JumpIf(user_life>=350,"Death")
+		Loop
+	Death:
+		TNT1 A 1
+		Stop
+	}
+}
+
+Actor GluonTrailToken : Inventory { Inventory.MaxAmount 14 }
+
+Actor GluonTrailV2
+{
+	+NOTIMEFREEZE
+	+NOINTERACTION
+	Scale 0.2 //0.45
+	RenderStyle Add
+	Translation "0:255=%[0,0,0]:[0.15,0.15,1]"
+	Alpha 0.25
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		PLSE B 0 A_SetScale(frandom(0.2,0.35))
+		PLSE B 0 A_Jump(256,1,2,3)
+		PLSE B 1 bright
+		Stop
+
+		PLSE C 1 bright
+		Stop
+
+		PLSE D 1 bright
+		Stop
+	}
+}
+
+Actor GluonTrailV3 : GluonTrailV2
+{
+	Scale 0.2
+	Alpha 0.25
+	States
+	{
+	Spawn:
+		LPUF A 0
+		LPUF A 1
+		Stop
+	}
+}
+
+Actor GluonPrimaryBurst2 : GluonPrimaryBurst
+{
+	States
+	{
+	Spawn:
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,30)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,60)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,90)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,60)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,30)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,0)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,-30)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,-60)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,-90)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,-60)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,-30)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,0)
+		Loop
+	}
+}
+
+Actor GluonPrimaryBurst3 : GluonPrimaryBurst
+{
+	States
+	{
+	Spawn:
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,60)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,90)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,60)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,30)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,0)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,-30)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,-60)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,-90)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,-60)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,-30)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,0)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,30)
+		Loop
+	}
+}
+
+Actor GluonPrimaryBurst4 : GluonPrimaryBurst
+{
+	States
+	{
+	Spawn:
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,90)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,60)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,30)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,0)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,-30)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,-60)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,-90)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,-60)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,-30)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,0)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,30)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,60)
+		Loop
+	}
+}
+
+Actor GluonPrimaryBurst5 : GluonPrimaryBurst
+{
+	States
+	{
+	Spawn:
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,60)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,30)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,0)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,-30)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,-60)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,-90)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,-60)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,-30)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,0)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,30)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,60)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,90)
+		Loop
+	}
+}
+
+Actor GluonPrimaryBurst6 : GluonPrimaryBurst
+{
+	States
+	{
+	Spawn:
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,30)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,0)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,-30)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,-60)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,-90)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,-60)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,-30)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,0)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,30)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,60)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,90)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,60)
+		Loop
+	}
+}
+
+Actor GluonPrimaryBurst7 : GluonPrimaryBurst
+{
+	States
+	{
+	Spawn:
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,0)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,-30)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,-60)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,-90)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,-60)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,-30)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,0)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,30)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,60)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,90)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,60)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,30)
+		Loop
+	}
+}
+
+Actor GluonPrimaryBurst8 : GluonPrimaryBurst
+{
+	States
+	{
+	Spawn:
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,-30)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,-60)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,-90)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,-60)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,-30)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,0)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,30)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,60)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,90)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,60)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,30)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,0)
+		Loop
+	}
+}
+
+Actor GluonPrimaryBurst9 : GluonPrimaryBurst
+{
+	States
+	{
+	Spawn:
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,-60)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,-90)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,-60)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,-30)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,0)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,30)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,60)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,90)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,60)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,30)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,0)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,-30)
+		Loop
+	}
+}
+
+Actor GluonPrimaryBurst10 : GluonPrimaryBurst
+{
+	States
+	{
+	Spawn:
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,-90)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,-60)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,-30)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,0)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,30)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,60)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,90)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,60)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,30)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,0)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,-30)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,-60)
+		Loop
+	}
+}
+
+Actor GluonPrimaryBurst11 : GluonPrimaryBurst
+{
+	States
+	{
+	Spawn:
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,-60)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,-30)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,0)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,30)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,60)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,90)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,60)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,30)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,0)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,-30)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,-60)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,-90)
+		Loop
+	}
+}
+
+Actor GluonPrimaryBurst12 : GluonPrimaryBurst
+{
+	States
+	{
+	Spawn:
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,-30)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,0)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,30)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,60)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,90)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,60)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,30)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,0)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,-30)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,-60)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,-90,2,-90)
+		LPUF A 1 Bright A_CustomMissile("GluonOutsideTrailSpawner",0,0,90,2,-60)
+		Loop
+	}
+}
+
+//The Gluon "flash", which up close, is deadly to those who get in front of the gun.
+
+Actor GluonFire
+{
+	Speed 20
+	Damage (1)
+	Radius 1
+	Height 1
+	Projectile
+	+RIPPER
+//	RipperLevel 2
+	+DONTREFLECT
+	+EXTREMEDEATH
+	DamageType "PlasmaDisint"
+	States
+	{
+	Spawn:
+		TNT1 A 1
+		Stop
+	}
+}
+
+Actor GluonFire2 : GluonFire
+{
+	States
+	{
+	Spawn:
+		TNT1 A 2
+		Stop
+	}
+}
+
+Actor GluonFire3 : GluonFire
+{
+	States
+	{
+	Spawn:
+		TNT1 A 3
+		Stop
+	}
+}
+
+Actor GluonFire4 : GluonFire { Speed 30 }
+
+Actor GluonFire5 : GluonFire2 { Speed 30 }
+
+
+Actor GluonTrail
+{
+	Scale 1.15
+	Projectile
+	+NOINTERACTION
+	RenderStyle Add
+	Alpha .45
+	States
+	{
+	Spawn:
+		LPUF ABCDE 2
+		Stop
+	}
+}
+
+Actor GluonExplosion : GluonTrail
+{
+	Scale 1.15
+	Projectile
+	+NOCLIP
+	+EXTREMEDEATH
+	+FORCERADIUSDMG
+	RenderStyle Add
+	DamageType "PlasmaDisint"
+	Alpha .45
+	States
+	{
+	Spawn:
+		LPUF A 0
+		LPUF A 0 A_Explode(10,75,0)
+		Stop
+	}
+}
+
+Actor GluonOutsideTrailSpawner
+{
+	+NOINTERACTION
+	States
+	{
+	Spawn:
+		TNT1 A 1
+		TNT1 A 0 A_CustomMissile("GluonTrail",0,0)
+		Stop
+	}
+}
+
+
+Actor GluonTrailSmall : GluonTrail { Scale .95 }
+
+Actor RipperEffect
+{
+	Projectile
+	+RIPPER
+//	RipperLevel 2
+	+EXTREMEDEATH
+	+DONTREFLECT
+	+PAINLESS
+	Speed 1
+	Damage 1
+	Radius 1
+	Height 1
+	DamageType "PlasmaDisint"
+	States
+	{
+	Spawn:
+		TNT1 A 1
+		Stop
+	}
+}
+
+//***************************************************************
+
+actor AECell : Ammo replaces Cell 8506
+{
+	+FLOORCLIP
+	spawnid 75
+	radius 20
+	height 10
+	inventory.pickupmessage "Picked up depleted U-235."
+	inventory.icon "IECCA0"
+	inventory.amount 20
+	inventory.maxamount 100
+	inventory.pickupsound "misc/w_pkup"
+	ammo.backpackamount 20
+	ammo.backpackmaxamount 100
+	Scale 0.75
+	states
+	{
+	Spawn:
+		AECC ABC 3
+		Loop
+	}
+}
+
+actor AECellBox : AECell replaces CellPack 30024
+{
+	+FLOORCLIP
+	spawnid 232
+	radius 8
+	height 8
+	inventory.pickupmessage "Picked up depleted U-235."
+	inventory.icon "IECCA0"
+	inventory.amount 20
+	inventory.maxamount 100
+	inventory.pickupsound "misc/w_pkup"
+	ammo.backpackmaxamount 20
+	Scale 0.75
+	states
+	{
+	Spawn:
+		POSS A -1
+		Loop
+	}
+}
+
+//****
+// Hornet Gun (aka HiveHand)
+//****
+
+ACTOR HornetGunItem : CustomInventory 6199
+{
+    +FLOORCLIP
+    +INVENTORY.IGNORESKILL
+    Scale 0.095
+    Inventory.Amount 1
+    Inventory.PickupMessage "You swiped an alien hornet gun!"
+    Inventory.PickupSound "reilsss/weapons/demoncalleridlebio"
+    States
+    {
+    Spawn:
+        HNTG A -1
+        Loop
+    Pickup:
+	TNT1 A 0 A_GiveInventory("HornetGun",1)
+	TNT1 A 0 A_SelectWeapon("HornetGun")
+	TNT1 A 0
+	Stop
+    Ammo:
+	TNT1 A 0 A_GiveInventory("HLHornet",10)
+	Stop
+    }
+}
+
+ACTOR HornetGun : Weapon
+{
+	SpawnID 231
+    +FLOORCLIP
+    +CHEATNOTWEAPON
+    +WEAPON.AMMO_OPTIONAL
+    +WEAPON.ALT_AMMO_OPTIONAL
+    +IGNORESKILL
+    Weapon.AmmoType1 "HLHornet"
+    Weapon.AmmoType2 "HLHornet"
+    Weapon.AmmoGive1 10
+    Weapon.AmmoUse1 1
+    Weapon.AmmoUse2 1
+    Inventory.PickupMessage "You swiped an alien hornet gun!"
+    Inventory.PickupSound "reilsss/weapons/demoncalleridlebio"
+    weapon.upsound "weapons/draw"
+    Scale 0.095
+    Tag "HornetGun"
+    States
+    {
+    Spawn:
+	POSS A 3
+	Loop
+    Ready:
+	HNTG BBBBBB 1 A_WeaponReady
+	HNTG B 0 A_JumpIfInventory("HLHornet",10,"Ready")
+	HNTG B 0 A_GiveInventory("HLHornet",1)
+	Goto Ready
+    Deselect:
+	HNTG B 1 A_Lower
+	TNT1 AA 0 A_Lower
+	Loop
+    Select:
+	HNTG B 1 A_Raise
+	TNT1 AA 0 A_Raise
+	Loop
+    Fire:
+	HNTG B 0 A_JumpIfInventory("HLHornet",1,1)
+	Goto Ready
+	HNTG B 0 A_PlaySound("halflife/monsters/hornetgrunt/flysight",CHAN_WEAPON,0.6,0)
+	HNTG B 0 A_FireCustomMissile("HGunHornet",0,1,8,0)
+	HNTG CDE 2
+	HNTG B 2
+	HNTG B 0 A_ReFire
+	Goto Ready
+    AltFire:
+	HNTG B 0 A_JumpIfInventory("HLHornet",1,1)
+	Goto Ready
+	HNTG B 0 A_PlaySound("halflife/monsters/hornetgrunt/flysight",CHAN_WEAPON,0.6,0)
+	HNTG B 0 A_FireCustomMissile("HGunHornet2",0,1,8,0)
+	HNTG CDE 1
+	HNTG B 1
+	HNTG B 0 A_ReFire
+	Goto Ready
+	HNTG B 0 A_JumpIfInventory("HLHornet",1,1)
+	Goto Ready
+	HNTG B 0 A_PlaySound("halflife/monsters/hornetgrunt/flysight",CHAN_WEAPON,0.6,0)
+	HNTG B 0 A_FireCustomMissile("HGunHornet2",0,1,8,0)
+	HNTG E 1
+	HNTG B 1
+	HNTG B 0 A_ReFire
+	Goto Ready
+    Flash:
+	NULL A 1 Bright A_Light2
+	NULL A 1 Bright A_Light1
+	NULL A 2 Bright A_Light0
+	Stop
+    }
+}
+
+ACTOR HGunHornet : FastProjectile
+{
+    Radius 4
+    Height 4
+    Projectile
+    Speed 20
+    Damage 5
+    Scale 0.095
+    +SEEKERMISSILE
+    MissileType "HGHornetTrail"
+    MissileHeight 8
+    States
+    {
+    Spawn:
+	HLOH B 1 Bright A_SeekerMissile(2,2,1,90,3)
+	Loop
+    Death:
+    Crash:
+	TNT1 A 0 A_SpawnItemEx("HGHornetShooter1",0,0,0,0,0,0,0,0)
+	TNT1 A 1 A_PlaySound("halflife/monsters/hornetgrunt/flybuzz")
+	Stop
+    XDeath:
+	TNT1 A 0 A_PlaySound("halflife/monsters/hornetgrunt/flyhit")
+	Stop
+    }
+}
+
+ACTOR HGunHornet2 : FastProjectile
+{
+    Radius 4
+    Height 4
+    Projectile
+    Speed 10
+    Damage 5
+    Scale 0.025
+    MissileType "HGHornetTrail1"
+    MissileHeight 8
+    States
+    {
+    Spawn:
+	HLOH A 1 Bright A_SeekerMissile(2,2,1,90,3)
+	Loop
+    Death:
+    Crash:
+	TNT1 A 0 A_SpawnItemEx("HGHornetShooter2",0,0,0,0,0,0,0,0)
+	TNT1 A 1 A_PlaySound("halflife/monsters/hornetgrunt/flybuzz")
+	Stop
+    XDeath:
+	TNT1 A 0 A_PlaySound("halflife/monsters/hornetgrunt/flyhit")
+	Stop
+    }
+}
+
+ACTOR HLHornet : Ammo
+{
+    Inventory.Amount 1
+    Inventory.MaxAmount 10
+    +IGNORESKILL
+    Inventory.Icon "HTAMMO"
+    States
+    {
+    Spawn:
+        TNT1 A 1
+        Loop
+   }
+}
+
+ACTOR HornetGunPickup : CustomInventory 30025
+{
+    Inventory.PickupMessage "You swiped an alien hornet gun!"
+    Inventory.PickupSound "reilsss/weapons/demoncalleridlebio"
+    Scale 0.095
+    States
+    {
+    Spawn:
+	POSS A -1
+	Loop
+    Pickup:
+	NULL A 0 A_SelectWeapon("HornetGun")
+	NULL A 0 A_GiveInventory("HornetGun",1)
+	NULL A 0
+	Stop
+    }
+}
+
+//****
+
+actor HGHornetTrail1
+{
+  radius 6
+  height 8
+  +NOINTERACTION
+  Scale 0.015
+  RenderStyle Add
+  Alpha 0.5
+  Translation "80:111=192:223"
+  states
+  {
+  Spawn:
+    X099 A 1 A_FadeOut (0.03)
+    loop
+  }
+}
+
+Actor HGHornetShooter2
+{
+    +FRIENDLY
+    MONSTER
+    Radius 1
+    Height 1
+    Speed 0
+    +NOGRAVITY
+    +NOCLIP
+    +LOOKALLAROUND
+    +MISSILEMORE
+    +MISSILEEVENMORE
+	-SOLID
+	-SHOOTABLE
+	-COUNTKILL
+    MinMissileChance 0
+    RenderStyle None
+    ReactionTime 25
+    States
+    {
+    Spawn:
+	NULL A 0 A_CountDown
+        PLAY A 1 A_Look
+    See:
+       PLAY A 0 A_Chase
+    Missile:
+	 TNT1 A 0 A_JumpIfCloser(128,"SuccessfulChase")
+	 TNT1 A 0 A_Jump(128,"NinetyNeg1")
+	 PLAY A 0 A_SpawnItemEx("HGruntHornetFake1",0,0,0,10,0,random(2,-2),90,0)
+	 Stop
+    NinetyNeg1:
+	 PLAY A 0 A_SpawnItemEx("HGruntHornetFake1",0,0,0,10,0,random(5,-5),-90,0)
+	 Stop
+    SuccessfulChase:
+       PLAY A 0 A_FaceTarget
+       PLAY A 0 A_CustomMissile("HGruntHornetNoSightSound1",0,0,0)
+	Stop
+    }
+}
+
+Actor HGruntHornetNoSightSound1 : HGruntHornet
+{
+	SeeSound ""
+	States
+	{
+	Death:
+	Crash:
+		TNT1 A 1 A_PlaySound("halflife/monsters/hornetgrunt/flybuzz")
+		Stop
+	XDeath:
+		TNT1 A 0 A_PlaySound("halflife/monsters/hornetgrunt/flyhit")
+		Stop
+	}
+}
+
+Actor HGruntHornetFake1 : HGruntHornet
+{
+	SeeSound ""
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		HLOH A 1 A_JumpIfInventory("HornetCounter",20,"Death")
+		TNT1 A 0 A_GiveInventory("HornetCounter",1)
+		X099 A 0 bright A_SpawnItemEx (HGHornetTrail1, -2, 0, 0, 0, 0, 0, 0, 160)
+		Loop
+	Death:
+		TNT1 A 1 A_PlaySound("halflife/monsters/hornetgrunt/flybuzz")
+		Stop
+	}
+}

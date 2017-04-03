@@ -1,29 +1,5 @@
 gameinfo
 {
-/*	titlepage = "TITLEPIC"
-	creditpage = "CREDIT"
-	titlemusic = "$MUSIC_DM2TTL"
-	titletime = 11
-	advisorytime = 0
-	pagetime = 5
-	chatsound = "misc/chat"
-	finalemusic = "$MUSIC_READ_M"
-	finaleflat = "SLIME16"
-	finalepage = "CREDIT"
-	infopage = "HELP", "CREDIT"
-	quitsound = "menu/quit"
-	border = DoomBorder
-	telefogheight = 0
-	defkickback = 100
-	skyflatname = "F_SKY1"
-	translator = "xlat/doom.txt"
-	mapinfo = "mapinfo/doom2.txt"
-	defaultbloodcolor = "68 00 00"
-	defaultbloodparticlecolor = "ff 00 00"
-	backpacktype = "Backpack"
-	statusbar = "sbarinfo/doom.txt"
-	intermissionmusic = "$MUSIC_DM2INT"
-*/
 	borderflat = "XMETAL25"
 	infopage = "HELP"
 }
@@ -63,8 +39,13 @@ ACSreturn = 3
 Key = d
 }
 
-map TITLEMAP "The Path to Perdition"
-{sky1 = HLSKY5, 0.0
+defaultmap
+{
+lightmode = 0
+fogdensity = 1
+fade = "00 00 00"
+evenlighting
+nolightfade
 }
 
 map map01 "Walk Softly and Carry a Big Stick"
@@ -124,42 +105,296 @@ exittext =
 "'The Persecution Complex'."
 }
 
-/*map map09 "Smoke on the Water, The Fire in the Sky."
-{sky1 = HLSKY3, 0.0
-//music = D_MAP08
-fallingdamage
-cluster = 2}
-
-map map10 "When Hell Freezes Over."
-{sky1 = HLSKY3, 0.0
-//music = D_MAP08
-fallingdamage
-cluster = 2}
-
-map map11 "Fly in a Web"
-{sky1 = HLSKY4, 0.0
-//music = D_MAP08
-fallingdamage
-cluster = 2}
-
-cluster 2 {hub
-pic = TITLEPIC
-exittext =
-"Paranoid: A production of",
-"'The Persecution Complex'."
-}
-*/
-
-map map31 "Six Ways to Die."
-{sky1 = HLSKY4, 0.0
-//music = D_MAP08
-fallingdamage
-cluster = 3}
-
 cluster 3
 {
 pic = TITLEPIC
 exittext =
 "Paranoid: A production of",
 "'The Persecution Complex'."
+}
+
+episode map01 
+{
+name="Paranoid: Infiltration"
+}
+
+episode map10 
+{
+name="Paranoiac: Extraction"
+}
+
+episode map19 
+{
+name="Paranoiac: Dissolution"
+}
+
+episode map22 
+{
+name="Paranoiac: Obliteration"
+}
+
+map TITLEMAP "Flight of the Phoenix"
+{sky1 = HLSKY3, 0.0
+PrecacheSounds = "30Title"
+}
+
+map map10 "Smoke on the Water, The Fire in the Sky."
+{evenlighting
+sky1 = HLSKY3, 0.0
+music = ""
+PrecacheSounds = "10Earth"
+fallingdamage
+cluster = 2}
+
+map map11 "Fly in a Web."
+{evenlighting
+sky1 = HLSKY3, 0.0
+music = ""
+PrecacheSounds = "01Earth"
+PrecacheSounds = "11Earth"
+fallingdamage
+MonsterFallingDamage
+cluster = 2}
+
+map map12 "How Green, the Valley."
+{evenlighting
+sky1 = HLSKY3, 0.0
+music = ""
+PrecacheSounds = "01Earth"
+fallingdamage
+MonsterFallingDamage
+cluster = 2}
+
+map map13 "Sewer Rat."
+{evenlighting
+sky1 = HLSKY4, 0.0
+music = ""
+PrecacheSounds = "01Earth"
+PrecacheSounds = "13Earth"
+fallingdamage
+MonsterFallingDamage
+cluster = 2}
+
+map map14 "Run, Rabbit, Run!"
+{evenlighting
+sky1 = HLSKY4, 0.0
+music = ""
+PrecacheSounds = "01Earth"
+PrecacheSounds = "14Earth"
+fallingdamage
+MonsterFallingDamage
+cluster = 2}
+
+map map15 "When Hell Freezes Over."
+{lightmode = 0
+fogdensity = 1
+fade = "00 00 00"
+nolightfade
+evenlighting
+sky1 = HLSKY4, 0.0
+music = ""
+PrecacheSounds = "01Earth"
+fallingdamage
+MonsterFallingDamage
+cluster = 2
+hazardcolor = "80 a0 ff"
+hazardflash = "40 80 ff"}
+
+map map16 "Play the Mad Scientist."
+{evenlighting
+sky1 = HLSKY5, 0.0
+music = ""
+PrecacheSounds = "01Earth"
+PrecacheSounds = "16Earth"
+PrecacheSounds = "16ZEarth"
+fallingdamage
+MonsterFallingDamage
+cluster = 2}
+
+map map17 "Painted into a Corner."
+{evenlighting
+sky1 = HLSKY5, 0.0
+music = ""
+PrecacheSounds = "01Earth"
+PrecacheSounds = "17Earth"
+fallingdamage
+MonsterFallingDamage
+cluster = 2}
+
+map map18 "Cavernicolous."
+{evenlighting
+sky1 = HLSKY5, 0.0
+music = ""
+PrecacheSounds = "01Earth"
+PrecacheSounds = "18Earth"
+PrecacheSounds = "18ZEarth"
+fallingdamage
+MonsterFallingDamage
+cluster = 2}
+
+map map19 "Island Hopping."
+{evenlighting
+sky1 = HLSKY6, 0.0
+music = ""
+PrecacheSounds = "19Xen"
+fallingdamage
+MonsterFallingDamage
+AirControl = 0.25
+cluster = 2}
+
+map map20 "Monarch Gonarch."
+{evenlighting
+sky1 = HLSKY6, 0.0
+music = ""
+PrecacheSounds = "20Xen"
+fallingdamage
+MonsterFallingDamage
+AirControl = 0.25
+cluster = 2}
+
+map map21 "Xenophobia."
+{evenlighting
+sky1 = HLSKY6, 0.0
+music = ""
+PrecacheSounds = "21Xen"
+PrecacheSounds = "21YXen"
+PrecacheSounds = "21ZXen"
+fallingdamage
+MonsterFallingDamage
+AirControl = 0.25
+cluster = 2
+next = EndSequence, "ParaEndScroll"
+}
+
+map map22 "Six Ways to Die."
+{evenlighting
+sky1 = HLSKY1, 0.0
+music = ""
+PrecacheSounds = "22SixWay"
+fallingdamage
+MonsterFallingDamage
+cluster = 2}
+
+map map23 "SpaceX."
+{evenlighting
+sky1 = HLSKY6, 0.0
+music = ""
+PrecacheSounds = "23Space"
+PrecacheTextures = "XMETL08", "XMETL09", "XMETL10", "XMETL08A", "XMETL08B", "XMETL08C", "XMETL09A", "XMETL09B", "XMETL09C", "XMETL09D", "XMETL09E", "XMETL09F", "XMETL10A", "XMETL10B", "XMETL10C", "XMETL10D", "XMETL10E"
+fallingdamage
+MonsterFallingDamage
+cluster = 2
+next = EndSequence, "ParaEndScroll"
+}
+
+cluster 2 {hub
+pic = TITLEPIC
+exittext =
+"Paranoiac: A production of",
+"'The Persecution Complex'.",
+"Other Work by the Team:",
+"Paranoid (2010)",
+"The Phobos Directive (2011)",
+"Visit us at http://doomnexus.drdteam.org"
+}
+
+Intermission ParaEndScroll
+{
+	Scroller
+	{
+		ScrollDirection = Left
+		Background = "PNEND1"
+		Background2 = "PNEND2"
+		Music = "D_PNDEND"
+		InitialDelay = -35
+//		InitialDelay = -105
+		Scrolltime = -640
+		Time = -760
+	}
+	Link = ParaEndLogo
+}
+
+Intermission ParaEndLogo
+{
+	// no backgrounds are set here so this will reuse the previous one.
+	Image
+	{
+		Draw = "TNT1A0", 255, 145
+		Time = -480
+		Sound = "halflife/GMan/EndSpeech1"
+	}
+	Image
+	{
+		Draw = "PEND0", 255, 145
+		Time = -4
+		Sound = "halflife/weapons/machinegunshot"
+	}
+	Image
+	{
+		Draw = "PEND1", 255, 145
+		Time = -4
+		Sound = "halflife/weapons/machinegunshot"
+	}
+	Image
+	{
+		Draw = "PEND2", 255, 145
+		Time = -8
+		Sound = "halflife/weapons/machinegunshot"
+	}
+	Image
+	{
+		Draw = "PEND3", 255, 145
+		Draw = "PNDMEND", 5, 0
+		Time = -60
+		Sound = "halflife/weapons/explode1"
+	}
+	Image
+	{
+		Draw = "PEND3", 255, 145
+		Draw = "PNDMEND", 5, 0
+		Time = -260
+		Sound = "halflife/GMan/EndSpeech2"
+	}
+	Wiper
+	{
+		WipeType = Crossfade
+		Time = -105
+	}
+	Image
+	{
+		Background = "PNEND3"
+		Draw = "PEND3", 255, 145
+		Draw = "PNDMEND", 5, 0
+		Time = -180
+		Sound = "halflife/GMan/EndSpeech3"
+	}
+	Fader
+	{
+		FadeType = FADEOUT
+		Draw = "PEND3", 255, 145
+		Draw = "PNDMEND", 5, 0		
+		Time = -105
+	}
+	Image
+	{
+		Background = "PNEND3"
+		Time = -35
+	}
+	Wiper
+	{
+		WipeType = Crossfade
+		Time = -35
+	}
+	Image
+	{
+		Background = "PNEND4"
+		Time = -35
+	}
+	Fader
+	{
+		FadeType = FADEOUT
+		Time = -105
+	}
+//	GotoTitle 
+//	{} 
 }

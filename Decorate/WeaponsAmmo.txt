@@ -1,4 +1,5 @@
 //March 30, 2010: 1630 hrs GMT
+//Updated March 13, 2010 to add crossbow bolts & gluon gun ammo to ammo pack
 
 Actor PistolHeldAmmo : Inventory
 {	Inventory.MaxAmount 17	}
@@ -223,7 +224,7 @@ ACTOR Pshotgun : Weapon
 	States
 	{
 	Ready:
-		HW1I A 1 A_WeaponReady
+		HW1I A 1 A_WeaponReady(WRF_ALLOWRELOAD)
 		TNT1 A 0 A_JumpIfInventory("ReloadCheck",1,"RealReload")
 		Loop
 	Deselect:
@@ -242,6 +243,7 @@ ACTOR Pshotgun : Weapon
 		HW1I A 5 A_PlayWeaponSound("halflife/weapons/noammo")
 		Goto "RealReload"
 
+	Reload:
 	RealReload:
 		TNT1 a 0 A_JumpIfInventory("ShotgunHeldAmmo",8,"CantReload")
 		TNT1 a 0 A_JumpIfInventory("PShell",1,"ReloadPossible")
@@ -448,7 +450,7 @@ actor ARifle : Weapon
 	States
 	{
 	Ready:
-		HW3I A 1 A_WeaponReady
+		HW3I A 1 A_WeaponReady(WRF_ALLOWRELOAD)
 		TNT1 A 0 A_JumpIfInventory("ReloadCheck",1,"RealReload")
 		Loop
 	Deselect:
@@ -497,6 +499,7 @@ actor ARifle : Weapon
 		POSS A 3
 		Loop
 
+	Reload:
 	RealReload:
 			TNT1 A 0 A_JumpIfInventory("M16HeldAmmo",50,"NoNeed")
 			TNT1 A 0 A_JumpIfInventory("ARClip",1,"ReloadPossible")
@@ -693,7 +696,7 @@ ACTOR Beretta : Weapon
 	States
 	{
 	Ready:
-		HW2I A 1 A_WeaponReady
+		HW2I A 1 A_WeaponReady(WRF_ALLOWRELOAD)
 		TNT1 A 0 A_JumpIfInventory("ReloadCheck",1,"RealReload")
 		Loop
 	Deselect:
@@ -750,6 +753,7 @@ ACTOR Beretta : Weapon
 	Spawn:
 		POSS A 3
 		Loop
+	Reload:
 	RealReload:
 			TNT1 A 0 A_JumpIfInventory("PistolHeldAmmo",17,"NoNeed")
 			TNT1 A 0 A_JumpIfInventory("BClip",1,"ReloadPossible")
@@ -847,7 +851,7 @@ ACTOR Python : DoomWeapon
 	{
 	Ready:
 //		HWAT ABCDE 2
-		HWAI A 1 A_WeaponReady
+		HWAI A 1 A_WeaponReady(WRF_ALLOWRELOAD)
 		TNT1 A 0 A_JumpIfInventory("ReloadCheck",1,"RealReload")
 		Loop
 	Deselect:
@@ -884,6 +888,7 @@ ACTOR Python : DoomWeapon
 		POSS A 3
 		Loop
 
+	Reload:
 	RealReload:
 			TNT1 A 0 A_JumpIfInventory("MagnumHeldAmmo",6,"NoNeed")
 			TNT1 A 0 A_JumpIfInventory("PythonAmmo",1,"ReloadPossible")
@@ -1203,7 +1208,9 @@ ACTOR AmmoPack : CustomInventory 30016
 		TNT1 A 0 A_GiveInventory("PShell",4)
       	TNT1 A 0 A_GiveInventory("PythonAmmo",6)
 		TNT1 A 0 A_GiveInventory("RPGAmmo",1)
-      	Stop
+		TNT1 A 0 A_GiveInventory("Xbowbolts",2)
+ 		TNT1 A 0 A_GiveInventory("AECell",10)
+     	Stop
 	Spawn:
 		POSS A 3
 		Loop

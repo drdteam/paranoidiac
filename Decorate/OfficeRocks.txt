@@ -1,0 +1,519 @@
+Actor StreetLamp : SwitchableDecoration 30349
+{
+    Radius 4
+    Height 160
+    +SOLID
+	+Floorclip
+    States
+    {
+    
+    Spawn:
+    
+    Active:
+    POSS A -1
+    Loop
+    
+    Inactive:
+    POSS B -1
+    Stop
+    
+    }
+}
+
+Actor Glass01 30350
+{
+    Radius 16
+    Height 16
+    Renderstyle Translucent
+    Alpha 0.5
+    +nogravity
+    States
+    {  
+    Spawn:
+    POSS A -1
+    Stop
+    }
+}
+
+ACTOR BookShelf1a 30351
+{
+    Radius 8
+    Height 64
+    +SOLID
+ 	States
+	{
+		Spawn:
+		POSS A -1
+		Stop
+	}
+}
+
+ACTOR BookShelf1b : BookShelf1a 30352
+{
+}
+
+ACTOR BookShelf2a : BookShelf1a 30353
+{
+}
+
+ACTOR BookShelf2b : BookShelf1a 30354
+{
+}
+
+ACTOR RKive : BookShelf1a 30355
+{
+	Radius 8
+	Height 16
+}
+
+ACTOR Credenza 30356
+{
+    Radius 12
+    Height 26
+    +SOLID
+	States
+	{
+		Spawn:
+		POSS A -1
+		Stop
+	}
+}
+
+ACTOR CredenzaShort : Credenza 30357
+{
+}
+
+ACTOR Credenza2 : Credenza 30358
+{
+}
+
+ACTOR Ashtray 30359
+{
+    Radius 2
+    Height 2
+    +SOLID
+ 	States
+	{
+		Spawn:
+		POSS A -1
+		Stop
+	}
+}
+
+ACTOR AshtrayCig : Ashtray 30360
+{
+}
+
+ACTOR ConfTable : Credenza 30361
+{
+}
+
+ACTOR Phone1 30362
+{
+    Radius 4
+    Height 4
+    +SOLID
+ 	States
+	{
+		Spawn:
+		POSS A -1
+		Stop
+	}
+}
+
+ACTOR Phone2 : Phone1 30363
+{
+}
+
+ACTOR Phone3 : Phone1 30364
+{
+    +NOGRAVITY
+}
+
+ACTOR Rock01 30365
+{
+    Radius 24
+    Height 360
+    +SOLID
+	States
+	{
+		Spawn:
+		POSS A -1
+		Stop
+	}
+}
+
+ACTOR Rock01a : Rock01 30366
+{
+}
+
+ACTOR Rock01b : Rock01 30367
+{
+}
+
+ACTOR Rock01c : Rock01 30368
+{
+}
+
+ACTOR Rock02 : Rock01 30369
+{
+}
+
+ACTOR Rock02a : Rock01 30370
+{
+}
+
+ACTOR Rock02b : Rock01 30371
+{
+}
+
+ACTOR Rock02c : Rock01 30372
+{
+}
+
+ACTOR Rock03 : Rock01 30373
+{
+}
+
+ACTOR Rock03a : Rock01 30374
+{
+}
+
+ACTOR Rock03b : Rock01 30375
+{
+}
+
+ACTOR Rock03c : Rock01 30376
+{
+}
+
+ACTOR Rock04 : Rock01 30377
+{
+    Radius 48
+    Height 148
+}
+
+ACTOR Rock04a : Rock04 30378
+{
+}
+
+ACTOR Rock04b : Rock04 30379
+{
+}
+
+ACTOR Rock04c : Rock04 30380
+{
+}
+
+ACTOR Rock05 30381
+{
+    Radius 48
+    Height 100
+    +SOLID
+	States
+	{
+		Spawn:
+		POSS A -1
+		Stop
+	}
+}
+
+ACTOR Rock05a : Rock05 30382
+{
+}
+
+ACTOR Rock06 : Rock05 30383
+{
+}
+
+ACTOR Rock06a : Rock05 30384
+{
+}
+
+ACTOR TechPillar1a 30385
+{
+    Radius 16
+    Height 214
+	Mass 0x7FFFFFF
+    +SOLID
+	+Floorclip
+	States
+	{
+		Spawn:
+		POSS A 3
+		Loop
+	}
+}
+
+ACTOR TechPillar1b : TechPillar1a 30386
+{
+}
+
+ACTOR TechPillar1c : TechPillar1a 30387
+{
+}
+
+ACTOR TechPillar2 : TechPillar1a 30388
+{
+    Height 188
+}
+
+ACTOR TechClamp 30389
+{
+    Radius 96
+    Height 256
+	Mass 0x7FFFFFF
+    +SOLID
+	+SPAWNCEILING
+	+NOGRAVITY
+	States
+	{
+		Spawn:
+		POSS A 3
+		Loop
+	}
+}
+
+ACTOR TechPillar1aa : TechPillar1a 30390
+{
+    Radius 12
+    Height 160
+}
+
+ACTOR TechPillar1bb : TechPillar1a 30391
+{
+    Radius 12
+    Height 160
+}
+
+ACTOR TechPillar1cc : TechPillar1a 30392
+{
+    Radius 12
+    Height 160
+}
+
+ACTOR TechPillar2a : TechPillar1a 30393
+{
+    Radius 8
+    Height 94
+}
+
+ACTOR TechClampa 30394
+{
+    Radius 48
+    Height 128
+	Mass 0x7FFFFFF
+    +SOLID
+	+SPAWNCEILING
+	+NOGRAVITY
+	States
+	{
+		Spawn:
+		POSS A 3
+		Loop
+	}
+}
+
+ACTOR Rock02d : Rock01 30395
+{
+}
+
+ACTOR Rock03d : Rock01 30396
+{
+}
+
+ACTOR Rock02e : Rock01 30397
+{
+}
+
+ACTOR Rock03e : Rock01 30398
+{
+}
+
+ACTOR Rock02f : Rock01 30399
+{
+    Radius 60
+    Height 450
+}
+
+ACTOR Rock03f : Rock01 30400
+{
+    Radius 60
+    Height 450
+}
+
+ACTOR XenIsland1 30401
+{
+    Radius 96
+    Height 128
+    Mass 0x7FFFFFF
+    -SOLID
+    -NOBLOCKMAP
+    States
+    {
+      Spawn:
+      POSS A -1
+      Stop
+  }
+}
+
+ACTOR XenIsland2 : XenIsland1 30402
+{
+}
+
+ACTOR OspreyDead1 : OspreyDead 30403
+{
+	Radius 2
+	Height 2
+}
+
+ACTOR XenIsland3 : XenIsland1 30404
+{
+    Radius 288
+    Height 384
+}
+
+ACTOR NewDesk2 : Desk1 replaces Desk2
+{
+    Height 26
+}
+
+ACTOR NewDesk3 : Desk1 replaces Desk3
+{
+    Height 26
+}
+
+ACTOR NewDesk4 : Desk1 replaces Desk4
+{
+    Height 26
+}
+
+ACTOR NewDesk5 : Desk1 replaces Desk5
+{
+    Height 26
+}
+
+ACTOR NewDesk6 : Desk1 replaces Desk6
+{
+    Height 26
+}
+
+ACTOR HoverPad 30405
+{
+    Radius 28
+    Height 1
+    -SOLID
+    -NOBLOCKMAP
+ 	States
+	{
+		Spawn:
+		POSS A -1
+		Stop
+	}
+}
+
+ACTOR XenIsland4 : XenIsland3 30406
+{
+}
+
+ACTOR XenIsland5 : XenIsland3 30407
+{
+}
+
+ACTOR PConsole 30408
+{
+    Radius 12
+    Height 32
+    +SOLID
+ 	States
+	{
+		Spawn:
+		POSS A -1
+		Stop
+	}
+}
+
+ACTOR PConsole1 : PConsole 30409
+{
+}
+
+ACTOR PConsole2 : PConsole 30410
+{
+}
+
+ACTOR PConsole3 : PConsole 30411
+{
+}
+
+Actor pipe7 : pipe1 30412
+{
+	Radius 12
+	Height 181
+}
+
+Actor pipe8 : pipe1 30413
+{
+	Radius 16
+	Height 272
+}
+
+Actor girder3 : girder1 30414
+{
+	Radius 136
+	Height 1664
+	+NoGravity
+}
+
+Actor girder4 : girder1 30415
+{
+	Radius 128
+	+NoGravity
+}
+
+Actor XMetalBox1 : XMetalBox 30115
+{
+	Radius 136
+	Height 256
+}
+
+ACTOR XenIsland6 : XenIsland3 30416
+{
+}
+
+ACTOR Rock02g : Rock01 30417
+{
+    Radius 72
+    Height 476
+}
+
+ACTOR Rock03g : Rock01 30418
+{
+    Radius 72
+    Height 476
+}
+
+ACTOR Explosive : Inventory 30026
+{
+    Radius 4
+    Height 8
+    Mass 10
+    Inventory.PickupSound "misc/p_pkup"
+    Inventory.PickupMessage "Acquired explosive device."
+    +FLOORCLIP
+    +SOLID
+    +INVENTORY.ALWAYSPICKUP
+    States
+    {
+    Spawn:
+	POSS A 3
+	Loop
+    }
+}
+
+ACTOR PConsole4 : PConsole 30421
+{
+}
+
+ACTOR PConsole5 : PConsole 30422
+{
+}

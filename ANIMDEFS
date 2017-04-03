@@ -346,3 +346,97 @@ pic XWFALL5 tics 8
 // Modified: 1/13/2009 12:36 PM by Rex Claussen
 // Modified: 5/27/2009 08:26 PM by Rex Claussen
 // [NOTES on Edits: Complete change in texture nomenclature, added many more switches & animated textures]
+
+//******
+// WARPED FLATS
+//******
+
+WARP FLAT XNUKE02
+WARP2 FLAT XWATER06
+
+//******
+// SWITCHES
+//******
+ 
+switch XSWITCH1  on  sound sw1 pic XSWITCH2  tics 8
+
+//******
+// ANIMATED TEXTURES
+//******
+
+texture XGLASS1A
+
+pic XGLASS1A tics 7
+pic XGLASS02 tics 7
+pic XGLASS03 tics 7
+pic XGLASS02 tics 7
+pic XGLASS1A tics 7
+pic XGLASS03 tics 7
+pic XGLASS1A tics 7
+pic XGLASS02 tics 7
+
+texture XMONI31A 
+
+pic XMONI31A tics 105 
+pic XMONI31B tics 105 
+pic XMONI31C tics 105 
+pic XMONI31D tics 105
+pic XMONI31E tics 105
+pic XMONI31F tics 105
+
+texture XMONI31B 
+
+pic XMONI31B tics 70
+pic XMONI31C tics 70
+pic XMONI31D tics 70
+pic XMONI31E tics 70
+pic XMONI31F tics 70
+pic XMONI31A tics 70 
+
+texture XMONI31C 
+
+pic XMONI31C tics 70
+pic XMONI31D tics 105
+pic XMONI31E tics 70
+pic XMONI31F tics 105
+pic XMONI31A tics 70 
+pic XMONI31B tics 105
+
+texture XMONI31D 
+
+pic XMONI31D tics 35
+pic XMONI31E tics 70
+pic XMONI31F tics 35
+pic XMONI31A tics 70 
+pic XMONI31B tics 35
+pic XMONI31C tics 70
+
+texture XMONI32B 
+
+pic XMONI32B tics 105
+pic XMONI32C tics 105
+pic XMONI32D tics 105
+
+texture XMONI32C 
+
+pic XMONI32C tics 70
+pic XMONI32D tics 70
+pic XMONI32B tics 70
+
+texture XMONI32D 
+
+pic XMONI32D tics 140
+pic XMONI32B tics 140
+pic XMONI32C tics 140
+
+texture XMONI33A 
+
+pic XMONI33A tics 105 
+pic XMONI33B tics 105 
+pic XMONI33C tics 105 
+pic XMONI33D tics 105
+pic XMONI33E tics 105
+pic XMONI33F tics 105
+pic XMONI33G tics 105
+pic XMONI33H tics 105
+pic XMONI33I tics 140

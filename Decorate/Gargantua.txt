@@ -7,7 +7,7 @@ actor HLGargantua 7421
     spawnid 164
 	Monster
 	Health 8000
-	Mass 0xFFFFFFFFF
+	Mass 0x7FFFFFFF
 	Speed 18
 	Height 128
 	Radius 40

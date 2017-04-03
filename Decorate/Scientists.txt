@@ -1325,6 +1325,7 @@ actor HLScientist1Still 4055
 	{
 	Spawn:
 		PLAY A 0
+	See:
 	PonderingDecide:
 		TNT1 A 0 A_Jump(255,"Pondering1","Pondering3","Pondering3")
 
@@ -1481,6 +1482,7 @@ actor HLScientistUpdate 7423
 //	ActiveSound "halflife/monsters/scientist/idle"
 	States
 	{
+	See:
 	Spawn:
 		HLRW AABBCCDDEEF 3 A_Wander
 		TNT1 A 0 A_Jump(18,"StopMov")
@@ -1550,6 +1552,7 @@ actor HLScientist1 7424
 //	ActiveSound "halflife/monsters/scientist/idle"
 	States
 	{
+	See:
 	Spawn:
 		SC1W AABBCCDDEEF 3 A_Wander
 		TNT1 A 0 A_Jump(18,"StopMov")
@@ -1619,6 +1622,7 @@ actor HLScientist2 7425
 //	ActiveSound "halflife/monsters/scientist/idle"
 	States
 	{
+	See:
 	Spawn:
 		SC2W AABBCCDDEEF 3 A_Wander
 		TNT1 A 0 A_Jump(18,"StopMov")
@@ -1690,6 +1694,7 @@ actor HLScientist3 7426
 //	ActiveSound "halflife/monsters/scientist/idle"
 	States
 	{
+	See:
 	Spawn:
 		SC3W AABBCCDDEEF 3 A_Wander
 		TNT1 A 0 A_Jump(18,"StopMov")

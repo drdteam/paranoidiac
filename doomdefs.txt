@@ -1,0 +1,14 @@
+// Tall street lamp
+pointlight STREETLAMP
+{
+    color 0.85 0.85 0.85
+    size 128
+    // front, high, side
+    offset 72 40 0
+}
+
+
+object StreetLamp
+{
+    frame POSSA { light STREETLAMP }
+}
