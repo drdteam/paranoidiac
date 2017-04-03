@@ -1,55 +1,55 @@
 actor Bubble1
 {
-  height 2
-  radius 1
-  PROJECTILE
-  +FORCEXYBILLBOARD
-  renderstyle translucent
-  xscale 0.075
-  yscale 0.05625
-  alpha 0.75
-  states
-  {
-  Spawn:
-    BUBL A 0
-	BUBL A 0 ThrustThingZ(0, random(8, 12), 0, 0)
-	BUBL A 0 A_JumpIf(waterlevel == 0, "Death")
-	BUBL A 1 ACS_ExecuteAlways(729, 0)
-	goto Spawn+2
-  Death:
-    BUBL A 0 A_Stop
-	goto FadeOut
-  FadeOut:
-    BUBL A 1 A_FadeOut(0.25)
-    loop
+	height 2
+	radius 1
+	PROJECTILE
+	+FORCEXYBILLBOARD
+	renderstyle translucent
+	xscale 0.075
+	yscale 0.05625
+	alpha 0.75
+	states
+	{
+	Spawn:
+		BUBL A 0
+		BUBL A 0 ThrustThingZ(0, random(8, 12), 0, 0)
+		BUBL A 0 A_JumpIf(waterlevel == 0, "Death")
+		BUBL A 1 ACS_ExecuteAlways(729, 0)
+		goto Spawn+2
+	Death:
+		BUBL A 0 A_Stop
+		goto FadeOut
+	FadeOut:
+		BUBL A 1 A_FadeOut(0.25)
+		loop
   }
 }
 
-actor Bubble2 : Bubble1 { xscale 0.0625 yscale 0.05625 }
-actor Bubble3 : Bubble1 { xscale 0.05 yscale 0.05 }
-actor Bubble4 : Bubble1 { xscale 0.0375 yscale 0.0375 }
-actor Bubble5 : Bubble1 { xscale 0.025 yscale 0.025 }
+actor Bubble2 : Bubble1{xscale 0.0625 yscale 0.05625}
+actor Bubble3 : Bubble1{xscale 0.05 yscale 0.05}
+actor Bubble4 : Bubble1{xscale 0.0375 yscale 0.0375}
+actor Bubble5 : Bubble1{xscale 0.025 yscale 0.025}
 
 actor OMGBubbles : SwitchableDecoration 31599
 {
-  +NOCLIP
-  +NOSECTOR
-  +NOGRAVITY
-  +NOBLOCKMAP
-  states
-  {
-  Spawn:
-  Active:
-    TNT1 A 0
-    TNT1 A 0 A_CheckSightOrRange(2560,"IdleNoSee")
-    TNT1 A 1 ACS_ExecuteAlways(730, 0, args[0], args[1], args[2])
-    loop
-  Inactive:
-    TNT1 A -1
-    stop
-  IdleNoSee:
-    TNT1 A 10
-    TNT1 A 0 A_CheckSightOrRange(2560,"IdleNoSee")
-    goto Active
-  }
+	+NOCLIP
+	+NOSECTOR
+	+NOGRAVITY
+	+NOBLOCKMAP
+	states
+	{
+	Spawn:
+	Active:
+		TNT1 A 0
+		TNT1 A 0 A_CheckSightOrRange(2560,"IdleNoSee")
+		TNT1 A 1 ACS_ExecuteAlways(730, 0, args[0], args[1], args[2])
+		loop
+	Inactive:
+		TNT1 A -1
+		stop
+	IdleNoSee:
+		TNT1 A 10
+		TNT1 A 0 A_CheckSightOrRange(2560,"IdleNoSee")
+		goto Active
+	}
 }

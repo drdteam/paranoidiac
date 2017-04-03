@@ -7,13 +7,10 @@ Shotgun ""
 SuperShotgun ""
 RocketLauncher ""
 PlasmaRifle ""
-
-
 Pshotgun1 ""
 ARifle1 ""
 
 Health i_health
-
 
 Clip ""
 Shell ""
@@ -28,14 +25,12 @@ Pshotgun i_sgun1
 ARifle i_arifl1
 RPGLauncher i_rlau1
 
-
 Bclip i_bul1
 PythonAmmo i_bul2
 PShell i_shel1
 ARClip i_bul3
 M16Gren i_gren2
 RPGAmmo i_rock2
-
 
 BlueCard BKEYB0
 RedCard RKEYB0

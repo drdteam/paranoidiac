@@ -1,254 +1,222 @@
 //Map02: Message 1
-
 ACTOR MessageItem01 : CustomInventory
 {
-   Scale 0.25
-   inventory.maxamount 1
-   inventory.icon MAIL01
-   inventory.usesound "misc/chat"
-   +INVBAR
-   +undroppable
-   States
-   {
-     Spawn:
-     MAIL A 3
-     LOOP
-     Use:
-     TNT1 A 1 ACS_Execute (501, 0, 0, 0, 0)
-     Stop
-   }
+	Tag "Message"
+	Scale 0.25
+	inventory.icon MAIL01
+	inventory.usesound "misc/chat"
+	+INVBAR
+	+undroppable
+	States
+	{
+	Spawn:
+		MAIL A 3
+		LOOP
+	Use:
+		TNT1 A 1 ACS_Execute(501,0)
+		Fail
+	}
 }
 
 //Map02: Message 2
-
 ACTOR MessageItem02 : MessageItem01
 {
-   inventory.icon MAIL02
-   States
-   {
-     Use:
-     TNT1 A 1 ACS_Execute (502, 0, 0, 0, 0)
-     Stop
-   }
+	inventory.icon MAIL02
+	States
+	{
+	Use:
+		TNT1 A 1 ACS_Execute(502,0)
+		Fail
+	}
+}
+//Map04: Message 4
+ACTOR MessageItem19 : MessageItem02
+{
+	inventory.icon MAIL04
 }
 
 //Map02: Message 3
-
 ACTOR MessageItem03 : MessageItem01
 {
-   inventory.icon MAIL03
-   States
-   {
-     Use:
-     TNT1 A 1 ACS_Execute (503, 0, 0, 0, 0)
-     Stop
-   }
+	inventory.icon MAIL03
+	States
+	{
+	Use:
+		TNT1 A 1 ACS_Execute(503,0)
+		Fail
+	}
 }
 
 //Map02: Message 4
-
 ACTOR MessageItem04 : MessageItem01
 {
-   inventory.icon MAIL04
-   States
-   {
-     Use:
-     TNT1 A 1 ACS_Execute (504, 0, 0, 0, 0)
-     Stop
-   }
+	inventory.icon MAIL04
+	States
+	{
+	Use:
+		TNT1 A 1 ACS_Execute(504,0)
+		Fail
+	}
 }
 
 //Map03: Message 1
-
 ACTOR MessageItem05 : MessageItem01
 {
-   inventory.icon MAIL01
-   States
-   {
-     Use:
-     TNT1 A 1 ACS_Execute (505, 0, 0, 0, 0)
-     Stop
-   }
+	States
+	{
+	Use:
+		TNT1 A 1 ACS_Execute(505,0)
+		Fail
+	}
 }
 
 //Map03: Message 2
-
 ACTOR MessageItem06 : MessageItem01
 {
-   inventory.icon MAIL02
-   States
-   {
-     Use:
-     TNT1 A 1 ACS_Execute (506, 0, 0, 0, 0)
-     Stop
-   }
+	inventory.icon MAIL02
+	States
+	{
+	Use:
+		TNT1 A 1 ACS_Execute(506,0)
+		Fail
+	}
 }
 
 //Map03: Message 3
-
 ACTOR MessageItem07 : MessageItem01
 {
-   inventory.icon MAIL03
-   States
-   {
-     Use:
-     TNT1 A 1 ACS_Execute (507, 0, 0, 0, 0)
-     Stop
-   }
+	inventory.icon MAIL03
+	States
+	{
+	Use:
+		TNT1 A 1 ACS_Execute(507,0)
+		Fail
+	}
 }
 
 //Map04: Message 1
-
 ACTOR MessageItem08 : MessageItem01
 {
-   inventory.icon MAIL01
-   States
-   {
-     Use:
-     TNT1 A 1 ACS_Execute (508, 0, 0, 0, 0)
-     Stop
-   }
+	States
+	{
+	Use:
+		TNT1 A 1 ACS_Execute(508,0)
+		Fail
+	}
 }
 
 //Map04: Message 2
-
 ACTOR MessageItem09 : MessageItem01
 {
-   inventory.icon MAIL02
-   States
-   {
-     Use:
-     TNT1 A 1 ACS_Execute (509, 0, 0, 0, 0)
-     Stop
-   }
+	inventory.icon MAIL02
+	States
+	{
+	Use:
+		TNT1 A 1 ACS_Execute(509,0)
+		Fail
+	}
 }
 
 //Map04: Message 3
-
 ACTOR MessageItem10 : MessageItem01
 {
-   inventory.icon MAIL03
-   States
-   {
-     Use:
-     TNT1 A 1 ACS_Execute (510, 0, 0, 0, 0)
-     Stop
-   }
-}
-
-//Map04: Message 4
-
-ACTOR MessageItem19 : MessageItem01
-{
-   inventory.icon MAIL04
-   States
-   {
-     Use:
-     TNT1 A 1 ACS_Execute (519, 0, 0, 0, 0)
-     Stop
-   }
+	inventory.icon MAIL03
+	States
+	{
+	Use:
+		TNT1 A 1 ACS_Execute(510,0)
+		Fail
+	}
 }
 
 //Map08: Message 1
-
 ACTOR MessageItem11 : MessageItem01
 {
-   inventory.icon MAIL01
-   States
-   {
-     Use:
-     TNT1 A 1 ACS_Execute (511, 0, 0, 0, 0)
-     Stop
-   }
+	States
+	{
+	Use:
+		TNT1 A 1 ACS_Execute(511,0)
+		Fail
+	}
 }
 
 //Map05: Message 1
-
 ACTOR MessageItem12 : MessageItem01
 {
-   inventory.icon MAIL01
-   States
-   {
-     Use:
-     TNT1 A 1 ACS_Execute (512, 0, 0, 0, 0)
-     Stop
-   }
+	States
+	{
+	Use:
+		TNT1 A 1 ACS_Execute(512,0)
+		Fail
+	}
 }
 
 //Map05: Message 2
-
 ACTOR MessageItem13 : MessageItem01
 {
-   inventory.icon MAIL02
-   States
-   {
-     Use:
-     TNT1 A 1 ACS_Execute (513, 0, 0, 0, 0)
-     Stop
-   }
+	inventory.icon MAIL02
+	States
+	{
+	Use:
+		TNT1 A 1 ACS_Execute(513,0)
+		Fail
+	}
 }
 
 //Map05: Message 3
-
 ACTOR MessageItem14 : MessageItem01
 {
-   inventory.icon MAIL03
-   States
-   {
-     Use:
-     TNT1 A 1 ACS_Execute (514, 0, 0, 0, 0)
-     Stop
-   }
+	inventory.icon MAIL03
+	States
+	{
+	Use:
+		TNT1 A 1 ACS_Execute(514,0)
+		Fail
+	}
 }
 
 //Map06: Message 1
-
 ACTOR MessageItem15 : MessageItem01
 {
-   inventory.icon MAIL01
-   States
-   {
-     Use:
-     TNT1 A 1 ACS_Execute (515, 0, 0, 0, 0)
-     Stop
-   }
+	States
+	{
+	Use:
+		TNT1 A 1 ACS_Execute(515,0)
+		Fail
+	}
 }
 
 //Map06: Message 2
-
 ACTOR MessageItem16 : MessageItem01
 {
-   inventory.icon MAIL02
-   States
-   {
-     Use:
-     TNT1 A 1 ACS_Execute (516, 0, 0, 0, 0)
-     Stop
-   }
+	inventory.icon MAIL02
+	States
+	{
+	Use:
+		TNT1 A 1 ACS_Execute(516,0)
+		Fail
+	}
 }
 
 //Map07: Message 1
-
 ACTOR MessageItem17 : MessageItem01
 {
-   inventory.icon MAIL01
-   States
-   {
-     Use:
-     TNT1 A 1 ACS_Execute (517, 0, 0, 0, 0)
-     Stop
-   }
+	States
+	{
+	Use:
+		TNT1 A 1 ACS_Execute(517,0)
+		Fail
+	}
 }
 
 //Map07: Message 2
-
 ACTOR MessageItem18 : MessageItem01
 {
-   inventory.icon MAIL02
-   States
-   {
-     Use:
-     TNT1 A 1 ACS_Execute (518, 0, 0, 0, 0)
-     Stop
-   }
+	inventory.icon MAIL02
+	States
+	{
+	Use:
+		TNT1 A 1 ACS_Execute(518,0)
+		Fail
+	}
 }

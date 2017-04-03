@@ -4,14 +4,12 @@
 
 actor HLHoundEye 7401
 {
-    spawnid 155
 	Monster
 //	Health 150
 	Health 100
 	Mass 120
 	Speed 11
 	Height 45
-	Radius 20
 	PainChance 128
 	Scale 0.335
 	MeleeRange 80
@@ -20,6 +18,7 @@ actor HLHoundEye 7401
 	PainSound "halflife/monsters/houndeye/pain"
 	DeathSound "halflife/monsters/houndeye/death"
 	ActiveSound "halflife/monsters/houndeye/idle"
+	var int user_theta;
 	States
 	{
 	Spawn:
@@ -39,94 +38,30 @@ actor HLHoundEye 7401
 		Loop
 	Melee:
 		TNT1 A 0 A_FaceTarget
-		HLAA A 4 A_PlaySoundEx("halflife/monsters/houndeye/attackcharge","SoundSlot5")
-		HLAA BCBCBCBCBCBC 3
-		HLAA BCBCBCBCB 3
-		TNT1 A 0 A_stopsoundex("SoundSlot5")
+		HLAA A 4 A_PlaySound("halflife/monsters/houndeye/attackcharge",5)
+		HLAA BCBCBCBCBCBCBCBCBCBCB 3
+		TNT1 A 0 A_StopSound(5)
 		TNT1 A 0 A_PlaySound("halflife/monsters/houndeye/attackblast")
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWFast",0,0,0)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWFast",0,0,10)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWFast",0,0,20)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWFast",0,0,30)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWFast",0,0,40)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWFast",0,0,50)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWFast",0,0,60)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWFast",0,0,70)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWFast",0,0,80)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWFast",0,0,90)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWFast",0,0,100)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWFast",0,0,110)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWFast",0,0,120)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWFast",0,0,130)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWFast",0,0,140)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWFast",0,0,150)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWFast",0,0,160)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWFast",0,0,170)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWFast",0,0,180)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWFast",0,0,-10)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWFast",0,0,-20)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWFast",0,0,-30)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWFast",0,0,-40)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWFast",0,0,-50)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWFast",0,0,-60)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWFast",0,0,-70)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWFast",0,0,-80)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWFast",0,0,-90)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWFast",0,0,-100)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWFast",0,0,-110)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWFast",0,0,-120)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWFast",0,0,-130)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWFast",0,0,-140)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWFast",0,0,-150)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWFast",0,0,-160)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWFast",0,0,-170)
-
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWSlow",0,0,0)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWSlow",0,0,10)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWSlow",0,0,20)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWSlow",0,0,30)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWSlow",0,0,40)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWSlow",0,0,50)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWSlow",0,0,60)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWSlow",0,0,70)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWSlow",0,0,80)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWSlow",0,0,90)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWSlow",0,0,100)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWSlow",0,0,110)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWSlow",0,0,120)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWSlow",0,0,130)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWSlow",0,0,140)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWSlow",0,0,150)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWSlow",0,0,160)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWSlow",0,0,170)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWSlow",0,0,180)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWSlow",0,0,-10)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWSlow",0,0,-20)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWSlow",0,0,-30)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWSlow",0,0,-40)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWSlow",0,0,-50)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWSlow",0,0,-60)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWSlow",0,0,-70)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWSlow",0,0,-80)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWSlow",0,0,-90)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWSlow",0,0,-100)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWSlow",0,0,-110)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWSlow",0,0,-120)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWSlow",0,0,-130)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWSlow",0,0,-140)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWSlow",0,0,-150)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWSlow",0,0,-160)
-		TNT1 A 0 A_CustomMissile("HoundEyeShockWSlow",0,0,-170)
-
-
+		TNT1 A 0 A_SetUserVar("user_theta",0)
+	Shock1:
+		TNT1 A 0 A_CustomMissile("HoundEyeShockWFast",0,0,user_theta)
+		TNT1 A 0 A_SetUserVar("user_theta",user_theta+1)
+		TNT1 A 0 A_JumpIf(user_theta==360,1)
+		Loop
+		TNT1 A 0 A_SetUserVar("user_theta",0)
+	Shock2:
+		TNT1 A 0 A_CustomMissile("HoundEyeShockWSlow",0,0,user_theta)
+		TNT1 A 0 A_SetUserVar("user_theta",user_theta+1)
+		TNT1 A 0 A_JumpIf(user_theta==360,1)
+		Loop
 		HLAA A 7
 		Goto See
 	Pain:
-		TNT1 A 0 A_StopSoundEx("SoundSlot5")
+		TNT1 A 0 A_StopSound(5)
 		HLAP A 8 A_Pain
 		Goto See
 	Death:
-		TNT1 A 0 A_StopSoundEx("SoundSlot5")
+		TNT1 A 0 A_StopSound(5)
 		HLAD A 5 A_Scream
 		HLAD B 4 A_Fall
 		TNT1 A 0 A_PlaySound("halflife/weapons/bodydrop")
@@ -136,7 +71,7 @@ actor HLHoundEye 7401
 	XDeath:
 		TNT1 A 0 A_PlaySound("other/gibdeath")
 		TNT1 A 0 A_Fall
-	  	NULL AAAAAAAAAAAAAA 0 A_SpawnItemEx("XenGibs",random(5,-5),random(5,-5),random(10,40),random(1,7),random(1,7),random(5,13),random(0,359))
+	  	TNT1 AAAAAAAAAAAAAA 0 A_SpawnItemEx("XenGibs",random(5,-5),random(5,-5),random(10,40),random(1,7),random(1,7),random(5,13),random(0,359))
 		Stop
 	}
 }
@@ -158,22 +93,14 @@ ACTOR HoundEyeShockWFast
 	States
 	{
 	Spawn:
-	  HSHK ABC 3 A_Gravity
-	  Goto Death
+		HSHK ABC 3 A_Gravity
 	Death:
-	  HSHK C 0 
-	  Stop
+		HSHK C 0
+		Stop
 	}
 }
 
 Actor HoundEyeShockWSlow : HoundEyeShockWFast
 {
-	Damage (1)
 	Speed 12
-	States
-	{
-	Spawn:
-	  HSHK ABC 3 A_Gravity
-	  Goto Death
-	}
 }

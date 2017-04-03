@@ -6,95 +6,79 @@
 
 actor HEVSuit : BasicArmorPickup 31000
 {
-   radius 16
-   height 52
-  inventory.pickupmessage "Picked up the HEV Suit!"
-//  inventory.icon "ARM5A0"
-  armor.saveamount 100
-  armor.savepercent 50
-//  armor.maxfullabsorb 25
-  states
-  {
-  Spawn:
-    POSS A 3
-    loop
-  }
+	radius 16
+	height 52
+	inventory.pickupmessage "Picked up the HEV Suit!"
+	//inventory.icon "ARM5A0"
+	armor.saveamount 100
+	armor.savepercent 50
+	//armor.maxfullabsorb 25
+	states
+	{
+	Spawn:
+		POSS A -1
+		Stop
+	}
 }
 
 actor HEVbattery : BasicArmorBonus 31001
 {
-  spawnid 194
-  Radius 4
-  Height 12
-  -ALWAYSPICKUP
-  inventory.pickupmessage "Picked up battery pack for HEV Suit!"
-  armor.saveamount 15
-  armor.savepercent 50
-  armor.maxsaveamount 100
-//  inventory.icon "ABO2A0"
-  states
-  {
-  Spawn:
-    POSS A 3
-    loop
-  }
+	Radius 4
+	Height 12
+	-ALWAYSPICKUP
+	inventory.pickupmessage "Picked up battery pack for HEV Suit!"
+	armor.saveamount 15
+	armor.savepercent 50
+	armor.maxsaveamount 100
+	//inventory.icon "ABO2A0"
+	states
+	{
+	Spawn:
+		POSS A -1
+		Stop
+	}
 }
 
-Actor Key1 : DoomKey 31002
+Actor Key1 : Key 31002
 {
-   Inventory.Pickupmessage "Picked up the blue security key"
-   Inventory.Icon "HLKEYBI"
-   spawnid 197
-   radius 4
-   height 2
-   States
-   {
-   Spawn:
-      POSS A 10
-      loop
-   }
+	Inventory.Pickupmessage "Picked up the blue security key"
+	Inventory.Icon "HLKEYBI"
+	radius 4
+	height 2
+	States
+	{
+	Spawn:
+		POSS A -1
+		Stop
+	}
 }
 
 actor Medkit : Health 31003
 {
-  spawnid 195
-  Radius 8
-  Height 4
-  inventory.pickupmessage "Picked up a field medical kit!"
-  Inventory.Amount 15
-//  inventory.icon "ABO2A0"
-  states
-  {
-  Spawn:
-    POSS A 3
-    loop
-  }
+	Radius 8
+	Height 4
+	inventory.pickupmessage "Picked up a field medical kit!"
+	Inventory.Amount 15
+	//inventory.icon "ABO2A0"
+	states
+	{
+	Spawn:
+		POSS A -1
+		Stop
+	}
 }
 
 actor HEVCharge : BasicArmorBonus
 {
-  armor.maxsaveamount 100
-  armor.saveamount 1
-  armor.savepercent 50
-  -ALWAYSPICKUP
-  states
-  {
-  Spawn:
-    TNT1 A 0
-    loop
-  }
+	armor.maxsaveamount 100
+	armor.saveamount 1
+	armor.savepercent 50
+	-ALWAYSPICKUP
 }
 
-Actor Key2 : DoomKey 31004
+Actor Key2 : Key1 31004
 {
-   Inventory.Pickupmessage "Picked up the red security key"
-   Inventory.Icon "HLKEYRI"
-   radius 4
-   height 4
-   States
-   {
-   Spawn:
-      POSS A 10
-      loop
-   }
+	Inventory.Pickupmessage "Picked up the red security key"
+	Inventory.Icon "HLKEYRI"
+	height 4
 }

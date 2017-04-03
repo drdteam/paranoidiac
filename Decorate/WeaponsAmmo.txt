@@ -1,21 +1,29 @@
 //March 30, 2010: 1630 hrs GMT
-//Updated March 13, 2010 to add crossbow bolts & gluon gun ammo to ammo pack
+ACTOR ParanoidWeaponPickup : CustomInventory
+{
+	Inventory.PickupSound "misc/w_pkup"
+	States
+	{
+	Spawn:
+		POSS A -1
+		Stop
+	}
+}
 
-Actor PistolHeldAmmo : Inventory
-{	Inventory.MaxAmount 17	}
-
-Actor ReloadCheck : Inventory
-{	Inventory.MaxAmount 1	}
-
-Actor MagnumHeldAmmo : Inventory
-{	Inventory.MaxAmount 6	}
-
-Actor ShotgunHeldAmmo : Inventory
-{	Inventory.MaxAmount 8	}
-
-Actor M16HeldAmmo : Inventory
-{	Inventory.MaxAmount 50	}
-
+//****************************************
+// Dummy item for light on player weapons
+//****************************************
+Actor LighCheapHack
+{
+	+NOINTERACTION
+	States
+	{
+	Spawn:
+		TNT1 A 3 LIGHT("YellowMediumFlicker3")
+		TNT1 A 3 LIGHT("YellowSmallFlicker1")
+		Stop
+	}
+}
 
 //================
 // Weapons & Ammo
@@ -23,124 +31,121 @@ Actor M16HeldAmmo : Inventory
 
 ACTOR Crowbar : Weapon 30001
 {
-   SpawnID 255
-   Radius 20
-   Height 4
-   Weapon.Kickback 0
-   Inventory.PickupSound "misc/i_pkup"
-   MeleeSound "halflife/weapons/Crowbarhitbody"
-   Inventory.PickupMessage "Picked up a Crowbar"
-   Obituary "%k shoved %o's crowbar where the sun don't shine."
-   +WEAPON.MELEEWEAPON      
-   States
-   {
-   Ready:
-      HW4I A 4 A_WeaponReady
-      Loop
-   Deselect:
-      TNT1 A 0 A_Lower
-      HW4I A 1 A_Lower
-      Loop
-   Select:
-      TNT1 A 0 A_Raise
-      HW4I A 1 A_Raise
-      Loop
-   Fire:
-      TNT1 A 0 A_Jump(255,"Fire1","Fire2","Fire3")
-   Fire1:
-      TNT1 A 0 A_JumpIfCloser(80,"FireFast1")
-      HW4F BC 2
-      TNT1 A 0 A_PlayWeaponSound("halflife/weapons/CrowbarMiss")
-      HW4F D 2 
-      HW4F E 1 A_FireBullets(1,1,1,3,"CrowbarPuff2",0,80)	//to ensure the puff spawning attack hits first
-      HW4F E 1 A_FireBullets(12,12,5,3,"Puffnone",0,80)
-      TNT1 A 0 A_JumpIfCloser(80,"Fire1F")
-      HW4F FGGGG 2
-      HW4G H 2
-      HW4I A 2
-      Goto Ready
-   Fire1F:
-      HW4F F 1
-      HW4F GGG 2
-      HW4G H 2
-      HW4I A 2
-      Goto Ready
-   Fire2:
-      TNT1 A 0 A_JumpIfCloser(80,"FireFast2")
-      HW4F B 2
-      HW4G BC 2 
-      TNT1 A 0 A_PlayWeaponSound("halflife/weapons/CrowbarMiss")
-      HW4G D 1
-      HW4G D 1 A_FireBullets(1,1,1,3,"CrowbarPuff2",0,80)
-      HW4G E 1 A_FireBullets(12,12,5,3,"Puffnone",0,80)
-      TNT1 A 0 A_JumpIfCloser(80,"Fire2F")
-      HW4G FG 1
-      TNT1 A 8
-      HW4G H 2
-      HW4I A 2
-      Goto Ready
-   Fire2F:
-      HW4G FG 1
-      TNT1 A 4
-      HW4G H 1
-      HW4I A 2
-      Goto Ready
-   Fire3:
-      TNT1 A 0 A_JumpIfCloser(80,"FireFast3")
-      HW4H BCD 2
-      TNT1 A 0 A_PlayWeaponSound("halflife/weapons/CrowbarMiss")
-      HW4H E 2 
-      HW4H F 1 A_FireBullets(1,1,1,3,"CrowbarPuff2",0,80)
-      HW4H F 1 A_FireBullets(12,12,5,3,"Puffnone",0,80)
-      TNT1 A 0 A_JumpIfCloser(90,"Fire3F")
-      HW4H G 2
-      TNT1 A 8
-      HW4H HIJKLM 1
-      Goto Ready
-   Fire3F:
-      HW4H G 2
-      TNT1 A 3
-      HW4H HJKM 1
-      Goto Ready
-   FireFast1:
-      HW4F BC 2
-      TNT1 A 0 A_PlayWeaponSound("halflife/weapons/CrowbarMiss")
-      HW4F D 1 A_FireBullets(1,1,1,3,"CrowbarPuff2",0,80)
-      HW4F E 1 A_FireBullets(12,12,5,3,"Puffnone",0,80)
-      HW4F F 1
-      HW4F GG 2
-      HW4G H 2
-      HW4I A 2
-      Goto Ready
-   FireFast2:
-      HW4F B 2
-      HW4G BC 2 
-      TNT1 A 0 A_PlayWeaponSound("halflife/weapons/CrowbarMiss")
-      HW4G D 1 A_FireBullets(1,1,1,3,"CrowbarPuff2",0,80)
-      HW4G E 1 A_FireBullets(12,12,5,3,"Puffnone",0,80)
-      HW4G FG 1
-      TNT1 A 4
-      HW4G H 1
-      HW4I A 2
-      Goto Ready
-   FireFast3:
-      HW4H BC 2
-      HW4H D 1
-      TNT1 A 0 A_PlayWeaponSound("halflife/weapons/CrowbarMiss")
-      HW4H E 1 A_FireBullets(1,1,1,3,"CrowbarPuff2",0,80)
-      HW4H F 1 A_FireBullets(12,12,5,3,"Puffnone",0,80)
-      HW4H G 2
-      TNT1 A 3
-      HW4H HJKM 1
-      Goto Ready
-   Spawn:
-      POSS A 3
-      Loop
-   }
+	Tag "Crowbar"
+	Height 4
+	Weapon.Kickback 0
+	Inventory.PickupSound "misc/i_pkup"
+	MeleeSound "halflife/weapons/Crowbarhitbody"
+	Inventory.PickupMessage "Picked up a Crowbar"
+	Obituary "%k shoved %o's crowbar where the sun don't shine."
+	+WEAPON.MELEEWEAPON
+	States
+	{
+	Ready:
+		HW4I A 4 A_WeaponReady
+		Loop
+	Deselect:
+		TNT1 A 0 A_Lower
+		HW4I A 1 A_Lower
+		Loop
+	Select:
+		TNT1 A 0 A_Raise
+		HW4I A 1 A_Raise
+		Loop
+	Fire:
+		TNT1 A 0 A_Jump(255,"Fire1","Fire2","Fire3")
+	Fire1:
+		TNT1 A 0 A_JumpIfCloser(80,"FireFast1")
+		HW4F BC 2
+		TNT1 A 0 A_PlaySound("halflife/weapons/CrowbarMiss",CHAN_WEAPON)
+		HW4F D 2
+		HW4F E 1 A_FireBullets(1,1,1,3,"CrowbarPuff2",0,80)	//to ensure the puff spawning attack hits first
+		HW4F E 1 A_FireBullets(12,12,5,3,"Puffnone",0,80)
+		TNT1 A 0 A_JumpIfCloser(80,"Fire1F")
+		HW4F FGGGG 2
+		HW4G H 2
+		HW4I A 2
+		Goto Ready
+	Fire1F:
+		HW4F F 1
+		HW4F G 6
+		HW4G H 2
+		HW4I A 2
+		Goto Ready
+	Fire2:
+		TNT1 A 0 A_JumpIfCloser(80,"FireFast2")
+		HW4F B 2
+		HW4G BC 2
+		TNT1 A 0 A_PlaySound("halflife/weapons/CrowbarMiss",CHAN_WEAPON)
+		HW4G D 1
+		HW4G D 1 A_FireBullets(1,1,1,3,"CrowbarPuff2",0,80)
+		HW4G E 1 A_FireBullets(12,12,5,3,"Puffnone",0,80)
+		TNT1 A 0 A_JumpIfCloser(80,"Fire2F")
+		HW4G FG 1
+		TNT1 A 8
+		HW4G H 2
+		HW4I A 2
+		Goto Ready
+	Fire2F:
+		HW4G FG 1
+		TNT1 A 4
+		HW4G H 1
+		HW4I A 2
+		Goto Ready
+	Fire3:
+		TNT1 A 0 A_JumpIfCloser(80,"FireFast3")
+		HW4H BCD 2
+		HW4H E 2 A_PlaySound("halflife/weapons/CrowbarMiss",CHAN_WEAPON)
+		HW4H F 1 A_FireBullets(1,1,1,3,"CrowbarPuff2",0,80)
+		HW4H F 1 A_FireBullets(12,12,5,3,"Puffnone",0,80)
+		HW4H G 2
+		TNT1 A 8 A_JumpIfCloser(90,"Fire3F")
+		HW4H HIJKLM 1
+		Goto Ready
+	Fire3F:
+		TNT1 A 3
+		HW4H HJKM 1
+		Goto Ready
+	FireFast1:
+		HW4F BC 2
+		TNT1 A 0 A_PlaySound("halflife/weapons/CrowbarMiss",CHAN_WEAPON)
+		HW4F D 1 A_FireBullets(1,1,1,3,"CrowbarPuff2",0,80)
+		HW4F E 1 A_FireBullets(12,12,5,3,"Puffnone",0,80)
+		HW4F F 1
+		HW4F G 4
+		HW4G H 2
+		HW4I A 2
+		Goto Ready
+	FireFast2:
+		HW4F B 2
+		HW4G BC 2
+		TNT1 A 0 A_PlaySound("halflife/weapons/CrowbarMiss",CHAN_WEAPON)
+		HW4G D 1 A_FireBullets(1,1,1,3,"CrowbarPuff2",0,80)
+		HW4G E 1 A_FireBullets(12,12,5,3,"Puffnone",0,80)
+		HW4G FG 1
+		TNT1 A 4
+		HW4G H 1
+		HW4I A 2
+		Goto Ready
+	FireFast3:
+		HW4H BC 2
+		HW4H D 1
+		TNT1 A 0 A_PlaySound("halflife/weapons/CrowbarMiss",CHAN_WEAPON)
+		HW4H E 1 A_FireBullets(1,1,1,3,"CrowbarPuff2",0,80)
+		HW4H F 1 A_FireBullets(12,12,5,3,"Puffnone",0,80)
+		HW4H G 2
+		TNT1 A 3
+		HW4H HJKM 1
+		Goto Ready
+	Spawn:
+		POSS A -1
+		Stop
+	}
 }
 
 Actor Puffnone
-{ +NOINTERACTION
+{
+	+NOINTERACTION
 	States
 	{
 	Spawn:
@@ -151,49 +156,37 @@ Actor Puffnone
 
 Actor CrowbarPuff2
 {
-    +NOEXTREMEDEATH
-    +NOBLOCKMAP
-    +NOGRAVITY
-    +PUFFONACTORS
-    Speed 0
-    Damage 0
-    Scale 0.2
-    RenderStyle Add
-    states
-    {
-      Spawn:
-		TNT1 AAA 0
-		TNT1 A 0 A_PlayWeaponSound("halflife/weapons/Crowbarhitbody")
-		TNT1 A 4
+	+NOEXTREMEDEATH
+	+NOBLOCKMAP
+	+NOGRAVITY
+	+PUFFONACTORS
+	Scale 0.2
+	RenderStyle Add
+	states
+	{
+	Spawn:
+		TNT1 A 4 NODELAY A_PlaySound("halflife/weapons/Crowbarhitbody",CHAN_WEAPON)
 		Stop
 	Crash:
-		TNT1 A 0 A_PlayWeaponSound("halflife/weapons/Crowbarhit")
-		Goto "Puffer"
-	Puffer:
+		TNT1 A 0 A_PlaySound("halflife/weapons/Crowbarhit",CHAN_WEAPON)
 		TNT1 A 0 A_SpawnItemEx("PuffSmoke",0,0,0,0,0,0,0,32)
 		TNT1 A 0 A_Jump(128,11)
 		FX57 ABCDEFGHIJ 2 Bright A_FadeOut
 		Stop
 		FX57 KLMNOPQRST 2 Bright A_FadeOut
 		Stop
-    }
+	}
 }
 
 //===================
 // Paranoid Shotgun
 //===================
 
-Actor ShotgunPickup : CustomInventory 30002
+Actor ShotgunPickup : ParanoidWeaponPickup 30002
 {
-	+INVENTORY.IGNORESKILL
-	Inventory.Amount 1
-	Inventory.PickupSound "misc/w_pkup"
 	Inventory.PickupMessage "You got the shotgun!"
 	States
 	{
-	Spawn:
-		POSS A -1
-		Stop
 	Pickup:
 		TNT1 A 0 A_JumpIfInventory("PShotgun",1,"JustAmmo")
 		TNT1 A 0 A_GiveInventory("ShotgunHeldAmmo",8)
@@ -204,150 +197,111 @@ Actor ShotgunPickup : CustomInventory 30002
 		Stop
 	}
 }
+//=============================
+// Paranoid Shotgun (Vertical)
+//=============================
 
-ACTOR Pshotgun : Weapon 
-
+ACTOR Pshotgun1 : ShotgunPickup 30005
 {
-  SpawnID 254
-  Radius 20
-  Height 4
+	Radius 4
+	Height 32
+}
+
+ACTOR Pshotgun : Weapon
+{
+	Tag "Shotgun"
+	Height 4
 	+NOALERT
-	+INVENTORY.IGNORESKILL
+	+WEAPON.AMMO_CHECKBOTH
 	Weapon.SelectionOrder 900
-	Weapon.AmmoUse 0
-	Weapon.AmmoUse2 0
-	Weapon.AmmoGive 0
+	Weapon.AmmoUse 1
+	Weapon.AmmoUse2 1
 	Weapon.AmmoType "PShell"
-	Weapon.AmmoType2 "PShell"
+	Weapon.AmmoType2 "ShotgunHeldAmmo"
 	Inventory.PickupMessage "You got the shotgun!"
 	Obituary "%o swallowed %k's lead pellets."
+	Decal BulletChip
 	States
 	{
 	Ready:
+		HW1I A 0 A_JumpIfInventory("ShotgunHeldAmmo",0,2)
+		HW1I A 0 A_JumpIfInventory("PShell",1,2)
+		HW1I A 1 A_WeaponReady
+		Loop
 		HW1I A 1 A_WeaponReady(WRF_ALLOWRELOAD)
-		TNT1 A 0 A_JumpIfInventory("ReloadCheck",1,"RealReload")
 		Loop
 	Deselect:
-		TNT1 A 0 ACS_Terminate(870,0)
 		TNT1 A 0 A_Lower
 		HW1I A 1 A_Lower
-		Goto Deselect+1
+		Loop
 	Select:
-		TNT1 A 0 ACS_Execute(870,0,3,0,0)
 		TNT1 A 0 A_Raise
 		HW1I A 1 A_Raise
-		Goto Select+1
-
+		Loop
 	Fire:
-		TNT1 A 0 A_JumpIfInventory("ShotgunHeldAmmo",1,"Shot")
-		HW1I A 5 A_PlayWeaponSound("halflife/weapons/noammo")
-		Goto "RealReload"
-
-	Reload:
-	RealReload:
-		TNT1 a 0 A_JumpIfInventory("ShotgunHeldAmmo",8,"CantReload")
-		TNT1 a 0 A_JumpIfInventory("PShell",1,"ReloadPossible")
-		Goto "CantReload"
-
-	CantReload:
-		HW1I A 5 A_TakeInventory("ReloadCheck",1)
-		Goto Ready
-
-	ReloadPossible:
-		Hw1I A 5
-		HW1Q ABCDE 3
-
-		TNT1 A 0 A_JumpIfInventory("PShell",1,"ReloadContinue")
-		Goto "ReloadDone"
-
-	ReloadContinue:
-		TNT1 A 0 A_JumpIfInventory("ShotgunHeldAmmo",8,"ReloadDone")
-
-		HW1R ABC 2
-		TNT1 A 0 A_PlayWeaponSound("halflife/weapons/reload1")
-		TNT1 A 0 A_TakeInventory("PShell",1)
-		TNT1 A 0 A_GiveInventory("ShotgunHeldAmmo",1)
-		HW1R DEFG 2
-		TNT1 A 0 A_TakeInventory("ReloadCheck",1)
-		HW1R A 0 A_WeaponReady
-		HW1R A 2
-		Goto "ReloadPossible"+6
-
-	ReloadDone:
-		TNT1 A 0 A_TakeInventory("ReloadCheck",1)
-		HW1S ABCD 3
-		TNT1 A 0 A_PlayWeaponSound("halflife/weapons/shotgunpump")
-		hw1I IJKLMNOPQRS 2
-		Goto Ready
+		TNT1 A 0 A_JumpIfInventory("ShotgunHeldAmmo",1,2)
+		HW1I A 5 A_PlaySound("halflife/weapons/noammo",CHAN_WEAPON)
+		Goto Reload
 	Shot:
-		TNT1 A 0 A_PlayWeaponSound("halflife/weapons/shotgunsingle")
+		TNT1 A 0 A_PlaySound("halflife/weapons/shotgunsingle",CHAN_WEAPON)
 		TNT1 A 0 ACS_Execute(869,0,350,0,0)
 		TNT1 A 0 A_AlertMonsters
 		TNT1 AA 0 A_FireCustomMissile("GunSmallSmokeSpawner",0,0,4,6)
-		TNT1 a 0 A_FireCustomMissile("LighCheapHack",0,0,0)
-		hw1I B 2 A_FireBullets(3,3,8,5,"NewPuff1",1)
+		TNT1 A 0 A_FireCustomMissile("LighCheapHack",0,0,0)
+		hw1I B 2 A_FireBullets(3,3,8,5,"NewPuff1",0)
+		//hw1I B 2 A_FireBullets(6,6,7,5,"NewPuff1",0)
 		TNT1 A 0 A_TakeInventory("ShotgunHeldAmmo",1)
 		HW1I B 1 ACS_Execute(869,0,-50,0,0)
 		HW1I CCCDDD 1 ACS_Execute(869,0,-50,0,0)
 		hw1I EFGH 3
-		TNT1 A 0 A_PlayWeaponSound("halflife/weapons/shotgunpump")
+		TNT1 A 0 A_PlaySound("halflife/weapons/shotgunpump",CHAN_WEAPON)
 		hw1I IJKLMNOPQRS 2
 		Goto Ready
-
+	Reload:
+		HW1I A 5
+		HW1Q ABCDE 3
+	ReloadLoop:
+		HW1R ABC 2
+		TNT1 A 0 A_PlaySound("halflife/weapons/reload1",CHAN_WEAPON)
+		TNT1 A 0 A_TakeInventory("PShell",1,TIF_NOTAKEINFINITE)
+		TNT1 A 0 A_GiveInventory("ShotgunHeldAmmo",1)
+		HW1R DEFG 2
+		HW1R A 0 A_WeaponReady(WRF_NOBOB)
+		HW1R A 2
+		TNT1 A 0 A_JumpIfInventory("ShotgunHeldAmmo",0,"ReloadDone")
+		TNT1 A 0 A_JumpIfInventory("PShell",1,"ReloadLoop")
+		Goto ReloadDone
+	ReloadDone:
+		HW1S ABCD 3
+		TNT1 A 0 A_PlaySound("halflife/weapons/shotgunpump",CHAN_WEAPON)
+		hw1I IJKLMNOPQRS 2
+		Goto Ready
 	AltFire:
-		TNT1 a 0 A_JumpIfInventory("ShotgunHeldAmmo",1,"AtLeastOneShell")
-		HW1I A 5 A_PlayWeaponSound("halflife/weapons/noammo")
-		Goto "RealReload"
-	AtLeastOneShell:				//descriptive state names :P
 		TNT1 A 0 A_JumpIfInventory("ShotgunHeldAmmo",2,"DoubleShot")	//if less than two, will shot only one
-		Goto "ShotSingle"
-	ShotSingle:
-		TNT1 A 0 A_PlayWeaponSound("halflife/weapons/shotgunsingle")
-		TNT1 A 0 ACS_Execute(869,0,350,0,0)
-		TNT1 A 0 A_AlertMonsters
-		TNT1 AA 0 A_FireCustomMissile("GunSmallSmokeSpawner",0,0,4,5)
-		TNT1 a 0 A_FireCustomMissile("LighCheapHack",0,0,0)
-		hw1I B 2 A_FireBullets(6,6,7,5,"NewPuff1",0)
-		TNT1 A 0 A_TakeInventory("ShotgunHeldAmmo",1)
-		HW1I B 1 ACS_Execute(869,0,-50,0,0)
-		HW1I CCCDDD 1 ACS_Execute(869,0,-50,0,0)
-		hw1I EFGH 3
-		TNT1 A 0 A_PlayWeaponSound("halflife/weapons/shotgunpump")
-		hw1I IJKLMNOPQRS 2
-		Goto Ready
-
+		Goto Fire
 	DoubleShot:
-		TNT1 A 0 A_PlayWeaponSound("halflife/weapons/shotgundouble")
+		TNT1 A 0 A_PlaySound("halflife/weapons/shotgundouble",CHAN_WEAPON)
 		TNT1 A 0 ACS_Execute(869,0,550,0,0)
 		TNT1 AA 0 A_FireCustomMissile("GunSmallSmokeSpawner",0,0,4,5)
 		TNT1 A 0 A_AlertMonsters
-		TNT1 a 0 A_FireCustomMissile("LighCheapHack",0,0,0)
-		hw1B A 2 A_FireBullets(10,10,20,5,"NewPuff1",1)
+		TNT1 A 0 A_FireCustomMissile("LighCheapHack",0,0,0)
 		TNT1 A 0 A_TakeInventory("ShotgunHeldAmmo",2)
+		hw1B A 2 A_FireBullets(10,10,20,5,"NewPuff1",0)
 		HW1B A 1 ACS_Execute(869,0,-50,0,0)
 		HW1B BBCCDDEEFF 1 ACS_Execute(869,0,-50,0,0)
 		HW1B HIJKLMN 2
-		TNT1 A 0 A_PlayWeaponSound("halflife/weapons/shotgunpump")
+		TNT1 A 0 A_PlaySound("halflife/weapons/shotgunpump",CHAN_WEAPON)
 		hw1I IJKLMNOPQRS 2
 		Goto Ready
 	Spawn:
-		POSS A 3
-		Loop
-	}
-}
-//=========================
-// Self explanatory
-//=========================
-Actor LighCheapHack
-{
-	+NOINTERACTION
-	RenderStyle None
-	States
-	{
-	Spawn:
-		PLAY AB 3
+		POSS A -1
 		Stop
 	}
+}
+Actor ShotgunHeldAmmo : Ammo
+{
+	+INVENTORY.IGNORESKILL
+	Inventory.MaxAmount 8
 }
 
 //=========================
@@ -356,22 +310,22 @@ Actor LighCheapHack
 
 ACTOR PShell : Ammo 30003
 {
-  SpawnID 253
-  Radius 4
-  Height 4
-  Inventory.PickupSound "misc/w_pkup"
-  Inventory.PickupMessage "Picked up 4 shotgun shells."
-  Inventory.Amount 4
-  Inventory.MaxAmount 125
-  Ammo.BackpackAmount 4
-  Ammo.BackpackMaxAmount 125
-  Inventory.Icon "SHELA0"
-  States
-  {
-  Spawn:
-    POSS A 3
-    Loop
-  }
+	Tag "Shell"
+	Radius 4
+	Height 4
+	Inventory.PickupSound "misc/w_pkup"
+	Inventory.PickupMessage "Picked up 4 shotgun shells."
+	Inventory.Amount 4
+	Inventory.MaxAmount 125
+	Ammo.BackpackAmount 4
+	Ammo.BackpackMaxAmount 125
+	Inventory.Icon "SHELA0"
+	States
+	{
+	Spawn:
+		POSS A -1
+		Stop
+	}
 }
 
 //===========================
@@ -380,50 +334,24 @@ ACTOR PShell : Ammo 30003
 
 ACTOR PShellBox : PShell 30004
 {
-  SpawnID 252
-  Radius 6
-  Height 4
-  Inventory.PickupSound "misc/w_pkup"
-  Inventory.PickupMessage "Picked up a box of shotgun shells."
-  Inventory.Amount 12
-  States
-  {
-  Spawn:
-    POSS A 3
-    Loop
-  }
-}
-
-//=============================
-// Paranoid Shotgun (Vertical)
-//=============================
-
-ACTOR Pshotgun1 : ShotgunPickup 30005
-
-{
-  Radius 4
-  Height 32
-  SpawnID 251
+	Radius 6
+	Inventory.PickupMessage "Picked up a box of shotgun shells."
+	Inventory.Amount 12
 }
 
 //===================
 // 9mm Assault Rifle
 //===================
 
-Actor M16Pickup : CustomInventory 30006
+Actor M16Pickup : ParanoidWeaponPickup 30006
 {
-	+INVENTORY.IGNORESKILL
-	Inventory.Amount 1
-	Inventory.PickupSound "misc/w_pkup"
 	Inventory.PickupMessage "You got the 9mm Assault Rifle"
 	States
 	{
-	Spawn:
-		POSS A -1
-		Stop
 	Pickup:
 		TNT1 A 0 A_JumpIfInventory("ARifle",1,"JustAmmo")
 		TNT1 A 0 A_GiveInventory("M16HeldAmmo",25)
+		TNT1 A 0 A_GiveInventory("M16Gren")
 		TNT1 A 0 A_GiveInventory("ARifle",1)
 		Stop
 	JustAmmo:
@@ -432,105 +360,109 @@ Actor M16Pickup : CustomInventory 30006
 	}
 }
 
-actor ARifle : Weapon 
+//=============================
+// 9mm Assault Rifle (Vertical)
+//=============================
+
+ACTOR ARifle1 : M16Pickup 30009
 {
-   SpawnID 250
-   Radius 20
-   Height 4
+	Radius 4
+	Height 32
+}
+
+actor ARifle : Weapon
+{
+	Tag "Assault Rifle"
+	Height 4
 	+NOALERT
 	+INVENTORY.IGNORESKILL
+	+WEAPON.AMMO_CHECKBOTH
 	Weapon.SelectionOrder 1000
-	Weapon.AmmoUse 0
-	Weapon.AmmoGive 0
-	Weapon.AmmoUse2 0
-	Weapon.AmmoGive2 1
+	Weapon.AmmoUse 1
+	Weapon.AmmoUse2 1
 	Weapon.AmmoType "ARClip"
-	Weapon.AmmoType2 "M16Gren"
+	Weapon.AmmoType2 "M16ClipGren"
+	Inventory.PickupMessage "You got the 9mm Assault Rifle"
 	Obituary "%o felt %k's m16."
+	Decal BulletChip
 	States
 	{
 	Ready:
+		HW3I A 0 A_JumpIfInventory("M16HeldAmmo",0,2)
+		HW3I A 0 A_JumpIfInventory("ARClip",1,2)
+		HW3I A 1 A_WeaponReady
+		Loop
 		HW3I A 1 A_WeaponReady(WRF_ALLOWRELOAD)
-		TNT1 A 0 A_JumpIfInventory("ReloadCheck",1,"RealReload")
 		Loop
 	Deselect:
-		TNT1 A 0 ACS_Terminate(870,0)
 		TNT1 A 0 A_Lower
 		HW3I A 1 A_Lower
-		Goto Deselect+1
+		Loop
 	Select:
-		TNT1 A 0 ACS_Execute(870,0,4,0,0)
 		TNT1 A 0 A_Raise
 		HW3I A 1 A_Raise
-		Goto Select+1
+		Loop
 	Fire:
-		TNT1 A 0 A_JumpIfInventory("M16HeldAmmo",1,"Successful")
-		HW3I A 5 A_PlayWeaponSound("halflife/weapons/noammo")
-		Goto "RealReload"
-
-	Successful:
-//		HW3F A 1
-		TNT1 a 0 A_FireCustomMissile("LighCheapHack",0,0,0)
-		TNT1 a 0 A_PlayWeaponSound("halflife/weapons/machinegunshot")
-		TNT1 a 0 A_FireBullets(3,3,-1,5,"NewPuff1",1)
+		TNT1 A 0 A_JumpIfInventory("M16HeldAmmo",1,2)
+		HW3I A 5 A_PlaySound("halflife/weapons/noammo",CHAN_WEAPON)
+		Goto Reload
+		TNT1 A 0 A_FireCustomMissile("LighCheapHack",0,0,0)
+		TNT1 A 0 A_PlaySound("halflife/weapons/machinegunshot",CHAN_WEAPON)
+		TNT1 A 0 A_FireBullets(3,3,-1,5,"NewPuff1",0)
 		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_FireCustomMissile("GunSmallSmokeSpawner",0,0,6,4)
 		HW3F B 1 ACS_Execute(869,0,100,0,0)
 		TNT1 A 0 A_TakeInventory("M16HeldAmmo",1)
 		HW3F CE 1 ACS_Execute(869,0,-50,0,0)
-		HW3F F 1 
+		HW3F F 1
+		TNT1 A 0 A_CheckReload
 		Goto Ready
 	AltFire:
-		TNT1 A 0 A_JumpIfInventory("M16Gren",1,"AltSuccesful")
-		HW3I A 12 A_PlayWeaponSound("halflife/weapons/noammo")
+		TNT1 A 0 A_JumpIfInventory("M16Gren",1,2)
+		HW3I A 12 A_PlaySound("halflife/weapons/noammo",CHAN_WEAPON)
 		Goto Ready
-	AltSuccesful:
-		TNT1 A 0 A_PlayWeaponSound("halflife/weapons/grenadelaunch")
+		TNT1 A 0 A_PlaySound("halflife/weapons/grenadelaunch",CHAN_WEAPON)
 		TNT1 AA 0 A_FireCustomMissile("GunSmallSmokeSpawner",0,0,6,6)
-		TNT1 A 0 A_TakeInventory("M16Gren",1)
 		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 ACS_Execute(869,0,400,0,0)
-		TNT1 a 0 A_FireCustomMissile("LighCheapHack",0,0,0)
-		HW3G A 2 A_FireCustomMissile("M16Grenade",0,1,5,0)
+		TNT1 A 0 A_FireCustomMissile("LighCheapHack",0,0,0)
+		TNT1 A 0 A_TakeInventory("M16Gren",1,TIF_NOTAKEINFINITE)
+		HW3G A 2 A_FireCustomMissile("M16Grenade",0,0,5,0)
 		HW3G BBCCDDEE 1 ACS_Execute(869,0,-50,0,0)
 		HW3G FGHIJKLMNOPQ 2
+		TNT1 A 0 A_CheckReload
 		Goto Ready
-	Spawn:
-		POSS A 3
-		Loop
-
 	Reload:
-	RealReload:
-			TNT1 A 0 A_JumpIfInventory("M16HeldAmmo",50,"NoNeed")
-			TNT1 A 0 A_JumpIfInventory("ARClip",1,"ReloadPossible")
-			HW3I A 5
-			TNT1 A 0 A_TakeInventory("ReloadCheck",1)
-			Goto Ready
-	ReloadPossible:
-		HW3I A 5 
+		HW3I A 0 A_JumpIfInventory("ARClip",1,1)
+		Goto Ready
+		HW3I A 5
 		HW3R ABCDEF 3
-		TNT1 A 0 A_PlayWeaponSound("halflife/weapons/m16cliprelease")
-
-			TNT1 A 0 A_JumpIfInventory("M16HeldAmmo",50,"ReloadDone")
-			TNT1 A 0 A_JumpIfInventory("ARClip",1,"StillPossible")
-			Goto "ReloadDone"
-	StillPossible:
-			TNT1 A 0 A_TakeInventory("ARClip",1)
-			TNT1 A 0 A_GiveInventory("M16HeldAmmo",1)
-			Goto "ReloadPossible"+8
+		TNT1 A 0 A_PlaySound("halflife/weapons/m16cliprelease",CHAN_WEAPON)
+	ReloadLoop:
+		TNT1 A 0 A_TakeInventory("ARClip",1,TIF_NOTAKEINFINITE)
+		TNT1 A 0 A_GiveInventory("M16HeldAmmo",1)
+		TNT1 A 0 A_JumpIfInventory("M16HeldAmmo",0,"ReloadDone")
+		TNT1 A 0 A_JumpIfInventory("ARClip",1,"ReloadLoop")
 	ReloadDone:
-		TNT1 A 0 A_TakeInventory("ReloadCheck",1)
-
 		HW3R GHIJKLMNOPQ 2
-		TNT1 A 0 A_PlayWeaponSound("halflife/weapons/m16clipinsert")
+		TNT1 A 0 A_PlaySound("halflife/weapons/m16clipinsert",CHAN_WEAPON)
 		HW3S ABCDEFGI 2
 		Goto Ready
-	NoNeed:
-		HW3I A 5 A_TakeInventory("ReloadCheck",1)
-		Goto Ready
-   }
+	Spawn:
+		POSS A -1
+		Stop
+	}
 }
-
+Actor M16HeldAmmo : Ammo
+{
+	+INVENTORY.IGNORESKILL
+	Inventory.MaxAmount 50
+}
+ACTOR M16ClipGren : Ammo
+{
+	+INVENTORY.IGNORESKILL
+	Inventory.MaxAmount 70
+}
 Actor M16Grenade
 {
 	Projectile
@@ -542,18 +474,18 @@ Actor M16Grenade
 	Gravity 0.25
 	Scale 0.65
 	DeathSound "halflife/weapons/randomexplo"
+	Decal Scorch
 	States
 	{
 	Spawn:
 		TNT1 A 0
 		GRNL A 3 ThrustThingZ(0,8,0,1)
 		TNT1 AA 0 A_SpawnItemEx("GrenadeTrail",random(1,-3),random(3,-3),2+random(3,-3),0,0,0,0,0)
-		GRNL A 1 
+		GRNL A 1
 		Goto Spawn+2
 	Death:
 		TNT1 A 0 A_Explode(170,140)
-		TNT1 A 0 A_SpawnItemEx("GeneralExplosion",0,0,0,0,0,0,32,0)
-		TNT1 A 10
+		TNT1 A 10 A_SpawnItemEx("GeneralExplosion",0,0,0,0,0,0,32,0)
 		Stop
 	}
 }
@@ -582,23 +514,22 @@ Actor GrenadeTrail
 
 ACTOR ARClip : Ammo 30007
 {
-  Game Doom
-  SpawnID 249
-  Radius 8
-  Height 4
-  Inventory.PickupSound "misc/w_pkup"
-  Inventory.PickupMessage "Picked up a clip."
-  Inventory.Amount 25
-  Inventory.MaxAmount 250
-  Ammo.BackpackAmount 25
-  Ammo.BackpackMaxAmount 400
-  Inventory.Icon "CLIPA0"
-  States
-  {
-  Spawn:
-    POSS A 3
-    Loop
-  }
+	Tag "9mm AR"
+	Radius 8
+	Height 4
+	Inventory.PickupSound "misc/w_pkup"
+	Inventory.PickupMessage "Picked up a clip."
+	Inventory.Amount 25
+	Inventory.MaxAmount 250
+	Ammo.BackpackAmount 25
+	Ammo.BackpackMaxAmount 400
+	Inventory.Icon "CLIPA0"
+	States
+	{
+	Spawn:
+		POSS A -1
+		Stop
+	}
 }
 
 //========================
@@ -606,19 +537,10 @@ ACTOR ARClip : Ammo 30007
 //========================
 actor ARAmmo : ARClip 30008
 {
-  Game Doom
-  SpawnID 248
-  Radius 12
-  Height 8
-  Inventory.PickupSound "misc/w_pkup"
-  Inventory.PickupMessage "Picked up a box of 9mm bullets."
-  Inventory.Amount 50
-  States
-  {
-  Spawn:
-    POSS A 3
-    Loop
-  }
+	Radius 12
+	Height 8
+	Inventory.PickupMessage "Picked up a box of 9mm bullets."
+	Inventory.Amount 50
 }
 
 //=========
@@ -627,48 +549,30 @@ actor ARAmmo : ARClip 30008
 
 ACTOR M16Gren : Ammo 30017
 {
-  SpawnID 239
-  Inventory.PickupMessage "Picked up two M16 Grenades."
-  Inventory.Amount 2
-  Inventory.MaxAmount 10
-  Ammo.BackpackAmount 2
-  Ammo.BackpackMaxAmount 20
-  Inventory.Icon "ROCKA0"  //Placeholder icon for now
-  States
-  {
-  Spawn:
-    POSS A 3
-    Loop
-  }
-}
-
-//=============================
-// 9mm Assault Rifle (Vertical)
-//=============================
-
-ACTOR ARifle1 : M16Pickup 30009
-
-{
-  Radius 4
-  Height 32
-  SpawnID 247
+	Tag "Grenade"
+	Inventory.PickupMessage "Picked up two M16 Grenades."
+	Inventory.Amount 2
+	Inventory.MaxAmount 10
+	Ammo.BackpackAmount 2
+	Ammo.BackpackMaxAmount 20
+	Inventory.Icon "ROCKA0"  //Placeholder icon for now
+	States
+	{
+	Spawn:
+		POSS A -1
+		Stop
+	}
 }
 
 //=========
 // Beretta
 //=========
 
-Actor PistolPickup : CustomInventory 30010
+Actor PistolPickup : ParanoidWeaponPickup 30010
 {
-	+INVENTORY.IGNORESKILL
-	Inventory.Amount 1
-	Inventory.PickupSound "misc/w_pkup"
 	Inventory.PickupMessage "You picked up a Beretta."
 	States
 	{
-	Spawn:
-		POSS A -1
-		Stop
 	Pickup:
 		TNT1 A 0 A_JumpIfInventory("Beretta",1,"JustAmmo")
 		TNT1 A 0 A_GiveInventory("PistolHeldAmmo",17)
@@ -680,108 +584,100 @@ Actor PistolPickup : CustomInventory 30010
 	}
 }
 
-ACTOR Beretta : Weapon 
+ACTOR Beretta : Weapon
 {
-	SpawnID 246
+	Tag "Beretta"
 	Radius 4
 	Height 4
 	+NOALERT
 	+INVENTORY.IGNORESKILL
+	+WEAPON.AMMO_CHECKBOTH
 	Weapon.SelectionOrder 2000
-	Weapon.AmmoUse 0
-	Weapon.AmmoGive 0
+	Weapon.AmmoUse 1
+	Weapon.AmmoUse2 1
 	Weapon.AmmoType "BClip"
-	Weapon.AmmoType2 "BClip"
+	Weapon.AmmoType2 "PistolHeldAmmo"
+	Inventory.PickupMessage "You picked up a Beretta."
 	Obituary "%o was out-gunned by %k's Beretta."
+	Decal BulletChip
 	States
 	{
 	Ready:
+		HW2I A 0 A_JumpIfInventory("PistolHeldAmmo",0,2)
 		HW2I A 1 A_WeaponReady(WRF_ALLOWRELOAD)
-		TNT1 A 0 A_JumpIfInventory("ReloadCheck",1,"RealReload")
+		Loop
+		HW2I A 1 A_WeaponReady
 		Loop
 	Deselect:
-		TNT1 A 0 ACS_Terminate(870,0)
 		TNT1 A 0 A_Lower
 		HW2I A 1 A_Lower
-		Goto Deselect+1
+		Loop
 	Select:
-		TNT1 A 0 ACS_Execute(870,0,1,0,0)
 		TNT1 A 0 A_Raise
 		HW2I A 1 A_Raise
-		Goto Select+1
+		Loop
 	Fire:
-		TNT1 A 0 A_JumpIfInventory("PistolHeldAmmo",1,"Successful")
-		HW2I A 5 A_PlayWeaponSound("halflife/weapons/noammo")
-		Goto "RealReload"
-	Successful:
-		TNT1 A 0 A_PlayWeaponSound("halflife/weapons/pistol")
+		TNT1 A 0 A_JumpIfInventory("PistolHeldAmmo",1,2)
+		HW2I A 5 A_PlaySound("halflife/weapons/noammo",CHAN_WEAPON)
+		Goto Reload
+		TNT1 A 0 A_PlaySound("halflife/weapons/pistol",CHAN_WEAPON)
 		HW2F AB 1
 		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_TakeInventory("PistolHeldAmmo",1)
 		TNT1 A 0 ACS_Execute(869,0,100,0,0)
 		TNT1 A 0 A_FireCustomMissile("GunSmallSmokeSpawner",0,0,7,5)
-		TNT1 a 0 A_FireCustomMissile("LighCheapHack",0,0,0)
-		HW2F C 2 A_FireBullets(1,1,-1,5,"NewPuff1",1)
+		TNT1 A 0 A_FireCustomMissile("LighCheapHack",0,0,0)
+		HW2F C 2 A_FireBullets(1,1,-1,5,"NewPuff1",0)
 		HW2F DD 1 ACS_Execute(869,0,-50,0,0)
 		HW2F D 1
 		HW2F EF 2
 		TNT1 A 0 A_ReFire
 		HW2F GHIJKL 2
 		Goto Ready
-
 	AltFire:
-		TNT1 A 0 A_JumpIfInventory("PistolHeldAmmo",1,"AltSuccessful")
-		HW2I A 5 A_PlayWeaponSound("halflife/weapons/noammo")
-		Goto "RealReload"
-	AltSuccessful:
+		TNT1 A 0 A_JumpIfInventory("PistolHeldAmmo",1,2)
+		HW2I A 5 A_PlaySound("halflife/weapons/noammo",CHAN_WEAPON)
+		Goto Reload
 		HW2F B 1
 		TNT1 A 0 A_AlertMonsters
-		TNT1 A 0 A_PlayWeaponSound("halflife/weapons/pistol")
+		TNT1 A 0 A_PlaySound("halflife/weapons/pistol",CHAN_WEAPON)
 		TNT1 A 0 A_TakeInventory("PistolHeldAmmo",1)
 		TNT1 A 0 ACS_Execute(869,0,100,0,0)
 		TNT1 A 0 A_FireCustomMissile("GunSmallSmokeSpawner",0,0,7,5)
-		TNT1 a 0 A_FireCustomMissile("LighCheapHack",0,0,0)
-		HW2F C 2 A_FireBullets(3,3,-1,5,"NewPuff1",1)
+		TNT1 A 0 A_FireCustomMissile("LighCheapHack",0,0,0)
+		HW2F C 2 A_FireBullets(3,3,-1,5,"NewPuff1",0)
 		HW2F DD 1 ACS_Execute(869,0,-50,0,0)
-		HW2F D 1
-		HW2F E 1
-		TNT1 A 0 A_ReFire
-		HW2F EFF 1
-		HW2F GHIJKL 2
+		HW2F DE 1
+		HW2F E 1 A_ReFire
+		HW2F FGHIJKL 2
 		Goto Ready
-
-	Spawn:
-		POSS A 3
-		Loop
 	Reload:
-	RealReload:
-			TNT1 A 0 A_JumpIfInventory("PistolHeldAmmo",17,"NoNeed")
-			TNT1 A 0 A_JumpIfInventory("BClip",1,"ReloadPossible")
-			HW2I A 10 A_PlayWeaponSound("halflife/weapons/noammo")
-			TNT1 A 0 A_TakeInventory("ReloadCheck",1)
-			Goto Ready
-	ReloadPossible:
-		HW2I A 5 
+		TNT1 A 0 A_JumpIfInventory("BClip",1,3)
+		HW2I A 0 A_PlaySound("halflife/weapons/noammo",CHAN_WEAPON)
+		HW2I A 10 A_WeaponReady
+		Goto Ready
+		HW2I A 5
 		HW2R ABCDEF 3
-		TNT1 A 0 A_PlayWeaponSound("halflife/weapons/reload1")
-
-			TNT1 A 0 A_JumpIfInventory("PistolHeldAmmo",17,"ReloadDone")
-			TNT1 A 0 A_JumpIfInventory("BClip",1,"StillPossible")
-			Goto "ReloadDone"
-	StillPossible:
-			TNT1 A 0 A_TakeInventory("BClip",1)
-			TNT1 A 0 A_GiveInventory("PistolHeldAmmo",1)
-			Goto "ReloadPossible"+8
+		TNT1 A 0 A_PlaySound("halflife/weapons/reload1",CHAN_WEAPON)
+	ReloadLoop:
+		TNT1 A 0 A_TakeInventory("BClip",1,TIF_NOTAKEINFINITE)
+		TNT1 A 0 A_GiveInventory("PistolHeldAmmo",1)
+		TNT1 A 0 A_JumpIfInventory("PistolHeldAmmo",0,"ReloadDone")
+		TNT1 A 0 A_JumpIfInventory("BClip",1,"ReloadLoop")
 	ReloadDone:
-		TNT1 A 0 A_TakeInventory("ReloadCheck",1)
 		HW2R GHIJKLM 2
-		TNT1 A 0 A_PlayWeaponSound("halflife/weapons/reload2")
+		TNT1 A 0 A_PlaySound("halflife/weapons/reload2",CHAN_WEAPON)
 		HW2R NOPQRSTUV 2
 		Goto Ready
-	NoNeed:
-		HW2I A 5 A_TakeInventory("ReloadCheck",1)
-		Goto Ready
+	Spawn:
+		POSS A -1
+		Stop
 	}
+}
+Actor PistolHeldAmmo : Ammo
+{
+	+INVENTORY.IGNORESKILL
+	Inventory.MaxAmount 17
 }
 
 //====================
@@ -790,40 +686,33 @@ ACTOR Beretta : Weapon
 
 ACTOR BClip : Ammo 30011
 {
-  Game Doom
-  SpawnID 245
-  Radius 8
-  Height 4
-  Inventory.PickupSound "misc/w_pkup"
-  Inventory.PickupMessage "Picked up a clip."
-  Inventory.Amount 17
-  Inventory.MaxAmount 250
-  Ammo.BackpackAmount 17
-  Ammo.BackpackMaxAmount 400
-  Inventory.Icon "CLIPA0"
-  States
-  {
-  Spawn:
-    POSS A 3
-    Loop
-  }
+	Tag "9mm"
+	Radius 8
+	Height 4
+	Inventory.PickupSound "misc/w_pkup"
+	Inventory.PickupMessage "Picked up a clip."
+	Inventory.Amount 17
+	Inventory.MaxAmount 250
+	Ammo.BackpackAmount 17
+	Ammo.BackpackMaxAmount 400
+	Inventory.Icon "CLIPA0"
+	States
+	{
+	Spawn:
+		POSS A -1
+		Stop
+	}
 }
 
 //=====================
 // Python (357 Magnum)
 //=====================
 
-Actor R357Pickup : CustomInventory 30012
+Actor R357Pickup : ParanoidWeaponPickup 30012
 {
-	+INVENTORY.IGNORESKILL
-	Inventory.Amount 1
-	Inventory.PickupSound "misc/w_pkup"
-	Inventory.PickupMessage "A 357 Magnum! You Feelin' Lucky, Punk?"
+	Inventory.PickupMessage "A .357 Magnum! You Feelin' Lucky, Punk?"
 	States
 	{
-	Spawn:
-		POSS A -1
-		Stop
 	Pickup:
 		TNT1 A 0 A_JumpIfInventory("Python",1,"JustAmmo")
 		TNT1 A 0 A_GiveInventory("MagnumHeldAmmo",6)
@@ -835,120 +724,111 @@ Actor R357Pickup : CustomInventory 30012
 	}
 }
 
-ACTOR Python : DoomWeapon 
+ACTOR Python : Weapon
 {
-	SpawnID 244
+	Tag "Python"
 	Radius 4
 	Height 4
 	+NOALERT
 	+INVENTORY.IGNORESKILL
+	+WEAPON.AMMO_CHECKBOTH
+	Weapon.Kickback 100
 	Weapon.SelectionOrder 1500
-	Weapon.AmmoUse 0
-	Weapon.AmmoGive 0
+	Weapon.AmmoUse 1
+	Weapon.AmmoUse2 1
 	Weapon.AmmoType "PythonAmmo"
+	Weapon.AmmoType2 "MagnumHeldAmmo"
+	Inventory.PickupMessage "A .357 Magnum! You Feelin' Lucky, Punk?"
 	Obituary "%o's armor was pierced by %k's Python."
+	Decal BulletChip
 	States
 	{
 	Ready:
-//		HWAT ABCDE 2
+		HWAI A 0 A_JumpIfInventory("MagnumHeldAmmo",0,2)
+		TNT1 A 0 A_JumpIfInventory("PythonAmmo",1,2)
+		HWAI A 1 A_WeaponReady
+		Loop
 		HWAI A 1 A_WeaponReady(WRF_ALLOWRELOAD)
-		TNT1 A 0 A_JumpIfInventory("ReloadCheck",1,"RealReload")
 		Loop
 	Deselect:
-		TNT1 A 0 ACS_Terminate(870,0)
 		HWAI A 0 A_Lower
 		HWAI A 1 A_Lower
 		Loop
 	Select:
-		TNT1 A 0 ACS_Execute(870,0,2,0,0)
 		HWAI A 0 A_Raise
 		HWAI A 1 A_Raise
-		Goto Select+1
+		Loop
 	Fire:
-		TNT1 A 0 A_JumpIfInventory("MagnumHeldAmmo",1,"FireSuccesful")
-		HWAI A 5 A_PlayWeaponSound("halflife/weapons/noammo")
-		Goto "RealReload"
-	FireSuccesful:
+		TNT1 A 0 A_JumpIfInventory("MagnumHeldAmmo",1,2)
+		HWAI A 5 A_PlaySound("halflife/weapons/noammo",CHAN_WEAPON)
+		Goto Reload
 		HWAF A 2
-		TNT1 A 0 A_PlayWeaponSound("halflife/weapons/magnumshot")
+		TNT1 A 0 A_PlaySound("halflife/weapons/magnumshot",CHAN_WEAPON)
 		TNT1 A 0 ACS_Execute(869,0,500,0,0)
 		TNT1 A 0 A_AlertMonsters
 		TNT1 AA 0 A_FireCustomMissile("GunSmallSmokeSpawner",0,0,6,5)
-		TNT1 a 0 A_FireCustomMissile("LighCheapHack",0,0,0)
-		HWAF B 0 A_FireBullets (0, 0, 1, 85, "BulletPuff", 1)	
+		TNT1 A 0 A_FireCustomMissile("LighCheapHack",0,0,0)
+		HWAF B 0 A_FireBullets (0, 0, 1, 85, "BulletPuff", 0)
 		TNT1 A 0 A_TakeInventory("MagnumHeldAmmo",1)
 		HWAF BBCCDDEEEE 1 ACS_Execute(869,0,-50,0,0)
 		HWAF FGHIJKLMNOP 3
 		Goto Ready
 	Flash:
-		TNT1 A 4 Bright A_Light1
-		TNT1 A 3 Bright A_Light2
+		TNT1 A 4 A_Light1
+		TNT1 A 3 A_Light2
 		Goto LightDone
-	Spawn:
-		POSS A 3
-		Loop
-
 	Reload:
-	RealReload:
-			TNT1 A 0 A_JumpIfInventory("MagnumHeldAmmo",6,"NoNeed")
-			TNT1 A 0 A_JumpIfInventory("PythonAmmo",1,"ReloadPossible")
-			HWAI A 10
-			TNT1 A 0 A_TakeInventory("ReloadCheck",1)
-			Goto Ready
-	ReloadPossible:
 		HWAR ABCDEFGHIJKLMNOPQRSTUVWXYZ 2
 		HWAS ABCDEFGHIJKL 2
-
-			TNT1 A 0 A_JumpIfInventory("MagnumHeldAmmo",6,"ReloadDone")
-			TNT1 A 0 A_JumpIfInventory("PythonAmmo",1,"StillPossible")
-			Goto "ReloadDone"
-	StillPossible:
-			TNT1 A 0 A_TakeInventory("PythonAmmo",1)
-			TNT1 A 0 A_GiveInventory("MagnumHeldAmmo",1)
-			Goto "ReloadPossible"+38
+	ReloadLoop:
+		TNT1 A 0 A_TakeInventory("PythonAmmo",1,TIF_NOTAKEINFINITE)
+		TNT1 A 0 A_GiveInventory("MagnumHeldAmmo",1)
+		TNT1 A 0 A_JumpIfInventory("MagnumHeldAmmo",0,"ReloadDone")
+		TNT1 A 0 A_JumpIfInventory("PythonAmmo",1,"ReloadLoop")
 	ReloadDone:
-		TNT1 A 0 A_TakeInventory("ReloadCheck",1)
-		TNT1 A 0 A_PlayWeaponSound("halflife/weapons/m357reload")
+		TNT1 A 0 A_PlaySound("halflife/weapons/m357reload",CHAN_WEAPON)
 		HWAS MNOPQRSTUV 2
 		Goto Ready
-	NoNeed:
-		HWAI A 5 A_TakeInventory("ReloadCheck",1)
-		Goto Ready
+	Spawn:
+		POSS A -1
+		Stop
 	}
+}
+Actor MagnumHeldAmmo : Ammo
+{
+	+INVENTORY.IGNORESKILL
+	Inventory.MaxAmount 6
 }
 
 //=============
-// Python Ammo 
+// Python Ammo
 //=============
 
 ACTOR PythonAmmo : Ammo 30013
 {
-  Game Doom
-  SpawnID 243
-  Radius 6
-  Height 4
-  Inventory.PickupSound "misc/w_pkup"
-  Inventory.PickupMessage "Picked up a box of 357 calibers."
-  Inventory.Amount 12
-  Inventory.MaxAmount 36
-  Ammo.BackpackAmount 6
-  Ammo.BackpackMaxAmount 50
-  Inventory.Icon "CLIPA0"
-  States
-  {
-  Spawn:
-    POSS A 3
-    Loop
-  }
+	Tag ".357"
+	Radius 6
+	Height 4
+	Inventory.PickupSound "misc/w_pkup"
+	Inventory.PickupMessage "Picked up a box of .357 calibers."
+	Inventory.Amount 12
+	Inventory.MaxAmount 36
+	Ammo.BackpackAmount 6
+	Ammo.BackpackMaxAmount 50
+	Inventory.Icon "CLIPA0"
+	States
+	{
+	Spawn:
+		POSS A -1
+		Stop
+	}
 }
 
 ACTOR PythonAmmo1 : PythonAmmo 30018
 {
-  SpawnID 238
-  Radius 4
-  Height 4
-  Inventory.PickupMessage "Picked up six 357 caliber bullets."
-  Inventory.Amount 6
+	Radius 4
+	Inventory.PickupMessage "Picked up six 357 caliber bullets."
+	Inventory.Amount 6
 }
 
 //=====================
@@ -957,79 +837,77 @@ ACTOR PythonAmmo1 : PythonAmmo 30018
 
 ACTOR RPGLauncher : Weapon 30014
 {
-	SpawnID 242
+	Tag "RPG Launcher"
 	Radius 32
 	Height 8
 	+FLOORCLIP
-   Inventory.PickupSound "misc/w_pkup"
-   Inventory.PickupMessage "You just got an RPG Launcher! Let's blow things up!"
-   Weapon.AmmoType "RPGAmmo"
-	//+CHEATNOTWEAPON
-   Weapon.AmmoGive 2
-   Weapon.AmmoUse 1
-   States
-   {
-   Spawn:
-      POSS A 3
-      Loop
-   Ready:
-      HW5I A 1 A_WeaponReady
-      Loop
-   Deselect:
-      HW5I A 0 A_Lower
-      HW5I A 1 A_Lower
-      Loop
-   Select:
-      HW5I A 0 A_Raise
-      HW5I A 1 A_Raise
-      Loop
-   Fire:
-	TNT1 A 0 ACS_Execute(869,0,800,0,0)
-	TNT1 A 0 A_PlayWeaponSound("halflife/weapons/RPGFire")
-	TNT1 a 0 A_FireCustomMissile("LighCheapHack",0,0,0)
-      HW5F A 3 A_FireCustomMissile("HLRocket",0,1,5,5)
-	TNT1 A 0 A_Recoil(7)
-	HW5F BBCCCCCC 1 ACS_Execute(869,0,-100,0,0)
-      HW5F DEFGHI 2 
-	TNT1 A 0 A_CheckReload
-	HW5R ABCDEFGHIJKLMNOPQRSTUVWXYZ 2
-	HW5S ABCDE 2
-      Goto Ready
-   }
+	Inventory.PickupMessage "You just got an RPG Launcher! Let's blow things up!"
+	Weapon.AmmoUse 1
+	Weapon.AmmoGive 2
+	Weapon.AmmoType "RPGAmmo"
+	States
+	{
+	Ready:
+		HW5I A 1 A_WeaponReady
+		Loop
+	Deselect:
+		HW5I A 0 A_Lower
+		HW5I A 1 A_Lower
+		Loop
+	Select:
+		HW5I A 0 A_Raise
+		HW5I A 1 A_Raise
+		Loop
+	Fire:
+		TNT1 A 0 ACS_Execute(869,0,800,0,0)
+		TNT1 A 0 A_PlaySound("halflife/weapons/RPGFire",CHAN_WEAPON)
+		TNT1 A 0 A_FireCustomMissile("LighCheapHack",0,0,0)
+		HW5F A 3 A_FireCustomMissile("HLRocket",0,1,5,5)
+		TNT1 A 0 A_Recoil(7)
+		HW5F BBCCCCCC 1 ACS_Execute(869,0,-100,0,0)
+		HW5F DEFGHI 2
+		TNT1 A 0 A_CheckReload
+		HW5R ABCDEFGHIJKLMNOPQRSTUVWXYZ 2
+		HW5S ABCDE 2
+		Goto Ready
+	Spawn:
+		POSS A -1
+		Stop
+	}
 }
 
 ACTOR HLRocket
 {
-   Radius 5
-   Height 5
-   Speed 35
-   Scale 0.7
-   Damage 70
-   PROJECTILE
-   +EXTREMEDEATH
-   +ROCKETTRAIL
-   +FORCERADIUSDMG
-   DeathSound "halflife/weapons/randomexplo"
-   States
-   {
-   Spawn:
-      MI13 A 1 Bright
-	TNT1 A 0 A_CustomMissile("RPGTrail2",random(3,-3),random(3,-3),0)
-	TNT1 AA 0 A_CustomMissile("RPGTrail1",random(3,-3),random(3,-3),0)
-      Loop
-   Death:
-      TNT1 A 0 Bright A_Explode(512,256,1)
-      TNT1 A 0 Bright A_CustomMissile("HLRocketExplo",0,0,0,0)
-	TNT1 A 20 Radius_Quake(8,20,0,35,0)
-      Stop
-   }
+	Radius 5
+	Height 5
+	Speed 35
+	Scale 0.7
+	Damage 70
+	PROJECTILE
+	+EXTREMEDEATH
+	+ROCKETTRAIL
+	+FORCERADIUSDMG
+	DeathSound "halflife/weapons/randomexplo"
+	Decal HugeScorch
+	States
+	{
+	Spawn:
+		MI13 A 1 Bright
+		TNT1 A 0 A_CustomMissile("RPGTrail2",random(3,-3),random(3,-3),0)
+		TNT1 AA 0 A_CustomMissile("RPGTrail1",random(3,-3),random(3,-3),0)
+		Loop
+	Death:
+		TNT1 A 0 A_Explode(512,256,1)
+		TNT1 A 0 A_CustomMissile("HLRocketExplo",0,0,0,0)
+		TNT1 A 20 Radius_Quake(8,20,0,35,0)
+		Stop
+	}
 }
 
 Actor RPGTrail1
 {
 	+NOCLIP
 	+NOGRAVITY
-	Scale 0.3
 	RenderStyle Add
 	Alpha 0.6
 	Scale 0.4
@@ -1043,13 +921,9 @@ Actor RPGTrail1
 	}
 }
 
-Actor RPGTrail2
+Actor RPGTrail2 : RPGTrail1
 {
-	+NOCLIP
-	+NOGRAVITY
 	Scale 0.3
-	RenderStyle Add
-	Alpha 0.6
 	States
 	{
 	Spawn:
@@ -1064,30 +938,20 @@ Actor RPGTrail2
 Actor HLRocketExplo
 {
 	Projectile
-	Speed 0
-	Damage 0
 	+NOCLIP
 	SeeSound "halflife/weapons/randomexplo"
 	States
 	{
 	Spawn:
 		TNT1 A 0
-		TNT1 A 0 A_Jump(255,"Exp1","Exp2","Exp3","Exp4")
-	Exp1:
-		TNT1 A 0 A_CustomMissile("HLRocketExplo1",0,0,0)
-		TNT1 A 10
+		TNT1 A 0 A_Jump(255,1,2,3,4)
+		TNT1 A 10 A_CustomMissile("HLRocketExplo1",0,0,0)
 		Stop
-	Exp2:
-		TNT1 A 0 A_CustomMissile("HLRocketExplo2",0,0,0)
-		TNT1 A 10
+		TNT1 A 10 A_CustomMissile("HLRocketExplo2",0,0,0)
 		Stop
-	Exp3:
-		TNT1 A 0 A_CustomMissile("HLRocketExplo3",0,0,0)
-		TNT1 A 10
+		TNT1 A 10 A_CustomMissile("HLRocketExplo3",0,0,0)
 		Stop
-	Exp4:
-		TNT1 A 0 A_CustomMissile("HLRocketExplo4",0,0,0)
-		TNT1 A 10
+		TNT1 A 10 A_CustomMissile("HLRocketExplo4",0,0,0)
 		Stop
 	}
 }
@@ -1165,54 +1029,46 @@ Actor GeneralExplosionSmokeBig
 }
 
 //===================
-// RPG Launcher Ammo 
+// RPG Launcher Ammo
 //===================
 
 ACTOR RPGAmmo : Ammo 30015
 {
-  SpawnID 241
-  Radius 4
-  Height 20
-  Inventory.PickupSound "misc/w_pkup"
-  Inventory.PickupMessage "Picked up an RPG round."
-  Inventory.Amount 1
-  Inventory.MaxAmount 10
-  Ammo.BackpackAmount 2
-  Ammo.BackpackMaxAmount 20
-  Inventory.Icon "ROCKA0"
-  States
-  {
-  Spawn:
-    POSS A 3
-    Loop
-  }
+	Tag "RPG"
+	Radius 4
+	Height 20
+	Inventory.PickupSound "misc/w_pkup"
+	Inventory.PickupMessage "Picked up an RPG round."
+	Inventory.MaxAmount 10
+	Ammo.BackpackAmount 2
+	Ammo.BackpackMaxAmount 20
+	Inventory.Icon "ROCKA0"
+	States
+	{
+	Spawn:
+		POSS A -1
+		Stop
+	}
 }
 
 //============
 // Ammo Pack
 //============
 
-ACTOR AmmoPack : CustomInventory 30016
+ACTOR AmmoPack : ParanoidWeaponPickup 30016
 {
-	SpawnID 240
 	Radius 6
 	Height 24
-	Inventory.PickupSound "misc/w_pkup"
 	Inventory.PickupMessage "Picked up an AmmoPack!"
 	+FLOORCLIP
 	States
 	{
 	Pickup:
-      	TNT1 A 0 A_GiveInventory("BClip",17)
-      	TNT1 A 0 A_GiveInventory("ARClip",25)
+		TNT1 A 0 A_GiveInventory("BClip",17)
+		TNT1 A 0 A_GiveInventory("ARClip",25)
 		TNT1 A 0 A_GiveInventory("PShell",4)
-      	TNT1 A 0 A_GiveInventory("PythonAmmo",6)
+		TNT1 A 0 A_GiveInventory("PythonAmmo",6)
 		TNT1 A 0 A_GiveInventory("RPGAmmo",1)
-		TNT1 A 0 A_GiveInventory("Xbowbolts",2)
- 		TNT1 A 0 A_GiveInventory("AECell",10)
-     	Stop
-	Spawn:
-		POSS A 3
-		Loop
+		Stop
 	}
 }
