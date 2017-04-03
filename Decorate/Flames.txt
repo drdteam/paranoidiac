@@ -9,16 +9,16 @@ actor OMGFire : SwitchableDecoration 31998
   {
   Spawn:
   Active:
-    TNT1 A 0
-    TNT1 A 0 A_CheckSightOrRange(2560,"IdleNoSee")
-    TNT1 A 1 ACS_ExecuteAlways(777, 0, args[0], args[1], args[2])
-    loop
+	TNT1 A 0
+	TNT1 A 0 A_CheckSightOrRange(2560,"IdleNoSee")
+	TNT1 A 1 ACS_ExecuteAlways(777, 0, args[0], args[1], args[2])
+	loop
   IdleNoSee:
-    TNT1 A 10
-    TNT1 A 0 A_CheckSightOrRange(2560,"IdleNoSee")
-    goto Active
+	TNT1 A 10
+	TNT1 A 0 A_CheckSightOrRange(2560,"IdleNoSee")
+	goto Active
   Inactive:
-    TNT1 A -1
+	TNT1 A -1
 	stop
   }
 }
@@ -35,10 +35,10 @@ actor Ember
   states
   {
   Spawn:
-    SPKO E 35 bright
+	SPKO E 35 bright
 	goto FadeOut
   FadeOut:
-    SPKO E 1 bright A_FadeOut(0.1)
+	SPKO E 1 bright A_FadeOut(0.1)
 	loop
   }
 }
@@ -56,7 +56,7 @@ actor FlameGlow_0.2
   states
   {
   Spawn:
-    SPKO E 1 bright A_FadeOut(0.0125)
+	SPKO E 1 bright A_FadeOut(0.0125)
 	loop
   }
 }
@@ -84,7 +84,7 @@ actor Flame1A_0.1
   Spawn:
 	FLM1 ABCDEFGHIJ 2 bright
 	FLM1 KKLLMM 1 bright A_FadeOut(0.2)
-    stop
+	stop
   }
 }
 
@@ -96,9 +96,9 @@ actor Flame1B_0.1 : Flame1A_0.1
   states
   {
   Spawn:
-    FLM1 NOPQRSTUVW 2 bright
+	FLM1 NOPQRSTUVW 2 bright
 	FLM1 XXYYZZ 1 bright A_FadeOut(0.2)
-    stop
+	stop
   }
 }
 
@@ -112,7 +112,7 @@ actor Flame2A_0.1 : Flame1A_0.1
   Spawn:
 	FLM2 ABCDEFGHIJ 2 bright
 	FLM2 KKLLMM 1 bright A_FadeOut(0.2)
-    stop
+	stop
   }
 }
 
@@ -124,9 +124,9 @@ actor Flame2B_0.1 : Flame1A_0.1
   states
   {
   Spawn:
-    FLM2 NOPQRSTUVW 2 bright
+	FLM2 NOPQRSTUVW 2 bright
 	FLM2 XXYYZZ 1 bright A_FadeOut(0.2)
-    stop
+	stop
   }
 }
 
@@ -140,7 +140,7 @@ actor Flame3A_0.1 : Flame1A_0.1
   Spawn:
 	FLM3 ABCDEFGHIJ 2 bright
 	FLM3 KKLLMM 1 bright A_FadeOut(0.2)
-    stop
+	stop
   }
 }
 
@@ -152,9 +152,9 @@ actor Flame3B_0.1 : Flame3A_0.1
   states
   {
   Spawn:
-    FLM3 NOPQRSTUVW 2 bright
+	FLM3 NOPQRSTUVW 2 bright
 	FLM3 XXYYZZ 1 bright A_FadeOut(0.2)
-    stop
+	stop
   }
 }
 
@@ -168,7 +168,7 @@ actor Flame4A_0.1 : Flame1A_0.1
   Spawn:
 	FLM4 ABCDEFGHIJ 2 bright
 	FLM4 KKLLMM 1 bright A_FadeOut(0.2)
-    stop
+	stop
   }
 }
 
@@ -180,9 +180,9 @@ actor Flame4B_0.1 : Flame4A_0.1
   states
   {
   Spawn:
-    FLM4 NOPQRSTUVW 2 bright
+	FLM4 NOPQRSTUVW 2 bright
 	FLM4 XXYYZZ 1 bright A_FadeOut(0.2)
-    stop
+	stop
   }
 }
 
@@ -196,7 +196,7 @@ actor Flame5A_0.1 : Flame1A_0.1
   Spawn:
 	FLM5 ABCDEFGHIJ 2 bright
 	FLM5 KKLLMM 1 bright A_FadeOut(0.2)
-    stop
+	stop
   }
 }
 
@@ -208,9 +208,9 @@ actor Flame5B_0.1 : Flame5A_0.1
   states
   {
   Spawn:
-    FLM5 NOPQRSTUVW 2 bright
+	FLM5 NOPQRSTUVW 2 bright
 	FLM5 XXYYZZ 1 bright A_FadeOut(0.2)
-    stop
+	stop
   }
 }
 
@@ -224,7 +224,7 @@ actor Flame6A_0.1 : Flame1A_0.1
   Spawn:
 	FLM6 ABCDEFGHIJ 2 bright
 	FLM6 KKLLMM 1 bright A_FadeOut(0.2)
-    stop
+	stop
   }
 }
 
@@ -236,9 +236,9 @@ actor Flame6B_0.1 : Flame6A_0.1
   states
   {
   Spawn:
-    FLM6 NOPQRSTUVW 2 bright
+	FLM6 NOPQRSTUVW 2 bright
 	FLM6 XXYYZZ 1 bright A_FadeOut(0.2)
-    stop
+	stop
   }
 }
 
@@ -251,7 +251,7 @@ actor Flame7A_0.1 : Flame1A_0.1
   Spawn:
 	FLM7 ABCDEFGHIJ 2 bright
 	FLM7 KKLLMM 1 bright A_FadeOut(0.2)
-    stop
+	stop
   }
 }
 
@@ -263,9 +263,9 @@ actor Flame7B_0.1 : Flame7A_0.1
   states
   {
   Spawn:
-    FLM7 NOPQRSTUVW 2 bright
+	FLM7 NOPQRSTUVW 2 bright
 	FLM7 XXYYZZ 1 bright A_FadeOut(0.2)
-    stop
+	stop
   }
 }
 
@@ -279,7 +279,7 @@ actor Flame8A_0.1 : Flame1A_0.1
   Spawn:
 	FLM8 ABCDEFGHIJ 2 bright
 	FLM8 KKLLMM 1 bright A_FadeOut(0.2)
-    stop
+	stop
   }
 }
 
@@ -291,9 +291,9 @@ actor Flame8B_0.1 : Flame8A_0.1
   states
   {
   Spawn:
-    FLM8 NOPQRSTUVW 2 bright
+	FLM8 NOPQRSTUVW 2 bright
 	FLM8 XXYYZZ 1 bright A_FadeOut(0.2)
-    stop
+	stop
   }
 }
 
@@ -307,7 +307,7 @@ actor Flame9A_0.1 : Flame1A_0.1
   Spawn:
 	FLM9 ABCDEFGHIJ 2 bright
 	FLM9 KKLLMM 1 bright A_FadeOut(0.2)
-    stop
+	stop
   }
 }
 
@@ -319,9 +319,9 @@ actor Flame9B_0.1 : Flame9A_0.1
   states
   {
   Spawn:
-    FLM9 NOPQRSTUVW 2 bright
+	FLM9 NOPQRSTUVW 2 bright
 	FLM9 XXYYZZ 1 bright A_FadeOut(0.2)
-    stop
+	stop
   }
 }
 
@@ -335,8 +335,8 @@ actor Flame10A_0.1 : Flame1A_0.1
   Spawn:
 	FL10 ABCDEFGHIJ 2 bright
 	FL10 KKLLMM 1 bright A_FadeOut(0.2)
-    stop
-    stop
+	stop
+	stop
   }
 }
 
@@ -348,9 +348,9 @@ actor Flame10B_0.1 : Flame10A_0.1
   states
   {
   Spawn:
-    FL10 NOPQRSTUVW 2 bright
+	FL10 NOPQRSTUVW 2 bright
 	FL10 XXYYZZ 1 bright A_FadeOut(0.2)
-    stop
+	stop
   }
 }
 
@@ -364,7 +364,7 @@ actor Flame11A_0.1 : Flame1A_0.1
   Spawn:
 	FL11 ABCDEFGHIJ 2 bright
 	FL11 KKLLMM 1 bright A_FadeOut(0.2)
-    stop
+	stop
   }
 }
 
@@ -376,9 +376,9 @@ actor Flame11B_0.1 : Flame11A_0.1
   states
   {
   Spawn:
-    FL11 NOPQRSTUVW 2 bright
+	FL11 NOPQRSTUVW 2 bright
 	FL11 XXYYZZ 1 bright A_FadeOut(0.2)
-    stop
+	stop
   }
 }
 
@@ -392,7 +392,7 @@ actor Flame12A_0.1 : Flame1A_0.1
   Spawn:
 	FL12 ABCDEFGHIJ 2 bright
 	FL12 KKLLMM 1 bright A_FadeOut(0.2)
-    stop
+	stop
   }
 }
 
@@ -404,9 +404,9 @@ actor Flame12B_0.1 : Flame12A_0.1
   states
   {
   Spawn:
-    FL12 NOPQRSTUVW 2 bright
+	FL12 NOPQRSTUVW 2 bright
 	FL12 XXYYZZ 1 bright A_FadeOut(0.2)
-    stop
+	stop
   }
 }
 
@@ -420,7 +420,7 @@ actor Flame13A_0.1 : Flame1A_0.1
   Spawn:
 	FL13 ABCDEFGHIJ 2 bright
 	FL13 KKLLMM 1 bright A_FadeOut(0.2)
-    stop
+	stop
   }
 }
 
@@ -432,9 +432,9 @@ actor Flame13B_0.1 : Flame13A_0.1
   states
   {
   Spawn:
-    FL13 NOPQRSTUVW 2 bright
+	FL13 NOPQRSTUVW 2 bright
 	FL13 XXYYZZ 1 bright A_FadeOut(0.2)
-    stop
+	stop
   }
 }
 
@@ -448,7 +448,7 @@ actor Flame14A_0.1 : Flame1A_0.1
   Spawn:
 	FL14 ABCDEFGHIJ 2 bright
 	FL14 KKLLMM 1 bright A_FadeOut(0.2)
-    stop
+	stop
   }
 }
 
@@ -460,9 +460,9 @@ actor Flame14B_0.1 : Flame14A_0.1
   states
   {
   Spawn:
-    FL14 NOPQRSTUVW 2 bright
+	FL14 NOPQRSTUVW 2 bright
 	FL14 XXYYZZ 1 bright A_FadeOut(0.2)
-    stop
+	stop
   }
 }
 
@@ -476,7 +476,7 @@ actor Flame15A_0.1 : Flame1A_0.1
   Spawn:
 	FL15 ABCDEFGHIJ 2 bright
 	FL15 KKLLMM 1 bright A_FadeOut(0.2)
-    stop
+	stop
   }
 }
 
@@ -488,9 +488,9 @@ actor Flame15B_0.1 : Flame15A_0.1
   states
   {
   Spawn:
-    FL15 NOPQRSTUVW 2 bright
+	FL15 NOPQRSTUVW 2 bright
 	FL15 XXYYZZ 1 bright A_FadeOut(0.2)
-    stop
+	stop
   }
 }
 

@@ -7,192 +7,183 @@ a line in the direction the Waterfall actor is facing.
 
 actor Waterfall : SwitchableDecoration 20000
 {
-  +NOCLIP
-  +NOSECTOR
-  +NOGRAVITY
-  +NOBLOCKMAP
-  states
-  {
-  Spawn:
-  Active:
-    TNT1 A 0
-    TNT1 A 0 A_CheckSightOrRange(2560,"IdleNoSee")
-    TNT1 A 1 ACS_ExecuteAlways(444, 0, args[0])
-    loop
-  Inactive:
-    TNT1 A -1
-    stop
-  IdleNoSee:
-    TNT1 A 10
-    TNT1 A 0 A_CheckSightOrRange(2560,"IdleNoSee")
-    goto Active
-  }
+	+NOCLIP
+	+NOSECTOR
+	+NOGRAVITY
+	+NOBLOCKMAP
+	states
+	{
+	Spawn:
+	Active:
+		TNT1 A 0
+		TNT1 A 0 A_CheckSightOrRange(2560,"IdleNoSee")
+		TNT1 A 1 ACS_ExecuteAlways(444, 0, args[0])
+		loop
+	Inactive:
+		TNT1 A -1
+		stop
+	IdleNoSee:
+		TNT1 A 10
+		TNT1 A 0 A_CheckSightOrRange(2560,"IdleNoSee")
+		goto Active
+	}
 }
 
 actor WFallSplash
 {
-  height 0
-  radius 0
-  renderstyle Add
-  alpha 0
-  +FORCEXYBILLBOARD
-  states
-  {
-  Spawn:
-    STEM AABBCCDDEE 2 A_FadeIn(0.0125)
-    STEM FGHIJKL 4
-    goto FadeOut
-  FadeOut:
-    STEM L 2 A_FadeOut(0.0125)
-    loop
-  }
+	height 0
+	radius 0
+	renderstyle Add
+	alpha 0
+	+FORCEXYBILLBOARD
+	states
+	{
+	Spawn:
+		STEM AABBCCDDEE 2 A_FadeIn(0.0125)
+		STEM FGHIJKL 4
+		goto FadeOut
+	FadeOut:
+		STEM L 2 A_FadeOut(0.0125)
+		loop
+	}
 }
-   
+
 actor WFallParticle1A
 {
-  height 16
-  radius 8
-  +MISSILE
-  gravity 0.5
-  renderstyle Add
-  alpha 0
-  +FORCEXYBILLBOARD
-  states
-  {
-  Spawn:
-    WFS1 AAAAAA 1 A_FadeIn(0.125)
-    goto Fall
-  Fall:
-    WFS1 A 1
-    loop
-  Death:
-    TNT1 A 0 A_SpawnItemEx("WFallSplash", random(0, 8), 0, 0, random(0, 2), 0, 0, random(0, 360), 4, 192)
-    stop
-  }
+	height 16
+	radius 8
+	+MISSILE
+	gravity 0.5
+	renderstyle Add
+	alpha 0
+	+FORCEXYBILLBOARD
+	states
+	{
+	Spawn:
+		WFS1 AAAAAA 1 A_FadeIn(0.125)
+		goto Fall
+	Fall:
+		WFS1 A 1
+		loop
+	Death:
+		TNT1 A 0 A_SpawnItemEx("WFallSplash", random(0, 8), 0, 0, random(0, 2), 0, 0, random(0, 360), 4, 192)
+		stop
+	}
 }
 
 actor WFallParticle1B : WFallParticle1A
 {
-  +FORCEXYBILLBOARD
-  states
-  {
-  Spawn:
-    WFS1 NNNNNN 1 A_FadeIn(0.125)
-    goto Fall
-  Fall:
-    WFS1 N 1
-    loop
-  }
+	states
+	{
+	Spawn:
+		WFS1 NNNNNN 1 A_FadeIn(0.125)
+		goto Fall
+	Fall:
+		WFS1 N 1
+		loop
+	}
 }
 
 actor WFallParticle2A : WFallParticle1A
 {
-  +FORCEXYBILLBOARD
-  states
-  {
-  Spawn:
-    WFS2 AAAAAA 1 A_FadeIn(0.125)
-    goto Fall
-  Fall:
-    WFS2 A 1
-    loop
-  }
+	states
+	{
+	Spawn:
+		WFS2 AAAAAA 1 A_FadeIn(0.125)
+		goto Fall
+	Fall:
+		WFS2 A 1
+		loop
+	}
 }
 
 actor WFallParticle2B : WFallParticle1A
 {
-  +FORCEXYBILLBOARD
-  states
-  {
-  Spawn:
-    WFS2 NNNNNN 1 A_FadeIn(0.125)
-    goto Fall
-  Fall:
-    WFS2 N 1
-    loop
-  }
+	states
+	{
+	Spawn:
+		WFS2 NNNNNN 1 A_FadeIn(0.125)
+		goto Fall
+	Fall:
+		WFS2 N 1
+		loop
+	}
 }
 
 actor WFallParticle3A : WFallParticle1A
 {
-  +FORCEXYBILLBOARD
-  states
-  {
-  Spawn:
-    WFS3 AAAAAA 1 A_FadeIn(0.125)
-    goto Fall
-  Fall:
-    WFS3 A 1
-    loop
-  }
+	states
+	{
+	Spawn:
+		WFS3 AAAAAA 1 A_FadeIn(0.125)
+		goto Fall
+	Fall:
+		WFS3 A 1
+		loop
+	}
 }
 
 actor WFallParticle3B : WFallParticle1A
 {
-  +FORCEXYBILLBOARD
-  states
-  {
-  Spawn:
-    WFS3 NNNNNN 1 A_FadeIn(0.125)
-    goto Fall
-  Fall:
-    WFS3 N 1
-    loop
-  }
+	states
+	{
+	Spawn:
+		WFS3 NNNNNN 1 A_FadeIn(0.125)
+		goto Fall
+	Fall:
+		WFS3 N 1
+		loop
+	}
 }
 
 actor WFallParticle4A : WFallParticle1A
 {
-  +FORCEXYBILLBOARD
-  states
-  {
-  Spawn:
-    WFS4 AAAAAA 1 A_FadeIn(0.125)
-    goto Fall
-  Fall:
-    WFS4 A 1
-    loop
-  }
+	states
+	{
+	Spawn:
+		WFS4 AAAAAA 1 A_FadeIn(0.125)
+		goto Fall
+	Fall:
+		WFS4 A 1
+		loop
+	}
 }
 
 actor WFallParticle4B : WFallParticle1A
 {
-  +FORCEXYBILLBOARD
-  states
-  {
-  Spawn:
-    WFS4 NNNNNN 1 A_FadeIn(0.125)
-    goto Fall
-  Fall:
-    WFS4 N 1
-    loop
-  }
+	states
+	{
+	Spawn:
+		WFS4 NNNNNN 1 A_FadeIn(0.125)
+		goto Fall
+	Fall:
+		WFS4 N 1
+		loop
+	}
 }
 
 actor WFallParticle5A : WFallParticle1A
 {
-  +FORCEXYBILLBOARD
-  states
-  {
-  Spawn:
-    WFS5 AAAAAA 1 A_FadeIn(0.125)
-    goto Fall
-  Fall:
-    WFS5 A 1
-    loop
-  }
+	states
+	{
+	Spawn:
+		WFS5 AAAAAA 1 A_FadeIn(0.125)
+		goto Fall
+	Fall:
+		WFS5 A 1
+		loop
+	}
 }
 
 actor WFallParticle5B : WFallParticle1A
 {
-  +FORCEXYBILLBOARD
-  states
-  {
-  Spawn:
-    WFS5 NNNNNN 1 A_FadeIn(0.125)
-    goto Fall
-  Fall:
-    WFS5 N 1
-    loop
-  }
+	states
+	{
+	Spawn:
+		WFS5 NNNNNN 1 A_FadeIn(0.125)
+		goto Fall
+	Fall:
+		WFS5 N 1
+		loop
+	}
 }

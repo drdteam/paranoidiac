@@ -6,26 +6,18 @@
 
 ACTOR Barrier1 30107
 {
-    spawnid 187
-    Radius 4
-    Height 32
-    Mass 500
-    +FLOORCLIP
-    +SOLID
-    States
-    {
-    Spawn:
-	POSS A 3
-	Loop
-    }
+	Radius 4
+	Height 32
+	Mass 500
+	+FLOORCLIP
+	+SOLID
+	States
+	{
+	Spawn:
+		POSS A -1
+		Stop
+	}
 }
 
-ACTOR Barrier2 : Barrier1 30108
-{
-    spawnid 188
-}
-
-ACTOR Barrier3 : Barrier1 30109
-{
-    spawnid 189
-}
+ACTOR Barrier2 : Barrier1 30108{}
+ACTOR Barrier3 : Barrier1 30109{}

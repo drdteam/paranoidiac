@@ -1,165 +1,109 @@
 gameinfo
 {
-/*	titlepage = "TITLEPIC"
-	creditpage = "CREDIT"
-	titlemusic = "$MUSIC_DM2TTL"
-	titletime = 11
-	advisorytime = 0
-	pagetime = 5
-	chatsound = "misc/chat"
-	finalemusic = "$MUSIC_READ_M"
-	finaleflat = "SLIME16"
-	finalepage = "CREDIT"
-	infopage = "HELP", "CREDIT"
-	quitsound = "menu/quit"
-	border = DoomBorder
-	telefogheight = 0
-	defkickback = 100
-	skyflatname = "F_SKY1"
-	translator = "xlat/doom.txt"
-	mapinfo = "mapinfo/doom2.txt"
-	defaultbloodcolor = "68 00 00"
-	defaultbloodparticlecolor = "ff 00 00"
-	backpacktype = "Backpack"
-	statusbar = "sbarinfo/doom.txt"
-	intermissionmusic = "$MUSIC_DM2INT"
-*/
+	playerclasses = "RolfBellmer"
 	borderflat = "XMETAL25"
 	infopage = "HELP"
 }
 
 clearskills
-
 skill Easy
 {
-AmmoFactor = 1
-DamageFactor = 1
-aggressiveness = 0
-SpawnFilter = "Easy"
-PicName = "M_EASY"
-ACSreturn = 1
-Key = e
+	SpawnFilter = "Easy"
+	PicName = "M_EASY"
+	ACSreturn = 1
+	Key = e
 }
-
 skill Medium
 {
-AmmoFactor = 1
-DamageFactor = 1
-aggressiveness = 0
-SpawnFilter = "Normal"
-PicName = "M_MED"
-ACSreturn = 2
-Key = m
+	SpawnFilter = "Normal"
+	PicName = "M_MED"
+	ACSreturn = 2
+	Key = m
 }
-
 skill Difficult
 {
-AmmoFactor = 1
-DamageFactor = 1
-aggressiveness = 0
-SpawnFilter = "Hard"
-PicName = "M_DIFF"
-ACSreturn = 3
-Key = d
+	SpawnFilter = "Hard"
+	PicName = "M_DIFF"
+	ACSreturn = 3
+	Key = d
 }
 
+defaultmap
+{
+	sky1 = HLSKY1
+	fallingdamage
+	cluster = 1
+}
 map TITLEMAP "The Path to Perdition"
-{sky1 = HLSKY5, 0.0
+{
+	sky1 = HLSKY5
+}
+map map01 "Walk Softly and Carry a Big Stick"{}
+map map02 "You Can Run ...."{}
+map map03 "No Rest for the Wicked"{}
+map map04 "Finding Dr. Zimmerman"{}
+map map08 "...But You Can't Hide."{}
+map map05 "Mission Accomplished?"
+{
+	sky1 = HLSKY2
+}
+map map06 "Dirty. Little. Secret"
+{
+	sky1 = HLSKY2
+}
+map map07 "Out of the Frying Pan ...."
+{
+	sky1 = HLSKY2
+	next=EndTitle
 }
 
-map map01 "Walk Softly and Carry a Big Stick"
-{sky1 = HLSKY1, 0.0
-//music = D_ROMER2
-fallingdamage
-cluster = 1}
-
-map map02 "You Can Run ...."
-{sky1 = HLSKY1, 0.0
-//music = D_MAP02
-fallingdamage
-cluster = 1}
-
-map map03 "No Rest for the Wicked"
-{sky1 = HLSKY1, 0.0
-//music = D_MAP03
-fallingdamage
-cluster = 1}
-
-map map04 "Finding Dr. Zimmerman"
-{sky1 = HLSKY1, 0.0
-//music = D_MAP04
-fallingdamage
-cluster = 1}
-
-map map08 "...But You Can't Hide."
-{sky1 = HLSKY1, 0.0
-//music = D_MAP04
-fallingdamage
-cluster = 1}
-
-map map05 "Mission Accomplished?"
-{sky1 = HLSKY2, 0.0
-//music = D_STLKS3
-fallingdamage
-cluster = 1}
-
-map map06 "Dirty. Little. Secret"
-{sky1 = HLSKY2, 0.0
-//music = D_STLKS3
-fallingdamage
-cluster = 1}
-
-map map07 "Out of the Frying Pan ...."
-{sky1 = HLSKY2, 0.0
-next = "map09"
-//music = D_MAP07
-fallingdamage
-cluster = 1
-next=EndTitle}
-
-cluster 1 {hub
-pic = TITLEPIC
-exittext =
-"Paranoid: A production of",
-"'The Persecution Complex'."
+cluster 1
+{
+	hub
+	pic = TITLEPIC
+	exittext =
+	"Paranoid: A production of",
+	"'The Persecution Complex'."
 }
 
 /*map map09 "Smoke on the Water, The Fire in the Sky."
-{sky1 = HLSKY3, 0.0
-//music = D_MAP08
-fallingdamage
-cluster = 2}
-
+{
+	sky1 = HLSKY3, 0.0
+	//music = D_MAP08
+	cluster = 2
+}
 map map10 "When Hell Freezes Over."
-{sky1 = HLSKY3, 0.0
-//music = D_MAP08
-fallingdamage
-cluster = 2}
-
+{
+	sky1 = HLSKY3, 0.0
+	//music = D_MAP08
+	cluster = 2
+}
 map map11 "Fly in a Web"
-{sky1 = HLSKY4, 0.0
-//music = D_MAP08
-fallingdamage
-cluster = 2}
+{
+	sky1 = HLSKY4, 0.0
+	//music = D_MAP08
+	cluster = 2
+}
 
-cluster 2 {hub
-pic = TITLEPIC
-exittext =
-"Paranoid: A production of",
-"'The Persecution Complex'."
+cluster 2
+{
+	hub
+	pic = TITLEPIC
+	exittext =
+	"Paranoid: A production of",
+	"'The Persecution Complex'."
 }
 */
 
 map map31 "Six Ways to Die."
-{sky1 = HLSKY4, 0.0
-//music = D_MAP08
-fallingdamage
-cluster = 3}
-
+{
+	sky1 = HLSKY4, 0.0
+	cluster = 3
+}
 cluster 3
 {
-pic = TITLEPIC
-exittext =
-"Paranoid: A production of",
-"'The Persecution Complex'."
+	pic = TITLEPIC
+	exittext =
+	"Paranoid: A production of",
+	"'The Persecution Complex'."
 }
