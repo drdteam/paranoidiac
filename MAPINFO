@@ -1,5 +1,6 @@
 gameinfo
 {
+	playerclasses = "RolfBellmer"
 	borderflat = "XMETAL25"
 	infopage = "HELP"
 }
@@ -8,294 +9,220 @@ clearskills
 
 skill Easy
 {
-AmmoFactor = 1
-DamageFactor = 1
-aggressiveness = 0
-SpawnFilter = "Easy"
-PicName = "M_EASY"
-ACSreturn = 1
-Key = e
+	SpawnFilter = "Easy"
+	PicName = "M_EASY"
+	ACSreturn = 1
+	Key = e
 }
 
 skill Medium
 {
-AmmoFactor = 1
-DamageFactor = 1
-aggressiveness = 0
-SpawnFilter = "Normal"
-PicName = "M_MED"
-ACSreturn = 2
-Key = m
+	SpawnFilter = "Normal"
+	PicName = "M_MED"
+	ACSreturn = 2
+	Key = m
 }
 
 skill Difficult
 {
-AmmoFactor = 1
-DamageFactor = 1
-aggressiveness = 0
-SpawnFilter = "Hard"
-PicName = "M_DIFF"
-ACSreturn = 3
-Key = d
+	SpawnFilter = "Hard"
+	PicName = "M_DIFF"
+	ACSreturn = 3
+	Key = d
+}
+
+episode map01
+{
+	name="Paranoid: Infiltration"
+}
+
+episode map10
+{
+	name="Paranoiac: Extraction"
+}
+
+episode map19
+{
+	name="Paranoiac: Dissolution"
+}
+
+episode map22
+{
+	name="Paranoiac: Obliteration"
+}
+
+map TITLEMAP "Flight of the Phoenix"
+{
+	sky1 = HLSKY3, 0.0
+	PrecacheSounds = "30Title"
 }
 
 defaultmap
 {
-lightmode = 0
-fogdensity = 1
-fade = "00 00 00"
-evenlighting
-nolightfade
+	lightmode = 0
+	fogdensity = 1
+	fade = "00 00 00"
+	evenlighting
+	nolightfade
+	fallingdamage
+	cluster = 1
+	sky1 = HLSKY1, 0.0
 }
 
-map map01 "Walk Softly and Carry a Big Stick"
-{sky1 = HLSKY1, 0.0
-//music = D_ROMER2
-fallingdamage
-cluster = 1}
-
-map map02 "You Can Run ...."
-{sky1 = HLSKY1, 0.0
-//music = D_MAP02
-fallingdamage
-cluster = 1}
-
-map map03 "No Rest for the Wicked"
-{sky1 = HLSKY1, 0.0
-//music = D_MAP03
-fallingdamage
-cluster = 1}
-
-map map04 "Finding Dr. Zimmerman"
-{sky1 = HLSKY1, 0.0
-//music = D_MAP04
-fallingdamage
-cluster = 1}
-
-map map08 "...But You Can't Hide."
-{sky1 = HLSKY1, 0.0
-//music = D_MAP04
-fallingdamage
-cluster = 1}
+map map01 "Walk Softly and Carry a Big Stick"{}
+map map02 "You Can Run ...."{}
+map map03 "No Rest for the Wicked"{}
+map map04 "Finding Dr. Zimmerman"{}
+map map08 "...But You Can't Hide."{}
 
 map map05 "Mission Accomplished?"
-{sky1 = HLSKY2, 0.0
-//music = D_STLKS3
-fallingdamage
-cluster = 1}
+{
+	sky1 = HLSKY2, 0.0
+}
 
 map map06 "Dirty. Little. Secret"
-{sky1 = HLSKY2, 0.0
-//music = D_STLKS3
-fallingdamage
-cluster = 1}
+{
+	sky1 = HLSKY2, 0.0
+}
 
 map map07 "Out of the Frying Pan ...."
-{sky1 = HLSKY2, 0.0
-next = "map09"
-//music = D_MAP07
-fallingdamage
-cluster = 1
-next=EndTitle}
-
-cluster 1 {hub
-pic = TITLEPIC
-exittext =
-"Paranoid: A production of",
-"'The Persecution Complex'."
-}
-
-cluster 3
 {
-pic = TITLEPIC
-exittext =
-"Paranoid: A production of",
-"'The Persecution Complex'."
+	sky1 = HLSKY2, 0.0
+	next = "map09"
+	next=EndTitle
 }
 
-episode map01 
+cluster 1
 {
-name="Paranoid: Infiltration"
+	hub
+	pic = TITLEPIC
+	exittext =
+	"Paranoid: A production of",
+	"'The Persecution Complex'."
 }
 
-episode map10 
+adddefaultmap
 {
-name="Paranoiac: Extraction"
-}
-
-episode map19 
-{
-name="Paranoiac: Dissolution"
-}
-
-episode map22 
-{
-name="Paranoiac: Obliteration"
-}
-
-map TITLEMAP "Flight of the Phoenix"
-{sky1 = HLSKY3, 0.0
-PrecacheSounds = "30Title"
+	cluster = 2
 }
 
 map map10 "Smoke on the Water, The Fire in the Sky."
-{evenlighting
-sky1 = HLSKY3, 0.0
-music = ""
-PrecacheSounds = "10Earth"
-fallingdamage
-cluster = 2}
+{
+	sky1 = HLSKY3, 0.0
+	PrecacheSounds = "10Earth"
+}
+
+adddefaultmap
+{
+	MonsterFallingDamage
+}
 
 map map11 "Fly in a Web."
-{evenlighting
-sky1 = HLSKY3, 0.0
-music = ""
-PrecacheSounds = "01Earth"
-PrecacheSounds = "11Earth"
-fallingdamage
-MonsterFallingDamage
-cluster = 2}
+{
+	sky1 = HLSKY3, 0.0
+	PrecacheSounds = "01Earth"
+	PrecacheSounds = "11Earth"
+}
 
 map map12 "How Green, the Valley."
-{evenlighting
-sky1 = HLSKY3, 0.0
-music = ""
-PrecacheSounds = "01Earth"
-fallingdamage
-MonsterFallingDamage
-cluster = 2}
+{
+	sky1 = HLSKY3, 0.0
+	PrecacheSounds = "01Earth"
+}
 
 map map13 "Sewer Rat."
-{evenlighting
-sky1 = HLSKY4, 0.0
-music = ""
-PrecacheSounds = "01Earth"
-PrecacheSounds = "13Earth"
-fallingdamage
-MonsterFallingDamage
-cluster = 2}
+{
+	sky1 = HLSKY4, 0.0
+	PrecacheSounds = "01Earth"
+	PrecacheSounds = "13Earth"
+}
 
 map map14 "Run, Rabbit, Run!"
-{evenlighting
-sky1 = HLSKY4, 0.0
-music = ""
-PrecacheSounds = "01Earth"
-PrecacheSounds = "14Earth"
-fallingdamage
-MonsterFallingDamage
-cluster = 2}
+{
+	sky1 = HLSKY4, 0.0
+	PrecacheSounds = "01Earth"
+	PrecacheSounds = "14Earth"
+}
 
 map map15 "When Hell Freezes Over."
-{lightmode = 0
-fogdensity = 1
-fade = "00 00 00"
-nolightfade
-evenlighting
-sky1 = HLSKY4, 0.0
-music = ""
-PrecacheSounds = "01Earth"
-fallingdamage
-MonsterFallingDamage
-cluster = 2
-hazardcolor = "80 a0 ff"
-hazardflash = "40 80 ff"}
+{
+	sky1 = HLSKY4, 0.0
+	PrecacheSounds = "01Earth"
+	hazardcolor = "80 a0 ff"
+	hazardflash = "40 80 ff"
+}
 
 map map16 "Play the Mad Scientist."
-{evenlighting
-sky1 = HLSKY5, 0.0
-music = ""
-PrecacheSounds = "01Earth"
-PrecacheSounds = "16Earth"
-PrecacheSounds = "16ZEarth"
-fallingdamage
-MonsterFallingDamage
-cluster = 2}
+{
+	sky1 = HLSKY5, 0.0
+	PrecacheSounds = "01Earth"
+	PrecacheSounds = "16Earth"
+	PrecacheSounds = "16ZEarth"
+}
 
 map map17 "Painted into a Corner."
-{evenlighting
-sky1 = HLSKY5, 0.0
-music = ""
-PrecacheSounds = "01Earth"
-PrecacheSounds = "17Earth"
-fallingdamage
-MonsterFallingDamage
-cluster = 2}
+{
+	sky1 = HLSKY5, 0.0
+	PrecacheSounds = "01Earth"
+	PrecacheSounds = "17Earth"
+}
 
 map map18 "Cavernicolous."
-{evenlighting
-sky1 = HLSKY5, 0.0
-music = ""
-PrecacheSounds = "01Earth"
-PrecacheSounds = "18Earth"
-PrecacheSounds = "18ZEarth"
-fallingdamage
-MonsterFallingDamage
-cluster = 2}
+{
+	sky1 = HLSKY5, 0.0
+	PrecacheSounds = "01Earth"
+	PrecacheSounds = "18Earth"
+	PrecacheSounds = "18ZEarth"
+}
 
 map map19 "Island Hopping."
-{evenlighting
-sky1 = HLSKY6, 0.0
-music = ""
-PrecacheSounds = "19Xen"
-fallingdamage
-MonsterFallingDamage
-AirControl = 0.25
-cluster = 2}
+{
+	sky1 = HLSKY6, 0.0
+	PrecacheSounds = "19Xen"
+	AirControl = 0.25
+}
 
 map map20 "Monarch Gonarch."
-{evenlighting
-sky1 = HLSKY6, 0.0
-music = ""
-PrecacheSounds = "20Xen"
-fallingdamage
-MonsterFallingDamage
-AirControl = 0.25
-cluster = 2}
+{
+	sky1 = HLSKY6, 0.0
+	PrecacheSounds = "20Xen"
+	AirControl = 0.25
+}
 
 map map21 "Xenophobia."
-{evenlighting
-sky1 = HLSKY6, 0.0
-music = ""
-PrecacheSounds = "21Xen"
-PrecacheSounds = "21YXen"
-PrecacheSounds = "21ZXen"
-fallingdamage
-MonsterFallingDamage
-AirControl = 0.25
-cluster = 2
-next = EndSequence, "ParaEndScroll"
+{
+	sky1 = HLSKY6, 0.0
+	PrecacheSounds = "21Xen"
+	PrecacheSounds = "21YXen"
+	PrecacheSounds = "21ZXen"
+	AirControl = 0.25
+	next = EndSequence, "ParaEndScroll"
 }
 
 map map22 "Six Ways to Die."
-{evenlighting
-sky1 = HLSKY1, 0.0
-music = ""
-PrecacheSounds = "22SixWay"
-fallingdamage
-MonsterFallingDamage
-cluster = 2}
-
-map map23 "SpaceX."
-{evenlighting
-sky1 = HLSKY6, 0.0
-music = ""
-PrecacheSounds = "23Space"
-PrecacheTextures = "XMETL08", "XMETL09", "XMETL10", "XMETL08A", "XMETL08B", "XMETL08C", "XMETL09A", "XMETL09B", "XMETL09C", "XMETL09D", "XMETL09E", "XMETL09F", "XMETL10A", "XMETL10B", "XMETL10C", "XMETL10D", "XMETL10E"
-fallingdamage
-MonsterFallingDamage
-cluster = 2
-next = EndSequence, "ParaEndScroll"
+{
+	PrecacheSounds = "22SixWay"
 }
 
-cluster 2 {hub
-pic = TITLEPIC
-exittext =
-"Paranoiac: A production of",
-"'The Persecution Complex'.",
-"Other Work by the Team:",
-"Paranoid (2010)",
-"The Phobos Directive (2011)",
-"Visit us at http://doomnexus.drdteam.org"
+map map23 "SpaceX."
+{
+	sky1 = HLSKY6, 0.0
+	PrecacheSounds = "23Space"
+	PrecacheTextures = "XMETL08", "XMETL09", "XMETL10", "XMETL08A", "XMETL08B", "XMETL08C", "XMETL09A", "XMETL09B", "XMETL09C", "XMETL09D", "XMETL09E", "XMETL09F", "XMETL10A", "XMETL10B", "XMETL10C", "XMETL10D", "XMETL10E"
+	next = EndSequence, "ParaEndScroll"
+}
+
+cluster 2
+{
+	hub
+	pic = TITLEPIC
+	exittext =
+	"Paranoiac: A production of",
+	"'The Persecution Complex'.",
+	"Other Work by the Team:",
+	"Paranoid (2010)",
+	"The Phobos Directive (2011)",
+	"Visit us at http://doomnexus.drdteam.org"
 }
 
 Intermission ParaEndScroll
@@ -395,6 +322,6 @@ Intermission ParaEndLogo
 		FadeType = FADEOUT
 		Time = -105
 	}
-//	GotoTitle 
-//	{} 
+//	GotoTitle
+//	{}
 }

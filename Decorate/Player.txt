@@ -9,9 +9,10 @@ ACTOR RolfBellmer : PlayerPawn
 	Player.AttackZOffset 24
 	Player.WeaponSlot 1,Crowbar
 	Player.WeaponSlot 2,Beretta,Python
-	Player.WeaponSlot 3,PShotgun
-	Player.WeaponSlot 4,ARifle
+	Player.WeaponSlot 3,HornetGun,PShotgun
+	Player.WeaponSlot 4,Xbow,ARifle
 	Player.WeaponSlot 5,RPGLauncher
+	Player.WeaponSlot GluonGun
 	States
 	{
 	Spawn:
