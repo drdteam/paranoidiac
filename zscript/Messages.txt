@@ -1,0 +1,426 @@
+//Map02: Message 1
+class MessageItem01 : CustomInventory
+{
+	Default
+	{
+		Tag "Message";
+		Scale .25;
+		Inventory.Icon "MAIL01";
+		inventory.usesound "misc/chat";
+		+INVENTORY.INVBAR
+		+INVENTORY.UNDROPPABLE
+	}
+	States
+	{
+	Spawn:
+		MAIL A -1;
+		Stop;
+	Use:
+		TNT1 A 1 ACS_Execute(501,0);
+		Fail;
+	}
+}
+
+//Map02: Message 2
+class MessageItem02 : MessageItem01
+{
+	Default
+	{
+		Inventory.Icon "MAIL02";
+	}
+	States
+	{
+	Use:
+		TNT1 A 1 ACS_Execute(502,0);
+		Fail;
+	}
+}
+//Map04: Message 4
+class MessageItem19 : MessageItem02
+{
+	Default
+	{
+		Inventory.Icon "MAIL04";
+	}
+}
+
+//Map02: Message 3
+class MessageItem03 : MessageItem01
+{
+	Default
+	{
+		Inventory.Icon "MAIL03";
+	}
+	States
+	{
+	Use:
+		TNT1 A 1 ACS_Execute(503,0);
+		Fail;
+	}
+}
+
+//Map02: Message 4
+class MessageItem04 : MessageItem01
+{
+	Default
+	{
+		Inventory.Icon "MAIL04";
+	}
+	States
+	{
+	Use:
+		TNT1 A 1 ACS_Execute(504,0);
+		Fail;
+	}
+}
+
+//Map03: Message 1
+class MessageItem05 : MessageItem01
+{
+	States
+	{
+	Use:
+		TNT1 A 1 ACS_Execute(505,0);
+		Fail;
+	}
+}
+
+//Map03: Message 2
+class MessageItem06 : MessageItem01
+{
+	Default
+	{
+		Inventory.Icon "MAIL02";
+	}
+	States
+	{
+	Use:
+		TNT1 A 1 ACS_Execute(506,0);
+		Fail;
+	}
+}
+
+//Map03: Message 3
+class MessageItem07 : MessageItem01
+{
+	Default
+	{
+		Inventory.Icon "MAIL03";
+	}
+	States
+	{
+	Use:
+		TNT1 A 1 ACS_Execute(507,0);
+		Fail;
+	}
+}
+
+//Map04: Message 1
+class MessageItem08 : MessageItem01
+{
+	States
+	{
+	Use:
+		TNT1 A 1 ACS_Execute(508,0);
+		Fail;
+	}
+}
+
+//Map04: Message 2
+class MessageItem09 : MessageItem01
+{
+	Default
+	{
+		Inventory.Icon "MAIL02";
+	}
+	States
+	{
+	Use:
+		TNT1 A 1 ACS_Execute(509,0);
+		Fail;
+	}
+}
+
+//Map04: Message 3
+class MessageItem10 : MessageItem01
+{
+	Default
+	{
+		Inventory.Icon "MAIL03";
+	}
+	States
+	{
+	Use:
+		TNT1 A 1 ACS_Execute(510,0);
+		Fail;
+	}
+}
+
+//Map08: Message 1
+class MessageItem11 : MessageItem01
+{
+	States
+	{
+	Use:
+		TNT1 A 1 ACS_Execute(511,0);
+		Fail;
+	}
+}
+
+//Map05: Message 1
+class MessageItem12 : MessageItem01
+{
+	States
+	{
+	Use:
+		TNT1 A 1 ACS_Execute(512,0);
+		Fail;
+	}
+}
+
+//Map05: Message 2
+class MessageItem13 : MessageItem01
+{
+	Default
+	{
+		Inventory.Icon "MAIL02";
+	}
+	States
+	{
+	Use:
+		TNT1 A 1 ACS_Execute(513,0);
+		Fail;
+	}
+}
+
+//Map05: Message 3
+class MessageItem14 : MessageItem01
+{
+	Default
+	{
+		Inventory.Icon "MAIL03";
+	}
+	States
+	{
+	Use:
+		TNT1 A 1 ACS_Execute(514,0);
+		Fail;
+	}
+}
+
+//Map06: Message 1
+class MessageItem15 : MessageItem01
+{
+	States
+	{
+	Use:
+		TNT1 A 1 ACS_Execute(515,0);
+		Fail;
+	}
+}
+
+//Map06: Message 2
+class MessageItem16 : MessageItem01
+{
+	Default
+	{
+		Inventory.Icon "MAIL02";
+	}
+	States
+	{
+	Use:
+		TNT1 A 1 ACS_Execute(516,0);
+		Fail;
+	}
+}
+
+//Map07: Message 1
+class MessageItem17 : MessageItem01
+{
+	States
+	{
+	Use:
+		TNT1 A 1 ACS_Execute(517,0);
+		Fail;
+	}
+}
+
+//Map07: Message 2
+class MessageItem18 : MessageItem01
+{
+	Default
+	{
+		Inventory.Icon "MAIL02";
+	}
+	States
+	{
+	Use:
+		TNT1 A 1 ACS_Execute(518,0);
+		Fail;
+	}
+}
+
+//Map10: Message 1 (Col. Stinson; MAP10VX1)
+class MessageItem20 : MessageItem01
+{
+	States
+	{
+	Use:
+		TNT1 A 1 ACS_Execute(520,0);
+		Fail;
+	}
+}
+
+//Map11: Message 1 (Col. Stinson; MAP11VX1)
+class MessageItem21 : MessageItem01
+{
+	States
+	{
+	Use:
+		TNT1 A 1 ACS_Execute(521,0);
+		Fail;
+	}
+}
+
+//Map11: Message 2 (Otis) is not done through inventory, as it is via "live" interaction with NPC
+
+//Map12: Message 1 (Col. Stinson; MAP12VX1)
+class MessageItem22 : MessageItem01
+{
+	States
+	{
+	Use:
+		TNT1 A 1 ACS_Execute(522,0);
+		Fail;
+	}
+}
+
+//Map12: Message 2 (UnderNet; MAP12VX2)
+class MessageItem23 : MessageItem01
+{
+	Default
+	{
+		Inventory.Icon "MAIL02";
+	}
+	States
+	{
+	Use:
+		TNT1 A 1 ACS_Execute(523,0);
+		Fail;
+	}
+}
+
+//Map13: Message 1 (Col. Stinson; MAP13VX1)
+class MessageItem24 : MessageItem01
+{
+	States
+	{
+	Use:
+		TNT1 A 1 ACS_Execute(524,0);
+		Fail;
+	}
+}
+
+//Map13: Message 2 (UnderNet; MAP13VX2)
+class MessageItem25 : MessageItem01
+{
+	Default
+	{
+		Inventory.Icon "MAIL02";
+	}
+	States
+	{
+	Use:
+		TNT1 A 1 ACS_Execute(525,0);
+		Fail;
+	}
+}
+
+//Map14: Message 1 (Col. Stinson; MAP14VX1)
+class MessageItem26 : MessageItem01
+{
+	States
+	{
+	Use:
+		TNT1 A 1 ACS_Execute(526,0);
+		Fail;
+	}
+}
+
+//Map14: Message 2 (Col. Stinson; MAP14VX2)
+class MessageItem27 : MessageItem01
+{
+	Default
+	{
+		Inventory.Icon "MAIL02";
+	}
+	States
+	{
+	Use:
+		TNT1 A 1 ACS_Execute(527,0);
+		Fail;
+	}
+}
+
+//Map15: Message 1 (Col. Stinson; MAP15VX1)
+class MessageItem28 : MessageItem01
+{
+	States
+	{
+	Use:
+		TNT1 A 1 ACS_Execute(528,0);
+		Fail;
+	}
+}
+
+//Map16: Message 1 (Col. Stinson; MAP16VX1)
+class MessageItem29 : MessageItem01
+{
+	States
+	{
+	Use:
+		TNT1 A 1 ACS_Execute(529,0);
+		Fail;
+	}
+}
+
+//Map16: Message 2 (UnderNet; MAP16VX2)
+class MessageItem30 : MessageItem01
+{
+	Default
+	{
+		Inventory.Icon "MAIL02";
+	}
+	States
+	{
+	Use:
+		TNT1 A 1 ACS_Execute(530,0);
+		Fail;
+	}
+}
+
+//Map16: Message 3 (Col. Stinson; MAP16VX3)
+class MessageItem31 : MessageItem01
+{
+	Default
+	{
+		Inventory.Icon "MAIL03";
+	}
+	States
+	{
+	Use:
+		TNT1 A 1 ACS_Execute(531,0);
+		Fail;
+	}
+}
+
+//Map17: Message 1 (Col. Stinson; MAP17VX1)
+class MessageItem32 : MessageItem01
+{
+	States
+	{
+	Use:
+		TNT1 A 1 ACS_Execute(532,0);
+		Fail;
+	}
+}

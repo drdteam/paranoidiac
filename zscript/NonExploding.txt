@@ -1,0 +1,79 @@
+//================================================================
+// Non-Explosive barrels/trashcan (plastic & heavy metal), crates
+//================================================================
+
+class Barrel1 : Actor
+{
+	Default
+	{
+		Radius 8;
+		Height 29;
+		Mass 50;
+		+FLOORCLIP
+		+PUSHABLE
+		+SHOOTABLE
+		+NOTAUTOAIMED
+		+SOLID
+		+NOBLOOD
+		+NODAMAGE
+	}
+	States
+	{
+	Spawn:
+		POSS A -1;
+		Stop;
+	}
+}
+
+class Barrel2 : Barrel1{}
+
+class Barrel3 : Barrel1
+{
+	Default
+	{
+		Radius 9;
+		Height 29;
+		Mass 200;
+	}
+}
+
+class Trashcan1 : Barrel1
+{
+	Default
+	{
+		Radius 10;
+	}
+}
+
+class Xcrate03 : Barrel1
+{
+	Default
+	{
+		Health 30;
+		Radius 32;
+		Height 64;
+		Mass 200;
+	}
+}
+
+class Xcrate04 : Xcrate03{}
+
+class XMetalBox : Actor
+{
+	Default
+	{
+		Radius 34;
+		Height 64;
+		Mass 0x7FFFFFF;
+		+SOLID
+		+NODAMAGE
+		+NOBLOOD
+		+NOGRAVITY
+	}
+	States
+	{
+	Spawn:
+		POSS A -1;
+		Stop;
+	}
+}

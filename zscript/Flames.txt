@@ -1,0 +1,507 @@
+class OMGFire : SwitchableDecoration
+{
+	Default
+	{
+		+NOGRAVITY
+		+NOBLOCKMAP
+		+NOCLIP
+		+NOSECTOR
+		+LOOKALLAROUND
+	}
+	states
+	{
+	Spawn:
+	Active:
+		TNT1 A 0;
+		TNT1 A 0 A_CheckSightOrRange(2560,"IdleNoSee");
+		TNT1 A 1 ACS_ExecuteAlways(777, 0, args[0], args[1], args[2]);
+		loop;
+	IdleNoSee:
+		TNT1 A 10;
+		TNT1 A 0 A_CheckSightOrRange(2560,"IdleNoSee");
+		goto Active;
+	Inactive:
+		TNT1 A -1;
+		stop;
+	}
+}
+
+class Ember : Actor
+{
+	Default
+	{
+		height 2;
+		radius 1;
+		mass 0;
+		PROJECTILE;
+		RenderStyle "Add";
+		scale 0.0625;
+		+FORCEXYBILLBOARD
+	}
+	states
+	{
+	Spawn:
+		SPKO E 35 bright;
+		SPKO E 1 bright A_FadeOut;
+		Wait;
+  }
+}
+
+class FlameGlow_02 : Actor
+{
+	Default
+	{
+		height 1;
+		radius 8;
+		mass 0;
+		PROJECTILE;
+		+NOCLIP
+		RenderStyle "Add";
+		alpha 0.25;
+		scale 0.2;
+	}
+	states
+	{
+	Spawn:
+		SPKO E 1 bright A_FadeOut(0.0125);
+		loop;
+	}
+}
+
+class FlameGlow_04 : FlameGlow_02{Default{scale .4;}}
+class FlameGlow_06 : FlameGlow_02{Default{scale .6;}}
+
+class Flame1A_01 : Actor
+{
+	Default
+	{
+		height 1;
+		radius 8;
+		damagefunction (1);
+		mass 0;
+		PROJECTILE;
+		DamageType "Fire";
+		+RIPPER
+		+BLOODLESSIMPACT
+		+WINDTHRUST
+		+NOINTERACTION
+		+FORCEXYBILLBOARD
+		RenderStyle "Add";
+		scale 0.1;
+	}
+	states
+	{
+	Spawn:
+		FLM1 ABCDEFGHIJ 2 bright;
+		FLM1 KKLLMM 1 bright A_FadeOut(0.2);
+		stop;
+	}
+}
+
+class Flame1A_02 : Flame1A_01{Default{scale .2;}}
+class Flame1A_03 : Flame1A_01{Default{scale .3;}}
+
+class Flame1B_01 : Flame1A_01
+{
+	states
+	{
+	Spawn:
+		FLM1 NOPQRSTUVW 2 bright;
+		FLM1 XXYYZZ 1 bright A_FadeOut(0.2);
+		stop;
+	}
+}
+
+class Flame1B_02 : Flame1B_01{Default{scale .2;}}
+class Flame1B_03 : Flame1B_01{Default{scale .3;}}
+
+class Flame2A_01 : Flame1A_01
+{
+  states
+  {
+  Spawn:
+	FLM2 ABCDEFGHIJ 2 bright;
+	FLM2 KKLLMM 1 bright A_FadeOut(0.2);
+	stop;
+  }
+}
+
+class Flame2A_02 : Flame2A_01{Default{scale .2;}}
+class Flame2A_03 : Flame2A_01{Default{scale .3;}}
+
+class Flame2B_01 : Flame1A_01
+{
+  states
+  {
+  Spawn:
+	FLM2 NOPQRSTUVW 2 bright;
+	FLM2 XXYYZZ 1 bright A_FadeOut(0.2);
+	stop;
+  }
+}
+
+class Flame2B_02 : Flame2B_01{Default{scale .2;}}
+class Flame2B_03 : Flame2B_01{Default{scale .3;}}
+
+class Flame3A_01 : Flame1A_01
+{
+  states
+  {
+  Spawn:
+	FLM3 ABCDEFGHIJ 2 bright;
+	FLM3 KKLLMM 1 bright A_FadeOut(0.2);
+	stop;
+  }
+}
+
+class Flame3A_02 : Flame3A_01{Default{scale .2;}}
+class Flame3A_03 : Flame3A_01{Default{scale .3;}}
+
+class Flame3B_01 : Flame3A_01
+{
+  states
+  {
+  Spawn:
+	FLM3 NOPQRSTUVW 2 bright;
+	FLM3 XXYYZZ 1 bright A_FadeOut(0.2);
+	stop;
+  }
+}
+
+class Flame3B_02 : Flame3B_01{Default{scale .2;}}
+class Flame3B_03 : Flame3B_01{Default{scale .3;}}
+
+class Flame4A_01 : Flame1A_01
+{
+  states
+  {
+  Spawn:
+	FLM4 ABCDEFGHIJ 2 bright;
+	FLM4 KKLLMM 1 bright A_FadeOut(0.2);
+	stop;
+  }
+}
+
+class Flame4A_02 : Flame4A_01{Default{scale .2;}}
+class Flame4A_03 : Flame4A_01{Default{scale .3;}}
+
+class Flame4B_01 : Flame4A_01
+{
+  states
+  {
+  Spawn:
+	FLM4 NOPQRSTUVW 2 bright;
+	FLM4 XXYYZZ 1 bright A_FadeOut(0.2);
+	stop;
+  }
+}
+
+class Flame4B_02 : Flame4B_01{Default{scale .2;}}
+class Flame4B_03 : Flame4B_01{Default{scale .3;}}
+
+class Flame5A_01 : Flame1A_01
+{
+  states
+  {
+  Spawn:
+	FLM5 ABCDEFGHIJ 2 bright;
+	FLM5 KKLLMM 1 bright A_FadeOut(0.2);
+	stop;
+  }
+}
+
+class Flame5A_02 : Flame5A_01{Default{scale .2;}}
+class Flame5A_03 : Flame5A_01{Default{scale .3;}}
+
+class Flame5B_01 : Flame5A_01
+{
+  states
+  {
+  Spawn:
+	FLM5 NOPQRSTUVW 2 bright;
+	FLM5 XXYYZZ 1 bright A_FadeOut(0.2);
+	stop;
+  }
+}
+
+class Flame5B_02 : Flame5B_01{Default{scale .2;}}
+class Flame5B_03 : Flame5B_01{Default{scale .3;}}
+
+class Flame6A_01 : Flame1A_01
+{
+  states
+  {
+  Spawn:
+	FLM6 ABCDEFGHIJ 2 bright;
+	FLM6 KKLLMM 1 bright A_FadeOut(0.2);
+	stop;
+  }
+}
+
+class Flame6A_02 : Flame6A_01{Default{scale .2;}}
+class Flame6A_03 : Flame6A_01{Default{scale .3;}}
+
+class Flame6B_01 : Flame6A_01
+{
+  states
+  {
+  Spawn:
+	FLM6 NOPQRSTUVW 2 bright;
+	FLM6 XXYYZZ 1 bright A_FadeOut(0.2);
+	stop;
+  }
+}
+
+class Flame6B_02 : Flame6B_01{Default{scale .2;}}
+
+class Flame7A_01 : Flame1A_01
+{
+  states
+  {
+  Spawn:
+	FLM7 ABCDEFGHIJ 2 bright;
+	FLM7 KKLLMM 1 bright A_FadeOut(0.2);
+	stop;
+  }
+}
+
+class Flame7A_02 : Flame7A_01{Default{scale .2;}}
+class Flame7A_03 : Flame7A_01{Default{scale .3;}}
+
+class Flame7B_01 : Flame7A_01
+{
+  states
+  {
+  Spawn:
+	FLM7 NOPQRSTUVW 2 bright;
+	FLM7 XXYYZZ 1 bright A_FadeOut(0.2);
+	stop;
+  }
+}
+
+class Flame7B_02 : Flame7B_01{Default{scale .2;}}
+class Flame7B_03 : Flame7B_01{Default{scale .3;}}
+
+class Flame8A_01 : Flame1A_01
+{
+  states
+  {
+  Spawn:
+	FLM8 ABCDEFGHIJ 2 bright;
+	FLM8 KKLLMM 1 bright A_FadeOut(0.2);
+	stop;
+  }
+}
+
+class Flame8A_02 : Flame8A_01{Default{scale .2;}}
+class Flame8A_03 : Flame8A_01{Default{scale .3;}}
+
+class Flame8B_01 : Flame8A_01
+{
+  states
+  {
+  Spawn:
+	FLM8 NOPQRSTUVW 2 bright;
+	FLM8 XXYYZZ 1 bright A_FadeOut(0.2);
+	stop;
+  }
+}
+
+class Flame8B_02 : Flame8B_01{Default{scale .2;}}
+class Flame8B_03 : Flame8B_01{Default{scale .3;}}
+
+class Flame9A_01 : Flame1A_01
+{
+  states
+  {
+  Spawn:
+	FLM9 ABCDEFGHIJ 2 bright;
+	FLM9 KKLLMM 1 bright A_FadeOut(0.2);
+	stop;
+  }
+}
+
+class Flame9A_02 : Flame9A_01{Default{scale .2;}}
+class Flame9A_03 : Flame9A_01{Default{scale .3;}}
+
+class Flame9B_01 : Flame9A_01
+{
+  states
+  {
+  Spawn:
+	FLM9 NOPQRSTUVW 2 bright;
+	FLM9 XXYYZZ 1 bright A_FadeOut(0.2);
+	stop;
+  }
+}
+
+class Flame9B_02 : Flame9B_01{Default{scale .2;}}
+class Flame9B_03 : Flame9B_01{Default{scale .3;}}
+
+class Flame10A_01 : Flame1A_01
+{
+  states
+  {
+  Spawn:
+	FL10 ABCDEFGHIJ 2 bright;
+	FL10 KKLLMM 1 bright A_FadeOut(0.2);
+	stop;
+  }
+}
+
+class Flame10A_02 : Flame10A_01{Default{scale .2;}}
+class Flame10A_03 : Flame10A_01{Default{scale .3;}}
+
+class Flame10B_01 : Flame10A_01
+{
+  states
+  {
+  Spawn:
+	FL10 NOPQRSTUVW 2 bright;
+	FL10 XXYYZZ 1 bright A_FadeOut(0.2);
+	stop;
+  }
+}
+
+class Flame10B_02 : Flame10B_01{Default{scale .2;}}
+class Flame10B_03 : Flame10B_01{Default{scale .3;}}
+
+class Flame11A_01 : Flame1A_01
+{
+  states
+  {
+  Spawn:
+	FL11 ABCDEFGHIJ 2 bright;
+	FL11 KKLLMM 1 bright A_FadeOut(0.2);
+	stop;
+  }
+}
+
+class Flame11A_02 : Flame11A_01{Default{scale .2;}}
+class Flame11A_03 : Flame11A_01{Default{scale .3;}}
+
+class Flame11B_01 : Flame11A_01
+{
+  states
+  {
+  Spawn:
+	FL11 NOPQRSTUVW 2 bright;
+	FL11 XXYYZZ 1 bright A_FadeOut(0.2);
+	stop;
+  }
+}
+
+class Flame11B_02 : Flame11B_01{Default{scale .2;}}
+class Flame11B_03 : Flame11B_01{Default{scale .3;}}
+
+class Flame12A_01 : Flame1A_01
+{
+  states
+  {
+  Spawn:
+	FL12 ABCDEFGHIJ 2 bright;
+	FL12 KKLLMM 1 bright A_FadeOut(0.2);
+	stop;
+  }
+}
+
+class Flame12A_02 : Flame12A_01{Default{scale .2;}}
+class Flame12A_03 : Flame12A_01{Default{scale .3;}}
+
+class Flame12B_01 : Flame12A_01
+{
+  states
+  {
+  Spawn:
+	FL12 NOPQRSTUVW 2 bright;
+	FL12 XXYYZZ 1 bright A_FadeOut(0.2);
+	stop;
+  }
+}
+
+class Flame12B_02 : Flame12B_01{Default{scale .2;}}
+class Flame12B_03 : Flame12B_01{Default{scale .3;}}
+
+class Flame13A_01 : Flame1A_01
+{
+  states
+  {
+  Spawn:
+	FL13 ABCDEFGHIJ 2 bright;
+	FL13 KKLLMM 1 bright A_FadeOut(0.2);
+	stop;
+  }
+}
+
+class Flame13A_02 : Flame13A_01{Default{scale .2;}}
+class Flame13A_03 : Flame13A_01{Default{scale .3;}}
+
+class Flame13B_01 : Flame13A_01
+{
+  states
+  {
+  Spawn:
+	FL13 NOPQRSTUVW 2 bright;
+	FL13 XXYYZZ 1 bright A_FadeOut(0.2);
+	stop;
+  }
+}
+
+class Flame13B_02 : Flame13B_01{Default{scale .2;}}
+class Flame13B_03 : Flame13B_01{Default{scale .3;}}
+
+class Flame14A_01 : Flame1A_01
+{
+  states
+  {
+  Spawn:
+	FL14 ABCDEFGHIJ 2 bright;
+	FL14 KKLLMM 1 bright A_FadeOut(0.2);
+	stop;
+  }
+}
+
+class Flame14A_02 : Flame14A_01{Default{scale .2;}}
+class Flame14A_03 : Flame14A_01{Default{scale .3;}}
+
+class Flame14B_01 : Flame14A_01
+{
+  states
+  {
+  Spawn:
+	FL14 NOPQRSTUVW 2 bright;
+	FL14 XXYYZZ 1 bright A_FadeOut(0.2);
+	stop;
+  }
+}
+
+class Flame14B_02 : Flame14B_01{Default{scale .2;}}
+class Flame14B_03 : Flame14B_01{Default{scale .3;}}
+
+class Flame15A_01 : Flame1A_01
+{
+  states
+  {
+  Spawn:
+	FL15 ABCDEFGHIJ 2 bright;
+	FL15 KKLLMM 1 bright A_FadeOut(0.2);
+	stop;
+  }
+}
+
+class Flame15A_02 : Flame15A_01{Default{scale .2;}}
+class Flame15A_03 : Flame15A_01{Default{scale .3;}}
+
+class Flame15B_01 : Flame15A_01
+{
+  states
+  {
+  Spawn:
+	FL15 NOPQRSTUVW 2 bright;
+	FL15 XXYYZZ 1 bright A_FadeOut(0.2);
+	stop;
+  }
+}
+
+class Flame15B_02 : Flame15B_01{Default{scale .2;}}
+class Flame15B_03 : Flame15B_01{Default{scale .3;}}
