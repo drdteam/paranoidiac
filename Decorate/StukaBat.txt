@@ -1,4 +1,4 @@
-actor HLBat 7420
+actor HLBat
 {
 	Monster
 	spawnid 172
@@ -54,7 +54,7 @@ actor HLBat 7420
 	}
 }
 
-actor StukaFireBall 
+actor StukaFireBall
 {
 	Projectile
 	Speed 25

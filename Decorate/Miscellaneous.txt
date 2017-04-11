@@ -1,4 +1,4 @@
-Actor MusicSwitcher07 : SwitchableDecoration 3210
+Actor MusicSwitcher07 : SwitchableDecoration
 {
 	Radius 16
 	Height 16
@@ -29,7 +29,7 @@ actor HLTeleportFog : TeleportFog replaces TeleportFog
 	}
 }
 
-ACTOR debris01 20001
+ACTOR debris01
 {
 	Radius 7
 	Height 7
@@ -47,7 +47,7 @@ ACTOR debris01 20001
 	}
 }
 
-ACTOR debris02 : debris01 20002
+ACTOR debris02 : debris01
 {
 	States
 	{
@@ -57,7 +57,7 @@ ACTOR debris02 : debris01 20002
 	}
 }
 
-ACTOR debris03 : debris01 20003
+ACTOR debris03 : debris01
 {
 	States
 	{
@@ -67,7 +67,7 @@ ACTOR debris03 : debris01 20003
 	}
 }
 
-ACTOR debris04 : debris01 20004
+ACTOR debris04 : debris01
 {
 	States
 	{
@@ -77,7 +77,7 @@ ACTOR debris04 : debris01 20004
 	}
 }
 
-ACTOR debris05 : debris01 20005
+ACTOR debris05 : debris01
 {
 	States
 	{
@@ -87,7 +87,7 @@ ACTOR debris05 : debris01 20005
 	}
 }
 
-ACTOR debris06 : debris01 20006
+ACTOR debris06 : debris01
 {
 	States
 	{
@@ -97,7 +97,7 @@ ACTOR debris06 : debris01 20006
 	}
 }
 
-ACTOR debris07 : debris01 20007
+ACTOR debris07 : debris01
 {
 	States
 	{
@@ -107,7 +107,7 @@ ACTOR debris07 : debris01 20007
 	}
 }
 
-ACTOR debris08 : debris01 20008
+ACTOR debris08 : debris01
 {
 	States
 	{
@@ -117,7 +117,7 @@ ACTOR debris08 : debris01 20008
 	}
 }
 
-ACTOR debris09 : debris01 20009
+ACTOR debris09 : debris01
 {
 	States
 	{
@@ -127,7 +127,7 @@ ACTOR debris09 : debris01 20009
 	}
 }
 
-ACTOR debris10 : debris01 20010
+ACTOR debris10 : debris01
 {
 	States
 	{
@@ -137,7 +137,7 @@ ACTOR debris10 : debris01 20010
 	}
 }
 
-ACTOR debris11 : debris01 20011
+ACTOR debris11 : debris01
 {
 	States
 	{

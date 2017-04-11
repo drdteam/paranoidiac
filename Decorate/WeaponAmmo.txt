@@ -1,5 +1,4 @@
-Actor ZoomToken : Inventory
-{	Inventory.MaxAmount 1	}
+Actor ZoomToken : Inventory{}
 
 Actor BoltHeld : Ammo
 {	Inventory.MaxAmount 5	}
@@ -8,7 +7,7 @@ Actor BoltHeld : Ammo
 // Cross-Bow
 //=============
 
-ACTOR XBow : Weapon 30019
+ACTOR XBow : Weapon
 {
 	SpawnID 237
 	Radius 16
@@ -142,7 +141,7 @@ ACTOR XBow : Weapon 30019
 	}
 }
 
-actor XBowBolts : Ammo 30020
+actor XBowBolts : Ammo
 {
 	+FLOORCLIP
 	SpawnID 236
@@ -163,7 +162,7 @@ actor XBowBolts : Ammo 30020
 	}
 }
 
-actor XBowBoltSingle : Ammo 30021
+actor XBowBoltSingle : Ammo
 {
 	+FLOORCLIP
 	SpawnID 235
@@ -210,8 +209,7 @@ ACTOR XbowBolt : FastProjectile
 	}
 }
 
-Actor Missile : Rocket 30022
-
+Actor Missile : Rocket
 {
 	SpawnID 234
 //	Speed 40
@@ -229,7 +227,7 @@ Actor GluonHeldAmmo : Inventory
 
 //***************************************************************
 
-Actor GluonGun : Weapon 30023
+Actor GluonGun : Weapon
 {
 	SpawnID 233
 	Weapon.AmmoUse1 0
@@ -1087,7 +1085,7 @@ Actor RipperEffect
 
 //***************************************************************
 
-actor AECell : Ammo replaces Cell 8506
+actor AECell : Ammo replaces Cell
 {
 	+FLOORCLIP
 	spawnid 75
@@ -1109,7 +1107,7 @@ actor AECell : Ammo replaces Cell 8506
 	}
 }
 
-actor AECellBox : AECell replaces CellPack 30024
+actor AECellBox : AECell replaces CellPack
 {
 	+FLOORCLIP
 	spawnid 232
@@ -1134,7 +1132,7 @@ actor AECellBox : AECell replaces CellPack 30024
 // Hornet Gun (aka HiveHand)
 //****
 
-ACTOR HornetGunItem : CustomInventory 6199
+ACTOR HornetGunItem : CustomInventory
 {
     +FLOORCLIP
     +INVENTORY.IGNORESKILL
@@ -1295,7 +1293,7 @@ ACTOR HLHornet : Ammo
    }
 }
 
-ACTOR HornetGunPickup : CustomInventory 30025
+ACTOR HornetGunPickup : CustomInventory
 {
     Inventory.PickupMessage "You swiped an alien hornet gun!"
     Inventory.PickupSound "reilsss/weapons/demoncalleridlebio"

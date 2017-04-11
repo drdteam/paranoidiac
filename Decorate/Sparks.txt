@@ -1,4 +1,4 @@
-actor OMGOrangeSpark : SwitchableDecoration 31902
+actor OMGOrangeSpark : SwitchableDecoration
 {
 	height 2
 	radius 1
@@ -273,7 +273,7 @@ actor Spark_O16 : Spark_O1 { Speed 4.0  }
 //Gargantua Big Blue Spark
 //****
 
-actor BigBlueSpark : SwitchableDecoration 20012
+actor BigBlueSpark : SwitchableDecoration
 {
 	height 2
 	radius 1

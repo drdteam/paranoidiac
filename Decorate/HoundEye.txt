@@ -2,7 +2,7 @@
 // HoundEye
 //==========
 
-actor HLHoundEye 7401
+actor HLHoundEye
 {
 	Monster
 //	Health 150

@@ -2,7 +2,7 @@
 // Alien Controller
 //==================
 
-actor HLController 7403
+actor HLController
 {
 	Monster
 //	Health 240

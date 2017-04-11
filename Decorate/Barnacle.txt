@@ -2,7 +2,7 @@
 //Credit to CaptainToenail for the original hanger monster idea
 //==============================================================
 
-actor HLBarnacle 7422
+actor HLBarnacle
 {
 	obituary "%o was spat on by a Barnacle."
 	health 80

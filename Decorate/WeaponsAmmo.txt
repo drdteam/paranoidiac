@@ -29,7 +29,7 @@ Actor LighCheapHack
 // Weapons & Ammo
 //================
 
-ACTOR Crowbar : Weapon 30001
+ACTOR Crowbar : Weapon
 {
 	Tag "Crowbar"
 	Height 4
@@ -182,7 +182,7 @@ Actor CrowbarPuff2
 // Paranoid Shotgun
 //===================
 
-Actor ShotgunPickup : ParanoidWeaponPickup 30002
+Actor ShotgunPickup : ParanoidWeaponPickup
 {
 	Inventory.PickupMessage "You got the shotgun!"
 	States
@@ -201,7 +201,7 @@ Actor ShotgunPickup : ParanoidWeaponPickup 30002
 // Paranoid Shotgun (Vertical)
 //=============================
 
-ACTOR Pshotgun1 : ShotgunPickup 30005
+ACTOR Pshotgun1 : ShotgunPickup
 {
 	Radius 4
 	Height 32
@@ -308,7 +308,7 @@ Actor ShotgunHeldAmmo : Ammo
 // Paranoid Shotgun Shells
 //=========================
 
-ACTOR PShell : Ammo 30003
+ACTOR PShell : Ammo
 {
 	Tag "Shell"
 	Radius 4
@@ -332,7 +332,7 @@ ACTOR PShell : Ammo 30003
 // Paranoid Shotgun Shellbox
 //===========================
 
-ACTOR PShellBox : PShell 30004
+ACTOR PShellBox : PShell
 {
 	Radius 6
 	Inventory.PickupMessage "Picked up a box of shotgun shells."
@@ -343,7 +343,7 @@ ACTOR PShellBox : PShell 30004
 // 9mm Assault Rifle
 //===================
 
-Actor M16Pickup : ParanoidWeaponPickup 30006
+Actor M16Pickup : ParanoidWeaponPickup
 {
 	Inventory.PickupMessage "You got the 9mm Assault Rifle"
 	States
@@ -364,7 +364,7 @@ Actor M16Pickup : ParanoidWeaponPickup 30006
 // 9mm Assault Rifle (Vertical)
 //=============================
 
-ACTOR ARifle1 : M16Pickup 30009
+ACTOR ARifle1 : M16Pickup
 {
 	Radius 4
 	Height 32
@@ -512,7 +512,7 @@ Actor GrenadeTrail
 // Assault Rifle Clip
 //====================
 
-ACTOR ARClip : Ammo 30007
+ACTOR ARClip : Ammo
 {
 	Tag "9mm AR"
 	Radius 8
@@ -535,7 +535,7 @@ ACTOR ARClip : Ammo 30007
 //========================
 // Assault Rifle Ammo Box
 //========================
-actor ARAmmo : ARClip 30008
+actor ARAmmo : ARClip
 {
 	Radius 12
 	Height 8
@@ -547,7 +547,7 @@ actor ARAmmo : ARClip 30008
 // M16Gren
 //=========
 
-ACTOR M16Gren : Ammo 30017
+ACTOR M16Gren : Ammo
 {
 	Tag "Grenade"
 	Inventory.PickupMessage "Picked up two M16 Grenades."
@@ -568,7 +568,7 @@ ACTOR M16Gren : Ammo 30017
 // Beretta
 //=========
 
-Actor PistolPickup : ParanoidWeaponPickup 30010
+Actor PistolPickup : ParanoidWeaponPickup
 {
 	Inventory.PickupMessage "You picked up a Beretta."
 	States
@@ -684,7 +684,7 @@ Actor PistolHeldAmmo : Ammo
 // Beretta Clip
 //====================
 
-ACTOR BClip : Ammo 30011
+ACTOR BClip : Ammo
 {
 	Tag "9mm"
 	Radius 8
@@ -708,7 +708,7 @@ ACTOR BClip : Ammo 30011
 // Python (357 Magnum)
 //=====================
 
-Actor R357Pickup : ParanoidWeaponPickup 30012
+Actor R357Pickup : ParanoidWeaponPickup
 {
 	Inventory.PickupMessage "A .357 Magnum! You Feelin' Lucky, Punk?"
 	States
@@ -804,7 +804,7 @@ Actor MagnumHeldAmmo : Ammo
 // Python Ammo
 //=============
 
-ACTOR PythonAmmo : Ammo 30013
+ACTOR PythonAmmo : Ammo
 {
 	Tag ".357"
 	Radius 6
@@ -824,7 +824,7 @@ ACTOR PythonAmmo : Ammo 30013
 	}
 }
 
-ACTOR PythonAmmo1 : PythonAmmo 30018
+ACTOR PythonAmmo1 : PythonAmmo
 {
 	Radius 4
 	Inventory.PickupMessage "Picked up six 357 caliber bullets."
@@ -835,7 +835,7 @@ ACTOR PythonAmmo1 : PythonAmmo 30018
 // RPG Launcher
 //=====================
 
-ACTOR RPGLauncher : Weapon 30014
+ACTOR RPGLauncher : Weapon
 {
 	Tag "RPG Launcher"
 	Radius 32
@@ -1032,7 +1032,7 @@ Actor GeneralExplosionSmokeBig
 // RPG Launcher Ammo
 //===================
 
-ACTOR RPGAmmo : Ammo 30015
+ACTOR RPGAmmo : Ammo
 {
 	Tag "RPG"
 	Radius 4
@@ -1055,7 +1055,7 @@ ACTOR RPGAmmo : Ammo 30015
 // Ammo Pack
 //============
 
-ACTOR AmmoPack : ParanoidWeaponPickup 30016
+ACTOR AmmoPack : ParanoidWeaponPickup
 {
 	Radius 6
 	Height 24

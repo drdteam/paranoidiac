@@ -70,19 +70,3 @@ ACTOR ScientistDisguise : Inventory
 {
 	+INVENTORY.UNDROPPABLE
 }
-ACTOR RolfBellmerScientist : RolfBellmer
-{
-	+PLAYERPAWN.CROUCHABLEMORPH
-	States
-	{
-	}
-}
-ACTOR NullFlash
-{
-	States
-	{
-	Spawn:
-		TNT1 A 1
-		Stop
-	}
-}

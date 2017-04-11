@@ -5,7 +5,7 @@ the Waterfall actor is placed on the map.  The waterfall will extend in
 a line in the direction the Waterfall actor is facing.
 */
 
-actor Waterfall : SwitchableDecoration 20000
+actor Waterfall : SwitchableDecoration
 {
 	+NOCLIP
 	+NOSECTOR

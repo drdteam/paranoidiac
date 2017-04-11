@@ -30,7 +30,7 @@ actor Bubble3 : Bubble1{xscale 0.05 yscale 0.05}
 actor Bubble4 : Bubble1{xscale 0.0375 yscale 0.0375}
 actor Bubble5 : Bubble1{xscale 0.025 yscale 0.025}
 
-actor OMGBubbles : SwitchableDecoration 31599
+actor OMGBubbles : SwitchableDecoration
 {
 	+NOCLIP
 	+NOSECTOR

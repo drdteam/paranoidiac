@@ -1,4 +1,4 @@
-ACTOR SUV4 30420	//destroyable SUV
+ACTOR SUV4 	//destroyable SUV
 {
 	Radius 38
 	Height 66
@@ -22,7 +22,7 @@ ACTOR SUV4 30420	//destroyable SUV
 		POSS A 1
 		POSS A 1 A_PlaySound("SUV/Hit", CHAN_AUTO, 1.0, false, ATTN_NORM)
 		Goto Spawn +2
-	
+
 	Death:
 		POSS B 0 A_PlaySound("halflife/weapons/explode1", CHAN_AUTO, 1.0, false, ATTN_NORM)
 		POSS B 1 A_KillChildren

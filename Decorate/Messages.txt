@@ -10,8 +10,8 @@ ACTOR MessageItem01 : CustomInventory
 	States
 	{
 	Spawn:
-		MAIL A 3
-		LOOP
+		MAIL A -1
+		Stop
 	Use:
 		TNT1 A 1 ACS_Execute(501,0)
 		Fail

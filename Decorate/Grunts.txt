@@ -2,7 +2,7 @@
 // Government Troops: Random Selector
 //====================================
 
-Actor HLGruntAny : RandomSpawner 7439
+Actor HLGruntAny : RandomSpawner
 {
 	DropItem "HLGrunt1"
 	DropItem "HLGrunt2"
@@ -12,21 +12,21 @@ Actor HLGruntAny : RandomSpawner 7439
 	DropItem "HLGrunt6"
 }
 
-Actor HLGruntM16 : RandomSpawner 7440
+Actor HLGruntM16 : RandomSpawner
 {
 	DropItem "HLGrunt1"
 	DropItem "HLGrunt2"
 	DropItem "HLGrunt3"
 }
 
-Actor HLGruntShotgun : RandomSpawner 7441
+Actor HLGruntShotgun : RandomSpawner
 {
 	DropItem "HLGrunt4"
 	DropItem "HLGrunt5"
 	DropItem "HLGrunt6"
 }
 
-Actor HLGruntNoGrenadesAny : RandomSpawner 7442
+Actor HLGruntNoGrenadesAny : RandomSpawner
 {
 	DropItem "HLGrunt1NoGren"
 	DropItem "HLGrunt2NoGren"
@@ -36,14 +36,14 @@ Actor HLGruntNoGrenadesAny : RandomSpawner 7442
 	DropItem "HLGrunt6NoGren"
 }
 
-Actor HLGruntM16NoGrenades : RandomSpawner 7443
+Actor HLGruntM16NoGrenades : RandomSpawner
 {
 	DropItem "HLGrunt1NoGren"
 	DropItem "HLGrunt2NoGren"
 	DropItem "HLGrunt3NoGren"
 }
 
-Actor HLGruntShotgunNoGrenade : RandomSpawner 7444
+Actor HLGruntShotgunNoGrenade : RandomSpawner
 {
 	DropItem "HLGrunt4NoGren"
 	DropItem "HLGrunt5NoGren"
@@ -54,7 +54,7 @@ Actor HLGruntShotgunNoGrenade : RandomSpawner 7444
 // Government Troops: M16 & Grenade Attack
 //==========================================
 
-actor HLGrunt1 7427
+actor HLGrunt1
 {
 	Monster
 	Health 150
@@ -257,7 +257,7 @@ Actor HLGruntGunGrenadeClose : HLGruntGunGrenade
 // Government Troops: M16 & Grenade Attack
 //==========================================
 
-actor HLGrunt2 : HLGrunt1 7428
+actor HLGrunt2 : HLGrunt1
 {
 	States
 	{
@@ -354,7 +354,7 @@ actor HLGrunt2 : HLGrunt1 7428
 // Government Troops: M16 & Grenade Attack
 //==========================================
 
-actor HLGrunt3 : HLGrunt1 7429
+actor HLGrunt3 : HLGrunt1
 {
 	States
 	{
@@ -452,7 +452,7 @@ actor HLGrunt3 : HLGrunt1 7429
 // Government Troops: Shotgun & Grenade Attack
 //============================================
 
-actor HLGrunt4 : HLGrunt1 7430
+actor HLGrunt4 : HLGrunt1
 {
 	dropitem "ShotgunPickup" 256
 	States
@@ -548,7 +548,7 @@ actor HLGrunt4 : HLGrunt1 7430
 // Government Troops: Shotgun & Grenade Attack
 //============================================
 
-actor HLGrunt5 : HLGrunt4 7431
+actor HLGrunt5 : HLGrunt4
 {
 	States
 	{
@@ -644,7 +644,7 @@ actor HLGrunt5 : HLGrunt4 7431
 // Government Troops: Shotgun & Grenade Attack
 //============================================
 
-actor HLGrunt6 : HLGrunt4 7432
+actor HLGrunt6 : HLGrunt4
 {
 	States
 	{
@@ -739,7 +739,7 @@ actor HLGrunt6 : HLGrunt4 7432
 // Government Troops: M16 Attack
 //===============================
 
-actor HLGrunt1NoGren 7433
+actor HLGrunt1NoGren
 {
 	Monster
 	Health 150
@@ -805,7 +805,7 @@ actor HLGrunt1NoGren 7433
 // Government Troops: M16 Attack
 //===============================
 
-actor HLGrunt2NoGren : HLGrunt1NoGren 7434
+actor HLGrunt2NoGren : HLGrunt1NoGren
 {
 	States
 	{
@@ -852,7 +852,7 @@ actor HLGrunt2NoGren : HLGrunt1NoGren 7434
 // Government Troops: M16 Attack
 //===============================
 
-actor HLGrunt3NoGren : HLGrunt1NoGren 7435
+actor HLGrunt3NoGren : HLGrunt1NoGren
 {
 	States
 	{
@@ -898,7 +898,7 @@ actor HLGrunt3NoGren : HLGrunt1NoGren 7435
 // Government Troops: Shotgun Attack
 //==================================
 
-actor HLGrunt4NoGren : HLGrunt1NoGren 7436
+actor HLGrunt4NoGren : HLGrunt1NoGren
 {
 	dropitem "ShotgunPickup" 256
 	States
@@ -957,7 +957,7 @@ actor HLGrunt4NoGren : HLGrunt1NoGren 7436
 // Government Troops: Shotgun Attack
 //==================================
 
-actor HLGrunt5NoGren : HLGrunt1NoGren 7437
+actor HLGrunt5NoGren : HLGrunt1NoGren
 {
 	States
 	{
@@ -1017,7 +1017,7 @@ actor HLGrunt5NoGren : HLGrunt1NoGren 7437
 // Government Troops: Shotgun Attack
 //==================================
 
-actor HLGrunt6NoGren : HLGrunt1NoGren 7438
+actor HLGrunt6NoGren : HLGrunt1NoGren
 {
 	States
 	{

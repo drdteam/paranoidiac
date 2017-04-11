@@ -2,7 +2,7 @@
 // Gargantua
 //===========
 
-actor HLGargantua 7421
+actor HLGargantua
 {
 	Monster
 	Health 8000
@@ -13,7 +13,7 @@ actor HLGargantua 7421
 	+BOSS
 	+NORADIUSDMG
 	PainChance 5
-	Scale 0.75
+	Scale .75
 	DamageFactor "Hornet", 0.0
 	BloodColor "DE FE 72"
 	Translation "192:207=%[1.0,0.0,0.0]:[2.0,0.0,0.0]"
@@ -196,8 +196,8 @@ Actor HLGargFlame
 	PROJECTILE
 	RENDERSTYLE ADD
 	DamageType Fire
-	ALPHA 0.67
-	Scale 0.5
+	ALPHA .67
+	Scale .5
 	DONTHURTSHOOTER
 	+THRUGHOST
 	+DONTSPLASH
@@ -234,10 +234,10 @@ actor GargFloorBoom
 	Speed 16
 	Damage 15
 	+RIPPER
-	Scale 0.65
+	Scale .65
 	+FLOORHUGGER
 	RenderStyle Add
-	Alpha 0.9
+	Alpha .9
 	States
 	{
 	Spawn:
@@ -375,7 +375,7 @@ Actor GargFXtra
 	Radius 1
 	+DONTBLAST
 	Height 1
-	Scale 0.15
+	Scale .15
 	RenderStyle Add
 	States
 	{
@@ -398,8 +398,8 @@ Actor GargFXtra
 ACTOR gargantuagibblood : Blood
 {
 	translation "176:183=224:231"
-	Scale 0.5
-	Gravity 0.4
+	Scale .5
+	Gravity .4
 }
 
 ACTOR gargantuagibs
@@ -410,7 +410,7 @@ ACTOR gargantuagibs
 	+NOTELEPORT
 	+CORPSE
 	+CANNOTPUSH
-	scale 0.25
+	scale .25
 	states
 	{
 	Spawn:
@@ -433,7 +433,7 @@ ACTOR gargantuagibs
 // Gargantua mature
 //=================
 
-Actor HLGargantua2 : HLGargantua 7445
+Actor HLGargantua2 : HLGargantua
 {
 	Health 10000
 	Speed 21
@@ -650,11 +650,11 @@ Actor GargControllerFireball1
 	Damage 3
 	Radius 8
 	Height 12
-	Scale 0.5
+	Scale .5
 	RenderStyle Add
 	+FORCEXYBILLBOARD
 	DeathSound "halflife/weapons/gausshit2"
-	Alpha 0.9
+	Alpha .9
 	States
 	{
 	Spawn:

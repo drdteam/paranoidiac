@@ -2,7 +2,7 @@
 // Zombie & Moaning Zombie
 //=========================
 
-actor HLZombie 7405
+actor HLZombie
 {
 	Monster
 //	Health 200
@@ -56,7 +56,7 @@ actor HLZombie 7405
 	}
 }
 
-actor HLZombieMoan : HLZombie 7406
+actor HLZombieMoan : HLZombie
 {
 	States
 	{

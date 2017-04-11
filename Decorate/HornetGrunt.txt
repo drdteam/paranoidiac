@@ -2,7 +2,7 @@
 // Hornet Grunt
 //==============
 
-actor HLHornetGrunt 7416
+actor HLHornetGrunt
 {
 	Monster
 	Health 500

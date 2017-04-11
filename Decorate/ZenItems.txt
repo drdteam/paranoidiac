@@ -1,8 +1,7 @@
-ACTOR ZenHair 30282
+ACTOR ZenHair
 {
 	Radius 4
 	Height 20
-	Speed 0
 	Mass 0x7FFFFFFF
 	+FLOORCLIP
 	+RANDOMIZE
@@ -15,7 +14,7 @@ ACTOR ZenHair 30282
 	}
 }
 
-ACTOR ZenLight 30283
+ACTOR ZenLight
 {
 	Radius 8
 	Height 32
@@ -56,7 +55,7 @@ ACTOR ZenLight 30283
 	}
 }
 
-ACTOR ZenTree 30284
+ACTOR ZenTree
 {
 	Height 144
 	Health 10000
@@ -94,7 +93,7 @@ ACTOR ZenTree 30284
 	}
 }
 
-ACTOR Fungus 30285
+ACTOR Fungus
 {
 	Radius 32
 	Height 72
@@ -113,7 +112,7 @@ ACTOR Fungus 30285
 	}
 }
 
-ACTOR HeadCrab 30335	//Dissected HeadCrab Model
+ACTOR HeadCrab //Dissected HeadCrab Model
 {
 	Radius 8
 	Height 16

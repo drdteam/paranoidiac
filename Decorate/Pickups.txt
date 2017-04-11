@@ -1,10 +1,8 @@
-//March 29, 2010: 0330 hrs GMT
-
 //=========
 // Pickups
 //=========
 
-actor HEVSuit : BasicArmorPickup 31000
+actor HEVSuit : BasicArmorPickup
 {
 	radius 16
 	height 52
@@ -21,7 +19,7 @@ actor HEVSuit : BasicArmorPickup 31000
 	}
 }
 
-actor HEVbattery : BasicArmorBonus 31001
+actor HEVbattery : BasicArmorBonus
 {
 	Radius 4
 	Height 12
@@ -39,7 +37,7 @@ actor HEVbattery : BasicArmorBonus 31001
 	}
 }
 
-Actor Key1 : Key 31002
+Actor Key1 : Key
 {
 	Inventory.Pickupmessage "Picked up the blue security key"
 	Inventory.Icon "HLKEYBI"
@@ -53,7 +51,7 @@ Actor Key1 : Key 31002
 	}
 }
 
-actor Medkit : Health 31003
+actor Medkit : Health
 {
 	Radius 8
 	Height 4
@@ -76,7 +74,7 @@ actor HEVCharge : BasicArmorBonus
 	-ALWAYSPICKUP
 }
 
-Actor Key2 : Key1 31004
+Actor Key2 : Key1
 {
 	Inventory.Pickupmessage "Picked up the red security key"
 	Inventory.Icon "HLKEYRI"

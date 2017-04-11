@@ -2,7 +2,7 @@
 // BullSquid
 //===========
 
-actor HLBullSquid 7404
+actor HLBullSquid
 {
 	Monster
 //	Health 200

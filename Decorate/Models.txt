@@ -1,4 +1,4 @@
-ACTOR Monitor 30228
+ACTOR Monitor
 {
 	Radius 15
 	Height 20
@@ -14,11 +14,11 @@ ACTOR Monitor 30228
 	}
 }
 
-ACTOR Monitor1 : Monitor 30345{}
-ACTOR Monitor2 : Monitor 30346{}
-ACTOR Monitor3 : Monitor 30347{}
+ACTOR Monitor1 : Monitor{}
+ACTOR Monitor2 : Monitor{}
+ACTOR Monitor3 : Monitor{}
 
-ACTOR keyboard1 30290
+ACTOR keyboard1
 {
 	Radius 16
 	Height 4
@@ -35,34 +35,34 @@ ACTOR keyboard1 30290
 	}
 }
 
-ACTOR keyboard3 : keyboard1 30291{}
+ACTOR keyboard3 : keyboard1{}
 
-ACTOR flatpanel1 : keyboard1 30292
+ACTOR flatpanel1 : keyboard1
 {
 	Radius 12
 	Height 20
 }
 
-ACTOR flatpanel2 : flatpanel1 30293{}
+ACTOR flatpanel2 : flatpanel1{}
 
-ACTOR flatpanel3 : keyboard1 30294
+ACTOR flatpanel3 : keyboard1
 {
 	Radius 8
 	Height 16
 }
 
-ACTOR flatpanel4 : flatpanel3 30295{}
+ACTOR flatpanel4 : flatpanel3{}
 
-ACTOR flatpanel5 : keyboard1 30296
+ACTOR flatpanel5 : keyboard1
 {
 	Radius 2
 	Height 32
 	+nogravity
 }
 
-ACTOR flatpanel6 : flatpanel5 30297{}
+ACTOR flatpanel6 : flatpanel5{}
 
-ACTOR flatpanel7 : flatpanel5 30298
+ACTOR flatpanel7 : flatpanel5
 {
 	States
 	{
@@ -72,36 +72,36 @@ ACTOR flatpanel7 : flatpanel5 30298
 	}
 }
 
-ACTOR flatpanel8 : flatpanel5 30299{}
-ACTOR flatpanel9 : flatpanel5 30300{}
+ACTOR flatpanel8 : flatpanel5{}
+ACTOR flatpanel9 : flatpanel5{}
 
-ACTOR mouse3 : keyboard1 30301
+ACTOR mouse3 : keyboard1
 {
 	Radius 3
 	Height 4
 }
 
-ACTOR pc1 : keyboard1  30302
+ACTOR pc1 : keyboard1
 {
 	Radius 12
 	Height 20
 }
-ACTOR pc3 : pc1 30304{}
+ACTOR pc3 : pc1{}
 
-ACTOR modem : keyboard1 30303
+ACTOR modem : keyboard1
 {
 	Radius 4
 	Height 6
 }
 
-ACTOR server1 : keyboard1 30305
+ACTOR server1 : keyboard1
 {
 	Radius 20
 	Height 72
 }
 
-ACTOR server2 : server1 30306{}
-ACTOR server3 : server1 30307{}
+ACTOR server2 : server1{}
+ACTOR server3 : server1{}
 
 //=============================================
 // Non-spawnable models
@@ -109,7 +109,7 @@ ACTOR server3 : server1 30307{}
 // Lights, Tesla Coil
 //=============================================
 
-ACTOR Transformer 30260
+ACTOR Transformer
 {
 	Radius 12
 	Height 60
@@ -124,13 +124,13 @@ ACTOR Transformer 30260
 	}
 }
 
-ACTOR Transformer1 : Transformer 30263
+ACTOR Transformer1 : Transformer
 {
 	Radius 24
 	Height 88
 }
 
-ACTOR Meter1 : Transformer 30261
+ACTOR Meter1 : Transformer
 {
 	Radius 4
 	Height 12
@@ -138,19 +138,19 @@ ACTOR Meter1 : Transformer 30261
 	-FLOORCLIP
 }
 
-ACTOR Meter2 : Meter1 30262
+ACTOR Meter2 : Meter1
 {
 	Radius 16
 	Height 32
 }
 
-ACTOR Meter3 : Meter1 30264
+ACTOR Meter3 : Meter1
 {
 	Radius 24
 	Height 48
 }
 
-ACTOR light1 30274
+ACTOR light1
 {
 	Radius 6
 	Height 8
@@ -165,7 +165,7 @@ ACTOR light1 30274
 	}
 }
 
-ACTOR light2 : light1 30275
+ACTOR light2 : light1
 {
 	Radius 16
 	Height 42
@@ -173,7 +173,7 @@ ACTOR light2 : light1 30275
 	-nogravity
 }
 
-ACTOR Tesla : Transformer 30308
+ACTOR Tesla : Transformer
 {
 	Radius 16
 	Height 72
@@ -185,7 +185,7 @@ ACTOR Tesla : Transformer 30308
 // Apache & Osprey helicopters; steel girders; trams
 //====================================================================
 
-ACTOR Forklift1 30200
+ACTOR Forklift1
 {
 	Radius 20
 	Height 64
@@ -200,25 +200,25 @@ ACTOR Forklift1 30200
 	}
 }
 
-ACTOR Forklift2 : Forklift1 30265
+ACTOR Forklift2 : Forklift1
 {
 	Radius 24
 	Height 32
 }
 
-ACTOR Loader1 : Forklift1 30272
+ACTOR Loader1 : Forklift1
 {
 	Radius 64
 	Height 96
 }
 
-ACTOR loader2 : Loader1 30273{}
-ACTOR Backhoe1 : Forklift1 30201{}
-ACTOR Bulldozer1 : Forklift1 30202{}
-ACTOR Trailer1 : Forklift1 30203{}
-ACTOR Trailer2 : Forklift1 30204{}
+ACTOR loader2 : Loader1{}
+ACTOR Backhoe1 : Forklift1{}
+ACTOR Bulldozer1 : Forklift1{}
+ACTOR Trailer1 : Forklift1{}
+ACTOR Trailer2 : Forklift1{}
 
-ACTOR Generator1 30205
+ACTOR Generator1
 {
 	Radius 24
 	Height 64
@@ -234,7 +234,7 @@ ACTOR Generator1 30205
 	}
 }
 
-ACTOR Generator2 : Generator1 30227
+ACTOR Generator2 : Generator1
 {
 	Radius 20
 	Height 48
@@ -243,12 +243,12 @@ ACTOR Generator2 : Generator1 30227
 	+PUSHABLE
 }
 
-ACTOR Generator3 : Forklift1 30251
+ACTOR Generator3 : Forklift1
 {
 	Radius 32
 }
 
-ACTOR Generator3a : SwitchableDecoration 30311
+ACTOR Generator3a : SwitchableDecoration
 {
 	Radius 32
 	Height 64
@@ -291,13 +291,13 @@ ACTOR Generator3a : SwitchableDecoration 30311
 	}
 }
 
-ACTOR Generator4 : Forklift1 30252
+ACTOR Generator4 : Forklift1
 {
 	Radius 64
 	Height 128
 }
 
-Actor girder1 30278
+Actor girder1
 {
 	Radius 34
 	Height 416
@@ -312,13 +312,13 @@ Actor girder1 30278
 	}
 }
 
-Actor girder2 : girder1 30279
+Actor girder2 : girder1
 {
 	Height 64
 	+NoGravity
 }
 
-Actor apache 30280
+Actor apache
 {
 	Radius 48
 	Height 128
@@ -333,7 +333,7 @@ Actor apache 30280
 	}
 }
 
-ACTOR Tram 30313
+ACTOR Tram
 {
 	Radius 40
 	Height 32
@@ -348,9 +348,9 @@ ACTOR Tram 30313
 	}
 }
 
-ACTOR Tram2 : Tram 30320{}
+ACTOR Tram2 : Tram{}
 
-actor Osprey 30281
+actor Osprey
 {
 	Radius 20
 	Height 20
@@ -368,7 +368,7 @@ actor Osprey 30281
 	}
 }
 
-actor OspreyBellmer : Osprey 30338
+actor OspreyBellmer : Osprey
 {
 	Height 16
 	states
@@ -379,7 +379,7 @@ actor OspreyBellmer : Osprey 30338
 	}
 }
 
-ACTOR OspreyDead 30343
+ACTOR OspreyDead
 {
 	Radius 86
 	Height 8
@@ -406,7 +406,7 @@ actor OspreyBlade
 	}
 }
 
-ACTOR Truck01 30339
+ACTOR Truck01
 {
 	Radius 58
 	Height 122
@@ -421,7 +421,7 @@ ACTOR Truck01 30339
 	}
 }
 
-ACTOR SUV1 : Truck01 30340
+ACTOR SUV1 : Truck01
 {
    Radius 38
    Height 66
@@ -433,9 +433,9 @@ ACTOR SUV1 : Truck01 30340
    }
 }
 
-ACTOR SUV2 : SUV1 30342{}
+ACTOR SUV2 : SUV1{}
 
-ACTOR SUV3 : SUV1 30344	//SUV with Glass
+ACTOR SUV3 : SUV1 //SUV with Glass
 {
 	States
 	{
@@ -447,7 +447,7 @@ ACTOR SUV3 : SUV1 30344	//SUV with Glass
 	}
 }
 
-ACTOR SUVGlass 30341
+ACTOR SUVGlass
 {
 	Renderstyle Translucent
 	Alpha 0.5
@@ -467,7 +467,7 @@ ACTOR SUVGlass 30341
 // Commodes, urinals, desks, chairs, filing cabinets
 //===================================================
 
-ACTOR Toilet1 30206
+ACTOR Toilet1
 {
 	Radius 16
 	Height 28
@@ -481,15 +481,15 @@ ACTOR Toilet1 30206
 		Stop
 	}
 }
-ACTOR Toilet2 : Toilet1 30253{}
-ACTOR ToiletStainless : Toilet1 30270{}
+ACTOR Toilet2 : Toilet1{}
+ACTOR ToiletStainless : Toilet1{}
 
-ACTOR Urinal1 : Toilet1 30207
+ACTOR Urinal1 : Toilet1
 {
 	Height 40
 }
 
-ACTOR Chair1 30210
+ACTOR Chair1
 {
 	Radius 10
 	Height 29
@@ -505,17 +505,17 @@ ACTOR Chair1 30210
 	}
 }
 
-ACTOR Chair2 : Chair1 30211
+ACTOR Chair2 : Chair1
 {
 	Mass 30
 }
 
-ACTOR Chair3 : Chair2 30249
+ACTOR Chair3 : Chair2
 {
 	Height 32
 }
 
-ACTOR Armchair : Chair1 30212
+ACTOR Armchair : Chair1
 {
 	Radius 20
 	Mass 200
@@ -523,12 +523,12 @@ ACTOR Armchair : Chair1 30212
 	+NODAMAGE
 }
 
-ACTOR Sofa : Armchair 30213
+ACTOR Sofa : Armchair
 {
 	Mass 300
 }
 
-ACTOR Desklamp1 30214
+ACTOR Desklamp1
 {
 	Radius 4
 	Height 16
@@ -544,9 +544,9 @@ ACTOR Desklamp1 30214
 	}
 }
 
-ACTOR Desklamp2 : Desklamp1 30215{}
+ACTOR Desklamp2 : Desklamp1{}
 
-ACTOR Desk1 30250
+ACTOR Desk1
 {
 	Radius 18
 	Height 32
@@ -561,17 +561,17 @@ ACTOR Desk1 30250
 	}
 }
 
-ACTOR Desk2 : Desk1 30254
+ACTOR Desk2 : Desk1
 {
 	Radius 24
 }
 
-ACTOR Desk3 : Desk2 30255{}
-ACTOR Desk4 : Desk2 30256{}
-ACTOR Desk5 : Desk2 30257{}
-ACTOR Desk6 : Desk2 30258{}
+ACTOR Desk3 : Desk2{}
+ACTOR Desk4 : Desk2{}
+ACTOR Desk5 : Desk2{}
+ACTOR Desk6 : Desk2{}
 
-ACTOR HandDryer 30266
+ACTOR HandDryer
 {
 	Radius 4
 	Height 8
@@ -586,30 +586,30 @@ ACTOR HandDryer 30266
 	}
 }
 
-ACTOR Sink1 : HandDryer 30267
+ACTOR Sink1 : HandDryer
 {
 	Radius 8
 	Height 16
 }
 
-ACTOR Sink2 : HandDryer 30268
+ACTOR Sink2 : HandDryer
 {
 	Radius 16
 	Height 20
 }
 
-ACTOR SoapDispenser : HandDryer 30269
+ACTOR SoapDispenser : HandDryer
 {
 	Radius 8
 }
 
-ACTOR ToiletPaper : HandDryer 30271
+ACTOR ToiletPaper : HandDryer
 {
 	Radius 4
 	Height 4
 }
 
-ACTOR Bed01 30286
+ACTOR Bed01
 {
 	Radius 20
 	Height 24
@@ -624,16 +624,16 @@ ACTOR Bed01 30286
 	}
 }
 
-ACTOR Bed02 : Bed01 30287
+ACTOR Bed02 : Bed01
 {
 	Radius 16
 	Height 36
 }
 
-ACTOR Bed03 : Bed01 30288{}
-ACTOR Bed04 : Bed02 30289{}
+ACTOR Bed03 : Bed01{}
+ACTOR Bed04 : Bed02{}
 
-ACTOR FileCab2 30309
+ACTOR FileCab2
 {
 	Radius 12
 	Height 32
@@ -646,12 +646,12 @@ ACTOR FileCab2 30309
 	}
 }
 
-ACTOR FileCab3: FileCab2 30310
+ACTOR FileCab3: FileCab2
 {
 	Height 48
 }
 
-ACTOR DeerHead 30317
+ACTOR DeerHead
 {
 	Radius 32
 	Height 40
@@ -668,7 +668,7 @@ ACTOR DeerHead 30317
 	}
 }
 
-ACTOR VidCam1 30318
+ACTOR VidCam1
 {
 	Radius 16
 	Height 56
@@ -682,12 +682,12 @@ ACTOR VidCam1 30318
 	}
 }
 
-Actor VidCam2 : VidCam1 30319
+Actor VidCam2 : VidCam1
 {
 	Radius 10
 }
 
-ACTOR TankGlass 30334
+ACTOR TankGlass
 {
 	Radius 2
 	Height 2
@@ -706,7 +706,7 @@ ACTOR TankGlass 30334
 // Pipes, tanks, valves
 //=======================
 
-ACTOR Pipe1 30229
+ACTOR Pipe1
 {
 	Radius 20
 	Height 58
@@ -721,105 +721,105 @@ ACTOR Pipe1 30229
 	}
 }
 
-Actor Pipe1a : pipe1 30336{}
+Actor Pipe1a : pipe1{}
 
-Actor Pipe2 : pipe1 30230
+Actor Pipe2 : pipe1
 {
 	Height 66
 }
 
-Actor Tank01 : pipe1 30231
+Actor Tank01 : pipe1
 {
 	Radius 28
 	Height 86
 }
 
-Actor Tank02 : pipe1 30232
+Actor Tank02 : pipe1
 {
 	Radius 15
 	Height 36
 }
 
-Actor Tank02a : pipe1 30314
+Actor Tank02a : pipe1
 {
 	Radius 4
 	Height 36
 }
 
-Actor Valve1 : pipe1 30233
+Actor Valve1 : pipe1
 {
 	Radius 24
 	Height 50
 }
 
-ACTOR Pipe3 : pipe1 30234
+ACTOR Pipe3 : pipe1
 {
 	Radius 10
 	Height 29
 }
 
-ACTOR Pipe3a : Pipe3 30337{}
+ACTOR Pipe3a : Pipe3{}
 
-Actor Pipe4 : pipe1 30235
+Actor Pipe4 : pipe1
 {
 	Radius 10
 	Height 33
 }
 
-Actor propane1a : pipe1 30241
+Actor propane1a : pipe1
 {
 	Height 40
 }
 
-Actor propane1b : propane1a 30242{}
-Actor propane1c : propane1a 30243{}
+Actor propane1b : propane1a{}
+Actor propane1c : propane1a{}
 
-Actor propane2 : pipe1 30244
+Actor propane2 : pipe1
 {
 	Radius 10
 	Height 36
 }
 
-Actor tank03 : pipe1 30245
+Actor tank03 : pipe1
 {
 	Radius 6
 	Height 16
 }
 
-Actor tank04 : pipe1 30246
+Actor tank04 : pipe1
 {
 	Radius 72
 	Height 264
 }
 
-Actor tank04a : tank04 30312{}
+Actor tank04a : tank04{}
 
-Actor tank05 : pipe1 30247
+Actor tank05 : pipe1
 {
 	Radius 12
 	Height 36
 }
 
-Actor tank06 : pipe1 30248
+Actor tank06 : pipe1
 {
 	Radius 36
 	Height 128
 	scale 0.5
 }
 
-Actor pipe5 : pipe1 30276
+Actor pipe5 : pipe1
 {
 	Radius 8
 	Height 136
 }
 
-Actor pipe6 : pipe1 30277
+Actor pipe6 : pipe1
 {
 	Radius 6
 	Height 68
 }
 
-ACTOR PipeMaze 30348
+ACTOR PipeMaze
 {
 	Radius 64
 	Height 28
@@ -838,7 +838,7 @@ ACTOR PipeMaze 30348
 // Radios, toolboxes, gas can
 //===========================
 
-ACTOR Toolbox1 30208
+ACTOR Toolbox1
 {
 	Radius 20
 	Height 40
@@ -854,13 +854,13 @@ ACTOR Toolbox1 30208
 	}
 }
 
-ACTOR Toolbox2 : Toolbox1 30209
+ACTOR Toolbox2 : Toolbox1
 {
 	Height 48
 	Mass 300
 }
 
-ACTOR Radio1 30236
+ACTOR Radio1
 {
 	Radius 8
 	Height 8
@@ -874,26 +874,26 @@ ACTOR Radio1 30236
 	}
 }
 
-ACTOR Radio2 : Radio1 30237
+ACTOR Radio2 : Radio1
 {
 	Radius 16
 	Height 12
 	Mass 30
 }
 
-ACTOR Radio3 : Radio1 30238
+ACTOR Radio3 : Radio1
 {
 	Radius 4
 	Height 12
 	Mass 10
 }
 
-ACTOR Radio4 : Radio1 30239
+ACTOR Radio4 : Radio1
 {
 	Radius 10
 }
 
-ACTOR Radio5 : Inventory 30240
+ACTOR Radio5 : Inventory
 {
 	Radius 2
 	Height 12
@@ -911,7 +911,7 @@ ACTOR Radio5 : Inventory 30240
 	}
 }
 
-ACTOR Gascan1 : Radio5 30259
+ACTOR Gascan1 : Radio5
 {
 	Radius 4
 	Height 12
@@ -926,7 +926,7 @@ ACTOR Gascan1 : Radio5 30259
 // Trees, plants, cacti
 //====================================================================
 
-ACTOR Palm1a 30216
+ACTOR Palm1a
 {
 	Radius 8
 	Height 340
@@ -941,41 +941,41 @@ ACTOR Palm1a 30216
 	}
 }
 
-ACTOR Palm1b : Palm1a 30217{}
+ACTOR Palm1b : Palm1a{}
 
-ACTOR Palm2a : Palm1a 30218
+ACTOR Palm2a : Palm1a
 {
 	Height 256
 }
 
-ACTOR Palm2b : Palm2a 30219{}
+ACTOR Palm2b : Palm2a{}
 
-ACTOR Palm3a : Palm1a 30220
+ACTOR Palm3a : Palm1a
 {
 	Height 160
 }
 
-ACTOR Palm3b : Palm3a 30221{}
-ACTOR Palm3c : Palm3a 30222{}
+ACTOR Palm3b : Palm3a{}
+ACTOR Palm3c : Palm3a{}
 
-ACTOR Cactus : Palm1a 30223
+ACTOR Cactus : Palm1a
 {
 	Height 128
 }
 
-ACTOR Fern : Palm1a 30224
+ACTOR Fern : Palm1a
 {
 	Radius 16
 	Height 16
 }
 
-ACTOR Plant1 : Palm1a 30225
+ACTOR Plant1 : Palm1a
 {
 	Radius 16
 	Height 24
 }
 
-ACTOR Plant2 : Palm1a 30226
+ACTOR Plant2 : Palm1a
 {
 	Radius 32
 	Height 32

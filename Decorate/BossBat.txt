@@ -1,4 +1,4 @@
-actor HLBossBat 7800
+actor HLBossBat
 {
 	Monster
 	spawnid 173
@@ -59,7 +59,7 @@ ACTOR IceBall	//Based on Mancubus FireBalls
   Height 8
   Speed 20
   Damage 8
-  Projectile 
+  Projectile
   +RANDOMIZE
   RenderStyle Add
   Alpha 1

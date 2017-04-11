@@ -27,7 +27,7 @@ Actor ExplosiveItemBangBarrel : ExplosiveItemBang
 	Scale 0.4
 }
 
-ACTOR Xbarrel1 30100
+ACTOR Xbarrel1
 {
 	Health 50
 	Radius 12
@@ -59,16 +59,16 @@ ACTOR Xbarrel1 30100
 		Stop
 	}
 }
-ACTOR Xbarrel2 : Xbarrel1 30101
+ACTOR Xbarrel2 : Xbarrel1
 {
 	Health 20
 }
-ACTOR Xbarrel3 : Xbarrel1 30102
+ACTOR Xbarrel3 : Xbarrel1
 {
 	Health 30
 }
 
-ACTOR Xcrate01 : Xbarrel1 30110
+ACTOR Xcrate01 : Xbarrel1
 {
 	-PUSHABLE
 	Health 30
@@ -83,7 +83,7 @@ ACTOR Xcrate01 : Xbarrel1 30110
 		Goto Super::Death+1
 	}
 }
-ACTOR Xcrate02 : Xcrate01 30111{}
+ACTOR Xcrate02 : Xcrate01{}
 
 //====================
 // General Explosions

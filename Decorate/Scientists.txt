@@ -23,7 +23,7 @@ ACTOR HLScientist
 
 //**************************************************************************
 //**************************************************************************
-actor HLScientist1Path : HLScientist 4041
+actor HLScientist1Path : HLScientist
 {
 	States
 	{
@@ -113,7 +113,7 @@ actor HLScientist1Path : HLScientist 4041
 	}
 }
 
-actor HLScientist1Wander : HLScientist 4042
+actor HLScientist1Wander : HLScientist
 {
 	Health 4
 	States
@@ -165,7 +165,7 @@ actor HLScientist1Wander : HLScientist 4042
 	}
 }
 
-actor HLScientist1Panic : HLScientist1Wander 4043
+actor HLScientist1Panic : HLScientist1Wander
 {
 	Health 25
 	-USESPECIAL
@@ -284,7 +284,7 @@ actor HLScientist1Panic : HLScientist1Wander 4043
 
 //**************************************************************************
 //**************************************************************************
-actor HLScientist2Path : HLScientist 4044
+actor HLScientist2Path : HLScientist
 {
 	Scale 0.3526
 	States
@@ -375,7 +375,7 @@ actor HLScientist2Path : HLScientist 4044
 	}
 }
 
-actor HLScientist2Wander : HLScientist 4045
+actor HLScientist2Wander : HLScientist
 {
 	Health 4
 	Scale 0.3526
@@ -427,7 +427,7 @@ actor HLScientist2Wander : HLScientist 4045
 	}
 }
 
-actor HLScientist2Panic : HLScientist2Wander 4046
+actor HLScientist2Panic : HLScientist2Wander
 {
 	Health 25
 	Scale 0.36
@@ -547,7 +547,7 @@ actor HLScientist2Panic : HLScientist2Wander 4046
 
 //**************************************************************************
 //**************************************************************************
-actor HLScientist3Path : HLScientist 4047
+actor HLScientist3Path : HLScientist
 {
 	Scale 0.355
 	States
@@ -643,7 +643,7 @@ actor HLScientist3Path : HLScientist 4047
 	}
 }
 
-actor HLScientist3Wander : HLScientist 4048
+actor HLScientist3Wander : HLScientist
 {
 	Health 4
 	Scale 0.355
@@ -696,7 +696,7 @@ actor HLScientist3Wander : HLScientist 4048
 	}
 }
 
-actor HLScientist3Panic : HLScientist3Wander 4049
+actor HLScientist3Panic : HLScientist3Wander
 {
 	Health 25
 	Scale 0.36
@@ -817,7 +817,7 @@ actor HLScientist3Panic : HLScientist3Wander 4049
 
 //**************************************************************************
 //**************************************************************************
-actor HLScientist4Path : HLScientist 4050
+actor HLScientist4Path : HLScientist
 {
 	States
 	{
@@ -911,7 +911,7 @@ actor HLScientist4Path : HLScientist 4050
 	}
 }
 
-actor HLScientist4Wander : HLScientist 4051
+actor HLScientist4Wander : HLScientist
 {
 	Health 4
 	States
@@ -963,7 +963,7 @@ actor HLScientist4Wander : HLScientist 4051
 	}
 }
 
-actor HLScientist4Panic : HLScientist4Wander 4052
+actor HLScientist4Panic : HLScientist4Wander
 {
 	Health 25
 	-USESPECIAL
@@ -1084,7 +1084,7 @@ actor HLScientist4Panic : HLScientist4Wander 4052
 //**************************************************************************
 //**************************************************************************
 
-Actor HLScientistWandererSpawner : RandomSpawner 4053
+Actor HLScientistWandererSpawner : RandomSpawner
 {
 	DropItem "HLScientist1Wander"
 	DropItem "HLScientist2Wander"
@@ -1092,7 +1092,7 @@ Actor HLScientistWandererSpawner : RandomSpawner 4053
 	DropItem "HLScientist4Wander"
 }
 
-Actor HLScientistImmovilSpawner : RandomSpawner 4054
+Actor HLScientistImmovilSpawner : RandomSpawner
 {
 	DropItem "HLScientist1Still"
 	DropItem "HLScientist2Still"
@@ -1100,7 +1100,7 @@ Actor HLScientistImmovilSpawner : RandomSpawner 4054
 	DropItem "HLScientist4Still"
 }
 
-actor HLScientist1Still : HLScientist 4055
+actor HLScientist1Still : HLScientist
 {
 	Health 2
 	States
@@ -1141,7 +1141,7 @@ actor HLScientist1Still : HLScientist 4055
 	}
 }
 
-actor HLScientist2Still : HLScientist1Still 4056
+actor HLScientist2Still : HLScientist1Still
 {
 	Scale 0.3526
 	States
@@ -1175,7 +1175,7 @@ actor HLScientist2Still : HLScientist1Still 4056
 	}
 }
 
-actor HLScientist3Still : HLScientist1Still 4057
+actor HLScientist3Still : HLScientist1Still
 {
 	Scale 0.355
 	States
@@ -1209,7 +1209,7 @@ actor HLScientist3Still : HLScientist1Still 4057
 	}
 }
 
-actor HLScientist4Still : HLScientist1Still 4058
+actor HLScientist4Still : HLScientist1Still
 {
 	Scale 0.36
 	States
@@ -1247,7 +1247,7 @@ actor HLScientist4Still : HLScientist1Still 4058
 //Previous code for scientists; only used for dead ones //
 //////////////////////////////////////////////////////////
 
-actor HLScientistUpdate 7423
+actor HLScientistUpdate
 {
 	Monster
 	-COUNTKILL
@@ -1316,7 +1316,7 @@ actor HLScientistUpdate 7423
 	}
 }
 
-actor HLScientist1 7424
+actor HLScientist1
 {
 	Monster
 	-COUNTKILL
@@ -1386,7 +1386,7 @@ actor HLScientist1 7424
 	}
 }
 
-actor HLScientist2 7425
+actor HLScientist2
 {
 	Monster
 	-COUNTKILL
@@ -1458,7 +1458,7 @@ actor HLScientist2 7425
 	}
 }
 
-actor HLScientist3 7426
+actor HLScientist3
 {
 	Monster
 	-COUNTKILL

@@ -2,7 +2,7 @@
 // Vortigaunt (Slave)
 //====================
 
-actor HLVortigaunt 7407
+actor HLVortigaunt
 {
 	Monster
 //	Health 250

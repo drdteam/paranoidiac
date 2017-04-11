@@ -1,4 +1,4 @@
-actor OMGSteam : SwitchableDecoration 31980
+actor OMGSteam : SwitchableDecoration
 {
 	height 2
 	radius 1

@@ -1,4 +1,4 @@
-actor OMGFire : SwitchableDecoration 31998
+actor OMGFire : SwitchableDecoration
 {
   +NOGRAVITY
   +NOBLOCKMAP

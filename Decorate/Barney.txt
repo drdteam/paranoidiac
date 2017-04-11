@@ -2,7 +2,7 @@
 // Barney
 //=========
 
-actor HLBarney 7414
+actor HLBarney
 {
 	Monster
 	Health 150

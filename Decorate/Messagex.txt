@@ -4,21 +4,20 @@
 
 ACTOR MessageItem20 : CustomInventory
 {
-   Scale 0.25
-   inventory.maxamount 1
-   inventory.icon MAIL01
-   inventory.usesound "misc/chat"
-   +INVBAR
-   +undroppable
-   States
-   {
-     Spawn:
-     MAIL A 3
-     LOOP
-     Use:
-     TNT1 A 1 ACS_Execute (520, 0, 0, 0, 0)
-     Stop
-   }
+	Scale .25
+	inventory.icon MAIL01
+	inventory.usesound "misc/chat"
+	+INVBAR
+	+undroppable
+	States
+	{
+	Spawn:
+		MAIL A -1
+		Stop
+	Use:
+		TNT1 A 1 ACS_Execute (520, 0, 0, 0, 0)
+		Stop
+	}
 }
 
 //Map11: Message 1 (Col. Stinson; MAP11VX1)
