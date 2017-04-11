@@ -4,7 +4,7 @@
 // or invisible bridge things
 //======================================
 
-ACTOR Barrier1 30107
+ACTOR Barrier1
 {
 	Radius 4
 	Height 32
@@ -19,5 +19,5 @@ ACTOR Barrier1 30107
 	}
 }
 
-ACTOR Barrier2 : Barrier1 30108{}
-ACTOR Barrier3 : Barrier1 30109{}
+ACTOR Barrier2 : Barrier1{}
+ACTOR Barrier3 : Barrier1{}

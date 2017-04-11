@@ -2,7 +2,7 @@
 // Head Crab
 //===========
 
-actor HLHeadcrab 7402
+actor HLHeadcrab
 {
 	Monster
 	Health 10

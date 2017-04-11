@@ -3,7 +3,7 @@
 // Scientists, Administrator, Barney, Otis
 //==========================================
 
-ACTOR Handler2Standing 30315
+ACTOR Handler2Standing
 {
 	Height 56
 	+solid
@@ -14,12 +14,12 @@ ACTOR Handler2Standing 30315
 		Stop
 	}
 }
-ACTOR Handler2Sitting : Handler2Standing 30316
+ACTOR Handler2Sitting : Handler2Standing
 {
 	Height 40
 }
 
-ACTOR Otis01 : Handler2Standing 30321
+ACTOR Otis01 : Handler2Standing
 {
 	Radius 18
 	Height 64
@@ -33,31 +33,31 @@ ACTOR Otis01 : Handler2Standing 30321
 	+NOTAUTOAIMED
 }
 
-ACTOR Barney01 : Otis01 30322{}
+ACTOR Barney01 : Otis01{}
 
-ACTOR Admin01 : Otis01 30323
+ACTOR Admin01 : Otis01
 {
 	Radius 22
 	Height 40
 }
 
-ACTOR Einstein01 : Otis01 30324 //Slumped over scientists
+ACTOR Einstein01 : Otis01//Slumped over scientists
 {
 	Radius 18
 	Height 28
 }
 
-ACTOR Luther01 : Einstein01 30325{}
-ACTOR Slick01 : Einstein01 30326{}
-ACTOR Walter01 : Einstein01 30327{}
-ACTOR Walter01a : Einstein01 30328{}
+ACTOR Luther01 : Einstein01{}
+ACTOR Slick01 : Einstein01{}
+ACTOR Walter01 : Einstein01{}
+ACTOR Walter01a : Einstein01{}
 
-ACTOR Einstein02 : Einstein01 30329 //Standing scientists
+ACTOR Einstein02 : Einstein01//Standing scientists
 {
 	Height 56
 }
 
-ACTOR Luther02 : Einstein02 30330{}
-ACTOR Slick02 : Einstein02 30331{}
-ACTOR Walter02 : Einstein02 30332{}
-ACTOR Walter02a : Einstein02 30333{}
+ACTOR Luther02 : Einstein02{}
+ACTOR Slick02 : Einstein02{}
+ACTOR Walter02 : Einstein02{}
+ACTOR Walter02a : Einstein02{}

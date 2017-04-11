@@ -1,4 +1,4 @@
-actor HLBabyHeadCrab 7418
+actor HLBabyHeadCrab
 {
 	Monster
 	Health 10

@@ -1,4 +1,4 @@
-ACTOR MarineBody 32001
+ACTOR MarineBody
 {
 	Radius 16
 	Height 8
@@ -16,7 +16,7 @@ ACTOR MarineBody 32001
 // Custom Medical Kit
 //****
 
-ACTOR Medkit1 : HealthPickup 31005
+ACTOR Medkit1 : HealthPickup
 {
 	SpawnID 198
 	+COUNTITEM

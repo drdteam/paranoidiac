@@ -2,7 +2,7 @@
 // Non-Explosive barrels/trashcan (plastic & heavy metal), crates
 //================================================================
 
-ACTOR Barrel1 30103
+ACTOR Barrel1
 {
 	Radius 8
 	Height 29
@@ -22,21 +22,21 @@ ACTOR Barrel1 30103
 	}
 }
 
-ACTOR Barrel2 : Barrel1 30104{}
+ACTOR Barrel2 : Barrel1{}
 
-ACTOR Barrel3 : Barrel1 30105
+ACTOR Barrel3 : Barrel1
 {
 	Radius 9
 	Height 29
 	Mass 200
 }
 
-ACTOR Trashcan1 : Barrel1 30106
+ACTOR Trashcan1 : Barrel1
 {
 	Radius 10
 }
 
-ACTOR Xcrate03 : Barrel1 30112
+ACTOR Xcrate03 : Barrel1
 {
 	Health 30
 	Radius 32
@@ -44,9 +44,9 @@ ACTOR Xcrate03 : Barrel1 30112
 	Mass 200
 }
 
-ACTOR Xcrate04 : Xcrate03 30113{}
+ACTOR Xcrate04 : Xcrate03{}
 
-ACTOR XMetalBox 30114
+ACTOR XMetalBox
 {
 	Radius 34
 	Height 64
