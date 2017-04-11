@@ -4,20 +4,23 @@
 // or invisible bridge things
 //======================================
 
-ACTOR Barrier1
+class Barrier1 : Actor
 {
-	Radius 4
-	Height 32
-	Mass 500
-	+FLOORCLIP
-	+SOLID
+	Default
+	{
+		Radius 4;
+		Height 32;
+		Mass 500;
+		+FLOORCLIP
+		+SOLID
+	}
 	States
 	{
 	Spawn:
-		POSS A -1
-		Stop
+		POSS A -1;
+		Stop;
 	}
 }
 
-ACTOR Barrier2 : Barrier1{}
-ACTOR Barrier3 : Barrier1{}
+class Barrier2 : Barrier1{}
+class Barrier3 : Barrier1{}

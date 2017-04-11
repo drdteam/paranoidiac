@@ -1,1 +1,47 @@
+#include "zscript/Barriers.txt"
+#include "zscript/Bubbles.txt"
+#include "zscript/Models.txt"
+//#include "zscript/Exploding.txt"
+//#include "zscript/Flames.txt"
+//#include "zscript/Messages.txt"
+//#include "zscript/Miscellaneous.txt"
+//#include "zscript/NonExploding.txt"
+//#include "zscript/NPCModels.txt"
+//#include "zscript/Pickups.txt"
+#include "zscript/Player.txt"
+//#include "zscript/Sparks.txt"
+//#include "zscript/Steam.txt"
+//#include "zscript/WaterFall.txt"
+//#include "zscript/WeaponsAmmo.txt"
+
+//#include "zscript/Barnacle.txt"
+//#include "zscript/BullSquid.txt"
+//#include "zscript/Controller.txt"
+//#include "zscript/Gargantua.txt"
+//#include "zscript/Grunts.txt"
+//#include "zscript/HeadCrab.txt"
+//#include "zscript/HornetGrunt.txt"
+//#include "zscript/HoundEye.txt"
+//#include "zscript/Vortigaunt.txt"
+//#include "zscript/Zombie.txt"
+
+//#include "zscript/ZenItems.txt"
+
+//#include "zscript/Barney.txt"
+//#include "zscript/Scientists.txt"
+
+//#include "zscript/Explosion.txt"	//Always keep this instruction at the bottom of the list
+
+// paranoic
+//#include "zscript/OfficeRocks.txt"
+//#include "zscript/WeaponAmmo.txt"
+//#include "zscript/BabyHeadCrab.txt"
+//#include "zscript/Gonarch.txt"
+//#include "zscript/Nihilanth.txt"
+//#include "zscript/StukaBat.txt"
+//#include "zscript/BossBat.txt"
+//#include "zscript/MixedBag.txt"
+//#include "zscript/SUVGoBoom.txt"
+//#include "zscript/OspreyGoBoom.txt"
+
 #include "zscript/freezeritem.txt"
