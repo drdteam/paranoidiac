@@ -38,7 +38,7 @@ class HLBarney : Actor
 		TNT1 a 0 A_Jump(64,"Magnum");
 		HLMM C 2 A_FaceTarget;
 		TNT1 A 0 A_PlaySound("halflife/weapons/pistol",5);
-		TNT1 AA 0 A_SpawnItemEx("GunSmallSmoke",20,2,52,0,0,0,0,0);
+		TNT1 AA 0 A_SpawnItemEx("GunSmallSmoke",20,2,52);
 		HLMM D 5 Light("ImShootingAGun") A_CustomBulletAttack(7,7,1,5,"BulletPuff");
 		HLMM CC 3 A_FaceTarget;
 		TNT1 A 0 A_CPosRefire;
@@ -46,11 +46,11 @@ class HLBarney : Actor
 	Magnum:
 		HLMM C 4 A_FaceTarget;
 		TNT1 A 0 A_PlaySound("halflife/weapons/magnumshot",5);
-		TNT1 AA 0 A_SpawnItemEx("GunSmoke",20,2,52,0,0,0,0,0);
+		TNT1 AA 0 A_SpawnItemEx("GunSmoke",20,2,52);
 		HLMM D 5 Light("ImShootingAGun") A_CustomBulletAttack(2,2,1,25,"BulletPuff");
 		HLMM CCCCC 8 A_FaceTarget;
 		TNT1 A 0 A_PlaySound("halflife/weapons/magnumshot",5);
-		TNT1 AA 0 A_SpawnItemEx("GunSmoke",20,2,52,0,0,0,0,0);
+		TNT1 AA 0 A_SpawnItemEx("GunSmoke",20,2,52);
 		HLMM D 5 Light("ImShootingAGun") A_CustomBulletAttack(2,2,1,25,"BulletPuff");
 		HLMM CCCCC 8 A_FaceTarget;
 		Goto See;
@@ -67,7 +67,7 @@ class HLBarney : Actor
 		Stop;
 	XDeath:
 		TNT1 A 0 A_PlaySound("other/gibdeath");
-		TNT1 A 0 A_SpawnItemEx("BloodGibDropper",0,0,random(20,40),0,0,0,0,1);
+		TNT1 A 0 A_SpawnItemEx("BloodGibDropper",0,0,random(20,40));
 		TNT1 A 1 A_NoBlocking;
 		Stop;
 	}

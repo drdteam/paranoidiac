@@ -44,19 +44,19 @@ class HLVortigaunt : Actor
 	Missile:
 		TNT1 A 0 A_FaceTarget;
 		HLFI A 0 A_PlaySound("halflife/weapons/zap4",5);
-		HLFI AAAAAA 4 A_SpawnItemEx ("VortiLightning", 0, 0, 0, 0, 0, 0, 0, 48, 0);
-		HLFN B 0 A_SpawnItemEx ("VortiLightning", 0, 0, 0, 0, 0, 0, 0, 48, 0);
+		HLFI AAAAAA 4 A_SpawnItemEx("VortiLightning",flags:SXF_SETMASTER|SXF_NOCHECKPOSITION);
+		HLFN B 0 A_SpawnItemEx("VortiLightning",flags:SXF_SETMASTER|SXF_NOCHECKPOSITION);
 		HLFN B 4 A_FaceTarget;
-		HLFN B 2 A_SpawnItemEx ("VortiLightning", 0, 0, 0, 0, 0, 0, 0, 48, 0);
+		HLFN B 2 A_SpawnItemEx("VortiLightning",flags:SXF_SETMASTER|SXF_NOCHECKPOSITION);
 		HLFN C 2 A_PlaySound("halflife/weapons/zap4",5);
-		HLFN CC 0 A_SpawnItemEx ("VortiLightning", 0, 0, 0, 0, 0, 0, 0, 48, 0);
+		HLFN CC 0 A_SpawnItemEx("VortiLightning",flags:SXF_SETMASTER|SXF_NOCHECKPOSITION);
 		HLFN C 4;
 		HLFN D 4 A_FaceTarget;
-		HLFN D 3 A_SpawnItemEx ("VortiLightning", 0, 0, 0, 0, 0, 0, 0, 48, 0);
+		HLFN D 3 A_SpawnItemEx("VortiLightning",flags:SXF_SETMASTER|SXF_NOCHECKPOSITION);
 		TNT1 A 0 A_PlaySound("halflife/weapons/gausshit1",5);
 		TNT1 A 0 A_KillChildren;
-	  	HLFN E 0 A_SpawnProjectile("VortiPlasma",32,9,0);
-	  	HLFN E 3 A_SpawnProjectile("VortiPlasma",32,-9,0);
+	  	HLFN E 0 A_SpawnProjectile("VortiPlasma",32,9);
+	  	HLFN E 3 A_SpawnProjectile("VortiPlasma",32,-9);
 		HLFN F 6;
 		Goto See;
 	Pain:
@@ -156,24 +156,10 @@ class VortigauntShot : Actor
 	{
 	Spawn:
 		X099 A 1 bright;
-		X099 A 0 A_SpawnItemEx ("VortigauntShotTrail", -2, 0, 0, 0, 0, 0, 0, 160);
-		X099 A 0 A_SpawnItemEx ("VortigauntShotTrail", -4, 0, 0, 0, 0, 0, 0, 160);
-		X099 A 0 A_SpawnItemEx ("VortigauntShotTrail", -6, 0, 0, 0, 0, 0, 0, 160);
-		X099 A 0 A_SpawnItemEx ("VortigauntShotTrail", -8, 0, 0, 0, 0, 0, 0, 160);
-		X099 A 0 A_SpawnItemEx ("VortigauntShotTrail", -10, 0, 0, 0, 0, 0, 0, 160);
-		X099 A 0 A_SpawnItemEx ("VortigauntShotTrail", -12, 0, 0, 0, 0, 0, 0, 160);
-		X099 A 0 A_SpawnItemEx ("VortigauntShotTrail", -14, 0, 0, 0, 0, 0, 0, 160);
-		X099 A 0 A_SpawnItemEx ("VortigauntShotTrail", -16, 0, 0, 0, 0, 0, 0, 160);
-		X099 A 0 A_SpawnItemEx ("VortigauntShotTrail", -18, 0, 0, 0, 0, 0, 0, 160);
-		X099 A 0 A_SpawnItemEx ("VortigauntShotTrail", -20, 0, 0, 0, 0, 0, 0, 160);
-		X099 A 0 A_SpawnItemEx ("VortigauntShotTrail", -22, 0, 0, 0, 0, 0, 0, 160);
-		X099 A 0 A_SpawnItemEx ("VortigauntShotTrail", -24, 0, 0, 0, 0, 0, 0, 160);
-		X099 A 0 A_SpawnItemEx ("VortigauntShotTrail", -26, 0, 0, 0, 0, 0, 0, 160);
-		X099 A 0 A_SpawnItemEx ("VortigauntShotTrail", -28, 0, 0, 0, 0, 0, 0, 160);
-		X099 A 0 A_SpawnItemEx ("VortigauntShotTrail", -30, 0, 0, 0, 0, 0, 0, 160);
-		X099 A 0 A_SpawnItemEx ("VortigauntShotTrail", -32, 0, 0, 0, 0, 0, 0, 160);
-		X099 A 0 A_SpawnItemEx ("VortigauntShotTrail", -34, 0, 0, 0, 0, 0, 0, 160);
-		X099 A 0 A_SpawnItemEx ("VortigauntShotTrail", -36, 0, 0, 0, 0, 0, 0, 160);
+		{
+			for(i=-2;i>=-36;i-=2)
+				A_SpawnItemEx("VortigauntShotTrail",i);
+		}
 		loop;
 	XDeath:
 		TNT1 A 1;
@@ -247,15 +233,15 @@ class VortiPlasma : Actor
 		VPLS FG 6 bright;
 		loop;
 	Death:
-		VPLS A 1 A_SpawnItemEx ("VortiPlasma_Explode", 0, 0, 0, 0, 0, 0, 0, 128);
+		VPLS A 1 A_SpawnItemEx("VortiPlasma_Explode");
 		VPLS A 0 A_Jump(120,1,2,3,4);
-		VPLS A 1 A_SpawnItemEx ("VortiPlasma_Bolt1", 0, 0, 0, 0, 0, 0, 0, 128);
+		VPLS A 1 A_SpawnItemEx("VortiPlasma_Bolt1");
 		stop;
-		VPLS A 1 A_SpawnItemEx ("VortiPlasma_Bolt2", 0, 0, 0, 0, 0, 0, 0, 128);
+		VPLS A 1 A_SpawnItemEx("VortiPlasma_Bolt2");
 		stop;
-		VPLS A 1 A_SpawnItemEx ("VortiPlasma_Bolt3", 0, 0, 0, 0, 0, 0, 0, 128);
+		VPLS A 1 A_SpawnItemEx("VortiPlasma_Bolt3");
 		stop;
-		VPLS A 1 A_SpawnItemEx ("VortiPlasma_Bolt4", 0, 0, 0, 0, 0, 0, 0, 128);
+		VPLS A 1 A_SpawnItemEx("VortiPlasma_Bolt4");
 		stop;
 	}
 }

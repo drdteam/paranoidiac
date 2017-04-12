@@ -28,10 +28,10 @@ class SUV4 : Actor	//destroyable SUV
 		POSS B 1 A_KillChildren;
 		POSS B 0 A_Explode(128,192);
 		POSS B 0 A_PlaySound("SUV/Explode");
-		POSS B 1 A_SpawnItemEx("NewExplosionMedium",56.0,32.0,40.0);
-		POSS B 1 A_SpawnItemEx("NewExplosionMedium",-64.0,-40.0,56.0);
-		POSS B 1 A_SpawnItemEx("NewExplosionMedium",frandom (-16,16),-40.0,32.0);
-		POSS B 1 A_SpawnItemEx("NewExplosionMedium",frandom (-16,16),40.0,32.0);
+		POSS B 1 A_SpawnItemEx("NewExplosionMedium",56,32,40);
+		POSS B 1 A_SpawnItemEx("NewExplosionMedium",-64,-40,56);
+		POSS B 1 A_SpawnItemEx("NewExplosionMedium",frandom(-16,16),-40,32);
+		POSS B 1 A_SpawnItemEx("NewExplosionMedium",frandom(-16,16),40,32);
 		POSS BB 0 A_SpawnItemEx("Spark_O1",frandom(-96,96),frandom(-96,96),frandom(32,96),frandom(-4,4),frandom(-4,4),frandom(-4,4));
 		POSS BB 0 A_SpawnItemEx("Spark_O2",frandom(-96,96),frandom(-96,96),frandom(32,96),frandom(-4,4),frandom(-4,4),frandom(-4,4));
 		POSS BB 0 A_SpawnItemEx("Spark_O3",frandom(-96,96),frandom(-96,96),frandom(32,96),frandom(-4,4),frandom(-4,4),frandom(-4,4));

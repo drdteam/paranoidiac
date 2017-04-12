@@ -1282,7 +1282,7 @@ class HLScientistUpdate : Actor
 		Stop;
 	XDeath:
 		TNT1 A 0 A_PlaySound("other/gibdeath");
-		TNT1 A 0 A_SpawnItemEx("BloodGibDropper",0,0,random(20,40),0,0,0,0,1);
+		TNT1 A 0 A_SpawnItemEx("BloodGibDropper",0,0,random(20,40));
 		TNT1 A 1 A_NoBlocking;
 		Stop;
 	}
@@ -1354,7 +1354,7 @@ class HLScientist1 : Actor
 		Stop;
 	XDeath:
 		TNT1 A 0 A_PlaySound("other/gibdeath");
-		TNT1 A 0 A_SpawnItemEx("BloodGibDropper",0,0,random(20,40),0,0,0,0,1);
+		TNT1 A 0 A_SpawnItemEx("BloodGibDropper",0,0,random(20,40));
 		TNT1 A 1 A_NoBlocking;
 		Stop;
 	}
@@ -1426,7 +1426,7 @@ class HLScientist2 : Actor
 		Stop;
 	XDeath:
 		TNT1 A 0 A_PlaySound("other/gibdeath");
-		TNT1 A 0 A_SpawnItemEx("BloodGibDropper",0,0,random(20,40),0,0,0,0,1);
+		TNT1 A 0 A_SpawnItemEx("BloodGibDropper",0,0,random(20,40));
 		TNT1 A 1 A_NoBlocking;
 		Stop;
 	}
@@ -1499,7 +1499,7 @@ class HLScientist3 : Actor
 		Stop;
 	XDeath:
 		TNT1 A 0 A_PlaySound("other/gibdeath");
-		TNT1 A 0 A_SpawnItemEx("BloodGibDropper",0,0,random(20,40),0,0,0,0,1);
+		TNT1 A 0 A_SpawnItemEx("BloodGibDropper",0,0,random(20,40));
 		TNT1 A 1 A_NoBlocking;
 		Stop;
 	}
