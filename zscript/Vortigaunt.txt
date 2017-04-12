@@ -155,9 +155,9 @@ class VortigauntShot : Actor
 	States
 	{
 	Spawn:
-		X099 A 1 bright;
+		X099 A 1 bright
 		{
-			for(i=-2;i>=-36;i-=2)
+			for(int i=-2;i>=-36;i-=2)
 				A_SpawnItemEx("VortigauntShotTrail",i);
 		}
 		loop;
