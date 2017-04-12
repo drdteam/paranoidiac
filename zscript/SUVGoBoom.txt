@@ -1,0 +1,74 @@
+class SUV4 : Actor	//destroyable SUV
+{
+	Default
+	{
+		Radius 38;
+		Height 66;
+		DeathHeight 66;
+		Mass 0x7FFFFFF;
+		Health 400;
+		PainChance 256;
+		+FLOORCLIP
+		+SOLID
+		+ismonster
+		+shootable
+		+NOBLOOD
+	}
+	States
+	{
+	Spawn:
+		POSS A -1 NODELAY A_SpawnItemEx("SUVGlassEx",flags:SXF_SETMASTER);
+		Stop;
+	Pain:
+		POSS A 1;
+		POSS A -1 A_PlaySound("SUV/Hit",CHAN_AUTO);
+		Stop;
+	Death:
+		POSS B 0 A_PlaySound("halflife/weapons/explode1");
+		POSS B 1 A_KillChildren;
+		POSS B 0 A_Explode(128,192);
+		POSS B 0 A_PlaySound("SUV/Explode");
+		POSS B 1 A_SpawnItemEx("NewExplosionMedium",56.0,32.0,40.0);
+		POSS B 1 A_SpawnItemEx("NewExplosionMedium",-64.0,-40.0,56.0);
+		POSS B 1 A_SpawnItemEx("NewExplosionMedium",frandom (-16,16),-40.0,32.0);
+		POSS B 1 A_SpawnItemEx("NewExplosionMedium",frandom (-16,16),40.0,32.0);
+		POSS BB 0 A_SpawnItemEx("Spark_O1",frandom(-96,96),frandom(-96,96),frandom(32,96),frandom(-4,4),frandom(-4,4),frandom(-4,4));
+		POSS BB 0 A_SpawnItemEx("Spark_O2",frandom(-96,96),frandom(-96,96),frandom(32,96),frandom(-4,4),frandom(-4,4),frandom(-4,4));
+		POSS BB 0 A_SpawnItemEx("Spark_O3",frandom(-96,96),frandom(-96,96),frandom(32,96),frandom(-4,4),frandom(-4,4),frandom(-4,4));
+		POSS BB 0 A_SpawnItemEx("Spark_O4",frandom(-96,96),frandom(-96,96),frandom(32,96),frandom(-4,4),frandom(-4,4),frandom(-4,4));
+		POSS BB 0 A_SpawnItemEx("Spark_O5",frandom(-96,96),frandom(-96,96),frandom(32,96),frandom(-4,4),frandom(-4,4),frandom(-4,4));
+		POSS BB 0 A_SpawnItemEx("Spark_O6",frandom(-96,96),frandom(-96,96),frandom(32,96),frandom(-4,4),frandom(-4,4),frandom(-4,4));
+		POSS BB 0 A_SpawnItemEx("Spark_O7",frandom(-96,96),frandom(-96,96),frandom(32,96),frandom(-4,4),frandom(-4,4),frandom(-4,4));
+		POSS BB 0 A_SpawnItemEx("Spark_O8",frandom(-96,96),frandom(-96,96),frandom(32,96),frandom(-4,4),frandom(-4,4),frandom(-4,4));
+		POSS B 8;
+		POSS BBBB 6 A_SpawnItemEx("NewExploBigSmoke",frandom(-64,64),frandom(-48,48),frandom(32,64),0,0,frandom(1,4));
+		POSS B -1;
+		Stop;
+	}
+}
+
+class SUVGlassEx : Actor
+{
+	Default
+	{
+		Renderstyle "Translucent";
+		Alpha 0.5;
+		Radius 16;
+		Height 56;
+		Mass 0x7FFFFFF;
+		+shootable
+		+FLOORCLIP
+		+NOTARGET
+		+NOBLOOD
+	}
+	States
+	{
+	Spawn:
+		POSS A -1;
+		Stop;
+	Death:
+		POSS BCDEFGHI 1;
+		POSS JKLM 1 A_FadeOut;
+		Stop;
+	}
+}

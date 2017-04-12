@@ -28,19 +28,19 @@
 #include "zscript/ZenItems.txt"
 
 #include "zscript/Barney.txt"
-//#include "zscript/Scientists.txt"
+#include "zscript/Scientists.txt"
 
-//#include "zscript/Explosion.txt"	//Always keep this instruction at the bottom of the list
+#include "zscript/Explosion.txt"	//Always keep this instruction at the bottom of the list
 
 // paranoic
-//#include "zscript/OfficeRocks.txt"
-//#include "zscript/BabyHeadCrab.txt"
-//#include "zscript/Gonarch.txt"
-//#include "zscript/Nihilanth.txt"
-//#include "zscript/StukaBat.txt"
-//#include "zscript/BossBat.txt"
-//#include "zscript/MixedBag.txt"
-//#include "zscript/SUVGoBoom.txt"
-//#include "zscript/OspreyGoBoom.txt"
+#include "zscript/OfficeRocks.txt"
+#include "zscript/BabyHeadCrab.txt"
+#include "zscript/Gonarch.txt"
+#include "zscript/Nihilanth.txt"
+#include "zscript/StukaBat.txt"
+#include "zscript/BossBat.txt"
+#include "zscript/MixedBag.txt"
+#include "zscript/SUVGoBoom.txt"
+#include "zscript/OspreyGoBoom.txt"
 
 #include "zscript/freezeritem.txt"

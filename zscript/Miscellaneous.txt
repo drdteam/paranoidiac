@@ -202,7 +202,7 @@ class GunSmallSmokeSpawner : Actor
 	{
 	Spawn:
 		TNT1 A 1;
-		TNT1 A 5 A_CustomMissile("GunSmallSmoke2",-2,0,0);
+		TNT1 A 5 A_SpawnProjectile("GunSmallSmoke2",-2,0,0);
 		Stop;
 	}
 }
