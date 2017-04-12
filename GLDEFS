@@ -1994,7 +1994,7 @@ Object ControllerFireball2
 // Generic explosion fx
 //***************************
 
-Object ExploMediumBack1
+Object NewExplosionMedium
 {
 	Frame X004A { Light YellowSmallFlicker2 }
 	Frame X004B { Light YellowSmallFlicker1 }
@@ -2013,10 +2013,7 @@ Object ExploMediumBack1
 	Frame X004O { Light YellowSmallFlicker1 }
 	Frame X004P { Light YellowSmallFlicker2 }
 	Frame X004Q { Light YellowSmallFlicker3 }
-}
 
-Object ExploMediumBack2
-{
 	Frame X005A { Light YellowSmallFlicker2 }
 	Frame X005B { Light YellowSmallFlicker2 }
 	Frame X005C { Light YellowSmallFlicker2 }
@@ -2041,10 +2038,7 @@ Object ExploMediumBack2
 	Frame X005V { Light YellowSmallFlicker2 }
 	Frame X005W { Light YellowSmallFlicker2 }
 	Frame X005X { Light YellowSmallFlicker3 }
-}
 
-Object ExploMediumBack3
-{
 	Frame X006A { Light YellowSmallFlicker2 }
 	Frame X006B { Light YellowSmallFlicker1 }
 	Frame X006C { Light YellowSmallFlicker1 }
@@ -2061,10 +2055,7 @@ Object ExploMediumBack3
 	Frame X006N { Light YellowSmallFlicker1 }
 	Frame X006O { Light YellowSmallFlicker1 }
 	Frame X006P { Light YellowSmallFlicker2 }
-}
 
-Object ExploMediumBack4
-{
 	Frame X015A { Light YellowSmallFlicker2 }
 	Frame X015B { Light YellowSmallFlicker2 }
 	Frame X015C { Light YellowSmallFlicker2 }
@@ -2089,10 +2080,7 @@ Object ExploMediumBack4
 	Frame X015V { Light YellowSmallFlicker2 }
 	Frame X015W { Light YellowSmallFlicker2 }
 	Frame X015X { Light YellowSmallFlicker3 }
-}
 
-Object ExploMediumBackFloor1
-{
 	Frame EXP3A { Light YellowSmallFlicker1 }
 	Frame EXP3B { Light YellowMediumFlicker3 }
 	Frame EXP3C { Light YellowMediumFlicker2 }
@@ -2119,10 +2107,7 @@ Object ExploMediumBackFloor1
 	Frame EXP3X { Light YellowSmallFlicker3 }
 	Frame EXP3Y { Light YellowSmallFlicker3 }
 	Frame EXP3Z { Light YellowSmallFlicker3 }
-}
 
-Object ExploMediumBackFloor2
-{
 	Frame EXPLB { Light YellowSmallFlicker1 }
 	Frame EXPLC { Light YellowMediumFlicker3 }
 	Frame EXPLD { Light YellowMediumFlicker3 }
@@ -2143,10 +2128,7 @@ Object ExploMediumBackFloor2
 	Frame EXPLS { Light YellowSmallFlicker2 }
 	Frame EXPLT { Light YellowSmallFlicker3 }
 	Frame EXPLU { Light YellowSmallFlicker3 }
-}
 
-Object ExploMediumBackFloor3
-{
 	FRAME BNG4A { Light YellowMediumFlicker3 }
 	FRAME BNG4B { Light YellowMediumFlicker2 }
 	FRAME BNG4C { Light YellowMediumFlicker2 }
@@ -2164,7 +2146,7 @@ Object ExploMediumBackFloor3
 }
 
 //*****************************************************************
-Object ExploMediumBigBack1
+Object NewExplosionMediumBig
 {
 	Frame X004A { Light YellowSmallFlicker1 }
 	Frame X004B { Light YellowMediumFlicker3 }
@@ -2183,10 +2165,7 @@ Object ExploMediumBigBack1
 	Frame X004O { Light YellowMediumFlicker3 }
 	Frame X004P { Light YellowSmallFlicker1 }
 	Frame X004Q { Light YellowSmallFlicker2 }
-}
 
-Object ExploMediumBigBack2
-{
 	Frame X005A { Light YellowSmallFlicker1 }
 	Frame X005B { Light YellowSmallFlicker1 }
 	Frame X005C { Light YellowSmallFlicker1 }
@@ -2211,10 +2190,7 @@ Object ExploMediumBigBack2
 	Frame X005V { Light YellowSmallFlicker1 }
 	Frame X005W { Light YellowSmallFlicker1 }
 	Frame X005X { Light YellowSmallFlicker2 }
-}
 
-Object ExploMediumBigBack3
-{
 	Frame X006A { Light YellowSmallFlicker1 }
 	Frame X006B { Light YellowMediumFlicker3 }
 	Frame X006C { Light YellowMediumFlicker3 }
@@ -2231,10 +2207,7 @@ Object ExploMediumBigBack3
 	Frame X006N { Light YellowMediumFlicker3 }
 	Frame X006O { Light YellowMediumFlicker3 }
 	Frame X006P { Light YellowSmallFlicker1 }
-}
 
-Object ExploMediumBigBack4
-{
 	Frame X015A { Light YellowSmallFlicker1 }
 	Frame X015B { Light YellowSmallFlicker1 }
 	Frame X015C { Light YellowSmallFlicker1 }
@@ -2259,10 +2232,7 @@ Object ExploMediumBigBack4
 	Frame X015V { Light YellowSmallFlicker1 }
 	Frame X015W { Light YellowSmallFlicker1 }
 	Frame X015X { Light YellowSmallFlicker2 }
-}
 
-Object ExploMediumBigBackFloor1
-{
 	Frame EXP3A { Light YellowMediumFlicker3 }
 	Frame EXP3B { Light YellowMediumFlicker2 }
 	Frame EXP3C { Light YellowMediumFlicker1 }
@@ -2289,10 +2259,7 @@ Object ExploMediumBigBackFloor1
 	Frame EXP3X { Light YellowSmallFlicker2 }
 	Frame EXP3Y { Light YellowSmallFlicker2 }
 	Frame EXP3Z { Light YellowSmallFlicker2 }
-}
 
-Object ExploMediumBigBackFloor2
-{
 	Frame EXPLB { Light YellowMediumFlicker3 }
 	Frame EXPLC { Light YellowMediumFlicker2 }
 	Frame EXPLD { Light YellowMediumFlicker2 }
@@ -2313,10 +2280,7 @@ Object ExploMediumBigBackFloor2
 	Frame EXPLS { Light YellowSmallFlicker1 }
 	Frame EXPLT { Light YellowSmallFlicker2 }
 	Frame EXPLU { Light YellowSmallFlicker2 }
-}
 
-Object ExploMediumBigBackFloor3
-{
 	FRAME BNG4A { Light YellowMediumFlicker2 }
 	FRAME BNG4B { Light YellowMediumFlicker1 }
 	FRAME BNG4C { Light YellowMediumFlicker1 }
@@ -2333,7 +2297,7 @@ Object ExploMediumBigBackFloor3
 	FRAME BNG4N { Light YellowSmallFlicker1 }
 }
 //*****************************************************************
-Object ExploBigBack1
+Object NewExplosionBig
 {
 	Frame X004A { Light YellowMediumFlicker2 }
 	Frame X004B { Light YellowMediumFlicker1 }
@@ -2352,10 +2316,7 @@ Object ExploBigBack1
 	Frame X004O { Light YellowMediumFlicker1 }
 	Frame X004P { Light YellowMediumFlicker2 }
 	Frame X004Q { Light YellowMediumFlicker3 }
-}
 
-Object ExploBigBack2
-{
 	Frame X005A { Light YellowMediumFlicker3 }
 	Frame X005B { Light YellowMediumFlicker2 }
 	Frame X005C { Light YellowMediumFlicker2 }
@@ -2380,10 +2341,7 @@ Object ExploBigBack2
 	Frame X005V { Light YellowMediumFlicker1 }
 	Frame X005W { Light YellowMediumFlicker2 }
 	Frame X005X { Light YellowMediumFlicker3 }
-}
 
-Object ExploBigBack3
-{
 	Frame X006A { Light YellowMediumFlicker2 }
 	Frame X006B { Light YellowMediumFlicker1 }
 	Frame X006C { Light YellowMediumFlicker1 }
@@ -2400,10 +2358,7 @@ Object ExploBigBack3
 	Frame X006N { Light YellowMediumFlicker1 }
 	Frame X006O { Light YellowMediumFlicker1 }
 	Frame X006P { Light YellowMediumFlicker2 }
-}
 
-Object ExploBigBack4
-{
 	Frame X015A { Light YellowMediumFlicker3 }
 	Frame X015B { Light YellowMediumFlicker2 }
 	Frame X015C { Light YellowMediumFlicker2 }
@@ -2428,10 +2383,7 @@ Object ExploBigBack4
 	Frame X015V { Light YellowMediumFlicker2 }
 	Frame X015W { Light YellowMediumFlicker2 }
 	Frame X015X { Light YellowMediumFlicker3 }
-}
 
-Object ExploBigBackFloor1
-{
 	Frame EXP3A { Light YellowMediumFlicker1 }
 	Frame EXP3B { Light YellowBigFlicker3 }
 	Frame EXP3C { Light YellowBigFlicker2 }
@@ -2458,10 +2410,7 @@ Object ExploBigBackFloor1
 	Frame EXP3X { Light YellowMediumFlicker3 }
 	Frame EXP3Y { Light YellowMediumFlicker3 }
 	Frame EXP3Z { Light YellowMediumFlicker3 }
-}
 
-Object ExploBigBackFloor2
-{
 	Frame EXPLB { Light YellowMediumFlicker1 }
 	Frame EXPLC { Light YellowBigFlicker3 }
 	Frame EXPLD { Light YellowBigFlicker3 }
@@ -2482,10 +2431,7 @@ Object ExploBigBackFloor2
 	Frame EXPLS { Light YellowMediumFlicker2 }
 	Frame EXPLT { Light YellowMediumFlicker3 }
 	Frame EXPLU { Light YellowMediumFlicker3 }
-}
 
-Object ExploBigBackFloor3
-{
 	FRAME BNG4A { Light YellowMediumFlicker1 }
 	FRAME BNG4B { Light YellowBigFlicker3 }
 	FRAME BNG4C { Light YellowBigFlicker2 }
@@ -2666,8 +2612,8 @@ Object HEVbattery
 {	Frame POSS { Light HevBattLight }	}
 
 skybox HLSKY6 fliptop//Xen Sky
-{ 
-   XEN01_N 
+{
+   XEN01_N
    XEN01_E
    XEN01_S
    XEN01_W

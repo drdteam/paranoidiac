@@ -122,10 +122,10 @@ class HLGonarch : Actor
 		HLNO D 8;
 		Goto See;
 	SpawnCrab:
-		TNT1 A 0 A_PlaySoundEx("halflife/monsters/gonarch/attack","SoundSlot5");
+		TNT1 A 0 A_PlaySound("halflife/monsters/gonarch/attack",5);
 		HLNN ABC 8 A_SpawnItemEx("ShieldSpawner8Tics",0,0,0,0,0,0,0,32);
 		TNT1 A 0 A_SpawnItemEx("ShieldSpawner5Tics",0,0,0,0,0,0,0,32);
-		TNT1 A 0 A_PlaySoundEx("halflife/monsters/gonarch/spawnchild","SoundSlot4");
+		TNT1 A 0 A_PlaySound("halflife/monsters/gonarch/spawnchild",4);
 		HLNN DD 2 A_SpawnItemEx("HLBabyHeadCrab2",random(10,-10),random(10,-10),0,0,0,0,32,0);
 		HLNN D 1 A_SpawnItemEx("HLBabyHeadCrab2",random(10,-10),random(10,-10),0,0,0,0,32,0);
 		HLNN EEEE 8 A_SpawnItemEx("ShieldSpawner5Tics",0,0,0,0,0,0,0,32);
@@ -138,7 +138,7 @@ class HLGonarch : Actor
 		HLND A 3 A_Scream;
 		HLND B 3 A_Fall;
 		HLND CD 4;
-		TNT1 A 0 A_PlaySoundEx("halflife/monsters/gonarch/step","SoundSlot6");
+		TNT1 A 0 A_PlaySound("halflife/monsters/gonarch/step",6);
 		HLND EF 4;
 		HLND G 100;
 		TNT1 A 0 A_PlaySound("halflife/weapons/explode2");
@@ -179,7 +179,7 @@ class GonarchAcid : Actor
 		X022 A 4 ThrustThingZ(0,12,0,1);
 		TNT1 AA 0 A_SpawnItemEx("GonarchAcidExtra",random(5,-5),random(5,-5),random(5,-5),0,0,0,0,0);
 		X022 B 4;
-		TNT1 A 0 A_Changeflag("THRUGHOST",0);
+		TNT1 A 0 {bTHRUGHOST=0;}
 		TNT1 AA 0 A_SpawnItemEx("GonarchAcidExtra",random(5,-5),random(5,-5),random(5,-5),0,0,0,0,0);
 		X022 C 4;
 		TNT1 AA 0 A_SpawnItemEx("GonarchAcidExtra",random(5,-5),random(5,-5),random(5,-5),0,0,0,0,0);
@@ -255,7 +255,7 @@ class GonarchAcid2 : GonarchAcid
 		X022 A 4 ThrustThingZ(0,12,0,1);
 		TNT1 AA 0 A_SpawnItemEx("GonarchAcid2Extra",random(5,-5),random(5,-5),random(5,-5),0,0,0,0,0);
 		X022 B 4;
-		TNT1 A 0 A_Changeflag("THRUGHOST",0);
+		TNT1 A 0 {bTHRUGHOST=0;}
 		TNT1 AA 0 A_SpawnItemEx("GonarchAcid2Extra",random(5,-5),random(5,-5),random(5,-5),0,0,0,0,0);
 		X022 C 4;
 		TNT1 AA 0 A_SpawnItemEx("GonarchAcid2Extra",random(5,-5),random(5,-5),random(5,-5),0,0,0,0,0);
