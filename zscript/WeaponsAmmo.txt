@@ -1115,7 +1115,6 @@ class XBow : Weapon
 {
 	Default
 	{
-		//SpawnID 237
 		Radius 16;
 		Height 8;
 		+FLOORCLIP
@@ -1247,7 +1246,6 @@ class XBowBolts : Ammo
 	Default
 	{
 		+FLOORCLIP
-		//SpawnID 236
 		Radius 8;
 		Height 4;
 		inventory.pickupmessage "Picked up a clip of crossbow bolts";
@@ -1271,7 +1269,6 @@ class XBowBoltSingle : Ammo
 	Default
 	{
 		+FLOORCLIP
-		//SpawnID 235
 		Radius 8;
 		Height 4;
 		inventory.pickupmessage "Picked up a crossbow bolt";
@@ -1319,7 +1316,6 @@ class XbowBolt : FastProjectile
 
 class Missile : Rocket
 {
-	//SpawnID 234
 //	Speed 40
 }
 
@@ -1342,7 +1338,6 @@ class GluonGun : Weapon
 {
 	Default
 	{
-		//SpawnID 233
 		Weapon.AmmoUse1 0;
 		Weapon.AmmoType1 "AECell";
 		Weapon.AmmoGive1 40;
@@ -2214,7 +2209,6 @@ class AECell : Ammo replaces Cell
 	Default
 	{
 		+FLOORCLIP
-		//spawnid 75
 		height 10;
 		inventory.pickupmessage "Picked up depleted U-235.";
 		inventory.icon "IECCA0";
@@ -2237,7 +2231,6 @@ class AECellBox : AECell replaces CellPack
 {
 	Default
 	{
-		//spawnid 232
 		radius 8;
 		height 8;
 	}
@@ -2276,7 +2269,6 @@ class HornetGun : Weapon
 {
 	Default
 	{
-		//SpawnID 231
 		+FLOORCLIP
 		+WEAPON.CHEATNOTWEAPON
 		+WEAPON.AMMO_OPTIONAL

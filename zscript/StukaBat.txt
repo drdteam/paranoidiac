@@ -3,7 +3,6 @@ class HLBat : Actor
 	Default
 	{
 		Monster;
-		//spawnid 172;
 		Health 200;
 		Speed 12;
 		Height 76;

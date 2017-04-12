@@ -4,7 +4,6 @@ class HLNihilanth : Actor
 	Default
 	{
 		Monster;
-		//spawnid 175
 		Health 4000;
 		Mass 0x7FFFFFFF;
 		+FLOAT

@@ -3,7 +3,6 @@ class HLGonarch : Actor
 	Default
 	{
 		Monster;
-		//spawnid 174
 		Health 5000;
 		Mass 0x7FFFFFFF;
 		+DONTHARMCLASS

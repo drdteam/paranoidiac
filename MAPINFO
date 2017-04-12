@@ -326,6 +326,22 @@ Intermission ParaEndLogo
 //	{}
 }
 
+spawnnums
+{
+	75=AECell
+	172=HLBat
+	173=HLBossBat
+	174=HLGonarch
+	175=HLNihilanth
+	198=Medkit1
+	231=HornetGun
+	232=AECellBox
+	233=GluonGun
+	234=Missile
+	235=XBowBoltSingle
+	236=XBowBolts
+	237=XBow
+}
 DoomEdNums
 {
 	3210=MusicSwitcher07

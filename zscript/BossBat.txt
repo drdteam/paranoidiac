@@ -3,7 +3,6 @@ class HLBossBat : Actor
 	Default
 	{
 		Monster;
-		//spawnid 173
 		Health 1600;
 		Speed 24;
 		Height 128;
