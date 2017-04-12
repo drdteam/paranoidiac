@@ -9,7 +9,7 @@ class HLBarnacle : Actor
 		obituary "%o was spat on by a Barnacle.";
 		health 80;
 		height 32;
-		mass 0x7fffffff;
+		mass 0x7FFFFFFF;
 		maxtargetrange 384;
 		painchance 128;
 		BloodColor "DE FE 72";

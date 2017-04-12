@@ -5,7 +5,7 @@ class HLGonarch : Actor
 		Monster;
 		//spawnid 174
 		Health 5000;
-		Mass 0x7FFFFFFFF;
+		Mass 0x7FFFFFFF;
 		+DONTHARMCLASS
 		Speed 8;
 		Height 90;

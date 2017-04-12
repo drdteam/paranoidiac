@@ -64,7 +64,7 @@ class XMetalBox : Actor
 	{
 		Radius 34;
 		Height 64;
-		Mass 0x7FFFFFF;
+		Mass 0x7FFFFFFF;
 		+SOLID
 		+NODAMAGE
 		+NOBLOOD

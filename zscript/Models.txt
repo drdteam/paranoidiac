@@ -142,7 +142,7 @@ class Transformer : Actor
 	{
 		Radius 12;
 		Height 60;
-		Mass 0x7FFFFFF;
+		Mass 0x7FFFFFFF;
 		+FLOORCLIP
 		+SOLID
 	}
@@ -241,7 +241,7 @@ class Forklift1 : Actor
 	Default
 	{
 		Height 64;
-		Mass 0x7FFFFFF;
+		Mass 0x7FFFFFFF;
 		+FLOORCLIP
 		+SOLID
 	}
@@ -322,7 +322,7 @@ class Generator3a : SwitchableDecoration
 	{
 		Radius 32;
 		Height 64;
-		Mass 0x7FFFFFF;
+		Mass 0x7FFFFFFF;
 		+FLOORCLIP
 		+SOLID
 	}
@@ -377,7 +377,7 @@ class girder1 : Actor
 	{
 		Radius 34;
 		Height 416;
-		Mass 0x7FFFFFF;
+		Mass 0x7FFFFFFF;
 		+FLOORCLIP
 		+SOLID
 	}
@@ -404,7 +404,7 @@ class apache : Actor
 	{
 		Radius 48;
 		Height 128;
-		Mass 0x7FFFFFF;
+		Mass 0x7FFFFFFF;
 		+FLOORCLIP
 		+SOLID
 	}
@@ -422,7 +422,7 @@ class Tram : Actor
 	{
 		Radius 40;
 		Height 32;
-		Mass 0x7FFFFFF;
+		Mass 0x7FFFFFFF;
 		+FLOORCLIP
 		+SOLID
 	}
@@ -474,7 +474,7 @@ class OspreyDead : Actor
 	{
 		Radius 86;
 		Height 8;
-		Mass 0x7FFFFFF;
+		Mass 0x7FFFFFFF;
 		+FLOORCLIP
 	}
 	States
@@ -507,7 +507,7 @@ class Truck01 : Actor
 	{
 		Radius 58;
 		Height 122;
-		Mass 0x7FFFFFF;
+		Mass 0x7FFFFFFF;
 		+FLOORCLIP
 		+SOLID
 	}
@@ -575,7 +575,7 @@ class Toilet1 : Actor
 	{
 		Radius 16;
 		Height 28;
-		Mass 0x7FFFFFF;
+		Mass 0x7FFFFFFF;
 		+FLOORCLIP
 		+SOLID
 	}
@@ -709,7 +709,7 @@ class HandDryer : Actor
 	{
 		Radius 4;
 		Height 8;
-		Mass 0x7FFFFFF;
+		Mass 0x7FFFFFFF;
 		+NOGRAVITY
 		+SOLID
 	}
@@ -881,7 +881,7 @@ class Pipe1 : Actor
 	Default
 	{
 		Height 58;
-		Mass 0x7FFFFFF;
+		Mass 0x7FFFFFFF;
 		+FLOORCLIP
 		+SOLID
 	}
@@ -1175,7 +1175,7 @@ class Palm1a : Actor
 	{
 		Radius 8;
 		Height 340;
-		Mass 0x7fffffff;
+		Mass 0x7FFFFFFF;
 		+FLOORCLIP
 		+SOLID
 	}

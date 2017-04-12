@@ -93,7 +93,7 @@ class VortiLightning : Actor
 		-COUNTKILL
 		Height 1;
 		Radius 1;
-		Health 0xFFFFFFF;
+		Health 0x7FFFFFFF;
 		RenderStyle "Add";
 		Alpha 0.7;
 		Scale 1.05;

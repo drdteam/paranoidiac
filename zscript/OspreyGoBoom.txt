@@ -8,8 +8,8 @@ class OspreyKillable : Actor
 	{
 		Radius 3;
 		Height 20;
-		Mass 0x7FFFFFF;
-		Health 0x7FFFFFF;
+		Mass 0x7FFFFFFF;
+		Health 0x7FFFFFFF;
 		+FLOORCLIP
 		+NOGRAVITY
 		+notarget

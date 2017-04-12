@@ -195,7 +195,7 @@ class TechPillar1a : Actor
 	{
 		Radius 16;
 		Height 214;
-		Mass 0x7FFFFFF;
+		Mass 0x7FFFFFFF;
 		+SOLID
 		+Floorclip
 	}
@@ -224,7 +224,7 @@ class TechClamp : Actor
 	{
 		Radius 96;
 		Height 256;
-		Mass 0x7FFFFFF;
+		Mass 0x7FFFFFFF;
 		+SOLID
 		+SPAWNCEILING
 		+NOGRAVITY
@@ -264,7 +264,7 @@ class TechClampa : Actor
 	{
 		Radius 48;
 		Height 128;
-		Mass 0x7FFFFFF;
+		Mass 0x7FFFFFFF;
 		+SOLID
 		+SPAWNCEILING
 		+NOGRAVITY
@@ -306,7 +306,7 @@ class XenIsland1 : Actor
 	{
 		Radius 96;
 		Height 128;
-		Mass 0x7FFFFFF;
+		Mass 0x7FFFFFFF;
 		-SOLID
 		-NOBLOCKMAP
 	}

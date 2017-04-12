@@ -6,7 +6,7 @@ class HLNihilanth : Actor
 		Monster;
 		//spawnid 175
 		Health 4000;
-		Mass 0x7FFFFFFFF;
+		Mass 0x7FFFFFFF;
 		+FLOAT
 		+NOGRAVITY
 		Speed 6;
@@ -144,7 +144,7 @@ class NihilantVul : Actor
 	//	-Solid		//i removed it to make nihilant get stuck, in that way he wont move, not even with the arc of death
 		+NOGRAVITY
 		+DONTFALL
-		Mass 0xFFFFFFFFFFF;
+		Mass 0x7FFFFFFF;
 		Health 2000;
 		Radius 50;
 		Height 56;
