@@ -1,0 +1,199 @@
+//==================
+// Alien Controller
+//==================
+
+class HLController : Actor
+{
+	Default
+	{
+		Monster;
+		Health 200;
+		Mass 200;
+		Speed 8;
+		Height 56;
+		Radius 23;
+		PainChance 64;
+		+NOGRAVITY
+		+FLOAT
+		Scale 0.45;
+		BloodColor "DE FE 72";
+		SeeSound "halflife/monsters/controller/Sight";
+		PainSound "halflife/monsters/controller/Pain";
+		DeathSound "halflife/monsters/controller/Death";
+		ActiveSound "halflife/monsters/controller/idle";
+	}
+	States
+	{
+	Spawn:
+		HLCW A 3 A_Look;
+		Loop;
+	See:
+		HLCW A 3 A_Chase;
+		Loop;
+	Missile:
+		TNT1 A 0 A_Jump(255,"Side1","Side2","MissileDecide");		//equal chance to go right, left or not move at all
+		TNT1 A 0 A_FaceTarget;
+	Side1:
+		TNT1 A 0 ThrustThing(angle*256/360+192, random(5,8), 0, 0);
+		Goto MissileDecide;
+	Side2:
+		TNT1 A 0 ThrustThing(angle*256/360+64, random(5,8), 0, 0);
+		Goto MissileDecide;
+	MissileDecide:
+		TNT1 A 0 A_PlaySound("halflife/monsters/controller/attack");
+		TNT1 A 0 A_Jump(128,"Missile2");
+		HLCA ABCD 3 A_FaceTarget;
+	FireMissiles:
+		HLCA EEEEEE 5 A_SpawnProjectile("ControllerFireball1",32,0,random(10,-10));
+		HLCA F 4 A_Stop;
+		Goto See;
+	Missile2:
+		HLCB AB 4 A_FaceTarget;
+		HLCB CCCCC 3 A_FaceTarget;
+		HLCB D 7;
+		HLCB E 14;
+		HLCB F 15 A_SpawnProjectile("ControllerFireball2",42,0,0);
+		HLCB G 9;
+		HLCB H 5 A_Stop;
+		Goto See;
+	Pain:
+		HLCP A 8;
+		Goto See;
+	Death:
+		HLCD A 3 A_Scream;
+		HLCD BC 3;
+		Wait;
+	Crash:
+		TNT1 A 0 A_PlaySound("halflife/weapons/bodydrop");
+		HLCD DEFGHI 2;
+		TNT1 A 0 A_NoBlocking;
+		HLCD JLMN 2;
+		HLCD O -1;
+		Stop;
+	XDeath:
+		TNT1 A 0 A_PlaySound("other/gibdeath");
+		TNT1 A 0 A_NoBlocking;
+	  	TNT1 AAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("XenGibs",random(5,-5),random(5,-5),random(10,40),random(1,7),random(1,7),random(5,13),random(0,359));
+		Stop;
+	}
+}
+
+class ControllerFireball1 : Actor
+{
+	Default
+	{
+		Projectile;
+		Speed 18;
+		Damage 3;
+		Radius 8;
+		Height 12;
+		Scale 0.5;
+		RenderStyle "Add";
+		DeathSound "halflife/weapons/gausshit2";
+		Alpha 0.9;
+	}
+	States
+	{
+	Spawn:
+		X029 ABCDEFGHIJK 2 Bright;
+		Loop;
+	Death:
+		TNT1 AAAAAA 0 A_SpawnItemEx("ControllerFireballSpark",0,0,0,frandom(-1.1,1.1),frandom(-1.1,1.1),frandom(-1.1,1.1),random(0,359),32);
+		TNT1 ABC 5;
+		Stop;
+	}
+}
+class ControllerFireballSpark : Actor
+{
+	Default
+	{
+		radius 2;
+		height 2;
+		+NOINTERACTION
+		Scale 0.02;
+		RenderStyle "Add";
+		+FORCEXYBILLBOARD
+		Translation "80:111=160:167";
+	}
+	states
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 A 0 A_Jump(255,"SP1","SP2","SP3");
+	SP1:
+		X099 A 1 A_FadeOut (0.03);
+		loop;
+	SP2:
+		X099 A 1 A_FadeOut (0.04);
+		loop;
+	SP3:
+		X099 A 1 A_FadeOut (0.05);
+		loop;
+	}
+}
+
+class ControllerFireball2 : Actor
+{
+	Default
+	{
+		Projectile;
+		Speed 10;
+		Damage 12;
+		Radius 8;
+		Height 12;
+		Scale 0.4;
+		DeathSound "halflife/weapons/gausshit1";
+		RenderStyle "Add";
+		Alpha 0.9;
+		+SeekerMissile
+	}
+	States
+	{
+	Spawn:
+		X025 BCDEFGHIJKLMNOPQRSTUVWXY 2 Bright A_SeekerMissile(5,5);
+		Loop;
+	Death:
+		TNT1 A 0 A_SpawnItemEx("CFB2SSpawner",0,0,0,0,0,0,0,32);
+		TNT1 ABC 5;
+		Stop;
+	}
+}
+
+class CFB2SSpawner : Actor
+{
+	Default
+	{
+		+NOINTERACTION
+	}
+	States
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 AAAAAAAA 0 A_SpawnItemEx("ControllerFireball2Spark",0,0,0,frandom(-0.7,0.7),frandom(-0.7,0.7),frandom(-0.7,0.7),random(0,359),32);
+		TNT1 A 10;
+		Stop;
+	}
+}
+
+class ControllerFireball2Spark : Actor
+{
+	Default
+	{
+		radius 2;
+		height 2;
+		+NOINTERACTION
+		Scale 0.3;
+		RenderStyle "Add";
+		+FORCEXYBILLBOARD
+		Translation "80:111=160:167";
+	}
+	states
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 A 0 A_Jump(255,1,3,5,7,9,11,13,15);
+	Looper:
+		X025 BCDEFGHIJKLMNOPQRSTUVWXY 2 Bright A_FadeOut(0.15);
+		loop;
+	}
+}

@@ -1,0 +1,283 @@
+///====================
+// Vortigaunt (Slave)
+//====================
+
+class HLVortigaunt : Actor
+{
+	Default
+	{
+		Monster;
+		Health 175;
+		Mass 200;
+		Speed 14;
+		Height 63;
+		PainChance 100;
+		Scale 0.423;
+		BloodColor "DE FE 72";
+		SeeSound "halflife/monsters/slave/sight";
+		PainSound "halflife/monsters/slave/pain";
+		DeathSound "halflife/monsters/slave/death";
+		ActiveSound "halflife/monsters/slave/idle";
+		maxdropoffheight 64;
+	}
+	States
+	{
+	Spawn:
+		HLFI A 3 A_Look;
+		Loop;
+	See:
+		HLFW ABCDEF 4 A_Chase;
+		Loop;
+	Melee:
+		HLFI A 4 A_FaceTarget;
+		HLFM AB 4 A_FaceTarget;
+		TNT1 A 0 A_PlaySound("halflife/monsters/zombie/attswing");
+		HLFM C 3 A_CustomMeleeAttack(3*random(1,8),"halflife/monsters/zombie/hit");
+		HLFM D 4 A_FaceTarget;
+		TNT1 A 0 A_PlaySound("halflife/monsters/zombie/attswing");
+		HLFM E 3 A_CustomMeleeAttack(3*random(1,8),"halflife/monsters/zombie/hit");
+		HLFM F 4 A_FaceTarget;
+		TNT1 A 0 A_PlaySound("halflife/monsters/zombie/attswing");
+		HLFM G 3 A_CustomMeleeAttack(3*random(1,8),"halflife/monsters/zombie/hit");
+		HLFM H 4;
+		Goto See;
+	Missile:
+		TNT1 A 0 A_FaceTarget;
+		HLFI A 0 A_PlaySound("halflife/weapons/zap4",5);
+		HLFI AAAAAA 4 A_SpawnItemEx ("VortiLightning", 0, 0, 0, 0, 0, 0, 0, 48, 0);
+		HLFN B 0 A_SpawnItemEx ("VortiLightning", 0, 0, 0, 0, 0, 0, 0, 48, 0);
+		HLFN B 4 A_FaceTarget;
+		HLFN B 2 A_SpawnItemEx ("VortiLightning", 0, 0, 0, 0, 0, 0, 0, 48, 0);
+		HLFN C 2 A_PlaySound("halflife/weapons/zap4",5);
+		HLFN CC 0 A_SpawnItemEx ("VortiLightning", 0, 0, 0, 0, 0, 0, 0, 48, 0);
+		HLFN C 4;
+		HLFN D 4 A_FaceTarget;
+		HLFN D 3 A_SpawnItemEx ("VortiLightning", 0, 0, 0, 0, 0, 0, 0, 48, 0);
+		TNT1 A 0 A_PlaySound("halflife/weapons/gausshit1",5);
+		TNT1 A 0 A_KillChildren;
+	  	HLFN E 0 A_SpawnProjectile("VortiPlasma",32,9,0);
+	  	HLFN E 3 A_SpawnProjectile("VortiPlasma",32,-9,0);
+		HLFN F 6;
+		Goto See;
+	Pain:
+		TNT1 A 0 A_KillChildren;
+		HLFP A 8 A_Pain;
+		Goto See;
+	Death:
+		TNT1 A 0 A_KillChildren;
+		HLFD A 2 A_Scream;
+		HLFD B 2 A_Fall;
+		HLFD CDEF 2;
+		TNT1 A 0 A_PlaySound("halflife/weapons/bodydrop");
+		HLFD FGH 2;
+		HLFD IJKLM 4;
+		HLFD N -1;
+		Stop;
+	XDeath:
+		TNT1 A 0 A_PlaySound("other/gibdeath");
+		TNT1 A 0 A_KillChildren;
+		TNT1 A 0 A_Fall;
+	  	TNT1 AAAAAAAAAAAAAA 0 A_SpawnItemEx("XenGibs",random(5,-5),random(5,-5),random(10,40),random(1,7),random(1,7),random(5,13),random(0,359));
+		TNT1 A 10;
+		Stop;
+	}
+}
+//	The regular non model attack
+class VortiLightning : Actor
+{
+	Default
+	{
+		Monster;
+		-SOLID
+		+NOTARGET
+		-COUNTKILL
+		Height 1;
+		Radius 1;
+		Health 0xFFFFFFF;
+		RenderStyle "Add";
+		Alpha 0.7;
+		Scale 1.05;
+	}
+	States
+	{
+	Spawn:
+		TNT1 A 0;
+		TNT1 A 0 A_Jump(255,"One","Two","Three","Four","Five","Six","Seven","Eight");
+	One:
+		X098 AB 2 Bright;
+		Stop;
+	Two:
+		X098 CD 2 Bright;
+		Stop;
+	Three:
+		X098 EF 2 Bright;
+		Stop;
+	Four:
+		X098 GH 2 Bright;
+		Stop;
+	Five:
+		X098 IJ 2 Bright;
+		Stop;
+	Six:
+		X098 KL 2 Bright;
+		Stop;
+	Seven:
+		X098 MN 2 Bright;
+		Stop;
+	Eight:
+		X098 OP 2 Bright;
+		Stop;
+	Death:
+		TNT1 A 1;
+		Stop;
+	}
+}
+
+//========================================
+//  Captain Toenail gets credits for this
+//========================================
+
+class VortigauntShot : Actor
+{
+	Default
+	{
+		Radius 6;
+		Height 8;
+		Speed 36;
+		DamageFunction (random(1,4)*10);
+		Projectile;
+		RenderStyle "Add";
+		Scale 0.02;
+		seesound "Dalek/Fire";
+		+SPAWNSOUNDSOURCE
+		Translation "80:111=112:127";
+	}
+	States
+	{
+	Spawn:
+		X099 A 1 bright;
+		X099 A 0 A_SpawnItemEx ("VortigauntShotTrail", -2, 0, 0, 0, 0, 0, 0, 160);
+		X099 A 0 A_SpawnItemEx ("VortigauntShotTrail", -4, 0, 0, 0, 0, 0, 0, 160);
+		X099 A 0 A_SpawnItemEx ("VortigauntShotTrail", -6, 0, 0, 0, 0, 0, 0, 160);
+		X099 A 0 A_SpawnItemEx ("VortigauntShotTrail", -8, 0, 0, 0, 0, 0, 0, 160);
+		X099 A 0 A_SpawnItemEx ("VortigauntShotTrail", -10, 0, 0, 0, 0, 0, 0, 160);
+		X099 A 0 A_SpawnItemEx ("VortigauntShotTrail", -12, 0, 0, 0, 0, 0, 0, 160);
+		X099 A 0 A_SpawnItemEx ("VortigauntShotTrail", -14, 0, 0, 0, 0, 0, 0, 160);
+		X099 A 0 A_SpawnItemEx ("VortigauntShotTrail", -16, 0, 0, 0, 0, 0, 0, 160);
+		X099 A 0 A_SpawnItemEx ("VortigauntShotTrail", -18, 0, 0, 0, 0, 0, 0, 160);
+		X099 A 0 A_SpawnItemEx ("VortigauntShotTrail", -20, 0, 0, 0, 0, 0, 0, 160);
+		X099 A 0 A_SpawnItemEx ("VortigauntShotTrail", -22, 0, 0, 0, 0, 0, 0, 160);
+		X099 A 0 A_SpawnItemEx ("VortigauntShotTrail", -24, 0, 0, 0, 0, 0, 0, 160);
+		X099 A 0 A_SpawnItemEx ("VortigauntShotTrail", -26, 0, 0, 0, 0, 0, 0, 160);
+		X099 A 0 A_SpawnItemEx ("VortigauntShotTrail", -28, 0, 0, 0, 0, 0, 0, 160);
+		X099 A 0 A_SpawnItemEx ("VortigauntShotTrail", -30, 0, 0, 0, 0, 0, 0, 160);
+		X099 A 0 A_SpawnItemEx ("VortigauntShotTrail", -32, 0, 0, 0, 0, 0, 0, 160);
+		X099 A 0 A_SpawnItemEx ("VortigauntShotTrail", -34, 0, 0, 0, 0, 0, 0, 160);
+		X099 A 0 A_SpawnItemEx ("VortigauntShotTrail", -36, 0, 0, 0, 0, 0, 0, 160);
+		loop;
+	XDeath:
+		TNT1 A 1;
+		stop;
+	}
+}
+
+class VortigauntShotTrail : Actor
+{
+	Default
+	{
+		radius 6;
+		height 8;
+		RenderStyle "Add";
+		Scale 0.02;
+		+NOBLOCKMAP
+		+NOGRAVITY
+		+MISSILE
+		+NOTELEPORT
+		+DONTSPLASH
+		+NOCLIP
+		Translation "80:111=112:127";
+	}
+	states
+	{
+	Spawn:
+		X099 A 1 bright A_FadeOut;
+		loop;
+	}
+}
+//====================
+// The model attack
+//====================
+
+class VortiPlasma_Explode : Actor
+{
+	Default
+	{
+		+NOGRAVITY
+		RenderStyle "Add";
+		Alpha 0.55;
+		scale 0.3;
+	}
+	States
+	{
+	Spawn:
+		VPLS ABCDE 3 bright;
+		stop;
+	}
+}
+
+class VortiPlasma : Actor
+{
+	Default
+	{
+		Radius 6;
+		Height 8;
+		Speed 36;
+		DamageFunction (random(1,4)*10);
+		Projectile;
+		+RANDOMIZE
+		RenderStyle "Add";
+		Alpha 0.55;
+		Scale 0.3;
+		+SPAWNSOUNDSOURCE
+		DeathSound "halflife/weapons/gaussshot";
+	}
+	States
+	{
+	Spawn:
+		VPLS FG 6 bright;
+		loop;
+	Death:
+		VPLS A 1 A_SpawnItemEx ("VortiPlasma_Explode", 0, 0, 0, 0, 0, 0, 0, 128);
+		VPLS A 0 A_Jump(120,1,2,3,4);
+		VPLS A 1 A_SpawnItemEx ("VortiPlasma_Bolt1", 0, 0, 0, 0, 0, 0, 0, 128);
+		stop;
+		VPLS A 1 A_SpawnItemEx ("VortiPlasma_Bolt2", 0, 0, 0, 0, 0, 0, 0, 128);
+		stop;
+		VPLS A 1 A_SpawnItemEx ("VortiPlasma_Bolt3", 0, 0, 0, 0, 0, 0, 0, 128);
+		stop;
+		VPLS A 1 A_SpawnItemEx ("VortiPlasma_Bolt4", 0, 0, 0, 0, 0, 0, 0, 128);
+		stop;
+	}
+}
+
+class VortiPlasma_Bolt : Actor
+{
+	Default
+	{
+		+NOGRAVITY
+		RenderStyle "Add";
+		Alpha 0.75;
+		Scale 0.3;		// turn this up for more EXTREME plasma
+	}
+	States
+	{
+	Spawn:
+		VPLS A 1 A_FadeOut;
+		loop;
+	}
+}
+
+class VortiPlasma_Bolt1 : VortiPlasma_Bolt{}
+class VortiPlasma_Bolt2 : VortiPlasma_Bolt{}
+class VortiPlasma_Bolt3 : VortiPlasma_Bolt{}
+class VortiPlasma_Bolt4 : VortiPlasma_Bolt{}

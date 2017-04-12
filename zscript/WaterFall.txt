@@ -1,0 +1,164 @@
+/*Customize with arg 0
+
+args[0] is the length at which the waterfall will extend from the where
+the Waterfall actor is placed on the map.  The waterfall will extend in
+a line in the direction the Waterfall actor is facing.
+*/
+
+class Waterfall : SwitchableDecoration
+{
+	Default
+	{
+		+NOCLIP
+		+NOSECTOR
+		+NOGRAVITY
+		+NOBLOCKMAP
+	}
+	states
+	{
+	Spawn:
+	Active:
+		TNT1 A 0 NODELAY A_CheckSightOrRange(2560,"IdleNoSee");
+		TNT1 A 1 ACS_ExecuteAlways(444, 0, args[0]);
+		loop;
+	Inactive:
+		TNT1 A -1;
+		stop;
+	IdleNoSee:
+		TNT1 A 10;
+		TNT1 A 0 A_CheckSightOrRange(2560,"IdleNoSee");
+		goto Active;
+	}
+}
+
+class WFallSplash : Actor
+{
+	Default
+	{
+		height 0;
+		radius 0;
+		RenderStyle "Add";
+		alpha 0;
+		+FORCEXYBILLBOARD
+	}
+	states
+	{
+	Spawn:
+		STEM AABBCCDDEE 2 A_FadeIn(0.0125);
+		STEM FGHIJKL 4;
+		STEM L 2 A_FadeOut(0.0125);
+		Wait;
+	}
+}
+
+class WFallParticle1A : WFallSplash
+{
+	Default
+	{
+		height 16;
+		radius 8;
+		+MISSILE
+		gravity 0.5;
+	}
+	states
+	{
+	Spawn:
+		WFS1 A 0;
+		"####" "######" 1 A_FadeIn(0.125);
+		"####" # -1;
+		loop;
+	Death:
+		TNT1 A 0 A_SpawnItemEx("WFallSplash",random(0,8),0,0,random(0,2),0,0,random(0,360),4,192);
+		stop;
+	}
+}
+
+class WFallParticle1B : WFallParticle1A
+{
+	states
+	{
+	Spawn:
+		WFS1 N 0;
+		Goto Super::Spawn+1;
+	}
+}
+
+class WFallParticle2A : WFallParticle1A
+{
+	states
+	{
+	Spawn:
+		WFS2 A 0;
+		Goto Super::Spawn+1;
+	}
+}
+
+class WFallParticle2B : WFallParticle1A
+{
+	states
+	{
+	Spawn:
+		WFS2 N 0;
+		Goto Super::Spawn+1;
+	}
+}
+
+class WFallParticle3A : WFallParticle1A
+{
+	states
+	{
+	Spawn:
+		WFS3 A 0;
+		Goto Super::Spawn+1;
+	}
+}
+
+class WFallParticle3B : WFallParticle1A
+{
+	states
+	{
+	Spawn:
+		WFS3 N 0;
+		Goto Super::Spawn+1;
+	}
+}
+
+class WFallParticle4A : WFallParticle1A
+{
+	states
+	{
+	Spawn:
+		WFS4 A 0;
+		Goto Super::Spawn+1;
+	}
+}
+
+class WFallParticle4B : WFallParticle1A
+{
+	states
+	{
+	Spawn:
+		WFS4 N 0;
+		Goto Super::Spawn+1;
+	}
+}
+
+class WFallParticle5A : WFallParticle1A
+{
+	states
+	{
+	Spawn:
+		WFS5 A 0;
+		Goto Super::Spawn+1;
+	}
+}
+
+class WFallParticle5B : WFallParticle1A
+{
+	states
+	{
+	Spawn:
+		WFS5 N 0;
+		Goto Super::Spawn+1;
+	}
+}
