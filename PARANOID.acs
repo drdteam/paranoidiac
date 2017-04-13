@@ -618,6 +618,29 @@ script 444 (int size)
 }
 
 //Sets up behavior for Barney to follow player
+script "BarneyFollow"(int tid)
+{
+	int follow;
+	while(ThingCount(T_NONE,tid))
+	{
+		if(!follow && distance(tid,tid+1) > 96.0)
+		{
+			follow=TRUE;
+			SetActorState(tid,"See",YES);
+			Thing_SetGoal(tid,tid+1,0,YES);
+		}
+		else if(follow && distance(tid,tid+1) <= 96.0)
+		{
+			follow=FALSE;
+			SetActorState(tid,"Stand",YES);
+			Thing_SetGoal(tid,tid+1,0,NO);
+		}
+		if(!follow)
+			SetActorAngle(36,GetTargetAngle(tid,tid+1));
+		delay(3);
+	}
+}
+
 function int GetTargetAngle(int tid1,int tid2)
 {
 	return VectorAngle(GetActorX(tid2) - GetActorX(tid1),GetActorY(tid2) - GetActorY(tid1));
@@ -638,22 +661,18 @@ function int distance(int tid1,int tid2)
 		return FixedDiv(sin(a),z);
 	return FixedDiv(cos(a),l);
 }
-function void fadetobold(int a,int b,int c,int d,int e)
-{
-	for(int i=0;i<PlayerCount();i++)
-	{
-		SetActivator(0,AAPTR_PLAYER1>>i);
-		FadeTo(a,b,c,d,e);
-	}
-}
-function int medstation(int uses,int tex)
+script "MedStation"(int uses,int tex)
 {
 	if(GetActorProperty(0,APROP_Health)>=100) // Check health first.
-		return 0;
-	else if(uses>4)
+	{
+		SetResultValue(0);
+		terminate;
+	}
+	if(uses>4)
 	{
 		ActivatorSound("MEDCHARGEUSED",127);
-		return 0;
+		SetResultValue(0);
+		terminate;
 	}
 	HealThing(10);
 	ActivatorSound("MEDCHARGE",127);
@@ -662,16 +681,20 @@ function int medstation(int uses,int tex)
 		setlinetexture(tex,SIDE_FRONT,TEXTURE_TOP,"XMEDIC02");
 		setlinetexture(tex,SIDE_FRONT,TEXTURE_BOTTOM,"XMEDIC02");
 	}
-	return 1;
+	SetResultValue(1);
 }
-function int armorstation(int uses,int tex)
+script "ArmorStation"(int uses,int tex)
 {
 	if(CheckInventory("Armor")>=100)
-		return 0;
-	else if(uses>4)
+	{
+		SetResultValue(0);
+		terminate;
+	}
+	if(uses>4)
 	{
 		ActivatorSound("HEVCHARGEUSED",127);
-		return 0;
+		SetResultValue(0);
+		terminate;
 	}
 	GiveInventory("HEVCharge",10);
 	ActivatorSound("HEVCHARGE",127);
@@ -680,5 +703,5 @@ function int armorstation(int uses,int tex)
 		setlinetexture(tex,SIDE_FRONT,TEXTURE_TOP,"XARMOR02");
 		setlinetexture(tex,SIDE_FRONT,TEXTURE_BOTTOM,"XARMOR02");
 	}
-	return 1;
+	SetResultValue(1);
 }
