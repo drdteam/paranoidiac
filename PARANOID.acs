@@ -1,8 +1,6 @@
 #library "PARANOID"
 #include "zcommon.acs"
 
-str debris[11]={"debris01","debris02","debris03","debris04","debris05","debris06","debris07","debris08","debris09","debris10","debris11"};
-
 //////////////////////////////
 // Script 729-730: Bubbles	//
 //////////////////////////////
@@ -84,39 +82,39 @@ script 730 (int area, int intensity, int shape)
 
 str Flame[30][3] =
 {
-	{"Flame1A_0.1", "Flame1A_0.2", "Flame1A_0.3"},
-	{"Flame1B_0.1", "Flame1B_0.2", "Flame1B_0.3"},
-	{"Flame2A_0.1", "Flame2A_0.2", "Flame2A_0.3"},
-	{"Flame2B_0.1", "Flame2B_0.2", "Flame2B_0.3"},
-	{"Flame3A_0.1", "Flame3A_0.2", "Flame3A_0.3"},
-	{"Flame3B_0.1", "Flame3B_0.2", "Flame3B_0.3"},
-	{"Flame4A_0.1", "Flame4A_0.2", "Flame4A_0.3"},
-	{"Flame4B_0.1", "Flame4B_0.2", "Flame4B_0.3"},
-	{"Flame5A_0.1", "Flame5A_0.2", "Flame5A_0.3"},
-	{"Flame5B_0.1", "Flame5B_0.2", "Flame5B_0.3"},
-	{"Flame6A_0.1", "Flame6A_0.2", "Flame6A_0.3"},
-	{"Flame6B_0.1", "Flame6B_0.2", "Flame6B_0.3"},
-	{"Flame7A_0.1", "Flame7A_0.2", "Flame7A_0.3"},
-	{"Flame7B_0.1", "Flame7B_0.2", "Flame7B_0.3"},
-	{"Flame8A_0.1", "Flame8A_0.2", "Flame8A_0.3"},
-	{"Flame8B_0.1", "Flame8B_0.2", "Flame8B_0.3"},
-	{"Flame9A_0.1", "Flame9A_0.2", "Flame9A_0.3"},
-	{"Flame9B_0.1", "Flame9B_0.2", "Flame9B_0.3"},
-	{"Flame10A_0.1", "Flame10A_0.2", "Flame10A_0.3"},
-	{"Flame10B_0.1", "Flame10B_0.2", "Flame10B_0.3"},
-	{"Flame11A_0.1", "Flame11A_0.2", "Flame11A_0.3"},
-	{"Flame11B_0.1", "Flame11B_0.2", "Flame11B_0.3"},
-	{"Flame12A_0.1", "Flame12A_0.2", "Flame12A_0.3"},
-	{"Flame12B_0.1", "Flame12B_0.2", "Flame12B_0.3"},
-	{"Flame13A_0.1", "Flame13A_0.2", "Flame13A_0.3"},
-	{"Flame13B_0.1", "Flame13B_0.2", "Flame13B_0.3"},
-	{"Flame14A_0.1", "Flame14A_0.2", "Flame14A_0.3"},
-	{"Flame14B_0.1", "Flame14B_0.2", "Flame14B_0.3"},
-	{"Flame14A_0.1", "Flame14A_0.2", "Flame14A_0.3"},
-	{"Flame14B_0.1", "Flame14B_0.2", "Flame14B_0.3"}
+	{"Flame1A_01", "Flame1A_02", "Flame1A_03"},
+	{"Flame1B_01", "Flame1B_02", "Flame1B_03"},
+	{"Flame2A_01", "Flame2A_02", "Flame2A_03"},
+	{"Flame2B_01", "Flame2B_02", "Flame2B_03"},
+	{"Flame3A_01", "Flame3A_02", "Flame3A_03"},
+	{"Flame3B_01", "Flame3B_02", "Flame3B_03"},
+	{"Flame4A_01", "Flame4A_02", "Flame4A_03"},
+	{"Flame4B_01", "Flame4B_02", "Flame4B_03"},
+	{"Flame5A_01", "Flame5A_02", "Flame5A_03"},
+	{"Flame5B_01", "Flame5B_02", "Flame5B_03"},
+	{"Flame6A_01", "Flame6A_02", "Flame6A_03"},
+	{"Flame6B_01", "Flame6B_02", "Flame6B_03"},
+	{"Flame7A_01", "Flame7A_02", "Flame7A_03"},
+	{"Flame7B_01", "Flame7B_02", "Flame7B_03"},
+	{"Flame8A_01", "Flame8A_02", "Flame8A_03"},
+	{"Flame8B_01", "Flame8B_02", "Flame8B_03"},
+	{"Flame9A_01", "Flame9A_02", "Flame9A_03"},
+	{"Flame9B_01", "Flame9B_02", "Flame9B_03"},
+	{"Flame10A_01", "Flame10A_02", "Flame10A_03"},
+	{"Flame10B_01", "Flame10B_02", "Flame10B_03"},
+	{"Flame11A_01", "Flame11A_02", "Flame11A_03"},
+	{"Flame11B_01", "Flame11B_02", "Flame11B_03"},
+	{"Flame12A_01", "Flame12A_02", "Flame12A_03"},
+	{"Flame12B_01", "Flame12B_02", "Flame12B_03"},
+	{"Flame13A_01", "Flame13A_02", "Flame13A_03"},
+	{"Flame13B_01", "Flame13B_02", "Flame13B_03"},
+	{"Flame14A_01", "Flame14A_02", "Flame14A_03"},
+	{"Flame14B_01", "Flame14B_02", "Flame14B_03"},
+	{"Flame14A_01", "Flame14A_02", "Flame14A_03"},
+	{"Flame14B_01", "Flame14B_02", "Flame14B_03"}
 };
 
-str FlameGlow[3] = {"FlameGlow_0.2", "FlameGLow_0.4", "FlameGlow_0.6"};
+str FlameGlow[3] = {"FlameGlow_02", "FlameGLow_04", "FlameGlow_06"};
 
 function void SpawnGlow (int x, int y, int z, int a, int s, int t, int glow)
 {
@@ -648,16 +646,6 @@ function void fadetobold(int a,int b,int c,int d,int e)
 		FadeTo(a,b,c,d,e);
 	}
 }
-function void GiveInventoryBold(str item,int amt)
-{
-	SetActivator(0,AAPTR_NULL);
-	GiveInventory(item,amt);
-}
-function void TakeInventoryBold(str item,int amt)
-{
-	SetActivator(0,AAPTR_NULL);
-	TakeInventory(item,amt);
-}
 function int medstation(int uses,int tex)
 {
 	if(GetActorProperty(0,APROP_Health)>=100) // Check health first.
@@ -693,10 +681,4 @@ function int armorstation(int uses,int tex)
 		setlinetexture(tex,SIDE_FRONT,TEXTURE_BOTTOM,"XARMOR02");
 	}
 	return 1;
-}
-
-function void SpawnSpotTelefog(str classname,int spottid,int tid,int angle)
-{
-	SpawnSpot(classname,spottid,tid,angle);
-	SpawnSpot("TeleportFog",spottid,tid,angle);
 }
