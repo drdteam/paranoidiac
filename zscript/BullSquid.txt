@@ -9,11 +9,11 @@ class HLBullSquid : Actor
 		Monster;
 		Health 150;
 		Mass 350;
-		Speed 20;
+		Speed 5;
 		Height 32;
 		Radius 28;
 		PainChance 40;
-		Scale 0.365;
+		Scale .365;
 		BloodColor "DE FE 72";
 		SeeSound "halflife/monsters/bullsquid/sight";
 		PainSound "halflife/monsters/bullsquid/pain";
@@ -26,14 +26,28 @@ class HLBullSquid : Actor
 		HLDI A 3 A_Look;
 		Loop;
 	See:
-		HLDW ABCD 4 A_Chase;
+		HLDW A 1 A_Chase;
+		HLDW AAA 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLDW B 1 A_Chase;
+		HLDW BBB 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLDW C 1 A_Chase;
+		HLDW CCC 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLDW D 1 A_Chase;
+		HLDW DDD 1 A_Chase(null,null,HLSMOOTHCHASE);
 		Loop;
 	Melee:
 		TNT1 A 0 A_PlaySound("halflife/monsters/bullsquid/growl");
 		HLDA ABC 4 A_FaceTarget;
 		HLDA D 4 A_CustomMeleeAttack(8*random(1,8));
 		HLDA EF 4;
-		HLDW ABCD 4 A_ExtChase(0,0);
+		HLDW A 1 A_Chase(null,null);
+		HLDW AAA 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLDW B 1 A_Chase(null,null);
+		HLDW BBB 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLDW C 1 A_Chase(null,null);
+		HLDW CCC 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLDW D 1 A_Chase(null,null);
+		HLDW DDD 1 A_Chase(null,null,HLSMOOTHCHASE);
 		Goto See;
 	Missile:
 		HLDB ABC 6 A_FaceTarget;

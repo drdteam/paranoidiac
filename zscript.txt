@@ -1,3 +1,8 @@
+enum ParanoidEnum
+{
+	HLSMOOTHCHASE=CHF_NOPLAYACTIVE+CHF_NORANDOMTURN+CHF_STOPIFBLOCKED
+}
+
 #include "zscript/Barriers.txt"
 #include "zscript/Bubbles.txt"
 #include "zscript/Models.txt"
@@ -20,6 +25,7 @@
 #include "zscript/Gargantua.txt"
 #include "zscript/Grunts.txt"
 #include "zscript/HeadCrab.txt"
+#include "zscript/BabyHeadCrab.txt"
 #include "zscript/HornetGrunt.txt"
 #include "zscript/HoundEye.txt"
 #include "zscript/Vortigaunt.txt"
@@ -34,7 +40,6 @@
 
 // paranoic
 #include "zscript/OfficeRocks.txt"
-#include "zscript/BabyHeadCrab.txt"
 #include "zscript/Gonarch.txt"
 #include "zscript/Nihilanth.txt"
 #include "zscript/StukaBat.txt"

@@ -9,7 +9,7 @@ class HLHornetGrunt : Actor
 		Monster;
 		Health 500;
 		Mass 800;
-		Speed 10;
+		Speed 2.5;
 		Height 64;
 		PainChance 40;
 		Scale .47;
@@ -26,7 +26,18 @@ class HLHornetGrunt : Actor
 		HLOI A 3 A_Look;
 		Loop;
 	See:
-		HLOW ABCDEF 4 A_Chase;
+		HLOW A 1 A_Chase;
+		HLOW AAA 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLOW B 1 A_Chase;
+		HLOW BBB 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLOW C 1 A_Chase;
+		HLOW CCC 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLOW D 1 A_Chase;
+		HLOW DDD 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLOW E 1 A_Chase;
+		HLOW EEE 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLOW F 1 A_Chase;
+		HLOW FFF 1 A_Chase(null,null,HLSMOOTHCHASE);
 		Loop;
 	Melee:
 		HLOM ABCD 4 A_FaceTarget;

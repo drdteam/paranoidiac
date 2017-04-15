@@ -74,17 +74,19 @@ class HLGruntShotgunNoGrenade : RandomSpawner
 
 class HLGrunt1 : Actor
 {
+	bool closegrencheck;
+	int GrenTimeCounter;
 	Default
 	{
 		Monster;
 		Health 150;
 		Mass 150;
-		Speed 7;
+		Speed 3.5;
 		Height 63;
 		PainChance 70;
-		Scale 0.343;
+		Scale .343;
 		maxdropoffheight 128;
-		dropitem "M16Pickup";
+		DropItem "M16Pickup";
 		DamageFactor "SoldierDamage",0;
 		SeeSound "halflife/monsters/humangrunt/sight";
 		PainSound "halflife/monsters/humangrunt/pain";
@@ -97,191 +99,157 @@ class HLGrunt1 : Actor
 		HK1I A 3 A_Look;
 		Loop;
 	See:
-		TNT1 A 0 A_JumpIfInventory("CloseGrenCheck",1,"Flee");
-		TNT1 A 0 A_JumpIfCloser(300,"Walking");
-		HK1R AABBCCDDEEFF 2 A_Chase;
-		Loop;
+		HK1R A 0;
+		"####" A 0
+		{
+			if(closegrencheck)
+			{
+				bFRIGHTENED=1;
+				if(GrenTimeCounter>=4)
+				{
+					closegrencheck=0;
+					GrenTimeCounter-=4;
+					bFRIGHTENED=0;
+				}
+				else
+				{
+					GrenTimeCounter++;
+					return ResolveState("Flee");
+				}
+			}
+			if(CheckIfCloser(target,300))
+				return ResolveState("Walking");
+			A_SetSpeed(3.5);
+			return state(null);
+		}
+		"####" A 1 A_Chase;
+		"####" A 1 A_Chase(null,null,HLSMOOTHCHASE);
+		"####" A 1 A_Chase;
+		"####" A 1 A_Chase(null,null,HLSMOOTHCHASE);
+		"####" B 1 A_Chase;
+		"####" B 1 A_Chase(null,null,HLSMOOTHCHASE);
+		"####" B 1 A_Chase;
+		"####" B 1 A_Chase(null,null,HLSMOOTHCHASE);
+		"####" C 1 A_Chase;
+		"####" C 1 A_Chase(null,null,HLSMOOTHCHASE);
+		"####" C 1 A_Chase;
+		"####" C 1 A_Chase(null,null,HLSMOOTHCHASE);
+		"####" D 1 A_Chase;
+		"####" D 1 A_Chase(null,null,HLSMOOTHCHASE);
+		"####" D 1 A_Chase;
+		"####" D 1 A_Chase(null,null,HLSMOOTHCHASE);
+		"####" E 1 A_Chase;
+		"####" E 1 A_Chase(null,null,HLSMOOTHCHASE);
+		"####" E 1 A_Chase;
+		"####" E 1 A_Chase(null,null,HLSMOOTHCHASE);
+		"####" F 1 A_Chase;
+		"####" F 1 A_Chase(null,null,HLSMOOTHCHASE);
+		"####" F 1 A_Chase;
+		"####" F 1 A_Chase(null,null,HLSMOOTHCHASE);
+		Goto See+1;
 	Walking:
-		TNT1 A 0 {bMISSILEEVENMORE=1;}
-		TNT1 A 0 {bMISSILEMORE=1;}
-		HK1W ABCDEF 4 A_Chase;
-		TNT1 A 0 {bMISSILEEVENMORE=0;}
-		TNT1 A 0 {bMISSILEMORE=0;}
-		Goto See;
+		HK1W A 0;
+		"####" A 0
+		{
+			bMISSILEEVENMORE=1;
+			bMISSILEMORE=1;
+			A_SetSpeed(1.75);
+		}
+		"####" A 1 A_Chase;
+		"####" AAA 1 A_Chase(null,null,HLSMOOTHCHASE);
+		"####" B 1 A_Chase;
+		"####" BBB 1 A_Chase(null,null,HLSMOOTHCHASE);
+		"####" C 1 A_Chase;
+		"####" CCC 1 A_Chase(null,null,HLSMOOTHCHASE);
+		"####" D 1 A_Chase;
+		"####" DDD 1 A_Chase(null,null,HLSMOOTHCHASE);
+		"####" E 1 A_Chase;
+		"####" EEE 1 A_Chase(null,null,HLSMOOTHCHASE);
+		"####" F 1 A_Chase;
+		"####" FFF 1 A_Chase(null,null,HLSMOOTHCHASE);
+		"####" A 0
+		{
+			bMISSILEEVENMORE=0;
+			bMISSILEMORE=0;
+		}
+		"####" A 0 A_Jump(256,"See");
 	Flee:
-		TNT1 A 0 {bFRIGHTENED=1;}
-		TNT1 A 0 A_JumpIfInventory("GrenTimeCounter",4,"StopFlee");
-		TNT1 A 0 A_GiveInventory("GrenTimeCounter",1);
-		HK1R AABBCCDDEEFF 2 A_ExtChase(0,0);
-		Goto See;
-	StopFlee:
-		TNT1 A 0 A_TakeInventory("CloseGrenCheck",1);
-		TNT1 A 0 A_TakeInventory("GrenTimeCounter",4);
-		TNT1 a 0 {bFRIGHTENED=0;}
-		Goto See;
+		"####" AABBCCDDEEFF 2 A_Chase(null,null);
+		"####" A 0 A_Jump(256,"See");
 	Missile:
 		TNT1 A 0 A_Jump(200,"Assault");
 		TNT1 A 0 A_JumpIfCloser(600,"Grenade");
 		TNT1 A 0 A_JumpIfCloser(1000,"GrenadeGun");
+		TNT1 A 0 A_Jump(256,"Assault");
 	Assault:
-		HK1O AAAA 3 A_FaceTarget;
-		HK1O A 2 A_FaceTarget;
-		TNT1 A 0 A_PlaySound("halflife/weapons/machinegunshot",5);
-		TNT1 AA 0 A_SpawnItemEx("GunSmallSmoke",15,3,49);
-		HK1O B 2 Light("ImShootingAGun") A_CustomBulletAttack(7,7,1,4,"NewPuff2");
-		TNT1 A 0 A_Jump(15,"See");
-		TNT1 A 0 A_CposRefire;
-		Goto Assault+4;
+		HK1O A 0;
+		"####" AAAA 3 A_FaceTarget;
+		"####" A 2 A_FaceTarget;
+		"####" A 0
+		{
+			A_PlaySound("halflife/weapons/machinegunshot",5);
+			for(int i=0;0<2;i++)
+				A_SpawnItemEx("GunSmallSmoke",15,3,49);
+		}
+		"####" B 2 Light("ImShootingAGun") A_CustomBulletAttack(7,7,1,4,"NewPuff2");
+		"####" A 0 A_Jump(15,"See");
+		"####" A 0 A_CposRefire;
+		Goto Assault+5;
 	GrenadeGun:
-		HK1M AAAAAAAAA 3 A_FaceTarget;
-		HK1M B 4;
-		TNT1 A 0 A_PlaySound("halflife/weapons/grenadelaunch",5);
-		TNT1 AA 0 A_SpawnItemEx("GunSmoke",15,3,49);
-		TNT1 a 0 A_JumpIfCloser(500,"GrenadeGunClose");
-		HK1M B 5 Light("ImShootingAGun") A_SpawnProjectile("HLGruntGunGrenade",38,0,0);
-		HK1M BA 5;
-		Goto See;
+		HK1M A 0;
+		"####" AAAAAAAAA 3 A_FaceTarget;
+		"####" B 4;
+		"####" A 0 A_PlaySound("halflife/weapons/grenadelaunch",5);
+		"####" AA 0 A_SpawnItemEx("GunSmoke",15,3,49);
+		"####" A 0 A_JumpIfCloser(500,"GrenadeGunClose");
+		"####" B 5 Light("ImShootingAGun") A_SpawnProjectile("HLGruntGunGrenade",38,0,0);
+		"####" BA 5;
+		"####" A 0 A_Jump(256,"See");
 	GrenadeGunClose:
-		HK1M B 5 Light("ImShootingAGun") A_SpawnProjectile("HLGruntGunGrenadeClose",38,0,0);
-		HK1M BA 5;
-		Goto See;
+		"####" B 5 Light("ImShootingAGun") A_SpawnProjectile("HLGruntGunGrenadeClose",38,0,0);
+		"####" BA 5;
+		"####" A 0 A_Jump(256,"See");
 	Grenade:
-		TNT1 A 0 A_JumpIfCloser(256,"Assault");
-		TNT1 A 0 A_Jump(64,"GrenadeGun");
-		HK1N A 3 A_FaceTarget;
-		HK1N B 17;
-		HK1N CD 5 A_FaceTarget;
-		HK1N E 6 A_SpawnProjectile("GruntHandGrenade",40,0,0);
-		HK1N F 7;
-		Goto See;
+		HK1N A 0;
+		"####" A 0 A_JumpIfCloser(256,"Assault");
+		"####" A 0 A_Jump(64,"GrenadeGun");
+		"####" A 3 A_FaceTarget;
+		"####" B 17;
+		"####" CD 5 A_FaceTarget;
+		"####" E 6 A_SpawnProjectile("GruntHandGrenade",40);
+		"####" F 7;
+		"####" A 0 A_Jump(256,"See");
 	Melee:
-	HandGrenadeClose:
-		HK1N A 3 A_FaceTarget;
-		HK1N B 10;
-		HK1N C 5 A_FaceTarget;
-		TNT1 A 0 A_GiveInventory("CloseGrenCheck",1);
-		HK1N D 6 A_SpawnProjectile("GruntHandGrenadeClose",40,0,0);
-		HK1N F 7;
-		Goto See;
+		HK1N A 0;
+		"####" A 3 A_FaceTarget;
+		"####" B 10;
+		"####" C 5 A_FaceTarget;
+		"####" D 6
+		{
+			closegrencheck=1;
+			A_SpawnProjectile("GruntHandGrenadeClose",40);
+		}
+		"####" F 7;
+		"####" A 0 A_Jump(256,"See");
 	Pain:
-		TNT1 A 0 A_JumpIfInventory("CloseGrenCheck",1,"FleePain");
 		HK1P A 8 A_Pain;
-		Goto See;
-	FleePain:
-		HK1P A 8 A_Pain;
-		TNT1 A 0 A_GiveInventory("GrenTimeCounter",1);
-		Goto See;
+		"####" A 0
+		{
+			if(closegrencheck)
+				GrenTimeCounter++;
+		}
+		"####" A 0 A_Jump(256,"See");
 	Death:
 		HK1B A 2 A_Scream;
 		HK1B B 2 A_Fall;
 		HK1D ABCDEFGHIJ 2;
-		TNT1 A 0 A_PlaySound("halflife/weapons/bodydrop");
-		HK1D K -1;
+		HK1D K -1 A_PlaySound("halflife/weapons/bodydrop");
 		Stop;
 	XDeath:
 		TNT1 A 0 A_PlaySound("other/gibdeath");
 		TNT1 A 0 A_SpawnItemEx("BloodGibDropper",0,0,random(20,40));
 		TNT1 A 1 A_Fall;
 		Stop;
-	}
-}
-class CloseGrenCheck : Inventory{}
-
-//********************************************
-class GruntHandGrenade : Actor
-{
-	Default
-	{
-		Mass 1;
-		Radius 3;
-		Height 6;
-		Speed 20;
-		Scale 0.3;
-		Damage 1;
-		Damagetype "SoldierDamage";
-		PROJECTILE;
-		BounceType "Doom";
-		+CANBOUNCEWATER
-		BounceFactor 0.6;
-		-NOGRAVITY
-		Gravity 0.5;
-	}
-	States
-	{
-	Spawn:
-		HGN1 ABCDE 2;
-		TNT1 A 0 A_GiveInventory("GrenTimeCounter",1);
-		TNT1 A 0 A_JumpIfInventory("GrenTimeCounter",9,"Explode");
-		Loop;
-	Death:
-		HGN1 AAAAA 2;
-		TNT1 A 0 A_GiveInventory("GrenTimeCounter",1);
-		TNT1 A 0 A_JumpIfInventory("GrenTimeCounter",9,"Explode");
-		Loop;
-	Explode:
-		TNT1 A 0 A_PlaySound("halflife/weapons/explode1");
-		TNT1 A 0 Bright A_Explode(128,64,1);
-		TNT1 A 0 A_SpawnItemEx("GeneralExplosion");
-		TNT1 A 10;
-		Stop;
-	}
-}
-class GruntHandGrenadeClose : GruntHandGrenade
-{
-	Default
-	{
-		Speed 10;
-	}
-}
-
-class GrenTimeCounter : Inventory
-{
-	Default
-	{
-		Inventory.MaxAmount 175;
-	}
-}
-
-//********************************************
-class HLGruntGunGrenade : Actor
-{
-	Default
-	{
-		Projectile;
-		Speed 20;
-		Damage 20;
-		Radius 10;
-		Height 20;
-		Damagetype "SoldierDamage";
-		-NoGravity
-		Gravity 0.2;
-		Scale 0.65;
-		DeathSound "halflife/weapons/explode1";
-	}
-	States
-	{
-	Spawn:
-		TNT1 A 0;
-		GRNL A 3 ThrustThingZ(0,14,0,1);
-		GRNL A -1;
-		Wait;
-	Death:
-		TNT1 A 0 A_Explode(64,64);
-		TNT1 A 0 A_SpawnItemEx("GeneralExplosion");
-		TNT1 A 10;
-		Stop;
-	}
-}
-
-class HLGruntGunGrenadeClose : HLGruntGunGrenade
-{
-	States
-	{
-	Spawn:
-		TNT1 A 0;
-		GRNL A 3 ThrustThingZ(0,5,0,1);
-		GRNL A -1;
-		Wait;
 	}
 }
 
@@ -297,87 +265,32 @@ class HLGrunt2 : HLGrunt1
 		HK2I A 3 A_Look;
 		Loop;
 	See:
-		TNT1 A 0 A_JumpIfInventory("CloseGrenCheck",1,"Flee");
-		TNT1 A 0 A_JumpIfCloser(300,"Walking");
-		HK2R AABBCCDDEEFF 2 A_Chase;
-		Loop;
+		HK2R A 0;
+		Goto Super::See+1;
 	Walking:
-		TNT1 A 0 {bMISSILEEVENMORE=1;}
-		TNT1 A 0 {bMISSILEMORE=1;}
-		HK2W ABCDEF 4 A_Chase;
-		TNT1 A 0 {bMISSILEEVENMORE=0;}
-		TNT1 A 0 {bMISSILEMORE=0;}
-		Goto See;
-	Flee:
-		TNT1 A 0 {bFRIGHTENED=1;}
-		TNT1 A 0 A_JumpIfInventory("GrenTimeCounter",4,"StopFlee");
-		TNT1 A 0 A_GiveInventory("GrenTimeCounter",1);
-		HK2R AABBCCDDEEFF 2 A_ExtChase(0,0);
-		Goto See;
-	StopFlee:
-		TNT1 A 0 A_TakeInventory("CloseGrenCheck",1);
-		TNT1 A 0 A_TakeInventory("GrenTimeCounter",4);
-		TNT1 a 0 {bFRIGHTENED=0;}
-		Goto See;
-	Missile:
-		TNT1 A 0 A_Jump(200,"Assault");
-		TNT1 A 0 A_JumpIfCloser(600,"Grenade");
-		TNT1 A 0 A_JumpIfCloser(1000,"GrenadeGun");
+		HK2W A 0;
+		Goto Super::Walking+1;
 	Assault:
-		HK2O AAAA 3 A_FaceTarget;
-		HK2O A 2 A_FaceTarget;
-		TNT1 A 0 A_PlaySound("halflife/weapons/machinegunshot",5);
-		TNT1 AA 0 A_SpawnItemEx("GunSmallSmoke",15,5,49);
-		HK2O B 2 Light("ImShootingAGun") A_CustomBulletAttack(7,7,1,4,"NewPuff2");
-		TNT1 A 0 A_Jump(15,"See");
-		TNT1 A 0 A_CposRefire;
-		Goto Assault+4;
+		HK2O A 0;
+		Goto Super::Assault+1;
 	GrenadeGun:
-		HK2M AAAAAAAAA 3 A_FaceTarget;
-		HK2M B 4;
-		TNT1 A 0 A_PlaySound("halflife/weapons/grenadelaunch",5);
-		TNT1 AA 0 A_SpawnItemEx("GunSmoke",15,3,49);
-		TNT1 a 0 A_JumpIfCloser(500,"GrenadeGunClose");
-		HK2M B 5 Light("ImShootingAGun") A_SpawnProjectile("HLGruntGunGrenade",38,0,0);
-		HK2M BA 5;
-		Goto See;
-	GrenadeGunClose:
-		HK2M B 5 Light("ImShootingAGun") A_SpawnProjectile("HLGruntGunGrenadeClose",38,0,0);
-		HK2M BA 5;
-		Goto See;
+		HK2M A 0;
+		Goto Super::GrenadeGun+1;
 	Grenade:
-		TNT1 A 0 A_JumpIfCloser(256,"Assault");
-		TNT1 A 0 A_Jump(64,"GrenadeGun");
-		HK2N A 3 A_FaceTarget;
-		HK2N B 17;
-		HK2N CD 5 A_FaceTarget;
-		HK2N E 6 A_SpawnProjectile("GruntHandGrenade",40,0,0);
-		HK2N F 7;
-		Goto See;
+		HK2N A 0;
+		Goto Super::Grenade+1;
 	Melee:
-	HandGrenadeClose:
-		HK2N A 3 A_FaceTarget;
-		HK2N B 10;
-		HK2N C 5 A_FaceTarget;
-		TNT1 A 0 A_GiveInventory("CloseGrenCheck",1);
-		HK2N D 6 A_SpawnProjectile("GruntHandGrenadeClose",40,0,0);
-		HK2N F 7;
-		Goto See;
+		HK2N A 0;
+		Goto Super::Melee+1;
 	Pain:
-		TNT1 A 0 A_JumpIfInventory("CloseGrenCheck",1,"FleePain");
 		HK2P A 8 A_Pain;
-		Goto See;
-	FleePain:
-		HK2P A 8 A_Pain;
-		TNT1 A 0 A_GiveInventory("GrenTimeCounter",1);
-		Goto See;
+		Goto Super::Pain+1
 	Death:
 		HK2B A 3 A_Scream;
 		HK2B B 3 A_Fall;
 		HK2B CDE 3;
 		HK2D ABCD 3;
-		TNT1 A 0 A_PlaySound("halflife/weapons/bodydrop");
-		HK2D E -1;
+		HK2D E -1 A_PlaySound("halflife/weapons/bodydrop");
 		Stop;
 	}
 }
@@ -394,87 +307,32 @@ class HLGrunt3 : HLGrunt1
 		HK3I A 3 A_Look;
 		Loop;
 	See:
-		TNT1 A 0 A_JumpIfInventory("CloseGrenCheck",1,"Flee");
-		TNT1 A 0 A_JumpIfCloser(300,"Walking");
-		HK3R AABBCCDDEEFF 2 A_Chase;
-		Loop;
+		HK3R A 0;
+		Goto Super::See+1;
 	Walking:
-		TNT1 A 0 {bMISSILEEVENMORE=1;}
-		TNT1 A 0 {bMISSILEMORE=1;}
-		HK3W ABCDEF 4 A_Chase;
-		TNT1 A 0 {bMISSILEEVENMORE=0;}
-		TNT1 A 0 {bMISSILEMORE=0;}
-		Goto See;
-	Flee:
-		TNT1 A 0 {bFRIGHTENED=1;}
-		TNT1 A 0 A_JumpIfInventory("GrenTimeCounter",4,"StopFlee");
-		TNT1 A 0 A_GiveInventory("GrenTimeCounter",1);
-		HK3R AABBCCDDEEFF 2 A_ExtChase(0,0);
-		Goto See;
-	StopFlee:
-		TNT1 A 0 A_TakeInventory("CloseGrenCheck",1);
-		TNT1 A 0 A_TakeInventory("GrenTimeCounter",4);
-		TNT1 a 0 {bFRIGHTENED=0;}
-		Goto See;
-	Missile:
-		TNT1 A 0 A_Jump(200,"Assault");
-		TNT1 A 0 A_JumpIfCloser(600,"Grenade");
-		TNT1 A 0 A_JumpIfCloser(1000,"GrenadeGun");
+		HK3W A 0;
+		Goto Super::Walking+1;
 	Assault:
-		HK3O AAAA 3 A_FaceTarget;
-		HK3O A 2 A_FaceTarget;
-		TNT1 A 0 A_PlaySound("halflife/weapons/machinegunshot",5);
-		TNT1 AA 0 A_SpawnItemEx("GunSmallSmoke",15,4,51);
-		HK3O B 2 Light("ImShootingAGun") A_CustomBulletAttack(7,7,1,4,"NewPuff2");
-		TNT1 A 0 A_Jump(15,"See");
-		TNT1 A 0 A_CposRefire;
-		Goto Assault+4;
+		HK3O A 0;
+		Goto Super::Assault+1;
 	GrenadeGun:
-		HK3M AAAAAAAAA 3 A_FaceTarget;
-		HK3M B 4;
-		TNT1 A 0 A_PlaySound("halflife/weapons/grenadelaunch",5);
-		TNT1 AA 0 A_SpawnItemEx("GunSmoke",15,4,51);
-		TNT1 a 0 A_JumpIfCloser(500,"GrenadeGunClose");
-		HK3M B 5 Light("ImShootingAGun") A_SpawnProjectile("HLGruntGunGrenade",38,0,0);
-		HK3M BA 5;
-		Goto See;
-	GrenadeGunClose:
-		HK3M B 5 Light("ImShootingAGun") A_SpawnProjectile("HLGruntGunGrenadeClose",38,0,0);
-		HK3M BA 5;
-		Goto See;
+		HK3M A 0;
+		Goto Super::GrenadeGun+1;
 	Grenade:
-		TNT1 A 0 A_JumpIfCloser(256,"Assault");
-		TNT1 A 0 A_Jump(64,"GrenadeGun");
-		HK3N A 3 A_FaceTarget;
-		HK3N B 17;
-		HK3N CD 5 A_FaceTarget;
-		HK3N E 6 A_SpawnProjectile("GruntHandGrenade",40,0,0);
-		HK3N F 7;
-		Goto See;
+		HK3N A 0;
+		Goto Super::Grenade+1;
 	Melee:
-	HandGrenadeClose:
-		HK3N A 3 A_FaceTarget;
-		HK3N B 10;
-		HK3N C 5 A_FaceTarget;
-		TNT1 A 0 A_GiveInventory("CloseGrenCheck",1);
-		HK3N D 6 A_SpawnProjectile("GruntHandGrenadeClose",40,0,0);
-		HK3N F 7;
-		Goto See;
+		HK3N A 0;
+		Goto Super::Melee+1;
 	Pain:
-		TNT1 A 0 A_JumpIfInventory("CloseGrenCheck",1,"FleePain");
 		HK3P A 8 A_Pain;
-		Goto See;
-	FleePain:
-		HK3P A 8 A_Pain;
-		TNT1 A 0 A_GiveInventory("GrenTimeCounter",1);
-		Goto See;
+		Goto Super::Pain+1
 	Death:
 		HK3B A 2 A_Scream;
 		HK3B B 2 A_Fall;
 		HK3B C 2;
 		HK3D ABCDEFGH 2;
-		TNT1 A 0 A_PlaySound("halflife/weapons/bodydrop");
-		HK3D I -1;
+		HK3D I -1 A_PlaySound("halflife/weapons/bodydrop");
 		Stop;
 	}
 }
@@ -495,84 +353,53 @@ class HLGrunt4 : HLGrunt1
 		HK4I A 3 A_Look;
 		Loop;
 	See:
-		TNT1 A 0 A_JumpIfInventory("CloseGrenCheck",1,"Flee");
-		TNT1 A 0 A_JumpIfCloser(300,"Walking");
-		HK4R AABBCCDDEEFF 2 A_Chase;
-		Loop;
+		HK4R A 0;
+		Goto Super::See+1;
 	Walking:
-		TNT1 A 0 {bMISSILEEVENMORE=1;}
-		TNT1 A 0 {bMISSILEMORE=1;}
-		HK4W ABCDEF 4 A_Chase;
-		TNT1 A 0 {bMISSILEEVENMORE=0;}
-		TNT1 A 0 {bMISSILEMORE=0;}
-		Goto See;
-	Flee:
-		TNT1 A 0 {bFRIGHTENED=1;}
-		TNT1 A 0 A_JumpIfInventory("GrenTimeCounter",4,"StopFlee");
-		TNT1 A 0 A_GiveInventory("GrenTimeCounter",1);
-		HK4R AABBCCDDEEFF 2 A_ExtChase(0,0);
-		Goto See;
-	StopFlee:
-		TNT1 A 0 A_TakeInventory("CloseGrenCheck",1);
-		TNT1 A 0 A_TakeInventory("GrenTimeCounter",4);
-		TNT1 a 0 {bFRIGHTENED=0;}
-		Goto See;
+		HK4W A 0;
+		Goto Super::Walking+1;
 	Missile:
 		TNT1 A 0 A_Jump(200,"Shotgun");
 		TNT1 A 0 A_JumpIfCloser(600,"Grenade");
+		TNT1 A 0 A_Jump(256,"Shotgun");
 	Shotgun:
-		TNT1 A 0 A_Jump(64,"ShotgunDouble");
-		HK4N AAAA 3 A_FaceTarget;
-		HK4N AAA 4 A_FaceTarget;
-		TNT1 A 0 A_PlaySound("halflife/weapons/shotgunsingle",5);
-		TNT1 AA 0 A_SpawnItemEx("GunSmoke",15,4,47);
-		HK4N B 4 Light("ImShootingAGun") A_CustomBulletAttack(7,7,5,4,"NewPuff2");
-		HK4N BCBA 4;
-		TNT1 A 0 A_Jump(40,"See");
-		TNT1 A 0 A_CposRefire;
-		Goto Shotgun+5;
+		HK4N A 0;
+		"####" A 0 A_Jump(64,"ShotgunDouble");
+		"####" AAAA 3 A_FaceTarget;
+		"####" AAA 4 A_FaceTarget;
+		"####" A 0 A_PlaySound("halflife/weapons/shotgunsingle",5);
+		"####" AA 0 A_SpawnItemEx("GunSmoke",15,4,47);
+		"####" B 4 Light("ImShootingAGun") A_CustomBulletAttack(7,7,5,4,"NewPuff2");
+		"####" BCBA 4;
+		"####" A 0 A_Jump(40,"See");
+		"####" A 0 A_CposRefire;
+		Goto Shotgun+6;
 	ShotgunDouble:
-		HK4N AAAA 3 A_FaceTarget;
-		HK4N AAAAA 4 A_FaceTarget;
-		TNT1 A 0 A_PlaySound("halflife/weapons/shotgundouble",5);
-		TNT1 AA 0 A_SpawnItemEx("GunSmoke",15,4,43);
-		HK4N B 4 Light("ImShootingAGun") A_CustomBulletAttack(7,7,10,4,"NewPuff2");
-		HK4N BCBA 4;
-		HK4N AAA 4 A_FaceTarget;
-		TNT1 A 0 A_Jump(100,"See");
-		TNT1 A 0 A_CposRefire;
+		"####" AAAA 3 A_FaceTarget;
+		"####" AAAAA 4 A_FaceTarget;
+		"####" A 0 A_PlaySound("halflife/weapons/shotgundouble",5);
+		"####" AA 0 A_SpawnItemEx("GunSmoke",15,4,47);
+		"####" B 4 Light("ImShootingAGun") A_CustomBulletAttack(7,7,10,4,"NewPuff2");
+		"####" BCBA 4;
+		"####" AAA 4 A_FaceTarget;
+		"####" A 0 A_Jump(100,"See");
+		"####" A 0 A_CposRefire;
 		Goto ShotgunDouble+4;
 	Grenade:
-		TNT1 A 0 A_JumpIfCloser(256,"Shotgun");
-		HK4M A 3 A_FaceTarget;
-		HK4M B 17;
-		HK4M CD 5 A_FaceTarget;
-		HK4M E 6 A_SpawnProjectile("GruntHandGrenade",40,0,0);
-		HK4M F 7;
-		Goto See;
+		HK4M A 0;
+		"####" A 0 A_JumpIfCloser(256,"Shotgun");
+		Goto Super::Grenade+3;
 	Melee:
-	HandGrenadeClose:
-		HK4M A 3 A_FaceTarget;
-		HK4M B 10;
-		HK4M C 5 A_FaceTarget;
-		TNTT A 0 A_GiveInventory("CloseGrenCheck",1);
-		HK4M D 6 A_SpawnProjectile("GruntHandGrenadeClose",40,0,0);
-		HK4M F 7;
-		Goto See;
+		HK4N A 0;
+		Goto Super::Melee+1;
 	Pain:
-		TNT1 A 0 A_JumpIfInventory("CloseGrenCheck",1,"FleePain");
 		HK4P A 8 A_Pain;
-		Goto See;
-	FleePain:
-		HK4P A 8 A_Pain;
-		TNT1 A 0 A_GiveInventory("GrenTimeCounter",1);
-		Goto See;
+		Goto Super::Pain+1
 	Death:
 		HK1C A 2 A_Scream;
 		HK1C B 2 A_Fall;
 		HK1D ABCDEFGHIJ 2;
-		TNT1 A 0 A_PlaySound("halflife/weapons/bodydrop");
-		HK1D K -1;
+		HK1D K -1 A_PlaySound("halflife/weapons/bodydrop");
 		Stop;
 	}
 }
@@ -589,85 +416,29 @@ class HLGrunt5 : HLGrunt4
 		HK5I A 3 A_Look;
 		Loop;
 	See:
-		TNT1 A 0 A_JumpIfInventory("CloseGrenCheck",1,"Flee");
-		TNT1 A 0 A_JumpIfCloser(300,"Walking");
-		HK5R AABBCCDDEEFF 2 A_Chase;
-		Loop;
+		HK5R A 0;
+		Goto HLGrunt1::See+1;
 	Walking:
-		TNT1 A 0 {bMISSILEEVENMORE=1;}
-		TNT1 A 0 {bMISSILEMORE=1;}
-		HK5W ABCDEF 4 A_Chase;
-		TNT1 A 0 {bMISSILEEVENMORE=0;}
-		TNT1 A 0 {bMISSILEMORE=0;}
-		Goto See;
-	Flee:
-		TNT1 A 0 {bFRIGHTENED=1;}
-		TNT1 A 0 A_JumpIfInventory("GrenTimeCounter",4,"StopFlee");
-		TNT1 A 0 A_GiveInventory("GrenTimeCounter",1);
-		HK5R AABBCCDDEEFF 2 A_ExtChase(0,0);
-		Goto See;
-	StopFlee:
-		TNT1 A 0 A_TakeInventory("CloseGrenCheck",1);
-		TNT1 A 0 A_TakeInventory("GrenTimeCounter",4);
-		TNT1 a 0 {bFRIGHTENED=0;}
-		Goto See;
-	Missile:
-		TNT1 A 0 A_Jump(200,"Shotgun");
-		TNT1 A 0 A_JumpIfCloser(600,"Grenade");
+		HK5W A 0;
+		Goto HLGrunt1::Walking+1;
 	Shotgun:
-		TNT1 A 0 A_Jump(64,"ShotgunDouble");
-		HK5N AAAA 3 A_FaceTarget;
-		HK5N AAA 4 A_FaceTarget;
-		TNT1 A 0 A_PlaySound("halflife/weapons/shotgunsingle",5);
-		TNT1 AA 0 A_SpawnItemEx("GunSmoke",15,5,47);
-		HK5N B 4 Light("ImShootingAGun") A_CustomBulletAttack(7,7,5,4,"NewPuff2");
-		HK5N BCBA 4;
-		TNT1 A 0 A_Jump(40,"See");
-		TNT1 A 0 A_CposRefire;
-		Goto Shotgun+5;
-	ShotgunDouble:
-		HK5N AAAA 3 A_FaceTarget;
-		HK5N AAAAA 4 A_FaceTarget;
-		TNT1 A 0 A_PlaySound("halflife/weapons/shotgundouble",5);
-		TNT1 AA 0 A_SpawnItemEx("GunSmoke",15,5,42);
-		HK5N B 4 Light("ImShootingAGun") A_CustomBulletAttack(7,7,10,4,"NewPuff2");
-		HK5N BCBA 4;
-		HK5N AAA 4 A_FaceTarget;
-		TNT1 A 0 A_Jump(100,"See");
-		TNT1 A 0 A_CposRefire;
-		Goto ShotgunDouble+4;
+		HK5N A 0;
+		Goto Super::Shotgun+1;
 	Grenade:
-		TNT1 A 0 A_JumpIfCloser(256,"Shotgun");
-		HK5M A 3 A_FaceTarget;
-		HK5M B 17;
-		HK5M CD 5 A_FaceTarget;
-		HK5M E 6 A_SpawnProjectile("GruntHandGrenade",40,0,0);
-		HK5M F 7;
-		Goto See;
+		HK5M A 0;
+		Goto Super::Grenade+1;
 	Melee:
-	HandGrenadeClose:
-		HK5M A 3 A_FaceTarget;
-		HK5M B 10;
-		HK5M C 5 A_FaceTarget;
-		TNTT A 0 A_GiveInventory("CloseGrenCheck",1);
-		HK5M D 6 A_SpawnProjectile("GruntHandGrenadeClose",40,0,0);
-		HK5M F 7;
-		Goto See;
+		HK5N A 0;
+		Goto HLGrunt1::Melee+1;
 	Pain:
-		TNT1 A 0 A_JumpIfInventory("CloseGrenCheck",1,"FleePain");
 		HK5P A 8 A_Pain;
-		Goto See;
-	FleePain:
-		HK5P A 8 A_Pain;
-		TNT1 A 0 A_GiveInventory("GrenTimeCounter",1);
-		Goto See;
+		Goto HLGrunt1::Pain+1
 	Death:
 		HK2C A 3 A_Scream;
 		HK2C B 3 A_Fall;
 		HK2C CDE 3;
 		HK2D ABCD 3;
-		TNT1 A 0 A_PlaySound("halflife/weapons/bodydrop");
-		HK2D E -1;
+		HK2D E -1 A_PlaySound("halflife/weapons/bodydrop");
 		Stop;
 	}
 }
@@ -684,85 +455,29 @@ class HLGrunt6 : HLGrunt4
 		HK6I A 3 A_Look;
 		Loop;
 	See:
-		TNT1 A 0 A_JumpIfInventory("CloseGrenCheck",1,"Flee");
-		TNT1 A 0 A_JumpIfCloser(300,"Walking");
-		HK6R AABBCCDDEEFF 2 A_Chase;
-		Loop;
+		HK6R A 0;
+		Goto HLGrunt1::See+1;
 	Walking:
-		TNT1 A 0 {bMISSILEEVENMORE=1;}
-		TNT1 A 0 {bMISSILEMORE=1;}
-		HK6W ABCDEF 4 A_Chase;
-		TNT1 A 0 {bMISSILEEVENMORE=0;}
-		TNT1 A 0 {bMISSILEMORE=0;}
-		Goto See;
-	Flee:
-		TNT1 A 0 {bFRIGHTENED=1;}
-		TNT1 A 0 A_JumpIfInventory("GrenTimeCounter",4,"StopFlee");
-		TNT1 A 0 A_GiveInventory("GrenTimeCounter",1);
-		HK6R AABBCCDDEEFF 2 A_ExtChase(0,0);
-		Goto See;
-	StopFlee:
-		TNT1 A 0 A_TakeInventory("CloseGrenCheck",1);
-		TNT1 A 0 A_TakeInventory("GrenTimeCounter",4);
-		TNT1 a 0 {bFRIGHTENED=0;}
-		Goto See;
-	Missile:
-		TNT1 A 0 A_Jump(200,"Shotgun");
-		TNT1 A 0 A_JumpIfCloser(600,"Grenade");
+		HK6W A 0;
+		Goto HLGrunt1::Walking+1;
 	Shotgun:
-		TNT1 A 0 A_Jump(64,"ShotgunDouble");
-		HK6N AAAA 3 A_FaceTarget;
-		HK6N AAA 4 A_FaceTarget;
-		TNT1 A 0 A_PlaySound("halflife/weapons/shotgunsingle",5);
-		TNT1 AA 0 A_SpawnItemEx("GunSmoke",15,4,48);
-		HK6N B 4 Light("ImShootingAGun") A_CustomBulletAttack(7,7,5,4,"NewPuff2");
-		HK6N BCBA 4;
-		TNT1 A 0 A_Jump(40,"See");
-		TNT1 A 0 A_CposRefire;
-		Goto Shotgun+5;
-	ShotgunDouble:
-		HK6N AAAA 3 A_FaceTarget;
-		HK6N AAAAA 4 A_FaceTarget;
-		TNT1 A 0 A_PlaySound("halflife/weapons/shotgundouble",5);
-		TNT1 AA 0 A_SpawnItemEx("GunSmoke",15,4,48);
-		HK6N B 4 Light("ImShootingAGun") A_CustomBulletAttack(7,7,10,4,"NewPuff2");
-		HK6N BCBA 4;
-		HK6N AAA 4 A_FaceTarget;
-		TNT1 A 0 A_Jump(100,"See");
-		TNT1 A 0 A_CposRefire;
-		Goto ShotgunDouble+4;
+		HK6N A 0;
+		Goto Super::Shotgun+1;
 	Grenade:
-		TNT1 A 0 A_JumpIfCloser(256,"Shotgun");
-		HK6M A 3 A_FaceTarget;
-		HK6M B 17;
-		HK6M CD 5 A_FaceTarget;
-		HK6M E 6 A_SpawnProjectile("GruntHandGrenade",40,0,0);
-		HK6M F 7;
-		Goto See;
+		HK6M A 0;
+		Goto Super::Grenade+1;
 	Melee:
-	HandGrenadeClose:
-		HK6M A 3 A_FaceTarget;
-		HK6M B 10;
-		HK6M C 5 A_FaceTarget;
-		TNTT A 0 A_GiveInventory("CloseGrenCheck",1);
-		HK6M D 6 A_SpawnProjectile("GruntHandGrenadeClose",40,0,0);
-		HK6M F 7;
-		Goto See;
+		HK6M A 0;
+		Goto HLGrunt1::Melee+1;
 	Pain:
-		TNT1 A 0 A_JumpIfInventory("CloseGrenCheck",1,"FleePain");
 		HK6P A 8 A_Pain;
-		Goto See;
-	FleePain:
-		HK6P A 8 A_Pain;
-		TNT1 A 0 A_GiveInventory("GrenTimeCounter",1);
-		Goto See;
+		Goto HLGrunt1::Pain+1
 	Death:
 		HK3C A 2 A_Scream;
 		HK3C B 2 A_Fall;
 		HK3C C 2;
 		HK3D ABCDEFGH 2;
-		TNT1 A 0 A_PlaySound("halflife/weapons/bodydrop");
-		HK3D I -1;
+		HK3D I -1 A_PlaySound("halflife/weapons/bodydrop");
 		Stop;
 	}
 }
@@ -771,66 +486,18 @@ class HLGrunt6 : HLGrunt4
 // Government Troops: M16 Attack
 //===============================
 
-class HLGrunt1NoGren : Actor
+class HLGrunt1NoGren : HLGrunt1
 {
 	Default
 	{
-		Monster;
-		Health 150;
 		Mass 200;
-		Speed 7;
-		Height 63;
-		Radius 20;
 		PainChance 64;
-		Scale 0.343;
-		maxdropoffheight 128;
-		dropitem "M16Pickup";
-		DamageFactor "SoldierDamage",0;
-		SeeSound "halflife/monsters/humangrunt/sight";
-		PainSound "halflife/monsters/humangrunt/pain";
-		DeathSound "halflife/monsters/humangrunt/death";
-		ActiveSound "halflife/monsters/humangrunt/active";
 	}
 	States
 	{
-	Spawn:
-		HK1I A 3 A_Look;
-		Loop;
-	See:
-		TNT1 A 0 A_JumpIfCloser(300,"Walking");
-		HK1R AABBCCDDEEFF 2 A_Chase;
-		Loop;
-	Walking:
-		TNT1 A 0 {bMISSILEEVENMORE=1;}
-		TNT1 A 0 {bMISSILEMORE=1;}
-		HK1W ABCDEF 4 A_Chase;
-		TNT1 A 0 {bMISSILEEVENMORE=0;}
-		TNT1 A 0 {bMISSILEMORE=0;}
-		Goto See;
 	Missile:
-	Assault:
-		HK1O AAAA 3 A_FaceTarget;
-		HK1O A 2 A_FaceTarget;
-		TNT1 A 0 A_PlaySound("halflife/weapons/machinegunshot",5);
-		TNT1 AA 0 A_SpawnItemEx("GunSmallSmoke",15,3,49);
-		HK1O B 2 Light("ImShootingAGun") A_CustomBulletAttack(7,7,1,4,"NewPuff2");
-		TNT1 A 0 A_Jump(15,"See");
-		TNT1 A 0 A_CposRefire;
-		Goto Assault+4;
-	Pain:
-		HK1P A 8 A_Pain;
-		Goto See;
-	Death:
-		HK1B A 2 A_Scream;
-		HK1B B 2 A_Fall;
-		HK1D ABCDEFGHIJ 2;
-		TNT1 A 0 A_PlaySound("halflife/weapons/bodydrop");
-		HK1D K -1;
-		Stop;
-	XDeath:
-		TNT1 A 0 A_PlaySound("other/gibdeath");
-		TNT1 A 0 A_SpawnItemEx("BloodGibDropper",0,0,random(20,40));
-		TNT1 A 1 A_Fall;
+		Goto Assault;
+	Melee:
 		Stop;
 	}
 }
@@ -839,152 +506,38 @@ class HLGrunt1NoGren : Actor
 // Government Troops: M16 Attack
 //===============================
 
-class HLGrunt2NoGren : HLGrunt1NoGren
-{
-	States
-	{
-	Spawn:
-		HK2I A 3 A_Look;
-		Loop;
-	See:
-		TNT1 A 0 A_JumpIfCloser(300,"Walking");
-		HK2R AABBCCDDEEFF 2 A_Chase;
-		Loop;
-	Walking:
-		TNT1 A 0 {bMISSILEEVENMORE=1;}
-		TNT1 A 0 {bMISSILEMORE=1;}
-		HK2W ABCDEF 4 A_Chase;
-		TNT1 A 0 {bMISSILEEVENMORE=0;}
-		TNT1 A 0 {bMISSILEMORE=0;}
-		Goto See;
-	Missile:
-	Assault:
-		HK2O AAAA 3 A_FaceTarget;
-		HK2O A 2 A_FaceTarget;
-		TNT1 A 0 A_PlaySound("halflife/weapons/machinegunshot",5);
-		TNT1 AA 0 A_SpawnItemEx("GunSmallSmoke",15,3,49);
-		HK2O B 2 Light("ImShootingAGun") A_CustomBulletAttack(7,7,1,4,"NewPuff2");
-		TNT1 A 0 A_Jump(15,"See");
-		TNT1 A 0 A_CposRefire;
-		Goto Assault+4;
-	Pain:
-		HK2P A 8 A_Pain;
-		Goto See;
-	Death:
-		HK2B A 3 A_Scream;
-		HK2B B 3 A_Fall;
-		HK2B CDE 3;
-		HK2D ABCD 3;
-		TNT1 A 0 A_PlaySound("halflife/weapons/bodydrop");
-		HK2D E -1;
-		Stop;
-	}
-}
-
-//===============================
-// Government Troops: M16 Attack
-//===============================
-
-class HLGrunt3NoGren : HLGrunt1NoGren
-{
-	States
-	{
-	Spawn:
-		HK3I A 3 A_Look;
-		Loop;
-	See:
-		TNT1 A 0 A_JumpIfCloser(300,"Walking");
-		HK3R AABBCCDDEEFF 2 A_Chase;
-		Loop;
-	Walking:
-		TNT1 A 0 {bMISSILEEVENMORE=1;}
-		TNT1 A 0 {bMISSILEMORE=1;}
-		HK3W ABCDEF 4 A_Chase;
-		TNT1 A 0 {bMISSILEEVENMORE=0;}
-		TNT1 A 0 {bMISSILEMORE=0;}
-		Goto See;
-	Missile:
-	Assault:
-		HK3O AAAA 3 A_FaceTarget;
-		HK3O A 2 A_FaceTarget;
-		TNT1 A 0 A_PlaySound("halflife/weapons/machinegunshot",5);
-		TNT1 AA 0 A_SpawnItemEx("GunSmallSmoke",15,3,51);
-		HK3O B 2 Light("ImShootingAGun") A_CustomBulletAttack(7,7,1,4,"NewPuff2");
-		TNT1 A 0 A_Jump(15,"See");
-		TNT1 A 0 A_CposRefire;
-		Goto Assault+4;
-	Pain:
-		HK3P A 8 A_Pain;
-		Goto See;
-	Death:
-		HK3B A 2 A_Scream;
-		HK3B B 2 A_Fall;
-		HK3B C 2;
-		HK3D ABCDEFGH 2;
-		TNT1 A 0 A_PlaySound("halflife/weapons/bodydrop");
-		HK3D I -1;
-		Stop;
-	}
-}
-
-//==================================
-// Government Troops: Shotgun Attack
-//==================================
-
-class HLGrunt4NoGren : HLGrunt1NoGren
+class HLGrunt2NoGren : HLGrunt2
 {
 	Default
 	{
-		DropItem "ShotgunPickup";
+		Mass 200;
+		PainChance 64;
 	}
 	States
 	{
-	Spawn:
-		HK4I A 3 A_Look;
-		Loop;
-	See:
-		TNT1 A 0 A_JumpIfCloser(300,"Walking");
-		HK4R AABBCCDDEEFF 2 A_Chase;
-		Loop;
-	Walking:
-		TNT1 A 0 {bMISSILEEVENMORE=1;}
-		TNT1 A 0 {bMISSILEMORE=1;}
-		HK4W ABCDEF 4 A_Chase;
-		TNT1 A 0 {bMISSILEEVENMORE=0;}
-		TNT1 A 0 {bMISSILEMORE=0;}
-		Goto See;
 	Missile:
-	Shotgun:
-		TNT1 A 0 A_Jump(64,"ShotgunDouble");
-		HK4N AAAA 3 A_FaceTarget;
-		HK4N AAA 4 A_FaceTarget;
-		TNT1 A 0 A_PlaySound("halflife/weapons/shotgunsingle",5);
-		TNT1 AA 0 A_SpawnItemEx("GunSmoke",15,4,47);
-		HK4N B 4 Light("ImShootingAGun") A_CustomBulletAttack(7,7,5,4,"NewPuff2");
-		HK4N BCBA 4;
-		TNT1 A 0 A_Jump(40,"See");
-		TNT1 A 0 A_CposRefire;
-		Goto Shotgun+5;
-	ShotgunDouble:
-		HK4N AAAA 3 A_FaceTarget;
-		HK4N AAAAA 4 A_FaceTarget;
-		TNT1 A 0 A_PlaySound("halflife/weapons/shotgundouble",5);
-		TNT1 AA 0 A_SpawnItemEx("GunSmoke",15,4,47);
-		HK4N B 4 Light("ImShootingAGun") A_CustomBulletAttack(7,7,10,4,"NewPuff2");
-		HK4N BCBA 4;
-		HK4N AAA 4 A_FaceTarget;
-		TNT1 A 0 A_Jump(100,"See");
-		TNT1 A 0 A_CposRefire;
-		Goto ShotgunDouble+4;
-	Pain:
-		HK4P A 8 A_Pain;
-		Goto See;
-	Death:
-		HK1C A 2 A_Scream;
-		HK1C B 2 A_Fall;
-		HK1D ABCDEFGHIJ 2;
-		TNT1 A 0 A_PlaySound("halflife/weapons/bodydrop");
-		HK1D K -1;
+		Goto Assault;
+	Melee:
+		Stop;
+	}
+}
+
+//===============================
+// Government Troops: M16 Attack
+//===============================
+
+class HLGrunt3NoGren : HLGrunt3
+{
+	Default
+	{
+		Mass 200;
+		PainChance 64;
+	}
+	States
+	{
+	Missile:
+		Goto Assault;
+	Melee:
 		Stop;
 	}
 }
@@ -993,57 +546,18 @@ class HLGrunt4NoGren : HLGrunt1NoGren
 // Government Troops: Shotgun Attack
 //==================================
 
-class HLGrunt5NoGren : HLGrunt1NoGren
+class HLGrunt4NoGren : HLGrunt4
 {
+	Default
+	{
+		Mass 200;
+		PainChance 64;
+	}
 	States
 	{
-	Spawn:
-		HK5I A 3 A_Look;
-		Loop;
-	See:
-		TNT1 A 0 A_JumpIfCloser(300,"Walking");
-		HK5R AABBCCDDEEFF 2 A_Chase;
-		Loop;
-	Walking:
-		TNT1 A 0 {bMISSILEEVENMORE=1;}
-		TNT1 A 0 {bMISSILEMORE=1;}
-		HK5W ABCDEF 4 A_Chase;
-		TNT1 A 0 {bMISSILEEVENMORE=0;}
-		TNT1 A 0 {bMISSILEMORE=0;}
-		Goto See;
 	Missile:
-	Shotgun:
-		TNT1 A 0 A_Jump(64,"ShotgunDouble");
-		HK5N AAAA 3 A_FaceTarget;
-		HK5N AAA 4 A_FaceTarget;
-		TNT1 A 0 A_PlaySound("halflife/weapons/shotgunsingle",5);
-		TNT1 AA 0 A_SpawnItemEx("GunSmoke",15,5,47);
-		HK5N B 4 Light("ImShootingAGun") A_CustomBulletAttack(7,7,5,4,"NewPuff2");
-		HK5N BCBA 4;
-		TNT1 A 0 A_Jump(40,"See");
-		TNT1 A 0 A_CposRefire;
-		Goto Shotgun+5;
-	ShotgunDouble:
-		HK5N AAAA 3 A_FaceTarget;
-		HK5N AAAAA 4 A_FaceTarget;
-		TNT1 A 0 A_PlaySound("halflife/weapons/shotgundouble",5);
-		TNT1 AA 0 A_SpawnItemEx("GunSmoke",15,5,47);
-		HK5N B 4 Light("ImShootingAGun") A_CustomBulletAttack(7,7,10,4,"NewPuff2");
-		HK5N BCBA 4;
-		HK5N AAA 4 A_FaceTarget;
-		TNT1 A 0 A_Jump(100,"See");
-		TNT1 A 0 A_CposRefire;
-		Goto ShotgunDouble+4;
-	Pain:
-		HK5P A 8 A_Pain;
-		Goto See;
-	Death:
-		HK2C A 3 A_Scream;
-		HK2C B 3 A_Fall;
-		HK2C CDE 3;
-		HK2D ABCD 3;
-		TNT1 A 0 A_PlaySound("halflife/weapons/bodydrop");
-		HK2D E -1;
+		Goto Shotgun;
+	Melee:
 		Stop;
 	}
 }
@@ -1052,57 +566,127 @@ class HLGrunt5NoGren : HLGrunt1NoGren
 // Government Troops: Shotgun Attack
 //==================================
 
-class HLGrunt6NoGren : HLGrunt1NoGren
+class HLGrunt5NoGren : HLGrunt5
+{
+	Default
+	{
+		Mass 200;
+		PainChance 64;
+	}
+	States
+	{
+	Missile:
+		Goto Shotgun;
+	Melee:
+		Stop;
+	}
+}
+
+//==================================
+// Government Troops: Shotgun Attack
+//==================================
+
+class HLGrunt6NoGren : HLGrunt6
+{
+	Default
+	{
+		Mass 200;
+		PainChance 64;
+	}
+	States
+	{
+	Missile:
+		Goto Shotgun;
+	Melee:
+		Stop;
+	}
+}
+
+//********************************************
+class GruntHandGrenade : Actor
+{
+	int GrenTimeCounter;
+	Default
+	{
+		Mass 1;
+		Radius 3;
+		Height 6;
+		Speed 20;
+		Scale 0.3;
+		Damage 1;
+		Damagetype "SoldierDamage";
+		PROJECTILE;
+		BounceType "Doom";
+		+CANBOUNCEWATER
+		BounceFactor 0.6;
+		-NOGRAVITY
+		Gravity 0.5;
+	}
+	States
+	{
+	Spawn:
+		HGN1 ABCDE 2;
+		TNT1 A 0 {GrenTimeCounter++;}
+		TNT1 A 0 A_JumpIf(GrenTimeCounter>=9,"Explode");
+		Loop;
+	Death:
+		HGN1 A 10;
+		TNT1 A 0 {GrenTimeCounter++;}
+		TNT1 A 0 A_JumpIf(GrenTimeCounter>=9,"Explode");
+		Loop;
+	Explode:
+		TNT1 A 0 A_PlaySound("halflife/weapons/explode1");
+		TNT1 A 0 Bright A_Explode(128,64,1);
+		TNT1 A 0 A_SpawnItemEx("GeneralExplosion");
+		TNT1 A 10;
+		Stop;
+	}
+}
+class GruntHandGrenadeClose : GruntHandGrenade
+{
+	Default
+	{
+		Speed 10;
+	}
+}
+
+//********************************************
+class HLGruntGunGrenade : Actor
+{
+	Default
+	{
+		Projectile;
+		Speed 20;
+		Damage 20;
+		Radius 10;
+		Height 20;
+		Damagetype "SoldierDamage";
+		-NoGravity
+		Gravity .2;
+		Scale .65;
+		DeathSound "halflife/weapons/explode1";
+	}
+	States
+	{
+	Spawn:
+		GRNL A -1 NODELAY ThrustThingZ(0,14,0,1);
+		Wait;
+	Death:
+		TNT1 A 10
+		{
+			A_Explode(64);
+			A_SpawnItemEx("GeneralExplosion");
+		}
+		Stop;
+	}
+}
+
+class HLGruntGunGrenadeClose : HLGruntGunGrenade
 {
 	States
 	{
 	Spawn:
-		HK6I A 3 A_Look;
-		Loop;
-	See:
-		TNT1 A 0 A_JumpIfCloser(300,"Walking");
-		HK6R AABBCCDDEEFF 2 A_Chase;
-		Loop;
-	Walking:
-		TNT1 A 0 {bMISSILEEVENMORE=1;}
-		TNT1 A 0 {bMISSILEMORE=1;}
-		HK6W ABCDEF 4 A_Chase;
-		TNT1 A 0 {bMISSILEEVENMORE=0;}
-		TNT1 A 0 {bMISSILEMORE=0;}
-		Goto See;
-	Missile:
-	Shotgun:
-		TNT1 A 0 A_Jump(64,"ShotgunDouble");
-		HK6N AAAA 3 A_FaceTarget;
-		HK6N AAA 4 A_FaceTarget;
-		TNT1 A 0 A_PlaySound("halflife/weapons/shotgunsingle",5);
-		TNT1 AA 0 A_SpawnItemEx("GunSmoke",15,4,47);
-		HK6N B 4 Light("ImShootingAGun") A_CustomBulletAttack(7,7,5,4,"NewPuff2");
-		HK6N BCBA 4;
-		TNT1 A 0 A_Jump(40,"See");
-		TNT1 A 0 A_CposRefire;
-		Goto Shotgun+5;
-	ShotgunDouble:
-		HK6N AAAA 3 A_FaceTarget;
-		HK6N AAAAA 4 A_FaceTarget;
-		TNT1 A 0 A_PlaySound("halflife/weapons/shotgundouble",5);
-		TNT1 AA 0 A_SpawnItemEx("GunSmoke",15,4,47);
-		HK6N B 4 Light("ImShootingAGun") A_CustomBulletAttack(7,7,10,4,"NewPuff2");
-		HK6N BCBA 4;
-		HK6N AAA 4 A_FaceTarget;
-		TNT1 A 0 A_Jump(100,"See");
-		TNT1 A 0 A_CposRefire;
-		Goto ShotgunDouble+4;
-	Pain:
-		HK6P A 8 A_Pain;
-		Goto See;
-	Death:
-		HK3C A 2 A_Scream;
-		HK3C B 2 A_Fall;
-		HK3C C 2;
-		HK3D ABCDEFGH 2;
-		TNT1 A 0 A_PlaySound("halflife/weapons/bodydrop");
-		HK3D I -1;
-		Stop;
+		GRNL A -1 NODELAY ThrustThingZ(0,5,0,1);
+		Wait;
 	}
 }

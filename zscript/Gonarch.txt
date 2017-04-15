@@ -31,17 +31,80 @@ class HLGonarch : Actor
 		HLNI A 3 A_Look;
 		Loop;
 	See:
-		HLNW AABBCC 3
+		HLNW A 1
 		{
 			A_SpawnItemEx("ShieldSpawner3Tics");
 			A_Chase();
 		}
+		HLNW AA 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLNW A 1
+		{
+			A_SpawnItemEx("ShieldSpawner3Tics");
+			A_Chase();
+		}
+		HLNW AA 1 A_Chase(null,null,HLSMOOTHCHASE);
+
+		HLNW B 1
+		{
+			A_SpawnItemEx("ShieldSpawner3Tics");
+			A_Chase();
+		}
+		HLNW BB 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLNW B 1
+		{
+			A_SpawnItemEx("ShieldSpawner3Tics");
+			A_Chase();
+		}
+		HLNW BB 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLNW C
+		{
+			A_SpawnItemEx("ShieldSpawner3Tics");
+			A_Chase();
+		}
+		HLNW CC 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLNW C 1
+		{
+			A_SpawnItemEx("ShieldSpawner3Tics");
+			A_Chase();
+		}
+		HLNW CC 1 A_Chase(null,null,HLSMOOTHCHASE);
 		TNT1 A 0 A_PlaySound("halflife/monsters/gonarch/step",6);
-		HLNW DDEEFF 3
+		HLNW D 1
 		{
 			A_SpawnItemEx("ShieldSpawner3Tics");
 			A_Chase();
 		}
+		HLNW DD 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLNW D 1
+		{
+			A_SpawnItemEx("ShieldSpawner3Tics");
+			A_Chase();
+		}
+		HLNW DD 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLNW E 1
+		{
+			A_SpawnItemEx("ShieldSpawner3Tics");
+			A_Chase();
+		}
+		HLNW EE 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLNW E 1
+		{
+			A_SpawnItemEx("ShieldSpawner3Tics");
+			A_Chase();
+		}
+		HLNW EE 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLNW F 1
+		{
+			A_SpawnItemEx("ShieldSpawner3Tics");
+			A_Chase();
+		}
+		HLNW FF 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLNW F 1
+		{
+			A_SpawnItemEx("ShieldSpawner3Tics");
+			A_Chase();
+		}
+		HLNW FF 1 A_Chase(null,null,HLSMOOTHCHASE);
 		TNT1 A 0 A_PlaySound("halflife/monsters/gonarch/step",6);
 		TNT1 A 0 A_Jump(210,"See");
 		TNT1 A 0 A_PlaySound("halflife/monsters/gonarch/sight",5);

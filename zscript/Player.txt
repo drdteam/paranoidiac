@@ -19,8 +19,7 @@ class RolfBellmer : PlayerPawn
 	States
 	{
 	Spawn:
-		HPLM A 0 A_JumpIf(CountInv("ScientistDisguise"),"Spawn2");
-		HPLM A 1;
+		HPLM A 1 A_JumpIf(CountInv("ScientistDisguise"),"Spawn2");
 		Loop;
 	Spawn2:
 		HP2I A 1 A_JumpIf(vel.x!=0||vel.y!=0,"See");
@@ -35,8 +34,8 @@ class RolfBellmer : PlayerPawn
 	Melee:
 		HPLM A 0 A_JumpIf(CountInv("ScientistDisguise"),"Melee2");
 	Missile:
-		HPLM A 0 A_JumpIf(CountInv("ScientistDisguise"),"Missile2");
-		HPLM AABC 3;
+		HPLM A 3 A_JumpIf(CountInv("ScientistDisguise"),"Missile2");
+		HPLM ABC 3;
 		Goto Spawn;
 	Melee2:
 		HP2I B 12;

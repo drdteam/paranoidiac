@@ -4,15 +4,16 @@ class HLBat : Actor
 	{
 		Monster;
 		Health 200;
-		Speed 12;
+		Speed 3;
+		FloatSpeed 1;
 		Height 76;
 		Radius 60;
 		Mass 400;
 		PainChance 160;
-		Scale 0.6;
+		Scale .6;
 		+FLOAT
 		+NOGRAVITY
-		Translation "16:47=64:79", "64:79=96:111";
+		Translation "16:47=64:79","64:79=96:111";
 		BloodColor "DE FE 72";
 		SeeSound "stukabat/sight";
 		PainSound "stukabat/pain";
@@ -27,12 +28,27 @@ class HLBat : Actor
 		HLSX ABCDEFG 2 A_Look;
 		Loop;
 	See:
-		HLSW ABCDEF 4 A_Chase;
+		HLSW A 1 A_Chase;
+		HLSW AAA 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLSW B 1 A_Chase;
+		HLSW BBB 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLSW C 1 A_Chase;
+		HLSW CCC 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLSW D 1 A_Chase;
+		HLSW DDD 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLSW E 1 A_Chase;
+		HLSW EEE 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLSW F 1 A_Chase;
+		HLSW FFF 1 A_Chase(null,null,HLSMOOTHCHASE);
 		Loop;
 	Missile:
 		HLSM ABC 4 A_FaceTarget;
-		TNT1 AAAAAAA 0 A_SpawnItemEx("SBFireExtra2",0,0,20,random(2,5),random(2,-2),random(1,3));
-		HLSM D 4 A_SpawnProjectile("StukaFireBall");
+		HLSM D 4
+		{
+			for(int i=0;i<7;i++)
+				A_SpawnItemEx("SBFireExtra2",0,0,20,random(2,5),random(2,-2),random(1,3));
+			A_SpawnProjectile("StukaFireBall");
+		}
 		HLSM EF 4;
 		Goto See;
 	Pain:
@@ -42,14 +58,21 @@ class HLBat : Actor
 		HLSD A -1 A_Scream;
 		Stop;
 	Crash:
-		TNT1 A 0 A_PlaySound("halflife/weapons/bodydrop");
-		HLSD B 2 A_Fall;
+		HLSD B 2
+		{
+			A_PlaySound("halflife/weapons/bodydrop");
+			A_Fall();
+		}
 		HLSD CDEFGHIJK 2;
 		HLSD K -1;
 		Stop;
 	XDeath:
-		TNT1 A 0 A_PlaySound("other/gibdeath");
-	  	TNT1 AAAAAAAAAAAAAA 0 A_SpawnItemEx("XenGibs",random(5,-5),random(5,-5),random(10,40),random(1,7),random(1,7),random(5,13),random(0,359));
+	  	TNT1 A 0
+		{
+			A_PlaySound("other/gibdeath");
+			for(int i=0;i<14;i++)
+				A_SpawnItemEx("XenGibs",random(5,-5),random(5,-5),random(10,40),random(1,7),random(1,7),random(5,13),random(0,359));
+		}
 		Stop;
 	}
 }
@@ -60,10 +83,10 @@ class StukaFireBall : Actor
 	{
 		Projectile;
 		Speed 25;
-		Scale 0.35;
+		Scale .35;
 		Damage 10;
 		RenderStyle "Add";
-		Alpha 0.9;
+		Alpha .9;
 		Translation "80:111=16:47";
 	}
 	States
@@ -72,8 +95,12 @@ class StukaFireBall : Actor
 		X022 ABCD 4;
 		Loop;
 	Death:
-		TNT1 A 0 A_PlaySound("halflife/weapons/hl2explo1");
-		TNT1 AAAA 0 A_SpawnItemEx("SBFireExtra",0,0,0,random(1,-1),random(1,-1),random(0,2));
+		TNT1 A 0
+		{
+			A_PlaySound("halflife/weapons/hl2explo1");
+			for(int i=0;i<4;i++)
+				A_SpawnItemEx("SBFireExtra",0,0,0,random(1,-1),random(1,-1),random(0,2));
+		}
 		Stop;
 	}
 }
@@ -84,9 +111,9 @@ class SBFireExtra : Actor
 	{
 		Projectile;
 		+NOCLIP
-		Scale 0.15;
+		Scale .15;
 		RenderStyle "Add";
-		Alpha 0.9;
+		Alpha .9;
 		-NOGRAVITY
 		Gravity .125;
 		Translation "80:111=26:47";
@@ -107,6 +134,6 @@ class SBFireExtra2 : SBFireExtra
 {
 	Default
 	{
-		Scale 0.26;
+		Scale .26;
 	}
 }
