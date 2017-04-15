@@ -694,6 +694,7 @@ class Desk2 : Desk1
 {
 	Default
 	{
+		Height 26;
 		Radius 24;
 	}
 }

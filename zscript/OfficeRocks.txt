@@ -338,19 +338,6 @@ class XenIsland3 : XenIsland1
 	}
 }
 
-class NewDesk2 : Desk1 replaces Desk2
-{
-	Default
-	{
-		Height 26;
-	}
-}
-
-class NewDesk3 : NewDesk2 replaces Desk3{}
-class NewDesk4 : NewDesk2 replaces Desk4{}
-class NewDesk5 : NewDesk2 replaces Desk5{}
-class NewDesk6 : NewDesk2 replaces Desk6{}
-
 class HoverPad : Actor
 {
 	Default

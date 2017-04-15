@@ -961,8 +961,7 @@ Model Desk2
 	Path "Models"
 	Model 0 "desk2.md3"
 	Skin 0 "desk2.png"
-	//Scale 0.8 0.8 0.8
-	Scale 1.05 1.05 1.05
+	Scale 0.8 0.8 0.8
 
 	FrameIndex POSS A 0 0
 }
@@ -972,8 +971,7 @@ Model Desk3
 	Path "Models"
 	Model 0 "desk3.md3"
 	Skin 0 "desk3.png"
-	//Scale 0.8 0.8 0.8
-	Scale 1.05 1.05 1.05
+	Scale 0.8 0.8 0.8
 
 	FrameIndex POSS A 0 0
 }
@@ -983,8 +981,7 @@ Model Desk4
 	Path "Models"
 	Model 0 "desk4.md3"
 	Skin 0 "desk4.png"
-	//Scale 0.8 0.8 0.8
-	Scale 1.05 1.05 1.05
+	Scale 0.8 0.8 0.8
 
 	FrameIndex POSS A 0 0
 }
@@ -994,8 +991,7 @@ Model Desk5
 	Path "Models"
 	Model 0 "desk5.md3"
 	Skin 0 "desk5.png"
-	//Scale 0.8 0.8 0.8
-	Scale 1.05 1.05 1.05
+	Scale 0.8 0.8 0.8
 
 	FrameIndex POSS A 0 0
 }
@@ -1005,8 +1001,7 @@ Model Desk6
 	Path "Models"
 	Model 0 "desk6.md3"
 	Skin 0 "desk6.png"
-	//Scale 0.8 0.8 0.8
-	Scale 1.05 1.05 1.05
+	Scale 0.8 0.8 0.8
 
 	FrameIndex POSS A 0 0
 }
@@ -2369,83 +2364,33 @@ Model OspreyBellmer
 //Office/Building Items
 //********
 
-Model NewDesk2
-{ 
-	Path "Models" 
-	Model 0 "desk2.md3" 
-	Skin 0 "desk2.png"
-	Scale 0.8 0.8 0.8
-	
-	FrameIndex POSS A 0 0
-} 
-
-Model NewDesk3
-{ 
-	Path "Models" 
-	Model 0 "desk3.md3" 
-	Skin 0 "desk3.png"
-	Scale 0.8 0.8 0.8
-	
-	FrameIndex POSS A 0 0
-} 
-
-Model NewDesk4
-{ 
-	Path "Models" 
-	Model 0 "desk4.md3" 
-	Skin 0 "desk4.png"
-	Scale 0.8 0.8 0.8
-	
-	FrameIndex POSS A 0 0
-} 
-
-Model NewDesk5
-{ 
-	Path "Models" 
-	Model 0 "desk5.md3" 
-	Skin 0 "desk5.png"
-	Scale 0.8 0.8 0.8
-	
-	FrameIndex POSS A 0 0
-} 
-
-Model NewDesk6
-{ 
-	Path "Models" 
-	Model 0 "desk6.md3" 
-	Skin 0 "desk6.png"
-	Scale 0.8 0.8 0.8
-	
-	FrameIndex POSS A 0 0
-} 
-
 Model StreetLamp
-{ 
-	Path "Models" 
-	Model 0 "lamp1x.md3" 
+{
+	Path "Models"
+	Model 0 "lamp1x.md3"
 	Skin 0 "lamp1x1.png"
 	Scale 1.0 1.0 1.5
-	
+
 	FrameIndex POSS A 0 0
 }
 
 Model StreetLamp
-{ 
-	Path "Models" 
-	Model 1 "lamp1x.md3" 
+{
+	Path "Models"
+	Model 1 "lamp1x.md3"
 	Skin 1 "lamp1x3.png"
 	Scale 1.0 1.0 1.5
-	
+
 	FrameIndex POSS B 1 0
 }
 
 Model Glass01
-{ 
-	Path "Models" 
-	Model 0 "glass01.md3" 
+{
+	Path "Models"
+	Model 0 "glass01.md3"
 	Skin 0 "glass01.png"
 	Scale 1.0 1.0 1.0
-	
+
 	FrameIndex POSS A 0 0
 }
 
@@ -2454,9 +2399,9 @@ Model BookShelf1a
 	Path "Models"
 	Model 0 "bookshelf1a.md3"
 	Skin 0 "bookshelf1.png"
-	
+
 	Scale 0.8 0.8 0.8
-	
+
 	FrameIndex POSS A 0 0
 }
 
@@ -2465,9 +2410,9 @@ Model BookShelf1b
 	Path "Models"
 	Model 0 "bookshelf1b.md3"
 	Skin 0 "bookshelf1.png"
-	
+
 	Scale 0.8 0.8 0.8
-	
+
 	FrameIndex POSS A 0 0
 }
 
@@ -2476,9 +2421,9 @@ Model BookShelf2a
 	Path "Models"
 	Model 0 "bookshelf2a.md3"
 	Skin 0 "bookshelf2.png"
-	
+
 	Scale 0.8 0.8 0.8
-	
+
 	FrameIndex POSS A 0 0
 }
 
@@ -2487,9 +2432,9 @@ Model BookShelf2b
 	Path "Models"
 	Model 0 "bookshelf2b.md3"
 	Skin 0 "bookshelf2.png"
-	
+
 	Scale 0.8 0.8 0.8
-	
+
 	FrameIndex POSS A 0 0
 }
 
@@ -2498,9 +2443,9 @@ Model rkive
 	Path "Models"
 	Model 0 "rkive.md3"
 	Skin 0 "rkive.png"
-	
+
 	Scale 0.8 0.8 0.8
-	
+
 	FrameIndex POSS A 0 0
 }
 
@@ -2509,9 +2454,9 @@ Model Credenza
 	Path "Models"
 	Model 0 "credenza.md3"
 	Skin 0 "credenza.png"
-	
+
 	Scale 0.68 0.68 0.68
-	
+
 	FrameIndex POSS A 0 0
 }
 
@@ -2520,9 +2465,9 @@ Model CredenzaShort
 	Path "Models"
 	Model 0 "credenzashort.md3"
 	Skin 0 "credenza.png"
-	
+
 	Scale 0.68 0.68 0.68
-	
+
 	FrameIndex POSS A 0 0
 }
 
@@ -2531,9 +2476,9 @@ Model Credenza2
 	Path "Models"
 	Model 0 "credenza2.md3"
 	Skin 0 "credenza2.png"
-	
+
 	Scale 0.57 0.57 0.57
-	
+
 	FrameIndex POSS A 0 0
 }
 
@@ -2542,9 +2487,9 @@ Model Ashtray
 	Path "Models"
 	Model 0 "Ashtray.md3"
 	Skin 0 "Ashtray.jpg"
-	
+
 	Scale 0.7 0.7 0.7
-	
+
 	FrameIndex POSS A 0 0
 }
 
@@ -2553,9 +2498,9 @@ Model AshtrayCig
 	Path "Models"
 	Model 0 "Ashtray_Cig.md3"
 	Skin 0 "Ashtray.jpg"
-	
+
 	Scale 0.7 0.7 0.7
-	
+
 	FrameIndex POSS A 0 0
 }
 
@@ -2564,9 +2509,9 @@ Model ConfTable
 	Path "Models"
 	Model 0 "Conf_Table.md3"
 	Skin 0 "Conf_Table.jpg"
-	
+
 	Scale 0.46 0.46 0.46
-	
+
 	FrameIndex POSS A 0 0
 }
 
@@ -2575,9 +2520,9 @@ Model Phone1
 	Path "Models"
 	Model 0 "Phone1.md3"
 	Skin 0 "Phones.jpg"
-	
+
 	Scale 0.25 0.25 0.25
-	
+
 	FrameIndex POSS A 0 0
 }
 
@@ -2586,9 +2531,9 @@ Model Phone2
 	Path "Models"
 	Model 0 "Phone2.md3"
 	Skin 0 "Phones.jpg"
-	
+
 	Scale 0.2 0.2 0.2
-	
+
 	FrameIndex POSS A 0 0
 }
 
@@ -2597,35 +2542,35 @@ Model Phone3
 	Path "Models"
 	Model 0 "Phone3.md3"
 	Skin 0 "Phones.jpg"
-	
+
 	Scale 0.7 0.7 0.7
-	
+
 	FrameIndex POSS A 0 0
 }
 
 Model Pipe7
-{ 
-	Path "Models" 
-	Model 0 "pipe5.md2" 
+{
+	Path "Models"
+	Model 0 "pipe5.md2"
 	Skin 0 "pipe5.png"
-	
+
 	Frame POSS A 0 "frame01"
 }
 
 Model Pipe8
-{ 
-	Path "Models" 
-	Model 0 "pipe5.md2" 
+{
+	Path "Models"
+	Model 0 "pipe5.md2"
 	Skin 0 "pipe5.png"
 	Scale 1.5 1.5 1.5
-	
+
 	Frame POSS A 0 "frame01"
 }
 
 Model XMetalBox1
-{ 
-	Path "Models" 
-	Model 0 "xcrate01.md2" 
+{
+	Path "Models"
+	Model 0 "xcrate01.md2"
 	Skin 0 "xmetalbox.png"
 	Scale 4.48 4.68 4.0
 
@@ -2633,22 +2578,22 @@ Model XMetalBox1
 }
 
 Model girder3
-{ 
-	Path "Models" 
-	Model 0 "girder1.md2" 
+{
+	Path "Models"
+	Model 0 "girder1.md2"
 	Skin 0 "girder1.png"
 	Scale 4.0 4.0 4.0
-	
+
 	Frame POSS A 0 "frame01"
 }
 
 Model girder4
-{ 
-	Path "Models" 
-	Model 0 "girder2.md2" 
+{
+	Path "Models"
+	Model 0 "girder2.md2"
 	Skin 0 "girder2.png"
 	Scale 4.0 4.0 4.0
-	
+
 	Frame POSS A 0 "frame01"
 }
 
@@ -2661,7 +2606,7 @@ Model Rock01
 	Path "Models"
 	Model 0 "rock_big_a.md3"
 	Skin 0 "rock_big.jpg"
-	
+
 	Scale 1.0 1.0 1.0
 	ZOffset 192
 	FrameIndex POSS A 0 0
@@ -2672,7 +2617,7 @@ Model Rock01a
 	Path "Models"
 	Model 0 "rock_big_a.md3"
 	Skin 0 "rock_big2.jpg"
-	
+
 	Scale 1.0 1.0 1.0
 	ZOffset 192
 	FrameIndex POSS A 0 0
@@ -2683,7 +2628,7 @@ Model Rock01b
 	Path "Models"
 	Model 0 "rock_big_a.md3"
 	Skin 0 "rock_moss1.jpg"
-	
+
 	Scale 1.0 1.0 1.0
 	ZOffset 192
 	FrameIndex POSS A 0 0
@@ -2694,7 +2639,7 @@ Model Rock01c
 	Path "Models"
 	Model 0 "rock_big_a.md3"
 	Skin 0 "rock_moss2.jpg"
-	
+
 	Scale 1.0 1.0 1.0
 	ZOffset 192
 	FrameIndex POSS A 0 0
@@ -2705,7 +2650,7 @@ Model Rock02
 	Path "Models"
 	Model 0 "rock_big_b.md3"
 	Skin 0 "rock_big.jpg"
-	
+
 	Scale 1.0 1.0 1.0
 	ZOffset 172
 	FrameIndex POSS A 0 0
@@ -2716,7 +2661,7 @@ Model Rock02a
 	Path "Models"
 	Model 0 "rock_big_b.md3"
 	Skin 0 "rock_big2.jpg"
-	
+
 	Scale 1.0 1.0 1.0
 	ZOffset 172
 	FrameIndex POSS A 0 0
@@ -2727,7 +2672,7 @@ Model Rock02b
 	Path "Models"
 	Model 0 "rock_big_b.md3"
 	Skin 0 "rock_moss1.jpg"
-	
+
 	Scale 1.0 1.0 1.0
 	ZOffset 172
 	FrameIndex POSS A 0 0
@@ -2738,7 +2683,7 @@ Model Rock02c
 	Path "Models"
 	Model 0 "rock_big_b.md3"
 	Skin 0 "rock_moss2.jpg"
-	
+
 	Scale 1.0 1.0 1.0
 	ZOffset 172
 	FrameIndex POSS A 0 0
@@ -2749,7 +2694,7 @@ Model Rock02d
 	Path "Models"
 	Model 0 "rock_big_b.md3"
 	Skin 0 "xenrock1.png"
-	
+
 	Scale 1.0 1.0 1.0
 	ZOffset 596
 	FrameIndex POSS A 0 0
@@ -2760,7 +2705,7 @@ Model Rock02e
 	Path "Models"
 	Model 0 "rock_big_b.md3"
 	Skin 0 "xenrock2.png"
-	
+
 	Scale 1.0 1.0 1.0
 	ZOffset 676
 	FrameIndex POSS A 0 0
@@ -2771,7 +2716,7 @@ Model Rock02f
 	Path "Models"
 	Model 0 "rock_big_b.md3"
 	Skin 0 "xenrock3.png"
-	
+
 	Scale 1.25 1.25 1.25
 	ZOffset 766
 	FrameIndex POSS A 0 0
@@ -2782,7 +2727,7 @@ Model Rock02g
 	Path "Models"
 	Model 0 "rock_big_b.md3"
 	Skin 0 "xenrock1.png"
-	
+
 	Scale 1.5 1.5 1.5
 	ZOffset 160
 	FrameIndex POSS A 0 0
@@ -2793,7 +2738,7 @@ Model Rock03
 	Path "Models"
 	Model 0 "rock_big_c.md3"
 	Skin 0 "rock_big.jpg"
-	
+
 	Scale 1.0 1.0 1.0
 	ZOffset 184
 	FrameIndex POSS A 0 0
@@ -2804,7 +2749,7 @@ Model Rock03a
 	Path "Models"
 	Model 0 "rock_big_c.md3"
 	Skin 0 "rock_big2.jpg"
-	
+
 	Scale 1.0 1.0 1.0
 	ZOffset 184
 	FrameIndex POSS A 0 0
@@ -2815,7 +2760,7 @@ Model Rock03b
 	Path "Models"
 	Model 0 "rock_big_c.md3"
 	Skin 0 "rock_moss1.jpg"
-	
+
 	Scale 1.0 1.0 1.0
 	ZOffset 184
 	FrameIndex POSS A 0 0
@@ -2826,7 +2771,7 @@ Model Rock03c
 	Path "Models"
 	Model 0 "rock_big_c.md3"
 	Skin 0 "rock_moss2.jpg"
-	
+
 	Scale 1.0 1.0 1.0
 	ZOffset 184
 	FrameIndex POSS A 0 0
@@ -2837,7 +2782,7 @@ Model Rock03d
 	Path "Models"
 	Model 0 "rock_big_c.md3"
 	Skin 0 "xenrock1.png"
-	
+
 	Scale 1.0 1.0 1.0
 	ZOffset 608
 	FrameIndex POSS A 0 0
@@ -2848,7 +2793,7 @@ Model Rock03e
 	Path "Models"
 	Model 0 "rock_big_c.md3"
 	Skin 0 "xenrock2.png"
-	
+
 	Scale 1.0 1.0 1.0
 	ZOffset 680
 	FrameIndex POSS A 0 0
@@ -2859,7 +2804,7 @@ Model Rock03f
 	Path "Models"
 	Model 0 "rock_big_c.md3"
 	Skin 0 "xenrock3.png"
-	
+
 	Scale 1.25 1.25 1.25
 	ZOffset 770
 	FrameIndex POSS A 0 0
@@ -2870,7 +2815,7 @@ Model Rock03g
 	Path "Models"
 	Model 0 "rock_big_c.md3"
 	Skin 0 "xenrock3.png"
-	
+
 	Scale 1.5 1.5 1.5
 	ZOffset 128
 	FrameIndex POSS A 0 0
@@ -2881,7 +2826,7 @@ Model Rock04
 	Path "Models"
 	Model 0 "rock_big_d.md3"
 	Skin 0 "rock_big.jpg"
-	
+
 	Scale 1.0 1.0 1.0
 	ZOffset 72
 	FrameIndex POSS A 0 0
@@ -2892,7 +2837,7 @@ Model Rock04a
 	Path "Models"
 	Model 0 "rock_big_d.md3"
 	Skin 0 "rock_big2.jpg"
-	
+
 	Scale 1.0 1.0 1.0
 	ZOffset 72
 	FrameIndex POSS A 0 0
@@ -2903,7 +2848,7 @@ Model Rock04b
 	Path "Models"
 	Model 0 "rock_big_d.md3"
 	Skin 0 "rock_moss1.jpg"
-	
+
 	Scale 1.0 1.0 1.0
 	ZOffset 72
 	FrameIndex POSS A 0 0
@@ -2914,7 +2859,7 @@ Model Rock04c
 	Path "Models"
 	Model 0 "rock_big_d.md3"
 	Skin 0 "rock_moss2.jpg"
-	
+
 	Scale 1.0 1.0 1.0
 	ZOffset 72
 	FrameIndex POSS A 0 0
@@ -2927,7 +2872,7 @@ Model Rock05
 	Skin 0 "rock_big2.jpg"
 
 	Scale 0.125 0.125 0.125
-	ZOffset 48	
+	ZOffset 48
 	FrameIndex POSS A 0 0
 }
 
@@ -2938,7 +2883,7 @@ Model Rock05a
 	Skin 0 "rock_moss1.jpg"
 
 	Scale 0.125 0.125 0.125
-	ZOffset 48	
+	ZOffset 48
 	FrameIndex POSS A 0 0
 }
 
@@ -2947,7 +2892,7 @@ Model Rock06
 	Path "Models"
 	Model 0 "rock_small_b.md3"
 	Skin 0 "rock_big2.jpg"
-	
+
 	Scale 0.125 0.125 0.125
 	ZOffset 48
 	FrameIndex POSS A 0 0
@@ -2958,7 +2903,7 @@ Model Rock06a
 	Path "Models"
 	Model 0 "rock_small_b.md3"
 	Skin 0 "rock_moss1.jpg"
-	
+
 	Scale 0.125 0.125 0.125
 	ZOffset 48
 	FrameIndex POSS A 0 0
@@ -2970,7 +2915,7 @@ Model XenIsland1
 	Path "Models"
 	Model 0 "island.md3"
 	Skin 0 "island.png"
-	
+
 	ZOffset -84
 	Scale 500.0 500.0 500.0
 	FrameIndex POSS A 0 0
@@ -2982,7 +2927,7 @@ Model XenIsland2
 	Path "Models"
 	Model 0 "island.md3"
 	Skin 0 "xenrock2.png"
-	
+
 	ZOffset -84
 	Scale 500.0 500.0 500.0
 	FrameIndex POSS A 0 0
@@ -2994,7 +2939,7 @@ Model XenIsland3
 	Path "Models"
 	Model 0 "island.md3"
 	Skin 0 "rock_big.jpg"
-	
+
 	ZOffset -300
 	Scale 1800.0 1800.0 1800.0
 	FrameIndex POSS A 0 0
@@ -3006,7 +2951,7 @@ Model XenIsland4
 	Path "Models"
 	Model 0 "island.md3"
 	Skin 0 "rock_moss1.jpg"
-	
+
 	ZOffset -300
 	Scale 1800.0 1800.0 1800.0
 	FrameIndex POSS A 0 0
@@ -3018,7 +2963,7 @@ Model XenIsland5
 	Path "Models"
 	Model 0 "island.md3"
 	Skin 0 "rock_big2.jpg"
-	
+
 	ZOffset -300
 	Scale 1800.0 1800.0 1800.0
 	FrameIndex POSS A 0 0
@@ -3030,7 +2975,7 @@ Model XenIsland6
 	Path "Models"
 	Model 0 "island.md3"
 	Skin 0 "rock_moss2.jpg"
-	
+
 	ZOffset -300
 	Scale 1800.0 1800.0 1800.0
 	FrameIndex POSS A 0 0
@@ -3041,49 +2986,49 @@ Model XenIsland6
 //********
 
 Model TechPillar1a
-{ 
-	Path "Models" 
-	Model 0 "q4tech01.md3" 
+{
+	Path "Models"
+	Model 0 "q4tech01.md3"
 	Skin 0 "q4tech1a.jpg"
 	Scale 1.0 1.0 1.0
-	
+
 	FrameIndex POSS A 0 0
 }
 
 Model TechPillar1b
-{ 
-	Path "Models" 
-	Model 0 "q4tech01.md3" 
+{
+	Path "Models"
+	Model 0 "q4tech01.md3"
 	Skin 0 "q4tech1b.jpg"
 	Scale 1.0 1.0 1.0
-	
+
 	FrameIndex POSS A 0 0
 }
 
 Model TechPillar1c
-{ 
-	Path "Models" 
-	Model 0 "q4tech01.md3" 
+{
+	Path "Models"
+	Model 0 "q4tech01.md3"
 	Skin 0 "q4tech1c.jpg"
 	Scale 1.0 1.0 1.0
-	
+
 	FrameIndex POSS A 0 0
 }
 
 Model TechPillar2
-{ 
-	Path "Models" 
-	Model 0 "q4tech02.md3" 
+{
+	Path "Models"
+	Model 0 "q4tech02.md3"
 	Skin 0 "q4tech02.jpg"
 	Scale 1.0 1.0 1.0
-	
+
 	FrameIndex POSS A 0 0
 }
 
 Model TechClamp
-{ 
-	Path "Models" 
-	Model 0 "q4tech03.md3" 
+{
+	Path "Models"
+	Model 0 "q4tech03.md3"
 	Skin 0 "q4tech03.jpg"
 
 	Scale 1.0 1.0 1.0
@@ -3092,49 +3037,49 @@ Model TechClamp
 }
 
 Model TechPillar1aa	//Small version
-{ 
-	Path "Models" 
-	Model 0 "q4tech01.md3" 
+{
+	Path "Models"
+	Model 0 "q4tech01.md3"
 	Skin 0 "q4tech1a.jpg"
 	Scale 0.75 0.75 0.75
-	
+
 	FrameIndex POSS A 0 0
 }
 
 Model TechPillar1bb	//Small version
-{ 
-	Path "Models" 
-	Model 0 "q4tech01.md3" 
+{
+	Path "Models"
+	Model 0 "q4tech01.md3"
 	Skin 0 "q4tech1b.jpg"
 	Scale 0.75 0.75 0.75
-	
+
 	FrameIndex POSS A 0 0
 }
 
 Model TechPillar1cc	//Small version
-{ 
-	Path "Models" 
-	Model 0 "q4tech01.md3" 
+{
+	Path "Models"
+	Model 0 "q4tech01.md3"
 	Skin 0 "q4tech1c.jpg"
 	Scale 0.75 0.75 0.75
-	
+
 	FrameIndex POSS A 0 0
 }
 
 Model TechPillar2a	//Small version
-{ 
-	Path "Models" 
-	Model 0 "q4tech02.md3" 
+{
+	Path "Models"
+	Model 0 "q4tech02.md3"
 	Skin 0 "q4tech02.jpg"
 	Scale 0.5 0.5 0.5
-	
+
 	FrameIndex POSS A 0 0
 }
 
 Model TechClampa	//Small version
-{ 
-	Path "Models" 
-	Model 0 "q4tech03.md3" 
+{
+	Path "Models"
+	Model 0 "q4tech03.md3"
 	Skin 0 "q4tech03.jpg"
 
 	Scale 0.5 0.5 0.5
@@ -3143,12 +3088,12 @@ Model TechClampa	//Small version
 }
 
 Model OspreyDead1
-{ 
-	Path "Models" 
-	Model 0 "osprey_dead.md3" 
+{
+	Path "Models"
+	Model 0 "osprey_dead.md3"
 	Skin 0 "osprey_dead_gov.png"
 	Scale 1.6 1.6 1.6
-	
+
 	FrameIndex POSS A 0 0
 }
 
@@ -3157,39 +3102,39 @@ Model OspreyDead1
 //********
 
 Model XBow
-{ 
-	Path "Models" 
-	Model 0 "xbow1.md3" 
+{
+	Path "Models"
+	Model 0 "xbow1.md3"
 	Skin 0 "xbowskin.png"
 	Scale 1.0 1.0 1.0
-	
+
 	FrameIndex POSS A 0 0
 
-	Path "Models" 
-	Model 1 "xbow2.md3" 
+	Path "Models"
+	Model 1 "xbow2.md3"
 	Skin 1 "xbowskin.png"
 	Scale 0.75 0.75 0.75
-	
+
 	FrameIndex POSS A 1 0
 }
 
 Model XBowBolts
-{ 
-	Path "Models" 
-	Model 0 "xbow3.md3" 
+{
+	Path "Models"
+	Model 0 "xbow3.md3"
 	Skin 0 "xbowskin.png"
 	Scale 0.75 0.75 0.75
-	
+
 	FrameIndex POSS A 0 0
 }
 
 Model XBowBoltSingle
-{ 
-	Path "Models" 
-	Model 0 "xbow4.md3" 
+{
+	Path "Models"
+	Model 0 "xbow4.md3"
 	Skin 0 "xbowskin.png"
 	Scale 0.75 0.75 0.75
-	
+
 	FrameIndex POSS A 0 0
 }
 
@@ -3207,42 +3152,42 @@ Model Missile
 }
 
 Model AECellBox
-{ 
-	Path "Models" 
-	Model 0 "isotopebox.md3" 
+{
+	Path "Models"
+	Model 0 "isotopebox.md3"
 	Skin 0 "isotopebox.png"
 	Scale 0.75 0.75 0.75
-	
+
 	FrameIndex POSS A 0 0
 }
 
 Model HornetGunPickup
-{ 
-	Path "Models" 
-	Model 0 "hornetgun.md3" 
+{
+	Path "Models"
+	Model 0 "hornetgun.md3"
 	Skin 0 "hornetgun.png"
 	Scale 4.0 4.0 4.0
-	
+
 	FrameIndex POSS A 0 0
 }
 
 Model Gluongun
-{ 
-	Path "Models" 
-	Model 0 "gluongun.md3" 
+{
+	Path "Models"
+	Model 0 "gluongun.md3"
 	Skin 0 "gluongun.png"
 	Scale 0.75 0.75 0.75
-	
+
 	FrameIndex POSS A 0 0
 }
 
 Model Explosive
-{ 
-	Path "Models" 
-	Model 0 "explosive.md3" 
+{
+	Path "Models"
+	Model 0 "explosive.md3"
 	Skin 0 "explosive.jpg"
 	Scale 0.75 0.75 0.75
-	
+
 	FrameIndex POSS A 0 0
 }
 
@@ -3251,12 +3196,12 @@ Model Explosive
 //********
 
 Model MarineBody
-{ 
-	Path "Models" 
+{
+	Path "Models"
 	Model 0 "hgrunt.md3"
 	Skin 0 "hgrunt.png"
 	Scale 1.0 1.0 1.0
-	
+
 	FrameIndex POSS A 0 0
 }
 
@@ -3265,13 +3210,13 @@ Model MarineBody
 //********
 
 Model HoverPad
-{ 
-	Path "Models" 
-	Model 0 "hover.md3" 
+{
+	Path "Models"
+	Model 0 "hover.md3"
 	ZOffset -24
 	Skin 0 "hover.jpg"
 	Scale 1.8 1.8 1.8
-	
+
 	FrameIndex POSS A 0 0
 }
 
@@ -3280,32 +3225,32 @@ Model HoverPad
 //********
 
 Model SUV4
-{ 
-	Path "Models" 
-	Model 0 "suv01.md3" 
+{
+	Path "Models"
+	Model 0 "suv01.md3"
 	Skin 0 "suv01.png"
 	Scale 0.95 0.95 0.95
-	
+
 	FrameIndex POSS A 0 0
 }
 
 Model SUV4
-{ 
-	Path "Models" 
-	Model 0 "suv02.md3" 
+{
+	Path "Models"
+	Model 0 "suv02.md3"
 	Skin 0 "suv02Ex.png"
 	Scale 0.95 0.95 0.95
-	
+
 	FrameIndex POSS B 0 0
 }
 
 Model SUVGlassEx
-{ 
-	Path "Models" 
-	Model 0 "SUVGlassEx.md3" 
+{
+	Path "Models"
+	Model 0 "SUVGlassEx.md3"
 	Skin 0 "suv01glass.png"
 	Scale 0.95 0.95 0.95
-	
+
 	FrameIndex POSS A 0 0
 	FrameIndex POSS B 0 1
 	FrameIndex POSS C 0 2
@@ -3326,12 +3271,12 @@ Model SUVGlassEx
 //********
 
 Model MedKit1
-{ 
-	Path "Models" 
-	Model 0 "medkit.md3" 
+{
+	Path "Models"
+	Model 0 "medkit.md3"
 	Skin 0 "medkit1.png"
 	Scale 0.8 0.8 0.8
-	
+
 	FrameIndex POSS A 0 0
 }
 
@@ -3340,13 +3285,13 @@ Model MedKit1
 //********
 
 Model OspreyKillable
-{ 
+{
 	NOINTERPOLATION
-	Path "Models" 
-	Model 0 "osprey3.md3" 
+	Path "Models"
+	Model 0 "osprey3.md3"
 	Skin 0 "osprey.png"
 	Scale 2.0 2.0 2.0
-	
+
 	FrameIndex POSS A 0 0
 	FrameIndex POSS B 0 1
 	FrameIndex POSS C 0 2
@@ -3358,13 +3303,13 @@ Model OspreyKillable
 }
 
 Model OspreyKillable
-{ 
+{
 	NOINTERPOLATION
-	Path "Models" 
-	Model 0 "osprey4.md3" 
+	Path "Models"
+	Model 0 "osprey4.md3"
 	Skin 0 "osprey.png"
 	Scale 2.0 2.0 2.0
-	
+
 	FrameIndex SPOS A 0 0
 	FrameIndex SPOS B 0 1
 	FrameIndex SPOS C 0 2
@@ -3392,12 +3337,12 @@ Model OspreyKillable
 }
 
 Model OspreyKillable
-{ 
-	Path "Models" 
-	Model 0 "osprey5.md3" 
+{
+	Path "Models"
+	Model 0 "osprey5.md3"
 	Skin 0 "osprey_dead_gov.png"
 	Scale 1.6 1.6 1.6
-	
+
 	FrameIndex POSS I 0 0
 	FrameIndex POSS J 0 1
 	FrameIndex POSS K 0 2
@@ -3412,9 +3357,9 @@ Model PConsole
 	Path "Models"
 	Model 0 "console.md3"
 	Skin 0 "console.png"
-	
+
 	Scale 2.2 2.2 2.2
-	
+
 	FrameIndex POSS A 0 0
 }
 
@@ -3423,9 +3368,9 @@ Model PConsole1
 	Path "Models"
 	Model 0 "console.md3"
 	Skin 0 "console1.png"
-	
+
 	Scale 2.2 2.2 2.2
-	
+
 	FrameIndex POSS A 0 0
 }
 
@@ -3434,9 +3379,9 @@ Model PConsole2
 	Path "Models"
 	Model 0 "console.md3"
 	Skin 0 "console2.png"
-	
+
 	Scale 2.2 2.2 2.2
-	
+
 	FrameIndex POSS A 0 0
 }
 
@@ -3445,9 +3390,9 @@ Model PConsole3
 	Path "Models"
 	Model 0 "console.md3"
 	Skin 0 "console3.png"
-	
+
 	Scale 2.2 2.2 2.2
-	
+
 	FrameIndex POSS A 0 0
 }
 
@@ -3456,9 +3401,9 @@ Model PConsole4
 	Path "Models"
 	Model 0 "console.md3"
 	Skin 0 "console4.png"
-	
+
 	Scale 2.2 2.2 2.2
-	
+
 	FrameIndex POSS A 0 0
 }
 
@@ -3467,8 +3412,8 @@ Model PConsole5
 	Path "Models"
 	Model 0 "consolebroke.md3"
 	Skin 0 "consolebroke.png"
-	
+
 	Scale 2.2 2.2 2.2
-	
+
 	FrameIndex POSS A 0 0
 }

@@ -661,6 +661,7 @@ function int distance(int tid1,int tid2)
 		return FixedDiv(sin(a),z);
 	return FixedDiv(cos(a),l);
 }
+
 script "MedStation"(int uses,int tex)
 {
 	if(GetActorProperty(0,APROP_Health)>=100) // Check health first.
