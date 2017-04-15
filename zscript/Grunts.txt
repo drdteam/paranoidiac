@@ -284,7 +284,7 @@ class HLGrunt2 : HLGrunt1
 		Goto Super::Melee+1;
 	Pain:
 		HK2P A 8 A_Pain;
-		Goto Super::Pain+1
+		Goto Super::Pain+1;
 	Death:
 		HK2B A 3 A_Scream;
 		HK2B B 3 A_Fall;
@@ -326,7 +326,7 @@ class HLGrunt3 : HLGrunt1
 		Goto Super::Melee+1;
 	Pain:
 		HK3P A 8 A_Pain;
-		Goto Super::Pain+1
+		Goto Super::Pain+1;
 	Death:
 		HK3B A 2 A_Scream;
 		HK3B B 2 A_Fall;
@@ -394,7 +394,7 @@ class HLGrunt4 : HLGrunt1
 		Goto Super::Melee+1;
 	Pain:
 		HK4P A 8 A_Pain;
-		Goto Super::Pain+1
+		Goto Super::Pain+1;
 	Death:
 		HK1C A 2 A_Scream;
 		HK1C B 2 A_Fall;
@@ -432,7 +432,7 @@ class HLGrunt5 : HLGrunt4
 		Goto HLGrunt1::Melee+1;
 	Pain:
 		HK5P A 8 A_Pain;
-		Goto HLGrunt1::Pain+1
+		Goto HLGrunt1::Pain+1;
 	Death:
 		HK2C A 3 A_Scream;
 		HK2C B 3 A_Fall;
@@ -471,7 +471,7 @@ class HLGrunt6 : HLGrunt4
 		Goto HLGrunt1::Melee+1;
 	Pain:
 		HK6P A 8 A_Pain;
-		Goto HLGrunt1::Pain+1
+		Goto HLGrunt1::Pain+1;
 	Death:
 		HK3C A 2 A_Scream;
 		HK3C B 2 A_Fall;

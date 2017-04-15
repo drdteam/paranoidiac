@@ -56,7 +56,7 @@ class HLGonarch : Actor
 			A_Chase();
 		}
 		HLNW BB 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLNW C
+		HLNW C 1
 		{
 			A_SpawnItemEx("ShieldSpawner3Tics");
 			A_Chase();
