@@ -1,24 +1,7 @@
-Pistol ""
-BFG9000 ""
-Chaingun ""
-Chainsaw ""
-Shotgun ""
-SuperShotgun ""
-RocketLauncher ""
-PlasmaRifle ""
-
-
 Pshotgun1 ""
 ARifle1 ""
 
 Health i_health
-
-
-Clip ""
-Shell ""
-RocketAmmo ""  //**DO NOT** change this one once the AR has its own grenade ammo
-Cell ""
-
 
 Crowbar i_cbar1
 Beretta i_pist1

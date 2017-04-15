@@ -174,7 +174,31 @@ class HLGrunt1 : Actor
 		}
 		"####" A 0 A_Jump(256,"See");
 	Flee:
-		"####" AABBCCDDEEFF 2 A_Chase(null,null);
+		"####" A 0 A_SetSpeed(3.5);
+		"####" A 1 A_Chase(null,null);
+		"####" A 1 A_Chase(null,null,HLSMOOTHCHASE);
+		"####" A 1 A_Chase(null,null);
+		"####" A 1 A_Chase(null,null,HLSMOOTHCHASE);
+		"####" B 1 A_Chase(null,null);
+		"####" B 1 A_Chase(null,null,HLSMOOTHCHASE);
+		"####" B 1 A_Chase(null,null);
+		"####" B 1 A_Chase(null,null,HLSMOOTHCHASE);
+		"####" C 1 A_Chase(null,null);
+		"####" C 1 A_Chase(null,null,HLSMOOTHCHASE);
+		"####" C 1 A_Chase(null,null);
+		"####" C 1 A_Chase(null,null,HLSMOOTHCHASE);
+		"####" D 1 A_Chase(null,null);
+		"####" D 1 A_Chase(null,null,HLSMOOTHCHASE);
+		"####" D 1 A_Chase(null,null);
+		"####" D 1 A_Chase(null,null,HLSMOOTHCHASE);
+		"####" E 1 A_Chase(null,null);
+		"####" E 1 A_Chase(null,null,HLSMOOTHCHASE);
+		"####" E 1 A_Chase(null,null);
+		"####" E 1 A_Chase(null,null,HLSMOOTHCHASE);
+		"####" F 1 A_Chase(null,null);
+		"####" F 1 A_Chase(null,null,HLSMOOTHCHASE);
+		"####" F 1 A_Chase(null,null);
+		"####" F 1 A_Chase(null,null,HLSMOOTHCHASE);
 		"####" A 0 A_Jump(256,"See");
 	Missile:
 		TNT1 A 0 A_Jump(200,"Assault");
@@ -188,7 +212,7 @@ class HLGrunt1 : Actor
 		"####" A 0
 		{
 			A_PlaySound("halflife/weapons/machinegunshot",5);
-			for(int i=0;0<2;i++)
+			for(int i=0;i<2;i++)
 				A_SpawnItemEx("GunSmallSmoke",15,3,49);
 		}
 		"####" B 2 Light("ImShootingAGun") A_CustomBulletAttack(7,7,1,4,"NewPuff2");
