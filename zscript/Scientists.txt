@@ -22,11 +22,12 @@ class HLScientistImmovilSpawner : RandomSpawner
 
 class HLScientist : Actor
 {
-	int user_boredom,stay,panic;
-	/*override void Activate(Actor activator)
-		{user_boredom=0;}
-	override void Deactivate(Actor activator)
-		{user_boredom=1;}*/
+	int boredom,stay,panic;
+	override bool Used(Actor user)
+	{
+		boredom=0;
+		return false;
+	}
 	Default
 	{
 		Monster;
@@ -37,10 +38,8 @@ class HLScientist : Actor
 		Scale .36;
 		+FRIENDLY
 		//+NODAMAGE
-		+USESPECIAL
 		-CANUSEWALLS
 		-COUNTKILL
-		Activation THINGSPEC_NoDeathSpecial;
 		SeeSound "halflife/monsters/scientist/sight";
 		PainSound "halflife/monsters/scientist/pain";
 		DeathSound "halflife/monsters/scientist/death";
@@ -61,7 +60,7 @@ class HLScientist1Path : HLScientist
 	{
 	Spawn:
 		HLRI A 0;
-		"####" A 0 {user_boredom=1;}
+		"####" A 0 {boredom=1;}
 		"####" A 0 A_Jump(256,1,2,3);
 		"####" ABC 0 A_Jump(256,"Pondering");
 	Pondering:
@@ -72,13 +71,13 @@ class HLScientist1Path : HLScientist
 				stay=0;
 				if(random(0,1))
 				{
-					user_boredom=0;
+					boredom=0;
 					return ResolveState("See");
 				}
 				return State(null);
 			}
 			stay++;
-			if(!user_boredom)
+			if(!boredom)
 			{
 				A_PlaySound("scientist/randomphrase");
 				return ResolveState("See");
@@ -92,7 +91,7 @@ class HLScientist1Path : HLScientist
 	SeeLoop:
 		"####" AAAAAABBBBBBCCCCCCDDDDDDEEEEEEFFFFFF 1
 		{
-			if(user_boredom)
+			if(boredom)
 				return ResolveState("Spawn");
 			A_Chase();
 			return state(null);
@@ -278,7 +277,6 @@ class HLScientist1Panic : HLScientist
 	Default
 	{
 		Health 25;
-		-USESPECIAL
 		+FRIGHTENED
 	}
 	States

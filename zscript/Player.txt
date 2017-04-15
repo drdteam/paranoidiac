@@ -25,8 +25,8 @@ class RolfBellmer : PlayerPawn
 		HP2I A 1 A_JumpIf(vel.x!=0||vel.y!=0,"See");
 		Goto Spawn;
 	See:
-		HPLW A 0 A_JumpIf(CountInv("ScientistDisguise"),"See2");
-		HPLW ABCDEF 4;
+		HPLW A 4 A_JumpIf(CountInv("ScientistDisguise"),"See2");
+		HPLW BCDEF 4;
 		Loop;
 	See2:
 		HP2W ABCDEF 4 A_JumpIf(vel.x==0&&vel.y==0,"Spawn");
