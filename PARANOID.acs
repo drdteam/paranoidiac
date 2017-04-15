@@ -1,6 +1,448 @@
 #library "PARANOID"
 #include "zcommon.acs"
 
+//Recoil
+script 869 (int climb, int twist)
+{
+	int playerpitch = GetActorPitch(0) -(climb); // ((random(1,3)+5)*climb);
+	if(playerpitch > -5780)
+		SetActorPitch (0, playerpitch);
+	int playerangle = GetActorAngle(0) - ((random(1,2)+4)*twist);
+	SetActorAngle (0, playerangle);
+}
+
+script "AltHudAmmo" ENTER
+{
+	str heldtype="";
+	if(CheckWeapon("Beretta"))
+		heldtype="PistolHeldAmmo";
+	else if(CheckWeapon("Python"))
+		heldtype="MagnumHeldAmmo";
+	else if(CheckWeapon("Pshotgun"))
+		heldtype="ShotgunHeldAmmo";
+	else if(CheckWeapon("ARifle"))
+		heldtype="M16HeldAmmo";
+	if(StrCmp(heldtype,"")&&GetCVar("screenblocks")==11&&GetCVar("hud_althud"))
+	{
+		setfont("CONFONT");
+		HudMessage(d:CheckInventory(heldtype);HUDMSG_PLAIN, 3, CR_RED, 0.9, 1.0, 0.35);
+	}
+	delay(1);
+	restart;
+}
+
+script "M16Ammo" ENTER
+{
+	if(CheckInventory("M16ClipGren")!=(CheckInventory("M16HeldAmmo")+CheckInventory("M16Gren")))
+	{
+		TakeInventory("M16ClipGren",70);
+		GiveInventory("M16ClipGren",(CheckInventory("M16HeldAmmo")+CheckInventory("M16Gren")));
+	}
+	Delay(1);
+	Restart;
+}
+
+//Sets up behavior for Barney to follow player
+script "BarneyFollow"(int tid)
+{
+	int follow;
+	while(ThingCount(T_NONE,tid))
+	{
+		if(!follow && distance(tid,tid+1) > 96.0)
+		{
+			follow=TRUE;
+			SetActorState(tid,"See",YES);
+			Thing_SetGoal(tid,tid+1,0,YES);
+		}
+		else if(follow && distance(tid,tid+1) <= 96.0)
+		{
+			follow=FALSE;
+			SetActorState(tid,"Stand",YES);
+			Thing_SetGoal(tid,tid+1,0,NO);
+		}
+		if(!follow)
+			SetActorAngle(36,GetTargetAngle(tid,tid+1));
+		delay(3);
+	}
+}
+
+function int GetTargetAngle(int tid1,int tid2)
+{
+	return VectorAngle(GetActorX(tid2) - GetActorX(tid1),GetActorY(tid2) - GetActorY(tid1));
+}
+function int distance(int tid1,int tid2)
+{
+	int x,y,z,a,l;
+	x = GetActorX(tid1) - GetActorX(tid2);
+	y = GetActorY(tid1) - GetActorY(tid2);
+	z = GetActorZ(tid1) - GetActorZ(tid2);
+	a = VectorAngle(x,y);
+	if((a + 0.125) % 0.5 > 0.25)
+		l = FixedDiv(sin(a),y);
+	else
+		l = FixedDiv(cos(a),x);
+	a = VectorAngle(l,z);
+	if((a + 0.125) % 0.5 > 0.25)
+		return FixedDiv(sin(a),z);
+	return FixedDiv(cos(a),l);
+}
+
+script "MedStation"(int uses,int tex)
+{
+	if(GetActorProperty(0,APROP_Health)>=100) // Check health first.
+	{
+		SetResultValue(0);
+		terminate;
+	}
+	if(uses>4)
+	{
+		ActivatorSound("MEDCHARGEUSED",127);
+		SetResultValue(0);
+		terminate;
+	}
+	HealThing(10);
+	ActivatorSound("MEDCHARGE",127);
+	if(uses==4)
+	{
+		setlinetexture(tex,SIDE_FRONT,TEXTURE_TOP,"XMEDIC02");
+		setlinetexture(tex,SIDE_FRONT,TEXTURE_BOTTOM,"XMEDIC02");
+	}
+	SetResultValue(1);
+}
+script "ArmorStation"(int uses,int tex)
+{
+	if(CheckInventory("Armor")>=100)
+	{
+		SetResultValue(0);
+		terminate;
+	}
+	if(uses>4)
+	{
+		ActivatorSound("HEVCHARGEUSED",127);
+		SetResultValue(0);
+		terminate;
+	}
+	GiveInventory("HEVCharge",10);
+	ActivatorSound("HEVCHARGE",127);
+	if(uses==4)
+	{
+		setlinetexture(tex,SIDE_FRONT,TEXTURE_TOP,"XARMOR02");
+		setlinetexture(tex,SIDE_FRONT,TEXTURE_BOTTOM,"XARMOR02");
+	}
+	SetResultValue(1);
+}
+
+//Hint messages that are run when player uses the inventory item "MessageItem**"
+function void hintmessage(str message,str icon,int holdtime,int holdtime2)
+{
+	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
+	PlaySound(0,message,7,1.0,0,ATTN_STATIC);
+	SetHUDSize(640,480,1);
+	SetFont(icon);
+	HUDMessage(s:"A";HUDMSG_PLAIN,1,CR_UNTRANSLATED,0.1,30.1,holdtime);
+	SetFont("smallfont");
+	if(holdtime2)
+		HUDMessage(l:message;HUDMSG_TYPEON|HUDMSG_LOG,2,CR_GOLD,80.1,30.1,holdtime2,0.062,0.05);
+	else
+		HUDMessage(l:message;HUDMSG_PLAIN|HUDMSG_LOG,2,CR_GOLD,80.1,30.1,holdtime);
+}
+
+//Map02: Message 1
+Script 501(void)
+{
+	hintmessage("MAP2VOX1","HINTMAN",7.0,0);
+	delay(8*35);
+	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
+}
+
+//Map02: Message 2
+//Map04: Message 4
+Script 502(void)
+{
+	hintmessage("MAP2VOX2","HINTMAN",5.0,0);
+	delay(6*35);
+	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
+}
+
+//Map02: Message 3
+Script 503(void)
+{
+	hintmessage("MAP2VOX3","HINTMAN",6.0,0);
+	delay(7*35);
+	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
+}
+
+//Map02: Message 4
+Script 504(void)
+{
+	hintmessage("MAP2VOX4","HINTMAN",9.0,0);
+	delay(9*35);
+	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
+}
+
+//Map03: Message 1
+Script 505(void)
+{
+	hintmessage("MAP3VOX1","HINTMAN",18.0,0);
+	delay(16*35);
+	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
+}
+
+//Map03: Message 2
+Script 506(void)
+{
+	hintmessage("MAP3VOX2","HINTMAN",18.0,0);
+	delay(14*35);
+	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
+}
+
+//Map03: Message 3
+Script 507(void)
+{
+	hintmessage("MAP3VOX3","HINTMAN",11.0,0);
+	delay(10*35);
+	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
+}
+
+//Map04: Message 1
+Script 508(void)
+{
+	hintmessage("MAP4VOX1","HINTMAN",12.0,0);
+	delay(10*35);
+	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
+}
+
+//Map04: Message 2
+Script 509(void)
+{
+	hintmessage("MAP4VOX2","HINTMAN",15.0,0);
+	delay(15*35);
+	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
+}
+
+//Map04: Message 3
+Script 510(void)
+{
+	hintmessage("MAP4VOX3","HINTMAN",13.0,0);
+	delay(10*35);
+	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
+}
+
+//Map08: Message 1
+Script 511(void)
+{
+	hintmessage("MAP8VOX1","HINTMAN",7.0,0);
+	delay(8*35);
+	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
+}
+
+//Map05: Message 1
+Script 512(void)
+{
+	hintmessage("MAP5VOX1","HINTMAN",5.0,0);
+	delay(6*35);
+	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
+}
+
+//Map05: Message 2
+Script 513(void)
+{
+	hintmessage("MAP5VOX2","HINTMAN",15.0,0);
+	delay(13*35);
+	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
+}
+
+//Map05: Message 3
+Script 514(void)
+{
+	hintmessage("MAP5VOX3","HINTMAN",10.0,0);
+	delay(8*35);
+	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
+}
+
+//Map06: Message 1
+Script 515(void)
+{
+	hintmessage("MAP6VOX1","HINTMAN",4.0,0);
+	delay(5*35);
+	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
+}
+
+//Map06: Message 2
+Script 516(void)
+{
+	hintmessage("MAP6VOX2","HINTMAN",8.0,0);
+	delay(7*35);
+	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
+}
+
+//Map07: Message 1
+Script 517(void)
+{
+	hintmessage("MAP7VOX1","HINTMAN",5.0,0);
+	delay(5*35);
+	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
+}
+
+//Map07: Message 2
+Script 518(void)
+{
+	hintmessage("MAP7VOX2","HINTMAN",8.0,0);
+	delay(8*35);
+	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
+}
+
+//Script 519 & MessageItem19 already assigned to Map04
+
+//Map10: Message 1 (Col. Stinson)
+Script 520 (void)
+{
+	hintmessage("MAP10VX1","STINSON",42.0,4.6);
+	delay(42*35);
+	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
+}
+
+//Map11: Message 1 (Col. Stinson)
+Script 521 (void)
+{
+	hintmessage("MAP11VX1","STINSON",18.0,2.1);
+	delay(18*35);
+	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
+}
+
+//Map12: Message 1 (Col. Stinson)
+Script 522 (void)
+{
+	hintmessage("MAP12VX1","STINSON",32.0,2.65);
+	delay(32*35);
+	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
+}
+
+//Map12: Message 2 (UnderNet)
+Script 523 (void)
+{
+	hintmessage("MAP12VX2","UNDERNET",39.0,3.25);
+	delay(39*35);
+	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
+}
+
+//Map13: Message 1 (Col. Stinson)
+Script 524 (void)
+{
+	hintmessage("MAP13VX1","STINSON",29.0,2.01);
+	delay(29*35);
+	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
+}
+
+//Map13: Message 2 (UnderNet)
+Script 525 (void)
+{
+	hintmessage("MAP13VX2","UNDERNET",38.0,3.21);
+	delay(38*35);
+	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
+}
+
+//Map14: Message 1 (Col. Stinson)
+Script 526 (void)
+{
+	hintmessage("MAP14VX1","STINSON",13.0,2.94);
+	delay(13*35);
+	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
+}
+
+//Map14: Message 2 (Col. Stinson)
+Script 527 (void)
+{
+	hintmessage("MAP14VX2","STINSON",27.0,1.3);
+	delay(27*35);
+	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
+}
+
+//Map15: Message 1 (Col. Stinson)
+Script 528 (void)
+{
+	hintmessage("MAP15VX1","STINSON",18.0,1.2);
+	delay(18*35);
+	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
+}
+
+//Map16: Message 1 (Col. Stinson)
+Script 529 (void)
+{
+	hintmessage("MAP16VX1","STINSON",21.0,1.0);
+	delay(21*35);
+	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
+}
+
+//Map16: Message 2 (UnderNet)
+Script 530 (void)
+{
+	hintmessage("MAP16VX2","UNDERNET",29.0,2.3);
+	delay(29*35);
+	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
+}
+
+//Map16: Message 3 (Col. Stinson)
+Script 531 (void)
+{
+	hintmessage("MAP16VX3","STINSON",24.0,2.6);
+	delay(24*35);
+	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
+}
+
+//Map17: Message 1 (Col. Stinson)
+Script 532 (void)
+{
+	hintmessage("MAP17VX1","STINSON",16.0,1.7);
+	delay(16*35);
+	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
+}
+
+//////////////////////////////////////
+//Script 872: Osprey body/rotors	//
+//////////////////////////////////////
+
+int PartOffset[2][3]={{340.0,0,0.25},{342.0,0,-0.25}};
+
+script 872 (void)
+{
+	Thing_ChangeTID(0,1000);
+	for(int i=0;i<2;i++)
+	{
+		int a = (GetActorAngle(0) + PartOffset[i][2] + 1.0) % 1.0;
+		Spawn("OspreyBlade",
+		GetActorX(0) + FixedMul(cos(a), PartOffset[i][0]),
+		GetActorY(0) + FixedMul(sin(a), PartOffset[i][0]),
+		GetActorZ(0) + PartOffset[i][1],
+		1000 + i + 1,GetActorAngle(0) >> 8);
+	}
+}
+
+//////////////////////////////
+// Script 444: Waterfall	//
+//////////////////////////////
+
+str WFallParticles[10] =
+{
+	"WFallParticle1A","WFallParticle1B",
+	"WFallParticle2A","WFallParticle2B",
+	"WFallParticle3A","WFallParticle3B",
+	"WFallParticle4A","WFallParticle4B",
+	"WFallParticle5A","WFallParticle5B"
+};
+
+script 444 (int size)
+{
+	for(int r=0;r<size<<16;r+=random(4.0,8.0))
+	{
+		Spawn(WFallParticles[random(0,9)],
+		GetActorX(0)+random(-8.0,8.0)+FixedMul(cos(GetActorAngle(0)),r),
+		GetActorY(0)+random(-8.0,8.0)+FixedMul(sin(GetActorAngle(0)),r),
+		GetActorZ(0)+random(-8.0,8.0),
+		0,GetActorAngle(0)>>8);
+	}
+}
+
 //////////////////////////////
 // Script 729-730: Bubbles	//
 //////////////////////////////
@@ -57,7 +499,29 @@ script 730 (int area, int intensity, int shape)
 				GetActorZ(0),0,GetActorAngle(0) >> 8);
 		}
 		break;
-  }
+	}
+}
+
+//STEAM
+script 770(int size,int pitch,int plane)
+{
+	int momentum;
+	int angle=GetActorAngle(0)+random(-1024,1024);
+	pitch+=random(-4,4);
+	pitch<<=8;
+	switch(plane)
+	{
+	case 0:
+		momentum=FixedMul(cos(GetActorAngle(0)),FixedMul(cos(pitch),random(30.0,35.0)));
+		break;
+	case 1:
+		momentum=FixedMul(sin(GetActorAngle(0)),FixedMul(cos(Pitch),random(30.0,35.0)));
+		break;
+	case 2:
+		momentum=FixedMul(-sin(pitch),random(30.0,35.0));
+		break;
+	}
+	SetResultValue(momentum*(size+1)/5>>16);
 }
 
 //////////////////////////
@@ -202,507 +666,4 @@ script 777 (int area, int shape, int glow)
 		}
 		break;
 	}
-}
-
-function void hintmessage(str sound,str message,int holdtime)
-{
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-	PlaySound(0,sound,7,1.0,0,ATTN_STATIC);
-	SetHUDSize(640,480,1);
-	SetFont("HINTMAN");
-	HUDMessage(s:"A";HUDMSG_PLAIN,1,CR_UNTRANSLATED,0.1,30.1,holdtime);
-	SetFont("smallfont");
-	HUDMessage(s:"\cCMessage From Controller:\n",s:message;HUDMSG_PLAIN|HUDMSG_LOG,2,CR_GOLD,80.1,30.1,holdtime);
-}
-//Hint messages that are run when player uses the inventory item "MessageItem**"
-
-//Map02: Message 1
-Script 501(void)
-{
-	hintmessage("MAP2VOX1","You'll need to reach Dr. Zimmerman, the Sector Administrator, \nto get the System Override code.",
-		7.0);
-	delay(8*35);
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-}
-
-//Map02: Message 2
-//Map04: Message 4
-Script 502(void)
-{
-	hintmessage("MAP2VOX2","Shoot the undamaged fuse to disable the laser barrier.",
-		5.0);
-	delay(6*35);
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-}
-
-//Map02: Message 3
-Script 503(void)
-{
-	hintmessage("MAP2VOX3","Look for a gasoline can in the Fuel Room, \nwhich is near the Flow Control Room.",
-		6.0);
-	delay(7*35);
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-}
-
-//Map02: Message 4
-Script 504(void)
-{
-	hintmessage("MAP2VOX4","Raise the crane and jump on it to ride it to the top. \n\nIf you miss, use the switch to lower the crane and try again.",
-		9.0);
-	delay(9*35);
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-}
-
-//Map03: Message 1
-Script 505(void)
-{
-	hintmessage("MAP3VOX1","The security key is in Security Room B-102, \nwhich overlooks Storage Bay A2. \n\nUse the lift in Storage Bay A3 to reach the bridge \nover Storage Bay A2, which will take you to B-102.",
-		18.0);
-	delay(16*35);
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-}
-
-//Map03: Message 2
-Script 506(void)
-{
-	hintmessage("MAP3VOX2","Find Hazardous Materials Bay B and exit to the East of the building. \n\nThe bay doors are operated from the control room overlooking HazMat Bay B. \n\nTo reach the control room, take the stairs from the Cafeteria.",
-		18.0);
-	delay(14*35);
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-}
-
-//Map03: Message 3
-Script 507(void)
-{
-	hintmessage("MAP3VOX3","Go all the way to the rear of Supply Room D-301, \nand find a duct that will take you back to Sector C.",
-		11.0);
-	delay(10*35);
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-}
-
-//Map04: Message 1
-Script 508(void)
-{
-	hintmessage("MAP4VOX1","We just intercepted a Security Bulletin. \n\nDr. Zimmerman is being held in the Secure Holding Facility \nin the North-Eastern quadrant of this sector.",
-		12.0);
-	delay(10*35);
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-}
-
-//Map04: Message 2
-Script 509(void)
-{
-	hintmessage("MAP4VOX2","Because of the emergency, the security systems have \nautomatically electrified the gate and the perimeter fence. \n\nTo safely access the gate you'll need to switch off auxiliary power. \n\nYou'll need to get to the Turbine Control Room \nin the Western part of this sector.",
-		15.0);
-	delay(15*35);
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-}
-
-//Map04: Message 3
-Script 510(void)
-{
-	hintmessage("MAP4VOX3","Gate Control at the Secure Holding Facility has been restored. \n\nReturn to the Guard tower, reachable through the Storage Warehouse \nin the Eastern quadrant of this sector.",
-		13.0);
-	delay(10*35);
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-}
-
-//Map08: Message 1
-Script 511(void)
-{
-	hintmessage("MAP8VOX1","You will probably find Dr. Zimmerman in \nthe sub-basement level of the Holding Facility.",
-		7.0);
-	delay(8*35);
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-}
-
-//Map05: Message 1
-Script 512(void)
-{
-	hintmessage("MAP5VOX1","There's a drainage tunnel near the dam \nthat will take you to the Research Labs.",
-		5.0);
-	delay(6*35);
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-}
-
-//Map05: Message 2
-Script 513(void)
-{
-	hintmessage("MAP5VOX2","Look for Sergeant Harrison, the Security Officer. \nHe'll restore your security clearance. \n\nYou'll find him in the Office Block at the North-Western quadrant \nof this sector. Take the bridge over the storage warehouse.",
-		15.0);
-	delay(13*35);
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-}
-
-//Map05: Message 3
-Script 514(void)
-{
-	hintmessage("MAP5VOX3","Return to the Research Labs and use your \nsecurity clearance to gain access. \n\nTake the bridge over the storage warehouse.",
-		10.0);
-	delay(8*35);
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-}
-
-//Map06: Message 1
-Script 515(void)
-{
-	hintmessage("MAP6VOX1","You should be able to crawl under the door.",
-		4.0);
-	delay(5*35);
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-}
-
-//Map06: Message 2
-Script 516(void)
-{
-	hintmessage("MAP6VOX2","This is a timed switch that will temporarily \nraise the gate to the next reservoir chamber.",
-		8.0);
-	delay(7*35);
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-}
-
-//Map07: Message 1
-Script 517(void)
-{
-	hintmessage("MAP7VOX1","Keep pressing the switch to fry that sucker.",
-		5.0);
-	delay(5*35);
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-}
-
-//Map07: Message 2
-Script 518(void)
-{
-	hintmessage("MAP7VOX2","Use the terminal to upload the virus. \n\nWe have remotely disabled the critical security protocols.",
-		8.0);
-	delay(8*35);
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-}
-
-//Script 519 & MessageItem19 already assigned to Map04
-
-function void hintmessage2(str sound,str icon,str message,int holdtime,int holdtime2)
-{
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-	PlaySound(0,sound,7,1.0,0,ATTN_STATIC);
-	SetHUDSize(640,480,1);
-	SetFont(icon);
-	HUDMessage(s:"A";HUDMSG_PLAIN,1,CR_UNTRANSLATED,0.1,30.1,holdtime);
-	SetFont("smallfont");
-	HUDMessage(s:"\cCMessage From Controller:\n",s:message;HUDMSG_TYPEON|HUDMSG_LOG,2,CR_GOLD,80.1,30.1,holdtime2,0.062,0.05);
-}
-
-//Map10: Message 1 (Col. Stinson)
-Script 520 (void)
-{
-	hintmessage2("MAP10VX1","STINSON","\Dr. Bellmer, my name is Colonel Stinson, with Legion: Earth. We don't have much time, \nso listen carefully. The mission to extract you from Black Mesa was compromised, \nand your Controller has gone AWOL, and possibly rogue. Unfortunately, we cannot \nmobilize a rescue mission yet, so you're on your own for now. Our surveillance \nindicates your crash site has only one way in or out. Therefore, your exit strategy \nis to return to Black Mesa while we attempt another extraction. Meanwhile, \ngovernment and alien forces will continue to hunt you. There's a cavern nearby \nwhere you can seek cover until we can .....",
-		42.0,4.6);
-	delay(42*35);
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-}
-
-//Map11: Message 1 (Col. Stinson)
-Script 521 (void)
-{
-	hintmessage2("MAP11VX1","STINSON","\Dr. Bellmer, you're at the employee in-processing facility. You may recall you went through \nhere when you began your mission. The monorail will take you to back to Sector C. \nWe'll try to regroup once you get there, and work out an effective way to extract you.",
-		18.0,2.1);
-	delay(18*35);
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-}
-
-//Map12: Message 1 (Col. Stinson)
-Script 522 (void)
-{
-	hintmessage2("MAP12VX1","STINSON","\We didn't anticipate the total lockdown of Sector C. We can't send transport to your \ncurrent location because the winds make flying exceedingly treacherous. Proceed \nthrough the canyon until you reach the dam. There are two ways out at that point, \nand we'll figure out your best option. Meanwhile, you're probably wondering who we are. \nI'm sending you an UnderNet link that provides some background. As to why we're \ninterested in you, that will be revealed in due time.",
-		32.0,2.65);
-	delay(32*35);
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-}
-
-//Map12: Message 2 (UnderNet)
-Script 523 (void)
-{
-	hintmessage2("MAP12VX2","UNDERNET","\Legion: Earth is an organization that was created to protect Earth from threats both \nextra-terrestrial and home-grown. In recent years, that threat has increased as a \nresult of Anomalous Materials research at the Black Mesa facility in the United States \nand by the European Space Consortium. The discovery of PortalTech, otherwise known as \nteleportation, has allowed both these agencies to collaborate with an alien species \nin a Borderworld known as Xen. We have evidence that human dealings with this species \nare paving the way for an invasion of Earth. Our mandate is to stop it.",
-		39.0,3.25);
-	delay(39*35);
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-}
-
-//Map13: Message 1 (Col. Stinson)
-Script 524 (void)
-{
-	hintmessage2("MAP13VX1","STINSON","\Too bad you couldn't cross the dam and get out from there. It might have been easier \nto extract you from the East. Your best chance now is to take the sewers to the \nWeapons Test Lab. There's an open landing area there, and we can set a transport \nhelicopter down. Government forces control strategic points, while the Xen aliens \nroam freely elsewhere. Watch your back. I'm sending you another UnderNet link with \nmore information on us.",
-		29.0,2.01);
-	delay(29*35);
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-}
-
-//Map13: Message 2 (UnderNet)
-Script 525 (void)
-{
-	hintmessage2("MAP13VX2","UNDERNET","\Legion: Earth was first aware of Xen and human collaboration about a year ago. Then, \nwe discovered that the European Space Consortium engineered an infiltration into \nBlack Mesa with the objective of sabotaging the research there. The operative, \none Dr. Rolf Bellmer, succeeded in corrupting vital data at Black Mesa. This gave \nthe Consortium an edge in the race to harness alien technology. But Dr. Bellmer was \na loose end, and the Consortium attempted to terminate him with extreme prejudice. \This attempt failed, but Dr. Bellmer continues to remain embattled.",
-		38.0,3.21);
-	delay(38*35);
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-}
-
-//Map14: Message 1 (Col. Stinson)
-Script 526 (void)
-{
-	hintmessage2("MAP14VX1","STINSON","\Dr. Bellmer, follow these instructions carefully. When you exit the sewers, proceed \nto the East Gate. We'll have helicopter transport waiting there to get you out.",
-		13.0,2.94);
-	delay(13*35);
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-}
-
-//Map14: Message 2 (Col. Stinson)
-Script 527 (void)
-{
-	hintmessage2("MAP14VX2","STINSON","\Damn! It seems your Controller is one step ahead of us. He has a lot to answer for; \nthose were good people we lost on that transport............................................ \nOkay, Plan B. You'll need to proceed through the Lambda Complex. The security key \nwill probably be in the Administrator's office. And make sure you collect the \nexperimental energy weapon they're developing before you head for Lambda.",
-		27.0,1.3);
-	delay(27*35);
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-}
-
-//Map15: Message 1 (Col. Stinson)
-Script 528 (void)
-{
-	hintmessage2("MAP15VX1","STINSON","\The Lambda Complex is a series of labs. Be mindful of the freezer section and \ndon't stay in there for too long. Also, there's a rumor that your Controller \nmay be trying to recruit other scientists to his cause. Do not engage him. \nI repeat, do not engage your Controller.",
-		18.0,1.2);
-	delay(18*35);
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-}
-
-//Map16: Message 1 (Col. Stinson)
-Script 529 (void)
-{
-	hintmessage2("MAP16VX1","STINSON","\You're approaching the core of the Lambda Complex. This is where they conduct \nexperiments on live specimens. We'll try to set a transport down on the helipad \nleading to the East entrance. But you'll need a security key to make it through \nthe checkpoint. I'm sending you a final UnderNet link that will make things clearer.",
-		21.0,1.0);
-	delay(21*35);
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-}
-
-//Map16: Message 2 (UnderNet)
-Script 530 (void)
-{
-	hintmessage2("MAP16VX2","UNDERNET","\Dr. Rolf Bellmer has proven to be extremely resourceful, both as an undercover operative, \nand as a combat technician. Moreover, he possesses a rare combination of advanced scientific \nknowledge and survivor's instinct, which makes him an ideal candidate for recruitment to \nLegion: Earth. In addition, his time at Black Mesa will give us valuable insights into \noperations at that facility, and will allow us to hobble their efforts.",
-		29.0,2.3);
-	delay(29*35);
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-}
-
-//Map16: Message 3 (Col. Stinson)
-Script 531 (void)
-{
-	hintmessage2("MAP16VX3","STINSON","\We think the security key is inside the central chamber where the Gargantua is in stasis. \nYou'll need to disable the laser barrier and drop into the chamber to retrieve the key. \nWith the malfunctioning door, the only way into the laser control room are the ducts. \nFind the Boiler Room next to the Fuel Storage area, and use the ventilation duct.",
-		24.0,2.6);
-	delay(24*35);
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-}
-
-//Map17: Message 1 (Col. Stinson)
-Script 532 (void)
-{
-	hintmessage2("MAP17VX1","STINSON","\They've cut power to most sectors, and drained the fuel from the emergency generators. \nYou may find some fuel in the supply area in the North-East quadrant. But be careful: \nthe place is swarming with government and alien forces.",
-		16.0,1.7);
-	delay(16*35);
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-}
-
-//////////////////////////////////////
-//Script 872: Osprey body/rotors	//
-//////////////////////////////////////
-
-int PartOffset[2][3]={{340.0,0,0.25},{342.0,0,-0.25}};
-
-script 872 (void)
-{
-	Thing_ChangeTID(0,1000);
-	for(int i=0;i<2;i++)
-	{
-		int a = (GetActorAngle(0) + PartOffset[i][2] + 1.0) % 1.0;
-		Spawn("OspreyBlade",
-		GetActorX(0) + FixedMul(cos(a), PartOffset[i][0]),
-		GetActorY(0) + FixedMul(sin(a), PartOffset[i][0]),
-		GetActorZ(0) + PartOffset[i][1],
-		1000 + i + 1,GetActorAngle(0) >> 8);
-	}
-}
-
-//Recoil
-script 869 (int climb, int twist)
-{
-	int playerpitch = GetActorPitch(0) -(climb); // ((random(1,3)+5)*climb);
-	if(playerpitch > -5780)
-		SetActorPitch (0, playerpitch);
-	int playerangle = GetActorAngle(0) - ((random(1,2)+4)*twist);
-	SetActorAngle (0, playerangle);
-}
-
-script "AltHudAmmo" ENTER
-{
-	str heldtype="";
-	if(CheckWeapon("Beretta"))
-		heldtype="PistolHeldAmmo";
-	else if(CheckWeapon("Python"))
-		heldtype="MagnumHeldAmmo";
-	else if(CheckWeapon("Pshotgun"))
-		heldtype="ShotgunHeldAmmo";
-	else if(CheckWeapon("ARifle"))
-		heldtype="M16HeldAmmo";
-	if(StrCmp(heldtype,"")&&GetCVar("screenblocks")==11&&GetCVar("hud_althud"))
-	{
-		setfont("CONFONT");
-		HudMessage(d:CheckInventory(heldtype);HUDMSG_PLAIN, 3, CR_RED, 0.9, 1.0, 0.35);
-	}
-	delay(1);
-	restart;
-}
-
-script "M16Ammo" ENTER
-{
-	if(CheckInventory("M16ClipGren")!=(CheckInventory("M16HeldAmmo")+CheckInventory("M16Gren")))
-	{
-		TakeInventory("M16ClipGren",70);
-		GiveInventory("M16ClipGren",(CheckInventory("M16HeldAmmo")+CheckInventory("M16Gren")));
-	}
-	Delay(1);
-	Restart;
-}
-
-//STEAM
-script 770(int size,int pitch,int plane)
-{
-	int momentum;
-	int angle=GetActorAngle(0)+random(-1024,1024);
-	pitch+=random(-4,4);
-	pitch<<=8;
-	switch(plane)
-	{
-	case 0:
-		momentum=FixedMul(cos(GetActorAngle(0)),FixedMul(cos(pitch),random(30.0,35.0)));
-		break;
-	case 1:
-		momentum=FixedMul(sin(GetActorAngle(0)),FixedMul(cos(Pitch),random(30.0,35.0)));
-		break;
-	case 2:
-		momentum=FixedMul(-sin(pitch),random(30.0,35.0));
-		break;
-	}
-	SetResultValue(momentum*(size+1)/5>>16);
-}
-
-//////////////////////////////
-// Script 444: Waterfall	//
-//////////////////////////////
-
-str WFallParticles[10] =
-{
-	"WFallParticle1A","WFallParticle1B",
-	"WFallParticle2A","WFallParticle2B",
-	"WFallParticle3A","WFallParticle3B",
-	"WFallParticle4A","WFallParticle4B",
-	"WFallParticle5A","WFallParticle5B"
-};
-
-script 444 (int size)
-{
-	for(int r=0;r<size<<16;r+=random(4.0,8.0))
-	{
-		Spawn(WFallParticles[random(0,9)],
-		GetActorX(0)+random(-8.0,8.0)+FixedMul(cos(GetActorAngle(0)),r),
-		GetActorY(0)+random(-8.0,8.0)+FixedMul(sin(GetActorAngle(0)),r),
-		GetActorZ(0)+random(-8.0,8.0),
-		0,GetActorAngle(0)>>8);
-	}
-}
-
-//Sets up behavior for Barney to follow player
-script "BarneyFollow"(int tid)
-{
-	int follow;
-	while(ThingCount(T_NONE,tid))
-	{
-		if(!follow && distance(tid,tid+1) > 96.0)
-		{
-			follow=TRUE;
-			SetActorState(tid,"See",YES);
-			Thing_SetGoal(tid,tid+1,0,YES);
-		}
-		else if(follow && distance(tid,tid+1) <= 96.0)
-		{
-			follow=FALSE;
-			SetActorState(tid,"Stand",YES);
-			Thing_SetGoal(tid,tid+1,0,NO);
-		}
-		if(!follow)
-			SetActorAngle(36,GetTargetAngle(tid,tid+1));
-		delay(3);
-	}
-}
-
-function int GetTargetAngle(int tid1,int tid2)
-{
-	return VectorAngle(GetActorX(tid2) - GetActorX(tid1),GetActorY(tid2) - GetActorY(tid1));
-}
-function int distance(int tid1,int tid2)
-{
-	int x,y,z,a,l;
-	x = GetActorX(tid1) - GetActorX(tid2);
-	y = GetActorY(tid1) - GetActorY(tid2);
-	z = GetActorZ(tid1) - GetActorZ(tid2);
-	a = VectorAngle(x,y);
-	if((a + 0.125) % 0.5 > 0.25)
-		l = FixedDiv(sin(a),y);
-	else
-		l = FixedDiv(cos(a),x);
-	a = VectorAngle(l,z);
-	if((a + 0.125) % 0.5 > 0.25)
-		return FixedDiv(sin(a),z);
-	return FixedDiv(cos(a),l);
-}
-
-script "MedStation"(int uses,int tex)
-{
-	if(GetActorProperty(0,APROP_Health)>=100) // Check health first.
-	{
-		SetResultValue(0);
-		terminate;
-	}
-	if(uses>4)
-	{
-		ActivatorSound("MEDCHARGEUSED",127);
-		SetResultValue(0);
-		terminate;
-	}
-	HealThing(10);
-	ActivatorSound("MEDCHARGE",127);
-	if(uses==4)
-	{
-		setlinetexture(tex,SIDE_FRONT,TEXTURE_TOP,"XMEDIC02");
-		setlinetexture(tex,SIDE_FRONT,TEXTURE_BOTTOM,"XMEDIC02");
-	}
-	SetResultValue(1);
-}
-script "ArmorStation"(int uses,int tex)
-{
-	if(CheckInventory("Armor")>=100)
-	{
-		SetResultValue(0);
-		terminate;
-	}
-	if(uses>4)
-	{
-		ActivatorSound("HEVCHARGEUSED",127);
-		SetResultValue(0);
-		terminate;
-	}
-	GiveInventory("HEVCharge",10);
-	ActivatorSound("HEVCHARGE",127);
-	if(uses==4)
-	{
-		setlinetexture(tex,SIDE_FRONT,TEXTURE_TOP,"XARMOR02");
-		setlinetexture(tex,SIDE_FRONT,TEXTURE_BOTTOM,"XARMOR02");
-	}
-	SetResultValue(1);
 }
