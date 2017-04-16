@@ -1,0 +1,320 @@
+#library "PLATFORM"
+#include "zcommon.acs"
+
+//**************
+//Moving Platform Design & Execution by GooberMan (aka Ethan Watson)
+//**************
+
+// These defines exist solely to make reading everything easier. Not necessary for the map.
+//(Note: Both floors are set up to be completely 3D)
+
+#define FLOOR2_POLYID 1
+#define FLOOR2_SECTORREF 4
+#define FLOOR2_ACTIVATORLINE 3
+#define FLOOR2_TEXLINE1 1
+#define FLOOR2_TEXLINE2 2
+#define FLOOR2_VISUALRIDER 100
+
+#define FLOOR1_POLYID 2
+#define FLOOR1_SECTORREF 2
+#define FLOOR1_ACTIVATORLINE 1
+#define FLOOR1_TEXLINE1 1
+#define FLOOR1_TEXLINE2 2
+#define FLOOR1_VISUALRIDER 101
+
+//-----------------------------------------------------------------------------
+// Magic value that normalises movement to a velocity that can be applied to riding objects
+
+#define VELOCITY_DIVISOR 10.7
+
+// All players get a TID on map enter.
+
+#define PLAYER_TID 12345
+
+// A define for a script number. Much easier to read.
+
+#define FLOOR_RIDERHOPONOFFLOGIC 999
+
+// Corresponds to the number of players currently, plus one for the visual rider.
+// The visual rider is currently the last available index.
+
+#define MAX_RIDERS 9
+#define FLOOR_VISUALRIDERINDEX 8
+
+// Increase this number when you want more floors, and then update all the arrays starting with "int floor".
+
+#define MAX_FLOORS 2
+
+// Don't touch this. Automatically calculated from above defines
+
+#define RIDER_ARRAYSIZE MAX_RIDERS * MAX_FLOORS
+
+// TIDs of objects riding the floor
+
+int objectRiding[ RIDER_ARRAYSIZE ];
+
+//-----------------------------------------------------------------------------
+// A set of arrays that you are to maintain with values corresponding to objects in your map.
+
+// Poly object ID for the floor
+
+int floorPolyIDs[ MAX_FLOORS ]          = { FLOOR1_POLYID,          FLOOR2_POLYID };
+
+// A sector that can be used to query the Z height of your floor
+
+int floorSectorRefs[ MAX_FLOORS ]       = { FLOOR1_SECTORREF,       FLOOR2_SECTORREF };
+
+// The outer lines of your polyobject's line ID.
+
+int floorActivators[ MAX_FLOORS ]       = { FLOOR1_ACTIVATORLINE,   FLOOR2_ACTIVATORLINE };
+
+// For maintaining texture offset on mid textures. A line ID of -1 is skipped over by this system.
+// Two are provided: one for your activator line, and the other for any internal lines that need to be kept in sync.
+
+int floorTexLine1[ MAX_FLOORS ]         = { FLOOR1_TEXLINE1,        FLOOR2_TEXLINE1 };
+int floorTexLine2[ MAX_FLOORS ]         = { FLOOR1_TEXLINE2,        FLOOR2_TEXLINE2 };
+
+// A visual rider is kept perfectly in sync with the floor. Basically, use the object specified
+// by the TID in this array as a representation of the floor in lieu of the usual polyobject hacks.
+
+int floorVisualRiders[ MAX_FLOORS ]     = { FLOOR1_VISUALRIDER,    FLOOR2_VISUALRIDER };
+
+//-----------------------------------------------------------------------------
+// Handles a thing crossing the outer poly object lines. Setup by calling the FloorLogic script.
+
+script FLOOR_RIDERHOPONOFFLOGIC (int floorNum)
+{
+    // TODO: It's not a whole lot of work from here to support arbitrary things. Basically, if something crosses the
+    // activator lines and it has no TID, assign it a temporary negative TID. We can assume it is not already riding.
+    // If it has a TID, check if it's already riding. Once we've determined that it's not riding, give it a free slot.
+    // When it's leaving the platform, unassign the negative TID if necessary and clear the slot it was occupying.
+    //
+    // The only reason I'm not doing it myself is laziness.
+    //
+    // Should be easy enough though to support more than the 8 players I support, just bump up the MAX_RIDERS number.
+
+    if (PlayerNumber() < 0)
+        Terminate;
+
+    int riderNum = floorNum * MAX_RIDERS + PlayerNumber();
+    int tid = ActivatorTID();
+
+    if (LineSide() == LINE_FRONT)
+    {
+//        Print(s:"Welcome aboard platform ", d:floorNum, s:"!");
+
+        objectRiding[ riderNum ] = tid;
+    }
+    else
+    {
+//        Print(s: "We hope you enjoyed your journey!");
+        objectRiding[ riderNum ] = 0;
+    }
+}
+
+//-----------------------------------------------------------------------------
+// The guts of the floor logic. floorNum is a 0-based index in to an array.
+
+script "FloorLogic" ( int floorNum )
+{
+    SetLineSpecial( floorActivators[ floorNum ], ACS_ExecuteAlways, FLOOR_RIDERHOPONOFFLOGIC, 0, floorNum, 0, 0);
+
+    int riderBaseIndex = floorNum * MAX_RIDERS;
+    for( int currRiderIndex = riderBaseIndex; currRiderIndex < riderbaseIndex + MAX_RIDERS; ++currRiderIndex )
+    {
+        objectRiding[ currRiderIndex ] = 0;
+    }
+
+    // A special rider is kept perfectly in sync with the floor
+    if( floorVisualRiders[ floorNum ] != 0 )
+    {
+        objectRiding[ floorNum * MAX_RIDERS + FLOOR_VISUALRIDERINDEX ] = floorVisualRiders[ floorNum ];
+    }
+
+    int polyObj = floorPolyIDs[ floorNum ];
+    int sectorRef = floorSectorRefs[ floorNum ];
+    int texLine1 = floorTexLine1[ floorNum ];
+    int texLine2 = floorTexLine2[ floorNum ];
+
+    int mapSpotPrevX = GetPolyobjX( polyObj );
+    int mapSpotPrevY = GetPolyobjY( polyObj );
+    int mapSpotPrevZ = GetSectorCeilingZ( sectorRef, 0, 0 );
+
+    if( floorVisualRiders[ floorNum ] != 0 )
+    {
+        SetActorPosition( floorVisualRiders[ floorNum ], mapSpotPrevX, mapSpotPrevY, mapSpotPrevZ, false );
+    }
+
+    int lastVelX = 0;
+    int lastVelY = 0;
+
+    while (true)
+    {
+        int mapSpotX = GetPolyobjX( polyObj );
+        int mapSpotY = GetPolyobjY( polyObj );
+
+        int mapSpotZ = GetSectorCeilingZ( sectorRef, 0, 0 );
+        int floorMin = GetSectorFloorZ( sectorRef, 0, 0 );
+
+        int diffX = mapSpotX - mapSpotPrevX;
+        int diffY = mapSpotY - mapSpotPrevY;
+        int diffZ = mapSpotZ - mapSpotPrevZ;
+
+        int platVelX = FixedDiv( diffX, VELOCITY_DIVISOR );
+        int platVelY = FixedDiv( diffY, VELOCITY_DIVISOR );
+
+        for ( int currRider = 0; currRider < MAX_RIDERS; ++currRider )
+        {
+            int riderIndex = floorNum * MAX_RIDERS + currRider;
+
+            if ( objectRiding[ riderIndex ] != 0 )
+            {
+                int objectTID = objectRiding[ riderIndex ];
+                int objectZ = GetActorZ( objectTID );
+
+                if( currRider == FLOOR_VISUALRIDERINDEX )
+                {
+                    SetActorVelocity( objectTID, diffX, diffY, diffZ, false, false );
+                }
+                // Apply friction
+                else if ( objectZ <= mapSpotZ && objectZ >= floorMin )
+                {
+                    int velX = GetActorVelX( objectTID );
+                    int velY = GetActorVelY( objectTID );
+                    int velZ = GetActorVelZ( objectTID );
+
+                    SetActorVelocity( objectTID, velX + platVelX, velY + platVelY, velZ, false, false );
+                }
+
+            }
+        }
+
+        lastVelX = platVelX;
+        lastVelY = platVelY;
+
+        if( texLine1 >= 0 )
+        {
+            Line_SetTextureOffset( texLine1, 0, floorMin, SIDE_FRONT, TEXFLAG_MIDDLE);
+            Line_SetTextureOffset( texLine1, 0, floorMin, SIDE_BACK, TEXFLAG_MIDDLE);
+        }
+        if( texLine2 >= 0 )
+        {
+            Line_SetTextureOffset( texLine2, 0, floorMin, SIDE_FRONT, TEXFLAG_MIDDLE);
+            Line_SetTextureOffset( texLine2, 0, floorMin, SIDE_BACK, TEXFLAG_MIDDLE);
+        }
+
+        mapSpotPrevX = mapSpotX;
+        mapSpotPrevY = mapSpotY;
+        mapSpotPrevZ = mapSpotZ;
+
+        Delay(1);
+    }
+}
+
+//-----------------------------------------------------------------------------
+// This is where map-specific stuff goes. I call two separate scripts to handle
+// both floors separately. Each script is a good example on how to set your own floors up.
+//(Note: Both floors are set up to be completely 3D)
+
+script "SetupFloor" open
+{
+    ACS_NamedExecute( "MoveFull3DFloor1", 0, 0, 0, 0 );
+    ACS_NamedExecute( "MoveFull3DFloor", 0, 0, 0, 0 );
+}
+
+script "MoveFull3DFloor" (void)
+{
+    // Your floor will not accept riders if you do not call FloorLogic with the floor you want to handle.
+	//Ensure you use the execute always variant or you will only have one floor moving.
+
+    ACS_NamedExecuteAlways( "FloorLogic", 0, 0 );
+
+    Delay(70);
+
+    while(true)
+    {
+        PolyObj_MoveToSpot(FLOOR1_POLYID, 24, 70 );
+        PolyWait( FLOOR1_POLYID );
+        PolyObj_MoveToSpot(FLOOR1_POLYID, 32, 71 );
+        PolyWait( FLOOR1_POLYID );
+        PolyObj_MoveToSpot(FLOOR1_POLYID, 48, 72 );
+        PolyWait( FLOOR1_POLYID );
+        PolyObj_MoveToSpot(FLOOR1_POLYID, 64, 73 );
+        PolyWait( FLOOR1_POLYID );
+        PolyObj_MoveToSpot(FLOOR1_POLYID, 48, 74 );
+        PolyWait( FLOOR1_POLYID );
+        PolyObj_MoveToSpot(FLOOR1_POLYID, 40, 75 );
+        PolyWait( FLOOR1_POLYID );
+        PolyObj_MoveToSpot(FLOOR1_POLYID, 40, 76 );
+        PolyWait( FLOOR1_POLYID );
+        PolyObj_MoveToSpot(FLOOR1_POLYID, 40, 77 );
+        PolyWait( FLOOR1_POLYID );
+        PolyObj_MoveToSpot(FLOOR1_POLYID, 40, 78 );
+        PolyWait( FLOOR1_POLYID );
+        PolyObj_MoveToSpot(FLOOR1_POLYID, 40, 79 );
+        PolyWait( FLOOR1_POLYID );
+        PolyObj_MoveToSpot(FLOOR1_POLYID, 40, 80 );
+        PolyWait( FLOOR1_POLYID );
+        PolyObj_MoveToSpot(FLOOR1_POLYID, 40, 81 );
+        PolyWait( FLOOR1_POLYID );
+        PolyObj_MoveToSpot(FLOOR1_POLYID, 48, 82 );
+        PolyWait( FLOOR1_POLYID );
+        PolyObj_MoveToSpot(FLOOR1_POLYID, 64, 83 );
+        PolyWait( FLOOR1_POLYID );
+        PolyObj_MoveToSpot(FLOOR1_POLYID, 48, 84 );
+        PolyWait( FLOOR1_POLYID );
+        PolyObj_MoveToSpot(FLOOR1_POLYID, 48, 85 );
+        TagWait( FLOOR1_SECTORREF );
+        PolyWait( FLOOR1_POLYID );
+    }
+}
+
+script "MoveFull3DFloor1" (void)
+{
+//	ACS_NamedExecuteAlways( "FloorLogic", 0, 0 );
+	ACS_NamedExecuteAlways( "FloorLogic", 0, 1 );	//[This is for Half3DFloor]
+
+    Delay(70);
+
+    while(true)
+    {
+        PolyObj_MoveToSpot(FLOOR2_POLYID, 24, 50 );
+        PolyWait( FLOOR2_POLYID );
+        PolyObj_MoveToSpot(FLOOR2_POLYID, 32, 51 );
+        PolyWait( FLOOR2_POLYID );
+        PolyObj_MoveToSpot(FLOOR2_POLYID, 48, 52 );
+        PolyWait( FLOOR2_POLYID );
+        PolyObj_MoveToSpot(FLOOR2_POLYID, 64, 53 );
+        PolyWait( FLOOR2_POLYID );
+        PolyObj_MoveToSpot(FLOOR2_POLYID, 48, 54 );
+        PolyWait( FLOOR2_POLYID );
+        PolyObj_MoveToSpot(FLOOR2_POLYID, 40, 55 );
+        PolyWait( FLOOR2_POLYID );
+        PolyObj_MoveToSpot(FLOOR2_POLYID, 40, 56 );
+        PolyWait( FLOOR2_POLYID );
+        PolyObj_MoveToSpot(FLOOR2_POLYID, 40, 57 );
+        PolyWait( FLOOR2_POLYID );
+        PolyObj_MoveToSpot(FLOOR2_POLYID, 40, 58 );
+        PolyWait( FLOOR2_POLYID );
+        PolyObj_MoveToSpot(FLOOR2_POLYID, 40, 59 );
+        PolyWait( FLOOR2_POLYID );
+        PolyObj_MoveToSpot(FLOOR2_POLYID, 40, 60 );
+        PolyWait( FLOOR2_POLYID );
+        PolyObj_MoveToSpot(FLOOR2_POLYID, 40, 61 );
+        PolyWait( FLOOR2_POLYID );
+        PolyObj_MoveToSpot(FLOOR2_POLYID, 48, 62 );
+        PolyWait( FLOOR2_POLYID );
+        PolyObj_MoveToSpot(FLOOR2_POLYID, 64, 63 );
+        PolyWait( FLOOR2_POLYID );
+        PolyObj_MoveToSpot(FLOOR2_POLYID, 48, 64 );
+        PolyWait( FLOOR2_POLYID );
+        PolyObj_MoveToSpot(FLOOR2_POLYID, 48, 65 );
+        TagWait( FLOOR2_SECTORREF );
+        PolyWait( FLOOR2_POLYID );
+    }
+}
+
+script "SetupPlayer" enter
+{
+    Thing_ChangeTID(0, PLAYER_TID + PlayerNumber());
+}

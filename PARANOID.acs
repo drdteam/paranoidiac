@@ -1,16 +1,6 @@
 #library "PARANOID"
 #include "zcommon.acs"
 
-//Recoil
-script 869 (int climb, int twist)
-{
-	int playerpitch = GetActorPitch(0) -(climb); // ((random(1,3)+5)*climb);
-	if(playerpitch > -5780)
-		SetActorPitch (0, playerpitch);
-	int playerangle = GetActorAngle(0) - ((random(1,2)+4)*twist);
-	SetActorAngle (0, playerangle);
-}
-
 script "AltHudAmmo" ENTER
 {
 	str heldtype="";
@@ -396,6 +386,16 @@ Script 532 (void)
 	hintmessage("MAP17VX1","STINSON",16.0,1.7);
 	delay(16*35);
 	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
+}
+
+//Recoil
+script 869 (int climb, int twist)
+{
+	int playerpitch = GetActorPitch(0) -(climb); // ((random(1,3)+5)*climb);
+	if(playerpitch > -5780)
+		SetActorPitch (0, playerpitch);
+	int playerangle = GetActorAngle(0) - ((random(1,2)+4)*twist);
+	SetActorAngle (0, playerangle);
 }
 
 //////////////////////////////////////
