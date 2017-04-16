@@ -383,7 +383,7 @@ class M16Pickup : ParanoidWeaponGiver
 	Default
 	{
 		Inventory.PickupMessage "You got the 9mm Assault Rifle";
-		ParanoidWeaponGiver.Weapon1 "M16HeldAmmo","ARifle",25;
+		ParanoidWeaponGiver.Weapon1 "M16HeldAmmo","ARClip",25;
 		DropItem "ARifle";
 	}
 	override bool TryPickup(in out Actor toucher)
