@@ -16,7 +16,7 @@ class MessageItem01 : CustomInventory
 		MAIL A -1;
 		Stop;
 	Use:
-		TNT1 A 1 ACS_Execute(501,0);
+		TNT1 A 0 ACS_Execute(501,0);
 		Fail;
 	}
 }
@@ -31,16 +31,8 @@ class MessageItem02 : MessageItem01
 	States
 	{
 	Use:
-		TNT1 A 1 ACS_Execute(502,0);
+		TNT1 A 0 ACS_Execute(502,0);
 		Fail;
-	}
-}
-//Map04: Message 4
-class MessageItem19 : MessageItem02
-{
-	Default
-	{
-		Inventory.Icon "MAIL04";
 	}
 }
 
@@ -54,7 +46,7 @@ class MessageItem03 : MessageItem01
 	States
 	{
 	Use:
-		TNT1 A 1 ACS_Execute(503,0);
+		TNT1 A 0 ACS_Execute(503,0);
 		Fail;
 	}
 }
@@ -69,7 +61,7 @@ class MessageItem04 : MessageItem01
 	States
 	{
 	Use:
-		TNT1 A 1 ACS_Execute(504,0);
+		TNT1 A 0 ACS_Execute(504,0);
 		Fail;
 	}
 }
@@ -80,37 +72,29 @@ class MessageItem05 : MessageItem01
 	States
 	{
 	Use:
-		TNT1 A 1 ACS_Execute(505,0);
+		TNT1 A 0 ACS_Execute(505,0);
 		Fail;
 	}
 }
 
 //Map03: Message 2
-class MessageItem06 : MessageItem01
+class MessageItem06 : MessageItem02
 {
-	Default
-	{
-		Inventory.Icon "MAIL02";
-	}
 	States
 	{
 	Use:
-		TNT1 A 1 ACS_Execute(506,0);
+		TNT1 A 0 ACS_Execute(506,0);
 		Fail;
 	}
 }
 
 //Map03: Message 3
-class MessageItem07 : MessageItem01
+class MessageItem07 : MessageItem03
 {
-	Default
-	{
-		Inventory.Icon "MAIL03";
-	}
 	States
 	{
 	Use:
-		TNT1 A 1 ACS_Execute(507,0);
+		TNT1 A 0 ACS_Execute(507,0);
 		Fail;
 	}
 }
@@ -121,38 +105,39 @@ class MessageItem08 : MessageItem01
 	States
 	{
 	Use:
-		TNT1 A 1 ACS_Execute(508,0);
+		TNT1 A 0 ACS_Execute(508,0);
 		Fail;
 	}
 }
 
 //Map04: Message 2
-class MessageItem09 : MessageItem01
+class MessageItem09 : MessageItem02
 {
-	Default
-	{
-		Inventory.Icon "MAIL02";
-	}
 	States
 	{
 	Use:
-		TNT1 A 1 ACS_Execute(509,0);
+		TNT1 A 0 ACS_Execute(509,0);
 		Fail;
 	}
 }
 
 //Map04: Message 3
-class MessageItem10 : MessageItem01
+class MessageItem10 : MessageItem03
 {
-	Default
-	{
-		Inventory.Icon "MAIL03";
-	}
 	States
 	{
 	Use:
-		TNT1 A 1 ACS_Execute(510,0);
+		TNT1 A 0 ACS_Execute(510,0);
 		Fail;
+	}
+}
+
+//Map04: Message 4
+class MessageItem19 : MessageItem02
+{
+	Default
+	{
+		Inventory.Icon "MAIL04";
 	}
 }
 
@@ -162,7 +147,7 @@ class MessageItem11 : MessageItem01
 	States
 	{
 	Use:
-		TNT1 A 1 ACS_Execute(511,0);
+		TNT1 A 0 ACS_Execute(511,0);
 		Fail;
 	}
 }
@@ -173,37 +158,29 @@ class MessageItem12 : MessageItem01
 	States
 	{
 	Use:
-		TNT1 A 1 ACS_Execute(512,0);
+		TNT1 A 0 ACS_Execute(512,0);
 		Fail;
 	}
 }
 
 //Map05: Message 2
-class MessageItem13 : MessageItem01
+class MessageItem13 : MessageItem02
 {
-	Default
-	{
-		Inventory.Icon "MAIL02";
-	}
 	States
 	{
 	Use:
-		TNT1 A 1 ACS_Execute(513,0);
+		TNT1 A 0 ACS_Execute(513,0);
 		Fail;
 	}
 }
 
 //Map05: Message 3
-class MessageItem14 : MessageItem01
+class MessageItem14 : MessageItem03
 {
-	Default
-	{
-		Inventory.Icon "MAIL03";
-	}
 	States
 	{
 	Use:
-		TNT1 A 1 ACS_Execute(514,0);
+		TNT1 A 0 ACS_Execute(514,0);
 		Fail;
 	}
 }
@@ -214,22 +191,18 @@ class MessageItem15 : MessageItem01
 	States
 	{
 	Use:
-		TNT1 A 1 ACS_Execute(515,0);
+		TNT1 A 0 ACS_Execute(515,0);
 		Fail;
 	}
 }
 
 //Map06: Message 2
-class MessageItem16 : MessageItem01
+class MessageItem16 : MessageItem02
 {
-	Default
-	{
-		Inventory.Icon "MAIL02";
-	}
 	States
 	{
 	Use:
-		TNT1 A 1 ACS_Execute(516,0);
+		TNT1 A 0 ACS_Execute(516,0);
 		Fail;
 	}
 }
@@ -240,22 +213,18 @@ class MessageItem17 : MessageItem01
 	States
 	{
 	Use:
-		TNT1 A 1 ACS_Execute(517,0);
+		TNT1 A 0 ACS_Execute(517,0);
 		Fail;
 	}
 }
 
 //Map07: Message 2
-class MessageItem18 : MessageItem01
+class MessageItem18 : MessageItem02
 {
-	Default
-	{
-		Inventory.Icon "MAIL02";
-	}
 	States
 	{
 	Use:
-		TNT1 A 1 ACS_Execute(518,0);
+		TNT1 A 0 ACS_Execute(518,0);
 		Fail;
 	}
 }
@@ -266,7 +235,7 @@ class MessageItem20 : MessageItem01
 	States
 	{
 	Use:
-		TNT1 A 1 ACS_Execute(520,0);
+		TNT1 A 0 ACS_Execute(520,0);
 		Fail;
 	}
 }
@@ -277,7 +246,7 @@ class MessageItem21 : MessageItem01
 	States
 	{
 	Use:
-		TNT1 A 1 ACS_Execute(521,0);
+		TNT1 A 0 ACS_Execute(521,0);
 		Fail;
 	}
 }
@@ -290,22 +259,18 @@ class MessageItem22 : MessageItem01
 	States
 	{
 	Use:
-		TNT1 A 1 ACS_Execute(522,0);
+		TNT1 A 0 ACS_Execute(522,0);
 		Fail;
 	}
 }
 
 //Map12: Message 2 (UnderNet; MAP12VX2)
-class MessageItem23 : MessageItem01
+class MessageItem23 : MessageItem02
 {
-	Default
-	{
-		Inventory.Icon "MAIL02";
-	}
 	States
 	{
 	Use:
-		TNT1 A 1 ACS_Execute(523,0);
+		TNT1 A 0 ACS_Execute(523,0);
 		Fail;
 	}
 }
@@ -316,22 +281,18 @@ class MessageItem24 : MessageItem01
 	States
 	{
 	Use:
-		TNT1 A 1 ACS_Execute(524,0);
+		TNT1 A 0 ACS_Execute(524,0);
 		Fail;
 	}
 }
 
 //Map13: Message 2 (UnderNet; MAP13VX2)
-class MessageItem25 : MessageItem01
+class MessageItem25 : MessageItem02
 {
-	Default
-	{
-		Inventory.Icon "MAIL02";
-	}
 	States
 	{
 	Use:
-		TNT1 A 1 ACS_Execute(525,0);
+		TNT1 A 0 ACS_Execute(525,0);
 		Fail;
 	}
 }
@@ -342,22 +303,18 @@ class MessageItem26 : MessageItem01
 	States
 	{
 	Use:
-		TNT1 A 1 ACS_Execute(526,0);
+		TNT1 A 0 ACS_Execute(526,0);
 		Fail;
 	}
 }
 
 //Map14: Message 2 (Col. Stinson; MAP14VX2)
-class MessageItem27 : MessageItem01
+class MessageItem27 : MessageItem02
 {
-	Default
-	{
-		Inventory.Icon "MAIL02";
-	}
 	States
 	{
 	Use:
-		TNT1 A 1 ACS_Execute(527,0);
+		TNT1 A 0 ACS_Execute(527,0);
 		Fail;
 	}
 }
@@ -368,7 +325,7 @@ class MessageItem28 : MessageItem01
 	States
 	{
 	Use:
-		TNT1 A 1 ACS_Execute(528,0);
+		TNT1 A 0 ACS_Execute(528,0);
 		Fail;
 	}
 }
@@ -379,37 +336,29 @@ class MessageItem29 : MessageItem01
 	States
 	{
 	Use:
-		TNT1 A 1 ACS_Execute(529,0);
+		TNT1 A 0 ACS_Execute(529,0);
 		Fail;
 	}
 }
 
 //Map16: Message 2 (UnderNet; MAP16VX2)
-class MessageItem30 : MessageItem01
+class MessageItem30 : MessageItem02
 {
-	Default
-	{
-		Inventory.Icon "MAIL02";
-	}
 	States
 	{
 	Use:
-		TNT1 A 1 ACS_Execute(530,0);
+		TNT1 A 0 ACS_Execute(530,0);
 		Fail;
 	}
 }
 
 //Map16: Message 3 (Col. Stinson; MAP16VX3)
-class MessageItem31 : MessageItem01
+class MessageItem31 : MessageItem03
 {
-	Default
-	{
-		Inventory.Icon "MAIL03";
-	}
 	States
 	{
 	Use:
-		TNT1 A 1 ACS_Execute(531,0);
+		TNT1 A 0 ACS_Execute(531,0);
 		Fail;
 	}
 }
@@ -420,7 +369,7 @@ class MessageItem32 : MessageItem01
 	States
 	{
 	Use:
-		TNT1 A 1 ACS_Execute(532,0);
+		TNT1 A 0 ACS_Execute(532,0);
 		Fail;
 	}
 }

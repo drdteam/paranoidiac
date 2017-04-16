@@ -1,8 +1,22 @@
-class ParanoidWeaponPickup : CustomInventory
+class ParanoidWeaponGiver : WeaponGiver
 {
-	Default
+	string Weapon1,Weapon2;
+	int Weapon1Amount;
+	Property Weapon1: Weapon1,Weapon2,Weapon1Amount;
+	override bool TryPickup(in out Actor toucher)
 	{
-		Inventory.PickupSound "misc/w_pkup";
+		if(WeaponGiver.TryPickup(toucher))
+		{
+			toucher.A_GiveInventory(Weapon1,Weapon1Amount);
+			GoAwayAndDie();
+			return true;
+		}
+		if(toucher.A_GiveInventory(Weapon2,Weapon1Amount))
+		{
+			GoAwayAndDie();
+			return true;
+		}
+		return false;
 	}
 	States
 	{
@@ -46,6 +60,7 @@ class Crowbar : Weapon
 		Inventory.PickupMessage "Picked up a Crowbar";
 		Obituary "%k shoved %o's crowbar where the sun don't shine.";
 		+WEAPON.MELEEWEAPON
+		Inventory.Icon "i_cbar1";
 	}
 	States
 	{
@@ -194,22 +209,13 @@ class CrowbarPuff2 : Actor
 // Paranoid Shotgun
 //===================
 
-class ShotgunPickup : ParanoidWeaponPickup
+class ShotgunPickup : ParanoidWeaponGiver
 {
 	Default
 	{
 		Inventory.PickupMessage "You got the shotgun!";
-	}
-	States
-	{
-	Pickup:
-		TNT1 A 0 A_JumpIfInventory("PShotgun",1,"JustAmmo");
-		TNT1 A 0 A_GiveInventory("ShotgunHeldAmmo",8);
-		TNT1 A 0 A_GiveInventory("PShotgun",1);
-		Stop;
-	JustAmmo:
-		TNT1 A 0 A_GiveInventory("PShell",8);
-		Stop;
+		ParanoidWeaponGiver.Weapon1 "ShotgunHeldAmmo","PShell",8;
+		DropItem "PShotgun";
 	}
 }
 //=============================
@@ -241,6 +247,7 @@ class Pshotgun : Weapon
 		Inventory.PickupMessage "You got the shotgun!";
 		Obituary "%o swallowed %k's lead pellets.";
 		Decal "BulletChip";
+		Inventory.Icon "i_sgun1";
 	}
 	States
 	{
@@ -343,7 +350,7 @@ class PShell : Ammo
 		Inventory.MaxAmount 125;
 		Ammo.BackpackAmount 4;
 		Ammo.BackpackMaxAmount 125;
-		Inventory.Icon "SHELA0";
+		Inventory.Icon "i_shel1";
 	}
 	States
 	{
@@ -371,23 +378,29 @@ class PShellBox : PShell
 // 9mm Assault Rifle
 //===================
 
-class M16Pickup : ParanoidWeaponPickup
+class M16Pickup : ParanoidWeaponGiver
 {
 	Default
 	{
 		Inventory.PickupMessage "You got the 9mm Assault Rifle";
+		ParanoidWeaponGiver.Weapon1 "M16HeldAmmo","ARifle",25;
+		DropItem "ARifle";
 	}
-	States
+	override bool TryPickup(in out Actor toucher)
 	{
-	Pickup:
-		TNT1 A 0 A_JumpIfInventory("ARifle",1,"JustAmmo");
-		TNT1 A 0 A_GiveInventory("M16HeldAmmo",25);
-		TNT1 A 0 A_GiveInventory("M16Gren");
-		TNT1 A 0 A_GiveInventory("ARifle",1);
-		Stop;
-	JustAmmo:
-		TNT1 A 0 A_GiveInventory("ARClip",25);
-		Stop;
+		if(WeaponGiver.TryPickup(toucher))
+		{
+			toucher.A_GiveInventory(Weapon1,Weapon1Amount);
+			toucher.A_GiveInventory("M16Gren");
+			GoAwayAndDie();
+			return true;
+		}
+		if(toucher.A_GiveInventory(Weapon2,Weapon1Amount))
+		{
+			GoAwayAndDie();
+			return true;
+		}
+		return false;
 	}
 }
 
@@ -421,6 +434,7 @@ class ARifle : Weapon
 		Inventory.PickupMessage "You got the 9mm Assault Rifle";
 		Obituary "%o felt %k's m16.";
 		Decal "BulletChip";
+		Inventory.Icon "i_arifl1";
 	}
 	States
 	{
@@ -570,7 +584,7 @@ class ARClip : Ammo
 		Inventory.MaxAmount 250;
 		Ammo.BackpackAmount 25;
 		Ammo.BackpackMaxAmount 400;
-		Inventory.Icon "CLIPA0";
+		Inventory.Icon "i_bul3";
 	}
 	States
 	{
@@ -608,7 +622,7 @@ class M16Gren : Ammo
 		Inventory.MaxAmount 10;
 		Ammo.BackpackAmount 2;
 		Ammo.BackpackMaxAmount 20;
-		Inventory.Icon "ROCKA0";  //Placeholder icon for now
+		Inventory.Icon "i_gren2";
 	}
 	States
 	{
@@ -622,22 +636,13 @@ class M16Gren : Ammo
 // Beretta
 //=========
 
-class PistolPickup : ParanoidWeaponPickup
+class PistolPickup : ParanoidWeaponGiver
 {
 	Default
 	{
 		Inventory.PickupMessage "You picked up a Beretta.";
-	}
-	States
-	{
-	Pickup:
-		TNT1 A 0 A_JumpIfInventory("Beretta",1,"JustAmmo");
-		TNT1 A 0 A_GiveInventory("PistolHeldAmmo",17);
-		TNT1 A 0 A_GiveInventory("Beretta",1);
-		Stop;
-	JustAmmo:
-		TNT1 A 0 A_GiveInventory("BClip",17);
-		Stop;
+		ParanoidWeaponGiver.Weapon1 "PistolHeldAmmo","BClip",17;
+		DropItem "Beretta";
 	}
 }
 
@@ -659,6 +664,7 @@ class Beretta : Weapon
 		Inventory.PickupMessage "You picked up a Beretta.";
 		Obituary "%o was out-gunned by %k's Beretta.";
 		Decal "BulletChip";
+		Inventory.Icon "i_pist1";
 	}
 	States
 	{
@@ -758,7 +764,7 @@ class BClip : Ammo
 		Inventory.MaxAmount 250;
 		Ammo.BackpackAmount 17;
 		Ammo.BackpackMaxAmount 400;
-		Inventory.Icon "CLIPA0";
+		Inventory.Icon "i_bul1";
 	}
 	States
 	{
@@ -772,22 +778,13 @@ class BClip : Ammo
 // Python (357 Magnum)
 //=====================
 
-class R357Pickup : ParanoidWeaponPickup
+class R357Pickup : ParanoidWeaponGiver
 {
 	Default
 	{
 		Inventory.PickupMessage "A .357 Magnum! You Feelin' Lucky, Punk?";
-	}
-	States
-	{
-	Pickup:
-		TNT1 A 0 A_JumpIfInventory("Python",1,"JustAmmo");
-		TNT1 A 0 A_GiveInventory("MagnumHeldAmmo",6);
-		TNT1 A 0 A_GiveInventory("Python",1);
-		Stop;
-	JustAmmo:
-		TNT1 A 0 A_GiveInventory("PythonAmmo",6);
-		Stop;
+		ParanoidWeaponGiver.Weapon1 "MagnumHeldAmmo","PythonAmmo",6;
+		DropItem "Python";
 	}
 }
 
@@ -810,6 +807,7 @@ class Python : Weapon
 		Inventory.PickupMessage "A .357 Magnum! You Feelin' Lucky, Punk?";
 		Obituary "%o's armor was pierced by %k's Python.";
 		Decal "BulletChip";
+		Inventory.Icon "i_pist2";
 	}
 	States
 	{
@@ -888,7 +886,7 @@ class PythonAmmo : Ammo
 		Inventory.MaxAmount 36;
 		Ammo.BackpackAmount 6;
 		Ammo.BackpackMaxAmount 50;
-		Inventory.Icon "CLIPA0";
+		Inventory.Icon "i_bul2";
 	}
 	States
 	{
@@ -924,6 +922,7 @@ class RPGLauncher : Weapon
 		Weapon.AmmoUse 1;
 		Weapon.AmmoGive 2;
 		Weapon.AmmoType "RPGAmmo";
+		Inventory.Icon "i_rlau1";
 	}
 	States
 	{
@@ -1093,7 +1092,7 @@ class RPGAmmo : Ammo
 		Inventory.MaxAmount 10;
 		Ammo.BackpackAmount 2;
 		Ammo.BackpackMaxAmount 20;
-		Inventory.Icon "ROCKA0";
+		Inventory.Icon "i_rock2";
 	}
 	States
 	{
@@ -1129,6 +1128,7 @@ class XBow : Weapon
 		weapon.upsound "";
 		Tag "Crossbow";
 		+WEAPON.NOAUTOFIRE
+		Inventory.Icon "i_xbow1";
 	}
 	States
 	{
@@ -1249,12 +1249,12 @@ class XBowBolts : Ammo
 		Radius 8;
 		Height 4;
 		inventory.pickupmessage "Picked up a clip of crossbow bolts";
-		inventory.icon "HWXPB0";
 		inventory.pickupsound "misc/w_pkup";
 		inventory.amount 5;
 		inventory.maxamount 50;
 		ammo.backpackamount 5;
 		ammo.backpackmaxamount 50;
+		inventory.icon "i_bul1";	//Change when proper icon is inserted into file
 	}
 	states
 	{
@@ -1264,25 +1264,12 @@ class XBowBolts : Ammo
 	}
 }
 
-class XBowBoltSingle : Ammo
+class XBowBoltSingle : XBowBolts
 {
 	Default
 	{
-		+FLOORCLIP
-		Radius 8;
-		Height 4;
 		inventory.pickupmessage "Picked up a crossbow bolt";
-		inventory.icon "HWXPB0";
-		inventory.pickupsound "misc/w_pkup";
-		inventory.maxamount 50;
-		ammo.backpackamount 5;
-		ammo.backpackmaxamount 50;
-	}
-	states
-	{
-	Spawn:
-		POSS A -1;
-		Stop;
+		inventory.amount 1;
 	}
 }
 
@@ -1349,6 +1336,7 @@ class GluonGun : Weapon
 		+FLOORCLIP
 		Tag "Gluon gun";
 		Scale 0.8;
+		Inventory.Icon "i_gluon1";
 	}
 	States
 	{
@@ -2204,35 +2192,21 @@ class RipperEffect : Actor
 
 //***************************************************************
 
-class AECell : Ammo replaces Cell
+class AECell : Ammo
 {
 	Default
 	{
 		+FLOORCLIP
-		height 10;
+		radius 8;
+		height 8;
 		inventory.pickupmessage "Picked up depleted U-235.";
-		inventory.icon "IECCA0";
 		inventory.amount 20;
 		inventory.maxamount 100;
 		inventory.pickupsound "misc/w_pkup";
 		ammo.backpackamount 20;
 		ammo.backpackmaxamount 100;
 		Scale 0.75;
-	}
-	states
-	{
-	Spawn:
-		AECC ABC 3;
-		Loop;
-	}
-}
-
-class AECellBox : AECell replaces CellPack
-{
-	Default
-	{
-		radius 8;
-		height 8;
+		inventory.icon "i_bul1";	//Change when proper icon is inserted into file
 	}
 	states
 	{
@@ -2245,25 +2219,6 @@ class AECellBox : AECell replaces CellPack
 //****
 // Hornet Gun (aka HiveHand)
 //****
-
-class HornetGunItem : WeaponGiver
-{
-	Default
-	{
-		+FLOORCLIP
-		+INVENTORY.IGNORESKILL
-		Scale 0.095;
-		Inventory.PickupMessage "You swiped an alien hornet gun!";
-		Inventory.PickupSound "reilsss/weapons/demoncalleridlebio";
-		DropItem "HornetGun";
-	}
-    States
-    {
-    Spawn:
-        HNTG A -1;
-        Loop;
-	}
-}
 
 class HornetGun : Weapon
 {
@@ -2284,6 +2239,7 @@ class HornetGun : Weapon
 		weapon.upsound "weapons/draw";
 		Scale 0.095;
 		Tag "HornetGun";
+		Inventory.Icon "i_hhand1";
 	}
     States
     {
@@ -2391,25 +2347,8 @@ class HLHornet : Ammo
 	{
 		Inventory.MaxAmount 10;
 		+INVENTORY.IGNORESKILL
-		Inventory.Icon "HTAMMO";
+		inventory.icon "i_bul1";	//Change when proper icon is inserted into file
 	}
-}
-
-class HornetGunPickup : WeaponGiver
-{
-	Default
-	{
-		Inventory.PickupMessage "You swiped an alien hornet gun!";
-		Inventory.PickupSound "reilsss/weapons/demoncalleridlebio";
-		Scale 0.095;
-		DropItem "HornetGun";
-    }
-	States
-    {
-    Spawn:
-		POSS A -1;
-		Loop;
-    }
 }
 
 //****
@@ -2626,12 +2565,13 @@ class HGruntHornetFake1 : HGruntHornetFake
 // Ammo Pack
 //============
 
-class AmmoPack : ParanoidWeaponPickup
+class AmmoPack : CustomInventory
 {
 	Default
 	{
 		Radius 6;
 		Height 24;
+		Inventory.PickupSound "misc/w_pkup";
 		Inventory.PickupMessage "Picked up an AmmoPack!";
 		+FLOORCLIP
 	}

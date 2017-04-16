@@ -347,7 +347,6 @@ DoomEdNums
 	4056=HLScientist2Still
 	4057=HLScientist3Still
 	4058=HLScientist4Still
-	6199=HornetGunItem
 	7401=HLHoundEye
 	7402=HLHeadcrab
 	7403=HLController
@@ -387,7 +386,6 @@ DoomEdNums
 	7444=HLGruntShotgunNoGrenade
 	7445=HLGargantua2
 	7800=HLBossBat
-	8506=AECell
 	20000=Waterfall
 	20001=debris01
 	20002=debris02
@@ -424,8 +422,8 @@ DoomEdNums
 	30021=XBowBoltSingle
 	30022=Missile
 	30023=GluonGun
-	30024=AECellBox
-	30025=HornetGunPickup
+	30024=AECell
+	30025=HornetGun
 	30026=Explosive
 	30100=Xbarrel1
 	30101=Xbarrel2

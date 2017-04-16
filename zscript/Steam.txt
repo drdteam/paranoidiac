@@ -17,7 +17,8 @@ class OMGSteam : SwitchableDecoration
 		TNT1 A 0 NODELAY
 		{
 			A_PlaySound("Steam/Loop",7,1,1);
-			scale=(args[0]+1*0.1,args[0]+1*0.1);
+			scale.x=(args[0]+1)/10.0;
+			scale.y=scale.x;
 		}
 		TNT1 A 0 A_CheckSightOrRange(2560,"IdleNoSee");
 		TNT1 A 1 A_SpawnItemEx("Steam1",0,0,0,(0.1)*ACS_ExecuteWithResult(770,args[0],args[1],0),
