@@ -408,6 +408,45 @@ script 872 (void)
 	}
 }
 
+#define OSPREY_TID		1000
+#define OFFSET_RADIUS	0
+#define OFFSET_VERTICAL	1
+#define OFFSET_ANGLE	2
+
+int OspreyBob;
+script "OspreyFlight"(int movertid)
+{
+	int i,a,b,z;
+	Thing_Activate(movertid);
+	ACS_NamedExecute("OspreyFlight2",0);
+	while(1)
+	{
+		a=GetActorAngle(movertid);
+		SetActorAngle(OSPREY_TID,a);
+		SetActorPosition(OSPREY_TID,
+		GetActorX(movertid),
+		GetActorY(movertid),
+		GetActorZ(movertid) + FixedMul(sin(OspreyBob),16.0),0);
+		for(i=0;i<2;i++)
+		{
+			a =(GetActorAngle(movertid) + PartOffset[i][OFFSET_ANGLE] + 1.0) % 1.0;
+			SetActorPosition(OSPREY_TID + 1 + i,
+			GetActorX(movertid) + FixedMul(cos(a),PartOffset[i][OFFSET_RADIUS]),
+			GetActorY(movertid) + FixedMul(sin(a),PartOffset[i][OFFSET_RADIUS]),
+			GetActorZ(movertid) + PartOffset[i][OFFSET_VERTICAL] + FixedMul(sin(OspreyBob),16.0),0);
+			SetActorAngle(OSPREY_TID + 1 + i,GetActorAngle(movertid));
+			delay(1);
+		}
+	}
+}
+script "OspreyFlight2"(void)
+{
+	OspreyBob += 512;
+	OspreyBob %= 1.0;
+	delay(1);
+	restart;
+}
+
 //////////////////////////////
 // Script 444: Waterfall	//
 //////////////////////////////
