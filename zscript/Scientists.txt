@@ -381,7 +381,7 @@ class HLScientist1Panic : HLScientist
 			}
 			return state(null);
 		}
-		Goto WanderRunDecide;
+		TNT1 A 0 A_Jump(256,"WanderRunDecide");
 	CalmDown:
 		TNT1 A 0 {panic-=8;}	//If decides to go running again, will last a bit more
 		TNT1 A 0 A_Jump(160,"WanderRun");
