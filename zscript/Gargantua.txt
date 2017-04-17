@@ -86,7 +86,7 @@ class HLGargantua : Actor
 		TNT1 A 0 A_PlaySound("halflife/monsters/gargantua/stomp",7,1,0,ATTN_NONE);
 		TNT1 A 0 Radius_Quake(8,20,0,15,0);
 		HL0N E 23 A_SpawnItemEx("GargFloorBoomFake",10);
-		HL0N E 10 A_SpawnItemEx("GargFloorBoom",10);		//where it aimed first
+		HL0N E 10 A_SpawnItemEx("GargFloorBoom",10,0,0,20);		//where it aimed first
 		Goto See;
 	Hornets:
 		HL0M ABC 7 A_FaceTarget;
