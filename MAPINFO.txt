@@ -1,34 +1,34 @@
 gameinfo
 {
-	playerclasses = "RolfBellmer"
-	borderflat = "XMETAL25"
-	infopage = "HELP"
+	playerclasses="RolfBellmer"
+	borderflat="XMETAL25"
+	infopage="HELP"
 }
 
 clearskills
 
 skill Easy
 {
-	SpawnFilter = "Easy"
-	PicName = "M_EASY"
-	ACSreturn = 1
-	Key = e
+	SpawnFilter="Easy"
+	PicName="M_EASY"
+	ACSreturn=1
+	Key=e
 }
 
 skill Medium
 {
-	SpawnFilter = "Normal"
-	PicName = "M_MED"
-	ACSreturn = 2
-	Key = m
+	SpawnFilter="Normal"
+	PicName="M_MED"
+	ACSreturn=2
+	Key=m
 }
 
 skill Difficult
 {
-	SpawnFilter = "Hard"
-	PicName = "M_DIFF"
-	ACSreturn = 3
-	Key = d
+	SpawnFilter="Hard"
+	PicName="M_DIFF"
+	ACSreturn=3
+	Key=d
 }
 
 episode map01
@@ -53,63 +53,76 @@ episode map22
 
 map TITLEMAP "Flight of the Phoenix"
 {
-	sky1 = HLSKY3, 0.0
-	PrecacheSounds = "30Title"
+	sky1=HLSKY3
+	PrecacheSounds="Music01","30Title"
 }
 
 defaultmap
 {
-	lightmode = 0
-	fogdensity = 1
-	fade = "00 00 00"
+	lightmode=0
+	fogdensity=1
+	fade="00 00 00"
 	evenlighting
 	nolightfade
 	fallingdamage
-	cluster = 1
-	sky1 = HLSKY1, 0.0
+	cluster=1
+	sky1=HLSKY1
 }
 
-map map01 "Walk Softly and Carry a Big Stick"{}
-map map02 "You Can Run ...."{}
-map map03 "No Rest for the Wicked"{}
+map map01 "Walk Softly and Carry a Big Stick"
+{
+	PrecacheSounds="Music02"
+}
+map map02 "You Can Run ...."
+{
+	PrecacheSounds="Music02"
+}
+map map03 "No Rest for the Wicked"
+{
+	PrecacheSounds="Music03"
+}
 map map04 "Finding Dr. Zimmerman"{}
-map map08 "...But You Can't Hide."{}
+map map08 "...But You Can't Hide."
+{
+	PrecacheSounds="Music04"
+}
 
+adddefaultmap
+{
+	sky1=HLSKY2
+}
 map map05 "Mission Accomplished?"
 {
-	sky1 = HLSKY2, 0.0
+	PrecacheSounds="Music07"
 }
-
 map map06 "Dirty. Little. Secret"
 {
-	sky1 = HLSKY2, 0.0
+	PrecacheSounds="Music01"
 }
-
 map map07 "Out of the Frying Pan ...."
 {
-	sky1 = HLSKY2, 0.0
-	next = "map09"
 	next=EndTitle
+	PrecacheSounds="Music03","Music07"
 }
 
 cluster 1
 {
 	hub
-	pic = TITLEPIC
-	exittext =
+	pic=TITLEPIC
+	exittext=
 	"Paranoid: A production of",
 	"'The Persecution Complex'."
 }
 
 adddefaultmap
 {
-	cluster = 2
+	cluster=2
+	sky1=HLSKY3
 }
 
 map map10 "Smoke on the Water, The Fire in the Sky."
 {
-	sky1 = HLSKY3, 0.0
-	PrecacheSounds = "10Earth"
+	PrecacheSounds="10Earth"
 }
 
 adddefaultmap
@@ -119,104 +132,87 @@ adddefaultmap
 
 map map11 "Fly in a Web."
 {
-	sky1 = HLSKY3, 0.0
-	PrecacheSounds = "01Earth"
-	PrecacheSounds = "11Earth"
+	PrecacheSounds="01Earth","11Earth"
 }
-
 map map12 "How Green, the Valley."
 {
-	sky1 = HLSKY3, 0.0
-	PrecacheSounds = "01Earth"
+	PrecacheSounds="01Earth"
+}
+
+adddefaultmap
+{
+	sky1=HLSKY4
 }
 
 map map13 "Sewer Rat."
 {
-	sky1 = HLSKY4, 0.0
-	PrecacheSounds = "01Earth"
-	PrecacheSounds = "13Earth"
+	PrecacheSounds="01Earth","13Earth"
 }
-
 map map14 "Run, Rabbit, Run!"
 {
-	sky1 = HLSKY4, 0.0
-	PrecacheSounds = "01Earth"
-	PrecacheSounds = "14Earth"
+	PrecacheSounds="01Earth","14Earth"
 }
-
 map map15 "When Hell Freezes Over."
 {
-	sky1 = HLSKY4, 0.0
-	PrecacheSounds = "01Earth"
-	hazardcolor = "80 a0 ff"
-	hazardflash = "40 80 ff"
+	PrecacheSounds="01Earth"
+	hazardcolor="80 a0 ff"
+	hazardflash="40 80 ff"
+}
+
+adddefaultmap
+{
+	sky1=HLSKY5
 }
 
 map map16 "Play the Mad Scientist."
 {
-	sky1 = HLSKY5, 0.0
-	PrecacheSounds = "01Earth"
-	PrecacheSounds = "16Earth"
-	PrecacheSounds = "16ZEarth"
+	PrecacheSounds="01Earth","16Earth","16ZEarth"
 }
-
 map map17 "Painted into a Corner."
 {
-	sky1 = HLSKY5, 0.0
-	PrecacheSounds = "01Earth"
-	PrecacheSounds = "17Earth"
+	PrecacheSounds="01Earth","17Earth"
 }
-
 map map18 "Cavernicolous."
 {
-	sky1 = HLSKY5, 0.0
-	PrecacheSounds = "01Earth"
-	PrecacheSounds = "18Earth"
-	PrecacheSounds = "18ZEarth"
+	PrecacheSounds="01Earth","18Earth","18ZEarth"
 }
 
+adddefaultmap
+{
+	sky1=HLSKY6
+}
 map map19 "Island Hopping."
 {
-	sky1 = HLSKY6, 0.0
-	PrecacheSounds = "19Xen"
-	AirControl = 0.25
+	PrecacheSounds="19Xen"
+	AirControl=.25
 }
-
 map map20 "Monarch Gonarch."
 {
-	sky1 = HLSKY6, 0.0
-	PrecacheSounds = "20Xen"
-	AirControl = 0.25
+	PrecacheSounds="20Xen"
+	AirControl=.25
 }
 
 map map21 "Xenophobia."
 {
-	sky1 = HLSKY6, 0.0
-	PrecacheSounds = "21Xen"
-	PrecacheSounds = "21YXen"
-	PrecacheSounds = "21ZXen"
-	AirControl = 0.25
-	next = EndSequence, "ParaEndScroll"
+	PrecacheSounds="21Xen","21YXen","21ZXen"
+	next=EndSequence,"ParaEndScroll"
 }
-
 map map22 "Six Ways to Die."
 {
-	PrecacheSounds = "22SixWay"
+	PrecacheSounds="22SixWay"
 }
-
 map map23 "SpaceX."
 {
-	sky1 = HLSKY6, 0.0
-	PrecacheSounds = "23Space"
-	PrecacheTextures = "XMETL08", "XMETL09", "XMETL10", "XMETL08A", "XMETL08B", "XMETL08C", "XMETL09A", "XMETL09B", "XMETL09C", "XMETL09D", "XMETL09E", "XMETL09F", "XMETL10A", "XMETL10B", "XMETL10C", "XMETL10D", "XMETL10E"
-	next = EndSequence, "ParaEndScroll"
+	PrecacheSounds="23Space"
+	PrecacheTextures="XMETL08","XMETL09","XMETL10","XMETL08A","XMETL08B","XMETL08C","XMETL09A","XMETL09B","XMETL09C","XMETL09D","XMETL09E","XMETL09F","XMETL10A","XMETL10B","XMETL10C","XMETL10D","XMETL10E"
+	next=EndSequence,"ParaEndScroll"
 }
 
 cluster 2
 {
 	hub
-	pic = TITLEPIC
-	exittext =
+	pic=TITLEPIC
+	exittext=
 	"Paranoiac: A production of",
 	"'The Persecution Complex'.",
 	"Other Work by the Team:",
@@ -229,16 +225,16 @@ Intermission ParaEndScroll
 {
 	Scroller
 	{
-		ScrollDirection = Left
-		Background = "PNEND1"
-		Background2 = "PNEND2"
-		Music = "D_PNDEND"
-		InitialDelay = -35
-//		InitialDelay = -105
-		Scrolltime = -640
-		Time = -760
+		ScrollDirection=Left
+		Background="PNEND1"
+		Background2="PNEND2"
+		Music="D_PNDEND"
+		InitialDelay=-35
+//		InitialDelay=-105
+		Scrolltime=-640
+		Time=-760
 	}
-	Link = ParaEndLogo
+	Link=ParaEndLogo
 }
 
 Intermission ParaEndLogo
