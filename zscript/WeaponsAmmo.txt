@@ -1,5 +1,10 @@
 class ParanoidWeapon : Weapon
 {
+	override void PostBeginPlay()
+	{
+		if(bTOSSED)
+			angle=random(0,359);
+	}
 	States
 	{
 	Spawn:
@@ -15,6 +20,11 @@ class ParanoidWeaponGiver : WeaponGiver
 	string Weapon1,Weapon2;
 	int Weapon1Amount;
 	Property Weapon1: Weapon1,Weapon2,Weapon1Amount;
+	override void PostBeginPlay()
+	{
+		if(bTOSSED)
+			angle=random(0,359);
+	}
 	override bool TryPickup(in out Actor toucher)
 	{
 		if(WeaponGiver.TryPickup(toucher))
