@@ -1,3 +1,95 @@
+class Osprey : Actor
+{
+	int bobstate;
+	actor lblade,rblade;
+	override void postbeginplay()
+	{
+		lblade=Spawn("OspreyBlade",pos);
+		rblade=Spawn("OspreyBlade",pos);
+	}
+	override void tick()
+	{
+		double newz=pos.z-BobSin(bobstate)/2.;
+		bobstate=(bobstate+1)&63;
+		newz+=BobSin(bobstate)/2.;
+		SetZ(newz);
+		int a;
+		if(lblade)
+		{
+			a=angle+90;
+			lblade.SetOrigin((pos.x+cos(a)*340.0,pos.y+sin(a)*340.0,pos.z),true);
+			lblade.angle=angle;
+		}
+		if(rblade)
+		{
+			a=angle+270;
+			rblade.SetOrigin((pos.x+cos(a)*340.0,pos.y+sin(a)*340.0,pos.z),true);
+			rblade.angle=angle;
+		}
+		super.tick();
+	}
+	Default
+	{
+		Height 20;
+		+NOCLIP
+		+NOBLOCKMAP
+		+NOGRAVITY
+	}
+	states
+	{
+	Spawn:
+		POSS A -1 NODELAY A_PlaySound("play/osprey",CHAN_AUTO,1.0,1);
+		Stop;
+	}
+}
+
+class OspreyBellmer : Osprey
+{
+	Default
+	{
+		Height 16;
+	}
+	states
+	{
+	Bellmer:
+		POSS B -1;
+		Stop;
+	}
+}
+
+class OspreyDead : Actor
+{
+	Default
+	{
+		Radius 86;
+		Height 8;
+		Mass 0x7FFFFFFF;
+		+FLOORCLIP
+	}
+	States
+	{
+	Spawn:
+		POSS A -1;
+		Stop;
+	}
+}
+
+class OspreyBlade : Actor
+{
+	Default
+	{
+		+NOCLIP
+		+NOBLOCKMAP
+		+NOGRAVITY
+	}
+	states
+	{
+	Spawn:
+		POSS A -1;
+		Stop;
+	}
+}
+
 //****
 // Osprey that can be "destroyed"
 //****

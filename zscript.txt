@@ -6,6 +6,7 @@ enum ParanoidEnum
 #include "zscript/Barriers.txt"
 #include "zscript/Bubbles.txt"
 #include "zscript/Models.txt"
+#include "zscript/Osprey.txt"
 #include "zscript/Exploding.txt"
 #include "zscript/Flames.txt"
 #include "zscript/Messages.txt"
@@ -46,6 +47,5 @@ enum ParanoidEnum
 #include "zscript/BossBat.txt"
 #include "zscript/MixedBag.txt"
 #include "zscript/SUVGoBoom.txt"
-#include "zscript/OspreyGoBoom.txt"
 
 #include "zscript/freezeritem.txt"

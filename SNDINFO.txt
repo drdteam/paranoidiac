@@ -40,8 +40,8 @@ chemical_detected hazchem1
 
 $rolloff zap 1024 2048
 
-play/osprey 			"sounds/osprey.wav"
-Steam/Loop STEMLOOP
+play/osprey 			osprey
+Steam/Loop 				STEMLOOP
 
 sw0deny	sw0deny
 switches/sw1light		sw1light
