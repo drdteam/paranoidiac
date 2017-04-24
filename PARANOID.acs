@@ -123,6 +123,51 @@ script "ArmorStation"(int uses,int tex)
 }
 
 //Hint messages that are run when player uses the inventory item "MessageItem**"
+str hintsnd[32][2]=
+{
+	{"MAP2VOX1","HINTMAN"},
+	{"MAP2VOX2","HINTMAN"},
+	{"MAP2VOX3","HINTMAN"},
+	{"MAP2VOX4","HINTMAN"},
+	{"MAP3VOX1","HINTMAN"},
+	{"MAP3VOX2","HINTMAN"},
+	{"MAP3VOX3","HINTMAN"},
+	{"MAP4VOX1","HINTMAN"},
+	{"MAP4VOX2","HINTMAN"},
+	{"MAP4VOX3","HINTMAN"},
+	{"MAP8VOX1","HINTMAN"},
+	{"MAP5VOX1","HINTMAN"},
+	{"MAP5VOX2","HINTMAN"},
+	{"MAP5VOX3","HINTMAN"},
+	{"MAP6VOX1","HINTMAN"},
+	{"MAP6VOX2","HINTMAN"},
+	{"MAP7VOX1","HINTMAN"},
+	{"MAP7VOX2","HINTMAN"},
+	{"",""},
+	{"MAP10VX1","STINSON"},
+	{"MAP11VX1","STINSON"},
+	{"MAP12VX1","STINSON"},
+	{"MAP12VX2","UNDERNET"},
+	{"MAP13VX1","STINSON"},
+	{"MAP13VX2","UNDERNET"},
+	{"MAP14VX1","STINSON"},
+	{"MAP14VX2","STINSON"},
+	{"MAP15VX1","STINSON"},
+	{"MAP16VX1","STINSON"},
+	{"MAP16VX2","UNDERNET"},
+	{"MAP16VX3","STINSON"},
+	{"MAP17VX1","STINSON"}
+};
+int delays[32][2]=
+{
+	{8,0},{6,0},{7,0},{9,0},{16,0},
+	{14,0},{10,0},{10,0},{15,0},{10,0},
+	{8,0},{6,0},{13,0},{8,0},{5,0},
+	{7,0},{5,0},{8,0},{0,0},{42,4.6},
+	{18,2.1},{32,2.65},{39,3.25},{29,2.01},{38,3.21},
+	{13,2.94},{27,1.3},{18,1.2},{21,1.0},{29,2.3},
+	{24,2.6},{16,1.7}
+};
 function void hintmessage(str message,str icon,int holdtime,int holdtime2)
 {
 	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
@@ -136,255 +181,10 @@ function void hintmessage(str message,str icon,int holdtime,int holdtime2)
 	else
 		HUDMessage(l:message;HUDMSG_PLAIN|HUDMSG_LOG,2,CR_GOLD,80.1,30.1,holdtime);
 }
-
-//Map02: Message 1
-Script 501(void)
+script "HintMessage"(int message)
 {
-	hintmessage("MAP2VOX1","HINTMAN",7.0,0);
-	delay(8*35);
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-}
-
-//Map02: Message 2
-//Map04: Message 4
-Script 502(void)
-{
-	hintmessage("MAP2VOX2","HINTMAN",5.0,0);
-	delay(6*35);
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-}
-
-//Map02: Message 3
-Script 503(void)
-{
-	hintmessage("MAP2VOX3","HINTMAN",6.0,0);
-	delay(7*35);
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-}
-
-//Map02: Message 4
-Script 504(void)
-{
-	hintmessage("MAP2VOX4","HINTMAN",9.0,0);
-	delay(9*35);
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-}
-
-//Map03: Message 1
-Script 505(void)
-{
-	hintmessage("MAP3VOX1","HINTMAN",18.0,0);
-	delay(16*35);
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-}
-
-//Map03: Message 2
-Script 506(void)
-{
-	hintmessage("MAP3VOX2","HINTMAN",18.0,0);
-	delay(14*35);
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-}
-
-//Map03: Message 3
-Script 507(void)
-{
-	hintmessage("MAP3VOX3","HINTMAN",11.0,0);
-	delay(10*35);
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-}
-
-//Map04: Message 1
-Script 508(void)
-{
-	hintmessage("MAP4VOX1","HINTMAN",12.0,0);
-	delay(10*35);
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-}
-
-//Map04: Message 2
-Script 509(void)
-{
-	hintmessage("MAP4VOX2","HINTMAN",15.0,0);
-	delay(15*35);
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-}
-
-//Map04: Message 3
-Script 510(void)
-{
-	hintmessage("MAP4VOX3","HINTMAN",13.0,0);
-	delay(10*35);
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-}
-
-//Map08: Message 1
-Script 511(void)
-{
-	hintmessage("MAP8VOX1","HINTMAN",7.0,0);
-	delay(8*35);
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-}
-
-//Map05: Message 1
-Script 512(void)
-{
-	hintmessage("MAP5VOX1","HINTMAN",5.0,0);
-	delay(6*35);
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-}
-
-//Map05: Message 2
-Script 513(void)
-{
-	hintmessage("MAP5VOX2","HINTMAN",15.0,0);
-	delay(13*35);
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-}
-
-//Map05: Message 3
-Script 514(void)
-{
-	hintmessage("MAP5VOX3","HINTMAN",10.0,0);
-	delay(8*35);
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-}
-
-//Map06: Message 1
-Script 515(void)
-{
-	hintmessage("MAP6VOX1","HINTMAN",4.0,0);
-	delay(5*35);
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-}
-
-//Map06: Message 2
-Script 516(void)
-{
-	hintmessage("MAP6VOX2","HINTMAN",8.0,0);
-	delay(7*35);
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-}
-
-//Map07: Message 1
-Script 517(void)
-{
-	hintmessage("MAP7VOX1","HINTMAN",5.0,0);
-	delay(5*35);
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-}
-
-//Map07: Message 2
-Script 518(void)
-{
-	hintmessage("MAP7VOX2","HINTMAN",8.0,0);
-	delay(8*35);
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-}
-
-//Script 519 & MessageItem19 already assigned to Map04
-
-//Map10: Message 1 (Col. Stinson)
-Script 520 (void)
-{
-	hintmessage("MAP10VX1","STINSON",42.0,4.6);
-	delay(42*35);
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-}
-
-//Map11: Message 1 (Col. Stinson)
-Script 521 (void)
-{
-	hintmessage("MAP11VX1","STINSON",18.0,2.1);
-	delay(18*35);
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-}
-
-//Map12: Message 1 (Col. Stinson)
-Script 522 (void)
-{
-	hintmessage("MAP12VX1","STINSON",32.0,2.65);
-	delay(32*35);
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-}
-
-//Map12: Message 2 (UnderNet)
-Script 523 (void)
-{
-	hintmessage("MAP12VX2","UNDERNET",39.0,3.25);
-	delay(39*35);
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-}
-
-//Map13: Message 1 (Col. Stinson)
-Script 524 (void)
-{
-	hintmessage("MAP13VX1","STINSON",29.0,2.01);
-	delay(29*35);
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-}
-
-//Map13: Message 2 (UnderNet)
-Script 525 (void)
-{
-	hintmessage("MAP13VX2","UNDERNET",38.0,3.21);
-	delay(38*35);
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-}
-
-//Map14: Message 1 (Col. Stinson)
-Script 526 (void)
-{
-	hintmessage("MAP14VX1","STINSON",13.0,2.94);
-	delay(13*35);
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-}
-
-//Map14: Message 2 (Col. Stinson)
-Script 527 (void)
-{
-	hintmessage("MAP14VX2","STINSON",27.0,1.3);
-	delay(27*35);
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-}
-
-//Map15: Message 1 (Col. Stinson)
-Script 528 (void)
-{
-	hintmessage("MAP15VX1","STINSON",18.0,1.2);
-	delay(18*35);
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-}
-
-//Map16: Message 1 (Col. Stinson)
-Script 529 (void)
-{
-	hintmessage("MAP16VX1","STINSON",21.0,1.0);
-	delay(21*35);
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-}
-
-//Map16: Message 2 (UnderNet)
-Script 530 (void)
-{
-	hintmessage("MAP16VX2","UNDERNET",29.0,2.3);
-	delay(29*35);
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-}
-
-//Map16: Message 3 (Col. Stinson)
-Script 531 (void)
-{
-	hintmessage("MAP16VX3","STINSON",24.0,2.6);
-	delay(24*35);
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-}
-
-//Map17: Message 1 (Col. Stinson)
-Script 532 (void)
-{
-	hintmessage("MAP17VX1","STINSON",16.0,1.7);
-	delay(16*35);
+	hintmessage(hintsnd[message-1][0],hintsnd[message-1][1],delays[message-1][0]*1.0,delays[message-1][1]);
+	delay(delays[message-1][0]*35);
 	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
 }
 
@@ -417,7 +217,7 @@ script 444 (int size)
 // Script 729-730: Bubbles	//
 //////////////////////////////
 
-str Bubble[5] ={"Bubble1","Bubble2","Bubble3","Bubble4","Bubble5"};
+str Bubble[5]={"Bubble1","Bubble2","Bubble3","Bubble4","Bubble5"};
 
 script 729 (void)
 {

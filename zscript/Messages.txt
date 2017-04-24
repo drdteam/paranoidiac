@@ -16,7 +16,7 @@ class MessageItem01 : CustomInventory
 		MAIL A -1;
 		Stop;
 	Use:
-		TNT1 A 0 ACS_Execute(501,0);
+		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,1);
 		Fail;
 	}
 }
@@ -31,7 +31,7 @@ class MessageItem02 : MessageItem01
 	States
 	{
 	Use:
-		TNT1 A 0 ACS_Execute(502,0);
+		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,2);
 		Fail;
 	}
 }
@@ -46,7 +46,7 @@ class MessageItem03 : MessageItem01
 	States
 	{
 	Use:
-		TNT1 A 0 ACS_Execute(503,0);
+		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,3);
 		Fail;
 	}
 }
@@ -61,7 +61,7 @@ class MessageItem04 : MessageItem01
 	States
 	{
 	Use:
-		TNT1 A 0 ACS_Execute(504,0);
+		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,4);
 		Fail;
 	}
 }
@@ -72,7 +72,7 @@ class MessageItem05 : MessageItem01
 	States
 	{
 	Use:
-		TNT1 A 0 ACS_Execute(505,0);
+		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,5);
 		Fail;
 	}
 }
@@ -83,7 +83,7 @@ class MessageItem06 : MessageItem02
 	States
 	{
 	Use:
-		TNT1 A 0 ACS_Execute(506,0);
+		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,6);
 		Fail;
 	}
 }
@@ -94,7 +94,7 @@ class MessageItem07 : MessageItem03
 	States
 	{
 	Use:
-		TNT1 A 0 ACS_Execute(507,0);
+		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,7);
 		Fail;
 	}
 }
@@ -105,7 +105,7 @@ class MessageItem08 : MessageItem01
 	States
 	{
 	Use:
-		TNT1 A 0 ACS_Execute(508,0);
+		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,8);
 		Fail;
 	}
 }
@@ -116,7 +116,7 @@ class MessageItem09 : MessageItem02
 	States
 	{
 	Use:
-		TNT1 A 0 ACS_Execute(509,0);
+		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,9);
 		Fail;
 	}
 }
@@ -127,7 +127,7 @@ class MessageItem10 : MessageItem03
 	States
 	{
 	Use:
-		TNT1 A 0 ACS_Execute(510,0);
+		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,10);
 		Fail;
 	}
 }
@@ -147,7 +147,7 @@ class MessageItem11 : MessageItem01
 	States
 	{
 	Use:
-		TNT1 A 0 ACS_Execute(511,0);
+		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,11);
 		Fail;
 	}
 }
@@ -158,7 +158,7 @@ class MessageItem12 : MessageItem01
 	States
 	{
 	Use:
-		TNT1 A 0 ACS_Execute(512,0);
+		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,12);
 		Fail;
 	}
 }
@@ -169,7 +169,7 @@ class MessageItem13 : MessageItem02
 	States
 	{
 	Use:
-		TNT1 A 0 ACS_Execute(513,0);
+		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,13);
 		Fail;
 	}
 }
@@ -180,7 +180,7 @@ class MessageItem14 : MessageItem03
 	States
 	{
 	Use:
-		TNT1 A 0 ACS_Execute(514,0);
+		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,14);
 		Fail;
 	}
 }
@@ -191,7 +191,7 @@ class MessageItem15 : MessageItem01
 	States
 	{
 	Use:
-		TNT1 A 0 ACS_Execute(515,0);
+		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,15);
 		Fail;
 	}
 }
@@ -202,7 +202,7 @@ class MessageItem16 : MessageItem02
 	States
 	{
 	Use:
-		TNT1 A 0 ACS_Execute(516,0);
+		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,16);
 		Fail;
 	}
 }
@@ -213,7 +213,7 @@ class MessageItem17 : MessageItem01
 	States
 	{
 	Use:
-		TNT1 A 0 ACS_Execute(517,0);
+		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,17);
 		Fail;
 	}
 }
@@ -224,7 +224,7 @@ class MessageItem18 : MessageItem02
 	States
 	{
 	Use:
-		TNT1 A 0 ACS_Execute(518,0);
+		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,18);
 		Fail;
 	}
 }
@@ -235,7 +235,7 @@ class MessageItem20 : MessageItem01
 	States
 	{
 	Use:
-		TNT1 A 0 ACS_Execute(520,0);
+		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,20);
 		Fail;
 	}
 }
@@ -246,7 +246,7 @@ class MessageItem21 : MessageItem01
 	States
 	{
 	Use:
-		TNT1 A 0 ACS_Execute(521,0);
+		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,21);
 		Fail;
 	}
 }
@@ -259,7 +259,7 @@ class MessageItem22 : MessageItem01
 	States
 	{
 	Use:
-		TNT1 A 0 ACS_Execute(522,0);
+		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,22);
 		Fail;
 	}
 }
@@ -270,7 +270,7 @@ class MessageItem23 : MessageItem02
 	States
 	{
 	Use:
-		TNT1 A 0 ACS_Execute(523,0);
+		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,23);
 		Fail;
 	}
 }
@@ -281,7 +281,7 @@ class MessageItem24 : MessageItem01
 	States
 	{
 	Use:
-		TNT1 A 0 ACS_Execute(524,0);
+		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,24);
 		Fail;
 	}
 }
@@ -292,7 +292,7 @@ class MessageItem25 : MessageItem02
 	States
 	{
 	Use:
-		TNT1 A 0 ACS_Execute(525,0);
+		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,25);
 		Fail;
 	}
 }
@@ -303,7 +303,7 @@ class MessageItem26 : MessageItem01
 	States
 	{
 	Use:
-		TNT1 A 0 ACS_Execute(526,0);
+		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,26);
 		Fail;
 	}
 }
@@ -314,7 +314,7 @@ class MessageItem27 : MessageItem02
 	States
 	{
 	Use:
-		TNT1 A 0 ACS_Execute(527,0);
+		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,27);
 		Fail;
 	}
 }
@@ -325,7 +325,7 @@ class MessageItem28 : MessageItem01
 	States
 	{
 	Use:
-		TNT1 A 0 ACS_Execute(528,0);
+		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,28);
 		Fail;
 	}
 }
@@ -336,7 +336,7 @@ class MessageItem29 : MessageItem01
 	States
 	{
 	Use:
-		TNT1 A 0 ACS_Execute(529,0);
+		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,29);
 		Fail;
 	}
 }
@@ -347,7 +347,7 @@ class MessageItem30 : MessageItem02
 	States
 	{
 	Use:
-		TNT1 A 0 ACS_Execute(530,0);
+		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,30);
 		Fail;
 	}
 }
@@ -358,7 +358,7 @@ class MessageItem31 : MessageItem03
 	States
 	{
 	Use:
-		TNT1 A 0 ACS_Execute(531,0);
+		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,31);
 		Fail;
 	}
 }
@@ -369,7 +369,7 @@ class MessageItem32 : MessageItem01
 	States
 	{
 	Use:
-		TNT1 A 0 ACS_Execute(532,0);
+		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,32);
 		Fail;
 	}
 }
