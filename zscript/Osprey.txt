@@ -1,4 +1,4 @@
-class Osprey : Actor
+class Osprey : ModelBase
 {
 	int bobstate;
 	actor lblade,rblade;
@@ -6,13 +6,17 @@ class Osprey : Actor
 	{
 		lblade=Spawn("OspreyBlade",pos);
 		rblade=Spawn("OspreyBlade",pos);
+		A_PlaySound("play/osprey",looping:1);
 	}
 	override void tick()
 	{
-		double newz=pos.z-BobSin(bobstate)/2.;
-		bobstate=(bobstate+1)&63;
-		newz+=BobSin(bobstate)/2.;
-		SetZ(newz);
+		if(pos.z!=floorz)
+		{
+			double newz=pos.z-BobSin(bobstate)/2.;
+			bobstate=(bobstate+1)&63;
+			newz+=BobSin(bobstate)/2.;
+			SetZ(newz);
+		}
 		int a;
 		if(lblade)
 		{
@@ -31,15 +35,10 @@ class Osprey : Actor
 	Default
 	{
 		Height 20;
+		-SOLID
 		+NOCLIP
 		+NOBLOCKMAP
 		+NOGRAVITY
-	}
-	states
-	{
-	Spawn:
-		POSS A -1 NODELAY A_PlaySound("play/osprey",CHAN_AUTO,1.0,1);
-		Stop;
 	}
 }
 
@@ -71,6 +70,15 @@ class OspreyDead : Actor
 	Spawn:
 		POSS A -1;
 		Stop;
+	}
+}
+
+class OspreyDead1 : OspreyDead
+{
+	Default
+	{
+		Radius 2;
+		Height 2;
 	}
 }
 

@@ -1,13 +1,8 @@
-class Monitor : Actor
+class ModelBase : Actor
 {
 	Default
 	{
-		Radius 15;
-		Height 20;
-		Mass 450;
-		Scale .25;
 		+SOLID
-		+PUSHABLE
 	}
 	States
 	{
@@ -17,27 +12,32 @@ class Monitor : Actor
 	}
 }
 
+class Monitor : ModelBase
+{
+	Default
+	{
+		Radius 15;
+		Height 20;
+		Mass 450;
+		Scale .25;
+		+PUSHABLE
+	}
+}
+
 class Monitor1 : Monitor{}
 class Monitor2 : Monitor{}
 class Monitor3 : Monitor{}
 
-class keyboard1 : Actor
+class keyboard1 : ModelBase
 {
 	Default
 	{
 		Radius 16;
 		Height 4;
-		+solid
 		+shootable
 		+noblood
 		+FLOORCLIP
 		+NOTAUTOAIMED
-	}
-	States
-	{
-	Spawn:
-		POSS A -1;
-		Stop;
 	}
 }
 
@@ -136,7 +136,7 @@ class server3 : server1{}
 // Lights, Tesla Coil
 //=============================================
 
-class Transformer : Actor
+class Transformer : ModelBase
 {
 	Default
 	{
@@ -144,13 +144,6 @@ class Transformer : Actor
 		Height 60;
 		Mass 0x7FFFFFFF;
 		+FLOORCLIP
-		+SOLID
-	}
-	States
-	{
-	Spawn:
-		POSS A -1;
-		Stop;
 	}
 }
 
@@ -192,14 +185,13 @@ class Meter3 : Meter1
 	}
 }
 
-class light1 : Actor
+class light1 : ModelBase
 {
 	Default
 	{
 		Radius 6;
 		Height 8;
 		+FLOORCLIP
-		+SOLID
 		+NoGravity
 	}
 	States
@@ -236,20 +228,13 @@ class Tesla : Transformer
 // Apache & Osprey helicopters; steel girders; trams
 //====================================================================
 
-class Forklift1 : Actor
+class Forklift1 : ModelBase
 {
 	Default
 	{
 		Height 64;
 		Mass 0x7FFFFFFF;
 		+FLOORCLIP
-		+SOLID
-	}
-	States
-	{
-	Spawn:
-		POSS A -1;
-		Stop;
 	}
 }
 
@@ -277,7 +262,7 @@ class Bulldozer1 : Forklift1{}
 class Trailer1 : Forklift1{}
 class Trailer2 : Forklift1{}
 
-class Generator1 : Actor
+class Generator1 : ModelBase
 {
 	Default
 	{
@@ -285,14 +270,7 @@ class Generator1 : Actor
 		Height 64;
 		Mass 1200;
 		Scale 2.0;
-		+SOLID
 		+FLOORCLIP
-	}
-	States
-	{
-	Spawn:
-		POSS A -1;
-		Stop;
 	}
 }
 
@@ -371,7 +349,7 @@ class Generator4 : Forklift1
 	}
 }
 
-class girder1 : Actor
+class girder1 : ModelBase
 {
 	Default
 	{
@@ -379,13 +357,6 @@ class girder1 : Actor
 		Height 416;
 		Mass 0x7FFFFFFF;
 		+FLOORCLIP
-		+SOLID
-	}
-	States
-	{
-	Spawn:
-		POSS A -1;
-		Stop;
 	}
 }
 
@@ -398,7 +369,7 @@ class girder2 : girder1
 	}
 }
 
-class apache : Actor
+class apache : ModelBase
 {
 	Default
 	{
@@ -406,17 +377,10 @@ class apache : Actor
 		Height 128;
 		Mass 0x7FFFFFFF;
 		+FLOORCLIP
-		+SOLID
-	}
-	States
-	{
-	Spawn:
-		POSS A -1;
-		Stop;
 	}
 }
 
-class Tram : Actor
+class Tram : ModelBase
 {
 	Default
 	{
@@ -424,19 +388,12 @@ class Tram : Actor
 		Height 32;
 		Mass 0x7FFFFFFF;
 		+FLOORCLIP
-		+SOLID
-	}
-	States
-	{
-	Spawn:
-		POSS A -1;
-		Stop;
 	}
 }
 
 class Tram2 : Tram{}
 
-class Truck01 : Actor
+class Truck01 : ModelBase
 {
 	Default
 	{
@@ -444,13 +401,6 @@ class Truck01 : Actor
 		Height 122;
 		Mass 0x7FFFFFFF;
 		+FLOORCLIP
-		+SOLID
-	}
-	States
-	{
-	Spawn:
-		POSS A -1;
-		Stop;
 	}
 }
 
@@ -481,7 +431,7 @@ class SUV3 : SUV1 //SUV with Glass
 	}
 }
 
-class SUVGlass : Actor
+class SUVGlass : ModelBase
 {
 	Default
 	{
@@ -490,12 +440,7 @@ class SUVGlass : Actor
 		Radius 16;
 		Height 56;
 		+FLOORCLIP
-	}
-	States
-	{
-	Spawn:
-		POSS A -1;
-		Stop;
+		-SOLID
 	}
 }
 
@@ -504,7 +449,7 @@ class SUVGlass : Actor
 // Commodes, urinals, desks, chairs, filing cabinets
 //===================================================
 
-class Toilet1 : Actor
+class Toilet1 : ModelBase
 {
 	Default
 	{
@@ -512,13 +457,6 @@ class Toilet1 : Actor
 		Height 28;
 		Mass 0x7FFFFFFF;
 		+FLOORCLIP
-		+SOLID
-	}
-	States
-	{
-	Spawn:
-		POSS A -1;
-		Stop;
 	}
 }
 class Toilet2 : Toilet1{}
@@ -532,7 +470,7 @@ class Urinal1 : Toilet1
 	}
 }
 
-class Chair1 : Actor
+class Chair1 : ModelBase
 {
 	Default
 	{
@@ -541,13 +479,6 @@ class Chair1 : Actor
 		Mass 50;
 		+FLOORCLIP
 		+PUSHABLE
-		+SOLID
-	}
-	States
-	{
-	Spawn:
-		POSS A -1;
-		Stop;
 	}
 }
 
@@ -586,7 +517,7 @@ class Sofa : Armchair
 	}
 }
 
-class Desklamp1 : Actor
+class Desklamp1 : ModelBase
 {
 	Default
 	{
@@ -595,19 +526,12 @@ class Desklamp1 : Actor
 		Mass 10;
 		+FLOORCLIP
 		+PUSHABLE
-		+SOLID
-	}
-	States
-	{
-	Spawn:
-		POSS A -1;
-		Stop;
 	}
 }
 
 class Desklamp2 : Desklamp1{}
 
-class Desk1 : Actor
+class Desk1 : ModelBase
 {
 	Default
 	{
@@ -615,13 +539,6 @@ class Desk1 : Actor
 		Height 32;
 		Mass 100;
 		+FLOORCLIP
-		+SOLID
-	}
-	States
-	{
-	Spawn:
-		POSS A -1;
-		Stop;
 	}
 }
 
@@ -639,7 +556,7 @@ class Desk4 : Desk2{}
 class Desk5 : Desk2{}
 class Desk6 : Desk2{}
 
-class HandDryer : Actor
+class HandDryer : ModelBase
 {
 	Default
 	{
@@ -647,13 +564,6 @@ class HandDryer : Actor
 		Height 8;
 		Mass 0x7FFFFFFF;
 		+NOGRAVITY
-		+SOLID
-	}
-	States
-	{
-	Spawn:
-		POSS A -1;
-		Stop;
 	}
 }
 
@@ -692,20 +602,13 @@ class ToiletPaper : HandDryer
 	}
 }
 
-class Bed01 : Actor
+class Bed01 : ModelBase
 {
 	Default
 	{
 		Height 24;
 		Mass 150;
 		+FLOORCLIP
-		+SOLID
-	}
-	States
-	{
-	Spawn:
-		POSS A -1;
-		Stop;
 	}
 }
 
@@ -721,19 +624,12 @@ class Bed02 : Bed01
 class Bed03 : Bed01{}
 class Bed04 : Bed02{}
 
-class FileCab2 : Actor
+class FileCab2 : ModelBase
 {
 	Default
 	{
 		Radius 12;
 		Height 32;
-		+solid
-	}
-	States
-	{
-	Spawn:
-		POSS A -1;
-		Stop;
 	}
 }
 
@@ -745,7 +641,7 @@ class FileCab3: FileCab2
 	}
 }
 
-class DeerHead : Actor
+class DeerHead : ModelBase
 {
 	Default
 	{
@@ -754,31 +650,17 @@ class DeerHead : Actor
 		Mass 450;
 		Scale 1.25;
 		+FLOORCLIP
-		+SOLID
 		+NOGRAVITY
-	}
-	States
-	{
-	Spawn:
-		POSS A -1;
-		Stop;
 	}
 }
 
-class VidCam1 : Actor
+class VidCam1 : ModelBase
 {
 	Default
 	{
 		Radius 16;
 		Height 56;
-		+SOLID
 		+FLOORCLIP
-	}
-	States
-	{
-	Spawn:
-		POSS A -1;
-		Stop;
 	}
 }
 
@@ -790,7 +672,7 @@ class VidCam2 : VidCam1
 	}
 }
 
-class TankGlass : Actor
+class TankGlass : ModelBase
 {
 	Default
 	{
@@ -798,12 +680,7 @@ class TankGlass : Actor
 		Height 2;
 		Renderstyle "translucent";
 		Alpha 0.5;
-	}
-	States
-	{
-	Spawn:
-		POSS A -1;
-		Stop;
+		-SOLID
 	}
 }
 
@@ -812,20 +689,13 @@ class TankGlass : Actor
 // Pipes, tanks, valves
 //=======================
 
-class Pipe1 : Actor
+class Pipe1 : ModelBase
 {
 	Default
 	{
 		Height 58;
 		Mass 0x7FFFFFFF;
 		+FLOORCLIP
-		+SOLID
-	}
-	States
-	{
-	Spawn:
-		POSS A -1;
-		Stop;
 	}
 }
 
@@ -972,20 +842,13 @@ class pipe6 : pipe1
 	}
 }
 
-class PipeMaze : Actor
+class PipeMaze : ModelBase
 {
 	Default
 	{
 		Radius 64;
 		Height 28;
 		+NOGRAVITY
-		+SOLID
-	}
-	States
-	{
-	Spawn:
-		POSS A -1;
-		Stop;
 	}
 }
 
@@ -994,7 +857,7 @@ class PipeMaze : Actor
 // Radios, toolboxes, gas can
 //===========================
 
-class Toolbox1 : Actor
+class Toolbox1 : ModelBase
 {
 	Default
 	{
@@ -1002,13 +865,6 @@ class Toolbox1 : Actor
 		Mass 200;
 		+FLOORCLIP
 		+PUSHABLE
-		+SOLID
-	}
-	States
-	{
-	Spawn:
-		POSS A -1;
-		Stop;
 	}
 }
 
@@ -1021,20 +877,13 @@ class Toolbox2 : Toolbox1
 	}
 }
 
-class Radio1 : Actor
+class Radio1 : ModelBase
 {
 	Default
 	{
 		Radius 8;
 		Height 8;
 		Mass 20;
-		+SOLID
-	}
-	States
-	{
-	Spawn:
-		POSS A -1;
-		Stop;
 	}
 }
 
@@ -1105,7 +954,7 @@ class Gascan1 : Radio5
 // Trees, plants, cacti
 //====================================================================
 
-class Palm1a : Actor
+class Palm1a : ModelBase
 {
 	Default
 	{
@@ -1113,13 +962,6 @@ class Palm1a : Actor
 		Height 340;
 		Mass 0x7FFFFFFF;
 		+FLOORCLIP
-		+SOLID
-	}
- 	States
-	{
-	Spawn:
-		POSS A -1;
-		Stop;
 	}
 }
 
@@ -1180,3 +1022,358 @@ class Plant2 : Palm1a
 		Height 32;
 	}
 }
+
+class StreetLamp : SwitchableDecoration
+{
+	Default
+	{
+		Radius 4;
+		Height 160;
+		+SOLID
+		+Floorclip
+	}
+    States
+    {
+    Spawn:
+    Active:
+		POSS A -1;
+		Loop;
+    Inactive:
+		POSS B -1;
+		Stop;
+    }
+}
+
+class Glass01 : ModelBase
+{
+	Default
+	{
+		Radius 16;
+		Height 16;
+		Renderstyle "Translucent";
+		Alpha 0.5;
+		+nogravity
+		-SOLID
+	}
+}
+
+class BookShelf1a : ModelBase
+{
+	Default
+	{
+		Radius 8;
+		Height 64;
+	}
+}
+
+class BookShelf1b : BookShelf1a{}
+class BookShelf2a : BookShelf1a{}
+class BookShelf2b : BookShelf1a{}
+class RKive : BookShelf1a
+{
+	Default
+	{
+		Height 16;
+	}
+}
+
+class Credenza : ModelBase
+{
+	Default
+	{
+		Radius 12;
+		Height 26;
+	}
+}
+
+class CredenzaShort : Credenza{}
+class Credenza2 : Credenza{}
+
+class Ashtray : ModelBase
+{
+	Default
+	{
+		Radius 2;
+		Height 2;
+	}
+}
+
+class AshtrayCig : Ashtray{}
+class ConfTable : Credenza{}
+
+class Phone1 : ModelBase
+{
+	Default
+	{
+		Radius 4;
+		Height 4;
+	}
+}
+
+class Phone2 : Phone1{}
+
+class Phone3 : Phone1
+{
+	Default
+	{
+		+NOGRAVITY
+	}
+}
+
+class Rock01 : ModelBase
+{
+	Default
+	{
+		Radius 24;
+		Height 360;
+	}
+}
+
+class Rock01a : Rock01{}
+class Rock01b : Rock01{}
+class Rock01c : Rock01{}
+class Rock02 : Rock01{}
+class Rock02a : Rock01{}
+class Rock02b : Rock01{}
+class Rock02c : Rock01{}
+class Rock03 : Rock01{}
+class Rock03a : Rock01{}
+class Rock03b : Rock01{}
+class Rock03c : Rock01{}
+
+class Rock04 : Rock01
+{
+	Default
+	{
+		Radius 48;
+		Height 148;
+	}
+}
+
+class Rock04a : Rock04{}
+class Rock04b : Rock04{}
+class Rock04c : Rock04{}
+
+class Rock05 : ModelBase
+{
+	Default
+	{
+		Radius 48;
+		Height 100;
+	}
+}
+
+class Rock05a : Rock05{}
+class Rock06 : Rock05{}
+class Rock06a : Rock05{}
+
+class TechPillar1a : ModelBase
+{
+	Default
+	{
+		Radius 16;
+		Height 214;
+		Mass 0x7FFFFFFF;
+		+Floorclip
+	}
+}
+
+class TechPillar1b : TechPillar1a{}
+class TechPillar1c : TechPillar1a{}
+
+class TechPillar2 : TechPillar1a
+{
+	Default
+	{
+		Height 188;
+	}
+}
+
+class TechClamp : ModelBase
+{
+	Default
+	{
+		Radius 96;
+		Height 256;
+		Mass 0x7FFFFFFF;
+		+SPAWNCEILING
+		+NOGRAVITY
+	}
+}
+
+class TechPillar1aa : TechPillar1a
+{
+	Default
+	{
+		Radius 12;
+		Height 160;
+	}
+}
+
+class TechPillar1bb : TechPillar1aa{}
+class TechPillar1cc : TechPillar1aa{}
+
+class TechPillar2a : TechPillar1a
+{
+	Default
+	{
+		Radius 8;
+		Height 94;
+	}
+}
+
+class TechClampa : TechClamp
+{
+	Default
+	{
+		Radius 48;
+		Height 128;
+	}
+}
+
+class Rock02d : Rock01{}
+class Rock03d : Rock01{}
+class Rock02e : Rock01{}
+class Rock03e : Rock01{}
+
+class Rock02f : Rock01
+{
+	Default
+	{
+		Radius 60;
+		Height 450;
+	}
+}
+
+class Rock03f : Rock02f{}
+
+class XenIsland1 : ModelBase
+{
+	Default
+	{
+		Radius 96;
+		Height 128;
+		Mass 0x7FFFFFFF;
+		-SOLID
+	}
+}
+
+class XenIsland2 : XenIsland1{}
+
+class XenIsland3 : XenIsland1
+{
+	Default
+	{
+		Radius 288;
+		Height 384;
+	}
+}
+
+class HoverPad : ModelBase
+{
+	Default
+	{
+		Radius 28;
+		Height 1;
+		-SOLID
+	}
+}
+
+class XenIsland4 : XenIsland3{}
+class XenIsland5 : XenIsland3{}
+
+class PConsole : ModelBase
+{
+	Default
+	{
+		Radius 12;
+		Height 32;
+	}
+}
+
+class PConsole1 : PConsole{}
+class PConsole2 : PConsole{}
+class PConsole3 : PConsole{}
+
+class pipe7 : pipe1
+{
+	Default
+	{
+		Radius 12;
+		Height 181;
+	}
+}
+
+class pipe8 : pipe1
+{
+	Default
+	{
+		Radius 16;
+		Height 272;
+	}
+}
+
+class girder3 : girder1
+{
+	Default
+	{
+		Radius 136;
+		Height 1664;
+		+NoGravity
+	}
+}
+
+class girder4 : girder1
+{
+	Default
+	{
+		Radius 128;
+		+NoGravity
+	}
+}
+
+class XMetalBox1 : XMetalBox
+{
+	Default
+	{
+		Radius 136;
+		Height 256;
+	}
+}
+
+class XenIsland6 : XenIsland3{}
+
+class Rock02g : Rock01
+{
+	Default
+	{
+		Radius 72;
+		Height 476;
+	}
+}
+
+class Rock03g : Rock02g{}
+
+class Explosive : Inventory
+{
+	Default
+	{
+		Radius 4;
+		Height 8;
+		Mass 10;
+		Inventory.PickupSound "misc/p_pkup";
+		Inventory.PickupMessage "Acquired explosive device.";
+		+FLOORCLIP
+		+SOLID
+		+INVENTORY.ALWAYSPICKUP
+	}
+    States
+    {
+    Spawn:
+		POSS A -1;
+		Loop;
+    }
+}
+
+class PConsole4 : PConsole{}
+class PConsole5 : PConsole{}
