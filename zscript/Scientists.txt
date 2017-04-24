@@ -356,6 +356,7 @@ class HLScientist1Panic : HLScientist
 		TNT1 A 0 A_Jump(256,"WanderRunDecide");
 	WanderRunDecide:	//decide if they calm down or not
 		TNT1 A 0 A_JumpIf(panic>=30,"CalmDown");
+		TNT1 A 0 A_Jump(256,"WanderRun");
 	WanderRun:		//not calmed at all
 		HLRR A 0;
 		"####" A 0 A_SetSpeed(5);
