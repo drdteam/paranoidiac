@@ -22,7 +22,7 @@ class HLScientistImmovilSpawner : RandomSpawner
 
 class HLScientist : Actor
 {
-	int boredom,stay,panic;
+	int limit,limit2,boredom,stay,panic;
 	override bool Used(Actor user)
 	{
 		boredom=0;
@@ -31,7 +31,7 @@ class HLScientist : Actor
 	Default
 	{
 		Monster;
-		Health 1;
+		Health 25;
 		Speed 1.666667;
 		Height 56;
 		PainChance 255;
@@ -56,6 +56,12 @@ class HLScientist : Actor
 
 class HLScientist1Path : HLScientist
 {
+	override void postbeginplay()
+	{
+		limit=35;
+		limit2=30;
+	}
+	//+FRIGHTENED
 	States
 	{
 	Spawn:
@@ -88,6 +94,15 @@ class HLScientist1Path : HLScientist
 		Loop;
 	See:
 		HLRW A 0;
+		"####" A 0
+		{
+			if(bFRIGHTENED)//scream the 1st time they enter here
+			{
+				A_PlaySound("halflife/monsters/scientist/sight");
+				return ResolveState("SeeDecidePanic");
+			}
+			return state(null);
+		}
 		"####" AAAAAABBBBBBCCCCCCDDDDDDEEEEEEFFFFFF 1
 		{
 			if(boredom)
@@ -97,199 +112,26 @@ class HLScientist1Path : HLScientist
 		}
 		Goto See+1;
 	Pain:
-		HLRP A 8 A_Pain;
-		Goto See;
+		HLRP A 0;
+		"####" A 8 A_Pain;
+		"####" A 0 A_Jump(256,"See");
 	Death:
-		TNT1 A 0 A_NoBlocking;
-		TNT1 A 10 A_SpawnItemEx("HLScientist1Panic",flags:SXF_NOCHECKPOSITION);
+		HLRD A 0;
+		"####" A 3 A_Scream;
+		"####" B 3 A_NoBlocking;
+		"####" CDEFGHIJ 3;
+		"####" K 3 A_PlaySound("halflife/weapons/bodydrop");
+		"####" L 3;
+		"####" M -1;
 		Stop;
-	}
-}
-
-class HLScientist2Path : HLScientist1Path
-{
-	Default
-	{
-		Scale .3526;
-	}
-	States
-	{
-	Spawn:
-		SC1I A 0;
-		Goto Super::Spawn+1;
-	See:
-		SC1W A 0;
-		Goto Super::See+1;
-	Pain:
-		SC1P A 8 A_Pain;
-		Goto See;
-	Death:
-		TNT1 A 0 A_NoBlocking;
-		TNT1 A 10 A_SpawnItemEx("HLScientist2Panic",flags:SXF_NOCHECKPOSITION);
-		Stop;
-	}
-}
-
-class HLScientist3Path : HLScientist1Path
-{
-	Default
-	{
-		Scale .355;
-	}
-	States
-	{
-	Spawn:
-		SC2I A 0;
-		Goto Super::Spawn+1;
-	See:
-		SC2W A 0;
-		Goto Super::See+1;
-	Pain:
-		SC2P A 8 A_Pain;
-		Goto See;
-	Death:
-		TNT1 A 0 A_NoBlocking;
-		TNT1 A 10 A_SpawnItemEx("HLScientist3Panic",flags:SXF_NOCHECKPOSITION);
-		Stop;
-	}
-}
-
-class HLScientist4Path : HLScientist1Path
-{
-	States
-	{
-	Spawn:
-		SC3I A 0;
-		Goto Super::Spawn+1;
-	See:
-		SC3W A 0;
-		Goto Super::See+1;
-	Pain:
-		SC3P A 8 A_Pain;
-		Goto See;
-	Death:
-		TNT1 A 0 A_NoBlocking;
-		TNT1 A 10 A_SpawnItemEx("HLScientist4Panic",flags:SXF_NOCHECKPOSITION);
-		Stop;
-	}
-}
-
-//**************************************************************************
-//**************************************************************************
-
-class HLScientist1Wander : HLScientist
-{
-	Default
-	{
-		Health 4;
-	}
-	States
-	{
-	Spawn:
-		HLRW AAAAAABBBBBBCCCCCCDDDDDDEEEEEEFFFFFF 1 A_Wander;
-		HLRI A 0 A_Jump(32,"StopMov");
-		Loop;
-	StopMov:
-		"####" A 0 A_Jump(256,1,2,3);
-		"####" ABC 0 A_Jump(256,"Pondering");
-	Pondering:
-		"####" # 15 Chatter(4);
-		"####" # 0 A_Jump(6,"Spawn");
-		Loop;
-	Pain:
-		HLRP A 8 A_Pain;
-		Goto Spawn;
-	Death:
-		TNT1 A 0 A_NoBlocking;
-		TNT1 A 10 A_SpawnItemEx("HLScientist1Panic",flags:SXF_NOCHECKPOSITION);
-		Stop;
-	}
-}
-
-class HLScientist2Wander : HLScientist1Wander
-{
-	Default
-	{
-		Scale 0.3526;
-	}
-	States
-	{
-	Spawn:
-		SC1W AAAAAABBBBBBCCCCCCDDDDDDEEEEEEFFFFFF 1 NODELAY A_Wander;
-		SC1I A 0 A_Jump(32,"StopMov");
-		Loop;
-	Pain:
-		SC1P A 8 A_Pain;
-		Goto Spawn;
-	Death:
-		TNT1 A 0 A_NoBlocking;
-		TNT1 A 10 A_SpawnItemEx("HLScientist2Panic",flags:SXF_NOCHECKPOSITION);
-		Stop;
-	}
-}
-
-class HLScientist3Wander : HLScientist1Wander
-{
-	Default
-	{
-		Scale 0.355;
-	}
-	States
-	{
-	Spawn:
-		SC2W AAAAAABBBBBBCCCCCCDDDDDDEEEEEEFFFFFF 1 NODELAY A_Wander;
-		SC2I A 0 A_Jump(32,"StopMov");
-		Loop;
-	Pain:
-		SC2P A 8 A_Pain;
-		Goto Spawn;
-	Death:
-		TNT1 A 0 A_NoBlocking;
-		TNT1 A 10 A_SpawnItemEx("HLScientist3Panic",flags:SXF_NOCHECKPOSITION);
-		Stop;
-	}
-}
-
-class HLScientist4Wander : HLScientist1Wander
-{
-	States
-	{
-	Spawn:
-		SC3W AAAAAABBBBBBCCCCCCDDDDDDEEEEEEFFFFFF 1 NODELAY A_Wander;
-		SC3I A 0 A_Jump(32,"StopMov");
-		Loop;
-	Pain:
-		SC3P A 8 A_Pain;
-		Goto Spawn;
-	Death:
-		TNT1 A 0 A_NoBlocking;
-		TNT1 A 10 A_SpawnItemEx("HLScientist4Panic",flags:SXF_NOCHECKPOSITION);
-		Stop;
-	}
-}
-
-//**************************************************************************
-//**************************************************************************
-
-class HLScientist1Panic : HLScientist
-{
-	int limit,limit2;
-	override void postbeginplay()
-	{
-		limit=35;
-		limit2=30;
-	}
-	Default
-	{
-		Health 25;
-		+FRIGHTENED
-	}
-	States
-	{
-	Spawn:
-		TNT1 A 0 NODELAY A_ClearTarget;
-		TNT1 A 0 A_Jump(256,"Wander","WanderRunStart");
-	Wander:
+	Panic:
+		TNT1 A 0 NODELAY
+		{
+			A_ClearTarget();
+			bFRIGHTENED=1;
+		}
+		TNT1 A 0 A_Jump(256,"WanderPanic","WanderRunStartPanic");
+	WanderPanic:
 		HLRW A 0;
 		"####" A 0 A_SetSpeed(5.0/3.0);
 		"####" AAAAAA 1 A_Wander;
@@ -309,18 +151,18 @@ class HLScientist1Panic : HLScientist
 			if(random(0,255)<8)
 			{
 				A_PlaySound("scientist/panic");
-				return ResolveState("Wander");
+				return ResolveState("WanderPanic");
 			}
 			if(random(0,255)<4)
 			{
 				if(random(0,255)<235)
-					return ResolveState("IdleReg");		//stopmov, ironically also randomly starts the run seq
-				return ResolveState("WanderRunStart");	//kind of rare to see them running just because of nothing.
+					return ResolveState("IdleRegPanic");	//stopmov, ironically also randomly starts the run seq
+				return ResolveState("WanderRunStartPanic");	//kind of rare to see them running just because of nothing.
 			}
 			return state(null);
 		}
-		Goto Wander+1;
-	IdleReg:
+		Goto WanderPanic+1;
+	IdleRegPanic:
 		HLRI A 0;
 		"####" A 0
 		{
@@ -328,16 +170,13 @@ class HLScientist1Panic : HLScientist
 				A_PlaySound("scientist/panic");
 		}
 		"####" "###" 5 A_Look;
-		"####" # 0 A_Jump(5,"Wander");
-		Goto IdleReg+1;
-	See:			//scream the 1st time they enter here
-		"####" # 0 A_PlaySound("halflife/monsters/scientist/sight");
-		"####" # 0 A_Jump(256,"SeeDecide");
-	SeeDecide:		//decide if they calm down or not
+		"####" # 0 A_Jump(5,"WanderPanic");
+		Goto IdleRegPanic+1;
+	SeeDecidePanic:		//decide if they calm down or not
 		HLRR A 0;
-		"####" # 0 A_JumpIf(panic>=limit,"SeeCalmDown");
-		"####" # 0 A_Jump(256,"SeeLoop");
-	SeeLoop:
+		"####" # 0 A_JumpIf(panic>=limit,"SeeCalmDownPanic");
+		"####" # 0 A_Jump(256,"SeeLoopPanic");
+	SeeLoopPanic:
 		"####" A 0 A_SetSpeed(5);
 		"####" AAABBBCCCDDDEEEFFF 1 A_Chase;
 		"####" A 0
@@ -346,28 +185,28 @@ class HLScientist1Panic : HLScientist
 			if(random(0,255)<4)//every once in a while it will say something
 			{
 				A_PlaySound("halflife/monsters/scientist/sight");
-				return ResolveState("SeeLoop");
+				return ResolveState("SeeLoopPanic");
 			}
 			return state(null);
 		}
-		"####" # 0 A_Jump(256,"SeeDecide");
-	SeeCalmDown:
+		"####" # 0 A_Jump(256,"SeeDecidePanic");
+	SeeCalmDownPanic:
 		TNT1 A 0
 		{
 			panic-=8;	//If decides to go running again, will last a bit more
 			if(random(0,255)<160)
-				return ResolveState("WanderRun");
+				return ResolveState("WanderRunPanic");
 			panic=0;
 			A_ClearTarget();
-			return ResolveState("Wander");
+			return ResolveState("WanderPanic");
 		}
-	WanderRunStart:		//scream the 1st time they enter here
+	WanderRunStartPanic:		//scream the 1st time they enter here
 		TNT1 A 0 A_PlaySound("halflife/monsters/scientist/sight");
-		TNT1 A 0 A_Jump(256,"WanderRunDecide");
-	WanderRunDecide:	//decide if they calm down or not
-		TNT1 A 0 A_JumpIf(panic>=limit,"CalmDown");
-		TNT1 A 0 A_Jump(256,"WanderRun");
-	WanderRun:		//not calmed at all
+		TNT1 A 0 A_Jump(256,"WanderRunDecidePanic");
+	WanderRunDecidePanic:	//decide if they calm down or not
+		TNT1 A 0 A_JumpIf(panic>=limit,"CalmDownPanic");
+		TNT1 A 0 A_Jump(256,"WanderRunPanic");
+	WanderRunPanic:		//not calmed at all
 		HLRR A 0;
 		"####" A 0 A_SetSpeed(5);
 		"####" AAA 1 A_Wander;
@@ -388,36 +227,24 @@ class HLScientist1Panic : HLScientist
 			if(random(0,255)<4)//every once in a while it will say something
 			{
 				A_PlaySound("halflife/monsters/scientist/sight");
-				return ResolveState("WanderRun");
+				return ResolveState("WanderRunPanic");
 			}
 			return state(null);
 		}
-		TNT1 A 0 A_Jump(256,"WanderRunDecide");
-	CalmDown:
+		TNT1 A 0 A_Jump(256,"WanderRunDecidePanic");
+	CalmDownPanic:
 		TNT1 A 0
 		{
 			panic-=8;	//If decides to go running again, will last a bit more
 			if(random(0,255)<160)
-				return ResolveState("WanderRun");
+				return ResolveState("WanderRunPanic");
 			panic=0;
-			return ResolveState("Wander");
+			return ResolveState("WanderPanic");
 		}
-	Pain:
-		HLRP A 8 A_Pain;
-		Goto See;
-	Death:
-		HLRD A 0;
-		"####" A 3 A_Scream;
-		"####" B 3 A_NoBlocking;
-		"####" CDEFGHIJ 3;
-		"####" K 3 A_PlaySound("halflife/weapons/bodydrop");
-		"####" L 3;
-		"####" M -1;
-		Stop;
 	}
 }
 
-class HLScientist2Panic : HLScientist1Panic
+class HLScientist2Path : HLScientist1Path
 {
 	override void postbeginplay()
 	{
@@ -426,32 +253,38 @@ class HLScientist2Panic : HLScientist1Panic
 	}
 	Default
 	{
-		Scale .36;
+		Scale .3526;
 	}
 	States
 	{
-	Wander:
-		SC1W A 0;
-		Goto Super::Wander+1;
-	IdleReg:
+	Spawn:
 		SC1I A 0;
-		Goto Super::IdleReg+1;
-	SeeDecide:
-		SC1R A 0;
-		Goto Super::SeeDecide+1;
-	WanderRun:
-		SC1R A 0;
-		Goto Super::WanderRun+1;
+		Goto Super::Spawn+1;
+	See:
+		SC1W A 0;
+		Goto Super::See+1;
 	Pain:
-		SC1P A 8 A_Pain;
-		Goto See;
+		SC1P A 0;
+		Goto Super::Pain+1;
 	Death:
 		SC1D A 0;
 		Goto Super::Death+1;
+	WanderPanic:
+		SC1W A 0;
+		Goto Super::WanderPanic+1;
+	IdleRegPanic:
+		SC1I A 0;
+		Goto Super::IdleRegPanic+1;
+	SeeDecidePanic:
+		SC1R A 0;
+		Goto Super::SeeDecidePanic+1;
+	WanderRunPanic:
+		SC1R A 0;
+		Goto Super::WanderRunPanic+1;
 	}
 }
 
-class HLScientist3Panic : HLScientist1Panic
+class HLScientist3Path : HLScientist1Path
 {
 	override void postbeginplay()
 	{
@@ -460,32 +293,38 @@ class HLScientist3Panic : HLScientist1Panic
 	}
 	Default
 	{
-		Scale .36;
+		Scale .355;
 	}
 	States
 	{
-	Wander:
-		SC2W A 0;
-		Goto Super::Wander+1;
-	IdleReg:
+	Spawn:
 		SC2I A 0;
-		Goto Super::IdleReg+1;
-	SeeDecide:
-		SC2R A 0;
-		Goto Super::SeeDecide+1;
-	WanderRun:
-		SC2R A 0;
-		Goto Super::WanderRun+1;
+		Goto Super::Spawn+1;
+	See:
+		SC2W A 0;
+		Goto Super::See+1;
 	Pain:
-		SC2P A 8 A_Pain;
-		Goto See;
+		SC2P A 0;
+		Goto Super::Pain+1;
 	Death:
 		SC2D A 0;
 		Goto Super::Death+1;
+	WanderPanic:
+		SC2W A 0;
+		Goto Super::WanderPanic+1;
+	IdleRegPanic:
+		SC2I A 0;
+		Goto Super::IdleRegPanic+1;
+	SeeDecidePanic:
+		SC2R A 0;
+		Goto Super::SeeDecidePanic+1;
+	WanderRunPanic:
+		SC2R A 0;
+		Goto Super::WanderRunPanic+1;
 	}
 }
 
-class HLScientist4Panic : HLScientist1Panic
+class HLScientist4Path : HLScientist1Path
 {
 	override void postbeginplay()
 	{
@@ -494,115 +333,170 @@ class HLScientist4Panic : HLScientist1Panic
 	}
 	States
 	{
-	Wander:
-		SC3W A 0;
-		Goto Super::Wander+1;
-	IdleReg:
+	Spawn:
 		SC3I A 0;
-		Goto Super::IdleReg+1;
-	SeeDecide:
-		SC3R A 0;
-		Goto Super::SeeDecide+1;
-	WanderRun:
-		SC3R A 0;
-		Goto Super::WanderRun+1;
+		Goto Super::Spawn+1;
+	See:
+		SC3W A 0;
+		Goto Super::See+1;
 	Pain:
-		SC3P A 8 A_Pain;
-		Goto See;
+		SC3P A 0;
+		Goto Super::Pain+1;
 	Death:
 		SC3D A 0;
 		Goto Super::Death+1;
+	WanderPanic:
+		SC3W A 0;
+		Goto Super::WanderPanic+1;
+	IdleRegPanic:
+		SC3I A 0;
+		Goto Super::IdleRegPanic+1;
+	SeeDecidePanic:
+		SC3R A 0;
+		Goto Super::SeeDecidePanic+1;
+	WanderRunPanic:
+		SC3R A 0;
+		Goto Super::WanderRunPanic+1;
 	}
 }
 
 //**************************************************************************
 //**************************************************************************
 
-class HLScientist1Still : HLScientist
+class HLScientist1Wander : HLScientist1Path
 {
-	Default
-	{
-		Health 2;
-	}
 	States
 	{
 	Spawn:
+	See:
+		HLRW AAAAAABBBBBBCCCCCCDDDDDDEEEEEEFFFFFF 1 A_Wander;
+		HLRI A 0 A_Jump(32,"StopMov");
+		Loop;
+	StopMov:
+		"####" A 0 A_Jump(256,1,2,3);
+		"####" ABC 0 A_Jump(256,"Pondering");
+	Pondering:
+		"####" # 15 Chatter(4);
+		"####" # 0 A_Jump(6,"Spawn");
+		Loop;
+	}
+}
+
+class HLScientist2Wander : HLScientist2Path
+{
+	States
+	{
+	Spawn:
+	See:
+		SC1W AAAAAABBBBBBCCCCCCDDDDDDEEEEEEFFFFFF 1 NODELAY A_Wander;
+		SC1I A 0 A_Jump(32,"StopMov");
+		Loop;
+	StopMov:
+		"####" A 0 A_Jump(256,1,2,3);
+		"####" ABC 0 A_Jump(256,"Pondering");
+	Pondering:
+		"####" # 15 Chatter(4);
+		"####" # 0 A_Jump(6,"Spawn");
+		Loop;
+	}
+}
+
+class HLScientist3Wander : HLScientist3Path
+{
+	States
+	{
+	Spawn:
+	See:
+		SC2W AAAAAABBBBBBCCCCCCDDDDDDEEEEEEFFFFFF 1 NODELAY A_Wander;
+		SC2I A 0 A_Jump(32,"StopMov");
+		Loop;
+	StopMov:
+		"####" A 0 A_Jump(256,1,2,3);
+		"####" ABC 0 A_Jump(256,"Pondering");
+	Pondering:
+		"####" # 15 Chatter(4);
+		"####" # 0 A_Jump(6,"Spawn");
+		Loop;
+	}
+}
+
+class HLScientist4Wander : HLScientist4Path
+{
+	States
+	{
+	Spawn:
+	See:
+		SC3W AAAAAABBBBBBCCCCCCDDDDDDEEEEEEFFFFFF 1 NODELAY A_Wander;
+		SC3I A 0 A_Jump(32,"StopMov");
+		Loop;
+	StopMov:
+		"####" A 0 A_Jump(256,1,2,3);
+		"####" ABC 0 A_Jump(256,"Pondering");
+	Pondering:
+		"####" # 15 Chatter(4);
+		"####" # 0 A_Jump(6,"Spawn");
+		Loop;
+	}
+}
+
+//**************************************************************************
+//**************************************************************************
+
+class HLScientist1Still : HLScientist1Path
+{
+	States
+	{
+	Spawn:
+	See:
 		HLRI A 0;
 		"####" A 0 A_Jump(256,1,2,3);
 		"####" ABC 0 A_Jump(256,"Pondering");
 	Pondering:
 		"####" # 10 Chatter(2);
 		Loop;
-	Pain:
-		HLRP A 8 A_Pain;
-		Goto Spawn;
-	Death:
-		TNT1 A 0 A_NoBlocking;
-		TNT1 A 10 A_SpawnItemEx("HLScientist1Panic",flags:SXF_NOCHECKPOSITION);
-		Stop;
 	}
 }
 
-class HLScientist2Still : HLScientist1Still
+class HLScientist2Still : HLScientist2Path
 {
-	Default
-	{
-		Scale 0.3526;
-	}
 	States
 	{
 	Spawn:
+	See:
 		SC1I A 0;
-		Goto Super::Spawn+1;
-	Pain:
-		SC1P A 8 A_Pain;
-		Goto Spawn;
-	Death:
-		TNT1 A 0 A_NoBlocking;
-		TNT1 A 10 A_SpawnItemEx("HLScientist2Panic",flags:SXF_NOCHECKPOSITION);
-		Stop;
+		"####" A 0 A_Jump(256,1,2,3);
+		"####" ABC 0 A_Jump(256,"Pondering");
+	Pondering:
+		"####" # 10 Chatter(2);
+		Loop;
 	}
 }
 
-class HLScientist3Still : HLScientist1Still
+class HLScientist3Still : HLScientist3Path
 {
-	Default
-	{
-		Scale 0.355;
-	}
 	States
 	{
 	Spawn:
 		SC2I A 0;
-		Goto Super::Spawn+1;
-	Pain:
-		SC2P A 8 A_Pain;
-		Goto Spawn;
-	Death:
-		TNT1 A 0 A_NoBlocking;
-		TNT1 A 10 A_SpawnItemEx("HLScientist3Panic",flags:SXF_NOCHECKPOSITION);
-		Stop;
+		"####" A 0 A_Jump(256,1,2,3);
+		"####" ABC 0 A_Jump(256,"Pondering");
+	Pondering:
+		"####" # 10 Chatter(2);
+		Loop;
 	}
 }
 
-class HLScientist4Still : HLScientist1Still
+class HLScientist4Still : HLScientist4Path
 {
-	Default
-	{
-		Scale 0.36;
-	}
 	States
 	{
 	Spawn:
 		SC3I A 0;
-		Goto Super::Spawn+1;
-	Pain:
-		SC3P A 8 A_Pain;
-		Goto Spawn;
-	Death:
-		TNT1 A 0 A_NoBlocking;
-		TNT1 A 10 A_SpawnItemEx("HLScientist4Panic",flags:SXF_NOCHECKPOSITION);
-		Stop;
+		"####" A 0 A_Jump(256,1,2,3);
+		"####" ABC 0 A_Jump(256,"Pondering");
+	Pondering:
+		"####" # 10 Chatter(2);
+		Loop;
 	}
 }
 
