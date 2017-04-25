@@ -1,3 +1,5 @@
+version "2.5"
+
 enum ParanoidEnum
 {
 	HLSMOOTHCHASE=CHF_NOPLAYACTIVE+CHF_NORANDOMTURN+CHF_STOPIFBLOCKED
@@ -40,7 +42,6 @@ enum ParanoidEnum
 #include "zscript/Explosion.txt"	//Always keep this instruction at the bottom of the list
 
 // paranoic
-#include "zscript/OfficeRocks.txt"
 #include "zscript/Gonarch.txt"
 #include "zscript/Nihilanth.txt"
 #include "zscript/StukaBat.txt"
@@ -49,3 +50,22 @@ enum ParanoidEnum
 #include "zscript/SUVGoBoom.txt"
 
 #include "zscript/freezeritem.txt"
+
+class ParanoidAmmoHandler : StaticEventHandler
+{
+	override void WorldTick()
+	{
+		if(level.mapname=="TITLEMAP")
+			return;
+		for(int i=0;i<MAXPLAYERS;i++)
+		{
+			if(playeringame[i])
+			{
+				let me=players[i].mo;
+				int should=me.CountInv("M16HeldAmmo")+me.CountInv("M16Gren");
+				if(me.CountInv("M16ClipGren")!=should)
+					me.SetInventory("M16ClipGren",should);
+			}
+		}
+	}
+}

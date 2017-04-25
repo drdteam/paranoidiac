@@ -15,21 +15,10 @@ script "AltHudAmmo" ENTER
 	if(StrCmp(heldtype,"")&&GetCVar("screenblocks")==11&&GetCVar("hud_althud"))
 	{
 		setfont("CONFONT");
-		HudMessage(d:CheckInventory(heldtype);HUDMSG_PLAIN, 3, CR_RED, 0.9, 1.0, 0.35);
+		HudMessage(d:CheckInventory(heldtype);HUDMSG_PLAIN,3,CR_RED,0.9,1.0,0.35);
 	}
 	delay(1);
 	restart;
-}
-
-script "M16Ammo" ENTER
-{
-	if(CheckInventory("M16ClipGren")!=(CheckInventory("M16HeldAmmo")+CheckInventory("M16Gren")))
-	{
-		TakeInventory("M16ClipGren",70);
-		GiveInventory("M16ClipGren",(CheckInventory("M16HeldAmmo")+CheckInventory("M16Gren")));
-	}
-	Delay(1);
-	Restart;
 }
 
 //Sets up behavior for Barney to follow player
@@ -210,65 +199,6 @@ script 444 (int size)
 		GetActorY(0)+random(-8.0,8.0)+FixedMul(sin(GetActorAngle(0)),r),
 		GetActorZ(0)+random(-8.0,8.0),
 		0,GetActorAngle(0)>>8);
-	}
-}
-
-//////////////////////////////
-// Script 729-730: Bubbles	//
-//////////////////////////////
-
-str Bubble[5]={"Bubble1","Bubble2","Bubble3","Bubble4","Bubble5"};
-
-script 729 (void)
-{
-	int r = random(0,65536);
-	SetActorAngle(0, GetActorAngle(0) + 0.125);
-	SetActorPosition(0,
-		GetActorX(0) + FixedMul(cos(GetActorAngle(0)), r),
-		GetActorY(0) + FixedMUl(sin(GetActorAngle(0)), r),
-		GetActorZ(0),0);
-}
-
-script 730 (int area, int intensity, int shape)
-{
-	int i, a, r;
-	area += random(0, 8);
-	intensity += 1;
-	switch (shape)
-	{
-	case 0:	//square
-		area /= 2;
-		area <<= 16;
-		for (i=0; i<intensity; i++)
-			Spawn(Bubble[random(0, 4)],
-				GetActorX(0) + random(-area, area),
-				GetActorY(0) + random(-area, area),
-				GetActorZ(0),0,random(0, 255));
-		break;
-	case 1:	//circle
-		area /= 2;
-		area <<= 16;
-		for (i=0; i<intensity; i++)
-		{
-			r = random(0, area);
-			a = random(0,65536);
-			Spawn(Bubble[random(0, 4)],
-				GetActorX(0) + FixedMul(cos(a), r),
-				GetActorY(0) + FixedMul(sin(a), r),
-				GetActorZ(0),0,a >> 8);
-		}
-		break;
-	case 2:	//line
-		area <<= 16;
-		for (i=0; i<intensity; i++)
-		{
-			r = random(0, area);
-			Spawn(Bubble[random(0, 4)],
-				GetActorX(0) + FixedMul(cos(GetActorAngle(0)), r),
-				GetActorY(0) + FixedMul(sin(GetActorAngle(0)), r),
-				GetActorZ(0),0,GetActorAngle(0) >> 8);
-		}
-		break;
 	}
 }
 
