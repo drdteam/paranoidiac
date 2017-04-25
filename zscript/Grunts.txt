@@ -201,12 +201,18 @@ class HLGrunt1 : Actor
 		"####" F 1 A_Chase(null,null,HLSMOOTHCHASE);
 		"####" A 0 A_Jump(256,"See");
 	Missile:
-		TNT1 A 0 A_Jump(200,"Assault");
-		TNT1 A 0 A_JumpIfCloser(600,"Grenade");
-		TNT1 A 0 A_JumpIfCloser(1000,"GrenadeGun");
-		TNT1 A 0 A_Jump(256,"Assault");
-	Assault:
 		HK1O A 0;
+		"####" A 0
+		{
+			if(random(0,255)<200)
+				return state(null);
+			if(CheckIfCloser(target,600))
+				return resolvestate("Grenade");
+			if(CheckIfCloser(target,1000))
+				return resolvestate("GrenadeGun");
+			return state(null);
+		}
+	Assault:
 		"####" AAAA 3 A_FaceTarget;
 		"####" A 2 A_FaceTarget;
 		"####" A 0
@@ -218,19 +224,21 @@ class HLGrunt1 : Actor
 		"####" B 2 Light("ImShootingAGun") A_CustomBulletAttack(7,7,1,4,"NewPuff2");
 		"####" A 0 A_Jump(15,"See");
 		"####" A 0 A_CposRefire;
-		Goto Assault+5;
+		Goto Assault+4;
 	GrenadeGun:
 		HK1M A 0;
 		"####" AAAAAAAAA 3 A_FaceTarget;
 		"####" B 4;
-		"####" A 0 A_PlaySound("halflife/weapons/grenadelaunch",5);
-		"####" AA 0 A_SpawnItemEx("GunSmoke",15,3,49);
-		"####" A 0 A_JumpIfCloser(500,"GrenadeGunClose");
-		"####" B 5 Light("ImShootingAGun") A_SpawnProjectile("HLGruntGunGrenade",38,0,0);
-		"####" BA 5;
-		"####" A 0 A_Jump(256,"See");
-	GrenadeGunClose:
-		"####" B 5 Light("ImShootingAGun") A_SpawnProjectile("HLGruntGunGrenadeClose",38,0,0);
+		"####" B 5 Light("ImShootingAGun")
+		{
+			A_PlaySound("halflife/weapons/grenadelaunch",5);
+			for(int i=0;i<2;i++)
+				A_SpawnItemEx("GunSmoke",15,3,49);
+			if(CheckIfCloser(target,500))
+				A_SpawnProjectile("HLGruntGunGrenadeClose",38,0,0);
+			else
+				A_SpawnProjectile("HLGruntGunGrenade",38,0,0);
+		}
 		"####" BA 5;
 		"####" A 0 A_Jump(256,"See");
 	Grenade:
@@ -261,8 +269,8 @@ class HLGrunt1 : Actor
 		{
 			if(closegrencheck)
 				GrenTimeCounter++;
+			return resolvestate("See");
 		}
-		"####" A 0 A_Jump(256,"See");
 	Death:
 		HK1B A 2 A_Scream;
 		HK1B B 2 A_Fall;
@@ -270,9 +278,12 @@ class HLGrunt1 : Actor
 		HK1D K -1 A_PlaySound("halflife/weapons/bodydrop");
 		Stop;
 	XDeath:
-		TNT1 A 0 A_PlaySound("other/gibdeath");
-		TNT1 A 0 A_SpawnItemEx("BloodGibDropper",0,0,random(20,40));
-		TNT1 A 1 A_Fall;
+		TNT1 A 1
+		{
+			A_PlaySound("other/gibdeath");
+			A_SpawnItemEx("BloodGibDropper",0,0,random(20,40));
+			A_NoBlocking();
+		}
 		Stop;
 	}
 }
@@ -294,9 +305,9 @@ class HLGrunt2 : HLGrunt1
 	Walking:
 		HK2W A 0;
 		Goto Super::Walking+1;
-	Assault:
+	Missile:
 		HK2O A 0;
-		Goto Super::Assault+1;
+		Goto Super::Missile+1;
 	GrenadeGun:
 		HK2M A 0;
 		Goto Super::GrenadeGun+1;
@@ -336,9 +347,9 @@ class HLGrunt3 : HLGrunt1
 	Walking:
 		HK3W A 0;
 		Goto Super::Walking+1;
-	Assault:
+	Missile:
 		HK3O A 0;
-		Goto Super::Assault+1;
+		Goto Super::Missile+1;
 	GrenadeGun:
 		HK3M A 0;
 		Goto Super::GrenadeGun+1;
@@ -383,27 +394,40 @@ class HLGrunt4 : HLGrunt1
 		HK4W A 0;
 		Goto Super::Walking+1;
 	Missile:
-		TNT1 A 0 A_Jump(200,"Shotgun");
-		TNT1 A 0 A_JumpIfCloser(600,"Grenade");
-		TNT1 A 0 A_Jump(256,"Shotgun");
-	Shotgun:
 		HK4N A 0;
+		"####" A 0
+		{
+			if(random(0,255)<200)
+				return state(null);
+			if(CheckIfCloser(target,600))
+				return resolvestate("Grenade");
+			return state(null);
+		}
 		"####" A 0 A_Jump(64,"ShotgunDouble");
+	Shotgun:
 		"####" AAAA 3 A_FaceTarget;
 		"####" AAA 4 A_FaceTarget;
-		"####" A 0 A_PlaySound("halflife/weapons/shotgunsingle",5);
-		"####" AA 0 A_SpawnItemEx("GunSmoke",15,4,47);
-		"####" B 4 Light("ImShootingAGun") A_CustomBulletAttack(7,7,5,4,"NewPuff2");
+		"####" B 4 Light("ImShootingAGun")
+		{
+			A_PlaySound("halflife/weapons/shotgunsingle",5);
+			for(int i=0;i<2;i++)
+				A_SpawnItemEx("GunSmoke",15,4,47);
+			A_CustomBulletAttack(7,7,5,4,"NewPuff2");
+		}
 		"####" BCBA 4;
 		"####" A 0 A_Jump(40,"See");
 		"####" A 0 A_CposRefire;
-		Goto Shotgun+6;
+		Goto Shotgun+4;
 	ShotgunDouble:
 		"####" AAAA 3 A_FaceTarget;
 		"####" AAAAA 4 A_FaceTarget;
-		"####" A 0 A_PlaySound("halflife/weapons/shotgundouble",5);
-		"####" AA 0 A_SpawnItemEx("GunSmoke",15,4,47);
-		"####" B 4 Light("ImShootingAGun") A_CustomBulletAttack(7,7,10,4,"NewPuff2");
+		"####" B 4 Light("ImShootingAGun")
+		{
+			A_PlaySound("halflife/weapons/shotgundouble",5);
+			for(int i=0;i<2;i++)
+				A_SpawnItemEx("GunSmoke",15,4,47);
+			A_CustomBulletAttack(7,7,10,4,"NewPuff2");
+		}
 		"####" BCBA 4;
 		"####" AAA 4 A_FaceTarget;
 		"####" A 0 A_Jump(100,"See");
@@ -414,7 +438,7 @@ class HLGrunt4 : HLGrunt1
 		"####" A 0 A_JumpIfCloser(256,"Shotgun");
 		Goto Super::Grenade+3;
 	Melee:
-		HK4N A 0;
+		HK4M A 0;
 		Goto Super::Melee+1;
 	Pain:
 		HK4P A 8 A_Pain;
@@ -445,14 +469,14 @@ class HLGrunt5 : HLGrunt4
 	Walking:
 		HK5W A 0;
 		Goto HLGrunt1::Walking+1;
-	Shotgun:
+	Missile:
 		HK5N A 0;
-		Goto Super::Shotgun+1;
+		Goto Super::Missile+1;
 	Grenade:
 		HK5M A 0;
 		Goto Super::Grenade+1;
 	Melee:
-		HK5N A 0;
+		HK5M A 0;
 		Goto HLGrunt1::Melee+1;
 	Pain:
 		HK5P A 8 A_Pain;
@@ -484,9 +508,9 @@ class HLGrunt6 : HLGrunt4
 	Walking:
 		HK6W A 0;
 		Goto HLGrunt1::Walking+1;
-	Shotgun:
+	Missile:
 		HK6N A 0;
-		Goto Super::Shotgun+1;
+		Goto Super::Missile+1;
 	Grenade:
 		HK6M A 0;
 		Goto Super::Grenade+1;
@@ -636,15 +660,15 @@ class GruntHandGrenade : Actor
 		Radius 3;
 		Height 6;
 		Speed 20;
-		Scale 0.3;
+		Scale .3;
 		Damage 1;
 		Damagetype "SoldierDamage";
 		PROJECTILE;
 		BounceType "Doom";
 		+CANBOUNCEWATER
-		BounceFactor 0.6;
+		BounceFactor .6;
 		-NOGRAVITY
-		Gravity 0.5;
+		Gravity .5;
 	}
 	States
 	{
@@ -659,10 +683,12 @@ class GruntHandGrenade : Actor
 		TNT1 A 0 A_JumpIf(GrenTimeCounter>=9,"Explode");
 		Loop;
 	Explode:
-		TNT1 A 0 A_PlaySound("halflife/weapons/explode1");
-		TNT1 A 0 Bright A_Explode(128,64,1);
-		TNT1 A 0 A_SpawnItemEx("NewExplosionMedium");
-		TNT1 A 10;
+		TNT1 A 10
+		{
+			A_PlaySound("halflife/weapons/explode1");
+			A_Explode(128,64);
+			A_SpawnItemEx("NewExplosionMedium");
+		}
 		Stop;
 	}
 }
