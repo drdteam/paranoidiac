@@ -157,28 +157,6 @@ script 444 (int size)
 	}
 }
 
-//STEAM
-script 770(int size,int pitch,int plane)
-{
-	int momentum;
-	int angle=GetActorAngle(0)+random(-1024,1024);
-	pitch+=random(-4,4);
-	pitch<<=8;
-	switch(plane)
-	{
-	case 0:
-		momentum=FixedMul(cos(GetActorAngle(0)),FixedMul(cos(pitch),random(30.0,35.0)));
-		break;
-	case 1:
-		momentum=FixedMul(sin(GetActorAngle(0)),FixedMul(cos(Pitch),random(30.0,35.0)));
-		break;
-	case 2:
-		momentum=FixedMul(-sin(pitch),random(30.0,35.0));
-		break;
-	}
-	SetResultValue(momentum*(size+1)/5>>16);
-}
-
 //////////////////////////
 // Script 777: Flames	//
 //////////////////////////
