@@ -12,6 +12,7 @@ class HLHoundEye : Actor
 		Speed 3.666667;
 		Height 45;
 		PainChance 128;
+		PainChance "Crowbar",252;
 		Scale .335;
 		MeleeRange 80;
 		BloodColor "DE FE 72";

@@ -12,6 +12,7 @@ class HLHornetGrunt : Actor
 		Speed 2.5;
 		Height 64;
 		PainChance 40;
+		PainChance "Crowbar",164;
 		Scale .47;
 		BloodColor "DE FE 72";
 		DamageFactor "Hornet",0;

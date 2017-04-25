@@ -11,6 +11,7 @@ class HLBarney : Actor
 		Speed 4;
 		Height 63;
 		PainChance 128;
+		PainChance "Crowbar",252;
 		Scale .366;
 		SeeSound "halflife/monsters/barney/sight";
 		PainSound "halflife/monsters/barney/pain";

@@ -8,6 +8,7 @@ class HLBossBat : HLBat
 		Radius 104;
 		Mass 600;
 		PainChance 30;
+		PainChance "Crowbar",135;
 		Scale 1;
 		Translation "None";
 		SeeSound "bossbat/sight";

@@ -10,6 +10,7 @@ class HLBat : Actor
 		Radius 60;
 		Mass 400;
 		PainChance 160;
+		PainChance "Crowbar",255;
 		Scale .6;
 		+FLOAT
 		+NOGRAVITY

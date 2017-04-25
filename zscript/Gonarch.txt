@@ -10,6 +10,7 @@ class HLGonarch : Actor
 		Height 90;
 		Radius 55;
 		PainChance 10;
+		PainChance "Crowbar",54;
 		+BOSS
 		+NORADIUSDMG
 		+MISSILEEVENMORE

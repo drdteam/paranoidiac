@@ -17,24 +17,22 @@ class ZenHair : Actor
 	}
 }
 
-class ZenLight : Actor
+class ZenLight : ZenHair
 {
 	Default
 	{
 		Radius 8;
 		Height 32;
 		Health 10000;
-		Mass 0x7FFFFFFF;
 		PainChance 192;
+		PainChance "Crowbar",256;
 		PainSound "misc/chat";
 		+SHOOTABLE
 		+NOTAUTOAIMED
 		+NOBLOOD
-		+FLOORCLIP
 		+NORADIUSDMG
 		+NODAMAGE
 		+SOLID
-		+RANDOMIZE
 	}
 	States
 	{
@@ -70,11 +68,11 @@ class ZenTree : Actor
 		Mass 0x7FFFFFFF;
 		meleerange 128;
 		PainChance 128;
+		PainChance "Crowbar",252;
 		PainSound "tree/pain";
 		+NOTAUTOAIMED
 		+SHOOTABLE
 		+NOBLOOD
-		+FLOORCLIP
 		+NORADIUSDMG
 		+NODAMAGE
 		+SOLID

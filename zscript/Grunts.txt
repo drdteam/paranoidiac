@@ -84,6 +84,7 @@ class HLGrunt1 : Actor
 		Speed 3.5;
 		Height 63;
 		PainChance 70;
+		PainChance "Crowbar",218;
 		Scale .343;
 		maxdropoffheight 128;
 		DropItem "M16Pickup";
@@ -540,6 +541,7 @@ class HLGrunt1NoGren : HLGrunt1
 	{
 		Mass 200;
 		PainChance 64;
+		PainChance "Crowbar",210;
 	}
 	States
 	{
@@ -560,6 +562,7 @@ class HLGrunt2NoGren : HLGrunt2
 	{
 		Mass 200;
 		PainChance 64;
+		PainChance "Crowbar",210;
 	}
 	States
 	{
@@ -580,6 +583,7 @@ class HLGrunt3NoGren : HLGrunt3
 	{
 		Mass 200;
 		PainChance 64;
+		PainChance "Crowbar",210;
 	}
 	States
 	{
@@ -600,6 +604,7 @@ class HLGrunt4NoGren : HLGrunt4
 	{
 		Mass 200;
 		PainChance 64;
+		PainChance "Crowbar",210;
 	}
 	States
 	{
@@ -620,6 +625,7 @@ class HLGrunt5NoGren : HLGrunt5
 	{
 		Mass 200;
 		PainChance 64;
+		PainChance "Crowbar",210;
 	}
 	States
 	{
@@ -640,6 +646,7 @@ class HLGrunt6NoGren : HLGrunt6
 	{
 		Mass 200;
 		PainChance 64;
+		PainChance "Crowbar",210;
 	}
 	States
 	{

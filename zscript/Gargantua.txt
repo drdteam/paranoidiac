@@ -22,6 +22,7 @@ class HLGargantua : Actor
 		+BOSS
 		+NORADIUSDMG
 		PainChance 5;
+		PainChance "Crowbar",29;
 		Scale .75;
 		DamageFactor "Hornet",0;
 		BloodColor "DE FE 72";

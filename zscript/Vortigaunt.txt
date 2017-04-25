@@ -12,6 +12,7 @@ class HLVortigaunt : Actor
 		Speed 3.5;
 		Height 63;
 		PainChance 100;
+		PainChance "Crowbar",243;
 		Scale .423;
 		BloodColor "DE FE 72";
 		SeeSound "halflife/monsters/slave/sight";

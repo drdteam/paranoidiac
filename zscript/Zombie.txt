@@ -12,6 +12,7 @@ class HLZombie : Actor
 		Speed 1.4;
 		Height 63;
 		PainChance 128;
+		PainChance "Crowbar",252;
 		Scale .32;
 		BloodColor "DE FE 72";
 		SeeSound "halflife/monsters/zombie/sight";

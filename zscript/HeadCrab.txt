@@ -14,6 +14,7 @@ class HLHeadcrab : Actor
 		Height 25;
 		Radius 8;
 		PainChance 200;
+		PainChance "Crowbar",256;
 		Scale .25;
 		BloodColor "DE FE 72";
 		SeeSound "halflife/monsters/headcrab/sight";

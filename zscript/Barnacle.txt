@@ -12,6 +12,7 @@ class HLBarnacle : Actor
 		mass 0x7FFFFFFF;
 		maxtargetrange 384;
 		painchance 128;
+		PainChance "Crowbar",252;
 		BloodColor "DE FE 72";
 		seesound "barnacle/sight";
 		painsound "barnacle/pain";

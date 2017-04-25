@@ -13,6 +13,7 @@ class HLBullSquid : Actor
 		Height 32;
 		Radius 28;
 		PainChance 40;
+		PainChance "Crowbar",164;
 		Scale .365;
 		BloodColor "DE FE 72";
 		SeeSound "halflife/monsters/bullsquid/sight";
