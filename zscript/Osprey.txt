@@ -17,7 +17,7 @@ class Osprey : ModelBase
 			newz+=BobSin(bobstate)/2.;
 			SetZ(newz);
 		}
-		int a;
+		double a;
 		if(lblade)
 		{
 			a=angle+90;
