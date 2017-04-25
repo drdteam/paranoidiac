@@ -266,7 +266,6 @@ Model RPGAmmo
 ////////////////////////////////
 
 Model HEVsuit
-
 {
 	Path "Models"
 	Model 0 "hevsuit.md3"
@@ -1852,6 +1851,16 @@ Model OspreyDead
 	FrameIndex POSS A 0 0
 }
 
+Model OspreyDead1
+{
+	Path "Models"
+	Model 0 "osprey_dead.md3"
+	Skin 0 "osprey_dead_gov.png"
+	Scale 1.6 1.6 1.6
+
+	FrameIndex POSS A 0 0
+}
+
 Model SUV3
 {
 	Path "Models"
@@ -3084,16 +3093,6 @@ Model TechClampa	//Small version
 
 	Scale 0.5 0.5 0.5
 	ZOffset -67
-	FrameIndex POSS A 0 0
-}
-
-Model OspreyDead1
-{
-	Path "Models"
-	Model 0 "osprey_dead.md3"
-	Skin 0 "osprey_dead_gov.png"
-	Scale 1.6 1.6 1.6
-
 	FrameIndex POSS A 0 0
 }
 
