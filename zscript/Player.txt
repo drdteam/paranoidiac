@@ -16,6 +16,7 @@ class RolfBellmer : PlayerPawn
 		Player.WeaponSlot 5,"RPGLauncher";
 		Player.WeaponSlot 6,"GluonGun";
 		Player.StartItem "Crowbar";
+		Player.StartItem "HEVSuit";
 	}
 	States
 	{
