@@ -11,11 +11,10 @@ class HLBarney : Actor
 		Speed 4;
 		Height 63;
 		PainChance 128;
-		Scale 0.366;
+		Scale .366;
 		SeeSound "halflife/monsters/barney/sight";
 		PainSound "halflife/monsters/barney/pain";
 		DeathSound "halflife/monsters/barney/death";
-	//	ActiveSound "halflife/monsters/barney/idle";
 		maxdropoffheight 64;
 		dropitem "PistolPickup";
 		+FRIENDLY
@@ -25,6 +24,9 @@ class HLBarney : Actor
 	{
 	Spawn:
 		HLMI B 3 A_Look;		//frame A is the regular pose with weapon in hand.
+		Loop;
+	Stand:
+		HLMI A 3 A_Look;		//frame A is the regular pose with weapon in hand.
 		Loop;
 	See:
 		HLMW A 1 A_Chase;
