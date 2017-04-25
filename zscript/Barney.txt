@@ -4,6 +4,27 @@
 
 class HLBarney : Actor
 {
+	bool follow,follower;
+	override void tick()
+	{
+		if(follower)
+		{
+			if(goal==null)
+				goal=players[0].mo;
+
+			if(!follow&&Distance3D(goal)>96.0)
+			{
+				follow=1;
+				SetStateLabel("See");
+			}
+			else if(follow&&Distance3D(goal)<=96.0)
+			{
+				follow=0;
+				SetStateLabel("Stand");
+			}
+		}
+		Super.Tick();
+	}
 	Default
 	{
 		Monster;
@@ -27,8 +48,13 @@ class HLBarney : Actor
 		HLMI B 3 A_Look;		//frame A is the regular pose with weapon in hand.
 		Loop;
 	Stand:
-		HLMI A 3 A_Look;		//frame A is the regular pose with weapon in hand.
-		Loop;
+		HLMI A 3 A_ClearTarget;
+		HLMI A 3
+		{
+			A_Face(goal);
+			A_LookEx(fov:360);
+		}
+		Wait;
 	See:
 		HLMW A 1 A_Chase;
 		HLMW AAA 1 A_Chase(null,null,HLSMOOTHCHASE);
