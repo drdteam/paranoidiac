@@ -47,7 +47,7 @@ enum ParanoidEnum
 #include "zscript/StukaBat.txt"
 #include "zscript/BossBat.txt"
 #include "zscript/MixedBag.txt"
-#include "zscript/SUVGoBoom.txt"
+#include "zscript/SUV.txt"
 
 #include "zscript/freezeritem.txt"
 
