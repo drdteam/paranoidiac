@@ -202,18 +202,18 @@ class HLGrunt1 : Actor
 		"####" F 1 A_Chase(null,null,HLSMOOTHCHASE);
 		"####" A 0 A_Jump(256,"See");
 	Missile:
-		HK1O A 0;
 		"####" A 0
 		{
 			if(random(0,255)<200)
-				return state(null);
+				return resolvestate("Assault");
 			if(CheckIfCloser(target,600))
 				return resolvestate("Grenade");
 			if(CheckIfCloser(target,1000))
 				return resolvestate("GrenadeGun");
-			return state(null);
+			return resolvestate("Assault");
 		}
 	Assault:
+		HK1O A 0;
 		"####" AAAA 3 A_FaceTarget;
 		"####" A 2 A_FaceTarget;
 		"####" A 0
@@ -225,7 +225,7 @@ class HLGrunt1 : Actor
 		"####" B 2 Light("ImShootingAGun") A_CustomBulletAttack(7,7,1,4,"NewPuff2");
 		"####" A 0 A_Jump(15,"See");
 		"####" A 0 A_CposRefire;
-		Goto Assault+4;
+		Goto Assault+5;
 	GrenadeGun:
 		HK1M A 0;
 		"####" AAAAAAAAA 3 A_FaceTarget;
@@ -306,9 +306,9 @@ class HLGrunt2 : HLGrunt1
 	Walking:
 		HK2W A 0;
 		Goto Super::Walking+1;
-	Missile:
+	Assault:
 		HK2O A 0;
-		Goto Super::Missile+1;
+		Goto Super::Assault+1;
 	GrenadeGun:
 		HK2M A 0;
 		Goto Super::GrenadeGun+1;
@@ -348,9 +348,9 @@ class HLGrunt3 : HLGrunt1
 	Walking:
 		HK3W A 0;
 		Goto Super::Walking+1;
-	Missile:
+	Assault:
 		HK3O A 0;
-		Goto Super::Missile+1;
+		Goto Super::Assault+1;
 	GrenadeGun:
 		HK3M A 0;
 		Goto Super::GrenadeGun+1;
@@ -395,7 +395,6 @@ class HLGrunt4 : HLGrunt1
 		HK4W A 0;
 		Goto Super::Walking+1;
 	Missile:
-		HK4N A 0;
 		"####" A 0
 		{
 			if(random(0,255)<200)
@@ -404,8 +403,9 @@ class HLGrunt4 : HLGrunt1
 				return resolvestate("Grenade");
 			return state(null);
 		}
-		"####" A 0 A_Jump(64,"ShotgunDouble");
 	Shotgun:
+		HK4N A 0;
+		"####" A 0 A_Jump(64,"ShotgunDouble");
 		"####" AAAA 3 A_FaceTarget;
 		"####" AAA 4 A_FaceTarget;
 		"####" B 4 Light("ImShootingAGun")
@@ -418,7 +418,7 @@ class HLGrunt4 : HLGrunt1
 		"####" BCBA 4;
 		"####" A 0 A_Jump(40,"See");
 		"####" A 0 A_CposRefire;
-		Goto Shotgun+4;
+		Goto Shotgun+6;
 	ShotgunDouble:
 		"####" AAAA 3 A_FaceTarget;
 		"####" AAAAA 4 A_FaceTarget;
@@ -470,9 +470,9 @@ class HLGrunt5 : HLGrunt4
 	Walking:
 		HK5W A 0;
 		Goto HLGrunt1::Walking+1;
-	Missile:
+	Shotgun:
 		HK5N A 0;
-		Goto Super::Missile+1;
+		Goto Super::Shotgun+1;
 	Grenade:
 		HK5M A 0;
 		Goto Super::Grenade+1;
@@ -509,9 +509,9 @@ class HLGrunt6 : HLGrunt4
 	Walking:
 		HK6W A 0;
 		Goto HLGrunt1::Walking+1;
-	Missile:
+	Shotgun:
 		HK6N A 0;
-		Goto Super::Missile+1;
+		Goto Super::Shotgun+1;
 	Grenade:
 		HK6M A 0;
 		Goto Super::Grenade+1;
