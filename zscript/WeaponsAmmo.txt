@@ -562,6 +562,7 @@ class Pshotgun : ParanoidWeapon
 	States
 	{
 	Ready:
+		HW1I A 0 {invoker.reloading=0;}
 		HW1I A 1
 		{
 			if(CountInv("ShotgunHeldAmmo")<8&&CountInv("PShell"))
@@ -569,7 +570,7 @@ class Pshotgun : ParanoidWeapon
 			else
 				A_WeaponReady();
 		}
-		Loop;
+		Wait;
 	Deselect:
 		HW1I A 0 {invoker.reloading=0;}
 		HW1I A 1 A_Lower(12);
@@ -622,6 +623,7 @@ class Pshotgun : ParanoidWeapon
 		HW1I S 2 {invoker.reloading=0;}
 		Goto Ready;
 	AltFire:
+		TNT1 A 0 A_JumpIf(invoker.reloading,"ReloadDone");
 		TNT1 A 0 A_JumpIf(CountInv("ShotgunHeldAmmo")<2,"Fire");	//if less than two, will shoot only one
 		HW1B A 2
 		{
