@@ -35,7 +35,7 @@ class OMGSteam : SwitchableDecoration
 		TNT1 A -1 A_StopSound(7);
 		stop;
 	}
-	action int steamscript(int size,int thispitch,int plane)
+	action float steamscript(int size,int thispitch,int plane)
 	{
 		float momentum;
 		thispitch+=random(-4,4);
