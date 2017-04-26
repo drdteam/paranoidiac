@@ -3,19 +3,22 @@
 
 script "AltHudAmmo" ENTER
 {
-	str heldtype="";
-	if(CheckWeapon("Beretta"))
-		heldtype="PistolHeldAmmo";
-	else if(CheckWeapon("Python"))
-		heldtype="MagnumHeldAmmo";
-	else if(CheckWeapon("Pshotgun"))
-		heldtype="ShotgunHeldAmmo";
-	else if(CheckWeapon("ARifle"))
-		heldtype="M16HeldAmmo";
-	if(StrCmp(heldtype,"")&&GetCVar("screenblocks")==11&&GetCVar("hud_althud"))
+	if(GetCVar("screenblocks")==11&&GetCVar("hud_althud"))
 	{
-		setfont("CONFONT");
-		HudMessage(d:CheckInventory(heldtype);HUDMSG_PLAIN,3,CR_RED,0.9,1.0,0.35);
+		str heldtype="";
+		if(CheckWeapon("Beretta"))
+			heldtype="PistolHeldAmmo";
+		else if(CheckWeapon("Python"))
+			heldtype="MagnumHeldAmmo";
+		else if(CheckWeapon("Pshotgun"))
+			heldtype="ShotgunHeldAmmo";
+		else if(CheckWeapon("ARifle"))
+			heldtype="M16HeldAmmo";
+		if(StrCmp(heldtype,""))
+		{
+			setfont("CONFONT");
+			HudMessage(d:CheckInventory(heldtype);HUDMSG_PLAIN,3,CR_RED,0.9,1.0,0.35);
+		}
 	}
 	delay(1);
 	restart;
@@ -59,37 +62,22 @@ function int station(int uses,str tex,int type)
 //Hint messages that are run when player uses the inventory item "MessageItem**"
 str hintsnd[32][2]=
 {
-	{"MAP2VOX1","HINTMAN"},
-	{"MAP2VOX2","HINTMAN"},
-	{"MAP2VOX3","HINTMAN"},
-	{"MAP2VOX4","HINTMAN"},
-	{"MAP3VOX1","HINTMAN"},
-	{"MAP3VOX2","HINTMAN"},
-	{"MAP3VOX3","HINTMAN"},
-	{"MAP4VOX1","HINTMAN"},
-	{"MAP4VOX2","HINTMAN"},
-	{"MAP4VOX3","HINTMAN"},
-	{"MAP8VOX1","HINTMAN"},
-	{"MAP5VOX1","HINTMAN"},
-	{"MAP5VOX2","HINTMAN"},
-	{"MAP5VOX3","HINTMAN"},
-	{"MAP6VOX1","HINTMAN"},
-	{"MAP6VOX2","HINTMAN"},
-	{"MAP7VOX1","HINTMAN"},
-	{"MAP7VOX2","HINTMAN"},
+	{"MAP2VOX1","HINTMAN"},{"MAP2VOX2","HINTMAN"},
+	{"MAP2VOX3","HINTMAN"},{"MAP2VOX4","HINTMAN"},
+	{"MAP3VOX1","HINTMAN"},{"MAP3VOX2","HINTMAN"},
+	{"MAP3VOX3","HINTMAN"},{"MAP4VOX1","HINTMAN"},
+	{"MAP4VOX2","HINTMAN"},{"MAP4VOX3","HINTMAN"},
+	{"MAP8VOX1","HINTMAN"},{"MAP5VOX1","HINTMAN"},
+	{"MAP5VOX2","HINTMAN"},{"MAP5VOX3","HINTMAN"},
+	{"MAP6VOX1","HINTMAN"},{"MAP6VOX2","HINTMAN"},
+	{"MAP7VOX1","HINTMAN"},{"MAP7VOX2","HINTMAN"},
 	{"",""},
-	{"MAP10VX1","STINSON"},
-	{"MAP11VX1","STINSON"},
-	{"MAP12VX1","STINSON"},
-	{"MAP12VX2","UNDERNET"},
-	{"MAP13VX1","STINSON"},
-	{"MAP13VX2","UNDERNET"},
-	{"MAP14VX1","STINSON"},
-	{"MAP14VX2","STINSON"},
-	{"MAP15VX1","STINSON"},
-	{"MAP16VX1","STINSON"},
-	{"MAP16VX2","UNDERNET"},
-	{"MAP16VX3","STINSON"},
+	{"MAP10VX1","STINSON"},{"MAP11VX1","STINSON"},
+	{"MAP12VX1","STINSON"},{"MAP12VX2","UNDERNET"},
+	{"MAP13VX1","STINSON"},{"MAP13VX2","UNDERNET"},
+	{"MAP14VX1","STINSON"},{"MAP14VX2","STINSON"},
+	{"MAP15VX1","STINSON"},{"MAP16VX1","STINSON"},
+	{"MAP16VX2","UNDERNET"},{"MAP16VX3","STINSON"},
 	{"MAP17VX1","STINSON"}
 };
 int delays[32][2]=
