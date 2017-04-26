@@ -398,10 +398,10 @@ class HLGrunt4 : HLGrunt1
 		"####" A 0
 		{
 			if(random(0,255)<200)
-				return state(null);
+				return resolvestate("Shotgun");
 			if(CheckIfCloser(target,600))
 				return resolvestate("Grenade");
-			return state(null);
+			return resolvestate("Shotgun");
 		}
 	Shotgun:
 		HK4N A 0;
