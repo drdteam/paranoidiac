@@ -37,7 +37,6 @@ class HLScientist : Actor
 		PainChance 255;
 		Scale .36;
 		+FRIENDLY
-		//+NODAMAGE
 		-CANUSEWALLS
 		-COUNTKILL
 		SeeSound "halflife/monsters/scientist/sight";
@@ -61,7 +60,6 @@ class HLScientist1Path : HLScientist
 		limit=35;
 		limit2=30;
 	}
-	//+FRIGHTENED
 	States
 	{
 	Spawn:
@@ -101,6 +99,7 @@ class HLScientist1Path : HLScientist
 				A_PlaySound("halflife/monsters/scientist/sight");
 				return ResolveState("SeeDecidePanic");
 			}
+			A_SetSpeed(5.0/3.0);
 			return state(null);
 		}
 		"####" AAAAAABBBBBBCCCCCCDDDDDDEEEEEEFFFFFF 1
@@ -134,17 +133,17 @@ class HLScientist1Path : HLScientist
 	WanderPanic:
 		HLRW A 0;
 		"####" A 0 A_SetSpeed(5.0/3.0);
-		"####" AAAAAA 1 A_Wander;
+		"####" AAAAAA 1 A_Chase;
 		"####" A 0 A_Look;
-		"####" BBBBBB 1 A_Wander;
+		"####" BBBBBB 1 A_Chase;
 		"####" A 0 A_Look;
-		"####" CCCCCC 1 A_Wander;
+		"####" CCCCCC 1 A_Chase;
 		"####" A 0 A_Look;
-		"####" DDDDDD 1 A_Wander;
+		"####" DDDDDD 1 A_Chase;
 		"####" A 0 A_Look;
-		"####" EEEEEE 1 A_Wander;
+		"####" EEEEEE 1 A_Chase;
 		"####" A 0 A_Look;
-		"####" FFFFFF 1 A_Wander;
+		"####" FFFFFF 1 A_Chase;
 		"####" A 0 A_Look;
 		"####" A 0	//how often they'll say something while moving
 		{
@@ -175,7 +174,6 @@ class HLScientist1Path : HLScientist
 	SeeDecidePanic:		//decide if they calm down or not
 		HLRR A 0;
 		"####" # 0 A_JumpIf(panic>=limit,"SeeCalmDownPanic");
-		"####" # 0 A_Jump(256,"SeeLoopPanic");
 	SeeLoopPanic:
 		"####" A 0 A_SetSpeed(5);
 		"####" AAABBBCCCDDDEEEFFF 1 A_Chase;
@@ -209,17 +207,17 @@ class HLScientist1Path : HLScientist
 	WanderRunPanic:		//not calmed at all
 		HLRR A 0;
 		"####" A 0 A_SetSpeed(5);
-		"####" AAA 1 A_Wander;
+		"####" AAA 1 A_Chase;
 		"####" A 0 A_Look;
-		"####" BBB 1 A_Wander;
+		"####" BBB 1 A_Chase;
 		"####" A 0 A_Look;
-		"####" CCC 1 A_Wander;
+		"####" CCC 1 A_Chase;
 		"####" A 0 A_Look;
-		"####" DDD 1 A_Wander;
+		"####" DDD 1 A_Chase;
 		"####" A 0 A_Look;
-		"####" EEE 1 A_Wander;
+		"####" EEE 1 A_Chase;
 		"####" A 0 A_Look;
-		"####" FFF 1 A_Wander;
+		"####" FFF 1 A_Chase;
 		"####" A 0 A_Look;
 		"####" A 0
 		{
