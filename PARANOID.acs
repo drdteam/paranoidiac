@@ -22,48 +22,38 @@ script "AltHudAmmo" ENTER
 }
 
 script "MedStation"(int uses,int tex)
-{
-	if(GetActorProperty(0,APROP_Health)>=100) // Check health first.
-	{
-		SetResultValue(0);
-		terminate;
-	}
-	if(uses>4)
-	{
-		ActivatorSound("MEDCHARGEUSED",127);
-		SetResultValue(0);
-		terminate;
-	}
-	HealThing(10);
-	ActivatorSound("MEDCHARGE",127);
-	if(uses==4)
-	{
-		setlinetexture(tex,SIDE_FRONT,TEXTURE_TOP,"XMEDIC02");
-		setlinetexture(tex,SIDE_FRONT,TEXTURE_BOTTOM,"XMEDIC02");
-	}
-	SetResultValue(1);
-}
+	{SetResultValue(station(uses,tex,1));}
 script "ArmorStation"(int uses,int tex)
+	{SetResultValue(station(uses,tex,2));}
+function int station(int uses,str tex,int type)
 {
-	if(CheckInventory("Armor")>=100)
+	int checkvalue=GetActorProperty(0,APROP_Health);
+	str snd1="MEDCHARGE",snd2="MEDCHARGEUSED",texture="XMEDIC02";
+	if(type==2)
 	{
-		SetResultValue(0);
-		terminate;
+		checkvalue=CheckInventory("Armor");
+		snd1="HEVCHARGE";
+		snd2="HEVCHARGEUSED";
+		texture="XARMOR02";
 	}
-	if(uses>4)
+	if(checkvalue>=100)
+		return 0;
+	else if(uses>4)
 	{
-		ActivatorSound("HEVCHARGEUSED",127);
-		SetResultValue(0);
-		terminate;
+		ActivatorSound(snd2,127);
+		return 0;
 	}
-	GiveInventory("HEVCharge",10);
-	ActivatorSound("HEVCHARGE",127);
+	ActivatorSound(snd1,127);
+	if(type==2)
+		GiveInventory("HEVCharge",10);
+	else
+		HealThing(10);
 	if(uses==4)
 	{
-		setlinetexture(tex,SIDE_FRONT,TEXTURE_TOP,"XARMOR02");
-		setlinetexture(tex,SIDE_FRONT,TEXTURE_BOTTOM,"XARMOR02");
+		setlinetexture(tex,SIDE_FRONT,TEXTURE_TOP,texture);
+		setlinetexture(tex,SIDE_FRONT,TEXTURE_BOTTOM,texture);
 	}
-	SetResultValue(1);
+	return 1;
 }
 
 //Hint messages that are run when player uses the inventory item "MessageItem**"
@@ -114,8 +104,8 @@ int delays[32][2]=
 };
 function void hintmessage(str message,str icon,int holdtime,int holdtime2)
 {
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-	PlaySound(0,message,7,1.0,0,ATTN_STATIC);
+	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC,1);
+	PlaySound(0,message,7,1.0,0,ATTN_STATIC,1);
 	SetHUDSize(640,480,1);
 	SetFont(icon);
 	HUDMessage(s:"A";HUDMSG_PLAIN,1,CR_UNTRANSLATED,0.1,30.1,holdtime);
@@ -129,174 +119,5 @@ script "HintMessage"(int message)
 {
 	hintmessage(hintsnd[message-1][0],hintsnd[message-1][1],delays[message-1][0]*1.0,delays[message-1][1]);
 	delay(delays[message-1][0]*35);
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC);
-}
-
-//////////////////////////////
-// Script 444: Waterfall	//
-//////////////////////////////
-
-str WFallParticles[10] =
-{
-	"WFallParticle1A","WFallParticle1B",
-	"WFallParticle2A","WFallParticle2B",
-	"WFallParticle3A","WFallParticle3B",
-	"WFallParticle4A","WFallParticle4B",
-	"WFallParticle5A","WFallParticle5B"
-};
-
-script 444 (int size)
-{
-	for(int r=0;r<size<<16;r+=random(4.0,8.0))
-	{
-		Spawn(WFallParticles[random(0,9)],
-		GetActorX(0)+random(-8.0,8.0)+FixedMul(cos(GetActorAngle(0)),r),
-		GetActorY(0)+random(-8.0,8.0)+FixedMul(sin(GetActorAngle(0)),r),
-		GetActorZ(0)+random(-8.0,8.0),
-		0,GetActorAngle(0)>>8);
-	}
-}
-
-//////////////////////////
-// Script 777: Flames	//
-//////////////////////////
-
-#define FIRE_CIRCLE     0
-#define FIRE_SQUARE     1
-#define FIRE_LINE       2
-
-#define FIRE_TID        -16384
-#define GLOW_TID        -16383
-#define EMBER_TID       -16382
-
-#define GLOW_NONE       0
-#define GLOW_GROUND     1
-#define GLOW_RAISE      2
-#define GLOW_BOTH       3
-
-#define FIRE_SPEED_LOW  8
-#define FIRE_SPEED_HIGH 12
-
-str Flame[30][3] =
-{
-	{"Flame1A_01", "Flame1A_02", "Flame1A_03"},
-	{"Flame1B_01", "Flame1B_02", "Flame1B_03"},
-	{"Flame2A_01", "Flame2A_02", "Flame2A_03"},
-	{"Flame2B_01", "Flame2B_02", "Flame2B_03"},
-	{"Flame3A_01", "Flame3A_02", "Flame3A_03"},
-	{"Flame3B_01", "Flame3B_02", "Flame3B_03"},
-	{"Flame4A_01", "Flame4A_02", "Flame4A_03"},
-	{"Flame4B_01", "Flame4B_02", "Flame4B_03"},
-	{"Flame5A_01", "Flame5A_02", "Flame5A_03"},
-	{"Flame5B_01", "Flame5B_02", "Flame5B_03"},
-	{"Flame6A_01", "Flame6A_02", "Flame6A_03"},
-	{"Flame6B_01", "Flame6B_02", "Flame6B_03"},
-	{"Flame7A_01", "Flame7A_02", "Flame7A_03"},
-	{"Flame7B_01", "Flame7B_02", "Flame7B_03"},
-	{"Flame8A_01", "Flame8A_02", "Flame8A_03"},
-	{"Flame8B_01", "Flame8B_02", "Flame8B_03"},
-	{"Flame9A_01", "Flame9A_02", "Flame9A_03"},
-	{"Flame9B_01", "Flame9B_02", "Flame9B_03"},
-	{"Flame10A_01", "Flame10A_02", "Flame10A_03"},
-	{"Flame10B_01", "Flame10B_02", "Flame10B_03"},
-	{"Flame11A_01", "Flame11A_02", "Flame11A_03"},
-	{"Flame11B_01", "Flame11B_02", "Flame11B_03"},
-	{"Flame12A_01", "Flame12A_02", "Flame12A_03"},
-	{"Flame12B_01", "Flame12B_02", "Flame12B_03"},
-	{"Flame13A_01", "Flame13A_02", "Flame13A_03"},
-	{"Flame13B_01", "Flame13B_02", "Flame13B_03"},
-	{"Flame14A_01", "Flame14A_02", "Flame14A_03"},
-	{"Flame14B_01", "Flame14B_02", "Flame14B_03"},
-	{"Flame14A_01", "Flame14A_02", "Flame14A_03"},
-	{"Flame14B_01", "Flame14B_02", "Flame14B_03"}
-};
-
-str FlameGlow[3] = {"FlameGlow_02", "FlameGLow_04", "FlameGlow_06"};
-
-function void SpawnGlow (int x, int y, int z, int a, int s, int t, int glow)
-{
-	switch (glow)
-	{
-	case GLOW_GROUND:
-		Spawn(FlameGlow[s], x, y, z, 0, a >> 8);
-		break;
-	case GLOW_RAISE:
-		Spawn(FlameGlow[s], x, y, z, GLOW_TID, a >> 8);
-		ThrustThingZ(GLOW_TID, t, 0, 0);
-		Thing_ChangeTID(GLOW_TID, 0);
-		break;
-	case GLOW_BOTH:
-		Spawn(FlameGlow[s], x, y, z, 0, a >> 8);
-		Spawn(FlameGlow[s], x, y, z, GLOW_TID, a >> 8);
-		ThrustThingZ(GLOW_TID, t, 0, 0);
-		Thing_ChangeTID(GLOW_TID, 0);
-		break;
-	}
-}
-
-function void SpawnEmber (int x, int y, int z)
-{
-	if (!random(0, 64))
-	{
-		int a = random(0, 255);
-		Spawn("Ember", x, y, z, EMBER_TID, a);
-		ThrustThingZ(EMBER_TID, random(12, 24), 0, 0);
-		ThrustThing(a, random(-2, 2)/2, 0, EMBER_TID);
-		Thing_ChangeTID(EMBER_TID, 0);
-	}
-}
-
-script 777 (int area, int shape, int glow)
-{
-	int a, r, x, y, s, t, i;
-	switch (shape)
-	{
-	case FIRE_CIRCLE:
-		for (i=0; i<area/32+1; i++)
-		{
-			a = random(0, 65535);
-			r = random(0, (area / 2) << 16);
-			s = random(0, 2);
-			t = random(FIRE_SPEED_LOW, FIRE_SPEED_HIGH);
-			x = GetActorX(0) + FixedMul(cos(a), r);
-			y = GetActorY(0) + FixedMul(sin(a), r);
-			Spawn(Flame[random(0, 29)][s], x, y, GetActorZ(0), FIRE_TID, a >> 8);
-			ThrustThingZ(FIRE_TID, t, 0, 0);
-			Thing_ChangeTID(FIRE_TID, 0);
-			SpawnGlow(x, y, GetActorZ(0), a, s, t, glow);
-			SpawnEmber(x, y, GetActorZ(0));
-		}
-		break;
-	case FIRE_SQUARE:
-		for (i=0; i<area/32+1; i++)
-		{
-			a = random(0, 65535);
-			s = random(0, 2);
-			t = random(FIRE_SPEED_LOW, FIRE_SPEED_HIGH);
-			x = GetActorX(0) + random(-(area<<16)/2, (area<<16)/2);
-			y = GetActorY(0) + random(-(area<<16)/2, (area<<16)/2);
-			Spawn(Flame[random(0, 29)][s], x, y, GetActorZ(0), FIRE_TID, a >> 8);
-			ThrustThingZ(FIRE_TID, t, 0, 0);
-			Thing_ChangeTID(FIRE_TID, 0);
-			SpawnGlow(x, y, GetActorZ(0), a, s, t, glow);
-			SpawnEmber(x, y, GetActorZ(0));
-		}
-		break;
-	case FIRE_LINE:
-		for (i=0; i<area/32+1; i++)
-		{
-			a = GetActorAngle(0);
-			r = random(0, area << 16);
-			s = random(0, 2);
-			t = random(FIRE_SPEED_LOW, FIRE_SPEED_HIGH);
-			x = GetActorX(0) + FixedMul(cos(a), r);
-			y = GetActorY(0) + FixedMul(sin(a), r);
-			Spawn(Flame[random(0, 29)][s], x, y, GetActorZ(0), FIRE_TID, a >> 8);
-			ThrustThingZ(FIRE_TID, t, 0, 0);
-			Thing_ChangeTID(FIRE_TID, 0);
-			SpawnGlow(x, y, GetActorZ(0), a, s, t, glow);
-			SpawnEmber(x, y, GetActorZ(0));
-		}
-		break;
-	}
+	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC,1);
 }
