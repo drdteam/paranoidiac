@@ -43,23 +43,6 @@ class HEVbattery : BasicArmorBonus
 	}
 }
 
-class Key1 : Key
-{
-	Default
-	{
-		Inventory.Pickupmessage "Picked up the blue security key";
-		Inventory.Icon "HLKEYBI";
-		radius 4;
-		height 2;
-	}
-	States
-	{
-	Spawn:
-		POSS A -1;
-		Stop;
-	}
-}
-
 class Medkit : Health
 {
 	Default
@@ -78,6 +61,29 @@ class Medkit : Health
 	}
 }
 
+class Medkit1 : HealthPickup
+{
+	Default
+	{
+		Tag "Portable Medkit";
+		+COUNTITEM
+		+INVENTORY.HUBPOWER
+		+INVENTORY.INVBAR
+		health 25;
+		inventory.maxamount 4;
+		inventory.icon "MEDKZ0";
+		Inventory.PickupMessage "Picked up a portable medkit.";
+		Inventory.PickupSound "misc/i_pkup";
+		Inventory.UseSound "misc/i_pkup";
+	}
+	States
+	{
+	Spawn:
+		POSS A -1;
+		Stop;
+	}
+}
+
 class HEVCharge : BasicArmorBonus
 {
 	Default
@@ -86,6 +92,23 @@ class HEVCharge : BasicArmorBonus
 		armor.saveamount 1;
 		armor.savepercent 50;
 		-INVENTORY.ALWAYSPICKUP
+	}
+}
+
+class Key1 : Key
+{
+	Default
+	{
+		Inventory.Pickupmessage "Picked up the blue security key";
+		Inventory.Icon "HLKEYBI";
+		radius 4;
+		height 2;
+	}
+	States
+	{
+	Spawn:
+		POSS A -1;
+		Stop;
 	}
 }
 

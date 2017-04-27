@@ -1337,3 +1337,273 @@ class Explosive : Inventory
 
 class PConsole4 : PConsole{}
 class PConsole5 : PConsole{}
+
+class MarineBody : ModelBase
+{
+	Default
+	{
+		Radius 16;
+		Height 8;
+	}
+}
+
+//======================================
+// Concrete Jersey Barriers:
+// Spawning will require rising sectors
+// or invisible bridge things
+//======================================
+
+class Barrier1 : ModelBase
+{
+	Default
+	{
+		Radius 4;
+		Height 32;
+		Mass 500;
+		+FLOORCLIP
+	}
+}
+
+class Barrier2 : Barrier1{}
+class Barrier3 : Barrier1{}
+
+//============================
+// Explosive barrels & crates
+//============================
+
+class ExplosiveItemBang : Actor
+{
+	Default
+	{
+		Radius 4;
+		Height 4;
+		Renderstyle "Translucent";
+		Alpha 0.9;
+		+dontsplash
+		+noclip
+	}
+	States
+	{
+	Spawn:
+		CBNG ABCDEFGHIJKLMNOPQRS 2 Bright;
+		CBNG TU 2;
+		stop;
+	}
+}
+class ExplosiveItemBangCrate : ExplosiveItemBang
+{
+	Default
+	{
+		Scale 0.6;
+	}
+}
+class ExplosiveItemBangBarrel : ExplosiveItemBang
+{
+	Default
+	{
+		Scale 0.4;
+	}
+}
+
+class Xbarrel1 : ModelBase
+{
+	Default
+	{
+		Health 50;
+		Radius 12;
+		Height 32;
+		Mass 100;
+		DeathSound "world/barrelx";
+		Obituary "%o stood too close to an exploding barrel.";
+		+PUSHABLE
+		+SHOOTABLE
+		+NOBLOOD
+	}
+	States
+	{
+	Death:
+		POSS B 0 A_SpawnItemEx("ExplosiveItemBangBarrel");
+		POSS B 2 A_AlertMonsters;
+		POSS C 2 A_Scream;
+		POSS D 1 A_Explode;
+		POSS D 1 A_SetTranslucent(.5);
+		POSS EE 1 A_FadeOut;
+		POSS F 2 A_NoBlocking;
+		POSS GG 1 A_FadeOut;
+		Stop;
+	}
+}
+class Xbarrel2 : Xbarrel1
+{
+	Default
+	{
+		Health 20;
+	}
+}
+class Xbarrel3 : Xbarrel1
+{
+	Default
+	{
+		Health 30;
+	}
+}
+
+class Xcrate01 : Xbarrel1
+{
+	Default
+	{
+		-PUSHABLE
+		Health 30;
+		Radius 32;
+		Height 64;
+		Mass 200;
+		Obituary "%o stood too close to an exploding crate.";
+	}
+	States
+	{
+	Death:
+		POSS B 0 A_SpawnItemEx("ExplosiveItemBangCrate");
+		Goto Super::Death+1;
+	}
+}
+class Xcrate02 : Xcrate01{}
+
+//================================================================
+// Non-Explosive barrels/trashcan (plastic & heavy metal), crates
+//================================================================
+
+class Barrel1 : ModelBase
+{
+	Default
+	{
+		Radius 8;
+		Height 29;
+		Mass 50;
+		+FLOORCLIP
+		+PUSHABLE
+		+SHOOTABLE
+		+NOTAUTOAIMED
+		+NOBLOOD
+		+NODAMAGE
+	}
+}
+
+class Barrel2 : Barrel1{}
+
+class Barrel3 : Barrel1
+{
+	Default
+	{
+		Radius 9;
+		Height 29;
+		Mass 200;
+	}
+}
+
+class Trashcan1 : Barrel1
+{
+	Default
+	{
+		Radius 10;
+	}
+}
+
+class Xcrate03 : Barrel1
+{
+	Default
+	{
+		Health 30;
+		Radius 32;
+		Height 64;
+		Mass 200;
+	}
+}
+
+class Xcrate04 : Xcrate03{}
+
+class XMetalBox : ModelBase
+{
+	Default
+	{
+		Radius 34;
+		Height 64;
+		Mass 0x7FFFFFFF;
+		+NODAMAGE
+		+NOBLOOD
+		+NOGRAVITY
+	}
+}
+
+//==========================================
+// Non-Player Character Models: Controller,
+// Scientists, Administrator, Barney, Otis
+//==========================================
+
+class Handler2Standing : ModelBase
+{
+	Default
+	{
+		Height 56;
+	}
+}
+class Handler2Sitting : ModelBase
+{
+	Default
+	{
+		Height 40;
+	}
+}
+
+class Otis01 : ModelBase
+{
+	Default
+	{
+		Radius 18;
+		Height 64;
+		Mass 200;
+		+SHOOTABLE
+		+FLOORCLIP
+		+NORADIUSDMG
+		+NODAMAGE
+		+FLOORCLIP
+		+USESPECIAL
+		+NOTAUTOAIMED
+	}
+}
+
+class Barney01 : Otis01{}
+
+class Admin01 : Otis01
+{
+	Default
+	{
+		Radius 22;
+		Height 40;
+	}
+}
+
+class Einstein01 : Otis01 //Slumped over scientists
+{
+	Default
+	{
+		Height 28;
+	}
+}
+
+class Luther01 : Einstein01{}
+class Slick01 : Einstein01{}
+class Walter01 : Einstein01{}
+class Walter01a : Einstein01{}
+
+class Einstein02 : Otis01 //Standing scientists
+{
+	Default
+	{
+		Height 56;
+	}
+}
+
+class Luther02 : Einstein02{}
+class Slick02 : Einstein02{}
+class Walter02 : Einstein02{}
+class Walter02a : Einstein02{}

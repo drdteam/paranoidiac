@@ -5,16 +5,10 @@ enum ParanoidEnum
 	HLSMOOTHCHASE=CHF_NOPLAYACTIVE+CHF_NORANDOMTURN+CHF_STOPIFBLOCKED
 }
 
-#include "zscript/Barriers.txt"
 #include "zscript/Bubbles.txt"
-#include "zscript/Models.txt"
-#include "zscript/Osprey.txt"
-#include "zscript/Exploding.txt"
 #include "zscript/Flames.txt"
 #include "zscript/Messages.txt"
 #include "zscript/Miscellaneous.txt"
-#include "zscript/NonExploding.txt"
-#include "zscript/NPCModels.txt"
 #include "zscript/Pickups.txt"
 #include "zscript/Player.txt"
 #include "zscript/Sparks.txt"
@@ -34,6 +28,10 @@ enum ParanoidEnum
 #include "zscript/Vortigaunt.txt"
 #include "zscript/Zombie.txt"
 
+#include "zscript/Models.txt"
+#include "zscript/Osprey.txt"
+#include "zscript/SUV.txt"
+
 #include "zscript/ZenItems.txt"
 
 #include "zscript/Barney.txt"
@@ -46,8 +44,6 @@ enum ParanoidEnum
 #include "zscript/Nihilanth.txt"
 #include "zscript/StukaBat.txt"
 #include "zscript/BossBat.txt"
-#include "zscript/MixedBag.txt"
-#include "zscript/SUV.txt"
 
 #include "zscript/freezeritem.txt"
 
