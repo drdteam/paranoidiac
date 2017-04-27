@@ -157,3 +157,22 @@ MAP17VX1=
 	"\They've cut power to most sectors, and drained the fuel from the emergency generators.\n"
 	"You may find some fuel in the supply area in the North-East quadrant. But be careful:\n"
 	"the place is swarming with government and alien forces.";
+
+PARANOIDCREDITS01:"Paranoid was a production of The Persecution Complex.";
+PARANOIDCREDITS02:"The Team:";
+PARANOIDCREDITS03:"DB Thanatos: Enemies, Weapons";
+PARANOIDCREDITS04:"Travis 'solarsnowfall' Miller: Special Effects";
+PARANOIDCREDITS05:"Nigel 'Enjay' Rowand: Models, Menu, Etc.";
+PARANOIDCREDITS06:"Rex Claussen: Maps, Game Design, Etc.";
+PARANOIDCREDITS07:"Jeff Ligda: Music";
+PARANOIDCREDITS08:"Rex Claussen: Voice Acting";
+PARANOIDCREDITS09:"David Ferstat: Voice Acting";
+PARANOIDCREDITS10:"Björn 'Vader' Ostmann: Play-Testing";
+PARANOIDCREDITS11:"Rachael 'Eruanna' Alexanderson: Play-Testing, Trouble-Shooting";
+PARANOIDCREDITS12:"Remmirath aka Morpheus: Play-Testing";
+PARANOIDCREDITS13:"Special Thanks To:";
+PARANOIDCREDITS14:"id Software, Valve Software, Randy Heit, Graf Zahl";
+PARANOIDCREDITS15:"Additional Thanks To:";
+PARANOIDCREDITS16:"W. Sitters & BlackRayne for many models";
+PARANOIDCREDITS17:"Patrick 'Janitor' Pineda";
+PARANOIDCREDITS18:"And the good folks at the ZDooM forums for their assistance";
