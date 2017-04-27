@@ -45,12 +45,10 @@ class HLZombie : Actor
 		Goto See;
 	Melee:
 		HLEA AB 3 A_FaceTarget;
-		TNT1 A 0 A_PlaySound("halflife/monsters/zombie/attswing");
-		HLEA C 3 A_FaceTarget;
+		HLEA C 3 ZombieWoosh;
 		HLEA D 3 A_CustomMeleeAttack(2*random(1,8),"halflife/monsters/zombie/hit");
 		HLEA E 3 A_FaceTarget;
-		TNT1 A 0 A_PlaySound("halflife/monsters/zombie/attswing");
-		HLEA F 3 A_FaceTarget;
+		HLEA F 3 ZombieWoosh;
 		HLEA G 3 A_CustomMeleeAttack(2*random(1,8),"halflife/monsters/zombie/hit");
 		HLEA HIJ 3;
 		Goto See;
@@ -69,8 +67,8 @@ class HLZombie : Actor
 		}
 		HLED B 3 A_Fall;
 		HLED CDEFGH 2;
-		TNT1 A 0 A_PlaySound("halflife/weapons/bodydrop");
-		HLED HIJ 3;
+		HLED H 3 A_PlaySound("halflife/weapons/bodydrop");
+		HLED IJ 3;
 		HLED K -1;
 		Stop;
 	XDeath:
@@ -82,6 +80,11 @@ class HLZombie : Actor
 				A_SpawnItemEx("XenGibs",random(5,-5),random(5,-5),random(10,40),random(1,7),random(1,7),random(5,13),random(0,359));
 	  	}
 		Stop;
+	}
+	action void ZombieWoosh()
+	{
+		A_PlaySound("halflife/monsters/zombie/attswing");
+		A_FaceTarget();
 	}
 }
 

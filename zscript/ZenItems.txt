@@ -100,7 +100,7 @@ class ZenTree : Actor
 	}
 }
 
-class Fungus : Actor
+class Fungus : ModelBase
 {
 	Default
 	{
@@ -112,13 +112,6 @@ class Fungus : Actor
 		+SHOOTABLE
 		+NOBLOOD
 		+NODAMAGE
-		+SOLID
-	}
-	States
-	{
-	Spawn:
-		POSS A -1;
-		Stop;
 	}
 }
 

@@ -70,7 +70,6 @@ class HLBullSquid : Actor
 		Stop;
 	XDeath:
 		TNT1 A 0 A_PlaySound("other/gibdeath");
-		TNT1 A 0 A_NoBlocking;
 	  	TNT1 AAAAAAAAAAAAAAAA 0 A_SpawnItemEx("XenGibs",random(5,-5),random(5,-5),random(10,40),random(1,7),random(1,7),random(5,13),random(0,359));
 		Stop;
 	}
@@ -101,19 +100,16 @@ class BullSquidSpit : Actor
 	}
 }
 
-class BSSpitExtra : Actor
+class BSSpitExtra : BullSquidSpit
 {
 	Default
 	{
-		Projectile;
+		Speed 0;
+		Damage 0;
 		+NOCLIP
 		Scale 0.15;
-		RenderStyle "Add";
-		Alpha 0.9;
 		-NOGRAVITY
 		Gravity .125;
-		+FORCEXYBILLBOARD
-		Translation "80:111=118:127";
 	}
 	States
 	{

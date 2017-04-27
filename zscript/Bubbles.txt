@@ -32,42 +32,8 @@ class Bubble1 : Actor
 	}
 }
 
-class Bubble2 : Bubble1
-{
-	Default
-	{
-		xscale .0625;
-		yscale .05625;
-	}
-}
-class Bubble3 : Bubble1
-{
-	Default
-	{
-		xscale .05;
-		yscale .05;
-	}
-}
-class Bubble4 : Bubble1
-{
-	Default
-	{
-		xscale .0375;
-		yscale .0375;
-	}
-}
-class Bubble5 : Bubble1
-{
-	Default
-	{
-		xscale .025;
-		yscale .025;
-	}
-}
-
 class OMGBubbles : SwitchableDecoration
 {
-	static const class<Actor> Bubble[]={"Bubble1","Bubble2","Bubble3","Bubble4","Bubble5"};
 	Default
 	{
 		+NOCLIP
@@ -91,25 +57,29 @@ class OMGBubbles : SwitchableDecoration
 			{
 			case 0:	//square
 				for(int i=0;i<intensity;i++)
-					bub=Spawn(Bubble[random(0,4)],(pos.x+frandom(-area,area),pos.y+frandom(-area,area),pos.z));
+					bub=Spawn("Bubble1",(pos.x+frandom(-area,area),pos.y+frandom(-area,area),pos.z));
 				break;
 			case 1:	//circle
 				float a=frandom(0.0,1.0);
 				for(int i=0;i<intensity;i++)
 				{
 					float r=frandom(0,area);
-					bub=Spawn(Bubble[random(0,4)],(pos.x+(cos(a)*r),pos.y+(sin(a)*r),pos.z));
+					bub=Spawn("Bubble1",(pos.x+(cos(a)*r),pos.y+(sin(a)*r),pos.z));
 				}
 				break;
 			case 2:	//line
 				for(int i=0;i<intensity;i++)
 				{
 					float r=frandom(0,area);
-					bub=Spawn(Bubble[random(0,4)],(pos.x+(cos(angle)*r),pos.y+(sin(angle)*r),pos.z));
+					bub=Spawn("Bubble1",(pos.x+(cos(angle)*r),pos.y+(sin(angle)*r),pos.z));
 				}
 				break;
 			}
 			bub.angle=random(0,359);
+			bub.scale.x=.0125*random(2,6);
+			bub.scale.y=bub.scale.x;
+			if(bub.scale.y>.05625)
+				bub.scale.y=.05625;
 		}
 		loop;
 	Inactive:

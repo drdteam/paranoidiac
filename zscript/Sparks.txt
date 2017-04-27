@@ -16,20 +16,30 @@ class OMGOrangeSpark : SwitchableDecoration
 	Active:
 		TNT1 A 0 NODELAY A_PlaySound("World/Spark");
 		TNT1 A 0 A_CheckSightOrRange(2560,"Inactive");
-		TNT1 A 0 A_Jump(256,1,2,3,4,5,6);
-		TNT1 A 1 A_SpawnItemEx("SparkFlare_O1");
-		goto SpawnSparks;
-		TNT1 A 1 A_SpawnItemEx("SparkFlare_O2");
-		goto SpawnSparks;
-		TNT1 A 1 A_SpawnItemEx("SparkFlare_O3");
-		goto SpawnSparks;
-		TNT1 A 1 A_SpawnItemEx("SparkFlare_O4");
-		goto SpawnSparks;
-		TNT1 A 1 A_SpawnItemEx("SparkFlare_O5");
-		goto SpawnSparks;
-		TNT1 A 1 A_SpawnItemEx("SparkFlare_O6");
-		goto SpawnSparks;
-	SpawnSparks:
+		TNT1 A 1
+		{
+			switch(random(1,6))
+			{
+			case 1:
+				A_SpawnItemEx("SparkFlare_O1");
+				break;
+			case 2:
+				A_SpawnItemEx("SparkFlare_O2");
+				break;
+			case 3:
+				A_SpawnItemEx("SparkFlare_O3");
+				break;
+			case 4:
+				A_SpawnItemEx("SparkFlare_O4");
+				break;
+			case 5:
+				A_SpawnItemEx("SparkFlare_O5");
+				break;
+			case 6:
+				A_SpawnItemEx("SparkFlare_O6");
+				break;
+			}
+		}
 		TNT1 A 0 A_JumpIf(args[0] == 1,"SpawnUp");
 		TNT1 A 0 A_JumpIf(args[0] > 1,"SpawnSide");
 		goto SpawnDown;
@@ -536,7 +546,7 @@ class Spark_BB1 : Actor
 		height 1;
 		radius 2;
 		mass 0;
-		speed 0.5;
+		speed .25;
 		+MISSILE
 		+NOBLOCKMAP
 		+FORCEXYBILLBOARD

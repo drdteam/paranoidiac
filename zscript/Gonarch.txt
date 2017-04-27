@@ -222,13 +222,13 @@ class GonarchAcid : Actor
 		Radius 12;
 		Height 8;
 		Speed 24;
-		Scale 0.6;
+		Scale .6;
 		Damage 25;
 		RenderStyle "Add";
-		Alpha 0.9;
+		Alpha .9;
 	//	Translation "80:111=118:127";
 		-NOGRAVITY
-		Gravity 0.18;
+		Gravity .18;
 		PoisonDamage 50;
 		+THRUGHOST
 		+FORCERADIUSDMG
@@ -237,30 +237,22 @@ class GonarchAcid : Actor
 	States
 	{
 	Spawn:
-		TNT1 A 0;
-		TNT1 AA 0 A_SpawnItemEx("GonarchAcidExtra",random(5,-5),random(5,-5),random(5,-5));
-		X022 A 4 ThrustThingZ(0,12,0,1);
-		TNT1 AA 0 A_SpawnItemEx("GonarchAcidExtra",random(5,-5),random(5,-5),random(5,-5));
-		X022 B 4;
+		X022 A 0 NODELAY ThrustThingZ(0,12,0,1);
+		X022 AB 4 AcidExtra;
 		TNT1 A 0 {bTHRUGHOST=0;}
-		TNT1 AA 0 A_SpawnItemEx("GonarchAcidExtra",random(5,-5),random(5,-5),random(5,-5));
-		X022 C 4;
-		TNT1 AA 0 A_SpawnItemEx("GonarchAcidExtra",random(5,-5),random(5,-5),random(5,-5));
-		X022 D 4;
-		TNT1 AA 0 A_SpawnItemEx("GonarchAcidExtra",random(5,-5),random(5,-5),random(5,-5));
-		X022 A 4;
-		TNT1 AA 0 A_SpawnItemEx("GonarchAcidExtra",random(5,-5),random(5,-5),random(5,-5));
-		X022 B 4;
-		TNT1 AA 0 A_SpawnItemEx("GonarchAcidExtra",random(5,-5),random(5,-5),random(5,-5));
-		X022 C 4;
-		TNT1 AA 0 A_SpawnItemEx("GonarchAcidExtra",random(5,-5),random(5,-5),random(5,-5));
-		X022 D 4;
-		Goto Spawn+14;
+	SpawnLoop:
+		X022 CDAB 4 AcidExtra;
+		Loop;
 	Death:
 		TNT1 A 0 A_Explode(128,128,0);
 		TNT1 A 0 A_PlaySound("halflife/monsters/bullsquid/spitehit");
 		TNT1 AAAAAAAAAA 0 A_SpawnItemEx("GonarchAcidExtra",0,0,0,random(2,-2),random(2,-2),random(0,4));
 		Stop;
+	}
+	action void AcidExtra()
+	{
+		for(int i=0;i<2;i++)
+			A_SpawnItemEx("GonarchAcidExtra",random(5,-5),random(5,-5),random(5,-5));
 	}
 }
 
@@ -407,13 +399,14 @@ class ShieldSpawner3Tics : Actor
 	States
 	{
 	Spawn:
-		TNT1 A 0;
-		TNT1 A 0 A_SpawnItemEx("LegShield",48,48);	//front right
-		TNT1 A 0 A_SpawnItemEx("LegShield",48,-48);	//front left
-		TNT1 A 0 A_SpawnItemEx("LegShield",-48,48);	//back right
-		TNT1 A 0 A_SpawnItemEx("LegShield",-48,-48);	//back left
-		TNT1 A 0 A_SpawnItemEx("TopShield",0,0,70);		//"head" shield
-		TNT1 A 1;
+		TNT1 A 1 NODELAY
+		{
+			A_SpawnItemEx("LegShield",48,48);	//front right
+			A_SpawnItemEx("LegShield",48,-48);	//front left
+			A_SpawnItemEx("LegShield",-48,48);	//back right
+			A_SpawnItemEx("LegShield",-48,-48);//back left
+			A_SpawnItemEx("TopShield",0,0,70);	//"head" shield
+		}
 		Stop;
 	}
 }
@@ -456,12 +449,14 @@ class ShieldSpawner5Tics : ShieldSpawner3Tics
 	States
 	{
 	Spawn:
-		TNT1 A 0;
-		TNT1 A 0 A_SpawnItemEx("LegShield5Tics",48,48);	//front right
-		TNT1 A 0 A_SpawnItemEx("LegShield5Tics",48,-48);	//front left
-		TNT1 A 0 A_SpawnItemEx("LegShield5Tics",-48,48);	//back right
-		TNT1 A 0 A_SpawnItemEx("LegShield5Tics",-48,-48);	//back left
-		TNT1 A 1 A_SpawnItemEx("TopShield5Tics",0,0,68);		//"head" shield
+		TNT1 A 1 NODELAY
+		{
+			A_SpawnItemEx("LegShield5Tics",48,48);	//front right
+			A_SpawnItemEx("LegShield5Tics",48,-48);	//front left
+			A_SpawnItemEx("LegShield5Tics",-48,48);	//back right
+			A_SpawnItemEx("LegShield5Tics",-48,-48);//back left
+			A_SpawnItemEx("TopShield5Tics",0,0,68);	//"head" shield
+		}
 		Stop;
 	}
 }
@@ -494,13 +489,14 @@ class ShieldSpawner8Tics : ShieldSpawner3Tics
 	States
 	{
 	Spawn:
-		TNT1 A 0;
-		TNT1 A 0 A_SpawnItemEx("LegShield8Tics",48,48);	//front right
-		TNT1 A 0 A_SpawnItemEx("LegShield8Tics",48,-48);	//front left
-		TNT1 A 0 A_SpawnItemEx("LegShield8Tics",-48,48);	//back right
-		TNT1 A 0 A_SpawnItemEx("LegShield8Tics",-48,-48);	//back left
-		TNT1 A 0 A_SpawnItemEx("TopShield8Tics",0,0,68);		//"head" shield
-		TNT1 A 1;
+		TNT1 A 1 NODELAY
+		{
+			A_SpawnItemEx("LegShield8Tics",48,48);	//front right
+			A_SpawnItemEx("LegShield8Tics",48,-48);	//front left
+			A_SpawnItemEx("LegShield8Tics",-48,48);	//back right
+			A_SpawnItemEx("LegShield8Tics",-48,-48);//back left
+			A_SpawnItemEx("TopShield8Tics",0,0,68);	//"head" shield
+		}
 		Stop;
 	}
 }

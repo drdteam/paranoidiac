@@ -34,7 +34,6 @@ class OMGFire : SwitchableDecoration
 			"Flame11A_01","Flame11B_01","Flame12A_01","Flame12B_01","Flame13A_01",
 			"Flame13B_01","Flame14A_01","Flame14B_01","Flame14A_01","Flame14B_01"
 		};
-		//ACS_ExecuteAlways(777,0,args[0],args[1],args[2]);
 		int area=args[0],shape=args[1],glow=args[2],s,t;
 		float a,r,xval,yval,zval=pos.z;
 		for(int i=0;i<area/32+1;i++)
@@ -162,8 +161,9 @@ class Flame1A_01 : Actor
 	states
 	{
 	Spawn:
-		FLM1 ABCDEFGHIJ 2 bright;
-		FLM1 KKLLMM 1 bright A_FadeOut(0.2);
+		FLM1 A 0;
+		"####" ABCDEFGHIJ 2 bright;
+		"####" KKLLMM 1 bright A_FadeOut(0.2);
 		stop;
 	}
 }
@@ -173,8 +173,9 @@ class Flame1B_01 : Flame1A_01
 	states
 	{
 	Spawn:
-		FLM1 NOPQRSTUVW 2 bright;
-		FLM1 XXYYZZ 1 bright A_FadeOut(0.2);
+		FLM1 A 0;
+		"####" NOPQRSTUVW 2 bright;
+		"####" XXYYZZ 1 bright A_FadeOut(0.2);
 		stop;
 	}
 }
@@ -184,20 +185,18 @@ class Flame2A_01 : Flame1A_01
 	states
 	{
 	Spawn:
-		FLM2 ABCDEFGHIJ 2 bright;
-		FLM2 KKLLMM 1 bright A_FadeOut(0.2);
-		stop;
+		FLM2 A 0;
+		Goto Super::Spawn+1;
 	}
 }
 
-class Flame2B_01 : Flame1A_01
+class Flame2B_01 : Flame1B_01
 {
 	states
 	{
 	Spawn:
-		FLM2 NOPQRSTUVW 2 bright;
-		FLM2 XXYYZZ 1 bright A_FadeOut(0.2);
-		stop;
+		FLM2 A 0;
+		Goto Super::Spawn+1;
 	}
 }
 
@@ -206,20 +205,18 @@ class Flame3A_01 : Flame1A_01
 	states
 	{
 	Spawn:
-		FLM3 ABCDEFGHIJ 2 bright;
-		FLM3 KKLLMM 1 bright A_FadeOut(0.2);
-		stop;
+		FLM3 A 0;
+		Goto Super::Spawn+1;
 	}
 }
 
-class Flame3B_01 : Flame3A_01
+class Flame3B_01 : Flame1B_01
 {
 	states
 	{
 	Spawn:
-		FLM3 NOPQRSTUVW 2 bright;
-		FLM3 XXYYZZ 1 bright A_FadeOut(0.2);
-		stop;
+		FLM3 A 0;
+		Goto Super::Spawn+1;
 	}
 }
 
@@ -228,20 +225,18 @@ class Flame4A_01 : Flame1A_01
 	states
 	{
 	Spawn:
-		FLM4 ABCDEFGHIJ 2 bright;
-		FLM4 KKLLMM 1 bright A_FadeOut(0.2);
-		stop;
+		FLM4 A 0;
+		Goto Super::Spawn+1;
 	}
 }
 
-class Flame4B_01 : Flame4A_01
+class Flame4B_01 : Flame1B_01
 {
 	states
 	{
 	Spawn:
-		FLM4 NOPQRSTUVW 2 bright;
-		FLM4 XXYYZZ 1 bright A_FadeOut(0.2);
-		stop;
+		FLM4 A 0;
+		Goto Super::Spawn+1;
 	}
 }
 
@@ -250,20 +245,18 @@ class Flame5A_01 : Flame1A_01
 	states
 	{
 	Spawn:
-		FLM5 ABCDEFGHIJ 2 bright;
-		FLM5 KKLLMM 1 bright A_FadeOut(0.2);
-		stop;
+		FLM5 A 0;
+		Goto Super::Spawn+1;
 	}
 }
 
-class Flame5B_01 : Flame5A_01
+class Flame5B_01 : Flame1B_01
 {
 	states
 	{
 	Spawn:
-		FLM5 NOPQRSTUVW 2 bright;
-		FLM5 XXYYZZ 1 bright A_FadeOut(0.2);
-		stop;
+		FLM5 A 0;
+		Goto Super::Spawn+1;
 	}
 }
 
@@ -272,20 +265,18 @@ class Flame6A_01 : Flame1A_01
 	states
 	{
 	Spawn:
-		FLM6 ABCDEFGHIJ 2 bright;
-		FLM6 KKLLMM 1 bright A_FadeOut(0.2);
-		stop;
+		FLM6 A 0;
+		Goto Super::Spawn+1;
 	}
 }
 
-class Flame6B_01 : Flame6A_01
+class Flame6B_01 : Flame1B_01
 {
 	states
 	{
 	Spawn:
-		FLM6 NOPQRSTUVW 2 bright;
-		FLM6 XXYYZZ 1 bright A_FadeOut(0.2);
-		stop;
+		FLM6 A 0;
+		Goto Super::Spawn+1;
 	}
 }
 
@@ -294,20 +285,18 @@ class Flame7A_01 : Flame1A_01
 	states
 	{
 	Spawn:
-		FLM7 ABCDEFGHIJ 2 bright;
-		FLM7 KKLLMM 1 bright A_FadeOut(0.2);
-		stop;
+		FLM7 A 0;
+		Goto Super::Spawn+1;
 	}
 }
 
-class Flame7B_01 : Flame7A_01
+class Flame7B_01 : Flame1B_01
 {
 	states
 	{
 	Spawn:
-		FLM7 NOPQRSTUVW 2 bright;
-		FLM7 XXYYZZ 1 bright A_FadeOut(0.2);
-		stop;
+		FLM7 A 0;
+		Goto Super::Spawn+1;
 	}
 }
 
@@ -316,20 +305,18 @@ class Flame8A_01 : Flame1A_01
 	states
 	{
 	Spawn:
-		FLM8 ABCDEFGHIJ 2 bright;
-		FLM8 KKLLMM 1 bright A_FadeOut(0.2);
-		stop;
+		FLM8 A 0;
+		Goto Super::Spawn+1;
 	}
 }
 
-class Flame8B_01 : Flame8A_01
+class Flame8B_01 : Flame1B_01
 {
 	states
 	{
 	Spawn:
-		FLM8 NOPQRSTUVW 2 bright;
-		FLM8 XXYYZZ 1 bright A_FadeOut(0.2);
-		stop;
+		FLM8 A 0;
+		Goto Super::Spawn+1;
 	}
 }
 
@@ -338,20 +325,18 @@ class Flame9A_01 : Flame1A_01
 	states
 	{
 	Spawn:
-		FLM9 ABCDEFGHIJ 2 bright;
-		FLM9 KKLLMM 1 bright A_FadeOut(0.2);
-		stop;
+		FLM9 A 0;
+		Goto Super::Spawn+1;
 	}
 }
 
-class Flame9B_01 : Flame9A_01
+class Flame9B_01 : Flame1B_01
 {
 	states
 	{
 	Spawn:
-		FLM9 NOPQRSTUVW 2 bright;
-		FLM9 XXYYZZ 1 bright A_FadeOut(0.2);
-		stop;
+		FLM9 A 0;
+		Goto Super::Spawn+1;
 	}
 }
 
@@ -360,20 +345,18 @@ class Flame10A_01 : Flame1A_01
 	states
 	{
 	Spawn:
-		FL10 ABCDEFGHIJ 2 bright;
-		FL10 KKLLMM 1 bright A_FadeOut(0.2);
-		stop;
+		FL10 A 0;
+		Goto Super::Spawn+1;
 	}
 }
 
-class Flame10B_01 : Flame10A_01
+class Flame10B_01 : Flame1B_01
 {
 	states
 	{
 	Spawn:
-		FL10 NOPQRSTUVW 2 bright;
-		FL10 XXYYZZ 1 bright A_FadeOut(0.2);
-		stop;
+		FL10 A 0;
+		Goto Super::Spawn+1;
 	}
 }
 
@@ -382,20 +365,18 @@ class Flame11A_01 : Flame1A_01
 	states
 	{
 	Spawn:
-		FL11 ABCDEFGHIJ 2 bright;
-		FL11 KKLLMM 1 bright A_FadeOut(0.2);
-		stop;
+		FL11 A 0;
+		Goto Super::Spawn+1;
 	}
 }
 
-class Flame11B_01 : Flame11A_01
+class Flame11B_01 : Flame1B_01
 {
 	states
 	{
 	Spawn:
-		FL11 NOPQRSTUVW 2 bright;
-		FL11 XXYYZZ 1 bright A_FadeOut(0.2);
-		stop;
+		FL11 A 0;
+		Goto Super::Spawn+1;
 	}
 }
 
@@ -404,20 +385,18 @@ class Flame12A_01 : Flame1A_01
 	states
 	{
 	Spawn:
-		FL12 ABCDEFGHIJ 2 bright;
-		FL12 KKLLMM 1 bright A_FadeOut(0.2);
-		stop;
+		FL12 A 0;
+		Goto Super::Spawn+1;
 	}
 }
 
-class Flame12B_01 : Flame12A_01
+class Flame12B_01 : Flame1B_01
 {
 	states
 	{
 	Spawn:
-		FL12 NOPQRSTUVW 2 bright;
-		FL12 XXYYZZ 1 bright A_FadeOut(0.2);
-		stop;
+		FL12 A 0;
+		Goto Super::Spawn+1;
 	}
 }
 
@@ -426,20 +405,18 @@ class Flame13A_01 : Flame1A_01
 	states
 	{
 	Spawn:
-		FL13 ABCDEFGHIJ 2 bright;
-		FL13 KKLLMM 1 bright A_FadeOut(0.2);
-		stop;
+		FL13 A 0;
+		Goto Super::Spawn+1;
 	}
 }
 
-class Flame13B_01 : Flame13A_01
+class Flame13B_01 : Flame1B_01
 {
 	states
 	{
 	Spawn:
-		FL13 NOPQRSTUVW 2 bright;
-		FL13 XXYYZZ 1 bright A_FadeOut(0.2);
-		stop;
+		FL13 A 0;
+		Goto Super::Spawn+1;
 	}
 }
 
@@ -448,20 +425,18 @@ class Flame14A_01 : Flame1A_01
 	states
 	{
 	Spawn:
-		FL14 ABCDEFGHIJ 2 bright;
-		FL14 KKLLMM 1 bright A_FadeOut(0.2);
-		stop;
+		FL14 A 0;
+		Goto Super::Spawn+1;
 	}
 }
 
-class Flame14B_01 : Flame14A_01
+class Flame14B_01 : Flame1B_01
 {
 	states
 	{
 	Spawn:
-		FL14 NOPQRSTUVW 2 bright;
-		FL14 XXYYZZ 1 bright A_FadeOut(0.2);
-		stop;
+		FL14 A 0;
+		Goto Super::Spawn+1;
 	}
 }
 
@@ -470,19 +445,17 @@ class Flame15A_01 : Flame1A_01
 	states
 	{
 	Spawn:
-		FL15 ABCDEFGHIJ 2 bright;
-		FL15 KKLLMM 1 bright A_FadeOut(0.2);
-		stop;
+		FL15 A 0;
+		Goto Super::Spawn+1;
 	}
 }
 
-class Flame15B_01 : Flame15A_01
+class Flame15B_01 : Flame1B_01
 {
 	states
 	{
 	Spawn:
-		FL15 NOPQRSTUVW 2 bright;
-		FL15 XXYYZZ 1 bright A_FadeOut(0.2);
-		stop;
+		FL15 A 0;
+		Goto Super::Spawn+1;
 	}
 }

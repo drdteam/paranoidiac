@@ -207,7 +207,7 @@ class GunSmallSmokeSpawner : Actor
 	}
 }
 
-class GunSmallSmoke2 : GunSmallSmoke{Default{Alpha 0.2;}}
+class GunSmallSmoke2 : GunSmallSmoke{Default{Alpha .2;}}
 
 class NewPuff1 : Actor replaces BulletPuff
 {
@@ -215,7 +215,7 @@ class NewPuff1 : Actor replaces BulletPuff
 	{
 		Projectile;
 		+NOCLIP
-		Scale 0.2;
+		Scale .2;
 		RenderStyle "Add";
 	}
 	states
@@ -251,8 +251,7 @@ class PuffSmoke : Actor
 	States
 	{
 	Spawn:
-		TNT1 A 0;
-		WPXS A 2 ThrustThingZ(0,random(1,4),0,1);
+		WPXS A 2 NODELAY ThrustThingZ(0,random(1,4),0,1);
 		WPXS CEGIKMOQSUWYZ 2 A_FadeOut;
 		Wait;
 	}
@@ -329,17 +328,19 @@ class GibBloodSmall : NewBlood
 	Default
 	{
 		RenderStyle "Translucent";
-		Scale 0.05;
-		Gravity 0.3;
+		Scale .05;
+		Gravity .3;
 		+NOINTERACTION
 	}
 	States
 	{
 	Spawn:
-		TNT1 A 0;
-		TNT1 A 0 A_SpawnItemEx("GibBloodSmall2",random(3,-3),random(3,-3),random(3,-3),flags:SXF_TRANSFERTRANSLATION);
-		BLD1 A 6 ThrustThingZ(0,random(-1,-2),0,1);
-		BLD1 ABCD 6;
+		BLD1 A 12 NODELAY
+		{
+			ThrustThingZ(0,random(-1,-2),0,1);
+			A_SpawnItemEx("GibBloodSmall2",random(3,-3),random(3,-3),random(3,-3),zvel:random(-1,-2)/4.0,flags:SXF_TRANSFERTRANSLATION);
+		}
+		BLD1 BCD 6;
 		Stop;
 	}
 }
@@ -353,8 +354,8 @@ class GibBloodSmall2 : GibBloodSmall
 	States
 	{
 	Spawn:
-		TNT1 A 0;
-		Goto Super::Spawn+2;
+		BLD1 A 12;
+		Goto Super::Spawn+1;
 	}
 }
 
@@ -368,9 +369,8 @@ class GibBloodTrailMediumSize : GibBloodSmall
 	States
 	{
 	Spawn:
-		TNT1 A 0;
-		BLD1 A 6 ThrustThingZ(0,random(-1,-4),0,1);
-		BLD1 ABCD 6;
+		BLD1 A 12 NODELAY ThrustThingZ(0,random(-1,-4),0,1);
+		BLD1 BCD 6;
 		Stop;
 	}
 }
@@ -384,45 +384,40 @@ class BloodGibDropper : Actor
 	States
 	{
 	Spawn:
-		TNT1 A 0;
-		TNT1 A 0 A_CheckSight("Simple");
-		TNT1 AAAAAAAAAAAAAAAA 0 A_SpawnItemEx("NewMeat",0,0,0,random(-7,7),random(-7,7),random(1,14),random(1,359),SXF_TRANSFERTRANSLATION);
-		TNT1 A 0 A_Jump(180,"Drop2","Drop3","Drop4");
-		TNT1 AA 0 A_SpawnItemEx("BloodGib1",0,0,0,random(-5,5),0,0,random(1,359),SXF_TRANSFERTRANSLATION);
-		TNT1 AA 0 A_SpawnItemEx("BloodGib2",0,0,0,random(-5,5),0,0,random(1,359),SXF_TRANSFERTRANSLATION);
-		TNT1 AAA 0 A_SpawnItemEx("BloodGib3",0,0,0,random(-5,5),0,0,random(1,359),SXF_TRANSFERTRANSLATION);
-		TNT1 A 0 A_SpawnItemEx("BloodGib4",0,0,0,random(-5,5),0,0,random(1,359),SXF_TRANSFERTRANSLATION);
-		TNT1 A 1;
-		Stop;
-	Drop2:
-		TNT1 AA 0 A_SpawnItemEx("BloodGib1",0,0,0,random(-5,5),0,0,random(1,359),SXF_TRANSFERTRANSLATION);
-		TNT1 AA 0 A_SpawnItemEx("BloodGib2",0,0,0,random(-5,5),0,0,random(1,359),SXF_TRANSFERTRANSLATION);
-		TNT1 AA 0 A_SpawnItemEx("BloodGib3",0,0,0,random(-5,5),0,0,random(1,359),SXF_TRANSFERTRANSLATION);
-		TNT1 AA 0 A_SpawnItemEx("BloodGib4",0,0,0,random(-5,5),0,0,random(1,359),SXF_TRANSFERTRANSLATION);
-		TNT1 A 1;
-		Stop;
-	Drop3:
-		TNT1 A 0 A_SpawnItemEx("BloodGib1",0,0,0,random(-5,5),0,0,random(1,359),SXF_TRANSFERTRANSLATION);
-		TNT1 AA 0 A_SpawnItemEx("BloodGib2",0,0,0,random(-5,5),0,0,random(1,359),SXF_TRANSFERTRANSLATION);
-		TNT1 AAA 0 A_SpawnItemEx("BloodGib3",0,0,0,random(-5,5),0,0,random(1,359),SXF_TRANSFERTRANSLATION);
-		TNT1 AA 0 A_SpawnItemEx("BloodGib4",0,0,0,random(-5,5),0,0,random(1,359),SXF_TRANSFERTRANSLATION);
-		TNT1 A 1;
-		Stop;
-	Drop4:
-		TNT1 AA 0 A_SpawnItemEx("BloodGib1",0,0,0,random(-5,5),0,0,random(1,359),SXF_TRANSFERTRANSLATION);
-		TNT1 A 0 A_SpawnItemEx("BloodGib2",0,0,0,random(-5,5),0,0,random(1,359),SXF_TRANSFERTRANSLATION);
-		TNT1 AA 0 A_SpawnItemEx("BloodGib3",0,0,0,random(-5,5),0,0,random(1,359),SXF_TRANSFERTRANSLATION);
-		TNT1 AAA 0 A_SpawnItemEx("BloodGib4",0,0,0,random(-5,5),0,0,random(1,359),SXF_TRANSFERTRANSLATION);
-		TNT1 A 1;
+		TNT1 A 0 NODELAY A_CheckSight("Simple");
+		TNT1 A 1
+		{
+			for(int i=0;i<16;i++)
+				A_SpawnItemEx("NewMeat",0,0,0,random(-7,7),random(-7,7),random(1,14),random(1,359),SXF_TRANSFERTRANSLATION);
+			switch(random(1,4))
+			{
+			case 1:BloodGib(2,2,3,1);break;
+			case 1:BloodGib(2,2,2,2);break;
+			case 1:BloodGib(1,2,3,2);break;
+			case 1:BloodGib(2,1,2,3);break;
+			}
+		}
 		Stop;
 	Simple:
-		TNT1 AAAA 0 A_SpawnItemEx("NewMeat",0,0,0,random(-7,7),random(-7,7),random(1,14),random(1,359),SXF_TRANSFERTRANSLATION);
-		TNT1 A 0 A_SpawnItemEx("BloodGib1",0,0,0,random(-5,5),0,0,random(1,359),SXF_TRANSFERTRANSLATION);
-		TNT1 A 0 A_SpawnItemEx("BloodGib2",0,0,0,random(-5,5),0,0,random(1,359),SXF_TRANSFERTRANSLATION);
-		TNT1 A 0 A_SpawnItemEx("BloodGib3",0,0,0,random(-5,5),0,0,random(1,359),SXF_TRANSFERTRANSLATION);
-		TNT1 A 0 A_SpawnItemEx("BloodGib4",0,0,0,random(-5,5),0,0,random(1,359),SXF_TRANSFERTRANSLATION);
-		TNT1 A 1;
+		TNT1 A 1
+		{
+			for(int i=0;i<4;i++)
+				A_SpawnItemEx("NewMeat",0,0,0,random(-7,7),random(-7,7),random(1,14),random(1,359),SXF_TRANSFERTRANSLATION);
+			BloodGib(1,1,1,1);
+		}
 		Stop;
+	}
+	action void BloodGib(int gib1,int gib2,int gib3,int gib4)
+	{
+		int i;
+		for(i=0;i<gib1;i++)
+			A_SpawnItemEx("BloodGib1",0,0,0,random(-5,5),0,0,random(1,359),SXF_TRANSFERTRANSLATION);
+		for(i=0;i<gib2;i++)
+			A_SpawnItemEx("BloodGib2",0,0,0,random(-5,5),0,0,random(1,359),SXF_TRANSFERTRANSLATION);
+		for(i=0;i<gib3;i++)
+			A_SpawnItemEx("BloodGib3",0,0,0,random(-5,5),0,0,random(1,359),SXF_TRANSFERTRANSLATION);
+		for(i=0;i<gib4;i++)
+			A_SpawnItemEx("BloodGib4",0,0,0,random(-5,5),0,0,random(1,359),SXF_TRANSFERTRANSLATION);
 	}
 }
 
@@ -537,9 +532,8 @@ class XenGibsRed : Actor
 	{
 	Spawn:
 		RGIB A 0;
-		RGIB A 0 A_Gravity;
-		RGIB A 0 A_Jump(255,1,2,3,4,5,6,7,8);
-		RGIB ABCDEFGH 2 A_Jump(256,"Gib");
+		"####" A 0 A_Jump(256,1,2,3,4,5,6,7,8);
+		"####" ABCDEFGH 2 A_Jump(256,"Gib");
 	Gib:
 		RGIB "#" 2 A_CheckFloor("Crash");
 		Loop;
@@ -561,10 +555,7 @@ class XenGibs : XenGibsRed
 	{
 	Spawn:
 		GGIB A 0;
-		GGIB A 0 A_Gravity;
-		TNT1 A 0 A_Jump(255,1,2,3,4,5,6,7,8);
-		GGIB ABCDEFGH 0 A_Jump(256,"Gib");
-		Stop;
+		Goto Super::Spawn;
 	Gib:
 		GGIB "#" 2 A_SpawnItemEx("XenBlood",random(3,-3),random(3,-3),random(3,-3),flags:SXF_TRANSFERTRANSLATION);
 		GGIB "#" 0 A_CheckFloor("Crash");
@@ -624,5 +615,3 @@ class XenBloodMini : Blood
 		Stop;
 	}
 }
-
-class SingleCheck : Inventory{}
