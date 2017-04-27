@@ -2,6 +2,7 @@ class HLScientistWandererSpawner : RandomSpawner
 {
 	Default
 	{
+		+FRIENDLY
 		DropItem "HLScientist1Wander";
 		DropItem "HLScientist2Wander";
 		DropItem "HLScientist3Wander";
@@ -13,6 +14,7 @@ class HLScientistImmovilSpawner : RandomSpawner
 {
 	Default
 	{
+		+FRIENDLY
 		DropItem "HLScientist1Still";
 		DropItem "HLScientist2Still";
 		DropItem "HLScientist3Still";
