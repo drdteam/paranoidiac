@@ -90,7 +90,7 @@ statusbar normal
 
 	//Ammo icons
 	drawimage "HLAMMO", 248, 176;
-	drawimage "HLAMMO1", 385, 176;
+	drawimage "HLAMMO1", 285, 176;
 
 	//Clip values column
 	drawnumber 2, HLBARFONT, HLYellow1, PistolHeldAmmo, 259, 177, Red, 5, HLYELLOW3, 12;
