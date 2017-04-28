@@ -95,7 +95,7 @@ class HEVCharge : BasicArmorBonus
 	}
 }
 
-class Key1 : Key
+class Key1 : FakeInventory
 {
 	Default
 	{

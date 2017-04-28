@@ -31,9 +31,6 @@ statusbar normal
 	//On screen damage indicator
 	drawmugshot "STF", 5, xdeathface, 128, 56;
 
-	//Draw held keys in the top-right
-	DrawKeyBar 8, vertical, 8, 311, 2;
-
 	drawselectedinventory HLBARFONT, 0, 146, 27, 170, HLYellow1;
 
 	//Draws appropriate icons and clip ammo per weapon.
@@ -201,9 +198,6 @@ statusbar fullscreen
 
 	//On screen damage indicator
 	drawmugshot "STF", 5, xdeathface, 128, 56;
-
-	//Draw held keys in the top-right
-	DrawKeyBar 8, vertical, 8, 311, 2;
 }
 
 statusbar inventoryfullscreen, fullscreenoffsets
