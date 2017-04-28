@@ -5,6 +5,12 @@ class ParanoidWeapon : Weapon
 		if(bTOSSED)
 			angle=random(0,359);
 	}
+	Default
+	{
+		Weapon.BobRangeX 0;
+		Weapon.BobRangeY .25;
+		Weapon.BobStyle "Smooth";
+	}
 	States
 	{
 	Spawn:
