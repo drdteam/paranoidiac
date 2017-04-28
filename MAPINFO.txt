@@ -7,6 +7,16 @@ gameinfo
 }
 
 clearskills
+skill VeryEasy
+{
+	AutoUseHealth
+	AmmoFactor=2
+	DamageFactor=.5
+	SpawnFilter="Easy"
+	Name="Very Easy"
+	ACSreturn=0
+	Key="v"
+}
 
 skill Easy
 {
@@ -133,7 +143,7 @@ adddefaultmap
 
 map map11 "Fly in a Web."
 {
-	PrecacheSounds="01Earth","11Earth"
+	PrecacheSounds="01Earth","11Earth","MAP11VX2"
 }
 map map12 "How Green, the Valley."
 {
@@ -328,16 +338,12 @@ DoomEdNums
 	3210=MusicSwitcher07
 	4041=HLScientist1Path
 	4042=HLScientist1Wander
-	//4043=HLScientist1Panic
 	4044=HLScientist2Path
 	4045=HLScientist2Wander
-	//4046=HLScientist2Panic
 	4047=HLScientist3Path
 	4048=HLScientist3Wander
-	//4049=HLScientist3Panic
 	4050=HLScientist4Path
 	4051=HLScientist4Wander
-	//4052=HLScientist4Panic
 	4053=HLScientistWandererSpawner
 	4054=HLScientistImmovilSpawner
 	4055=HLScientist1Still
