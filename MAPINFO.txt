@@ -28,6 +28,7 @@ skill Easy
 
 skill Medium
 {
+	DefaultSkill
 	SpawnFilter="Normal"
 	PicName="M_MED"
 	ACSreturn=2
@@ -62,10 +63,20 @@ episode map22
 	name="Paranoiac: Obliteration"
 }
 
-map TITLEMAP "Flight of the Phoenix"
+map TITLEMAP "Welcome"
+{
+	Next=TITLE1
+	SecretNext=TITLE2
+}
+map TITLE1 "The Path to Perdition"
+{
+	sky1=HLSKY5
+	PrecacheSounds="Music01"
+}
+map TITLE2 "Flight of the Phoenix"
 {
 	sky1=HLSKY3
-	PrecacheSounds="Music01","30Title"
+	PrecacheSounds="30Title"
 }
 
 defaultmap
