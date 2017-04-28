@@ -20,7 +20,12 @@ graphic HINTMAN, 128, 128
 }
 
 //Bright armour graphic
-
+graphic HLARM0, 32, 48
+{
+   XScale 2.0
+   YScale 2.0
+   Patch HLARM0, 0, 0
+}
 graphic HLARM1, 32, 48
 {
    XScale 2.0
@@ -735,11 +740,11 @@ graphic MEDKZ0, 43, 37
 
 //Status bar
 
-graphic HLBAR, 712, 48
+graphic HLBAR, 640, 48
 {
    XScale 2.0
    YScale 2.0
-   Patch HLBAR, 0, 0
+   Patch HLBAR,0,0
 }
 
 //Col. Stinson
