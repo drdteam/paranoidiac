@@ -415,7 +415,9 @@ class Python : ParanoidWeapon
 	Ready:
 		HWAI A 1
 		{
-			if(CountInv("MagnumHeldAmmo")<6&&CountInv("PythonAmmo"))
+			if(waterlevel==3)
+				A_WeaponReady(WRF_NOFIRE);
+			else if(CountInv("MagnumHeldAmmo")<6&&CountInv("PythonAmmo"))
 				A_WeaponReady(WRF_ALLOWRELOAD);
 			else
 				A_WeaponReady();
@@ -564,7 +566,9 @@ class Pshotgun : ParanoidWeapon
 		HW1I A 0 {invoker.reloading=0;}
 		HW1I A 1
 		{
-			if(CountInv("ShotgunHeldAmmo")<8&&CountInv("PShell"))
+			if(waterlevel==3)
+				A_WeaponReady(WRF_NOFIRE);
+			else if(CountInv("ShotgunHeldAmmo")<8&&CountInv("PShell"))
 				A_WeaponReady(WRF_ALLOWRELOAD);
 			else
 				A_WeaponReady();
@@ -759,7 +763,9 @@ class ARifle : ParanoidWeapon
 	Ready:
 		HW3I A 1
 		{
-			if(CountInv("M16HeldAmmo")<50&&CountInv("ARClip"))
+			if(waterlevel==3)
+				A_WeaponReady(WRF_NOFIRE);
+			else if(CountInv("M16HeldAmmo")<50&&CountInv("ARClip"))
 				A_WeaponReady(WRF_ALLOWRELOAD);
 			else
 				A_WeaponReady();
@@ -1368,7 +1374,9 @@ class GluonGun : ParanoidWeapon
 		}
 		RFLP A 1
 		{
-			if(CountInv("GluonHeldAmmo")<40&&CountInv("AECell"))
+			if(waterlevel==3)
+				A_WeaponReady(WRF_NOFIRE);
+			else if(CountInv("GluonHeldAmmo")<40&&CountInv("AECell"))
 				A_WeaponReady(WRF_ALLOWRELOAD);
 			else
 				A_WeaponReady();
