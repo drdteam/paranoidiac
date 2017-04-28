@@ -59,7 +59,7 @@ statusbar normal
 		drawnumber 3, HLSTAFONT, HLYellow1, M16HeldAmmo, 236, 182, 0, Red, 15, HLYELLOW3, 40;
 		drawnumber 3, HLBARFONT, HLYellow1, Ammo1, 244, 193, HLYELLOW2, 50, HLYELLOW3, 150;
 		drawnumber 3, HLBARFONT, HLYellow1, ammo M16Gren, 244, 197, Red, 4, HLYELLOW3, 10;
-		drawimage "i_gren1", 268, 197;
+		drawimage "i_gren1", 230, 197;
 	}
 	IsSelected RPGLauncher
 	{
