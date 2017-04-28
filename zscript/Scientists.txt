@@ -94,6 +94,7 @@ class HLScientist1Path : HLScientist
 		Loop;
 	See:
 		HLRW A 0;
+	StopMoving:
 		"####" A 0
 		{
 			if(bFRIGHTENED)//scream the 1st time they enter here
@@ -111,6 +112,7 @@ class HLScientist1Path : HLScientist
 			A_Chase();
 			return state(null);
 		}
+		"####" A 0 A_Jump(32,"StopMov");
 		Goto See+1;
 	Pain:
 		HLRP A 0;
@@ -368,10 +370,7 @@ class HLScientist1Wander : HLScientist1Path
 	States
 	{
 	Spawn:
-	See:
-		HLRW AAAAAABBBBBBCCCCCCDDDDDDEEEEEEFFFFFF 1 A_Wander;
-		HLRI A 0 A_Jump(32,"StopMov");
-		Loop;
+		Goto See;
 	StopMov:
 		"####" A 0 A_Jump(256,1,2,3);
 		"####" ABC 0 A_Jump(256,"Pondering");
@@ -387,10 +386,7 @@ class HLScientist2Wander : HLScientist2Path
 	States
 	{
 	Spawn:
-	See:
-		SC1W AAAAAABBBBBBCCCCCCDDDDDDEEEEEEFFFFFF 1 NODELAY A_Wander;
-		SC1I A 0 A_Jump(32,"StopMov");
-		Loop;
+		Goto See;
 	StopMov:
 		"####" A 0 A_Jump(256,1,2,3);
 		"####" ABC 0 A_Jump(256,"Pondering");
@@ -406,10 +402,7 @@ class HLScientist3Wander : HLScientist3Path
 	States
 	{
 	Spawn:
-	See:
-		SC2W AAAAAABBBBBBCCCCCCDDDDDDEEEEEEFFFFFF 1 NODELAY A_Wander;
-		SC2I A 0 A_Jump(32,"StopMov");
-		Loop;
+		Goto See;
 	StopMov:
 		"####" A 0 A_Jump(256,1,2,3);
 		"####" ABC 0 A_Jump(256,"Pondering");
@@ -425,10 +418,7 @@ class HLScientist4Wander : HLScientist4Path
 	States
 	{
 	Spawn:
-	See:
-		SC3W AAAAAABBBBBBCCCCCCDDDDDDEEEEEEFFFFFF 1 NODELAY A_Wander;
-		SC3I A 0 A_Jump(32,"StopMov");
-		Loop;
+		Goto See;
 	StopMov:
 		"####" A 0 A_Jump(256,1,2,3);
 		"####" ABC 0 A_Jump(256,"Pondering");
