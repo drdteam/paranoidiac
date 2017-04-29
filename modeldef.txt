@@ -3416,3 +3416,68 @@ Model PConsole5
 
 	FrameIndex POSS A 0 0
 }
+
+
+
+Model Beretta
+{
+	Path "Models"
+	Model 0 "v_9mmhandgun.md2"
+	Skin 0 "v_9mmhandgun.png"
+	Scale -1 1 1
+
+	Offset 1 0 -2
+
+	FrameIndex HW2I A 0 63
+
+	FrameIndex HW2F A 0 153
+	FrameIndex HW2F B 0 154
+	FrameIndex HW2F C 0 155
+	FrameIndex HW2F D 0 156
+	FrameIndex HW2F E 0 158
+	FrameIndex HW2F F 0 160
+	FrameIndex HW2F G 0 162
+	FrameIndex HW2F H 0 164
+	FrameIndex HW2F I 0 166
+	FrameIndex HW2F J 0 168
+	FrameIndex HW2F K 0 170
+	FrameIndex HW2F L 0 172
+
+	FrameIndex HW2R A 0 2
+	FrameIndex HW2R B 0 5
+	FrameIndex HW2R C 0 8
+	FrameIndex HW2R D 0 11
+	FrameIndex HW2R E 0 14
+	FrameIndex HW2R F 0 17
+	FrameIndex HW2R G 0 20
+	FrameIndex HW2R H 0 23
+	FrameIndex HW2R I 0 26
+	FrameIndex HW2R J 0 29
+	FrameIndex HW2R K 0 32
+	FrameIndex HW2R L 0 35
+	FrameIndex HW2R M 0 38
+	FrameIndex HW2R N 0 41
+	FrameIndex HW2R O 0 44
+	FrameIndex HW2R P 0 47
+	FrameIndex HW2R Q 0 50
+	FrameIndex HW2R R 0 53
+	FrameIndex HW2R S 0 56
+	FrameIndex HW2R T 0 59
+	FrameIndex HW2R U 0 62
+	FrameIndex HW2R V 0 62
+
+	FrameIndex HW2U A 0 292
+	FrameIndex HW2U B 0 293
+	FrameIndex HW2U C 0 294
+	FrameIndex HW2U D 0 295
+	FrameIndex HW2U E 0 296
+	FrameIndex HW2U F 0 297
+	FrameIndex HW2U G 0 298
+	FrameIndex HW2U H 0 299
+	FrameIndex HW2U I 0 300
+	FrameIndex HW2U J 0 301
+	FrameIndex HW2U K 0 302
+	FrameIndex HW2U L 0 303
+	FrameIndex HW2U M 0 304
+	FrameIndex HW2U N 0 305
+}

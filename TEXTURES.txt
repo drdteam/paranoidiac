@@ -2073,3 +2073,32 @@ Texture XDOOR27A, 128, 128
 }
 
 // End of texture definitions
+
+sprite HW2UA0,316,206
+	{Patch HW2IA0,0,0}
+sprite HW2UB0,316,206
+	{Patch HW2IA0,0,0}
+sprite HW2UC0,316,206
+	{Patch HW2IA0,0,0}
+sprite HW2UD0,316,206
+	{Patch HW2IA0,0,0}
+sprite HW2UE0,316,206
+	{Patch HW2IA0,0,0}
+sprite HW2UF0,316,206
+	{Patch HW2IA0,0,0}
+sprite HW2UG0,316,206
+	{Patch HW2IA0,0,0}
+sprite HW2UH0,316,206
+	{Patch HW2IA0,0,0}
+sprite HW2UI0,316,206
+	{Patch HW2IA0,0,0}
+sprite HW2UJ0,316,206
+	{Patch HW2IA0,0,0}
+sprite HW2UK0,316,206
+	{Patch HW2IA0,0,0}
+sprite HW2UL0,316,206
+	{Patch HW2IA0,0,0}
+sprite HW2UM0,316,206
+	{Patch HW2IA0,0,0}
+sprite HW2UN0,316,206
+	{Patch HW2IA0,0,0}
