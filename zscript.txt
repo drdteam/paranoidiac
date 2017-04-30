@@ -5,6 +5,8 @@ enum ParanoidEnum
 	HLSMOOTHCHASE=CHF_NOPLAYACTIVE+CHF_NORANDOMTURN+CHF_STOPIFBLOCKED
 }
 
+#include "Paranoid/statbar.txt"
+
 #include "Paranoid/Bubbles.txt"
 #include "Paranoid/Flames.txt"
 #include "Paranoid/Messages.txt"

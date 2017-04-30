@@ -4,6 +4,7 @@ gameinfo
 	playerclasses="RolfBellmer"
 	borderflat="XMETAL25"
 	infopage="HELP"
+	statusbarclass="ParanoidStatusBar"
 }
 
 clearskills

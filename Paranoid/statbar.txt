@@ -1,0 +1,267 @@
+class ParanoidStatusBar : BaseStatusBar
+{
+	HUDFont HLSTAFONT,HLBARFONT;
+	InventoryBarState diparms;
+	DynamicValueInterpolator HealthInterp,ArmorInterp;
+	override void NewGame()
+	{
+		Super.NewGame();
+		HealthInterp.Reset(0);
+		ArmorInterp.Reset(0);
+	}
+	override void Tick()
+	{
+		Super.Tick();
+		HealthInterp.Update(CPlayer.health);
+		ArmorInterp.Update(GetArmorAmount());
+	}
+	override void Init()
+	{
+		//InterpolateHealth true, 10;
+		//InterpolateArmor true, 10;
+		Super.Init();
+		SetSize(24,320,200);
+		Font fnt="HLSTAFONT";
+		HLSTAFONT=HUDFont.Create(fnt,fnt.GetCharWidth("0"),true);
+		fnt="HLBARFONT";
+		HLBARFONT=HUDFont.Create(fnt,fnt.GetCharWidth("0"),true);
+		diparms=InventoryBarState.Create(HLBARFONT,Font.FindFontColor('HLYellow1'));
+		HealthInterp=DynamicValueInterpolator.Create(0,.25,1,10);
+		ArmorInterp=DynamicValueInterpolator.Create(0,.25,1,10);
+	}
+	override void Draw(int state,double TicFrac)
+	{
+		Super.Draw(state,TicFrac);
+		if(state==HUD_StatusBar)
+		{
+			BeginStatusBar();
+			DrawMainBar(TicFrac);
+		}
+		else if(state==HUD_Fullscreen)
+		{
+			BeginHUD();
+			DrawFullScreenStuff();
+		}
+	}
+	int,int ammolowhigh(int ammomax)
+	{
+		//MagnumHeldAmmo/BoltHeld
+		if(ammomax==5||ammomax==6)
+			return 2,5;
+		//ShotgunHeldAmmo
+		else if(ammomax==8)
+			return 3,6;
+		//RPGAmmo/HLHornet
+		else if(ammomax==10)
+			return 4,10;
+		//PistolHeldAmmo
+		else if(ammomax==17)
+			return 5,12;
+		//PythonAmmo
+		else if(ammomax==36)
+			return 11,38;
+		//GluonHeldAmmo
+		else if(ammomax==40)
+			return 15,40;
+		//Xbowbolts
+		else if(ammomax==50)
+			return 5,20;
+		//AECell
+		else if(ammomax==100)
+			return 40,400;
+		//PShell
+		else if(ammomax==125)
+			return 15,38;
+		//BClip
+		else if(ammomax==250)
+			return 33,170;
+		return 0,1;
+	}
+	override void DrawAutomapHUD(double ticFrac)
+		{DoDrawAutomapHUD(Font.CR_GREY, Font.CR_UNTRANSLATED);}
+	void DrawMainBar(double TicFrac)
+	{
+		let me=CPlayer.mo;
+		Inventory ammotype1,ammotype2;
+		//Main bar
+		DrawImage("HLBAR",(0,176),DI_ITEM_OFFSETS);
+		//Health
+		DrawString(HLSTAFONT,FormatNumber(HealthInterp.GetValue(),3),(38,182),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor2(HealthInterp.GetValue(),35,101));
+		//Armour
+		DrawString(HLSTAFONT,FormatNumber(ArmorInterp.GetValue(),3),(78,182),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor1(ArmorInterp.GetValue(),35,101));
+		//Glowy armour icon
+		DrawImage(ArmorInterp.GetValue()>0?"HLARM1":"HLARM0",(43,180),DI_ITEM_OFFSETS);
+
+		//Paranoid logo
+		DrawImage("HLLOGO",(81,177),DI_ITEM_OFFSETS);
+
+		//Weapon slot box
+		DrawImage(CPlayer.HasWeaponsInSlot(1)?"HLYNUM1":"HLGNUM1",(86,188),DI_ITEM_OFFSETS);
+		DrawImage(CPlayer.HasWeaponsInSlot(2)?"HLYNUM2":"HLGNUM2",(92,188),DI_ITEM_OFFSETS);
+		DrawImage(CPlayer.HasWeaponsInSlot(3)?"HLYNUM3":"HLGNUM3",(98,188),DI_ITEM_OFFSETS);
+		DrawImage(CPlayer.HasWeaponsInSlot(4)?"HLYNUM4":"HLGNUM4",(104,188),DI_ITEM_OFFSETS);
+		DrawImage(CPlayer.HasWeaponsInSlot(5)?"HLYNUM5":"HLGNUM5",(110,188),DI_ITEM_OFFSETS);
+		DrawImage(CPlayer.HasWeaponsInSlot(6)?"HLYNUM6":"HLGNUM6",(116,188),DI_ITEM_OFFSETS);
+		DrawImage(CPlayer.HasWeaponsInSlot(7)?"HLYNUM7":"HLGNUM7",(122,188),DI_ITEM_OFFSETS);
+
+		//On screen damage indicator
+		DrawTexture(GetMugShot(5,MugShot.XDEATHFACE),(128,56),DI_ITEM_OFFSETS);
+
+		//Draws appropriate icons and clip ammo per weapon.
+		DrawInventoryIcon(CPlayer.ReadyWeapon,(132,176),DI_ITEM_OFFSETS);
+		[ammotype1,ammotype2]=GetCurrentAmmo();
+		int ammolow,ammohigh,ammocolor;
+		if(CheckWeaponSelected("ARifle"))
+		{
+			DrawImage("i_gren1",(230,197),DI_ITEM_OFFSETS);
+			DrawString(HLBARFONT,FormatNumber(me.CountInv("ARClip"),3),(244,193),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor1(me.CountInv("ARClip"),50,150));
+			DrawString(HLSTAFONT,FormatNumber(me.CountInv("M16HeldAmmo"),3),(236,182),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor2(me.CountInv("M16HeldAmmo"),15,40));
+			DrawString(HLBARFONT,FormatNumber(me.CountInv("M16Gren"),3),(244,197),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor2(me.CountInv("M16Gren"),4,10));
+		}
+		else if(ammotype2==null||ammotype2==ammotype1)
+		{
+			if(ammotype1!=null)
+			{
+				[ammolow,ammohigh]=ammolowhigh(ammotype1.MaxAmount);
+				DrawString(HLSTAFONT,FormatNumber(ammotype1.Amount,3),(236,182),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor1(ammotype1.Amount,ammolow,ammohigh));
+			}
+		}
+		else if(ammotype1!=null)
+		{
+			[ammolow,ammohigh]=ammolowhigh(ammotype1.MaxAmount);
+			DrawString(HLBARFONT,FormatNumber(ammotype1.Amount,3),(244,193),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor1(ammotype1.Amount,ammolow,ammohigh));
+			[ammolow,ammohigh]=ammolowhigh(ammotype2.MaxAmount);
+			DrawString(HLSTAFONT,FormatNumber(ammotype2.Amount,3),(236,182),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor2(ammotype2.Amount,ammolow,ammohigh));
+		}
+
+		//frags panel in case anyone plays deathmatch
+		if(deathmatch||teamplay)
+		{
+			DrawImage("HLFRAGS",(246,152),DI_ITEM_OFFSETS);
+			DrawString(HLSTAFONT,FormatNumber(CPlayer.FragCount,3),(279,258),DI_TEXT_ALIGN_RIGHT,Font.FindFontColor('HLYellow1'));
+		}
+
+		//Ammo icons
+		DrawImage("HLAMMO",(248,176),DI_ITEM_OFFSETS);
+		DrawImage("HLAMMO1",(285,176),DI_ITEM_OFFSETS);
+
+		//Clip values column
+		DrawString(HLBARFONT,FormatNumber(GetAmount("PistolHeldAmmo"),2),(259,177),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor2(GetAmount("PistolHeldAmmo"),5,12));
+		DrawString(HLBARFONT,FormatNumber(GetAmount("MagnumHeldAmmo"),2),(259,181),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor2(GetAmount("MagnumHeldAmmo"),2,5));
+		DrawString(HLBARFONT,FormatNumber(GetAmount("ShotgunHeldAmmo"),2),(259,185),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor2(GetAmount("ShotgunHeldAmmo"),3,6));
+		DrawString(HLBARFONT,FormatNumber(GetAmount("M16HeldAmmo"),2),(259,189),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor2(GetAmount("M16HeldAmmo"),15,40));
+		DrawString(HLBARFONT,FormatNumber(GetAmount("GluonHeldAmmo"),2),(296,177),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor2(GetAmount("GluonHeldAmmo"),15,40));
+		DrawString(HLBARFONT,FormatNumber(GetAmount("BoltHeld"),2),(296,181),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor2(GetAmount("BoltHeld"),15,40));
+		DrawString(HLBARFONT,FormatNumber(GetAmount("HLHornet"),2),(296,185),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor2(GetAmount("HLHornet"),15,40));
+
+		//Total held ammo column
+		DrawString(HLBARFONT,FormatNumber(GetAmount("BClip"),3),(270,177),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor1(GetAmount("BClip"),33,170));
+
+		DrawString(HLBARFONT,FormatNumber(GetAmount("PythonAmmo"),3),(270,181),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor1(GetAmount("PythonAmmo"),11,38));
+		DrawString(HLBARFONT,FormatNumber(GetAmount("PShell"),3),(270,185),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor1(GetAmount("PShell"),15,38));
+		DrawString(HLBARFONT,FormatNumber(GetAmount("ARClip"),3),(270,189),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor1(GetAmount("ARClip"),50,150));
+		DrawString(HLBARFONT,FormatNumber(GetAmount("M16Gren"),3),(270,193),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor1(GetAmount("M16Gren"),4,10));
+		DrawString(HLBARFONT,FormatNumber(GetAmount("RPGAmmo"),3),(270,197),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor1(GetAmount("RPGAmmo"),4,10));
+		DrawString(HLBARFONT,FormatNumber(GetAmount("AECell"),3),(307,177),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor1(GetAmount("AECell"),4,10));
+		DrawString(HLBARFONT,FormatNumber(GetAmount("XBowBolts"),3),(307,181),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor1(GetAmount("XBowBolts"),4,10));
+		DrawString(HLBARFONT,FormatNumber(GetAmount("HLHornet"),3),(307,185),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor1(GetAmount("HLHornet"),4,10));
+
+		//Max ammo capacity column
+		DrawString(HLBARFONT,FormatNumber(GetMaxAmount("BClip"),3),(281,177),DI_TEXT_ALIGN_RIGHT,Font.FindFontColor('HLYellow3'));
+		DrawString(HLBARFONT,FormatNumber(GetMaxAmount("PythonAmmo"),3),(281,181),DI_TEXT_ALIGN_RIGHT,Font.FindFontColor('HLYellow3'));
+		DrawString(HLBARFONT,FormatNumber(GetMaxAmount("PShell"),3),(281,185),DI_TEXT_ALIGN_RIGHT,Font.FindFontColor('HLYellow3'));
+		DrawString(HLBARFONT,FormatNumber(GetMaxAmount("ARClip"),3),(281,189),DI_TEXT_ALIGN_RIGHT,Font.FindFontColor('HLYellow3'));
+		DrawString(HLBARFONT,FormatNumber(GetMaxAmount("M16Gren"),3),(281,193),DI_TEXT_ALIGN_RIGHT,Font.FindFontColor('HLYellow3'));
+		DrawString(HLBARFONT,FormatNumber(GetMaxAmount("RPGAmmo"),3),(281,197),DI_TEXT_ALIGN_RIGHT,Font.FindFontColor('HLYellow3'));
+		DrawString(HLBARFONT,FormatNumber(GetMaxAmount("AECell"),3),(318,177),DI_TEXT_ALIGN_RIGHT,Font.FindFontColor('HLYellow3'));
+		DrawString(HLBARFONT,FormatNumber(GetMaxAmount("XBowBolts"),3),(318,181),DI_TEXT_ALIGN_RIGHT,Font.FindFontColor('HLYellow3'));
+		DrawString(HLBARFONT,FormatNumber(GetMaxAmount("HLHornet"),3),(318,185),DI_TEXT_ALIGN_RIGHT,Font.FindFontColor('HLYellow3'));
+
+		if(me.InvSel!=null&&!level.NoInventoryBar)
+		{
+			int xval=15,yval=161;
+			DrawInventoryIcon(me.InvSel,(xval,yval),DI_ITEM_CENTER);
+			if(me.InvSel.Amount>1)
+				DrawString(HLBARFONT,FormatNumber(me.InvSel.Amount),(xval+14,yval+14-HLBARFONT.mFont.GetHeight()),DI_TEXT_ALIGN_RIGHT,Font.FindFontColor('HLYellow1'));
+		}
+		if(isInventoryBarVisible())
+			DrawInventoryBar(diparms,(0,146),6,DI_ITEM_LEFT_TOP);
+
+	}
+	int ParanoidHudColor1(int amt,int low,int high)
+	{
+		if(amt<=low)
+			return Font.FindFontColor('HLYellow2');
+		if(amt>=high)
+			return Font.FindFontColor('HLYellow3');
+		return Font.FindFontColor('HLYellow1');
+	}
+	int ParanoidHudColor2(int amt,int low,int high)
+	{
+		if(amt<=low)
+			return Font.CR_RED;
+		if(amt>=high)
+			return Font.FindFontColor('HLYellow3');
+		return Font.FindFontColor('HLYellow1');
+	}
+	protected void DrawFullScreenStuff()
+	{
+		let me=CPlayer.mo;
+		Inventory ammotype1,ammotype2;
+		[ammotype1,ammotype2]=GetCurrentAmmo();
+
+		//Health
+		DrawImage("i_health",(0,176-24),DI_ITEM_OFFSETS);
+		DrawString(HLSTAFONT,FormatNumber(HealthInterp.GetValue(),3),(40,182-24),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor2(HealthInterp.GetValue(),35,101));
+
+		DrawImage("divide",(48,176-24),DI_ITEM_OFFSETS);
+
+		//Armour
+		DrawString(HLSTAFONT,FormatNumber(ArmorInterp.GetValue(),3),(94,182-24),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor1(ArmorInterp.GetValue(),35,101));
+		DrawImage(ArmorInterp.GetValue()>0?"i_arm2":"i_arm1",(54,176-24),DI_ITEM_OFFSETS);
+
+		//Ammo
+		if(ammotype1!=null)
+			DrawInventoryIcon(ammotype1,(312-320,158),DI_ITEM_OFFSETS);
+		if(ammotype2!=null&&ammotype2!=ammotype1)
+			DrawImage("divide",(280-320,152),DI_ITEM_OFFSETS);
+
+		int ammolow,ammohigh,ammocolor;
+		if(CheckWeaponSelected("ARifle"))
+		{
+			DrawImage("i_gren1",(312-320,166-24),DI_ITEM_OFFSETS);
+			DrawString(HLSTAFONT,FormatNumber(me.CountInv("ARClip"),3),(310-320,182-24),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor1(me.CountInv("ARClip"),50,150));
+			DrawString(HLSTAFONT,FormatNumber(me.CountInv("M16HeldAmmo"),3),(272-320,182-24),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor2(me.CountInv("M16HeldAmmo"),15,40));
+			DrawString(HLSTAFONT,FormatNumber(me.CountInv("M16Gren"),3),(310-320,166-24),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor2(me.CountInv("M16Gren"),4,10));
+		}
+		else
+		{
+			if(ammotype1!=null)
+			{
+				[ammolow,ammohigh]=ammolowhigh(ammotype1.MaxAmount);
+				DrawString(HLSTAFONT,FormatNumber(ammotype1.Amount,3),(310-320,182-24),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor1(ammotype1.Amount,ammolow,ammohigh));
+			}
+			if(ammotype2!=null&&ammotype2!=ammotype1)
+			{
+				[ammolow,ammohigh]=ammolowhigh(ammotype2.MaxAmount);
+				DrawString(HLSTAFONT,FormatNumber(ammotype2.Amount,3),(272-320,182-24),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor2(ammotype2.Amount,ammolow,ammohigh));
+			}
+		}
+
+		//Current inventory item
+		if(me.InvSel!=null&&!level.NoInventoryBar)
+		{
+			DrawInventoryIcon(me.InvSel,(146,27-24));
+			if(me.InvSel.Amount>1)
+				DrawString(HLBARFONT,FormatNumber(me.InvSel.Amount),(170,27-24-HLBARFONT.mFont.GetHeight()),DI_TEXT_ALIGN_RIGHT,Font.FindFontColor('HLYellow1'));
+		}
+		if(deathmatch||teamplay)
+			DrawString(HLSTAFONT,FormatNumber(CPlayer.FragCount,2),(310-320,150-24),DI_TEXT_ALIGN_RIGHT,Font.FindFontColor('HLYellow1'));
+
+		//On screen damage indicator
+		DrawTexture(GetMugShot(5,MugShot.XDEATHFACE),(128,32),DI_ITEM_OFFSETS);
+
+		if(isInventoryBarVisible())
+			DrawInventoryBar(diparms,(-106,-31),7,DI_SCREEN_CENTER_BOTTOM);
+	}
+}
