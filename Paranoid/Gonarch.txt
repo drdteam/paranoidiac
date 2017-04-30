@@ -1,5 +1,17 @@
 class HLGonarch : Actor
 {
+	override void tick()
+	{
+		if(health>0)
+		{
+			A_SpawnItemEx("LegShield1Tic",48,48);	//front right
+			A_SpawnItemEx("LegShield1Tic",48,-48);	//front left
+			A_SpawnItemEx("LegShield1Tic",-48,48);	//back right
+			A_SpawnItemEx("LegShield1Tic",-48,-48);	//back left
+			A_SpawnItemEx("TopShield1Tic",0,0,70);	//"head" shield
+		}
+		super.tick();
+	}
 	Default
 	{
 		Monster;
@@ -28,83 +40,33 @@ class HLGonarch : Actor
 	States
 	{
 	Spawn:
-		HLNI A 0 NODELAY A_SpawnItemEx("ShieldSpawner3Tics");
 		HLNI A 3 A_Look;
 		Loop;
 	See:
-		HLNW A 1
-		{
-			A_SpawnItemEx("ShieldSpawner3Tics");
-			A_Chase();
-		}
+		HLNW A 1 A_Chase();
 		HLNW AA 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLNW A 1
-		{
-			A_SpawnItemEx("ShieldSpawner3Tics");
-			A_Chase();
-		}
+		HLNW A 1 A_Chase();
 		HLNW AA 1 A_Chase(null,null,HLSMOOTHCHASE);
-
-		HLNW B 1
-		{
-			A_SpawnItemEx("ShieldSpawner3Tics");
-			A_Chase();
-		}
+		HLNW B 1 A_Chase();
 		HLNW BB 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLNW B 1
-		{
-			A_SpawnItemEx("ShieldSpawner3Tics");
-			A_Chase();
-		}
+		HLNW B 1 A_Chase();
 		HLNW BB 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLNW C 1
-		{
-			A_SpawnItemEx("ShieldSpawner3Tics");
-			A_Chase();
-		}
+		HLNW C 1 A_Chase();
 		HLNW CC 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLNW C 1
-		{
-			A_SpawnItemEx("ShieldSpawner3Tics");
-			A_Chase();
-		}
+		HLNW C 1 A_Chase();
 		HLNW CC 1 A_Chase(null,null,HLSMOOTHCHASE);
 		TNT1 A 0 A_PlaySound("halflife/monsters/gonarch/step",6);
-		HLNW D 1
-		{
-			A_SpawnItemEx("ShieldSpawner3Tics");
-			A_Chase();
-		}
+		HLNW D 1 A_Chase();
 		HLNW DD 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLNW D 1
-		{
-			A_SpawnItemEx("ShieldSpawner3Tics");
-			A_Chase();
-		}
+		HLNW D 1 A_Chase();
 		HLNW DD 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLNW E 1
-		{
-			A_SpawnItemEx("ShieldSpawner3Tics");
-			A_Chase();
-		}
+		HLNW E 1 A_Chase();
 		HLNW EE 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLNW E 1
-		{
-			A_SpawnItemEx("ShieldSpawner3Tics");
-			A_Chase();
-		}
+		HLNW E 1 A_Chase();
 		HLNW EE 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLNW F 1
-		{
-			A_SpawnItemEx("ShieldSpawner3Tics");
-			A_Chase();
-		}
+		HLNW F 1 A_Chase();
 		HLNW FF 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLNW F 1
-		{
-			A_SpawnItemEx("ShieldSpawner3Tics");
-			A_Chase();
-		}
+		HLNW F 1 A_Chase();
 		HLNW FF 1 A_Chase(null,null,HLSMOOTHCHASE);
 		TNT1 A 0 A_PlaySound("halflife/monsters/gonarch/step",6);
 		TNT1 A 0 A_Jump(210,"See");
@@ -112,89 +74,44 @@ class HLGonarch : Actor
 		Loop;
 	Melee:
 		TNT1 A 0 A_Jump(100,"AcidSimple");
-		TNT1 A 0 A_Jump(80,"MeleeSightSound");
-		TNT1 A 0 A_PlaySound("halflife/monsters/gonarch/attack",5);
-		Goto MeleeAttack;
-	MeleeSightSound:
-		TNT1 A 0 A_PlaySound("halflife/monsters/gonarch/sight",4);
-	MeleeAttack:
-		HLNM AB 5
+		TNT1 A 0
 		{
-			A_SpawnItemEx("LegShield5Tics",44);
-			A_SpawnItemEx("LegShield5Tics",44,-44);
-			A_SpawnItemEx("LegShield5Tics",-44,44);
-			A_SpawnItemEx("LegShield5Tics",-44,-44);
-			A_SpawnItemEx("TopShield5Tics",0,0,60);
-			A_FaceTarget();
+			if(random(0,255)<80)
+				A_PlaySound("halflife/monsters/gonarch/sight",4);
+			else
+				A_PlaySound("halflife/monsters/gonarch/attack",5);
 		}
+		HLNM AB 5 A_FaceTarget();
 		TNT1 A 0 A_PlaySound("halflife/monsters/zombie/attswing",6);
-		HLNM C 5
-		{
-			A_SpawnItemEx("LegShield5Tics",44);
-			A_SpawnItemEx("LegShield5Tics",44,-44);
-			A_SpawnItemEx("LegShield5Tics",-44,44);
-			A_SpawnItemEx("LegShield5Tics",-44,-44);
-			A_SpawnItemEx("TopShield5Tics",0,0,60);
-			A_FaceTarget();
-		}
-		HLNM D 4
-		{
-			A_SpawnItemEx("LegShield5Tics",44,-44);
-			A_SpawnItemEx("LegShield5Tics",-44,44);
-			A_SpawnItemEx("LegShield5Tics",-44,-44);
-			A_SpawnItemEx("TopShield5Tics",0,0,60);
-			A_CustomMeleeAttack(random(1,8)*25,"zombie/hit");
-		}
-		HLNM EF 5
-		{
-			A_SpawnItemEx("LegShield5Tics",44,-44);
-			A_SpawnItemEx("LegShield5Tics",-44,44);
-			A_SpawnItemEx("LegShield5Tics",-44,-44);
-			A_SpawnItemEx("TopShield5Tics",0,0,60);
-		}
+		HLNM C 5 A_FaceTarget();
+		HLNM D 4 A_CustomMeleeAttack(random(1,8)*25,"zombie/hit");
+		HLNM EF 5;
 		Goto See;
 	Missile:
 		TNT1 A 0 A_Jump(145,"AcidSimple");
 		Goto SpawnCrab;
 	AcidSimple:
 		TNT1 A 0 A_PlaySound("halflife/monsters/gonarch/attack",5);
+		HLNO AABBBB 4 A_FaceTarget;
 		TNT1 A 0 A_Jump(80,"AcidHeavy");
-		TNT1 A 0 A_SpawnItemEx("ShieldSpawner8Tics");
-		HLNO AA 4 A_FaceTarget;
-		TNT1 A 0 A_SpawnItemEx("ShieldSpawner8Tics");
-		HLNO BB 4 A_FaceTarget;
-		TNT1 A 0 A_SpawnItemEx("ShieldSpawner8Tics");
-		HLNO BB 4 A_FaceTarget;
-		TNT1 A 0 A_SpawnItemEx("ShieldSpawner8Tics");
 		TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("GonarchAcidExtra",0,0,80,random(2,-2),random(2,-2),random(1,8));
 		HLNO C 8 A_SpawnProjectile("GonarchAcid",80);
-		TNT1 A 0 A_SpawnItemEx("ShieldSpawner8Tics");
 		HLNO D 8;
 		Goto See;
 	AcidHeavy:
-		TNT1 A 0 A_SpawnItemEx("ShieldSpawner8Tics");
-		HLNO AA 4 A_FaceTarget;
-		TNT1 A 0 A_SpawnItemEx("ShieldSpawner8Tics");
-		HLNO BB 4 A_FaceTarget;
-		TNT1 A 0 A_SpawnItemEx("ShieldSpawner8Tics");
-		HLNO BB 4 A_FaceTarget;
-		TNT1 A 0 A_SpawnItemEx("ShieldSpawner8Tics");
 		TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("GonarchAcid2Extra",0,0,80,random(2,-2),random(2,-2),random(1,8));
 		HLNO C 8 A_SpawnProjectile("GonarchAcid2",80);
-		TNT1 A 0 A_SpawnItemEx("ShieldSpawner8Tics");
 		HLNO D 8;
 		Goto See;
 	SpawnCrab:
 		TNT1 A 0 A_PlaySound("halflife/monsters/gonarch/attack",5);
-		HLNN ABC 8 A_SpawnItemEx("ShieldSpawner8Tics");
-		TNT1 A 0 A_SpawnItemEx("ShieldSpawner5Tics");
+		HLNN ABC 8;
 		TNT1 A 0 A_PlaySound("halflife/monsters/gonarch/spawnchild",4);
 		HLNN DD 2 A_SpawnItemEx("HLBabyHeadCrab2",random(10,-10),random(10,-10),flags:SXF_NOCHECKPOSITION);
 		HLNN D 1 A_SpawnItemEx("HLBabyHeadCrab2",random(10,-10),random(10,-10),flags:SXF_NOCHECKPOSITION);
-		HLNN EEEE 8 A_SpawnItemEx("ShieldSpawner5Tics");
+		HLNN E 32;
 		Goto See;
 	Pain:
-		TNT1 A 0 A_SpawnItemEx("ShieldSpawner3Tics");
 		HLNI A 4 A_Pain;
 		Goto See;
 	Death:
@@ -305,25 +222,19 @@ class GonarchAcid2 : GonarchAcid
 	States
 	{
 	Spawn:
-		TNT1 A 0;
-		TNT1 AA 0 A_SpawnItemEx("GonarchAcid2Extra",random(5,-5),random(5,-5),random(5,-5));
-		X022 A 4 ThrustThingZ(0,12,0,1);
-		TNT1 AA 0 A_SpawnItemEx("GonarchAcid2Extra",random(5,-5),random(5,-5),random(5,-5));
-		X022 B 4;
+		TNT1 A 0 NODELAY ThrustThingZ(0,12,0,1);
+		X022 AB 4
+		{
+			for(int i=0;i<2;i++)
+				A_SpawnItemEx("GonarchAcid2Extra",random(5,-5),random(5,-5),random(5,-5));
+		}
 		TNT1 A 0 {bTHRUGHOST=0;}
-		TNT1 AA 0 A_SpawnItemEx("GonarchAcid2Extra",random(5,-5),random(5,-5),random(5,-5));
-		X022 C 4;
-		TNT1 AA 0 A_SpawnItemEx("GonarchAcid2Extra",random(5,-5),random(5,-5),random(5,-5));
-		X022 D 4;
-		TNT1 AA 0 A_SpawnItemEx("GonarchAcid2Extra",random(5,-5),random(5,-5),random(5,-5));
-		X022 A 4;
-		TNT1 AA 0 A_SpawnItemEx("GonarchAcid2Extra",random(5,-5),random(5,-5),random(5,-5));
-		X022 B 4;
-		TNT1 AA 0 A_SpawnItemEx("GonarchAcid2Extra",random(5,-5),random(5,-5),random(5,-5));
-		X022 C 4;
-		TNT1 AA 0 A_SpawnItemEx("GonarchAcid2Extra",random(5,-5),random(5,-5),random(5,-5));
-		X022 D 4;
-		Goto Spawn+14;
+		X022 CDAB 4
+		{
+			for(int i=0;i<2;i++)
+				A_SpawnItemEx("GonarchAcid2Extra",random(5,-5),random(5,-5),random(5,-5));
+		}
+		Goto Spawn+4;
 	Death:
 		TNT1 A 0 A_Explode(256,256,0);
 		TNT1 A 0 A_PlaySound("halflife/monsters/bullsquid/spitehit");
@@ -387,36 +298,11 @@ class GonarchAcid2Mini : GonarchAcidExtra
 	}
 }
 
-//*********************************************
-//	For 3 tics use
-//*********************************************
-class ShieldSpawner3Tics : Actor
-{
-	Default
-	{
-		+NOCLIP
-	}
-	States
-	{
-	Spawn:
-		TNT1 A 1 NODELAY
-		{
-			A_SpawnItemEx("LegShield",48,48);	//front right
-			A_SpawnItemEx("LegShield",48,-48);	//front left
-			A_SpawnItemEx("LegShield",-48,48);	//back right
-			A_SpawnItemEx("LegShield",-48,-48);//back left
-			A_SpawnItemEx("TopShield",0,0,70);	//"head" shield
-		}
-		Stop;
-	}
-}
-
-class LegShield : Actor
+class LegShield1Tic : Actor
 {
 	Default
 	{
 		+GHOST
-		health 999999;
 		radius 14;
 		height 90;
 		+NOCLIP
@@ -426,93 +312,12 @@ class LegShield : Actor
 	states
 	{
 	Spawn:
-		TNT1 A 4;
+		TNT1 A 2;
 		stop;
 	}
 }
 
-class TopShield : LegShield
-{
-	Default
-	{
-		Radius 64;
-		Height 30;
-	}
-}
-
-
-//*********************************************
-//	For 5 tics use
-//*********************************************
-class ShieldSpawner5Tics : ShieldSpawner3Tics
-{
-	States
-	{
-	Spawn:
-		TNT1 A 1 NODELAY
-		{
-			A_SpawnItemEx("LegShield5Tics",48,48);	//front right
-			A_SpawnItemEx("LegShield5Tics",48,-48);	//front left
-			A_SpawnItemEx("LegShield5Tics",-48,48);	//back right
-			A_SpawnItemEx("LegShield5Tics",-48,-48);//back left
-			A_SpawnItemEx("TopShield5Tics",0,0,68);	//"head" shield
-		}
-		Stop;
-	}
-}
-
-
-class LegShield5Tics : LegShield
-{
-	States
-	{
-	Spawn:
-		TNT1 A 6;
-		stop;
-	}
-}
-
-class TopShield5Tics : LegShield5Tics
-{
-	Default
-	{
-		Radius 70;
-		Height 30;
-	}
-}
-
-//*********************************************
-//	For 8 tics use
-//*********************************************
-class ShieldSpawner8Tics : ShieldSpawner3Tics
-{
-	States
-	{
-	Spawn:
-		TNT1 A 1 NODELAY
-		{
-			A_SpawnItemEx("LegShield8Tics",48,48);	//front right
-			A_SpawnItemEx("LegShield8Tics",48,-48);	//front left
-			A_SpawnItemEx("LegShield8Tics",-48,48);	//back right
-			A_SpawnItemEx("LegShield8Tics",-48,-48);//back left
-			A_SpawnItemEx("TopShield8Tics",0,0,68);	//"head" shield
-		}
-		Stop;
-	}
-}
-
-
-class LegShield8Tics : LegShield
-{
-	States
-	{
-	Spawn:
-		TNT1 A 9;
-		stop;
-	}
-}
-
-class TopShield8Tics : LegShield8Tics
+class TopShield1Tic : LegShield1Tic
 {
 	Default
 	{

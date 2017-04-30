@@ -5,47 +5,47 @@ enum ParanoidEnum
 	HLSMOOTHCHASE=CHF_NOPLAYACTIVE+CHF_NORANDOMTURN+CHF_STOPIFBLOCKED
 }
 
-#include "zscript/Bubbles.txt"
-#include "zscript/Flames.txt"
-#include "zscript/Messages.txt"
-#include "zscript/Miscellaneous.txt"
-#include "zscript/Pickups.txt"
-#include "zscript/Player.txt"
-#include "zscript/Sparks.txt"
-#include "zscript/Steam.txt"
-#include "zscript/WaterFall.txt"
-#include "zscript/WeaponsAmmo.txt"
+#include "Paranoid/Bubbles.txt"
+#include "Paranoid/Flames.txt"
+#include "Paranoid/Messages.txt"
+#include "Paranoid/Miscellaneous.txt"
+#include "Paranoid/Pickups.txt"
+#include "Paranoid/Player.txt"
+#include "Paranoid/Sparks.txt"
+#include "Paranoid/Steam.txt"
+#include "Paranoid/WaterFall.txt"
+#include "Paranoid/WeaponsAmmo.txt"
 
-#include "zscript/Barnacle.txt"
-#include "zscript/BullSquid.txt"
-#include "zscript/Controller.txt"
-#include "zscript/Gargantua.txt"
-#include "zscript/Grunts.txt"
-#include "zscript/HeadCrab.txt"
-#include "zscript/BabyHeadCrab.txt"
-#include "zscript/HornetGrunt.txt"
-#include "zscript/HoundEye.txt"
-#include "zscript/Vortigaunt.txt"
-#include "zscript/Zombie.txt"
+#include "Paranoid/Barnacle.txt"
+#include "Paranoid/BullSquid.txt"
+#include "Paranoid/Controller.txt"
+#include "Paranoid/Gargantua.txt"
+#include "Paranoid/Grunts.txt"
+#include "Paranoid/HeadCrab.txt"
+#include "Paranoid/BabyHeadCrab.txt"
+#include "Paranoid/HornetGrunt.txt"
+#include "Paranoid/HoundEye.txt"
+#include "Paranoid/Vortigaunt.txt"
+#include "Paranoid/Zombie.txt"
 
-#include "zscript/Models.txt"
-#include "zscript/Osprey.txt"
-#include "zscript/SUV.txt"
+#include "Paranoid/Models.txt"
+#include "Paranoid/Osprey.txt"
+#include "Paranoid/SUV.txt"
 
-#include "zscript/ZenItems.txt"
+#include "Paranoid/ZenItems.txt"
 
-#include "zscript/Barney.txt"
-#include "zscript/Scientists.txt"
+#include "Paranoid/Barney.txt"
+#include "Paranoid/Scientists.txt"
 
-#include "zscript/Explosion.txt"	//Always keep this instruction at the bottom of the list
+#include "Paranoid/Explosion.txt"	//Always keep this instruction at the bottom of the list
 
 // paranoic
-#include "zscript/Gonarch.txt"
-#include "zscript/Nihilanth.txt"
-#include "zscript/StukaBat.txt"
-#include "zscript/BossBat.txt"
+#include "Paranoid/Gonarch.txt"
+#include "Paranoid/Nihilanth.txt"
+#include "Paranoid/StukaBat.txt"
+#include "Paranoid/BossBat.txt"
 
-#include "zscript/freezeritem.txt"
+#include "Paranoid/freezeritem.txt"
 
 class ParanoidAmmoHandler : StaticEventHandler
 {
