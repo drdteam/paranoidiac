@@ -75,8 +75,6 @@ class ParanoidStatusBar : BaseStatusBar
 			return 33,170;
 		return 0,1;
 	}
-	override void DrawAutomapHUD(double ticFrac)
-		{DoDrawAutomapHUD(Font.CR_GREY, Font.CR_UNTRANSLATED);}
 	void DrawMainBar(double TicFrac)
 	{
 		let me=CPlayer.mo;
