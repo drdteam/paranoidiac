@@ -32,7 +32,7 @@ class OMGFire : SwitchableDecoration
 			"Flame6A_01","Flame6B_01","Flame7A_01","Flame7B_01","Flame8A_01",
 			"Flame8B_01","Flame9A_01","Flame9B_01","Flame10A_01","Flame10B_01",
 			"Flame11A_01","Flame11B_01","Flame12A_01","Flame12B_01","Flame13A_01",
-			"Flame13B_01","Flame14A_01","Flame14B_01","Flame14A_01","Flame14B_01"
+			"Flame13B_01","Flame14A_01","Flame14B_01","Flame15A_01","Flame15B_01"
 		};
 		int area=args[0],shape=args[1],glow=args[2],s,t;
 		float a,r,xval,yval,zval=pos.z;
