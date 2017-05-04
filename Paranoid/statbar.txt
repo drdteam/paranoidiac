@@ -17,8 +17,6 @@ class ParanoidStatusBar : BaseStatusBar
 	}
 	override void Init()
 	{
-		//InterpolateHealth true, 10;
-		//InterpolateArmor true, 10;
 		Super.Init();
 		SetSize(24,320,200);
 		Font fnt="HLSTAFONT";
@@ -145,37 +143,51 @@ class ParanoidStatusBar : BaseStatusBar
 		DrawImage("HLAMMO",(248,176),DI_ITEM_OFFSETS);
 		DrawImage("HLAMMO1",(285,176),DI_ITEM_OFFSETS);
 
+		int amt1,maxamt;
 		//Clip values column
-		DrawString(HLBARFONT,FormatNumber(GetAmount("PistolHeldAmmo"),2),(259,177),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor2(GetAmount("PistolHeldAmmo"),5,12));
-		DrawString(HLBARFONT,FormatNumber(GetAmount("MagnumHeldAmmo"),2),(259,181),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor2(GetAmount("MagnumHeldAmmo"),2,5));
-		DrawString(HLBARFONT,FormatNumber(GetAmount("ShotgunHeldAmmo"),2),(259,185),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor2(GetAmount("ShotgunHeldAmmo"),3,6));
-		DrawString(HLBARFONT,FormatNumber(GetAmount("M16HeldAmmo"),2),(259,189),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor2(GetAmount("M16HeldAmmo"),15,40));
-		DrawString(HLBARFONT,FormatNumber(GetAmount("GluonHeldAmmo"),2),(296,177),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor2(GetAmount("GluonHeldAmmo"),15,40));
-		DrawString(HLBARFONT,FormatNumber(GetAmount("BoltHeld"),2),(296,181),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor2(GetAmount("BoltHeld"),15,40));
-		DrawString(HLBARFONT,FormatNumber(GetAmount("HLHornet"),2),(296,185),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor2(GetAmount("HLHornet"),15,40));
+		amt1=GetAmount("PistolHeldAmmo");
+		DrawString(HLBARFONT,FormatNumber(amt1,2),(259,177),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor2(amt1,5,12));
+		amt1=GetAmount("MagnumHeldAmmo");
+		DrawString(HLBARFONT,FormatNumber(amt1,2),(259,181),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor2(amt1,2,5));
+		amt1=GetAmount("ShotgunHeldAmmo");
+		DrawString(HLBARFONT,FormatNumber(amt1,2),(259,185),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor2(amt1,3,6));
+		amt1=GetAmount("M16HeldAmmo");
+		DrawString(HLBARFONT,FormatNumber(amt1,2),(259,189),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor2(amt1,15,40));
+		amt1=GetAmount("GluonHeldAmmo");
+		DrawString(HLBARFONT,FormatNumber(amt1,2),(296,177),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor2(amt1,15,40));
+		amt1=GetAmount("BoltHeld");
+		DrawString(HLBARFONT,FormatNumber(amt1,2),(296,181),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor2(amt1,15,40));
+		amt1=GetAmount("HLHornet");
+		DrawString(HLBARFONT,FormatNumber(amt1,2),(296,185),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor2(amt1,15,40));
 
-		//Total held ammo column
-		DrawString(HLBARFONT,FormatNumber(GetAmount("BClip"),3),(270,177),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor1(GetAmount("BClip"),33,170));
-
-		DrawString(HLBARFONT,FormatNumber(GetAmount("PythonAmmo"),3),(270,181),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor1(GetAmount("PythonAmmo"),11,38));
-		DrawString(HLBARFONT,FormatNumber(GetAmount("PShell"),3),(270,185),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor1(GetAmount("PShell"),15,38));
-		DrawString(HLBARFONT,FormatNumber(GetAmount("ARClip"),3),(270,189),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor1(GetAmount("ARClip"),50,150));
-		DrawString(HLBARFONT,FormatNumber(GetAmount("M16Gren"),3),(270,193),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor1(GetAmount("M16Gren"),4,10));
-		DrawString(HLBARFONT,FormatNumber(GetAmount("RPGAmmo"),3),(270,197),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor1(GetAmount("RPGAmmo"),4,10));
-		DrawString(HLBARFONT,FormatNumber(GetAmount("AECell"),3),(307,177),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor1(GetAmount("AECell"),4,10));
-		DrawString(HLBARFONT,FormatNumber(GetAmount("XBowBolts"),3),(307,181),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor1(GetAmount("XBowBolts"),4,10));
-		DrawString(HLBARFONT,FormatNumber(GetAmount("HLHornet"),3),(307,185),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor1(GetAmount("HLHornet"),4,10));
-
-		//Max ammo capacity column
-		DrawString(HLBARFONT,FormatNumber(GetMaxAmount("BClip"),3),(281,177),DI_TEXT_ALIGN_RIGHT,Font.FindFontColor('HLYellow3'));
-		DrawString(HLBARFONT,FormatNumber(GetMaxAmount("PythonAmmo"),3),(281,181),DI_TEXT_ALIGN_RIGHT,Font.FindFontColor('HLYellow3'));
-		DrawString(HLBARFONT,FormatNumber(GetMaxAmount("PShell"),3),(281,185),DI_TEXT_ALIGN_RIGHT,Font.FindFontColor('HLYellow3'));
-		DrawString(HLBARFONT,FormatNumber(GetMaxAmount("ARClip"),3),(281,189),DI_TEXT_ALIGN_RIGHT,Font.FindFontColor('HLYellow3'));
-		DrawString(HLBARFONT,FormatNumber(GetMaxAmount("M16Gren"),3),(281,193),DI_TEXT_ALIGN_RIGHT,Font.FindFontColor('HLYellow3'));
-		DrawString(HLBARFONT,FormatNumber(GetMaxAmount("RPGAmmo"),3),(281,197),DI_TEXT_ALIGN_RIGHT,Font.FindFontColor('HLYellow3'));
-		DrawString(HLBARFONT,FormatNumber(GetMaxAmount("AECell"),3),(318,177),DI_TEXT_ALIGN_RIGHT,Font.FindFontColor('HLYellow3'));
-		DrawString(HLBARFONT,FormatNumber(GetMaxAmount("XBowBolts"),3),(318,181),DI_TEXT_ALIGN_RIGHT,Font.FindFontColor('HLYellow3'));
-		DrawString(HLBARFONT,FormatNumber(GetMaxAmount("HLHornet"),3),(318,185),DI_TEXT_ALIGN_RIGHT,Font.FindFontColor('HLYellow3'));
+		//Total held ammo column/Max ammo capacity column
+		[amt1,maxamt]=GetAmount("BClip");
+		DrawString(HLBARFONT,FormatNumber(amt1,3),(270,177),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor1(amt1,33,170));
+		DrawString(HLBARFONT,FormatNumber(maxamt,3),(281,177),DI_TEXT_ALIGN_RIGHT,Font.FindFontColor('HLYellow3'));
+		[amt1,maxamt]=GetAmount("PythonAmmo");
+		DrawString(HLBARFONT,FormatNumber(amt1,3),(270,181),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor1(amt1,11,38));
+		DrawString(HLBARFONT,FormatNumber(maxamt,3),(281,181),DI_TEXT_ALIGN_RIGHT,Font.FindFontColor('HLYellow3'));
+		[amt1,maxamt]=GetAmount("PShell");
+		DrawString(HLBARFONT,FormatNumber(amt1,3),(270,185),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor1(amt1,15,38));
+		DrawString(HLBARFONT,FormatNumber(maxamt,3),(281,185),DI_TEXT_ALIGN_RIGHT,Font.FindFontColor('HLYellow3'));
+		[amt1,maxamt]=GetAmount("ARClip");
+		DrawString(HLBARFONT,FormatNumber(amt1,3),(270,189),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor1(amt1,50,150));
+		DrawString(HLBARFONT,FormatNumber(maxamt,3),(281,189),DI_TEXT_ALIGN_RIGHT,Font.FindFontColor('HLYellow3'));
+		[amt1,maxamt]=GetAmount("M16Gren");
+		DrawString(HLBARFONT,FormatNumber(amt1,3),(270,193),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor1(amt1,4,10));
+		DrawString(HLBARFONT,FormatNumber(maxamt,3),(281,193),DI_TEXT_ALIGN_RIGHT,Font.FindFontColor('HLYellow3'));
+		[amt1,maxamt]=GetAmount("RPGAmmo");
+		DrawString(HLBARFONT,FormatNumber(amt1,3),(270,197),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor1(amt1,4,10));
+		DrawString(HLBARFONT,FormatNumber(maxamt,3),(281,197),DI_TEXT_ALIGN_RIGHT,Font.FindFontColor('HLYellow3'));
+		[amt1,maxamt]=GetAmount("AECell");
+		DrawString(HLBARFONT,FormatNumber(amt1,3),(307,177),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor1(amt1,4,10));
+		DrawString(HLBARFONT,FormatNumber(maxamt,3),(318,177),DI_TEXT_ALIGN_RIGHT,Font.FindFontColor('HLYellow3'));
+		[amt1,maxamt]=GetAmount("XBowBolts");
+		DrawString(HLBARFONT,FormatNumber(amt1,3),(307,181),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor1(amt1,4,10));
+		DrawString(HLBARFONT,FormatNumber(maxamt,3),(318,181),DI_TEXT_ALIGN_RIGHT,Font.FindFontColor('HLYellow3'));
+		[amt1,maxamt]=GetAmount("HLHornet");
+		DrawString(HLBARFONT,FormatNumber(amt1,3),(307,185),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor1(amt1,4,10));
+		DrawString(HLBARFONT,FormatNumber(maxamt,3),(318,185),DI_TEXT_ALIGN_RIGHT,Font.FindFontColor('HLYellow3'));
 
 		if(me.InvSel!=null&&!level.NoInventoryBar)
 		{
