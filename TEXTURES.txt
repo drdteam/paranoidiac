@@ -5,801 +5,801 @@ define xwall11l 128 64
 
 graphic HLBAR, 640, 48
 {
-   XScale 2.0
-   YScale 2.0
-   Patch HLBAR, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch HLBAR, 0, 0
 }
 
 //Hintman
 
 graphic HINTMAN, 128, 128
 {
-   XScale 2.0
-   YScale 2.0
-   Patch HINTMAN, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch HINTMAN, 0, 0
 }
 
 //Bright armour graphic
 graphic HLARM0, 32, 48
 {
-   XScale 2.0
-   YScale 2.0
-   Patch HLARM0, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch HLARM0, 0, 0
 }
 graphic HLARM1, 32, 48
 {
-   XScale 2.0
-   YScale 2.0
-   Patch HLARM1, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch HLARM1, 0, 0
 }
 
 //ammo icons for status bar
 
 graphic HLAMMO, 24, 96
 {
-   XScale 4.0
-   YScale 4.0
-   Patch HLAMMO, 0, 0
+	XScale 4.0
+	YScale 4.0
+	Patch HLAMMO, 0, 0
 }
 
 //grenade icon for status bar mode
 
 graphic i_gren1, 24, 12
 {
-   XScale 4.0
-   YScale 4.0
-   Patch i_gren1, 0, 0
+	XScale 4.0
+	YScale 4.0
+	Patch i_gren1, 0, 0
 }
 
 //Health cross for full screen
 
 graphic i_health, 32, 48
 {
-   XScale 2.0
-   YScale 2.0
-   Patch i_health, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch i_health, 0, 0
 }
 
 //Armour icons for full screen
 
 graphic i_arm1, 32, 48
 {
-   XScale 2.0
-   YScale 2.0
-   Patch i_arm1, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch i_arm1, 0, 0
 }
 
 graphic i_arm2, 32, 48
 {
-   XScale 2.0
-   YScale 2.0
-   Patch i_arm2, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch i_arm2, 0, 0
 }
 
 //Ammo icons for full screen
 
 graphic i_bul1, 12, 24
 {
-   XScale 2.0
-   YScale 2.0
-   Patch i_bul1, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch i_bul1, 0, 0
 }
 
 graphic i_bul2, 12, 24
 {
-   XScale 2.0
-   YScale 2.0
-   Patch i_bul2, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch i_bul2, 0, 0
 }
 
 graphic i_bul3, 12, 24
 {
-   XScale 2.0
-   YScale 2.0
-   Patch i_bul3, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch i_bul3, 0, 0
 }
 
 graphic i_shel1, 12, 24
 {
-   XScale 2.0
-   YScale 2.0
-   Patch i_shel1, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch i_shel1, 0, 0
 }
 
 
 graphic i_gren2, 12, 24
 {
-   XScale 2.0
-   YScale 2.0
-   Patch i_gren2, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch i_gren2, 0, 0
 }
 
 graphic i_rock2, 12, 24
 {
-   XScale 2.0
-   YScale 2.0
-   Patch i_rock2, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch i_rock2, 0, 0
 }
 
 //Vertical divider for full screen
 
 graphic divide, 4, 48
 {
-   XScale 2.0
-   YScale 2.0
-   Patch divide, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch divide, 0, 0
 }
 
 //Paranoid logo for status bar
 
 graphic HLLOGO, 208, 32
 {
-   XScale 4.0
-   YScale 4.0
-   Patch HLLOGO, 0, 0
+	XScale 4.0
+	YScale 4.0
+	Patch HLLOGO, 0, 0
 }
 
 //frags panel for DM
 
 graphic HLFRAGS, 76, 48
 {
-   XScale 2.0
-   YScale 2.0
-   Patch HLFRAGS, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch HLFRAGS, 0, 0
 }
 
 //Weapon icons for status bar and althud
 
 graphic i_arifl1, 170, 48
 {
-   XScale 2.0
-   YScale 2.0
-   Patch i_arifl1, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch i_arifl1, 0, 0
 }
 
 graphic i_cbar1, 170, 48
 {
-   XScale 2.0
-   YScale 2.0
-   Patch i_cbar1, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch i_cbar1, 0, 0
 }
 
 graphic i_pist1, 170, 48
 {
-   XScale 2.0
-   YScale 2.0
-   Patch i_pist1, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch i_pist1, 0, 0
 }
 
 graphic i_pist2, 170, 48
 {
-   XScale 2.0
-   YScale 2.0
-   Patch i_pist2, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch i_pist2, 0, 0
 }
 
 graphic i_rlau1, 170, 48
 {
-   XScale 2.0
-   YScale 2.0
-   Patch i_rlau1, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch i_rlau1, 0, 0
 }
 
 graphic i_sgun1, 170, 48
 {
-   XScale 2.0
-   YScale 2.0
-   Patch i_sgun1, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch i_sgun1, 0, 0
 }
 
 //Status bar big numbers
 
 graphic HLSNUM0, 16, 24
 {
-   XScale 2.0
-   YScale 2.0
-   Patch HLSNUM0, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch HLSNUM0, 0, 0
 }
 
 graphic HLSNUM1, 16, 24
 {
-   XScale 2.0
-   YScale 2.0
-   Patch HLSNUM1, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch HLSNUM1, 0, 0
 }
 
 graphic HLSNUM2, 16, 24
 {
-   XScale 2.0
-   YScale 2.0
-   Patch HLSNUM2, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch HLSNUM2, 0, 0
 }
 
 graphic HLSNUM3, 16, 24
 {
-   XScale 2.0
-   YScale 2.0
-   Patch HLSNUM3, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch HLSNUM3, 0, 0
 }
 
 graphic HLSNUM4, 16, 24
 {
-   XScale 2.0
-   YScale 2.0
-   Patch HLSNUM4, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch HLSNUM4, 0, 0
 }
 
 graphic HLSNUM5, 16, 24
 {
-   XScale 2.0
-   YScale 2.0
-   Patch HLSNUM5, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch HLSNUM5, 0, 0
 }
 
 graphic HLSNUM6, 16, 24
 {
-   XScale 2.0
-   YScale 2.0
-   Patch HLSNUM6, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch HLSNUM6, 0, 0
 }
 
 graphic HLSNUM7, 16, 24
 {
-   XScale 2.0
-   YScale 2.0
-   Patch HLSNUM7, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch HLSNUM7, 0, 0
 }
 
 graphic HLSNUM8, 16, 24
 {
-   XScale 2.0
-   YScale 2.0
-   Patch HLSNUM8, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch HLSNUM8, 0, 0
 }
 
 graphic HLSNUM9, 16, 24
 {
-   XScale 2.0
-   YScale 2.0
-   Patch HLSNUM9, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch HLSNUM9, 0, 0
 }
 
 graphic HLSPRCNT, 16, 24
 {
-   XScale 2.0
-   YScale 2.0
-   Patch HLSPRCNT, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch HLSPRCNT, 0, 0
 }
 
 graphic HLSSLASH, 16, 24
 {
-   XScale 2.0
-   YScale 2.0
-   Patch HLSSLASH, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch HLSSLASH, 0, 0
 }
 
 graphic hlsminus, 16, 24
 {
-   XScale 2.0
-   YScale 2.0
-   Patch hlsminus, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch hlsminus, 0, 0
 }
 
 //System number - small for ammo totals
 
 graphic HLSYNUM0, 4, 6
 {
-   XScale 2.0
-   YScale 2.0
-   Patch HLSYNUM0, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch HLSYNUM0, 0, 0
 }
 
 graphic HLSYNUM1, 4, 6
 {
-   XScale 2.0
-   YScale 2.0
-   Patch HLSYNUM1, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch HLSYNUM1, 0, 0
 }
 
 graphic HLSYNUM2, 4, 6
 {
-   XScale 2.0
-   YScale 2.0
-   Patch HLSYNUM2, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch HLSYNUM2, 0, 0
 }
 
 graphic HLSYNUM3, 4, 6
 {
-   XScale 2.0
-   YScale 2.0
-   Patch HLSYNUM3, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch HLSYNUM3, 0, 0
 }
 
 graphic HLSYNUM4, 4, 6
 {
-   XScale 2.0
-   YScale 2.0
-   Patch HLSYNUM4, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch HLSYNUM4, 0, 0
 }
 
 graphic HLSYNUM5, 4, 6
 {
-   XScale 2.0
-   YScale 2.0
-   Patch HLSYNUM5, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch HLSYNUM5, 0, 0
 }
 
 graphic HLSYNUM6, 4, 6
 {
-   XScale 2.0
-   YScale 2.0
-   Patch HLSYNUM6, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch HLSYNUM6, 0, 0
 }
 
 graphic HLSYNUM7, 4, 6
 {
-   XScale 2.0
-   YScale 2.0
-   Patch HLSYNUM7, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch HLSYNUM7, 0, 0
 }
 
 graphic HLSYNUM8, 4, 6
 {
-   XScale 2.0
-   YScale 2.0
-   Patch HLSYNUM8, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch HLSYNUM8, 0, 0
 }
 
 graphic HLSYNUM9, 4, 6
 {
-   XScale 2.0
-   YScale 2.0
-   Patch HLSYNUM9, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch HLSYNUM9, 0, 0
 }
 
 graphic "HLSYNUM-", 4, 6
 {
-   XScale 2.0
-   YScale 2.0
-   Patch "HLSYNUM-", 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch "HLSYNUM-", 0, 0
 }
 
 //Remap intermission numbers to hi-res status bar font
 
 graphic WINUM0, 16, 24
 {
-   XScale 2.0
-   YScale 2.0
-   Patch HLSNUM0, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch HLSNUM0, 0, 0
 }
 
 graphic WINUM1, 16, 24
 {
-   XScale 2.0
-   YScale 2.0
-   Patch HLSNUM1, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch HLSNUM1, 0, 0
 }
 
 graphic WINUM2, 16, 24
 {
-   XScale 2.0
-   YScale 2.0
-   Patch HLSNUM2, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch HLSNUM2, 0, 0
 }
 
 graphic WINUM3, 16, 24
 {
-   XScale 2.0
-   YScale 2.0
-   Patch HLSNUM3, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch HLSNUM3, 0, 0
 }
 
 graphic WINUM4, 16, 24
 {
-   XScale 2.0
-   YScale 2.0
-   Patch HLSNUM4, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch HLSNUM4, 0, 0
 }
 
 graphic WINUM5, 16, 24
 {
-   XScale 2.0
-   YScale 2.0
-   Patch HLSNUM5, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch HLSNUM5, 0, 0
 }
 
 graphic WINUM6, 16, 24
 {
-   XScale 2.0
-   YScale 2.0
-   Patch HLSNUM6, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch HLSNUM6, 0, 0
 }
 
 graphic WINUM7, 16, 24
 {
-   XScale 2.0
-   YScale 2.0
-   Patch HLSNUM7, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch HLSNUM7, 0, 0
 }
 
 graphic WINUM8, 16, 24
 {
-   XScale 2.0
-   YScale 2.0
-   Patch HLSNUM8, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch HLSNUM8, 0, 0
 }
 
 graphic WINUM9, 16, 24
 {
-   XScale 2.0
-   YScale 2.0
-   Patch HLSNUM9, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch HLSNUM9, 0, 0
 }
 
 graphic WIPCNT, 16, 24
 {
-   XScale 2.0
-   YScale 2.0
-   Patch HLSPRCNT, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch HLSPRCNT, 0, 0
 }
 
 graphic WISLASH, 16, 24
 {
-   XScale 2.0
-   YScale 2.0
-   Patch HLSSLASH, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch HLSSLASH, 0, 0
 }
 
 graphic wiminus, 16, 24
 {
-   XScale 2.0
-   YScale 2.0
-   Patch hlsminus, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch hlsminus, 0, 0
 }
 
 //Intermission colon (no colon on status bar)
 
 graphic wicolon, 6, 24
 {
-   XScale 2.0
-   YScale 2.0
-   Patch wicolon, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch wicolon, 0, 0
 }
 
 //Other intermission graphics
 
 graphic wienter, 208, 24
 {
-   XScale 2.0
-   YScale 2.0
-   Patch wienter, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch wienter, 0, 0
 }
 
 graphic wif, 208, 24
 {
-   XScale 2.0
-   YScale 2.0
-   Patch wif, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch wif, 0, 0
 }
 
 graphic wiosti, 120, 24
 {
-   XScale 2.0
-   YScale 2.0
-   Patch wiosti, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch wiosti, 0, 0
 }
 
 graphic wiostk, 120, 24
 {
-   XScale 2.0
-   YScale 2.0
-   Patch wiostk, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch wiostk, 0, 0
 }
 
 graphic wiosts, 120, 24
 {
-   XScale 2.0
-   YScale 2.0
-   Patch wiosts, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch wiosts, 0, 0
 }
 
 //Message icons
 
 graphic MAIL01, 34, 37
 {
-   XScale 2.0
-   YScale 2.5
-   Patch MAIL01, 0, 0
-   Offset -13, -20
+	XScale 2.0
+	YScale 2.5
+	Patch MAIL01, 0, 0
+	Offset -13, -20
 }
 
 graphic MAIL02, 34, 37
 {
-   XScale 2.0
-   YScale 2.5
-   Patch MAIL02, 0, 0
-   Offset -13, -20
+	XScale 2.0
+	YScale 2.5
+	Patch MAIL02, 0, 0
+	Offset -13, -20
 }
 
 graphic MAIL03, 34, 37
 {
-   XScale 2.0
-   YScale 2.5
-   Patch MAIL03, 0, 0
-   Offset -13, -20
+	XScale 2.0
+	YScale 2.5
+	Patch MAIL03, 0, 0
+	Offset -13, -20
 }
 
 graphic MAIL04, 34, 37
 {
-   XScale 2.0
-   YScale 2.5
-   Patch MAIL04, 0, 0
-   Offset -13, -20
+	XScale 2.0
+	YScale 2.5
+	Patch MAIL04, 0, 0
+	Offset -13, -20
 }
 
 //Why does Doom have 2 secret graphics?
 
 graphic wiscrt2, 120, 24
 {
-   XScale 2.0
-   YScale 2.0
-   Patch wiosts, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch wiosts, 0, 0
 }
 
 graphic witime, 120, 24
 {
-   XScale 2.0
-   YScale 2.0
-   Patch witime, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch witime, 0, 0
 }
 
 graphic wisucks, 120, 24
 {
-   XScale 2.0
-   YScale 2.0
-   Patch wisucks, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch wisucks, 0, 0
 }
 
 graphic wipar, 120, 24
 {
-   XScale 2.0
-   YScale 2.0
-   Patch wipar, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch wipar, 0, 0
 }
 
 //Dont think this is used by Zdoom anymore, but just in case...
 graphic wimstt, 120, 24
 {
-   XScale 2.0
-   YScale 2.0
-   Patch wimstt, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch wimstt, 0, 0
 }
 
 //Menu stuff
 
 graphic M_DIFF, 112, 22
 {
-   XScale 2.0
-   YScale 2.0
-   Patch M_DIFF, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch M_DIFF, 0, 0
 }
 
 graphic M_EASY, 112, 22
 {
-   XScale 2.0
-   YScale 2.0
-   Patch M_EASY, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch M_EASY, 0, 0
 }
 
 graphic M_LOADG, 112, 22
 {
-   XScale 2.0
-   YScale 2.0
-   Patch M_LOADG, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch M_LOADG, 0, 0
 }
 
 graphic M_MED, 112, 22
 {
-   XScale 2.0
-   YScale 2.0
-   Patch M_MED, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch M_MED, 0, 0
 }
 
 graphic M_NGAME, 112, 22
 {
-   XScale 2.0
-   YScale 2.0
-   Patch M_NGAME, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch M_NGAME, 0, 0
 }
 
 graphic M_OPTION, 112, 22
 {
-   XScale 2.0
-   YScale 2.0
-   Patch M_OPTION, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch M_OPTION, 0, 0
 }
 
 graphic M_PAUSE, 69, 22
 {
-   XScale 2.0
-   YScale 2.0
-   Patch M_PAUSE, 0, 0
-   Offset 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch M_PAUSE, 0, 0
+	Offset 0, 0
 }
 
 graphic M_QUITG, 112, 22
 {
-   XScale 2.0
-   YScale 2.0
-   Patch M_QUITG, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch M_QUITG, 0, 0
 }
 
 graphic M_SAVEG, 112, 22
 {
-   XScale 2.0
-   YScale 2.0
-   Patch M_SAVEG, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch M_SAVEG, 0, 0
 }
 
 graphic M_SKULL1, 46, 46
 {
-   XScale 4.0
-   YScale 4.0
-   Patch M_SKULL1, 0, 0
-   Offset -64, -16
+	XScale 4.0
+	YScale 4.0
+	Patch M_SKULL1, 0, 0
+	Offset -64, -16
 }
 
 graphic M_SKULL2, 46, 46
 {
-   XScale 4.0
-   YScale 4.0
-   Patch M_SKULL2, 0, 0
-   Offset -64, -16
+	XScale 4.0
+	YScale 4.0
+	Patch M_SKULL2, 0, 0
+	Offset -64, -16
 }
 
 graphic M_DOOM, 620, 128
 {
-   XScale 2.0
-   YScale 2.0
-   Patch M_DOOM, 0, 0
-   Offset 178, 4
+	XScale 2.0
+	YScale 2.0
+	Patch M_DOOM, 0, 0
+	Offset 178, 4
 }
 
 graphic M_SKILL, 620, 128
 {
-   XScale 2.0
-   YScale 2.0
-   Patch M_SKILL, 0, 0
-   Offset 98, 76
+	XScale 2.0
+	YScale 2.0
+	Patch M_SKILL, 0, 0
+	Offset 98, 76
 }
 
 //Keys
 
 graphic HLKEYBI, 160, 104
 {
-   XScale 20.0
-   YScale 20.0
-   Patch HLKEYBI, 0, 0
-   Offset -4, 0
+	XScale 20.0
+	YScale 20.0
+	Patch HLKEYBI, 0, 0
+	Offset -4, 0
 }
 
 graphic HLKEYRI, 160, 104
 {
-   XScale 20.0
-   YScale 20.0
-   Patch HLKEYRI, 0, 0
-   Offset -4, 0
+	XScale 20.0
+	YScale 20.0
+	Patch HLKEYRI, 0, 0
+	Offset -4, 0
 }
 
 //GameEnd Graphics
 
 graphic PEND0, 120, 100
 {
-   XScale 2.0
-   YScale 2.0
-   Patch PEND0, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch PEND0, 0, 0
 }
 
 graphic PEND1, 120, 100
 {
-   XScale 2.0
-   YScale 2.0
-   Patch PEND1, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch PEND1, 0, 0
 }
 
 graphic PEND2, 120, 100
 {
-   XScale 2.0
-   YScale 2.0
-   Patch PEND2, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch PEND2, 0, 0
 }
 
 graphic PEND3, 120, 100
 {
-   XScale 2.0
-   YScale 2.0
-   Patch PEND3, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch PEND3, 0, 0
 }
 
 graphic PNDMEND, 620, 128
 {
-   XScale 2.0
-   YScale 2.0
-   Patch M_DOOM, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch M_DOOM, 0, 0
 }
 
 //Portable Medkit
 
 graphic MEDKZ0, 43, 37
 {
-   XScale 2.5
-   YScale 2.5
-   patch MEDKZ0, 0, 0
-   Offset -16, -20
+	XScale 2.5
+	YScale 2.5
+	patch MEDKZ0, 0, 0
+	Offset -16, -20
 }
 
 //Status bar
 
 graphic HLBAR, 640, 48
 {
-   XScale 2.0
-   YScale 2.0
-   Patch HLBAR,0,0
+	XScale 2.0
+	YScale 2.0
+	Patch HLBAR,0,0
 }
 
 //Col. Stinson
 
 graphic STINSON, 128, 128
 {
-   XScale 2.0
-   YScale 2.0
-   Patch STINSON, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch STINSON, 0, 0
 }
 
 //UnderNet
 
 graphic UNDERNET, 128, 128
 {
-   XScale 2.0
-   YScale 2.0
-   Patch UNDERNET, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch UNDERNET, 0, 0
 }
 
 //Ammo & 1Weapon icons for status bar and althud
 
 graphic HLAMMO1, 24, 96
 {
-   XScale 4.0
-   YScale 4.0
-   Patch HLAMMO1, 0, 0
+	XScale 4.0
+	YScale 4.0
+	Patch HLAMMO1, 0, 0
 }
 
 graphic i_xbow1, 170, 48
 {
-   XScale 2.0
-   YScale 2.0
-   Patch i_xbow1, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch i_xbow1, 0, 0
 }
 
 graphic i_gluon1, 170, 48
 {
-   XScale 2.0
-   YScale 2.0
-   Patch i_gluon1, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch i_gluon1, 0, 0
 }
 
 graphic i_hhand1, 170, 48
 {
-   XScale 2.0
-   YScale 2.0
-   Patch i_hhand1, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch i_hhand1, 0, 0
 }
 
 //Textures
 
 Texture X0LASERH, 128, 16
 {
-   Patch X0LASERY, 0, 0
+	Patch X0LASERY, 0, 0
 	{
 		rotate 90
 	}
@@ -819,34 +819,34 @@ Texture XBRICK1J, 96, 512
 
 Texture XBRICK4A, 512, 512
 {
-   Patch XBRICK4, 0, 352
-   Patch XCONCR42, 0, 320
-   Patch XCONCR42, 128, 320
-   Patch XCONCR42, 256, 320
-   Patch XCONCR42, 384, 320
-   Patch XCONCR28, 0, 160
-   Patch XCONCR50, 128, 160
-   Patch XCONCR28, 256, 160
-   Patch XCONCR51, 384, 160
-   Patch XCONCR42, 0, 128
-   Patch XCONCR42, 128, 128
-   Patch XCONCR42, 256, 128
-   Patch XCONCR42, 384, 128
-   Patch XCONCR04, 0, 0
-   Patch XCONCR05, 128, 0
-   Patch XCONCR04, 256, 0
-   Patch XCONCR05, 384, 0
-   Patch XBRICK4, 256, 352
+	Patch XBRICK4, 0, 352
+	Patch XCONCR42, 0, 320
+	Patch XCONCR42, 128, 320
+	Patch XCONCR42, 256, 320
+	Patch XCONCR42, 384, 320
+	Patch XCONCR28, 0, 160
+	Patch XCONCR50, 128, 160
+	Patch XCONCR28, 256, 160
+	Patch XCONCR51, 384, 160
+	Patch XCONCR42, 0, 128
+	Patch XCONCR42, 128, 128
+	Patch XCONCR42, 256, 128
+	Patch XCONCR42, 384, 128
+	Patch XCONCR04, 0, 0
+	Patch XCONCR05, 128, 0
+	Patch XCONCR04, 256, 0
+	Patch XCONCR05, 384, 0
+	Patch XBRICK4, 256, 352
 }
 
 Texture XCOMP01A, 128, 64
 {
-   Patch XCOMP01, 0, 0
+	Patch XCOMP01, 0, 0
 }
 
 Texture XCOMP01B, 64, 128
 {
-   Patch XCOMP01, 0, 0
+	Patch XCOMP01, 0, 0
 	{
 		rotate 90
 	}
@@ -854,9 +854,9 @@ Texture XCOMP01B, 64, 128
 
 Texture XCOMP01C, 64, 128
 {
-   XScale 2.0
-   YScale 2.0
-   Patch XCOMP01, 0, 0
+	XScale 2.0
+	YScale 2.0
+	Patch XCOMP01, 0, 0
 	{
 		rotate 90
 	}
@@ -864,34 +864,34 @@ Texture XCOMP01C, 64, 128
 
 Texture XCOMP40, 128, 64
 {
-   Patch XCOMP06, 0, 0
-   Patch XCOMP07, 64, 0
-   Patch XCOMP08, 0, 32
-   Patch XCOMP09, 64, 32
+	Patch XCOMP06, 0, 0
+	Patch XCOMP07, 64, 0
+	Patch XCOMP08, 0, 32
+	Patch XCOMP09, 64, 32
 }
 
 Texture XCOMP41, 128, 64
 {
-   Patch XCOMP03, 0, 0
-   Patch XCOMP04, 64, 0
-   Patch XCOMP05, 0, 32
-   Patch XCOMP17, 64, 32
-   Patch XCOMP19, 96, 32
+	Patch XCOMP03, 0, 0
+	Patch XCOMP04, 64, 0
+	Patch XCOMP05, 0, 32
+	Patch XCOMP17, 64, 32
+	Patch XCOMP19, 96, 32
 }
 
 Texture XCONCR74, 128, 512
 {
-   Patch XPRISON7, 0, 0
-   Patch XCONCR18, 0, 128
-   Patch XPRISON7, 0, 256
-   Patch XPRISON7, 0, 384
+	Patch XPRISON7, 0, 0
+	Patch XCONCR18, 0, 128
+	Patch XPRISON7, 0, 256
+	Patch XPRISON7, 0, 384
 }
 
 Texture XDOME02, 256, 256
 {
-   XScale 4
-   YScale 4
-   Patch XDOME01, 0, 0
+	XScale 4
+	YScale 4
+	Patch XDOME01, 0, 0
 }
 
 Texture XDOOR29A, 128, 608
@@ -907,52 +907,52 @@ Patch XDOOR29, 0, 480
 
 Texture XLABPN10, 32, 192
 {
-   Patch XBORDR13, 0, 0
-   Patch XLITE07, 0, 16
-   Patch XLABPNL2, 0, 32
-   Patch XLITE07, 0, 160
-   Patch XBORDR13, 0, 176
+	Patch XBORDR13, 0, 0
+	Patch XLITE07, 0, 16
+	Patch XLABPNL2, 0, 32
+	Patch XLITE07, 0, 160
+	Patch XBORDR13, 0, 176
 }
 
 Texture XMETL03E, 512, 512
 {
-   XScale 0.5
-   YScale 0.5
-   Patch XMETL03A, 0, 0
-   Patch XMETL03B, 128, 0
-   Patch XMETL03C, 256, 0
-   Patch XMETL03B, 384, 0
-   Patch XMETL03B, 0, 128
-   Patch XMETL03A, 128, 128
-   Patch XMETL03C, 256, 128
-   Patch XMETL03A, 384, 128
-   Patch XMETL03C, 0, 256
-   Patch XMETL03B, 128, 256
-   Patch XMETL03A, 256, 256
-   Patch XMETL03B, 384, 256
-   Patch XMETL03B, 0, 384
-   Patch XMETL03C, 128, 384
-   Patch XMETL03B, 256, 384
-   Patch XMETL03A, 384, 384
+	XScale 0.5
+	YScale 0.5
+	Patch XMETL03A, 0, 0
+	Patch XMETL03B, 128, 0
+	Patch XMETL03C, 256, 0
+	Patch XMETL03B, 384, 0
+	Patch XMETL03B, 0, 128
+	Patch XMETL03A, 128, 128
+	Patch XMETL03C, 256, 128
+	Patch XMETL03A, 384, 128
+	Patch XMETL03C, 0, 256
+	Patch XMETL03B, 128, 256
+	Patch XMETL03A, 256, 256
+	Patch XMETL03B, 384, 256
+	Patch XMETL03B, 0, 384
+	Patch XMETL03C, 128, 384
+	Patch XMETL03B, 256, 384
+	Patch XMETL03A, 384, 384
 }
 
 Texture XMETL03F, 256, 256
 {
-   XScale 0.5
-   YScale 0.5
-   Patch XMETL03A, 0, 0
+	XScale 0.5
+	YScale 0.5
+	Patch XMETL03A, 0, 0
 	{
 		rotate 90
 	}
-   Patch XMETL03B, 0, 128
+	Patch XMETL03B, 0, 128
 	{
 		rotate 90
 	}
-   Patch XMETL03C, 128, 0
+	Patch XMETL03C, 128, 0
 	{
 		rotate 90
 	}
-   Patch XMETL03B, 128, 128
+	Patch XMETL03B, 128, 128
 	{
 		rotate 90
 	}
@@ -960,21 +960,21 @@ Texture XMETL03F, 256, 256
 
 Texture XMETL03G, 256, 256
 {
-   XScale 0.5
-   YScale 0.5
-   Patch XMETL03A, 0, 0
+	XScale 0.5
+	YScale 0.5
+	Patch XMETL03A, 0, 0
 	{
 		rotate 180
 	}
-   Patch XMETL03B, 0, 128
+	Patch XMETL03B, 0, 128
 	{
 		rotate 180
 	}
-   Patch XMETL03C, 128, 0
+	Patch XMETL03C, 128, 0
 	{
 		rotate 180
 	}
-   Patch XMETL03B, 128, 128
+	Patch XMETL03B, 128, 128
 	{
 		rotate 180
 	}
@@ -982,20 +982,20 @@ Texture XMETL03G, 256, 256
 
 Texture XMETL03H, 128, 384
 {
-   Patch XMETL03A, 0, 0
-   Patch XMETL03B, 0, 128
-   Patch XMETL03C, 0, 256
+	Patch XMETL03A, 0, 0
+	Patch XMETL03B, 0, 128
+	Patch XMETL03C, 0, 256
 }
 
 Texture XMETL05B, 48, 128
 {
-   Patch XMETL05A, 0, 0
-   Patch XTRIM08, -40, 96
+	Patch XMETL05A, 0, 0
+	Patch XTRIM08, -40, 96
 }
 
 Texture XMETL06D, 64, 128
 {
-   Patch XMETL06B, 0, 0
+	Patch XMETL06B, 0, 0
 	{
 		rotate 90
 	}
@@ -1003,7 +1003,7 @@ Texture XMETL06D, 64, 128
 
 Texture XMETL07C, 128, 64
 {
-   Patch XMETL07A, 0, 0
+	Patch XMETL07A, 0, 0
 	{
 		rotate 90
 	}
@@ -1011,67 +1011,67 @@ Texture XMETL07C, 128, 64
 
 Texture XMETL07D, 128, 256
 {
-   XScale 0.5
-   YScale 0.5
-   Patch XMETL07A, 0, 0
-   Patch XMETL07A, 64, 0
-   Patch XMETL07A, 0, 128
-   Patch XMETL07A, 64, 128
+	XScale 0.5
+	YScale 0.5
+	Patch XMETL07A, 0, 0
+	Patch XMETL07A, 64, 0
+	Patch XMETL07A, 0, 128
+	Patch XMETL07A, 64, 128
 }
 
 Texture XMETL08A, 4096, 4096
 {
-   XScale 4
-   YScale 4
-   Patch XMETL08, 0, 0
-   Patch XMETL08, 0, 1024
+	XScale 4
+	YScale 4
+	Patch XMETL08, 0, 0
+	Patch XMETL08, 0, 1024
 	{
 		rotate 90
 	}
-   Patch XMETL08, 0, 2048
+	Patch XMETL08, 0, 2048
 	{
 		rotate 180
 	}
-   Patch XMETL08, 0, 3072
+	Patch XMETL08, 0, 3072
 	{
 		rotate 270
 	}
-   Patch XMETL08, 1024, 0
+	Patch XMETL08, 1024, 0
 	{
 		rotate 270
 	}
-   Patch XMETL08, 1024, 1024
+	Patch XMETL08, 1024, 1024
 	{
 		rotate 180
 	}
-   Patch XMETL08, 1024, 2048
+	Patch XMETL08, 1024, 2048
 	{
 		rotate 90
 	}
-   Patch XMETL08, 1024, 3072
-   Patch XMETL08, 2048, 0
+	Patch XMETL08, 1024, 3072
+	Patch XMETL08, 2048, 0
 	{
 		rotate 180
 	}
-   Patch XMETL08, 2048, 1024
-   Patch XMETL08, 2048, 2048
+	Patch XMETL08, 2048, 1024
+	Patch XMETL08, 2048, 2048
 	{
 		rotate 270
 	}
-   Patch XMETL08, 2048, 3072
+	Patch XMETL08, 2048, 3072
 	{
 		rotate 90
 	}
-   Patch XMETL08, 3072, 0
+	Patch XMETL08, 3072, 0
 	{
 		rotate 90
 	}
-   Patch XMETL08, 3072, 1024
+	Patch XMETL08, 3072, 1024
 	{
 		rotate 270
 	}
-   Patch XMETL08, 3072, 2048
-   Patch XMETL08, 3072, 3072
+	Patch XMETL08, 3072, 2048
+	Patch XMETL08, 3072, 3072
 	{
 		rotate 180
 	}
@@ -1079,57 +1079,57 @@ Texture XMETL08A, 4096, 4096
 
 Texture XMETL08B, 2048, 2048
 {
-   XScale 2
-   YScale 2
-   Patch XMETL08, 0, 0
-   Patch XMETL08, 0, 1024
+	XScale 2
+	YScale 2
+	Patch XMETL08, 0, 0
+	Patch XMETL08, 0, 1024
 	{
 		rotate 90
 	}
-   Patch XMETL08, 0, 2048
+	Patch XMETL08, 0, 2048
 	{
 		rotate 180
 	}
-   Patch XMETL08, 0, 3072
+	Patch XMETL08, 0, 3072
 	{
 		rotate 270
 	}
-   Patch XMETL08, 1024, 0
+	Patch XMETL08, 1024, 0
 	{
 		rotate 270
 	}
-   Patch XMETL08, 1024, 1024
+	Patch XMETL08, 1024, 1024
 	{
 		rotate 180
 	}
-   Patch XMETL08, 1024, 2048
+	Patch XMETL08, 1024, 2048
 	{
 		rotate 90
 	}
-   Patch XMETL08, 1024, 3072
-   Patch XMETL08, 2048, 0
+	Patch XMETL08, 1024, 3072
+	Patch XMETL08, 2048, 0
 	{
 		rotate 180
 	}
-   Patch XMETL08, 2048, 1024
-   Patch XMETL08, 2048, 2048
+	Patch XMETL08, 2048, 1024
+	Patch XMETL08, 2048, 2048
 	{
 		rotate 270
 	}
-   Patch XMETL08, 2048, 3072
+	Patch XMETL08, 2048, 3072
 	{
 		rotate 90
 	}
-   Patch XMETL08, 3072, 0
+	Patch XMETL08, 3072, 0
 	{
 		rotate 90
 	}
-   Patch XMETL08, 3072, 1024
+	Patch XMETL08, 3072, 1024
 	{
 		rotate 270
 	}
-   Patch XMETL08, 3072, 2048
-   Patch XMETL08, 3072, 3072
+	Patch XMETL08, 3072, 2048
+	Patch XMETL08, 3072, 3072
 	{
 		rotate 180
 	}
@@ -1137,55 +1137,55 @@ Texture XMETL08B, 2048, 2048
 
 Texture XMETL08C, 4096, 2048
 {
-   Patch XMETL08, 0, 0
-   Patch XMETL08, 0, 1024
+	Patch XMETL08, 0, 0
+	Patch XMETL08, 0, 1024
 	{
 		rotate 90
 	}
-   Patch XMETL08, 0, 2048
+	Patch XMETL08, 0, 2048
 	{
 		rotate 180
 	}
-   Patch XMETL08, 0, 3072
+	Patch XMETL08, 0, 3072
 	{
 		rotate 270
 	}
-   Patch XMETL08, 1024, 0
+	Patch XMETL08, 1024, 0
 	{
 		rotate 270
 	}
-   Patch XMETL08, 1024, 1024
+	Patch XMETL08, 1024, 1024
 	{
 		rotate 180
 	}
-   Patch XMETL08, 1024, 2048
+	Patch XMETL08, 1024, 2048
 	{
 		rotate 90
 	}
-   Patch XMETL08, 1024, 3072
-   Patch XMETL08, 2048, 0
+	Patch XMETL08, 1024, 3072
+	Patch XMETL08, 2048, 0
 	{
 		rotate 180
 	}
-   Patch XMETL08, 2048, 1024
-   Patch XMETL08, 2048, 2048
+	Patch XMETL08, 2048, 1024
+	Patch XMETL08, 2048, 2048
 	{
 		rotate 270
 	}
-   Patch XMETL08, 2048, 3072
+	Patch XMETL08, 2048, 3072
 	{
 		rotate 90
 	}
-   Patch XMETL08, 3072, 0
+	Patch XMETL08, 3072, 0
 	{
 		rotate 90
 	}
-   Patch XMETL08, 3072, 1024
+	Patch XMETL08, 3072, 1024
 	{
 		rotate 270
 	}
-   Patch XMETL08, 3072, 2048
-   Patch XMETL08, 3072, 3072
+	Patch XMETL08, 3072, 2048
+	Patch XMETL08, 3072, 3072
 	{
 		rotate 180
 	}
@@ -1193,7 +1193,7 @@ Texture XMETL08C, 4096, 2048
 
 Texture XMETL09A, 1024, 1024
 {
-   Patch XMETL09, 0, 0
+	Patch XMETL09, 0, 0
 	{
 		rotate 90
 	}
@@ -1201,28 +1201,28 @@ Texture XMETL09A, 1024, 1024
 
 Texture XMETL09B, 1024, 1024	//Scaled down to 512 * 512
 {
-   XScale 2
-   YScale 2
-   Patch XMETL09, 0, 0
-   Patch XMETL09, 0, 1024
-   Patch XMETL09, 1024, 0
-   Patch XMETL09, 1024, 1024
+	XScale 2
+	YScale 2
+	Patch XMETL09, 0, 0
+	Patch XMETL09, 0, 1024
+	Patch XMETL09, 1024, 0
+	Patch XMETL09, 1024, 1024
 }
 
 Texture XMETL09C, 1024, 1024	//Scaled down to 512 * 512
 {
-   XScale 2
-   YScale 2
-   Patch XMETL09, 0, 0
-   Patch XMETL09, 0, 1024
+	XScale 2
+	YScale 2
+	Patch XMETL09, 0, 0
+	Patch XMETL09, 0, 1024
 	{
 		rotate 90
 	}
-   Patch XMETL09, 1024, 0
+	Patch XMETL09, 1024, 0
 	{
 		rotate 180
 	}
-   Patch XMETL09, 1024, 1024
+	Patch XMETL09, 1024, 1024
 	{
 		rotate 270
 	}
@@ -1230,28 +1230,28 @@ Texture XMETL09C, 1024, 1024	//Scaled down to 512 * 512
 
 Texture XMETL09D, 1024, 1024	//Scaled down to 256 * 256
 {
-   XScale 4
-   YScale 4
-   Patch XMETL09, 0, 0
-   Patch XMETL09, 0, 1024
-   Patch XMETL09, 1024, 0
-   Patch XMETL09, 1024, 1024
+	XScale 4
+	YScale 4
+	Patch XMETL09, 0, 0
+	Patch XMETL09, 0, 1024
+	Patch XMETL09, 1024, 0
+	Patch XMETL09, 1024, 1024
 }
 
 Texture XMETL09E, 1024, 1024	//Scaled down to 256 * 256
 {
-   XScale 4
-   YScale 4
-   Patch XMETL09, 0, 0
-   Patch XMETL09, 0, 1024
+	XScale 4
+	YScale 4
+	Patch XMETL09, 0, 0
+	Patch XMETL09, 0, 1024
 	{
 		rotate 90
 	}
-   Patch XMETL09, 1024, 0
+	Patch XMETL09, 1024, 0
 	{
 		rotate 180
 	}
-   Patch XMETL09, 1024, 1024
+	Patch XMETL09, 1024, 1024
 	{
 		rotate 270
 	}
@@ -1261,79 +1261,79 @@ Texture XMETL09F, 4096, 4096	//Scaled down to 256 * 256
 {
 	XScale 4
 	YScale 4
-   Patch XMETL09, 0, 0
+	Patch XMETL09, 0, 0
 	{
 		Translation Desaturate, 8
 	}
-   Patch XMETL09, 1024, 0
+	Patch XMETL09, 1024, 0
 	{
 		rotate 90
 		Translation Desaturate, 16
 	}
-   Patch XMETL09, 2048, 0
+	Patch XMETL09, 2048, 0
 	{
 		rotate 180
 		Translation Desaturate, 24
 	}
-   Patch XMETL09, 3072, 0
+	Patch XMETL09, 3072, 0
 	{
 		rotate 270
 		Translation Desaturate, 31
 	}
-   Patch XMETL09, 0, 1024
+	Patch XMETL09, 0, 1024
 	{
 		rotate 90
 		Translation Desaturate, 8
 	}
-   Patch XMETL09, 1024, 1024
+	Patch XMETL09, 1024, 1024
 	{
 		rotate 180
 		Translation Desaturate, 16
 	}
-   Patch XMETL09, 2048, 1024
+	Patch XMETL09, 2048, 1024
 	{
 		rotate 270
 		Translation Desaturate, 24
 	}
-   Patch XMETL09, 3072, 1024
+	Patch XMETL09, 3072, 1024
 	{
 		Translation Desaturate, 31
 	}
-   Patch XMETL09, 0, 2048
+	Patch XMETL09, 0, 2048
 	{
 		rotate 270
 		Translation Desaturate, 8
 	}
-   Patch XMETL09, 1024, 2048
+	Patch XMETL09, 1024, 2048
 	{
 		rotate 180
 		Translation Desaturate, 16
 	}
-   Patch XMETL09, 2048, 2048
+	Patch XMETL09, 2048, 2048
 	{
 		rotate 90
 		Translation Desaturate, 24
 	}
-   Patch XMETL09, 3072, 2048
+	Patch XMETL09, 3072, 2048
 	{
 		Translation Desaturate, 31
 	}
-   Patch XMETL09, 0, 3072
+	Patch XMETL09, 0, 3072
 	{
 		rotate 180
 		Translation Desaturate, 8
 	}
-   Patch XMETL09, 1024, 3072
+	Patch XMETL09, 1024, 3072
 	{
 		rotate 270
 		Translation Desaturate, 16
 	}
-   Patch XMETL09, 2048, 3072
+	Patch XMETL09, 2048, 3072
 	{
 		rotate 90
 		Translation Desaturate, 24
 	}
-   Patch XMETL09, 3072, 3072
+	Patch XMETL09, 3072, 3072
 	{
 		Translation Desaturate, 31
 	}
@@ -1341,7 +1341,7 @@ Texture XMETL09F, 4096, 4096	//Scaled down to 256 * 256
 
 Texture XMETL10A, 1024, 1024
 {
-   Patch XMETL10, 0, 0
+	Patch XMETL10, 0, 0
 	{
 		rotate 90
 	}
@@ -1349,16 +1349,16 @@ Texture XMETL10A, 1024, 1024
 
 Texture XMETL10B, 512, 512
 {
-   XScale 2
-   YScale 2
-   Patch XMETL10, 0, 0
+	XScale 2
+	YScale 2
+	Patch XMETL10, 0, 0
 }
 
 Texture XMETL10C, 512, 512
 {
-   XScale 2
-   YScale 2
-   Patch XMETL10, 0, 0
+	XScale 2
+	YScale 2
+	Patch XMETL10, 0, 0
 	{
 		rotate 90
 	}
@@ -1366,16 +1366,16 @@ Texture XMETL10C, 512, 512
 
 Texture XMETL10D, 256, 256
 {
-   XScale 4
-   YScale 4
-   Patch XMETL10, 0, 0
+	XScale 4
+	YScale 4
+	Patch XMETL10, 0, 0
 }
 
 Texture XMETL10E, 256, 256
 {
-   XScale 4
-   YScale 4
-   Patch XMETL10, 0, 0
+	XScale 4
+	YScale 4
+	Patch XMETL10, 0, 0
 	{
 		rotate 90
 	}
@@ -1383,160 +1383,160 @@ Texture XMETL10E, 256, 256
 
 Texture XMETL18A, 128, 128
 {
-   XScale 0.5
-   YScale 0.5
-   Patch XMETAL18, 0, 0
-   Patch XMETAL18, 0, 64
-   Patch XMETAL18, 64, 0
-   Patch XMETAL18, 64, 64
+	XScale 0.5
+	YScale 0.5
+	Patch XMETAL18, 0, 0
+	Patch XMETAL18, 0, 64
+	Patch XMETAL18, 64, 0
+	Patch XMETAL18, 64, 64
 }
 
 Texture XMETL19A, 128, 128
 {
-   XScale 0.5
-   YScale 0.5
-   Patch XMETAL19, 0, 0
-   Patch XMETAL19, 0, 64
-   Patch XMETAL19, 64, 0
-   Patch XMETAL19, 64, 64
+	XScale 0.5
+	YScale 0.5
+	Patch XMETAL19, 0, 0
+	Patch XMETAL19, 0, 64
+	Patch XMETAL19, 64, 0
+	Patch XMETAL19, 64, 64
 }
 
 Texture XMONI34, 64, 64
 {
-   Patch XCOMP10, 0, 0
-   Patch XCOMP11, 32, 0
+	Patch XCOMP10, 0, 0
+	Patch XCOMP11, 32, 0
 }
 
 Texture XNUKE02, 128, 128
 {
-   XScale 0.5
-   YScale 0.5
-   Patch XNUKE01, 0, 0
-   Patch XNUKE01, 64, 0
-   Patch XNUKE01, 0, 64
-   Patch XNUKE01, 64, 64
+	XScale 0.5
+	YScale 0.5
+	Patch XNUKE01, 0, 0
+	Patch XNUKE01, 64, 0
+	Patch XNUKE01, 0, 64
+	Patch XNUKE01, 64, 64
 }
 
 Texture XPEBBLE2, 512, 512
 {
-   XScale 4
-   YScale 4
-   Patch XPEBBLE1, 0, 0
+	XScale 4
+	YScale 4
+	Patch XPEBBLE1, 0, 0
 }
 
 Texture XROCK03A, 1024, 512
 {
-   XScale 4
-   YScale 4
-   Patch XROCK03, 0, 0
+	XScale 4
+	YScale 4
+	Patch XROCK03, 0, 0
 }
 
 Texture XROCK05A, 512, 512
 {
-   XScale 2
-   YScale 2
-   Patch XROCK05, 0, 0
+	XScale 2
+	YScale 2
+	Patch XROCK05, 0, 0
 }
 
 Texture XROCK05B, 1024, 1024
 {
-   XScale 0.5
-   YScale 0.5
-   Patch XROCK05, 0, 0
+	XScale 0.5
+	YScale 0.5
+	Patch XROCK05, 0, 0
 }
 
 Texture XSAND01A, 256, 256
 {
-   XScale 0.5
-   YScale 0.5
-   Patch XSAND01, 0, 0
-   Patch XSAND01, 128, 0
-   Patch XSAND01, 0, 128
-   Patch XSAND01, 128, 128
+	XScale 0.5
+	YScale 0.5
+	Patch XSAND01, 0, 0
+	Patch XSAND01, 128, 0
+	Patch XSAND01, 0, 128
+	Patch XSAND01, 128, 128
 }
 
 Texture XSAND02A, 256, 256
 {
-   XScale 0.5
-   YScale 0.5
-   Patch XSAND02, 0, 0
-   Patch XSAND02, 128, 0
-   Patch XSAND02, 0, 128
-   Patch XSAND02, 128, 128
+	XScale 0.5
+	YScale 0.5
+	Patch XSAND02, 0, 0
+	Patch XSAND02, 128, 0
+	Patch XSAND02, 0, 128
+	Patch XSAND02, 128, 128
 }
 
 Texture XSAND03A, 256, 256
 {
-   XScale 0.5
-   YScale 0.5
-   Patch XSAND03, 0, 0
-   Patch XSAND03, 128, 0
-   Patch XSAND03, 0, 128
-   Patch XSAND03, 128, 128
+	XScale 0.5
+	YScale 0.5
+	Patch XSAND03, 0, 0
+	Patch XSAND03, 128, 0
+	Patch XSAND03, 0, 128
+	Patch XSAND03, 128, 128
 }
 
 Texture XSAND04A, 256, 256
 {
-   XScale 0.5
-   YScale 0.5
-   Patch XSAND04, 0, 0
-   Patch XSAND04, 128, 0
-   Patch XSAND04, 0, 128
-   Patch XSAND04, 128, 128
+	XScale 0.5
+	YScale 0.5
+	Patch XSAND04, 0, 0
+	Patch XSAND04, 128, 0
+	Patch XSAND04, 0, 128
+	Patch XSAND04, 128, 128
 }
 
 Texture XSWIT15, 32, 64
 {
-   XScale 4
-   YScale 4
-   Patch XSWIT16A, 0, 0
+	XScale 4
+	YScale 4
+	Patch XSWIT16A, 0, 0
 }
 
 texture XTILE09F, 160, 160
 {
-     Patch XTILE09E, 0, 0
-     XScale 1.0
-     YScale 1.2
+	Patch XTILE09E, 0, 0
+	XScale 1.0
+	YScale 1.2
 }
 
 TEXTURE XWALL33A, 384, 640
 {
-   Patch XWALL36, 0, 0
-   Patch XWALL37, 128, 0
-   Patch XWALL36, 256, 0
-   Patch XCONCR42, 0, 160
-   Patch XCONCR42, 128, 160
-   Patch XCONCR42, 256, 160
-   Patch XWALL35, 0, 192
-   Patch XWALL33, 128, 192
-   Patch XWALL35, 256, 192
-   Patch XCONCR42, 0, 320
-   Patch XCONCR42, 128, 320
-   Patch XCONCR42, 256, 320
-   Patch XWALL34, 0, 352
-   Patch XWALL34, 128, 352
-   Patch XWALL34, 256, 352
-   Patch XCONCR42, 0, 480
-   Patch XCONCR42, 128, 480
-   Patch XCONCR42, 256, 480
-   Patch XCONCR30, 0, 512
-   Patch XCONCR30, 96, 512
-   Patch XCONCR30, 192, 512
-   Patch XCONCR30, 288, 512
+	Patch XWALL36, 0, 0
+	Patch XWALL37, 128, 0
+	Patch XWALL36, 256, 0
+	Patch XCONCR42, 0, 160
+	Patch XCONCR42, 128, 160
+	Patch XCONCR42, 256, 160
+	Patch XWALL35, 0, 192
+	Patch XWALL33, 128, 192
+	Patch XWALL35, 256, 192
+	Patch XCONCR42, 0, 320
+	Patch XCONCR42, 128, 320
+	Patch XCONCR42, 256, 320
+	Patch XWALL34, 0, 352
+	Patch XWALL34, 128, 352
+	Patch XWALL34, 256, 352
+	Patch XCONCR42, 0, 480
+	Patch XCONCR42, 128, 480
+	Patch XCONCR42, 256, 480
+	Patch XCONCR30, 0, 512
+	Patch XCONCR30, 96, 512
+	Patch XCONCR30, 192, 512
+	Patch XCONCR30, 288, 512
 }
 
 TEXTURE XWALL33B, 128, 96
 {
-   Patch XWALL36, 0, -128
-   Patch XCONCR42, 0, 32
-   Patch XWALL35, 0, 64
+	Patch XWALL36, 0, -128
+	Patch XCONCR42, 0, 32
+	Patch XWALL35, 0, 64
 }
 
 TEXTURE XWALL33C, 128, 96
 {
-   Patch XWALL35, 0, -96
-   Patch XCONCR42, 0, 32
-   Patch XWALL34, 0, 64
+	Patch XWALL35, 0, -96
+	Patch XCONCR42, 0, 32
+	Patch XWALL34, 0, 64
 }
 
 //*******
@@ -1545,43 +1545,43 @@ TEXTURE XWALL33C, 128, 96
 
 Texture XENFLR3A, 128, 128
 {
-   XScale 0.5
-   YScale 0.5
-   Patch XENFLR03, 0, 0
+	XScale 0.5
+	YScale 0.5
+	Patch XENFLR03, 0, 0
 }
 
 Texture XENFLR5A, 160, 160
 {
-   XScale 0.5
-   YScale 0.5
-   Patch XENFLR05, 0, 0
+	XScale 0.5
+	YScale 0.5
+	Patch XENFLR05, 0, 0
 }
 
 Texture XENFLR6A, 160, 160
 {
-   XScale 0.5
-   YScale 0.5
-   Patch XENFLR06, 0, 0
+	XScale 0.5
+	YScale 0.5
+	Patch XENFLR06, 0, 0
 }
 
 Texture XENFLR7A, 192, 192
 {
-   XScale 0.5
-   YScale 0.5
-   Patch XENFLR07, 0, 0
+	XScale 0.5
+	YScale 0.5
+	Patch XENFLR07, 0, 0
 }
 
 Texture XENFLR8A, 192, 160
 {
-   XScale 0.5
-   YScale 0.5
-   Patch XENFLR08, 0, 0
+	XScale 0.5
+	YScale 0.5
+	Patch XENFLR08, 0, 0
 }
 
 Texture XENFLR9A, 128, 256
 {
-   Patch XENFLR09, 0, 0
-   Patch XENFLR09, 0, 128
+	Patch XENFLR09, 0, 0
+	Patch XENFLR09, 0, 128
 	{
 		rotate 180
 	}
@@ -1589,57 +1589,57 @@ Texture XENFLR9A, 128, 256
 
 Texture XENFLR9B, 128, 128
 {
-   XScale 0.25
-   YScale 0.25
-   Patch XENFLR09, 0, 0
+	XScale 0.25
+	YScale 0.25
+	Patch XENFLR09, 0, 0
 }
 
 Texture XENFLR9C, 128, 128
 {
-   XScale 0.5
-   YScale 0.5
-   Patch XENFLR09, 0, 0
+	XScale 0.5
+	YScale 0.5
+	Patch XENFLR09, 0, 0
 }
 
 Texture XENFLR12, 128, 128
 {
-   Patch XENFLRA1, 0, 0
-   Patch XENFLRA2, 0, 64
-   Patch XENFLRA3, 64, 0
-   Patch XENFLRA1, 64, 64
+	Patch XENFLRA1, 0, 0
+	Patch XENFLRA2, 0, 64
+	Patch XENFLRA3, 64, 0
+	Patch XENFLRA1, 64, 64
 }
 
 Texture XENFLR13, 80, 80
 {
-   XScale 0.25
-   YScale 0.25
-   Patch XENFLR10, 0, 0
+	XScale 0.25
+	YScale 0.25
+	Patch XENFLR10, 0, 0
 }
 
 Texture XENFLR14, 160, 160
 {
-   XScale 0.5
-   YScale 0.5
-   Patch XENWLL09, 0, 0
+	XScale 0.5
+	YScale 0.5
+	Patch XENWLL09, 0, 0
 }
 
 Texture XENFLR17, 160, 160
 {
-   XScale 4.0
-   YScale 4.0
-   Patch XENWLL09, 0, 0
+	XScale 4.0
+	YScale 4.0
+	Patch XENWLL09, 0, 0
 }
 
 Texture XENFLR18, 80, 80
 {
-   XScale 1.6
-   YScale 1.6
-   Patch XENFLR10, 0, 0
+	XScale 1.6
+	YScale 1.6
+	Patch XENFLR10, 0, 0
 }
 
 Texture XENPILR2, 256, 160
 {
-   Patch XENPILR1, 0, 0
+	Patch XENPILR1, 0, 0
 	{
 		rotate 90
 	}
@@ -1647,203 +1647,203 @@ Texture XENPILR2, 256, 160
 
 Texture XENPILR4, 160, 400
 {
-   Patch XENPILR3, 0, 0
-   Patch XENPILR1, 0, 144
+	Patch XENPILR3, 0, 0
+	Patch XENPILR1, 0, 144
 }
 
 Texture XENPILR6, 160, 480
 {
-   Patch XENPILR5, 0, 0
-   Patch XENPILR3, 0, 80
-   Patch XENPILR1, 0, 224
+	Patch XENPILR5, 0, 0
+	Patch XENPILR3, 0, 80
+	Patch XENPILR1, 0, 224
 }
 
 Texture XENPILR8, 160, 128
 {
-   Patch XENPILR7, 0, 0
-   Patch XTRIM04, 0, 112
-   Patch XTRIM04, 80, 112
+	Patch XENPILR7, 0, 0
+	Patch XTRIM04, 0, 112
+	Patch XTRIM04, 80, 112
 }
 
 Texture XENPILR9, 256, 288
 {
-   Patch XENWLL07, 0, 0
-   Patch XENWLL07, 128, 0
-   Patch XENTEK13, 0, 96
-   Patch XENTEK13, 128, 96
-   Graphic XENPILR2, 0, 128
+	Patch XENWLL07, 0, 0
+	Patch XENWLL07, 128, 0
+	Patch XENTEK13, 0, 96
+	Patch XENTEK13, 128, 96
+	Graphic XENPILR2, 0, 128
 }
 
 Texture XENSUP06, 320, 128
 {
-   Patch XENSUP01, 0, 0
-   Patch XENSUP04, 64, 0
-   Patch XENSUP02, 128, 0
-   Patch XENSUP05, 192, 0
-   Patch XENSUP03, 256, 0
+	Patch XENSUP01, 0, 0
+	Patch XENSUP04, 64, 0
+	Patch XENSUP02, 128, 0
+	Patch XENSUP05, 192, 0
+	Patch XENSUP03, 256, 0
 }
 
 Texture XSWITCH1, 64, 64
 {
-   Patch XENTEK05, 0, 0
-   Patch XSWIT04A, 16, 16
+	Patch XENTEK05, 0, 0
+	Patch XSWIT04A, 16, 16
 }
 
 Texture XSWITCH2, 64, 64
 {
-   Patch XENTEK05, 0, 0
-   Patch XSWIT04B, 16, 16
+	Patch XENTEK05, 0, 0
+	Patch XSWIT04B, 16, 16
 }
 
 Texture XENTEK21, 256, 256
 {
-   XScale 0.5
-   YScale 0.5
-   Patch XENTEK15, 0, 0
-   Patch XENTEK15, 128, 0
-   Patch XENTEK15, 0, 128
-   Patch XENTEK15, 128, 128
+	XScale 0.5
+	YScale 0.5
+	Patch XENTEK15, 0, 0
+	Patch XENTEK15, 128, 0
+	Patch XENTEK15, 0, 128
+	Patch XENTEK15, 128, 128
 }
 
 Texture XENVINE2, 192, 192
 {
-   Patch XENFLR07, 0, 0
-   Patch XENVINE1, 0, 0 { Style CopyAlpha }
+	Patch XENFLR07, 0, 0
+	Patch XENVINE1, 0, 0 { Style CopyAlpha }
 }
 
 Texture XENVINE4, 384, 384
 {
-   Patch XENVINE3, 0, 0 { FlipX }
+	Patch XENVINE3, 0, 0 { FlipX }
 }
 
 Texture XENWLL1A, 128, 560
 {
-   Patch XENWLL01, 0, 0
-   Patch XENWLL02, 0, 176
-   Patch XENWLL02, 0, 304
-   Patch XENWLL02, 0, 432
+	Patch XENWLL01, 0, 0
+	Patch XENWLL02, 0, 176
+	Patch XENWLL02, 0, 304
+	Patch XENWLL02, 0, 432
 }
 
 Texture XENWLL1B, 128, 560
 {
-   XScale 0.5
-   YScale 0.5
-   Patch XENWLL01, 0, 0
-   Patch XENWLL02, 0, 176
-   Patch XENWLL02, 0, 304
-   Patch XENWLL02, 0, 432
+	XScale 0.5
+	YScale 0.5
+	Patch XENWLL01, 0, 0
+	Patch XENWLL02, 0, 176
+	Patch XENWLL02, 0, 304
+	Patch XENWLL02, 0, 432
 }
 
 Texture XENWLL2A, 128, 128
 {
-   XScale 0.5
-   YScale 0.5
-   Patch XENWLL02, 0, 0
+	XScale 0.5
+	YScale 0.5
+	Patch XENWLL02, 0, 0
 }
 
 Texture XENWLL6A, 128, 384
 {
-   Patch XENWLL06, 0, 0
-   Patch XENWLL08, 0, 128
-   Patch XENWLL08, 0, 256
+	Patch XENWLL06, 0, 0
+	Patch XENWLL08, 0, 128
+	Patch XENWLL08, 0, 256
 }
 
 Texture XENWLL7A, 128, 384
 {
-   Patch XENWLL07, 0, 0
-   Patch XENWLL08, 0, 128
-   Patch XENWLL08, 0, 256
+	Patch XENWLL07, 0, 0
+	Patch XENWLL08, 0, 128
+	Patch XENWLL08, 0, 256
 }
 
 Texture XENWLL8A, 128, 128
 {
-   XScale 0.125
-   YScale 0.125
-   Patch XENWLL08, 0, 0
+	XScale 0.125
+	YScale 0.125
+	Patch XENWLL08, 0, 0
 }
 
 Texture XENWLL8B, 128, 128
 {
-   XScale 0.25
-   YScale 0.25
-   Patch XENWLL08, 0, 0
+	XScale 0.25
+	YScale 0.25
+	Patch XENWLL08, 0, 0
 }
 
 Texture XENWLL8C, 128, 128
 {
-   XScale 0.5
-   YScale 0.5
-   Patch XENWLL08, 0, 0
+	XScale 0.5
+	YScale 0.5
+	Patch XENWLL08, 0, 0
 }
 
 Texture XENWLL9B, 160, 240
 {
-   XScale 0.5
-   YScale 0.5
-   Patch XENWLL9A, 0, 0
+	XScale 0.5
+	YScale 0.5
+	Patch XENWLL9A, 0, 0
 }
 
 Texture XENWLL9C, 160, 880
 {
-   Patch XENWLL12, 0, 0
-   Patch XENWLL9A, 0, 160
-   Patch XENWLL11, 0, 400
-   Patch XENWLL10, 0, 560
-   Patch XENWLL09, 0, 720
+	Patch XENWLL12, 0, 0
+	Patch XENWLL9A, 0, 160
+	Patch XENWLL11, 0, 400
+	Patch XENWLL10, 0, 560
+	Patch XENWLL09, 0, 720
 }
 
 Texture XENWLL9D, 320, 1120	//Scaled up by a factor of 2
 {
-   XScale 0.5
-   YScale 0.5
-   Patch XENWLL12, 0, 0
-   Patch XENWLL9A, 0, 160
-   Patch XENWLL11, 0, 400
-   Patch XENWLL10, 0, 560
-   Patch XENWLL09, 0, 720
-   Patch XENWLL9A, 0, 880
-   Patch XENWLL12, 160, 0
-   Patch XENWLL9A, 160, 160
-   Patch XENWLL11, 160, 400
-   Patch XENWLL10, 160, 560
-   Patch XENWLL09, 160, 720
-   Patch XENWLL9A, 160, 880
+	XScale 0.5
+	YScale 0.5
+	Patch XENWLL12, 0, 0
+	Patch XENWLL9A, 0, 160
+	Patch XENWLL11, 0, 400
+	Patch XENWLL10, 0, 560
+	Patch XENWLL09, 0, 720
+	Patch XENWLL9A, 0, 880
+	Patch XENWLL12, 160, 0
+	Patch XENWLL9A, 160, 160
+	Patch XENWLL11, 160, 400
+	Patch XENWLL10, 160, 560
+	Patch XENWLL09, 160, 720
+	Patch XENWLL9A, 160, 880
 }
 
 Texture XENWLL9E, 320, 1120	//Scaled up by a factor of 2
 {
-   XScale 0.5
-   YScale 0.5
-   Patch XENWLL10, 0, 0
-   Patch XENWLL9A, 0, 160
-   Patch XENWLL11, 0, 400
-   Patch XENWLL10, 0, 560
-   Patch XENWLL09, 0, 720
-   Patch XENWLL9A, 0, 880
-   Patch XENWLL10, 160, 0
-   Patch XENWLL9A, 160, 160
-   Patch XENWLL11, 160, 400
-   Patch XENWLL10, 160, 560
-   Patch XENWLL09, 160, 720
-   Patch XENWLL9A, 160, 880
+	XScale 0.5
+	YScale 0.5
+	Patch XENWLL10, 0, 0
+	Patch XENWLL9A, 0, 160
+	Patch XENWLL11, 0, 400
+	Patch XENWLL10, 0, 560
+	Patch XENWLL09, 0, 720
+	Patch XENWLL9A, 0, 880
+	Patch XENWLL10, 160, 0
+	Patch XENWLL9A, 160, 160
+	Patch XENWLL11, 160, 400
+	Patch XENWLL10, 160, 560
+	Patch XENWLL09, 160, 720
+	Patch XENWLL9A, 160, 880
 }
 
 Texture XENWL13A, 128, 128
 {
-   XScale 0.25
-   YScale 0.25
-   Patch XENWLL13, 0, 0
+	XScale 0.25
+	YScale 0.25
+	Patch XENWLL13, 0, 0
 }
 
 Texture XENWL14A, 256, 128
 {
-   Patch XENWLL14, 0, 0
-   Patch XBORDR01, 0, 0
-   Patch XBORDR01, 0, 112
-   Patch XBORDR01, 128, 0
-   Patch XBORDR01, 128, 112
-   Patch XBORDR14, 0, 0
-   Patch XBORDR14, 240, 0
+	Patch XENWLL14, 0, 0
+	Patch XBORDR01, 0, 0
+	Patch XBORDR01, 0, 112
+	Patch XBORDR01, 128, 0
+	Patch XBORDR01, 128, 112
+	Patch XBORDR14, 0, 0
+	Patch XBORDR14, 240, 0
 }
 
 // Texture definitions generated by SLADE3
@@ -2073,32 +2073,3 @@ Texture XDOOR27A, 128, 128
 }
 
 // End of texture definitions
-
-sprite HW2UA0,316,206
-	{Patch HW2IA0,0,0}
-sprite HW2UB0,316,206
-	{Patch HW2IA0,0,0}
-sprite HW2UC0,316,206
-	{Patch HW2IA0,0,0}
-sprite HW2UD0,316,206
-	{Patch HW2IA0,0,0}
-sprite HW2UE0,316,206
-	{Patch HW2IA0,0,0}
-sprite HW2UF0,316,206
-	{Patch HW2IA0,0,0}
-sprite HW2UG0,316,206
-	{Patch HW2IA0,0,0}
-sprite HW2UH0,316,206
-	{Patch HW2IA0,0,0}
-sprite HW2UI0,316,206
-	{Patch HW2IA0,0,0}
-sprite HW2UJ0,316,206
-	{Patch HW2IA0,0,0}
-sprite HW2UK0,316,206
-	{Patch HW2IA0,0,0}
-sprite HW2UL0,316,206
-	{Patch HW2IA0,0,0}
-sprite HW2UM0,316,206
-	{Patch HW2IA0,0,0}
-sprite HW2UN0,316,206
-	{Patch HW2IA0,0,0}
