@@ -1,5 +1,11 @@
 class RolfBellmer : PlayerPawn
 {
+	override void CheckCrouch(bool totallyfrozen)
+	{
+		//Prevent crouching when in disguise
+		if(!CountInv("ScientistDisguise"))
+			super.CheckCrouch(totallyfrozen);
+	}
 	Default
 	{
 		+NOSKIN
