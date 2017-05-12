@@ -54,17 +54,8 @@ class SUV4 : SUV1	//destroyable SUV
 		POSS B 1 A_SpawnItemEx("NewExplosionMedium",frandom(-16,16),40,32);
 		POSS B 8
 		{
-			for(int i=0;i<2;i++)
-			{
+			for(int i=0;i<16;i++)
 				A_SpawnItemEx("Spark_O1",frandom(-96,96),frandom(-96,96),frandom(32,96),frandom(-4,4),frandom(-4,4),frandom(-4,4));
-				A_SpawnItemEx("Spark_O2",frandom(-96,96),frandom(-96,96),frandom(32,96),frandom(-4,4),frandom(-4,4),frandom(-4,4));
-				A_SpawnItemEx("Spark_O3",frandom(-96,96),frandom(-96,96),frandom(32,96),frandom(-4,4),frandom(-4,4),frandom(-4,4));
-				A_SpawnItemEx("Spark_O4",frandom(-96,96),frandom(-96,96),frandom(32,96),frandom(-4,4),frandom(-4,4),frandom(-4,4));
-				A_SpawnItemEx("Spark_O5",frandom(-96,96),frandom(-96,96),frandom(32,96),frandom(-4,4),frandom(-4,4),frandom(-4,4));
-				A_SpawnItemEx("Spark_O6",frandom(-96,96),frandom(-96,96),frandom(32,96),frandom(-4,4),frandom(-4,4),frandom(-4,4));
-				A_SpawnItemEx("Spark_O7",frandom(-96,96),frandom(-96,96),frandom(32,96),frandom(-4,4),frandom(-4,4),frandom(-4,4));
-				A_SpawnItemEx("Spark_O8",frandom(-96,96),frandom(-96,96),frandom(32,96),frandom(-4,4),frandom(-4,4),frandom(-4,4));
-			}
 		}
 		POSS BBBB 6 A_SpawnItemEx("NewExploBigSmoke",frandom(-64,64),frandom(-48,48),frandom(32,64),0,0,frandom(1,4));
 		POSS B -1;
