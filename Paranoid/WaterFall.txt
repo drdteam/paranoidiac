@@ -21,16 +21,8 @@ class Waterfall : SwitchableDecoration
 		TNT1 A 0 NODELAY A_CheckSightOrRange(2560,"IdleNoSee");
 		TNT1 A 1
 		{
-			static const class<Actor> WFallParticles[]=
-			{
-				"WFallParticle1A","WFallParticle1B",
-				"WFallParticle2A","WFallParticle2B",
-				"WFallParticle3A","WFallParticle3B",
-				"WFallParticle4A","WFallParticle4B",
-				"WFallParticle5A","WFallParticle5B"
-			};
 			for(float i=0;i<args[0];i+=frandom(4.0,8.0))
-				A_SpawnItemEx(WFallParticles[random(0,9)],frandom(-8.0,8.0)+cos(angle)*i,frandom(-8.0,8.0)+sin(angle)*i,frandom(-8.0,8.0),flags:SXF_ABSOLUTEPOSITION);
+				A_SpawnItemEx("WFallParticle1A",frandom(-8.0,8.0)+cos(angle)*i,frandom(-8.0,8.0)+sin(angle)*i,frandom(-8.0,8.0),flags:SXF_ABSOLUTEPOSITION);
 		}
 		Loop;
 	Inactive:
@@ -75,102 +67,17 @@ class WFallParticle1A : WFallSplash
 	states
 	{
 	Spawn:
-		WFS1 A 0;
-		"####" "######" 1 A_FadeIn(0.125);
-		"####" # -1;
-		loop;
+		WFS1 A 0 NODELAY
+		{
+			if(random(0,1))
+				scale.x=-1;
+			self.frame=random(0,4);
+		}
+		WFS1 "######" 1 A_FadeIn(.125);
+		WFS1 # -1;
+		Stop;
 	Death:
 		TNT1 A 0 A_SpawnItemEx("WFallSplash",random(0,8),0,0,random(0,2),0,0,random(0,360),SXF_ABSOLUTEANGLE,192);
 		stop;
-	}
-}
-
-class WFallParticle1B : WFallParticle1A
-{
-	states
-	{
-	Spawn:
-		WFS1 N 0;
-		Goto Super::Spawn+1;
-	}
-}
-
-class WFallParticle2A : WFallParticle1A
-{
-	states
-	{
-	Spawn:
-		WFS2 A 0;
-		Goto Super::Spawn+1;
-	}
-}
-
-class WFallParticle2B : WFallParticle1A
-{
-	states
-	{
-	Spawn:
-		WFS2 N 0;
-		Goto Super::Spawn+1;
-	}
-}
-
-class WFallParticle3A : WFallParticle1A
-{
-	states
-	{
-	Spawn:
-		WFS3 A 0;
-		Goto Super::Spawn+1;
-	}
-}
-
-class WFallParticle3B : WFallParticle1A
-{
-	states
-	{
-	Spawn:
-		WFS3 N 0;
-		Goto Super::Spawn+1;
-	}
-}
-
-class WFallParticle4A : WFallParticle1A
-{
-	states
-	{
-	Spawn:
-		WFS4 A 0;
-		Goto Super::Spawn+1;
-	}
-}
-
-class WFallParticle4B : WFallParticle1A
-{
-	states
-	{
-	Spawn:
-		WFS4 N 0;
-		Goto Super::Spawn+1;
-	}
-}
-
-class WFallParticle5A : WFallParticle1A
-{
-	states
-	{
-	Spawn:
-		WFS5 A 0;
-		Goto Super::Spawn+1;
-	}
-}
-
-class WFallParticle5B : WFallParticle1A
-{
-	states
-	{
-	Spawn:
-		WFS5 N 0;
-		Goto Super::Spawn+1;
 	}
 }
