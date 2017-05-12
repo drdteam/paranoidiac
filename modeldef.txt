@@ -100,6 +100,17 @@ Model Pshotgun1
 
 	FrameIndex POSS A 0 0
 }
+/*Model Pshotgun2
+{
+	Path "Models"
+	Model 0 "shotgun.md3"
+	Skin 0 "shotgun.png"
+	Scale 1.0 1.0 1.0
+	Offset 0.0 0.0 20.0
+	RollOffset -82
+
+	FrameIndex POSS A 0 0
+}*/
 
 Model M16Pickup
 {
@@ -3663,5 +3674,172 @@ Model XbowBolt
 	Skin 0 "crossbow_bolt.png"
 	Scale 1 1 1
 
-	FrameIndex HWXB A 0 1
+	FrameIndex HWXB A 0 0
+}
+
+Model HLHoundEye
+{
+	Path "Models"
+	Model 0 "houndeye.md2"
+	Skin 0 "houndeye.png"
+	Scale 1 1 1
+
+	FrameIndex HLI1 A 0 0
+
+	FrameIndex HLR1 A 0 208
+	FrameIndex HLR1 B 0 209
+	FrameIndex HLR1 C 0 210
+	FrameIndex HLR1 D 0 211
+	FrameIndex HLR1 E 0 212
+	FrameIndex HLR1 F 0 213
+	FrameIndex HLR1 G 0 214
+	FrameIndex HLR1 H 0 215
+	FrameIndex HLR1 I 0 216
+	FrameIndex HLR1 J 0 217
+	FrameIndex HLR1 K 0 218
+	FrameIndex HLR1 L 0 219
+	FrameIndex HLR1 M 0 220
+	FrameIndex HLR1 N 0 221
+	FrameIndex HLR1 O 0 222
+	FrameIndex HLR1 P 0 223
+	FrameIndex HLR1 Q 0 224
+	FrameIndex HLR1 R 0 225
+	FrameIndex HLR1 S 0 226
+	FrameIndex HLR1 T 0 227
+	FrameIndex HLR1 U 0 228
+	FrameIndex HLR1 V 0 229
+	FrameIndex HLR1 W 0 230
+	FrameIndex HLR1 X 0 231
+	FrameIndex HLR1 Y 0 232
+	FrameIndex HLR1 Z 0 233
+	FrameIndex HLR1 [ 0 234
+	FrameIndex HLR1 \ 0 235
+	FrameIndex HLR1 ] 0 236
+	FrameIndex HLR2 A 0 237
+	FrameIndex HLR2 B 0 238
+	FrameIndex HLR2 C 0 239
+	FrameIndex HLR2 D 0 240
+	FrameIndex HLR2 E 0 241
+	FrameIndex HLR2 F 0 242
+	FrameIndex HLR2 G 0 243
+	FrameIndex HLR2 H 0 244
+	FrameIndex HLR2 I 0 245
+	FrameIndex HLR2 J 0 246
+	FrameIndex HLR2 K 0 247
+	FrameIndex HLR2 L 0 248
+	FrameIndex HLR2 M 0 249
+	FrameIndex HLR2 N 0 250
+	FrameIndex HLR2 O 0 251
+	FrameIndex HLR2 P 0 252
+	FrameIndex HLR2 Q 0 253
+	FrameIndex HLR2 R 0 254
+	FrameIndex HLR2 S 0 255
+	FrameIndex HLR2 T 0 256
+	FrameIndex HLR2 U 0 257
+	FrameIndex HLR2 V 0 258
+	FrameIndex HLR2 W 0 259
+	FrameIndex HLR2 X 0 260
+	FrameIndex HLR2 Y 0 261
+	FrameIndex HLR2 Z 0 262
+	FrameIndex HLR2 [ 0 263
+	FrameIndex HLR2 \ 0 264
+	FrameIndex HLR2 ] 0 265
+
+	FrameIndex HLA1 A 0 329
+	FrameIndex HLA1 B 0 330
+	FrameIndex HLA1 C 0 331
+	FrameIndex HLA1 D 0 332
+	FrameIndex HLA1 E 0 333
+	FrameIndex HLA1 F 0 334
+	FrameIndex HLA1 G 0 335
+	FrameIndex HLA1 H 0 336
+	FrameIndex HLA1 I 0 337
+	FrameIndex HLA1 J 0 338
+	FrameIndex HLA1 K 0 339
+	FrameIndex HLA1 L 0 340
+	FrameIndex HLA1 M 0 341
+	FrameIndex HLA1 N 0 342
+	FrameIndex HLA1 O 0 343
+	FrameIndex HLA1 P 0 344
+	FrameIndex HLA1 Q 0 345
+	FrameIndex HLA1 R 0 346
+	FrameIndex HLA1 S 0 347
+	FrameIndex HLA1 T 0 348
+	FrameIndex HLA1 U 0 349
+	FrameIndex HLA1 V 0 350
+	FrameIndex HLA1 W 0 351
+	FrameIndex HLA1 X 0 352
+	FrameIndex HLA1 Y 0 353
+	FrameIndex HLA1 Z 0 354
+	FrameIndex HLA1 [ 0 355
+	FrameIndex HLA1 \ 0 356
+	FrameIndex HLA1 ] 0 357
+	FrameIndex HLA2 A 0 358
+	FrameIndex HLA2 B 0 359
+	FrameIndex HLA2 C 0 360
+	FrameIndex HLA2 D 0 361
+	FrameIndex HLA2 E 0 362
+	FrameIndex HLA2 F 0 363
+	FrameIndex HLA2 G 0 364
+	FrameIndex HLA2 H 0 365
+	FrameIndex HLA2 I 0 366
+	FrameIndex HLA2 J 0 367
+	FrameIndex HLA2 K 0 368
+	FrameIndex HLA2 L 0 369
+	FrameIndex HLA2 M 0 370
+	FrameIndex HLA2 N 0 371
+	FrameIndex HLA2 O 0 372
+	FrameIndex HLA2 P 0 373
+	FrameIndex HLA2 Q 0 374
+	FrameIndex HLA2 R 0 375
+	FrameIndex HLA2 S 0 376
+	FrameIndex HLA2 T 0 377
+	FrameIndex HLA2 U 0 378
+	FrameIndex HLA2 V 0 379
+	FrameIndex HLA2 W 0 380
+	FrameIndex HLA2 X 0 381
+	FrameIndex HLA2 Y 0 382
+	FrameIndex HLA2 Z 0 383
+	FrameIndex HLA2 [ 0 384
+	FrameIndex HLA2 \ 0 385
+	FrameIndex HLA2 ] 0 386
+
+	FrameIndex HLP1 A 0 409
+	FrameIndex HLP1 B 0 410
+	FrameIndex HLP1 C 0 411
+	FrameIndex HLP1 D 0 412
+	FrameIndex HLP1 E 0 413
+	FrameIndex HLP1 F 0 414
+	FrameIndex HLP1 G 0 415
+	FrameIndex HLP1 H 0 416
+
+	FrameIndex HLD1 A 0 419
+	FrameIndex HLD1 B 0 420
+	FrameIndex HLD1 C 0 421
+	FrameIndex HLD1 D 0 422
+	FrameIndex HLD1 E 0 423
+	FrameIndex HLD1 F 0 424
+	FrameIndex HLD1 G 0 425
+	FrameIndex HLD1 H 0 426
+	FrameIndex HLD1 I 0 427
+	FrameIndex HLD1 J 0 428
+	FrameIndex HLD1 K 0 429
+	FrameIndex HLD1 L 0 430
+	FrameIndex HLD1 M 0 431
+	FrameIndex HLD1 N 0 432
+	FrameIndex HLD1 O 0 433
+	FrameIndex HLD1 P 0 434
+	FrameIndex HLD1 Q 0 435
+	FrameIndex HLD1 R 0 436
+	FrameIndex HLD1 S 0 437
+	FrameIndex HLD1 T 0 438
+	FrameIndex HLD1 U 0 439
+	FrameIndex HLD1 V 0 440
+	FrameIndex HLD1 W 0 441
+	FrameIndex HLD1 X 0 442
+	FrameIndex HLD1 Y 0 443
+	FrameIndex HLD1 Z 0 444
+	FrameIndex HLD1 [ 0 445
+	FrameIndex HLD1 \ 0 446
+	FrameIndex HLD1 ] 0 447
 }
