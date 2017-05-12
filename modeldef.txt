@@ -3655,3 +3655,13 @@ Model Python
 	FrameIndex HWU1 N 0 398
 	FrameIndex HWU1 O 0 399
 }
+
+Model XbowBolt
+{
+	Path "Models"
+	Model 0 "crossbow_bolt.md2"
+	Skin 0 "crossbow_bolt.png"
+	Scale 1 1 1
+
+	FrameIndex HWXB A 0 1
+}
