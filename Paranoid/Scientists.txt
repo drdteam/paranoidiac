@@ -78,7 +78,7 @@ class HLScientist1Path : Actor
 		TNT1 A 0
 		{
 			self.sprite=GetSpriteIndex(spawnsprite);
-			self.frame=random(1,3);
+			self.frame=random(0,2);
 		}
 		"####" # 5
 		{
