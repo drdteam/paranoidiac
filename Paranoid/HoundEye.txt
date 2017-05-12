@@ -24,8 +24,9 @@ class HLHoundEye : Actor
 	States
 	{
 	Spawn:
+		TNT1 A 0;
 		HLI1 A 3 A_Look;
-		Loop;
+		Wait;
 	See:
 		HLR1 A 1 A_Chase;
 		HLR1 BC 1 A_Chase(null,null,HLSMOOTHCHASE);
