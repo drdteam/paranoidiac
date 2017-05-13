@@ -30,7 +30,19 @@ class HLTeleportFog : TeleportFog replaces TeleportFog
 	States
 	{
 	Spawn:
-		HTEL ABCDEFGHIJKLMNOPQRSTUVWXY 2 Bright;
+		HTEL AB 2 Bright LIGHT("TeleportFogLth1");
+		HTEL C 2 Bright LIGHT("TeleportFogLth2");
+		HTEL D 2 Bright LIGHT("TeleportFogLth3");
+		HTEL EF 2 Bright LIGHT("TeleportFogLth4");
+		HTEL GH 2 Bright LIGHT("TeleportFogLth5");
+		HTEL IJ 2 Bright LIGHT("TeleportFogLth6");
+		HTEL K 2 Bright LIGHT("TeleportFogLth7");
+		HTEL LMN 2 Bright LIGHT("TeleportFogLth6");
+		HTEL OP 2 Bright LIGHT("TeleportFogLth5");
+		HTEL QR 2 Bright LIGHT("TeleportFogLth4");
+		HTEL ST 2 Bright LIGHT("TeleportFogLth3");
+		HTEL UV 2 Bright LIGHT("TeleportFogLth2");
+		HTEL WXY 2 Bright LIGHT("TeleportFogLth1");
 		Stop;
 	}
 }

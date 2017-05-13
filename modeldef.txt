@@ -1982,7 +1982,7 @@ model VortiPlasma_Explode
 	frameindex VPLS E 0 5
 }
 
-model VortiPlasma_Bolt1
+model VortiPlasma_Bolt
 {
 	path "models"
 
@@ -1992,42 +1992,9 @@ model VortiPlasma_Bolt1
 	Scale 1.0 1.0 1.0
 
 	frameindex VPLS A 0 0
-}
-
-model VortiPlasma_Bolt2
-{
-	path "models"
-
-	model 0 "bolt.md3"
-	skin 0 "bolt_skin.png"
-
-	Scale 1.0 1.0 1.0
-
-	frameindex VPLS A 0 1
-}
-
-model VortiPlasma_Bolt3
-{
-	path "models"
-
-	model 0 "bolt.md3"
-	skin 0 "bolt_skin.png"
-
-	Scale 1.0 1.0 1.0
-
-	frameindex VPLS A 0 2
-}
-
-model VortiPlasma_Bolt4
-{
-	path "models"
-
-	model 0 "bolt.md3"
-	skin 0 "bolt_skin.png"
-
-	Scale 1.0 1.0 1.0
-
-	frameindex VPLS A 0 3
+	frameindex VPLS B 0 1
+	frameindex VPLS C 0 2
+	frameindex VPLS D 0 3
 }
 
 //////////////////////

@@ -996,7 +996,7 @@ class StreetLamp : SwitchableDecoration
     {
     Spawn:
     Active:
-		POSS A -1;
+		POSS A -1 LIGHT("STREETLAMP");
 		Loop;
     Inactive:
 		POSS B -1;
@@ -1371,10 +1371,11 @@ class Barrier3 : Barrier1{}
 // Explosive barrels & crates
 //============================
 
-class ExplosiveItemBang : Actor
+class ExplosiveItemBangCrate : Actor
 {
 	Default
 	{
+		Scale .6;
 		Radius 4;
 		Height 4;
 		Renderstyle "Translucent";
@@ -1385,23 +1386,31 @@ class ExplosiveItemBang : Actor
 	States
 	{
 	Spawn:
-		CBNG ABCDEFGHIJKLMNOPQRS 2 Bright;
+		CBNG ABC 2 BRIGHT LIGHT("CRATE_X2");
+		CBNG DEFGH 2 BRIGHT LIGHT("CRATE_X1");
+		CBNG IJKL 2 BRIGHT LIGHT("CRATE_X2");
+		CBNG MNOP 2 BRIGHT LIGHT("CRATE_X3");
+		CBNG QRS 2 BRIGHT LIGHT("CRATE_X4");
 		CBNG TU 2;
-		stop;
+		Stop;
 	}
 }
-class ExplosiveItemBangCrate : ExplosiveItemBang
+class ExplosiveItemBangBarrel : ExplosiveItemBangCrate
 {
 	Default
 	{
-		Scale 0.6;
+		Scale .4;
 	}
-}
-class ExplosiveItemBangBarrel : ExplosiveItemBang
-{
-	Default
+	States
 	{
-		Scale 0.4;
+	Spawn:
+		CBNG ABC 2 BRIGHT LIGHT("BARREL_X2");
+		CBNG DEFGH 2 BRIGHT LIGHT("BARREL_X1");
+		CBNG IJKL 2 BRIGHT LIGHT("BARREL_X2");
+		CBNG MNOP 2 BRIGHT LIGHT("BARREL_X3");
+		CBNG QRS 2 BRIGHT LIGHT("BARREL_X4");
+		CBNG TU 2;
+		Stop;
 	}
 }
 
@@ -1426,7 +1435,7 @@ class Xbarrel1 : ModelBase
 		POSS B 2 A_AlertMonsters;
 		POSS C 2 A_Scream;
 		POSS D 1 A_Explode;
-		POSS D 1 A_SetTranslucent(.5);
+		POSS D 1 A_SetRenderStyle(.5,STYLE_Translucent);
 		POSS EE 1 A_FadeOut;
 		POSS F 2 A_NoBlocking;
 		POSS GG 1 A_FadeOut;

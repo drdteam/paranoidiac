@@ -38,7 +38,7 @@ class HEVbattery : BasicArmorBonus
 	states
 	{
 	Spawn:
-		POSS A -1;
+		POSS A -1 LIGHT("HevBattLight");
 		Stop;
 	}
 }

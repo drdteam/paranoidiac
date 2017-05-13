@@ -7,6 +7,7 @@ enum ParanoidEnum
 
 #include "Paranoid/statbar.txt"
 
+#include "Paranoid/Base.txt"
 #include "Paranoid/Bubbles.txt"
 #include "Paranoid/Flames.txt"
 #include "Paranoid/Messages.txt"
@@ -39,7 +40,7 @@ enum ParanoidEnum
 #include "Paranoid/Barney.txt"
 #include "Paranoid/Scientists.txt"
 
-#include "Paranoid/Explosion.txt"	//Always keep this instruction at the bottom of the list
+#include "Paranoid/Explosion.txt"
 
 // paranoic
 #include "Paranoid/Gonarch.txt"
