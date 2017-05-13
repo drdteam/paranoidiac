@@ -25,15 +25,6 @@ class OMGFire : SwitchableDecoration
 	}
 	action void omgfire()
 	{
-		static const class<Actor> Flame[]=
-		{
-			"Flame1A_01","Flame1B_01","Flame2A_01","Flame2B_01","Flame3A_01",
-			"Flame3B_01","Flame4A_01","Flame4B_01","Flame5A_01","Flame5B_01",
-			"Flame6A_01","Flame6B_01","Flame7A_01","Flame7B_01","Flame8A_01",
-			"Flame8B_01","Flame9A_01","Flame9B_01","Flame10A_01","Flame10B_01",
-			"Flame11A_01","Flame11B_01","Flame12A_01","Flame12B_01","Flame13A_01",
-			"Flame13B_01","Flame14A_01","Flame14B_01","Flame15A_01","Flame15B_01"
-		};
 		int area=args[0],shape=args[1],glow=args[2],s,t;
 		float a,r,xval,yval,zval=pos.z;
 		for(int i=0;i<area/32+1;i++)
@@ -61,7 +52,7 @@ class OMGFire : SwitchableDecoration
 				yval=pos.y+sin(a)*r;
 				break;
 			}
-			let thisflame=Spawn(Flame[random(0,29)],(xval,yval,zval));
+			let thisflame=Spawn("Flame1A_01",(xval,yval,zval));
 			thisflame.vel.z+=t;
 			thisflame.angle=a;
 			if(s==1)
@@ -135,7 +126,7 @@ class FlameGlow_02 : Actor
 	states
 	{
 	Spawn:
-		SPKO E 1 bright A_FadeOut(0.0125);
+		SPKO E 1 bright A_FadeOut(.0125);
 		loop;
 	}
 }
@@ -156,306 +147,30 @@ class Flame1A_01 : Actor
 		+NOINTERACTION
 		+FORCEXYBILLBOARD
 		RenderStyle "Add";
-		scale 0.1;
+		scale .1;
 	}
 	states
 	{
 	Spawn:
-		FLM1 A 0;
+		TNT1 A 0 NODELAY
+		{
+			if(random(0,1))
+				scale.x=-.1;
+			static const string sprt[]=
+			{
+				"FLM1A0","FLM2A0","FLM3A0","FLM4A0","FLM5A0",
+				"FLM6A0","FLM7A0","FLM8A0","FLM9A0","FL10A0",
+				"FL11A0","FL12A0","FL13A0","FL14A0","FL15A0"
+			};
+			self.sprite=GetSpriteIndex(sprt[random(0,14)]);
+		}
 		"####" ABCDEFGHIJ 2 bright;
 		"####" KKLLMM 1 bright A_FadeOut(0.2);
 		stop;
-	}
-}
-
-class Flame1B_01 : Flame1A_01
-{
-	states
-	{
-	Spawn:
-		FLM1 A 0;
-		"####" NOPQRSTUVW 2 bright;
-		"####" XXYYZZ 1 bright A_FadeOut(0.2);
-		stop;
-	}
-}
-
-class Flame2A_01 : Flame1A_01
-{
-	states
-	{
-	Spawn:
-		FLM2 A 0;
-		Goto Super::Spawn+1;
-	}
-}
-
-class Flame2B_01 : Flame1B_01
-{
-	states
-	{
-	Spawn:
-		FLM2 A 0;
-		Goto Super::Spawn+1;
-	}
-}
-
-class Flame3A_01 : Flame1A_01
-{
-	states
-	{
-	Spawn:
-		FLM3 A 0;
-		Goto Super::Spawn+1;
-	}
-}
-
-class Flame3B_01 : Flame1B_01
-{
-	states
-	{
-	Spawn:
-		FLM3 A 0;
-		Goto Super::Spawn+1;
-	}
-}
-
-class Flame4A_01 : Flame1A_01
-{
-	states
-	{
-	Spawn:
-		FLM4 A 0;
-		Goto Super::Spawn+1;
-	}
-}
-
-class Flame4B_01 : Flame1B_01
-{
-	states
-	{
-	Spawn:
-		FLM4 A 0;
-		Goto Super::Spawn+1;
-	}
-}
-
-class Flame5A_01 : Flame1A_01
-{
-	states
-	{
-	Spawn:
-		FLM5 A 0;
-		Goto Super::Spawn+1;
-	}
-}
-
-class Flame5B_01 : Flame1B_01
-{
-	states
-	{
-	Spawn:
-		FLM5 A 0;
-		Goto Super::Spawn+1;
-	}
-}
-
-class Flame6A_01 : Flame1A_01
-{
-	states
-	{
-	Spawn:
-		FLM6 A 0;
-		Goto Super::Spawn+1;
-	}
-}
-
-class Flame6B_01 : Flame1B_01
-{
-	states
-	{
-	Spawn:
-		FLM6 A 0;
-		Goto Super::Spawn+1;
-	}
-}
-
-class Flame7A_01 : Flame1A_01
-{
-	states
-	{
-	Spawn:
-		FLM7 A 0;
-		Goto Super::Spawn+1;
-	}
-}
-
-class Flame7B_01 : Flame1B_01
-{
-	states
-	{
-	Spawn:
-		FLM7 A 0;
-		Goto Super::Spawn+1;
-	}
-}
-
-class Flame8A_01 : Flame1A_01
-{
-	states
-	{
-	Spawn:
-		FLM8 A 0;
-		Goto Super::Spawn+1;
-	}
-}
-
-class Flame8B_01 : Flame1B_01
-{
-	states
-	{
-	Spawn:
-		FLM8 A 0;
-		Goto Super::Spawn+1;
-	}
-}
-
-class Flame9A_01 : Flame1A_01
-{
-	states
-	{
-	Spawn:
-		FLM9 A 0;
-		Goto Super::Spawn+1;
-	}
-}
-
-class Flame9B_01 : Flame1B_01
-{
-	states
-	{
-	Spawn:
-		FLM9 A 0;
-		Goto Super::Spawn+1;
-	}
-}
-
-class Flame10A_01 : Flame1A_01
-{
-	states
-	{
-	Spawn:
-		FL10 A 0;
-		Goto Super::Spawn+1;
-	}
-}
-
-class Flame10B_01 : Flame1B_01
-{
-	states
-	{
-	Spawn:
-		FL10 A 0;
-		Goto Super::Spawn+1;
-	}
-}
-
-class Flame11A_01 : Flame1A_01
-{
-	states
-	{
-	Spawn:
-		FL11 A 0;
-		Goto Super::Spawn+1;
-	}
-}
-
-class Flame11B_01 : Flame1B_01
-{
-	states
-	{
-	Spawn:
-		FL11 A 0;
-		Goto Super::Spawn+1;
-	}
-}
-
-class Flame12A_01 : Flame1A_01
-{
-	states
-	{
-	Spawn:
-		FL12 A 0;
-		Goto Super::Spawn+1;
-	}
-}
-
-class Flame12B_01 : Flame1B_01
-{
-	states
-	{
-	Spawn:
-		FL12 A 0;
-		Goto Super::Spawn+1;
-	}
-}
-
-class Flame13A_01 : Flame1A_01
-{
-	states
-	{
-	Spawn:
-		FL13 A 0;
-		Goto Super::Spawn+1;
-	}
-}
-
-class Flame13B_01 : Flame1B_01
-{
-	states
-	{
-	Spawn:
-		FL13 A 0;
-		Goto Super::Spawn+1;
-	}
-}
-
-class Flame14A_01 : Flame1A_01
-{
-	states
-	{
-	Spawn:
-		FL14 A 0;
-		Goto Super::Spawn+1;
-	}
-}
-
-class Flame14B_01 : Flame1B_01
-{
-	states
-	{
-	Spawn:
-		FL14 A 0;
-		Goto Super::Spawn+1;
-	}
-}
-
-class Flame15A_01 : Flame1A_01
-{
-	states
-	{
-	Spawn:
-		FL15 A 0;
-		Goto Super::Spawn+1;
-	}
-}
-
-class Flame15B_01 : Flame1B_01
-{
-	states
-	{
-	Spawn:
-		FL15 A 0;
-		Goto Super::Spawn+1;
+	Dud:
+		FLM1 A 0;FLM2 A 0;FLM3 A 0;FLM4 A 0;FLM5 A 0;
+		FLM6 A 0;FLM7 A 0;FLM8 A 0;FLM9 A 0;FL10 A 0;
+		FL11 A 0;FL12 A 0;FL13 A 0;FL14 A 0;FL15 A 0;
+		Stop;
 	}
 }
