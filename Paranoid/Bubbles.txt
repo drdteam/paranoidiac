@@ -14,7 +14,7 @@ class Bubble1 : Actor
 	states
 	{
 	Spawn:
-		BUBL A 0 NODELAY ThrustThingZ(0,random(8,12),0,0);
+		BUBL A 0 NODELAY AddZ(random(2,3));
 		BUBL A 1
 		{
 			if(waterlevel==0)

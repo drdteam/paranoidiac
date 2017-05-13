@@ -51,7 +51,7 @@ class HLBabyHeadCrab : HLHeadcrab
 			crabjump=1;
 			A_SkullAttack();
 		}
-		HLQM C 5 ThrustThingZ(0,random(10,25),0,1);
+		HLQM C 5 AddZ(random(10,25)/4.0);
 		HLQM C 3 A_CheckFloor(1);
 		Wait;
 		HLQM D 60 A_stop;

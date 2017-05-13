@@ -1074,7 +1074,7 @@ class RPGTrail1 : Actor
 	{
 	Spawn:
 		TNT1 A 2;
-	 	SPIR K 3 ThrustThingZ(0,random(1,5),0,1);
+	 	SPIR K 3 AddZ(frandom(.25,1.25));
 		SPIR LMNO 3;
 		Stop;
 	}
@@ -1090,7 +1090,7 @@ class RPGTrail2 : RPGTrail1
 	{
 	Spawn:
 		TNT1 A 2;
-	 	PUF2 A 1 ThrustThingZ(0,random(1,5),0,1);
+	 	PUF2 A 1 AddZ(frandom(.25,1.25));
 		PUF2 CEGIKMOQSUWY 1;
 		PUF3 AC 1;
 		Stop;

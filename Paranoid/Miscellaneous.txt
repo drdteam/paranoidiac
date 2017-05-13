@@ -62,7 +62,7 @@ class debris01 : Actor
 	{
 	Spawn:
 		DEBA A 0;
-		"####" A 2 ThrustThingZ(0,random(1,4),0,1);
+		"####" A 2 AddZ(frandom(.25,1));
 		"####" A 2 A_FadeOut;
 		Wait;
 	}
@@ -263,7 +263,7 @@ class PuffSmoke : Actor
 	States
 	{
 	Spawn:
-		WPXS A 2 NODELAY ThrustThingZ(0,random(1,4),0,1);
+		WPXS A 2 NODELAY AddZ(frandom(.25,1));
 		WPXS CEGIKMOQSUWYZ 2 A_FadeOut;
 		Wait;
 	}
@@ -302,8 +302,8 @@ class ExtraBlood : NewBlood
 	States
 	{
 	Spawn:
-		BLD1 A 6 NODELAY ThrustThingZ(0,random(5,12),0,1);
-		BLD1 ABCD 6;
+		BLD1 A 12 NODELAY AddZ(random(5,12)/4.0);
+		BLD1 BCD 6;
 		Stop;
 	}
 }
@@ -349,7 +349,7 @@ class GibBloodSmall : NewBlood
 	Spawn:
 		BLD1 A 12 NODELAY
 		{
-			ThrustThingZ(0,random(-1,-2),0,1);
+			AddZ(frandom(-.25,-.5));
 			A_SpawnItemEx("GibBloodSmall2",random(3,-3),random(3,-3),random(3,-3),zvel:random(-1,-2)/4.0,flags:SXF_TRANSFERTRANSLATION);
 		}
 		BLD1 BCD 6;
@@ -381,7 +381,7 @@ class GibBloodTrailMediumSize : GibBloodSmall
 	States
 	{
 	Spawn:
-		BLD1 A 12 NODELAY ThrustThingZ(0,random(-1,-4),0,1);
+		BLD1 A 12 NODELAY AddZ(frandom(-.25,-1));
 		BLD1 BCD 6;
 		Stop;
 	}
@@ -449,11 +449,10 @@ class BloodGib1 : Actor
 	states
 	{
 	Spawn:
-		TNT1 A 0;
-		ANYG AAAA 1 ThrustThingZ(0,random(3,20),0,1);
+		ANYG AAAA 1 NODELAY AddZ(random(3,20)/4.0);
 		ANYG BBCCDD 2 A_SpawnItemEx("GibBloodTrailMediumSize",random(3,-3),random(3,-3),random(3,-3),SXF_TRANSFERTRANSLATION);
 		ANYG AABBCCDD 2 A_SpawnItemEx("GibBloodTrailMediumSize",random(3,-3),random(3,-3),random(3,-3),SXF_TRANSFERTRANSLATION);
-		Goto Spawn+11;
+		Goto Spawn+10;
 	Crash:
 		ANYG E 450 A_NoBlocking;
 		ANYG E 1 A_FadeOut;
@@ -471,11 +470,10 @@ class BloodGib2 : BloodGib1		//eye
 	states
 	{
 	Spawn:
-		TNT1 A 0;
-		ANYG FFFF 1 ThrustThingZ(0,random(3,20),0,1);
+		ANYG FFFF 1 NODELAY AddZ(random(3,20)/4.0);
 		ANYG GGHHII 2 A_SpawnItemEx("GibBloodTrailMediumSize",random(3,-3),random(3,-3),random(3,-3),flags:SXF_TRANSFERTRANSLATION);
 		ANYG FFGGHHII 2 A_SpawnItemEx("GibBloodTrailMediumSize",random(3,-3),random(3,-3),random(3,-3),flags:SXF_TRANSFERTRANSLATION);
-		Goto Spawn+11;
+		Goto Spawn+10;
 	Crash:
 		ANYG J 560 A_NoBlocking;
 		ANYG J 1 A_FadeOut;
@@ -493,11 +491,10 @@ class BloodGib3 : BloodGib1		//liver
 	states
 	{
 	Spawn:
-		TNT1 A 0;
-		ANYG KKKK 1 ThrustThingZ(0,random(3,20),0,1);
+		ANYG KKKK 1 NODELAY AddZ(random(3,20)/4.0);
 		ANYG LLMMNN 2 A_SpawnItemEx("GibBloodTrailMediumSize",random(3,-3),random(3,-3),random(3,-3),flags:SXF_TRANSFERTRANSLATION);
 		ANYG KKLLMMNN 2 A_SpawnItemEx("GibBloodTrailMediumSize",random(3,-3),random(3,-3),random(3,-3),flags:SXF_TRANSFERTRANSLATION);
-		Goto Spawn+11;
+		Goto Spawn+10;
 	Crash:
 		ANYG O 400 A_NoBlocking;
 		ANYG O 1 A_FadeOut;
@@ -515,11 +512,10 @@ class BloodGib4 : BloodGib1		//bloodthing
 	states
 	{
 	Spawn:
-		TNT1 A 0;
-		ANYG PPPP 1 ThrustThingZ(0,random(3,20),0,1);
+		ANYG PPPP 1 NODELAY AddZ(random(3,20)/4.0);
 		ANYG QQRRSS 2 A_SpawnItemEx("GibBloodTrailMediumSize",random(3,-3),random(3,-3),random(3,-3),flags:SXF_TRANSFERTRANSLATION);
 		ANYG PPQQRRSS 2 A_SpawnItemEx("GibBloodTrailMediumSize",random(3,-3),random(3,-3),random(3,-3),flags:SXF_TRANSFERTRANSLATION);
-		Goto Spawn+11;
+		Goto Spawn+10;
 	Crash:
 		ANYG T 500 A_NoBlocking;
 		ANYG T 1 A_FadeOut;
