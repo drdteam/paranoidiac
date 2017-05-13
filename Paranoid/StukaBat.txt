@@ -1,8 +1,7 @@
-class HLBat : Actor
+class HLBat : HLMonster
 {
 	Default
 	{
-		Monster;
 		Health 200;
 		Speed 3;
 		FloatSpeed 1;
@@ -22,6 +21,7 @@ class HLBat : Actor
 		ActiveSound "stukabat/active";
 		AttackSound "stukabat/attack";
 		Obituary "%o was fried by a StukaBat.";
+		Species "HLBat";
 	}
 	States
 	{
@@ -68,12 +68,7 @@ class HLBat : Actor
 		HLSD K -1;
 		Stop;
 	XDeath:
-	  	TNT1 A 0
-		{
-			A_PlaySound("other/gibdeath");
-			for(int i=0;i<14;i++)
-				A_SpawnItemEx("XenGibs",random(5,-5),random(5,-5),random(10,40),random(1,7),random(1,7),random(5,13),random(0,359));
-		}
+	  	TNT1 A 0 A_XenGibs(14);
 		Stop;
 	}
 }

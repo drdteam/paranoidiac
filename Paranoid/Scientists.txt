@@ -25,7 +25,7 @@ class HLScientistImmovilSpawner : RandomSpawner
 //**************************************************************************
 //**************************************************************************
 
-class HLScientist1Path : Actor
+class HLScientist1Path : HLMonster
 {
 	bool wanderer,still;
 	int limit,limit2,boredom,stay,panic;
@@ -39,8 +39,8 @@ class HLScientist1Path : Actor
 	}
 	Default
 	{
-		Monster;
 		Health 25;
+		GibHealth -100;
 		Speed 1.666667;
 		Height 56;
 		PainChance 255;
@@ -53,6 +53,7 @@ class HLScientist1Path : Actor
 		DeathSound "halflife/monsters/scientist/death";
 		HLScientist1Path.Limits 35,30;
 		HLScientist1Path.Sprites "HLRIA0","HLRWA0","HLRRA0","HLRPA0","HLRDA0";
+		Species "HLScientist";
 	}
 	States
 	{
@@ -291,6 +292,9 @@ class HLScientist1Path : Actor
 		"####" K 3 A_PlaySound("halflife/weapons/bodydrop");
 		"####" L 3;
 		"####" M -1;
+		Stop;
+	XDeath:
+		TNT1 A 0 A_XenGibs(1);
 		Stop;
 	}
 	action void Chatter(int chance)

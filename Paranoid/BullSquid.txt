@@ -2,11 +2,10 @@
 // BullSquid
 //===========
 
-class HLBullSquid : Actor
+class HLBullSquid : HLMonster
 {
 	Default
 	{
-		Monster;
 		Health 150;
 		Mass 350;
 		Speed 5;
@@ -20,6 +19,7 @@ class HLBullSquid : Actor
 		PainSound "halflife/monsters/bullsquid/pain";
 		DeathSound "halflife/monsters/bullsquid/death";
 		ActiveSound "halflife/monsters/bullsquid/idle";
+		Species "HLBullSquid";
 	}
 	States
 	{
@@ -69,8 +69,7 @@ class HLBullSquid : Actor
 		HLDD H -1;
 		Stop;
 	XDeath:
-		TNT1 A 0 A_PlaySound("other/gibdeath");
-	  	TNT1 AAAAAAAAAAAAAAAA 0 A_SpawnItemEx("XenGibs",random(5,-5),random(5,-5),random(10,40),random(1,7),random(1,7),random(5,13),random(0,359));
+		TNT1 A 0 A_XenGibs;
 		Stop;
 	}
 }

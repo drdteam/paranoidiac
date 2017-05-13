@@ -72,13 +72,12 @@ class HLGruntShotgunNoGrenade : RandomSpawner
 // Government Troops: M16 & Grenade Attack
 //==========================================
 
-class HLGrunt1 : Actor
+class HLGrunt1 : HLMonster
 {
 	bool closegrencheck;
 	int GrenTimeCounter;
 	Default
 	{
-		Monster;
 		Health 150;
 		Mass 150;
 		Speed 3.5;
@@ -93,6 +92,7 @@ class HLGrunt1 : Actor
 		PainSound "halflife/monsters/humangrunt/pain";
 		DeathSound "halflife/monsters/humangrunt/death";
 		ActiveSound "halflife/monsters/humangrunt/active";
+		Species "HLGrunt";
 	}
 	States
 	{
@@ -279,12 +279,7 @@ class HLGrunt1 : Actor
 		HK1D K -1 A_PlaySound("halflife/weapons/bodydrop");
 		Stop;
 	XDeath:
-		TNT1 A 1
-		{
-			A_PlaySound("other/gibdeath");
-			A_SpawnItemEx("BloodGibDropper",0,0,random(20,40));
-			A_NoBlocking();
-		}
+		TNT1 A 0 A_XenGibs(1);
 		Stop;
 	}
 }
