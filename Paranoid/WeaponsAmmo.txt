@@ -810,7 +810,8 @@ class ARifle : ParanoidWeapon
 			for(int i=0;i<2;i++)
 				A_FireProjectile("GunSmallSmokeSpawner",0,0,6,6);
 			A_PlaySound("halflife/weapons/grenadelaunch",CHAN_WEAPON);
-			A_FireProjectile("M16Grenade",0,0,5,0,FPF_NOAUTOAIM);
+			actor gren=A_FireProjectile("M16Grenade",0,0,5,0,FPF_NOAUTOAIM);
+			gren.AddZ(2);
 			A_AlertMonsters();
 			WeaponRecoil(400);
 			A_SpawnItemEx("LighCheapHack");
@@ -874,7 +875,7 @@ class M16Grenade : Actor
 	States
 	{
 	Spawn:
-		GRNL A 3 NODELAY ThrustThingZ(0,8,0,1);
+		GRNL A 3;
 		GRNL A 1
 		{
 			for(int i=0;i<2;i++)
@@ -882,7 +883,7 @@ class M16Grenade : Actor
 		}
 		Wait;
 	Death:
-		TNT1 A 10
+		TNT1 A 1
 		{
 			A_Explode(170,140);
 			A_SpawnItemEx("NewExplosionMedium");
@@ -904,7 +905,7 @@ class GrenadeTrail : Actor
 	States
 	{
 	Spawn:
-		WPXS ABCDEFGIHJKLMNOPQRSTUVWXYZ 1 NODELAY A_FadeOut(0.03);
+		WPXS ABCDEFGIHJKLMNOPQRSTUVWXYZ 1 NODELAY A_FadeOut(.03);
 		Wait;
 	}
 }
@@ -1528,8 +1529,8 @@ class GluonPrimaryBurst : Actor
 		}
 	Movement:
 		LPUF A 0 A_JumpIf(user_life[0]>=25000,"Death");
-	//This must be done multiple times, or else it will jump beyond walls. This could
-	//easily cause an engine overload.
+		//This must be done multiple times, or else it will jump beyond walls. This could
+		//easily cause an engine overload.
 		LPUF A 0 A_Warp(AAPTR_DEFAULT,vel.x,vel.y,vel.z,0,WARPF_ABSOLUTEOFFSET,1);
 		Goto MoveOut;
 		LPUF A 0 A_Warp(AAPTR_DEFAULT,vel.x,vel.y,vel.z,0,WARPF_ABSOLUTEOFFSET,1);
@@ -2020,7 +2021,7 @@ class HLHornet : Ammo
 
 //****
 
-class HGHornetTrail1 : Actor
+class HGHornetTrail : Actor
 {
 	Default
 	{
@@ -2029,56 +2030,23 @@ class HGHornetTrail1 : Actor
 		+NOINTERACTION
 		Scale .015;
 		RenderStyle "Add";
-		Alpha .5;
-		Translation "80:111=192:223";
+		Translation "80:111=160:167";
 	}
 	states
 	{
 	Spawn:
-		X099 A 1 A_FadeOut(0.03);
-		loop;
+		X099 A 1 A_FadeOut(.03);
+		Loop;
 	}
 }
 
-class HGHornetShooter2 : Actor
+class HGHornetTrail1 : HGHornetTrail
 {
 	Default
 	{
-		+FRIENDLY
-		MONSTER;
-		Radius 1;
-		Height 1;
-		+NOGRAVITY
-		+NOCLIP
-		+LOOKALLAROUND
-		+MISSILEMORE
-		+MISSILEEVENMORE
-		-SOLID
-		-SHOOTABLE
-		-COUNTKILL
-		MinMissileChance 0;
-		ReactionTime 25;
+		Alpha .5;
+		Translation "80:111=192:223";
 	}
-    States
-    {
-    Spawn:
-		TNT1 A 0 A_CountDown;
-        PLAY A 1 A_Look;
-    See:
-		PLAY A 0 A_Chase;
-	Missile:
-		TNT1 A 0 A_JumpIfCloser(128,"SuccessfulChase");
-		TNT1 A 0 A_Jump(128,"NinetyNeg1");
-		PLAY A 0 A_SpawnItemEx("HGruntHornetFake1",0,0,0,10,0,random(2,-2),90);
-		Stop;
-    NinetyNeg1:
-		PLAY A 0 A_SpawnItemEx("HGruntHornetFake1",0,0,0,10,0,random(5,-5),-90);
-		Stop;
-    SuccessfulChase:
-		PLAY A 0 A_FaceTarget;
-		PLAY A 0 A_SpawnProjectile("HGruntHornetNoSightSound",0);
-		Stop;
-    }
 }
 
 class HGruntHornet : Actor
@@ -2112,25 +2080,6 @@ class HGruntHornet : Actor
 	}
 }
 
-class HGHornetTrail : Actor
-{
-	Default
-	{
-		radius 6;
-		height 8;
-		+NOINTERACTION
-		Scale .015;
-		RenderStyle "Add";
-		Translation "80:111=160:167";
-	}
-	states
-	{
-	Spawn:
-		X099 A 1 A_FadeOut(.03);
-		Loop;
-	}
-}
-
 class HGHornetShooter1 : Actor
 {
 	Default
@@ -2148,15 +2097,14 @@ class HGHornetShooter1 : Actor
 		-SHOOTABLE
 		-COUNTKILL
 		MinMissileChance 0;
-		ReactionTime 25;
 	}
 	States
 	{
 	Spawn:
-		TNT1 A 0 A_CountDown;
-		TNT1 A 1 A_Look;
+		TNT1 A 1 NODELAY A_Look;
 	See:
 		TNT1 A 0 A_Chase;
+		TNT1 A 0 A_Jump(256,"Missile");
 	Missile:
 		TNT1 A 0 A_JumpIfCloser(128,"SuccessfulChase");
 		TNT1 A 0 A_Jump(128,"NinetyNeg");
@@ -2170,6 +2118,21 @@ class HGHornetShooter1 : Actor
 		TNT1 A 0 A_SpawnProjectile("HGruntHornetNoSightSound",0);
 		Stop;
 	}
+}
+
+class HGHornetShooter2 : HGHornetShooter1
+{
+    States
+    {
+	Missile:
+		TNT1 A 0 A_JumpIfCloser(128,"SuccessfulChase");
+		TNT1 A 0 A_Jump(128,"NinetyNeg");
+		TNT1 A 0 A_SpawnItemEx("HGruntHornetFake1",0,0,0,10,0,random(2,-2),90);
+		Stop;
+    NinetyNeg1:
+		TNT1 A 0 A_SpawnItemEx("HGruntHornetFake1",0,0,0,10,0,random(5,-5),-90);
+		Stop;
+    }
 }
 
 class HGruntHornetNoSightSound : HGruntHornet
@@ -2248,13 +2211,16 @@ class AmmoPack : CustomInventory
 		POSS A -1;
 		Stop;
 	Pickup:
-		TNT1 A 0 A_GiveInventory("BClip",17);
-		TNT1 A 0 A_GiveInventory("ARClip",25);
-		TNT1 A 0 A_GiveInventory("PShell",4);
-		TNT1 A 0 A_GiveInventory("PythonAmmo",6);
-		TNT1 A 0 A_GiveInventory("RPGAmmo");
-		TNT1 A 0 A_GiveInventory("Xbowbolts",2);
- 		TNT1 A 0 A_GiveInventory("AECell",10);
+		TNT1 A 0
+		{
+			A_GiveInventory("BClip",17);
+			A_GiveInventory("ARClip",25);
+			A_GiveInventory("PShell",4);
+			A_GiveInventory("PythonAmmo",6);
+			A_GiveInventory("RPGAmmo");
+			A_GiveInventory("Xbowbolts",2);
+			A_GiveInventory("AECell",10);
+		}
 		Stop;
 	}
 }
