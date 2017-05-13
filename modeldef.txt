@@ -3639,9 +3639,21 @@ Model XbowBolt
 	Path "Models"
 	Model 0 "crossbow_bolt.md2"
 	Skin 0 "crossbow_bolt.png"
-	Scale 1 1 1
+	Scale .3 .3 .3
+	AngleOffset 90
 
 	FrameIndex HWXB A 0 0
+}
+
+Model HLRocket
+{
+	Path "Models"
+	Model 0 "rpgrocket.md2"
+	Skin 0 "rpgrocket.png"
+	Scale 1 1 1
+	AngleOffset 90
+
+	FrameIndex POSS A 0 0
 }
 
 Model HLHoundEye
