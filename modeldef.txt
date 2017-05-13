@@ -3544,6 +3544,119 @@ Model Python
 	FrameIndex HWU1 O 0 399
 }
 
+Model ARifle
+{
+	Path "Models"
+	Model 0 "v_9mmar.md2"
+	Skin 0 "v_9mmar.png"
+	Scale -1 1 1
+
+	Offset 1 0 -2
+
+	FrameIndex HWI1 A 0 1
+
+	FrameIndex HWF1 A 0 246
+	FrameIndex HWF1 B 0 247
+	FrameIndex HWF1 C 0 248
+	FrameIndex HWF1 D 0 249
+	FrameIndex HWF1 E 0 250
+	FrameIndex HWF1 F 0 251
+	FrameIndex HWF1 G 0 252
+
+	FrameIndex HWF1 H 0 152
+	FrameIndex HWF1 I 0 153
+	FrameIndex HWF1 J 0 154
+	FrameIndex HWF1 K 0 155
+	FrameIndex HWF1 L 0 156
+	FrameIndex HWF1 M 0 157
+	FrameIndex HWF1 N 0 158
+	FrameIndex HWF1 O 0 159
+	FrameIndex HWF1 P 0 161
+	FrameIndex HWF1 Q 0 162
+	FrameIndex HWF1 R 0 163
+	FrameIndex HWF1 S 0 164
+	FrameIndex HWF1 T 0 165
+	FrameIndex HWF1 U 0 166
+	FrameIndex HWF1 V 0 167
+	FrameIndex HWF1 W 0 168
+	FrameIndex HWF1 X 0 169
+	FrameIndex HWF1 Y 0 170
+	FrameIndex HWF1 Z 0 171
+	FrameIndex HWF1 [ 0 172
+	FrameIndex HWF1 \ 0 173
+	FrameIndex HWF1 ] 0 174
+	FrameIndex HWF2 A 0 175
+	FrameIndex HWF2 B 0 176
+	FrameIndex HWF2 C 0 177
+	FrameIndex HWF2 D 0 178
+	FrameIndex HWF2 E 0 179
+	FrameIndex HWF2 F 0 180
+	FrameIndex HWF2 G 0 181
+	FrameIndex HWF2 H 0 182
+	FrameIndex HWF2 I 0 183
+	FrameIndex HWF2 J 0 184
+	FrameIndex HWF2 K 0 185
+	FrameIndex HWF2 L 0 186
+
+	FrameIndex HWR1 A 0 187
+	FrameIndex HWR1 B 0 188
+	FrameIndex HWR1 C 0 189
+	FrameIndex HWR1 D 0 190
+	FrameIndex HWR1 E 0 191
+	FrameIndex HWR1 F 0 192
+	FrameIndex HWR1 G 0 193
+	FrameIndex HWR1 H 0 194
+	FrameIndex HWR1 I 0 195
+	FrameIndex HWR1 J 0 196
+	FrameIndex HWR1 K 0 197
+	FrameIndex HWR1 L 0 198
+	FrameIndex HWR1 M 0 199
+	FrameIndex HWR1 N 0 200
+	FrameIndex HWR1 O 0 201
+	FrameIndex HWR1 P 0 202
+	FrameIndex HWR1 Q 0 203
+	FrameIndex HWR1 R 0 204
+	FrameIndex HWR1 S 0 205
+	FrameIndex HWR1 T 0 206
+	FrameIndex HWR1 U 0 207
+	FrameIndex HWR1 V 0 208
+	FrameIndex HWR1 W 0 209
+	FrameIndex HWR1 X 0 210
+	FrameIndex HWR1 Y 0 211
+	FrameIndex HWR1 Z 0 212
+	FrameIndex HWR1 [ 0 213
+	FrameIndex HWR1 \ 0 214
+	FrameIndex HWR1 ] 0 215
+	FrameIndex HWR2 A 0 216
+	FrameIndex HWR2 B 0 217
+	FrameIndex HWR2 C 0 218
+	FrameIndex HWR2 D 0 219
+	FrameIndex HWR2 E 0 220
+	FrameIndex HWR2 F 0 221
+	FrameIndex HWR2 G 0 222
+	FrameIndex HWR2 H 0 223
+	FrameIndex HWR2 I 0 224
+	FrameIndex HWR2 J 0 225
+	FrameIndex HWR2 K 0 226
+	FrameIndex HWR2 L 0 227
+	FrameIndex HWR2 M 0 228
+	FrameIndex HWR2 N 0 229
+	FrameIndex HWR2 O 0 230
+	FrameIndex HWR2 P 0 231
+	FrameIndex HWR2 Q 0 232
+
+	FrameIndex HWU1 A 0 243
+	FrameIndex HWU1 B 0 242
+	FrameIndex HWU1 C 0 241
+	FrameIndex HWU1 D 0 240
+	FrameIndex HWU1 E 0 239
+	FrameIndex HWU1 F 0 238
+	FrameIndex HWU1 G 0 237
+	FrameIndex HWU1 H 0 236
+	FrameIndex HWU1 I 0 235
+	FrameIndex HWU1 J 0 234
+}
+
 Model XbowBolt
 {
 	Path "Models"
@@ -3560,7 +3673,7 @@ Model M16Grenade
 	Path "Models"
 	Model 0 "grenade.md2"
 	Skin 0 "grenade.png"
-	Scale 1 1 1
+	Scale .65 .65 .65
 	AngleOffset 90
 
 	FrameIndex GRNL A 0 0
@@ -3571,7 +3684,7 @@ Model HLGruntGunGrenade
 	Path "Models"
 	Model 0 "grenade.md2"
 	Skin 0 "grenade.png"
-	Scale 1 1 1
+	Scale .65 .65 .65
 	AngleOffset 90
 
 	FrameIndex GRNL A 0 0
