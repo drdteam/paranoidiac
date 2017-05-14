@@ -3305,8 +3305,6 @@ Model PConsole5
 	FrameIndex POSS A 0 0
 }
 
-
-
 Model Beretta
 {
 	Path "Models"
@@ -3542,6 +3540,138 @@ Model Python
 	FrameIndex HWU1 M 0 397
 	FrameIndex HWU1 N 0 398
 	FrameIndex HWU1 O 0 399
+}
+
+Model Pshotgun
+{
+	Path "Models"
+	Model 0 "v_shotgun.md2"
+	Skin 0 "v_shotgun.png"
+	Scale -1 1 1
+
+	Offset 1 0 -2
+
+	FrameIndex HWI1 A 0 1
+
+	FrameIndex HWF1 A 0 23
+	FrameIndex HWF1 B 0 24
+	FrameIndex HWF1 C 0 25
+	FrameIndex HWF1 D 0 26
+	FrameIndex HWF1 E 0 27
+	FrameIndex HWF1 F 0 28
+	FrameIndex HWF1 G 0 29
+	FrameIndex HWF1 H 0 30
+	FrameIndex HWF1 I 0 31
+	FrameIndex HWF1 J 0 32
+	FrameIndex HWF1 K 0 33
+	FrameIndex HWF1 L 0 34
+	FrameIndex HWF1 M 0 35
+	FrameIndex HWF1 N 0 36
+	FrameIndex HWF1 O 0 37
+	FrameIndex HWF1 P 0 38
+	FrameIndex HWF1 Q 0 39
+	FrameIndex HWF1 R 0 40
+	FrameIndex HWF1 S 0 41
+	FrameIndex HWF1 T 0 42
+	FrameIndex HWF1 U 0 43
+	FrameIndex HWF1 V 0 44
+	FrameIndex HWF1 W 0 45
+	FrameIndex HWF1 X 0 46
+	FrameIndex HWF1 Y 0 47
+	FrameIndex HWF1 Z 0 48
+	FrameIndex HWF1 [ 0 49
+	FrameIndex HWF1 \ 0 50
+	FrameIndex HWF1 ] 0 51
+	FrameIndex HWF2 A 0 52
+	FrameIndex HWF2 B 0 53
+
+	FrameIndex HWF2 C 0 54
+	FrameIndex HWF2 D 0 55
+	FrameIndex HWF2 E 0 56
+	FrameIndex HWF2 F 0 57
+	FrameIndex HWF2 G 0 58
+	FrameIndex HWF2 H 0 59
+	FrameIndex HWF2 I 0 60
+	FrameIndex HWF2 J 0 61
+	FrameIndex HWF2 K 0 62
+	FrameIndex HWF2 L 0 63
+	FrameIndex HWF2 M 0 64
+	FrameIndex HWF2 N 0 65
+	FrameIndex HWF2 O 0 66
+	FrameIndex HWF2 P 0 67
+	FrameIndex HWF2 Q 0 68
+	FrameIndex HWF2 R 0 69
+	FrameIndex HWF2 S 0 70
+	FrameIndex HWF2 T 0 71
+	FrameIndex HWF2 U 0 72
+	FrameIndex HWF2 V 0 73
+	FrameIndex HWF2 W 0 74
+	FrameIndex HWF2 X 0 75
+	FrameIndex HWF2 Y 0 76
+	FrameIndex HWF2 Z 0 77
+	FrameIndex HWF2 [ 0 78
+	FrameIndex HWF2 \ 0 79
+	FrameIndex HWF2 ] 0 80
+	FrameIndex HWF3 A 0 81
+	FrameIndex HWF3 B 0 82
+	FrameIndex HWF3 C 0 83
+	FrameIndex HWF3 D 0 84
+	FrameIndex HWF3 E 0 85
+	FrameIndex HWF3 F 0 86
+	FrameIndex HWF3 G 0 87
+	FrameIndex HWF3 H 0 88
+	FrameIndex HWF3 I 0 89
+	FrameIndex HWF3 J 0 91
+	FrameIndex HWF3 K 0 92
+	FrameIndex HWF3 L 0 93
+	FrameIndex HWF3 M 0 94
+	FrameIndex HWF3 N 0 95
+	FrameIndex HWF3 O 0 96
+	FrameIndex HWF3 P 0 97
+	FrameIndex HWF3 Q 0 98
+	FrameIndex HWF3 R 0 99
+	FrameIndex HWF3 R 0 100
+
+	FrameIndex HWR1 A 0 101
+	FrameIndex HWR1 B 0 102
+	FrameIndex HWR1 C 0 103
+	FrameIndex HWR1 D 0 104
+	FrameIndex HWR1 E 0 105
+	FrameIndex HWR1 F 0 106
+	FrameIndex HWR1 G 0 107
+	FrameIndex HWR1 H 0 108
+	FrameIndex HWR1 I 0 109
+	FrameIndex HWR1 J 0 110
+	FrameIndex HWR1 K 0 111
+	FrameIndex HWR1 L 0 112
+	FrameIndex HWR1 M 0 113
+	FrameIndex HWR1 N 0 114
+	FrameIndex HWR1 O 0 115
+	FrameIndex HWR1 P 0 116
+	FrameIndex HWR1 Q 0 117
+	FrameIndex HWR1 R 0 118
+	FrameIndex HWR1 S 0 119
+	FrameIndex HWR1 T 0 120
+	FrameIndex HWR1 U 0 121
+	FrameIndex HWR1 V 0 122
+	FrameIndex HWR1 W 0 123
+	FrameIndex HWR1 X 0 124
+	FrameIndex HWR1 Y 0 125
+	FrameIndex HWR1 Z 0 126
+	FrameIndex HWR1 [ 0 127
+	FrameIndex HWR1 \ 0 128
+
+	FrameIndex HWU1 A 0 150
+	FrameIndex HWU1 B 0 149
+	FrameIndex HWU1 C 0 148
+	FrameIndex HWU1 D 0 147
+	FrameIndex HWU1 E 0 146
+	FrameIndex HWU1 F 0 145
+	FrameIndex HWU1 G 0 144
+	FrameIndex HWU1 H 0 143
+	FrameIndex HWU1 I 0 142
+	FrameIndex HWU1 J 0 141
+	FrameIndex HWU1 K 0 140
 }
 
 Model ARifle
