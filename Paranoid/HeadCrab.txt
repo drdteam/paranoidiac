@@ -118,8 +118,7 @@ class HLHeadCrab : HLMonster
 		{A_CustomMeleeAttack(random(1,8),"halflife/monsters/headcrab/meleehit");}
 	void A_HeadCrabAttack(float min,float max)
 	{
-		let self=HLHeadCrab(self);
-		self.crabjump=1;
+		crabjump=1;
 		A_SkullAttack();
 		A_ChangeVelocity(z:frandom(min,max));
 	}
