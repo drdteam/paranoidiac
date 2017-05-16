@@ -293,9 +293,9 @@ class HLGrunt1 : HLMonster
 				A_SpawnItemEx("GunSmoke",15,3,49);
 			actor gren=A_SpawnProjectile("HLGruntGunGrenade",38);
 			if(CheckIfCloser(target,500))
-				gren.AddZ(1.25);
+				gren.A_ChangeVelocity(z:1.25);
 			else
-				gren.AddZ(3.5);
+				gren.A_ChangeVelocity(z:3.5);
 		}
 		HLA3 FGHIJKLMNOPQRSTUV 1;
 		Goto See;

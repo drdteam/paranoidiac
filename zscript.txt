@@ -25,7 +25,6 @@ enum ParanoidEnum
 #include "Paranoid/Gargantua.txt"
 #include "Paranoid/Grunts.txt"
 #include "Paranoid/HeadCrab.txt"
-#include "Paranoid/BabyHeadCrab.txt"
 #include "Paranoid/HornetGrunt.txt"
 #include "Paranoid/HoundEye.txt"
 #include "Paranoid/Vortigaunt.txt"
@@ -46,7 +45,6 @@ enum ParanoidEnum
 #include "Paranoid/Gonarch.txt"
 #include "Paranoid/Nihilanth.txt"
 #include "Paranoid/StukaBat.txt"
-#include "Paranoid/BossBat.txt"
 
 #include "Paranoid/freezeritem.txt"
 

@@ -2,7 +2,7 @@
 // Head Crab
 //===========
 
-class HLHeadcrab : HLMonster
+class HLHeadCrab : HLMonster
 {
 	bool crabjump;
 	int drowncounter;
@@ -23,7 +23,7 @@ class HLHeadcrab : HLMonster
 		maxdropoffheight 384;
 		+DONTHARMCLASS;
 		DamageFactor "Gonarch",0;
-		Species "HLHeadcrab";
+		Species "HLHeadCrab";
 	}
 	States
 	{
@@ -61,22 +61,17 @@ class HLHeadcrab : HLMonster
 		HLBW BBBB 1 A_Chase(null,null,HLSMOOTHCHASE);
 		Goto SeeCont;
 	Melee:
-		HLBW A 10 A_CustomMeleeAttack(random(1,8),"halflife/monsters/headcrab/meleehit");
+		HLBW A 10 A_HeadCrabMelee;
 		Goto See;
 	Missile:
 		TNT1 A 0 A_JumpIf(waterlevel>=2,"Drown");
 		HLBI A 4 A_FaceTarget;
 		HLBA A 3 A_PlaySound("halflife/monsters/headcrab/jump");
 		HLBA B 3;
-		HLBA C 1
-		{
-			crabjump=1;
-			A_SkullAttack();
-		}
-		HLBA C 2 AddZ(random(20,35)/4.0);
+		HLBA C 3 A_HeadCrabAttack(5,8.75);
 		HLBA D 3;
 		HLBA E 3 A_CheckFloor(1);
-		wait;
+		Wait;
 		WLBA F 30 A_Stop;
 		WLBA G 30;
 		Goto See;
@@ -88,36 +83,28 @@ class HLHeadcrab : HLMonster
 		}
 		Goto See;
 	Drown:
-		TNT1 A 0 A_JumpIf(drowncounter>=3,"DieDrowned");
-		TNT1 A 0 A_jump(230,1,2,3);
-		HLBP A 0 A_Pain;
-		HLBP AAA 4;
-		HLBP A 8 {drowncounter++;}
-		Loop;
-	DieDrowned:
-		HLBD A 1 A_Die("DrownDMG");
-		Wait;
-	Death.DrownDMG:
-		HLBD A 2 A_Scream;
-		HLBD B 2 A_NoBlocking;
-		HLBD CDEFGHIJ 3;
-		HLBD K -1 A_JumpIf(waterlevel==3,"DrownUp");
-		Stop;
-	DrownUp:
-		TNT1 A 0 A_JumpIf(waterlevel<3,"DrownStay");
-		HLBD K 2 AddZ(.75);
-		Loop;
-	DrownStay:
-		HLBD K 16 A_JumpIf(waterlevel==3,9);
-		Loop;
-		HLBD K 2 AddZ(.5);
-		Loop;
+		HLBP A 12
+		{
+			if(drowncounter>=3)
+				A_Die();
+			else
+			{
+				A_Pain();
+				drowncounter++;
+				A_SetTics(random(3,5)*4);
+			}
+		}
+		Goto See;
 	Death:
 		HLBD A 2 A_Scream;
 		HLBD B 2 A_NoBlocking;
 		HLBD CDEFGHIJ 3;
-		HLBD K -1;
-		Stop;
+		HLBD K 2
+		{
+			if(waterlevel>=3)
+				A_ChangeVelocity(z:.75);
+		}
+		Wait;
 	XDeath:
 		TNT1 A 0
 		{
@@ -126,5 +113,116 @@ class HLHeadcrab : HLMonster
 				A_SpawnItemEx("XenGibsMini",random(5,-5),random(5,-5),random(10,40),random(1,7),random(1,7),random(5,13),random(0,359));
 		}
 		Stop;
+	}
+	action void A_HeadCrabMelee()
+		{A_CustomMeleeAttack(random(1,8),"halflife/monsters/headcrab/meleehit");}
+	action void A_HeadCrabAttack(float min,float max)
+	{
+		let self=HLHeadCrab(self);
+		self.crabjump=1;
+		A_SkullAttack();
+		A_ChangeVelocity(z:frandom(min,max));
+	}
+}
+
+class HLBabyHeadCrab : HLHeadCrab
+{
+	Default
+	{
+		Height 8;
+		-Solid
+		RenderStyle "Translucent";
+		Alpha .9;
+		MaxTargetRange 128;
+		Scale .09;
+		maxdropoffheight 24;
+		Species "HLBabyHeadCrab";
+	}
+	States
+	{
+	Spawn:
+		HLQI A 3 A_Look;
+		Loop;
+	See:
+		TNT1 A 0 A_JumpIf(crabjump,"SeeMelee");
+		HLQW A 1 A_Chase(null,"Missile");
+		HLQW AAAA 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLQW B 1 A_Chase(null,"Missile");
+		HLQW BBBB 1 A_Chase(null,null,HLSMOOTHCHASE);
+	SeeCont:
+		HLQW C 1 A_Chase(null,"Missile");
+		HLQW CCCC 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLQW D 1 A_Chase(null,"Missile");
+		HLQW DDDD 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLQW E 1 A_Chase(null,"Missile");
+		HLQW EEEE 1 A_Chase(null,null,HLSMOOTHCHASE);
+		Loop;
+	SeeMelee:
+		HLQW A 1 A_Chase("Melee",null);
+		HLQW AAAA 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLQW B 1
+		{
+			crabjump=0;
+			A_Chase("Melee",null);
+		}
+		HLQW BBBB 1 A_Chase(null,null,HLSMOOTHCHASE);
+		Goto SeeCont;
+	Melee:
+		HLQW A 10 A_HeadCrabMelee;
+		Goto See;
+	Missile:
+		HLQI A 4 A_FaceTarget;
+		HLQM AB 3;
+		HLQM C 6 A_HeadCrabAttack(2.5,6.25);
+		HLQM C 3 A_CheckFloor(1);
+		Wait;
+		HLQM D 60 A_stop;
+		Goto See;
+	Pain:
+		HLQP A 8 {crabjump=0;}
+		Goto See;
+	Death:
+	XDeath:
+		TNT1 A 0
+		{
+			for(int i=0;i<4;i++)
+				A_SpawnItemEx("XenGibsMini",random(2,-2),random(2,-2),random(0,20),random(1,4),random(1,4),random(2,6),random(0,359));
+		}
+		Stop;
+	}
+}
+
+class HLBabyHeadCrab2 : HLBabyHeadCrab	//for the gonarch
+{
+	Default
+	{
+		Speed 3.333333;
+	}
+	States
+	{
+	See:
+		TNT1 A 0 A_JumpIf(crabjump,"SeeMelee");
+		HLQW A 1 A_Chase(null,"Missile");
+		HLQW AA 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLQW B 1 A_Chase(null,"Missile");
+		HLQW BB 1 A_Chase(null,null,HLSMOOTHCHASE);
+	SeeCont:
+		HLQW C 1 A_Chase(null,"Missile");
+		HLQW CC 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLQW D 1 A_Chase(null,"Missile");
+		HLQW DD 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLQW E 1 A_Chase(null,"Missile");
+		HLQW EE 1 A_Chase(null,null,HLSMOOTHCHASE);
+		Loop;
+	SeeMelee:
+		HLQW A 1 A_Chase("Melee",null);
+		HLQW AA 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLQW B 1
+		{
+			crabjump=0;
+			A_Chase("Melee",null);
+		}
+		HLQW BB 1 A_Chase(null,null,HLSMOOTHCHASE);
+		Goto SeeCont;
 	}
 }
