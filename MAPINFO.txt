@@ -64,6 +64,17 @@ episode map22
 	name="Paranoiac: Obliteration"
 }
 
+defaultmap
+{
+	lightmode=0
+	fogdensity=1
+	evenlighting
+	nolightfade
+	fallingdamage
+	cluster=1
+	sky1=HLSKY1
+}
+
 map TITLEMAP "Welcome"
 {
 	Next=TITLE1
@@ -78,18 +89,6 @@ map TITLE2 "Flight of the Phoenix"
 {
 	sky1=HLSKY3
 	PrecacheSounds="30Title"
-}
-
-defaultmap
-{
-	lightmode=0
-	fogdensity=1
-	fade="00 00 00"
-	evenlighting
-	nolightfade
-	fallingdamage
-	cluster=1
-	sky1=HLSKY1
 }
 
 map map01 "Walk Softly and Carry a Big Stick"
