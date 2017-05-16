@@ -23,7 +23,7 @@ class OMGFire : SwitchableDecoration
 		TNT1 A -1;
 		stop;
 	}
-	action void omgfire()
+	void omgfire()
 	{
 		int area=args[0],shape=args[1],glow=args[2],s,t;
 		float a,r,xval,yval,zval=pos.z;

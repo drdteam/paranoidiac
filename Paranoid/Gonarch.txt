@@ -84,18 +84,15 @@ class HLGonarch : Actor
 		HLNO AABBBB 4 A_FaceTarget;
 		HLNO C 8
 		{
+			string acid="GonarchAcid",acidextra="GonarchAcidExtra";
 			if(random(0,255)<80)
 			{
-				for(int i=0;i<15;i++)
-					A_SpawnItemEx("GonarchAcid2Extra",0,0,80,random(2,-2),random(2,-2),random(1,8));
-				A_SpawnProjectile("GonarchAcid2",80);
+				acid="GonarchAcid2";
+				acidextra="GonarchAcid2Extra";
 			}
-			else
-			{
-				for(int i=0;i<15;i++)
-					A_SpawnItemEx("GonarchAcidExtra",0,0,80,random(2,-2),random(2,-2),random(1,8));
-				A_SpawnProjectile("GonarchAcid",80);
-			}
+			for(int i=0;i<15;i++)
+				A_SpawnItemEx(acidextra,0,0,80,random(2,-2),random(2,-2),random(1,8));
+			A_SpawnProjectile(acid,80);
 		}
 		HLNO D 8;
 		Goto See;
@@ -112,7 +109,7 @@ class HLGonarch : Actor
 		Goto See;
 	Death:
 		HLND A 3 A_Scream;
-		HLND B 3 A_Fall;
+		HLND B 3 A_NoBlocking;
 		HLND CD 4;
 		HLND E 4 A_PlaySound("halflife/monsters/gonarch/step",6);
 		HLND F 4;
@@ -154,19 +151,19 @@ class GonarchAcid : Actor
 	States
 	{
 	Spawn:
-		X022 A 0 NODELAY ThrustThingZ(0,12,0,1);
+		X022 A 0 NODELAY A_ChangeVelocity(z:3);
 		X022 ABCD 4 AcidExtra;
 		Goto Spawn+1;
 	Death:
 		TNT1 A 0 AcidDeath;
 		Stop;
 	}
-	action void AcidExtra(class<actor> acid="GonarchAcidExtra")
+	void AcidExtra(class<actor> acid="GonarchAcidExtra")
 	{
 		for(int i=0;i<2;i++)
 			A_SpawnItemEx(acid,random(5,-5),random(5,-5),random(5,-5));
 	}
-	action void AcidDeath(int exp=128,class<actor> acid="GonarchAcidExtra",int cnt=10)
+	void AcidDeath(int exp=128,class<actor> acid="GonarchAcidExtra",int cnt=10)
 	{
 		A_Explode(exp,exp,0);
 		for(int i=0;i<cnt;i++)
@@ -213,7 +210,7 @@ class GonarchAcid2 : GonarchAcid
 	States
 	{
 	Spawn:
-		TNT1 A 0 NODELAY ThrustThingZ(0,12,0,1);
+		TNT1 A 0 NODELAY A_ChangeVelocity(z:3);
 		X022 ABCD 4 AcidExtra("GonarchAcid2Extra");
 		Goto Spawn+1;
 	Death:

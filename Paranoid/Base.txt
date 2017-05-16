@@ -2,9 +2,9 @@ class HLMonster : Actor
 {
 	Default
 	{
-		MONSTER;
+		Monster;
 	}
-	action void A_XenGibs(int max=16)
+	void A_XenGibs(int max=16)
 	{
 		A_NoBlocking();
 		A_PlaySound("other/gibdeath");

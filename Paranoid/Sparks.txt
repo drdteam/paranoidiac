@@ -66,11 +66,9 @@ class SparkFlare_O1 : Actor
 	states
 	{
 	Spawn:
-		SPKO A 0 NODELAY A_Jump(256,1,2,3,4,5,6);
-		SPKO ABCDEF 0 A_Jump(256,"End");
-	End:
+		SPKO A 0 NODELAY {self.frame=(random(0,5));}
 		SPKO # 1 Bright A_FadeOut;
-		Loop;
+		Wait;
 	}
 }
 
@@ -267,7 +265,7 @@ class BigBlueSpark : SwitchableDecoration
 		TNT1 A 1 A_Spark("Spark_BB10");
 		goto Inactive;
 	}
-	action void A_Spark(string spark)
+	void A_Spark(string spark)
 		{A_SpawnProjectile(spark,0,0,random(0,359),2,Random(-255,255));}
 }
 

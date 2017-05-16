@@ -419,7 +419,7 @@ class BloodGibDropper : Actor
 		}
 		Stop;
 	}
-	action void BloodGib(int gib1,int gib2,int gib3,int gib4)
+	void BloodGib(int gib1,int gib2,int gib3,int gib4)
 	{
 		int i;
 		for(i=0;i<gib1;i++)

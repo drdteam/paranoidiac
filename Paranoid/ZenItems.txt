@@ -62,7 +62,7 @@ class ZenLight : ZenHair
 		POSS ONML 3 Bright;
 		Goto Spawn;
 	}
-	action void ZenLightLook()
+	void ZenLightLook()
 		{A_LookEx(LOF_NOSOUNDCHECK,0,264,264,45,"Shrink");}
 }
 

@@ -114,9 +114,9 @@ class HLHeadCrab : HLMonster
 		}
 		Stop;
 	}
-	action void A_HeadCrabMelee()
+	void A_HeadCrabMelee()
 		{A_CustomMeleeAttack(random(1,8),"halflife/monsters/headcrab/meleehit");}
-	action void A_HeadCrabAttack(float min,float max)
+	void A_HeadCrabAttack(float min,float max)
 	{
 		let self=HLHeadCrab(self);
 		self.crabjump=1;

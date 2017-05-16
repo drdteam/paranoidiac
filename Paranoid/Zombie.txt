@@ -45,10 +45,10 @@ class HLZombie : HLMonster
 		Goto See;
 	Melee:
 		HLEA AB 3 A_FaceTarget;
-		HLEA C 3 ZombieWoosh;
+		HLEA C 3 A_ZombieWoosh;
 		HLEA D 3 A_CustomMeleeAttack(2*random(1,8),"halflife/monsters/zombie/hit");
 		HLEA E 3 A_FaceTarget;
-		HLEA F 3 ZombieWoosh;
+		HLEA F 3 A_ZombieWoosh;
 		HLEA G 3 A_CustomMeleeAttack(2*random(1,8),"halflife/monsters/zombie/hit");
 		HLEA HIJ 3;
 		Goto See;
@@ -65,7 +65,7 @@ class HLZombie : HLMonster
 			A_StopSound(6);
 			A_Scream();
 		}
-		HLED B 3 A_Fall;
+		HLED B 3 A_NoBlocking;
 		HLED CDEFGH 2;
 		HLED H 3 A_PlaySound("halflife/weapons/bodydrop");
 		HLED IJ 3;
@@ -79,7 +79,7 @@ class HLZombie : HLMonster
 		}
 		Stop;
 	}
-	action void ZombieWoosh()
+	void A_ZombieWoosh()
 	{
 		A_PlaySound("halflife/monsters/zombie/attswing");
 		A_FaceTarget();

@@ -297,7 +297,7 @@ class HLScientist1Path : HLMonster
 		TNT1 A 0 A_XenGibs(1);
 		Stop;
 	}
-	action void Chatter(int chance)
+	void Chatter(int chance)
 	{
 		if(random(0,255)<chance)
 			A_PlaySound("halflife/monsters/scientist/idle");
