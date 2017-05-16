@@ -289,8 +289,7 @@ class HLGrunt1 : HLMonster
 		HLA3 E 1 Light("ImShootingAGun")
 		{
 			A_PlaySound("halflife/weapons/grenadelaunch",5);
-			for(int i=0;i<2;i++)
-				A_SpawnItemEx("GunSmoke",15,3,49);
+			A_GruntGunsmoke();
 			actor gren=A_SpawnProjectile("HLGruntGunGrenade",38);
 			if(CheckIfCloser(target,500))
 				gren.A_ChangeVelocity(z:1.25);
@@ -326,8 +325,7 @@ class HLGrunt1 : HLMonster
 		if(shots==1)
 		{
 			A_PlaySound("halflife/weapons/machinegunshot",5);
-			for(int i=0;i<2;i++)
-				A_SpawnItemEx("GunSmallSmoke",15,3,49);
+			A_GruntGunsmoke("GunSmallSmoke");
 		}
 		else
 		{
@@ -335,10 +333,14 @@ class HLGrunt1 : HLMonster
 				A_PlaySound("halflife/weapons/shotgunsingle",5);
 			else if(shots==10)
 				A_PlaySound("halflife/weapons/shotgundouble",5);
-			for(int i=0;i<2;i++)
-				A_SpawnItemEx("GunSmoke",15,4,47);
+			A_GruntGunsmoke();
 		}
 		A_CustomBulletAttack(7,7,shots,4,"NewPuff2");
+	}
+	void A_GruntGunsmoke(class<actor> smoke="GunSmoke")
+	{
+		for(int i=0;i<2;i++)
+			A_SpawnItemEx(smoke,35,3,49);
 	}
 }
 
