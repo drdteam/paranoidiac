@@ -12,12 +12,12 @@ class OMGFire : SwitchableDecoration
 	{
 	Spawn:
 	Active:
-		TNT1 A 0 NODELAY A_CheckSightOrRange(1280,"IdleNoSee");
+		TNT1 A 0 NODELAY A_CheckSightOrRange(2560,"IdleNoSee");
 		TNT1 A 1 omgfire;
 		loop;
 	IdleNoSee:
 		TNT1 A 10;
-		TNT1 A 0 A_CheckSightOrRange(1280,"IdleNoSee");
+		TNT1 A 0 A_CheckSightOrRange(2560,"IdleNoSee");
 		goto Active;
 	Inactive:
 		TNT1 A -1;
