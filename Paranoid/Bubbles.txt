@@ -44,7 +44,7 @@ class OMGBubbles : SwitchableDecoration
 	{
 	Spawn:
 	Active:
-		TNT1 A 0 NODELAY A_CheckSightOrRange(2560,"IdleNoSee");
+		TNT1 A 0 NODELAY A_CheckSightOrRange(1280,"IdleNoSee");
 		TNT1 A 1
 		{
 			float area=args[0]+random(0,8);
@@ -87,7 +87,7 @@ class OMGBubbles : SwitchableDecoration
 		stop;
 	IdleNoSee:
 		TNT1 A 10;
-		TNT1 A 0 A_CheckSightOrRange(2560,"IdleNoSee");
+		TNT1 A 0 A_CheckSightOrRange(1280,"IdleNoSee");
 		goto Active;
 	}
 }
