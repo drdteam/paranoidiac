@@ -25,7 +25,7 @@ class HLTeleportFog : TeleportFog replaces TeleportFog
 	Default
 	{
 		RenderStyle "Add";
-		Alpha 0.6;
+		Alpha .6;
 	}
 	States
 	{
@@ -47,7 +47,7 @@ class HLTeleportFog : TeleportFog replaces TeleportFog
 	}
 }
 
-class debris01 : Actor
+class Debris01 : Actor
 {
 	Default
 	{
@@ -61,210 +61,8 @@ class debris01 : Actor
 	States
 	{
 	Spawn:
-		DEBA A 0;
-		"####" A 2 A_ChangeVelocity(z:frandom(.25,1));
-		"####" A 2 A_FadeOut;
-		Wait;
-	}
-}
-
-class debris02 : debris01
-{
-	States
-	{
-	Spawn:
-		DEBB A 0;
-		Goto Super::Spawn+1;
-	}
-}
-
-class debris03 : debris01
-{
-	States
-	{
-	Spawn:
-		DEBC A 0;
-		Goto Super::Spawn+1;
-	}
-}
-
-class debris04 : debris01
-{
-	States
-	{
-	Spawn:
-		DEBD A 0;
-		Goto Super::Spawn+1;
-	}
-}
-
-class debris05 : debris01
-{
-	States
-	{
-	Spawn:
-		DEBE A 0;
-		Goto Super::Spawn+1;
-	}
-}
-
-class debris06 : debris01
-{
-	States
-	{
-	Spawn:
-		DEBF A 0;
-		Goto Super::Spawn+1;
-	}
-}
-
-class debris07 : debris01
-{
-	States
-	{
-	Spawn:
-		DEBG A 0;
-		Goto Super::Spawn+1;
-	}
-}
-
-class debris08 : debris01
-{
-	States
-	{
-	Spawn:
-		DEBH A 0;
-		Goto Super::Spawn+1;
-	}
-}
-
-class debris09 : debris01
-{
-	States
-	{
-	Spawn:
-		DEBI A 0;
-		Goto Super::Spawn+1;
-	}
-}
-
-class debris10 : debris01
-{
-	States
-	{
-	Spawn:
-		DEBJ A 0;
-		Goto Super::Spawn+1;
-	}
-}
-
-class debris11 : debris01
-{
-	States
-	{
-	Spawn:
-		DEBK A 0;
-		Goto Super::Spawn+1;
-	}
-}
-
-//===============
-// Gun Smoke
-//===============
-
-class GunSmoke : Actor
-{
-	Default
-	{
-		Radius 1;
-		Height 1;
-		PROJECTILE;
-		+NOGRAVITY
-		+FLOORCLIP
-		+NOBLOCKMAP
-		Alpha 0.33;
-		Scale 0.25;
-		Mass 0;
-		RenderStyle "Add";
-		+FORCEXYBILLBOARD
-	}
-	States
-	{
-	Spawn:
-	   TNT1 A 0 NODELAY A_Jump(210,6,8,10,12,14);
-	   WPXS ABCDEFGHIJKLMNOPQRSTUVWXYZ 1 A_FadeOut(0.01);
- 	   WPXZ ABC 1 A_FadeOut(0.01);
-	   Stop;
-	}
-}
-
-class GunSmallSmoke : GunSmoke{Default{Scale 0.16;}}
-
-class GunSmallSmokeSpawner : Actor
-{
-	Default
-	{
-		Radius 1;
-		Height 1;
-		Speed 14;
-		PROJECTILE;
-		+NOTIMEFREEZE
-	}
-	States
-	{
-	Spawn:
-		TNT1 A 1;
-		TNT1 A 5 A_SpawnProjectile("GunSmallSmoke2",-2);
-		Stop;
-	}
-}
-
-class GunSmallSmoke2 : GunSmallSmoke{Default{Alpha .2;}}
-
-class NewPuff1 : Actor replaces BulletPuff
-{
-	Default
-	{
-		Projectile;
-		+NOCLIP
-		Scale .2;
-		RenderStyle "Add";
-	}
-	states
-	{
-	Spawn:
-		TNT1 A 0 NODELAY A_SpawnItemEx("PuffSmoke");
-		TNT1 A 0 A_Jump(128,11);
-		FX57 ABCDEFGHIJ 2 Bright A_FadeOut;
-		Stop;
-		FX57 KLMNOPQRST 2 Bright A_FadeOut;
-		Stop;
-	}
-}
-
-class NewPuff2 : NewPuff1  //does soldier damage type
-{
-	Default
-	{
-		DamageType "SoldierDamage";
-	}
-}
-
-class PuffSmoke : Actor
-{
-	Default
-	{
-		Projectile;
-		+NOCLIP
-		Scale 0.3;
-		RenderStyle "Add";
-		Alpha 0.67;
-	}
-	States
-	{
-	Spawn:
-		WPXS A 2 NODELAY A_ChangeVelocity(z:frandom(.25,1));
-		WPXS CEGIKMOQSUWYZ 2 A_FadeOut;
+		DEBA A 2 {self.frame=random(0,4);}
+		DEBA # 2 A_FadeOut;
 		Wait;
 	}
 }
@@ -273,12 +71,38 @@ class PuffSmoke : Actor
 // Blood & Gibs
 //===============
 
+class NewMeat : Actor
+{
+	Default
+	{
+		radius 6;
+		height 5;
+		+DROPOFF
+		+NOTELEPORT
+		+CORPSE
+		+CANNOTPUSH
+	}
+	States
+	{
+	Spawn:
+		MEAT A 0 NODELAY {self.frame=random(0,19);}
+		MEAT # 2 A_SpawnItemEx("GibBloodTrailMediumSize",random(3,-3),random(3,-3),random(3,-3),zvel:frandom(-.25,-1),flags:SXF_TRANSFERTRANSLATION);
+		Wait;
+	Crash:
+		MEAT # 350;
+		MEAT # 1 A_FadeOut;
+		Wait;
+	}
+	void A_GibTrail()
+		{A_SpawnItemEx("GibBloodTrailMediumSize",random(3,-3),random(3,-3),random(3,-3),zvel:frandom(-.25,-1),SXF_TRANSFERTRANSLATION);}
+}
+
 class NewBlood : Blood replaces Blood
 {
 	Default
 	{
-		Scale 0.15;
-		Gravity 0.44;
+		Scale .15;
+		Gravity .44;
 		+DONTSPLASH
 		+DONTBLAST
 		+CANNOTPUSH
@@ -287,7 +111,7 @@ class NewBlood : Blood replaces Blood
 	{
 	Spawn:
 		BLD1 A 1;
-		TNT1 AAA 0 A_SpawnItemEx("ExtraBlood",random(3,-3),random(3,-3),random(3,-3),1,0,0,random(1,359),SXF_TRANSFERTRANSLATION);
+		TNT1 AAA 0 A_SpawnItemEx("ExtraBlood",random(3,-3),random(3,-3),random(3,-3),1,0,frandom(1.25,3),random(1,359),SXF_TRANSFERTRANSLATION);
 		BLD1 ABCD 6;
 		Stop;
 	}
@@ -302,88 +126,21 @@ class ExtraBlood : NewBlood
 	States
 	{
 	Spawn:
-		BLD1 A 12 NODELAY A_ChangeVelocity(z:random(5,12)/4.0);
+		BLD1 A 12;
 		BLD1 BCD 6;
 		Stop;
 	}
 }
 
-class NewMeat : Actor replaces Meat
-{
-	Default
-	{
-		radius 6;
-		height 5;
-		+DROPOFF
-		+NOTELEPORT
-		+CORPSE
-		+CANNOTPUSH
-	}
-	States
-	{
-	Spawn:
-		TNT1 A 0 NODELAY A_Jump(256,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20);
-		MEAT ABCDEFGHIJKLMNOPQRST 0 A_Jump(256,"m");
-		stop;
-	m:
-		MEAT "##" 2 A_SpawnItemEx("GibBloodTrailMediumSize",random(3,-3),random(3,-3),random(3,-3),flags:SXF_TRANSFERTRANSLATION);
-		MEAT "#" 0 A_CheckFloor(1);
-		Loop;
-		MEAT "#" 350;
-		MEAT "#" 1 A_FadeOut;
-		Wait;
-	}
-}
-
-class GibBloodSmall : NewBlood
+class GibBloodTrailMediumSize : ExtraBlood
 {
 	Default
 	{
 		RenderStyle "Translucent";
-		Scale .05;
 		Gravity .3;
 		+NOINTERACTION
-	}
-	States
-	{
-	Spawn:
-		BLD1 A 12 NODELAY
-		{
-			A_ChangeVelocity(z:frandom(-.25,-.5));
-			A_SpawnItemEx("GibBloodSmall2",random(3,-3),random(3,-3),random(3,-3),zvel:random(-1,-2)/4.0,flags:SXF_TRANSFERTRANSLATION);
-		}
-		BLD1 BCD 6;
-		Stop;
-	}
-}
-
-class GibBloodSmall2 : GibBloodSmall
-{
-	Default
-	{
-		Scale .1;
-	}
-	States
-	{
-	Spawn:
-		BLD1 A 12;
-		Goto Super::Spawn+1;
-	}
-}
-
-class GibBloodTrailMediumSize : GibBloodSmall
-{
-	Default
-	{
 		Scale .12;
 		+RANDOMIZE
-	}
-	States
-	{
-	Spawn:
-		BLD1 A 12 NODELAY A_ChangeVelocity(z:frandom(-.25,-1));
-		BLD1 BCD 6;
-		Stop;
 	}
 }
 
@@ -396,63 +153,60 @@ class BloodGibDropper : Actor
 	States
 	{
 	Spawn:
-		TNT1 A 0 NODELAY A_CheckSight("Simple");
-		TNT1 A 1
+		TNT1 A 1 NODELAY
 		{
-			for(int i=0;i<16;i++)
-				A_SpawnItemEx("NewMeat",0,0,0,random(-7,7),random(-7,7),random(1,14),random(1,359),SXF_TRANSFERTRANSLATION);
-			switch(random(1,4))
+			if(CheckIfSeen())
 			{
-			case 1:BloodGib(2,2,3,1);break;
-			case 1:BloodGib(2,2,2,2);break;
-			case 1:BloodGib(1,2,3,2);break;
-			case 1:BloodGib(2,1,2,3);break;
+				NewMeat(4);
+				BloodGib(1,1,1,1);
+			}
+			else
+			{
+				NewMeat(16);
+				switch(random(1,4))
+				{
+				case 1:BloodGib(2,2,3,1);break;
+				case 1:BloodGib(2,2,2,2);break;
+				case 1:BloodGib(1,2,3,2);break;
+				case 1:BloodGib(2,1,2,3);break;
+				}
 			}
 		}
 		Stop;
-	Simple:
-		TNT1 A 1
-		{
-			for(int i=0;i<4;i++)
-				A_SpawnItemEx("NewMeat",0,0,0,random(-7,7),random(-7,7),random(1,14),random(1,359),SXF_TRANSFERTRANSLATION);
-			BloodGib(1,1,1,1);
-		}
-		Stop;
+	}
+	void NewMeat(int cnt)
+	{
+		for(int i=0;i<cnt;i++)
+			A_SpawnItemEx("NewMeat",0,0,0,random(-7,7),random(-7,7),random(1,14),random(1,359),SXF_TRANSFERTRANSLATION);
 	}
 	void BloodGib(int gib1,int gib2,int gib3,int gib4)
 	{
 		int i;
 		for(i=0;i<gib1;i++)
-			A_SpawnItemEx("BloodGib1",0,0,0,random(-5,5),0,0,random(1,359),SXF_TRANSFERTRANSLATION);
+			SpawnBloodGib("BloodGib1");
 		for(i=0;i<gib2;i++)
-			A_SpawnItemEx("BloodGib2",0,0,0,random(-5,5),0,0,random(1,359),SXF_TRANSFERTRANSLATION);
+			SpawnBloodGib("BloodGib2");
 		for(i=0;i<gib3;i++)
-			A_SpawnItemEx("BloodGib3",0,0,0,random(-5,5),0,0,random(1,359),SXF_TRANSFERTRANSLATION);
+			SpawnBloodGib("BloodGib3");
 		for(i=0;i<gib4;i++)
-			A_SpawnItemEx("BloodGib4",0,0,0,random(-5,5),0,0,random(1,359),SXF_TRANSFERTRANSLATION);
+			SpawnBloodGib("BloodGib4");
 	}
+	private void SpawnBloodGib(class<actor> gib)
+		{A_SpawnItemEx(gib,xvel:random(-5,5),zvel:frandom(.75,5),angle:random(1,359),flags:SXF_TRANSFERTRANSLATION);}
 }
 
 //***************************************
-class BloodGib1 : Actor
+class BloodGib1 : NewMeat
 {
 	Default
 	{
-		scale 0.6;
-		radius 6;
-		height 5;
-		+DROPOFF
-		+NOTELEPORT
-		+CORPSE
-		+CANNOTPUSH
+		scale .6;
 	}
 	states
 	{
 	Spawn:
-		ANYG AAAA 1 NODELAY A_ChangeVelocity(z:random(3,20)/4.0);
-		ANYG BBCCDD 2 A_SpawnItemEx("GibBloodTrailMediumSize",random(3,-3),random(3,-3),random(3,-3),SXF_TRANSFERTRANSLATION);
-		ANYG AABBCCDD 2 A_SpawnItemEx("GibBloodTrailMediumSize",random(3,-3),random(3,-3),random(3,-3),SXF_TRANSFERTRANSLATION);
-		Goto Spawn+10;
+		ANYG AABBCCDD 2 A_GibTrail;
+		Loop;
 	Crash:
 		ANYG E 450 A_NoBlocking;
 		ANYG E 1 A_FadeOut;
@@ -464,16 +218,13 @@ class BloodGib2 : BloodGib1		//eye
 {
 	Default
 	{
-		scale 0.4;
-		speed 7;
+		scale .4;
 	}
 	states
 	{
 	Spawn:
-		ANYG FFFF 1 NODELAY A_ChangeVelocity(z:random(3,20)/4.0);
-		ANYG GGHHII 2 A_SpawnItemEx("GibBloodTrailMediumSize",random(3,-3),random(3,-3),random(3,-3),flags:SXF_TRANSFERTRANSLATION);
-		ANYG FFGGHHII 2 A_SpawnItemEx("GibBloodTrailMediumSize",random(3,-3),random(3,-3),random(3,-3),flags:SXF_TRANSFERTRANSLATION);
-		Goto Spawn+10;
+		ANYG FFGGHHII 2 A_GibTrail;
+		Loop;
 	Crash:
 		ANYG J 560 A_NoBlocking;
 		ANYG J 1 A_FadeOut;
@@ -483,18 +234,11 @@ class BloodGib2 : BloodGib1		//eye
 
 class BloodGib3 : BloodGib1		//liver
 {
-	Default
-	{
-		scale 0.6;
-		speed 7;
-	}
 	states
 	{
 	Spawn:
-		ANYG KKKK 1 NODELAY A_ChangeVelocity(z:random(3,20)/4.0);
-		ANYG LLMMNN 2 A_SpawnItemEx("GibBloodTrailMediumSize",random(3,-3),random(3,-3),random(3,-3),flags:SXF_TRANSFERTRANSLATION);
-		ANYG KKLLMMNN 2 A_SpawnItemEx("GibBloodTrailMediumSize",random(3,-3),random(3,-3),random(3,-3),flags:SXF_TRANSFERTRANSLATION);
-		Goto Spawn+10;
+		ANYG KKLLMMNN 2 A_GibTrail;
+		Loop;
 	Crash:
 		ANYG O 400 A_NoBlocking;
 		ANYG O 1 A_FadeOut;
@@ -504,18 +248,11 @@ class BloodGib3 : BloodGib1		//liver
 
 class BloodGib4 : BloodGib1		//bloodthing
 {
-	Default
-	{
-		scale 0.6;
-		speed 7;
-	}
 	states
 	{
 	Spawn:
-		ANYG PPPP 1 NODELAY A_ChangeVelocity(z:random(3,20)/4.0);
-		ANYG QQRRSS 2 A_SpawnItemEx("GibBloodTrailMediumSize",random(3,-3),random(3,-3),random(3,-3),flags:SXF_TRANSFERTRANSLATION);
-		ANYG PPQQRRSS 2 A_SpawnItemEx("GibBloodTrailMediumSize",random(3,-3),random(3,-3),random(3,-3),flags:SXF_TRANSFERTRANSLATION);
-		Goto Spawn+10;
+		ANYG PPQQRRSS 2 A_GibTrail;
+		Loop;
 	Crash:
 		ANYG T 500 A_NoBlocking;
 		ANYG T 1 A_FadeOut;
@@ -539,35 +276,28 @@ class XenGibsRed : Actor
 	states
 	{
 	Spawn:
-		RGIB A 0;
-		"####" A 0 A_Jump(256,1,2,3,4,5,6,7,8);
-		"####" ABCDEFGH 2 A_Jump(256,"Gib");
-	Gib:
-		RGIB "#" 2 A_CheckFloor("Crash");
-		Loop;
+		RGIB A -1 NODELAY {self.frame=random(0,7);}
+		Stop;
 	Crash:
-		"####" "#" 300;
-		"####" "#" 2 A_FadeOut;
+		"####" # 300;
+		"####" # 2 A_FadeOut;
 		Wait;
-     }
+	}
 }
+
 class XenGibs : XenGibsRed
 {
 	Default
 	{
 		Mass 100;
 		Translation "176:191=[222,254,114]:[43,55,0]";
-		//Translation "176:191=224:231";
 	}
 	states
 	{
 	Spawn:
-		GGIB A 0;
-		Goto Super::Spawn;
-	Gib:
+		GGIB A 0 NODELAY {self.frame=random(0,7);}
 		GGIB "#" 2 A_SpawnItemEx("XenBlood",random(3,-3),random(3,-3),random(3,-3),flags:SXF_TRANSFERTRANSLATION);
-		GGIB "#" 0 A_CheckFloor("Crash");
-		Loop;
+		Wait;
 	}
 }
 
@@ -575,8 +305,8 @@ class XenBlood : Blood
 {
 	Default
 	{
-		Scale 0.15;
-		Gravity 0.44;
+		Scale .15;
+		Gravity .44;
 		+DONTSPLASH
 		+DONTBLAST
 		+CANNOTPUSH
@@ -584,8 +314,7 @@ class XenBlood : Blood
 	States
 	{
 	Spawn:
-		BLD1 A 1;
-		BLD1 A 6 A_SpawnItemEx("ExtraBlood",random(3,-3),random(3,-3),random(3,-3),1,0,0,random(1,359),SXF_TRANSFERTRANSLATION);
+		BLD1 A 6 NODELAY A_SpawnItemEx("ExtraBlood",random(3,-3),random(3,-3),random(3,-3),1,0,0,random(1,359),SXF_TRANSFERTRANSLATION);
 		BLD1 BCD 6;
 		Stop;
 	}
@@ -595,26 +324,22 @@ class XenGibsMini : XenGibs
 {
 	Default
 	{
-		Scale 0.09;
+		Scale .09;
 	}
-	states
+	States
 	{
-	Gib:
+	Spawn:
+		GGIB A 0 NODELAY {self.frame=random(0,7);}
 		GGIB "#" 2 A_SpawnItemEx("XenBloodMini",random(3,-3),random(3,-3),random(3,-3),flags:SXF_TRANSFERTRANSLATION);
-		GGIB "#" 0 A_CheckFloor("Crash");
-		Loop;
+		Wait;
 	}
 }
 
-class XenBloodMini : Blood
+class XenBloodMini : XenBlood
 {
 	Default
 	{
-		Scale 0.06;
-		Gravity 0.44;
-		+DONTSPLASH
-		+DONTBLAST
-		+CANNOTPUSH
+		Scale .06;
 	}
 	States
 	{

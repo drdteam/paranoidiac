@@ -86,6 +86,109 @@ class LighCheapHack : Actor
 	}
 }
 
+//===============
+// Gun Smoke
+//===============
+
+class GunSmoke : Actor
+{
+	Default
+	{
+		Radius 1;
+		Height 1;
+		PROJECTILE;
+		+NOGRAVITY
+		+FLOORCLIP
+		+NOBLOCKMAP
+		Alpha .33;
+		Scale .25;
+		Mass 0;
+		RenderStyle "Add";
+		+FORCEXYBILLBOARD
+	}
+	States
+	{
+	Spawn:
+	   TNT1 A 0 NODELAY A_Jump(210,6,8,10,12,14);
+	   WPXS ABCDEFGHIJKLMNOPQRSTUVWXYZ 1 A_FadeOut(.01);
+ 	   WPXZ ABC 1 A_FadeOut(.01);
+	   Stop;
+	}
+}
+
+class GunSmallSmoke : GunSmoke{Default{Scale .16;}}
+
+class GunSmallSmokeSpawner : Actor
+{
+	Default
+	{
+		Radius 1;
+		Height 1;
+		Speed 14;
+		PROJECTILE;
+		+NOTIMEFREEZE
+	}
+	States
+	{
+	Spawn:
+		TNT1 A 1;
+		TNT1 A 5 A_SpawnProjectile("GunSmallSmoke2",-2);
+		Stop;
+	}
+}
+
+class GunSmallSmoke2 : GunSmallSmoke{Default{Alpha .2;}}
+
+class NewPuff1 : Actor replaces BulletPuff
+{
+	Default
+	{
+		+NOBLOCKMAP
+		+NOGRAVITY
+		+NOCLIP
+		Scale .2;
+		RenderStyle "Add";
+	}
+	states
+	{
+	Spawn:
+		TNT1 A 0 NODELAY
+		{
+			A_SpawnItemEx("PuffSmoke",zvel:frandom(.25,1));
+			if(random(0,1))
+				scale.x=-scale.x;
+		}
+		FX57 ABCDEFGHIJ 2 Bright A_FadeOut;
+		Stop;
+	}
+}
+
+class NewPuff2 : NewPuff1  //does soldier damage type
+{
+	Default
+	{
+		DamageType "SoldierDamage";
+	}
+}
+
+class PuffSmoke : Actor
+{
+	Default
+	{
+		Projectile;
+		+NOCLIP
+		Scale .3;
+		RenderStyle "Add";
+		Alpha .67;
+	}
+	States
+	{
+	Spawn:
+		WPXS ACEGIKMOQSUWYZ 2 A_FadeOut;
+		Wait;
+	}
+}
+
 //================
 // Weapons & Ammo
 //================
@@ -219,16 +322,12 @@ class Crowbar : ParanoidWeapon
 	}
 }
 
-class CrowbarPuff2 : Actor
+class CrowbarPuff2 : NewPuff1
 {
 	Default
 	{
 		+NOEXTREMEDEATH
-		+NOBLOCKMAP
-		+NOGRAVITY
 		+PUFFONACTORS
-		Scale .2;
-		RenderStyle "Add";
 		ActiveSound "halflife/weapons/CrowbarMiss";
 	}
 	states
@@ -237,15 +336,8 @@ class CrowbarPuff2 : Actor
 		TNT1 A 4 NODELAY A_PlaySound("halflife/weapons/Crowbarhitbody",CHAN_WEAPON);
 		Stop;
 	Crash:
-		TNT1 A 0
-		{
-			A_PlaySound("halflife/weapons/Crowbarhit",CHAN_WEAPON);
-			A_SpawnItemEx("PuffSmoke");
-			if(random(0,1))
-				scale.x=-scale.x;
-		}
-		FX57 ABCDEFGHIJ 2 Bright A_FadeOut;
-		Stop;
+		TNT1 A 0 A_PlaySound("halflife/weapons/Crowbarhit",CHAN_WEAPON);
+		Goto Super::Spawn;
 	}
 }
 
@@ -817,7 +909,7 @@ class ARifle : ParanoidWeapon
 				A_FireProjectile("GunSmallSmokeSpawner",0,0,6,6);
 			A_PlaySound("halflife/weapons/grenadelaunch",CHAN_WEAPON);
 			actor gren=A_FireProjectile("M16Grenade",0,0,5,0,FPF_NOAUTOAIM);
-			gren.A_ChangeVelocity(z:2);
+			gren.vel.z+=2;
 			A_AlertMonsters();
 			WeaponRecoil(400);
 			A_SpawnItemEx("LighCheapHack");
@@ -1051,9 +1143,9 @@ class HLRocket : Actor
 	Spawn:
 		POSS A 1 Bright
 		{
-			A_SpawnItemEx("RPGTrail2",random(3,-3),random(3,-3),random(3,-3));
+			A_SpawnItemEx("RPGTrail2",random(3,-3),random(3,-3),random(3,-3),zvel:frandom(.25,1.25));
 			for(int i=0;i<2;i++)
-				A_SpawnItemEx("RPGTrail1",random(3,-3),random(3,-3),random(3,-3));
+				A_SpawnItemEx("RPGTrail1",random(3,-3),random(3,-3),random(3,-3),zvel:frandom(.25,1.25));
 		}
 		Loop;
 	Death:
@@ -1081,8 +1173,7 @@ class RPGTrail1 : Actor
 	{
 	Spawn:
 		TNT1 A 2;
-	 	SPIR K 3 A_ChangeVelocity(z:frandom(.25,1.25));
-		SPIR LMNO 3;
+	 	SPIR KLMNO 3;
 		Stop;
 	}
 }
@@ -1097,8 +1188,7 @@ class RPGTrail2 : RPGTrail1
 	{
 	Spawn:
 		TNT1 A 2;
-	 	PUF2 A 1 A_ChangeVelocity(z:frandom(.25,1.25));
-		PUF2 CEGIKMOQSUWY 1;
+		PUF2 ACEGIKMOQSUWY 1;
 		PUF3 AC 1;
 		Stop;
 	}
@@ -1529,11 +1619,8 @@ class GluonPrimaryBurst : Actor
 	States
 	{
 	Spawn:
-		TNT1 A 0 NODELAY
-		{
-			A_SpawnItemEx("GluonSpiral",0,0,8,vel.x,vel.y,vel.z,0,SXF_ABSOLUTEMOMENTUM|SXF_TRANSFERPOINTERS);
-			A_SpawnItemEx("GluonFakeBurstDelay",flags:SXF_TRANSFERPOINTERS);
-		}
+		TNT1 A 0 NODELAY A_SpawnItemEx("GluonFakeBurstDelay",flags:SXF_TRANSFERPOINTERS);
+		TNT1 A 0 A_SpawnItemEx("GluonSpiral",0,0,8,vel.x,vel.y,vel.z,0,SXF_ABSOLUTEMOMENTUM|SXF_TRANSFERPOINTERS);
 	Movement:
 		LPUF A 0 A_JumpIf(user_life[0]>=25000,"Death");
 		//This must be done multiple times, or else it will jump beyond walls. This could
@@ -1548,10 +1635,12 @@ class GluonPrimaryBurst : Actor
 		Goto MoveOut;
 		LPUF A 0 A_Warp(AAPTR_DEFAULT,vel.x,vel.y,vel.z,0,WARPF_ABSOLUTEOFFSET,1);
 		Goto MoveOut;
-		LPUF A 0 A_JumpIf(user_life[0]>=400,3);
-		LPUF A 0 A_CheckSight(2);
-		LPUF A 0 A_SpawnItemEx("GluonTrailV2",vel.x+frandom(-1.0,1.0),0,vel.z+frandom(-1.0,1.0),flags:SXF_ABSOLUTEMOMENTUM);
-		LPUF A 0 {user_life[0]++;}
+		LPUF A 0
+		{
+			if(user_life[0]<400&&!CheckIfSeen())
+				A_SpawnItemEx("GluonTrailV2",vel.x+frandom(-1.0,1.0),0,vel.z+frandom(-1.0,1.0),flags:SXF_ABSOLUTEMOMENTUM);
+			user_life[0]++;
+		}
 		Loop;
 	MoveOut:
 		TNT1 A 5;
@@ -1579,24 +1668,7 @@ class GluonFakeBurst : GluonPrimaryBurst//: FastProjectile
 	States
 	{
 	Spawn:
-		TNT1 A 0 NODELAY A_SpawnItemEx("GluonSpiral",0,0,8,vel.x,vel.y,vel.z,0,SXF_ABSOLUTEMOMENTUM|SXF_TRANSFERPOINTERS);
-	Movement:
-		LPUF A 0 A_JumpIf(user_life[0]>=20000,"Death");
-		LPUF A 0 A_Warp(AAPTR_DEFAULT,vel.x,vel.y,vel.z,0,WARPF_ABSOLUTEOFFSET,1);
-		Goto MoveOut;
-		LPUF A 0 A_Warp(AAPTR_DEFAULT,vel.x,vel.y,vel.z,0,WARPF_ABSOLUTEOFFSET,1);
-		Goto MoveOut;
-		LPUF A 0 A_Warp(AAPTR_DEFAULT,vel.x,vel.y,vel.z,0,WARPF_ABSOLUTEOFFSET,1);
-		Goto MoveOut;
-		LPUF A 0 A_Warp(AAPTR_DEFAULT,vel.x,vel.y,vel.z,0,WARPF_ABSOLUTEOFFSET,1);
-		Goto MoveOut;
-		LPUF A 0 A_Warp(AAPTR_DEFAULT,vel.x,vel.y,vel.z,0,WARPF_ABSOLUTEOFFSET,1);
-		Goto MoveOut;
-		LPUF A 0 A_JumpIf(user_life[0]>=4000,3);
-		LPUF A 0 A_CheckSight(2);
-		LPUF A 0 A_SpawnItemEx("GluonTrailV2",vel.x+frandom(-1.0,1.0),0,vel.z+frandom(-1.0,1.0),flags:SXF_ABSOLUTEMOMENTUM);
-		LPUF A 0 {user_life[0]++;}
-		Loop;
+		Goto Super::Spawn+1;
 	MoveOut:
 	Death:
 		TNT1 A 1;
