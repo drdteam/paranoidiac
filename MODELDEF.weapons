@@ -485,3 +485,119 @@ Model ARifle
 	FrameIndex HWU1 I 0 235
 	FrameIndex HWU1 J 0 234
 }
+
+Model RPGLauncher
+{
+	Path "Models"
+	Model 0 "v_rpg.md2"
+	Skin 0 "v_rpg.png"
+	Scale -1 1 1
+
+	Offset 1 0 -2
+
+	FrameIndex HWI1 A 0 1
+	FrameIndex HWI1 B 0 333
+
+	FrameIndex HWF1 A 0 243
+	FrameIndex HWF1 B 0 244
+	FrameIndex HWF1 C 0 245
+	FrameIndex HWF1 D 0 246
+	FrameIndex HWF1 E 0 247
+	FrameIndex HWF1 F 0 248
+	FrameIndex HWF1 G 0 249
+	FrameIndex HWF1 H 0 250
+	FrameIndex HWF1 I 0 251
+	FrameIndex HWF1 J 0 252
+	FrameIndex HWF1 K 0 253
+	FrameIndex HWF1 L 0 254
+	FrameIndex HWF1 M 0 255
+	FrameIndex HWF1 N 0 256
+
+	FrameIndex HWR1 A 0 183
+	FrameIndex HWR1 B 0 184
+	FrameIndex HWR1 C 0 185
+	FrameIndex HWR1 D 0 186
+	FrameIndex HWR1 E 0 187
+	FrameIndex HWR1 F 0 188
+	FrameIndex HWR1 G 0 189
+	FrameIndex HWR1 H 0 190
+	FrameIndex HWR1 I 0 191
+	FrameIndex HWR1 J 0 192
+	FrameIndex HWR1 K 0 193
+	FrameIndex HWR1 L 0 194
+	FrameIndex HWR1 M 0 195
+	FrameIndex HWR1 N 0 196
+	FrameIndex HWR1 O 0 197
+	FrameIndex HWR1 P 0 198
+	FrameIndex HWR1 Q 0 199
+	FrameIndex HWR1 R 0 200
+	FrameIndex HWR1 S 0 201
+	FrameIndex HWR1 T 0 202
+	FrameIndex HWR1 U 0 203
+	FrameIndex HWR1 V 0 204
+	FrameIndex HWR1 W 0 205
+	FrameIndex HWR1 X 0 206
+	FrameIndex HWR1 Y 0 207
+	FrameIndex HWR1 Z 0 208
+	FrameIndex HWR1 [ 0 209
+	FrameIndex HWR1 \ 0 210
+	FrameIndex HWR1 ] 0 211
+	FrameIndex HWR2 A 0 212
+	FrameIndex HWR2 B 0 213
+	FrameIndex HWR2 C 0 214
+	FrameIndex HWR2 D 0 215
+	FrameIndex HWR2 E 0 216
+	FrameIndex HWR2 F 0 217
+	FrameIndex HWR2 G 0 218
+	FrameIndex HWR2 H 0 219
+	FrameIndex HWR2 I 0 220
+	FrameIndex HWR2 J 0 221
+	FrameIndex HWR2 K 0 222
+	FrameIndex HWR2 L 0 223
+	FrameIndex HWR2 M 0 224
+	FrameIndex HWR2 N 0 225
+	FrameIndex HWR2 O 0 226
+	FrameIndex HWR2 P 0 227
+	FrameIndex HWR2 Q 0 228
+	FrameIndex HWR2 R 0 229
+	FrameIndex HWR2 S 0 230
+	FrameIndex HWR2 T 0 231
+	FrameIndex HWR2 U 0 232
+	FrameIndex HWR2 V 0 233
+	FrameIndex HWR2 W 0 234
+	FrameIndex HWR2 X 0 235
+	FrameIndex HWR2 Y 0 236
+	FrameIndex HWR2 Z 0 237
+	FrameIndex HWR2 [ 0 238
+	FrameIndex HWR2 \ 0 239
+	FrameIndex HWR2 ] 0 240
+
+	FrameIndex HWU1 A 0 269
+	FrameIndex HWU1 B 0 270
+	FrameIndex HWU1 C 0 271
+	FrameIndex HWU1 D 0 272
+	FrameIndex HWU1 E 0 273
+	FrameIndex HWU1 F 0 274
+	FrameIndex HWU1 G 0 275
+	FrameIndex HWU1 H 0 276
+	FrameIndex HWU1 I 0 277
+	FrameIndex HWU1 J 0 278
+	FrameIndex HWU1 K 0 279
+	FrameIndex HWU1 L 0 280
+	FrameIndex HWU1 M 0 281
+	FrameIndex HWU1 N 0 282
+	FrameIndex HWU1 O 0 301
+	FrameIndex HWU1 P 0 302
+	FrameIndex HWU1 Q 0 303
+	FrameIndex HWU1 R 0 304
+	FrameIndex HWU1 S 0 305
+	FrameIndex HWU1 T 0 306
+	FrameIndex HWU1 U 0 307
+	FrameIndex HWU1 V 0 308
+	FrameIndex HWU1 W 0 309
+	FrameIndex HWU1 X 0 310
+	FrameIndex HWU1 Y 0 311
+	FrameIndex HWU1 Z 0 312
+	FrameIndex HWU1 [ 0 313
+	FrameIndex HWU1 \ 0 314
+}
