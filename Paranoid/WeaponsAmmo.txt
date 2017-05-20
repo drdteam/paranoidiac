@@ -1202,8 +1202,8 @@ class RPGTrail2 : RPGTrail1
 	{
 	Spawn:
 		TNT1 A 2;
-		PUF2 ACEGIKMOQSUWY 1;
-		PUF3 AC 1;
+		WPXS ACEGIKMOQSUWY 1;
+		WPXZ AC 1;
 		Stop;
 	}
 }
