@@ -3,22 +3,24 @@ class HLScientistWandererSpawner : RandomSpawner
 	Default
 	{
 		+FRIENDLY
-		DropItem "HLScientist1Wander";
-		DropItem "HLScientist2Wander";
-		DropItem "HLScientist3Wander";
-		DropItem "HLScientist4Wander";
+		DropItem "HLScientist1Path";
+		DropItem "HLScientist2Path";
+		DropItem "HLScientist3Path";
+		DropItem "HLScientist4Path";
+	}
+	override void PostSpawn(Actor spawned)
+	{
+		let me=HLScientist1Path(spawned);
+		me.wanderer=1;
 	}
 }
 
-class HLScientistImmovilSpawner : RandomSpawner
+class HLScientistImmovilSpawner : HLScientistWandererSpawner
 {
-	Default
+	override void PostSpawn(Actor spawned)
 	{
-		+FRIENDLY
-		DropItem "HLScientist1Still";
-		DropItem "HLScientist2Still";
-		DropItem "HLScientist3Still";
-		DropItem "HLScientist4Still";
+		let me=HLScientist1Path(spawned);
+		me.still=1;
 	}
 }
 
@@ -54,15 +56,6 @@ class HLScientist1Path : HLMonster
 		HLScientist1Path.Limits 35,30;
 		HLScientist1Path.Sprites "HLRIA0","HLRWA0","HLRRA0","HLRPA0","HLRDA0";
 		Species "HLScientist";
-	}
-	States
-	{
-	Dud:
-		HLRI A 0;HLRW A 0;HLRR A 0;HLRP A 0;HLRD A 0;
-		SC1I A 0;SC1W A 0;SC1R A 0;SC1P A 0;SC1D A 0;
-		SC2I A 0;SC2W A 0;SC2R A 0;SC2P A 0;SC2D A 0;
-		SC3I A 0;SC3W A 0;SC3R A 0;SC3P A 0;SC3D A 0;
-		Stop;
 	}
 	States
 	{
@@ -296,6 +289,12 @@ class HLScientist1Path : HLMonster
 	XDeath:
 		TNT1 A 0 A_XenGibs(1);
 		Stop;
+	Dud:
+		HLRI A 0;HLRW A 0;HLRR A 0;HLRP A 0;HLRD A 0;
+		SC1I A 0;SC1W A 0;SC1R A 0;SC1P A 0;SC1D A 0;
+		SC2I A 0;SC2W A 0;SC2R A 0;SC2P A 0;SC2D A 0;
+		SC3I A 0;SC3W A 0;SC3R A 0;SC3P A 0;SC3D A 0;
+		Stop;
 	}
 	void Chatter(int chance)
 	{
@@ -331,54 +330,6 @@ class HLScientist4Path : HLScientist1Path
 		HLScientist1Path.Limits 65,65;
 		HLScientist1Path.Sprites "SC3IA0","SC3WA0","SC3RA0","SC3PA0","SC3DA0";
 	}
-}
-
-//**************************************************************************
-//**************************************************************************
-
-class HLScientist1Wander : HLScientist1Path
-{
-	override void postbeginplay()
-		{wanderer=1;}
-}
-class HLScientist2Wander : HLScientist2Path
-{
-	override void postbeginplay()
-		{wanderer=1;}
-}
-class HLScientist3Wander : HLScientist3Path
-{
-	override void postbeginplay()
-		{wanderer=1;}
-}
-class HLScientist4Wander : HLScientist4Path
-{
-	override void postbeginplay()
-		{wanderer=1;}
-}
-
-//**************************************************************************
-//**************************************************************************
-
-class HLScientist1Still : HLScientist1Path
-{
-	override void postbeginplay()
-		{still=1;}
-}
-class HLScientist2Still : HLScientist2Path
-{
-	override void postbeginplay()
-		{still=1;}
-}
-class HLScientist3Still : HLScientist3Path
-{
-	override void postbeginplay()
-		{still=1;}
-}
-class HLScientist4Still : HLScientist4Path
-{
-	override void postbeginplay()
-		{still=1;}
 }
 
 //////////////////////////////////////////////////////////

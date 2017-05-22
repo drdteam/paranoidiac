@@ -348,19 +348,11 @@ DoomEdNums
 {
 	3210=MusicSwitcher07
 	4041=HLScientist1Path
-	4042=HLScientist1Wander
 	4044=HLScientist2Path
-	4045=HLScientist2Wander
 	4047=HLScientist3Path
-	4048=HLScientist3Wander
 	4050=HLScientist4Path
-	4051=HLScientist4Wander
 	4053=HLScientistWandererSpawner
 	4054=HLScientistImmovilSpawner
-	4055=HLScientist1Still
-	4056=HLScientist2Still
-	4057=HLScientist3Still
-	4058=HLScientist4Still
 	7401=HLHoundEye
 	7402=HLHeadcrab
 	7403=HLController
