@@ -3348,3 +3348,448 @@ Model HLRocket
 
 	FrameIndex POSS A 0 0
 }
+
+Model HLScientist1Path
+{
+	Path "Models"
+	Model 0 "scientist1.md2"
+	Skin 0 "scientist1.png"
+	Scale 1 1 1
+	INTERPOLATEDOUBLEDFRAMES
+
+	FrameIndex HLI1 A 0 46
+	FrameIndex HLI1 B 0 166
+	FrameIndex HLI1 C 0 225
+
+	FrameIndex HLW1 A 0 1
+	FrameIndex HLW1 B 0 2
+	FrameIndex HLW1 C 0 3
+	FrameIndex HLW1 D 0 4
+	FrameIndex HLW1 E 0 5
+	FrameIndex HLW1 F 0 6
+	FrameIndex HLW1 G 0 7
+	FrameIndex HLW1 H 0 8
+	FrameIndex HLW1 I 0 9
+	FrameIndex HLW1 J 0 10
+	FrameIndex HLW1 K 0 11
+	FrameIndex HLW1 L 0 12
+	FrameIndex HLW1 M 0 13
+	FrameIndex HLW1 N 0 14
+	FrameIndex HLW1 O 0 15
+	FrameIndex HLW1 P 0 16
+
+	FrameIndex HLR1 A 0 17
+	FrameIndex HLR1 B 0 18
+	FrameIndex HLR1 C 0 19
+	FrameIndex HLR1 D 0 20
+	FrameIndex HLR1 E 0 21
+	FrameIndex HLR1 F 0 22
+	FrameIndex HLR1 G 0 23
+	FrameIndex HLR1 H 0 24
+	FrameIndex HLR1 I 0 25
+	FrameIndex HLR1 J 0 26
+	FrameIndex HLR1 K 0 27
+	FrameIndex HLR1 L 0 28
+	FrameIndex HLR1 M 0 29
+	FrameIndex HLR1 N 0 30
+	FrameIndex HLR1 O 0 31
+	FrameIndex HLR1 P 0 32
+	FrameIndex HLR1 Q 0 33
+	FrameIndex HLR1 R 0 34
+	FrameIndex HLR1 S 0 35
+
+	FrameIndex HLP1 A 0 36
+	FrameIndex HLP1 B 0 37
+	FrameIndex HLP1 C 0 38
+	FrameIndex HLP1 D 0 39
+	FrameIndex HLP1 E 0 40
+	FrameIndex HLP1 F 0 41
+	FrameIndex HLP1 G 0 42
+	FrameIndex HLP1 H 0 43
+
+	FrameIndex HLD1 A 0 138
+	FrameIndex HLD1 B 0 139
+	FrameIndex HLD1 C 0 140
+	FrameIndex HLD1 D 0 141
+	FrameIndex HLD1 E 0 142
+	FrameIndex HLD1 F 0 143
+	FrameIndex HLD1 G 0 144
+	FrameIndex HLD1 H 0 145
+	FrameIndex HLD1 I 0 146
+	FrameIndex HLD1 J 0 147
+	FrameIndex HLD1 K 0 148
+	FrameIndex HLD1 L 0 149
+	FrameIndex HLD1 M 0 150
+	FrameIndex HLD1 N 0 151
+	FrameIndex HLD1 O 0 152
+	FrameIndex HLD1 P 0 153
+	FrameIndex HLD1 Q 0 154
+	FrameIndex HLD1 R 0 155
+	FrameIndex HLD1 S 0 156
+	FrameIndex HLD1 T 0 157
+	FrameIndex HLD1 U 0 158
+	FrameIndex HLD1 V 0 159
+}
+
+Model HLScientist2Path
+{
+	Path "Models"
+	Model 0 "scientist2.md2"
+	Skin 0 "scientist2.png"
+	Scale 1 1 1
+	INTERPOLATEDOUBLEDFRAMES
+
+	FrameIndex HLI1 A 0 46
+	FrameIndex HLI1 B 0 166
+	FrameIndex HLI1 C 0 225
+
+	FrameIndex HLW1 A 0 1
+	FrameIndex HLW1 B 0 2
+	FrameIndex HLW1 C 0 3
+	FrameIndex HLW1 D 0 4
+	FrameIndex HLW1 E 0 5
+	FrameIndex HLW1 F 0 6
+	FrameIndex HLW1 G 0 7
+	FrameIndex HLW1 H 0 8
+	FrameIndex HLW1 I 0 9
+	FrameIndex HLW1 J 0 10
+	FrameIndex HLW1 K 0 11
+	FrameIndex HLW1 L 0 12
+	FrameIndex HLW1 M 0 13
+	FrameIndex HLW1 N 0 14
+	FrameIndex HLW1 O 0 15
+	FrameIndex HLW1 P 0 16
+
+	FrameIndex HLR1 A 0 17
+	FrameIndex HLR1 B 0 18
+	FrameIndex HLR1 C 0 19
+	FrameIndex HLR1 D 0 20
+	FrameIndex HLR1 E 0 21
+	FrameIndex HLR1 F 0 22
+	FrameIndex HLR1 G 0 23
+	FrameIndex HLR1 H 0 24
+	FrameIndex HLR1 I 0 25
+	FrameIndex HLR1 J 0 26
+	FrameIndex HLR1 K 0 27
+	FrameIndex HLR1 L 0 28
+	FrameIndex HLR1 M 0 29
+	FrameIndex HLR1 N 0 30
+	FrameIndex HLR1 O 0 31
+	FrameIndex HLR1 P 0 32
+	FrameIndex HLR1 Q 0 33
+	FrameIndex HLR1 R 0 34
+	FrameIndex HLR1 S 0 35
+
+	FrameIndex HLP1 A 0 36
+	FrameIndex HLP1 B 0 37
+	FrameIndex HLP1 C 0 38
+	FrameIndex HLP1 D 0 39
+	FrameIndex HLP1 E 0 40
+	FrameIndex HLP1 F 0 41
+	FrameIndex HLP1 G 0 42
+	FrameIndex HLP1 H 0 43
+
+	FrameIndex HLD1 A 0 138
+	FrameIndex HLD1 B 0 139
+	FrameIndex HLD1 C 0 140
+	FrameIndex HLD1 D 0 141
+	FrameIndex HLD1 E 0 142
+	FrameIndex HLD1 F 0 143
+	FrameIndex HLD1 G 0 144
+	FrameIndex HLD1 H 0 145
+	FrameIndex HLD1 I 0 146
+	FrameIndex HLD1 J 0 147
+	FrameIndex HLD1 K 0 148
+	FrameIndex HLD1 L 0 149
+	FrameIndex HLD1 M 0 150
+	FrameIndex HLD1 N 0 151
+	FrameIndex HLD1 O 0 152
+	FrameIndex HLD1 P 0 153
+	FrameIndex HLD1 Q 0 154
+	FrameIndex HLD1 R 0 155
+	FrameIndex HLD1 S 0 156
+	FrameIndex HLD1 T 0 157
+	FrameIndex HLD1 U 0 158
+	FrameIndex HLD1 V 0 159
+}
+Model HLScientist3Path
+{
+	Path "Models"
+	Model 0 "scientist3.md2"
+	Skin 0 "scientist3.png"
+	Scale 1 1 1
+	INTERPOLATEDOUBLEDFRAMES
+
+	FrameIndex HLI1 A 0 46
+	FrameIndex HLI1 B 0 166
+	FrameIndex HLI1 C 0 225
+
+	FrameIndex HLW1 A 0 1
+	FrameIndex HLW1 B 0 2
+	FrameIndex HLW1 C 0 3
+	FrameIndex HLW1 D 0 4
+	FrameIndex HLW1 E 0 5
+	FrameIndex HLW1 F 0 6
+	FrameIndex HLW1 G 0 7
+	FrameIndex HLW1 H 0 8
+	FrameIndex HLW1 I 0 9
+	FrameIndex HLW1 J 0 10
+	FrameIndex HLW1 K 0 11
+	FrameIndex HLW1 L 0 12
+	FrameIndex HLW1 M 0 13
+	FrameIndex HLW1 N 0 14
+	FrameIndex HLW1 O 0 15
+	FrameIndex HLW1 P 0 16
+
+	FrameIndex HLR1 A 0 17
+	FrameIndex HLR1 B 0 18
+	FrameIndex HLR1 C 0 19
+	FrameIndex HLR1 D 0 20
+	FrameIndex HLR1 E 0 21
+	FrameIndex HLR1 F 0 22
+	FrameIndex HLR1 G 0 23
+	FrameIndex HLR1 H 0 24
+	FrameIndex HLR1 I 0 25
+	FrameIndex HLR1 J 0 26
+	FrameIndex HLR1 K 0 27
+	FrameIndex HLR1 L 0 28
+	FrameIndex HLR1 M 0 29
+	FrameIndex HLR1 N 0 30
+	FrameIndex HLR1 O 0 31
+	FrameIndex HLR1 P 0 32
+	FrameIndex HLR1 Q 0 33
+	FrameIndex HLR1 R 0 34
+	FrameIndex HLR1 S 0 35
+
+	FrameIndex HLP1 A 0 36
+	FrameIndex HLP1 B 0 37
+	FrameIndex HLP1 C 0 38
+	FrameIndex HLP1 D 0 39
+	FrameIndex HLP1 E 0 40
+	FrameIndex HLP1 F 0 41
+	FrameIndex HLP1 G 0 42
+	FrameIndex HLP1 H 0 43
+
+	FrameIndex HLD1 A 0 138
+	FrameIndex HLD1 B 0 139
+	FrameIndex HLD1 C 0 140
+	FrameIndex HLD1 D 0 141
+	FrameIndex HLD1 E 0 142
+	FrameIndex HLD1 F 0 143
+	FrameIndex HLD1 G 0 144
+	FrameIndex HLD1 H 0 145
+	FrameIndex HLD1 I 0 146
+	FrameIndex HLD1 J 0 147
+	FrameIndex HLD1 K 0 148
+	FrameIndex HLD1 L 0 149
+	FrameIndex HLD1 M 0 150
+	FrameIndex HLD1 N 0 151
+	FrameIndex HLD1 O 0 152
+	FrameIndex HLD1 P 0 153
+	FrameIndex HLD1 Q 0 154
+	FrameIndex HLD1 R 0 155
+	FrameIndex HLD1 S 0 156
+	FrameIndex HLD1 T 0 157
+	FrameIndex HLD1 U 0 158
+	FrameIndex HLD1 V 0 159
+}
+Model HLScientist4Path
+{
+	Path "Models"
+	Model 0 "scientist4.md2"
+	Skin 0 "scientist4.png"
+	Scale 1 1 1
+	INTERPOLATEDOUBLEDFRAMES
+
+	FrameIndex HLI1 A 0 46
+	FrameIndex HLI1 B 0 166
+	FrameIndex HLI1 C 0 225
+
+	FrameIndex HLW1 A 0 1
+	FrameIndex HLW1 B 0 2
+	FrameIndex HLW1 C 0 3
+	FrameIndex HLW1 D 0 4
+	FrameIndex HLW1 E 0 5
+	FrameIndex HLW1 F 0 6
+	FrameIndex HLW1 G 0 7
+	FrameIndex HLW1 H 0 8
+	FrameIndex HLW1 I 0 9
+	FrameIndex HLW1 J 0 10
+	FrameIndex HLW1 K 0 11
+	FrameIndex HLW1 L 0 12
+	FrameIndex HLW1 M 0 13
+	FrameIndex HLW1 N 0 14
+	FrameIndex HLW1 O 0 15
+	FrameIndex HLW1 P 0 16
+
+	FrameIndex HLR1 A 0 17
+	FrameIndex HLR1 B 0 18
+	FrameIndex HLR1 C 0 19
+	FrameIndex HLR1 D 0 20
+	FrameIndex HLR1 E 0 21
+	FrameIndex HLR1 F 0 22
+	FrameIndex HLR1 G 0 23
+	FrameIndex HLR1 H 0 24
+	FrameIndex HLR1 I 0 25
+	FrameIndex HLR1 J 0 26
+	FrameIndex HLR1 K 0 27
+	FrameIndex HLR1 L 0 28
+	FrameIndex HLR1 M 0 29
+	FrameIndex HLR1 N 0 30
+	FrameIndex HLR1 O 0 31
+	FrameIndex HLR1 P 0 32
+	FrameIndex HLR1 Q 0 33
+	FrameIndex HLR1 R 0 34
+	FrameIndex HLR1 S 0 35
+
+	FrameIndex HLP1 A 0 36
+	FrameIndex HLP1 B 0 37
+	FrameIndex HLP1 C 0 38
+	FrameIndex HLP1 D 0 39
+	FrameIndex HLP1 E 0 40
+	FrameIndex HLP1 F 0 41
+	FrameIndex HLP1 G 0 42
+	FrameIndex HLP1 H 0 43
+
+	FrameIndex HLD1 A 0 138
+	FrameIndex HLD1 B 0 139
+	FrameIndex HLD1 C 0 140
+	FrameIndex HLD1 D 0 141
+	FrameIndex HLD1 E 0 142
+	FrameIndex HLD1 F 0 143
+	FrameIndex HLD1 G 0 144
+	FrameIndex HLD1 H 0 145
+	FrameIndex HLD1 I 0 146
+	FrameIndex HLD1 J 0 147
+	FrameIndex HLD1 K 0 148
+	FrameIndex HLD1 L 0 149
+	FrameIndex HLD1 M 0 150
+	FrameIndex HLD1 N 0 151
+	FrameIndex HLD1 O 0 152
+	FrameIndex HLD1 P 0 153
+	FrameIndex HLD1 Q 0 154
+	FrameIndex HLD1 R 0 155
+	FrameIndex HLD1 S 0 156
+	FrameIndex HLD1 T 0 157
+	FrameIndex HLD1 U 0 158
+	FrameIndex HLD1 V 0 159
+}
+
+Model HLScientistUpdate
+{
+	Path "Models"
+	Model 0 "scientist1.md2"
+	Skin 0 "scientist1.png"
+	Scale 1 1 1
+
+	FrameIndex HLD1 V 0 159
+}
+Model HLScientist1
+{
+	Path "Models"
+	Model 0 "scientist2.md2"
+	Skin 0 "scientist2.png"
+	Scale 1 1 1
+
+	FrameIndex HLD1 V 0 159
+}
+Model HLScientist2
+{
+	Path "Models"
+	Model 0 "scientist3.md2"
+	Skin 0 "scientist3.png"
+	Scale 1 1 1
+
+	FrameIndex HLD1 V 0 159
+}
+Model HLScientist3
+{
+	Path "Models"
+	Model 0 "scientist4.md2"
+	Skin 0 "scientist4.png"
+	Scale 1 1 1
+
+	FrameIndex HLD1 V 0 159
+}
+
+Model RolfBellmer
+{
+	Path "Models"
+	Model 0 "scientist3.md2"
+	Skin 0 "scientist3.png"
+	Scale 1 1 1
+	INTERPOLATEDOUBLEDFRAMES
+
+	FrameIndex HLI1 A 0 46
+	FrameIndex HLI1 B 0 166
+	FrameIndex HLI1 C 0 225
+
+	FrameIndex HLW1 A 0 1
+	FrameIndex HLW1 B 0 2
+	FrameIndex HLW1 C 0 3
+	FrameIndex HLW1 D 0 4
+	FrameIndex HLW1 E 0 5
+	FrameIndex HLW1 F 0 6
+	FrameIndex HLW1 G 0 7
+	FrameIndex HLW1 H 0 8
+	FrameIndex HLW1 I 0 9
+	FrameIndex HLW1 J 0 10
+	FrameIndex HLW1 K 0 11
+	FrameIndex HLW1 L 0 12
+	FrameIndex HLW1 M 0 13
+	FrameIndex HLW1 N 0 14
+	FrameIndex HLW1 O 0 15
+	FrameIndex HLW1 P 0 16
+
+	FrameIndex HLR1 A 0 17
+	FrameIndex HLR1 B 0 18
+	FrameIndex HLR1 C 0 19
+	FrameIndex HLR1 D 0 20
+	FrameIndex HLR1 E 0 21
+	FrameIndex HLR1 F 0 22
+	FrameIndex HLR1 G 0 23
+	FrameIndex HLR1 H 0 24
+	FrameIndex HLR1 I 0 25
+	FrameIndex HLR1 J 0 26
+	FrameIndex HLR1 K 0 27
+	FrameIndex HLR1 L 0 28
+	FrameIndex HLR1 M 0 29
+	FrameIndex HLR1 N 0 30
+	FrameIndex HLR1 O 0 31
+	FrameIndex HLR1 P 0 32
+	FrameIndex HLR1 Q 0 33
+	FrameIndex HLR1 R 0 34
+	FrameIndex HLR1 S 0 35
+
+	FrameIndex HLP1 A 0 36
+	FrameIndex HLP1 B 0 37
+	FrameIndex HLP1 C 0 38
+	FrameIndex HLP1 D 0 39
+	FrameIndex HLP1 E 0 40
+	FrameIndex HLP1 F 0 41
+	FrameIndex HLP1 G 0 42
+	FrameIndex HLP1 H 0 43
+
+	FrameIndex HLD1 A 0 138
+	FrameIndex HLD1 B 0 139
+	FrameIndex HLD1 C 0 140
+	FrameIndex HLD1 D 0 141
+	FrameIndex HLD1 E 0 142
+	FrameIndex HLD1 F 0 143
+	FrameIndex HLD1 G 0 144
+	FrameIndex HLD1 H 0 145
+	FrameIndex HLD1 I 0 146
+	FrameIndex HLD1 J 0 147
+	FrameIndex HLD1 K 0 148
+	FrameIndex HLD1 L 0 149
+	FrameIndex HLD1 M 0 150
+	FrameIndex HLD1 N 0 151
+	FrameIndex HLD1 O 0 152
+	FrameIndex HLD1 P 0 153
+	FrameIndex HLD1 Q 0 154
+	FrameIndex HLD1 R 0 155
+	FrameIndex HLD1 S 0 156
+	FrameIndex HLD1 T 0 157
+	FrameIndex HLD1 U 0 158
+	FrameIndex HLD1 V 0 159
+}
