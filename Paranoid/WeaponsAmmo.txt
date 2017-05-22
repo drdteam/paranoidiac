@@ -113,8 +113,7 @@ class GunSmoke : Actor
 	{
 	Spawn:
 	   TNT1 A 0 NODELAY A_Jump(210,6,8,10,12,14);
-	   WPXS ABCDEFGHIJKLMNOPQRSTUVWXYZ 1 A_FadeOut(.01);
- 	   WPXZ ABC 1 A_FadeOut(.01);
+	   WPXS "ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]" 1 A_FadeOut(.01);
 	   Stop;
 	}
 }
@@ -1202,8 +1201,7 @@ class RPGTrail2 : RPGTrail1
 	{
 	Spawn:
 		TNT1 A 2;
-		WPXS ACEGIKMOQSUWY 1;
-		WPXZ AC 1;
+		WPXS "ACEGIKMOQSUWY[]" 1;
 		Stop;
 	}
 }
