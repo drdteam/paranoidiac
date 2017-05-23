@@ -23,11 +23,6 @@ class HLZombie : HLMonster
 	}
 	States
 	{
-	Spawn:
-		TNT1 A 0;
-		HLI1 A 3;
-		HLI1 A 3 A_Look;
-		Wait;
 	See:
 		HLW1 A 0
 		{
@@ -103,11 +98,6 @@ class HLZombie : HLMonster
 			A_XenGibs();
 		}
 		Stop;
-	}
-	void A_ZombieMelee()
-	{
-		A_PlaySound("halflife/monsters/zombie/attswing");
-		A_CustomMeleeAttack(2*random(1,8),"halflife/monsters/zombie/hit");
 	}
 }
 

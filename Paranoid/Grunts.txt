@@ -99,11 +99,6 @@ class HLGrunt1 : HLMonster
 	}
 	States
 	{
-	Spawn:
-		TNT1 A 0;
-		HLI1 A 3;
-		HLI1 A 3 A_Look;
-		Wait;
 	See:
 		HLR1 A 0
 		{

@@ -43,45 +43,60 @@ class HLVortigaunt : HLMonster
 	Melee:
 		HLFI A 4 A_FaceTarget;
 		HLFM AB 4 A_FaceTarget;
-		TNT1 A 0 A_PlaySound("halflife/monsters/zombie/attswing");
-		HLFM C 3 A_CustomMeleeAttack(3*random(1,8),"halflife/monsters/zombie/hit");
+		HLFM C 3 A_ZombieMelee(3);
 		HLFM D 4 A_FaceTarget;
-		TNT1 A 0 A_PlaySound("halflife/monsters/zombie/attswing");
-		HLFM E 3 A_CustomMeleeAttack(3*random(1,8),"halflife/monsters/zombie/hit");
+		HLFM E 3 A_ZombieMelee(3);
 		HLFM F 4 A_FaceTarget;
-		TNT1 A 0 A_PlaySound("halflife/monsters/zombie/attswing");
-		HLFM G 3 A_CustomMeleeAttack(3*random(1,8),"halflife/monsters/zombie/hit");
+		HLFM G 3 A_ZombieMelee(3);
 		HLFM H 4;
 		Goto See;
 	Missile:
-		TNT1 A 0 A_FaceTarget;
-		HLFI A 0 A_PlaySound("halflife/weapons/zap4",5);
+		TNT1 A 0
+		{
+			A_FaceTarget();
+			A_PlaySound("halflife/weapons/zap4",5);
+		}
 		HLFI AAAAAA 4 A_SpawnItemEx("VortiLightning",flags:SXF_SETMASTER|SXF_NOCHECKPOSITION);
-		HLFN B 0 A_SpawnItemEx("VortiLightning",flags:SXF_SETMASTER|SXF_NOCHECKPOSITION);
-		HLFN B 4 A_FaceTarget;
+		HLFN B 4
+		{
+			A_SpawnItemEx("VortiLightning",flags:SXF_SETMASTER|SXF_NOCHECKPOSITION);
+			A_FaceTarget();
+		}
 		HLFN B 2 A_SpawnItemEx("VortiLightning",flags:SXF_SETMASTER|SXF_NOCHECKPOSITION);
 		HLFN C 2 A_PlaySound("halflife/weapons/zap4",5);
-		HLFN CC 0 A_SpawnItemEx("VortiLightning",flags:SXF_SETMASTER|SXF_NOCHECKPOSITION);
-		HLFN C 4;
+		HLFN C 4
+		{
+			for(int i=0;i<2;i++)
+				A_SpawnItemEx("VortiLightning",flags:SXF_SETMASTER|SXF_NOCHECKPOSITION);
+		}
 		HLFN D 4 A_FaceTarget;
 		HLFN D 3 A_SpawnItemEx("VortiLightning",flags:SXF_SETMASTER|SXF_NOCHECKPOSITION);
-		TNT1 A 0 A_PlaySound("halflife/weapons/gausshit1",5);
-		TNT1 A 0 A_KillChildren(flags:KILS_KILLMISSILES);
-	  	HLFN E 0 A_SpawnProjectile("VortiPlasma",32,9);
-	  	HLFN E 3 A_SpawnProjectile("VortiPlasma",32,-9);
+	  	HLFN E 3
+		{
+			A_PlaySound("halflife/weapons/gausshit1",5);
+			A_KillChildren(flags:KILS_KILLMISSILES);
+			A_SpawnProjectile("VortiPlasma",32,9);
+			A_SpawnProjectile("VortiPlasma",32,-9);
+		}
 		HLFN F 6;
 		Goto See;
 	Pain:
-		TNT1 A 0 A_KillChildren(flags:KILS_KILLMISSILES);
-		HLFP A 8 A_Pain;
+		HLFP A 8
+		{
+			A_KillChildren(flags:KILS_KILLMISSILES);
+			A_Pain();
+		}
 		Goto See;
 	Death:
-		TNT1 A 0 A_KillChildren(flags:KILS_KILLMISSILES);
-		HLFD A 2 A_Scream;
-		HLFD B 2 A_Fall;
+		HLFD A 2
+		{
+			A_KillChildren(flags:KILS_KILLMISSILES);
+			A_Scream();
+		}
+		HLFD B 2 A_NoBlocking;
 		HLFD CDEF 2;
-		TNT1 A 0 A_PlaySound("halflife/weapons/bodydrop");
-		HLFD FGH 2;
+		HLFD F 2 A_PlaySound("halflife/weapons/bodydrop");
+		HLFD GH 2;
 		HLFD IJKLM 4;
 		HLFD N -1;
 		Stop;
@@ -111,30 +126,8 @@ class VortiLightning : Actor
 	States
 	{
 	Spawn:
-		TNT1 A 0 NODELAY A_Jump(256,"One","Two","Three","Four","Five","Six","Seven","Eight");
-	One:
-		X098 AB 2 Bright LIGHT("GreenMediumFlicker2");
-		Stop;
-	Two:
-		X098 CD 2 Bright LIGHT("GreenMediumFlicker2");
-		Stop;
-	Three:
-		X098 EF 2 Bright LIGHT("GreenMediumFlicker2");
-		Stop;
-	Four:
-		X098 GH 2 Bright LIGHT("GreenMediumFlicker2");
-		Stop;
-	Five:
-		X098 IJ 2 Bright LIGHT("GreenMediumFlicker2");
-		Stop;
-	Six:
-		X098 KL 2 Bright LIGHT("GreenMediumFlicker2");
-		Stop;
-	Seven:
-		X098 MN 2 Bright LIGHT("GreenMediumFlicker2");
-		Stop;
-	Eight:
-		X098 OP 2 Bright LIGHT("GreenMediumFlicker2");
+		X098 A 2 Bright LIGHT("GreenMediumFlicker2") NODELAY {self.frame=random(0,7)*2;}
+		XO98 A 2 Bright LIGHT("GreenMediumFlicker2") {self.frame++;}
 		Stop;
 	Death:
 		TNT1 A 1;

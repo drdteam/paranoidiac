@@ -23,10 +23,6 @@ class HLBullSquid : HLMonster
 	}
 	States
 	{
-	Spawn:
-		TNT1 A 0;
-		HLI1 A 3 A_Look;
-		Loop;
 	See:
 		HLR1 A 1 A_BullSquidChase;
 		HLR1 BCD 1 A_Chase(null,null,HLSMOOTHCHASE);
@@ -49,12 +45,12 @@ class HLBullSquid : HLMonster
 		HLR2 EFG 1 A_Chase(null,null,HLSMOOTHCHASE);
 		Loop;
 	Melee:
-		TNT1 A 0
+		HLA1 A 1
 		{
 			countdown=4;
 			A_PlaySound("halflife/monsters/bullsquid/growl");
+			A_FaceTarget();
 		}
-		HLA1 A 1 A_FaceTarget;
 		HLA1 BCD 1;
 		HLA1 E 1 A_FaceTarget;
 		HLA1 FGH 1;
