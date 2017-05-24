@@ -2128,7 +2128,7 @@ Model Barney01
 {
 	Path "Models"
 	Model 0 "barney2.md3"
-	Skin 0 "barney.png"
+	Skin 0 "barney2.png"
 	Scale 1.0 1.0 1.0
 
 	FrameIndex POSS A 0 0

@@ -444,6 +444,101 @@ Model HLZombie
 	FrameIndex HLD1 ] 0 306
 }
 
+Model HLBarney
+{
+	Path "Models"
+	Model 0 "barney.md2"
+	Skin 0 "barney.png"
+	Scale 1 1 1
+	INTERPOLATEDOUBLEDFRAMES
+
+	FrameIndex HLI1 A 0 335
+	FrameIndex HLI1 B 0 1
+
+	FrameIndex HLR1 A 0 64
+	FrameIndex HLR1 B 0 65
+	FrameIndex HLR1 C 0 66
+	FrameIndex HLR1 D 0 67
+	FrameIndex HLR1 E 0 68
+	FrameIndex HLR1 F 0 69
+	FrameIndex HLR1 G 0 70
+	FrameIndex HLR1 H 0 71
+	FrameIndex HLR1 I 0 72
+	FrameIndex HLR1 J 0 73
+	FrameIndex HLR1 K 0 74
+	FrameIndex HLR1 L 0 75
+	FrameIndex HLR1 M 0 76
+	FrameIndex HLR1 N 0 77
+	FrameIndex HLR1 O 0 78
+	FrameIndex HLR1 P 0 79
+
+	FrameIndex HLA1 A 0 365
+	FrameIndex HLA1 B 0 366
+	FrameIndex HLA1 C 0 367
+	FrameIndex HLA1 D 0 368
+	FrameIndex HLA1 E 0 369
+	FrameIndex HLA1 F 0 370
+	FrameIndex HLA1 G 0 371
+	FrameIndex HLA1 H 0 372
+	FrameIndex HLA1 I 0 373
+	FrameIndex HLA1 J 0 374
+	FrameIndex HLA1 K 0 375
+	FrameIndex HLA1 L 0 376
+	FrameIndex HLA1 M 0 377
+	FrameIndex HLA1 N 0 378
+	FrameIndex HLA1 O 0 379
+	FrameIndex HLA1 P 0 380
+	FrameIndex HLA1 Q 0 381
+	FrameIndex HLA1 R 0 382
+	FrameIndex HLA1 S 0 383
+	FrameIndex HLA1 T 0 384
+	FrameIndex HLA1 U 0 385
+	FrameIndex HLA1 V 0 386
+	FrameIndex HLA1 W 0 387
+	FrameIndex HLA1 X 0 388
+	FrameIndex HLA1 Y 0 389
+	FrameIndex HLA1 Z 0 390
+	FrameIndex HLA1 [ 0 391
+	FrameIndex HLA1 \ 0 392
+	FrameIndex HLA1 ] 0 393
+	FrameIndex HLA2 A 0 394
+	FrameIndex HLA2 B 0 395
+
+	FrameIndex HLP1 A 0 158
+	FrameIndex HLP1 B 0 159
+	FrameIndex HLP1 C 0 160
+	FrameIndex HLP1 D 0 161
+	FrameIndex HLP1 E 0 162
+	FrameIndex HLP1 F 0 163
+	FrameIndex HLP1 G 0 164
+	FrameIndex HLP1 H 0 165
+	FrameIndex HLP1 I 0 166
+	FrameIndex HLP1 J 0 167
+	FrameIndex HLP1 K 0 168
+	FrameIndex HLP1 L 0 169
+	FrameIndex HLP1 M 0 170
+	FrameIndex HLP1 N 0 171
+	FrameIndex HLP1 O 0 172
+	FrameIndex HLP1 P 0 173
+	FrameIndex HLP1 Q 0 174
+	FrameIndex HLP1 R 0 175
+	FrameIndex HLP1 S 0 176
+
+	FrameIndex HLD1 A 0 272
+	FrameIndex HLD1 B 0 273
+	FrameIndex HLD1 C 0 274
+	FrameIndex HLD1 D 0 275
+	FrameIndex HLD1 E 0 276
+	FrameIndex HLD1 F 0 277
+	FrameIndex HLD1 G 0 278
+	FrameIndex HLD1 H 0 279
+	FrameIndex HLD1 I 0 280
+	FrameIndex HLD1 J 0 281
+	FrameIndex HLD1 K 0 282
+	FrameIndex HLD1 L 0 283
+	FrameIndex HLD1 M 0 284
+}
+
 Model HLGrunt1
 {
 	Path "Models"
