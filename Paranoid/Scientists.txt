@@ -300,6 +300,7 @@ class HLScientistUpdate : Actor
 	States
 	{
 	Spawn:
+		TNT1 A 0;
 		HLD1 V -1;
 		Stop;
 	}
