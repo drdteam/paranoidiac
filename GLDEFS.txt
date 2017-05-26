@@ -117,7 +117,6 @@ brightmap texture Xcomp08
 	map "brtmaps/Xcomp08.png"
 }
 
-
 brightmap texture Xcomp09
 {
 	map "brtmaps/Xcomp09.png"
@@ -863,7 +862,6 @@ brightmap texture Xswit21b
 	map "brtmaps/Xswit21b.png"
 }
 
-
 brightmap texture Xtech01
 {
 	map "brtmaps/Xtech01.png"
@@ -1036,12 +1034,12 @@ brightmap texture xdoor01f
 
 brightmap texture xdoor01g
 {
-   map "brtmaps/xdoor01g.png"
+	map "brtmaps/xdoor01g.png"
 }
 
 brightmap texture xdoor01h
 {
-   map "brtmaps/xdoor01h.png"
+	map "brtmaps/xdoor01h.png"
 }
 
 brightmap texture xfreez03
@@ -1106,180 +1104,180 @@ brightmap flat Xkeybrd4
 
 skybox HLSKY1 //Noon Sky
 {
-   DESERTN
-   DESERTE
-   DESERTS
-   DESERTW
-   DESERTT
-   DESERTB
+	DESERTN
+	DESERTE
+	DESERTS
+	DESERTW
+	DESERTT
+	DESERTB
 }
 
 skybox HLSKY2 //Evening Sky
 {
-   DESERT1N
-   DESERT1E
-   DESERT1S
-   DESERT1W
-   DESERT1T
-   DESERT1B
+	DESERT1N
+	DESERT1E
+	DESERT1S
+	DESERT1W
+	DESERT1T
+	DESERT1B
 }
 
 skybox HLSKY3 //Dusk Sky
 {
-   DESERT2N
-   DESERT2E
-   DESERT2S
-   DESERT2W
-   DESERT2T
-   DESERT2B
+	DESERT2N
+	DESERT2E
+	DESERT2S
+	DESERT2W
+	DESERT2T
+	DESERT2B
 }
 
 skybox HLSKY4 //Night Sky
 {
-   DESERT3N
-   DESERT3E
-   DESERT3S
-   DESERT3W
-   DESERT3T
-   DESERT3B
+	DESERT3N
+	DESERT3E
+	DESERT3S
+	DESERT3W
+	DESERT3T
+	DESERT3B
 }
 
 skybox HLSKY5 //Morning Sky
 {
-   DESERT4N
-   DESERT4E
-   DESERT4S
-   DESERT4W
-   DESERT4T
-   DESERT4B
+	DESERT4N
+	DESERT4E
+	DESERT4S
+	DESERT4W
+	DESERT4T
+	DESERT4B
 }
 
 Glow
 {
 	Flats
 	{
-   		NUKAGE1
-   		NUKAGE2
-   		NUKAGE3
+		NUKAGE1
+		NUKAGE2
+		NUKAGE3
 		XNUKE01
 	}
 }
 
 flickerlight BARREL_X1
 {
-    color 0.9 0.7 0.0
-    size 64
-    secondarySize 72
-    chance 0.3
-    offset 0 32 0
+	color 0.9 0.7 0.0
+	size 64
+	secondarySize 72
+	chance 0.3
+	offset 0 32 0
 }
 
 flickerlight BARREL_X2
 {
-    color 0.6 0.5 0.0
-    size 56
-    secondarySize 64
-    chance 0.3
-    offset 0 32 0
+	color 0.6 0.5 0.0
+	size 56
+	secondarySize 64
+	chance 0.3
+	offset 0 32 0
 }
 
 flickerlight BARREL_X3
 {
-    color 0.6 0.5 0.0
-    size 48
-    secondarySize 56
-    chance 0.3
-    offset 0 32 0
+	color 0.6 0.5 0.0
+	size 48
+	secondarySize 56
+	chance 0.3
+	offset 0 32 0
 }
 
 flickerlight BARREL_X4
 {
-    color 0.3 0.2 0.0
-    size 32
-    secondarySize 40
-    chance 0.3
-    offset 0 32 0
+	color 0.3 0.2 0.0
+	size 32
+	secondarySize 40
+	chance 0.3
+	offset 0 32 0
 }
 
 flickerlight CRATE_X1
 {
-    color 0.9 0.7 0.0
-    size 96
-    secondarySize 104
-    chance 0.3
-    offset 0 40 0
+	color 0.9 0.7 0.0
+	size 96
+	secondarySize 104
+	chance 0.3
+	offset 0 40 0
 }
 
 flickerlight CRATE_X2
 {
-    color 0.6 0.5 0.0
-    size 80
-    secondarySize 96
-    chance 0.3
-    offset 0 40 0
+	color 0.6 0.5 0.0
+	size 80
+	secondarySize 96
+	chance 0.3
+	offset 0 40 0
 }
 
 flickerlight CRATE_X3
 {
-    color 0.6 0.5 0.0
-    size 64
-    secondarySize 72
-    chance 0.3
-    offset 0 40 0
+	color 0.6 0.5 0.0
+	size 64
+	secondarySize 72
+	chance 0.3
+	offset 0 40 0
 }
 
 flickerlight CRATE_X4
 {
-    color 0.3 0.2 0.0
-    size 48
-    secondarySize 64
-    chance 0.3
-    offset 0 40 0
+	color 0.3 0.2 0.0
+	size 48
+	secondarySize 64
+	chance 0.3
+	offset 0 40 0
 }
 
 pulselight ZENLIGHT1
 {
-    color 0.8 0.8 0.7
-    size 24
-    secondarySize 32
-    interval 4.0
-    offset 24 40 0
+	color 0.8 0.8 0.7
+	size 24
+	secondarySize 32
+	interval 4.0
+	offset 24 40 0
 }
 
 pulselight ZENLIGHT2
 {
-    color 0.8 0.8 0.7
-    size 24
-    secondarySize 32
-    interval 4.0
-    offset 24 36 0
+	color 0.8 0.8 0.7
+	size 24
+	secondarySize 32
+	interval 4.0
+	offset 24 36 0
 }
 
 pulselight ZENLIGHT3
 {
-    color 0.8 0.8 0.7
-    size 24
-    secondarySize 32
-    interval 4.0
-    offset 24 32 0
+	color 0.8 0.8 0.7
+	size 24
+	secondarySize 32
+	interval 4.0
+	offset 24 32 0
 }
 
 pulselight ZENLIGHTFADE1
 {
-    color 0.6 0.6 0.5
-    size 16
-    secondarySize 24
-    interval 4.0
-    offset 16 32 0
+	color 0.6 0.6 0.5
+	size 16
+	secondarySize 24
+	interval 4.0
+	offset 16 32 0
 }
 
 pulselight ZENLIGHTFADE2
 {
-    color 0.4 0.4 0.3
-    size 8
-    secondarySize 16
-    interval 4.0
-    offset 8 24 0
+	color 0.4 0.4 0.3
+	size 8
+	secondarySize 16
+	interval 4.0
+	offset 8 24 0
 }
 
 //****
@@ -1288,10 +1286,10 @@ pulselight ZENLIGHTFADE2
 
 flickerlight NJSPARKY
 {
-    color 0.6 0.45 0.0
-    size 8
-    secondarySize 12
-    chance 0.8
+	color 0.6 0.45 0.0
+	size 8
+	secondarySize 12
+	chance 0.8
 }
 
 //****
@@ -1300,11 +1298,11 @@ flickerlight NJSPARKY
 
 pulselight BIGBLUESPARKLIGHT
 {
-    color 0.5 1.0 1.0
-    size 128
-    secondarySize 160
-    interval 4.0
-    offset 0 0 0
+	color 0.5 1.0 1.0
+	size 128
+	secondarySize 160
+	interval 4.0
+	offset 0 0 0
 }
 
 //****
@@ -1313,11 +1311,11 @@ pulselight BIGBLUESPARKLIGHT
 
 flickerlight TANKSPARKEFFECT
 {
-    color 1.0 1.0 0.6
-    size 28
-    secondarySize 32
-    chance 0.1
-    offset 0 48 0
+	color 1.0 1.0 0.6
+	size 28
+	secondarySize 32
+	chance 0.1
+	offset 0 48 0
 }
 
 //****************************************************************//
@@ -1326,11 +1324,11 @@ flickerlight TANKSPARKEFFECT
 
 flickerlight ImShootingAGun	//for barney and grunts
 {
-    color 1.0 0.8 0.0
-    size 40
-    secondarySize 45
-    chance 0.4
-    Offset 0 40 0
+	color 1.0 0.8 0.0
+	size 40
+	secondarySize 45
+	chance 0.4
+	Offset 0 40 0
 }
 
 //===============
@@ -1340,151 +1338,152 @@ flickerlight ImShootingAGun	//for barney and grunts
 
 flickerlight YellowBigFlicker1
 {
-    color 1.0 0.8 0.0
-    size 150
-    secondarySize 155
-    chance 0.4
+	color 1.0 0.8 0.0
+	size 150
+	secondarySize 155
+	chance 0.4
 }
 flickerlight YellowBigFlicker2
 {
-    color 1.0 0.8 0.0
-    size 120
-    secondarySize 125
-    chance 0.4
+	color 1.0 0.8 0.0
+	size 120
+	secondarySize 125
+	chance 0.4
 }
 flickerlight YellowBigFlicker3
 {
-    color 1.0 0.8 0.0
-    size 90
-    secondarySize 95
-    chance 0.4
+	color 1.0 0.8 0.0
+	size 90
+	secondarySize 95
+	chance 0.4
 }
 
 //***************************************
 flickerlight YellowMediumFlicker1
 {
-    color 1.0 0.8 0.0
-    size 80
-    secondarySize 85
-    chance 0.4
+	color 1.0 0.8 0.0
+	size 80
+	secondarySize 85
+	chance 0.4
 }
 flickerlight YellowMediumFlicker2
 {
-    color 1.0 0.8 0.0
-    size 60
-    secondarySize 65
-    chance 0.4
+	color 1.0 0.8 0.0
+	size 60
+	secondarySize 65
+	chance 0.4
 }
 flickerlight YellowMediumFlicker3
 {
-    color 1.0 0.8 0.0
-    size 50
-    secondarySize 55
-    chance 0.4
+	color 1.0 0.8 0.0
+	size 50
+	secondarySize 55
+	chance 0.4
 }
 
 //***************************************
 flickerlight YellowSmallFlicker1
 {
-    color 1.0 0.8 0.0
-    size 40
-    secondarySize 45
-    chance 0.4
+	color 1.0 0.8 0.0
+	size 40
+	secondarySize 45
+	chance 0.4
 }
 flickerlight YellowSmallFlicker2
 {
-    color 1.0 0.8 0.0
-    size 20
-    secondarySize 25
-    chance 0.4
+	color 1.0 0.8 0.0
+	size 20
+	secondarySize 25
+	chance 0.4
 }
 flickerlight YellowSmallFlicker3
 {
-    color 1.0 0.8 0.0
-    size 10
-    secondarySize 15
-    chance 0.4
+	color 1.0 0.8 0.0
+	size 10
+	secondarySize 15
+	chance 0.4
 }
+
 //***************************************
 flickerlight FlamerYellowSmallFlicker1
 {
-    color 0.7 0.5 0.0
-    size 40
-    secondarySize 45
-    chance 0.4
+	color 0.7 0.5 0.0
+	size 40
+	secondarySize 45
+	chance 0.4
 }
 flickerlight FlamerYellowSmallFlicker2
 {
-    color 0.7 0.5 0.0
-    size 20
-    secondarySize 25
-    chance 0.4
+	color 0.7 0.5 0.0
+	size 20
+	secondarySize 25
+	chance 0.4
 }
 flickerlight FlamerYellowSmallFlicker3
 {
-    color 0.7 0.5 0.0
-    size 10
-    secondarySize 15
-    chance 0.4
+	color 0.7 0.5 0.0
+	size 10
+	secondarySize 15
+	chance 0.4
 }
 flickerlight FlamerYellowSmallFlicker4
 {
-    color 0.9 0.7 0.0
-    size 20
-    secondarySize 25
-    chance 0.4
+	color 0.9 0.7 0.0
+	size 20
+	secondarySize 25
+	chance 0.4
 }
 
 //***************************************
 //***************************************
 pointlight YellowBigPoint1
 {
-    color 1.0 0.8 0.0
-    size 140
+	color 1.0 0.8 0.0
+	size 140
 }
 pointlight YellowBigPoint2
 {
-    color 1.0 0.8 0.0
-    size 110
+	color 1.0 0.8 0.0
+	size 110
 }
 pointlight YellowBigPoint3
 {
-    color 1.0 0.8 0.0
-    size 80
+	color 1.0 0.8 0.0
+	size 80
 }
 
 //***************************************
 pointlight YellowMediumPoint1
 {
-    color 1.0 0.8 0.0
-    size 75
+	color 1.0 0.8 0.0
+	size 75
 }
 pointlight YellowMediumPoint2
 {
-    color 1.0 0.8 0.0
-    size 55
+	color 1.0 0.8 0.0
+	size 55
 }
 pointlight YellowMediumPoint3
 {
-    color 1.0 0.8 0.0
-    size 45
+	color 1.0 0.8 0.0
+	size 45
 }
 
 //***************************************
 pointlight YellowSmallPoint1
 {
-    color 1.0 0.8 0.0
-    size 30
+	color 1.0 0.8 0.0
+	size 30
 }
 pointlight YellowSmallPoint2
 {
-    color 1.0 0.8 0.0
-    size 20
+	color 1.0 0.8 0.0
+	size 20
 }
 pointlight YellowSmallPoint3
 {
-    color 1.0 0.8 0.0
-    size 10
+	color 1.0 0.8 0.0
+	size 10
 }
 
 //==============
@@ -1494,70 +1493,70 @@ pointlight YellowSmallPoint3
 
 flickerlight GreenBigFlicker1
 {
-    color 0.0 1.0 0.0
-    size 150
-    secondarySize 155
-    chance 0.4
+	color 0.0 1.0 0.0
+	size 150
+	secondarySize 155
+	chance 0.4
 }
 flickerlight GreenBigFlicker2
 {
-    color 0.0 1.0 0.0
-    size 120
-    secondarySize 125
-    chance 0.4
+	color 0.0 1.0 0.0
+	size 120
+	secondarySize 125
+	chance 0.4
 }
 flickerlight GreenBigFlicker3
 {
-    color 0.0 1.0 0.0
-    size 90
-    secondarySize 95
-    chance 0.4
+	color 0.0 1.0 0.0
+	size 90
+	secondarySize 95
+	chance 0.4
 }
 
 //***************************************
 flickerlight GreenMediumFlicker1
 {
-    color 0.0 1.0 0.0
-    size 80
-    secondarySize 85
-    chance 0.4
+	color 0.0 1.0 0.0
+	size 80
+	secondarySize 85
+	chance 0.4
 }
 flickerlight GreenMediumFlicker2
 {
-    color 0.0 1.0 0.0
-    size 60
-    secondarySize 65
-    chance 0.4
+	color 0.0 1.0 0.0
+	size 60
+	secondarySize 65
+	chance 0.4
 }
 flickerlight GreenMediumFlicker3
 {
-    color 0.0 1.0 0.0
-    size 50
-    secondarySize 55
-    chance 0.4
+	color 0.0 1.0 0.0
+	size 50
+	secondarySize 55
+	chance 0.4
 }
 
 //***************************************
 flickerlight GreenSmallFlicker1
 {
-    color 0.0 1.0 0.0
-    size 40
-    secondarySize 45
-    chance 0.4
+	color 0.0 1.0 0.0
+	size 40
+	secondarySize 45
+	chance 0.4
 }
 flickerlight GreenSmallFlicker2
 {
-    color 0.0 1.0 0.0
-    size 20
-    secondarySize 25
-    chance 0.4
+	color 0.0 1.0 0.0
+	size 20
+	secondarySize 25
+	chance 0.4
 }
 flickerlight GreenSmallFlicker3
 {
-    color 0.0 1.0 0.0
-    size 10
-    secondarySize 15
-    chance 0.4
+	color 0.0 1.0 0.0
+	size 10
+	secondarySize 15
+	chance 0.4
 }
 
 //***************************************
@@ -1565,51 +1564,51 @@ flickerlight GreenSmallFlicker3
 pointlight GreenBigPoint1
 {
 	color 0.0 1.0 0.0
-    size 140
+	size 140
 }
 pointlight GreenBigPoint2
 {
 	color 0.0 1.0 0.0
-    size 110
+	size 110
 }
 pointlight GreenBigPoint3
 {
 	color 0.0 1.0 0.0
-    size 80
+	size 80
 }
 
 //***************************************
 pointlight GreenMediumPoint1
 {
 	color 0.0 1.0 0.0
-    size 75
+	size 75
 }
 pointlight GreenMediumPoint2
 {
 	color 0.0 1.0 0.0
-    size 55
+	size 55
 }
 pointlight GreenMediumPoint3
 {
 	color 0.0 1.0 0.0
-    size 45
+	size 45
 }
 
 //***************************************
 pointlight GreenSmallPoint1
 {
 	color 0.0 1.0 0.0
-    size 30
+	size 30
 }
 pointlight GreenSmallPoint2
 {
 	color 0.0 1.0 0.0
-    size 20
+	size 20
 }
 pointlight GreenSmallPoint3
 {
 	color 0.0 1.0 0.0
-    size 10
+	size 10
 }
 
 //================
@@ -1619,70 +1618,70 @@ pointlight GreenSmallPoint3
 
 flickerlight RedBigFlicker1
 {
-    color 1.0 0.0 0.0
-    size 150
-    secondarySize 155
-    chance 0.4
+	color 1.0 0.0 0.0
+	size 150
+	secondarySize 155
+	chance 0.4
 }
 flickerlight RedBigFlicker2
 {
-    color 1.0 0.0 0.0
-    size 120
-    secondarySize 125
-    chance 0.4
+	color 1.0 0.0 0.0
+	size 120
+	secondarySize 125
+	chance 0.4
 }
 flickerlight RedBigFlicker3
 {
-    color 1.0 0.0 0.0
-    size 90
-    secondarySize 95
-    chance 0.4
+	color 1.0 0.0 0.0
+	size 90
+	secondarySize 95
+	chance 0.4
 }
 
 //***************************************
 flickerlight RedMediumFlicker1
 {
-    color 1.0 0.0 0.0
-    size 80
-    secondarySize 85
-    chance 0.4
+	color 1.0 0.0 0.0
+	size 80
+	secondarySize 85
+	chance 0.4
 }
 flickerlight RedMediumFlicker2
 {
-    color 1.0 0.0 0.0
-    size 60
-    secondarySize 65
-    chance 0.4
+	color 1.0 0.0 0.0
+	size 60
+	secondarySize 65
+	chance 0.4
 }
 flickerlight RedMediumFlicker3
 {
-    color 1.0 0.0 0.0
-    size 50
-    secondarySize 55
-    chance 0.4
+	color 1.0 0.0 0.0
+	size 50
+	secondarySize 55
+	chance 0.4
 }
 
 //***************************************
 flickerlight RedSmallFlicker1
 {
-    color 1.0 0.0 0.0
-    size 40
-    secondarySize 45
-    chance 0.4
+	color 1.0 0.0 0.0
+	size 40
+	secondarySize 45
+	chance 0.4
 }
 flickerlight RedSmallFlicker2
 {
-    color 1.0 0.0 0.0
-    size 20
-    secondarySize 25
-    chance 0.4
+	color 1.0 0.0 0.0
+	size 20
+	secondarySize 25
+	chance 0.4
 }
 flickerlight RedSmallFlicker3
 {
-    color 1.0 0.0 0.0
-    size 10
-    secondarySize 15
-    chance 0.4
+	color 1.0 0.0 0.0
+	size 10
+	secondarySize 15
+	chance 0.4
 }
 
 //***************************************
@@ -1690,52 +1689,52 @@ flickerlight RedSmallFlicker3
 
 pointlight RedBigPoint1
 {
-    color 1.0 0.0 0.0
-    size 140
+	color 1.0 0.0 0.0
+	size 140
 }
 pointlight RedBigPoint2
 {
-    color 1.0 0.0 0.0
-    size 110
+	color 1.0 0.0 0.0
+	size 110
 }
 pointlight RedBigPoint3
 {
-    color 1.0 0.0 0.0
-    size 80
+	color 1.0 0.0 0.0
+	size 80
 }
 
 //***************************************
 pointlight RedMediumPoint1
 {
-    color 1.0 0.0 0.0
-    size 75
+	color 1.0 0.0 0.0
+	size 75
 }
 pointlight RedMediumPoint2
 {
-    color 1.0 0.0 0.0
-    size 55
+	color 1.0 0.0 0.0
+	size 55
 }
 pointlight RedMediumPoint3
 {
-    color 1.0 0.0 0.0
-    size 45
+	color 1.0 0.0 0.0
+	size 45
 }
 
 //***************************************
 pointlight RedSmallPoint1
 {
-    color 1.0 0.0 0.0
-    size 30
+	color 1.0 0.0 0.0
+	size 30
 }
 pointlight RedSmallPoint2
 {
-    color 1.0 0.0 0.0
-    size 20
+	color 1.0 0.0 0.0
+	size 20
 }
 pointlight RedSmallPoint3
 {
-    color 1.0 0.0 0.0
-    size 10
+	color 1.0 0.0 0.0
+	size 10
 }
 
 //=============
@@ -1745,122 +1744,122 @@ pointlight RedSmallPoint3
 
 flickerlight OrangeBigFlicker1
 {
-    color 1.0 0.5 0.3
-    size 150
-    secondarySize 155
-    chance 0.4
+	color 1.0 0.5 0.3
+	size 150
+	secondarySize 155
+	chance 0.4
 }
 flickerlight OrangeBigFlicker2
 {
-    color 1.0 0.5 0.3
-    size 120
-    secondarySize 125
-    chance 0.4
+	color 1.0 0.5 0.3
+	size 120
+	secondarySize 125
+	chance 0.4
 }
 flickerlight OrangeBigFlicker3
 {
-    color 1.0 0.5 0.3
-    size 90
-    secondarySize 95
-    chance 0.4
+	color 1.0 0.5 0.3
+	size 90
+	secondarySize 95
+	chance 0.4
 }
 
 //***************************************
 flickerlight OrangeMediumFlicker1
 {
-    color 1.0 0.5 0.3
-    size 80
-    secondarySize 85
-    chance 0.4
+	color 1.0 0.5 0.3
+	size 80
+	secondarySize 85
+	chance 0.4
 }
 flickerlight OrangeMediumFlicker2
 {
-    color 1.0 0.5 0.3
-    size 60
-    secondarySize 65
-    chance 0.4
+	color 1.0 0.5 0.3
+	size 60
+	secondarySize 65
+	chance 0.4
 }
 flickerlight OrangeMediumFlicker3
 {
-    color 1.0 0.5 0.3
-    size 50
-    secondarySize 55
-    chance 0.4
+	color 1.0 0.5 0.3
+	size 50
+	secondarySize 55
+	chance 0.4
 }
 
 //***************************************
 flickerlight OrangeSmallFlicker1
 {
-    color 1.0 0.5 0.3
-    size 40
-    secondarySize 45
-    chance 0.4
+	color 1.0 0.5 0.3
+	size 40
+	secondarySize 45
+	chance 0.4
 }
 flickerlight OrangeSmallFlicker2
 {
-    color 1.0 0.5 0.3
-    size 20
-    secondarySize 25
-    chance 0.4
+	color 1.0 0.5 0.3
+	size 20
+	secondarySize 25
+	chance 0.4
 }
 flickerlight OrangeSmallFlicker3
 {
-    color 1.0 0.5 0.3
-    size 10
-    secondarySize 15
-    chance 0.4
+	color 1.0 0.5 0.3
+	size 10
+	secondarySize 15
+	chance 0.4
 }
 
 //***************************************
 //***************************************
 pointlight OrangeBigPoint1
 {
-    color 1.0 0.5 0.3
-    size 140
+	color 1.0 0.5 0.3
+	size 140
 }
 pointlight OrangeBigPoint2
 {
-    color 1.0 0.5 0.3
-    size 110
+	color 1.0 0.5 0.3
+	size 110
 }
 pointlight OrangeBigPoint3
 {
-    color 1.0 0.5 0.3
-    size 80
+	color 1.0 0.5 0.3
+	size 80
 }
 
 //***************************************
 pointlight OrangeMediumPoint1
 {
-    color 1.0 0.5 0.3
-    size 75
+	color 1.0 0.5 0.3
+	size 75
 }
 pointlight OrangeMediumPoint2
 {
-    color 1.0 0.5 0.3
-    size 55
+	color 1.0 0.5 0.3
+	size 55
 }
 pointlight OrangeMediumPoint3
 {
-    color 1.0 0.5 0.3
-    size 45
+	color 1.0 0.5 0.3
+	size 45
 }
 
 //***************************************
 pointlight OrangeSmallPoint1
 {
-    color 1.0 0.5 0.3
-    size 30
+	color 1.0 0.5 0.3
+	size 30
 }
 pointlight OrangeSmallPoint2
 {
-    color 1.0 0.5 0.3
-    size 20
+	color 1.0 0.5 0.3
+	size 20
 }
 pointlight OrangeSmallPoint3
 {
-    color 1.0 0.5 0.3
-    size 10
+	color 1.0 0.5 0.3
+	size 10
 }
 
 //*************************
@@ -1869,91 +1868,91 @@ pointlight OrangeSmallPoint3
 
 flickerlight TeleportFogLth7
 {
-    color 0.0 1.0 1.0
-    size 90
-    secondarySize 95
-    chance 0.4
-    offset 0 40 0
+	color 0.0 1.0 1.0
+	size 90
+	secondarySize 95
+	chance 0.4
+	offset 0 40 0
 }
 
 flickerlight TeleportFogLth6
 {
-    color 0.0 1.0 1.0
-    size 80
-    secondarySize 85
-    chance 0.4
-    offset 0 40 0
+	color 0.0 1.0 1.0
+	size 80
+	secondarySize 85
+	chance 0.4
+	offset 0 40 0
 }
 
 flickerlight TeleportFogLth5
 {
-    color 0.0 1.0 1.0
-    size 60
-    secondarySize 65
-    chance 0.4
-    offset 0 40 0
+	color 0.0 1.0 1.0
+	size 60
+	secondarySize 65
+	chance 0.4
+	offset 0 40 0
 }
 
 flickerlight TeleportFogLth4
 {
-    color 0.0 1.0 1.0
-    size 50
-    secondarySize 55
-    chance 0.4
-    offset 0 40 0
+	color 0.0 1.0 1.0
+	size 50
+	secondarySize 55
+	chance 0.4
+	offset 0 40 0
 }
 
 flickerlight TeleportFogLth3
 {
-    color 0.0 1.0 1.0
-    size 40
-    secondarySize 45
-    chance 0.4
-    offset 0 40 0
+	color 0.0 1.0 1.0
+	size 40
+	secondarySize 45
+	chance 0.4
+	offset 0 40 0
 }
 
 flickerlight TeleportFogLth2
 {
-    color 0.0 1.0 1.0
-    size 20
-    secondarySize 25
-    chance 0.4
-    offset 0 40 0
+	color 0.0 1.0 1.0
+	size 20
+	secondarySize 25
+	chance 0.4
+	offset 0 40 0
 }
 
 flickerlight TeleportFogLth1
 {
-    color 0.0 1.0 1.0
-    size 10
-    secondarySize 15
-    chance 0.4
-    offset 0 40 0
+	color 0.0 1.0 1.0
+	size 10
+	secondarySize 15
+	chance 0.4
+	offset 0 40 0
 }
 
 Pulselight HevBattLight
 {
-    color 0.0 1.0 1.0
-    size 2
-    secondarySize 6
-    interval 1.5
-    offset 0 10 0
+	color 0.0 1.0 1.0
+	size 2
+	secondarySize 6
+	interval 1.5
+	offset 0 10 0
 }
 
 skybox HLSKY6 fliptop//Xen Sky
 {
-   XEN01_N
-   XEN01_E
-   XEN01_S
-   XEN01_W
-   XEN01_T
-   XEN01_B
+	XEN01_N
+	XEN01_E
+	XEN01_S
+	XEN01_W
+	XEN01_T
+	XEN01_B
 }
 
 // Tall street lamp
 pointlight STREETLAMP
 {
-    color 0.85 0.85 0.85
-    size 128
-    // front, high, side
-    offset 72 40 0
+	color 0.85 0.85 0.85
+	size 128
+	// front, high, side
+	offset 72 40 0
 }
