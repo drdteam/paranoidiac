@@ -12,7 +12,7 @@ class HLGruntM16NoGrenades : RandomSpawner
 	}
 }
 
-class HLGruntShotgunNoGrenade : HLGruntM16NoGrenades
+class HLGruntShotgunNoGrenade : RandomSpawner
 {
 	override void PostSpawn(Actor spawned)
 	{
@@ -27,7 +27,7 @@ class HLGruntShotgunNoGrenade : HLGruntM16NoGrenades
 	}
 }
 
-class HLGruntNoGrenadesAny : HLGruntM16NoGrenades
+class HLGruntNoGrenadesAny : RandomSpawner
 {
 	Default
 	{
@@ -41,30 +41,27 @@ class HLGruntM16 : HLGruntM16NoGrenades
 	override void PostSpawn(Actor spawned)
 	{
 		let me=HLGrunt1(spawned);
-		spawned.A_GiveInventory("handgren");//me.handgren=1;
+		me.handgren=1;
 		spawned.mass=150;
 		spawned.PainChance=70;
 		//PainChance "Crowbar",218;
 	}
 }
 
-class HLGruntShotgun : HLGruntM16
+class HLGruntShotgun : HLGruntShotgunNoGrenade
 {
 	override void PostSpawn(Actor spawned)
 	{
 		let me=HLGrunt1(spawned);
 		me.shotgun=1;
-		super.PostSpawn(spawned);
-	}
-	Default
-	{
-		DropItem "HLGrunt4";
-		DropItem "HLGrunt5";
-		DropItem "HLGrunt6";
+		me.handgren=1;
+		spawned.mass=150;
+		spawned.PainChance=70;
+		//PainChance "Crowbar",218;
 	}
 }
 
-class HLGruntAny : HLGruntM16
+class HLGruntAny : RandomSpawner
 {
 	Default
 	{
@@ -76,7 +73,6 @@ class HLGruntAny : HLGruntM16
 //==========================================
 // Government Troops: M16 & Grenade Attack
 //==========================================
-class handgren : inventory{}
 class HLGrunt1 : HLMonster
 {
 	bool closegrencheck,shotgun,handgren;
@@ -232,7 +228,7 @@ class HLGrunt1 : HLMonster
 			{
 				if(random(0,255)<200)
 					return resolvestate("Shotgun");
-				if((handgren||CountInv("handgren"))&&CheckIfCloser(target,600)&&!CheckIfCloser(target,256))
+				if(handgren&&CheckIfCloser(target,600)&&!CheckIfCloser(target,256))
 					return resolvestate("Grenade");
 				return resolvestate("Shotgun");
 			}
@@ -246,7 +242,7 @@ class HLGrunt1 : HLMonster
 					{
 						if(random(0,255)<64)
 							return resolvestate("GrenadeGun");
-						if(handgren||CountInv("handgren"))
+						if(handgren)
 							return resolvestate("Grenade");
 					}
 					return resolvestate("Assault");
