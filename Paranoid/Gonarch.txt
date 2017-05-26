@@ -100,8 +100,8 @@ class HLGonarch : Actor
 		HLNN A 8 A_PlaySound("halflife/monsters/gonarch/attack",5);
 		HLNN BC 8;
 		TNT1 A 0 A_PlaySound("halflife/monsters/gonarch/spawnchild",4);
-		HLNN DD 2 A_SpawnItemEx("HLBabyHeadCrab2",random(10,-10),random(10,-10),flags:SXF_NOCHECKPOSITION);
-		HLNN D 1 A_SpawnItemEx("HLBabyHeadCrab2",random(10,-10),random(10,-10),flags:SXF_NOCHECKPOSITION);
+		HLNN DD 2 A_SpawnBabyCrab;
+		HLNN D 1 A_SpawnBabyCrab;
 		HLNN E 32;
 		Goto See;
 	Pain:
@@ -125,6 +125,15 @@ class HLGonarch : Actor
 				A_SpawnItemEx("XenGibs",random(5,-5),random(5,-5),random(10,40),random(1,7),random(1,7),random(5,13),random(0,359));
 		}
 		Stop;
+	}
+	void A_SpawnBabyCrab()
+	{
+		bool num;
+		actor baby;
+		[num,baby]=A_SpawnItemEx("HLBabyHeadCrab",random(10,-10),random(10,-10),flags:SXF_NOCHECKPOSITION);
+		let me=HLBabyHeadCrab(baby);
+		me.Speed=10.0/3.0;
+		me.gonarchbaby=1;
 	}
 }
 
