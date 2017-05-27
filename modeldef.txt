@@ -3888,3 +3888,58 @@ Model RolfBellmer
 	FrameIndex HLD2 U 0 158
 	FrameIndex HLD2 V 0 159
 }
+
+Model XenGibs
+{
+	Path "Models"
+	Model 0 "xengibs1.md2"
+	Skin 0 "xengibs1.png"
+	Scale 1 1 1
+
+	FrameIndex HLI1 A 0 0
+}
+Model XenGibs
+{
+	Path "Models"
+	Model 0 "xengibs2.md2"
+	Skin 0 "xengibs2.png"
+	Scale 1 1 1
+
+	FrameIndex HLI1 B 0 0
+}
+Model XenGibs
+{
+	Path "Models"
+	Model 0 "xengibs3.md2"
+	Skin 0 "xengibs3.png"
+	Scale 1 1 1
+
+	FrameIndex HLI1 C 0 0
+}
+Model XenGibs
+{
+	Path "Models"
+	Model 0 "xengibs4.md2"
+	Skin 0 "xengibs4.png"
+	Scale 1 1 1
+
+	FrameIndex HLI1 D 0 0
+}
+Model XenGibs
+{
+	Path "Models"
+	Model 0 "xengibs5.md2"
+	Skin 0 "xengibs5.png"
+	Scale 1 1 1
+
+	FrameIndex HLI1 E 0 0
+}
+Model XenGibs
+{
+	Path "Models"
+	Model 0 "xengibs6.md2"
+	Skin 0 "xengibs6.png"
+	Scale 1 1 1
+
+	FrameIndex HLI1 F 0 0
+}

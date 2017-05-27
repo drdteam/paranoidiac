@@ -96,7 +96,12 @@ class HLHeadCrab : HLMonster
 		{
 			A_XenGibs(2);
 			for(int i=0;i<4;i++)
-				A_SpawnItemEx("XenGibsMini",random(5,-5),random(5,-5),random(10,40),random(1,7),random(1,7),random(5,13),random(0,359));
+			{
+				bool num;
+				actor gib;
+				[num,gib]=A_SpawnItemEx("XenGibs",random(5,-5),random(5,-5),random(10,40),random(1,7),random(1,7),random(5,13),random(0,359));
+				gib.scale=(.75,.75);
+			}
 		}
 		Stop;
 	}
@@ -164,7 +169,12 @@ class HLBabyHeadCrab : HLHeadCrab
 		TNT1 A 0
 		{
 			for(int i=0;i<4;i++)
-				A_SpawnItemEx("XenGibsMini",random(2,-2),random(2,-2),random(0,20),random(1,4),random(1,4),random(2,6),random(0,359));
+			{
+				bool num;
+				actor gib;
+				[num,gib]=A_SpawnItemEx("XenGibs",random(2,-2),random(2,-2),random(0,20),random(1,4),random(1,4),random(2,6),random(0,359));
+				gib.scale=(.75,.75);
+			}
 		}
 		Stop;
 	}

@@ -260,24 +260,34 @@ class BloodGib4 : BloodGib1		//bloodthing
 	}
 }
 
-class XenGibsRed : Actor
+class XenGibs : Actor
 {
 	Default
 	{
-		Mass 5;
+		Mass 100;
 		radius 6;
 		height 5;
 		+DROPOFF
 		+NOTELEPORT
 		+CORPSE
 		+CANNOTPUSH
-		scale 0.12;
+		Translation "176:191=[222,254,114]:[43,55,0]";
 	}
 	states
 	{
 	Spawn:
-		RGIB A -1 NODELAY {self.frame=random(0,7);}
-		Stop;
+		HLI1 A 0 NODELAY {self.frame=random(0,5);}
+		HLI1 "#" 2
+		{
+			bool num;
+			actor bld;
+			[num,bld]=A_SpawnItemEx("XenBlood",random(3,-3),random(3,-3),random(3,-3),flags:SXF_TRANSFERTRANSLATION);
+			if(scale.x==.75)
+				bld.scale=(.6,.6);
+			else
+				A_SpawnItemEx("ExtraBlood",random(3,-3),random(3,-3),random(3,-3),1,0,0,random(1,359),SXF_TRANSFERTRANSLATION);
+		}
+		Wait;
 	Crash:
 		"####" # 300;
 		"####" # 2 A_FadeOut;
@@ -285,19 +295,18 @@ class XenGibsRed : Actor
 	}
 }
 
-class XenGibs : XenGibsRed
+class XenGibsRed : XenGibs
 {
 	Default
 	{
-		Mass 100;
-		Translation "176:191=[222,254,114]:[43,55,0]";
+		Mass 5;
+		scale .12;
 	}
 	states
 	{
 	Spawn:
-		GGIB A 0 NODELAY {self.frame=random(0,7);}
-		GGIB "#" 2 A_SpawnItemEx("XenBlood",random(3,-3),random(3,-3),random(3,-3),flags:SXF_TRANSFERTRANSLATION);
-		Wait;
+		RGIB A -1 NODELAY {self.frame=random(0,7);}
+		Stop;
 	}
 }
 
@@ -310,36 +319,6 @@ class XenBlood : Blood
 		+DONTSPLASH
 		+DONTBLAST
 		+CANNOTPUSH
-	}
-	States
-	{
-	Spawn:
-		BLD1 A 6 NODELAY A_SpawnItemEx("ExtraBlood",random(3,-3),random(3,-3),random(3,-3),1,0,0,random(1,359),SXF_TRANSFERTRANSLATION);
-		BLD1 BCD 6;
-		Stop;
-	}
-}
-
-class XenGibsMini : XenGibs
-{
-	Default
-	{
-		Scale .09;
-	}
-	States
-	{
-	Spawn:
-		GGIB A 0 NODELAY {self.frame=random(0,7);}
-		GGIB "#" 2 A_SpawnItemEx("XenBloodMini",random(3,-3),random(3,-3),random(3,-3),flags:SXF_TRANSFERTRANSLATION);
-		Wait;
-	}
-}
-
-class XenBloodMini : XenBlood
-{
-	Default
-	{
-		Scale .06;
 	}
 	States
 	{
