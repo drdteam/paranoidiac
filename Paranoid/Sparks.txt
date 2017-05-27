@@ -36,7 +36,7 @@ class OMGOrangeSpark : SwitchableDecoration
 						thisspark=A_SpawnProjectile("Spark_O1",0,0,Random(-23,23),2,Random(157,203));
 						break;
 					}
-					thisspark.speed=(i/4.0);
+					thisspark.vel.x=(i/4.0);
 				}
 			}
 		}

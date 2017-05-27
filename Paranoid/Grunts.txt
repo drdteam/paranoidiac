@@ -216,7 +216,7 @@ class HLGrunt1 : HLMonster
 		{
 			closegrencheck=1;
 			actor gren=A_SpawnProjectile("GruntHandGrenade",40);
-			gren.speed=10;
+			gren.vel.x=10;
 		}
 		HLA2 B 1;
 		HLA2 DEFGHIKLM 1;
