@@ -73,18 +73,16 @@ class SparkFlare_O1 : Actor
 }
 
 //Sparks
-class Spark_O1 : Actor
+class Spark_O1 : SparkFlare_O1
 {
 	Default
 	{
 		height 1;
 		radius 2;
-		mass 0;
 		speed .25;
-		+MISSILE
-		+NOBLOCKMAP
-		+FORCEXYBILLBOARD
-		RenderStyle "Add";
+		-NOCLIP
+		-NOGRAVITY
+		-NOINTERACTION
 		gravity .125;
 		scale .025;
 	}
@@ -94,8 +92,7 @@ class Spark_O1 : Actor
 		SPKO E -1 bright;
 		Loop;
 	Death:
-		SPKO E 1 bright A_FadeOut;
-		Loop;
+		Goto Super::Spawn+1;
 	}
 }
 
@@ -201,72 +198,155 @@ class BigBlueSpark : SwitchableDecoration
 		TNT1 A -1 {iterator=0;}
 		Loop;
 	Active:
-		TNT1 A 1 A_SpawnItemEx("SparkFlare_BB1");
-		TNT1 AA 0 A_Spark("Spark_BB1");
-		TNT1 AA 1 A_Spark("Spark_BB16");
-		TNT1 AA 0 A_Spark("Spark_BB2");
-		TNT1 AA 1 A_Spark("Spark_BB15");
-		TNT1 A 1 A_SpawnItemEx("SparkFlare_BB2");
-		TNT1 AA 0 A_Spark("Spark_BB3");
-		TNT1 AA 1 A_Spark("Spark_BB14");
-		TNT1 AA 0 A_Spark("Spark_BB4");
-		TNT1 AA 1 A_Spark("Spark_BB13");
-		TNT1 A 1 A_SpawnItemEx("SparkFlare_BB3");
-		TNT1 AA 0 A_Spark("Spark_BB5");
-		TNT1 AA 1 A_Spark("Spark_BB12");
-		TNT1 AA 0 A_Spark("Spark_BB6");
-		TNT1 AA 1 A_Spark("Spark_BB11");
-		TNT1 A 1 A_SpawnItemEx("SparkFlare_BB4");
-		TNT1 A 0 A_Spark("Spark_BB7");
-		TNT1 A 1 A_Spark("Spark_BB10");
-		TNT1 A 0 A_Spark("Spark_BB8");
-		TNT1 A 1 A_Spark("Spark_BB9");
-		TNT1 A 1 A_SpawnItemEx("SparkFlare_BB5");
-		TNT1 A 0 A_Spark("Spark_BB9");
-		TNT1 A 1 A_Spark("Spark_BB8");
-		TNT1 A 0 A_Spark("Spark_BB10");
-		TNT1 A 1 A_Spark("Spark_BB7");
-		TNT1 A 1 A_SpawnItemEx("SparkFlare_BB6");
-		TNT1 A 0 A_Spark("Spark_BB11");
-		TNT1 A 1 A_Spark("Spark_BB6");
-		TNT1 A 0 A_Spark("Spark_BB12");
-		TNT1 A 1 A_Spark("Spark_BB5");
-		TNT1 A 1 A_SpawnItemEx("SparkFlare_BB2");
-		TNT1 A 0 A_Spark("Spark_BB13");
-		TNT1 A 1 A_Spark("Spark_BB4");
-		TNT1 A 0 A_Spark("Spark_BB14");
-		TNT1 A 1 A_Spark("Spark_BB3");
-		TNT1 A 1 A_SpawnItemEx("SparkFlare_BB4");
-		TNT1 A 0 A_Spark("Spark_BB15");
-		TNT1 A 1 A_Spark("Spark_BB2");
+		TNT1 A 1 A_SparkFlare("SparkFlare_BB1");
+		TNT1 A 1
+		{
+			A_Spark("Spark_BB1",.25,2);
+			A_Spark("Spark_BB1",4,2);
+		}
+		TNT1 A 1
+		{
+			A_Spark("Spark_BB1",.5,2);
+			A_Spark("Spark_BB1",3.75,2);
+		}
+		TNT1 A 1 A_SparkFlare("SparkFlare_BB1",1);
+		TNT1 A 1
+		{
+			A_Spark("Spark_BB1",.75,2);
+			A_Spark("Spark_BB1",3.5,2);
+		}
+		TNT1 A 1
+		{
+			A_Spark("Spark_BB1",1,2);
+			A_Spark("Spark_BB1",3.25,2);
+		}
+		TNT1 A 1 A_SparkFlare("SparkFlare_BB1",2);
+		TNT1 A 1
+		{
+			A_Spark("Spark_BB1",1.25,2);
+			A_Spark("Spark_BB1",3,2);
+		}
+		TNT1 A 1
+		{
+			A_Spark("Spark_BB1",1.5,2);
+			A_Spark("Spark_BB1",2.75,2);
+		}
+		TNT1 A 1 A_SparkFlare("SparkFlare_BB1",3);
+		TNT1 A 1
+		{
+			A_Spark("Spark_BB1",1.75);
+			A_Spark("Spark_BB1",2.5);
+		}
+		TNT1 A 1
+		{
+			A_Spark("Spark_BB1",2);
+			A_Spark("Spark_BB1",2.25);
+		}
+		TNT1 A 1 A_SparkFlare("SparkFlare_BB1",4);
+		TNT1 A 1
+		{
+			A_Spark("Spark_BB1",2.25);
+			A_Spark("Spark_BB1",2);
+		}
+		TNT1 A 1
+		{
+			A_Spark("Spark_BB1",2.5);
+			A_Spark("Spark_BB1",1.75);
+		}
+		TNT1 A 1 A_SparkFlare("SparkFlare_BB1",5);
+		TNT1 A 1
+		{
+			A_Spark("Spark_BB1",2.75);
+			A_Spark("Spark_BB1",1.5);
+		}
+		TNT1 A 1
+		{
+			A_Spark("Spark_BB1",3);
+			A_Spark("Spark_BB1",1.25);
+		}
+		TNT1 A 1 A_SparkFlare("SparkFlare_BB1",1);
+		TNT1 A 1
+		{
+			A_Spark("Spark_BB1",3.25);
+			A_Spark("Spark_BB1",1);
+		}
+		TNT1 A 1
+		{
+			A_Spark("Spark_BB1",3.5);
+			A_Spark("Spark_BB1",.75);
+		}
+		TNT1 A 1 A_SparkFlare("SparkFlare_BB1",3);
+		TNT1 A 1
+		{
+			A_Spark("Spark_BB1",3.75);
+			A_Spark("Spark_BB1",.5);
+		}
 		TNT1 A 0 {iterator++;}
 		TNT1 A 0 A_JumpIf(iterator>=4,1);
 		Loop;
 		//and again - shorter this time
-		TNT1 A 0 A_Spark("Spark_BB16");
-		TNT1 A 1 A_Spark("Spark_BB1");
-		TNT1 A 1 A_SpawnItemEx("SparkFlare_BB1");
-		TNT1 AA 0 A_Spark("Spark_BB1");
-		TNT1 AA 1 A_Spark("Spark_BB16");
-		TNT1 AA 0 A_Spark("Spark_BB2");
-		TNT1 AA 1 A_Spark("Spark_BB15");
-		TNT1 A 1 A_SpawnItemEx("SparkFlare_BB2");
-		TNT1 AA 0 A_Spark("Spark_BB3");
-		TNT1 AA 1 A_Spark("Spark_BB14");
-		TNT1 AA 0 A_Spark("Spark_BB4");
-		TNT1 AA 1 A_Spark("Spark_BB13");
-		TNT1 A 1 A_SpawnItemEx("SparkFlare_BB3");
-		TNT1 AA 0 A_Spark("Spark_BB5");
-		TNT1 AA 1 A_Spark("Spark_BB12");
-		TNT1 AA 0 A_Spark("Spark_BB6");
-		TNT1 AA 1 A_Spark("Spark_BB11");
-		TNT1 A 1 A_SpawnItemEx("SparkFlare_BB4");
-		TNT1 A 0 A_Spark("Spark_BB7");
-		TNT1 A 1 A_Spark("Spark_BB10");
-		goto Inactive;
+		TNT1 A 1
+		{
+			A_Spark("Spark_BB1",4);
+			A_Spark("Spark_BB1",.25);
+		}
+		TNT1 A 1 A_SparkFlare("SparkFlare_BB1");
+		TNT1 A 1
+		{
+			A_Spark("Spark_BB1",.25,2);
+			A_Spark("Spark_BB1",4,2);
+		}
+		TNT1 A 1
+		{
+			A_Spark("Spark_BB1",.5,2);
+			A_Spark("Spark_BB1",3.75,2);
+		}
+		TNT1 A 1 A_SparkFlare("SparkFlare_BB1",1);
+		TNT1 A 1
+		{
+			A_Spark("Spark_BB1",.75,2);
+			A_Spark("Spark_BB1",3.5,2);
+		}
+		TNT1 A 1
+		{
+			A_Spark("Spark_BB1",1,2);
+			A_Spark("Spark_BB1",3.25,2);
+		}
+		TNT1 A 1 A_SparkFlare("SparkFlare_BB1",2);
+		TNT1 A 1
+		{
+			A_Spark("Spark_BB1",1.25,2);
+			A_Spark("Spark_BB1",3,2);
+		}
+		TNT1 A 1
+		{
+			A_Spark("Spark_BB1",1.5,2);
+			A_Spark("Spark_BB1",2.75,2);
+		}
+		TNT1 A 1 A_SparkFlare("SparkFlare_BB1",3);
+		TNT1 A 1
+		{
+			A_Spark("Spark_BB1",1.75);
+			A_Spark("Spark_BB1",2.5);
+		}
+		Goto Inactive;
 	}
-	void A_Spark(string spark)
-		{A_SpawnProjectile(spark,0,0,random(0,359),2,Random(-255,255));}
+	void A_Spark(class<actor> spark,float spd,int num=1)
+	{
+		actor thisspark;
+		for(int i=0;i<num;i++)
+		{
+			thisspark=A_SpawnProjectile(spark,0,0,random(0,359),2,Random(-255,255));
+			thisspark.vel.x=spd;
+		}
+	}
+	void A_SparkFlare(class<actor> flare,int frm=0)
+	{
+		bool spawned;
+		actor thisflare;
+		[spawned,thisflare]=A_SpawnItemEx(flare);
+		thisflare.frame=frm;
+	}
 }
 
 //Big Blue Spark Flares
@@ -285,12 +365,6 @@ class SparkFlare_BB1 : SparkFlare_O1
 		Wait;
 	}
 }
-
-class SparkFlare_BB2 : SparkFlare_BB1{States{Spawn:SPKB B 0;Goto Super::Spawn+1;}}
-class SparkFlare_BB3 : SparkFlare_BB1{States{Spawn:SPKB C 0;Goto Super::Spawn+1;}}
-class SparkFlare_BB4 : SparkFlare_BB1{States{Spawn:SPKB D 0;Goto Super::Spawn+1;}}
-class SparkFlare_BB5 : SparkFlare_BB1{States{Spawn:SPKB E 0;Goto Super::Spawn+1;}}
-class SparkFlare_BB6 : SparkFlare_BB1{States{Spawn:SPKB F 0;Goto Super::Spawn+1;}}
 
 //Big Blue Sparks
 class Spark_BB1 : Spark_O1
@@ -313,22 +387,6 @@ class Spark_BB1 : Spark_O1
 		Stop;
 	}
 }
-
-class Spark_BB2 : Spark_BB1{Default{Speed .5;}}
-class Spark_BB3 : Spark_BB1{Default{Speed .75;}}
-class Spark_BB4 : Spark_BB1{Default{Speed 1.0;}}
-class Spark_BB5 : Spark_BB1{Default{Speed 1.25;}}
-class Spark_BB6 : Spark_BB1{Default{Speed 1.5;}}
-class Spark_BB7 : Spark_BB1{Default{Speed 1.75;}}
-class Spark_BB8 : Spark_BB1{Default{Speed 2.0;}}
-class Spark_BB9 : Spark_BB1{Default{Speed 2.25;}}
-class Spark_BB10 : Spark_BB1{Default{Speed 2.5;}}
-class Spark_BB11 : Spark_BB1{Default{Speed 2.75;}}
-class Spark_BB12 : Spark_BB1{Default{Speed 3.0;}}
-class Spark_BB13 : Spark_BB1{Default{Speed 3.25;}}
-class Spark_BB14 : Spark_BB1{Default{Speed 3.5;}}
-class Spark_BB15 : Spark_BB1{Default{Speed 3.75;}}
-class Spark_BB16 : Spark_BB1{Default{Speed 4.0;}}
 
 //Flares in Vacuum Tubes at the end of Map01
 class NJTankSpark : BlueTorch replaces BlueTorch
