@@ -1,3 +1,125 @@
+Model HLBabyHeadCrab
+{
+	Path "Models"
+	Model 0 "baby_headcrab.md2"
+	Skin 0 "baby_headcrab.png"
+	Scale 1 1 1
+
+	FrameIndex HLI1 A 0 0
+
+	FrameIndex HLW1 A 0 32
+	FrameIndex HLW1 B 0 33
+	FrameIndex HLW1 C 0 34
+	FrameIndex HLW1 D 0 35
+	FrameIndex HLW1 E 0 36
+	FrameIndex HLW1 F 0 37
+	FrameIndex HLW1 G 0 38
+	FrameIndex HLW1 H 0 39
+	FrameIndex HLW1 I 0 40
+	FrameIndex HLW1 J 0 41
+	FrameIndex HLW1 K 0 42
+	FrameIndex HLW1 L 0 43
+	FrameIndex HLW1 M 0 44
+	FrameIndex HLW1 N 0 45
+	FrameIndex HLW1 O 0 46
+	FrameIndex HLW1 P 0 47
+	FrameIndex HLW1 Q 0 48
+	FrameIndex HLW1 R 0 49
+	FrameIndex HLW1 S 0 50
+	FrameIndex HLW1 T 0 51
+	FrameIndex HLW1 U 0 52
+	FrameIndex HLW1 V 0 53
+	FrameIndex HLW1 W 0 54
+	FrameIndex HLW1 X 0 55
+	FrameIndex HLW1 Y 0 56
+	FrameIndex HLW1 Z 0 57
+	FrameIndex HLW1 [ 0 58
+	FrameIndex HLW1 \ 0 59
+	FrameIndex HLW1 ] 0 60
+	FrameIndex HLW2 A 0 61
+	FrameIndex HLW2 B 0 62
+	FrameIndex HLW2 C 0 63
+	FrameIndex HLW2 D 0 64
+	FrameIndex HLW2 E 0 65
+	FrameIndex HLW2 F 0 66
+
+	FrameIndex HLA1 A 0 137
+	FrameIndex HLA1 B 0 138
+	FrameIndex HLA1 C 0 139
+	FrameIndex HLA1 D 0 140
+	FrameIndex HLA1 E 0 141
+	FrameIndex HLA1 F 0 142
+	FrameIndex HLA1 G 0 143
+	FrameIndex HLA1 H 0 144
+	FrameIndex HLA1 I 0 145
+	FrameIndex HLA1 J 0 146
+	FrameIndex HLA1 K 0 147
+	FrameIndex HLA1 L 0 148
+	FrameIndex HLA1 M 0 149
+	FrameIndex HLA1 N 0 150
+	FrameIndex HLA1 O 0 151
+	FrameIndex HLA1 P 0 152
+	FrameIndex HLA1 Q 0 153
+	FrameIndex HLA1 R 0 154
+	FrameIndex HLA1 S 0 155
+	FrameIndex HLA1 T 0 156
+	FrameIndex HLA1 U 0 157
+	FrameIndex HLA1 V 0 158
+	FrameIndex HLA1 W 0 159
+	FrameIndex HLA1 X 0 160
+	FrameIndex HLA1 Y 0 161
+	FrameIndex HLA1 Z 0 162
+	FrameIndex HLA1 [ 0 163
+	FrameIndex HLA1 \ 0 164
+	FrameIndex HLA1 ] 0 165
+
+	FrameIndex HLP1 A 0 67
+	FrameIndex HLP1 B 0 68
+	FrameIndex HLP1 C 0 69
+	FrameIndex HLP1 D 0 70
+	FrameIndex HLP1 E 0 71
+	FrameIndex HLP1 F 0 72
+	FrameIndex HLP1 G 0 73
+	FrameIndex HLP1 H 0 74
+	FrameIndex HLP1 I 0 75
+	FrameIndex HLP1 J 0 76
+	FrameIndex HLP1 K 0 77
+	FrameIndex HLP1 L 0 78
+	FrameIndex HLP1 M 0 79
+	FrameIndex HLP1 N 0 80
+	FrameIndex HLP1 O 0 81
+
+	FrameIndex HLD1 A 0 86
+	FrameIndex HLD1 B 0 87
+	FrameIndex HLD1 C 0 88
+	FrameIndex HLD1 D 0 89
+	FrameIndex HLD1 E 0 90
+	FrameIndex HLD1 F 0 91
+	FrameIndex HLD1 G 0 92
+	FrameIndex HLD1 H 0 93
+	FrameIndex HLD1 I 0 94
+	FrameIndex HLD1 J 0 95
+	FrameIndex HLD1 K 0 96
+	FrameIndex HLD1 L 0 97
+	FrameIndex HLD1 M 0 98
+	FrameIndex HLD1 N 0 99
+	FrameIndex HLD1 O 0 100
+	FrameIndex HLD1 P 0 101
+	FrameIndex HLD1 Q 0 102
+	FrameIndex HLD1 R 0 103
+	FrameIndex HLD1 S 0 104
+	FrameIndex HLD1 T 0 105
+	FrameIndex HLD1 U 0 106
+	FrameIndex HLD1 V 0 107
+	FrameIndex HLD1 W 0 108
+	FrameIndex HLD1 X 0 109
+	FrameIndex HLD1 Y 0 110
+	FrameIndex HLD1 Z 0 111
+	FrameIndex HLD1 [ 0 112
+	FrameIndex HLD1 \ 0 113
+	FrameIndex HLD1 ] 0	117
+}
+
 Model HLHoundEye
 {
 	Path "Models"
