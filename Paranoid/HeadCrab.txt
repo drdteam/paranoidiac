@@ -4,9 +4,15 @@
 
 class HLHeadCrab : HLMonster
 {
-	int countdown,drowncounter;
+	int drowncounter;
+	override bool Slam(Actor victim)
+	{
+		A_PlaySound("halflife/monsters/headcrab/meleehit",CHAN_BODY);
+		return super.slam(victim);
+	}
 	Default
 	{
+		Damage 1;
 		Health 10;
 		Speed 1.6;
 		Height 25;
@@ -32,24 +38,21 @@ class HLHeadCrab : HLMonster
 		Loop;
 	See:
 		HLBW A 0 A_JumpIf(waterlevel>=2,"Drown");
-		HLBW A 1 A_HeadCrabChase;
+		HLBW A 1 A_Chase;
 		HLBW AAAA 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLBW B 1 A_HeadCrabChase;
+		HLBW B 1 A_Chase;
 		HLBW BBBB 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLBW C 1 A_HeadCrabChase;
+		HLBW C 1 A_Chase;
 		HLBW CCCC 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLBW D 1 A_HeadCrabChase;
+		HLBW D 1 A_Chase;
 		HLBW DDDD 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLBW E 1 A_HeadCrabChase;
+		HLBW E 1 A_Chase;
 		HLBW EEEE 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLBW F 1 A_HeadCrabChase;
+		HLBW F 1 A_Chase;
 		HLBW FFFF 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLBW G 1 A_HeadCrabChase;
+		HLBW G 1 A_Chase;
 		HLBW GGGG 1 A_Chase(null,null,HLSMOOTHCHASE);
 		Loop;
-	Melee:
-		HLBW A 10 A_HeadCrabMelee;
-		Goto See;
 	Missile:
 		TNT1 A 0 A_JumpIf(waterlevel>=2,"Drown");
 		HLBI A 4 A_FaceTarget;
@@ -63,11 +66,7 @@ class HLHeadCrab : HLMonster
 		WLBA G 30;
 		Goto See;
 	Pain:
-		HLBP A 8
-		{
-			countdown=0;
-			A_Pain();
-		}
+		HLBP A 8 A_Pain;
 		Goto See;
 	Drown:
 		HLBP A 12
@@ -101,19 +100,8 @@ class HLHeadCrab : HLMonster
 		}
 		Stop;
 	}
-	void A_HeadCrabChase()
-	{
-		if(countdown--)
-			A_Chase("Melee",null);
-		else
-			A_Chase(null,"Missile");
-		countdown--;
-	}
-	void A_HeadCrabMelee()
-		{A_CustomMeleeAttack(random(1,8),"halflife/monsters/headcrab/meleehit");}
 	void A_HeadCrabAttack(float min,float max)
 	{
-		countdown=2;
 		A_SkullAttack();
 		vel.z+=frandom(min,max);
 	}
@@ -140,32 +128,29 @@ class HLBabyHeadCrab : HLHeadCrab
 		Loop;
 	See:
 		HLQW A 0 A_JumpIf(gonarchbaby,"See2");
-		HLQW A 1 A_HeadCrabChase;
+		HLQW A 1 A_Chase;
 		HLQW AAAA 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLQW B 1 A_HeadCrabChase;
+		HLQW B 1 A_Chase;
 		HLQW BBBB 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLQW C 1 A_HeadCrabChase;
+		HLQW C 1 A_Chase;
 		HLQW CCCC 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLQW D 1 A_HeadCrabChase;
+		HLQW D 1 A_Chase;
 		HLQW DDDD 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLQW E 1 A_HeadCrabChase;
+		HLQW E 1 A_Chase;
 		HLQW EEEE 1 A_Chase(null,null,HLSMOOTHCHASE);
 		Loop;
 	See2:
-		HLQW A 1 A_HeadCrabChase;
+		HLQW A 1 A_Chase;
 		HLQW AA 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLQW B 1 A_HeadCrabChase;
+		HLQW B 1 A_Chase;
 		HLQW BB 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLQW C 1 A_HeadCrabChase;
+		HLQW C 1 A_Chase;
 		HLQW CC 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLQW D 1 A_HeadCrabChase;
+		HLQW D 1 A_Chase;
 		HLQW DD 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLQW E 1 A_HeadCrabChase;
+		HLQW E 1 A_Chase;
 		HLQW EE 1 A_Chase(null,null,HLSMOOTHCHASE);
 		Loop;
-	Melee:
-		HLQW A 10 A_HeadCrabMelee;
-		Goto See;
 	Missile:
 		HLQI A 4 A_FaceTarget;
 		HLQM AB 3;
@@ -175,7 +160,7 @@ class HLBabyHeadCrab : HLHeadCrab
 		HLQM D 60 A_stop;
 		Goto See;
 	Pain:
-		HLQP A 8 {countdown=0;}
+		HLQP A 8;
 		Goto See;
 	Death:
 	XDeath:
