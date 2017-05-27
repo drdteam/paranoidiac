@@ -1,3 +1,119 @@
+Model HLHeadCrab
+{
+	Path "Models"
+	Model 0 "headcrab.md2"
+	Skin 0 "headcrab.png"
+	Scale 1 1 1
+
+	FrameIndex HLI1 A 0 0
+
+	FrameIndex HLR1 A 0 32
+	FrameIndex HLR1 B 0 33
+	FrameIndex HLR1 C 0 34
+	FrameIndex HLR1 D 0 35
+	FrameIndex HLR1 E 0 36
+	FrameIndex HLR1 F 0 37
+	FrameIndex HLR1 G 0 38
+	FrameIndex HLR1 H 0 39
+	FrameIndex HLR1 I 0 40
+	FrameIndex HLR1 J 0 41
+	FrameIndex HLR1 K 0 42
+	FrameIndex HLR1 L 0 43
+	FrameIndex HLR1 M 0 44
+	FrameIndex HLR1 N 0 45
+	FrameIndex HLR1 O 0 46
+	FrameIndex HLR1 P 0 47
+	FrameIndex HLR1 Q 0 48
+	FrameIndex HLR1 R 0 49
+	FrameIndex HLR1 S 0 50
+	FrameIndex HLR1 T 0 51
+	FrameIndex HLR1 U 0 52
+	FrameIndex HLR1 V 0 53
+	FrameIndex HLR1 W 0 54
+	FrameIndex HLR1 X 0 55
+	FrameIndex HLR1 Y 0 56
+	FrameIndex HLR1 Z 0 57
+	FrameIndex HLR1 [ 0 58
+	FrameIndex HLR1 \ 0 59
+	FrameIndex HLR1 ] 0 60
+
+	FrameIndex HLA1 A 0 131
+	FrameIndex HLA1 B 0 132
+	FrameIndex HLA1 C 0 133
+	FrameIndex HLA1 D 0 134
+	FrameIndex HLA1 E 0 135
+	FrameIndex HLA1 F 0 136
+	FrameIndex HLA1 G 0 137
+	FrameIndex HLA1 H 0 138
+	FrameIndex HLA1 I 0 139
+	FrameIndex HLA1 J 0 140
+	FrameIndex HLA1 K 0 141
+	FrameIndex HLA1 L 0 142
+	FrameIndex HLA1 M 0 143
+	FrameIndex HLA1 N 0 144
+	FrameIndex HLA1 O 0 145
+	FrameIndex HLA1 P 0 146
+	FrameIndex HLA1 Q 0 147
+	FrameIndex HLA1 R 0 148
+	FrameIndex HLA1 S 0 149
+	FrameIndex HLA1 T 0 150
+	FrameIndex HLA1 U 0 151
+	FrameIndex HLA1 V 0 152
+	FrameIndex HLA1 W 0 153
+	FrameIndex HLA1 X 0 154
+	FrameIndex HLA1 Y 0 155
+	FrameIndex HLA1 Z 0 156
+	FrameIndex HLA1 [ 0 157
+	FrameIndex HLA1 \ 0 158
+	FrameIndex HLA1 ] 0 159
+
+	FrameIndex HLP1 A 0 61
+	FrameIndex HLP1 B 0 62
+	FrameIndex HLP1 C 0 63
+	FrameIndex HLP1 D 0 64
+	FrameIndex HLP1 E 0 65
+	FrameIndex HLP1 F 0 66
+	FrameIndex HLP1 G 0 67
+	FrameIndex HLP1 H 0 68
+	FrameIndex HLP1 I 0 69
+	FrameIndex HLP1 J 0 70
+	FrameIndex HLP1 K 0 71
+	FrameIndex HLP1 L 0 72
+	FrameIndex HLP1 M 0 73
+	FrameIndex HLP1 N 0 74
+	FrameIndex HLP1 O 0 75
+
+	FrameIndex HLD1 A 0 81
+	FrameIndex HLD1 B 0 82
+	FrameIndex HLD1 C 0 83
+	FrameIndex HLD1 D 0 84
+	FrameIndex HLD1 E 0 85
+	FrameIndex HLD1 F 0 86
+	FrameIndex HLD1 G 0 87
+	FrameIndex HLD1 H 0 88
+	FrameIndex HLD1 I 0 89
+	FrameIndex HLD1 J 0 90
+	FrameIndex HLD1 K 0 91
+	FrameIndex HLD1 L 0 92
+	FrameIndex HLD1 M 0 93
+	FrameIndex HLD1 N 0 94
+	FrameIndex HLD1 O 0 95
+	FrameIndex HLD1 P 0 96
+	FrameIndex HLD1 Q 0 97
+	FrameIndex HLD1 R 0 98
+	FrameIndex HLD1 S 0 99
+	FrameIndex HLD1 T 0 100
+	FrameIndex HLD1 U 0 101
+	FrameIndex HLD1 V 0 102
+	FrameIndex HLD1 W 0 103
+	FrameIndex HLD1 X 0 104
+	FrameIndex HLD1 Y 0 105
+	FrameIndex HLD1 Z 0 106
+	FrameIndex HLD1 [ 0 107
+	FrameIndex HLD1 \ 0 108
+	FrameIndex HLD1 ] 0	111
+}
+
 Model HLBabyHeadCrab
 {
 	Path "Models"
