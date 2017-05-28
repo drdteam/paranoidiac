@@ -9,10 +9,9 @@ class HEVSuit : BasicArmorPickup
 		radius 16;
 		height 52;
 		inventory.pickupmessage "Picked up the HEV Suit!";
-		//inventory.icon "ARM5A0";
 		armor.saveamount 100;
 		armor.savepercent 50;
-		//armor.maxfullabsorb 25;
+		Inventory.Icon "i_arm2";
 	}
 	states
 	{
@@ -22,18 +21,25 @@ class HEVSuit : BasicArmorPickup
 	}
 }
 
-class HEVbattery : BasicArmorBonus
+class HEVCharge : BasicArmorBonus
+{
+	Default
+	{
+		Inventory.Icon "i_arm2";
+		armor.maxsaveamount 100;
+		armor.saveamount 1;
+		armor.savepercent 50;
+		-INVENTORY.ALWAYSPICKUP
+	}
+}
+class HEVbattery : HEVCharge
 {
 	Default
 	{
 		Radius 4;
 		Height 12;
-		-INVENTORY.ALWAYSPICKUP
 		inventory.pickupmessage "Picked up battery pack for HEV Suit!";
 		armor.saveamount 15;
-		armor.savepercent 50;
-		armor.maxsaveamount 100;
-		//inventory.icon "ABO2A0";
 	}
 	states
 	{
@@ -51,7 +57,6 @@ class Medkit : Health
 		Height 4;
 		inventory.pickupmessage "Picked up a field medical kit!";
 		Inventory.Amount 15;
-		//inventory.icon "ABO2A0";
 	}
 	states
 	{
@@ -81,17 +86,6 @@ class Medkit1 : HealthPickup
 	Spawn:
 		POSS A -1;
 		Stop;
-	}
-}
-
-class HEVCharge : BasicArmorBonus
-{
-	Default
-	{
-		armor.maxsaveamount 100;
-		armor.saveamount 1;
-		armor.savepercent 50;
-		-INVENTORY.ALWAYSPICKUP
 	}
 }
 
