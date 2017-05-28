@@ -144,6 +144,24 @@ class GibBloodTrailMediumSize : ExtraBlood
 	}
 }
 
+class XenBlood : Blood
+{
+	Default
+	{
+		Scale .15;
+		Gravity .44;
+		+DONTSPLASH
+		+DONTBLAST
+		+CANNOTPUSH
+	}
+	States
+	{
+	Spawn:
+		BLD1 ABCD 6;
+		Stop;
+	}
+}
+
 class BloodGibDropper : Actor
 {
 	Default
@@ -166,9 +184,9 @@ class BloodGibDropper : Actor
 				switch(random(1,4))
 				{
 				case 1:BloodGib(2,2,3,1);break;
-				case 1:BloodGib(2,2,2,2);break;
-				case 1:BloodGib(1,2,3,2);break;
-				case 1:BloodGib(2,1,2,3);break;
+				case 2:BloodGib(2,2,2,2);break;
+				case 3:BloodGib(1,2,3,2);break;
+				case 4:BloodGib(2,1,2,3);break;
 				}
 			}
 		}
@@ -306,24 +324,6 @@ class XenGibsRed : XenGibs
 	{
 	Spawn:
 		RGIB A -1 NODELAY {self.frame=random(0,7);}
-		Stop;
-	}
-}
-
-class XenBlood : Blood
-{
-	Default
-	{
-		Scale .15;
-		Gravity .44;
-		+DONTSPLASH
-		+DONTBLAST
-		+CANNOTPUSH
-	}
-	States
-	{
-	Spawn:
-		BLD1 ABCD 6;
 		Stop;
 	}
 }
