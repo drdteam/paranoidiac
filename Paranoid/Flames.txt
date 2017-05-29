@@ -8,84 +8,83 @@ class OMGFire : SwitchableDecoration
 		+NOSECTOR
 		+LOOKALLAROUND
 	}
-	states
+	States
 	{
 	Spawn:
 	Active:
-		TNT1 A 0 NODELAY A_CheckSightOrRange(2560,"IdleNoSee");
-		TNT1 A 1 omgfire;
-		loop;
-	IdleNoSee:
-		TNT1 A 10;
-		TNT1 A 0 A_CheckSightOrRange(2560,"IdleNoSee");
-		goto Active;
-	Inactive:
-		TNT1 A -1;
-		stop;
-	}
-	void omgfire()
-	{
-		int area=args[0],shape=args[1],glow=args[2],s,t;
-		float a,r,xval,yval,zval=pos.z;
-		for(int i=0;i<area/32+1;i++)
+		TNT1 A 1 NODELAY
 		{
-			s=random(0,2);
-			t=random(2,3);
-			switch (shape)
+			if(CheckSightOrRange(2560))
 			{
-			case 0:
-				a=frandom(0.0,1.0);
-				r=frandom(0,area/2);
-				xval=pos.x+cos(a)*r;
-				yval=pos.y+sin(a)*r;
-				a*=360;
-				break;
-			case 1:
-				a=random(0,360);
-				xval=pos.x+frandom(-area/2,area/2);
-				yval=pos.y+frandom(-area/2,area/2);
-				break;
-			case 2:
-				a=angle;
-				r=frandom(0,area);
-				xval=pos.x+cos(a)*r;
-				yval=pos.y+sin(a)*r;
-				break;
+				A_SetTics(10);
+				return;
 			}
-			let thisflame=Spawn("Flame1A_01",(xval,yval,zval));
-			thisflame.vel.z+=t;
-			thisflame.angle=a;
-			if(s==1)
-				thisflame.scale=(.2,.2);
-			else if(s==2)
-				thisflame.scale=(.3,.3);
-			if(glow==1||glow==3)
+			int area=args[0],shape=args[1],glow=args[2],s,t;
+			float a,r,xval,yval,zval=pos.z;
+			for(int i=0;i<area/32+1;i++)
 			{
-				let thisglow=Spawn("FlameGlow_02",(xval,yval,zval));
-				thisglow.angle=a;
+				s=random(0,2);
+				t=random(2,3);
+				switch (shape)
+				{
+				case 0:
+					a=frandom(0.0,1.0);
+					r=frandom(0,area/2);
+					xval=pos.x+cos(a)*r;
+					yval=pos.y+sin(a)*r;
+					a*=360;
+					break;
+				case 1:
+					a=random(0,360);
+					xval=pos.x+frandom(-area/2,area/2);
+					yval=pos.y+frandom(-area/2,area/2);
+					break;
+				case 2:
+					a=angle;
+					r=frandom(0,area);
+					xval=pos.x+cos(a)*r;
+					yval=pos.y+sin(a)*r;
+					break;
+				}
+				let thisflame=Spawn("Flame1A_01",(xval,yval,zval));
+				thisflame.vel.z+=t;
+				thisflame.angle=a;
 				if(s==1)
-					thisglow.scale=(.4,.4);
+					thisflame.scale=(.2,.2);
 				else if(s==2)
-					thisglow.scale=(.6,.6);
-			}
-			if(glow>=2)
-			{
-				let thatglow=Spawn("FlameGlow_02",(xval,yval,zval));
-				thatglow.angle=a;
-				thatglow.vel.z+=t;
-				if(s==1)
-					thatglow.scale=(.4,.4);
-				else if(s==2)
-					thatglow.scale=(.6,.6);
-			}
-			if(!random(0,64))
-			{
-				let thisember=Spawn("Ember",(xval,yval,zval));
-				thisember.angle=random(0,359);
-				thisember.vel.z+=random(3,6);
-				thisember.vel.x+=random(-1,1);
+					thisflame.scale=(.3,.3);
+				if(glow==1||glow==3)
+				{
+					let thisglow=Spawn("FlameGlow_02",(xval,yval,zval));
+					thisglow.angle=a;
+					if(s==1)
+						thisglow.scale=(.4,.4);
+					else if(s==2)
+						thisglow.scale=(.6,.6);
+				}
+				if(glow>=2)
+				{
+					let thatglow=Spawn("FlameGlow_02",(xval,yval,zval));
+					thatglow.angle=a;
+					thatglow.vel.z+=t;
+					if(s==1)
+						thatglow.scale=(.4,.4);
+					else if(s==2)
+						thatglow.scale=(.6,.6);
+				}
+				if(!random(0,64))
+				{
+					let thisember=Spawn("Ember",(xval,yval,zval));
+					thisember.angle=random(0,359);
+					thisember.vel.z+=random(3,6);
+					thisember.vel.x+=random(-1,1);
+				}
 			}
 		}
+		Loop;
+	Inactive:
+		TNT1 A -1;
+		Stop;
 	}
 }
 
@@ -98,10 +97,10 @@ class Ember : Actor
 		mass 0;
 		PROJECTILE;
 		RenderStyle "Add";
-		scale 0.0625;
+		scale .0625;
 		+FORCEXYBILLBOARD
 	}
-	states
+	States
 	{
 	Spawn:
 		SPKO E 35 bright;
@@ -120,8 +119,8 @@ class FlameGlow_02 : Actor
 		PROJECTILE;
 		+NOCLIP
 		RenderStyle "Add";
-		alpha 0.25;
-		scale 0.2;
+		alpha .25;
+		scale .2;
 	}
 	states
 	{
@@ -156,16 +155,16 @@ class Flame1A_01 : Actor
 		{
 			if(random(0,1))
 				scale.x=-.1;
-			static const string sprt[]=
+			static const name sprt[]=
 			{
-				"FLM1A0","FLM2A0","FLM3A0","FLM4A0","FLM5A0",
-				"FLM6A0","FLM7A0","FLM8A0","FLM9A0","FL10A0",
-				"FL11A0","FL12A0","FL13A0","FL14A0","FL15A0"
+				'FLM1A0','FLM2A0','FLM3A0','FLM4A0','FLM5A0',
+				'FLM6A0','FLM7A0','FLM8A0','FLM9A0','FL10A0',
+				'FL11A0','FL12A0','FL13A0','FL14A0','FL15A0'
 			};
 			self.sprite=GetSpriteIndex(sprt[random(0,14)]);
 		}
 		"####" ABCDEFGHIJ 2 bright;
-		"####" KKLLMM 1 bright A_FadeOut(0.2);
+		"####" KKLLMM 1 bright A_FadeOut(.2);
 		stop;
 	Dud:
 		FLM1 A 0;FLM2 A 0;FLM3 A 0;FLM4 A 0;FLM5 A 0;

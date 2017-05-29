@@ -14,24 +14,24 @@ class Waterfall : SwitchableDecoration
 		+NOGRAVITY
 		+NOBLOCKMAP
 	}
-	states
+	States
 	{
 	Spawn:
 	Active:
-		TNT1 A 0 NODELAY A_CheckSightOrRange(2560,"IdleNoSee");
-		TNT1 A 1
+		TNT1 A 1 NODELAY
 		{
+			if(CheckSightOrRange(2560))
+			{
+				A_SetTics(10);
+				return;
+			}
 			for(float i=0;i<args[0];i+=frandom(4.0,8.0))
 				A_SpawnItemEx("WFallParticle1A",frandom(-8.0,8.0)+cos(angle)*i,frandom(-8.0,8.0)+sin(angle)*i,frandom(-8.0,8.0),flags:SXF_ABSOLUTEPOSITION);
 		}
 		Loop;
 	Inactive:
 		TNT1 A -1;
-		stop;
-	IdleNoSee:
-		TNT1 A 10;
-		TNT1 A 0 A_CheckSightOrRange(2560,"IdleNoSee");
-		Goto Active;
+		Stop;
 	}
 }
 
