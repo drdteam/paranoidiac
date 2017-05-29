@@ -1,5 +1,3 @@
-
-
 Model Beretta
 {
 	Path "Models"
@@ -600,4 +598,93 @@ Model RPGLauncher
 	FrameIndex HWU1 Z 0 312
 	FrameIndex HWU1 [ 0 313
 	FrameIndex HWU1 \ 0 314
+}
+
+Model GluonGun
+{
+	Path "Models"
+	Model 0 "v_egon.md2"
+	Skin 0 "v_egon.png"
+	Scale -1 1 1
+
+	Offset 1 0 -2
+
+	FrameIndex HWI1 A 0 1
+
+	FrameIndex HWR1 A 0 62
+	FrameIndex HWR1 B 0 63
+	FrameIndex HWR1 C 0 64
+	FrameIndex HWR1 D 0 65
+	FrameIndex HWR1 E 0 66
+	FrameIndex HWR1 F 0 67
+	FrameIndex HWR1 G 0 68
+	FrameIndex HWR1 H 0 69
+	FrameIndex HWR1 I 0 70
+	FrameIndex HWR1 J 0 71
+	FrameIndex HWR1 K 0 72
+	FrameIndex HWR1 L 0 73
+	FrameIndex HWR1 M 0 74
+	FrameIndex HWR1 N 0 75
+	FrameIndex HWR1 O 0 76
+	FrameIndex HWR1 P 0 77
+	FrameIndex HWR1 Q 0 78
+	FrameIndex HWR1 R 0 79
+	FrameIndex HWR1 S 0 80
+	FrameIndex HWR1 T 0 81
+	FrameIndex HWR1 U 0 82
+	FrameIndex HWR1 V 0 83
+	FrameIndex HWR1 W 0 84
+	FrameIndex HWR1 X 0 85
+	FrameIndex HWR1 Y 0 86
+	FrameIndex HWR1 Z 0 87
+	FrameIndex HWR1 [ 0 88
+	FrameIndex HWR1 \ 0 89
+	FrameIndex HWR1 ] 0 90
+	FrameIndex HWR2 A 0 91
+	FrameIndex HWR2 B 0 92
+	FrameIndex HWR2 C 0 93
+	FrameIndex HWR2 D 0 94
+	FrameIndex HWR2 E 0 95
+	FrameIndex HWR2 F 0 96
+	FrameIndex HWR2 G 0 97
+	FrameIndex HWR2 H 0 98
+	FrameIndex HWR2 I 0 99
+	FrameIndex HWR2 J 0 100
+	FrameIndex HWR2 K 0 101
+	FrameIndex HWR2 L 0 102
+	FrameIndex HWR2 M 0 103
+	FrameIndex HWR2 N 0 104
+	FrameIndex HWR2 O 0 105
+	FrameIndex HWR2 P 0 106
+	FrameIndex HWR2 Q 0 107
+	FrameIndex HWR2 R 0 108
+	FrameIndex HWR2 S 0 109
+	FrameIndex HWR2 T 0 110
+	FrameIndex HWR2 U 0 111
+	FrameIndex HWR2 V 0 112
+	FrameIndex HWR2 W 0 113
+	FrameIndex HWR2 X 0 114
+	FrameIndex HWR2 Y 0 115
+	FrameIndex HWR2 Z 0 116
+	FrameIndex HWR2 [ 0 117
+	FrameIndex HWR2 \ 0 118
+	FrameIndex HWR2 ] 0 119
+	FrameIndex HWR3 A 0 120
+	FrameIndex HWR3 B 0 121
+	FrameIndex HWR3 C 0 122
+
+	FrameIndex HWU1 A 0 209
+	FrameIndex HWU1 B 0 210
+	FrameIndex HWU1 C 0 211
+	FrameIndex HWU1 D 0 212
+	FrameIndex HWU1 E 0 213
+	FrameIndex HWU1 F 0 214
+	FrameIndex HWU1 G 0 215
+	FrameIndex HWU1 H 0 216
+	FrameIndex HWU1 I 0 217
+	FrameIndex HWU1 J 0 218
+	FrameIndex HWU1 K 0 219
+	FrameIndex HWU1 L 0 220
+	FrameIndex HWU1 M 0 221
+	FrameIndex HWU1 N 0 222
 }

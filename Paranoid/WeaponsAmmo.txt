@@ -9,6 +9,7 @@ class ParanoidWeapon : Weapon
 	{
 		+WEAPON.NOALERT
 		+INVENTORY.IGNORESKILL
+		+WEAPON.AMMO_CHECKBOTH
 		Weapon.BobRangeX 0;
 		Weapon.BobRangeY .25;
 		Weapon.BobStyle "Smooth";
@@ -207,6 +208,7 @@ class Crowbar : ParanoidWeapon
 		Obituary "%k shoved %o's crowbar where the sun don't shine.";
 		+WEAPON.MELEEWEAPON
 		-WEAPON.NOALERT
+		-WEAPON.AMMO_CHECKBOTH
 		Inventory.Icon "i_cbar1";
 	}
 	States
@@ -364,7 +366,6 @@ class Beretta : ParanoidWeapon
 		Tag "Beretta";
 		Radius 4;
 		Height 4;
-		+WEAPON.AMMO_CHECKBOTH
 		Weapon.SelectionOrder 2000;
 		Weapon.AmmoUse 1;
 		Weapon.AmmoUse2 1;
@@ -506,7 +507,6 @@ class Python : ParanoidWeapon
 		Tag "Python";
 		Radius 4;
 		Height 4;
-		+WEAPON.AMMO_CHECKBOTH
 		Weapon.Kickback 100;
 		Weapon.SelectionOrder 1500;
 		Weapon.AmmoUse 1;
@@ -653,7 +653,6 @@ class Pshotgun : ParanoidWeapon
 	{
 		Tag "Shotgun";
 		Height 4;
-		+WEAPON.AMMO_CHECKBOTH
 		Weapon.SelectionOrder 900;
 		Weapon.AmmoUse 1;
 		Weapon.AmmoUse2 1;
@@ -852,7 +851,6 @@ class ARifle : ParanoidWeapon
 	{
 		Tag "Assault Rifle";
 		Height 4;
-		+WEAPON.AMMO_CHECKBOTH
 		Weapon.SelectionOrder 1000;
 		Weapon.AmmoUse 1;
 		Weapon.AmmoUse2 1;
@@ -1090,6 +1088,7 @@ class RPGLauncher : ParanoidWeapon
 		Height 8;
 		+FLOORCLIP
 		-WEAPON.NOALERT
+		-WEAPON.AMMO_CHECKBOTH
 		Inventory.PickupMessage "You just got an RPG Launcher! Let's blow things up!";
 		Weapon.AmmoUse 1;
 		Weapon.AmmoGive 2;
@@ -1164,7 +1163,7 @@ class HLRocket : Actor
 	Death:
 		TNT1 A 20
 		{
-			A_Explode(512,256,1);
+			A_Explode(512,256);
 			A_SpawnItemEx("NewExplosionMediumBig");
 			Radius_Quake(8,20,0,35,0);
 		}
@@ -1253,7 +1252,6 @@ class XBow : ParanoidWeapon
 		Radius 16;
 		Height 8;
 		+FLOORCLIP
-		+WEAPON.AMMO_CHECKBOTH
 		Weapon.AmmoType "Xbowbolts";
 		Weapon.AmmoType2 "BoltHeld";
 		Weapon.AmmoGive 5;
@@ -1348,7 +1346,6 @@ class XBow : ParanoidWeapon
 		HWXS AB 3;
 		Goto Ready;
 	AltFire:
-		TNT1 A 0 A_JumpIf(invoker.ZoomToken,"Dezoom");
 		R016 N 2
 		{
 			if(invoker.ZoomToken)
@@ -1449,7 +1446,7 @@ class GluonHeldAmmo : Ammo
 
 class GluonGun : ParanoidWeapon
 {
-	int GluonRunning,GluonSoundCountdown,gluonlevel;
+	int GluonSoundCountdown;
 	Default
 	{
 		Weapon.AmmoUse 1;
@@ -1467,26 +1464,8 @@ class GluonGun : ParanoidWeapon
 	}
 	States
 	{
-	Select:
-		RFLP A 1 A_Raise(18);
-		Loop;
-	Deselect:
-		RFLP A 0
-		{
-			invoker.GluonRunning=0;
-			invoker.GluonSoundCountdown=0;
-			invoker.GluonLevel=0;
-		}
-		RFLP A 1 A_Lower(18);
-		Wait;
-	Ready:
-		RFLP A 0
-		{
-			invoker.GluonRunning=0;
-			invoker.GluonSoundCountdown=0;
-			invoker.GluonLevel=0;
-		}
-		RFLP A 1
+	Ready2:
+		HWI1 A 1
 		{
 			if(waterlevel==3)
 				A_WeaponReady(WRF_NOFIRE);
@@ -1495,89 +1474,55 @@ class GluonGun : ParanoidWeapon
 			else
 				A_WeaponReady();
 		}
-		Wait;
+		Loop;
 	Fire:
-		TNT1 A 0 A_JumpIfInventory("GluonHeldAmmo",1,"FireSuccesful");
-		RFLP A 0 A_PlaySound("Weapons/DryFire",6);
-	DryRefire:
-		RFLP A 10;
-		RFLP A 2 A_ReFire("DryRefire");
-		Goto Ready;
-	FireSuccesful:
-		RFLP A 1 Bright
+		HWI1 A 0 A_JumpIfInventory("GluonHeldAmmo",1,1);
+		Goto Reload;
+		HWI1 A 0
 		{
-			invoker.GluonLevel=1;
-			invoker.GluonSoundCountdown+=5; 	//Gives some counters, this is used to know in which part of the animation we're at
-			A_AlertMonsters();
+			invoker.GluonSoundCountdown=35;
 			A_PlaySound("weapons/gluonstart",CHAN_WEAPON);
-			A_TakeInventory("GluonHeldAmmo",1);
-			A_FireProjectile("GluonPrimaryBurst",0,0,4,2);
-			A_FireProjectile("GluonFire4",0,0,4,2);
-			A_FireProjectile("GluonFire5",0,0,4,2);
 		}
-		RFLP A 1 BRIGHT A_FireProjectile("GluonFakeBurst",0,0,4,2);
-		RFLP A 0 A_ReFire("ShotLoop");
-		RFLP B 3 A_PlaySound("weapons/gluonoff",CHAN_WEAPON);
-		RFLP A 3;
-		Goto Ready;
 	ShotLoop:
-		RFLP A 1 Bright
+		HWI1 A 1 Bright
 		{
 			if(!CountInv("GluonHeldAmmo"))
 			{
 				A_PlaySound("Weapons/DryFire",6);
-				A_StopSound(CHAN_WEAPON);
-				A_PlaySound("weapons/gluonoff",CHAN_WEAPON);
-				return resolvestate("DryRefire");
+				return resolvestate("PowerDown");
 			}
-			A_TakeInventory("GluonHeldAmmo",1);
 			A_AlertMonsters();
+			A_TakeInventory("GluonHeldAmmo",1,TIF_NOTAKEINFINITE);
 			A_FireProjectile("GluonPrimaryBurst",0,0,4,2);
 			A_FireProjectile("GluonFire",0,0,4,2);
 			A_FireProjectile("GluonFire2",0,0,4,2);
 			A_FireProjectile("GluonFire3",0,0,4,2);
 			return state(null);
 		}
-		RFLP A 1 BRIGHT A_FireProjectile("GluonFakeBurst",0,0,4,2);
-		RFLP A 1 bright
+		HWI1 A 1 BRIGHT A_FireProjectile("GluonFakeBurst",0,0,4,2);
+		HWI1 A 1 BRIGHT
 		{
 			A_FireProjectile("GluonPrimaryBurst",0,0,4,2);
 			A_FireProjectile("GluonFire4",0,0,4,2);
 			A_FireProjectile("GluonFire5",0,0,4,2);
 		}
-		RFLP A 1 BRIGHT A_FireProjectile("GluonFakeBurst",0,0,4,2);
-		TNT1 A 0
+		HWI1 A 1 BRIGHT A_FireProjectile("GluonFakeBurst",0,0,4,2);
+		HWI1 A 0
 		{
-			invoker.GluonLevel++;
-			if(invoker.GluonLevel>=7)
-			{
-				invoker.GluonSoundCountdown--;
-				if(invoker.GluonSoundCountdown)
-					return resolvestate(1);
-				if(!invoker.GluonRunning)
-				{
-					invoker.GluonRunning=1;
-					A_PlaySound("weapons/gluonrun",CHAN_WEAPON,1,1);
-				}
-				invoker.GluonLevel=0;
-			}
-			return state(null);
+			invoker.GluonSoundCountdown--;
+			if(!invoker.GluonSoundCountdown)
+				A_PlaySound("weapons/gluonrun",CHAN_WEAPON,1,1);
 		}
-		RFLP A 0 A_ReFire("ShotLoop");
-		Goto Powerdown;
-	Powerdown:
-		RFLP A 3
-		{
-			A_StopSound(CHAN_WEAPON);
-			A_PlaySound("weapons/gluonoff",CHAN_WEAPON);
-		}
-		Goto Ready;
+		HWI1 A 0 A_ReFire("ShotLoop");
+	PowerDown:
+		HWI1 A 6 A_PlaySound("weapons/gluonoff",CHAN_WEAPON);
+		Goto Ready2;
 	Reload:
-		TNT1 A 0 A_JumpIfInventory("AECell",1,1);
+		HWI1 A 8;
+		HWR1 ABCDEFGHIJKLMNOPQRSTU 1;
+		HWR1 V 0 A_JumpIfInventory("AECell",1,1);
 		Goto Empty;
-		RFLP A 5;
-		RFLP ABCDEFGH 3;
-		RFLP I 2
+		HWR1 V 1
 		{
 			A_PlaySound("halflife/weapons/reload1",CHAN_WEAPON);
 			while(CountInv("GluonHeldAmmo")<40&&CountInv("AECell"))
@@ -1586,20 +1531,18 @@ class GluonGun : ParanoidWeapon
 				A_GiveInventory("GluonHeldAmmo");
 			}
 		}
-		RFLP JKLM 2;
-		RFLP M 3 A_PlaySound("halflife/weapons/reload2",CHAN_WEAPON);
-		RFLP LKJI 2;
-		RFLP HGFEDCBA 3;
-		Goto Ready;
+		HWR1 "WXYZ[\]" 1;
+		HWR2 A 1;
+		HWR2 B 1 A_PlaySound("halflife/weapons/reload2",CHAN_WEAPON);
+		HWR2 "CDEFGHIJKLMNOPQRSTUVWXYZ[\]" 1;
+		HWR3 ABC 1;
+		Goto Ready2;
 	Empty:
-		RFLP A 8;
-		RFLP BCDEFGH 3;
-		RFLP I 2 A_PlaySound("halflife/weapons/noammo",CHAN_WEAPON);
-		RFLP JKLM 2;
-		RFLP M 3;
-		RFLP LKJI 2;
-		RFLP HGFEDCBA 3;
-		Goto Ready;
+		HWR1 V 1 A_PlaySound("halflife/weapons/noammo",CHAN_WEAPON);
+		HWR1 "WXYZ[\]" 1;
+		HWR2 "ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]" 1;
+		HWR3 ABC 1;
+		Goto Ready2;
 	}
 }
 
@@ -1981,6 +1924,7 @@ class HornetGun : ParanoidWeapon
 		+WEAPON.CHEATNOTWEAPON
 		+WEAPON.AMMO_OPTIONAL
 		-WEAPON.NOALERT
+		-WEAPON.AMMO_CHECKBOTH
 		Weapon.AmmoType1 "HLHornet";
 		Weapon.AmmoType2 "HLHornet";
 		Weapon.AmmoGive1 10;
