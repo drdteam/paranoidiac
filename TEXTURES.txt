@@ -2,7 +2,6 @@ define xwall11k 128 96
 define xwall11l 128 64
 
 //Status bar
-
 graphic HLBAR, 640, 48
 {
 	XScale 2.0
@@ -11,7 +10,6 @@ graphic HLBAR, 640, 48
 }
 
 //Hintman
-
 graphic HINTMAN, 128, 128
 {
 	XScale 2.0
@@ -26,6 +24,7 @@ graphic HLARM0, 32, 48
 	YScale 2.0
 	Patch HLARM0, 0, 0
 }
+
 graphic HLARM1, 32, 48
 {
 	XScale 2.0
@@ -34,7 +33,6 @@ graphic HLARM1, 32, 48
 }
 
 //ammo icons for status bar
-
 graphic HLAMMO, 24, 96
 {
 	XScale 4.0
@@ -43,7 +41,6 @@ graphic HLAMMO, 24, 96
 }
 
 //grenade icon for status bar mode
-
 graphic i_gren1, 24, 12
 {
 	XScale 4.0
@@ -52,7 +49,6 @@ graphic i_gren1, 24, 12
 }
 
 //Health cross for full screen
-
 graphic i_health, 32, 48
 {
 	XScale 2.0
@@ -61,7 +57,6 @@ graphic i_health, 32, 48
 }
 
 //Armour icons for full screen
-
 graphic i_arm1, 32, 48
 {
 	XScale 2.0
@@ -77,7 +72,6 @@ graphic i_arm2, 32, 48
 }
 
 //Ammo icons for full screen
-
 graphic i_bul1, 12, 24
 {
 	XScale 2.0
@@ -106,7 +100,6 @@ graphic i_shel1, 12, 24
 	Patch i_shel1, 0, 0
 }
 
-
 graphic i_gren2, 12, 24
 {
 	XScale 2.0
@@ -122,7 +115,6 @@ graphic i_rock2, 12, 24
 }
 
 //Vertical divider for full screen
-
 graphic divide, 4, 48
 {
 	XScale 2.0
@@ -131,7 +123,6 @@ graphic divide, 4, 48
 }
 
 //Paranoid logo for status bar
-
 graphic HLLOGO, 208, 32
 {
 	XScale 4.0
@@ -140,7 +131,6 @@ graphic HLLOGO, 208, 32
 }
 
 //frags panel for DM
-
 graphic HLFRAGS, 76, 48
 {
 	XScale 2.0
@@ -149,7 +139,6 @@ graphic HLFRAGS, 76, 48
 }
 
 //Weapon icons for status bar and althud
-
 graphic i_arifl1, 170, 48
 {
 	XScale 2.0
@@ -193,7 +182,6 @@ graphic i_sgun1, 170, 48
 }
 
 //Status bar big numbers
-
 graphic HLSNUM0, 16, 24
 {
 	XScale 2.0
@@ -286,7 +274,6 @@ graphic hlsminus, 16, 24
 }
 
 //System number - small for ammo totals
-
 graphic HLSYNUM0, 4, 6
 {
 	XScale 2.0
@@ -365,7 +352,6 @@ graphic "HLSYNUM-", 4, 6
 }
 
 //Remap intermission numbers to hi-res status bar font
-
 graphic WINUM0, 16, 24
 {
 	XScale 2.0
@@ -458,7 +444,6 @@ graphic wiminus, 16, 24
 }
 
 //Intermission colon (no colon on status bar)
-
 graphic wicolon, 6, 24
 {
 	XScale 2.0
@@ -467,7 +452,6 @@ graphic wicolon, 6, 24
 }
 
 //Other intermission graphics
-
 graphic wienter, 208, 24
 {
 	XScale 2.0
@@ -504,7 +488,6 @@ graphic wiosts, 120, 24
 }
 
 //Message icons
-
 graphic MAIL01, 34, 37
 {
 	XScale 2.0
@@ -538,7 +521,6 @@ graphic MAIL04, 34, 37
 }
 
 //Why does Doom have 2 secret graphics?
-
 graphic wiscrt2, 120, 24
 {
 	XScale 2.0
@@ -576,6 +558,12 @@ graphic wimstt, 120, 24
 }
 
 //Menu stuff
+graphic M_BACK, 64, 52
+{
+	XScale 4.0
+	YScale 4.0
+	Patch M_BACK, 0, 0
+}
 
 graphic M_DIFF, 112, 22
 {
@@ -674,7 +662,6 @@ graphic M_SKILL, 620, 128
 }
 
 //Keys
-
 graphic HLKEYBI, 160, 104
 {
 	XScale 20.0
@@ -692,7 +679,6 @@ graphic HLKEYRI, 160, 104
 }
 
 //GameEnd Graphics
-
 graphic PEND0, 120, 100
 {
 	XScale 2.0
@@ -729,7 +715,6 @@ graphic PNDMEND, 620, 128
 }
 
 //Portable Medkit
-
 graphic MEDKZ0, 43, 37
 {
 	XScale 2.5
@@ -739,7 +724,6 @@ graphic MEDKZ0, 43, 37
 }
 
 //Status bar
-
 graphic HLBAR, 640, 48
 {
 	XScale 2.0
@@ -748,7 +732,6 @@ graphic HLBAR, 640, 48
 }
 
 //Col. Stinson
-
 graphic STINSON, 128, 128
 {
 	XScale 2.0
@@ -757,7 +740,6 @@ graphic STINSON, 128, 128
 }
 
 //UnderNet
-
 graphic UNDERNET, 128, 128
 {
 	XScale 2.0
@@ -765,8 +747,7 @@ graphic UNDERNET, 128, 128
 	Patch UNDERNET, 0, 0
 }
 
-//Ammo & 1Weapon icons for status bar and althud
-
+//Ammo & Weapon icons for status bar and althud
 graphic HLAMMO1, 24, 96
 {
 	XScale 4.0
@@ -796,7 +777,6 @@ graphic i_hhand1, 170, 48
 }
 
 //Textures
-
 Texture X0LASERH, 128, 16
 {
 	Patch X0LASERY, 0, 0
