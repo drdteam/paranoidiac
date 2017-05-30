@@ -2,7 +2,7 @@
 // Gargantua
 //===========
 
-class HLGargantua : Actor
+class HLGargantua : HLMonster
 {
 	bool flametoken;
 	float defspeed;
@@ -13,157 +13,234 @@ class HLGargantua : Actor
 	}
 	Default
 	{
-		Monster;
-		Health 8000;
+		Health 10000;
 		Mass 0x7FFFFFFF;
-		Speed 18;
-		Height 128;
-		Radius 40;
+		Speed 21;
+		Height 170;
+		Radius 57;
 		+BOSS
 		+NORADIUSDMG
 		PainChance 5;
 		PainChance "Crowbar",29;
-		Scale .75;
 		DamageFactor "Hornet",0;
 		BloodColor "DE FE 72";
-		Translation "192:207=%[1.0,0.0,0.0]:[2.0,0.0,0.0]";
 		SeeSound "halflife/monsters/gargantua/sight";
 		PainSound "halflife/monsters/gargantua/pain";
 		DeathSound "halflife/monsters/gargantua/death";
 		ActiveSound "halflife/monsters/gargantua/idle";
+		Species "HLGargantua";
 	}
 	States
 	{
-	Spawn:
-		HL0I A 3 A_Look;
-		Loop;
 	See:
-		TNT1 A 0 A_JumpIf(flametoken,"FlameEnd");		//to stop the looping sound in case player dies while "Flame"
-		TNT1 A 0 A_JumpIfCloser(400,"Walk");				//if is close enough, the gargantua will walk instead of run
-		TNT1 A 0 A_SetSpeed(defspeed/4.0);
-		HL0R A 1 A_Chase;
-		HL0R AAA 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HL0R B 1 A_Chase;
-		HL0R BBB 1 A_Chase(null,null,HLSMOOTHCHASE);
-		TNT1 A 0 A_SetSpeed(defspeed/3.0);
-		HL0R C 1 A_Chase;
-		HL0R CC 1 A_Chase(null,null,HLSMOOTHCHASE);
-		TNT1 A 0 A_PlaySound("halflife/monsters/gargantua/step",7);
-		HL0R D 1 A_Chase;
-		HL0R DD 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HL0R E 1 A_Chase;
-		HL0R EE 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HL0R F 1 A_Chase;
-		HL0R FF 1 A_Chase(null,null,HLSMOOTHCHASE);
-		TNT1 A 0 A_PlaySound("halflife/monsters/gargantua/step",7);
-		HL0R G 1 A_Chase;
-		HL0R GG 1 A_Chase(null,null,HLSMOOTHCHASE);
-		Goto See+1;
+		HLR1 A 0 A_JumpIf(flametoken,"FlameEnd");	//to stop the looping sound in case player dies while "Flame"
+		HLR1 A 0 A_JumpIfCloser(400,"Walk");		//if is close enough, the gargantua will walk instead of run
+		HLR1 A 0 A_SetSpeed(defspeed/3.0);
+		HLR1 A 1 A_Chase;
+		HLR1 BC 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLR1 D 1 A_Chase;
+		HLR1 EF 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLR1 G 1 A_Chase;
+		HLR1 HI 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLR1 J 1 A_Chase();
+		HLR1 K 1
+		{
+			A_PlaySound("halflife/monsters/gargantua/step",7);
+			A_Chase(null,null,HLSMOOTHCHASE);
+		}
+		HLR1 L 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLR1 M 1 A_Chase;
+		HLR1 NO 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLR1 P 1 A_Chase;
+		HLR1 QR 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLR1 S 1 A_Chase();
+		HLR1 T 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLR1 A 0 A_PlaySound("halflife/monsters/gargantua/step",7);
+		Goto See+2;
 	Walk:
-		TNT1 A 0 A_SetSpeed(defspeed/5.0);
-		TNT1 A 0 A_PlaySound("halflife/monsters/gargantua/step",7);
-		HL0W A 1 A_Chase;
-		HL0W AAAA 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HL0W B 1 A_Chase;
-		HL0W BBBB 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HL0W C 1 A_Chase;
-		HL0W CCCC 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HL0W D 1 A_Chase;
-		HL0W DDDD 1 A_Chase(null,null,HLSMOOTHCHASE);
-		TNT1 A 0 A_PlaySound("halflife/monsters/gargantua/step",7);
-		HL0W E 1 A_Chase;
-		HL0W EEEE 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HL0W F 1 A_Chase;
-		HL0W FFFF 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HL0W G 1 A_Chase;
-		HL0W GGGG 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLW1 A 1
+		{
+			A_SetSpeed(defspeed/5.0);
+			A_Chase();
+		}
+		HLW1 ABBC 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLW1 C 1 A_Chase;
+		HLW1 DDEE 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLW1 F 1 A_Chase;
+		HLW1 FGGH 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLW1 H 1 A_Chase;
+		HLW1 IIJJ 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLW1 K 1 A_Chase;
+		HLW1 KLLM 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLW1 M 1 A_Chase;
+		HLW1 NNOO 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLW1 P 1 A_Chase;
+		HLW1 P 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLW1 A 0 A_PlaySound("halflife/monsters/gargantua/step",7);
+		HLW1 QQR 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLW1 R 1 A_Chase;
+		HLW1 SSTT 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLW1 U 1 A_Chase;
+		HLW1 UVVW 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLW1 W 1 A_Chase;
+		HLW1 XXYY 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLW1 Z 1 A_Chase;
+		HLW1 "Z[[" 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLW1 \ 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLW1 \ 1 A_Chase;
+		HLW1 "]]" 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLW2 AA 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLW2 B 1 A_Chase;
+		HLW2 BCC 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLW1 A 0 A_PlaySound("halflife/monsters/gargantua/step",7);
 		Goto See;
 	Missile:
 		TNT1 A 0 A_JumpIfCloser(250,"Flame");
-		TNT1 A 0 A_Jump(255,"Boom","Hornets");
+		TNT1 A 0 A_Jump(256,"Boom","Hornets","EnergyBalls","EnergyBallsSeek");
 	Boom:
-		HL0M A 7 A_FaceTarget;
-		HL0N ABCCD 4 A_FaceTarget;
-		TNT1 A 0 A_PlaySound("halflife/monsters/gargantua/stomp",7,1,0,ATTN_NONE);
-		TNT1 A 0 Radius_Quake(8,20,0,15,0);
-		HL0N E 23 A_SpawnItemEx("GargFloorBoomFake",10);
-		HL0N E 10 A_SpawnItemEx("GargFloorBoom",10,0,0,20);		//where it aimed first
+		HLI1 A 8 A_FaceTarget;
+		HLA1 ABCDEFGHIJKLMNOPQRS 1 A_FaceTarget;
+		HLA1 T 1
+		{
+			A_PlaySound("halflife/monsters/gargantua/stomp",7,1,0,ATTN_NONE);
+			Radius_Quake(8,20,0,15,0);
+			A_SpawnItemEx("GargFloorBoomFake",10);
+		}
+		HLA1 T 22;
+		HLA1 T 1
+		{
+			if(defspeed==21)
+				A_SpawnProjectile("GargFloorBoomSeeker",0);	//aimed at target
+			else
+				A_SpawnItemEx("GargFloorBoom",10,0,0,20);	//where it aimed first
+		}
+		HLA1 SQOMKIGECA 1;
 		Goto See;
 	Hornets:
-		HL0M ABC 7 A_FaceTarget;
-		HL0M DDDDDDDDD 5
-		{
-			A_FaceTarget();
-			A_SpawnProjectile("HGruntHornet",70,-51);
-			A_SpawnProjectile("HGruntHornet",70,51);
-		}
-		HL0M CBA 6;
+		HLA2 ABCD 2 A_FaceTarget;
+		HLA2 EFGHIJKLMNOPSS 1 A_FaceTarget;
+		HLA2 SSSSSSSSS 5 A_GargProjectile("HGruntHornet");
+		HLA2 SSPONMLKJIHGFEDCBA 1;
 		Goto See;
 	Flame:
-		TNT1 A 0 A_PlaySound("halflife/monsters/gargantua/flameon",5);
-		HL0M ABC 5 A_FaceTarget;
-		TNT1 A 0
+		HLA2 A 1 A_PlaySound("halflife/monsters/gargantua/flameon",5);
+		HLA2 BCDEFGHIJKLMNOP 1 A_FaceTarget;
+		HLA2 S 0
 		{
 			A_PlaySound("halflife/monsters/gargantua/flameloop",6,1,1);
 			flametoken=1;
 		}
-		TNT1 A 0 A_Jump(256,"FlameLoop");
 	FlameLoop:
-		HL0M DDDDD 1
-		{
-			A_FaceTarget();
-			A_SpawnProjectile("HLGargFlame",70,-51);
-			A_SpawnProjectile("HLGargFlame",70,51);
-		}
-		TNT1 A 0 A_CPosRefire;						//checks if player is dead (or out of LOS) and stop the attack
-		TNT1 A 0 A_JumpIfCloser(300,"FlameLoop");			//If still in range, will loop the attack
+		HLA2 SSSSS 1 A_GargProjectile("HLGargFlame");
+		HLA2 S 0 A_CPosRefire;
+		HLA2 S 0 A_JumpIfCloser(300,"FlameLoop");
 	FlameEnd:
-		TNT1 A 0
+		HLA2 P 1
 		{
 			A_StopSound(6);
 			A_PlaySound("halflife/monsters/gargantua/flameoff",5);
 			flametoken=0;
 		}
-		HL0M CBA 6;
+		HLA2 ONMLKJIHGFEDCBA 1;
+		Goto See;
+	EnergyBalls:
+		HLA2 ABCDE 2 A_FaceTarget;
+		HLA2 FGHI 1 A_FaceTarget;
+		HLA2 J 1 A_GargDischarge;
+		HLA2 KLMNOPSS 1 A_FaceTarget;
+		HLA2 SSSSSSSSSSSSSSSS 5 A_GargControllerBall;
+		HLA2 SSPONMLKJIHGFEDCBA 1;
+		Goto See;
+	EnergyBallsSeek:
+		HLA2 ABCDE 2 A_FaceTarget;
+		HLA2 FGHI 1 A_FaceTarget;
+		HLA2 J 1 A_GargDischarge;
+		HLA2 KLMNOPSS 1 A_FaceTarget;
+		HLA2 S 5 A_GargControllerBall(2);
+		HLA2 SSSSSS 5 A_FaceTarget;
+		HLA2 S 7 A_GargDischarge;
+		HLA2 S 5 A_GargControllerBall(2);
+		HLA2 SSSSSS 5 A_FaceTarget;
+		HLA2 S 7 A_GargDischarge;
+		HLA2 S 5 A_GargControllerBall(2);
+		HLA2 SSPONMLKJIHGFEDCBA 1;
 		Goto See;
 	Pain:
-		TNT1 A 0 A_Pain; 						//will play the sound before the check
-		HL0P A 7 A_JumpIf(flametoken,"FlameEnd");
-		TNT1 A 0 A_Jump(256,"See");
+		HLP1 A 0 A_Pain;
+		HLP1 A 1 A_JumpIf(flametoken,"FlameEnd");
+		HLP1 BCDEFGH 1;
+		Goto See;
 	Death:
-		TNT1 A 0 A_StopSound(6);
-		HL0D A 5 A_Scream;
-		HL0D B 5 A_NoBlocking;
-		HL0D CD 5;
-		HL0D EFGHIJKLMNN 4;
-		HL0D OPQRS 4;
-		TNT1 A 0 A_PlaySound("halflife/monsters/gonarch/step",7);
-		HL0D TU 5;
-		HL0D V 100;
-		TNT1 A 40 GargantuaGib;
+		HLD1 A 1
+		{
+			A_StopSound(6);
+			A_Scream();
+		}
+		HLD1 BCDE 1;
+		HLD1 F 1 A_NoBlocking;
+		HLD1 "GHIJKLMNOPQRSTUVWXYZ[\]" 1;
+		HLD2 "ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]" 1;
+		HLD3 ABCDEF 1;
+		HLD3 G 1 A_PlaySound("halflife/monsters/gonarch/step",7);
+		HLD3 HIJKLMNOP 1;
+		HLD3 Q 100;
+		TNT1 A 10 A_XenGibsBig;
 		Stop;
 	XDeath:
-		TNT1 A 0 A_StopSound(6);
-		HL0D A 6 A_Scream;
-		HL0D BCDE 6;
-		HL0D EEEEEE 2 {scale.x+=.04;}
-		HL0D E 2 {scale.x+=.07;}
-		TNT1 A 40
+		HLD1 A 1
 		{
-			GargantuaGib();
-			A_NoBlocking();
+			A_StopSound(6);
+			A_Scream();
 		}
+		HLD1 BCDEFGHIJKLMNOPQRSTUVWXY 1;
+		HLD1 ZZZZZZZ 1 {scale.x+=.025;}
+		TNT1 A 10 A_XenGibsBig;
 		Stop;
 	}
-	void GargantuaGib(int high=60)
+	void A_GargProjectile(class<actor> proj)
 	{
-		A_PlaySound("halflife/weapons/explode2");
-		for(int i=0;i<22;i++)
-			A_SpawnItemEx("gargantuagibs",random(30,-30),random(30,-30),random(10,high),random(1,7),random(1,7),random(5,18),random(0,359));
-		for(int i=0;i<10;i++)
-			A_SpawnItemEx("NewExplosionMedium",random(30,-30),random(30,-30),random(10,90),random(1,2),random(1,2),random(1,3));
-		for(int i=0;i<9;i++)
-			A_SpawnItemEx("XenGibs",random(5,-5),random(5,-5),random(10,40),random(1,7),random(1,7),random(5,13),random(0,359));
+		float a=80*scale.x,b=90*scale.x;
+		A_FaceTarget();
+		A_SpawnProjectile(proj,a,0-b);
+		A_SpawnProjectile(proj,a,b);
+	}
+	void A_GargControllerBall(int mode=0)
+	{
+		class<actor> ball;
+		if(mode==2)
+			ball="GargControllerFireball2";
+		else
+			ball="GargControllerFireball1";
+		A_FaceTarget();
+		A_SpawnProjectile(ball,90,-66,random(8,-8));
+		A_SpawnProjectile(ball,90,66,random(8,-8));
+	}
+	void A_GargDischarge()
+	{
+		A_FaceTarget();
+		A_PlaySound("halflife/weapons/shockroachdischarge");
+	}
+}
+
+//=================
+// Young Gargantua
+//=================
+
+class HLGargantua2 : HLGargantua
+{
+	Default
+	{
+		Health 8000;
+		Speed 18;
+		Height 128;
+		Radius 40;
+		Scale .75;
+	}
+	States
+	{
+	Missile:
+		TNT1 A 0 A_JumpIfCloser(250,"Flame");
+		TNT1 A 0 A_Jump(256,"Boom","Hornets");
 	}
 }
 
@@ -178,12 +255,11 @@ class HLGargFlame : Actor
 		Radius 2;
 		Height 4;
 		Speed 16;
-		PROJECTILE;
+		Projectile;
 		RenderStyle "Add";
 		DamageType "Fire";
-		ALPHA .67;
+		Alpha .67;
 		Scale .5;
-		//DONTHURTSHOOTER
 		+THRUGHOST
 		+DONTSPLASH
 		seesound "gargantua/flamestrm";
@@ -193,7 +269,7 @@ class HLGargFlame : Actor
 	States
 	{
 	Spawn:
-		TNT1 A 1 Bright;
+		TNT1 A 1;
 		FRFX ABCD 1 Bright A_Explode(3,6);
 		FRFX D 0 Bright A_Lowgravity;
 		FRFX EFG 1 Bright A_Explode(3,12);
@@ -213,12 +289,11 @@ class HLGargFlame : Actor
 //	Floor attack
 //*******************
 
-class GargFloorBoom : Actor
+class GargFloorBoomFake : Actor
 {
 	Default
 	{
 		Projectile;
-		Speed 16;
 		Damage 15;
 		+RIPPER
 		Scale .65;
@@ -229,14 +304,10 @@ class GargFloorBoom : Actor
 	States
 	{
 	Spawn:
-		X036 BCDEFGHIJKLMNOPQRSTUVWXY 1 Bright LIGHT("RedMediumPoint2") NODELAY
-		{
-			A_Explode(64,64,0);
-			A_SpawnItemEx("GargFXtraSpawner");
-		}
+		X036 BCDEFGHIJKLMNOPQRSTUVWXY 1 Bright LIGHT("RedMediumPoint2") NODELAY A_GargFXtra;
 		TNT1 A 0
 		{
-			if(self is "GargFloorBoomFake")
+			if(speed==0)
 				return resolvestate("Death");
 			return state(null);
 		}
@@ -245,23 +316,41 @@ class GargFloorBoom : Actor
 		TNT1 A 1;
 		Stop;
 	}
+	void A_GargFXtra()
+	{
+		A_Explode(64,64,0);
+		for(int i=0;i<3;i++)
+			A_SpawnItemEx("GargFXtra",0,0,0,random(5,-5),random(5,-5),random(1,6));
+	}
 }
 
-class GargFloorBoomFake : GargFloorBoom			//stays still a little
-	{Default{Speed 0;}}
+class GargFloorBoom : GargFloorBoomFake			//stays still a little
+	{Default{Speed 10;}}
 
-class GargFXtraSpawner : Actor
+class GargFloorBoomSeeker : GargFloorBoom
 {
 	Default
 	{
-		+NOCLIP
+		+SeekerMissile
 	}
 	States
 	{
 	Spawn:
-		TNT1 A 0;
-		TNT1 AAA 0 A_SpawnItemEx("GargFXtra",0,0,0,random(5,-5),random(5,-5),random(1,6));
-		Stop;
+		X036 BCDEFGH 1 BRIGHT NODELAY LIGHT("RedMediumPoint2") A_GargFXtra;
+		X036 I 1 BRIGHT LIGHT("RedMediumPoint2")
+		{
+			A_SeekerMissile(10,10);
+			A_GargFXtra();
+		}
+		X036 JKLMNOP 1 BRIGHT LIGHT("RedMediumPoint2") A_GargFXtra;
+		X036 Q 1 BRIGHT LIGHT("RedMediumPoint2")
+		{
+			A_SeekerMissile(10,10);
+			A_GargFXtra();
+		}
+		X036 RSTUVWXY 1 BRIGHT LIGHT("RedMediumPoint2") A_GargFXtra;
+		TNT1 A 0 A_SeekerMissile(10,10);
+		Loop;
 	}
 }
 
@@ -291,157 +380,6 @@ class GargFXtra : Actor
 	}
 }
 
-//*********************
-//	Gargantua Gibs
-//*********************
-
-class gargantuagibblood : Blood
-{
-	Default
-	{
-		translation "176:183=224:231";
-		Scale .5;
-		Gravity .4;
-	}
-}
-
-class gargantuagibs : Actor
-{
-	Default
-	{
-		radius 6;
-		height 5;
-		+DROPOFF
-		+NOTELEPORT
-		+CORPSE
-		+CANNOTPUSH
-		scale .25;
-	}
-	states
-	{
-	Spawn:
-		GGIB A 0 A_Jump(256,1,2,3,4,5,6,7,8);
-		GGIB ABCDEFGH 0 A_Jump(255,"Gib");
-		Stop;
-	Gib:
-		GGIB "#" 3 A_SpawnItem("gargantuagibblood",1);
-		GGIB "#" 0 A_CheckFloor("GibCrash");
-		Loop;
-	GibCrash:
-		GGIB "#" 300;
-		GGIB "#" 2 A_FadeOut;
-		Wait;
-	}
-}
-
-//=================
-// Gargantua mature
-//=================
-
-class HLGargantua2 : HLGargantua
-{
-	Default
-	{
-		Health 10000;
-		Speed 21;
-		Height 170;
-		Radius 57;
-		Scale 1;
-		Translation "None";
-	}
-	States
-	{
-	Missile:
-		TNT1 A 0 A_JumpIfCloser(250,"Flame");
-		TNT1 A 0 A_Jump(255,"Boom","Hornets","EnergyBalls","EnergyBallsSeek");
-	Boom:
-		HL0M A 7 A_FaceTarget;
-		HL0N ABCCD 4 A_FaceTarget;
-		TNT1 A 0 A_PlaySound("halflife/monsters/gargantua/stomp",7,1,0,ATTN_NONE);
-		TNT1 A 0 Radius_Quake(8,20,0,15,0);
-		HL0N E 23 A_SpawnItemEx("GargFloorBoomFake");
-		HL0N E 10 A_SpawnProjectile("GargFloorBoomSeeker",0);			//aimed at target
-		Goto See;
-	Hornets:
-		HL0M ABC 7 A_FaceTarget;
-		HL0M DDDDDDDDD 5
-		{
-			A_FaceTarget();
-			A_SpawnProjectile("HGruntHornet",90,-66);
-			A_SpawnProjectile("HGruntHornet",90,66);
-		}
-		HL0M CBA 6;
-		Goto See;
-	FlameLoop:
-		HL0M DDDDD 1
-		{
-			A_FaceTarget();
-			A_SpawnProjectile("HLGargFlame",90,-66);
-			A_SpawnProjectile("HLGargFlame",90,66);
-		}
-		TNT1 A 0 A_CPosRefire;						//checks if player is dead (or out of LOS) and stop the attack
-		TNT1 A 0 A_JumpIfCloser(300,"FlameLoop");			//If still in range, will loop the attack
-		Goto FlameEnd;
-	EnergyBalls:
-		HL0M AB 7 A_FaceTarget;
-		TNT1 a 0 A_PlaySound("halflife/weapons/shockroachdischarge");
-		HL0M C 7 A_FaceTarget;
-		HL0M DDDDDDDDDDDDDDDD 5
-		{
-			A_FaceTarget();
-			A_SpawnProjectile("GargControllerFireball1",90,-66,random(8,-8));
-			A_SpawnProjectile("GargControllerFireball1",90,66,random(8,-8));
-		}
-		HL0M CBA 6;
-		Goto See;
-	EnergyBallsSeek:
-		HL0M AB 7 A_FaceTarget;
-		TNT1 A 0 A_PlaySound("halflife/weapons/shockroachdischarge");
-		HL0M C 7 A_FaceTarget;
-		TNT1 A 0 A_FaceTarget;
-		HL0M D 0 A_SpawnProjectile("GargControllerFireball2",90,-66,random(8,-8));
-		HL0M D 5 A_SpawnProjectile("GargControllerFireball2",90,66,random(8,-8));
-		HL0M DDDDDD 5 A_FaceTarget;
-		TNT1 a 0 A_PlaySound("halflife/weapons/shockroachdischarge");
-		HL0M D 7 A_FaceTarget;
-		HL0M D 0 A_SpawnProjectile("GargControllerFireball2",90,-66,random(8,-8));
-		HL0M D 5 A_SpawnProjectile("GargControllerFireball2",90,66,random(8,-8));
-		HL0M DDDDDD 5 A_FaceTarget;
-		TNT1 a 0 A_PlaySound("halflife/weapons/shockroachdischarge");
-		HL0M D 7 A_FaceTarget;
-		HL0M D 0 A_SpawnProjectile("GargControllerFireball2",90,-66,random(8,-8));
-		HL0M D 5 A_SpawnProjectile("GargControllerFireball2",90,66,random(8,-8));
-		HL0M CBA 6;
-		Goto See;
-	Death:
-		TNT1 A 0 A_StopSound(6);
-		HL0D A 5 A_Scream;
-		HL0D B 5 A_NoBlocking;
-		HL0D CD 5;
-		HL0D EFGHIJKLMNN 4;
-		HL0D OPQRS 4;
-		TNT1 A 0 A_PlaySound("halflife/monsters/gonarch/step",7);
-		HL0D TU 5;
-		HL0D V 100;
-		TNT1 A 40 GargantuaGib(150);
-		Stop;
-	XDeath:
-		HL0D A 6
-		{
-			A_StopSound(6);
-			A_Scream();
-		}
-		HL0D BCDE 6;
-		HL0D EEEEEEE 2 {scale.x+=.05;}
-		TNT1 A 40
-		{
-			GargantuaGib(150);
-			A_NoBlocking();
-		}
-		Stop;
-	}
-}
-
 //******************************
 // Gargantua controller fireball
 //******************************
@@ -463,49 +401,5 @@ class GargControllerFireball2 : ControllerFireball2
 	{
 		Speed 12;
 		Damage 15;
-	}
-}
-
-//**********************
-// Garg mature floorfire
-//**********************
-class GargFloorBoomSeeker : GargFloorBoom
-{
-	Default
-	{
-		+SeekerMissile
-	}
-	States
-	{
-	Spawn:
-		X036 BCDEFGH 1 BRIGHT NODELAY LIGHT("RedMediumPoint2")
-		{
-			A_Explode(64,64,0);
-			A_SpawnItemEx("GargFXtraSpawner");
-		}
-		X036 I 1 BRIGHT LIGHT("RedMediumPoint2")
-		{
-			A_Explode(64,64,0);
-			A_SeekerMissile(10,10);
-			A_SpawnItemEx("GargFXtraSpawner");
-		}
-		X036 JKLMNOP 1 BRIGHT LIGHT("RedMediumPoint2")
-		{
-			A_Explode(64,64,0);
-			A_SpawnItemEx("GargFXtraSpawner");
-		}
-		X036 Q 1 BRIGHT LIGHT("RedMediumPoint2")
-		{
-			A_Explode(64,64,0);
-			A_SeekerMissile(10,10);
-			A_SpawnItemEx("GargFXtraSpawner");
-		}
-		X036 RSTUVWXY 1 BRIGHT LIGHT("RedMediumPoint2")
-		{
-			A_Explode(64,64,0);
-			A_SpawnItemEx("GargFXtraSpawner");
-		}
-		TNT1 A 0 A_SeekerMissile(10,10);
-		Loop;
 	}
 }
