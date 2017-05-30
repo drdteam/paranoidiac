@@ -1,8 +1,7 @@
-class HLGonarch : Actor
+class HLGonarch : HLMonster
 {
 	Default
 	{
-		Monster;
 		Health 5000;
 		Mass 0x7FFFFFFF;
 		+DONTHARMCLASS
@@ -25,6 +24,7 @@ class HLGonarch : Actor
 		MeleeRange 80;
 		MaxTargetRange 1100;
 		Scale .8;
+		Species "HLGonarch";
 	}
 	States
 	{
@@ -84,7 +84,7 @@ class HLGonarch : Actor
 		HLNO AABBBB 4 A_FaceTarget;
 		HLNO C 8
 		{
-			string acid="GonarchAcid",acidextra="GonarchAcidExtra";
+			class<actor> acid="GonarchAcid",acidextra="GonarchAcidExtra";
 			if(random(0,255)<80)
 			{
 				acid="GonarchAcid2";
@@ -114,16 +114,7 @@ class HLGonarch : Actor
 		HLND E 4 A_PlaySound("halflife/monsters/gonarch/step",6);
 		HLND F 4;
 		HLND G 100;
-		TNT1 A 10
-		{
-			A_PlaySound("halflife/weapons/explode2");
-			for(int i=0;i<10;i++)
-				A_SpawnItemEx("NewExplosionMedium",random(30,-30),random(30,-30),random(10,90),random(1,2),random(1,2),random(1,3));
-			for(int i=0;i<22;i++)
-				A_SpawnItemEx("gargantuagibs",random(30,-30),random(30,-30),random(10,60),random(1,7),random(1,7),random(5,18),random(0,359));
-			for(int i=0;i<9;i++)
-				A_SpawnItemEx("XenGibs",random(5,-5),random(5,-5),random(10,40),random(1,7),random(1,7),random(5,13),random(0,359));
-		}
+		TNT1 A 10 A_XenGibsBig;
 		Stop;
 	}
 	void A_SpawnBabyCrab()
@@ -160,7 +151,7 @@ class GonarchAcid : Actor
 	States
 	{
 	Spawn:
-		X022 A 0 NODELAY A_ChangeVelocity(z:3);
+		X022 A 0 NODELAY {vel.z+=3;}
 		X022 ABCD 4 AcidExtra;
 		Goto Spawn+1;
 	Death:
@@ -219,7 +210,7 @@ class GonarchAcid2 : GonarchAcid
 	States
 	{
 	Spawn:
-		TNT1 A 0 NODELAY A_ChangeVelocity(z:3);
+		TNT1 A 0 NODELAY {vel.z+=3;}
 		X022 ABCD 4 AcidExtra("GonarchAcid2Extra");
 		Goto Spawn+1;
 	Death:

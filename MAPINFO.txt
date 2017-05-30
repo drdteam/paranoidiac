@@ -367,7 +367,7 @@ DoomEdNums
 	7416=HLHornetGrunt
 	7418=HLBabyHeadCrab
 	7420=HLBat
-	7421=HLGargantua
+	7421=HLGargantua2
 	7422=HLBarnacle
 	7423=HLScientistUpdate
 	7424=HLScientist1
@@ -379,7 +379,7 @@ DoomEdNums
 	7442=HLGruntNoGrenadesAny
 	7443=HLGruntM16NoGrenades
 	7444=HLGruntShotgunNoGrenade
-	7445=HLGargantua2
+	7445=HLGargantua
 	7800=HLBossBat
 	20000=Waterfall
 	20012=BigBlueSpark

@@ -300,8 +300,10 @@ class XenGibs : Actor
 			bool num;
 			actor bld;
 			[num,bld]=A_SpawnItemEx("XenBlood",random(3,-3),random(3,-3),random(3,-3),flags:SXF_TRANSFERTRANSLATION);
-			if(scale.x==.75)
-				bld.scale=(.6,.6);
+			if(scale.x==2)
+				bld.scale=(.5,.5);
+			else if(scale.x==.75)
+				bld.scale=(.06,.06);
 			else
 				A_SpawnItemEx("ExtraBlood",random(3,-3),random(3,-3),random(3,-3),1,0,0,random(1,359),SXF_TRANSFERTRANSLATION);
 		}
