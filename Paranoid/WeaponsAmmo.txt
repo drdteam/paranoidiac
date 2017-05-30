@@ -909,7 +909,8 @@ class ARifle : ParanoidWeapon
 				A_FireProjectile("GunSmallSmokeSpawner",0,0,6,6);
 			A_PlaySound("halflife/weapons/grenadelaunch",CHAN_WEAPON);
 			actor gren=A_FireProjectile("M16Grenade",0,0,5,0,FPF_NOAUTOAIM);
-			gren.vel.z+=2;
+			if(gren!=null)
+				gren.vel.z+=2;
 			A_AlertMonsters();
 			WeaponRecoil(400);
 			A_SpawnItemEx("LighCheapHack");
