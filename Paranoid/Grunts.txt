@@ -216,7 +216,8 @@ class HLGrunt1 : HLMonster
 		{
 			closegrencheck=1;
 			actor gren=A_SpawnProjectile("GruntHandGrenade",40);
-			gren.vel.x=10;
+			if(gren!=null)
+				gren.vel.x=10;
 		}
 		HLA2 B 1;
 		HLA2 DEFGHIKLM 1;
@@ -286,10 +287,13 @@ class HLGrunt1 : HLMonster
 			A_PlaySound("halflife/weapons/grenadelaunch",5);
 			A_GruntGunsmoke();
 			actor gren=A_SpawnProjectile("HLGruntGunGrenade",38);
-			if(CheckIfCloser(target,500))
-				gren.vel.z+=1.25;
-			else
-				gren.vel.z+=3.5;
+			if(gren!=null)
+			{
+				if(CheckIfCloser(target,500))
+					gren.vel.z+=1.25;
+				else
+					gren.vel.z+=3.5;
+			}
 		}
 		HLA3 FGHIJKLMNOPQRSTUV 1;
 		Goto See;
