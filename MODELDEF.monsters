@@ -1,3 +1,92 @@
+Model HLHornetGrunt
+{
+	Path "Models"
+	Model 0 "agrunt.md2"
+	Skin 0 "agrunt.png"
+	Scale 1 1 1
+	INTERPOLATEDOUBLEDFRAMES
+
+	FrameIndex HLI1 A 0 1
+	//2x
+	FrameIndex HLW1 A 0 32
+	FrameIndex HLW1 B 0 33
+	FrameIndex HLW1 C 0 34
+	FrameIndex HLW1 D 0 35
+	FrameIndex HLW1 E 0 36
+	FrameIndex HLW1 F 0 37
+	FrameIndex HLW1 G 0 38
+	FrameIndex HLW1 H 0 39
+	FrameIndex HLW1 I 0 40
+	FrameIndex HLW1 J 0 41
+	FrameIndex HLW1 K 0 42
+	FrameIndex HLW1 L 0 43
+	FrameIndex HLW1 M 0 44
+	FrameIndex HLW1 N 0 45
+	FrameIndex HLW1 O 0 46
+	FrameIndex HLW1 P 0 47
+	FrameIndex HLW1 Q 0 48
+	FrameIndex HLW1 R 0 49
+	FrameIndex HLW1 S 0 50
+	FrameIndex HLW1 T 0 51
+
+	FrameIndex HLA2 A 0 62
+	FrameIndex HLA2 B 0 63
+	FrameIndex HLA2 C 0 64
+	FrameIndex HLA2 D 0 65
+	FrameIndex HLA2 E 0 66
+	FrameIndex HLA2 F 0 67
+	FrameIndex HLA2 G 0 68
+	FrameIndex HLA2 H 0 69
+	FrameIndex HLA2 I 0 70
+	FrameIndex HLA2 J 0 71
+	FrameIndex HLA2 K 0 72
+	FrameIndex HLA2 L 0 73
+	FrameIndex HLA2 M 0 74
+	FrameIndex HLA2 N 0 75
+	FrameIndex HLA2 O 0 76
+	FrameIndex HLA2 P 0 77
+
+	FrameIndex HLA1 A 0 78
+	FrameIndex HLA1 B 0 79
+	FrameIndex HLA1 C 0 80
+	FrameIndex HLA1 D 0 81
+	FrameIndex HLA1 E 0 82
+	FrameIndex HLA1 F 0 83
+	FrameIndex HLA1 G 0 84
+	FrameIndex HLA1 H 0 85
+	FrameIndex HLA1 I 0 86
+	FrameIndex HLA1 J 0 87
+	FrameIndex HLA1 K 0 88
+	FrameIndex HLA1 L 0 89
+	FrameIndex HLA1 M 0 90
+	FrameIndex HLA1 N 0 91
+	FrameIndex HLA1 O 0 92
+	FrameIndex HLA1 P 0 93
+
+	FrameIndex HLP1 A 0 52
+	FrameIndex HLP1 B 0 53
+	FrameIndex HLP1 C 0 54
+	FrameIndex HLP1 D 0 55
+	FrameIndex HLP1 E 0 56
+	FrameIndex HLP1 F 0 57
+	FrameIndex HLP1 G 0 58
+	FrameIndex HLP1 H 0 59
+	FrameIndex HLP1 I 0 60
+	FrameIndex HLP1 J 0 61
+
+	FrameIndex HLD1 A 0 94
+	FrameIndex HLD1 B 0 95
+	FrameIndex HLD1 C 0 96
+	FrameIndex HLD1 D 0 97
+	FrameIndex HLD1 E 0 98
+	FrameIndex HLD1 F 0 99
+	FrameIndex HLD1 G 0 100
+	FrameIndex HLD1 H 0 101
+	FrameIndex HLD1 I 0 102
+	FrameIndex HLD1 J 0 103
+	FrameIndex HLD1 K 0 104
+}
+
 Model HLGargantua
 {
 	Path "Models"
