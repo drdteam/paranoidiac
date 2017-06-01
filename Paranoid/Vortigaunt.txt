@@ -135,64 +135,6 @@ class VortiLightning : Actor
 	}
 }
 
-//========================================
-//  Captain Toenail gets credits for this
-//========================================
-
-class VortigauntShot : Actor
-{
-	Default
-	{
-		Radius 6;
-		Height 8;
-		Speed 36;
-		DamageFunction (random(1,4)*10);
-		Projectile;
-		RenderStyle "Add";
-		Scale .02;
-		seesound "Dalek/Fire";
-		+SPAWNSOUNDSOURCE
-		Translation "80:111=112:127";
-	}
-	States
-	{
-	Spawn:
-		X099 A 1 bright
-		{
-			for(int i=-2;i>=-36;i-=2)
-				A_SpawnItemEx("VortigauntShotTrail",i);
-		}
-		loop;
-	XDeath:
-		TNT1 A 1;
-		stop;
-	}
-}
-
-class VortigauntShotTrail : Actor
-{
-	Default
-	{
-		radius 6;
-		height 8;
-		RenderStyle "Add";
-		Scale .02;
-		+NOBLOCKMAP
-		+NOGRAVITY
-		+MISSILE
-		+NOTELEPORT
-		+DONTSPLASH
-		+NOCLIP
-		Translation "80:111=112:127";
-	}
-	states
-	{
-	Spawn:
-		X099 A 1 bright A_FadeOut;
-		loop;
-	}
-}
-
 //====================
 // The model attack
 //====================
