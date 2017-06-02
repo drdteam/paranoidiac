@@ -12,7 +12,6 @@ class HLVortigaunt : HLMonster
 		Height 63;
 		PainChance 100;
 		PainChance "Crowbar",243;
-		Scale .423;
 		BloodColor "DE FE 72";
 		SeeSound "halflife/monsters/slave/sight";
 		PainSound "halflife/monsters/slave/pain";
@@ -23,82 +22,95 @@ class HLVortigaunt : HLMonster
 	}
 	States
 	{
-	Spawn:
-		HLFI A 3 A_Look;
-		Loop;
 	See:
-		HLFW A 1 A_Chase;
-		HLFW AAA 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLFW B 1 A_Chase;
-		HLFW BBB 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLFW C 1 A_Chase;
-		HLFW CCC 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLFW D 1 A_Chase;
-		HLFW DDD 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLFW E 1 A_Chase;
-		HLFW EEE 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLFW F 1 A_Chase;
-		HLFW FFF 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLR1 A 1 A_Chase;
+		HLR1 BCD 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLR1 E 1 A_Chase;
+		HLR1 FGH 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLR1 I 1 A_Chase;
+		HLR1 JKL 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLR1 M 1 A_Chase;
+		HLR1 NOP 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLR1 Q 1 A_Chase;
+		HLR1 RST 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLR1 W 1 A_Chase;
+		HLR1 XY 1 A_Chase(null,null,HLSMOOTHCHASE);
 		Loop;
 	Melee:
-		HLFI A 4 A_FaceTarget;
-		HLFM AB 4 A_FaceTarget;
-		HLFM C 3 A_ZombieMelee(3);
-		HLFM D 4 A_FaceTarget;
-		HLFM E 3 A_ZombieMelee(3);
-		HLFM F 4 A_FaceTarget;
-		HLFM G 3 A_ZombieMelee(3);
-		HLFM H 4;
+		HLI1 A 4 A_FaceTarget;
+		HLA1 ABCDEFGH 1 A_FaceTarget;
+		HLA1 I 1 A_ZombieMelee(3);
+		HLA1 JKL 1 A_FaceTarget;
+		HLA1 M 1 A_ZombieMelee(3);
+		HLA1 NOPQRSTU 1 A_FaceTarget;
+		HLA1 V 1 A_ZombieMelee(3);
+		HLA1 "WXYZ[\]" 1;
+		HLA2 ABCD 1;
 		Goto See;
 	Missile:
-		TNT1 A 0
+		HLA2 E 2
 		{
-			A_FaceTarget();
 			A_PlaySound("halflife/weapons/zap4",5);
+			A_VortiLightning();
 		}
-		HLFI AAAAAA 4 A_SpawnItemEx("VortiLightning",flags:SXF_SETMASTER|SXF_NOCHECKPOSITION);
-		HLFN B 4
+		HLA2 F 2;
+		HLA2 G 2 A_VortiLightning;
+		HLA2 H 2;
+		HLA2 I 2 A_VortiLightning;
+		HLA2 J 2;
+		HLA2 K 2 A_VortiLightning;
+		HLA2 L 2;
+		HLA2 M 2 A_VortiLightning;
+		HLA2 O 2;
+		HLA2 P 2 A_VortiLightning;
+		HLA2 Q 2;
+		HLA2 R 2 A_VortiLightning;
+		HLA2 S 2;
+		HLA2 T 2 A_VortiLightning;
+		HLA2 U 2;
+		HLA2 V 2
 		{
-			A_SpawnItemEx("VortiLightning",flags:SXF_SETMASTER|SXF_NOCHECKPOSITION);
-			A_FaceTarget();
+			A_PlaySound("halflife/weapons/zap4",5);
+			A_VortiLightning();
 		}
-		HLFN B 2 A_SpawnItemEx("VortiLightning",flags:SXF_SETMASTER|SXF_NOCHECKPOSITION);
-		HLFN C 2 A_PlaySound("halflife/weapons/zap4",5);
-		HLFN C 4
-		{
-			for(int i=0;i<2;i++)
-				A_SpawnItemEx("VortiLightning",flags:SXF_SETMASTER|SXF_NOCHECKPOSITION);
-		}
-		HLFN D 4 A_FaceTarget;
-		HLFN D 3 A_SpawnItemEx("VortiLightning",flags:SXF_SETMASTER|SXF_NOCHECKPOSITION);
-	  	HLFN E 3
+		HLA2 W 2;
+		HLA2 X 2 A_VortiLightning;
+		HLA2 Y 2;
+		HLA2 Z 2 A_VortiLightning;
+		HLA2 [ 2;
+		HLA2 \ 2 A_VortiLightning;
+		HLA2 ] 2;
+		HLA3 A 2 A_VortiLightning;
+		HLA3 B 2;
+		HLA3 C 2
 		{
 			A_PlaySound("halflife/weapons/gausshit1",5);
 			A_KillChildren(flags:KILS_KILLMISSILES);
 			A_SpawnProjectile("VortiPlasma",32,9);
 			A_SpawnProjectile("VortiPlasma",32,-9);
 		}
-		HLFN F 6;
+		HLA3 DEFGHI 2;
 		Goto See;
 	Pain:
-		HLFP A 8
+		HLP1 A 1
 		{
 			A_KillChildren(flags:KILS_KILLMISSILES);
 			A_Pain();
 		}
+		HLP1 BCDEFG 1;
 		Goto See;
 	Death:
-		HLFD A 2
+		HLD1 A 2
 		{
 			A_KillChildren(flags:KILS_KILLMISSILES);
 			A_Scream();
 		}
-		HLFD B 2 A_NoBlocking;
-		HLFD CDEF 2;
-		HLFD F 2 A_PlaySound("halflife/weapons/bodydrop");
-		HLFD GH 2;
-		HLFD IJKLM 4;
-		HLFD N -1;
+		HLD1 B 2 A_NoBlocking;
+		HLD1 CDEF 2;
+		HLD1 G 2 A_PlaySound("halflife/weapons/bodydrop");
+		HLD1 "HIJKLMNOPQRSTUVWXYZ[\]" 2;
+		HLD2 A 2;
+		HLD2 B -1;
 		Stop;
 	XDeath:
 		TNT1 A 0
@@ -107,6 +119,11 @@ class HLVortigaunt : HLMonster
 			A_KillChildren(flags:KILS_KILLMISSILES);
 		}
 		Stop;
+	}
+	void A_VortiLightning()
+	{
+		A_FaceTarget();
+		A_SpawnItemEx("VortiLightning",flags:SXF_SETMASTER|SXF_NOCHECKPOSITION);
 	}
 }
 
@@ -139,28 +156,25 @@ class VortiLightning : Actor
 // The model attack
 //====================
 
-class VortiPlasma_Explode : Actor
+class VortiPlasma_Bolt : Actor
 {
 	Default
 	{
 		+NOGRAVITY
 		RenderStyle "Add";
-		Alpha .55;
+		Alpha .75;
 		scale .3;
 	}
 	States
 	{
 	Spawn:
-		VPLS A 3 bright LIGHT("GreenMediumFlicker2");
-		VPLS B 3 bright LIGHT("GreenMediumFlicker3");
-		VPLS C 3 bright LIGHT("GreenSmallFlicker1");
-		VPLS D 3 bright LIGHT("GreenSmallFlicker2");
-		VPLS E 3 bright LIGHT("GreenSmallFlicker3");
-		stop;
+		VPLS A 0 NODELAY {self.frame=random(0,3);}
+		VPLS # 1 A_FadeOut;
+		Wait;
 	}
 }
 
-class VortiPlasma : Actor
+class VortiPlasma : VortiPlasma_Bolt
 {
 	Default
 	{
@@ -170,38 +184,20 @@ class VortiPlasma : Actor
 		DamageFunction (random(1,4)*10);
 		Projectile;
 		+RANDOMIZE
-		RenderStyle "Add";
 		Alpha .55;
-		Scale .3;
-		+SPAWNSOUNDSOURCE
 		DeathSound "halflife/weapons/gaussshot";
 	}
 	States
 	{
 	Spawn:
-		VPLS FG 6 bright LIGHT("GreenMediumFlicker3");
-		loop;
+		VPLS FG 6 BRIGHT LIGHT("GreenMediumFlicker3");
+		Loop;
 	Death:
-		VPLS A 1 LIGHT("GreenMediumFlicker3") A_SpawnItemEx("VortiPlasma_Explode") ;
-		VPLS A 1 LIGHT("GreenMediumFlicker3") A_SpawnItemEx("VortiPlasma_Bolt");
+		VPLS A 3 BRIGHT LIGHT("GreenMediumFlicker3") LIGHT("GreenMediumFlicker2") A_SpawnItemEx("VortiPlasma_Bolt");
+		VPLS B 3 BRIGHT LIGHT("GreenMediumFlicker3");
+		VPLS C 3 BRIGHT LIGHT("GreenSmallFlicker1");
+		VPLS D 3 BRIGHT LIGHT("GreenSmallFlicker2");
+		VPLS E 3 BRIGHT LIGHT("GreenSmallFlicker3");
 		Stop;
-	}
-}
-
-class VortiPlasma_Bolt : Actor
-{
-	Default
-	{
-		+NOGRAVITY
-		RenderStyle "Add";
-		Alpha 0.75;
-		Scale 0.3;		// turn this up for more EXTREME plasma
-	}
-	States
-	{
-	Spawn:
-		VPLS A 0 NODELAY {self.frame=random(0,3);}
-		VPLS # 1 A_FadeOut;
-		Wait;
 	}
 }

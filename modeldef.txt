@@ -1961,7 +1961,7 @@ model VortiPlasma
 	frameindex VPLS G 0 1
 }
 
-model VortiPlasma_Explode
+model VortiPlasma
 {
 	path "models"
 	Model 0 "plasma_boom.md3"

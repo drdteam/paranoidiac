@@ -266,6 +266,153 @@ Model HLBossBat
 	FrameIndex HLD3 C 0 54
 }
 
+Model HLVortigaunt
+{
+	Path "Models"
+	Model 0 "islave.md2"
+	Skin 0 "islave.png"
+	Scale 1 1 1
+	INTERPOLATEDOUBLEDFRAMES
+
+	FrameIndex HLI1 A 0 1
+
+	FrameIndex HLR1 A 0 33
+	FrameIndex HLR1 B 0 34
+	FrameIndex HLR1 C 0 35
+	FrameIndex HLR1 D 0 36
+	FrameIndex HLR1 E 0 37
+	FrameIndex HLR1 F 0 38
+	FrameIndex HLR1 G 0 39
+	FrameIndex HLR1 H 0 40
+	FrameIndex HLR1 I 0 41
+	FrameIndex HLR1 J 0 42
+	FrameIndex HLR1 K 0 43
+	FrameIndex HLR1 L 0 44
+	FrameIndex HLR1 M 0 45
+	FrameIndex HLR1 N 0 46
+	FrameIndex HLR1 O 0 47
+	FrameIndex HLR1 P 0 48
+	FrameIndex HLR1 Q 0 49
+	FrameIndex HLR1 R 0 50
+	FrameIndex HLR1 S 0 51
+	FrameIndex HLR1 T 0 52
+	FrameIndex HLR1 U 0 53
+	FrameIndex HLR1 V 0 54
+	FrameIndex HLR1 W 0 55
+	FrameIndex HLR1 X 0 56
+	FrameIndex HLR1 Y 0 57
+
+	FrameIndex HLA1 A 0 58
+	FrameIndex HLA1 B 0 59
+	FrameIndex HLA1 C 0 60
+	FrameIndex HLA1 D 0 61
+	FrameIndex HLA1 E 0 62
+	FrameIndex HLA1 F 0 63
+	FrameIndex HLA1 G 0 64
+	FrameIndex HLA1 H 0 65
+	FrameIndex HLA1 I 0 66
+	FrameIndex HLA1 J 0 67
+	FrameIndex HLA1 K 0 68
+	FrameIndex HLA1 L 0 69
+	FrameIndex HLA1 M 0 70
+	FrameIndex HLA1 N 0 71
+	FrameIndex HLA1 O 0 72
+	FrameIndex HLA1 P 0 73
+	FrameIndex HLA1 Q 0 74
+	FrameIndex HLA1 R 0 75
+	FrameIndex HLA1 S 0 76
+	FrameIndex HLA1 T 0 77
+	FrameIndex HLA1 U 0 78
+	FrameIndex HLA1 V 0 79
+	FrameIndex HLA1 W 0 80
+	FrameIndex HLA1 X 0 81
+	FrameIndex HLA1 Y 0 82
+	FrameIndex HLA1 Z 0 83
+	FrameIndex HLA1 [ 0 84
+	FrameIndex HLA1 \ 0 85
+	FrameIndex HLA1 ] 0 86
+	FrameIndex HLA2 A 0 87
+	FrameIndex HLA2 B 0 88
+	FrameIndex HLA2 C 0 89
+	FrameIndex HLA2 D 0 90
+
+	FrameIndex HLA2 E 0 91
+	FrameIndex HLA2 F 0 92
+	FrameIndex HLA2 G 0 93
+	FrameIndex HLA2 H 0 94
+	FrameIndex HLA2 I 0 95
+	FrameIndex HLA2 J 0 96
+	FrameIndex HLA2 K 0 97
+	FrameIndex HLA2 L 0 98
+	FrameIndex HLA2 M 0 99
+	FrameIndex HLA2 N 0 100
+	FrameIndex HLA2 O 0 101
+	FrameIndex HLA2 P 0 101
+	FrameIndex HLA2 Q 0 102
+	FrameIndex HLA2 R 0 103
+	FrameIndex HLA2 S 0 104
+	FrameIndex HLA2 T 0 105
+	FrameIndex HLA2 U 0 106
+	FrameIndex HLA2 V 0 107
+	FrameIndex HLA2 W 0 108
+	FrameIndex HLA2 X 0 109
+	FrameIndex HLA2 Y 0 110
+	FrameIndex HLA2 Z 0 111
+	FrameIndex HLA2 [ 0 112
+	FrameIndex HLA2 \ 0 113
+	FrameIndex HLA2 ] 0 114
+	FrameIndex HLA3 A 0 115
+	FrameIndex HLA3 B 0 116
+	FrameIndex HLA3 C 0 117
+	FrameIndex HLA3 D 0 118
+	FrameIndex HLA3 E 0 119
+	FrameIndex HLA3 F 0 120
+	FrameIndex HLA3 G 0 121
+	FrameIndex HLA3 H 0 122
+	FrameIndex HLA3 I 0 123
+	FrameIndex HLA3 J 0 124
+
+	FrameIndex HLP1 A 0 125
+	FrameIndex HLP1 B 0 126
+	FrameIndex HLP1 C 0 127
+	FrameIndex HLP1 D 0 128
+	FrameIndex HLP1 E 0 129
+	FrameIndex HLP1 F 0 130
+	FrameIndex HLP1 G 0 131
+
+	FrameIndex HLD1 A 0 132
+	FrameIndex HLD1 B 0 133
+	FrameIndex HLD1 C 0 134
+	FrameIndex HLD1 D 0 135
+	FrameIndex HLD1 E 0 136
+	FrameIndex HLD1 F 0 137
+	FrameIndex HLD1 G 0 138
+	FrameIndex HLD1 H 0 139
+	FrameIndex HLD1 I 0 140
+	FrameIndex HLD1 J 0 141
+	FrameIndex HLD1 K 0 142
+	FrameIndex HLD1 L 0 143
+	FrameIndex HLD1 M 0 144
+	FrameIndex HLD1 N 0 145
+	FrameIndex HLD1 O 0 146
+	FrameIndex HLD1 P 0 147
+	FrameIndex HLD1 Q 0 148
+	FrameIndex HLD1 R 0 149
+	FrameIndex HLD1 S 0 150
+	FrameIndex HLD1 T 0 151
+	FrameIndex HLD1 U 0 152
+	FrameIndex HLD1 V 0 153
+	FrameIndex HLD1 W 0 154
+	FrameIndex HLD1 X 0 155
+	FrameIndex HLD1 Y 0 156
+	FrameIndex HLD1 Z 0 157
+	FrameIndex HLD1 [ 0 158
+	FrameIndex HLD1 \ 0 159
+	FrameIndex HLD1 ] 0 160
+	FrameIndex HLD2 A 0 161
+	FrameIndex HLD2 B 0 162
+}
+
 Model HLHornetGrunt
 {
 	Path "Models"
