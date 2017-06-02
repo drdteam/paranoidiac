@@ -1,3 +1,271 @@
+Model HLBat
+{
+	Path "Models"
+	Model 0 "stukabat.md2"
+	Skin 0 "stukabat2.png"
+	Scale 2 2 2
+	ZOffset 32
+	INTERPOLATEDOUBLEDFRAMES
+
+	FrameIndex HLI1 A 0 112
+	FrameIndex HLI1 B 0 113
+	FrameIndex HLI1 C 0 114
+	FrameIndex HLI1 D 0 115
+	FrameIndex HLI1 E 0 116
+	FrameIndex HLI1 F 0 117
+	FrameIndex HLI1 G 0 118
+	FrameIndex HLI1 H 0 119
+
+	FrameIndex HLW1 A 0 86
+	FrameIndex HLW1 B 0 87
+	FrameIndex HLW1 C 0 88
+	FrameIndex HLW1 D 0 89
+	FrameIndex HLW1 E 0 90
+	FrameIndex HLW1 F 0 91
+	FrameIndex HLW1 G 0 92
+	FrameIndex HLW1 H 0 93
+	FrameIndex HLW1 I 0 94
+	FrameIndex HLW1 J 0 95
+	FrameIndex HLW1 K 0 96
+	FrameIndex HLW1 L 0 97
+	FrameIndex HLW1 M 0 98
+	FrameIndex HLW1 N 0 99
+	FrameIndex HLW1 O 0 100
+	FrameIndex HLW1 P 0 101
+	FrameIndex HLW1 Q 0 102
+	FrameIndex HLW1 R 0 103
+	FrameIndex HLW1 S 0 104
+	FrameIndex HLW1 T 0 105
+	FrameIndex HLW1 U 0 106
+	FrameIndex HLW1 V 0 107
+	FrameIndex HLW1 W 0 108
+	FrameIndex HLW1 X 0 109
+	FrameIndex HLW1 Y 0 110
+	FrameIndex HLW1 Z 0 111
+
+	FrameIndex HLA1 A 0 1
+	FrameIndex HLA1 B 0 2
+	FrameIndex HLA1 C 0 3
+	FrameIndex HLA1 D 0 4
+	FrameIndex HLA1 E 0 5
+	FrameIndex HLA1 F 0 6
+	FrameIndex HLA1 G 0 7
+	FrameIndex HLA1 H 0 8
+	FrameIndex HLA1 I 0 9
+	FrameIndex HLA1 J 0 10
+	FrameIndex HLA1 K 0 11
+	FrameIndex HLA1 L 0 12
+	FrameIndex HLA1 M 0 13
+	FrameIndex HLA1 N 0 14
+
+	FrameIndex HLP1 A 0 77
+	FrameIndex HLP1 B 0 78
+	FrameIndex HLP1 C 0 79
+	FrameIndex HLP1 D 0 80
+	FrameIndex HLP1 E 0 81
+	FrameIndex HLP1 F 0 82
+	FrameIndex HLP1 G 0 83
+	FrameIndex HLP1 H 0 84
+	FrameIndex HLP1 I 0 85
+
+	FrameIndex HLD1 A 0 56
+	FrameIndex HLD1 B 0 57
+	FrameIndex HLD1 C 0 58
+	FrameIndex HLD1 D 0 59
+	FrameIndex HLD1 E 0 60
+	FrameIndex HLD1 F 0 61
+	FrameIndex HLD1 G 0 62
+	FrameIndex HLD1 H 0 63
+	FrameIndex HLD1 I 0 64
+	FrameIndex HLD1 J 0 65
+	FrameIndex HLD1 K 0 66
+	FrameIndex HLD1 L 0 67
+	FrameIndex HLD1 M 0 68
+	FrameIndex HLD1 N 0 69
+	FrameIndex HLD1 O 0 70
+	FrameIndex HLD1 P 0 71
+	FrameIndex HLD1 Q 0 72
+	FrameIndex HLD1 R 0 73
+	FrameIndex HLD1 S 0 74
+	FrameIndex HLD1 T 0 75
+	FrameIndex HLD1 U 0 76
+
+	FrameIndex HLD1 V 0 15
+	FrameIndex HLD1 W 0 16
+	FrameIndex HLD1 X 0 17
+	FrameIndex HLD1 Y 0 18
+	FrameIndex HLD1 Z 0 19
+	FrameIndex HLD1 [ 0 20
+	FrameIndex HLD1 \ 0 21
+	FrameIndex HLD1 ] 0 22
+	FrameIndex HLD2 A 0 23
+	FrameIndex HLD2 B 0 24
+	FrameIndex HLD2 C 0 25
+	FrameIndex HLD2 D 0 26
+	FrameIndex HLD2 E 0 27
+	FrameIndex HLD2 F 0 28
+	FrameIndex HLD2 G 0 29
+	FrameIndex HLD2 H 0 30
+	FrameIndex HLD2 I 0 31
+	FrameIndex HLD2 J 0 32
+	FrameIndex HLD2 K 0 33
+	FrameIndex HLD2 L 0 34
+	FrameIndex HLD2 M 0 35
+	FrameIndex HLD2 N 0 36
+	FrameIndex HLD2 O 0 37
+	FrameIndex HLD2 P 0 38
+	FrameIndex HLD2 Q 0 39
+	FrameIndex HLD2 R 0 40
+	FrameIndex HLD2 S 0 41
+	FrameIndex HLD2 T 0 42
+	FrameIndex HLD2 U 0 43
+	FrameIndex HLD2 V 0 44
+	FrameIndex HLD2 W 0 45
+	FrameIndex HLD2 X 0 46
+	FrameIndex HLD2 Y 0 47
+	FrameIndex HLD2 Z 0 48
+	FrameIndex HLD2 [ 0 49
+	FrameIndex HLD2 \ 0 50
+	FrameIndex HLD2 ] 0 51
+	FrameIndex HLD3 A 0 52
+	FrameIndex HLD3 B 0 53
+	FrameIndex HLD3 C 0 54
+}
+
+Model HLBossBat
+{
+	Path "Models"
+	Model 0 "stukabat.md2"
+	Skin 0 "stukabat.png"
+	Scale 2 2 2
+	ZOffset 32
+	INTERPOLATEDOUBLEDFRAMES
+
+	FrameIndex HLI1 A 0 112
+	FrameIndex HLI1 B 0 113
+	FrameIndex HLI1 C 0 114
+	FrameIndex HLI1 D 0 115
+	FrameIndex HLI1 E 0 116
+	FrameIndex HLI1 F 0 117
+	FrameIndex HLI1 G 0 118
+	FrameIndex HLI1 H 0 119
+
+	FrameIndex HLW1 A 0 86
+	FrameIndex HLW1 B 0 87
+	FrameIndex HLW1 C 0 88
+	FrameIndex HLW1 D 0 89
+	FrameIndex HLW1 E 0 90
+	FrameIndex HLW1 F 0 91
+	FrameIndex HLW1 G 0 92
+	FrameIndex HLW1 H 0 93
+	FrameIndex HLW1 I 0 94
+	FrameIndex HLW1 J 0 95
+	FrameIndex HLW1 K 0 96
+	FrameIndex HLW1 L 0 97
+	FrameIndex HLW1 M 0 98
+	FrameIndex HLW1 N 0 99
+	FrameIndex HLW1 O 0 100
+	FrameIndex HLW1 P 0 101
+	FrameIndex HLW1 Q 0 102
+	FrameIndex HLW1 R 0 103
+	FrameIndex HLW1 S 0 104
+	FrameIndex HLW1 T 0 105
+	FrameIndex HLW1 U 0 106
+	FrameIndex HLW1 V 0 107
+	FrameIndex HLW1 W 0 108
+	FrameIndex HLW1 X 0 109
+	FrameIndex HLW1 Y 0 110
+	FrameIndex HLW1 Z 0 111
+
+	FrameIndex HLA1 A 0 1
+	FrameIndex HLA1 B 0 2
+	FrameIndex HLA1 C 0 3
+	FrameIndex HLA1 D 0 4
+	FrameIndex HLA1 E 0 5
+	FrameIndex HLA1 F 0 6
+	FrameIndex HLA1 G 0 7
+	FrameIndex HLA1 H 0 8
+	FrameIndex HLA1 I 0 9
+	FrameIndex HLA1 J 0 10
+	FrameIndex HLA1 K 0 11
+	FrameIndex HLA1 L 0 12
+	FrameIndex HLA1 M 0 13
+	FrameIndex HLA1 N 0 14
+
+	FrameIndex HLP1 A 0 77
+	FrameIndex HLP1 B 0 78
+	FrameIndex HLP1 C 0 79
+	FrameIndex HLP1 D 0 80
+	FrameIndex HLP1 E 0 81
+	FrameIndex HLP1 F 0 82
+	FrameIndex HLP1 G 0 83
+	FrameIndex HLP1 H 0 84
+	FrameIndex HLP1 I 0 85
+
+	FrameIndex HLD1 A 0 56
+	FrameIndex HLD1 B 0 57
+	FrameIndex HLD1 C 0 58
+	FrameIndex HLD1 D 0 59
+	FrameIndex HLD1 E 0 60
+	FrameIndex HLD1 F 0 61
+	FrameIndex HLD1 G 0 62
+	FrameIndex HLD1 H 0 63
+	FrameIndex HLD1 I 0 64
+	FrameIndex HLD1 J 0 65
+	FrameIndex HLD1 K 0 66
+	FrameIndex HLD1 L 0 67
+	FrameIndex HLD1 M 0 68
+	FrameIndex HLD1 N 0 69
+	FrameIndex HLD1 O 0 70
+	FrameIndex HLD1 P 0 71
+	FrameIndex HLD1 Q 0 72
+	FrameIndex HLD1 R 0 73
+	FrameIndex HLD1 S 0 74
+	FrameIndex HLD1 T 0 75
+	FrameIndex HLD1 U 0 76
+
+	FrameIndex HLD1 V 0 15
+	FrameIndex HLD1 W 0 16
+	FrameIndex HLD1 X 0 17
+	FrameIndex HLD1 Y 0 18
+	FrameIndex HLD1 Z 0 19
+	FrameIndex HLD1 [ 0 20
+	FrameIndex HLD1 \ 0 21
+	FrameIndex HLD1 ] 0 22
+	FrameIndex HLD2 A 0 23
+	FrameIndex HLD2 B 0 24
+	FrameIndex HLD2 C 0 25
+	FrameIndex HLD2 D 0 26
+	FrameIndex HLD2 E 0 27
+	FrameIndex HLD2 F 0 28
+	FrameIndex HLD2 G 0 29
+	FrameIndex HLD2 H 0 30
+	FrameIndex HLD2 I 0 31
+	FrameIndex HLD2 J 0 32
+	FrameIndex HLD2 K 0 33
+	FrameIndex HLD2 L 0 34
+	FrameIndex HLD2 M 0 35
+	FrameIndex HLD2 N 0 36
+	FrameIndex HLD2 O 0 37
+	FrameIndex HLD2 P 0 38
+	FrameIndex HLD2 Q 0 39
+	FrameIndex HLD2 R 0 40
+	FrameIndex HLD2 S 0 41
+	FrameIndex HLD2 T 0 42
+	FrameIndex HLD2 U 0 43
+	FrameIndex HLD2 V 0 44
+	FrameIndex HLD2 W 0 45
+	FrameIndex HLD2 X 0 46
+	FrameIndex HLD2 Y 0 47
+	FrameIndex HLD2 Z 0 48
+	FrameIndex HLD2 [ 0 49
+	FrameIndex HLD2 \ 0 50
+	FrameIndex HLD2 ] 0 51
+	FrameIndex HLD3 A 0 52
+	FrameIndex HLD3 B 0 53
+	FrameIndex HLD3 C 0 54
+}
+
 Model HLHornetGrunt
 {
 	Path "Models"
