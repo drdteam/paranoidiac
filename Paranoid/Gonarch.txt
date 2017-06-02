@@ -28,61 +28,89 @@ class HLGonarch : HLMonster
 	}
 	States
 	{
-	Spawn:
-		HLNI A 3 A_Look;
-		Loop;
 	See:
-		HLNW A 1 A_Chase();
-		HLNW AA 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLNW A 1 A_Chase();
-		HLNW AA 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLNW B 1 A_Chase();
-		HLNW BB 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLNW B 1 A_Chase();
-		HLNW BB 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLNW C 1 A_Chase();
-		HLNW CC 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLNW C 1 A_Chase();
-		HLNW CC 1 A_Chase(null,null,HLSMOOTHCHASE);
-		TNT1 A 0 A_PlaySound("halflife/monsters/gonarch/step",6);
-		HLNW D 1 A_Chase();
-		HLNW DD 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLNW D 1 A_Chase();
-		HLNW DD 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLNW E 1 A_Chase();
-		HLNW EE 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLNW E 1 A_Chase();
-		HLNW EE 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLNW F 1 A_Chase();
-		HLNW FF 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLNW F 1 A_Chase();
-		HLNW FF 1 A_Chase(null,null,HLSMOOTHCHASE);
-		TNT1 A 0 A_PlaySound("halflife/monsters/gonarch/step",6);
-		TNT1 A 0 A_Jump(210,"See");
-		TNT1 A 0 A_PlaySound("halflife/monsters/gonarch/sight",5);
+		HLW1 A 1 A_Chase;
+		HLW1 BC 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLW1 D 1 A_Chase;
+		HLW1 EF 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLW1 G 1 A_Chase;
+		HLW1 HI 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLW1 J 1 A_Chase;
+		HLW1 KL 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLW1 M 1 A_Chase;
+		HLW1 NO 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLW1 P 1 A_Chase;
+		HLW1 QR 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLW1 S 1 A_Chase;
+		HLW1 TU 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLW1 V 1 A_Chase;
+		HLW1 WX 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLW1 Y 1
+		{
+			A_PlaySound("halflife/monsters/gonarch/step",6);
+			A_Chase();
+		}
+		HLW1 "Z[" 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLW1 \ 1 A_Chase;
+		HLW1 ] 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLW2 A 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLW2 B 1 A_Chase;
+		HLW2 CD 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLW2 E 1 A_Chase;
+		HLW2 FG 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLW2 H 1 A_Chase;
+		HLW2 IJ 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLW2 K 1 A_Chase;
+		HLW2 LM 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLW2 N 1 A_Chase;
+		HLW2 OP 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLW2 Q 1 A_Chase;
+		HLW2 RS 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLW2 T 1 A_Chase;
+		HLW2 T 0
+		{
+			A_PlaySound("halflife/monsters/gonarch/step",6);
+			if(random(0,255)<45)
+				A_PlaySound("halflife/monsters/gonarch/sight",5);
+		}
 		Loop;
 	Melee:
-		TNT1 A 0 A_Jump(100,"AcidSimple");
-		TNT1 A 0
+		HLA1 A 0 A_Jump(100,"AcidSimple");
+		HLA1 A 0
 		{
 			if(random(0,255)<80)
 				A_PlaySound("halflife/monsters/gonarch/sight",4);
 			else
 				A_PlaySound("halflife/monsters/gonarch/attack",5);
 		}
-		HLNM AB 5 A_FaceTarget();
-		TNT1 A 0 A_PlaySound("halflife/monsters/zombie/attswing",6);
-		HLNM C 5 A_FaceTarget();
-		HLNM D 4 A_CustomMeleeAttack(random(1,8)*25,"zombie/hit");
-		HLNM EF 5;
+		HLA1 ABCDE 1 A_FaceTarget();
+		HLA1 F 0 A_PlaySound("halflife/monsters/zombie/attswing",6);
+		HLA1 FGHIJ 1 A_FaceTarget();
+		HLA1 K 1 A_CustomMeleeAttack(random(1,8)*25,"zombie/hit");
+		HLA1 LMNOPQRST 1;
 		Goto See;
 	Missile:
-		TNT1 A 0 A_Jump(145,"AcidSimple");
-		Goto SpawnCrab;
+		HLA1 U 0 A_Jump(145,"AcidSimple");
+		HLA1 U 2 A_PlaySound("halflife/monsters/gonarch/attack",5);
+		HLA1 "VWXYZ[\]" 2;
+		HLA2 ABC 2;
+		HLA2 D 0 A_PlaySound("halflife/monsters/gonarch/spawnchild");
+		HLA2 DEF 2
+		{
+			bool num;
+			actor baby;
+			[num,baby]=A_SpawnItemEx("HLBabyHeadCrab",random(10,-10),random(10,-10),flags:SXF_NOCHECKPOSITION);
+			let me=HLBabyHeadCrab(baby);
+			me.Speed=10.0/3.0;
+			me.gonarchbaby=1;
+		}
+		HLA2 GHIJKLMNOPQRSTUV 2;
+		Goto See;
 	AcidSimple:
-		TNT1 A 0 A_PlaySound("halflife/monsters/gonarch/attack",5);
-		HLNO AABBBB 4 A_FaceTarget;
-		HLNO C 8
+		HLA2 W 0 A_PlaySound("halflife/monsters/gonarch/attack",5);
+		HLA2 "WXYZ[\]" 2 A_FaceTarget;
+		HLA3 ABCDE 2 A_FaceTarget;
+		HLA3 F 2
 		{
 			class<actor> acid="GonarchAcid",acidextra="GonarchAcidExtra";
 			if(random(0,255)<80)
@@ -90,41 +118,28 @@ class HLGonarch : HLMonster
 				acid="GonarchAcid2";
 				acidextra="GonarchAcid2Extra";
 			}
+			let thisacid=A_SpawnProjectile(acid,80);
+			if(thisacid!=null)
+				thisacid.vel.z+=3;
 			for(int i=0;i<15;i++)
 				A_SpawnItemEx(acidextra,0,0,80,random(2,-2),random(2,-2),random(1,8));
-			A_SpawnProjectile(acid,80);
 		}
-		HLNO D 8;
-		Goto See;
-	SpawnCrab:
-		HLNN A 8 A_PlaySound("halflife/monsters/gonarch/attack",5);
-		HLNN BC 8;
-		TNT1 A 0 A_PlaySound("halflife/monsters/gonarch/spawnchild",4);
-		HLNN DD 2 A_SpawnBabyCrab;
-		HLNN D 1 A_SpawnBabyCrab;
-		HLNN E 32;
+		HLA3 GHIJ 2;
 		Goto See;
 	Pain:
-		HLNI A 4 A_Pain;
+		HLP1 A 2 A_Pain;
+		HLP1 BCDEFGHIJKLMNOPQ 2;
 		Goto See;
 	Death:
-		HLND A 3 A_Scream;
-		HLND B 3 A_NoBlocking;
-		HLND CD 4;
-		HLND E 4 A_PlaySound("halflife/monsters/gonarch/step",6);
-		HLND F 4;
-		HLND G 100;
+		HLD1 A 2 A_Scream;
+		HLD1 B 2;
+		HLD1 C 2 A_NoBlocking;
+		HLD1 DEFGH 2;
+		HLD1 I 2 A_PlaySound("halflife/monsters/gonarch/step",6);
+		HLD1 JKLMNOPQRST 2;
+		HLD1 U 80;
 		TNT1 A 10 A_XenGibsBig;
 		Stop;
-	}
-	void A_SpawnBabyCrab()
-	{
-		bool num;
-		actor baby;
-		[num,baby]=A_SpawnItemEx("HLBabyHeadCrab",random(10,-10),random(10,-10),flags:SXF_NOCHECKPOSITION);
-		let me=HLBabyHeadCrab(baby);
-		me.Speed=10.0/3.0;
-		me.gonarchbaby=1;
 	}
 }
 
@@ -140,7 +155,6 @@ class GonarchAcid : Actor
 		Damage 25;
 		RenderStyle "Add";
 		Alpha .9;
-		//Translation "80:111=118:127";
 		-NOGRAVITY
 		Gravity .18;
 		PoisonDamage 50;
@@ -151,9 +165,8 @@ class GonarchAcid : Actor
 	States
 	{
 	Spawn:
-		X022 A 0 NODELAY {vel.z+=3;}
 		X022 ABCD 4 AcidExtra;
-		Goto Spawn+1;
+		Loop;
 	Death:
 		TNT1 A 0 AcidDeath;
 		Stop;
@@ -171,31 +184,6 @@ class GonarchAcid : Actor
 	}
 }
 
-class GonarchAcidExtra : Actor
-{
-	Default
-	{
-		Projectile;
-		+NOCLIP
-		Scale .3;
-		RenderStyle "Add";
-		Alpha .9;
-		-NOGRAVITY
-		Gravity .2;
-		//Translation "80:111=118:127";
-	}
-	States
-	{
-	Spawn:
-		X023 AB 3;
-		TNT1 A 0 A_Jump(100,"FadeOut");
-		Loop;
-	FadeOut:
-		X023 AB 3 A_FadeOut;
-		Loop;
-	}
-}
-
 class GonarchAcid2 : GonarchAcid
 {
 	Default
@@ -210,9 +198,8 @@ class GonarchAcid2 : GonarchAcid
 	States
 	{
 	Spawn:
-		TNT1 A 0 NODELAY {vel.z+=3;}
 		X022 ABCD 4 AcidExtra("GonarchAcid2Extra");
-		Goto Spawn+1;
+		Loop;
 	Death:
 		TNT1 A 0
 		{
@@ -224,13 +211,36 @@ class GonarchAcid2 : GonarchAcid
 	}
 }
 
+class GonarchAcidExtra : Actor
+{
+	Default
+	{
+		Projectile;
+		+NOCLIP
+		Scale .3;
+		RenderStyle "Add";
+		Alpha .9;
+		-NOGRAVITY
+		Gravity .2;
+	}
+	States
+	{
+	Spawn:
+		X023 AB 3;
+		TNT1 A 0 A_Jump(100,"FadeOut");
+		Loop;
+	FadeOut:
+		X023 AB 3 A_FadeOut;
+		Loop;
+	}
+}
+
 class GonarchAcid2Extra : GonarchAcidExtra
 {
 	Default
 	{
 		RenderStyle "Translucent";
 		Alpha .8;
-		Scale .3;
 		Translation "80:111=152:159";
 	}
 }
@@ -255,7 +265,11 @@ class GonarchAcid2MiniExplosive : GonarchAcid2
 		X022 ABCD 3;
 		Loop;
 	Death:
-		TNT1 AAAAAAAA 0 A_SpawnItemEx("GonarchAcid2Mini",0,0,0,random(3,-3),random(3,-3),random(1,5),random(0,359));
+		TNT1 A 0
+		{
+			for(int i=0;i<8;i++)
+				A_SpawnItemEx("GonarchAcid2Mini",0,0,0,random(3,-3),random(3,-3),random(1,5),random(0,359));
+		}
 		Stop;
 	}
 }
