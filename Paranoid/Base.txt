@@ -7,10 +7,8 @@ class HLMonster : Actor
 	States
 	{
 	Spawn:
-		TNT1 A 0;
-		HLI1 A 3;
 		HLI1 A 3 A_Look;
-		Wait;
+		Loop;
 	}
 	void A_XenGibs(int max=16)
 	{

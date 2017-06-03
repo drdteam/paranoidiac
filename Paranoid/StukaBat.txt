@@ -24,9 +24,8 @@ class HLBossBat : HLMonster
 	States
 	{
 	Spawn:
-		TNT1 A 0;
 		HLI1 ABCDEFGH 2 A_Look;
-		Goto Spawn+1;
+		Loop;
 	See:
 		HLW1 A 1 A_Chase;
 		HLW1 BCD 1 A_Chase(null,null,HLSMOOTHCHASE);

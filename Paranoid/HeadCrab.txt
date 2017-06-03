@@ -24,7 +24,7 @@ class HLHeadCrab : HLMonster
 		PainSound "halflife/monsters/headcrab/pain";
 		DeathSound "halflife/monsters/headcrab/death";
 		ActiveSound "halflife/monsters/headcrab/idle";
-		maxdropoffheight 384;
+		MaxDropoffHeight 384;
 		+DONTHARMCLASS;
 		DamageFactor "Gonarch",0;
 		Species "HLHeadCrab";
@@ -32,7 +32,6 @@ class HLHeadCrab : HLMonster
 	States
 	{
 	Spawn:
-		TNT1 A 0;
 		HLI1 A 3 A_JumpIf(waterlevel>=2,"Drown");
 		HLI1 A 3 A_Look;
 		Wait;
@@ -115,7 +114,7 @@ class HLBabyHeadCrab : HLHeadCrab
 	Default
 	{
 		Height 8;
-		-Solid
+		-SOLID
 		RenderStyle "Translucent";
 		Alpha .9;
 		MaxTargetRange 128;
