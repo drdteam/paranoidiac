@@ -197,7 +197,7 @@ map map17 "Painted into a Corner."
 }
 map map18 "Cavernicolous."
 {
-	PrecacheSounds="01Earth","18Earth","18ZEarth"
+	PrecacheSounds="18Earth","18ZEarth"
 }
 
 adddefaultmap
