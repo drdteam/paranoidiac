@@ -222,6 +222,9 @@ class Crowbar : ParanoidWeapon
 	Select:
 		HW4I A 1 A_Raise(12);
 		Loop;
+		HWU1 ABCDEFGHIJK 1;
+		TNT1 A 0 A_Lower;
+		Wait;
 	Fire:
 		TNT1 A 0 A_Jump(256,"Fire1","Fire2","Fire3");
 	Fire1:
@@ -1940,42 +1943,58 @@ class HornetGun : ParanoidWeapon
 	}
     States
     {
-    Ready:
-		HNTG B 6
+	Deselect:
+		HWD1 ABCDEFGHIJKLMNOPQR 2;
+		TNT1 A 0 A_Lower;
+		Wait;
+	Ready:
+		TNT1 A 0;
+		HWU1 "ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]" 1;
+		HWU2 A 1;
+    Ready2:
+		HWI1 A 6
 		{
 			if(CountInv("HLHornet"))
 				A_WeaponReady();
 			else
 				A_WeaponReady(WRF_NOFIRE);
 		}
-		HNTG B 0 A_GiveInventory("HLHornet");
-		Goto Ready;
-    Deselect:
-		HNTG B 1 A_Lower(18);
-		Loop;
-    Select:
-		HNTG B 1 A_Raise(18);
+		HWI1 B 0 A_GiveInventory("HLHornet");
 		Loop;
     Fire:
-		HNTG B 0 A_PlaySound("halflife/monsters/hornetgrunt/flysight",CHAN_WEAPON,0.6,0);
-		HNTG B 0 A_FireProjectile("HGunHornet",0,1,8,0);
-		HNTG CDE 2;
-		HNTG B 2;
-		Goto Ready;
+		HWF1 A 1 A_FireHornet;
+		HWF1 BCEGHIJ 1;
+		Goto Ready2;
     AltFire:
-		HNTG B 0 A_PlaySound("halflife/monsters/hornetgrunt/flysight",CHAN_WEAPON,0.6,0);
-		HNTG B 0 A_FireProjectile("HGunHornet2",0,1,8,0);
-		HNTG CDEB 1;
-		Goto Ready;
+		HWF1 A 1 A_FireHornet("HGunHornet2");
+		HWF1 CHI 1;
+		Goto Ready2;
     Flash:
 		TNT1 A 1 A_Light2;
 		TNT1 A 1 A_Light1;
 		Goto LightDone;
     }
+	action void A_FireHornet(class<actor> hornet="HGunHornet")
+	{
+		A_PlaySound("halflife/monsters/hornetgrunt/flysight",CHAN_WEAPON,0.6,0);
+		A_FireProjectile(hornet,0,1,8,0);
+	}
 }
 
-class HGunHornet : FastProjectile
+class HLHornet : Ammo
 {
+	Default
+	{
+		Inventory.MaxAmount 10;
+		+INVENTORY.IGNORESKILL
+		inventory.icon "i_bul1";	//Change when proper icon is inserted into file
+	}
+}
+
+class HGunHornet : Actor
+{
+	class<actor> trail;
+	Property trail:trail;
 	Default
 	{
 		Radius 4;
@@ -1984,23 +2003,36 @@ class HGunHornet : FastProjectile
 		Damage 5;
 		Scale .095;
 		+SEEKERMISSILE
-		MissileType "HGHornetTrail";
-		MissileHeight 8;
+		Projectile;
+		HGunHornet.Trail "HGHornetTrail";
 	}
 	States
     {
     Spawn:
-		HLOH B 1 Bright A_SeekerMissile(2,2,1,90,3);
+		HLOH B 1 BRIGHT A_HornetFly(SMF_LOOK);
 		Loop;
     Death:
     Crash:
-		TNT1 A 0 A_SpawnItemEx("HGHornetShooter1");
-		TNT1 A 1 A_PlaySound("halflife/monsters/hornetgrunt/flybuzz");
+		TNT1 A 1
+		{
+			bool num;
+			actor hornet;
+			[num,hornet]=A_SpawnItemEx("HGHornetShooter1");
+			if(bSEEKERMISSILE)
+				hornet.bSEEKERMISSILE=1;
+			A_PlaySound("halflife/monsters/hornetgrunt/flybuzz");
+		}
 		Stop;
     XDeath:
 		TNT1 A 0 A_PlaySound("halflife/monsters/hornetgrunt/flyhit");
 		Stop;
     }
+	void A_HornetFly(int flg=0)
+	{
+		A_SpawnItemEx(trail);
+		if(bSEEKERMISSILE)
+			A_SeekerMissile(2,2,flg,90,3);
+	}
 }
 
 class HGunHornet2 : HGunHornet
@@ -2014,27 +2046,106 @@ class HGunHornet2 : HGunHornet
 	States
     {
     Spawn:
-		HLOH A 1 Bright A_SeekerMissile(2,2,1,90,3);
+		HLOH A 1 BRIGHT A_HornetFly;
 		Loop;
-    Death:
-    Crash:
-		TNT1 A 0 A_SpawnItemEx("HGHornetShooter2");
-		TNT1 A 1 A_PlaySound("halflife/monsters/hornetgrunt/flybuzz");
-		Stop;
     }
 }
 
-class HLHornet : Ammo
+class HGruntHornet : HGunHornet
 {
 	Default
 	{
-		Inventory.MaxAmount 10;
-		+INVENTORY.IGNORESKILL
-		inventory.icon "i_bul1";	//Change when proper icon is inserted into file
+		Radius 8;
+		Height 12;
+		Projectile;
+		Speed 17;
+		Damage 4;
+		Scale .085;
+		DamageType "Hornet";
+		SeeSound "halflife/monsters/hornetgrunt/flysight";
+	}
+	States
+	{
+	Spawn:
+		HLOH B 1 NODELAY A_HornetFly;
+		Loop;
 	}
 }
 
-//****
+class HGHornetShooter1 : Actor
+{
+	Default
+	{
+		+FRIENDLY
+		+ISMONSTER
+		Radius 1;
+		Height 1;
+		+NOGRAVITY
+		+NOCLIP
+		+LOOKALLAROUND
+	}
+	States
+	{
+	Spawn:
+		TNT1 A 1 NODELAY A_Look;
+		TNT1 A 0
+		{
+			if(CheckIfCloser(target,128))
+			{
+				A_FaceTarget();
+				let hornet=HGruntHornetFake(A_SpawnProjectile("HGruntHornetFake",0));
+				hornet.countdown=1;
+				return;
+			}
+			int zvel=2,ang=90;
+			if(random(0,1))
+			{
+				zvel=5;
+				ang=-90;
+			}
+			bool num;
+			actor hornet;
+			[num,hornet]=A_SpawnItemEx("HGruntHornetFake",0,0,0,10,0,random(0-zvel,zvel),ang);
+			if(!bSEEKERMISSILE)
+			{
+				hornet.frame=0;
+				let thishorn=HGruntHornetFake(hornet);
+				thishorn.trail="HGHornetTrail2";
+			}
+		}
+		Stop;
+	}
+}
+
+class HGruntHornetFake : HGruntHornet
+{
+	int countdown;
+	Default
+	{
+		SeeSound "";
+	}
+	States
+	{
+	Spawn:
+		HLOH B 1 NODELAY
+		{
+			if(countdown>=1)
+			{
+				countdown++;
+				if(countdown>=21)
+					return resolvestate("Death");
+			}
+			else
+				A_HornetFly();
+			return state(null);
+		}
+		Loop;
+	Death:
+	Crash:
+		TNT1 A 1 A_PlaySound("halflife/monsters/hornetgrunt/flybuzz");
+		Stop;
+	}
+}
 
 class HGHornetTrail : Actor
 {
@@ -2055,154 +2166,12 @@ class HGHornetTrail : Actor
 	}
 }
 
-class HGHornetTrail1 : HGHornetTrail
+class HGHornetTrail2 : HGHornetTrail
 {
 	Default
 	{
 		Alpha .5;
 		Translation "80:111=192:223";
-	}
-}
-
-class HGruntHornet : Actor
-{
-	Default
-	{
-		Radius 8;
-		Height 12;
-		Projectile;
-		Speed 17;
-		Damage 4;
-		Scale .085;
-		DamageType "Hornet";
-		+SEEKERMISSILE;
-		SeeSound "halflife/monsters/hornetgrunt/flysight";
-	}
-	States
-	{
-	Spawn:
-		HLOH B 1 NODELAY A_SeekerMissile(2,2);
-		X099 A 0 A_SpawnItemEx("HGHornetTrail",-2);
-		Loop;
-	Death:
-	Crash:
-		TNT1 A 0 A_SpawnItemEx("HGHornetShooter1");
-		TNT1 A 1 A_PlaySound("halflife/monsters/hornetgrunt/flybuzz");
-		Stop;
-	XDeath:
-		TNT1 A 0 A_PlaySound("halflife/monsters/hornetgrunt/flyhit");
-		Stop;
-	}
-}
-
-class HGHornetShooter1 : Actor
-{
-	Default
-	{
-		+FRIENDLY
-		MONSTER;
-		Radius 1;
-		Height 1;
-		+NOGRAVITY
-		+NOCLIP
-		+LOOKALLAROUND
-		+MISSILEMORE
-		+MISSILEEVENMORE
-		-SOLID
-		-SHOOTABLE
-		-COUNTKILL
-		MinMissileChance 0;
-	}
-	States
-	{
-	Spawn:
-		TNT1 A 1 NODELAY A_Look;
-	See:
-		TNT1 A 0 A_Chase;
-		TNT1 A 0 A_Jump(256,"Missile");
-	Missile:
-		TNT1 A 0 A_JumpIfCloser(128,"SuccessfulChase");
-		TNT1 A 0 A_Jump(128,"NinetyNeg");
-		TNT1 A 0 A_SpawnItemEx("HGruntHornetFake",0,0,0,10,0,random(2,-2),90);
-		Stop;
-	NinetyNeg:
-		TNT1 A 0 A_SpawnItemEx("HGruntHornetFake",0,0,0,10,0,random(5,-5),-90);
-		Stop;
-	SuccessfulChase:
-		TNT1 A 0 A_FaceTarget;
-		TNT1 A 0 A_SpawnProjectile("HGruntHornetNoSightSound",0);
-		Stop;
-	}
-}
-
-class HGHornetShooter2 : HGHornetShooter1
-{
-    States
-    {
-	Missile:
-		TNT1 A 0 A_JumpIfCloser(128,"SuccessfulChase");
-		TNT1 A 0 A_Jump(128,"NinetyNeg");
-		TNT1 A 0 A_SpawnItemEx("HGruntHornetFake1",0,0,0,10,0,random(2,-2),90);
-		Stop;
-    NinetyNeg1:
-		TNT1 A 0 A_SpawnItemEx("HGruntHornetFake1",0,0,0,10,0,random(5,-5),-90);
-		Stop;
-    }
-}
-
-class HGruntHornetNoSightSound : HGruntHornet
-{
-	Default
-	{
-		SeeSound "";
-	}
-	States
-	{
-	Death:
-	Crash:
-		TNT1 A 1 A_PlaySound("halflife/monsters/hornetgrunt/flybuzz");
-		Stop;
-	XDeath:
-		TNT1 A 0 A_PlaySound("halflife/monsters/hornetgrunt/flyhit");
-		Stop;
-	}
-}
-
-class HGruntHornetFake : HGruntHornet
-{
-	int hornetcounter;
-	Default
-	{
-		SeeSound "";
-	}
-	States
-	{
-	Spawn:
-		HLOH B 1 NODELAY A_JumpIf(hornetcounter>=20,"Death");
-		TNT1 A 0
-		{
-			hornetcounter++;
-			A_SpawnItemEx("HGHornetTrail",-2);
-		}
-		Loop;
-	Death:
-		TNT1 A 1 A_PlaySound("halflife/monsters/hornetgrunt/flybuzz");
-		Stop;
-	}
-}
-
-class HGruntHornetFake1 : HGruntHornetFake
-{
-	States
-	{
-	Spawn:
-		HLOH A 1 NODELAY A_JumpIf(hornetcounter>=20,"Death");
-		TNT1 A 0
-		{
-			hornetcounter++;
-			A_SpawnItemEx("HGHornetTrail1",-2);
-		}
-		Loop;
 	}
 }
 

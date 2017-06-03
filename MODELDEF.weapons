@@ -688,3 +688,79 @@ Model GluonGun
 	FrameIndex HWU1 M 0 221
 	FrameIndex HWU1 N 0 222
 }
+
+Model HornetGun
+{
+	Path "Models"
+	Model 0 "v_hgun.md2"
+	Skin 0 "v_hgun.png"
+	Scale -1 1 1
+
+	Offset 1 0 -2
+
+	FrameIndex HWI1 A 0 1
+
+	FrameIndex HWD1 A 0 109
+	FrameIndex HWD1 B 0 110
+	FrameIndex HWD1 C 0 111
+	FrameIndex HWD1 D 0 112
+	FrameIndex HWD1 E 0 113
+	FrameIndex HWD1 F 0 114
+	FrameIndex HWD1 G 0 115
+	FrameIndex HWD1 H 0 116
+	FrameIndex HWD1 I 0 117
+	FrameIndex HWD1 J 0 118
+	FrameIndex HWD1 K 0 119
+	FrameIndex HWD1 L 0 120
+	FrameIndex HWD1 M 0 121
+	FrameIndex HWD1 N 0 122
+	FrameIndex HWD1 O 0 123
+	FrameIndex HWD1 P 0 124
+	FrameIndex HWD1 Q 0 125
+	FrameIndex HWD1 R 0 126
+	FrameIndex HWD1 S 0 127
+
+	FrameIndex HWU1 A 0 128
+	FrameIndex HWU1 B 0 129
+	FrameIndex HWU1 C 0 130
+	FrameIndex HWU1 D 0 131
+	FrameIndex HWU1 E 0 132
+	FrameIndex HWU1 F 0 133
+	FrameIndex HWU1 G 0 134
+	FrameIndex HWU1 H 0 135
+	FrameIndex HWU1 I 0 136
+	FrameIndex HWU1 J 0 137
+	FrameIndex HWU1 K 0 138
+	FrameIndex HWU1 L 0 139
+	FrameIndex HWU1 M 0 140
+	FrameIndex HWU1 N 0 141
+	FrameIndex HWU1 O 0 142
+	FrameIndex HWU1 P 0 143
+	FrameIndex HWU1 Q 0 144
+	FrameIndex HWU1 R 0 145
+	FrameIndex HWU1 S 0 146
+	FrameIndex HWU1 T 0 147
+	FrameIndex HWU1 U 0 148
+	FrameIndex HWU1 V 0 149
+	FrameIndex HWU1 W 0 150
+	FrameIndex HWU1 X 0 151
+	FrameIndex HWU1 Y 0 152
+	FrameIndex HWU1 Z 0 153
+	FrameIndex HWU1 [ 0 154
+	FrameIndex HWU1 \ 0 155
+	FrameIndex HWU1 ] 0 156
+	FrameIndex HWU2 A 0 157
+	FrameIndex HWU2 B 0 158
+
+	FrameIndex HWF1 A 0 159
+	FrameIndex HWF1 B 0 160
+	FrameIndex HWF1 C 0 161
+	FrameIndex HWF1 D 0 162
+	FrameIndex HWF1 E 0 163
+	FrameIndex HWF1 F 0 164
+	FrameIndex HWF1 G 0 165
+	FrameIndex HWF1 H 0 166
+	FrameIndex HWF1 I 0 167
+	FrameIndex HWF1 J 0 168
+	FrameIndex HWF1 K 0 169
+}
