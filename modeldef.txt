@@ -1,42 +1,3 @@
-//  [PLEASE UPDATE LINE NUMBERS AFTER ADDING DEFINITIONS]
-//  Player's Handler: Line 15
-//  Weapons & Ammo: Line 40
-//  Powerups, pickups, keys: Line 264
-//  Vegetation: Line 329
-//  Exploding Items: Line 443
-//  Computers: Line 559
-//  Animated Monitor: Line 679
-//  Office/Toilet Items, Beds: Line 816
-//  Decorative Items (equipment, pipes, etc.): Line 1140
-//	Vortigaunt charge effect: Line 1876
-//	Vortigaunt projectile: Line 1932
-//	Zen life forms: Line 2014
-//  Barney, Otis, Scientists, Administrator: Line 2136
-
-///////////////////////
-//  Player's Handler //
-///////////////////////
-
-Model Handler2Standing
-{
-	Path "Models"
-	Model 0 "military.md2"
-	Skin 0 "euro2.png"
-	Scale 1.55 1.55 1.55
-
-	Frame POSS A 0 "stand01"
-}
-
-Model Handler2Sitting
-{
-	Path "Models"
-	Model 0 "military.md2"
-	Skin 0 "euro2.png"
-	Scale 1.4 1.4 1.4
-
-	Frame POSS A 0 "sit01"
-}
-
 ///////////////////////
 //  Weapons & Ammo	//
 ///////////////////////
@@ -100,6 +61,7 @@ Model Pshotgun1
 
 	FrameIndex POSS A 0 0
 }
+
 /*Model Pshotgun2
 {
 	Path "Models"
@@ -1889,105 +1851,6 @@ Model PipeMaze
 	FrameIndex POSS A 0 0
 }
 
-///////////////////////////////
-//	Vortigaunt charge effect //
-///////////////////////////////
-
-Model VortiLightning
-{
-	Path "Models"
-	Model 0 "vorti.md2"
-	Skin 0 "spark0.png"
-	Scale 0.5 0.5 0.5
-
-	Frame X098 A 0 "frame00"
-	Frame X098 E 0 "frame01"
-	Frame X098 I 0 "frame02"
-	Frame X098 M 0 "frame03"
-}
-
-Model VortiLightning
-{
-	Path "Models"
-	Model 1 "vorti.md2"
-	Skin 1 "spark1.png"
-	Scale 0.5 0.5 0.5
-
-	Frame X098 B 1 "frame00"
-	Frame X098 F 1 "frame01"
-	Frame X098 J 1 "frame02"
-	Frame X098 N 1 "frame03"
-}
-
-Model VortiLightning
-{
-	Path "Models"
-	Model 2 "vorti.md2"
-	Skin 2 "spark2.png"
-	Scale 0.5 0.5 0.5
-
-	Frame X098 C 2 "frame00"
-	Frame X098 G 2 "frame01"
-	Frame X098 K 2 "frame02"
-	Frame X098 O 2 "frame03"
-}
-
-Model VortiLightning
-{
-	Path "Models"
-	Model 3 "vorti.md2"
-	Skin 3 "spark3.png"
-	Scale 0.5 0.5 0.5
-
-	Frame X098 D 3 "frame00"
-	Frame X098 H 3 "frame01"
-	Frame X098 L 3 "frame02"
-	Frame X098 P 3 "frame03"
-}
-
-////////////////////////////
-//	Vortigaunt projectile //
-////////////////////////////
-
-model VortiPlasma
-{
-	PITCHFROMMOMENTUM
-	path "models"
-	Model 0 "plasma_fly.md3"
-	skin 0 "plasma_skin.png"
-	Scale 1.0 1.0 1.0
-
-	frameindex VPLS F 0 0
-	frameindex VPLS G 0 1
-}
-
-model VortiPlasma
-{
-	path "models"
-	Model 0 "plasma_boom.md3"
-	skin 0 "plasma_skin.png"
-	Scale 1.0 1.0 1.0
-
-	frameindex VPLS A 0 1
-	frameindex VPLS B 0 2
-	frameindex VPLS C 0 3
-	frameindex VPLS D 0 4
-	frameindex VPLS E 0 5
-}
-
-model VortiPlasma_Bolt
-{
-	path "models"
-	Model 0 "bolt.md3"
-	skin 0 "bolt_skin.png"
-	Scale 1.0 1.0 1.0
-
-	frameindex VPLS A 0 0
-	frameindex VPLS B 0 1
-	frameindex VPLS C 0 2
-	frameindex VPLS D 0 3
-}
-
 //////////////////////
 //	Zen life forms  //
 //////////////////////
@@ -2000,41 +1863,6 @@ Model Fungus
 	Scale 0.5 0.5 0.5
 
 	FrameIndex POSS A 0 0
-}
-
-Model HLBarnacle
-{
-	Path "models"
-	Model 0 "barnacle.md2"
-	Skin 0 "barnacle.png"
-	Scale 0.8 0.8 0.8
-	Frame POSS A 0 "idle01"
-	Frame POSS B 0 "idle02"
-	Frame POSS C 0 "idle03"
-	Frame POSS D 0 "spit01"
-	Frame POSS E 0 "spit02"
-	Frame POSS F 0 "spit03"
-	Frame POSS G 0 "spit04"
-	Frame POSS H 0 "spit05"
-	Frame POSS I 0 "spit06"
-	Frame POSS J 0 "pain01"
-}
-
-Model HLBarnacle
-{
-	Path "models"
-	Model 1 "barnacle.md2"
-	Skin 1 "barnacle2.png"
-	Scale 0.8 0.8 0.8
-	Frame POSS K 1 "death01"
-	Frame POSS L 1 "death02"
-	Frame POSS M 1 "death03"
-	Frame POSS N 1 "death04"
-	Frame POSS O 1 "death05"
-	Frame POSS P 1 "death06"
-	Frame POSS Q 1 "death07"
-	Frame POSS R 1 "death08"
-	Frame POSS S 1 "death09"
 }
 
 Model ZenHair
@@ -2110,173 +1938,6 @@ Model HeadCrab
 	FrameIndex POSS A 0 0
 }
 
-/////////////////////////////
-//	Non-Player Characters  //
-/////////////////////////////
-
-Model Otis01
-{
-	Path "Models"
-	Model 0 "otis2.md3"
-	Skin 0 "otis.png"
-	Scale 1.05 1.05 1.05
-
-	FrameIndex POSS A 0 0
-}
-
-Model Barney01
-{
-	Path "Models"
-	Model 0 "barney2.md3"
-	Skin 0 "barney2.png"
-	Scale 1.0 1.0 1.0
-
-	FrameIndex POSS A 0 0
-}
-
-Model Admin01
-{
-	Path "Models"
-	Model 0 "zimmerman_body.md3"
-	Skin 0 "zimmerman.png"
-	Model 1 "zimmerman_chair.md3"
-	Skin 1 "zimmerman.png"
-	Scale 1.0 1.0 1.0
-
-	FrameIndex POSS A 0 0
-	FrameIndex POSS A 1 0
-}
-
-Model Einstein01
-{
-	Path "Models"
-	Model 0 "scientist_givenup_body.md3"
-	Skin 0 "scientist_body.png"
-	Model 1 "scientist_givenup_head_einstein.md3"
-	Skin 1 "scientist_head_einstein.png"
-	Scale 1.0 1.0 1.0
-
-	FrameIndex POSS A 0 0
-	FrameIndex POSS A 1 0
-}
-
-Model Luther01
-{
-	Path "Models"
-	Model 0 "scientist_givenup_body.md3"
-	Skin 0 "scientist_body.png"
-	Model 1 "scientist_givenup_head_luther.md3"
-	Skin 1 "scientist_head_luther.png"
-	Scale 1.0 1.0 1.0
-
-	FrameIndex POSS A 0 0
-	FrameIndex POSS A 1 0
-}
-
-Model Slick01
-{
-	Path "Models"
-	Model 0 "scientist_givenup_body.md3"
-	Skin 0 "scientist_body.png"
-	Model 1 "scientist_givenup_head_slick.md3"
-	Skin 1 "scientist_head_slick.png"
-	Scale 1.0 1.0 1.0
-
-	FrameIndex POSS A 0 0
-	FrameIndex POSS A 1 0
-}
-
-Model Walter01
-{
-	Path "Models"
-	Model 0 "scientist_givenup_body.md3"
-	Skin 0 "scientist_body.png"
-	Model 1 "scientist_givenup_head_walter.md3"
-	Skin 1 "scientist_head_walter.png"
-	Scale 1.0 1.0 1.0
-
-	FrameIndex POSS A 0 0
-	FrameIndex POSS A 1 0
-}
-
-Model Walter01a
-{
-	Path "Models"
-	Model 0 "scientist_givenup_body.md3"
-	Skin 0 "scientist_body.png"
-	Model 1 "scientist_givenup_head_walter_nospecs.md3"
-	Skin 1 "scientist_head_walter.png"
-	Scale 1.0 1.0 1.0
-
-	FrameIndex POSS A 0 0
-	FrameIndex POSS A 1 0
-}
-
-Model Einstein02
-{
-	Path "Models"
-	Model 0 "scientist_standing_body.md3"
-	Skin 0 "scientist_body.png"
-	Model 1 "scientist_standing_einstein.md3"
-	Skin 1 "scientist_head_einstein.png"
-	Scale 1.05 1.05 1.05
-
-	FrameIndex POSS A 0 0
-	FrameIndex POSS A 1 0
-}
-
-Model Luther02
-{
-	Path "Models"
-	Model 0 "scientist_standing_body.md3"
-	Skin 0 "scientist_body.png"
-	Model 1 "scientist_standing_luther.md3"
-	Skin 1 "scientist_head_luther.png"
-	Scale 1.05 1.05 1.05
-
-	FrameIndex POSS A 0 0
-	FrameIndex POSS A 1 0
-}
-
-Model Slick02
-{
-	Path "Models"
-	Model 0 "scientist_standing_body.md3"
-	Skin 0 "scientist_body.png"
-	Model 1 "scientist_standing_slick.md3"
-	Skin 1 "scientist_head_slick.png"
-	Scale 1.05 1.05 1.05
-
-	FrameIndex POSS A 0 0
-	FrameIndex POSS A 1 0
-}
-
-Model Walter02
-{
-	Path "Models"
-	Model 0 "scientist_standing_body.md3"
-	Skin 0 "scientist_body.png"
-	Model 1 "scientist_standing_walter.md3"
-	Skin 1 "scientist_head_walter.png"
-	Scale 1.05 1.05 1.05
-
-	FrameIndex POSS A 0 0
-	FrameIndex POSS A 1 0
-}
-
-Model Walter02a
-{
-	Path "Models"
-	Model 0 "scientist_standing_body.md3"
-	Skin 0 "scientist_body.png"
-	Model 1 "scientist_standing_walter_nospecs.md3"
-	Skin 1 "scientist_head_walter.png"
-	Scale 1.05 1.05 1.05
-
-	FrameIndex POSS A 0 0
-	FrameIndex POSS A 1 0
-}
-
 Model OspreyBellmer
 {
 	Path "Models"
@@ -2300,19 +1961,6 @@ Model OspreyBellmer
 	FrameIndex POSS B 1 0
 	FrameIndex POSS B 2 0
 }
-
-//****
-//January 22, 2016
-//Office/Building Items/Pipes/Girders = Line 15
-//Rocks = Line 302
-//Tech Pillars & Clamps = 686
-//Weapons & Ammo = 802
-//Body of Marine = 896
-//Hover Platform & Damageable SUV = 910
-//Medipack = 970
-//Killable Osprey = 984
-//Computer Consoles = 1052
-//****
 
 //********
 //Office/Building Items
@@ -3080,20 +2728,6 @@ Model Explosive
 	Model 0 "explosive.md3"
 	Skin 0 "explosive.jpg"
 	Scale 0.75 0.75 0.75
-
-	FrameIndex POSS A 0 0
-}
-
-//********
-//Body of Marine
-//********
-
-Model MarineBody
-{
-	Path "Models"
-	Model 0 "hgrunt.md3"
-	Skin 0 "hgrunt.png"
-	Scale 1.0 1.0 1.0
 
 	FrameIndex POSS A 0 0
 }

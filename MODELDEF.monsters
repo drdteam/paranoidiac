@@ -412,6 +412,139 @@ Model HLVortigaunt
 	FrameIndex HLD2 A 0 161
 	FrameIndex HLD2 B 0 162
 }
+///////////////////////////////
+//	Vortigaunt charge effect //
+///////////////////////////////
+
+Model VortiLightning
+{
+	Path "Models"
+	Model 0 "vorti.md2"
+	Skin 0 "spark0.png"
+	Scale 0.5 0.5 0.5
+
+	Frame X098 A 0 "frame00"
+	Frame X098 E 0 "frame01"
+	Frame X098 I 0 "frame02"
+	Frame X098 M 0 "frame03"
+}
+
+Model VortiLightning
+{
+	Path "Models"
+	Model 1 "vorti.md2"
+	Skin 1 "spark1.png"
+	Scale 0.5 0.5 0.5
+
+	Frame X098 B 1 "frame00"
+	Frame X098 F 1 "frame01"
+	Frame X098 J 1 "frame02"
+	Frame X098 N 1 "frame03"
+}
+
+Model VortiLightning
+{
+	Path "Models"
+	Model 2 "vorti.md2"
+	Skin 2 "spark2.png"
+	Scale 0.5 0.5 0.5
+
+	Frame X098 C 2 "frame00"
+	Frame X098 G 2 "frame01"
+	Frame X098 K 2 "frame02"
+	Frame X098 O 2 "frame03"
+}
+
+Model VortiLightning
+{
+	Path "Models"
+	Model 3 "vorti.md2"
+	Skin 3 "spark3.png"
+	Scale 0.5 0.5 0.5
+
+	Frame X098 D 3 "frame00"
+	Frame X098 H 3 "frame01"
+	Frame X098 L 3 "frame02"
+	Frame X098 P 3 "frame03"
+}
+
+////////////////////////////
+//	Vortigaunt projectile //
+////////////////////////////
+
+model VortiPlasma
+{
+	PITCHFROMMOMENTUM
+	path "models"
+	Model 0 "plasma_fly.md3"
+	skin 0 "plasma_skin.png"
+	Scale 1.0 1.0 1.0
+
+	frameindex VPLS F 0 0
+	frameindex VPLS G 0 1
+}
+
+model VortiPlasma
+{
+	path "models"
+	Model 0 "plasma_boom.md3"
+	skin 0 "plasma_skin.png"
+	Scale 1.0 1.0 1.0
+
+	frameindex VPLS A 0 1
+	frameindex VPLS B 0 2
+	frameindex VPLS C 0 3
+	frameindex VPLS D 0 4
+	frameindex VPLS E 0 5
+}
+
+model VortiPlasma_Bolt
+{
+	path "models"
+	Model 0 "bolt.md3"
+	skin 0 "bolt_skin.png"
+	Scale 1.0 1.0 1.0
+
+	frameindex VPLS A 0 0
+	frameindex VPLS B 0 1
+	frameindex VPLS C 0 2
+	frameindex VPLS D 0 3
+}
+
+Model HLBarnacle
+{
+	Path "models"
+	Model 0 "barnacle.md2"
+	Skin 0 "barnacle.png"
+	Scale 0.8 0.8 0.8
+	Frame POSS A 0 "idle01"
+	Frame POSS B 0 "idle02"
+	Frame POSS C 0 "idle03"
+	Frame POSS D 0 "spit01"
+	Frame POSS E 0 "spit02"
+	Frame POSS F 0 "spit03"
+	Frame POSS G 0 "spit04"
+	Frame POSS H 0 "spit05"
+	Frame POSS I 0 "spit06"
+	Frame POSS J 0 "pain01"
+}
+
+Model HLBarnacle
+{
+	Path "models"
+	Model 1 "barnacle.md2"
+	Skin 1 "barnacle2.png"
+	Scale 0.8 0.8 0.8
+	Frame POSS K 1 "death01"
+	Frame POSS L 1 "death02"
+	Frame POSS M 1 "death03"
+	Frame POSS N 1 "death04"
+	Frame POSS O 1 "death05"
+	Frame POSS P 1 "death06"
+	Frame POSS Q 1 "death07"
+	Frame POSS R 1 "death08"
+	Frame POSS S 1 "death09"
+}
 
 Model HLHornetGrunt
 {
@@ -1946,7 +2079,6 @@ Model HLZombie
 	FrameIndex HLD1 \ 0 305
 	FrameIndex HLD1 ] 0 306
 }
-
 
 Model HLNihilanth
 {

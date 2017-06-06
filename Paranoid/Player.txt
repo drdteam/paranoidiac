@@ -41,16 +41,16 @@ class RolfBellmer : PlayerPawn
 		HLP1 A 1 A_JumpIf(CountInv("ScientistDisguise"),"Pain2");
 		HLP1 DGJ 1;
 		HLP1 M 1 A_Pain;
-		HLP1 PS 1;
+		HLP1 PSU 1;
 		Goto Spawn;
 	Death:
 		HLD1 A 1 A_JumpIf(CountInv("ScientistDisguise"),"Death2");
 		HLD1 A 1 A_PlaySound("HLPlayerHEVFail",CHAN_VOICE);
 		HLD1 BC 1;
 		HLD1 D 1 A_NoBlocking;
-		HLD1 "EFGHIJKLMNOPQRSTUVWXYZ[" 1;
-		HLD1 \ 1;
-		HLD1 ] -1;
+		HLD1 "EFGHIJKLMNOPQRSTUVWXYZ[\]" 1;
+		HLD3 ABCDEFGHIJKL 1;
+		HLD3 M -1;
 		Stop;
 	Spawn2:
 		HLI2 A 1 A_JumpIf(vel.x!=0||vel.y!=0,"See");

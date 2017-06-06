@@ -1,3 +1,27 @@
+///////////////////////
+//  Player's Handler //
+///////////////////////
+
+Model Handler2Standing
+{
+	Path "Models"
+	Model 0 "military.md2"
+	Skin 0 "euro2.png"
+	Scale 1.55 1.55 1.55
+
+	Frame POSS A 0 "stand01"
+}
+
+Model Handler2Sitting
+{
+	Path "Models"
+	Model 0 "military.md2"
+	Skin 0 "euro2.png"
+	Scale 1.4 1.4 1.4
+
+	Frame POSS A 0 "sit01"
+}
+
 Model RolfBellmer
 {
 	Path "Models"
@@ -32,65 +56,80 @@ Model RolfBellmer
 	FrameIndex HLR1 V 0 85
 	FrameIndex HLR1 W 0 86
 
-	FrameIndex HLA1 A 0 362
-	FrameIndex HLA1 B 0 363
-	FrameIndex HLA1 C 0 364
-	FrameIndex HLA1 D 0 365
-	FrameIndex HLA1 E 0 366
-	FrameIndex HLA1 F 0 367
-	FrameIndex HLA1 G 0 368
-	FrameIndex HLA1 H 0 369
-	FrameIndex HLA1 I 0 370
+	FrameIndex HLA1 A 0 301
+	FrameIndex HLA1 B 0 302
+	FrameIndex HLA1 C 0 303
+	FrameIndex HLA1 D 0 304
+	FrameIndex HLA1 E 0 305
+	FrameIndex HLA1 F 0 306
+	FrameIndex HLA1 G 0 307
+	FrameIndex HLA1 H 0 308
+	FrameIndex HLA1 I 0 309
 
-	FrameIndex HLP1 A 0 166
-	FrameIndex HLP1 B 0 167
-	FrameIndex HLP1 C 0 168
-	FrameIndex HLP1 D 0 169
-	FrameIndex HLP1 E 0 170
-	FrameIndex HLP1 F 0 171
-	FrameIndex HLP1 G 0 172
-	FrameIndex HLP1 H 0 173
-	FrameIndex HLP1 I 0 174
-	FrameIndex HLP1 J 0 175
-	FrameIndex HLP1 K 0 176
-	FrameIndex HLP1 L 0 177
-	FrameIndex HLP1 M 0 178
-	FrameIndex HLP1 N 0 179
-	FrameIndex HLP1 O 0 180
-	FrameIndex HLP1 P 0 181
-	FrameIndex HLP1 Q 0 182
-	FrameIndex HLP1 R 0 183
-	FrameIndex HLP1 S 0 184
+	FrameIndex HLP1 A 0 171
+	FrameIndex HLP1 B 0 172
+	FrameIndex HLP1 C 0 173
+	FrameIndex HLP1 D 0 174
+	FrameIndex HLP1 E 0 175
+	FrameIndex HLP1 F 0 176
+	FrameIndex HLP1 G 0 177
+	FrameIndex HLP1 H 0 178
+	FrameIndex HLP1 I 0 179
+	FrameIndex HLP1 J 0 180
+	FrameIndex HLP1 K 0 181
+	FrameIndex HLP1 L 0 182
+	FrameIndex HLP1 M 0 183
+	FrameIndex HLP1 N 0 184
+	FrameIndex HLP1 O 0 185
+	FrameIndex HLP1 P 0 186
+	FrameIndex HLP1 Q 0 187
+	FrameIndex HLP1 R 0 188
+	FrameIndex HLP1 S 0 189
+	FrameIndex HLP1 T 0 190
+	FrameIndex HLP1 U 0 191
 
-	FrameIndex HLD1 A 0 294
-	FrameIndex HLD1 B 0 295
-	FrameIndex HLD1 C 0 296
-	FrameIndex HLD1 D 0 297
-	FrameIndex HLD1 E 0 298
-	FrameIndex HLD1 F 0 299
-	FrameIndex HLD1 G 0 300
-	FrameIndex HLD1 H 0 301
-	FrameIndex HLD1 I 0 302
-	FrameIndex HLD1 J 0 303
-	FrameIndex HLD1 K 0 304
-	FrameIndex HLD1 L 0 305
-	FrameIndex HLD1 M 0 306
-	FrameIndex HLD1 N 0 307
-	FrameIndex HLD1 O 0 308
-	FrameIndex HLD1 P 0 309
-	FrameIndex HLD1 Q 0 310
-	FrameIndex HLD1 R 0 311
-	FrameIndex HLD1 S 0 312
-	FrameIndex HLD1 T 0 313
-	FrameIndex HLD1 U 0 314
-	FrameIndex HLD1 V 0 315
-	FrameIndex HLD1 W 0 316
-	FrameIndex HLD1 X 0 317
-	FrameIndex HLD1 Y 0 318
-	FrameIndex HLD1 Z 0 319
-	FrameIndex HLD1 [ 0 320
-	FrameIndex HLD1 \ 0 321
-	FrameIndex HLD1 ] 0 322
+	FrameIndex HLD1 A 0 237
+	FrameIndex HLD1 B 0 238
+	FrameIndex HLD1 C 0 239
+	FrameIndex HLD1 D 0 240
+	FrameIndex HLD1 E 0 241
+	FrameIndex HLD1 F 0 242
+	FrameIndex HLD1 G 0 243
+	FrameIndex HLD1 H 0 244
+	FrameIndex HLD1 I 0 245
+	FrameIndex HLD1 J 0 246
+	FrameIndex HLD1 K 0 247
+	FrameIndex HLD1 L 0 248
+	FrameIndex HLD1 M 0 249
+	FrameIndex HLD1 N 0 250
+	FrameIndex HLD1 O 0 251
+	FrameIndex HLD1 P 0 252
+	FrameIndex HLD1 Q 0 253
+	FrameIndex HLD1 R 0 254
+	FrameIndex HLD1 S 0 255
+	FrameIndex HLD1 T 0 256
+	FrameIndex HLD1 U 0 257
+	FrameIndex HLD1 V 0 258
+	FrameIndex HLD1 W 0 259
+	FrameIndex HLD1 X 0 260
+	FrameIndex HLD1 Y 0 261
+	FrameIndex HLD1 Z 0 262
+	FrameIndex HLD1 [ 0 263
+	FrameIndex HLD1 \ 0 264
+	FrameIndex HLD1 ] 0 265
+	FrameIndex HLD3 A 0 266
+	FrameIndex HLD3 B 0 267
+	FrameIndex HLD3 C 0 268
+	FrameIndex HLD3 D 0 269
+	FrameIndex HLD3 E 0 270
+	FrameIndex HLD3 F 0 271
+	FrameIndex HLD3 G 0 272
+	FrameIndex HLD3 H 0 273
+	FrameIndex HLD3 I 0 274
+	FrameIndex HLD3 J 0 275
+	FrameIndex HLD3 K 0 276
+	FrameIndex HLD3 L 0 277
+	FrameIndex HLD3 M 0 278
 }
 
 Model RolfBellmer
@@ -1764,4 +1803,185 @@ Model HLGrunt6
 	FrameIndex HLD2 C 0 293
 	FrameIndex HLD2 D 0 294
 	FrameIndex HLD2 E 0 295
+}
+
+/////////////////////////////
+//	Non-Player Characters  //
+/////////////////////////////
+
+Model Otis01
+{
+	Path "Models"
+	Model 0 "otis2.md3"
+	Skin 0 "otis.png"
+	Scale 1.05 1.05 1.05
+
+	FrameIndex POSS A 0 0
+}
+
+Model Barney01
+{
+	Path "Models"
+	Model 0 "barney2.md3"
+	Skin 0 "barney2.png"
+	Scale 1.0 1.0 1.0
+
+	FrameIndex POSS A 0 0
+}
+
+Model Admin01
+{
+	Path "Models"
+	Model 0 "zimmerman_body.md3"
+	Skin 0 "zimmerman.png"
+	Model 1 "zimmerman_chair.md3"
+	Skin 1 "zimmerman.png"
+	Scale 1.0 1.0 1.0
+
+	FrameIndex POSS A 0 0
+	FrameIndex POSS A 1 0
+}
+
+Model Einstein01
+{
+	Path "Models"
+	Model 0 "scientist_givenup_body.md3"
+	Skin 0 "scientist_body.png"
+	Model 1 "scientist_givenup_head_einstein.md3"
+	Skin 1 "scientist_head_einstein.png"
+	Scale 1.0 1.0 1.0
+
+	FrameIndex POSS A 0 0
+	FrameIndex POSS A 1 0
+}
+
+Model Luther01
+{
+	Path "Models"
+	Model 0 "scientist_givenup_body.md3"
+	Skin 0 "scientist_body.png"
+	Model 1 "scientist_givenup_head_luther.md3"
+	Skin 1 "scientist_head_luther.png"
+	Scale 1.0 1.0 1.0
+
+	FrameIndex POSS A 0 0
+	FrameIndex POSS A 1 0
+}
+
+Model Slick01
+{
+	Path "Models"
+	Model 0 "scientist_givenup_body.md3"
+	Skin 0 "scientist_body.png"
+	Model 1 "scientist_givenup_head_slick.md3"
+	Skin 1 "scientist_head_slick.png"
+	Scale 1.0 1.0 1.0
+
+	FrameIndex POSS A 0 0
+	FrameIndex POSS A 1 0
+}
+
+Model Walter01
+{
+	Path "Models"
+	Model 0 "scientist_givenup_body.md3"
+	Skin 0 "scientist_body.png"
+	Model 1 "scientist_givenup_head_walter.md3"
+	Skin 1 "scientist_head_walter.png"
+	Scale 1.0 1.0 1.0
+
+	FrameIndex POSS A 0 0
+	FrameIndex POSS A 1 0
+}
+
+Model Walter01a
+{
+	Path "Models"
+	Model 0 "scientist_givenup_body.md3"
+	Skin 0 "scientist_body.png"
+	Model 1 "scientist_givenup_head_walter_nospecs.md3"
+	Skin 1 "scientist_head_walter.png"
+	Scale 1.0 1.0 1.0
+
+	FrameIndex POSS A 0 0
+	FrameIndex POSS A 1 0
+}
+
+Model Einstein02
+{
+	Path "Models"
+	Model 0 "scientist_standing_body.md3"
+	Skin 0 "scientist_body.png"
+	Model 1 "scientist_standing_einstein.md3"
+	Skin 1 "scientist_head_einstein.png"
+	Scale 1.05 1.05 1.05
+
+	FrameIndex POSS A 0 0
+	FrameIndex POSS A 1 0
+}
+
+Model Luther02
+{
+	Path "Models"
+	Model 0 "scientist_standing_body.md3"
+	Skin 0 "scientist_body.png"
+	Model 1 "scientist_standing_luther.md3"
+	Skin 1 "scientist_head_luther.png"
+	Scale 1.05 1.05 1.05
+
+	FrameIndex POSS A 0 0
+	FrameIndex POSS A 1 0
+}
+
+Model Slick02
+{
+	Path "Models"
+	Model 0 "scientist_standing_body.md3"
+	Skin 0 "scientist_body.png"
+	Model 1 "scientist_standing_slick.md3"
+	Skin 1 "scientist_head_slick.png"
+	Scale 1.05 1.05 1.05
+
+	FrameIndex POSS A 0 0
+	FrameIndex POSS A 1 0
+}
+
+Model Walter02
+{
+	Path "Models"
+	Model 0 "scientist_standing_body.md3"
+	Skin 0 "scientist_body.png"
+	Model 1 "scientist_standing_walter.md3"
+	Skin 1 "scientist_head_walter.png"
+	Scale 1.05 1.05 1.05
+
+	FrameIndex POSS A 0 0
+	FrameIndex POSS A 1 0
+}
+
+Model Walter02a
+{
+	Path "Models"
+	Model 0 "scientist_standing_body.md3"
+	Skin 0 "scientist_body.png"
+	Model 1 "scientist_standing_walter_nospecs.md3"
+	Skin 1 "scientist_head_walter.png"
+	Scale 1.05 1.05 1.05
+
+	FrameIndex POSS A 0 0
+	FrameIndex POSS A 1 0
+}
+
+//********
+//Body of Marine
+//********
+
+Model MarineBody
+{
+	Path "Models"
+	Model 0 "hgrunt.md3"
+	Skin 0 "hgrunt.png"
+	Scale 1.0 1.0 1.0
+
+	FrameIndex POSS A 0 0
 }
