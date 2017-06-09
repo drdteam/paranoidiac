@@ -1,3 +1,136 @@
+Model Crowbar
+{
+	Path "Models"
+	Model 0 "v_crowbar.md2"
+	Skin 0 "v_crowbar.png"
+	Scale -1 1 1
+
+	Offset 1 0 -2
+
+	FrameIndex HWI1 A 0 1
+
+	FrameIndex HWA1 A 0 74
+	FrameIndex HWA1 B 0 75
+	FrameIndex HWA1 C 0 76
+	FrameIndex HWA1 D 0 77
+	FrameIndex HWA1 E 0 78
+	FrameIndex HWA1 F 0 79
+	FrameIndex HWA1 G 0 80
+	FrameIndex HWA1 H 0 81
+	FrameIndex HWA1 I 0 82
+	FrameIndex HWA1 J 0 83
+	FrameIndex HWA1 K 0 84
+
+	FrameIndex HWA1 L 0 63
+	FrameIndex HWA1 M 0 64
+	FrameIndex HWA1 N 0 65
+	FrameIndex HWA1 O 0 66
+	FrameIndex HWA1 P 0 67
+	FrameIndex HWA1 Q 0 68
+	FrameIndex HWA1 R 0 69
+	FrameIndex HWA1 S 0 70
+	FrameIndex HWA1 T 0 71
+	FrameIndex HWA1 U 0 72
+	FrameIndex HWA1 V 0 73
+
+	FrameIndex HWA1 W 0 85
+	FrameIndex HWA1 X 0 86
+	FrameIndex HWA1 Y 0 87
+	FrameIndex HWA1 Z 0 88
+	FrameIndex HWA1 [ 0 89
+	FrameIndex HWA1 \ 0 90
+	FrameIndex HWA1 ] 0 91
+	FrameIndex HWA2 A 0 92
+	FrameIndex HWA2 B 0 93
+	FrameIndex HWA2 C 0 94
+	FrameIndex HWA2 D 0 95
+	FrameIndex HWA2 E 0 96
+	FrameIndex HWA2 F 0 97
+	FrameIndex HWA2 G 0 98
+
+	FrameIndex HWA2 H 0 99
+	FrameIndex HWA2 I 0 100
+	FrameIndex HWA2 J 0 101
+	FrameIndex HWA2 K 0 102
+	FrameIndex HWA2 L 0 103
+	FrameIndex HWA2 M 0 104
+	FrameIndex HWA2 N 0 105
+	FrameIndex HWA2 O 0 106
+	FrameIndex HWA2 P 0 107
+	FrameIndex HWA2 Q 0 108
+	FrameIndex HWA2 R 0 109
+	FrameIndex HWA2 S 0 110
+	FrameIndex HWA2 T 0 111
+	FrameIndex HWA2 U 0 112
+
+	FrameIndex HWA2 V 0 113
+	FrameIndex HWA2 W 0 114
+	FrameIndex HWA2 X 0 115
+	FrameIndex HWA2 Y 0 116
+	FrameIndex HWA2 Z 0 117
+	FrameIndex HWA2 [ 0 118
+	FrameIndex HWA2 \ 0 119
+	FrameIndex HWA2 ] 0 120
+	FrameIndex HWA3 A 0 121
+	FrameIndex HWA3 B 0 122
+	FrameIndex HWA3 C 0 123
+	FrameIndex HWA3 D 0 124
+	FrameIndex HWA3 E 0 125
+	FrameIndex HWA3 F 0 126
+	FrameIndex HWA3 G 0 127
+	FrameIndex HWA3 H 0 128
+	FrameIndex HWA3 I 0 129
+	FrameIndex HWA3 J 0 130
+	FrameIndex HWA3 K 0 131
+
+	FrameIndex HWA3 L 0 132
+	FrameIndex HWA3 M 0 133
+	FrameIndex HWA3 N 0 134
+	FrameIndex HWA3 O 0 135
+	FrameIndex HWA3 P 0 136
+	FrameIndex HWA3 Q 0 137
+	FrameIndex HWA3 R 0 138
+	FrameIndex HWA3 S 0 139
+	FrameIndex HWA3 T 0 140
+	FrameIndex HWA3 U 0 141
+	FrameIndex HWA3 V 0 142
+	FrameIndex HWA3 W 0 143
+	FrameIndex HWA3 X 0 144
+	FrameIndex HWA3 Y 0 145
+	FrameIndex HWA3 Z 0 146
+	FrameIndex HWA3 [ 0 147
+	FrameIndex HWA3 \ 0 148
+	FrameIndex HWA3 ] 0 149
+	FrameIndex HWA4 A 0 150
+
+	FrameIndex HWU1 A 0 37
+	FrameIndex HWU1 B 0 38
+	FrameIndex HWU1 C 0 39
+	FrameIndex HWU1 D 0 40
+	FrameIndex HWU1 E 0 41
+	FrameIndex HWU1 F 0 42
+	FrameIndex HWU1 G 0 43
+	FrameIndex HWU1 H 0 44
+	FrameIndex HWU1 I 0 45
+	FrameIndex HWU1 J 0 46
+	FrameIndex HWU1 K 0 47
+	FrameIndex HWU1 L 0 48
+	FrameIndex HWU1 M 0 49
+
+	FrameIndex HWD1 A 0 50
+	FrameIndex HWD1 B 0 51
+	FrameIndex HWD1 C 0 52
+	FrameIndex HWD1 D 0 53
+	FrameIndex HWD1 E 0 54
+	FrameIndex HWD1 F 0 55
+	FrameIndex HWD1 G 0 56
+	FrameIndex HWD1 H 0 57
+	FrameIndex HWD1 I 0 58
+	FrameIndex HWD1 J 0 59
+	FrameIndex HWD1 K 0 60
+	FrameIndex HWD1 L 0 61
+	FrameIndex HWD1 M 0 62
+}
 Model Beretta
 {
 	Path "Models"

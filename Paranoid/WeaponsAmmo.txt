@@ -213,94 +213,54 @@ class Crowbar : ParanoidWeapon
 	}
 	States
 	{
-	Ready:
-		HW4I A 4 A_WeaponReady;
-		Loop;
 	Deselect:
-		HW4I A 1 A_Lower(12);
-		Loop;
-	Select:
-		HW4I A 1 A_Raise(12);
-		Loop;
-		HWU1 ABCDEFGHIJK 1;
+		HWD1 ABCDEFGHIJKL 1;
 		TNT1 A 0 A_Lower;
 		Wait;
+	Ready:
+		TNT1 A 0;
+		HWU1 ABCDEFGHIJKL 1;
+		Goto Ready2;
 	Fire:
 		TNT1 A 0 A_Jump(256,"Fire1","Fire2","Fire3");
 	Fire1:
-		TNT1 A 0 A_JumpIfCloser(80,"FireFast1");
-		HW4F BC 2;
-		HW4F D 2;
-		HW4F E 2 CrowbarHit;
-		HW4F F 2 A_JumpIfCloser(80,"Fire1F");
-		HW4F G 8;
-		HW4G H 2;
-		HW4I A 2;
+		HWA1 A 2 A_JumpIfCloser(80,"FireFast1");
+		HWA1 BC 2;
+		HWA1 D 2 CrowbarHit;
+		HWA1 EFGHIJK 2;
 		Goto Ready;
 	FireFast1:
-		HW4F BC 2;
-		HW4F D 1 CrowbarHit;
-		HW4F EF 1;
-		HW4F G 4;
-		HW4G H 2;
-		HW4I A 2;
-		Goto Ready;
-	Fire1F:
-		HW4F F 1;
-		HW4F G 6;
-		HW4G H 2;
-		HW4I A 2;
-		Goto Ready;
+		HWA1 LMNO 1;
+		HWA1 P 1 CrowbarHit;
+		HWA1 QRSTUV 1;
+		HWI1 A 2;
+		Goto Ready2;
 	Fire2:
-		TNT1 A 0 A_JumpIfCloser(80,"FireFast2");
-		HW4F B 2;
-		HW4G BC 2;
-		HW4G D 1;
-		HW4G D 1 CrowbarHit;
-		HW4G E 1;
-		HW4G F 1 A_JumpIfCloser(80,"Fire2F");
-		HW4G G 1;
-		TNT1 A 8;
-		HW4G H 2;
-		HW4I A 2;
-		Goto Ready;
+		HWA1 W 2 A_JumpIfCloser(80,"FireFast2");
+		HWA1 XYZ 2;
+		HWA1 [ 2 CrowbarHit;
+		HWA1 \] 2;
+		HWA2 ABCDEF 2;
+		Goto Ready2;
 	FireFast2:
-		HW4F B 2;
-		HW4G BC 2;
-		HW4G D 1 CrowbarHit;
-		HW4G EFG 1;
-		TNT1 A 4;
-		HW4G H 1;
-		HW4I A 2;
-		Goto Ready;
-	Fire2F:
-		HW4G FG 1;
-		TNT1 A 4;
-		HW4G H 1;
-		HW4I A 2;
-		Goto Ready;
+		HWA2 HIJKLM 1;
+		HWA2 N 1 CrowbarHit;
+		HWA2 OPQRSTU 1;
+		Goto Ready2;
 	Fire3:
-		TNT1 A 0 A_JumpIfCloser(80,"FireFast3");
-		HW4H BCD 2;
-		HW4H E 2;
-		HW4H F 2 CrowbarHit;
-		HW4H G 2;
-		TNT1 A 8 A_JumpIfCloser(90,"Fire3F");
-		HW4H HIJKLM 1;
-		Goto Ready;
+		HWA2 V 2 A_JumpIfCloser(80,"FireFast3");
+		HWA2 WXY 2;
+		HWA2 Z 2 CrowbarHit;
+		HWA2 [\] 2;
+		HWA3 AB 2;
+		HWA3 CDEFGHIJK 1;
+		Goto Ready2;
 	FireFast3:
-		HW4H BC 2;
-		HW4H D 1;
-		HW4H E 1 CrowbarHit;
-		HW4H F 1;
-		HW4H G 2;
-		TNT1 A 3;
-		HW4H HJKM 1;
-		Goto Ready;
-	Fire3F:
-		TNT1 A 3;
-		HW4H HJKM 1;
-		Goto Ready;
+		HWA3 LMNOP 1;
+		HWA3 Q 1 CrowbarHit;
+		HWA3 RSTUVWXYZ[\] 1;
+		HWA4 A 1;
+		Goto Ready2;
 	}
 	action void CrowbarHit()
 	{
