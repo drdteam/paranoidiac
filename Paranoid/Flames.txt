@@ -92,19 +92,19 @@ class Ember : Actor
 {
 	Default
 	{
-		height 2;
-		radius 1;
-		mass 0;
-		PROJECTILE;
+		Height 2;
+		Radius 1;
+		Mass 0;
+		Projectile;
 		RenderStyle "Add";
-		scale .0625;
+		Scale .0625;
 		+FORCEXYBILLBOARD
 	}
 	States
 	{
 	Spawn:
-		SPKO E 35 bright;
-		SPKO E 1 bright A_FadeOut;
+		SPKO E 35 BRIGHT;
+		SPKO E 1 BRIGHT A_FadeOut;
 		Wait;
 	}
 }
@@ -113,63 +113,71 @@ class FlameGlow_02 : Actor
 {
 	Default
 	{
-		height 1;
-		radius 8;
-		mass 0;
-		PROJECTILE;
+		Height 1;
+		Radius 8;
+		Mass 0;
+		Projectile;
 		+NOCLIP
 		RenderStyle "Add";
-		alpha .25;
-		scale .2;
+		Alpha .25;
+		Scale .2;
 	}
-	states
+	States
 	{
 	Spawn:
-		SPKO E 1 bright A_FadeOut(.0125);
-		loop;
+		SPKO E 1 BRIGHT A_FadeOut(.0125);
+		Loop;
 	}
 }
 
-class Flame1A_01 : Actor
+class Flame1A_01 : FlameGlow_02
 {
+	float startscale,angmod;
 	Default
 	{
-		height 1;
-		radius 8;
-		damagefunction (1);
-		mass 0;
-		PROJECTILE;
+		-NOCLIP
+		DamageFunction (1);
 		DamageType "Fire";
 		+RIPPER
 		+BLOODLESSIMPACT
 		+WINDTHRUST
 		+NOINTERACTION
 		+FORCEXYBILLBOARD
-		RenderStyle "Add";
-		scale .1;
+		+ROLLSPRITE
+		Alpha 1;
+		Scale .1;
 	}
-	states
+	States
 	{
 	Spawn:
-		TNT1 A 0 NODELAY
+		FLM1 A 1 NODELAY
 		{
+			startscale=scale.x/26.0;
 			if(random(0,1))
-				scale.x=-.1;
-			static const name sprt[]=
+				bSPRITEFLIP=1;
+			frame=random(0,4);
+			switch(random(0,2))
 			{
-				'FLM1A0','FLM2A0','FLM3A0','FLM4A0','FLM5A0',
-				'FLM6A0','FLM7A0','FLM8A0','FLM9A0','FL10A0',
-				'FL11A0','FL12A0','FL13A0','FL14A0','FL15A0'
-			};
-			self.sprite=GetSpriteIndex(sprt[random(0,14)]);
+			case 1:
+				angmod=7.5;
+				break;
+			case 2:
+				angmod=-7.5;
+				break;
+			}
 		}
-		"####" ABCDEFGHIJ 2 bright;
-		"####" KKLLMM 1 bright A_FadeOut(.2);
-		stop;
-	Dud:
-		FLM1 A 0;FLM2 A 0;FLM3 A 0;FLM4 A 0;FLM5 A 0;
-		FLM6 A 0;FLM7 A 0;FLM8 A 0;FLM9 A 0;FL10 A 0;
-		FL11 A 0;FL12 A 0;FL13 A 0;FL14 A 0;FL15 A 0;
+		FLM1 ################### 1 BRIGHT A_FlameRoll;
+		FLM1 ###### 1 BRIGHT
+		{
+			A_FlameRoll();
+			A_FadeOut(.2);
+		}
 		Stop;
+	}
+	void A_FlameRoll()
+	{
+		scale.x-=startscale;
+		scale.y-=startscale;
+		A_SetRoll(roll+=angmod,SPF_INTERPOLATE);
 	}
 }
