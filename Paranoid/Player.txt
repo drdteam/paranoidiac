@@ -48,7 +48,7 @@ class RolfBellmer : PlayerPawn
 		HLD1 A 1 A_PlaySound("HLPlayerHEVFail",CHAN_VOICE);
 		HLD1 BC 1;
 		HLD1 D 1 A_NoBlocking;
-		HLD1 "EFGHIJKLMNOPQRSTUVWXYZ[\]" 1;
+		HLD1 EFGHIJKLMNOPQRSTUVWXYZ[\] 1;
 		HLD3 ABCDEFGHIJKL 1;
 		HLD3 M -1;
 		Stop;

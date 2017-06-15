@@ -63,7 +63,7 @@ class HLBarney : HLMonster
 		HLR1 MNN 1 A_Chase(null,null,HLSMOOTHCHASE);
 		HLR1 O 1 A_Chase;
 		HLR1 OPP 1 A_Chase(null,null,HLSMOOTHCHASE);
-		TNT1 A 0
+		HLR1 A 0
 		{
 			if(random(0,255)<8)
 				A_PlaySound("halflife/monsters/barney/idle");
@@ -87,7 +87,7 @@ class HLBarney : HLMonster
 		HLA1 W 1 A_FaceTarget;
 		HLA1 X 1;
 		HLA1 Y 1 Light("ImShootingAGun") A_BarneyGunshot;
-		HLA1 "Z[\]" 1 Light("ImShootingAGun");
+		HLA1 Z[\] 1 Light("ImShootingAGun");
 		HLA2 AB 1;
 		HLA1 VV 2 A_FaceTarget;
 		TNT1 A 0 A_MonsterRefire(0,"See");
@@ -96,13 +96,13 @@ class HLBarney : HLMonster
 		HLA1 W 1 A_FaceTarget;
 		HLA1 X 1;
 		HLA1 Y 1 Light("ImShootingAGun") A_BarneyGunshot(2);
-		HLA1 "Z[\]" 1 Light("ImShootingAGun");
+		HLA1 Z[\] 1 Light("ImShootingAGun");
 		HLA2 AB 1;
 		HLA1 V 6 A_FaceTarget;
 		HLA1 VVVV 8 A_FaceTarget;
 		TNT1 A 0 A_MonsterRefire(0,"See");
 		HLA1 Y 1 Light("ImShootingAGun") A_BarneyGunshot(2);
-		HLA1 "Z[\]" 1 Light("ImShootingAGun");
+		HLA1 Z[\] 1 Light("ImShootingAGun");
 		HLA2 AB 1;
 		HLA1 V 6 A_FaceTarget;
 		HLA1 VVVV 8 A_FaceTarget;

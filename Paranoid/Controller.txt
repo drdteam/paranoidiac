@@ -50,11 +50,11 @@ class HLController : HLMonster
 		HLA2 JNR 1;
 		Goto See;
 	Missile2:
-		HLA2 "WXYZ[\]" 1 A_FaceTarget;
-		HLA3 "ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]" 1 A_FaceTarget;
+		HLA2 WXYZ[\] 1 A_FaceTarget;
+		HLA3 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1 A_FaceTarget;
 		HLA4 ABCDEFGH 1;
 		HLA4 I 1 A_SpawnProjectile("ControllerFireball2",42);
-		HLA4 "JKLMNOPQRSTUVWXYZ[\]" 1;
+		HLA4 JKLMNOPQRSTUVWXYZ[\] 1;
 		HLA5 ABC 1;
 		HLA5 D 1 A_Stop;
 		HLA5 EF 2;
@@ -74,7 +74,7 @@ class HLController : HLMonster
 		HLD1 D 1 A_PlaySound("halflife/weapons/bodydrop");
 		HLD1 EFGHIJKLMNO 1;
 		HLD1 P 1 A_NoBlocking;
-		HLD1 "QRSTUVWXYZ[\]" 1;
+		HLD1 QRSTUVWXYZ[\] 1;
 		HLD2 ABCDEFGHIJKLMNOPQRS 1;
 		HLD2 T -1;
 		Stop;

@@ -45,8 +45,7 @@ class HLHoundEye : HLMonster
 		HLR1 W 1 A_Chase;
 		HLR1 XY 1 A_Chase(null,null,HLSMOOTHCHASE);
 		HLR1 Z 1 A_Chase;
-		HLR1 [ 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLR1 \ 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLR1 [\ 1 A_Chase(null,null,HLSMOOTHCHASE);
 		HLR1 ] 1 A_Chase;
 		HLR2 AB 1 A_Chase(null,null,HLSMOOTHCHASE);
 		HLR2 C 1 A_Chase;
@@ -66,7 +65,7 @@ class HLHoundEye : HLMonster
 		HLR2 X 1 A_Chase;
 		HLR2 WZ 1 A_Chase(null,null,HLSMOOTHCHASE);
 		HLR2 [ 1 A_Chase;
-		HLR2 "\]" 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLR2 \] 1 A_Chase(null,null,HLSMOOTHCHASE);
 		TNT1 A 0
 		{
 			if(random(0,1))
@@ -79,8 +78,8 @@ class HLHoundEye : HLMonster
 			A_FaceTarget();
 			A_PlaySound("halflife/monsters/houndeye/attackcharge",5);
 		}
-		HLA1 "BCDEFGHIJKLMNOPQRSTUVWXYZ[\]" 1;
-		HLA2 "ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]" 1;
+		HLA1 BCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1;
+		HLA2 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1;
 		HLA1 A 7
 		{
 			A_StopSound(5);
@@ -110,8 +109,7 @@ class HLHoundEye : HLMonster
 		HLD1 F 1 A_NoBlocking;
 		HLD1 GHI 1;
 		HLD1 J 1 A_PlaySound("halflife/weapons/bodydrop");
-		HLD1 "KLMNOPQRSTUVWXYZ[" 1;
-		HLD1 \ 1;
+		HLD1 KLMNOPQRSTUVWXYZ[\ 1;
 		HLD1 ] -1;
 		Stop;
 	XDeath:

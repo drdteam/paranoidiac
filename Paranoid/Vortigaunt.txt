@@ -44,7 +44,7 @@ class HLVortigaunt : HLMonster
 		HLA1 M 1 A_ZombieMelee(3);
 		HLA1 NOPQRSTU 1 A_FaceTarget;
 		HLA1 V 1 A_ZombieMelee(3);
-		HLA1 "WXYZ[\]" 1;
+		HLA1 WXYZ[\] 1;
 		HLA2 ABCD 1;
 		Goto See;
 	Missile:
@@ -108,7 +108,7 @@ class HLVortigaunt : HLMonster
 		HLD1 B 2 A_NoBlocking;
 		HLD1 CDEF 2;
 		HLD1 G 2 A_PlaySound("halflife/weapons/bodydrop");
-		HLD1 "HIJKLMNOPQRSTUVWXYZ[\]" 2;
+		HLD1 HIJKLMNOPQRSTUVWXYZ[\] 2;
 		HLD2 A 2;
 		HLD2 B -1;
 		Stop;

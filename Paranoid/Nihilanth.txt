@@ -66,7 +66,7 @@ class HLNihilanth : HLMonster
 			return state(null);
 		}
 		HLA1 ABCDEFGHIJKLMNOP 1 A_FaceTarget;
-		HLA1 "QRSTUVWXYZ[\]" 2 A_FaceTarget;
+		HLA1 QRSTUVWXYZ[\] 2 A_FaceTarget;
 		HLA2 ABCD 2 A_FaceTarget;
 		HLA2 E 1
 		{
@@ -91,8 +91,8 @@ class HLNihilanth : HLMonster
 		}
 		Goto MissileFin;
 	Vulnerable:
-		HLA2 "WXYZ[\]" 1 A_FaceTarget;
-		HLA3 "ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]" 1 A_FaceTarget;
+		HLA2 WXYZ[\] 1 A_FaceTarget;
+		HLA3 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1 A_FaceTarget;
 		HLA4 A 0
 		{
 			mode=random(0,1);
@@ -117,7 +117,7 @@ class HLNihilanth : HLMonster
 				A_SpawnProjectile("NihMonsterSpawner",60);
 			}
 		}
-		HLA4 "VWXYZ[\]" 5 A_FaceTarget;
+		HLA4 VWXYZ[\] 5 A_FaceTarget;
 		HLA5 ABCDEF 5 A_FaceTarget;
 		Goto See+1;
 	Death:

@@ -65,8 +65,8 @@ class HLBossBat : HLMonster
 			A_PlaySound("halflife/weapons/bodydrop");
 			A_NoBlocking();
 		}
-		HLD1 "WXYZ[\]" 3;
-		HLD2 "ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]" 3;
+		HLD1 WXYZ[\] 3;
+		HLD2 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 3;
 		HLD3 AB 3;
 		HLD3 C -1;
 		Stop;
