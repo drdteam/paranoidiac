@@ -114,7 +114,7 @@ class GunSmoke : Actor
 	{
 	Spawn:
 	   TNT1 A 0 NODELAY A_Jump(210,6,8,10,12,14);
-	   WPXS "ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]" 1 A_FadeOut(.01);
+	   WPXS ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1 A_FadeOut(.01);
 	   Stop;
 	}
 }
@@ -224,42 +224,42 @@ class Crowbar : ParanoidWeapon
 	Fire:
 		TNT1 A 0 A_Jump(256,"Fire1","Fire2","Fire3");
 	Fire1:
-		HWA1 A 2 A_JumpIfCloser(80,"FireFast1");
-		HWA1 BC 2;
-		HWA1 D 2 CrowbarHit;
-		HWA1 EFGHIJK 2;
+		HWF1 A 2 A_JumpIfCloser(80,"FireFast1");
+		HWF1 BC 2;
+		HWF1 D 2 CrowbarHit;
+		HWF1 EFGHIJK 2;
 		Goto Ready;
 	FireFast1:
-		HWA1 LMNO 1;
-		HWA1 P 1 CrowbarHit;
-		HWA1 QRSTUV 1;
+		HWF1 LMNO 1;
+		HWF1 P 1 CrowbarHit;
+		HWF1 QRSTUV 1;
 		HWI1 A 2;
 		Goto Ready2;
 	Fire2:
-		HWA1 W 2 A_JumpIfCloser(80,"FireFast2");
-		HWA1 XYZ 2;
-		HWA1 [ 2 CrowbarHit;
-		HWA1 \] 2;
-		HWA2 ABCDEF 2;
+		HWF1 W 2 A_JumpIfCloser(80,"FireFast2");
+		HWF1 XYZ 2;
+		HWF1 [ 2 CrowbarHit;
+		HWF1 \] 2;
+		HWF2 ABCDEF 2;
 		Goto Ready2;
 	FireFast2:
-		HWA2 HIJKLM 1;
-		HWA2 N 1 CrowbarHit;
-		HWA2 OPQRSTU 1;
+		HWF2 HIJKLM 1;
+		HWF2 N 1 CrowbarHit;
+		HWF2 OPQRSTU 1;
 		Goto Ready2;
 	Fire3:
-		HWA2 V 2 A_JumpIfCloser(80,"FireFast3");
-		HWA2 WXY 2;
-		HWA2 Z 2 CrowbarHit;
-		HWA2 [\] 2;
-		HWA3 AB 2;
-		HWA3 CDEFGHIJK 1;
+		HWF2 V 2 A_JumpIfCloser(80,"FireFast3");
+		HWF2 WXY 2;
+		HWF2 Z 2 CrowbarHit;
+		HWF2 [\] 2;
+		HWF3 AB 2;
+		HWF3 CDEFGHIJK 1;
 		Goto Ready2;
 	FireFast3:
-		HWA3 LMNOP 1;
-		HWA3 Q 1 CrowbarHit;
-		HWA3 RSTUVWXYZ[\] 1;
-		HWA4 A 1;
+		HWF3 LMNOP 1;
+		HWF3 Q 1 CrowbarHit;
+		HWF3 RSTUVWXYZ[\] 1;
+		HWF4 A 1;
 		Goto Ready2;
 	}
 	action void CrowbarHit()
@@ -406,7 +406,7 @@ class Beretta : ParanoidWeapon
 				A_GiveInventory("PistolHeldAmmo");
 			}
 		}
-		HWR1 "TUUVWXXYZ[[\]" 1;
+		HWR1 TUUVWXXYZ[[\] 1;
 		HWR2 AABCDDE 1;
 		HWR2 F 1 A_PlaySound("halflife/weapons/reload2",CHAN_WEAPON);
 		HWR2 GGHIJJK 1;
@@ -511,7 +511,7 @@ class Python : ParanoidWeapon
 			WeaponRecoil(450);
 		}
 		HWF1 DEFGHIJKL 1 WeaponRecoil(-50);
-		HWF1 "MNOPQRSTUVWXYZ[\]" 1;
+		HWF1 MNOPQRSTUVWXYZ[\] 1;
 		HWI1 A 16;
 		HWI1 A 0 A_CheckReload;
 		Goto Ready2;
@@ -520,8 +520,8 @@ class Python : ParanoidWeapon
 		TNT1 A 3 A_Light2;
 		Goto LightDone;
 	Reload:
-		HWR1 "ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]" 1;
-		HWR2 "ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]" 1;
+		HWR1 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1;
+		HWR2 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1;
 		HWR3 ABCDEFGHIJKLMNOPQR 1;
 		HWR3 S 1
 		{
@@ -532,7 +532,7 @@ class Python : ParanoidWeapon
 				A_GiveInventory("MagnumHeldAmmo");
 			}
 		}
-		HWR3 "TUVWXYZ[\]" 1;
+		HWR3 TUVWXYZ[\] 1;
 		HWR4 ABCDEFGHIJ 1;
 		Goto Ready2;
 	}
@@ -667,8 +667,8 @@ class Pshotgun : ParanoidWeapon
 		HWF1 B 1;
 		HWF1 CDEFGHI 1 WeaponRecoil(-50);
 		HWF1 JKLMN 1;
-		TNT1 A 0 A_PlaySound("halflife/weapons/shotgunpump",CHAN_WEAPON);
-		HWF1 "OPQRSTUVWXYZ[\]" 2;
+		HWF1 O 2 A_PlaySound("halflife/weapons/shotgunpump",CHAN_WEAPON);
+		HWF1 PQRSTUVWXYZ[\] 2;
 		HWF2 AB 2;
 		HWF2 A 0 A_CheckReload;
 		Goto Ready2;
@@ -688,10 +688,10 @@ class Pshotgun : ParanoidWeapon
 		}
 		HWF2 D 1;
 		HWF2 EFGHIJKLMNO 1 WeaponRecoil(-50);
-		HWF2 "PQRSTUVWXYZ[\]" 1;
+		HWF2 PQRSTUVWXYZ[\] 1;
 		HWF3 ABC 2;
-		TNT1 A 0 A_PlaySound("halflife/weapons/shotgunpump",CHAN_WEAPON);
-		HWF3 DEFGHIJKLMNOPQ 2;
+		HWF3 D 2 A_PlaySound("halflife/weapons/shotgunpump",CHAN_WEAPON);
+		HWF3 EFGHIJKLMNOPQ 2;
 		HWF3 Q 0 A_CheckReload;
 		Goto Ready2;
 	Reload:
@@ -711,7 +711,7 @@ class Pshotgun : ParanoidWeapon
 	ReloadDone:
 		HWR1 JKLMNO 2;
 		HWR1 P 2 A_PlaySound("halflife/weapons/shotgunpump",CHAN_WEAPON);
-		HWR1 "QRSTUVWXYZ[" 2;
+		HWR1 QRSTUVWXYZ[ 2;
 		HWR1 \ 2 {invoker.reloading=0;}
 		Goto Ready2;
 	}
@@ -881,7 +881,7 @@ class ARifle : ParanoidWeapon
 		}
 		HWF1 I 1;
 		HWF1 JKLMNOPQ 1 WeaponRecoil(-50);
-		HWF1 "RSTUVWXYZ[\]" 1;
+		HWF1 RSTUVWXYZ[\] 1;
 		HWF2 ABCDEFGHIJKL 1;
 		TNT1 A 0 A_CheckReload;
 		Goto Ready2;
@@ -898,10 +898,10 @@ class ARifle : ParanoidWeapon
 				A_GiveInventory("M16HeldAmmo");
 			}
 		}
-		HWR1 "JKLMNOPQRSTUVWXYZ[" 2;
-		HWR1 "\]" 1;
-		TNT1 A 0 A_PlaySound("halflife/weapons/m16clipinsert",CHAN_WEAPON);
-		HWR2 ABCDEFGHIJKLMNOPQ 1;
+		HWR1 JKLMNOPQRSTUVWXYZ[ 2;
+		HWR1 \] 1;
+		HWR2 A 1 A_PlaySound("halflife/weapons/m16clipinsert",CHAN_WEAPON);
+		HWR2 BCDEFGHIJKLMNOPQ 1;
 		Goto Ready2;
 	}
 }
@@ -1065,14 +1065,13 @@ class RPGLauncher : ParanoidWeapon
 		HWU1 A 0 A_JumpIf(!CountInv("RPGAmmo"),"DeselectEmpty");
 		Goto Super::Deselect;
 	DeselectEmpty:
-		HWU1 "OPQRSTUVWXYZ[" 1;
-		HWU1 \ 1;
+		HWU1 OPQRSTUVWXYZ[\ 1;
 		TNT1 A 0 A_Lower;
 		Wait;
 	Ready:
 		TNT1 A 0 A_JumpIf(!CountInv("RPGAmmo"),"ReadyEmpty");
 		Goto Super::Ready;
-		HWU1 "\[ZYXWVUTSRQPO" 1;
+		HWU1 \[ZYXWVUTSRQPO 1;
 	Ready2:
 		TNT1 A 0 A_JumpIf(!CountInv("RPGAmmo"),2);
 		HWI1 A 1 A_WeaponReady;
@@ -1092,9 +1091,9 @@ class RPGLauncher : ParanoidWeapon
 		HWF1 DEFGHIJK 1 WeaponRecoil(-100);
 		HWF1 LMN 1;
 		HWF1 N 9;
-		TNT1 A 0 A_CheckReload;
-		HWR1 "ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]" 1;
-		HWR2 "ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]" 1;
+		HWR1 A 1 A_CheckReload;
+		HWR1 BCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1;
+		HWR2 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1;
 		Goto Ready2;
 	}
 }
@@ -1164,7 +1163,7 @@ class RPGTrail2 : RPGTrail1
 	{
 	Spawn:
 		TNT1 A 2;
-		WPXS "ACEGIKMOQSUWY[]" 1;
+		WPXS ACEGIKMOQSUWY[] 1;
 		Stop;
 	}
 }
@@ -1229,26 +1228,27 @@ class XBow : ParanoidWeapon
 	}
 	States
 	{
-	Ready:
-		TNT1 A 0 A_JumpIf(invoker.ZoomToken,"ReadyZoomed");
-		TNT1 A 0 A_JumpIfInventory("BoltHeld",1,2);
-		HWXF D 1 A_WeaponReady(WRF_ALLOWRELOAD);
-		Loop;
-		HWXI A 1 A_WeaponReady(WRF_ALLOWRELOAD);
-		Loop;
-	ReadyZoomed:
-		R016 N 1 A_WeaponReady(WRF_ALLOWRELOAD);
-		Loop;
 	Deselect:
-		D016 A 0
+		HWD1 A 2
 		{
 			invoker.ZoomToken=0;
 			A_ZoomFactor(1.0,1);
 		}
-		HWXI A 1 A_Lower(18);
+		HWD1 BCDEFGHIJKLMNO 2;
+		TNT1 A 0 A_Lower;
 		Wait;
-	Select:
-		HWXI A 1 A_Raise(18);
+	Ready:
+		TNT1 A 0;
+		HWU1 ABCDEFGHIJKLMNO 2;
+		TNT1 A 0 A_Jump(256,"Ready2");
+	Ready2:
+		HWI1 A 0 A_JumpIf(invoker.ZoomToken,4);
+		HWI1 A 0 A_JumpIf(!CountInv("BoltHeld"),2);
+		HWI1 A 1 A_CrossbowReady();
+		Loop;
+		HWI1 B 1 A_CrossbowReady();
+		Loop;
+		R016 A 1 A_CrossbowReady();
 		Loop;
 	Fire:
 		"####" # 0 A_JumpIfInventory("BoltHeld",1,2);
@@ -1260,64 +1260,96 @@ class XBow : ParanoidWeapon
 			A_PlaySound("HLCrossbow/Fire",CHAN_WEAPON);
 			A_FireProjectile("XbowBolt",0,0,4,3);
 			A_SetPitch(pitch-2.8);
-		}
-		HWXF A 2 A_JumpIf(invoker.ZoomToken,"FireSuccessfulZoomed");
-		HWXF AAABBCC 1 A_SetPitch(pitch+0.4);
-		HWXF D 2;
-		TNT1 A 0 A_JumpIfInventory("BoltHeld",1,1);
-		Goto Reload;
-		TNT1 A 0 A_PlaySound("HLCrossbow/Reload",CHAN_WEAPON);
-		HWXF EFGHIJKLMNOPQRSTUVWXYZ 2;
-		HWXG ABCD 2 A_WeaponReady;
-		Goto Ready;
-	FireSuccessfulZoomed:
-		R016 N 2;
-		R016 NNNNNNN 1 A_SetPitch(pitch+0.4);
-		R016 N 2;
-		TNT1 A 0 A_JumpIfInventory("BoltHeld",1,1);
-		Goto ReadyZoomed;
-		R016 N 44 A_PlaySound("HLCrossbow/Reload",CHAN_WEAPON);
-		R016 N 8 A_WeaponReady;
-		Goto Ready;
-	Reload:
-		TNT1 A 0 A_JumpIfInventory("Xbowbolts",1,1);
-		Goto Ready;
-		TNT1 A 0 A_JumpIfInventory("BoltHeld",5,"CantReloadStillHaveHeld");
-		TNT1 A 0 A_JumpIfInventory("Xbowbolts",1,"ReloadSuccessful");
-	CantReloadNoHeld:			//shows the bow string no longer retracted
-		HWXF D 5 A_WeaponReady(WRF_NOFIRE);
-		Goto Ready;
-	CantReloadStillHaveHeld:	// shows the bow string retracted as it still has at least one bolt ready to shoot
-		HWXI A 5 A_WeaponReady(WRF_NOFIRE);
-		Goto Ready;
-	ReloadSuccessful:
-		HWXR A 3
-		{
-			invoker.ZoomToken=0;
-			A_ZoomFactor(1.0,1);
-			A_PlaySound("HLCrossbow/Reload",CHAN_WEAPON);
-		}
-		HWXR BCDEFG 3;
-		HWXR G 9
-		{
-			while(CountInv("BoltHeld")<5&&CountInv("Xbowbolts"))
+			//Fire1 (shoot and recock)
+			if(CountInv("BoltHeld"))
 			{
-				A_TakeInventory("Xbowbolts",1,TIF_NOTAKEINFINITE);
-				A_GiveInventory("BoltHeld");
+				if(invoker.ZoomToken)
+					return resolvestate("Fire1Zoom");
+				else
+					return resolvestate("Fire1");
 			}
+			//Fire2 (shoot, reload, recock)
+			else if(CountInv("Xbowbolts"))
+			{
+				if(invoker.ZoomToken)
+					return resolvestate("Fire2Zoom");
+				else
+					return resolvestate("Fire2");
+			}
+			//Fire3 (shoot, no reload or recock)
+			else
+			{
+				if(invoker.ZoomToken)
+					return resolvestate("Fire3Zoom");
+				else
+					return resolvestate("Fire3");
+			}
+			return state(null);
 		}
-		HWXR HIJKLMNOPQRSTUVWXYZ 3;
-		HWXS AB 3;
-		Goto Ready;
+	Fire1:
+		HWF1 BD 1;
+		HWF1 FHJLNPR 1 A_SetPitch(pitch+0.4);
+		HWF1 TVX 1;
+		HWF1 Z 1 A_PlaySound("HLCrossbow/Reload",CHAN_WEAPON);
+		HWF1 \ 1;
+		HWF2 ACEGIKMOQSUWY[] 1;
+		HWF3 BDFHJLNPRTVXZ\ 1;
+		HWF4 AC 1;
+		Goto Ready2;
+	Fire1Zoom:
+		R016 A 2;
+		R016 AAAAAAA 1 A_SetPitch(pitch+0.4);
+		R016 A 3;
+		R016 A 35 A_PlaySound("HLCrossbow/Reload",CHAN_WEAPON);
+		Goto Ready2;
+	Fire2:
+		HWF5 EF 1;
+		HWF5 GHIJKLM 1 A_SetPitch(pitch+0.4);
+		HWF5 NO 1;
+	Fire2Cont:
+		HWF5 P 1 A_CrossbowZoomOut();
+		HWF5 QRSTUVWXYZ[\] 1;
+		HWF6 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1;
+		HWF7 A 1 A_ReloadCrossbow;
+		HWF7 BCDEFGHIJKLMNOP 1;
+		HWF7 Q 1 A_PlaySound("HLCrossbow/Reload",CHAN_WEAPON);
+		HWF7 RSTUVWXYZ[\] 1;
+		HWF8 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1;
+		HWF9 ABCDEFGHIJKLMNOPQRSTUVWXY 1;
+		Goto Ready2;
+	Fire2Zoom:
+		R016 A 2;
+		R016 AAAAAAA 1 A_SetPitch(pitch+0.4);
+		R016 A 2;
+		Goto Fire2Cont;
+	Fire3:
+		HWF9 Z[ 1;
+		HWF9 \] 1 A_SetPitch(pitch+0.4);
+		HWF0 ABCDE 1 A_SetPitch(pitch+0.4);
+		HWF0 FGHIJK 1;
+		Goto Ready2;
+	Fire3Zoom:
+		R016 A 2;
+		R016 AAAAAAA 1 A_SetPitch(pitch+0.4);
+		R016 A 6;
+		Goto Ready2;
+	Reload:
+		HWR1 A 1 A_CrossbowZoomOut;
+		HWR1 BCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1;
+		HWR2 ABCDEFGHIJKLMNOPQRSTUVW 1;
+		HWR2 X 1 A_ReloadCrossbow;
+		HWR2 YZ[\] 1;
+		HWR3 ABCDEFGHIJ 1;
+		HWR3 K 1 A_PlaySound("HLCrossbow/Reload",CHAN_WEAPON);
+		HWR3 LMNOPQRSTUVWXYZ[\] 1;
+		HWR4 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1;
+		HWR5 ABCDEFGHIJKLMNOPQRS 1;
+		Goto Ready2;
 	AltFire:
-		R016 N 2
+		R016 A 1
 		{
 			if(invoker.ZoomToken)
-			{
-				A_PlaySound("BS/Headhunter/ZoomOut",7);
-				invoker.ZoomToken=0;
-				A_ZoomFactor(1,1);
-			}
+				A_CrossbowZoomOut();
 			else
 			{
 				A_PlaySound("BS/Headhunter/ZoomIn",7);
@@ -1325,7 +1357,28 @@ class XBow : ParanoidWeapon
 				A_ZoomFactor(5);
 			}
 		}
-		Goto Ready;
+		Goto Ready2;
+	}
+	action void A_CrossbowReady()
+	{
+		if(CountInv("Xbowbolts")&&CountInv("BoltHeld")<5)
+			A_WeaponReady(WRF_ALLOWRELOAD);
+		else
+			A_WeaponReady();
+	}
+	action void A_ReloadCrossbow()
+	{
+		while(CountInv("BoltHeld")<5&&CountInv("Xbowbolts"))
+		{
+			A_TakeInventory("Xbowbolts",1,TIF_NOTAKEINFINITE);
+			A_GiveInventory("BoltHeld");
+		}
+	}
+	action void A_CrossbowZoomOut()
+	{
+		A_PlaySound("BS/Headhunter/ZoomOut",7);
+		invoker.ZoomToken=0;
+		A_ZoomFactor(1,1);
 	}
 }
 
@@ -1495,16 +1548,16 @@ class GluonGun : ParanoidWeapon
 				A_GiveInventory("GluonHeldAmmo");
 			}
 		}
-		HWR1 "WXYZ[\]" 1;
+		HWR1 WXYZ[\] 1;
 		HWR2 A 1;
 		HWR2 B 1 A_PlaySound("halflife/weapons/reload2",CHAN_WEAPON);
-		HWR2 "CDEFGHIJKLMNOPQRSTUVWXYZ[\]" 1;
+		HWR2 CDEFGHIJKLMNOPQRSTUVWXYZ[\] 1;
 		HWR3 ABC 1;
 		Goto Ready2;
 	Empty:
 		HWR1 V 1 A_PlaySound("halflife/weapons/noammo",CHAN_WEAPON);
-		HWR1 "WXYZ[\]" 1;
-		HWR2 "ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]" 1;
+		HWR1 WXYZ[\] 1;
+		HWR2 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1;
 		HWR3 ABC 1;
 		Goto Ready2;
 	}
@@ -1909,7 +1962,7 @@ class HornetGun : ParanoidWeapon
 		Wait;
 	Ready:
 		TNT1 A 0;
-		HWU1 "ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]" 1;
+		HWU1 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1;
 		HWU2 A 1;
     Ready2:
 		HWI1 A 6
