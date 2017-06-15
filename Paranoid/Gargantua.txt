@@ -1,7 +1,6 @@
 //===========
 // Gargantua
 //===========
-
 class HLGargantua : HLMonster
 {
 	bool flametoken;
@@ -18,6 +17,8 @@ class HLGargantua : HLMonster
 		Speed 21;
 		Height 170;
 		Radius 57;
+		MaxStepHeight 48;
+		MaxDropOffHeight 48;
 		+BOSS
 		+NORADIUSDMG
 		PainChance 5;
@@ -85,10 +86,9 @@ class HLGargantua : HLMonster
 		HLW1 W 1 A_Chase;
 		HLW1 XXYY 1 A_Chase(null,null,HLSMOOTHCHASE);
 		HLW1 Z 1 A_Chase;
-		HLW1 "Z[[" 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLW1 \ 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLW1 Z[[\ 1 A_Chase(null,null,HLSMOOTHCHASE);
 		HLW1 \ 1 A_Chase;
-		HLW1 "]]" 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLW1 ]] 1 A_Chase(null,null,HLSMOOTHCHASE);
 		HLW2 AA 1 A_Chase(null,null,HLSMOOTHCHASE);
 		HLW2 B 1 A_Chase;
 		HLW2 BCC 1 A_Chase(null,null,HLSMOOTHCHASE);
@@ -178,8 +178,8 @@ class HLGargantua : HLMonster
 		}
 		HLD1 BCDE 1;
 		HLD1 F 1 A_NoBlocking;
-		HLD1 "GHIJKLMNOPQRSTUVWXYZ[\]" 1;
-		HLD2 "ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]" 1;
+		HLD1 GHIJKLMNOPQRSTUVWXYZ[\] 1;
+		HLD2 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1;
 		HLD3 ABCDEF 1;
 		HLD3 G 1 A_PlaySound("halflife/monsters/gonarch/step",7);
 		HLD3 HIJKLMNOP 1;
@@ -225,7 +225,6 @@ class HLGargantua : HLMonster
 //=================
 // Young Gargantua
 //=================
-
 class HLGargantua2 : HLGargantua
 {
 	Default
@@ -247,7 +246,6 @@ class HLGargantua2 : HLGargantua
 //********************
 //	Flame attack
 //********************
-
 class HLGargFlame : Actor
 {
 	Default
@@ -288,7 +286,6 @@ class HLGargFlame : Actor
 //*******************
 //	Floor attack
 //*******************
-
 class GargFloorBoomFake : Actor
 {
 	Default

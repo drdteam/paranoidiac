@@ -8,12 +8,12 @@ class HLGonarch : HLMonster
 		Speed 2.666667;
 		Height 90;
 		Radius 55;
+		MaxStepHeight 48;
+		MaxDropOffHeight 48;
 		PainChance 10;
 		PainChance "Crowbar",54;
 		+BOSS
 		+MISSILEEVENMORE
-		//-SHOOTABLE
-		//+VULNERABLE
 		BloodColor "DE FE 72";
 		SeeSound "gonarch/sight";
 		PainSound "gonarch/pain";
@@ -50,7 +50,7 @@ class HLGonarch : HLMonster
 			A_PlaySound("halflife/monsters/gonarch/step",6);
 			A_Chase();
 		}
-		HLW1 "Z[" 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLW1 Z[ 1 A_Chase(null,null,HLSMOOTHCHASE);
 		HLW1 \ 1 A_Chase;
 		HLW1 ] 1 A_Chase(null,null,HLSMOOTHCHASE);
 		HLW2 A 1 A_Chase(null,null,HLSMOOTHCHASE);
@@ -92,7 +92,7 @@ class HLGonarch : HLMonster
 	Missile:
 		HLA1 U 0 A_Jump(145,"AcidSimple");
 		HLA1 U 2 A_PlaySound("halflife/monsters/gonarch/attack",5);
-		HLA1 "VWXYZ[\]" 2;
+		HLA1 VWXYZ[\] 2;
 		HLA2 ABC 2;
 		HLA2 D 0 A_PlaySound("halflife/monsters/gonarch/spawnchild");
 		HLA2 DEF 2
@@ -108,7 +108,7 @@ class HLGonarch : HLMonster
 		Goto See;
 	AcidSimple:
 		HLA2 W 0 A_PlaySound("halflife/monsters/gonarch/attack",5);
-		HLA2 "WXYZ[\]" 2 A_FaceTarget;
+		HLA2 WXYZ[\] 2 A_FaceTarget;
 		HLA3 ABCDE 2 A_FaceTarget;
 		HLA3 F 2
 		{
