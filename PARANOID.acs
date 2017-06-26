@@ -60,6 +60,7 @@ function int station(int uses,str tex,int type)
 }
 
 //Hint messages that are run when player uses the inventory item "MessageItem**"
+int playingmessage[8];
 str hintsnd[32][2]=
 {
 	{"MAP2VOX1","HINTMAN"},{"MAP2VOX2","HINTMAN"},
@@ -92,20 +93,37 @@ int delays[32][2]=
 };
 function void hintmessage(str message,str icon,int holdtime,int holdtime2)
 {
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC,1);
-	PlaySound(0,message,7,1.0,0,ATTN_STATIC,1);
-	SetHUDSize(640,480,1);
-	SetFont(icon);
-	HUDMessage(s:"A";HUDMSG_PLAIN,1,CR_UNTRANSLATED,0.1,30.1,holdtime);
-	SetFont("smallfont");
-	if(holdtime2)
-		HUDMessage(l:message;HUDMSG_TYPEON|HUDMSG_LOG,2,CR_GOLD,80.1,30.1,holdtime2,0.062,0.05);
+	if(playingmessage[PlayerNumber()])
+	{
+		playingmessage[PlayerNumber()]=0;
+		StopSound(0,7);
+		HUDMessage(s:"";HUDMSG_PLAIN,1,CR_UNTRANSLATED,0,0,0);
+		HUDMessage(s:"";HUDMSG_PLAIN,2,CR_UNTRANSLATED,0,0,0);
+	}
 	else
-		HUDMessage(l:message;HUDMSG_PLAIN|HUDMSG_LOG,2,CR_GOLD,80.1,30.1,holdtime);
+	{
+		playingmessage[PlayerNumber()]=1;
+		LocalPlaySound("radiostatic",6);
+		LocalPlaySound(message,7);
+		SetHUDSize(640,480,1);
+		SetFont(icon);
+		HUDMessage(s:"A";HUDMSG_PLAIN,1,CR_UNTRANSLATED,0.1,30.1,holdtime);
+		SetFont("smallfont");
+		if(holdtime2)
+			HUDMessage(l:message;HUDMSG_TYPEON|HUDMSG_LOG,2,CR_GOLD,80.1,30.1,holdtime2,0.062,0.05);
+		else
+			HUDMessage(l:message;HUDMSG_PLAIN|HUDMSG_LOG,2,CR_GOLD,80.1,30.1,holdtime);
+	}
 }
 script "HintMessage"(int message)
 {
 	hintmessage(hintsnd[message-1][0],hintsnd[message-1][1],delays[message-1][0]*1.0,delays[message-1][1]);
-	delay(delays[message-1][0]*35);
-	PlaySound(0,"radiostatic",6,1.0,0,ATTN_STATIC,1);
+	for(int countdown=delays[message-1][0]*35;countdown;countdown--)
+	{
+		if(playingmessage[PlayerNumber()])
+			delay(1);
+	}
+	LocalPlaySound("radiostatic",6);
 }
+function void LocalPlaySound(str snd,int chan)
+	{PlaySound(0,snd,chan,1.0,0,ATTN_STATIC);}
