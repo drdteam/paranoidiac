@@ -664,18 +664,6 @@ halflife/monsters/gargantua/pain2			"sounds/halflife/monsters/GRGNpai2.wav"
 halflife/monsters/gargantua/step1			"sounds/halflife/monsters/GRGNstp1.wav"
 halflife/monsters/gargantua/step2			"sounds/halflife/monsters/GRGNstp2.wav"
 
-//----------
-//	Gonarch [Note: Only "step" is currently used (by Gargantua Adult)]
-//----------
-halflife/monsters/gonarch/attack		"sounds/halflife/monsters/HLN_att.wav"
-halflife/monsters/gonarch/childdie		"sounds/halflife/monsters/HLN_cdie.wav"
-halflife/monsters/gonarch/death		"sounds/halflife/monsters/HLN_die.wav"
-halflife/monsters/gonarch/idle		"sounds/halflife/monsters/HLN_idle.wav"
-halflife/monsters/gonarch/pain		"sounds/halflife/monsters/HLN_pain.wav"
-halflife/monsters/gonarch/sight		"sounds/halflife/monsters/HLN_sit.wav"
-halflife/monsters/gonarch/spawnchild		"sounds/halflife/monsters/HLN_spaw.wav"
-halflife/monsters/gonarch/step		"sounds/halflife/monsters/HLN_step.wav"
-
 //-----------
 //	Headcrab
 //-----------

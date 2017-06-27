@@ -181,7 +181,7 @@ class HLGargantua : HLMonster
 		HLD1 GHIJKLMNOPQRSTUVWXYZ[\] 1;
 		HLD2 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1;
 		HLD3 ABCDEF 1;
-		HLD3 G 1 A_PlaySound("halflife/monsters/gonarch/step",7);
+		HLD3 G 1 A_PlaySound("gonarch/step",7);
 		HLD3 HIJKLMNOP 1;
 		HLD3 Q 100;
 		TNT1 A 10 A_XenGibsBig;
