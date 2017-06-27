@@ -933,9 +933,9 @@ map17vx1 map17vx1		//Col. Stinson
 //EndGame (GMan)
 //======
 
-halflife/GMan/EndSpeech1	"sounds/GMan/gman1.wav"
-halflife/GMan/EndSpeech2	"sounds/GMan/gman2.wav"
-halflife/GMan/EndSpeech3	"sounds/GMan/gman3.wav"
+halflife/GMan/EndSpeech1	gman1
+halflife/GMan/EndSpeech2	gman2
+halflife/GMan/EndSpeech3	gman3
 
 //======
 //SOUNDS
