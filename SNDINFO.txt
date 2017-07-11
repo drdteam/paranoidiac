@@ -152,17 +152,17 @@ frog		frog
 katydid		katydid
 engine		engine
 wind		wind
-comtalk1 comtalk1
-comtalk2 comtalk2
-deadsignal dedsignl
-fan1 fan1
-labdrone1 labdron1
-labdrone2 labdron2
-siren1 siren1
-techamb1 techamb1
-techamb2 techamb2
-modem dsmodem
-geiger geiger
+comtalk1	comtalk1
+comtalk2	comtalk2
+deadsignal	dedsignl
+fan1		fan1
+labdrone1	labdron1
+labdrone2	labdron2
+siren1		siren1
+techamb1	techamb1
+techamb2	techamb2
+modem		dsmodem
+geiger		geiger
 
 $volume cricket1 0.5
 $volume cricket2 0.25
@@ -204,25 +204,23 @@ $AMBIENT 24 Geiger POINT 1.0 CONTINUOUS 127
 //MENU SOUNDS
 //***********
 
-menu/activate		dsmen01		// Activate a new menu
-menu/backup			dsmen02		// Backup to previous menu
-menu/prompt			dsmen03		// Activate a prompt "menu"
-menu/cursor			dsmen04		// Move cursor up/down
-menu/change			dsmen05		// Select new value for option
-menu/invalid		dsmen06		// Menu not available
-menu/dismiss		dsmen07		// Dismiss a prompt message
-menu/choose			dsmen08		// Choose a menu item
-menu/clear			dsmen09		// Close top menu
+menu/activate	dsmen01		// Activate a new menu
+menu/backup		dsmen02		// Backup to previous menu
+menu/prompt		dsmen03		// Activate a prompt "menu"
+menu/cursor		dsmen04		// Move cursor up/down
+menu/change		dsmen05		// Select new value for option
+menu/invalid	dsmen06		// Menu not available
+menu/dismiss	dsmen07		// Dismiss a prompt message
+menu/choose		dsmen08		// Choose a menu item
+menu/clear		dsmen09		// Close top menu
 
 //Sounds made on quitting the game
-
 menu/quit1	dsquit1
 menu/quit2	dsquit2
 
 $random menu/quit { menu/quit1 menu/quit2 }
 
-// The following entries are currently SVN only
-intermission/tick		dsint01		//countup
+intermission/tick			dsint01	//countup
 intermission/cooptotal		dsint02	//dunno
 intermission/nextstage		dsint02	//total
 intermission/paststats		dsint03	//on to next level
@@ -232,6 +230,26 @@ intermission/pastdmstats	dsint03	//on to next level DM
 //**************
 //PLAYER SOUNDS
 //**************
+
+$playeralias	player	male	*pain100	HLPlayerPain100
+$playeralias	player	male	*pain75		HLPlayerPain75
+$playeralias	player	male	*pain50		HLPlayerPain50
+$playeralias	player	male	*pain25		HLPlayerPain25
+$playeralias	player	male	*death		HLPlayerDeath
+$playeralias	player	male	*xdeath		HLPlayerXDeath
+$playersound	player	male	*gibbed		hlpsplt1
+$playersound	player	male	*grunt		hlpoof
+$playersound	player	male	*land		hlpland
+$playeralias	player	male	*jump		HLPlayerJump
+$playersound	player	male	*usefail	hlphump
+$playersound	player	male	*puzzfail	hlppuzz1
+$playersound	player	male	*gasp		hlpgasp
+$playersound	player	male	*dive		hlpwin
+$playersound	player	male	*surface	hlpwout
+//$playersound	player	male	*pain-drowning1	hlpgurp1
+//$playersound	player	male	*pain-drowning2	hlpgurp2
+//$playersound	player	male	*death-drowning	hlpdrown
+$playeralias	player	Male	*poison		hlpcoff
 
 misc/health_pkup	medkit1
 misc/armor_pkup		HEVBatt1
@@ -256,21 +274,6 @@ HLPlayerPain2501	HLPPA301
 HLPlayerPain2502	HLPPA302
 HLPlayerPain2503	HLPPA303
 
-$playeralias	player	male	*pain100	HLPLayerPain100
-$playeralias	player	male	*pain75		HLPLayerPain75
-$playeralias	player	male	*pain50		HLPLayerPain50
-$playeralias	player	male	*pain25		HLPLayerPain25
-
-$playeralias	player	female	*pain100	HLPLayerPain100
-$playeralias	player	female	*pain75		HLPLayerPain75
-$playeralias	player	female	*pain50		HLPLayerPain50
-$playeralias	player	female	*pain25		HLPLayerPain25
-
-$playeralias	player	cyborg	*pain100	HLPLayerPain100
-$playeralias	player	cyborg	*pain75		HLPLayerPain75
-$playeralias	player	cyborg	*pain50		HLPLayerPain50
-$playeralias	player	cyborg	*pain25		HLPLayerPain25
-
 $random HLPLayerPain100 { HLPlayerPain01 HLPlayerPain02 HLPlayerPain03 HLPlayerPain04 HLPlayerPain05 }
 $random HLPLayerPain75 { HLPlayerPain01 HLPlayerPain02 HLPlayerPain03 HLPlayerPain7501 HLPlayerPain04 HLPlayerPain05 }
 $random HLPLayerPain50 { HLPlayerPain01 HLPlayerPain02 HLPlayerPain5001 HLPlayerPain03 HLPlayerPain04 HLPlayerPain5002 HLPlayerPain05 }
@@ -281,115 +284,43 @@ $random HLPLayerPain25 { HLPlayerPain01 HLPlayerPain2501 HLPlayerPain02 HLPlayer
 //****
 
 //normal death
+HLPlayerDeath1	hlpdie01
+HLPlayerDeath2	hlpdie02
+HLPlayerDeath3	hlpdie03
 
-HLPlayerDeath1		hlpdie01
-HLPlayerDeath2		hlpdie02
-HLPlayerDeath3		hlpdie03
-
-$random HLPlayerDeath	{ HLPlayerDeath1 HLPlayerDeath2 HLPlayerDeath3 }
-
-$playeralias	player	male	*death		HLPlayerDeath
-
-$playeralias	player	female	*death		HLPlayerDeath
-
-$playeralias	player	cyborg	*death		HLPlayerDeath
+$random HLPlayerDeath { HLPlayerDeath1 HLPlayerDeath2 HLPlayerDeath3 }
 
 //Hi-death
-
 HLPlayerXDeath1		hlpxdie1
 HLPlayerXDeath2		hlpxdie2
 HLPlayerXDeath3		hlpxdie3
 
-$random HLPlayerXDeath	{ HLPlayerXDeath1 HLPlayerXDeath2 HLPlayerXDeath3 }
-
-$playeralias	player	male	*xdeath		HLPlayerXDeath
-
-$playeralias	player	female	*xdeath		HLPlayerXDeath
-
-$playeralias	player	cyborg	*xdeath		HLPlayerXDeath
-
-//slop
-
-$playersound	player	male	*gibbed		hlpsplt1
-
-$playersound	player	female	*gibbed		hlpsplt1
-
-$playersound	player	cyborg	*gibbed		hlpsplt1
+$random HLPlayerXDeath { HLPlayerXDeath1 HLPlayerXDeath2 HLPlayerXDeath3 }
 
 //HEV Fail
-
 HLPlayerHEVFail1	hlpfail1
 HLPlayerHEVFail2	hlpfail2
 
-$random HLPlayerHEVFail		{ HLPlayerHEVFail1 HLPlayerHEVFail2 }
+$random HLPlayerHEVFail { HLPlayerHEVFail1 HLPlayerHEVFail2 }
 
 //****
 //Landing and jumping sounds
 //****
 
-//landing grunt
-
-$playersound	player	male	*grunt		hlpoof
-
-$playersound	player	female	*grunt		hlpoof
-
-$playersound	player	cyborg	*grunt		hlpoof
-
-//landing impact noise
-
-$playersound	player	male	*land		hlpland
-
-//$playersound	player	female	*land		hlpland
-
-//$playersound	player	cyborg	*land		hlpland
-
 //jumping sound
+HLPlayerJump1	hlpjump1
+HLPlayerJump2	hlpjump2
 
-HLPlayerJump1		hlpjump1
-HLPlayerJump2		hlpjump2
-
-$random HLPlayerJump	{ HLPlayerJump1 HLPlayerJump2 }
-
-$playeralias	player	male	*jump		HLPlayerJump
-
-//$playeralias	player	female	*jump		HLPlayerJump
-
-//$playeralias	player	cyborg	*jump		HLPlayerJump
-
-//Fist sound - probably not needed
-
-$playersound	player	male	*fist		hlpnull
-
-$playersound	player	female	*fist		hlpnull
-
-$playersound	player	cyborg	*fist		hlpnull
+$random HLPlayerJump { HLPlayerJump1 HLPlayerJump2 }
 
 //****
 //Using stuff
 //****
 
-//Wall humping
-
-$playersound	player	male	*usefail	hlphump
-
-$playersound	player	female	*usefail	hlphump
-
-$playersound	player	cyborg	*usefail	hlphump
-
-//Puzzle Line didn't work - probably not needed
-
-$playersound	player	male	*puzzfail	hlppuzz1
-
-$playersound	player	female	*puzzfail	hlppuzz1
-
-$playersound	player	cyborg	*puzzfail	hlppuzz1
-
 //Puzzle Line did work - probably not needed
-
 PuzzleSuccess	hlppuzz1
 
 //Key door without key - probably not used
-
 misc/keytry		hlpktry
 
 //****
@@ -397,23 +328,6 @@ misc/keytry		hlpktry
 //****
 
 $random *pain-drowning { *pain-drowning1 *pain-drowning2 }
-
-$playersound player male *gasp				hlpgasp
-$playersound player male *dive				hlpwin
-$playersound player male *surface			hlpwout
-$playersound player male *pain-drowning1	hlpgurp1
-$playersound player male *pain-drowning2	hlpgurp2
-$playersound player	male *death-drowning	hlpdrown
-
-//Should have given up the cigarettes - player coughing sounds
-
-$playeralias	player	Male	*poison	PlayerMaleCough
-$playeralias	player	female	*poison	PlayerFemaleCough
-$playeralias	player	other	*poison	PlayerCyborgCough
-
-PlayerMaleCough		hlpcoff
-PlayerFemaleCough	hlpcoff
-PlayerCyborgCough	hlpcoff
 
 //****
 //Sounds before donning HEV - shouldn't be needed
@@ -446,11 +360,11 @@ $random halflife/weapons/ric
 	halflife/weapons/ric5
 }
 
-halflife/weapons/ric1		ric1
-halflife/weapons/ric2		ric2
-halflife/weapons/ric3		ric3
-halflife/weapons/ric4		ric4
-halflife/weapons/ric5		ric5
+halflife/weapons/ric1	ric1
+halflife/weapons/ric2	ric2
+halflife/weapons/ric3	ric3
+halflife/weapons/ric4	ric4
+halflife/weapons/ric5	ric5
 
 halflife/weapons/bodydrop	"sounds/halflife/weapons/bodydrop1.ogg"
 halflife/weapons/gib		"sounds/halflife/weapons/bodysplat.ogg"
@@ -458,8 +372,8 @@ halflife/weapons/zap4		"sounds/halflife/weapons/zap4.ogg"
 
 $random other/gibdeath { other/gibdeath1 other/gibdeath2 }
 
-other/gibdeath1		hlgib01
-other/gibdeath2		hlgib02
+other/gibdeath1	hlgib01
+other/gibdeath2	hlgib02
 
 halflife/weapons/noammo			"sounds/halflife/weapons/357_cock1.wav"
 halflife/weapons/magnumshot		"sounds/halflife/weapons/357_shot1.ogg"
@@ -502,8 +416,12 @@ halflife/weapons/machinegunshot3	"sounds/halflife/weapons/hks3.ogg"
 
 $random halflife/weapons/randomexplo
 {
-halflife/weapons/explode1 halflife/weapons/explode2 halflife/weapons/explode3
-halflife/weapons/hl2explo1 halflife/weapons/hl2explo2 halflife/weapons/hl2explo3
+	halflife/weapons/explode1
+	halflife/weapons/explode2
+	halflife/weapons/explode3
+	halflife/weapons/hl2explo1
+	halflife/weapons/hl2explo2
+	halflife/weapons/hl2explo3
 }
 
 $rolloff halflife/weapons/randomexplo 200 3000
@@ -562,17 +480,16 @@ barnaclespitball/splat	bspit2
 
 $random barney/randomphrase	{barney/sentry1 barney/sentry2 barney/sentry3}
 
-barney/sentry1 bsentry1
-barney/sentry2 bsentry2
-barney/sentry3 bsentry3
-
+barney/sentry1	bsentry1
+barney/sentry2	bsentry2
+barney/sentry3	bsentry3
 barney/airlock	bairlock
 barney/nohev	bnohev
 barney/yeshev	byeshev
 
-halflife/monsters/barney/death		HLM_die
-halflife/monsters/barney/sight		bsentry1
-halflife/monsters/barney/pain		HLM_pain
+halflife/monsters/barney/death	HLM_die
+halflife/monsters/barney/sight	bsentry1
+halflife/monsters/barney/pain	HLM_pain
 $random halflife/monsters/barney/idle
 {
 	halflife/monsters/barney/idle1
@@ -581,10 +498,10 @@ $random halflife/monsters/barney/idle
 	halflife/monsters/barney/idle4
 }
 
-halflife/monsters/barney/idle1		HLM_sit1
-halflife/monsters/barney/idle2		HLM_sit2
-halflife/monsters/barney/idle3		HLM_sit3
-halflife/monsters/barney/idle4		HLM_idle
+halflife/monsters/barney/idle1	HLM_sit1
+halflife/monsters/barney/idle2	HLM_sit2
+halflife/monsters/barney/idle3	HLM_sit3
+halflife/monsters/barney/idle4	HLM_idle
 
 //------------
 //	Bullsquid
@@ -609,11 +526,11 @@ halflife/monsters/controller/sight		HLC_sit
 //------------
 //	Gargantua
 //------------
-halflife/monsters/gargantua/flameon			GRGNfon
-halflife/monsters/gargantua/flameloop		GRGNfloo
-halflife/monsters/gargantua/flameoff		GRGNfoff
-halflife/monsters/gargantua/stomp			GRGNstmp
-halflife/monsters/gargantua/attack			GRGNatt
+halflife/monsters/gargantua/flameon		GRGNfon
+halflife/monsters/gargantua/flameloop	GRGNfloo
+halflife/monsters/gargantua/flameoff	GRGNfoff
+halflife/monsters/gargantua/stomp		GRGNstmp
+halflife/monsters/gargantua/attack		GRGNatt
 
 $random halflife/monsters/gargantua/sight { halflife/monsters/gargantua/sight1 halflife/monsters/gargantua/sight2 }
 $random halflife/monsters/gargantua/death { halflife/monsters/gargantua/death1 halflife/monsters/gargantua/death2 }
