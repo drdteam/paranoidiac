@@ -141,6 +141,6 @@ class HLBarney : HLMonster
 	void A_BarneyGunsmoke(class<actor> smoke="GunSmoke")
 	{
 		for(int i=0;i<2;i++)
-			A_SpawnItemEx(smoke,20,2,52);
+			A_SpawnItemEx(smoke,28,2,48);
 	}
 }
