@@ -228,7 +228,7 @@ class Crowbar : ParanoidWeapon
 		HWF1 BC 2;
 		HWF1 D 2 CrowbarHit;
 		HWF1 EFGHIJK 2;
-		Goto Ready;
+		Goto Ready2;
 	FireFast1:
 		HWF1 LMNO 1;
 		HWF1 P 1 CrowbarHit;
