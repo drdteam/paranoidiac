@@ -746,6 +746,7 @@ Model XBow
 	Offset 1 0 -2
 
 	FrameIndex HWI1 A 0 1
+	FrameIndex HWI1 B 0 93
 
 	FrameIndex HWF1 A 0 235
 	FrameIndex HWF1 B 0 236
