@@ -969,17 +969,30 @@ class Plant1 : Palm1a
 {
 	Default
 	{
-		Radius 16;
-		Height 24;
+		Height 8;
 	}
+	States
+	{
+	Spawn:
+		POSS A 1 A_CheckRangeRev(radius+30,"Shrink");
+		Loop;
+	Shrink:
+		POSS A 1 {scale.y=.8;}
+		POSS A 1 A_CheckRange(radius+30,"Grow");
+		Wait;
+	Grow:
+		POSS A 1 {scale.y=1;}
+		Goto Spawn;
+	}
+	state A_CheckRangeRev(double distance,statelabel label,bool two_dimension=false)
+		{return CheckRange(distance,two_dimension)?null:ResolveState(label);}
 }
 
-class Plant2 : Palm1a
+class Plant2 : Plant1
 {
 	Default
 	{
-		Radius 32;
-		Height 32;
+		Radius 16;
 	}
 }
 
