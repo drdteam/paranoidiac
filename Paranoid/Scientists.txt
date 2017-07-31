@@ -34,6 +34,7 @@ class HLScientist1Path : HLMonster
 	Property Limits:limit,limit2;
 	override bool Used(Actor user)
 	{
+		A_PlaySound("scientist/greeting");
 		boredom=0;
 		return false;
 	}
@@ -47,9 +48,9 @@ class HLScientist1Path : HLMonster
 		+FRIENDLY
 		-CANUSEWALLS
 		-COUNTKILL
-		SeeSound "halflife/monsters/scientist/sight";
-		PainSound "halflife/monsters/scientist/pain";
-		DeathSound "halflife/monsters/scientist/death";
+		SeeSound "scientist/sight";
+		PainSound "scientist/pain";
+		DeathSound "scientist/death";
 		HLScientist1Path.Limits 35,30;
 		Species "HLScientist";
 	}
@@ -95,7 +96,7 @@ class HLScientist1Path : HLMonster
 				stay++;
 				if(!boredom)
 				{
-					A_PlaySound("scientist/randomphrase");
+					A_PlaySound("scientist/idle");
 					return ResolveState("See");
 				}
 				Chatter(2);
@@ -108,7 +109,7 @@ class HLScientist1Path : HLMonster
 		{
 			if(bFRIGHTENED)//scream the 1st time they enter here
 			{
-				A_PlaySound("halflife/monsters/scientist/sight");
+				A_PlaySound("scientist/sight");
 				return ResolveState("SeeDecidePanic");
 			}
 			if(still)
@@ -187,7 +188,7 @@ class HLScientist1Path : HLMonster
 			panic++;
 			if(random(0,255)<4)//every once in a while it will say something
 			{
-				A_PlaySound("halflife/monsters/scientist/sight");
+				A_PlaySound("scientist/sight");
 				return ResolveState("SeeLoopPanic");
 			}
 			return state(null);
@@ -204,7 +205,7 @@ class HLScientist1Path : HLMonster
 			return ResolveState("WanderPanic");
 		}
 	WanderRunStartPanic:		//scream the 1st time they enter here
-		TNT1 A 0 A_PlaySound("halflife/monsters/scientist/sight");
+		TNT1 A 0 A_PlaySound("scientist/sight");
 	WanderRunDecidePanic:	//decide if they calm down or not
 		TNT1 A 0
 		{
@@ -237,7 +238,7 @@ class HLScientist1Path : HLMonster
 			panic++;
 			if(random(0,255)<4)//every once in a while it will say something
 			{
-				A_PlaySound("halflife/monsters/scientist/sight");
+				A_PlaySound("scientist/sight");
 				return ResolveState("WanderRunPanic");
 			}
 			return state(null);
@@ -263,7 +264,7 @@ class HLScientist1Path : HLMonster
 	void Chatter(int chance)
 	{
 		if(random(0,255)<chance)
-			A_PlaySound("halflife/monsters/scientist/idle");
+			A_PlaySound("scientist/idle");
 	}
 }
 

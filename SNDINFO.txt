@@ -12,7 +12,7 @@ Music07 D_MAP07
 //SOUNDS
 //======
 
-tree/pain			dstpain
+tree/pain			hlgib02
 tree/attack			dsthit
 tree/swipe			dstmiss
 bustgrate			bustmetl
@@ -347,7 +347,6 @@ halflife/weapons/reload1			"sounds/wepadd/reload1.wav"
 halflife/weapons/reload2			"sounds/wepadd/reload2.wav"
 halflife/weapons/reload3			"sounds/wepadd/reload3.ogg"
 halflife/weapons/shotgunpump		"sounds/wepadd/scock1.ogg"
-halflife/weapons/m357noammo			"Sounds/WepAdd/357_cock1.wav"
 halflife/weapons/m16cliprelease		"Sounds/WepAdd/cliprelease1.wav"
 halflife/weapons/m16clipinsert		"Sounds/WepAdd/clipinsert1.ogg"
 
@@ -375,7 +374,6 @@ $random other/gibdeath { other/gibdeath1 other/gibdeath2 }
 other/gibdeath1	hlgib01
 other/gibdeath2	hlgib02
 
-halflife/weapons/noammo			"sounds/halflife/weapons/357_cock1.wav"
 halflife/weapons/magnumshot		"sounds/halflife/weapons/357_shot1.ogg"
 halflife/weapons/bullethit		"sounds/halflife/weapons/bullet_hit2.wav"
 halflife/weapons/cbarhit		"sounds/halflife/weapons/cbar_hit1.ogg"
@@ -610,7 +608,7 @@ halflife/monsters/humangrunt/idle2		HLP_idl2
 //	Scientists
 //------------
 
-$random scientist/randomphrase	{scientist/greeting1 scientist/greeting2 scientist/greeting3 scientist/greeting4 scientist/greeting5 scientist/greeting6}
+$random scientist/greeting	{scientist/greeting1 scientist/greeting2 scientist/greeting3 scientist/greeting4 scientist/greeting5 scientist/greeting6}
 
 scientist/greeting1 scgreet1
 scientist/greeting2 scgreet2
@@ -656,70 +654,70 @@ scientist/panic14 scpani14
 scientist/panic15 scpani15
 scientist/panic16 scpani16
 
-$random halflife/monsters/scientist/death
+$random scientist/death
 {
-	halflife/monsters/scientist/death1
-	halflife/monsters/scientist/death2
-	halflife/monsters/scientist/death3
-	halflife/monsters/scientist/death4
+	scientist/death1
+	scientist/death2
+	scientist/death3
+	scientist/death4
 }
 
-$random halflife/monsters/scientist/idle
+$random scientist/idle
 {
-	halflife/monsters/scientist/idle1
-	halflife/monsters/scientist/idle2
-	halflife/monsters/scientist/idle3
-	halflife/monsters/scientist/idle4
-	halflife/monsters/scientist/idle5
-	halflife/monsters/scientist/idle6
-	halflife/monsters/scientist/idle7
-	halflife/monsters/scientist/idle8
-	halflife/monsters/scientist/idle9
+	scientist/idle1
+	scientist/idle2
+	scientist/idle3
+	scientist/idle4
+	scientist/idle5
+	scientist/idle6
+	scientist/idle7
+	scientist/idle8
+	scientist/idle9
 }
 
-$random halflife/monsters/scientist/pain
+$random scientist/pain
 {
-	halflife/monsters/scientist/pain1
-	halflife/monsters/scientist/pain2
+	scientist/pain1
+	scientist/pain2
 }
 
-$random halflife/monsters/scientist/sight
+$random scientist/sight
 {
-	halflife/monsters/scientist/sight1
-	halflife/monsters/scientist/sight2
-	halflife/monsters/scientist/sight3
-	halflife/monsters/scientist/sight4
-	halflife/monsters/scientist/sight5
-	halflife/monsters/scientist/sight6
-	halflife/monsters/scientist/sight7
-	halflife/monsters/scientist/sight8
-	halflife/monsters/scientist/sight9
+	scientist/sight1
+	scientist/sight2
+	scientist/sight3
+	scientist/sight4
+	scientist/sight5
+	scientist/sight6
+	scientist/sight7
+	scientist/sight8
+	scientist/sight9
 }
 
-halflife/monsters/scientist/death1		HLR_die1
-halflife/monsters/scientist/death2		HLR_die2
-halflife/monsters/scientist/death3		HLR_die3
-halflife/monsters/scientist/death4		HLR_die4
-halflife/monsters/scientist/idle1		HLR_idl1
-halflife/monsters/scientist/idle2		HLR_idl2
-halflife/monsters/scientist/idle3		HLR_idl3
-halflife/monsters/scientist/idle4		HLR_idl4
-halflife/monsters/scientist/idle5		HLR_idl5
-halflife/monsters/scientist/idle6		HLR_idl6
-halflife/monsters/scientist/idle7		HLR_idl7
-halflife/monsters/scientist/idle8		HLR_idl8
-halflife/monsters/scientist/idle9		HLR_idl9
-halflife/monsters/scientist/pain1		HLR_pai1
-halflife/monsters/scientist/pain2		HLR_pai2
-halflife/monsters/scientist/sight1		HLR_sit1
-halflife/monsters/scientist/sight2		HLR_sit2
-halflife/monsters/scientist/sight3		HLR_sit3
-halflife/monsters/scientist/sight4		HLR_sit4
-halflife/monsters/scientist/sight5		HLR_sit5
-halflife/monsters/scientist/sight6		HLR_sit6
-halflife/monsters/scientist/sight7		HLR_sit7
-halflife/monsters/scientist/sight8		HLR_sit8
-halflife/monsters/scientist/sight9		HLR_sit9
+scientist/death1	HLR_die1
+scientist/death2	HLR_die2
+scientist/death3	HLR_die3
+scientist/death4	HLR_die4
+scientist/idle1		HLR_idl1
+scientist/idle2		HLR_idl2
+scientist/idle3		HLR_idl3
+scientist/idle4		HLR_idl4
+scientist/idle5		HLR_idl5
+scientist/idle6		HLR_idl6
+scientist/idle7		HLR_idl7
+scientist/idle8		HLR_idl8
+scientist/idle9		HLR_idl9
+scientist/pain1		HLR_pai1
+scientist/pain2		HLR_pai2
+scientist/sight1	HLR_sit1
+scientist/sight2	HLR_sit2
+scientist/sight3	HLR_sit3
+scientist/sight4	HLR_sit4
+scientist/sight5	HLR_sit5
+scientist/sight6	HLR_sit6
+scientist/sight7	HLR_sit7
+scientist/sight8	HLR_sit8
+scientist/sight9	HLR_sit9
 
 //-------------
 //	Vortigaunt
@@ -844,8 +842,6 @@ HLCrossbow/Hitwall2		"Sounds/Xbow/xbow_hit2.ogg"
 HLCrossbow/Hitbody1		"Sounds/Xbow/xbow_hitbod1.wav"
 HLCrossbow/Hitbody2		"Sounds/Xbow/xbow_hitbod2.wav"
 HLCrossbow/Reload		"Sounds/Xbow/xbow_reload1.ogg"
-
-Weapons/DryFire			"Sounds/dryfire1.wav"
 
 $random HLCrossbow/Hitwall
 { HLCrossbow/Hitwall1 HLCrossbow/Hitwall2 }
