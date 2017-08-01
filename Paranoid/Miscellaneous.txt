@@ -61,7 +61,7 @@ class Debris01 : Actor
 	States
 	{
 	Spawn:
-		DEBA A 2 {self.frame=random(0,4);}
+		DEBA A 2 NODELAY {self.frame=random(0,4);}
 		DEBA # 2 A_FadeOut;
 		Wait;
 	}
