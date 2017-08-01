@@ -543,11 +543,7 @@ DoomEdNums
 	30321=Otis01
 	30322=Barney01
 	30323=Admin01
-	30324=Einstein01
-	30325=Luther01
-	30326=Slick01
-	30327=Walter01
-	30328=Walter01a
+	30324=HLScientistSlumpedSpawner
 	30329=HLScientistQuietSpawner
 	30334=TankGlass
 	30335=HeadCrab

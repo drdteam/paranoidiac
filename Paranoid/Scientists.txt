@@ -37,6 +37,19 @@ class HLScientistQuietSpawner : HLScientistPathSpawner
 	}
 }
 
+class HLScientistSlumpedSpawner : HLScientistPathSpawner
+{
+	Default
+	{
+		+FRIENDLY
+		DropItem "Einstein01";
+		DropItem "Luther01";
+		DropItem "Slick01";
+		DropItem "Walter01";
+		DropItem "Walter01a";
+	}
+}
+
 class HLScientistDeadSpawner : RandomSpawner
 {
 	Default
@@ -337,11 +350,11 @@ class HLScientist2Dead : HLScientist1Dead{}
 class HLScientist3Dead : HLScientist1Dead{}
 class HLScientist4Dead : HLScientist1Dead{}
 
-class Einstein02 : ModelBase //Standing scientists
+class Einstein01 : ModelBase //Slumped over scientists
 {
 	Default
 	{
-		Height 56;
+		Height 28;
 		Radius 18;
 		Mass 200;
 		+SHOOTABLE
@@ -351,19 +364,6 @@ class Einstein02 : ModelBase //Standing scientists
 		+FLOORCLIP
 		+USESPECIAL
 		+NOTAUTOAIMED
-	}
-}
-
-class Luther02 : Einstein02{}
-class Slick02 : Einstein02{}
-class Walter02 : Einstein02{}
-class Walter02a : Einstein02{}
-
-class Einstein01 : Einstein02 //Slumped over scientists
-{
-	Default
-	{
-		Height 28;
 	}
 }
 
