@@ -137,7 +137,7 @@ Model RolfBellmer
 	Path "Models"
 	Model 0 "scientist3.md2"
 	Skin 0 "scientist3.png"
-	Scale 1 1 1
+	Scale 1.03 1.03 1.03
 	INTERPOLATEDOUBLEDFRAMES
 
 	FrameIndex HLI2 A 0 46
@@ -219,7 +219,7 @@ Model HLScientist1Path
 	Path "Models"
 	Model 0 "scientist1.md2"
 	Skin 0 "scientist1.png"
-	Scale 1 1 1
+	Scale 1.03 1.03 1.03
 	INTERPOLATEDOUBLEDFRAMES
 
 	FrameIndex HLI1 A 0 46
@@ -301,7 +301,7 @@ Model HLScientist2Path
 	Path "Models"
 	Model 0 "scientist2.md2"
 	Skin 0 "scientist2.png"
-	Scale 1 1 1
+	Scale 1.03 1.03 1.03
 	INTERPOLATEDOUBLEDFRAMES
 
 	FrameIndex HLI1 A 0 46
@@ -383,7 +383,7 @@ Model HLScientist3Path
 	Path "Models"
 	Model 0 "scientist3.md2"
 	Skin 0 "scientist3.png"
-	Scale 1 1 1
+	Scale 1.03 1.03 1.03
 	INTERPOLATEDOUBLEDFRAMES
 
 	FrameIndex HLI1 A 0 46
@@ -465,7 +465,7 @@ Model HLScientist4Path
 	Path "Models"
 	Model 0 "scientist4.md2"
 	Skin 0 "scientist4.png"
-	Scale 1 1 1
+	Scale 1.03 1.03 1.03
 	INTERPOLATEDOUBLEDFRAMES
 
 	FrameIndex HLI1 A 0 46
@@ -547,7 +547,7 @@ Model HLScientist1Dead
 	Path "Models"
 	Model 0 "scientist1.md2"
 	Skin 0 "scientist1.png"
-	Scale 1 1 1
+	Scale 1.03 1.03 1.03
 
 	FrameIndex HLD1 V 0 159
 }
@@ -557,7 +557,7 @@ Model HLScientist2Dead
 	Path "Models"
 	Model 0 "scientist2.md2"
 	Skin 0 "scientist2.png"
-	Scale 1 1 1
+	Scale 1.03 1.03 1.03
 
 	FrameIndex HLD1 V 0 159
 }
@@ -567,7 +567,7 @@ Model HLScientist3Dead
 	Path "Models"
 	Model 0 "scientist3.md2"
 	Skin 0 "scientist3.png"
-	Scale 1 1 1
+	Scale 1.03 1.03 1.03
 
 	FrameIndex HLD1 V 0 159
 }
@@ -577,7 +577,7 @@ Model HLScientist4Dead
 	Path "Models"
 	Model 0 "scientist4.md2"
 	Skin 0 "scientist4.png"
-	Scale 1 1 1
+	Scale 1.03 1.03 1.03
 
 	FrameIndex HLD1 V 0 159
 }
@@ -587,7 +587,7 @@ Model HLBarney
 	Path "Models"
 	Model 0 "barney.md2"
 	Skin 0 "barney.png"
-	Scale 1 1 1
+	Scale 1.03 1.03 1.03
 	INTERPOLATEDOUBLEDFRAMES
 
 	FrameIndex HLI1 A 0 335
@@ -682,7 +682,7 @@ Model HLGrunt1
 	Path "Models"
 	Model 0 "hgrunt01.md2"
 	Skin 0 "hgrunt01.png"
-	Scale 1 1 1
+	Scale 1.03 1.03 1.03
 
 	FrameIndex HLI1 A 0 225
 
@@ -870,7 +870,7 @@ Model HLGrunt2
 	Path "Models"
 	Model 0 "hgrunt02.md2"
 	Skin 0 "hgrunt02.png"
-	Scale 1 1 1
+	Scale 1.03 1.03 1.03
 
 	FrameIndex HLI1 A 0 225
 
@@ -1058,7 +1058,7 @@ Model HLGrunt3
 	Path "Models"
 	Model 0 "hgrunt03.md2"
 	Skin 0 "hgrunt03.png"
-	Scale 1 1 1
+	Scale 1.03 1.03 1.03
 
 	FrameIndex HLI1 A 0 225
 
@@ -1246,7 +1246,7 @@ Model HLGrunt4
 	Path "Models"
 	Model 0 "hgrunt04.md2"
 	Skin 0 "hgrunt04.png"
-	Scale 1 1 1
+	Scale 1.03 1.03 1.03
 
 	FrameIndex HLI1 A 0 225
 
@@ -1434,7 +1434,7 @@ Model HLGrunt5
 	Path "Models"
 	Model 0 "hgrunt05.md2"
 	Skin 0 "hgrunt05.png"
-	Scale 1 1 1
+	Scale 1.03 1.03 1.03
 
 	FrameIndex HLI1 A 0 225
 
@@ -1622,7 +1622,7 @@ Model HLGrunt6
 	Path "Models"
 	Model 0 "hgrunt06.md2"
 	Skin 0 "hgrunt06.png"
-	Scale 1 1 1
+	Scale 1.03 1.03 1.03
 
 	FrameIndex HLI1 A 0 225
 
