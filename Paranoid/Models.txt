@@ -1603,29 +1603,3 @@ class Admin01 : Otis01
 		Height 40;
 	}
 }
-
-class Einstein01 : Otis01 //Slumped over scientists
-{
-	Default
-	{
-		Height 28;
-	}
-}
-
-class Luther01 : Einstein01{}
-class Slick01 : Einstein01{}
-class Walter01 : Einstein01{}
-class Walter01a : Einstein01{}
-
-class Einstein02 : Otis01 //Standing scientists
-{
-	Default
-	{
-		Height 56;
-	}
-}
-
-class Luther02 : Einstein02{}
-class Slick02 : Einstein02{}
-class Walter02 : Einstein02{}
-class Walter02a : Einstein02{}

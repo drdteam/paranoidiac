@@ -542,7 +542,7 @@ Model HLScientist4Path
 	FrameIndex HLD1 V 0 159
 }
 
-Model HLScientistUpdate
+Model HLScientist1Dead
 {
 	Path "Models"
 	Model 0 "scientist1.md2"
@@ -552,7 +552,7 @@ Model HLScientistUpdate
 	FrameIndex HLD1 V 0 159
 }
 
-Model HLScientist1
+Model HLScientist2Dead
 {
 	Path "Models"
 	Model 0 "scientist2.md2"
@@ -562,7 +562,7 @@ Model HLScientist1
 	FrameIndex HLD1 V 0 159
 }
 
-Model HLScientist2
+Model HLScientist3Dead
 {
 	Path "Models"
 	Model 0 "scientist3.md2"
@@ -572,7 +572,7 @@ Model HLScientist2
 	FrameIndex HLD1 V 0 159
 }
 
-Model HLScientist3
+Model HLScientist4Dead
 {
 	Path "Models"
 	Model 0 "scientist4.md2"
@@ -1902,71 +1902,6 @@ Model Walter01a
 	Model 1 "scientist_givenup_head_walter_nospecs.md3"
 	Skin 1 "scientist_head_walter.png"
 	Scale 1.0 1.0 1.0
-
-	FrameIndex POSS A 0 0
-	FrameIndex POSS A 1 0
-}
-
-Model Einstein02
-{
-	Path "Models"
-	Model 0 "scientist_standing_body.md3"
-	Skin 0 "scientist_body.png"
-	Model 1 "scientist_standing_einstein.md3"
-	Skin 1 "scientist_head_einstein.png"
-	Scale 1.05 1.05 1.05
-
-	FrameIndex POSS A 0 0
-	FrameIndex POSS A 1 0
-}
-
-Model Luther02
-{
-	Path "Models"
-	Model 0 "scientist_standing_body.md3"
-	Skin 0 "scientist_body.png"
-	Model 1 "scientist_standing_luther.md3"
-	Skin 1 "scientist_head_luther.png"
-	Scale 1.05 1.05 1.05
-
-	FrameIndex POSS A 0 0
-	FrameIndex POSS A 1 0
-}
-
-Model Slick02
-{
-	Path "Models"
-	Model 0 "scientist_standing_body.md3"
-	Skin 0 "scientist_body.png"
-	Model 1 "scientist_standing_slick.md3"
-	Skin 1 "scientist_head_slick.png"
-	Scale 1.05 1.05 1.05
-
-	FrameIndex POSS A 0 0
-	FrameIndex POSS A 1 0
-}
-
-Model Walter02
-{
-	Path "Models"
-	Model 0 "scientist_standing_body.md3"
-	Skin 0 "scientist_body.png"
-	Model 1 "scientist_standing_walter.md3"
-	Skin 1 "scientist_head_walter.png"
-	Scale 1.05 1.05 1.05
-
-	FrameIndex POSS A 0 0
-	FrameIndex POSS A 1 0
-}
-
-Model Walter02a
-{
-	Path "Models"
-	Model 0 "scientist_standing_body.md3"
-	Skin 0 "scientist_body.png"
-	Model 1 "scientist_standing_walter_nospecs.md3"
-	Skin 1 "scientist_head_walter.png"
-	Scale 1.05 1.05 1.05
 
 	FrameIndex POSS A 0 0
 	FrameIndex POSS A 1 0

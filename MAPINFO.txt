@@ -348,12 +348,9 @@ Intermission ParaEndLogo
 DoomEdNums
 {
 	3210=MusicSwitcher07
-	4041=HLScientist1Path
-	4044=HLScientist2Path
-	4047=HLScientist3Path
-	4050=HLScientist4Path
+	4041=HLScientistPathSpawner
 	4053=HLScientistWandererSpawner
-	4054=HLScientistImmovilSpawner
+	4054=HLScientistStillSpawner
 	7401=HLHoundEye
 	7402=HLHeadcrab
 	7403=HLController
@@ -369,10 +366,7 @@ DoomEdNums
 	7420=HLBat
 	7421=HLGargantua2
 	7422=HLBarnacle
-	7423=HLScientistUpdate
-	7424=HLScientist1
-	7425=HLScientist2
-	7426=HLScientist3
+	7423=HLScientistDeadSpawner
 	7439=HLGruntAny
 	7440=HLGruntM16
 	7441=HLGruntShotgun
@@ -554,11 +548,7 @@ DoomEdNums
 	30326=Slick01
 	30327=Walter01
 	30328=Walter01a
-	30329=Einstein02
-	30330=Luther02
-	30331=Slick02
-	30332=Walter02
-	30333=Walter02a
+	30329=HLScientistQuietSpawner
 	30334=TankGlass
 	30335=HeadCrab
 	30336=Pipe1a

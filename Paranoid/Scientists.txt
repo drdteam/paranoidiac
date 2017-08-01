@@ -1,4 +1,4 @@
-class HLScientistWandererSpawner : RandomSpawner
+class HLScientistPathSpawner : RandomSpawner
 {
 	Default
 	{
@@ -8,6 +8,10 @@ class HLScientistWandererSpawner : RandomSpawner
 		DropItem "HLScientist3Path";
 		DropItem "HLScientist4Path";
 	}
+}
+
+class HLScientistWandererSpawner : HLScientistPathSpawner
+{
 	override void PostSpawn(Actor spawned)
 	{
 		let me=HLScientist1Path(spawned);
@@ -15,7 +19,7 @@ class HLScientistWandererSpawner : RandomSpawner
 	}
 }
 
-class HLScientistImmovilSpawner : HLScientistWandererSpawner
+class HLScientistStillSpawner : HLScientistPathSpawner
 {
 	override void PostSpawn(Actor spawned)
 	{
@@ -24,18 +28,41 @@ class HLScientistImmovilSpawner : HLScientistWandererSpawner
 	}
 }
 
+class HLScientistQuietSpawner : HLScientistPathSpawner
+{
+	override void PostSpawn(Actor spawned)
+	{
+		let me=HLScientist1Path(spawned);
+		me.quiet=1;
+	}
+}
+
+class HLScientistDeadSpawner : RandomSpawner
+{
+	Default
+	{
+		+FRIENDLY
+		DropItem "HLScientist1Dead";
+		DropItem "HLScientist2Dead";
+		DropItem "HLScientist3Dead";
+		DropItem "HLScientist4Dead";
+	}
+}
+
 //**************************************************************************
 //**************************************************************************
 
 class HLScientist1Path : HLMonster
 {
-	bool wanderer,still;
+	bool greeting,wanderer,still,quiet;
 	int limit,limit2,boredom,stay,panic;
 	Property Limits:limit,limit2;
 	override bool Used(Actor user)
 	{
-		A_PlaySound("scientist/greeting");
+		if(!bFRIGHTENED)
+			A_PlaySound("scientist/greeting");
 		boredom=0;
+		greeting=1;
 		return false;
 	}
 	Default
@@ -67,7 +94,7 @@ class HLScientist1Path : HLMonster
 		}
 	Pondering:
 		HLI1 A 0 {self.frame=random(0,2);}
-		HLI1 # 5
+		HLI1 # -1
 		{
 			if(wanderer)
 			{
@@ -81,8 +108,9 @@ class HLScientist1Path : HLMonster
 				A_SetTics(10);
 				Chatter(2);
 			}
-			else
+			else if(!quiet)
 			{
+				A_SetTics(5);
 				if(stay>=80)
 				{
 					stay=0;
@@ -96,7 +124,9 @@ class HLScientist1Path : HLMonster
 				stay++;
 				if(!boredom)
 				{
-					A_PlaySound("scientist/idle");
+					if(!greeting)
+						A_PlaySound("scientist/idle");
+					greeting=0;
 					return ResolveState("See");
 				}
 				Chatter(2);
@@ -292,11 +322,7 @@ class HLScientist4Path : HLScientist1Path
 	}
 }
 
-//////////////////////////////////////////////////////////
-//Previous code for scientists; only used for dead ones //
-//////////////////////////////////////////////////////////
-
-class HLScientistUpdate : Actor
+class HLScientist1Dead : Actor
 {
 	States
 	{
@@ -307,6 +333,41 @@ class HLScientistUpdate : Actor
 	}
 }
 
-class HLScientist1 : HLScientistUpdate{}
-class HLScientist2 : HLScientistUpdate{}
-class HLScientist3 : HLScientistUpdate{}
+class HLScientist2Dead : HLScientist1Dead{}
+class HLScientist3Dead : HLScientist1Dead{}
+class HLScientist4Dead : HLScientist1Dead{}
+
+class Einstein02 : ModelBase //Standing scientists
+{
+	Default
+	{
+		Height 56;
+		Radius 18;
+		Mass 200;
+		+SHOOTABLE
+		+FLOORCLIP
+		+NORADIUSDMG
+		+NODAMAGE
+		+FLOORCLIP
+		+USESPECIAL
+		+NOTAUTOAIMED
+	}
+}
+
+class Luther02 : Einstein02{}
+class Slick02 : Einstein02{}
+class Walter02 : Einstein02{}
+class Walter02a : Einstein02{}
+
+class Einstein01 : Einstein02 //Slumped over scientists
+{
+	Default
+	{
+		Height 28;
+	}
+}
+
+class Luther01 : Einstein01{}
+class Slick01 : Einstein01{}
+class Walter01 : Einstein01{}
+class Walter01a : Einstein01{}
