@@ -1,52 +1,48 @@
-class HLScientistPathSpawner : RandomSpawner
+class HLScientistSpawner : RandomSpawner
 {
 	Default
 	{
 		+FRIENDLY
-		DropItem "HLScientist1Path";
-		DropItem "HLScientist2Path";
-		DropItem "HLScientist3Path";
-		DropItem "HLScientist4Path";
+		DropItem "HLScientist1";
+		DropItem "HLScientist2";
+		DropItem "HLScientist3";
+		DropItem "HLScientist4";
 	}
 }
 
-class HLScientistWandererSpawner : HLScientistPathSpawner
+class HLScientistWandererSpawner : HLScientistSpawner
 {
 	override void PostSpawn(Actor spawned)
 	{
-		let me=HLScientist1Path(spawned);
+		let me=HLScientist1(spawned);
 		me.wanderer=1;
 	}
 }
 
-class HLScientistStillSpawner : HLScientistPathSpawner
+class HLScientistStillSpawner : HLScientistSpawner
 {
 	override void PostSpawn(Actor spawned)
 	{
-		let me=HLScientist1Path(spawned);
+		let me=HLScientist1(spawned);
 		me.still=1;
 	}
 }
 
-class HLScientistQuietSpawner : HLScientistPathSpawner
+class HLScientistQuietSpawner : HLScientistSpawner
 {
 	override void PostSpawn(Actor spawned)
 	{
-		let me=HLScientist1Path(spawned);
+		let me=HLScientist1(spawned);
 		me.quiet=1;
 	}
 }
 
-class HLScientistSlumpedSpawner : HLScientistPathSpawner
+class HLScientistSlumpedSpawner : HLScientistSpawner
 {
-	Default
+	override void PostSpawn(Actor spawned)
 	{
-		+FRIENDLY
-		DropItem "Einstein01";
-		DropItem "Luther01";
-		DropItem "Slick01";
-		DropItem "Walter01";
-		DropItem "Walter01a";
+		let me=HLScientist1(spawned);
+		me.sit=1;
 	}
 }
 
@@ -54,7 +50,6 @@ class HLScientistDeadSpawner : RandomSpawner
 {
 	Default
 	{
-		+FRIENDLY
 		DropItem "HLScientist1Dead";
 		DropItem "HLScientist2Dead";
 		DropItem "HLScientist3Dead";
@@ -65,9 +60,9 @@ class HLScientistDeadSpawner : RandomSpawner
 //**************************************************************************
 //**************************************************************************
 
-class HLScientist1Path : HLMonster
+class HLScientist1 : HLMonster
 {
-	bool greeting,wanderer,still,quiet;
+	bool greeting,wanderer,still,quiet,sit;
 	int limit,limit2,boredom,stay,panic;
 	Property Limits:limit,limit2;
 	override bool Used(Actor user)
@@ -91,7 +86,7 @@ class HLScientist1Path : HLMonster
 		SeeSound "scientist/sight";
 		PainSound "scientist/pain";
 		DeathSound "scientist/death";
-		HLScientist1Path.Limits 35,30;
+		HLScientist1.Limits 35,30;
 		Species "HLScientist";
 	}
 	States
@@ -99,6 +94,12 @@ class HLScientist1Path : HLMonster
 	Spawn:
 		HLI1 A 0 NODELAY
 		{
+			if(sit)
+			{
+				Height=28;
+				bNOPAIN=1;
+				return ResolveState("Sit");
+			}
 			if(wanderer)
 				return ResolveState("See");
 			if(!still)
@@ -195,7 +196,8 @@ class HLScientist1Path : HLMonster
 		HLW1 JJKKLL 1 A_Chase;
 		HLW1 M 0 A_Look;
 		HLW1 MMNNOOPP 1 A_Chase;
-		HLW1 A 0 A_Look;
+		//HLW1 A 0 A_Look;
+		//HLW1 QQ 1 A_Chase;
 		HLW1 A 0	//how often they'll say something while moving
 		{
 			if(random(0,255)<8)
@@ -289,7 +291,7 @@ class HLScientist1Path : HLMonster
 		Goto WanderRunDecidePanic;
 	Pain:
 		HLP1 A 1 A_Pain;
-		HLP1 BCDEFGH 1;
+		HLP1 BCDEFGHI 1;
 		Goto See;
 	Death:
 		HLD1 A 1 A_Scream;
@@ -297,12 +299,15 @@ class HLScientist1Path : HLMonster
 		HLD1 D 1 A_NoBlocking;
 		HLD1 EFGHIJKLMNOPQRS 1;
 		HLD1 T 1 A_PlaySound("halflife/weapons/bodydrop");
-		HLD1 U 1;
-		HLD1 V -1;
+		HLD1 UVW 1;
+		HLD1 X -1;
 		Stop;
 	XDeath:
 		TNT1 A 0 A_XenGibs(1);
 		Stop;
+	Sit:
+		HLS1 ABCDEFGHIJKLMNOP 5;
+		Loop;
 	}
 	void Chatter(int chance)
 	{
@@ -311,27 +316,27 @@ class HLScientist1Path : HLMonster
 	}
 }
 
-class HLScientist2Path : HLScientist1Path
+class HLScientist2 : HLScientist1
 {
 	Default
 	{
-		HLScientist1Path.Limits 45,35;
+		HLScientist1.Limits 45,35;
 	}
 }
 
-class HLScientist3Path : HLScientist1Path
+class HLScientist3 : HLScientist1
 {
 	Default
 	{
-		HLScientist1Path.Limits 55,65;
+		HLScientist1.Limits 55,65;
 	}
 }
 
-class HLScientist4Path : HLScientist1Path
+class HLScientist4 : HLScientist1
 {
 	Default
 	{
-		HLScientist1Path.Limits 65,65;
+		HLScientist1.Limits 65,65;
 	}
 }
 
@@ -361,7 +366,6 @@ class Einstein01 : ModelBase //Slumped over scientists
 		+FLOORCLIP
 		+NORADIUSDMG
 		+NODAMAGE
-		+FLOORCLIP
 		+USESPECIAL
 		+NOTAUTOAIMED
 	}

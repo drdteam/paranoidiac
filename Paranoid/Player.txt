@@ -63,7 +63,7 @@ class RolfBellmer : PlayerPawn
 		Goto Spawn;
 	Pain2:
 		HLP2 A 1 A_PlaySound("HLPlayerScientistPain",CHAN_VOICE);
-		HLP2 BCDEFGH 1;
+		HLP2 BCDEFGHI 1;
 		Goto Spawn;
 	Death2:
 		HLD2 A 1 A_PlaySound("HLPlayerScientistDeath",CHAN_VOICE);
@@ -71,8 +71,8 @@ class RolfBellmer : PlayerPawn
 		HLD2 D 1 A_NoBlocking;
 		HLD2 EFGHIJKLMNOPQRS 1;
 		HLD2 T 1 A_PlaySound("halflife/weapons/bodydrop");
-		HLD2 U 1;
-		HLD2 V -1;
+		HLD2 UVW 1;
+		HLD2 X -1;
 		Stop;
 	}
 }
