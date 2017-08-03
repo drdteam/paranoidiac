@@ -615,7 +615,7 @@ Model HLScientist1Dead
 	Skin 0 "scientist1.png"
 	Scale 1 1 1
 
-	FrameIndex HLD1 V 0 159
+	FrameIndex HLD1 X 0 159
 }
 
 Model HLScientist2Dead
@@ -625,7 +625,7 @@ Model HLScientist2Dead
 	Skin 0 "scientist2.png"
 	Scale 1 1 1
 
-	FrameIndex HLD1 V 0 159
+	FrameIndex HLD1 X 0 159
 }
 
 Model HLScientist3Dead
@@ -635,7 +635,7 @@ Model HLScientist3Dead
 	Skin 0 "scientist3.png"
 	Scale 1 1 1
 
-	FrameIndex HLD1 V 0 159
+	FrameIndex HLD1 X 0 159
 }
 
 Model HLScientist4Dead
@@ -645,7 +645,7 @@ Model HLScientist4Dead
 	Skin 0 "scientist4.png"
 	Scale 1 1 1
 
-	FrameIndex HLD1 V 0 159
+	FrameIndex HLD1 X 0 159
 }
 
 Model HLBarney
@@ -653,11 +653,72 @@ Model HLBarney
 	Path "Models"
 	Model 0 "barney.md2"
 	Skin 0 "barney.png"
-	Scale 1.03 1.03 1.03
+	Scale 1 1 1
 	INTERPOLATEDOUBLEDFRAMES
 
-	FrameIndex HLI1 A 0 335
-	FrameIndex HLI1 B 0 1
+	FrameIndex HLI1 A 0 1
+	FrameIndex HLI1 B 0 2
+	FrameIndex HLI1 C 0 3
+	FrameIndex HLI1 D 0 4
+	FrameIndex HLI1 E 0 5
+	FrameIndex HLI1 F 0 6
+	FrameIndex HLI1 G 0 7
+	FrameIndex HLI1 H 0 8
+	FrameIndex HLI1 I 0 9
+	FrameIndex HLI1 J 0 10
+	FrameIndex HLI1 K 0 11
+	FrameIndex HLI1 L 0 12
+	FrameIndex HLI1 M 0 13
+	FrameIndex HLI1 N 0 14
+	FrameIndex HLI1 O 0 15
+	FrameIndex HLI1 P 0 16
+	FrameIndex HLI1 Q 0 17
+	FrameIndex HLI1 R 0 18
+	FrameIndex HLI1 S 0 19
+	FrameIndex HLI1 T 0 20
+	FrameIndex HLI1 U 0 21
+	FrameIndex HLI1 V 0 22
+	FrameIndex HLI1 W 0 23
+	FrameIndex HLI1 X 0 24
+	FrameIndex HLI1 Y 0 25
+	FrameIndex HLI1 Z 0 26
+	FrameIndex HLI1 [ 0 27
+	FrameIndex HLI1 \ 0 28
+	FrameIndex HLI1 ] 0 29
+	FrameIndex HLI2 A 0 30
+	FrameIndex HLI2 B 0 31
+
+	FrameIndex HLI2 C 0 342
+	FrameIndex HLI2 D 0 343
+	FrameIndex HLI2 E 0 344
+	FrameIndex HLI2 F 0 345
+	FrameIndex HLI2 G 0 346
+	FrameIndex HLI2 H 0 347
+	FrameIndex HLI2 I 0 348
+	FrameIndex HLI2 J 0 349
+	FrameIndex HLI2 K 0 350
+	FrameIndex HLI2 L 0 351
+	FrameIndex HLI2 M 0 352
+	FrameIndex HLI2 N 0 353
+	FrameIndex HLI2 O 0 354
+	FrameIndex HLI2 P 0 355
+	FrameIndex HLI2 Q 0 356
+	FrameIndex HLI2 R 0 357
+	FrameIndex HLI2 S 0 358
+	FrameIndex HLI2 T 0 359
+	FrameIndex HLI2 U 0 360
+	FrameIndex HLI2 V 0 361
+	FrameIndex HLI2 W 0 362
+	FrameIndex HLI2 X 0 363
+	FrameIndex HLI2 Y 0 364
+	FrameIndex HLI2 Z 0 365
+	FrameIndex HLI2 [ 0 366
+	FrameIndex HLI2 \ 0 367
+	FrameIndex HLI2 ] 0 368
+	FrameIndex HLI3 A 0 369
+	FrameIndex HLI3 B 0 370
+	FrameIndex HLI3 C 0 371
+	FrameIndex HLI3 D 0 372
 
 	FrameIndex HLR1 A 0 64
 	FrameIndex HLR1 B 0 65
@@ -675,72 +736,123 @@ Model HLBarney
 	FrameIndex HLR1 N 0 77
 	FrameIndex HLR1 O 0 78
 	FrameIndex HLR1 P 0 79
+	FrameIndex HLR1 Q 0 80
+	FrameIndex HLR1 R 0 81
+	FrameIndex HLR1 S 0 82
+	FrameIndex HLR1 T 0 83
+	FrameIndex HLR1 U 0 84
+	FrameIndex HLR1 V 0 85
+	FrameIndex HLR1 W 0 86
 
-	FrameIndex HLA1 A 0 365
-	FrameIndex HLA1 B 0 366
-	FrameIndex HLA1 C 0 367
-	FrameIndex HLA1 D 0 368
-	FrameIndex HLA1 E 0 369
-	FrameIndex HLA1 F 0 370
-	FrameIndex HLA1 G 0 371
-	FrameIndex HLA1 H 0 372
-	FrameIndex HLA1 I 0 373
-	FrameIndex HLA1 J 0 374
-	FrameIndex HLA1 K 0 375
-	FrameIndex HLA1 L 0 376
-	FrameIndex HLA1 M 0 377
-	FrameIndex HLA1 N 0 378
-	FrameIndex HLA1 O 0 379
-	FrameIndex HLA1 P 0 380
-	FrameIndex HLA1 Q 0 381
-	FrameIndex HLA1 R 0 382
-	FrameIndex HLA1 S 0 383
-	FrameIndex HLA1 T 0 384
-	FrameIndex HLA1 U 0 385
-	FrameIndex HLA1 V 0 386
-	FrameIndex HLA1 W 0 387
-	FrameIndex HLA1 X 0 388
-	FrameIndex HLA1 Y 0 389
-	FrameIndex HLA1 Z 0 390
-	FrameIndex HLA1 [ 0 391
-	FrameIndex HLA1 \ 0 392
-	FrameIndex HLA1 ] 0 393
-	FrameIndex HLA2 A 0 394
-	FrameIndex HLA2 B 0 395
+	FrameIndex HLA1 A 0 373
+	FrameIndex HLA1 B 0 374
+	FrameIndex HLA1 C 0 375
+	FrameIndex HLA1 D 0 376
+	FrameIndex HLA1 E 0 377
+	FrameIndex HLA1 F 0 378
+	FrameIndex HLA1 G 0 379
+	FrameIndex HLA1 H 0 380
+	FrameIndex HLA1 I 0 381
+	FrameIndex HLA1 J 0 382
+	FrameIndex HLA1 K 0 383
+	FrameIndex HLA1 L 0 384
+	FrameIndex HLA1 M 0 385
+	FrameIndex HLA1 N 0 386
+	FrameIndex HLA1 O 0 387
+	FrameIndex HLA1 P 0 388
+	FrameIndex HLA1 Q 0 389
+	FrameIndex HLA1 R 0 390
+	FrameIndex HLA1 S 0 391
+	FrameIndex HLA1 T 0 392
+	FrameIndex HLA1 U 0 393
+	FrameIndex HLA1 V 0 394
+	FrameIndex HLA1 W 0 395
+	FrameIndex HLA1 X 0 396
+	FrameIndex HLA1 Y 0 397
+	FrameIndex HLA1 Z 0 398
+	FrameIndex HLA1 [ 0 399
+	FrameIndex HLA1 \ 0 400
+	FrameIndex HLA1 ] 0 401
+	FrameIndex HLA2 A 0 402
+	FrameIndex HLA2 B 0 403
 
-	FrameIndex HLP1 A 0 158
-	FrameIndex HLP1 B 0 159
-	FrameIndex HLP1 C 0 160
-	FrameIndex HLP1 D 0 161
-	FrameIndex HLP1 E 0 162
-	FrameIndex HLP1 F 0 163
-	FrameIndex HLP1 G 0 164
-	FrameIndex HLP1 H 0 165
-	FrameIndex HLP1 I 0 166
-	FrameIndex HLP1 J 0 167
-	FrameIndex HLP1 K 0 168
-	FrameIndex HLP1 L 0 169
-	FrameIndex HLP1 M 0 170
-	FrameIndex HLP1 N 0 171
-	FrameIndex HLP1 O 0 172
-	FrameIndex HLP1 P 0 173
-	FrameIndex HLP1 Q 0 174
-	FrameIndex HLP1 R 0 175
-	FrameIndex HLP1 S 0 176
+	FrameIndex HLP1 A 0 166
+	FrameIndex HLP1 B 0 167
+	FrameIndex HLP1 C 0 168
+	FrameIndex HLP1 D 0 169
+	FrameIndex HLP1 E 0 170
+	FrameIndex HLP1 F 0 171
+	FrameIndex HLP1 G 0 172
+	FrameIndex HLP1 H 0 173
+	FrameIndex HLP1 I 0 174
+	FrameIndex HLP1 J 0 175
+	FrameIndex HLP1 K 0 176
+	FrameIndex HLP1 L 0 177
+	FrameIndex HLP1 M 0 178
+	FrameIndex HLP1 N 0 179
+	FrameIndex HLP1 O 0 180
+	FrameIndex HLP1 P 0 181
+	FrameIndex HLP1 Q 0 182
+	FrameIndex HLP1 R 0 183
+	FrameIndex HLP1 S 0 184
+	FrameIndex HLP1 T 0 185
+	FrameIndex HLP1 U 0 186
 
-	FrameIndex HLD1 A 0 272
-	FrameIndex HLD1 B 0 273
-	FrameIndex HLD1 C 0 274
-	FrameIndex HLD1 D 0 275
-	FrameIndex HLD1 E 0 276
-	FrameIndex HLD1 F 0 277
-	FrameIndex HLD1 G 0 278
-	FrameIndex HLD1 H 0 279
-	FrameIndex HLD1 I 0 280
-	FrameIndex HLD1 J 0 281
-	FrameIndex HLD1 K 0 282
-	FrameIndex HLD1 L 0 283
-	FrameIndex HLD1 M 0 284
+	FrameIndex HLD1 A 0 280
+	FrameIndex HLD1 B 0 281
+	FrameIndex HLD1 C 0 282
+	FrameIndex HLD1 D 0 283
+	FrameIndex HLD1 E 0 284
+	FrameIndex HLD1 F 0 285
+	FrameIndex HLD1 G 0 286
+	FrameIndex HLD1 H 0 287
+	FrameIndex HLD1 I 0 288
+	FrameIndex HLD1 J 0 289
+	FrameIndex HLD1 K 0 290
+	FrameIndex HLD1 L 0 291
+	FrameIndex HLD1 M 0 292
+	FrameIndex HLD1 N 0 293
+}
+
+Model HLBarney
+{
+	Path "Models"
+	Model 0 "barney2.md2"
+	Skin 0 "barney2.png"
+	Scale 1 1 1
+	INTERPOLATEDOUBLEDFRAMES
+
+	FrameIndex HLI3 E 0 1
+	FrameIndex HLI3 F 0 2
+	FrameIndex HLI3 G 0 3
+	FrameIndex HLI3 H 0 4
+	FrameIndex HLI3 I 0 5
+	FrameIndex HLI3 J 0 6
+	FrameIndex HLI3 K 0 7
+	FrameIndex HLI3 L 0 8
+	FrameIndex HLI3 M 0 9
+	FrameIndex HLI3 N 0 10
+	FrameIndex HLI3 O 0 11
+	FrameIndex HLI3 P 0 12
+	FrameIndex HLI3 Q 0 13
+	FrameIndex HLI3 R 0 14
+	FrameIndex HLI3 S 0 15
+	FrameIndex HLI3 T 0 16
+	FrameIndex HLI3 U 0 17
+	FrameIndex HLI3 V 0 18
+	FrameIndex HLI3 W 0 19
+	FrameIndex HLI3 X 0 20
+	FrameIndex HLI3 Y 0 21
+	FrameIndex HLI3 Z 0 22
+	FrameIndex HLI3 [ 0 23
+	FrameIndex HLI3 \ 0 24
+	FrameIndex HLI3 ] 0 25
+	FrameIndex HLI4 A 0 26
+	FrameIndex HLI4 B 0 27
+	FrameIndex HLI4 C 0 28
+	FrameIndex HLI4 D 0 29
+	FrameIndex HLI4 E 0 30
+	FrameIndex HLI4 F 0 31
 }
 
 Model HLGrunt1
@@ -1881,16 +1993,6 @@ Model Otis01
 	Model 0 "otis2.md3"
 	Skin 0 "otis.png"
 	Scale 1.05 1.05 1.05
-
-	FrameIndex POSS A 0 0
-}
-
-Model Barney01
-{
-	Path "Models"
-	Model 0 "barney2.md3"
-	Skin 0 "barney2.png"
-	Scale 1.0 1.0 1.0
 
 	FrameIndex POSS A 0 0
 }

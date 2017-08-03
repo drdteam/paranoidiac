@@ -2,9 +2,25 @@
 // Barney
 //=========
 
+class HLBarneyGuardSpawner : RandomSpawner
+{
+	Default
+	{
+		+FRIENDLY
+		DropItem "HLBarney";
+	}
+	override void PostSpawn(Actor spawned)
+	{
+		let me=HLBarney(spawned);
+		me.guard=1;
+		me.SetStateLabel("guard");
+		me.bUSESPECIAL=1;
+	}
+}
+
 class HLBarney : HLMonster
 {
-	bool follow,follower;
+	bool follow,follower,guard;
 	override void tick()
 	{
 		if(follower)
@@ -20,7 +36,9 @@ class HLBarney : HLMonster
 			{
 				follow=0;
 				A_ClearTarget();
-				SetStateLabel("Stand");
+				if(random(0,1))
+					SetStateLabel("Stand");
+				SetStateLabel("Stand2");
 			}
 		}
 		Super.Tick();
@@ -35,8 +53,8 @@ class HLBarney : HLMonster
 		SeeSound "halflife/monsters/barney/sight";
 		PainSound "halflife/monsters/barney/pain";
 		DeathSound "halflife/monsters/barney/death";
-		maxdropoffheight 64;
-		dropitem "PistolPickup";
+		MaxDropoffHeight 64;
+		DropItem "PistolPickup";
 		+FRIENDLY
 		-COUNTKILL
 		Species "HLBarney";
@@ -44,28 +62,33 @@ class HLBarney : HLMonster
 	States
 	{
 	Stand:
-		HLI1 B 3 A_Face(goal);
-		Wait;
+		HLI1 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 2 A_Face(goal);
+		HLI2 AB 2 A_Face(goal);
+		Loop;
+	Stand2:
+		HLI2 CDEFGHIJKLMNOPQRSTUVWXYZ[\] 2 A_Face(goal);
+		HLI3 ABCD 2 A_Face(goal);
+		Loop;
+	Guard:
+		HLI3 EFGHIJKLMNOPQRSTUVWXYZ[\] 2;
+		HLI4 ABCDEF 2;
+		Loop;
 	See:
 		HLR1 A 1 A_Chase;
-		HLR1 ABB 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLR1 C 1 A_Chase;
-		HLR1 CDD 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLR1 BCD 1 A_Chase(null,null,HLSMOOTHCHASE);
 		HLR1 E 1 A_Chase;
-		HLR1 EFF 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLR1 G 1 A_Chase;
-		HLR1 GGH 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLR1 FGH 1 A_Chase(null,null,HLSMOOTHCHASE);
 		HLR1 I 1 A_Chase;
-		HLR1 IJJ 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLR1 K 1 A_Chase;
-		HLR1 KLL 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLR1 JKL 1 A_Chase(null,null,HLSMOOTHCHASE);
 		HLR1 M 1 A_Chase;
-		HLR1 MNN 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLR1 O 1 A_Chase;
-		HLR1 OPP 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLR1 NOP 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLR1 Q 1 A_Chase;
+		HLR1 RST 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLR1 U 1 A_Chase;
+		HLR1 VW 1 A_Chase(null,null,HLSMOOTHCHASE);
 		HLR1 A 0
 		{
-			if(random(0,255)<8)
+			if(!random(0,32))
 				A_PlaySound("halflife/monsters/barney/idle");
 		}
 		Loop;
@@ -110,6 +133,7 @@ class HLBarney : HLMonster
 	Pain:
 		HLP1 A 1 A_Pain;
 		HLP1 DGJMPS 1;
+		HLP1 S 0 A_JumpIf(guard,"Guard");
 		Goto See;
 	Death:
 		HLD1 A 2 A_Scream;
