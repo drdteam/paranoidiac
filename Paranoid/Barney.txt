@@ -132,8 +132,8 @@ class HLBarney : HLMonster
 		Goto See;
 	Pain:
 		HLP1 A 1 A_Pain;
-		HLP1 DGJMPS 1;
-		HLP1 S 0 A_JumpIf(guard,"Guard");
+		HLP1 DGJMPSU 1;
+		HLP1 U 0 A_JumpIf(guard,"Guard");
 		Goto See;
 	Death:
 		HLD1 A 2 A_ScreamAndUnblock;
