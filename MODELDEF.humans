@@ -798,20 +798,44 @@ Model HLBarney
 	FrameIndex HLP1 T 0 185
 	FrameIndex HLP1 U 0 186
 
-	FrameIndex HLD1 A 0 280
-	FrameIndex HLD1 B 0 281
-	FrameIndex HLD1 C 0 282
-	FrameIndex HLD1 D 0 283
-	FrameIndex HLD1 E 0 284
-	FrameIndex HLD1 F 0 285
-	FrameIndex HLD1 G 0 286
-	FrameIndex HLD1 H 0 287
-	FrameIndex HLD1 I 0 288
-	FrameIndex HLD1 J 0 289
-	FrameIndex HLD1 K 0 290
-	FrameIndex HLD1 L 0 291
-	FrameIndex HLD1 M 0 292
-	FrameIndex HLD1 N 0 293
+	//FrameIndex HLD1 A 0 280
+	//FrameIndex HLD1 B 0 281
+	//FrameIndex HLD1 C 0 282
+	//FrameIndex HLD1 D 0 283
+	//FrameIndex HLD1 E 0 284
+	//FrameIndex HLD1 F 0 285
+	//FrameIndex HLD1 G 0 286
+	//FrameIndex HLD1 H 0 287
+	//FrameIndex HLD1 I 0 288
+	//FrameIndex HLD1 J 0 289
+	//FrameIndex HLD1 K 0 290
+	//FrameIndex HLD1 L 0 291
+	//FrameIndex HLD1 M 0 292
+	//FrameIndex HLD1 N 0 293
+}
+
+Model HLBarney
+{
+	Path "Models"
+	Model 0 "barneydie.md2"
+	Skin 0 "barney.png"
+	Scale 1 1 1
+	INTERPOLATEDOUBLEDFRAMES
+
+	FrameIndex HLD1 A 0 93
+	FrameIndex HLD1 B 0 94
+	FrameIndex HLD1 C 0 95
+	FrameIndex HLD1 D 0 96
+	FrameIndex HLD1 E 0 97
+	FrameIndex HLD1 F 0 98
+	FrameIndex HLD1 G 0 99
+	FrameIndex HLD1 H 0 100
+	FrameIndex HLD1 I 0 101
+	FrameIndex HLD1 J 0 102
+	FrameIndex HLD1 K 0 103
+	FrameIndex HLD1 L 0 104
+	FrameIndex HLD1 M 0 105
+	FrameIndex HLD1 N 0 106
 }
 
 Model HLBarney
