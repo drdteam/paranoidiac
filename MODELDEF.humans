@@ -255,7 +255,7 @@ Model HLScientist1
 	FrameIndex HLD1 U 0 191
 	FrameIndex HLD1 V 0 192
 	FrameIndex HLD1 W 0 193
-	FrameIndex HLD1 X 0 194
+	FrameIndex HLD1 X 0 193	//194
 
 	FrameIndex HLS1 A 0 303
 	FrameIndex HLS1 B 0 304
@@ -284,8 +284,8 @@ Model HLScientist2
 	INTERPOLATEDOUBLEDFRAMES
 
 	FrameIndex HLI1 A 0 46	//46-61
-	FrameIndex HLI1 B 0 200	//194-229
-	FrameIndex HLI1 C 0 290	//266-301
+	FrameIndex HLI1 B 0 200	//195-230
+	FrameIndex HLI1 C 0 290	//267-302
 
 	FrameIndex HLW1 A 0 1
 	FrameIndex HLW1 B 0 2
@@ -358,24 +358,24 @@ Model HLScientist2
 	FrameIndex HLD1 U 0 191
 	FrameIndex HLD1 V 0 192
 	FrameIndex HLD1 W 0 193
-	FrameIndex HLD1 X 0 194
+	FrameIndex HLD1 X 0 193	//194
 
-	FrameIndex HLS1 A 0 302
-	FrameIndex HLS1 B 0 303
-	FrameIndex HLS1 C 0 304
-	FrameIndex HLS1 D 0 305
-	FrameIndex HLS1 E 0 306
-	FrameIndex HLS1 F 0 307
-	FrameIndex HLS1 G 0 308
-	FrameIndex HLS1 H 0 309
-	FrameIndex HLS1 I 0 310
-	FrameIndex HLS1 J 0 311
-	FrameIndex HLS1 K 0 312
-	FrameIndex HLS1 L 0 313
-	FrameIndex HLS1 M 0 314
-	FrameIndex HLS1 N 0 315
-	FrameIndex HLS1 O 0 316
-	FrameIndex HLS1 P 0 317
+	FrameIndex HLS1 A 0 303
+	FrameIndex HLS1 B 0 304
+	FrameIndex HLS1 C 0 305
+	FrameIndex HLS1 D 0 306
+	FrameIndex HLS1 E 0 307
+	FrameIndex HLS1 F 0 308
+	FrameIndex HLS1 G 0 309
+	FrameIndex HLS1 H 0 310
+	FrameIndex HLS1 I 0 311
+	FrameIndex HLS1 J 0 312
+	FrameIndex HLS1 K 0 313
+	FrameIndex HLS1 L 0 314
+	FrameIndex HLS1 M 0 315
+	FrameIndex HLS1 N 0 316
+	FrameIndex HLS1 O 0 317
+	FrameIndex HLS1 P 0 318
 }
 
 Model HLScientist3
@@ -387,8 +387,8 @@ Model HLScientist3
 	INTERPOLATEDOUBLEDFRAMES
 
 	FrameIndex HLI1 A 0 46	//46-61
-	FrameIndex HLI1 B 0 200	//194-229
-	FrameIndex HLI1 C 0 290	//266-301
+	FrameIndex HLI1 B 0 200	//195-230
+	FrameIndex HLI1 C 0 290	//267-302
 
 	FrameIndex HLW1 A 0 1
 	FrameIndex HLW1 B 0 2
@@ -461,24 +461,24 @@ Model HLScientist3
 	FrameIndex HLD1 U 0 191
 	FrameIndex HLD1 V 0 192
 	FrameIndex HLD1 W 0 193
-	FrameIndex HLD1 X 0 194
+	FrameIndex HLD1 X 0 193	//194
 
-	FrameIndex HLS1 A 0 302
-	FrameIndex HLS1 B 0 303
-	FrameIndex HLS1 C 0 304
-	FrameIndex HLS1 D 0 305
-	FrameIndex HLS1 E 0 306
-	FrameIndex HLS1 F 0 307
-	FrameIndex HLS1 G 0 308
-	FrameIndex HLS1 H 0 309
-	FrameIndex HLS1 I 0 310
-	FrameIndex HLS1 J 0 311
-	FrameIndex HLS1 K 0 312
-	FrameIndex HLS1 L 0 313
-	FrameIndex HLS1 M 0 314
-	FrameIndex HLS1 N 0 315
-	FrameIndex HLS1 O 0 316
-	FrameIndex HLS1 P 0 317
+	FrameIndex HLS1 A 0 303
+	FrameIndex HLS1 B 0 304
+	FrameIndex HLS1 C 0 305
+	FrameIndex HLS1 D 0 306
+	FrameIndex HLS1 E 0 307
+	FrameIndex HLS1 F 0 308
+	FrameIndex HLS1 G 0 309
+	FrameIndex HLS1 H 0 310
+	FrameIndex HLS1 I 0 311
+	FrameIndex HLS1 J 0 312
+	FrameIndex HLS1 K 0 313
+	FrameIndex HLS1 L 0 314
+	FrameIndex HLS1 M 0 315
+	FrameIndex HLS1 N 0 316
+	FrameIndex HLS1 O 0 317
+	FrameIndex HLS1 P 0 318
 }
 
 Model HLScientist4
@@ -490,8 +490,8 @@ Model HLScientist4
 	INTERPOLATEDOUBLEDFRAMES
 
 	FrameIndex HLI1 A 0 46	//46-61
-	FrameIndex HLI1 B 0 200	//194-229
-	FrameIndex HLI1 C 0 290	//266-301
+	FrameIndex HLI1 B 0 200	//195-230
+	FrameIndex HLI1 C 0 290	//267-302
 
 	FrameIndex HLW1 A 0 1
 	FrameIndex HLW1 B 0 2
@@ -564,24 +564,24 @@ Model HLScientist4
 	FrameIndex HLD1 U 0 191
 	FrameIndex HLD1 V 0 192
 	FrameIndex HLD1 W 0 193
-	FrameIndex HLD1 X 0 194
+	FrameIndex HLD1 X 0 193	//194
 
-	FrameIndex HLS1 A 0 302
-	FrameIndex HLS1 B 0 303
-	FrameIndex HLS1 C 0 304
-	FrameIndex HLS1 D 0 305
-	FrameIndex HLS1 E 0 306
-	FrameIndex HLS1 F 0 307
-	FrameIndex HLS1 G 0 308
-	FrameIndex HLS1 H 0 309
-	FrameIndex HLS1 I 0 310
-	FrameIndex HLS1 J 0 311
-	FrameIndex HLS1 K 0 312
-	FrameIndex HLS1 L 0 313
-	FrameIndex HLS1 M 0 314
-	FrameIndex HLS1 N 0 315
-	FrameIndex HLS1 O 0 316
-	FrameIndex HLS1 P 0 317
+	FrameIndex HLS1 A 0 303
+	FrameIndex HLS1 B 0 304
+	FrameIndex HLS1 C 0 305
+	FrameIndex HLS1 D 0 306
+	FrameIndex HLS1 E 0 307
+	FrameIndex HLS1 F 0 308
+	FrameIndex HLS1 G 0 309
+	FrameIndex HLS1 H 0 310
+	FrameIndex HLS1 I 0 311
+	FrameIndex HLS1 J 0 312
+	FrameIndex HLS1 K 0 313
+	FrameIndex HLS1 L 0 314
+	FrameIndex HLS1 M 0 315
+	FrameIndex HLS1 N 0 316
+	FrameIndex HLS1 O 0 317
+	FrameIndex HLS1 P 0 318
 }
 
 Model HLScientist1Dead
@@ -591,7 +591,7 @@ Model HLScientist1Dead
 	Skin 0 "scientist1.png"
 	Scale 1 1 1
 
-	FrameIndex HLD1 X 0 159
+	FrameIndex HLD1 X 0 193	//194
 }
 
 Model HLScientist2Dead
@@ -601,7 +601,7 @@ Model HLScientist2Dead
 	Skin 0 "scientist2.png"
 	Scale 1 1 1
 
-	FrameIndex HLD1 X 0 159
+	FrameIndex HLD1 X 0 193	//194
 }
 
 Model HLScientist3Dead
@@ -611,7 +611,7 @@ Model HLScientist3Dead
 	Skin 0 "scientist3.png"
 	Scale 1 1 1
 
-	FrameIndex HLD1 X 0 159
+	FrameIndex HLD1 X 0 193	//194
 }
 
 Model HLScientist4Dead
@@ -621,7 +621,8 @@ Model HLScientist4Dead
 	Skin 0 "scientist4.png"
 	Scale 1 1 1
 
-	FrameIndex HLD1 X 0 159
+	FrameIndex HLD1 X 0 193	//194
+
 }
 
 Model HLBarney
@@ -805,6 +806,48 @@ Model HLBarney
 	Model 0 "barney2.md2"
 	Skin 0 "barney2.png"
 	Scale 1 1 1
+	INTERPOLATEDOUBLEDFRAMES
+
+	FrameIndex HLI3 E 0 1
+	FrameIndex HLI3 F 0 2
+	FrameIndex HLI3 G 0 3
+	FrameIndex HLI3 H 0 4
+	FrameIndex HLI3 I 0 5
+	FrameIndex HLI3 J 0 6
+	FrameIndex HLI3 K 0 7
+	FrameIndex HLI3 L 0 8
+	FrameIndex HLI3 M 0 9
+	FrameIndex HLI3 N 0 10
+	FrameIndex HLI3 O 0 11
+	FrameIndex HLI3 P 0 12
+	FrameIndex HLI3 Q 0 13
+	FrameIndex HLI3 R 0 14
+	FrameIndex HLI3 S 0 15
+	FrameIndex HLI3 T 0 16
+	FrameIndex HLI3 U 0 17
+	FrameIndex HLI3 V 0 18
+	FrameIndex HLI3 W 0 19
+	FrameIndex HLI3 X 0 20
+	FrameIndex HLI3 Y 0 21
+	FrameIndex HLI3 Z 0 22
+	FrameIndex HLI3 [ 0 23
+	FrameIndex HLI3 \ 0 24
+	FrameIndex HLI3 ] 0 25
+	FrameIndex HLI4 A 0 26
+	FrameIndex HLI4 B 0 27
+	FrameIndex HLI4 C 0 28
+	FrameIndex HLI4 D 0 29
+	FrameIndex HLI4 E 0 30
+	FrameIndex HLI4 F 0 31
+}
+
+Model HLOtis
+{
+	Path "Models"
+	Model 0 "otis2.md2"
+	Skin 0 "otis2.png"
+	Scale 1 1 1
+
 	INTERPOLATEDOUBLEDFRAMES
 
 	FrameIndex HLI3 E 0 1
@@ -2720,16 +2763,6 @@ Model Handler2Sitting
 	Scale 1.4 1.4 1.4
 
 	Frame POSS A 0 "sit01"
-}
-
-Model Otis01
-{
-	Path "Models"
-	Model 0 "otis2.md3"
-	Skin 0 "otis.png"
-	Scale 1.05 1.05 1.05
-
-	FrameIndex POSS A 0 0
 }
 
 Model Admin01

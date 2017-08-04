@@ -540,7 +540,7 @@ DoomEdNums
 	30318=VidCam1
 	30319=VidCam2
 	30320=Tram2
-	30321=Otis01
+	30321=HLOtisGuardSpawner
 	30322=HLBarneyGuardSpawner
 	30323=Admin01
 	30324=HLScientistSlumpedSpawner

@@ -1549,7 +1549,7 @@ class XMetalBox : ModelBase
 
 //==========================================
 // Non-Player Character Models: Controller,
-// Administrator, Otis
+// Administrator
 //==========================================
 
 class Handler2Standing : ModelBase
@@ -1567,12 +1567,12 @@ class Handler2Sitting : ModelBase
 	}
 }
 
-class Otis01 : ModelBase
+class Admin01 : ModelBase
 {
 	Default
 	{
-		Radius 18;
-		Height 64;
+		Radius 22;
+		Height 40;
 		Mass 200;
 		+SHOOTABLE
 		+FLOORCLIP
@@ -1581,14 +1581,5 @@ class Otis01 : ModelBase
 		+FLOORCLIP
 		+USESPECIAL
 		+NOTAUTOAIMED
-	}
-}
-
-class Admin01 : Otis01
-{
-	Default
-	{
-		Radius 22;
-		Height 40;
 	}
 }
