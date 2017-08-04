@@ -1351,15 +1351,6 @@ class Explosive : Inventory
 class PConsole4 : PConsole{}
 class PConsole5 : PConsole{}
 
-class MarineBody : ModelBase
-{
-	Default
-	{
-		Radius 16;
-		Height 8;
-	}
-}
-
 //======================================
 // Concrete Jersey Barriers:
 // Spawning will require rising sectors
@@ -1558,7 +1549,7 @@ class XMetalBox : ModelBase
 
 //==========================================
 // Non-Player Character Models: Controller,
-// Scientists, Administrator, Barney, Otis
+// Administrator, Otis
 //==========================================
 
 class Handler2Standing : ModelBase
@@ -1592,8 +1583,6 @@ class Otis01 : ModelBase
 		+NOTAUTOAIMED
 	}
 }
-
-class Barney01 : Otis01{}
 
 class Admin01 : Otis01
 {

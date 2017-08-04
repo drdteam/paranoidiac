@@ -644,5 +644,5 @@ DoomEdNums
 	31902=OMGOrangeSpark
 	31980=OMGSteam
 	31998=OMGFire
-	32001=MarineBody
+	32001=HLGrunt1Dead
 }
