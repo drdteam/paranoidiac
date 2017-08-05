@@ -169,7 +169,7 @@ Model RolfBellmer
 	FrameIndex HLD2 U 0 191
 	FrameIndex HLD2 V 0 192
 	FrameIndex HLD2 W 0 193
-	FrameIndex HLD2 X 0 194
+	FrameIndex HLD2 X 0 193	//194
 }
 
 Model HLScientist1
@@ -697,29 +697,29 @@ Model HLBarney
 	FrameIndex HLI3 C 0 215
 	FrameIndex HLI3 D 0 216
 
-	FrameIndex HLR1 A 0 64
-	FrameIndex HLR1 B 0 65
-	FrameIndex HLR1 C 0 66
-	FrameIndex HLR1 D 0 67
-	FrameIndex HLR1 E 0 68
-	FrameIndex HLR1 F 0 69
-	FrameIndex HLR1 G 0 70
-	FrameIndex HLR1 H 0 71
-	FrameIndex HLR1 I 0 72
-	FrameIndex HLR1 J 0 73
-	FrameIndex HLR1 K 0 74
-	FrameIndex HLR1 L 0 75
-	FrameIndex HLR1 M 0 76
-	FrameIndex HLR1 N 0 77
-	FrameIndex HLR1 O 0 78
-	FrameIndex HLR1 P 0 79
-	FrameIndex HLR1 Q 0 80
-	FrameIndex HLR1 R 0 81
-	FrameIndex HLR1 S 0 82
-	FrameIndex HLR1 T 0 83
-	FrameIndex HLR1 U 0 84
-	FrameIndex HLR1 V 0 85
-	FrameIndex HLR1 W 0 86
+	FrameIndex HLR1 A 0 63
+	FrameIndex HLR1 B 0 64
+	FrameIndex HLR1 C 0 65
+	FrameIndex HLR1 D 0 66
+	FrameIndex HLR1 E 0 67
+	FrameIndex HLR1 F 0 68
+	FrameIndex HLR1 G 0 69
+	FrameIndex HLR1 H 0 70
+	FrameIndex HLR1 I 0 71
+	FrameIndex HLR1 J 0 72
+	FrameIndex HLR1 K 0 73
+	FrameIndex HLR1 L 0 74
+	FrameIndex HLR1 M 0 75
+	FrameIndex HLR1 N 0 76
+	FrameIndex HLR1 O 0 77
+	FrameIndex HLR1 P 0 78
+	FrameIndex HLR1 Q 0 79
+	FrameIndex HLR1 R 0 80
+	FrameIndex HLR1 S 0 81
+	FrameIndex HLR1 T 0 82
+	FrameIndex HLR1 U 0 83
+	FrameIndex HLR1 V 0 84
+	FrameIndex HLR1 W 0 85
 
 	FrameIndex HLA1 A 0 217
 	FrameIndex HLA1 B 0 218
