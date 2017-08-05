@@ -124,6 +124,7 @@ script "HintMessage"(int message)
 			delay(1);
 	}
 	LocalPlaySound("radiostatic",6);
+	playingmessage[PlayerNumber()]=0;
 }
 function void LocalPlaySound(str snd,int chan)
 	{PlaySound(0,snd,chan,1.0,0,ATTN_STATIC);}
