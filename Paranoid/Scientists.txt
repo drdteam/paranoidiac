@@ -64,7 +64,11 @@ class HLScientist1 : HLMonster
 {
 	bool greeting,wanderer,still,quiet,sit;
 	int limit,limit2,boredom,stay,panic;
-	Property Limits:limit,limit2;
+	override void PostBeginPlay()
+	{
+		limit=random(30,60);
+		limit2=random(30,60);
+	}
 	override bool Used(Actor user)
 	{
 		if(!bFRIGHTENED)
@@ -86,7 +90,6 @@ class HLScientist1 : HLMonster
 		SeeSound "scientist/sight";
 		PainSound "scientist/pain";
 		DeathSound "scientist/death";
-		HLScientist1.Limits 35,30;
 		Species "HLScientist";
 	}
 	States
@@ -316,29 +319,9 @@ class HLScientist1 : HLMonster
 	}
 }
 
-class HLScientist2 : HLScientist1
-{
-	Default
-	{
-		HLScientist1.Limits 45,35;
-	}
-}
-
-class HLScientist3 : HLScientist1
-{
-	Default
-	{
-		HLScientist1.Limits 55,65;
-	}
-}
-
-class HLScientist4 : HLScientist1
-{
-	Default
-	{
-		HLScientist1.Limits 65,65;
-	}
-}
+class HLScientist2 : HLScientist1{}
+class HLScientist3 : HLScientist1{}
+class HLScientist4 : HLScientist1{}
 
 class HLScientist1Dead : Actor
 {
@@ -354,24 +337,3 @@ class HLScientist1Dead : Actor
 class HLScientist2Dead : HLScientist1Dead{}
 class HLScientist3Dead : HLScientist1Dead{}
 class HLScientist4Dead : HLScientist1Dead{}
-
-class Einstein01 : ModelBase //Slumped over scientists
-{
-	Default
-	{
-		Height 28;
-		Radius 18;
-		Mass 200;
-		+SHOOTABLE
-		+FLOORCLIP
-		+NORADIUSDMG
-		+NODAMAGE
-		+USESPECIAL
-		+NOTAUTOAIMED
-	}
-}
-
-class Luther01 : Einstein01{}
-class Slick01 : Einstein01{}
-class Walter01 : Einstein01{}
-class Walter01a : Einstein01{}
