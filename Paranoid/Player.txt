@@ -11,7 +11,6 @@ class RolfBellmer : PlayerPawn
 		+NOSKIN
 		Height 60;
 		Player.DisplayName "Rolf Bellmer";
-		Player.RunHealth 15;
 		Player.ViewHeight 56;
 		Player.AttackZOffset 24;
 		Player.WeaponSlot 1,"Crowbar";
