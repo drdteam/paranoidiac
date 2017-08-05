@@ -45,7 +45,8 @@ class HLBarney : HLMonster
 				A_ClearTarget();
 				if(random(0,1))
 					SetStateLabel("Stand");
-				SetStateLabel("Stand2");
+				else
+					SetStateLabel("Stand2");
 			}
 		}
 		Super.Tick();
