@@ -32,9 +32,9 @@ class HLHeadCrab : HLMonster
 	States
 	{
 	Spawn:
-		HLI1 A 3 A_JumpIf(waterlevel>=2,"Drown");
+		HLI1 A 0 A_JumpIf(waterlevel>=2,"Drown");
 		HLI1 A 3 A_Look;
-		Wait;
+		Loop;
 	See:
 		HLR1 A 0 A_JumpIf(waterlevel>=2,"Drown");
 		HLR1 A 1 A_Chase;
