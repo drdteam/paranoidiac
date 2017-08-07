@@ -83,15 +83,27 @@ str hintsnd[32][2]=
 };
 int delays[32][2]=
 {
-	{8,0},{6,0},{7,0},{9,0},{16,0},
-	{14,0},{10,0},{10,0},{15,0},{10,0},
-	{8,0},{6,0},{13,0},{8,0},{5,0},
-	{7,0},{5,0},{8,0},{0,0},{42,4.6},
-	{18,2.1},{32,2.65},{39,3.25},{29,2.01},{38,3.21},
-	{13,2.94},{27,1.3},{18,1.2},{21,1.0},{29,2.3},
-	{24,2.6},{16,1.7}
+	//duration of soundbyte
+	//# of characters
+	{8,94},{6,54},
+	{7,78},{9,116},
+	{16,178},{14,208},
+	{10,101},{10,146},
+	{15,265},{10,170},
+	{8,87},{6,79},
+	{13,215},{8,120},
+	{5,43},{7,90},
+	{5,44},{8,97},
+	{0,0},
+	{42,604},{17,260},
+	{29,468},{36,581},
+	{28,434},{37,561},
+	{11,163},{26,410},
+	{18,270},{19,322},
+	{28,430},{23,345},
+	{15,228}
 };
-function void hintmessage(str message,str icon,int holdtime,int holdtime2)
+script "HintMessage"(int msg)
 {
 	if(playingmessage[PlayerNumber()])
 	{
@@ -102,27 +114,25 @@ function void hintmessage(str message,str icon,int holdtime,int holdtime2)
 	}
 	else
 	{
+		str message=hintsnd[msg-1][0];
+		int dur=delays[msg-1][0];
+		int typetime=FixedDiv(dur-1,delays[msg-1][1]);
 		playingmessage[PlayerNumber()]=1;
 		LocalPlaySound("radiostatic",6);
 		LocalPlaySound(message,7);
 		SetHUDSize(640,480,1);
-		SetFont(icon);
-		HUDMessage(s:"A";HUDMSG_PLAIN,1,CR_UNTRANSLATED,0.1,30.1,holdtime);
+		SetFont(hintsnd[msg-1][1]);
+		HUDMessage(s:"A";HUDMSG_PLAIN,1,CR_UNTRANSLATED,0.1,30.1,(10+dur)*1.0);
 		SetFont("smallfont");
-		if(holdtime2)
-			HUDMessage(l:message;HUDMSG_TYPEON|HUDMSG_LOG,2,CR_GOLD,80.1,30.1,holdtime2,0.062,0.05);
-		else
-			HUDMessage(l:message;HUDMSG_PLAIN|HUDMSG_LOG,2,CR_GOLD,80.1,30.1,holdtime);
+		HUDMessage(l:message;HUDMSG_TYPEON|HUDMSG_LOG,2,CR_GOLD,80.1,30.1,10.0,typetime,0.05);
 	}
-}
-script "HintMessage"(int message)
-{
-	hintmessage(hintsnd[message-1][0],hintsnd[message-1][1],delays[message-1][0]*1.0,delays[message-1][1]);
-	for(int countdown=delays[message-1][0]*35;countdown;countdown--)
+	for(int i=3+dur*35;i;i--)
 	{
 		if(playingmessage[PlayerNumber()])
 			delay(1);
 	}
+	HUDMessage(s:"";HUDMSG_PLAIN,1,CR_UNTRANSLATED,0,0,0);
+	HUDMessage(s:"";HUDMSG_PLAIN,2,CR_UNTRANSLATED,0,0,0);
 	LocalPlaySound("radiostatic",6);
 	playingmessage[PlayerNumber()]=0;
 }

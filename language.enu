@@ -1,107 +1,89 @@
 [enu default]
 
 MAP2VOX1=
-	"\cCMessage From Controller:\n"
 	"You'll need to reach Dr. Zimmerman, the Sector Administrator,\n"
 	"to get the System Override code.";
 MAP2VOX2=
-	"\cCMessage From Controller:\n"
 	"Shoot the undamaged fuse to disable the laser barrier.";
 MAP2VOX3=
-	"\cCMessage From Controller:\n"
 	"Look for a gasoline can in the Fuel Room,\n"
 	"which is near the Flow Control Room.";
 MAP2VOX4=
-	"\cCMessage From Controller:\n"
 	"Raise the crane and jump on it to ride it to the top.\n\n"
 	"If you miss, use the switch to lower the crane and try again.";
 MAP3VOX1=
-	"\cCMessage From Controller:\n"
 	"The security key is in Security Room B-102,\n"
 	"which overlooks Storage Bay A2.\n\n"
 	"Use the lift in Storage Bay A3 to reach the bridge\n"
 	"over Storage Bay A2, which will take you to B-102.";
 MAP3VOX2=
-	"\cCMessage From Controller:\n"
 	"Find Hazardous Materials Bay B and exit to the East of the building.\n\n"
 	"The bay doors are operated from the control room overlooking HazMat Bay B.\n\n"
 	"To reach the control room, take the stairs from the Cafeteria.";
 MAP3VOX3=
-	"\cCMessage From Controller:\n"
 	"Go all the way to the rear of Supply Room D-301,\n"
 	"and find a duct that will take you back to Sector C.";
 MAP4VOX1=
-	"\cCMessage From Controller:\n"
 	"We just intercepted a Security Bulletin.\n\n"
 	"Dr. Zimmerman is being held in the Secure Holding Facility\n"
 	"in the North-Eastern quadrant of this sector.";
 MAP4VOX2=
-	"\cCMessage From Controller:\n"
 	"Because of the emergency, the security systems have\n"
 	"automatically electrified the gate and the perimeter fence.\n\n"
 	"To safely access the gate you'll need to switch off auxiliary power.\n\n"
 	"You'll need to get to the Turbine Control Room\n"
 	"in the Western part of this sector.";
 MAP4VOX3=
-	"\cCMessage From Controller:\n"
 	"Gate Control at the Secure Holding Facility has been restored.\n\n"
 	"Return to the Guard tower, reachable through the Storage Warehouse\n"
 	"in the Eastern quadrant of this sector.";
 MAP8VOX1=
-	"\cCMessage From Controller:\n"
 	"You will probably find Dr. Zimmerman in\n"
 	"the sub-basement level of the Holding Facility.";
 MAP5VOX1=
-	"\cCMessage From Controller:\n"
 	"There's a drainage tunnel near the dam\n"
 	"that will take you to the Research Labs.";
 MAP5VOX2=
-	"\cCMessage From Controller:\n"
 	"Look for Sergeant Harrison, the Security Officer.\n"
 	"He'll restore your security clearance.\n\n"
 	"You'll find him in the Office Block at the North-Western quadrant\n"
 	"of this sector. Take the bridge over the storage warehouse.";
 MAP5VOX3=
-	"\cCMessage From Controller:\n"
 	"Return to the Research Labs and use your\n"
 	"security clearance to gain access.\n\n"
 	"Take the bridge over the storage warehouse.";
 MAP6VOX1=
-	"\cCMessage From Controller:\n"
 	"You should be able to crawl under the door.";
 MAP6VOX2=
-	"\cCMessage From Controller:\n"
 	"This is a timed switch that will temporarily\n"
 	"raise the gate to the next reservoir chamber.";
 MAP7VOX1=
-	"\cCMessage From Controller:\n"
 	"Keep pressing the switch to fry that sucker.";
 MAP7VOX2=
-	"\cCMessage From Controller:\n"
 	"Use the terminal to upload the virus.\n\n"
 	"We have remotely disabled the critical security protocols.";
 MAP10VX1=
-	"\Dr. Bellmer, my name is Colonel Stinson, with Legion: Earth. We don't have much time,\n"
+	"Dr. Bellmer, my name is Colonel Stinson, with Legion: Earth. We don't have much time,\n"
 	"so listen carefully. The mission to extract you from Black Mesa was compromised,\n"
 	"and your Controller has gone AWOL, and possibly rogue. Unfortunately, we cannot\n"
 	"mobilize a rescue mission yet, so you're on your own for now. Our surveillance\n"
 	"indicates your crash site has only one way in or out. Therefore, your exit strategy\n"
 	"is to return to Black Mesa while we attempt another extraction. Meanwhile,\n"
 	"government and alien forces will continue to hunt you. There's a cavern nearby\n"
-	"where you can seek cover until we can .....";
+	"where you can seek cover until we can...";
 MAP11VX1=
-	"\Dr. Bellmer, you're at the employee in-processing facility. You may recall you went through\n"
+	"Dr. Bellmer, you're at the employee in-processing facility. You may recall you went through\n"
 	"here when you began your mission. The monorail will take you to back to Sector C.\n"
 	"We'll try to regroup once you get there, and work out an effective way to extract you.";
 MAP12VX1=
-	"\We didn't anticipate the total lockdown of Sector C. We can't send transport to your\n"
+	"We didn't anticipate the total lockdown of Sector C. We can't send transport to your\n"
 	"current location because the winds make flying exceedingly treacherous. Proceed\n"
 	"through the canyon until you reach the dam. There are two ways out at that point,\n"
 	"and we'll figure out your best option. Meanwhile, you're probably wondering who we are.\n"
 	"I'm sending you an UnderNet link that provides some background. As to why we're\n"
 	"interested in you, that will be revealed in due time.";
 MAP12VX2=
-	"\Legion: Earth is an organization that was created to protect Earth from threats both\n"
+	"Legion: Earth is an organization that was created to protect Earth from threats both\n"
 	"extra-terrestrial and home-grown. In recent years, that threat has increased as a\n"
 	"result of Anomalous Materials research at the Black Mesa facility in the United States\n"
 	"and by the European Space Consortium. The discovery of PortalTech, otherwise known as\n"
@@ -109,14 +91,14 @@ MAP12VX2=
 	"in a Borderworld known as Xen. We have evidence that human dealings with this species\n"
 	"are paving the way for an invasion of Earth. Our mandate is to stop it.";
 MAP13VX1=
-	"\Too bad you couldn't cross the dam and get out from there. It might have been easier\n"
+	"Too bad you couldn't cross the dam and get out from there. It might have been easier\n"
 	"to extract you from the East. Your best chance now is to take the sewers to the\n"
 	"Weapons Test Lab. There's an open landing area there, and we can set a transport\n"
 	"helicopter down. Government forces control strategic points, while the Xen aliens\n"
 	"roam freely elsewhere. Watch your back. I'm sending you another UnderNet link with\n"
 	"more information on us.";
 MAP13VX2=
-	"\Legion: Earth was first aware of Xen and human collaboration about a year ago. Then,\n"
+	"Legion: Earth was first aware of Xen and human collaboration about a year ago. Then,\n"
 	"we discovered that the European Space Consortium engineered an infiltration into\n"
 	"Black Mesa with the objective of sabotaging the research there. The operative,\n"
 	"one Dr. Rolf Bellmer, succeeded in corrupting vital data at Black Mesa. This gave\n"
@@ -124,37 +106,37 @@ MAP13VX2=
 	"a loose end, and the Consortium attempted to terminate him with extreme prejudice.\n"
 	"This attempt failed, but Dr. Bellmer continues to remain embattled.";
 MAP14VX1=
-	"\Dr. Bellmer, follow these instructions carefully. When you exit the sewers, proceed\n"
+	"Dr. Bellmer, follow these instructions carefully. When you exit the sewers, proceed\n"
 	"to the East Gate. We'll have helicopter transport waiting there to get you out.";
 MAP14VX2=
-	"\Damn! It seems your Controller is one step ahead of us. He has a lot to answer for;\n"
+	"Damn! It seems your Controller is one step ahead of us. He has a lot to answer for;\n"
 	"those were good people we lost on that transport............................................\n"
 	"Okay, Plan B. You'll need to proceed through the Lambda Complex. The security key\n"
 	"will probably be in the Administrator's office. And make sure you collect the\n"
 	"experimental energy weapon they're developing before you head for Lambda.";
 MAP15VX1=
-	"\The Lambda Complex is a series of labs. Be mindful of the freezer section and\n"
+	"The Lambda Complex is a series of labs. Be mindful of the freezer section and\n"
 	"don't stay in there for too long. Also, there's a rumor that your Controller\n"
 	"may be trying to recruit other scientists to his cause. Do not engage him.\n"
 	"I repeat, do not engage your Controller.";
 MAP16VX1=
-	"\You're approaching the core of the Lambda Complex. This is where they conduct\n"
+	"You're approaching the core of the Lambda Complex. This is where they conduct\n"
 	"experiments on live specimens. We'll try to set a transport down on the helipad\n"
 	"leading to the East entrance. But you'll need a security key to make it through\n"
 	"the checkpoint. I'm sending you a final UnderNet link that will make things clearer.";
 MAP16VX2=
-	"\Dr. Rolf Bellmer has proven to be extremely resourceful, both as an undercover operative,\n"
+	"Dr. Rolf Bellmer has proven to be extremely resourceful, both as an undercover operative,\n"
 	"and as a combat technician. Moreover, he possesses a rare combination of advanced scientific\n"
 	"knowledge and survivor's instinct, which makes him an ideal candidate for recruitment to\n"
 	"Legion: Earth. In addition, his time at Black Mesa will give us valuable insights into\n"
 	"operations at that facility, and will allow us to hobble their efforts.";
 MAP16VX3=
-	"\We think the security key is inside the central chamber where the Gargantua is in stasis.\n"
+	"We think the security key is inside the central chamber where the Gargantua is in stasis.\n"
 	"You'll need to disable the laser barrier and drop into the chamber to retrieve the key.\n"
 	"With the malfunctioning door, the only way into the laser control room are the ducts.\n"
 	"Find the Boiler Room next to the Fuel Storage area, and use the ventilation duct.";
 MAP17VX1=
-	"\They've cut power to most sectors, and drained the fuel from the emergency generators.\n"
+	"They've cut power to most sectors, and drained the fuel from the emergency generators.\n"
 	"You may find some fuel in the supply area in the North-East quadrant. But be careful:\n"
 	"the place is swarming with government and alien forces.";
 
@@ -169,7 +151,7 @@ PARANOIDCREDITS06B="Rex Claussen: Game & Level Design, Etc.";
 PARANOIDCREDITS07="Jeff Ligda: Music";
 PARANOIDCREDITS08="Rex Claussen: Voice Acting";
 PARANOIDCREDITS09="David Ferstat: Voice Acting";
-PARANOIDCREDITS10="Björn 'Vader' Ostmann: Play-Testing";
+PARANOIDCREDITS10="BjÃÂ¶rn 'Vader' Ostmann: Play-Testing";
 PARANOIDCREDITS11="Rachael 'Eruanna' Alexanderson: Play-Testing, Trouble-Shooting";
 PARANOIDCREDITS11B="Rachael 'Eruanna' Alexanderson: Models, Play-Testing, Trouble-Shooting";
 PARANOIDCREDITS12="Remmirath aka Morpheus: Play-Testing";
