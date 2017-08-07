@@ -7,7 +7,6 @@ Model HLGrunt1
 	Skin 1 "hgrunthead1.png"
 	Model 2 "hgruntarifle.md2"
 	Skin 2 "hgruntarifle.png"
-	Scale 1 1 1
 
 	FrameIndex HLI1 A 0 225
 	FrameIndex HLI1 A 1 225
@@ -879,7 +878,6 @@ Model HLGrunt2
 	Skin 1 "hgrunthead2.png"
 	Model 2 "hgruntarifle.md2"
 	Skin 2 "hgruntarifle.png"
-	Scale 1 1 1
 
 	FrameIndex HLI1 A 0 225
 	FrameIndex HLI1 A 1 225
@@ -1751,7 +1749,6 @@ Model HLGrunt3
 	Skin 1 "hgrunthead3.png"
 	Model 2 "hgruntarifle.md2"
 	Skin 2 "hgruntarifle.png"
-	Scale 1 1 1
 
 	FrameIndex HLI1 A 0 225
 	FrameIndex HLI1 A 1 225
@@ -2623,7 +2620,6 @@ Model HLGrunt4
 	Skin 1 "hgrunthead1.png"
 	Model 2 "hgruntshotgun.md2"
 	Skin 2 "hgruntshotgun.png"
-	Scale 1 1 1
 
 	FrameIndex HLI1 A 0 225
 	FrameIndex HLI1 A 1 225
@@ -3495,7 +3491,6 @@ Model HLGrunt5
 	Skin 1 "hgrunthead2.png"
 	Model 2 "hgruntshotgun.md2"
 	Skin 2 "hgruntshotgun.png"
-	Scale 1 1 1
 
 	FrameIndex HLI1 A 0 225
 	FrameIndex HLI1 A 1 225
@@ -4367,7 +4362,6 @@ Model HLGrunt6
 	Skin 1 "hgrunthead3.png"
 	Model 2 "hgruntshotgun.md2"
 	Skin 2 "hgruntshotgun.png"
-	Scale 1 1 1
 
 	FrameIndex HLI1 A 0 225
 	FrameIndex HLI1 A 1 225
@@ -5237,7 +5231,6 @@ Model HLGrunt1Dead
 	Skin 0 "hgruntbody.png"
 	Model 1 "hgrunthead1.md2"
 	Skin 1 "hgrunthead1.png"
-	Scale 1 1 1
 
 	FrameIndex HLD2 G 0 470
 	FrameIndex HLD2 G 1 470

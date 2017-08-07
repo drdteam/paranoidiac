@@ -271,7 +271,6 @@ Model HLVortigaunt
 	Path "Models"
 	Model 0 "islave.md2"
 	Skin 0 "islave.png"
-	Scale 1 1 1
 	INTERPOLATEDOUBLEDFRAMES
 
 	FrameIndex HLI1 A 0 1
@@ -478,7 +477,6 @@ model VortiPlasma
 	path "models"
 	Model 0 "plasma_fly.md3"
 	skin 0 "plasma_skin.png"
-	Scale 1.0 1.0 1.0
 
 	frameindex VPLS F 0 0
 	frameindex VPLS G 0 1
@@ -489,7 +487,6 @@ model VortiPlasma
 	path "models"
 	Model 0 "plasma_boom.md3"
 	skin 0 "plasma_skin.png"
-	Scale 1.0 1.0 1.0
 
 	frameindex VPLS A 0 1
 	frameindex VPLS B 0 2
@@ -503,7 +500,6 @@ model VortiPlasma_Bolt
 	path "models"
 	Model 0 "bolt.md3"
 	skin 0 "bolt_skin.png"
-	Scale 1.0 1.0 1.0
 
 	frameindex VPLS A 0 0
 	frameindex VPLS B 0 1
@@ -517,6 +513,7 @@ Model HLBarnacle
 	Model 0 "barnacle.md2"
 	Skin 0 "barnacle.png"
 	Scale 0.8 0.8 0.8
+
 	Frame POSS A 0 "idle01"
 	Frame POSS B 0 "idle02"
 	Frame POSS C 0 "idle03"
@@ -535,6 +532,7 @@ Model HLBarnacle
 	Model 1 "barnacle.md2"
 	Skin 1 "barnacle2.png"
 	Scale 0.8 0.8 0.8
+
 	Frame POSS K 1 "death01"
 	Frame POSS L 1 "death02"
 	Frame POSS M 1 "death03"
@@ -551,7 +549,6 @@ Model HLHornetGrunt
 	Path "Models"
 	Model 0 "agrunt.md2"
 	Skin 0 "agrunt.png"
-	Scale 1 1 1
 	INTERPOLATEDOUBLEDFRAMES
 
 	FrameIndex HLI1 A 0 1
@@ -640,7 +637,6 @@ Model HLGargantua
 	Path "Models"
 	Model 0 "garg.md2"
 	Skin 0 "garg.png"
-	Scale 1 1 1
 	INTERPOLATEDOUBLEDFRAMES
 
 	FrameIndex HLI1 A 0 1
@@ -838,7 +834,6 @@ Model HLGargantua2
 	Path "Models"
 	Model 0 "garg.md2"
 	Skin 0 "garg2.png"
-	Scale 1 1 1
 	INTERPOLATEDOUBLEDFRAMES
 
 	FrameIndex HLI1 A 0 1
@@ -1036,7 +1031,6 @@ Model HLHeadCrab
 	Path "Models"
 	Model 0 "headcrab.md2"
 	Skin 0 "headcrab.png"
-	Scale 1 1 1
 
 	FrameIndex HLI1 A 0 0
 
@@ -1152,7 +1146,6 @@ Model HLBabyHeadCrab
 	Path "Models"
 	Model 0 "baby_headcrab.md2"
 	Skin 0 "baby_headcrab.png"
-	Scale 1 1 1
 
 	FrameIndex HLI1 A 0 0
 
@@ -1274,7 +1267,6 @@ Model HLGonarch
 	Path "Models"
 	Model 0 "big_mom.md2"
 	Skin 0 "big_mom.png"
-	Scale 1 1 1
 	INTERPOLATEDOUBLEDFRAMES
 
 	FrameIndex HLI1 A 0 1
@@ -1446,7 +1438,6 @@ Model HLHoundEye
 	Path "Models"
 	Model 0 "houndeye.md2"
 	Skin 0 "houndeye.png"
-	Scale 1 1 1
 
 	FrameIndex HLI1 A 0 0
 
@@ -1613,7 +1604,6 @@ Model HLBullSquid
 	Path "Models"
 	Model 0 "bullsquid.md2"
 	Skin 0 "bullsquid.png"
-	Scale 1 1 1
 
 	FrameIndex HLI1 A 0 89
 
@@ -1753,7 +1743,6 @@ Model HLController
 	Path "Models"
 	Model 0 "controller.md2"
 	Skin 0 "controller.png"
-	Scale 1 1 1
 
 	FrameIndex HLI1 A 0 131
 
@@ -1946,7 +1935,6 @@ Model HLZombie1
 	Path "Models"
 	Model 0 "zombie1.md2"
 	Skin 0 "zombie1.png"
-	Scale 1 1 1
 
 	FrameIndex HLI1 A 0 0
 
@@ -2085,7 +2073,6 @@ Model HLZombie2
 	Path "Models"
 	Model 0 "zombie2.md2"
 	Skin 0 "zombie2.png"
-	Scale 1 1 1
 
 	FrameIndex HLI1 A 0 0
 
@@ -2224,7 +2211,6 @@ Model HLZombie3
 	Path "Models"
 	Model 0 "zombie3.md2"
 	Skin 0 "zombie3.png"
-	Scale 1 1 1
 
 	FrameIndex HLI1 A 0 0
 
@@ -2363,7 +2349,6 @@ Model HLNihilanth
 	Path "Models"
 	Model 0 "nihilanth.md2"
 	Skin 0 "nihilanth.png"
-	Scale 1 1 1
 	ZOffset 512
 
 	FrameIndex HLI1 A 0 1

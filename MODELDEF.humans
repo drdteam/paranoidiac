@@ -3,7 +3,6 @@ Model RolfBellmer
 	Path "Models"
 	Model 0 "hev_scientist.md2"
 	Skin 0 "hev_scientist.png"
-	Scale 1 1 1
 	INTERPOLATEDOUBLEDFRAMES
 
 	FrameIndex HLI1 A 0 1
@@ -115,7 +114,6 @@ Model RolfBellmer
 	Skin 0 "scientistbody.png"
 	Model 1 "scientisthead3.md2"
 	Skin 1 "scientisthead3.png"
-	Scale 1 1 1
 	INTERPOLATEDOUBLEDFRAMES
 
 	FrameIndex HLI2 A 0 46	//46-61
@@ -232,7 +230,6 @@ Model HLScientist1
 	Skin 0 "scientistbody.png"
 	Model 1 "scientisthead1.md2"
 	Skin 1 "scientisthead1.png"
-	Scale 1 1 1
 	INTERPOLATEDOUBLEDFRAMES
 
 	FrameIndex HLI1 A 0 46	//46-61
@@ -425,7 +422,6 @@ Model HLScientist2
 	Skin 0 "scientistbody.png"
 	Model 1 "scientisthead2.md2"
 	Skin 1 "scientisthead2.png"
-	Scale 1 1 1
 	INTERPOLATEDOUBLEDFRAMES
 
 	FrameIndex HLI1 A 0 46	//46-61
@@ -618,7 +614,6 @@ Model HLScientist3
 	Skin 0 "scientistbody.png"
 	Model 1 "scientisthead3.md2"
 	Skin 1 "scientisthead3.png"
-	Scale 1 1 1
 	INTERPOLATEDOUBLEDFRAMES
 
 	FrameIndex HLI1 A 0 46	//46-61
@@ -811,7 +806,6 @@ Model HLScientist4
 	Skin 0 "scientistbody2.png"
 	Model 1 "scientisthead4.md2"
 	Skin 1 "scientisthead4.png"
-	Scale 1 1 1
 	INTERPOLATEDOUBLEDFRAMES
 
 	FrameIndex HLI1 A 0 46	//46-61
@@ -1004,7 +998,6 @@ Model HLScientist1Dead
 	Skin 0 "scientistbody.png"
 	Model 1 "scientisthead1.md2"
 	Skin 1 "scientisthead1.png"
-	Scale 1 1 1
 
 	FrameIndex HLD1 X 0 193	//194
 	FrameIndex HLD1 X 1 193	//194
@@ -1017,7 +1010,6 @@ Model HLScientist2Dead
 	Skin 0 "scientistbody.png"
 	Model 1 "scientisthead2.md2"
 	Skin 1 "scientisthead2.png"
-	Scale 1 1 1
 
 	FrameIndex HLD1 X 0 193	//194
 	FrameIndex HLD1 X 1 193	//194
@@ -1030,7 +1022,6 @@ Model HLScientist3Dead
 	Skin 0 "scientistbody.png"
 	Model 1 "scientisthead3.md2"
 	Skin 1 "scientisthead3.png"
-	Scale 1 1 1
 
 	FrameIndex HLD1 X 0 193	//194
 	FrameIndex HLD1 X 1 193	//194
@@ -1043,7 +1034,6 @@ Model HLScientist4Dead
 	Skin 0 "scientistbody2.png"
 	Model 1 "scientisthead4.md2"
 	Skin 1 "scientisthead4.png"
-	Scale 1 1 1
 
 	FrameIndex HLD1 X 0 193	//194
 	FrameIndex HLD1 X 1 193	//194
@@ -1056,7 +1046,6 @@ Model HLBarney
 	Skin 0 "barney.png"
 	Model 1 "barneygun1.md2"
 	Skin 1 "barneygun1.png"
-	Scale 1 1 1
 	INTERPOLATEDOUBLEDFRAMES
 
 	FrameIndex HLI1 A 0 1
@@ -1375,7 +1364,6 @@ Model HLBarney
 	Skin 0 "barney.png"
 	Model 1 "barneygun2.md2"
 	Skin 1 "barneygun2.png"
-	Scale 1 1 1
 	INTERPOLATEDOUBLEDFRAMES
 
 	FrameIndex HLI3 E 0 187
@@ -1447,8 +1435,6 @@ Model HLOtis
 	Path "Models"
 	Model 0 "otis2.md2"
 	Skin 0 "otis2.png"
-	Scale 1 1 1
-
 	INTERPOLATEDOUBLEDFRAMES
 
 	FrameIndex HLI3 E 0 1
@@ -1515,7 +1501,6 @@ Model Admin01
 	Skin 0 "zimmerman.png"
 	Model 1 "zimmerman_chair.md3"
 	Skin 1 "zimmerman.png"
-	Scale 1.0 1.0 1.0
 
 	FrameIndex POSS A 0 0
 	FrameIndex POSS A 1 0
