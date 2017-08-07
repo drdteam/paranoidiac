@@ -889,18 +889,18 @@ class ARifle : ParanoidWeapon
 		HWI1 A 0 A_JumpIfInventory("ARClip",1,1);
 		Goto Ready2;
 		HWR1 ABCDEFGHI 1;
-		TNT1 S 0
+		TNT1 S 0 A_PlaySound("halflife/weapons/m16cliprelease",CHAN_WEAPON);
+		HWR1 JKLMNOPQRSTUVWXYZ[ 2;
+		HWR1 \] 1;
+		HWR2 A 1
 		{
-			A_PlaySound("halflife/weapons/m16cliprelease",CHAN_WEAPON);
+			A_PlaySound("halflife/weapons/m16clipinsert",CHAN_WEAPON);
 			while(CountInv("M16HeldAmmo")<50&&CountInv("ARClip"))
 			{
 				A_TakeInventory("ARClip",1,TIF_NOTAKEINFINITE);
 				A_GiveInventory("M16HeldAmmo");
 			}
 		}
-		HWR1 JKLMNOPQRSTUVWXYZ[ 2;
-		HWR1 \] 1;
-		HWR2 A 1 A_PlaySound("halflife/weapons/m16clipinsert",CHAN_WEAPON);
 		HWR2 BCDEFGHIJKLMNOPQ 1;
 		Goto Ready2;
 	}
