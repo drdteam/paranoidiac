@@ -303,7 +303,7 @@ class HLScientist1 : HLMonster
 		HLD1 X -1;
 		Stop;
 	XDeath:
-		TNT1 A 0 A_XenGibs(1);
+		TNT1 A 0 A_HLGibs;
 		Stop;
 	Sit:
 		HLS1 ABCDEFGHIJKLMNOP 5;

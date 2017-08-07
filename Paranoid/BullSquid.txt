@@ -99,7 +99,7 @@ class HLBullSquid : HLMonster
 		HLD1 K -1;
 		Stop;
 	XDeath:
-		TNT1 A 0 A_XenGibs;
+		TNT1 A 0 A_HLGibs(16,"XenGibs");
 		Stop;
 	}
 	void A_BullSquidChase()

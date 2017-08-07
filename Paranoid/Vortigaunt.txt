@@ -115,7 +115,7 @@ class HLVortigaunt : HLMonster
 	XDeath:
 		TNT1 A 0
 		{
-			A_XenGibs(14);
+			A_HLGibs(14,"XenGibs");
 			A_KillChildren(flags:KILS_KILLMISSILES);
 		}
 		Stop;

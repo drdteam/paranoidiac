@@ -86,7 +86,7 @@ class HLHornetGrunt : HLMonster
 		HLD1 J -1;
 		Stop;
 	XDeath:
-		TNT1 A 0 A_XenGibs(20);
+		TNT1 A 0 A_HLGibs(20,"XenGibs");
 		Stop;
 	}
 }
