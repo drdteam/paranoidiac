@@ -1,8 +1,22 @@
-//=========================
-// Zombie & Moaning Zombie
-//=========================
+class HLZombie : RandomSpawner
+{
+	Default
+	{
+		DropItem "HLZombie1";
+		DropItem "HLZombie2";
+		DropItem "HLZombie3";
+	}
+}
+class HLZombieMoan : HLZombie
+{
+	override void PostSpawn(Actor spawned)
+	{
+		let me=HLZombie1(spawned);
+		me.moan=1;
+	}
+}
 
-class HLZombie : HLMonster
+class HLZombie1 : HLMonster
 {
 	bool moan;
 	Default
@@ -98,17 +112,5 @@ class HLZombie : HLMonster
 		Stop;
 	}
 }
-
-class HLZombieMoan : RandomSpawner
-{
-	override void PostSpawn(Actor spawned)
-	{
-		let me=HLZombie(spawned);
-		me.moan=1;
-	}
-	Default
-	{
-		DropItem "HLZombie";
-	}
-
-}
+class HLZombie2 : HLZombie1{}
+class HLZombie3 : HLZombie1{}
