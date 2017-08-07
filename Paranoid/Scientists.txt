@@ -43,6 +43,9 @@ class HLScientistSlumpedSpawner : HLScientistSpawner
 	{
 		let me=HLScientist1(spawned);
 		me.sit=1;
+		me.SetStateLabel("Sit");
+		me.Height=28;
+		me.bNOPAIN=1;
 	}
 }
 
@@ -97,12 +100,6 @@ class HLScientist1 : HLMonster
 	Spawn:
 		HLI1 A 0 NODELAY
 		{
-			if(sit)
-			{
-				Height=28;
-				bNOPAIN=1;
-				return ResolveState("Sit");
-			}
 			if(wanderer)
 				return ResolveState("See");
 			if(!still)
