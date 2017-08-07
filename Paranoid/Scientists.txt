@@ -74,7 +74,7 @@ class HLScientist1 : HLMonster
 	}
 	override bool Used(Actor user)
 	{
-		if(!bFRIGHTENED)
+		if(!bFRIGHTENED&&!sit)
 			A_PlaySound("scientist/greeting");
 		boredom=0;
 		greeting=1;
