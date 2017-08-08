@@ -645,4 +645,6 @@ DoomEdNums
 	31980=OMGSteam
 	31998=OMGFire
 	32001=HLGrunt1Dead
+	32002=FirstAidStation
+	32003=HEVChargingStation
 }

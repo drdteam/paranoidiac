@@ -140,6 +140,46 @@ Model Explosive
 //  Powerups, pickups, keys	//
 ////////////////////////////////
 
+Model FirstAidStation
+{
+	Path "Models"
+	Model 0 "medcharger.md2"
+	Skin 0 "medcharger.png"
+	Model 1 "medchargerb.md2"
+	Skin 1 "medchargerb.png"
+
+	FrameIndex HLI1 A 0 1
+	FrameIndex HLI1 A 1 1
+}
+Model FirstAidStation
+{
+	Path "Models"
+	Model 0 "medcharger.md2"
+	Skin 0 "medcharger2.png"
+	Model 1 "medchargerb.md2"
+	Skin 1 "medchargerb.png"
+
+	FrameIndex HLI1 B 0 1
+	FrameIndex HLI1 B 1 1
+}
+
+Model HEVChargingStation
+{
+	Path "Models"
+	Model 0 "hevcharger.md2"
+	Skin 0 "hevcharger.png"
+
+	FrameIndex HLI1 A 0 1
+}
+Model HEVChargingStation
+{
+	Path "Models"
+	Model 0 "hevcharger.md2"
+	Skin 0 "hevcharger2.png"
+
+	FrameIndex HLI1 B 0 1
+}
+
 Model HEVsuit
 {
 	Path "Models"

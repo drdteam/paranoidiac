@@ -24,41 +24,6 @@ script "AltHudAmmo" ENTER
 	restart;
 }
 
-script "MedStation"(int uses,int tex)
-	{SetResultValue(station(uses,tex,1));}
-script "ArmorStation"(int uses,int tex)
-	{SetResultValue(station(uses,tex,2));}
-function int station(int uses,str tex,int type)
-{
-	int checkvalue=GetActorProperty(0,APROP_Health);
-	str snd1="MEDCHARGE",snd2="MEDCHARGEUSED",texture="XMEDIC02";
-	if(type==2)
-	{
-		checkvalue=CheckInventory("Armor");
-		snd1="HEVCHARGE";
-		snd2="HEVCHARGEUSED";
-		texture="XARMOR02";
-	}
-	if(checkvalue>=100)
-		return 0;
-	else if(uses>4)
-	{
-		ActivatorSound(snd2,127);
-		return 0;
-	}
-	ActivatorSound(snd1,127);
-	if(type==2)
-		GiveInventory("HEVCharge",10);
-	else
-		HealThing(10);
-	if(uses==4)
-	{
-		setlinetexture(tex,SIDE_FRONT,TEXTURE_TOP,texture);
-		setlinetexture(tex,SIDE_FRONT,TEXTURE_BOTTOM,texture);
-	}
-	return 1;
-}
-
 //Hint messages that are run when player uses the inventory item "MessageItem**"
 int playingmessage[8];
 str hintsnd[34][2]=

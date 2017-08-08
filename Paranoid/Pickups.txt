@@ -38,7 +38,7 @@ class HEVbattery : HEVCharge
 	{
 		Radius 4;
 		Height 12;
-		inventory.pickupmessage "Picked up battery pack for HEV Suit!";
+		inventory.pickupmessage "Picked up a battery pack for HEV Suit!";
 		armor.saveamount 15;
 	}
 	states
@@ -113,5 +113,61 @@ class Key2 : Key1
 		Inventory.Pickupmessage "Picked up the red security key";
 		Inventory.Icon "HLKEYRI";
 		height 4;
+	}
+}
+
+class FirstAidStation : Actor
+{
+	override bool Used(Actor user)
+	{
+		if(user.Health>=100)
+			return false;
+		if(!Health)
+		{
+			A_PlaySound("MEDCHARGEUSED");
+			return false;
+		}
+		A_PlaySound("MEDCHARGE");
+		user.GiveInventory("Health",10);
+		Health-=1;
+		if(!Health)
+			SetStateLabel("Death");
+		return false;
+	}
+	Default
+	{
+		+SOLID
+		+NOGRAVITY
+		Height 48;
+		Radius 16;
+		Health 5;
+	}
+	States
+	{
+	Spawn:
+		HLI1 A -1;
+		Stop;
+	Death:
+		HLI1 B -1;
+		Stop;
+	}
+}
+class HEVChargingStation : FirstAidStation
+{
+	override bool Used(Actor user)
+	{
+		if(user.CountInv("BasicArmor")>=100)
+			return false;
+		if(!Health)
+		{
+			A_PlaySound("HEVCHARGEUSED");
+			return false;
+		}
+		A_PlaySound("HEVCHARGE");
+		user.GiveInventory("HEVCharge",10);
+		Health-=1;
+		if(!Health)
+			SetStateLabel("Death");
+		return false;
 	}
 }
