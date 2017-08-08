@@ -61,7 +61,7 @@ function int station(int uses,str tex,int type)
 
 //Hint messages that are run when player uses the inventory item "MessageItem**"
 int playingmessage[8];
-str hintsnd[32][2]=
+str hintsnd[34][2]=
 {
 	{"MAP2VOX1","HINTMAN"},{"MAP2VOX2","HINTMAN"},
 	{"MAP2VOX3","HINTMAN"},{"MAP2VOX4","HINTMAN"},
@@ -72,16 +72,17 @@ str hintsnd[32][2]=
 	{"MAP5VOX2","HINTMAN"},{"MAP5VOX3","HINTMAN"},
 	{"MAP6VOX1","HINTMAN"},{"MAP6VOX2","HINTMAN"},
 	{"MAP7VOX1","HINTMAN"},{"MAP7VOX2","HINTMAN"},
-	{"",""},
+	{"MAP2VOX2","HINTMAN"},
 	{"MAP10VX1","STINSON"},{"MAP11VX1","STINSON"},
 	{"MAP12VX1","STINSON"},{"MAP12VX2","UNDERNET"},
 	{"MAP13VX1","STINSON"},{"MAP13VX2","UNDERNET"},
 	{"MAP14VX1","STINSON"},{"MAP14VX2","STINSON"},
 	{"MAP15VX1","STINSON"},{"MAP16VX1","STINSON"},
 	{"MAP16VX2","UNDERNET"},{"MAP16VX3","STINSON"},
-	{"MAP17VX1","STINSON"}
+	{"MAP17VX1","STINSON"},
+	{"MAP7VOX3",""},{"MAP11VX2",""}
 };
-int delays[32][2]=
+int delays[34][2]=
 {
 	//duration of soundbyte
 	//# of characters
@@ -94,47 +95,77 @@ int delays[32][2]=
 	{13,215},{8,120},
 	{5,43},{7,90},
 	{5,44},{8,97},
-	{0,0},
+	{6,54},
 	{42,604},{17,260},
 	{29,468},{36,581},
 	{28,434},{37,561},
 	{11,163},{26,410},
 	{18,270},{19,322},
 	{28,430},{23,345},
-	{15,228}
+	{15,228},
+	{17,178},{21,274}
 };
-script "HintMessage"(int msg)
+script "HintMessage"(int msg,int source)
 {
-	if(playingmessage[PlayerNumber()])
+	str message;
+	int i,dur,typetime;
+	if(playingmessage[PlayerNumber()]==2)
+		terminate;
+	SetHUDSize(640,480,1);
+	SetFont("smallfont");
+	if(source)
 	{
-		playingmessage[PlayerNumber()]=0;
-		StopSound(0,7);
-		HUDMessage(s:"";HUDMSG_PLAIN,1,CR_UNTRANSLATED,0,0,0);
-		HUDMessage(s:"";HUDMSG_PLAIN,2,CR_UNTRANSLATED,0,0,0);
+		for(i=0;i<8;i++)
+		{
+			SetActivator(0,AAPTR_PLAYER1>>i);
+			if(playingmessage[PlayerNumber()]==1)
+				StopMessage();
+			playingmessage[PlayerNumber()]=2;
+		}
+		message=hintsnd[msg-1][0];
+		dur=delays[msg-1][0];
+		typetime=FixedDiv(dur-1,delays[msg-1][1]);
+		AmbientSound(message,127);
+		SetFont("smallfont");
+		HUDMessageBold(l:message;HUDMSG_TYPEON|HUDMSG_LOG,2,CR_GOLD,80.1,30.1,10.0,typetime,0.05);
+		for(i=3+dur*35;i;i--)
+			delay(1);
+		HUDMessageBold(s:"";HUDMSG_PLAIN,2,CR_UNTRANSLATED,0,0,0);
+		for(i=0;i<8;i++)
+		{
+			SetActivator(0,AAPTR_PLAYER1>>i);
+			playingmessage[PlayerNumber()]=0;
+		}
+		terminate;
 	}
+	if(playingmessage[PlayerNumber()]==1)
+		StopMessage();
 	else
 	{
-		str message=hintsnd[msg-1][0];
-		int dur=delays[msg-1][0];
-		int typetime=FixedDiv(dur-1,delays[msg-1][1]);
 		playingmessage[PlayerNumber()]=1;
+		message=hintsnd[msg-1][0];
+		dur=delays[msg-1][0];
+		typetime=FixedDiv(dur-1,delays[msg-1][1]);
 		LocalPlaySound("radiostatic",6);
 		LocalPlaySound(message,7);
-		SetHUDSize(640,480,1);
+		HUDMessage(l:message;HUDMSG_TYPEON|HUDMSG_LOG,2,CR_GOLD,80.1,30.1,10.0,typetime,0.05);
 		SetFont(hintsnd[msg-1][1]);
 		HUDMessage(s:"A";HUDMSG_PLAIN,1,CR_UNTRANSLATED,0.1,30.1,(10+dur)*1.0);
-		SetFont("smallfont");
-		HUDMessage(l:message;HUDMSG_TYPEON|HUDMSG_LOG,2,CR_GOLD,80.1,30.1,10.0,typetime,0.05);
 	}
-	for(int i=3+dur*35;i;i--)
+	for(i=3+dur*35;i;i--)
 	{
 		if(playingmessage[PlayerNumber()])
 			delay(1);
 	}
-	HUDMessage(s:"";HUDMSG_PLAIN,1,CR_UNTRANSLATED,0,0,0);
-	HUDMessage(s:"";HUDMSG_PLAIN,2,CR_UNTRANSLATED,0,0,0);
+	StopMessage();
+}
+function void StopMessage(void)
+{
 	LocalPlaySound("radiostatic",6);
 	playingmessage[PlayerNumber()]=0;
+	StopSound(0,7);
+	HUDMessage(s:"";HUDMSG_PLAIN,1,CR_UNTRANSLATED,0,0,0);
+	HUDMessage(s:"";HUDMSG_PLAIN,2,CR_UNTRANSLATED,0,0,0);
 }
 function void LocalPlaySound(str snd,int chan)
 	{PlaySound(0,snd,chan,1.0,0,ATTN_STATIC);}

@@ -62,6 +62,10 @@ MAP7VOX1=
 MAP7VOX2=
 	"Use the terminal to upload the virus.\n\n"
 	"We have remotely disabled the critical security protocols.";
+MAP7VOX3=
+	"Warning! Illegal Data Access In Progress. Please Cease Data\n"
+	"Upload Immediately and Surrender to the Enforcement Authorities.\n"
+	"All Exit Vestibules are Being Flooded with Nerve Gas.";
 MAP10VX1=
 	"Dr. Bellmer, my name is Colonel Stinson, with Legion: Earth. We don't have much time,\n"
 	"so listen carefully. The mission to extract you from Black Mesa was compromised,\n"
@@ -75,6 +79,11 @@ MAP11VX1=
 	"Dr. Bellmer, you're at the employee in-processing facility. You may recall you went through\n"
 	"here when you began your mission. The monorail will take you to back to Sector C.\n"
 	"We'll try to regroup once you get there, and work out an effective way to extract you.";
+MAP11VX2=
+	"That you, Dr. Bellmer? Looks like you're stuck here with the rest of us. They've \n"
+	"disabled monorail and gate control. You can't get out that way. [Whoa! Did I \n"
+	"just make a Han Solo reference?] You can try and make it through the canyon, \n"
+	"but I wouldn't recommend it. Good luck.";
 MAP12VX1=
 	"We didn't anticipate the total lockdown of Sector C. We can't send transport to your\n"
 	"current location because the winds make flying exceedingly treacherous. Proceed\n"
@@ -151,7 +160,7 @@ PARANOIDCREDITS06B="Rex Claussen: Game & Level Design, Etc.";
 PARANOIDCREDITS07="Jeff Ligda: Music";
 PARANOIDCREDITS08="Rex Claussen: Voice Acting";
 PARANOIDCREDITS09="David Ferstat: Voice Acting";
-PARANOIDCREDITS10="BjÃÂ¶rn 'Vader' Ostmann: Play-Testing";
+PARANOIDCREDITS10="Björn 'Vader' Ostmann: Play-Testing";
 PARANOIDCREDITS11="Rachael 'Eruanna' Alexanderson: Play-Testing, Trouble-Shooting";
 PARANOIDCREDITS11B="Rachael 'Eruanna' Alexanderson: Models, Play-Testing, Trouble-Shooting";
 PARANOIDCREDITS12="Remmirath aka Morpheus: Play-Testing";

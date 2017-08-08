@@ -1,6 +1,8 @@
 //Map02: Message 1
 class MessageItem01 : CustomInventory
 {
+	int MessageNum;
+	Property MessageNum:MessageNum;
 	Default
 	{
 		Tag "Message";
@@ -9,6 +11,7 @@ class MessageItem01 : CustomInventory
 		inventory.usesound "misc/chat";
 		+INVENTORY.INVBAR
 		+INVENTORY.UNDROPPABLE
+		MessageItem01.MessageNum 1;
 	}
 	States
 	{
@@ -16,7 +19,7 @@ class MessageItem01 : CustomInventory
 		MAIL A -1;
 		Stop;
 	Use:
-		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,1);
+		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,invoker.MessageNum);
 		Fail;
 	}
 }
@@ -27,12 +30,7 @@ class MessageItem02 : MessageItem01
 	Default
 	{
 		Inventory.Icon "MAIL02";
-	}
-	States
-	{
-	Use:
-		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,2);
-		Fail;
+		MessageItem01.MessageNum 2;
 	}
 }
 
@@ -42,12 +40,7 @@ class MessageItem03 : MessageItem01
 	Default
 	{
 		Inventory.Icon "MAIL03";
-	}
-	States
-	{
-	Use:
-		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,3);
-		Fail;
+		MessageItem01.MessageNum 3;
 	}
 }
 
@@ -57,319 +50,118 @@ class MessageItem04 : MessageItem01
 	Default
 	{
 		Inventory.Icon "MAIL04";
-	}
-	States
-	{
-	Use:
-		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,4);
-		Fail;
+		MessageItem01.MessageNum 4;
 	}
 }
 
 //Map03: Message 1
 class MessageItem05 : MessageItem01
-{
-	States
-	{
-	Use:
-		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,5);
-		Fail;
-	}
-}
+	{Default{MessageItem01.MessageNum 5;}}
 
 //Map03: Message 2
 class MessageItem06 : MessageItem02
-{
-	States
-	{
-	Use:
-		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,6);
-		Fail;
-	}
-}
+	{Default{MessageItem01.MessageNum 6;}}
 
 //Map03: Message 3
 class MessageItem07 : MessageItem03
-{
-	States
-	{
-	Use:
-		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,7);
-		Fail;
-	}
-}
+	{Default{MessageItem01.MessageNum 7;}}
 
 //Map04: Message 1
 class MessageItem08 : MessageItem01
-{
-	States
-	{
-	Use:
-		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,8);
-		Fail;
-	}
-}
+	{Default{MessageItem01.MessageNum 8;}}
 
 //Map04: Message 2
 class MessageItem09 : MessageItem02
-{
-	States
-	{
-	Use:
-		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,9);
-		Fail;
-	}
-}
+	{Default{MessageItem01.MessageNum 9;}}
 
 //Map04: Message 3
 class MessageItem10 : MessageItem03
-{
-	States
-	{
-	Use:
-		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,10);
-		Fail;
-	}
-}
-
-//Map04: Message 4
-class MessageItem19 : MessageItem02
-{
-	Default
-	{
-		Inventory.Icon "MAIL04";
-	}
-}
+	{Default{MessageItem01.MessageNum 10;}}
 
 //Map08: Message 1
 class MessageItem11 : MessageItem01
-{
-	States
-	{
-	Use:
-		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,11);
-		Fail;
-	}
-}
+	{Default{MessageItem01.MessageNum 11;}}
 
 //Map05: Message 1
 class MessageItem12 : MessageItem01
-{
-	States
-	{
-	Use:
-		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,12);
-		Fail;
-	}
-}
+	{Default{MessageItem01.MessageNum 12;}}
 
 //Map05: Message 2
 class MessageItem13 : MessageItem02
-{
-	States
-	{
-	Use:
-		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,13);
-		Fail;
-	}
-}
+	{Default{MessageItem01.MessageNum 13;}}
 
 //Map05: Message 3
 class MessageItem14 : MessageItem03
-{
-	States
-	{
-	Use:
-		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,14);
-		Fail;
-	}
-}
+	{Default{MessageItem01.MessageNum 14;}}
 
 //Map06: Message 1
 class MessageItem15 : MessageItem01
-{
-	States
-	{
-	Use:
-		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,15);
-		Fail;
-	}
-}
+	{Default{MessageItem01.MessageNum 15;}}
 
 //Map06: Message 2
 class MessageItem16 : MessageItem02
-{
-	States
-	{
-	Use:
-		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,16);
-		Fail;
-	}
-}
+	{Default{MessageItem01.MessageNum 16;}}
 
 //Map07: Message 1
 class MessageItem17 : MessageItem01
-{
-	States
-	{
-	Use:
-		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,17);
-		Fail;
-	}
-}
+	{Default{MessageItem01.MessageNum 17;}}
 
 //Map07: Message 2
 class MessageItem18 : MessageItem02
-{
-	States
-	{
-	Use:
-		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,18);
-		Fail;
-	}
-}
+	{Default{MessageItem01.MessageNum 18;}}
 
-//Map10: Message 1 (Col. Stinson; MAP10VX1)
+//Map04: Message 4
+class MessageItem19 : MessageItem04
+	{Default{MessageItem01.MessageNum 19;}}
+
+//Map10: Message 1
 class MessageItem20 : MessageItem01
-{
-	States
-	{
-	Use:
-		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,20);
-		Fail;
-	}
-}
+	{Default{MessageItem01.MessageNum 20;}}
 
-//Map11: Message 1 (Col. Stinson; MAP11VX1)
+//Map11: Message 1
 class MessageItem21 : MessageItem01
-{
-	States
-	{
-	Use:
-		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,21);
-		Fail;
-	}
-}
+	{Default{MessageItem01.MessageNum 21;}}
 
-//Map11: Message 2 (Otis) is not done through inventory, as it is via "live" interaction with NPC
-
-//Map12: Message 1 (Col. Stinson; MAP12VX1)
+//Map12: Message 1
 class MessageItem22 : MessageItem01
-{
-	States
-	{
-	Use:
-		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,22);
-		Fail;
-	}
-}
+	{Default{MessageItem01.MessageNum 22;}}
 
-//Map12: Message 2 (UnderNet; MAP12VX2)
+//Map12: Message 2
 class MessageItem23 : MessageItem02
-{
-	States
-	{
-	Use:
-		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,23);
-		Fail;
-	}
-}
+	{Default{MessageItem01.MessageNum 23;}}
 
-//Map13: Message 1 (Col. Stinson; MAP13VX1)
+//Map13: Message 1
 class MessageItem24 : MessageItem01
-{
-	States
-	{
-	Use:
-		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,24);
-		Fail;
-	}
-}
+	{Default{MessageItem01.MessageNum 24;}}
 
-//Map13: Message 2 (UnderNet; MAP13VX2)
+//Map13: Message 2
 class MessageItem25 : MessageItem02
-{
-	States
-	{
-	Use:
-		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,25);
-		Fail;
-	}
-}
+	{Default{MessageItem01.MessageNum 25;}}
 
-//Map14: Message 1 (Col. Stinson; MAP14VX1)
+//Map14: Message 1
 class MessageItem26 : MessageItem01
-{
-	States
-	{
-	Use:
-		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,26);
-		Fail;
-	}
-}
+	{Default{MessageItem01.MessageNum 26;}}
 
-//Map14: Message 2 (Col. Stinson; MAP14VX2)
+//Map14: Message 2
 class MessageItem27 : MessageItem02
-{
-	States
-	{
-	Use:
-		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,27);
-		Fail;
-	}
-}
+	{Default{MessageItem01.MessageNum 27;}}
 
-//Map15: Message 1 (Col. Stinson; MAP15VX1)
+//Map15: Message 1
 class MessageItem28 : MessageItem01
-{
-	States
-	{
-	Use:
-		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,28);
-		Fail;
-	}
-}
+	{Default{MessageItem01.MessageNum 28;}}
 
-//Map16: Message 1 (Col. Stinson; MAP16VX1)
+//Map16: Message 1
 class MessageItem29 : MessageItem01
-{
-	States
-	{
-	Use:
-		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,29);
-		Fail;
-	}
-}
+	{Default{MessageItem01.MessageNum 29;}}
 
-//Map16: Message 2 (UnderNet; MAP16VX2)
+//Map16: Message 2
 class MessageItem30 : MessageItem02
-{
-	States
-	{
-	Use:
-		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,30);
-		Fail;
-	}
-}
+	{Default{MessageItem01.MessageNum 30;}}
 
-//Map16: Message 3 (Col. Stinson; MAP16VX3)
+//Map16: Message 3
 class MessageItem31 : MessageItem03
-{
-	States
-	{
-	Use:
-		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,31);
-		Fail;
-	}
-}
+	{Default{MessageItem01.MessageNum 31;}}
 
-//Map17: Message 1 (Col. Stinson; MAP17VX1)
+//Map17: Message 1
 class MessageItem32 : MessageItem01
-{
-	States
-	{
-	Use:
-		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,32);
-		Fail;
-	}
-}
+	{Default{MessageItem01.MessageNum 32;}}
