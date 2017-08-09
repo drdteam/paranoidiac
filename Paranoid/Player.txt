@@ -25,34 +25,38 @@ class RolfBellmer : PlayerPawn
 	States
 	{
 	Spawn:
-		HLI1 A 1 A_JumpIf(CountInv("ScientistDisguise"),"Spawn2");
+		HLI1 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 2 A_JumpIf(CountInv("ScientistDisguise"),"Spawn2");
+		HLI2 AB 2 A_JumpIf(CountInv("ScientistDisguise"),"Spawn2");
 		Loop;
 	See:
 		HLR1 A 1 A_JumpIf(CountInv("ScientistDisguise"),"See2");
-		HLR1 BCDEFGHIJKLMNOPQRSTUV 1;
+		HLR1 BCDEFGHIJKLMNOPQRSTUVW 1;
 		Loop;
-	Melee:
 	Missile:
-		HLA1 A 1 A_JumpIf(CountInv("ScientistDisguise"),"Missile2");
-		HLA1 BCDEFGHI 1;
+		HLA1 Y 1 A_JumpIf(CountInv("ScientistDisguise"),"Missile2");
+		HLA1 Z[\]FGHI 1;
+		HLA2 AB 1;
+		HLA1 V 2;
 		Goto Spawn;
 	Pain:
-		HLP1 A 1 A_JumpIf(CountInv("ScientistDisguise"),"Pain2");
-		HLP1 DGJ 1;
-		HLP1 M 1 A_Pain;
-		HLP1 PSU 1;
+		HLP1 A 0 A_JumpIf(CountInv("ScientistDisguise"),"Pain2");
+		HLP1 A 1 A_Pain;
+		HLP1 DGJMPSU 1;
 		Goto Spawn;
 	Death:
-		HLD1 A 1 A_JumpIf(CountInv("ScientistDisguise"),"Death2");
-		HLD1 A 1 A_PlaySound("HLPlayerHEVFail",CHAN_VOICE);
-		HLD1 BC 1;
-		HLD1 D 1 A_NoBlocking;
-		HLD1 EFGHIJKLMNOPQRSTUVWXYZ[\] 1;
-		HLD3 ABCDEFGHIJKL 1;
-		HLD3 M -1;
+		HLD1 A 0 A_JumpIf(CountInv("ScientistDisguise"),"Death2");
+		HLD1 A 2
+		{
+			A_PlaySound("HLPlayerHEVFail",CHAN_VOICE);
+			A_NoBlocking();
+		}
+		HLD1 BCDEFG 2;
+		HLD1 H 2 A_PlaySound("halflife/weapons/bodydrop");
+		HLD1 IJKL 2;
+		HLD1 M -1;
 		Stop;
 	Spawn2:
-		HLI2 A 1 A_JumpIf(vel.x!=0||vel.y!=0,"See");
+		HLI2 CCCCCDDDDDEEEEEFFFFFGGGGGHHHHHIIIIIJJJJJKKKKKLLLLLMMMMMNNNNNOOOOOPPPPPQQQQQ 1 A_JumpIf(vel.x!=0||vel.y!=0,"See");
 		Goto Spawn;
 	See2:
 		HLW2 AABBCCDDEEFFGGHHIIJJKKLLMMNNOOPP 1 A_JumpIf(vel.x==0&&vel.y==0,"Spawn");
