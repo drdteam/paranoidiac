@@ -41,40 +41,6 @@ class ParanoidStatusBar : BaseStatusBar
 			DrawFullScreenStuff();
 		}
 	}
-	int,int ammolowhigh(int ammomax)
-	{
-		//MagnumHeldAmmo/BoltHeld
-		if(ammomax==5||ammomax==6)
-			return 2,5;
-		//ShotgunHeldAmmo
-		else if(ammomax==8)
-			return 3,6;
-		//RPGAmmo/HLHornet
-		else if(ammomax==10)
-			return 4,10;
-		//PistolHeldAmmo
-		else if(ammomax==17)
-			return 5,12;
-		//PythonAmmo
-		else if(ammomax==36)
-			return 11,38;
-		//GluonHeldAmmo
-		else if(ammomax==40)
-			return 15,40;
-		//Xbowbolts
-		else if(ammomax==50)
-			return 5,20;
-		//AECell
-		else if(ammomax==100)
-			return 40,400;
-		//PShell
-		else if(ammomax==125)
-			return 15,38;
-		//BClip
-		else if(ammomax==250)
-			return 33,170;
-		return 0,1;
-	}
 	void DrawMainBar(double TicFrac)
 	{
 		let me=CPlayer.mo;
@@ -110,9 +76,12 @@ class ParanoidStatusBar : BaseStatusBar
 		if(CheckWeaponSelected("ARifle"))
 		{
 			DrawImage("i_gren1",(230,197),DI_ITEM_OFFSETS);
-			DrawString(HLBARFONT,FormatNumber(me.CountInv("BClip"),3),(244,193),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor1(me.CountInv("BClip"),50,150));
-			DrawString(HLSTAFONT,FormatNumber(me.CountInv("M16HeldAmmo"),3),(236,182),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor2(me.CountInv("M16HeldAmmo"),15,40));
-			DrawString(HLBARFONT,FormatNumber(me.CountInv("M16Gren"),3),(244,197),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor2(me.CountInv("M16Gren"),4,10));
+			[ammolow,ammohigh]=ammolowhigh(ammotype1.MaxAmount);
+			DrawString(HLBARFONT,FormatNumber(me.CountInv("BClip"),3),(244,193),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor1(me.CountInv("BClip"),ammolow,ammohigh));
+			[ammolow,ammohigh]=ammolowhigh(50);
+			DrawString(HLSTAFONT,FormatNumber(me.CountInv("M16HeldAmmo"),3),(236,182),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor2(me.CountInv("M16HeldAmmo"),ammolow,ammohigh));
+			[ammolow,ammohigh]=ammolowhigh(10);
+			DrawString(HLBARFONT,FormatNumber(me.CountInv("M16Gren"),3),(244,197),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor2(me.CountInv("M16Gren"),ammolow,ammohigh));
 		}
 		else if(ammotype2==null||ammotype2==ammotype1)
 		{
@@ -141,50 +110,25 @@ class ParanoidStatusBar : BaseStatusBar
 		DrawImage("HLAMMO",(248,176),DI_ITEM_OFFSETS);
 		DrawImage("HLAMMO1",(285,176),DI_ITEM_OFFSETS);
 
-		int amt1,maxamt;
 		//Clip values column
-		amt1=GetAmount("PistolHeldAmmo");
-		DrawString(HLBARFONT,FormatNumber(amt1,2),(259,177),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor2(amt1,5,12));
-		amt1=GetAmount("MagnumHeldAmmo");
-		DrawString(HLBARFONT,FormatNumber(amt1,2),(259,181),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor2(amt1,2,5));
-		amt1=GetAmount("ShotgunHeldAmmo");
-		DrawString(HLBARFONT,FormatNumber(amt1,2),(259,185),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor2(amt1,3,6));
-		amt1=GetAmount("M16HeldAmmo");
-		DrawString(HLBARFONT,FormatNumber(amt1,2),(259,189),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor2(amt1,15,40));
-		amt1=GetAmount("GluonHeldAmmo");
-		DrawString(HLBARFONT,FormatNumber(amt1,2),(296,177),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor2(amt1,15,40));
-		amt1=GetAmount("BoltHeld");
-		DrawString(HLBARFONT,FormatNumber(amt1,2),(296,181),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor2(amt1,15,40));
-		amt1=GetAmount("HLHornet");
-		DrawString(HLBARFONT,FormatNumber(amt1,2),(296,185),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor2(amt1,15,40));
+		AmmoColumn(1,"PistolHeldAmmo",259,177);
+		AmmoColumn(1,"MagnumHeldAmmo",259,181);
+		AmmoColumn(1,"ShotgunHeldAmmo",259,185);
+		AmmoColumn(1,"M16HeldAmmo",259,189);
+		AmmoColumn(1,"GluonHeldAmmo",296,177);
+		AmmoColumn(1,"BoltHeld",296,181);
+		AmmoColumn(1,"HLHornet",296,185);
 
 		//Total held ammo column/Max ammo capacity column
-		[amt1,maxamt]=GetAmount("BClip");
-		DrawString(HLBARFONT,FormatNumber(amt1,3),(270,177),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor1(amt1,33,170));
-		DrawString(HLBARFONT,FormatNumber(maxamt,3),(281,177),DI_TEXT_ALIGN_RIGHT,Font.FindFontColor('HLYellow3'));
-		DrawString(HLBARFONT,FormatNumber(amt1,3),(270,189),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor1(amt1,50,150));
-		DrawString(HLBARFONT,FormatNumber(maxamt,3),(281,189),DI_TEXT_ALIGN_RIGHT,Font.FindFontColor('HLYellow3'));
-		[amt1,maxamt]=GetAmount("PythonAmmo");
-		DrawString(HLBARFONT,FormatNumber(amt1,3),(270,181),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor1(amt1,11,38));
-		DrawString(HLBARFONT,FormatNumber(maxamt,3),(281,181),DI_TEXT_ALIGN_RIGHT,Font.FindFontColor('HLYellow3'));
-		[amt1,maxamt]=GetAmount("PShell");
-		DrawString(HLBARFONT,FormatNumber(amt1,3),(270,185),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor1(amt1,15,38));
-		DrawString(HLBARFONT,FormatNumber(maxamt,3),(281,185),DI_TEXT_ALIGN_RIGHT,Font.FindFontColor('HLYellow3'));
-		[amt1,maxamt]=GetAmount("M16Gren");
-		DrawString(HLBARFONT,FormatNumber(amt1,3),(270,193),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor1(amt1,4,10));
-		DrawString(HLBARFONT,FormatNumber(maxamt,3),(281,193),DI_TEXT_ALIGN_RIGHT,Font.FindFontColor('HLYellow3'));
-		[amt1,maxamt]=GetAmount("RPGAmmo");
-		DrawString(HLBARFONT,FormatNumber(amt1,3),(270,197),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor1(amt1,4,10));
-		DrawString(HLBARFONT,FormatNumber(maxamt,3),(281,197),DI_TEXT_ALIGN_RIGHT,Font.FindFontColor('HLYellow3'));
-		[amt1,maxamt]=GetAmount("AECell");
-		DrawString(HLBARFONT,FormatNumber(amt1,3),(307,177),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor1(amt1,4,10));
-		DrawString(HLBARFONT,FormatNumber(maxamt,3),(318,177),DI_TEXT_ALIGN_RIGHT,Font.FindFontColor('HLYellow3'));
-		[amt1,maxamt]=GetAmount("XBowBolts");
-		DrawString(HLBARFONT,FormatNumber(amt1,3),(307,181),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor1(amt1,4,10));
-		DrawString(HLBARFONT,FormatNumber(maxamt,3),(318,181),DI_TEXT_ALIGN_RIGHT,Font.FindFontColor('HLYellow3'));
-		[amt1,maxamt]=GetAmount("HLHornet");
-		DrawString(HLBARFONT,FormatNumber(amt1,3),(307,185),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor1(amt1,4,10));
-		DrawString(HLBARFONT,FormatNumber(maxamt,3),(318,185),DI_TEXT_ALIGN_RIGHT,Font.FindFontColor('HLYellow3'));
+		AmmoColumn(2,"BClip",270,177);
+		AmmoColumn(2,"PythonAmmo",270,181);
+		AmmoColumn(2,"PShell",270,185);
+		AmmoColumn(2,"BClip",270,189);
+		AmmoColumn(2,"M16Gren",270,193);
+		AmmoColumn(2,"RPGAmmo",270,197);
+		AmmoColumn(2,"AECell",307,177);
+		AmmoColumn(2,"XBowBolts",307,181);
+		AmmoColumn(2,"HLHornet",307,185);
 
 		if(me.InvSel!=null&&!level.NoInventoryBar)
 		{
@@ -195,7 +139,21 @@ class ParanoidStatusBar : BaseStatusBar
 		}
 		if(isInventoryBarVisible())
 			DrawInventoryBar(diparms,(0,146),6,DI_ITEM_LEFT_TOP);
-
+	}
+	int,int ammolowhigh(int ammomax)
+		{return ammomax/4,ammomax*9/10;}
+	void AmmoColumn(bool mode=1;class<inventory> ammotype,int coord1,int coord2)
+	{
+		int amt,maxamt,ammolow,ammohigh;
+		[amt,maxamt]=GetAmount(ammotype);
+		[ammolow,ammohigh]=ammolowhigh(maxamt);
+		if(mode==1)
+			DrawString(HLBARFONT,FormatNumber(amt,2),(coord1,coord2),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor2(amt,ammolow,ammohigh));
+		else if(mode==2)
+		{
+			DrawString(HLBARFONT,FormatNumber(amt,3),(coord1,coord2),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor1(amt,ammolow,ammohigh));
+			DrawString(HLBARFONT,FormatNumber(maxamt,3),(coord1+11,coord2),DI_TEXT_ALIGN_RIGHT,Font.FindFontColor('HLYellow3'));
+		}
 	}
 	int ParanoidHudColor1(int amt,int low,int high)
 	{
