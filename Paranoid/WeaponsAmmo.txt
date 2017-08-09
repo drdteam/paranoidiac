@@ -204,7 +204,7 @@ class Crowbar : ParanoidWeapon
 		Height 4;
 		Weapon.Kickback 0;
 		Inventory.PickupSound "misc/i_pkup";
-		Inventory.PickupMessage "Picked up a Crowbar";
+		Inventory.PickupMessage "Picked up a crowbar.";
 		Obituary "%k shoved %o's crowbar where the sun don't shine.";
 		+WEAPON.MELEEWEAPON
 		-WEAPON.NOALERT
@@ -316,7 +316,7 @@ class PistolPickup : ParanoidWeaponGiver
 {
 	Default
 	{
-		Inventory.PickupMessage "You picked up a Beretta.";
+		Inventory.PickupMessage "Picked up a Beretta.";
 		ParanoidWeaponGiver.Weapon1 "PistolHeldAmmo","BClip",17;
 		DropItem "Beretta";
 	}
@@ -334,7 +334,7 @@ class Beretta : ParanoidWeapon
 		Weapon.AmmoUse2 1;
 		Weapon.AmmoType "BClip";
 		Weapon.AmmoType2 "PistolHeldAmmo";
-		Inventory.PickupMessage "You picked up a Beretta.";
+		Inventory.PickupMessage "Picked up a Beretta.";
 		Obituary "%o was out-gunned by %k's Beretta.";
 		Decal "BulletChip";
 		Inventory.Icon "i_pist1";
@@ -434,7 +434,7 @@ class BClip : Ammo
 		Radius 8;
 		Height 4;
 		Inventory.PickupSound "misc/w_pkup";
-		Inventory.PickupMessage "Picked up a clip.";
+		Inventory.PickupMessage "Picked up a Beretta magazine.";
 		Inventory.Amount 17;
 		Inventory.MaxAmount 250;
 		Ammo.BackpackAmount 17;
@@ -457,7 +457,7 @@ class R357Pickup : ParanoidWeaponGiver
 {
 	Default
 	{
-		Inventory.PickupMessage "A .357 Magnum! You Feelin' Lucky, Punk?";
+		Inventory.PickupMessage "Picked up a .357 Magnum revolver. You Feel Lucky, Punk!?";
 		ParanoidWeaponGiver.Weapon1 "MagnumHeldAmmo","PythonAmmo",6;
 		DropItem "Python";
 	}
@@ -476,7 +476,7 @@ class Python : ParanoidWeapon
 		Weapon.AmmoUse2 1;
 		Weapon.AmmoType "PythonAmmo";
 		Weapon.AmmoType2 "MagnumHeldAmmo";
-		Inventory.PickupMessage "A .357 Magnum! You Feelin' Lucky, Punk?";
+		Inventory.PickupMessage "Picked up a .357 Magnum revolver. You Feel Lucky, Punk!?";
 		Obituary "%o's armor was pierced by %k's Python.";
 		Decal "BulletChip";
 		Inventory.Icon "i_pist2";
@@ -558,7 +558,7 @@ class PythonAmmo : Ammo
 		Radius 6;
 		Height 4;
 		Inventory.PickupSound "misc/w_pkup";
-		Inventory.PickupMessage "Picked up a box of .357 calibers.";
+		Inventory.PickupMessage "Picked up a box of .357 Magnum ammo.";
 		Inventory.Amount 12;
 		Inventory.MaxAmount 36;
 		Ammo.BackpackAmount 6;
@@ -578,7 +578,7 @@ class PythonAmmo1 : PythonAmmo
 	Default
 	{
 		Radius 4;
-		Inventory.PickupMessage "Picked up six 357 caliber bullets.";
+		Inventory.PickupMessage "Picked up a speedloader of .357 Magnum ammo.";
 		Inventory.Amount 6;
 	}
 }
@@ -591,7 +591,7 @@ class ShotgunPickup : ParanoidWeaponGiver
 {
 	Default
 	{
-		Inventory.PickupMessage "You got the shotgun!";
+		Inventory.PickupMessage "Picked up a shotgun.";
 		ParanoidWeaponGiver.Weapon1 "ShotgunHeldAmmo","PShell",8;
 		DropItem "PShotgun";
 	}
@@ -621,7 +621,7 @@ class Pshotgun : ParanoidWeapon
 		Weapon.AmmoUse2 1;
 		Weapon.AmmoType "PShell";
 		Weapon.AmmoType2 "ShotgunHeldAmmo";
-		Inventory.PickupMessage "You got the shotgun!";
+		Inventory.PickupMessage "Picked up a shotgun.";
 		Obituary "%o swallowed %k's lead pellets.";
 		Decal "BulletChip";
 		Inventory.Icon "i_sgun1";
@@ -773,7 +773,7 @@ class M16Pickup : ParanoidWeaponGiver
 {
 	Default
 	{
-		Inventory.PickupMessage "You got the 9mm Assault Rifle";
+		Inventory.PickupMessage "Picked up a 9mm assault rifle.";
 		ParanoidWeaponGiver.Weapon1 "M16HeldAmmo","ARClip",25;
 		DropItem "ARifle";
 	}
@@ -819,7 +819,7 @@ class ARifle : ParanoidWeapon
 		Weapon.AmmoUse2 1;
 		Weapon.AmmoType "ARClip";
 		Weapon.AmmoType2 "M16ClipGren";
-		Inventory.PickupMessage "You got the 9mm Assault Rifle";
+		Inventory.PickupMessage "Picked up a 9mm assault rifle.";
 		Obituary "%o felt %k's m16.";
 		Decal "BulletChip";
 		Inventory.Icon "i_arifl1";
@@ -985,7 +985,7 @@ class ARClip : Ammo
 		Radius 8;
 		Height 4;
 		Inventory.PickupSound "misc/w_pkup";
-		Inventory.PickupMessage "Picked up a clip.";
+		Inventory.PickupMessage "Picked up an assault rifle magazine.";
 		Inventory.Amount 25;
 		Inventory.MaxAmount 250;
 		Ammo.BackpackAmount 25;
@@ -1010,7 +1010,7 @@ class ARAmmo : ARClip
 	{
 		Radius 12;
 		Height 8;
-		Inventory.PickupMessage "Picked up a box of 9mm bullets.";
+		Inventory.PickupMessage "Picked up a box of 9mm ammo.";
 		Inventory.Amount 50;
 	}
 }
@@ -1024,7 +1024,7 @@ class M16Gren : Ammo
 	Default
 	{
 		Tag "Grenade";
-		Inventory.PickupMessage "Picked up two M16 Grenades.";
+		Inventory.PickupMessage "Picked up two 40mm Grenades.";
 		Inventory.Amount 2;
 		Inventory.MaxAmount 10;
 		Ammo.BackpackAmount 2;
@@ -1053,7 +1053,7 @@ class RPGLauncher : ParanoidWeapon
 		+FLOORCLIP
 		-WEAPON.NOALERT
 		-WEAPON.AMMO_CHECKBOTH
-		Inventory.PickupMessage "You just got an RPG Launcher! Let's blow things up!";
+		Inventory.PickupMessage "Picked up an RPG Launcher! Let's blow things up!";
 		Weapon.AmmoUse 1;
 		Weapon.AmmoGive 2;
 		Weapon.AmmoType "RPGAmmo";
@@ -1220,7 +1220,7 @@ class XBow : ParanoidWeapon
 		Weapon.AmmoGive 5;
 		Weapon.AmmoUse 1;
 		Weapon.AmmoUse2 1;
-		Inventory.PickupMessage "You got the crossbow! Snipe and impale!";
+		Inventory.PickupMessage "Picked up a crossbow. Snipe and impale!";
 		weapon.upsound "";
 		Tag "Crossbow";
 		+WEAPON.NOAUTOFIRE
@@ -1389,7 +1389,7 @@ class XBowBolts : Ammo
 		+FLOORCLIP
 		Radius 8;
 		Height 4;
-		inventory.pickupmessage "Picked up a clip of crossbow bolts";
+		inventory.pickupmessage "Picked up a clip of crossbow bolts.";
 		inventory.pickupsound "misc/w_pkup";
 		inventory.amount 5;
 		inventory.maxamount 50;
@@ -1408,7 +1408,7 @@ class XBowBoltSingle : XBowBolts
 {
 	Default
 	{
-		inventory.pickupmessage "Picked up a crossbow bolt";
+		inventory.pickupmessage "Picked up a crossbow bolt.";
 		inventory.amount 1;
 	}
 }
@@ -1473,7 +1473,7 @@ class GluonGun : ParanoidWeapon
 		Weapon.AmmoGive 40;
 		Weapon.UpSound "weapons/plasma/draw";
 		Weapon.SelectionOrder 10333;
-		Inventory.PickupMessage "You found the Gluon Gun.";
+		Inventory.PickupMessage "Picked up the Gluon Gun.";
 		+FLOORCLIP
 		Tag "Gluon gun";
 		Scale .8;
@@ -1913,7 +1913,7 @@ class AECell : Ammo
 		+FLOORCLIP
 		radius 8;
 		height 8;
-		inventory.pickupmessage "Picked up depleted U-235.";
+		inventory.pickupmessage "Picked up some depleted U-235.";
 		inventory.amount 20;
 		inventory.maxamount 100;
 		inventory.pickupsound "misc/w_pkup";
@@ -1947,7 +1947,7 @@ class HornetGun : ParanoidWeapon
 		Weapon.AmmoGive1 10;
 		Weapon.AmmoUse1 1;
 		Weapon.AmmoUse2 1;
-		Inventory.PickupMessage "You swiped an alien hornet gun!";
+		Inventory.PickupMessage "Picked up an alien hornet gun.";
 		Inventory.PickupSound "reilsss/weapons/demoncalleridlebio";
 		weapon.upsound "weapons/draw";
 		Scale .095;

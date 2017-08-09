@@ -8,7 +8,7 @@ class HEVSuit : BasicArmorPickup
 	{
 		radius 16;
 		height 52;
-		inventory.pickupmessage "Picked up the HEV Suit!";
+		Inventory.PickupMessage "Acquired the HEV Suit!";
 		armor.saveamount 100;
 		armor.savepercent 50;
 		Inventory.Icon "i_arm2";
@@ -38,7 +38,7 @@ class HEVbattery : HEVCharge
 	{
 		Radius 4;
 		Height 12;
-		inventory.pickupmessage "Picked up a battery pack for HEV Suit!";
+		Inventory.PickupMessage "Picked up a battery pack for the HEV Suit.";
 		armor.saveamount 15;
 	}
 	states
@@ -55,7 +55,7 @@ class Medkit : Health
 	{
 		Radius 8;
 		Height 4;
-		inventory.pickupmessage "Picked up a field medical kit!";
+		Inventory.PickupMessage "Picked up a field medical kit.";
 		Inventory.Amount 15;
 	}
 	states
@@ -93,7 +93,7 @@ class Key1 : FakeInventory
 {
 	Default
 	{
-		Inventory.Pickupmessage "Picked up the blue security key";
+		Inventory.PickupMessage "Picked up the blue security key.";
 		Inventory.Icon "HLKEYBI";
 		radius 4;
 		height 2;
@@ -110,7 +110,7 @@ class Key2 : Key1
 {
 	Default
 	{
-		Inventory.Pickupmessage "Picked up the red security key";
+		Inventory.PickupMessage "Picked up the red security key.";
 		Inventory.Icon "HLKEYRI";
 		height 4;
 	}
