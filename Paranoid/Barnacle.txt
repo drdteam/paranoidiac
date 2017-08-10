@@ -34,10 +34,10 @@ class HLBarnacle : Actor
 		POSS BCB 4 A_Look;
 		Loop;
 	See:
-		POSS AA 4 A_Chase;
+		POSS AA 4 A_BarnacleChase;
 		POSS A 4 A_Jump(96,1);
 		Loop;
-		POSS BCB 4 A_Chase;
+		POSS BCB 4 A_BarnacleChase;
 		Loop;
 	Missile:
 		POSS DEF 3 A_FaceTarget;
@@ -64,6 +64,8 @@ class HLBarnacle : Actor
 		POSS S -1;
 		Stop;
 	}
+	void A_BarnacleChase()
+		{A_Chase(null,"Missile",CHF_NODIRECTIONTURN);}
 }
 
 class BarnacleSpitBall : Actor
