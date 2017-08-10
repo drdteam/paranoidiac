@@ -395,11 +395,11 @@ DoomEdNums
 	30016=AmmoPack
 	30017=M16Gren
 	30018=PythonAmmo1
-	30019=XBow
+	30019=XBowPickup
 	30020=XBowBolts
 	30021=XBowBoltSingle
 	30022=Missile
-	30023=GluonGun
+	30023=GluonGunPickup
 	30024=AECell
 	30025=HornetGun
 	30026=Explosive
