@@ -37,6 +37,7 @@ class OMGOrangeSpark : SwitchableDecoration
 				float ang=frandom(0,360),push=frandom(0,2);
 				thisspark.vel.x+=(sin(ang)*push);
 				thisspark.vel.y+=(cos(ang)*push);
+				thisspark.gravity=frandom(.125,1);
 			}
 		}
 	Inactive:
