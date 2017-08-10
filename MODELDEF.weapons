@@ -842,6 +842,20 @@ Model RPGLauncher
 	FrameIndex HWU1 \ 0 314
 }
 
+Model XBowPickup
+{
+	Path "Models"
+	Model 0 "xbow1.md3"
+	Skin 0 "xbowskin.png"
+
+	FrameIndex POSS A 0 0
+
+	Model 1 "xbow2.md3"
+	Skin 1 "xbowskin.png"
+	Scale 0.75 0.75 0.75
+
+	FrameIndex POSS A 1 0
+}
 Model XBow
 {
 	Path "Models"
@@ -856,7 +870,6 @@ Model XBow
 
 	FrameIndex POSS A 1 0
 }
-
 Model XBow
 {
 	Path "Models"
@@ -1317,12 +1330,19 @@ Model XBow
 	FrameIndex HWD1 P 0 691
 }
 
+Model GluonGunPickup
+{
+	Path "Models"
+	Model 0 "gluongun.md3"
+	Skin 0 "gluongun.png"
+
+	FrameIndex POSS A 0 0
+}
 Model GluonGun
 {
 	Path "Models"
 	Model 0 "gluongun.md3"
 	Skin 0 "gluongun.png"
-	Scale 0.75 0.75 0.75
 
 	FrameIndex POSS A 0 0
 }
