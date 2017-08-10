@@ -150,35 +150,46 @@ MAP17VX1=
 	"the place is swarming with government and alien forces.";
 
 PARANOIDCREDITS01="Paranoid was a production of The Persecution Complex.";
-PARANOIDCREDITS01B="Paranoiac was a production of The Persecution Complex.";
 PARANOIDCREDITS02="The Team:";
-PARANOIDCREDITS03="DB Thanatos: Enemies, Weapons";
-PARANOIDCREDITS04="Travis 'solarsnowfall' Miller: Special Effects";
-PARANOIDCREDITS05="Nigel 'Enjay' Rowand: Models, Menu, Etc.";
-PARANOIDCREDITS06="Rex Claussen: Maps, Game Design, Etc.";
-PARANOIDCREDITS06B="Rex Claussen: Game & Level Design, Etc.";
-PARANOIDCREDITS07="Jeff Ligda: Music";
-PARANOIDCREDITS08="Rex Claussen: Voice Acting";
-PARANOIDCREDITS09="David Ferstat: Voice Acting";
-PARANOIDCREDITS10="Björn 'Vader' Ostmann: Play-Testing";
-PARANOIDCREDITS11="Rachael 'Eruanna' Alexanderson: Play-Testing, Trouble-Shooting";
-PARANOIDCREDITS11B="Rachael 'Eruanna' Alexanderson: Models, Play-Testing, Trouble-Shooting";
-PARANOIDCREDITS12="Remmirath aka Morpheus: Play-Testing";
-PARANOIDCREDITS12B="Ed The Bat: Co-Op Gameplay";
-PARANOIDCREDITS12C="Rachael 'Eruanna' Alexanderson: Voice Acting";
-PARANOIDCREDITS12D="Rex Claussen: Voice Acting";
-PARANOIDCREDITS12E="Kappes Buur: Play-Testing, Trouble-Shooting";
-PARANOIDCREDITS12F="Gez: Play-Testing, Trouble-Shooting";
-PARANOIDCREDITS12G="The Ultimate DooMer: Play-Testing";
-PARANOIDCREDITS12H="Graf Zahl: Trouble-Shooting";
-PARANOIDCREDITS13="Special Thanks To:";
-PARANOIDCREDITS14="id Software, Valve Software, Randy Heit, Graf Zahl";
-PARANOIDCREDITS15="Additional Thanks To:";
-PARANOIDCREDITS16="W. Sitters & BlackRayne for many models";
-PARANOIDCREDITS16B="W. Sitters for many models";
-PARANOIDCREDITS16C="BlackRayne for many models";
-PARANOIDCREDITS17="Patrick 'Janitor' Pineda";
-PARANOIDCREDITS17B="Ethan 'GooberMan' Watson: for the orbiting island code";
-PARANOIDCREDITS17C="Daniel 'Tormentor667' Gimmer: for the excellent promo video";
-PARANOIDCREDITS18="And the good folks at the ZDooM forums for their assistance";
-PARANOIDCREDITS18B="And the good folks at the ZDooM & DRDTeam forums for their assistance";
+PARANOIDCREDITS03="Game & Level Design:\n\n"
+	"Rex Claussen";
+PARANOIDCREDITS04="Quality Control & Co-Op Gameplay:\n\n"
+	"Ed the Bat";
+PARANOIDCREDITS05="Enemy and Weapon Code:\n\n"
+	"DB Thanatos\n"
+	"Ed the Bat";
+PARANOIDCREDITS06="Special Effects:\n\n"
+	"Travis 'solarsnowfall' Miller";
+PARANOIDCREDITS07="Menu Design\n\n"
+	"Nigel 'Enjay' Rowand";
+PARANOIDCREDITS08="Models:\n\n"
+	"Nigel 'Enjay' Rowand\n"
+	"Rachael 'Eruanna' Alexanderson\n"
+	"W. Sitters\n"
+	"BlackRayne";
+PARANOIDCREDITS09="Music:\n\n"
+	"Jeff Ligda";
+PARANOIDCREDITS10="Voice Acting:\n\n"
+	"Rex Claussen\n"
+	"David Ferstat\n"
+	"Rachael 'Eruanna' Alexanderson";
+PARANOIDCREDITS11="Play-Testing:\n\n"
+	"Björn 'Vader' Ostmann\n"
+	"Rachael 'Eruanna' Alexanderson\n"
+	"Remmirath aka Morpheus\n"
+	"Kappes Buur\n"
+	"Gez\n"
+	"The Ultimate DooMer";
+PARANOIDCREDITS12="Trouble-Shooting:\n\n"
+	"Rachael 'Eruanna' Alexanderson\n"
+	"Kappes Buur\n"
+	"Gez\n"
+	"Graf Zahl\n"
+	"Ed the Bat";
+PARANOIDCREDITS13="Special Thanks To:\n\n"
+	"id Software, Valve Software, Randy Heit, Graf Zahl";
+PARANOIDCREDITS14="Additional Thanks To:\n\n"
+	"Patrick 'Janitor' Pineda\n"
+	"Ethan 'GooberMan' Watson: for the orbiting island code\n"
+	"Daniel 'Tormentor667' Gimmer: for the excellent promo video\n"
+	"And the good folks at the ZDooM & DRDTeam forums for their assistance";
