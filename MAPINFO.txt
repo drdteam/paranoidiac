@@ -143,10 +143,7 @@ adddefaultmap
 	sky1=HLSKY3
 }
 
-map map10 "Smoke on the Water, The Fire in the Sky."
-{
-	PrecacheSounds="10Earth"
-}
+map map10 "Smoke on the Water, The Fire in the Sky."{}
 
 adddefaultmap
 {
@@ -155,12 +152,9 @@ adddefaultmap
 
 map map11 "Fly in a Web."
 {
-	PrecacheSounds="01Earth","11Earth","MAP11VX2"
+	PrecacheSounds="11Earth","32Trans","MAP11VX2"
 }
-map map12 "How Green, the Valley."
-{
-	PrecacheSounds="01Earth"
-}
+map map12 "How Green, the Valley."{}
 
 adddefaultmap
 {
@@ -169,15 +163,14 @@ adddefaultmap
 
 map map13 "Sewer Rat."
 {
-	PrecacheSounds="01Earth","13Earth"
+	PrecacheSounds="13Earth"
 }
 map map14 "Run, Rabbit, Run!"
 {
-	PrecacheSounds="01Earth","14Earth"
+	PrecacheSounds="14Earth","34Trans"
 }
 map map15 "When Hell Freezes Over."
 {
-	PrecacheSounds="01Earth"
 	hazardcolor="80 a0 ff"
 	hazardflash="40 80 ff"
 }
@@ -189,15 +182,15 @@ adddefaultmap
 
 map map16 "Play the Mad Scientist."
 {
-	PrecacheSounds="01Earth","16Earth","16ZEarth"
+	PrecacheSounds="16Earth","16ZEarth"
 }
 map map17 "Painted into a Corner."
 {
-	PrecacheSounds="01Earth","17Earth"
+	PrecacheSounds="17Earth"
 }
 map map18 "Cavernicolous."
 {
-	PrecacheSounds="18Earth","18ZEarth"
+	PrecacheSounds="18ZEarth","36Trans"
 }
 
 adddefaultmap
@@ -206,28 +199,27 @@ adddefaultmap
 }
 map map19 "Island Hopping."
 {
-	PrecacheSounds="19Xen"
 	AirControl=.25
 }
 map map20 "Monarch Gonarch."
 {
-	PrecacheSounds="20Xen"
+	Music="20Xen"
 	AirControl=.25
 }
-
 map map21 "Xenophobia."
 {
-	PrecacheSounds="21Xen","21YXen","21ZXen"
 	next=EndSequence,"ParaEndScroll"
 }
 map map22 "Six Ways to Die."
 {
-	PrecacheSounds="22SixWay"
+	Music="22SixWay"
 }
 map map23 "SpaceX."
 {
-	PrecacheSounds="23Space"
-	PrecacheTextures="XMETL08","XMETL09","XMETL10","XMETL08A","XMETL08B","XMETL08C","XMETL09A","XMETL09B","XMETL09C","XMETL09D","XMETL09E","XMETL09F","XMETL10A","XMETL10B","XMETL10C","XMETL10D","XMETL10E"
+	Music="23Space"
+	PrecacheTextures="XMETL08","XMETL09","XMETL10","XMETL08A","XMETL08B","XMETL08C",
+		"XMETL09A","XMETL09B","XMETL09C","XMETL09D","XMETL09E","XMETL09F","XMETL10A",
+		"XMETL10B","XMETL10C","XMETL10D","XMETL10E"
 	next=EndSequence,"ParaEndScroll"
 }
 
