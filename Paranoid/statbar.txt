@@ -142,7 +142,7 @@ class ParanoidStatusBar : BaseStatusBar
 	}
 	int,int ammolowhigh(int ammomax)
 		{return ammomax/4,ammomax*9/10;}
-	void AmmoColumn(bool mode=1;class<inventory> ammotype,int coord1,int coord2)
+	void AmmoColumn(int mode,class<inventory> ammotype,int coord1,int coord2)
 	{
 		int amt,maxamt,ammolow,ammohigh;
 		[amt,maxamt]=GetAmount(ammotype);
