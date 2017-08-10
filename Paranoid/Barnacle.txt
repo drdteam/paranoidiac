@@ -125,6 +125,8 @@ class BarnacleSpitParticle : BarnacleSpitBall
 		Loop;
 		X023 A 1 A_FadeOut(.01);
 		Wait;
+	Death:
+		Stop;
 	}
 }
 class BarnacleSpitParticle2 : BarnacleSpitParticle
