@@ -49,17 +49,18 @@ episode map01
 {
 	name="Paranoid: Infiltration"
 }
-
+episode map09
+{
+	name="Paranoiac: Extraction Intro"
+}
 episode map10
 {
 	name="Paranoiac: Extraction"
 }
-
 episode map19
 {
 	name="Paranoiac: Dissolution"
 }
-
 episode map22
 {
 	name="Paranoiac: Obliteration"
@@ -76,27 +77,17 @@ defaultmap
 	sky1=HLSKY1
 }
 
-map TITLEMAP "Welcome"
-{
-	Next=TITLE1
-	SecretNext=TITLE2
-}
-map TITLE1 "The Path to Perdition"
+map TITLEMAP "The Path to Perdition"
 {
 	sky1=HLSKY5
 	PrecacheSounds="Music01"
-}
-map TITLE2 "Flight of the Phoenix"
-{
-	sky1=HLSKY3
-	PrecacheSounds="30Title"
 }
 
 map map01 "Walk Softly and Carry a Big Stick"
 {
 	PrecacheSounds="Music02"
 }
-map map02 "You Can Run ...."
+map map02 "You Can Run..."
 {
 	PrecacheSounds="Music02"
 }
@@ -122,28 +113,31 @@ map map06 "Dirty. Little. Secret"
 {
 	PrecacheSounds="Music01"
 }
-map map07 "Out of the Frying Pan ...."
+map map07 "Out of the Frying Pan..."
 {
-	next=EndTitle
 	PrecacheSounds="Music03","Music07"
 }
 
-cluster 1
+adddefaultmap
 {
-	hub
-	pic=TITLEPIC
-	exittext=
-	"Paranoid: A production of",
-	"'The Persecution Complex'."
+	sky1=HLSKY3
+}
+map MAP09 "Flight of the Phoenix"
+{
+	NoIntermission
+	Next=map10
+	PrecacheSounds="30Title"
 }
 
 adddefaultmap
 {
 	cluster=2
-	sky1=HLSKY3
 }
-
-map map10 "Smoke on the Water, The Fire in the Sky."{}
+map map10 "Smoke on the Water, The Fire in the Sky."
+{
+	ResetHealth
+	ResetInventory
+}
 
 adddefaultmap
 {
@@ -223,16 +217,21 @@ map map23 "SpaceX."
 	next=EndSequence,"ParaEndScroll"
 }
 
+cluster 1
+{
+	hub
+}
 cluster 2
 {
 	hub
 	pic=TITLEPIC
 	exittext=
-	"Paranoiac: A production of",
+	"Paranoid Gold: A production of",
 	"'The Persecution Complex'.",
 	"Other Work by the Team:",
 	"Paranoid (2010)",
 	"The Phobos Directive (2011)",
+	"Paranoiac (2017)",
 	"Visit us at http://doomnexus.drdteam.org"
 }
 
@@ -333,8 +332,6 @@ Intermission ParaEndLogo
 		FadeType = FADEOUT
 		Time = -105
 	}
-//	GotoTitle
-//	{}
 }
 
 DoomEdNums
@@ -493,6 +490,7 @@ DoomEdNums
 	30279=girder2
 	30280=apache
 	30281=Osprey
+	30338=OspreyBellmer
 	30282=ZenHair
 	30283=ZenLight
 	30284=ZenTree
@@ -541,7 +539,6 @@ DoomEdNums
 	30335=HeadCrab
 	30336=Pipe1a
 	30337=Pipe3a
-	30338=OspreyBellmer
 	30339=Truck01
 	30340=SUV1
 	30341=SUVGlass
