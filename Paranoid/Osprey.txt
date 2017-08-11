@@ -34,100 +34,32 @@ class Osprey : ModelBase
 	}
 	Default
 	{
-		Height 20;
+		Radius 3;
+		Height 16;
+		Mass 0x7FFFFFFF;
 		-SOLID
 		+NOCLIP
 		+NOBLOCKMAP
 		+NOGRAVITY
+		+NOTARGET
+		+SHOOTABLE
+		+NONSHOOTABLE
+		+NOBLOOD
+		+NOTRIGGER
+		+NOTELEPORT
 	}
-}
-
-class OspreyBellmer : Osprey
-{
-	Default
-	{
-		Height 16;
-	}
-	states
+	States
 	{
 	Bellmer:
 		POSS B -1;
 		Stop;
-	}
-}
-
-class OspreyDead : Actor
-{
-	Default
-	{
-		Radius 86;
-		Height 8;
-		Mass 0x7FFFFFFF;
-		+FLOORCLIP
-	}
-	States
-	{
-	Spawn:
-		POSS A -1;
-		Stop;
-	}
-}
-
-class OspreyDead1 : OspreyDead
-{
-	Default
-	{
-		Radius 2;
-		Height 2;
-	}
-}
-
-class OspreyBlade : Actor
-{
-	Default
-	{
-		+NOCLIP
-		+NOBLOCKMAP
-		+NOGRAVITY
-	}
-	states
-	{
-	Spawn:
-		POSS A -1;
-		Stop;
-	}
-}
-
-//****
-// Osprey that can be "destroyed"
-//****
-
-class OspreyKillable : Actor
-{
-	Default
-	{
-		Radius 3;
-		Height 20;
-		Mass 0x7FFFFFFF;
-		Health 0x7FFFFFFF;
-		+FLOORCLIP
-		+NOGRAVITY
-		+notarget
-		+shootable
-		+noblood
-		+notrigger
-		+noteleport
-		+INVULNERABLE
-	}
-	States
-	{
-	Spawn:
-		POSS ABCDEFGH 1;
-		POSS A 1 A_PlaySound("play/osprey",CHAN_AUTO,1.0,1);
-		Loop;
 	Death:
 		SPOS A 1
 		{
+			if(lblade)
+				lblade.SetStateLabel("Null");
+			if(rblade)
+				rblade.SetStateLabel("Null");
 			A_SpawnItemEx("NewExplosionMedium",-176,280,128);
 			A_PlaySound("halflife/weapons/explode1",CHAN_AUTO,1.0,false,ATTN_NONE);
 			A_Quake(9,16,0,1024);
@@ -233,5 +165,27 @@ class OspreyKillable : Actor
 		//
 		POSS K -1;
 		Stop;
+	}
+}
+
+class OspreyDead : ModelBase
+{
+	Default
+	{
+		-SOLID
+		Radius 2;
+		Height 2;
+		Mass 0x7FFFFFFF;
+	}
+}
+
+class OspreyBlade : ModelBase
+{
+	Default
+	{
+		-SOLID
+		+NOCLIP
+		+NOBLOCKMAP
+		+NOGRAVITY
 	}
 }

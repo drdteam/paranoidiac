@@ -1611,6 +1611,76 @@ Model Osprey
 	Model 0 "osprey1.md3"
 	Skin 0 "osprey.png"
 	Scale 2.0 2.0 2.0
+	Model 1 "finale_body.md3"
+	Skin 1 "hevsuit.png"
+	Scale 2.0 2.0 2.0
+	Model 2 "finale_head.md3"
+	Skin 2 "scientist_head_slick.png"
+	Scale 2.0 2.0 2.0
+
+	NOINTERPOLATION
+
+	FrameIndex POSS A 0 0
+	FrameIndex POSS A 1 -1
+	FrameIndex POSS A 2 -1
+
+	FrameIndex POSS B 0 0
+	FrameIndex POSS B 1 0
+	FrameIndex POSS B 2 0
+}
+
+Model Osprey
+{
+	NOINTERPOLATION
+	Path "Models"
+	Model 0 "osprey4.md3"
+	Skin 0 "osprey.png"
+	Scale 2.0 2.0 2.0
+
+	FrameIndex SPOS A 0 0
+	FrameIndex SPOS B 0 1
+	FrameIndex SPOS C 0 2
+	FrameIndex SPOS D 0 3
+	FrameIndex SPOS E 0 4
+	FrameIndex SPOS F 0 5
+	FrameIndex SPOS G 0 6
+	FrameIndex SPOS H 0 7
+	FrameIndex SPOS I 0 8
+	FrameIndex SPOS J 0 9
+	FrameIndex SPOS K 0 10
+	FrameIndex SPOS L 0 11
+	FrameIndex SPOS M 0 12
+	FrameIndex SPOS N 0 13
+	FrameIndex SPOS O 0 14
+	FrameIndex SPOS P 0 15
+	FrameIndex SPOS Q 0 16
+	FrameIndex SPOS R 0 17
+	FrameIndex SPOS S 0 18
+	FrameIndex SPOS T 0 19
+	FrameIndex SPOS U 0 20
+	FrameIndex SPOS V 0 21
+	FrameIndex SPOS W 0 22
+	FrameIndex SPOS X 0 23
+}
+
+Model Osprey
+{
+	Path "Models"
+	Model 0 "osprey5.md3"
+	Skin 0 "osprey_dead_gov.png"
+	Scale 1.6 1.6 1.6
+
+	FrameIndex POSS I 0 0
+	FrameIndex POSS J 0 1
+	FrameIndex POSS K 0 2
+}
+
+Model OspreyDead
+{
+	Path "Models"
+	Model 0 "osprey_dead.md3"
+	Skin 0 "osprey_dead_gov.png"
+	Scale 1.6 1.6 1.6
 
 	FrameIndex POSS A 0 0
 }
@@ -1707,26 +1777,6 @@ Model SUV2
 	Model 0 "suv02.md3"
 	Skin 0 "suv02.png"
 	Scale 0.95 0.95 0.95
-
-	FrameIndex POSS A 0 0
-}
-
-Model OspreyDead
-{
-	Path "Models"
-	Model 0 "osprey_dead.md3"
-	Skin 0 "osprey_dead_gov.png"
-	Scale 1.6 1.6 1.6
-
-	FrameIndex POSS A 0 0
-}
-
-Model OspreyDead1
-{
-	Path "Models"
-	Model 0 "osprey_dead.md3"
-	Skin 0 "osprey_dead_gov.png"
-	Scale 1.6 1.6 1.6
 
 	FrameIndex POSS A 0 0
 }
@@ -1833,30 +1883,6 @@ Model HeadCrab
 	Skin 0 "dissected_headcrab.png"
 
 	FrameIndex POSS A 0 0
-}
-
-Model OspreyBellmer
-{
-	Path "Models"
-	Model 0 "osprey1.md3"
-	Skin 0 "osprey.png"
-	Scale 2.0 2.0 2.0
-	Model 1 "finale_body.md3"
-	Skin 1 "hevsuit.png"
-	Scale 2.0 2.0 2.0
-	Model 2 "finale_head.md3"
-	Skin 2 "scientist_head_slick.png"
-	Scale 2.0 2.0 2.0
-
-	NOINTERPOLATION
-
-	FrameIndex POSS A 0 1
-	FrameIndex POSS A 1 1
-	FrameIndex POSS A 2 1
-
-	FrameIndex POSS B 0 0
-	FrameIndex POSS B 1 0
-	FrameIndex POSS B 2 0
 }
 
 //********
@@ -2598,74 +2624,6 @@ Model SUVGlassEx
 	FrameIndex POSS K 0 10
 	FrameIndex POSS L 0 11
 	FrameIndex POSS M 0 12
-}
-
-//********
-//Osprey that can be "destroyed"
-//********
-
-Model OspreyKillable
-{
-	NOINTERPOLATION
-	Path "Models"
-	Model 0 "osprey3.md3"
-	Skin 0 "osprey.png"
-	Scale 2.0 2.0 2.0
-
-	FrameIndex POSS A 0 0
-	FrameIndex POSS B 0 1
-	FrameIndex POSS C 0 2
-	FrameIndex POSS D 0 3
-	FrameIndex POSS E 0 4
-	FrameIndex POSS F 0 5
-	FrameIndex POSS G 0 6
-	FrameIndex POSS H 0 7
-}
-
-Model OspreyKillable
-{
-	NOINTERPOLATION
-	Path "Models"
-	Model 0 "osprey4.md3"
-	Skin 0 "osprey.png"
-	Scale 2.0 2.0 2.0
-
-	FrameIndex SPOS A 0 0
-	FrameIndex SPOS B 0 1
-	FrameIndex SPOS C 0 2
-	FrameIndex SPOS D 0 3
-	FrameIndex SPOS E 0 4
-	FrameIndex SPOS F 0 5
-	FrameIndex SPOS G 0 6
-	FrameIndex SPOS H 0 7
-	FrameIndex SPOS I 0 8
-	FrameIndex SPOS J 0 9
-	FrameIndex SPOS K 0 10
-	FrameIndex SPOS L 0 11
-	FrameIndex SPOS M 0 12
-	FrameIndex SPOS N 0 13
-	FrameIndex SPOS O 0 14
-	FrameIndex SPOS P 0 15
-	FrameIndex SPOS Q 0 16
-	FrameIndex SPOS R 0 17
-	FrameIndex SPOS S 0 18
-	FrameIndex SPOS T 0 19
-	FrameIndex SPOS U 0 20
-	FrameIndex SPOS V 0 21
-	FrameIndex SPOS W 0 22
-	FrameIndex SPOS X 0 23
-}
-
-Model OspreyKillable
-{
-	Path "Models"
-	Model 0 "osprey5.md3"
-	Skin 0 "osprey_dead_gov.png"
-	Scale 1.6 1.6 1.6
-
-	FrameIndex POSS I 0 0
-	FrameIndex POSS J 0 1
-	FrameIndex POSS K 0 2
 }
 
 //********

@@ -490,7 +490,6 @@ DoomEdNums
 	30279=girder2
 	30280=apache
 	30281=Osprey
-	30338=OspreyBellmer
 	30282=ZenHair
 	30283=ZenLight
 	30284=ZenTree
@@ -543,7 +542,7 @@ DoomEdNums
 	30340=SUV1
 	30341=SUVGlass
 	30342=SUV2
-	30343=OspreyDead
+	30403=OspreyDead
 	30344=SUV3
 	30345=Monitor1
 	30346=Monitor2
@@ -603,7 +602,6 @@ DoomEdNums
 	30400=Rock03f
 	30401=XenIsland1
 	30402=XenIsland2
-	30403=OspreyDead1
 	30404=XenIsland3
 	30405=HoverPad
 	30406=XenIsland4
@@ -619,7 +617,6 @@ DoomEdNums
 	30416=XenIsland6
 	30417=Rock02g
 	30418=Rock03g
-	30419=OspreyKillable
 	30420=SUV4
 	30421=PConsole4
 	30422=PConsole5
