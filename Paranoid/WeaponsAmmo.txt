@@ -1455,7 +1455,7 @@ class GluonGunPickup : ParanoidWeaponGiver
 	Default
 	{
 		Inventory.PickupMessage "Picked up the Gluon Gun.";
-		ParanoidWeaponGiver.Weapon1 "AECell","GluonHeldAmmo",40;
+		ParanoidWeaponGiver.Weapon1 "GluonHeldAmmo","AECell",40;
 		DropItem "GluonGun";
 	}
 }
@@ -1938,7 +1938,7 @@ class HornetGun : ParanoidWeapon
 		Inventory.PickupSound "reilsss/weapons/demoncalleridlebio";
 		weapon.upsound "weapons/draw";
 		Scale .095;
-		Tag "HornetGun";
+		Tag "Hornet Gun";
 		Inventory.Icon "i_hhand1";
 	}
     States
