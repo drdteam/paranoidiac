@@ -2001,7 +2001,6 @@ class HGunHornet : Actor
 		Height 4;
 		Speed 20;
 		Damage 5;
-		Scale .095;
 		+SEEKERMISSILE
 		Projectile;
 		HGunHornet.Trail "HGHornetTrail";
@@ -2009,7 +2008,7 @@ class HGunHornet : Actor
 	States
     {
     Spawn:
-		HLOH B 1 BRIGHT A_HornetFly(SMF_LOOK);
+		HLI1 ABCD 1 BRIGHT A_HornetFly(SMF_LOOK);
 		Loop;
     Death:
     Crash:
@@ -2040,18 +2039,17 @@ class HGunHornet2 : HGunHornet
 	Default
 	{
 		Speed 10;
-		Scale .025;
 		-SEEKERMISSILE
 	}
 	States
     {
     Spawn:
-		HLOH A 1 BRIGHT A_HornetFly;
+		HLI1 ABCD 1 BRIGHT A_HornetFly;
 		Loop;
     }
 }
 
-class HGruntHornet : HGunHornet
+class HGruntHornet : HGunHornet2
 {
 	Default
 	{
@@ -2060,15 +2058,9 @@ class HGruntHornet : HGunHornet
 		Projectile;
 		Speed 17;
 		Damage 4;
-		Scale .085;
 		DamageType "Hornet";
 		SeeSound "halflife/monsters/hornetgrunt/flysight";
-	}
-	States
-	{
-	Spawn:
-		HLOH B 1 NODELAY A_HornetFly;
-		Loop;
+		+SEEKERMISSILE
 	}
 }
 
@@ -2127,7 +2119,7 @@ class HGruntHornetFake : HGruntHornet
 	States
 	{
 	Spawn:
-		HLOH B 1 NODELAY
+		HLI1 ABCD 1 NODELAY
 		{
 			if(countdown>=1)
 			{

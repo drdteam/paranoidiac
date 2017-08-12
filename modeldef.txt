@@ -2774,6 +2774,51 @@ Model Missile
 	FrameIndex MISL A 0 0
 }
 
+Model HGunHornet
+{
+	Path "Models"
+	Model 0 "hornet.md2"
+	Skin 0 "hornet.png"
+
+	FrameIndex HLI1 A 0 1
+	FrameIndex HLI1 B 0 2
+	FrameIndex HLI1 C 0 3
+	FrameIndex HLI1 D 0 4
+}
+Model HGunHornet2
+{
+	Path "Models"
+	Model 0 "hornet.md2"
+	Skin 0 "hornet.png"
+
+	FrameIndex HLI1 A 0 1
+	FrameIndex HLI1 B 0 2
+	FrameIndex HLI1 C 0 3
+	FrameIndex HLI1 D 0 4
+}
+Model HGruntHornet
+{
+	Path "Models"
+	Model 0 "hornet.md2"
+	Skin 0 "hornet.png"
+
+	FrameIndex HLI1 A 0 1
+	FrameIndex HLI1 B 0 2
+	FrameIndex HLI1 C 0 3
+	FrameIndex HLI1 D 0 4
+}
+Model HGruntHornetFake
+{
+	Path "Models"
+	Model 0 "hornet.md2"
+	Skin 0 "hornet.png"
+
+	FrameIndex HLI1 A 0 1
+	FrameIndex HLI1 B 0 2
+	FrameIndex HLI1 C 0 3
+	FrameIndex HLI1 D 0 4
+}
+
 Model HLGibs
 {
 	Path "Models"
