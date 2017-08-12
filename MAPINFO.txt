@@ -336,7 +336,6 @@ Intermission ParaEndLogo
 
 DoomEdNums
 {
-	//3210=MusicSwitcher07
 	4041=HLScientistSpawner
 	4053=HLScientistWandererSpawner
 	4054=HLScientistStillSpawner

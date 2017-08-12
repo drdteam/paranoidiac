@@ -9,8 +9,6 @@ class HLMonster : Actor
 	Spawn:
 		HLI1 A 3 A_Look;
 		Loop;
-	Crush:
-		Goto XDeath;
 	}
 	void A_HLGibs(int max=16,class<actor> gibs="HLGibs")
 	{

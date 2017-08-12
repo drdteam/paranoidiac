@@ -117,7 +117,6 @@ class ParanoidStatusBar : BaseStatusBar
 		AmmoColumn(1,"M16HeldAmmo",259,189);
 		AmmoColumn(1,"GluonHeldAmmo",296,177);
 		AmmoColumn(1,"BoltHeld",296,181);
-		AmmoColumn(1,"HLHornet",296,185);
 
 		//Total held ammo column/Max ammo capacity column
 		AmmoColumn(2,"BClip",270,177);
