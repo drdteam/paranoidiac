@@ -51,10 +51,6 @@ episode map01
 }
 episode map09
 {
-	name="Paranoiac: Extraction Intro"
-}
-episode map10
-{
 	name="Paranoiac: Extraction"
 }
 episode map19
