@@ -91,6 +91,7 @@ class HLHeadCrab : HLMonster
 		}
 		Wait;
 	XDeath:
+	Crush:
 		TNT1 A 0
 		{
 			A_HLGibs(2,"XenGibs");

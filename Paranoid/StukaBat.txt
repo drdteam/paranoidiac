@@ -71,6 +71,7 @@ class HLBat : HLMonster
 		HLD3 C -1;
 		Stop;
 	XDeath:
+	Crush:
 	  	TNT1 A 0 A_HLGibs(14,"XenGibs");
 		Stop;
 	}

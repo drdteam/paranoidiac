@@ -343,6 +343,7 @@ class HLGrunt1 : HLMonster
 		HLD2 G -1;
 		Stop;
 	XDeath:
+	Crush:
 		TNT1 A 0 A_HLGibs;
 		Stop;
 	}
