@@ -7,16 +7,11 @@ class Osprey : ModelBase
 		lblade=Spawn("OspreyBlade",pos);
 		rblade=Spawn("OspreyBlade",pos);
 		A_PlaySound("play/osprey",looping:1);
+		actor.postbeginplay();
 	}
 	override void tick()
 	{
-		if(pos.z!=floorz)
-		{
-			double newz=pos.z-BobSin(bobstate)/2.;
-			bobstate=(bobstate+1)&63;
-			newz+=BobSin(bobstate)/2.;
-			SetZ(newz);
-		}
+		OspreyBob();
 		double a;
 		if(lblade)
 		{
@@ -31,6 +26,16 @@ class Osprey : ModelBase
 			rblade.angle=angle;
 		}
 		super.tick();
+	}
+	void OspreyBob()
+	{
+		if(pos.z!=floorz)
+		{
+			double newz=pos.z-BobSin(bobstate)/2.;
+			bobstate=(bobstate+1)&63;
+			newz+=BobSin(bobstate)/2.;
+			SetZ(newz);
+		}
 	}
 	Default
 	{
@@ -50,9 +55,6 @@ class Osprey : ModelBase
 	}
 	States
 	{
-	Bellmer:
-		POSS B -1;
-		Stop;
 	Death:
 		SPOS A 1
 		{
@@ -187,5 +189,23 @@ class OspreyBlade : ModelBase
 		+NOCLIP
 		+NOBLOCKMAP
 		+NOGRAVITY
+	}
+}
+
+class OspreyBellmer : Osprey
+{
+	override void postbeginplay()
+		{actor.postbeginplay();}
+	override void tick()
+	{
+		OspreyBob();
+		actor.tick();
+	}
+	States
+	{
+	Spawn:
+		HLI1 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 2;
+		HLI2 AB 2;
+		Loop;
 	}
 }

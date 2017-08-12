@@ -542,7 +542,6 @@ DoomEdNums
 	30340=SUV1
 	30341=SUVGlass
 	30342=SUV2
-	30403=OspreyDead
 	30344=SUV3
 	30345=Monitor1
 	30346=Monitor2
@@ -602,6 +601,7 @@ DoomEdNums
 	30400=Rock03f
 	30401=XenIsland1
 	30402=XenIsland2
+	30403=OspreyDead
 	30404=XenIsland3
 	30405=HoverPad
 	30406=XenIsland4
@@ -633,4 +633,5 @@ DoomEdNums
 	32001=HLGrunt1Dead
 	32002=FirstAidStation
 	32003=HEVChargingStation
+	32004=OspreyBellmer
 }

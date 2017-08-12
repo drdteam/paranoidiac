@@ -1611,22 +1611,10 @@ Model Osprey
 	Model 0 "osprey1.md3"
 	Skin 0 "osprey.png"
 	Scale 2.0 2.0 2.0
-	Model 1 "finale_body.md3"
-	Skin 1 "hevsuit.png"
-	Scale 2.0 2.0 2.0
-	Model 2 "finale_head.md3"
-	Skin 2 "scientist_head_slick.png"
-	Scale 2.0 2.0 2.0
 
 	NOINTERPOLATION
 
 	FrameIndex POSS A 0 0
-	FrameIndex POSS A 1 -1
-	FrameIndex POSS A 2 -1
-
-	FrameIndex POSS B 0 0
-	FrameIndex POSS B 1 0
-	FrameIndex POSS B 2 0
 }
 
 Model Osprey
@@ -1695,6 +1683,47 @@ Model OspreyBlade
 	rotation-speed 10.0
 
 	FrameIndex POSS A 0 0
+}
+
+Model OspreyBellmer
+{
+	Path "Models"
+	Model 0 "hev_scientist.md2"
+	Skin 0 "hev_scientist.png"
+	Offset -8 44 12
+	AngleOffset 90
+
+	FrameIndex HLI1 A 0 1
+	FrameIndex HLI1 B 0 2
+	FrameIndex HLI1 C 0 3
+	FrameIndex HLI1 D 0 4
+	FrameIndex HLI1 E 0 5
+	FrameIndex HLI1 F 0 6
+	FrameIndex HLI1 G 0 7
+	FrameIndex HLI1 H 0 8
+	FrameIndex HLI1 I 0 9
+	FrameIndex HLI1 J 0 10
+	FrameIndex HLI1 K 0 11
+	FrameIndex HLI1 L 0 12
+	FrameIndex HLI1 M 0 13
+	FrameIndex HLI1 N 0 14
+	FrameIndex HLI1 O 0 15
+	FrameIndex HLI1 P 0 16
+	FrameIndex HLI1 Q 0 17
+	FrameIndex HLI1 R 0 18
+	FrameIndex HLI1 S 0 19
+	FrameIndex HLI1 T 0 20
+	FrameIndex HLI1 U 0 21
+	FrameIndex HLI1 V 0 22
+	FrameIndex HLI1 W 0 23
+	FrameIndex HLI1 X 0 24
+	FrameIndex HLI1 Y 0 25
+	FrameIndex HLI1 Z 0 26
+	FrameIndex HLI1 [ 0 27
+	FrameIndex HLI1 \ 0 28
+	FrameIndex HLI1 ] 0 29
+	FrameIndex HLI2 A 0 30
+	FrameIndex HLI2 B 0 31
 }
 
 Model Tesla
