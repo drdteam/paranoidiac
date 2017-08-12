@@ -1,25 +1,25 @@
-class HLBossBat : HLMonster
+class HLBat : HLMonster
 {
 	Default
 	{
-		Health 1600;
-		Speed 6;
+		Health 200;
+		Speed 3;
 		FloatSpeed 1;
-		Height 128;
-		Radius 104;
-		Mass 600;
-		PainChance 30;
-		PainChance "Crowbar",135;
+		Height 76;
+		Radius 60;
+		Mass 400;
+		PainChance 160;
+		PainChance "Crowbar",255;
+		Scale 1.2;
 		+FLOAT
 		+NOGRAVITY
 		BloodColor "DE FE 72";
-		SeeSound "bossbat/sight";
-		PainSound "bossbat/pain";
-		DeathSound "bossbat/death";
-		ActiveSound "bossbat/active";
-		AttackSound "bossbat/attack";
-		Obituary "%o was iced by a Boss Bat.";
-		Species "HLBat";
+		SeeSound "stukabat/sight";
+		PainSound "stukabat/pain";
+		DeathSound "stukabat/death";
+		ActiveSound "stukabat/active";
+		AttackSound "stukabat/attack";
+		Obituary "%o was fried by a StukaBat.";
 	}
 	States
 	{
@@ -46,11 +46,11 @@ class HLBossBat : HLMonster
 		HLA1 ABCDEF 2 A_FaceTarget;
 		HLA1 G 2
 		{
-			A_SpawnProjectile("IceBall",32,-24);
-			A_SpawnProjectile("IceBall",32,24);
+			for(int i=0;i<7;i++)
+				A_SpawnItemEx("SBFireExtra2",0,0,20,random(2,5),random(2,-2),random(1,3));
+			A_SpawnProjectile("StukaFireBall");
 		}
-		HLA1 H 2 A_SpawnProjectile("IceBall",8);
-		HLA1 IJKLMN 2;
+		HLA1 HIJKLMN 2;
 		Goto See;
 	Pain:
 		HLP1 ABCDEFGHI 1;
@@ -75,26 +75,24 @@ class HLBossBat : HLMonster
 		Stop;
 	}
 }
-
-class HLBat : HLBossBat
+class HLBossBat : HLBat
 {
 	Default
 	{
-		Health 200;
-		Speed 3;
-		Height 76;
-		Radius 60;
-		Mass 400;
-		PainChance 160;
-		PainChance "Crowbar",255;
-		Scale .6;
-		Translation "16:47=64:79","64:79=96:111";
-		SeeSound "stukabat/sight";
-		PainSound "stukabat/pain";
-		DeathSound "stukabat/death";
-		ActiveSound "stukabat/active";
-		AttackSound "stukabat/attack";
-		Obituary "%o was fried by a StukaBat.";
+		Health 1600;
+		Speed 6;
+		Height 128;
+		Radius 104;
+		Mass 600;
+		PainChance 30;
+		PainChance "Crowbar",135;
+		Scale 2;
+		SeeSound "bossbat/sight";
+		PainSound "bossbat/pain";
+		DeathSound "bossbat/death";
+		ActiveSound "bossbat/active";
+		AttackSound "bossbat/attack";
+		Obituary "%o was iced by a Boss Bat.";
 	}
 	States
 	{
@@ -102,11 +100,11 @@ class HLBat : HLBossBat
 		HLA1 ABCDEF 2 A_FaceTarget;
 		HLA1 G 2
 		{
-			for(int i=0;i<7;i++)
-				A_SpawnItemEx("SBFireExtra2",0,0,20,random(2,5),random(2,-2),random(1,3));
-			A_SpawnProjectile("StukaFireBall");
+			A_SpawnProjectile("IceBall",32,-24);
+			A_SpawnProjectile("IceBall",32,24);
 		}
-		HLA1 HIJKLMN 2;
+		HLA1 H 2 A_SpawnProjectile("IceBall",8);
+		HLA1 IJKLMN 2;
 		Goto See;
 	}
 }
