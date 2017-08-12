@@ -69,6 +69,10 @@ class HLBarney : HLMonster
 	}
 	States
 	{
+	Spawn:
+		HLI1 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 2 A_Look;
+		HLI2 AB 2 A_Look;
+		Loop;
 	Stand:
 		HLI1 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 2 A_Face(goal);
 		HLI2 AB 2 A_Face(goal);
