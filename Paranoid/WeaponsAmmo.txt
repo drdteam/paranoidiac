@@ -332,7 +332,7 @@ class PistolPickup : ParanoidWeaponGiver
 {
 	Default
 	{
-		Inventory.PickupMessage "Picked up a Beretta.";
+		Inventory.PickupMessage "Picked up a 9mm pistol.";
 		ParanoidWeaponGiver.Weapon1 "PistolHeldAmmo","BClip",17;
 		DropItem "Beretta";
 	}
@@ -342,7 +342,7 @@ class Beretta : ParanoidWeapon
 {
 	Default
 	{
-		Tag "Beretta";
+		Tag "9mm Pistol";
 		Radius 4;
 		Height 4;
 		Weapon.SelectionOrder 2000;
@@ -350,8 +350,8 @@ class Beretta : ParanoidWeapon
 		Weapon.AmmoUse2 1;
 		Weapon.AmmoType "BClip";
 		Weapon.AmmoType2 "PistolHeldAmmo";
-		Inventory.PickupMessage "Picked up a Beretta.";
-		Obituary "%o was out-gunned by %k's Beretta.";
+		Inventory.PickupMessage "Picked up a 9mm pistol.";
+		Obituary "%o was out-gunned by %k's 9mm pistol.";
 		Decal "BulletChip";
 		Inventory.Icon "i_pist1";
 	}
@@ -444,7 +444,7 @@ class BClip : Ammo
 		Radius 8;
 		Height 4;
 		Inventory.PickupSound "misc/w_pkup";
-		Inventory.PickupMessage "Picked up a Beretta magazine.";
+		Inventory.PickupMessage "Picked up a 9mm pistol magazine.";
 		Inventory.Amount 17;
 		Inventory.MaxAmount 250;
 		Ammo.BackpackAmount 17;
@@ -984,7 +984,7 @@ class ARClip : BClip
 {
 	Default
 	{
-		Inventory.PickupMessage "Picked up an assault rifle magazine.";
+		Inventory.PickupMessage "Picked up a 9mm assault rifle magazine.";
 		Inventory.Amount 25;
 	}
 }
@@ -1013,7 +1013,7 @@ class M16Gren : Ammo
 	Default
 	{
 		Tag "Grenade";
-		Inventory.PickupMessage "Picked up two 40mm Grenades.";
+		Inventory.PickupMessage "Picked up two 40mm grenades.";
 		Inventory.Amount 2;
 		Inventory.MaxAmount 10;
 		Ammo.BackpackAmount 2;
