@@ -3,8 +3,6 @@ Model HLBat
 	Path "Models"
 	Model 0 "stukabat.md2"
 	Skin 0 "stukabat2.png"
-	Scale 2 2 2
-	ZOffset 32
 	INTERPOLATEDOUBLEDFRAMES
 
 	FrameIndex HLI1 A 0 112
@@ -137,8 +135,6 @@ Model HLBossBat
 	Path "Models"
 	Model 0 "stukabat.md2"
 	Skin 0 "stukabat.png"
-	Scale 2 2 2
-	ZOffset 32
 	INTERPOLATEDOUBLEDFRAMES
 
 	FrameIndex HLI1 A 0 112
