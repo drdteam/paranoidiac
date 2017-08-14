@@ -1,120 +1,6 @@
-//=========
-// Pickups
-//=========
-
-class HEVSuit : BasicArmorPickup
-{
-	Default
-	{
-		radius 16;
-		height 52;
-		Inventory.PickupMessage "Acquired the HEV Suit!";
-		armor.saveamount 100;
-		armor.savepercent 50;
-		Inventory.Icon "i_arm2";
-	}
-	states
-	{
-	Spawn:
-		POSS A -1;
-		Stop;
-	}
-}
-
-class HEVCharge : BasicArmorBonus
-{
-	Default
-	{
-		Inventory.Icon "i_arm2";
-		armor.maxsaveamount 100;
-		armor.saveamount 1;
-		armor.savepercent 50;
-		-INVENTORY.ALWAYSPICKUP
-	}
-}
-class HEVbattery : HEVCharge
-{
-	Default
-	{
-		Radius 4;
-		Height 12;
-		Inventory.PickupMessage "Picked up a battery pack for the HEV Suit.";
-		armor.saveamount 15;
-	}
-	states
-	{
-	Spawn:
-		POSS A -1 LIGHT("HevBattLight");
-		Stop;
-	}
-}
-
-class Medkit : Health
-{
-	Default
-	{
-		Radius 8;
-		Height 4;
-		Inventory.PickupMessage "Picked up a field medical kit.";
-		Inventory.Amount 15;
-	}
-	states
-	{
-	Spawn:
-		POSS A -1;
-		Stop;
-	}
-}
-
-class Medkit1 : HealthPickup
-{
-	Default
-	{
-		Tag "Portable Medkit";
-		+COUNTITEM
-		+INVENTORY.HUBPOWER
-		+INVENTORY.INVBAR
-		health 25;
-		inventory.maxamount 4;
-		inventory.icon "MEDKZ0";
-		Inventory.PickupMessage "Picked up a portable medkit.";
-		Inventory.PickupSound "misc/i_pkup";
-		Inventory.UseSound "misc/i_pkup";
-	}
-	States
-	{
-	Spawn:
-		POSS A -1;
-		Stop;
-	}
-}
-
-class Key1 : FakeInventory
-{
-	Default
-	{
-		Inventory.PickupMessage "Picked up the blue security key.";
-		Inventory.Icon "HLKEYBI";
-		radius 4;
-		height 2;
-	}
-	States
-	{
-	Spawn:
-		POSS A -1;
-		Stop;
-	}
-}
-
-class Key2 : Key1
-{
-	Default
-	{
-		Inventory.PickupMessage "Picked up the red security key.";
-		Inventory.Icon "HLKEYRI";
-		height 4;
-	}
-}
+//==================
+// Charging Stations
+//==================
 
 class FirstAidStation : Actor
 {
@@ -152,6 +38,7 @@ class FirstAidStation : Actor
 		Stop;
 	}
 }
+
 class HEVChargingStation : FirstAidStation
 {
 	override bool Used(Actor user)
@@ -169,5 +56,142 @@ class HEVChargingStation : FirstAidStation
 		if(!Health)
 			SetStateLabel("Death");
 		return false;
+	}
+}
+class HEVCharge : BasicArmorBonus
+{
+	Default
+	{
+		Armor.SaveAmount 1;
+		Armor.SavePercent 50;
+		Armor.MaxSaveAmount 100;
+		-INVENTORY.ALWAYSPICKUP
+		Inventory.Icon "i_arm2";
+	}
+}
+
+//=========
+// Pickups
+//=========
+
+class HEVSuit : BasicArmorPickup
+{
+	Default
+	{
+		Radius 16;
+		Height 52;
+		Inventory.PickupMessage "Acquired the HEV Suit!";
+		Armor.SaveAmount 100;
+		Armor.SavePercent 50;
+		Inventory.Icon "i_arm2";
+	}
+	states
+	{
+	Spawn:
+		POSS A -1;
+		Stop;
+	}
+}
+
+class HEVbattery : HEVCharge
+{
+	Default
+	{
+		Radius 4;
+		Height 12;
+		Inventory.PickupMessage "Picked up a battery pack for the HEV Suit.";
+		Armor.SaveAmount 15;
+	}
+	States
+	{
+	Spawn:
+		POSS A -1 LIGHT("HevBattLight");
+		Stop;
+	}
+}
+
+class Medkit : Health
+{
+	Default
+	{
+		Radius 8;
+		Height 4;
+		Inventory.PickupMessage "Picked up a field medical kit.";
+		Inventory.Amount 15;
+	}
+	States
+	{
+	Spawn:
+		POSS A -1;
+		Stop;
+	}
+}
+
+class Medkit1 : HealthPickup
+{
+	Default
+	{
+		Tag "Portable Medkit";
+		+COUNTITEM
+		+INVENTORY.HUBPOWER
+		+INVENTORY.INVBAR
+		Health 25;
+		Inventory.MaxAmount 4;
+		Inventory.Icon "MEDKZ0";
+		Inventory.PickupMessage "Picked up a portable medkit.";
+		Inventory.PickupSound "misc/i_pkup";
+		Inventory.UseSound "misc/i_pkup";
+	}
+	States
+	{
+	Spawn:
+		POSS A -1;
+		Stop;
+	}
+}
+
+class Key1 : FakeInventory
+{
+	Default
+	{
+		Radius 4;
+		Height 2;
+		Inventory.PickupMessage "Picked up the blue security key.";
+	}
+	States
+	{
+	Spawn:
+		POSS A -1;
+		Stop;
+	}
+}
+
+class Key2 : Key1
+{
+	Default
+	{
+		Height 4;
+		Inventory.PickupMessage "Picked up the red security key.";
+	}
+}
+
+class Gascan1 : Key1
+{
+	Default
+	{
+		Height 12;
+		Scale .75;
+		Mass 20;
+		Inventory.PickupMessage "Acquired gasoline can.";
+	}
+}
+
+class Explosive : Key1
+{
+	Default
+	{
+		Height 8;
+		Mass 10;
+		Inventory.PickupMessage "Acquired explosive device.";
 	}
 }
