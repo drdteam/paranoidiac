@@ -183,10 +183,13 @@ Model HEVChargingStation
 Model HEVsuit
 {
 	Path "Models"
-	Model 0 "hevsuit.md3"
-	Skin 0 "hevsuit.png"
+	Model 0 "hev_scientistbody.md2"
+	Skin 0 "hev_scientistbody.png"
+	Model 1 "hev_scientisthead.md2"
+	Skin 1 "hev_scientisthead.png"
 
-	FrameIndex POSS A 0 0
+	FrameIndex POSS A 0 460
+	FrameIndex POSS A 1 460
 }
 
 Model HEVBattery
