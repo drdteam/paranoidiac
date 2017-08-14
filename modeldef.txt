@@ -1688,42 +1688,75 @@ Model OspreyBlade
 Model OspreyBellmer
 {
 	Path "Models"
-	Model 0 "hev_scientist.md2"
-	Skin 0 "hev_scientist.png"
+	Model 0 "hev_scientistbody.md2"
+	Skin 0 "hev_scientistbody.png"
+	Model 1 "hev_scientisthead2.md2"
+	Skin 1 "hev_scientisthead2.png"
 	Offset -8 44 12
 	AngleOffset 90
 
 	FrameIndex HLI1 A 0 1
+	FrameIndex HLI1 A 1 1
 	FrameIndex HLI1 B 0 2
+	FrameIndex HLI1 B 1 2
 	FrameIndex HLI1 C 0 3
+	FrameIndex HLI1 C 1 3
 	FrameIndex HLI1 D 0 4
+	FrameIndex HLI1 D 1 4
 	FrameIndex HLI1 E 0 5
+	FrameIndex HLI1 E 1 5
 	FrameIndex HLI1 F 0 6
+	FrameIndex HLI1 F 1 6
 	FrameIndex HLI1 G 0 7
+	FrameIndex HLI1 G 1 7
 	FrameIndex HLI1 H 0 8
+	FrameIndex HLI1 H 1 8
 	FrameIndex HLI1 I 0 9
+	FrameIndex HLI1 I 1 9
 	FrameIndex HLI1 J 0 10
+	FrameIndex HLI1 J 1 10
 	FrameIndex HLI1 K 0 11
+	FrameIndex HLI1 K 1 11
 	FrameIndex HLI1 L 0 12
+	FrameIndex HLI1 L 1 12
 	FrameIndex HLI1 M 0 13
+	FrameIndex HLI1 M 1 13
 	FrameIndex HLI1 N 0 14
+	FrameIndex HLI1 N 1 14
 	FrameIndex HLI1 O 0 15
+	FrameIndex HLI1 O 1 15
 	FrameIndex HLI1 P 0 16
+	FrameIndex HLI1 P 1 16
 	FrameIndex HLI1 Q 0 17
+	FrameIndex HLI1 Q 1 17
 	FrameIndex HLI1 R 0 18
+	FrameIndex HLI1 R 1 18
 	FrameIndex HLI1 S 0 19
+	FrameIndex HLI1 S 1 19
 	FrameIndex HLI1 T 0 20
+	FrameIndex HLI1 T 1 20
 	FrameIndex HLI1 U 0 21
+	FrameIndex HLI1 U 1 21
 	FrameIndex HLI1 V 0 22
+	FrameIndex HLI1 V 1 22
 	FrameIndex HLI1 W 0 23
+	FrameIndex HLI1 W 1 23
 	FrameIndex HLI1 X 0 24
+	FrameIndex HLI1 X 1 24
 	FrameIndex HLI1 Y 0 25
+	FrameIndex HLI1 Y 1 25
 	FrameIndex HLI1 Z 0 26
+	FrameIndex HLI1 Z 1 26
 	FrameIndex HLI1 [ 0 27
+	FrameIndex HLI1 [ 1 27
 	FrameIndex HLI1 \ 0 28
+	FrameIndex HLI1 \ 1 28
 	FrameIndex HLI1 ] 0 29
+	FrameIndex HLI1 ] 1 29
 	FrameIndex HLI2 A 0 30
+	FrameIndex HLI2 A 1 30
 	FrameIndex HLI2 B 0 31
+	FrameIndex HLI2 B 1 31
 }
 
 Model Tesla
