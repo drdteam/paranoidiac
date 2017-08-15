@@ -67,7 +67,7 @@ class HLHeadCrab : HLMonster
 		HLP1 CEGIKMO 1;
 		Goto See;
 	Drown:
-		HLBP A 12
+		HLI1 A 12
 		{
 			if(drowncounter>=3)
 				A_Die();
