@@ -34,9 +34,9 @@ class RolfBellmer : PlayerPawn
 		Loop;
 	Missile:
 		HLA1 Y 1 A_JumpIf(CountInv("ScientistDisguise"),"Missile2");
-		HLA1 Z[\]FGHI 1;
+		HLA1 Z[\] 1;
 		HLA2 AB 1;
-		HLA1 V 2;
+		HLA1 VUTRSQPONMLKJIHGFEDCBA 1;
 		Goto Spawn;
 	Pain:
 		HLP1 A 0 A_JumpIf(CountInv("ScientistDisguise"),"Pain2");
