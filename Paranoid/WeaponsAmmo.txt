@@ -35,6 +35,8 @@ class ParanoidWeapon : Weapon
 		POSS A -1;
 		Stop;
 	}
+	action void A_HLWeaponRecoil(int climb)
+		{A_SetPitch(pitch-climb*(360.0/65536.0));}
 	action void A_HLWeaponReady(int max,bool water=0)
 	{
 		if(water==1&&waterlevel==3)
@@ -52,8 +54,37 @@ class ParanoidWeapon : Weapon
 				A_WeaponReady();
 		}
 	}
-	action void WeaponRecoil(int climb)
-		{A_SetPitch(pitch-climb*(360.0/65536.0));}
+	action void A_HLReload(string snd,class<ammo> am2x=null,int amt=0)
+	{
+		A_PlaySound(snd,CHAN_WEAPON);
+		class<ammo> am1=invoker.ammotype1,am2=invoker.ammotype2;
+		if(am2x)
+			am2=am2x;
+		if(!amt)
+			amt=GetDefaultByType(am2).MaxAmount;
+		if(!am1||!am2)
+			return;
+		while(CountInv(am2)<amt&&CountInv(am1))
+		{
+			A_TakeInventory(am1,1,TIF_NOTAKEINFINITE);
+			A_GiveInventory(am2);
+		}
+	}
+	action void A_HLShootLead(int sprdxy,int sprdz,int num,int dmg,int climb,string snd,int smoke=1,class<ammo> am2x=null)
+	{
+		A_PlaySound(snd,CHAN_WEAPON);
+		A_AlertMonsters();
+		A_SpawnItemEx("LighCheapHack");
+		for(int i=0;i<smoke;i++)
+			A_FireProjectile("GunSmallSmokeSpawner",0,0,7,5);
+		A_FireBullets(sprdxy,sprdz,num,dmg,"NewPuff1",0);
+		A_HLWeaponRecoil(climb);
+		class<ammo> am2=invoker.ammotype2;
+		if(am2x)
+			am2=am2x;
+		if(am2)
+			A_TakeInventory(am2,1);
+	}
 }
 
 class ParanoidWeaponGiver : WeaponGiver
@@ -364,19 +395,11 @@ class Beretta : ParanoidWeapon
 		TNT1 A 0 A_JumpIfInventory("PistolHeldAmmo",1,2);
 		HWI1 A 5 A_PlaySound("halflife/weapons/noammo",CHAN_WEAPON);
 		Goto Reload;
-		HWF1 A 1 A_PlaySound("halflife/weapons/pistol",CHAN_WEAPON);
+		HWF1 A 1;
 		HWF1 B 1;
-		HWF1 C 1
-		{
-			A_AlertMonsters();
-			A_TakeInventory("PistolHeldAmmo",1);
-			A_FireProjectile("GunSmallSmokeSpawner",0,0,7,5);
-			A_SpawnItemEx("LighCheapHack");
-			A_FireBullets(1,1,-1,5,"NewPuff1",0);
-			WeaponRecoil(100);
-		}
+		HWF1 C 1 A_HLShootLead(1,1,-1,5,100,"halflife/weapons/pistol");
 		HWF1 D 1;
-		HWF1 EF 1 WeaponRecoil(-50);
+		HWF1 EF 1 A_HLWeaponRecoil(-50);
 		HWF1 GHIJ 1;
 		HWF1 K 2 A_ReFire;
 		HWF1 LMNOP 2;
@@ -385,18 +408,10 @@ class Beretta : ParanoidWeapon
 		TNT1 A 0 A_JumpIfInventory("PistolHeldAmmo",1,2);
 		HWI1 A 5 A_PlaySound("halflife/weapons/noammo",CHAN_WEAPON);
 		Goto Reload;
-		HWF1 B 1 A_PlaySound("halflife/weapons/pistol",CHAN_WEAPON);
-		HWF1 C 1
-		{
-			A_AlertMonsters();
-			A_TakeInventory("PistolHeldAmmo",1);
-			A_FireProjectile("GunSmallSmokeSpawner",0,0,7,5);
-			A_SpawnItemEx("LighCheapHack");
-			A_FireBullets(3,3,-1,5,"NewPuff1",0);
-			WeaponRecoil(100);
-		}
+		HWF1 B 1;
+		HWF1 C 1 A_HLShootLead(3,3,-1,5,100,"halflife/weapons/pistol");
 		HWF1 D 1;
-		HWF1 EF 1 WeaponRecoil(-50);
+		HWF1 EF 1 A_HLWeaponRecoil(-50);
 		HWF1 GH 1;
 		HWF1 I 1 A_ReFire;
 		HWF1 J 1;
@@ -407,18 +422,10 @@ class Beretta : ParanoidWeapon
 		Goto Ready2;
 		HWI1 A 5;
 		HWR1 ABCCDEFFGHIIJKLLMNOOPQRR 1;
-		HWR1 S 1
-		{
-			A_PlaySound("halflife/weapons/reload1",CHAN_WEAPON);
-			while(CountInv("PistolHeldAmmo")<17&&CountInv("BClip"))
-			{
-				A_TakeInventory("BClip",1,TIF_NOTAKEINFINITE);
-				A_GiveInventory("PistolHeldAmmo");
-			}
-		}
+		HWR1 S 1 A_PlaySound("halflife/weapons/reload1",CHAN_WEAPON);
 		HWR1 TUUVWXXYZ[[\] 1;
 		HWR2 AABCDDE 1;
-		HWR2 F 1 A_PlaySound("halflife/weapons/reload2",CHAN_WEAPON);
+		HWR2 F 1 A_HLReload("halflife/weapons/reload2");
 		HWR2 GGHIJJK 1;
 		Goto Ready2;
 	}
@@ -501,18 +508,8 @@ class Python : ParanoidWeapon
 		HWI1 A 5 A_PlaySound("halflife/weapons/noammo",CHAN_WEAPON);
 		Goto Reload;
 		HWF1 AB 1;
-		HWF1 C 1
-		{
-			A_PlaySound("halflife/weapons/magnumshot",CHAN_WEAPON);
-			A_AlertMonsters();
-			for(int i=0;i<2;i++)
-				A_FireProjectile("GunSmallSmokeSpawner",0,0,6,5);
-			A_SpawnItemEx("LighCheapHack");
-			A_FireBullets(0,0,1,85,"BulletPuff",0);
-			A_TakeInventory("MagnumHeldAmmo",1);
-			WeaponRecoil(450);
-		}
-		HWF1 DEFGHIJKL 1 WeaponRecoil(-50);
+		HWF1 C 1 A_HLShootLead(0,0,1,85,450,"halflife/weapons/magnumshot",2);
+		HWF1 DEFGHIJKL 1 A_HLWeaponRecoil(-50);
 		HWF1 MNOPQRSTUVWXYZ[\] 1;
 		HWI1 A 16;
 		HWI1 A 0 A_CheckReload;
@@ -525,15 +522,7 @@ class Python : ParanoidWeapon
 		HWR1 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1;
 		HWR2 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1;
 		HWR3 ABCDEFGHIJKLMNOPQR 1;
-		HWR3 S 1
-		{
-			A_PlaySound("halflife/weapons/m357reload",CHAN_WEAPON);
-			while(CountInv("MagnumHeldAmmo")<6&&CountInv("PythonAmmo"))
-			{
-				A_TakeInventory("PythonAmmo",1,TIF_NOTAKEINFINITE);
-				A_GiveInventory("MagnumHeldAmmo");
-			}
-		}
+		HWR3 S 1 A_HLReload("halflife/weapons/m357reload");
 		HWR3 TUVWXYZ[\] 1;
 		HWR4 ABCDEFGHIJ 1;
 		Goto Ready2;
@@ -648,19 +637,9 @@ class Pshotgun : ParanoidWeapon
 		TNT1 A 0 A_JumpIfInventory("ShotgunHeldAmmo",1,2);
 		HWI1 A 5 A_PlaySound("halflife/weapons/noammo",CHAN_WEAPON);
 		Goto Reload;
-		HWF1 A 1
-		{
-			A_SpawnItemEx("LighCheapHack");
-			A_AlertMonsters();
-			for(int i=0;i<2;i++)
-				A_FireProjectile("GunSmallSmokeSpawner",0,0,4,6);
-			A_PlaySound("halflife/weapons/shotgunsingle",CHAN_WEAPON);
-			A_FireBullets(3,3,6,8,"NewPuff1",0);
-			A_TakeInventory("ShotgunHeldAmmo",1);
-			WeaponRecoil(350);
-		}
+		HWF1 A 1 A_HLShootLead(3,3,6,8,350,"halflife/weapons/shotgunsingle",2);
 		HWF1 B 1;
-		HWF1 CDEFGHI 1 WeaponRecoil(-50);
+		HWF1 CDEFGHI 1 A_HLWeaponRecoil(-50);
 		HWF1 JKLMN 1;
 		HWF1 O 2 A_PlaySound("halflife/weapons/shotgunpump",CHAN_WEAPON);
 		HWF1 PQRSTUVWXYZ[\] 2;
@@ -672,17 +651,11 @@ class Pshotgun : ParanoidWeapon
 		TNT1 A 0 A_JumpIf(CountInv("ShotgunHeldAmmo")<2,"Fire");	//if less than two, will shoot only one
 		HWF2 C 1
 		{
-			A_SpawnItemEx("LighCheapHack");
-			A_AlertMonsters();
-			for(int i=0;i<2;i++)
-				A_FireProjectile("GunSmallSmokeSpawner",0,0,4,6);
-			A_PlaySound("halflife/weapons/shotgundouble",CHAN_WEAPON);
-			A_FireBullets(10,10,12,8,"NewPuff1",0);
-			A_TakeInventory("ShotgunHeldAmmo",2);
-			WeaponRecoil(550);
+			A_HLShootLead(10,10,12,8,550,"halflife/weapons/shotgundouble",2);
+			A_TakeInventory("ShotgunHeldAmmo",1);
 		}
 		HWF2 D 1;
-		HWF2 EFGHIJKLMNO 1 WeaponRecoil(-50);
+		HWF2 EFGHIJKLMNO 1 A_HLWeaponRecoil(-50);
 		HWF2 PQRSTUVWXYZ[\] 1;
 		HWF3 ABC 2;
 		HWF3 D 2 A_PlaySound("halflife/weapons/shotgunpump",CHAN_WEAPON);
@@ -851,17 +824,8 @@ class ARifle : ParanoidWeapon
 		TNT1 A 0 A_JumpIfInventory("M16HeldAmmo",1,2);
 		HWI1 A 5 A_PlaySound("halflife/weapons/noammo",CHAN_WEAPON);
 		Goto Reload;
-		HWF1 B 1
-		{
-			A_SpawnItemEx("LighCheapHack");
-			A_PlaySound("halflife/weapons/machinegunshot",CHAN_WEAPON);
-			A_AlertMonsters();
-			A_FireBullets(3,3,-1,5,"NewPuff1",0);
-			A_FireProjectile("GunSmallSmokeSpawner",0,0,6,4);
-			A_TakeInventory("M16HeldAmmo",1);
-			WeaponRecoil(100);
-		}
-		HWF1 CE 1 WeaponRecoil(-50);
+		HWF1 B 1 A_HLShootLead(3,3,-1,5,100,"halflife/weapons/machinegunshot",1,"M16HeldAmmo");
+		HWF1 CE 1 A_HLWeaponRecoil(-50);
 		HWF1 F 1;
 		TNT1 A 0 A_CheckReload;
 		Goto Ready2;
@@ -878,12 +842,12 @@ class ARifle : ParanoidWeapon
 			if(gren!=null)
 				gren.vel.z+=2;
 			A_AlertMonsters();
-			WeaponRecoil(400);
+			A_HLWeaponRecoil(400);
 			A_SpawnItemEx("LighCheapHack");
 			A_TakeInventory("M16Gren",1,TIF_NOTAKEINFINITE);
 		}
 		HWF1 I 1;
-		HWF1 JKLMNOPQ 1 WeaponRecoil(-50);
+		HWF1 JKLMNOPQ 1 A_HLWeaponRecoil(-50);
 		HWF1 RSTUVWXYZ[\] 1;
 		HWF2 ABCDEFGHIJKL 1;
 		TNT1 A 0 A_CheckReload;
@@ -895,15 +859,7 @@ class ARifle : ParanoidWeapon
 		TNT1 S 0 A_PlaySound("halflife/weapons/m16cliprelease",CHAN_WEAPON);
 		HWR1 JKLMNOPQRSTUVWXYZ[ 2;
 		HWR1 \] 1;
-		HWR2 A 1
-		{
-			A_PlaySound("halflife/weapons/m16clipinsert",CHAN_WEAPON);
-			while(CountInv("M16HeldAmmo")<50&&CountInv("BClip"))
-			{
-				A_TakeInventory("BClip",1,TIF_NOTAKEINFINITE);
-				A_GiveInventory("M16HeldAmmo");
-			}
-		}
+		HWR2 A 1 A_HLReload("halflife/weapons/m16clipinsert","M16HeldAmmo",50);
 		HWR2 BCDEFGHIJKLMNOPQ 1;
 		Goto Ready2;
 	}
@@ -1070,13 +1026,13 @@ class RPGLauncher : ParanoidWeapon
 		HWF1 A 1
 		{
 			A_FireProjectile("HLRocket",0,1,5,5);
-			WeaponRecoil(800);
+			A_HLWeaponRecoil(800);
 			A_PlaySound("halflife/weapons/RPGFire",CHAN_WEAPON);
 			A_SpawnItemEx("LighCheapHack");
 		}
 		HWF1 BC 1;
 		HWF1 A 0 A_Recoil(7);
-		HWF1 DEFGHIJK 1 WeaponRecoil(-100);
+		HWF1 DEFGHIJK 1 A_HLWeaponRecoil(-100);
 		HWF1 LMN 1;
 		HWF1 N 9;
 		HWR1 A 1 A_CheckReload;
@@ -1307,9 +1263,8 @@ class XBow : ParanoidWeapon
 		HWF5 P 1 A_CrossbowZoomOut();
 		HWF5 QRSTUVWXYZ[\] 1;
 		HWF6 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1;
-		HWF7 A 1 A_ReloadCrossbow;
-		HWF7 BCDEFGHIJKLMNOP 1;
-		HWF7 Q 1 A_PlaySound("HLCrossbow/Reload",CHAN_WEAPON);
+		HWF7 ABCDEFGHIJKLMNOP 1;
+		HWF7 Q 1 A_HLReload("HLCrossbow/Reload");
 		HWF7 RSTUVWXYZ[\] 1;
 		HWF8 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1;
 		HWF9 ABCDEFGHIJKLMNOPQRSTUVWXY 1;
@@ -1334,10 +1289,9 @@ class XBow : ParanoidWeapon
 		HWR1 A 1 A_CrossbowZoomOut;
 		HWR1 BCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1;
 		HWR2 ABCDEFGHIJKLMNOPQRSTUVW 1;
-		HWR2 X 1 A_ReloadCrossbow;
-		HWR2 YZ[\] 1;
+		HWR2 XYZ[\] 1;
 		HWR3 ABCDEFGHIJ 1;
-		HWR3 K 1 A_PlaySound("HLCrossbow/Reload",CHAN_WEAPON);
+		HWR3 K 1 A_HLReload("HLCrossbow/Reload");
 		HWR3 LMNOPQRSTUVWXYZ[\] 1;
 		HWR4 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1;
 		HWR5 ABCDEFGHIJKLMNOPQRS 1;
@@ -1355,14 +1309,6 @@ class XBow : ParanoidWeapon
 			}
 		}
 		Goto Ready2;
-	}
-	action void A_ReloadCrossbow()
-	{
-		while(CountInv("BoltHeld")<5&&CountInv("Xbowbolts"))
-		{
-			A_TakeInventory("Xbowbolts",1,TIF_NOTAKEINFINITE);
-			A_GiveInventory("BoltHeld");
-		}
 	}
 	action void A_CrossbowZoomOut()
 	{
@@ -1528,15 +1474,7 @@ class GluonGun : ParanoidWeapon
 		HWR1 ABCDEFGHIJKLMNOPQRSTU 1;
 		HWR1 V 0 A_JumpIfInventory("AECell",1,1);
 		Goto Empty;
-		HWR1 V 1
-		{
-			A_PlaySound("halflife/weapons/reload1",CHAN_WEAPON);
-			while(CountInv("GluonHeldAmmo")<40&&CountInv("AECell"))
-			{
-				A_TakeInventory("AECell",1,TIF_NOTAKEINFINITE);
-				A_GiveInventory("GluonHeldAmmo");
-			}
-		}
+		HWR1 V 1 A_HLReload("halflife/weapons/reload1");
 		HWR1 WXYZ[\] 1;
 		HWR2 A 1;
 		HWR2 B 1 A_PlaySound("halflife/weapons/reload2",CHAN_WEAPON);
