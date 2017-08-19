@@ -13,13 +13,13 @@ class RolfBellmer : PlayerPawn
 		Player.DisplayName "Rolf Bellmer";
 		Player.ViewHeight 56;
 		Player.AttackZOffset 24;
-		Player.WeaponSlot 1,"Crowbar";
-		Player.WeaponSlot 2,"Beretta","Python";
-		Player.WeaponSlot 3,"HornetGun","PShotgun";
-		Player.WeaponSlot 4,"Xbow","ARifle";
-		Player.WeaponSlot 5,"RPGLauncher";
-		Player.WeaponSlot 6,"GluonGun";
-		Player.StartItem "Crowbar";
+		Player.WeaponSlot 1,"HLCrowbar";
+		Player.WeaponSlot 2,"HLPistol","HLMagnum";
+		Player.WeaponSlot 3,"HLHornetGun","HLShotgun";
+		Player.WeaponSlot 4,"HLXBow","HLAssaultRifle";
+		Player.WeaponSlot 5,"HLRPG";
+		Player.WeaponSlot 6,"HLGluonGun";
+		Player.StartItem "HLCrowbar";
 		Player.StartItem "HEVSuit";
 	}
 	States

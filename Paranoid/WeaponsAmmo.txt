@@ -123,6 +123,7 @@ class ParanoidWeaponGiver : WeaponGiver
 //****************************************
 // Dummy item for light on player weapons
 //****************************************
+
 class LighCheapHack : Actor
 {
 	Default
@@ -225,7 +226,7 @@ class PuffSmoke : Actor
 // Weapons & Ammo
 //================
 
-class Crowbar : ParanoidWeapon
+class HLCrowbar : ParanoidWeapon
 {
 	Default
 	{
@@ -254,43 +255,43 @@ class Crowbar : ParanoidWeapon
 	Fire1:
 		HLF1 A 2 A_JumpIfCloser(80,"FireFast1");
 		HLF1 BC 2;
-		HLF1 D 2 CrowbarHit;
+		HLF1 D 2 A_HLCrowbarHit;
 		HLF1 EFGHIJK 2;
 		Goto Ready;
 	FireFast1:
 		HLF1 LMNO 1;
-		HLF1 P 1 CrowbarHit;
+		HLF1 P 1 A_HLCrowbarHit;
 		HLF1 QRSTUV 1;
 		HLI1 A 2;
 		Goto Ready;
 	Fire2:
 		HLF1 W 2 A_JumpIfCloser(80,"FireFast2");
 		HLF1 XYZ 2;
-		HLF1 [ 2 CrowbarHit;
+		HLF1 [ 2 A_HLCrowbarHit;
 		HLF1 \] 2;
 		HLF2 ABCDEF 2;
 		Goto Ready;
 	FireFast2:
 		HLF2 HIJKLM 1;
-		HLF2 N 1 CrowbarHit;
+		HLF2 N 1 A_HLCrowbarHit;
 		HLF2 OPQRSTU 1;
 		Goto Ready;
 	Fire3:
 		HLF2 V 2 A_JumpIfCloser(80,"FireFast3");
 		HLF2 WXY 2;
-		HLF2 Z 2 CrowbarHit;
+		HLF2 Z 2 A_HLCrowbarHit;
 		HLF2 [\] 2;
 		HLF3 AB 2;
 		HLF3 CDEFGHIJK 1;
 		Goto Ready;
 	FireFast3:
 		HLF3 LMNOP 1;
-		HLF3 Q 1 CrowbarHit;
+		HLF3 Q 1 A_HLCrowbarHit;
 		HLF3 RSTUVWXYZ[\] 1;
 		HLF4 A 1;
 		Goto Ready;
 	}
-	action void CrowbarHit()
+	action void A_HLCrowbarHit()
 	{
 		if(player==null)
 			return;
@@ -340,17 +341,17 @@ class CrowbarPuff2 : NewPuff1
 // Beretta
 //=========
 
-class PistolPickup : ParanoidWeaponGiver
+class HLPistolPickup : ParanoidWeaponGiver
 {
 	Default
 	{
 		Inventory.PickupMessage "Picked up a 9mm pistol.";
-		ParanoidWeaponGiver.Weapon1 "PistolHeldAmmo","BClip",17;
-		DropItem "Beretta";
+		ParanoidWeaponGiver.Weapon1 "HLPistolMag","HLPistolAmmo",17;
+		DropItem "HLPistol";
 	}
 }
 
-class Beretta : ParanoidWeapon
+class HLPistol : ParanoidWeapon
 {
 	Default
 	{
@@ -360,8 +361,8 @@ class Beretta : ParanoidWeapon
 		Weapon.SelectionOrder 2000;
 		Weapon.AmmoUse 1;
 		Weapon.AmmoUse2 1;
-		Weapon.AmmoType "BClip";
-		Weapon.AmmoType2 "PistolHeldAmmo";
+		Weapon.AmmoType "HLPistolAmmo";
+		Weapon.AmmoType2 "HLPistolMag";
 		Inventory.PickupMessage "Picked up a 9mm pistol.";
 		Obituary "%o was out-gunned by %k's 9mm pistol.";
 		Decal "BulletChip";
@@ -373,7 +374,7 @@ class Beretta : ParanoidWeapon
 		HLI1 A 1 A_HLWeaponReady(17);
 		Loop;
 	Fire:
-		TNT1 A 0 A_JumpIfInventory("PistolHeldAmmo",1,2);
+		TNT1 A 0 A_JumpIfInventory("HLPistolMag",1,2);
 		HLI1 A 5 A_PlaySound("halflife/weapons/noammo",CHAN_WEAPON);
 		Goto Reload;
 		HLF1 A 1;
@@ -386,7 +387,7 @@ class Beretta : ParanoidWeapon
 		HLF1 LMNOP 2;
 		Goto Ready;
 	AltFire:
-		TNT1 A 0 A_JumpIfInventory("PistolHeldAmmo",1,2);
+		TNT1 A 0 A_JumpIfInventory("HLPistolMag",1,2);
 		HLI1 A 5 A_PlaySound("halflife/weapons/noammo",CHAN_WEAPON);
 		Goto Reload;
 		HLF1 B 1;
@@ -409,7 +410,7 @@ class Beretta : ParanoidWeapon
 		Goto Ready;
 	}
 }
-class PistolHeldAmmo : Ammo
+class HLPistolMag : Ammo
 {
 	Default
 	{
@@ -422,7 +423,7 @@ class PistolHeldAmmo : Ammo
 // Beretta Clip
 //====================
 
-class BClip : Ammo
+class HLPistolAmmo : Ammo
 {
 	Default
 	{
@@ -449,17 +450,17 @@ class BClip : Ammo
 // Python (357 Magnum)
 //=====================
 
-class R357Pickup : ParanoidWeaponGiver
+class HLMagnumPickup : ParanoidWeaponGiver
 {
 	Default
 	{
 		Inventory.PickupMessage "Picked up a .357 Magnum revolver. You Feel Lucky, Punk!?";
-		ParanoidWeaponGiver.Weapon1 "MagnumHeldAmmo","PythonAmmo",6;
-		DropItem "Python";
+		ParanoidWeaponGiver.Weapon1 "HLMagnumMag","HLMagnumAmmo",6;
+		DropItem "HLMagnum";
 	}
 }
 
-class Python : ParanoidWeapon
+class HLMagnum : ParanoidWeapon
 {
 	Default
 	{
@@ -470,8 +471,8 @@ class Python : ParanoidWeapon
 		Weapon.SelectionOrder 1500;
 		Weapon.AmmoUse 1;
 		Weapon.AmmoUse2 1;
-		Weapon.AmmoType "PythonAmmo";
-		Weapon.AmmoType2 "MagnumHeldAmmo";
+		Weapon.AmmoType "HLMagnumAmmo";
+		Weapon.AmmoType2 "HLMagnumMag";
 		Inventory.PickupMessage "Picked up a .357 Magnum revolver. You Feel Lucky, Punk!?";
 		Obituary "%o's armor was pierced by %k's Python.";
 		Decal "BulletChip";
@@ -483,7 +484,7 @@ class Python : ParanoidWeapon
 		HLI1 A 1 A_HLWeaponReady(6,1);
 		Loop;
 	Fire:
-		TNT1 A 0 A_JumpIfInventory("MagnumHeldAmmo",1,2);
+		TNT1 A 0 A_JumpIfInventory("HLMagnumMag",1,2);
 		HLI1 A 5 A_PlaySound("halflife/weapons/noammo",CHAN_WEAPON);
 		Goto Reload;
 		HLF1 AB 1;
@@ -507,7 +508,7 @@ class Python : ParanoidWeapon
 		Goto Ready;
 	}
 }
-class MagnumHeldAmmo : Ammo
+class HLMagnumMag : Ammo
 {
 	Default
 	{
@@ -520,20 +521,20 @@ class MagnumHeldAmmo : Ammo
 // Python Ammo
 //=============
 
-class PythonAmmo : Ammo
+class HLMagnumAmmo : Ammo
 {
 	Default
 	{
 		Tag ".357";
-		Radius 6;
+		Radius 4;
 		Height 4;
 		Inventory.PickupSound "misc/w_pkup";
-		Inventory.PickupMessage "Picked up a box of .357 Magnum ammo.";
-		Inventory.Amount 12;
+		Inventory.Amount 6;
 		Inventory.MaxAmount 36;
 		Ammo.BackpackAmount 6;
 		Ammo.BackpackMaxAmount 50;
 		Inventory.Icon "i_bul2";
+		Inventory.PickupMessage "Picked up a speedloader of .357 Magnum ammo.";
 	}
 	States
 	{
@@ -543,13 +544,13 @@ class PythonAmmo : Ammo
 	}
 }
 
-class PythonAmmo1 : PythonAmmo
+class HLMagnumAmmoBox : HLMagnumAmmo
 {
 	Default
 	{
-		Radius 4;
-		Inventory.PickupMessage "Picked up a speedloader of .357 Magnum ammo.";
-		Inventory.Amount 6;
+		Radius 6;
+		Inventory.PickupMessage "Picked up a box of .357 Magnum ammo.";
+		Inventory.Amount 12;
 	}
 }
 
@@ -557,13 +558,13 @@ class PythonAmmo1 : PythonAmmo
 // Paranoid Shotgun
 //===================
 
-class ShotgunPickup : ParanoidWeaponGiver
+class HLShotgunPickup : ParanoidWeaponGiver
 {
 	Default
 	{
 		Inventory.PickupMessage "Picked up a shotgun.";
-		ParanoidWeaponGiver.Weapon1 "ShotgunHeldAmmo","PShell",8;
-		DropItem "PShotgun";
+		ParanoidWeaponGiver.Weapon1 "HLShotgunMag","HLShotgunAmmo",8;
+		DropItem "HLShotgun";
 	}
 }
 
@@ -571,7 +572,7 @@ class ShotgunPickup : ParanoidWeaponGiver
 // Paranoid Shotgun (Vertical)
 //=============================
 
-class Pshotgun1 : ShotgunPickup
+class HLShotgunPickup2 : HLShotgunPickup
 {
 	Default
 	{
@@ -580,7 +581,7 @@ class Pshotgun1 : ShotgunPickup
 	}
 }
 
-class Pshotgun : ParanoidWeapon
+class HLShotgun : ParanoidWeapon
 {
 	bool reloading;
 	Default
@@ -590,8 +591,8 @@ class Pshotgun : ParanoidWeapon
 		Weapon.SelectionOrder 900;
 		Weapon.AmmoUse 1;
 		Weapon.AmmoUse2 1;
-		Weapon.AmmoType "PShell";
-		Weapon.AmmoType2 "ShotgunHeldAmmo";
+		Weapon.AmmoType "HLShotgunAmmo";
+		Weapon.AmmoType2 "HLShotgunMag";
 		Inventory.PickupMessage "Picked up a shotgun.";
 		Obituary "%o swallowed %k's lead pellets.";
 		Decal "BulletChip";
@@ -612,7 +613,7 @@ class Pshotgun : ParanoidWeapon
 		Wait;
 	Fire:
 		TNT1 A 0 A_JumpIf(invoker.reloading,"ReloadDone");
-		TNT1 A 0 A_JumpIfInventory("ShotgunHeldAmmo",1,2);
+		TNT1 A 0 A_JumpIfInventory("HLShotgunMag",1,2);
 		HLI1 A 5 A_PlaySound("halflife/weapons/noammo",CHAN_WEAPON);
 		Goto Reload;
 		HLF1 A 1 A_HLShootLead(3,3,6,8,350,"halflife/weapons/shotgunsingle",1,4);
@@ -626,11 +627,11 @@ class Pshotgun : ParanoidWeapon
 		Goto Ready;
 	AltFire:
 		TNT1 A 0 A_JumpIf(invoker.reloading,"ReloadDone");
-		TNT1 A 0 A_JumpIf(CountInv("ShotgunHeldAmmo")<2,"Fire");	//if less than two, will shoot only one
+		TNT1 A 0 A_JumpIf(CountInv("HLShotgunMag")<2,"Fire");	//if less than two, will shoot only one
 		HLF2 C 1
 		{
 			A_HLShootLead(10,10,12,8,550,"halflife/weapons/shotgundouble",1,4);
-			A_TakeInventory("ShotgunHeldAmmo",1);
+			A_TakeInventory("HLShotgunMag",1);
 		}
 		HLF2 D 1;
 		HLF2 EFGHIJKLMNO 1 A_HLWeaponRecoil(-50);
@@ -647,13 +648,13 @@ class Pshotgun : ParanoidWeapon
 		HLR1 G 2
 		{
 			A_PlaySound("halflife/weapons/reload1",CHAN_WEAPON);
-			A_TakeInventory("PShell",1,TIF_NOTAKEINFINITE);
-			A_GiveInventory("ShotgunHeldAmmo",1);
+			A_TakeInventory("HLShotgunAmmo",1,TIF_NOTAKEINFINITE);
+			A_GiveInventory("HLShotgunMag",1);
 		}
 		HLR1 H 2;
 		HLR1 I 2 A_WeaponReady(WRF_NOBOB);
-		HLR1 A 0 A_JumpIfInventory("ShotgunHeldAmmo",0,"ReloadDone");
-		HLR1 A 0 A_JumpIfInventory("PShell",1,"ReloadLoop");
+		HLR1 A 0 A_JumpIfInventory("HLShotgunMag",0,"ReloadDone");
+		HLR1 A 0 A_JumpIfInventory("HLShotgunAmmo",1,"ReloadLoop");
 	ReloadDone:
 		HLR1 JKLMNO 2;
 		HLR1 P 2 A_PlaySound("halflife/weapons/shotgunpump",CHAN_WEAPON);
@@ -662,7 +663,7 @@ class Pshotgun : ParanoidWeapon
 		Goto Ready;
 	}
 }
-class ShotgunHeldAmmo : Ammo
+class HLShotgunMag : Ammo
 {
 	Default
 	{
@@ -675,7 +676,7 @@ class ShotgunHeldAmmo : Ammo
 // Paranoid Shotgun Shells
 //=========================
 
-class PShell : Ammo
+class HLShotgunAmmo : Ammo
 {
 	Default
 	{
@@ -697,11 +698,7 @@ class PShell : Ammo
 	}
 }
 
-//===========================
-// Paranoid Shotgun Shellbox
-//===========================
-
-class PShellBox : PShell
+class HLShotgunBox : HLShotgunAmmo
 {
 	Default
 	{
@@ -715,20 +712,20 @@ class PShellBox : PShell
 // 9mm Assault Rifle
 //===================
 
-class M16Pickup : ParanoidWeaponGiver
+class HLAssaultRiflePickup : ParanoidWeaponGiver
 {
 	Default
 	{
 		Inventory.PickupMessage "Picked up a 9mm assault rifle.";
-		ParanoidWeaponGiver.Weapon1 "M16HeldAmmo","BClip",25;
-		DropItem "ARifle";
+		ParanoidWeaponGiver.Weapon1 "HLAssaultRifleMag","HLPistolAmmo",25;
+		DropItem "HLAssaultRifle";
 	}
 	override bool TryPickup(in out Actor toucher)
 	{
 		if(WeaponGiver.TryPickup(toucher))
 		{
 			toucher.A_GiveInventory(Weapon1,Weapon1Amount);
-			toucher.A_GiveInventory("M16Gren");
+			toucher.A_GiveInventory("HLGrenadeLauncherAmmo");
 			GoAwayAndDie();
 			return true;
 		}
@@ -745,7 +742,7 @@ class M16Pickup : ParanoidWeaponGiver
 // 9mm Assault Rifle (Vertical)
 //=============================
 
-class ARifle1 : M16Pickup
+class HLAssaultRiflePickup2 : HLAssaultRiflePickup
 {
 	Default
 	{
@@ -754,7 +751,7 @@ class ARifle1 : M16Pickup
 	}
 }
 
-class ARifle : ParanoidWeapon
+class HLAssaultRifle : ParanoidWeapon
 {
 	Default
 	{
@@ -763,8 +760,8 @@ class ARifle : ParanoidWeapon
 		Weapon.SelectionOrder 1000;
 		Weapon.AmmoUse 1;
 		Weapon.AmmoUse2 1;
-		Weapon.AmmoType "BClip";
-		Weapon.AmmoType2 "M16ClipGren";
+		Weapon.AmmoType "HLPistolAmmo";
+		Weapon.AmmoType2 "HLAssaultRifleMagEx";
 		Inventory.PickupMessage "Picked up a 9mm assault rifle.";
 		Obituary "%o felt %k's m16.";
 		Decal "BulletChip";
@@ -783,14 +780,14 @@ class ARifle : ParanoidWeapon
 		{
 			if(waterlevel==3)
 			{
-				if(CountInv("M16HeldAmmo")<50&&CountInv("BClip"))
+				if(CountInv("HLAssaultRifleMag")<50&&CountInv("HLPistolAmmo"))
 					A_WeaponReady(WRF_NOFIRE|WRF_ALLOWRELOAD);
 				else
 					A_WeaponReady(WRF_NOFIRE);
 			}
 			else
 			{
-				if(CountInv("M16HeldAmmo")<50&&CountInv("BClip"))
+				if(CountInv("HLAssaultRifleMag")<50&&CountInv("HLPistolAmmo"))
 					A_WeaponReady(WRF_ALLOWRELOAD);
 				else
 					A_WeaponReady();
@@ -798,16 +795,16 @@ class ARifle : ParanoidWeapon
 		}
 		Loop;
 	Fire:
-		TNT1 A 0 A_JumpIfInventory("M16HeldAmmo",1,2);
+		TNT1 A 0 A_JumpIfInventory("HLAssaultRifleMag",1,2);
 		HLI1 A 5 A_PlaySound("halflife/weapons/noammo",CHAN_WEAPON);
 		Goto Reload;
-		HLF1 B 1 A_HLShootLead(3,3,-1,5,100,"halflife/weapons/machinegunshot",1,2,am2x:"M16HeldAmmo");
+		HLF1 B 1 A_HLShootLead(3,3,-1,5,100,"halflife/weapons/machinegunshot",1,2,am2x:"HLAssaultRifleMag");
 		HLF1 CE 1 A_HLWeaponRecoil(-50);
 		HLF1 F 1;
 		TNT1 A 0 A_CheckReload;
 		Goto Ready;
 	AltFire:
-		TNT1 A 0 A_JumpIfInventory("M16Gren",1,2);
+		TNT1 A 0 A_JumpIfInventory("HLGrenadeLauncherAmmo",1,2);
 		HLI1 A 12 A_PlaySound("halflife/weapons/noammo",CHAN_WEAPON);
 		Goto Ready;
 		HLF1 H 1
@@ -820,7 +817,7 @@ class ARifle : ParanoidWeapon
 				gren.vel.z+=2;
 			A_AlertMonsters();
 			A_HLWeaponRecoil(400);
-			A_TakeInventory("M16Gren",1,TIF_NOTAKEINFINITE);
+			A_TakeInventory("HLGrenadeLauncherAmmo",1,TIF_NOTAKEINFINITE);
 		}
 		HLF1 I 1;
 		HLF1 JKLMNOPQ 1 A_HLWeaponRecoil(-50);
@@ -833,12 +830,12 @@ class ARifle : ParanoidWeapon
 		TNT1 S 0 A_PlaySound("halflife/weapons/m16cliprelease",CHAN_WEAPON);
 		HLR1 JKLMNOPQRSTUVWXYZ[ 2;
 		HLR1 \] 1;
-		HLR2 A 1 A_HLReload("halflife/weapons/m16clipinsert","M16HeldAmmo",50);
+		HLR2 A 1 A_HLReload("halflife/weapons/m16clipinsert","HLAssaultRifleMag",50);
 		HLR2 BCDEFGHIJKLMNOPQ 1;
 		Goto Ready;
 	}
 }
-class M16HeldAmmo : Ammo
+class HLAssaultRifleMag : Ammo
 {
 	Default
 	{
@@ -846,7 +843,7 @@ class M16HeldAmmo : Ammo
 		Inventory.MaxAmount 50;
 	}
 }
-class M16ClipGren : Ammo
+class HLAssaultRifleMagEx : Ammo
 {
 	Default
 	{
@@ -854,6 +851,7 @@ class M16ClipGren : Ammo
 		Inventory.MaxAmount 70;
 	}
 }
+
 class M16Grenade : Actor
 {
 	Default
@@ -906,11 +904,11 @@ class GrenadeTrail : Actor
 	}
 }
 
-//====================
-// Assault Rifle Clip
-//====================
+//=======================
+// Assault Rifle Magazine
+//=======================
 
-class ARClip : BClip
+class HLAssaultRifleAmmo : HLPistolAmmo
 {
 	Default
 	{
@@ -919,11 +917,7 @@ class ARClip : BClip
 	}
 }
 
-//========================
-// Assault Rifle Ammo Box
-//========================
-
-class ARAmmo : ARClip
+class HLAssaultRifleBox : HLPistolAmmo
 {
 	Default
 	{
@@ -938,7 +932,7 @@ class ARAmmo : ARClip
 // M16Gren
 //=========
 
-class M16Gren : Ammo
+class HLGrenadeLauncherAmmo : Ammo
 {
 	Default
 	{
@@ -962,7 +956,7 @@ class M16Gren : Ammo
 // RPG Launcher
 //=====================
 
-class RPGLauncher : ParanoidWeapon
+class HLRPG : ParanoidWeapon
 {
 	Default
 	{
@@ -974,27 +968,27 @@ class RPGLauncher : ParanoidWeapon
 		Inventory.PickupMessage "Picked up an RPG Launcher! Let's blow things up!";
 		Weapon.AmmoUse 1;
 		Weapon.AmmoGive 2;
-		Weapon.AmmoType "RPGAmmo";
+		Weapon.AmmoType "HLRPGAmmo";
 		Inventory.Icon "i_rlau1";
 	}
 	States
 	{
 	Deselect:
-		HLU1 A 0 A_JumpIf(!CountInv("RPGAmmo"),"DeselectEmpty");
+		HLU1 A 0 A_JumpIf(!CountInv("HLRPGAmmo"),"DeselectEmpty");
 		Goto Super::Deselect;
 	DeselectEmpty:
 		HLU1 OPQRSTUVWXYZ[\ 1;
 		TNT1 A 0 A_Lower;
 		Wait;
 	Select1:
-		TNT1 A 0 A_JumpIf(!CountInv("RPGAmmo"),"SelectEmpty");
+		TNT1 A 0 A_JumpIf(!CountInv("HLRPGAmmo"),"SelectEmpty");
 		HLU1 NMLKJIHGFEDCBA 1;
 		Goto Ready;
 	SelectEmpty:
 		HLU1 \[ZYXWVUTSRQPO 1;
 		Goto Ready;
 	Ready:
-		TNT1 A 0 A_JumpIf(!CountInv("RPGAmmo"),2);
+		TNT1 A 0 A_JumpIf(!CountInv("HLRPGAmmo"),2);
 		HLI1 A 1 A_WeaponReady;
 		Loop;
 		HLI1 B 1 A_WeaponReady;
@@ -1093,7 +1087,7 @@ class RPGTrail2 : RPGTrail1
 // RPG Launcher Ammo
 //===================
 
-class RPGAmmo : Ammo
+class HLRPGAmmo : Ammo
 {
 	Default
 	{
@@ -1115,40 +1109,31 @@ class RPGAmmo : Ammo
 	}
 }
 
-class BoltHeld : Ammo
-{
-	Default
-	{
-		+INVENTORY.IGNORESKILL
-		Inventory.MaxAmount 5;
-	}
-}
-
 //=============
 // Cross-Bow
 //=============
 
-class XBowPickup : ParanoidWeaponGiver
+class HLXBowPickup : ParanoidWeaponGiver
 {
 	Default
 	{
 		Radius 16;
 		Height 8;
 		Inventory.PickupMessage "Picked up a crossbow. Snipe and impale!";
-		ParanoidWeaponGiver.Weapon1 "BoltHeld","Xbowbolts",5;
-		DropItem "XBow";
+		ParanoidWeaponGiver.Weapon1 "HLXBowMag","HLXBowAmmo",5;
+		DropItem "HLXBow";
 	}
 }
 
-class XBow : ParanoidWeapon
+class HLXBow : ParanoidWeapon
 {
 	bool zoomtoken;
 	Default
 	{
 		Radius 16;
 		Height 8;
-		Weapon.AmmoType "Xbowbolts";
-		Weapon.AmmoType2 "BoltHeld";
+		Weapon.AmmoType "HLXBowAmmo";
+		Weapon.AmmoType2 "HLXBowMag";
 		Weapon.AmmoGive 5;
 		Weapon.AmmoUse 1;
 		Weapon.AmmoUse2 1;
@@ -1172,7 +1157,7 @@ class XBow : ParanoidWeapon
 		HLU1 ABCDEFGHIJKLMNO 1;
 	Ready:
 		HLI1 A 0 A_JumpIf(invoker.ZoomToken,4);
-		HLI1 A 0 A_JumpIf(!CountInv("BoltHeld"),2);
+		HLI1 A 0 A_JumpIf(!CountInv("HLXBowMag"),2);
 		HLI1 A 1 A_HLWeaponReady(5);
 		Loop;
 		HLI1 B 1 A_HLWeaponReady(5);
@@ -1180,17 +1165,17 @@ class XBow : ParanoidWeapon
 		R016 A 1 A_HLWeaponReady(5);
 		Loop;
 	Fire:
-		"####" # 0 A_JumpIfInventory("BoltHeld",1,2);
+		"####" # 0 A_JumpIfInventory("HLXBowMag",1,2);
 		"####" # 5 A_PlaySound("halflife/weapons/noammo",CHAN_WEAPON);
 		Goto Reload;
 		TNT1 A 0
 		{
-			A_TakeInventory("BoltHeld",1);
+			A_TakeInventory("HLXBowMag",1);
 			A_PlaySound("HLCrossbow/Fire",CHAN_WEAPON);
 			A_FireProjectile("XbowBolt",0,0,4,3);
 			A_SetPitch(pitch-2.8);
 			//Fire1 (shoot and recock)
-			if(CountInv("BoltHeld"))
+			if(CountInv("HLXBowMag"))
 			{
 				if(invoker.ZoomToken)
 					return resolvestate("Fire1Zoom");
@@ -1198,7 +1183,7 @@ class XBow : ParanoidWeapon
 					return resolvestate("Fire1");
 			}
 			//Fire2 (shoot, reload, recock)
-			else if(CountInv("Xbowbolts"))
+			else if(CountInv("HLXBowAmmo"))
 			{
 				if(invoker.ZoomToken)
 					return resolvestate("Fire2Zoom");
@@ -1293,16 +1278,23 @@ class XBow : ParanoidWeapon
 		A_ZoomFactor(1,1);
 	}
 }
+class HLXBowMag : Ammo
+{
+	Default
+	{
+		+INVENTORY.IGNORESKILL
+		Inventory.MaxAmount 5;
+	}
+}
 
-class XBowBolts : Ammo
+class HLXBowAmmo : Ammo
 {
 	Default
 	{
 		Radius 8;
 		Height 4;
-		inventory.pickupmessage "Picked up a clip of crossbow bolts.";
+		inventory.pickupmessage "Picked up a crossbow bolt.";
 		inventory.pickupsound "misc/w_pkup";
-		inventory.amount 5;
 		inventory.maxamount 50;
 		ammo.backpackamount 5;
 		inventory.icon "i_bul1";	//Change when proper icon is inserted into file
@@ -1315,12 +1307,12 @@ class XBowBolts : Ammo
 	}
 }
 
-class XBowBoltSingle : XBowBolts
+class HLXBowBox : HLXBowAmmo
 {
 	Default
 	{
-		inventory.pickupmessage "Picked up a crossbow bolt.";
-		inventory.amount 1;
+		inventory.amount 5;
+		inventory.pickupmessage "Picked up a clip of crossbow bolts.";
 	}
 }
 
@@ -1361,36 +1353,25 @@ class Missile : Rocket
 // Developed by Major Cooke for AeOD; modified by DBThanatos & Kappes Buur
 //=============
 
-class GluonHeldAmmo : Ammo
-{
-	Default
-	{
-		+INVENTORY.IGNORESKILL
-		Inventory.MaxAmount 40;
-	}
-}
-
-//***************************************************************
-
-class GluonGunPickup : ParanoidWeaponGiver
+class HLGluonGunPickup : ParanoidWeaponGiver
 {
 	Default
 	{
 		Inventory.PickupMessage "Picked up the Gluon Gun.";
-		ParanoidWeaponGiver.Weapon1 "GluonHeldAmmo","AECell",40;
-		DropItem "GluonGun";
+		ParanoidWeaponGiver.Weapon1 "HLGluonGunMag","HLGluonGunAmmo",40;
+		DropItem "HLGluonGun";
 	}
 }
 
-class GluonGun : ParanoidWeapon
+class HLGluonGun : ParanoidWeapon
 {
 	int GluonSoundCountdown;
 	Default
 	{
 		Weapon.AmmoUse 1;
 		Weapon.AmmoUse2 1;
-		Weapon.AmmoType "AECell";
-		Weapon.AmmoType2 "GluonHeldAmmo";
+		Weapon.AmmoType "HLGluonGunAmmo";
+		Weapon.AmmoType2 "HLGluonGunMag";
 		Weapon.AmmoGive 40;
 		Weapon.UpSound "weapons/plasma/draw";
 		Weapon.SelectionOrder 10333;
@@ -1404,7 +1385,7 @@ class GluonGun : ParanoidWeapon
 		HLI1 A 1 A_HLWeaponReady(40,1);
 		Loop;
 	Fire:
-		HLI1 A 0 A_JumpIfInventory("GluonHeldAmmo",1,1);
+		HLI1 A 0 A_JumpIfInventory("HLGluonGunMag",1,1);
 		Goto Reload;
 		HLI1 A 0
 		{
@@ -1414,13 +1395,13 @@ class GluonGun : ParanoidWeapon
 	ShotLoop:
 		HLI1 A 1 Bright
 		{
-			if(!CountInv("GluonHeldAmmo"))
+			if(!CountInv("HLGluonGunMag"))
 			{
 				A_PlaySound("halflife/weapons/noammo",6);
 				return resolvestate("PowerDown");
 			}
 			A_AlertMonsters();
-			A_TakeInventory("GluonHeldAmmo",1,TIF_NOTAKEINFINITE);
+			A_TakeInventory("HLGluonGunMag",1,TIF_NOTAKEINFINITE);
 			A_FireProjectile("GluonPrimaryBurst",0,0,4,2);
 			A_FireProjectile("GluonFire",0,0,4,2);
 			A_FireProjectile("GluonFire2",0,0,4,2);
@@ -1448,7 +1429,7 @@ class GluonGun : ParanoidWeapon
 	Reload:
 		HLI1 A 8;
 		HLR1 ABCDEFGHIJKLMNOPQRSTU 1;
-		HLR1 V 0 A_JumpIfInventory("AECell",1,1);
+		HLR1 V 0 A_JumpIfInventory("HLGluonGunAmmo",1,1);
 		Goto Empty;
 		HLR1 V 1 A_HLReload("halflife/weapons/reload1");
 		HLR1 WXYZ[\] 1;
@@ -1463,6 +1444,14 @@ class GluonGun : ParanoidWeapon
 		HLR2 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1;
 		HLR3 ABC 1;
 		Goto Ready;
+	}
+}
+class HLGluonGunMag : Ammo
+{
+	Default
+	{
+		+INVENTORY.IGNORESKILL
+		Inventory.MaxAmount 40;
 	}
 }
 
@@ -1809,7 +1798,7 @@ class RipperEffect : Actor
 }
 
 //***************************************************************
-class AECell : Ammo
+class HLGluonGunAmmo : Ammo
 {
 	Default
 	{
@@ -1835,7 +1824,7 @@ class AECell : Ammo
 // Hornet Gun (aka HiveHand)
 //****
 
-class HornetGun : ParanoidWeapon
+class HLHornetGun : ParanoidWeapon
 {
 	Default
 	{
@@ -1843,8 +1832,8 @@ class HornetGun : ParanoidWeapon
 		+WEAPON.AMMO_OPTIONAL
 		-WEAPON.NOALERT
 		-WEAPON.AMMO_CHECKBOTH
-		Weapon.AmmoType1 "HLHornet";
-		Weapon.AmmoType2 "HLHornet";
+		Weapon.AmmoType1 "HLHornetGunAmmo";
+		Weapon.AmmoType2 "HLHornetGunAmmo";
 		Weapon.AmmoGive1 10;
 		Weapon.AmmoUse1 1;
 		Weapon.AmmoUse2 1;
@@ -1867,12 +1856,12 @@ class HornetGun : ParanoidWeapon
 	Ready:
 		HLI1 A 6
 		{
-			if(CountInv("HLHornet"))
+			if(CountInv("HLHornetGunAmmo"))
 				A_WeaponReady();
 			else
 				A_WeaponReady(WRF_NOFIRE);
 		}
-		HLI1 B 0 A_GiveInventory("HLHornet");
+		HLI1 B 0 A_GiveInventory("HLHornetGunAmmo");
 		Loop;
 	Fire:
 		HLF1 A 1 A_FireHornet;
@@ -1894,7 +1883,7 @@ class HornetGun : ParanoidWeapon
 	}
 }
 
-class HLHornet : Ammo
+class HLHornetGunAmmo : Ammo
 {
 	Default
 	{
@@ -2101,12 +2090,12 @@ class AmmoPack : CustomInventory
 	Pickup:
 		TNT1 A 0
 		{
-			A_GiveInventory("BClip",25);
-			A_GiveInventory("PShell",4);
-			A_GiveInventory("PythonAmmo",6);
-			A_GiveInventory("RPGAmmo");
-			A_GiveInventory("Xbowbolts",2);
-			A_GiveInventory("AECell",10);
+			A_GiveInventory("HLPistolAmmo",25);
+			A_GiveInventory("HLShotgunAmmo",4);
+			A_GiveInventory("HLMagnumAmmo",6);
+			A_GiveInventory("HLRPGAmmo");
+			A_GiveInventory("HLXBowAmmo",2);
+			A_GiveInventory("HLGluonGunAmmo",10);
 		}
 		Stop;
 	}

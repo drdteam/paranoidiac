@@ -6,14 +6,14 @@ script "AltHudAmmo" ENTER
 	if(GetCVar("screenblocks")==11&&GetCVar("hud_althud"))
 	{
 		str heldtype="";
-		if(CheckWeapon("Beretta"))
-			heldtype="PistolHeldAmmo";
-		else if(CheckWeapon("Python"))
-			heldtype="MagnumHeldAmmo";
-		else if(CheckWeapon("Pshotgun"))
-			heldtype="ShotgunHeldAmmo";
-		else if(CheckWeapon("ARifle"))
-			heldtype="M16HeldAmmo";
+		if(CheckWeapon("HLPistol"))
+			heldtype="HLPistolMag";
+		else if(CheckWeapon("HLMagnum"))
+			heldtype="HLMagnumMag";
+		else if(CheckWeapon("HLShotgun"))
+			heldtype="HLShotgunMag";
+		else if(CheckWeapon("HLAssaultRifle"))
+			heldtype="HLAssaultRifleMag";
 		if(StrCmp(heldtype,""))
 		{
 			setfont("CONFONT");

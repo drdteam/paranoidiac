@@ -332,9 +332,9 @@ class HLGrunt1 : HLMonster
 		{
 			A_Scream();
 			if(shotgun)
-				A_DropItem("ShotgunPickup");
+				A_DropItem("HLShotgunPickup");
 			else
-				A_DropItem("M16Pickup");
+				A_DropItem("HLAssaultRiflePickup");
 			bSolid=0;
 		}
 		HLD1 BCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1;

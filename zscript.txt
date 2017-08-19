@@ -59,9 +59,9 @@ class ParanoidAmmoHandler : StaticEventHandler
 			if(playeringame[i])
 			{
 				let me=players[i].mo;
-				int should=me.CountInv("M16HeldAmmo")+me.CountInv("M16Gren");
-				if(me.CountInv("M16ClipGren")!=should)
-					me.SetInventory("M16ClipGren",should);
+				int should=me.CountInv("HLAssaultRifleMag")+me.CountInv("HLGrenadeLauncherAmmo");
+				if(me.CountInv("HLAssaultRifleMagEx")!=should)
+					me.SetInventory("HLAssaultRifleMagEx",should);
 			}
 		}
 	}

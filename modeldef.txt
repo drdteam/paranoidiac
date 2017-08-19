@@ -2,7 +2,34 @@
 //  Ammo  //
 ////////////
 
-Model Pshell
+Model HLPistolAmmo
+{
+	Path "Models"
+	Model 0 "bclip.md3"
+	Skin 0 "bclip.png"
+
+	FrameIndex POSS A 0 0
+}
+
+Model HLMagnumAmmo
+{
+	Path "Models"
+	Model 0 "pammo.md3"
+	Skin 0 "pammo.png"
+
+	FrameIndex POSS A 0 0
+}
+
+Model HLMagnumAmmoBox
+{
+	Path "Models"
+	Model 0 "pythonammo.md3"
+	Skin 0 "pythonammo.png"
+
+	FrameIndex POSS A 0 0
+}
+
+Model HLShotgunAmmo
 {
 	Path "Models"
 	Model 0 "pshell.md3"
@@ -12,7 +39,7 @@ Model Pshell
 	FrameIndex POSS A 0 0
 }
 
-Model Pshellbox
+Model HLShotgunBox
 {
 	Path "Models"
 	Model 0 "pshellbox.md3"
@@ -22,7 +49,7 @@ Model Pshellbox
 	FrameIndex POSS A 0 0
 }
 
-Model ARClip
+Model HLAssaultRifleAmmo
 {
 	Path "Models"
 	Model 0 "9mmarclip.md3"
@@ -31,7 +58,7 @@ Model ARClip
 	FrameIndex POSS A 0 0
 }
 
-Model ARAmmo
+Model HLAssaultRifleBox
 {
 	Path "Models"
 	Model 0 "ammobox.md3"
@@ -41,7 +68,7 @@ Model ARAmmo
 	FrameIndex POSS A 0 0
 }
 
-Model M16Gren
+Model HLGrenadeLauncherAmmo
 {
 	Path "Models"
 	Model 0 "m16gren.md3"
@@ -51,43 +78,7 @@ Model M16Gren
 	FrameIndex POSS A 0 0
 }
 
-Model bclip
-{
-	Path "Models"
-	Model 0 "bclip.md3"
-	Skin 0 "bclip.png"
-
-	FrameIndex POSS A 0 0
-}
-
-Model pythonammo
-{
-	Path "Models"
-	Model 0 "pythonammo.md3"
-	Skin 0 "pythonammo.png"
-
-	FrameIndex POSS A 0 0
-}
-
-Model PythonAmmo1
-{
-	Path "Models"
-	Model 0 "pammo.md3"
-	Skin 0 "pammo.png"
-
-	FrameIndex POSS A 0 0
-}
-
-Model AmmoPack
-{
-	Path "Models"
-	Model 0 "wbox.md3"
-	Skin 0 "wbox.png"
-
-	FrameIndex POSS A 0 0
-}
-
-Model RPGAmmo
+Model HLRPGAmmo
 {
 	Path "Models"
 	Model 0 "rpgammo.md3"
@@ -96,17 +87,7 @@ Model RPGAmmo
 	FrameIndex POSS A 0 0
 }
 
-Model XBowBolts
-{
-	Path "Models"
-	Model 0 "xbow3.md3"
-	Skin 0 "xbowskin.png"
-	Scale 0.75 0.75 0.75
-
-	FrameIndex POSS A 0 0
-}
-
-Model XBowBoltSingle
+Model HLXBowAmmo
 {
 	Path "Models"
 	Model 0 "xbow4.md3"
@@ -116,12 +97,31 @@ Model XBowBoltSingle
 	FrameIndex POSS A 0 0
 }
 
-Model AECell
+Model HLXBowBox
+{
+	Path "Models"
+	Model 0 "xbow3.md3"
+	Skin 0 "xbowskin.png"
+	Scale 0.75 0.75 0.75
+
+	FrameIndex POSS A 0 0
+}
+
+Model HLGluonGunAmmo
 {
 	Path "Models"
 	Model 0 "isotopebox.md3"
 	Skin 0 "isotopebox.png"
 	Scale 0.75 0.75 0.75
+
+	FrameIndex POSS A 0 0
+}
+
+Model AmmoPack
+{
+	Path "Models"
+	Model 0 "wbox.md3"
+	Skin 0 "wbox.png"
 
 	FrameIndex POSS A 0 0
 }

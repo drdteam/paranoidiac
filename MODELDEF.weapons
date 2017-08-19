@@ -1,4 +1,4 @@
-Model Crowbar
+Model HLCrowbar
 {
 	Path "Models"
 	Model 0 "crowbar.md3"
@@ -6,7 +6,7 @@ Model Crowbar
 
 	FrameIndex POSS A 0 0
 }
-Model Crowbar
+Model HLCrowbar
 {
 	Path "Models"
 	Model 0 "v_crowbar.md2"
@@ -140,7 +140,7 @@ Model Crowbar
 	FrameIndex HLD1 M 0 62
 }
 
-Model PistolPickup
+Model HLPistolPickup
 {
 	Path "Models"
 	Model 0 "beretta.md3"
@@ -148,7 +148,7 @@ Model PistolPickup
 
 	FrameIndex POSS A 0 0
 }
-Model Beretta
+Model HLPistol
 {
 	Path "Models"
 	Model 0 "beretta.md3"
@@ -156,7 +156,7 @@ Model Beretta
 
 	FrameIndex POSS A 0 0
 }
-Model Beretta
+Model HLPistol
 {
 	Path "Models"
 	Model 0 "v_9mmhandgun.md2"
@@ -241,7 +241,7 @@ Model Beretta
 	FrameIndex HLU1 N 0 305
 }
 
-Model R357Pickup
+Model HLMagnumPickup
 {
 	Path "Models"
 	Model 0 "python.md3"
@@ -249,7 +249,7 @@ Model R357Pickup
 
 	FrameIndex POSS A 0 0
 }
-Model Python
+Model HLMagnum
 {
 	Path "Models"
 	Model 0 "python.md3"
@@ -257,7 +257,7 @@ Model Python
 
 	FrameIndex POSS A 0 0
 }
-Model Python
+Model HLMagnum
 {
 	Path "Models"
 	Model 0 "v_357.md2"
@@ -413,7 +413,7 @@ Model Python
 	FrameIndex HLU1 O 0 399
 }
 
-Model ShotgunPickup
+Model HLShotgunPickup
 {
 	Path "Models"
 	Model 0 "shotgun.md3"
@@ -421,7 +421,7 @@ Model ShotgunPickup
 
 	FrameIndex POSS A 0 0
 }
-Model Pshotgun1
+Model HLShotgunPickup2
 {
 	Path "Models"
 	Model 0 "shotgun1.md3"
@@ -429,7 +429,7 @@ Model Pshotgun1
 
 	FrameIndex POSS A 0 0
 }
-/*Model Pshotgun2
+/*Model HLShotgunPickup2
 {
 	Path "Models"
 	Model 0 "shotgun.md3"
@@ -439,7 +439,7 @@ Model Pshotgun1
 
 	FrameIndex POSS A 0 0
 }*/
-Model PShotgun
+Model HLShotgun
 {
 	Path "Models"
 	Model 0 "shotgun.md3"
@@ -447,7 +447,7 @@ Model PShotgun
 
 	FrameIndex POSS A 0 0
 }
-Model Pshotgun
+Model HLShotgun
 {
 	Path "Models"
 	Model 0 "v_shotgun.md2"
@@ -579,7 +579,7 @@ Model Pshotgun
 	FrameIndex HLU1 K 0 140
 }
 
-Model M16Pickup
+Model HLAssaultRiflePickup
 {
 	Path "Models"
 	Model 0 "9mmar.md3"
@@ -587,7 +587,7 @@ Model M16Pickup
 
 	FrameIndex POSS A 0 0
 }
-Model ARifle1
+Model HLAssaultRiflePickup2
 {
 	Path "Models"
 	Model 0 "9mmar1.md3"
@@ -595,7 +595,7 @@ Model ARifle1
 
 	FrameIndex POSS A 0 0
 }
-Model ARifle
+Model HLAssaultRifle
 {
 	Path "Models"
 	Model 0 "9mmar.md3"
@@ -603,7 +603,7 @@ Model ARifle
 
 	FrameIndex POSS A 0 0
 }
-Model ARifle
+Model HLAssaultRifle
 {
 	Path "Models"
 	Model 0 "v_9mmar.md2"
@@ -718,7 +718,7 @@ Model ARifle
 	FrameIndex HLU1 J 0 234
 }
 
-Model RPGLauncher
+Model HLRPG
 {
 	Path "Models"
 	Model 0 "rlauncher.md3"
@@ -726,7 +726,7 @@ Model RPGLauncher
 
 	FrameIndex POSS A 0 0
 }
-Model RPGLauncher
+Model HLRPG
 {
 	Path "Models"
 	Model 0 "v_rpg.md2"
@@ -842,7 +842,7 @@ Model RPGLauncher
 	FrameIndex HLU1 \ 0 314
 }
 
-Model XBowPickup
+Model HLXBowPickup
 {
 	Path "Models"
 	Model 0 "xbow1.md3"
@@ -856,7 +856,7 @@ Model XBowPickup
 
 	FrameIndex POSS A 1 0
 }
-Model XBow
+Model HLXBow
 {
 	Path "Models"
 	Model 0 "xbow1.md3"
@@ -870,7 +870,7 @@ Model XBow
 
 	FrameIndex POSS A 1 0
 }
-Model XBow
+Model HLXBow
 {
 	Path "Models"
 	Model 0 "v_crossbow.md2"
@@ -1330,7 +1330,7 @@ Model XBow
 	FrameIndex HLD1 P 0 691
 }
 
-Model GluonGunPickup
+Model HLGluonGunPickup
 {
 	Path "Models"
 	Model 0 "gluongun.md3"
@@ -1338,7 +1338,7 @@ Model GluonGunPickup
 
 	FrameIndex POSS A 0 0
 }
-Model GluonGun
+Model HLGluonGun
 {
 	Path "Models"
 	Model 0 "gluongun.md3"
@@ -1346,7 +1346,7 @@ Model GluonGun
 
 	FrameIndex POSS A 0 0
 }
-Model GluonGun
+Model HLGluonGun
 {
 	Path "Models"
 	Model 0 "v_egon.md2"
@@ -1435,7 +1435,7 @@ Model GluonGun
 	FrameIndex HLU1 N 0 222
 }
 
-Model HornetGun
+Model HLHornetGun
 {
 	Path "Models"
 	Model 0 "hornetgun.md3"
@@ -1444,7 +1444,7 @@ Model HornetGun
 
 	FrameIndex POSS A 0 0
 }
-Model HornetGun
+Model HLHornetGun
 {
 	Path "Models"
 	Model 0 "v_hgun.md2"
