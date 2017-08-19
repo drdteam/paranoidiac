@@ -45,6 +45,7 @@ skill Difficult
 	Key=d
 }
 
+clearepisodes
 episode map01
 {
 	name="Paranoid: Infiltration"

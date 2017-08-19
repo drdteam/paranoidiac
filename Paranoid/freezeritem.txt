@@ -20,18 +20,10 @@ class ParanoicFreezerItem : PowerupGiver
 {
 	Default
 	{
-		inventory.pickupmessage "Welcome to the frozen wastes of Cania! Try not to freeze to death!";
 		inventory.maxamount 0;
 		powerup.type "PowerParanoicFreezer";
 		powerup.duration 0x7FFFFFFD;
 		+INVENTORY.AUTOACTIVATE;
 		+INVENTORY.ALWAYSPICKUP;
-	}
-	states
-	{
-	Spawn:
-		PVIS A 6;
-		PVIS B 6 bright;
-		loop;
 	}
 }
