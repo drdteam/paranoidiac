@@ -2763,7 +2763,7 @@ Model XbowBolt
 	Scale .3 .3 .3
 	AngleOffset 90
 
-	FrameIndex HWXB A 0 0
+	FrameIndex POSS A 0 0
 }
 
 Model M16Grenade
@@ -2773,8 +2773,9 @@ Model M16Grenade
 	Skin 0 "grenade.png"
 	Scale .65 .65 .65
 	AngleOffset 90
+	USEACTORPITCH
 
-	FrameIndex GRNL A 0 0
+	FrameIndex POSS A 0 0
 }
 
 Model HLGruntGunGrenade
@@ -2784,8 +2785,9 @@ Model HLGruntGunGrenade
 	Skin 0 "grenade.png"
 	Scale .65 .65 .65
 	AngleOffset 90
+	USEACTORPITCH
 
-	FrameIndex GRNL A 0 0
+	FrameIndex POSS A 0 0
 }
 
 Model HLRocket
