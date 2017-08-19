@@ -71,6 +71,7 @@ defaultmap
 	fallingdamage
 	cluster=1
 	sky1=HLSKY1
+	SpawnWithWeaponRaised
 }
 
 map TITLEMAP "The Path to Perdition"
@@ -139,7 +140,6 @@ adddefaultmap
 {
 	MonsterFallingDamage
 }
-
 map map11 "Fly in a Web."
 {
 	PrecacheSounds="11Earth","32Trans","MAP11VX2"
@@ -150,7 +150,6 @@ adddefaultmap
 {
 	sky1=HLSKY4
 }
-
 map map13 "Sewer Rat."
 {
 	PrecacheSounds="13Earth"
@@ -169,7 +168,6 @@ adddefaultmap
 {
 	sky1=HLSKY5
 }
-
 map map16 "Play the Mad Scientist."
 {
 	PrecacheSounds="16Earth","16ZEarth"
