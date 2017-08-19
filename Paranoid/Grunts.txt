@@ -366,25 +366,22 @@ class HLGrunt1 : HLMonster
 	}
 	void A_GruntGunshot(int shots)
 	{
+		A_GruntGunsmoke();
 		if(shots==1)
-		{
 			A_PlaySound("halflife/weapons/machinegunshot",5);
-			A_GruntGunsmoke("GunSmallSmoke");
-		}
 		else
 		{
 			if(shots==5)
 				A_PlaySound("halflife/weapons/shotgunsingle",5);
 			else if(shots==10)
 				A_PlaySound("halflife/weapons/shotgundouble",5);
-			A_GruntGunsmoke();
 		}
 		A_CustomBulletAttack(7,7,shots,4,"NewPuff2");
 	}
-	void A_GruntGunsmoke(class<actor> smoke="GunSmoke")
+	void A_GruntGunsmoke()
 	{
 		for(int i=0;i<2;i++)
-			A_SpawnItemEx(smoke,35,3,49);
+			A_SpawnItemEx("GunSmoke",35,3,49);
 	}
 }
 class HLGrunt2 : HLGrunt1{}

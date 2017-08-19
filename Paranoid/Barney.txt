@@ -157,23 +157,22 @@ class HLBarney : HLMonster
 	}
 	void A_BarneyGunshot(int type=1)
 	{
+		A_BarneyGunsmoke();
 		if(type==2)
 		{
 			A_PlaySound("halflife/weapons/magnumshot",5);
-			A_BarneyGunsmoke();
 			A_CustomBulletAttack(2,2,1,25,"BulletPuff");
 		}
 		else
 		{
 			A_PlaySound("halflife/weapons/pistol",5);
-			A_BarneyGunsmoke("GunSmallSmoke");
 			A_CustomBulletAttack(7,7,1,5,"BulletPuff");
 		}
 	}
-	void A_BarneyGunsmoke(class<actor> smoke="GunSmoke")
+	void A_BarneyGunsmoke()
 	{
 		for(int i=0;i<2;i++)
-			A_SpawnItemEx(smoke,28,2,48);
+			A_SpawnItemEx("GunSmoke",28,2,48);
 	}
 	virtual void A_Chatter()
 	{
