@@ -1777,7 +1777,7 @@ Model Handler2Standing
 	Path "Models"
 	Model 0 "military.md2"
 	Skin 0 "euro2.png"
-	Scale 1.55 1.55 1.55
+	Scale 1.5 1.5 1.5
 
 	Frame POSS A 0 "stand01"
 }
