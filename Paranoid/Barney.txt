@@ -58,7 +58,7 @@ class HLBarney : HLMonster
 		Height 63;
 		PainChance 128;
 		PainChance "Crowbar",252;
-		SeeSound "halflife/monsters/barney/sight";
+		SeeSound "halflife/monsters/barney/idle";
 		PainSound "halflife/monsters/barney/pain";
 		DeathSound "halflife/monsters/barney/death";
 		MaxDropoffHeight 64;
@@ -160,12 +160,12 @@ class HLBarney : HLMonster
 		A_BarneyGunsmoke();
 		if(type==2)
 		{
-			A_PlaySound("halflife/weapons/magnumshot",5);
+			A_PlaySound("halflife/weapons/magnumshot",CHAN_WEAPON);
 			A_CustomBulletAttack(2,2,1,25,"BulletPuff");
 		}
 		else
 		{
-			A_PlaySound("halflife/weapons/pistol",5);
+			A_PlaySound("halflife/weapons/pistol",CHAN_WEAPON);
 			A_CustomBulletAttack(7,7,1,5,"BulletPuff");
 		}
 	}
@@ -185,7 +185,7 @@ class HLOtis : HLBarney
 {
 	Default
 	{
-		SeeSound "halflife/monsters/otis/sight";
+		SeeSound "halflife/monsters/otis/idle";
 		PainSound "halflife/monsters/otis/pain";
 		DeathSound "halflife/monsters/otis/death";
 	}

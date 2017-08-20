@@ -525,9 +525,8 @@ barney/airlock	bairlock
 barney/nohev	bnohev
 barney/yeshev	byeshev
 
-halflife/monsters/barney/death	HLM_die
-halflife/monsters/barney/sight	bsentry1
-halflife/monsters/barney/pain	HLM_pain
+halflife/monsters/barney/death	"sounds/halflife/barney/ba_die2.ogg"
+halflife/monsters/barney/pain	"sounds/halflife/barney/ba_pain3.wav"
 $random halflife/monsters/barney/idle
 {
 	halflife/monsters/barney/idle1
@@ -536,10 +535,10 @@ $random halflife/monsters/barney/idle
 	halflife/monsters/barney/idle4
 }
 
-halflife/monsters/barney/idle1	HLM_sit1
-halflife/monsters/barney/idle2	HLM_sit2
-halflife/monsters/barney/idle3	HLM_sit3
-halflife/monsters/barney/idle4	HLM_idle
+halflife/monsters/barney/idle1	"sounds/halflife/barney/ba_bring.ogg"
+halflife/monsters/barney/idle2	"sounds/halflife/barney/ba_attack1.ogg"
+halflife/monsters/barney/idle3	"sounds/halflife/barney/ba_endline.ogg"
+halflife/monsters/barney/idle4	"sounds/halflife/barney/targetpractice.ogg"
 
 //------------
 //	Bullsquid
