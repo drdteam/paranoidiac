@@ -171,7 +171,7 @@ adddefaultmap
 }
 map map16 "Play the Mad Scientist."
 {
-	PrecacheSounds="16Earth","16ZEarth"
+	PrecacheSounds="16Earth"
 }
 map map17 "Painted into a Corner."
 {
