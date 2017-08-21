@@ -29,6 +29,14 @@ class ParanoidWeapon : Weapon
 	Ready:
 		HLI1 A 1 A_WeaponReady;
 		Loop;
+	DryFire:
+		HLI1 A 5;
+		HLI1 A 0
+		{
+			if(CountInv(invoker.AmmoType2)<max&&CountInv(invoker.AmmoType1))
+				return ResolveState("Reload");
+			return ResolveState("Ready");
+		}
 	Spawn:
 		POSS A -1;
 		Stop;
@@ -84,6 +92,15 @@ class ParanoidWeapon : Weapon
 			am2=am2x;
 		if(am2)
 			A_TakeInventory(am2,1);
+	}
+	action state A_HLDryFireCheck(class<ammo> am2x=null)
+	{
+		class<ammo> am2=invoker.ammotype2;
+		if(am2x)
+			am2=am2x;
+		if(!CountInv(am2))
+			return ResolveState("DryFire");
+		return state(null);
 	}
 }
 
@@ -374,9 +391,7 @@ class HLPistol : ParanoidWeapon
 		HLI1 A 1 A_HLWeaponReady(17);
 		Loop;
 	Fire:
-		TNT1 A 0 A_JumpIfInventory("HLPistolMag",1,2);
-		HLI1 A 5 A_PlaySound("halflife/weapons/noammo",CHAN_WEAPON);
-		Goto Reload;
+		HLI1 A 0 A_HLDryFireCheck;
 		HLF1 A 1;
 		HLF1 B 1;
 		HLF1 C 1 A_HLShootLead(1,1,-1,5,100,"halflife/weapons/pistol");
@@ -387,9 +402,7 @@ class HLPistol : ParanoidWeapon
 		HLF1 LMNOP 2;
 		Goto Ready;
 	AltFire:
-		TNT1 A 0 A_JumpIfInventory("HLPistolMag",1,2);
-		HLI1 A 5 A_PlaySound("halflife/weapons/noammo",CHAN_WEAPON);
-		Goto Reload;
+		HLI1 A 0 A_HLDryFireCheck;
 		HLF1 B 1;
 		HLF1 C 1 A_HLShootLead(3,3,-1,5,100,"halflife/weapons/pistol");
 		HLF1 D 1;
@@ -484,9 +497,7 @@ class HLMagnum : ParanoidWeapon
 		HLI1 A 1 A_HLWeaponReady(6,1);
 		Loop;
 	Fire:
-		TNT1 A 0 A_JumpIfInventory("HLMagnumMag",1,2);
-		HLI1 A 5 A_PlaySound("halflife/weapons/noammo",CHAN_WEAPON);
-		Goto Reload;
+		HLI1 A 0 A_HLDryFireCheck;
 		HLF1 AB 1;
 		HLF1 C 1 A_HLShootLead(0,0,1,85,450,"halflife/weapons/magnumshot",2);
 		HLF1 DEFGHIJKL 1 A_HLWeaponRecoil(-50);
@@ -613,9 +624,7 @@ class HLShotgun : ParanoidWeapon
 		Wait;
 	Fire:
 		TNT1 A 0 A_JumpIf(invoker.reloading,"ReloadDone");
-		TNT1 A 0 A_JumpIfInventory("HLShotgunMag",1,2);
-		HLI1 A 5 A_PlaySound("halflife/weapons/noammo",CHAN_WEAPON);
-		Goto Reload;
+		HLI1 A 0 A_HLDryFireCheck;
 		HLF1 A 1 A_HLShootLead(3,3,6,8,350,"halflife/weapons/shotgunsingle",1,4);
 		HLF1 B 1;
 		HLF1 CDEFGHI 1 A_HLWeaponRecoil(-50);
@@ -795,9 +804,7 @@ class HLAssaultRifle : ParanoidWeapon
 		}
 		Loop;
 	Fire:
-		TNT1 A 0 A_JumpIfInventory("HLAssaultRifleMag",1,2);
-		HLI1 A 5 A_PlaySound("halflife/weapons/noammo",CHAN_WEAPON);
-		Goto Reload;
+		HLI1 A 0 A_HLDryFireCheck("HLAssaultRifleMag");
 		HLF1 B 1 A_HLShootLead(3,3,-1,5,100,"halflife/weapons/machinegunshot",1,2,am2x:"HLAssaultRifleMag");
 		HLF1 CE 1 A_HLWeaponRecoil(-50);
 		HLF1 F 1;
@@ -805,7 +812,7 @@ class HLAssaultRifle : ParanoidWeapon
 		Goto Ready;
 	AltFire:
 		TNT1 A 0 A_JumpIfInventory("HLGrenadeLauncherAmmo",1,2);
-		HLI1 A 12 A_PlaySound("halflife/weapons/noammo",CHAN_WEAPON);
+		HLI1 A 5 A_PlaySound("halflife/weapons/noammo",CHAN_WEAPON);
 		Goto Ready;
 		HLF1 H 1
 		{
@@ -986,7 +993,6 @@ class HLRPG : ParanoidWeapon
 		Goto Ready;
 	SelectEmpty:
 		HLU1 \[ZYXWVUTSRQPO 1;
-		Goto Ready;
 	Ready:
 		TNT1 A 0 A_JumpIf(!CountInv("HLRPGAmmo"),2);
 		HLI1 A 1 A_WeaponReady;
@@ -1165,9 +1171,7 @@ class HLXBow : ParanoidWeapon
 		R016 A 1 A_HLWeaponReady(5);
 		Loop;
 	Fire:
-		"####" # 0 A_JumpIfInventory("HLXBowMag",1,2);
-		"####" # 5 A_PlaySound("halflife/weapons/noammo",CHAN_WEAPON);
-		Goto Reload;
+		"####" # 0 A_HLDryFireCheck;
 		TNT1 A 0
 		{
 			A_TakeInventory("HLXBowMag",1);
@@ -1385,8 +1389,7 @@ class HLGluonGun : ParanoidWeapon
 		HLI1 A 1 A_HLWeaponReady(40,1);
 		Loop;
 	Fire:
-		HLI1 A 0 A_JumpIfInventory("HLGluonGunMag",1,1);
-		Goto Reload;
+		HLI1 A 0 A_HLDryFireCheck;
 		HLI1 A 0
 		{
 			invoker.GluonSoundCountdown=35;
