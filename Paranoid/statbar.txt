@@ -75,7 +75,7 @@ class ParanoidStatusBar : BaseStatusBar
 		int ammolow,ammohigh,ammocolor;
 		if(ammotype2!=null&&ammotype2.GetClassName()=="HLAssaultRifleMagEx")
 		{
-			DrawImage("i_gren2",(230,195),DI_ITEM_OFFSETS,scale:(.25,.25));
+			DrawImage("i_gren1b",(230,195),DI_ITEM_OFFSETS,scale:(.25,.25));
 			[ammolow,ammohigh]=ammolowhigh(ammotype1.MaxAmount);
 			int ammotemp=me.CountInv("HLPistolAmmo");
 			DrawString(HLBARFONT,FormatNumber(ammotemp,3),(244,193),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor1(ammotemp,ammolow,ammohigh));
@@ -109,27 +109,30 @@ class ParanoidStatusBar : BaseStatusBar
 			DrawString(HLSTAFONT,FormatNumber(CPlayer.FragCount,3),(279,258),DI_TEXT_ALIGN_RIGHT,Font.FindFontColor('HLYellow1'));
 		}
 
-		//Ammo icons
-		DrawImage("HLAMMO",(248,176),DI_ITEM_OFFSETS,scale:(.25,.25));
-		DrawImage("HLAMMO1",(285,176),DI_ITEM_OFFSETS,scale:(.25,.25));
-
-		//Clip values column
+		//Ammo
+		DrawImage("i_bul1b",(248,176),DI_ITEM_OFFSETS,scale:(.25,.25));
 		AmmoColumn(1,"HLPistolMag",259,177);
-		AmmoColumn(1,"HLMagnumMag",259,181);
-		AmmoColumn(1,"HLShotgunMag",259,185);
-		AmmoColumn(1,"HLAssaultRifleMag",259,189);
-		AmmoColumn(1,"HLGluonGunMag",296,177);
-		AmmoColumn(1,"HLXBowMag",296,181);
-
-		//Total held ammo column/Max ammo capacity column
 		AmmoColumn(2,"HLPistolAmmo",270,177);
+		DrawImage("i_bul2b",(248,180),DI_ITEM_OFFSETS,scale:(.25,.25));
+		AmmoColumn(1,"HLMagnumMag",259,181);
 		AmmoColumn(2,"HLMagnumAmmo",270,181);
+		DrawImage("i_shel1b",(248,184),DI_ITEM_OFFSETS,scale:(.25,.25));
+		AmmoColumn(1,"HLShotgunMag",259,185);
 		AmmoColumn(2,"HLShotgunAmmo",270,185);
+		DrawImage("i_bul1b",(248,188),DI_ITEM_OFFSETS,scale:(.25,.25));
+		AmmoColumn(1,"HLAssaultRifleMag",259,189);
 		AmmoColumn(2,"HLPistolAmmo",270,189);
+		DrawImage("i_gren1b",(248,192),DI_ITEM_OFFSETS,scale:(.25,.25));
 		AmmoColumn(2,"HLGrenadeLauncherAmmo",270,193);
+		DrawImage("i_rock1b",(248,196),DI_ITEM_OFFSETS,scale:(.25,.25));
 		AmmoColumn(2,"HLRPGAmmo",270,197);
-		AmmoColumn(2,"HLGluonGunAmmo",307,177);
-		AmmoColumn(2,"HLXBowAmmo",307,181);
+		DrawImage("i_bolt1b",(285,176),DI_ITEM_OFFSETS,scale:(.25,.25));
+		AmmoColumn(1,"HLXBowMag",296,177);
+		AmmoColumn(2,"HLXBowAmmo",307,177);
+		DrawImage("i_uran1b",(285,180),DI_ITEM_OFFSETS,scale:(.25,.25));
+		AmmoColumn(1,"HLGluonGunMag",296,181);
+		AmmoColumn(2,"HLGluonGunAmmo",307,181);
+		DrawImage("i_horn1b",(285,184),DI_ITEM_OFFSETS,scale:(.25,.25));
 		AmmoColumn(2,"HLHornetGunAmmo",307,185);
 
 		if(me.InvSel!=null&&!level.NoInventoryBar)

@@ -9,10 +9,103 @@ graphic HINTMAN, 128, 128
 	Patch HINTMAN, 0, 0
 }
 
-//grenade icon for status bar mode
-graphic i_gren2,24,24
+//Col. Stinson
+graphic STINSON, 128, 128
+{
+	XScale 2.0
+	YScale 2.0
+	Patch STINSON, 0, 0
+}
+
+//UnderNet
+graphic UNDERNET, 128, 128
+{
+	XScale 2.0
+	YScale 2.0
+	Patch UNDERNET, 0, 0
+}
+
+//Message icons
+graphic MAIL01, 34, 37
+{
+	XScale 2.0
+	YScale 2.5
+	Patch MAIL01, 0, 0
+	Offset -13, -20
+}
+
+graphic MAIL02, 34, 37
+{
+	XScale 2.0
+	YScale 2.5
+	Patch MAIL02, 0, 0
+	Offset -13, -20
+}
+
+graphic MAIL03, 34, 37
+{
+	XScale 2.0
+	YScale 2.5
+	Patch MAIL03, 0, 0
+	Offset -13, -20
+}
+
+graphic MAIL04, 34, 37
+{
+	XScale 2.0
+	YScale 2.5
+	Patch MAIL04, 0, 0
+	Offset -13, -20
+}
+
+//Portable Medkit
+graphic MEDKZ0, 43, 37
+{
+	XScale 2.5
+	YScale 2.5
+	patch MEDKZ0, 0, 0
+	Offset -16, -20
+}
+
+//ammo icons for status bar mode
+graphic i_bul1b,24,24
+{
+	Patch i_bul1,0,0
+		{Rotate 90}
+}
+graphic i_bul2b,24,24
+{
+	Patch i_bul2,0,0
+		{Rotate 90}
+}
+graphic i_shel1b,24,24
+{
+	Patch i_shel1,0,0
+		{Rotate 90}
+}
+graphic i_gren1b,24,24
 {
 	Patch i_gren1,0,0
+		{Rotate 90}
+}
+graphic i_rock1b,24,24
+{
+	Patch i_rock1,0,0
+		{Rotate 90}
+}
+graphic i_bolt1b,24,24
+{
+	Patch i_bolt1,0,0
+		{Rotate 90}
+}
+graphic i_uran1b,24,24
+{
+	Patch i_uran1,0,0
+		{Rotate 90}
+}
+graphic i_horn1b,24,24
+{
+	Patch i_horn1,0,0
 		{Rotate 90}
 }
 
@@ -322,39 +415,6 @@ graphic wiosts, 120, 24
 	Patch wiosts, 0, 0
 }
 
-//Message icons
-graphic MAIL01, 34, 37
-{
-	XScale 2.0
-	YScale 2.5
-	Patch MAIL01, 0, 0
-	Offset -13, -20
-}
-
-graphic MAIL02, 34, 37
-{
-	XScale 2.0
-	YScale 2.5
-	Patch MAIL02, 0, 0
-	Offset -13, -20
-}
-
-graphic MAIL03, 34, 37
-{
-	XScale 2.0
-	YScale 2.5
-	Patch MAIL03, 0, 0
-	Offset -13, -20
-}
-
-graphic MAIL04, 34, 37
-{
-	XScale 2.0
-	YScale 2.5
-	Patch MAIL04, 0, 0
-	Offset -13, -20
-}
-
 //Why does Doom have 2 secret graphics?
 graphic wiscrt2, 120, 24
 {
@@ -532,31 +592,6 @@ graphic PNDMEND, 620, 128
 	Patch M_DOOM, 0, 0
 }
 
-//Portable Medkit
-graphic MEDKZ0, 43, 37
-{
-	XScale 2.5
-	YScale 2.5
-	patch MEDKZ0, 0, 0
-	Offset -16, -20
-}
-
-//Col. Stinson
-graphic STINSON, 128, 128
-{
-	XScale 2.0
-	YScale 2.0
-	Patch STINSON, 0, 0
-}
-
-//UnderNet
-graphic UNDERNET, 128, 128
-{
-	XScale 2.0
-	YScale 2.0
-	Patch UNDERNET, 0, 0
-}
-
 //Textures
 Texture X0LASERH, 128, 16
 {
@@ -657,13 +692,13 @@ Texture XDOME02, 256, 256
 
 Texture XDOOR29A, 128, 608
 {
-Patch XDOOR29, 0, 0
-Patch XCONCR42, 0, 128
-Patch XDOOR29, 0, 160
-Patch XCONCR42, 0, 288
-Patch XDOOR29, 0, 320
-Patch XCONCR42, 0, 448
-Patch XDOOR29, 0, 480
+	Patch XDOOR29, 0, 0
+	Patch XCONCR42, 0, 128
+	Patch XDOOR29, 0, 160
+	Patch XCONCR42, 0, 288
+	Patch XDOOR29, 0, 320
+	Patch XCONCR42, 0, 448
+	Patch XDOOR29, 0, 480
 }
 
 Texture XLABPN10, 32, 192
