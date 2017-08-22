@@ -46,16 +46,16 @@ class ParanoidStatusBar : BaseStatusBar
 		let me=CPlayer.mo;
 		Inventory ammotype1,ammotype2;
 		//Main bar
-		DrawImage("HLBAR",(0,176),DI_ITEM_OFFSETS);
+		DrawImage("HLBAR",(0,176),DI_ITEM_OFFSETS,scale:(.5,.5));
 		//Health
 		DrawString(HLSTAFONT,FormatNumber(HealthInterp.GetValue(),3),(38,182),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor2(HealthInterp.GetValue(),35,101));
 		//Armour
 		DrawString(HLSTAFONT,FormatNumber(ArmorInterp.GetValue(),3),(78,182),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor1(ArmorInterp.GetValue(),35,101));
 		//Glowy armour icon
-		DrawImage(ArmorInterp.GetValue()>0?"HLARM1":"HLARM0",(43,180),DI_ITEM_OFFSETS);
+		DrawImage(ArmorInterp.GetValue()>0?"HLARM1":"HLARM0",(43,180),DI_ITEM_OFFSETS,scale:(.5,.5));
 
 		//Paranoid logo
-		DrawImage("HLLOGO",(81,177),DI_ITEM_OFFSETS);
+		DrawImage("HLLOGO",(81,177),DI_ITEM_OFFSETS,scale:(.25,.25));
 
 		//Weapon slot box
 		DrawImage(CPlayer.HasWeaponsInSlot(1)?"HLYNUM1":"HLGNUM1",(86,188),DI_ITEM_OFFSETS);
@@ -70,12 +70,12 @@ class ParanoidStatusBar : BaseStatusBar
 		DrawTexture(GetMugShot(5,MugShot.XDEATHFACE),(128,56),DI_ITEM_OFFSETS);
 
 		//Draws appropriate icons and clip ammo per weapon.
-		DrawInventoryIcon(CPlayer.ReadyWeapon,(132,176),DI_ITEM_OFFSETS);
+		DrawInventoryIcon(CPlayer.ReadyWeapon,(132,176),DI_ITEM_OFFSETS,scale:(.5,.5));
 		[ammotype1,ammotype2]=GetCurrentAmmo();
 		int ammolow,ammohigh,ammocolor;
 		if(ammotype2!=null&&ammotype2.GetClassName()=="HLAssaultRifleMagEx")
 		{
-			DrawImage("i_gren2",(230,195),DI_ITEM_OFFSETS);
+			DrawImage("i_gren2",(230,195),DI_ITEM_OFFSETS,scale:(.25,.25));
 			[ammolow,ammohigh]=ammolowhigh(ammotype1.MaxAmount);
 			int ammotemp=me.CountInv("HLPistolAmmo");
 			DrawString(HLBARFONT,FormatNumber(ammotemp,3),(244,193),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor1(ammotemp,ammolow,ammohigh));
@@ -105,13 +105,13 @@ class ParanoidStatusBar : BaseStatusBar
 		//frags panel in case anyone plays deathmatch
 		if(deathmatch||teamplay)
 		{
-			DrawImage("HLFRAGS",(246,152),DI_ITEM_OFFSETS);
+			DrawImage("HLFRAGS",(246,152),DI_ITEM_OFFSETS,scale:(.5,.5));
 			DrawString(HLSTAFONT,FormatNumber(CPlayer.FragCount,3),(279,258),DI_TEXT_ALIGN_RIGHT,Font.FindFontColor('HLYellow1'));
 		}
 
 		//Ammo icons
-		DrawImage("HLAMMO",(248,176),DI_ITEM_OFFSETS);
-		DrawImage("HLAMMO1",(285,176),DI_ITEM_OFFSETS);
+		DrawImage("HLAMMO",(248,176),DI_ITEM_OFFSETS,scale:(.25,.25));
+		DrawImage("HLAMMO1",(285,176),DI_ITEM_OFFSETS,scale:(.25,.25));
 
 		//Clip values column
 		AmmoColumn(1,"HLPistolMag",259,177);
@@ -180,31 +180,35 @@ class ParanoidStatusBar : BaseStatusBar
 		[ammotype1,ammotype2]=GetCurrentAmmo();
 
 		//Health
-		DrawImage("i_health",(0,176-24),DI_ITEM_OFFSETS);
+		DrawImage("i_health",(0,176-24),DI_ITEM_OFFSETS,scale:(.5,.5));
 		DrawString(HLSTAFONT,FormatNumber(HealthInterp.GetValue(),3),(40,182-24),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor2(HealthInterp.GetValue(),35,101));
 
-		DrawImage("divide",(48,176-24),DI_ITEM_OFFSETS);
+		DrawImage("divide",(48,176-24),DI_ITEM_OFFSETS,scale:(.5,.5));
 
 		//Armour
 		DrawString(HLSTAFONT,FormatNumber(ArmorInterp.GetValue(),3),(94,182-24),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor1(ArmorInterp.GetValue(),35,101));
-		DrawImage(ArmorInterp.GetValue()>0?"i_arm2":"i_arm1",(54,176-24),DI_ITEM_OFFSETS);
+		DrawImage(ArmorInterp.GetValue()>0?"i_arm2":"i_arm1",(54,176-24),DI_ITEM_OFFSETS,scale:(.5,.5));
 
 		//Ammo
 		if(ammotype1!=null)
-			DrawInventoryIcon(ammotype1,(312-320,158),DI_ITEM_OFFSETS);
+			DrawInventoryIcon(ammotype1,(312-320,158),DI_ITEM_OFFSETS,scale:(.5,.5));
 		if(ammotype2!=null&&ammotype2!=ammotype1)
-			DrawImage("divide",(280-320,152),DI_ITEM_OFFSETS);
+			DrawImage("divide",(280-320,152),DI_ITEM_OFFSETS,scale:(.5,.5));
 
+		[ammotype1,ammotype2]=GetCurrentAmmo();
 		int ammolow,ammohigh,ammocolor;
 		if(ammotype2!=null&&ammotype2.GetClassName()=="HLAssaultRifleMagEx")
 		{
-			DrawImage("i_gren2",(312-320,164-24),DI_ITEM_OFFSETS);
-			int ammotemp=me.CountInv("HLPistolMag");
-			DrawString(HLSTAFONT,FormatNumber(ammotemp,3),(310-320,182-24),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor1(ammotemp,50,150));
+			DrawImage("i_gren1",(312-320,164-24),DI_ITEM_OFFSETS,scale:(.5,.5));
+			[ammolow,ammohigh]=ammolowhigh(ammotype1.MaxAmount);
+			int ammotemp=me.CountInv("HLPistolAmmo");
+			DrawString(HLSTAFONT,FormatNumber(ammotemp,3),(310-320,182-24),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor1(ammotemp,ammolow,ammohigh));
+			[ammolow,ammohigh]=ammolowhigh(50);
 			ammotemp=me.CountInv("HLAssaultRifleMag");
-			DrawString(HLSTAFONT,FormatNumber(ammotemp,3),(272-320,182-24),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor2(ammotemp,15,40));
+			DrawString(HLSTAFONT,FormatNumber(ammotemp,3),(272-320,182-24),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor2(ammotemp,ammolow,ammohigh));
+			[ammolow,ammohigh]=ammolowhigh(10);
 			ammotemp=me.CountInv("HLGrenadeLauncherAmmo");
-			DrawString(HLSTAFONT,FormatNumber(ammotemp,3),(310-320,166-24),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor2(ammotemp,4,10));
+			DrawString(HLSTAFONT,FormatNumber(ammotemp,3),(310-320,166-24),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor2(ammotemp,ammolow,ammohigh));
 		}
 		else
 		{

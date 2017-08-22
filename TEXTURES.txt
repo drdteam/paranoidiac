@@ -1,14 +1,6 @@
 define xwall11k 128 96
 define xwall11l 128 64
 
-//Status bar
-graphic HLBAR, 640, 48
-{
-	XScale 2.0
-	YScale 2.0
-	Patch HLBAR, 0, 0
-}
-
 //Hintman
 graphic HINTMAN, 128, 128
 {
@@ -17,190 +9,11 @@ graphic HINTMAN, 128, 128
 	Patch HINTMAN, 0, 0
 }
 
-//Bright armour graphic
-graphic HLARM0, 32, 48
-{
-	XScale 2.0
-	YScale 2.0
-	Patch HLARM0, 0, 0
-}
-
-graphic HLARM1, 32, 48
-{
-	XScale 2.0
-	YScale 2.0
-	Patch HLARM1, 0, 0
-}
-
-//ammo icons for status bar
-graphic HLAMMO, 24, 96
-{
-	XScale 4.0
-	YScale 4.0
-	Patch HLAMMO, 0, 0
-}
-
 //grenade icon for status bar mode
-graphic i_gren2, 24, 24
+graphic i_gren2,24,24
 {
-	XScale 4.0
-	YScale 4.0
-	Patch i_gren1, 0, 0
+	Patch i_gren1,0,0
 		{Rotate 90}
-}
-
-//Health cross for full screen
-graphic i_health, 32, 48
-{
-	XScale 2.0
-	YScale 2.0
-	Patch i_health, 0, 0
-}
-
-//Armour icons for full screen
-graphic i_arm1, 32, 48
-{
-	XScale 2.0
-	YScale 2.0
-	Patch i_arm1, 0, 0
-}
-
-graphic i_arm2, 32, 48
-{
-	XScale 2.0
-	YScale 2.0
-	Patch i_arm2, 0, 0
-}
-
-//Ammo icons for full screen
-graphic i_bul1, 24, 24
-{
-	XScale 2.0
-	YScale 2.0
-	Patch i_bul1, 0, 0
-}
-
-graphic i_bul2, 24, 24
-{
-	XScale 2.0
-	YScale 2.0
-	Patch i_bul2, 0, 0
-}
-
-graphic i_bul3, 24, 24
-{
-	XScale 2.0
-	YScale 2.0
-	Patch i_bul3, 0, 0
-}
-
-graphic i_shel1, 24, 24
-{
-	XScale 2.0
-	YScale 2.0
-	Patch i_shel1, 0, 0
-}
-
-graphic i_gren1, 24, 24
-{
-	XScale 2.0
-	YScale 2.0
-	Patch i_gren1, 0, 0
-}
-
-graphic i_rock1, 24, 24
-{
-	XScale 2.0
-	YScale 2.0
-	Patch i_rock1, 0, 0
-}
-
-graphic i_bolt1, 24, 24
-{
-	XScale 2.0
-	YScale 2.0
-	Patch i_bolt1, 0, 0
-}
-
-graphic i_uran1, 24, 24
-{
-	XScale 2.0
-	YScale 2.0
-	Patch i_uran1, 0, 0
-}
-
-graphic i_horn1, 24, 24
-{
-	XScale 2.0
-	YScale 2.0
-	Patch i_horn1, 0, 0
-}
-
-//Vertical divider for full screen
-graphic divide, 4, 48
-{
-	XScale 2.0
-	YScale 2.0
-	Patch divide, 0, 0
-}
-
-//Paranoid logo for status bar
-graphic HLLOGO, 208, 32
-{
-	XScale 4.0
-	YScale 4.0
-	Patch HLLOGO, 0, 0
-}
-
-//frags panel for DM
-graphic HLFRAGS, 76, 48
-{
-	XScale 2.0
-	YScale 2.0
-	Patch HLFRAGS, 0, 0
-}
-
-//Weapon icons for status bar and althud
-graphic i_arifl1, 170, 48
-{
-	XScale 2.0
-	YScale 2.0
-	Patch i_arifl1, 0, 0
-}
-
-graphic i_cbar1, 170, 48
-{
-	XScale 2.0
-	YScale 2.0
-	Patch i_cbar1, 0, 0
-}
-
-graphic i_pist1, 170, 48
-{
-	XScale 2.0
-	YScale 2.0
-	Patch i_pist1, 0, 0
-}
-
-graphic i_pist2, 170, 48
-{
-	XScale 2.0
-	YScale 2.0
-	Patch i_pist2, 0, 0
-}
-
-graphic i_rlau1, 170, 48
-{
-	XScale 2.0
-	YScale 2.0
-	Patch i_rlau1, 0, 0
-}
-
-graphic i_sgun1, 170, 48
-{
-	XScale 2.0
-	YScale 2.0
-	Patch i_sgun1, 0, 0
 }
 
 //Status bar big numbers
@@ -683,23 +496,6 @@ graphic M_SKILL, 620, 128
 	Offset 98, 76
 }
 
-//Keys
-graphic HLKEYBI, 160, 104
-{
-	XScale 20.0
-	YScale 20.0
-	Patch HLKEYBI, 0, 0
-	Offset -4, 0
-}
-
-graphic HLKEYRI, 160, 104
-{
-	XScale 20.0
-	YScale 20.0
-	Patch HLKEYRI, 0, 0
-	Offset -4, 0
-}
-
 //GameEnd Graphics
 graphic PEND0, 120, 100
 {
@@ -745,14 +541,6 @@ graphic MEDKZ0, 43, 37
 	Offset -16, -20
 }
 
-//Status bar
-graphic HLBAR, 640, 48
-{
-	XScale 2.0
-	YScale 2.0
-	Patch HLBAR,0,0
-}
-
 //Col. Stinson
 graphic STINSON, 128, 128
 {
@@ -767,35 +555,6 @@ graphic UNDERNET, 128, 128
 	XScale 2.0
 	YScale 2.0
 	Patch UNDERNET, 0, 0
-}
-
-//Ammo & Weapon icons for status bar and althud
-graphic HLAMMO1, 24, 96
-{
-	XScale 4.0
-	YScale 4.0
-	Patch HLAMMO1, 0, 0
-}
-
-graphic i_xbow1, 170, 48
-{
-	XScale 2.0
-	YScale 2.0
-	Patch i_xbow1, 0, 0
-}
-
-graphic i_gluon1, 170, 48
-{
-	XScale 2.0
-	YScale 2.0
-	Patch i_gluon1, 0, 0
-}
-
-graphic i_hhand1, 170, 48
-{
-	XScale 2.0
-	YScale 2.0
-	Patch i_hhand1, 0, 0
 }
 
 //Textures
