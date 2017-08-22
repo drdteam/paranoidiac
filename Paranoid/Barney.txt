@@ -62,7 +62,7 @@ class HLBarney : HLMonster
 		PainSound "halflife/monsters/barney/pain";
 		DeathSound "halflife/monsters/barney/death";
 		MaxDropoffHeight 64;
-		DropItem "HLBerettaPickup";
+		DropItem "HLPistolPickup";
 		+FRIENDLY
 		-COUNTKILL
 		Species "HLBarney";
