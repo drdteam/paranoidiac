@@ -41,11 +41,12 @@ graphic HLAMMO, 24, 96
 }
 
 //grenade icon for status bar mode
-graphic i_gren1, 24, 12
+graphic i_gren2, 24, 24
 {
 	XScale 4.0
 	YScale 4.0
 	Patch i_gren1, 0, 0
+		{Rotate 90}
 }
 
 //Health cross for full screen
@@ -72,46 +73,67 @@ graphic i_arm2, 32, 48
 }
 
 //Ammo icons for full screen
-graphic i_bul1, 12, 24
+graphic i_bul1, 24, 24
 {
 	XScale 2.0
 	YScale 2.0
 	Patch i_bul1, 0, 0
 }
 
-graphic i_bul2, 12, 24
+graphic i_bul2, 24, 24
 {
 	XScale 2.0
 	YScale 2.0
 	Patch i_bul2, 0, 0
 }
 
-graphic i_bul3, 12, 24
+graphic i_bul3, 24, 24
 {
 	XScale 2.0
 	YScale 2.0
 	Patch i_bul3, 0, 0
 }
 
-graphic i_shel1, 12, 24
+graphic i_shel1, 24, 24
 {
 	XScale 2.0
 	YScale 2.0
 	Patch i_shel1, 0, 0
 }
 
-graphic i_gren2, 12, 24
+graphic i_gren1, 24, 24
 {
 	XScale 2.0
 	YScale 2.0
-	Patch i_gren2, 0, 0
+	Patch i_gren1, 0, 0
 }
 
-graphic i_rock2, 12, 24
+graphic i_rock1, 24, 24
 {
 	XScale 2.0
 	YScale 2.0
-	Patch i_rock2, 0, 0
+	Patch i_rock1, 0, 0
+}
+
+graphic i_bolt1, 24, 24
+{
+	XScale 2.0
+	YScale 2.0
+	Patch i_bolt1, 0, 0
+}
+
+graphic i_uran1, 24, 24
+{
+	XScale 2.0
+	YScale 2.0
+	Patch i_uran1, 0, 0
+}
+
+graphic i_horn1, 24, 24
+{
+	XScale 2.0
+	YScale 2.0
+	Patch i_horn1, 0, 0
 }
 
 //Vertical divider for full screen
