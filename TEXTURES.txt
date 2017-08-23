@@ -1,6 +1,11 @@
 define xwall11k 128 96
 define xwall11l 128 64
 
+graphic conback, 640,480
+{
+	Patch credit,0,0
+}
+
 //Hintman
 graphic HINTMAN, 128, 128
 {

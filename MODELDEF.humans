@@ -1661,7 +1661,7 @@ Model HLBarney
 	Model 0 "barney.md2"
 	Skin 0 "barney.png"
 	Model 1 "barneygun2.md2"
-	Skin 1 "barneygun2.png"
+	Skin 1 "w_9mmhandgun.png"
 	INTERPOLATEDOUBLEDFRAMES
 
 	FrameIndex HLI3 E 0 187
