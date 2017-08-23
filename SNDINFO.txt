@@ -904,6 +904,15 @@ $volume nihilant/v_nowdie 2.0
 $volume nihilant/v_last 2.0
 
 //****
+//	StukaBat
+//****
+stukabat/active			"sounds/halflife/stukabat/stkb_deploy1.ogg"
+stukabat/attack			"sounds/halflife/stukabat/stkb_fire2.ogg"
+stukabat/death			"sounds/halflife/stukabat/stkb_die1.ogg"
+stukabat/pain			"sounds/halflife/stukabat/stkb_fire1.ogg"
+stukabat/sight			"sounds/halflife/stukabat/stkb_deploy2.ogg"
+
+//****
 //	BossBat
 //****
 bossbat/active			"sounds/bossbat/active.ogg"
@@ -911,12 +920,3 @@ bossbat/attack			"sounds/bossbat/attack.ogg"
 bossbat/death			"sounds/bossbat/death.ogg"
 bossbat/pain			"sounds/bossbat/pain.ogg"
 bossbat/sight			"sounds/bossbat/see.ogg"
-
-//****
-//	StukaBat [Temporarily uses BossBat sounds; NEED TO ADD SOUNDS & EDIT BELOW]
-//****
-stukabat/active			"sounds/bossbat/active.ogg"
-stukabat/attack			"sounds/bossbat/attack.ogg"
-stukabat/death			"sounds/bossbat/death.ogg"
-stukabat/pain			"sounds/bossbat/pain.ogg"
-stukabat/sight			"sounds/bossbat/see.ogg"
