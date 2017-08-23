@@ -197,6 +197,7 @@ map map20 "Monarch Gonarch."
 }
 map map21 "Xenophobia."
 {
+	AirControl=.25
 	next=EndSequence,"ParaEndScroll"
 }
 map map22 "Six Ways to Die."
