@@ -3104,7 +3104,6 @@ Model HLHornetGun
 	Path "Models"
 	Model 0 "w_hgun.md2"
 	Skin 0 "w_hgun.png"
-	Scale 4.0 4.0 4.0
 
 	FrameIndex POSS A 0 0
 }
