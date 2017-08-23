@@ -2,7 +2,7 @@ Model HLBat
 {
 	Path "Models"
 	Model 0 "stukabat.md2"
-	Skin 0 "stukabat2.png"
+	Skin 0 "stukabat.png"
 	INTERPOLATEDOUBLEDFRAMES
 
 	FrameIndex HLI1 A 0 112
@@ -134,7 +134,7 @@ Model HLBossBat
 {
 	Path "Models"
 	Model 0 "stukabat.md2"
-	Skin 0 "stukabat.png"
+	Skin 0 "stukabat2.png"
 	INTERPOLATEDOUBLEDFRAMES
 
 	FrameIndex HLI1 A 0 112
