@@ -1,8 +1,8 @@
 Model HLCrowbar
 {
 	Path "Models"
-	Model 0 "crowbar.md3"
-	Skin 0 "crowbar.png"
+	Model 0 "w_crowbar.md2"
+	Skin 0 "w_crowbar.png"
 
 	FrameIndex POSS A 0 0
 }
@@ -260,16 +260,16 @@ Model HLCrowbar
 Model HLPistolPickup
 {
 	Path "Models"
-	Model 0 "beretta.md3"
-	Skin 0 "beretta.png"
+	Model 0 "w_9mmhandgun.md2"
+	Skin 0 "w_9mmhandgun.png"
 
 	FrameIndex POSS A 0 0
 }
 Model HLPistol
 {
 	Path "Models"
-	Model 0 "beretta.md3"
-	Skin 0 "beretta.png"
+	Model 0 "w_9mmhandgun.md2"
+	Skin 0 "w_9mmhandgun.png"
 
 	FrameIndex POSS A 0 0
 }
@@ -601,16 +601,16 @@ Model HLPistol
 Model HLMagnumPickup
 {
 	Path "Models"
-	Model 0 "python.md3"
-	Skin 0 "python.png"
+	Model 0 "w_357.md2"
+	Skin 0 "w_357.png"
 
 	FrameIndex POSS A 0 0
 }
 Model HLMagnum
 {
 	Path "Models"
-	Model 0 "python.md3"
-	Skin 0 "python.png"
+	Model 0 "w_357.md2"
+	Skin 0 "w_357.png"
 
 	FrameIndex POSS A 0 0
 }
@@ -978,8 +978,8 @@ Model HLMagnum
 Model HLShotgunPickup
 {
 	Path "Models"
-	Model 0 "shotgun.md3"
-	Skin 0 "shotgun.png"
+	Model 0 "w_shotgun.md2"
+	Skin 0 "w_shotgun.png"
 
 	FrameIndex POSS A 0 0
 }
@@ -987,8 +987,8 @@ Model HLShotgunPickup2
 {
 	Path "Models"
 	Model 0 "shotgun1.md3"
-	//Model 0 "shotgun.md3"
-	Skin 0 "shotgun.png"
+	//Model 0 "w_shotgun.md2"
+	Skin 0 "w_shotgun.png"
 	//Offset 0.0 0.0 20.0
 	//RollOffset -82
 
@@ -997,8 +997,8 @@ Model HLShotgunPickup2
 Model HLShotgun
 {
 	Path "Models"
-	Model 0 "shotgun.md3"
-	Skin 0 "shotgun.png"
+	Model 0 "w_shotgun.md2"
+	Skin 0 "w_shotgun.png"
 
 	FrameIndex POSS A 0 0
 }
@@ -1305,8 +1305,8 @@ Model HLShotgun
 Model HLAssaultRiflePickup
 {
 	Path "Models"
-	Model 0 "9mmar.md3"
-	Skin 0 "9mmar.png"
+	Model 0 "w_9mmar.md2"
+	Skin 0 "w_9mmar.png"
 
 	FrameIndex POSS A 0 0
 }
@@ -1314,15 +1314,15 @@ Model HLAssaultRiflePickup2
 {
 	Path "Models"
 	Model 0 "9mmar1.md3"
-	Skin 0 "9mmar.png"
+	Skin 0 "w_9mmar.png"
 
 	FrameIndex POSS A 0 0
 }
 Model HLAssaultRifle
 {
 	Path "Models"
-	Model 0 "9mmar.md3"
-	Skin 0 "9mmar.png"
+	Model 0 "w_9mmar.md2"
+	Skin 0 "w_9mmar.png"
 
 	FrameIndex POSS A 0 0
 }
@@ -1546,8 +1546,8 @@ Model HLAssaultRifle
 Model HLRPG
 {
 	Path "Models"
-	Model 0 "rlauncher.md3"
-	Skin 0 "rlauncher.png"
+	Model 0 "w_rpg.md2"
+	Skin 0 "w_rpg.png"
 
 	FrameIndex POSS A 0 0
 }
@@ -1841,30 +1841,18 @@ Model HLRPG
 Model HLXBowPickup
 {
 	Path "Models"
-	Model 0 "xbow1.md3"
-	Skin 0 "xbowskin.png"
+	Model 0 "w_crossbow.md2"
+	Skin 0 "w_crossbow.png"
 
 	FrameIndex POSS A 0 0
-
-	Model 1 "xbow2.md3"
-	Skin 1 "xbowskin.png"
-	Scale 0.75 0.75 0.75
-
-	FrameIndex POSS A 1 0
 }
 Model HLXBow
 {
 	Path "Models"
-	Model 0 "xbow1.md3"
-	Skin 0 "xbowskin.png"
+	Model 0 "w_crossbow.md2"
+	Skin 0 "w_crossbow.png"
 
 	FrameIndex POSS A 0 0
-
-	Model 1 "xbow2.md3"
-	Skin 1 "xbowskin.png"
-	Scale 0.75 0.75 0.75
-
-	FrameIndex POSS A 1 0
 }
 Model HLXBow
 {
@@ -2774,16 +2762,16 @@ Model HLXBow
 Model HLGluonGunPickup
 {
 	Path "Models"
-	Model 0 "gluongun.md3"
-	Skin 0 "gluongun.png"
+	Model 0 "w_egon.md2"
+	Skin 0 "w_egon.png"
 
 	FrameIndex POSS A 0 0
 }
 Model HLGluonGun
 {
 	Path "Models"
-	Model 0 "gluongun.md3"
-	Skin 0 "gluongun.png"
+	Model 0 "w_egon.md2"
+	Skin 0 "w_egon.png"
 
 	FrameIndex POSS A 0 0
 }
@@ -3114,8 +3102,8 @@ Model HLGluonGun
 Model HLHornetGun
 {
 	Path "Models"
-	Model 0 "hornetgun.md3"
-	Skin 0 "hornetgun.png"
+	Model 0 "w_hgun.md2"
+	Skin 0 "w_hgun.png"
 	Scale 4.0 4.0 4.0
 
 	FrameIndex POSS A 0 0

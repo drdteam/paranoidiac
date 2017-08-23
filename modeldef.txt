@@ -5,8 +5,8 @@
 Model HLPistolAmmo
 {
 	Path "Models"
-	Model 0 "bclip.md3"
-	Skin 0 "bclip.png"
+	Model 0 "w_9mmclip.md2"
+	Skin 0 "w_9mmclip.png"
 
 	FrameIndex POSS A 0 0
 }
@@ -14,8 +14,8 @@ Model HLPistolAmmo
 Model HLMagnumAmmo
 {
 	Path "Models"
-	Model 0 "pammo.md3"
-	Skin 0 "pammo.png"
+	Model 0 "w_357ammo.md2"
+	Skin 0 "w_357ammo.png"
 
 	FrameIndex POSS A 0 0
 }
@@ -23,8 +23,8 @@ Model HLMagnumAmmo
 Model HLMagnumAmmoBox
 {
 	Path "Models"
-	Model 0 "pythonammo.md3"
-	Skin 0 "pythonammo.png"
+	Model 0 "w_357ammobox.md2"
+	Skin 0 "w_357ammobox.png"
 
 	FrameIndex POSS A 0 0
 }
@@ -42,9 +42,8 @@ Model HLShotgunAmmo
 Model HLShotgunBox
 {
 	Path "Models"
-	Model 0 "pshellbox.md3"
-	Skin 0 "pshellbox.png"
-	Scale 0.75 0.75 0.75
+	Model 0 "w_shotbox.md2"
+	Skin 0 "w_shotbox.png"
 
 	FrameIndex POSS A 0 0
 }
@@ -52,8 +51,8 @@ Model HLShotgunBox
 Model HLAssaultRifleAmmo
 {
 	Path "Models"
-	Model 0 "9mmarclip.md3"
-	Skin 0 "9mmarclip.png"
+	Model 0 "w_9mmarclip.md2"
+	Skin 0 "w_9mmarclip.png"
 
 	FrameIndex POSS A 0 0
 }
@@ -61,9 +60,8 @@ Model HLAssaultRifleAmmo
 Model HLAssaultRifleBox
 {
 	Path "Models"
-	Model 0 "ammobox.md3"
-	Skin 0 "ammobox.png"
-	Scale 0.8 0.8 0.8
+	Model 0 "w_chainammo.md2"
+	Skin 0 "w_chainammo.png"
 
 	FrameIndex POSS A 0 0
 }
@@ -71,9 +69,8 @@ Model HLAssaultRifleBox
 Model HLGrenadeLauncherAmmo
 {
 	Path "Models"
-	Model 0 "m16gren.md3"
-	Skin 0 "m16grenade.png"
-	Scale 0.5 0.5 0.5
+	Model 0 "w_argrenade.md2"
+	Skin 0 "w_argrenade.png"
 
 	FrameIndex POSS A 0 0
 }
@@ -81,8 +78,8 @@ Model HLGrenadeLauncherAmmo
 Model HLRPGAmmo
 {
 	Path "Models"
-	Model 0 "rpgammo.md3"
-	Skin 0 "rpgammo.png"
+	Model 0 "w_rpgammo.md2"
+	Skin 0 "w_rpgammo.png"
 
 	FrameIndex POSS A 0 0
 }
@@ -90,9 +87,8 @@ Model HLRPGAmmo
 Model HLXBowAmmo
 {
 	Path "Models"
-	Model 0 "xbow4.md3"
-	Skin 0 "xbowskin.png"
-	Scale 0.75 0.75 0.75
+	Model 0 "crossbow_bolt.md2"
+	Skin 0 "crossbow_bolt.png"
 
 	FrameIndex POSS A 0 0
 }
@@ -100,9 +96,8 @@ Model HLXBowAmmo
 Model HLXBowBox
 {
 	Path "Models"
-	Model 0 "xbow3.md3"
-	Skin 0 "xbowskin.png"
-	Scale 0.75 0.75 0.75
+	Model 0 "w_crossbow_clip.md2"
+	Skin 0 "w_crossbow_clip.png"
 
 	FrameIndex POSS A 0 0
 }
@@ -110,9 +105,8 @@ Model HLXBowBox
 Model HLGluonGunAmmo
 {
 	Path "Models"
-	Model 0 "isotopebox.md3"
-	Skin 0 "isotopebox.png"
-	Scale 0.75 0.75 0.75
+	Model 0 "w_isotopebox.md2"
+	Skin 0 "w_isotopebox.png"
 
 	FrameIndex POSS A 0 0
 }
@@ -120,8 +114,8 @@ Model HLGluonGunAmmo
 Model AmmoPack
 {
 	Path "Models"
-	Model 0 "wbox.md3"
-	Skin 0 "wbox.png"
+	Model 0 "w_weaponbox.md2"
+	Skin 0 "w_weaponbox.png"
 
 	FrameIndex POSS A 0 0
 }
@@ -2490,7 +2484,7 @@ Model XenIsland3
 	Path "Models"
 	Model 0 "island.md3"
 	Skin 0 "rock_big.jpg"
-	ZOffset -300
+	ZOffset -342
 	Scale 1800.0 1800.0 1800.0
 
 	FrameIndex POSS A 0 0
@@ -2501,7 +2495,7 @@ Model XenIsland4
 	Path "Models"
 	Model 0 "island.md3"
 	Skin 0 "rock_moss1.jpg"
-	ZOffset -300
+	ZOffset -342
 	Scale 1800.0 1800.0 1800.0
 
 	FrameIndex POSS A 0 0
@@ -2512,7 +2506,7 @@ Model XenIsland5
 	Path "Models"
 	Model 0 "island.md3"
 	Skin 0 "rock_big2.jpg"
-	ZOffset -300
+	ZOffset -342
 	Scale 1800.0 1800.0 1800.0
 
 	FrameIndex POSS A 0 0
@@ -2523,7 +2517,7 @@ Model XenIsland6
 	Path "Models"
 	Model 0 "island.md3"
 	Skin 0 "rock_moss2.jpg"
-	ZOffset -300
+	ZOffset -342
 	Scale 1800.0 1800.0 1800.0
 
 	FrameIndex POSS A 0 0
@@ -2759,7 +2753,6 @@ Model XbowBolt
 	Path "Models"
 	Model 0 "crossbow_bolt.md2"
 	Skin 0 "crossbow_bolt.png"
-	Scale .3 .3 .3
 	AngleOffset 90
 
 	FrameIndex POSS A 0 0
@@ -2769,8 +2762,7 @@ Model M16Grenade
 {
 	Path "Models"
 	Model 0 "grenade.md2"
-	Skin 0 "grenade.png"
-	Scale .65 .65 .65
+	Skin 0 "w_argrenade.png"
 	AngleOffset 90
 	USEACTORPITCH
 
