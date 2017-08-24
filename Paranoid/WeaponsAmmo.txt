@@ -644,7 +644,7 @@ class HLShotgun : ParanoidWeapon
 		Wait;
 	Fire:
 		HLI1 A 0 A_HLDryFireCheck;
-		HLF1 A 1 A_HLShootLead(3,3,6,8,350,"halflife/weapons/shotgunsingle",1,4);
+		HLF1 A 1 A_HLShootLead(5,5,6,8,350,"halflife/weapons/shotgunsingle",1,4);
 		HLF1 BCDEFGH 1 A_HLWeaponRecoil(-50);
 		HLF1 I 1 A_CheckReload;
 		HLF1 JKLMN 1;
@@ -657,11 +657,11 @@ class HLShotgun : ParanoidWeapon
 		TNT1 A 0 A_JumpIf(CountInv("HLShotgunMag")<2,"Fire");	//if less than two, will shoot only one
 		HLF2 C 1
 		{
-			A_HLShootLead(10,10,12,8,550,"halflife/weapons/shotgundouble",1,4);
+			A_HLShootLead(10,10,12,8,700,"halflife/weapons/shotgundouble",1,4);
 			A_TakeInventory("HLShotgunMag",1,TIF_NOTAKEINFINITE);
 		}
-		HLF2 DEFGHIJKLMN 1 A_HLWeaponRecoil(-50);
-		HLF2 OPQRSTUVWXYZ[\ 1;
+		HLF2 DEFGHIJKLMNOPQ 1 A_HLWeaponRecoil(-50);
+		HLF2 RSTUVWXYZ[\ 1;
 		HLF2 ] 1 A_CheckReload;
 		HLF3 ABC 1;
 		HLF3 D 1 A_PlaySound("halflife/weapons/shotgunpump",CHAN_WEAPON);
