@@ -96,9 +96,7 @@ class HLBossBat : HLBat
 		AttackSound "bossbat/attack";
 		Obituary "%o was iced by a Boss Bat.";
 	}
-	States
-	{
-	virtual void A_HLStukaFire()
+	override void A_HLStukaFire()
 	{
 		A_SpawnProjectile("IceBall",32,-24);
 		A_SpawnProjectile("IceBall",32,24);
@@ -131,8 +129,10 @@ class StukaFireBall : Actor
 		{
 			for(int i=0;i<4;i++)
 			{
-				let ball=A_SpawnItemEx("SBFireExtra",0,0,0,random(1,-1),random(1,-1),random(0,2),0,SXF_TRANSFERTRANSLATION);
-				ball.scale=(scale*.5,scale*.5);
+				bool num;
+				actor ball;
+				[num,ball]=A_SpawnItemEx("SBFireExtra",0,0,0,random(1,-1),random(1,-1),random(0,2),0,SXF_TRANSFERTRANSLATION);
+				ball.scale=(scale.x*.5,scale.y*.5);
 			}
 		}
 		Stop;
