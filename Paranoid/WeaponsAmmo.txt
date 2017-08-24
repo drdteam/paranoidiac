@@ -716,10 +716,10 @@ class HLShotgunAmmo : Ammo
 		Radius 4;
 		Height 4;
 		Inventory.PickupSound "misc/w_pkup";
-		Inventory.PickupMessage "Picked up 4 shotgun shells.";
-		Inventory.Amount 4;
+		Inventory.PickupMessage "Picked up three shotgun shells.";
+		Inventory.Amount 3;
 		Inventory.MaxAmount 125;
-		Ammo.BackpackAmount 4;
+		Ammo.BackpackAmount 3;
 		Inventory.Icon "i_shel1";
 	}
 	States
