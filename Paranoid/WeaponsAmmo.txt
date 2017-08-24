@@ -17,14 +17,14 @@ class ParanoidWeapon : Weapon
 	States
 	{
 	Deselect:
-		HLD1 ABCDEFGHIJKLMNO 1;
+		//HLD1 ABCDEFGHIJKLMNO 1;
 		TNT1 A 0 A_Lower;
 		Wait;
 	Select:
 		TNT1 A 0 A_Raise(100);
 		Loop;
 	Select1:
-		HLU1 ABCDEFGHIJKLMNO 1;
+		HLU1 ABCDEFGHIJKLMNO 1 A_WeaponReady(WRF_NOBOB|WRF_NOFIRE);
 		HLU1 O 0 A_Jump(256,"Ready");
 	Fire:
 	Ready:
@@ -274,12 +274,12 @@ class HLCrowbar : ParanoidWeapon
 	}
 	States
 	{
-	Deselect:
+	/*Deselect:
 		HLD1 ABCDEFGHIJKL 1;
 		TNT1 A 0 A_Lower;
-		Wait;
+		Wait;*/
 	Select1:
-		HLU1 ABCDEFGHIJKL 1;
+		HLU1 ABCDEFGHIJKL 1 A_WeaponReady(WRF_NOBOB|WRF_NOFIRE);
 		Goto Ready;
 	Fire:
 		TNT1 A 0 A_Jump(256,"Fire1","Fire2","Fire3");
@@ -626,12 +626,12 @@ class HLShotgun : ParanoidWeapon
 	}
 	States
 	{
-	Deselect:
+	/*Deselect:
 		HLD1 ABCDEFGHIJKL 1;
 		TNT1 A 0 A_Lower;
-		Wait;
+		Wait;*/
 	Select1:
-		HLU1 ABCDEFGHIJKL 1;
+		HLU1 ABCDEFGHIJKL 1 A_WeaponReady(WRF_NOBOB|WRF_NOFIRE);
 	Ready:
 		HLI1 A 1 A_HLWeaponReady(8,1);
 		Wait;
@@ -791,12 +791,12 @@ class HLAssaultRifle : ParanoidWeapon
 	}
 	States
 	{
-	Deselect:
+	/*Deselect:
 		HLU1 KJIHGFEDCBA 1;
 		TNT1 A 0 A_Lower;
-		Wait;
+		Wait;*/
 	Select1:
-		HLU1 ABCDEFGHIJK 1;
+		HLU1 ABCDEFGHIJK 1 A_WeaponReady(WRF_NOBOB|WRF_NOFIRE);
 	Ready:
 		HLI1 A 1 A_HLWeaponReady(50,1,"HLAssaultRifleMag");
 		Loop;
@@ -978,23 +978,23 @@ class HLRPG : ParanoidWeapon
 	}
 	States
 	{
-	Deselect:
+	/*Deselect:
 		HLD1 A 1 A_JumpIf(!CountInv("HLRPGAmmo"),"DeselectEmpty");
 		HLD1 BCDEFGHIJKLMNO 1;
 		TNT1 A 0 A_Lower;
-		Wait;
+		Wait;*/
 	DeselectEmpty:
 		HLD1 QRSTUVWXYZ[\] 1;
 		HLD2 AB 1;
 		TNT1 A 0 A_Lower;
 		Wait;
 	Select1:
-		HLU1 A 1 A_JumpIf(!CountInv("HLRPGAmmo"),"SelectEmpty");
-		HLU1 BCDEFGHIJKLMNO 1;
+		HLU1 A 0 A_JumpIf(!CountInv("HLRPGAmmo"),"SelectEmpty");
+		HLU1 ABCDEFGHIJKLMNO 1 A_WeaponReady(WRF_NOBOB|WRF_NOFIRE);
 		Goto Ready;
 	SelectEmpty:
-		HLU1 QRSTUVWXYZ[\] 1;
-		HLU2 AB 1;
+		HLU1 QRSTUVWXYZ[\] 1 A_WeaponReady(WRF_NOBOB|WRF_NOFIRE);
+		HLU2 AB 1 A_WeaponReady(WRF_NOBOB|WRF_NOFIRE);
 	Ready:
 		TNT1 A 0 A_JumpIf(!CountInv("HLRPGAmmo"),2);
 		HLI1 A 1 A_WeaponReady;
@@ -1366,12 +1366,12 @@ class HLGluonGun : ParanoidWeapon
 	}
 	States
 	{
-	Deselect:
+	/*Deselect:
 		HLD1 ABCDEFGHIJKLM 1;
 		TNT1 A 0 A_Lower;
-		Wait;
+		Wait;*/
 	Select1:
-		HLU1 ABCDEFGHIJKLM 1;
+		HLU1 ABCDEFGHIJKLM 1 A_WeaponReady(WRF_NOBOB|WRF_NOFIRE);
 	Ready:
 		HLI1 A 1 A_HLWeaponReady(40,1);
 		Loop;
@@ -1861,13 +1861,13 @@ class HLHornetGun : ParanoidWeapon
 	}
 	States
 	{
-	Deselect:
+	/*Deselect:
 		HLD1 ABCDEFGHIJKLMNOPQR 2;
 		TNT1 A 0 A_Lower;
-		Wait;
+		Wait;*/
 	Select1:
-		HLU1 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1;
-		HLU2 A 1;
+		HLU1 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1 A_WeaponReady(WRF_NOBOB|WRF_NOFIRE);
+		HLU2 A 1 A_WeaponReady(WRF_NOBOB|WRF_NOFIRE);
 	Ready:
 		HLI1 A 6
 		{
