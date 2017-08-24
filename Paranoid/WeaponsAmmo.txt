@@ -270,6 +270,7 @@ class HLCrowbar : ParanoidWeapon
 	{
 		Tag "Crowbar";
 		Height 4;
+		Weapon.SelectionOrder 2100;
 		Weapon.Kickback 0;
 		Inventory.PickupSound "misc/i_pkup";
 		Inventory.PickupMessage "Picked up a crowbar.";
