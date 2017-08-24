@@ -80,12 +80,12 @@ MAP7VOX3=
 	"Warning! Illegal Data Access In Progress. Please Cease Data\n"
 	"Upload Immediately and Surrender to the Enforcement Authorities.\n"
 	"All Exit Vestibules are Being Flooded with Nerve Gas.";
-MAP8VOX1=
+MAP8VOX2=
 	"Who the hell are you? Ah, yes. Bellmer. The new fellow. What do you want? Hmmm...\n"
 	"the security override code, eh? What the heck! You're probably better off with it than me.\n"
-	"Listen carefully: It's 7-A-K-T-Z. Got it? And hey! It seems this other fellow .... Freeman.\n"
+	"Listen carefully: It's 7-A-K-T-Z. Got it? And hey! It seems this other fellow... Freeman.\n"
 	"He's been giving them hell, too. Perhaps you guys should hook up, eh?";
-MAP8VOX2=
+MAP8VOX3=
 	"What're you waiting for? Get out of here!";
 MAP10VX1=
 	"Dr. Bellmer, my name is Colonel Stinson, with Legion: Earth. We don't have much time,\n"
