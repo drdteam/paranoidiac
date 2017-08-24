@@ -19,7 +19,7 @@ class HLBullSquid : HLMonster
 		PainSound "halflife/monsters/bullsquid/pain";
 		DeathSound "halflife/monsters/bullsquid/death";
 		ActiveSound "halflife/monsters/bullsquid/idle";
-		Species "HLBullSquid";
+		Species "Xen";
 	}
 	States
 	{

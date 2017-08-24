@@ -24,7 +24,7 @@ class HLGonarch : HLMonster
 		MeleeRange 80;
 		MaxTargetRange 1100;
 		Scale .8;
-		Species "HLGonarch";
+		Species "Xen";
 	}
 	States
 	{

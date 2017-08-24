@@ -33,7 +33,7 @@ class HLZombie1 : HLMonster
 		DeathSound "halflife/monsters/zombie/pain";
 		ActiveSound "halflife/monsters/zombie/idle";
 		maxdropoffheight 64;
-		Species "HLZombie";
+		Species "Xen";
 	}
 	States
 	{

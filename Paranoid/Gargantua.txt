@@ -29,7 +29,7 @@ class HLGargantua : HLMonster
 		PainSound "halflife/monsters/gargantua/pain";
 		DeathSound "halflife/monsters/gargantua/death";
 		ActiveSound "halflife/monsters/gargantua/idle";
-		Species "HLGargantua";
+		Species "Xen";
 	}
 	States
 	{

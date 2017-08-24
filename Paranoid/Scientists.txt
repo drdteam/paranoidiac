@@ -93,7 +93,7 @@ class HLScientist1 : HLMonster
 		SeeSound "scientist/sight";
 		PainSound "scientist/pain";
 		DeathSound "scientist/death";
-		Species "HLScientist";
+		Species "BlackMesa";
 	}
 	States
 	{

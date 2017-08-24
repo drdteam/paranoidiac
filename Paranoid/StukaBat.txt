@@ -20,6 +20,7 @@ class HLBat : HLMonster
 		ActiveSound "stukabat/active";
 		AttackSound "stukabat/attack";
 		Obituary "%o was fried by a StukaBat.";
+		Species "Xen";
 	}
 	States
 	{

@@ -3,6 +3,8 @@ class HLMonster : Actor
 	Default
 	{
 		Monster;
+		+NOINFIGHTSPECIES
+		+DOHARMSPECIES
 	}
 	States
 	{

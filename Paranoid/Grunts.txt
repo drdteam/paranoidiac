@@ -77,15 +77,14 @@ class HLGrunt1 : HLMonster
 		Speed 3.5;
 		Height 63;
 		maxdropoffheight 128;
-		DamageFactor "SoldierDamage",0;
 		SeeSound "halflife/monsters/humangrunt/sight";
 		PainSound "halflife/monsters/humangrunt/pain";
 		DeathSound "halflife/monsters/humangrunt/death";
 		ActiveSound "halflife/monsters/humangrunt/active";
-		Species "HLGrunt";
 		Mass 200;
 		PainChance 64;
 		PainChance "Crowbar",210;
+		Species "HECU";
 	}
 	States
 	{
@@ -376,7 +375,7 @@ class HLGrunt1 : HLMonster
 			else if(shots==10)
 				A_PlaySound("halflife/weapons/shotgundouble",5);
 		}
-		A_CustomBulletAttack(7,7,shots,4,"NewPuff2");
+		A_CustomBulletAttack(7,7,shots,4,"NewPuff1");
 	}
 	void A_GruntGunsmoke()
 	{
@@ -402,7 +401,6 @@ class GruntHandGrenade : Actor
 		Speed 20;
 		Scale .3;
 		Damage 1;
-		Damagetype "SoldierDamage";
 		PROJECTILE;
 		BounceType "Doom";
 		+CANBOUNCEWATER
@@ -438,7 +436,6 @@ class HLGruntGunGrenade : M16Grenade
 {
 	Default
 	{
-		Damagetype "SoldierDamage";
 		Gravity .2;
 		DeathSound "halflife/weapons/explode1";
 		Decal "";

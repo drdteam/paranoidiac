@@ -48,7 +48,7 @@ class HLNihilanth : HLMonster
 		BloodColor "Yellow";
 		PainSound "nihilant/pain";
 		DeathSound "nihilant/death";
-		Species "HLNihilanth";
+		Species "Xen";
 	}
 	States
 	{

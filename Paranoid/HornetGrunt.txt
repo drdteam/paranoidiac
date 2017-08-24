@@ -18,7 +18,7 @@ class HLHornetGrunt : HLMonster
 		PainSound "halflife/monsters/hornetgrunt/pain";
 		DeathSound "halflife/monsters/hornetgrunt/death";
 		ActiveSound "halflife/monsters/hornetgrunt/idle";
-		Species "HLHornetGrunt";
+		Species "Xen";
 	}
 	States
 	{

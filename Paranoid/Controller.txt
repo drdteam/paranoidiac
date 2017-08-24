@@ -21,7 +21,7 @@ class HLController : HLMonster
 		PainSound "halflife/monsters/controller/Pain";
 		DeathSound "halflife/monsters/controller/Death";
 		ActiveSound "halflife/monsters/controller/idle";
-		Species "HLController";
+		Species "Xen";
 	}
 	States
 	{

@@ -27,7 +27,7 @@ class HLHeadCrab : HLMonster
 		MaxDropoffHeight 384;
 		+DONTHARMCLASS;
 		DamageFactor "Gonarch",0;
-		Species "HLHeadCrab";
+		Species "Xen";
 	}
 	States
 	{
@@ -121,7 +121,6 @@ class HLBabyHeadCrab : HLHeadCrab
 		maxdropoffheight 24;
 		PainSound "";
 		DeathSound "";
-		Species "HLBabyHeadCrab";
 	}
 	States
 	{

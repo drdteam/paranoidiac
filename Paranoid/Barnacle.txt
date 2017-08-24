@@ -24,6 +24,7 @@ class HLBarnacle : Actor
 		+SPAWNCEILING
 		+CEILINGHUGGER
 		+DONTFALL
+		Species "Xen";
 	}
 	states
 	{

@@ -234,14 +234,6 @@ class NewPuff1 : Actor replaces BulletPuff
 	}
 }
 
-class NewPuff2 : NewPuff1  //does soldier damage type
-{
-	Default
-	{
-		DamageType "SoldierDamage";
-	}
-}
-
 class PuffSmoke : Actor
 {
 	Default

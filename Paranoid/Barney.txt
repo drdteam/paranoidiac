@@ -65,7 +65,7 @@ class HLBarney : HLMonster
 		DropItem "HLPistolPickup";
 		+FRIENDLY
 		-COUNTKILL
-		Species "HLBarney";
+		Species "BlackMesa";
 	}
 	States
 	{
@@ -161,18 +161,18 @@ class HLBarney : HLMonster
 		if(type==2)
 		{
 			A_PlaySound("halflife/weapons/magnumshot",CHAN_WEAPON);
-			A_CustomBulletAttack(2,2,1,25,"BulletPuff");
+			A_CustomBulletAttack(2,2,1,25,"NewPuff1");
 		}
 		else
 		{
 			A_PlaySound("halflife/weapons/pistol",CHAN_WEAPON);
-			A_CustomBulletAttack(7,7,1,5,"BulletPuff");
+			A_CustomBulletAttack(7,7,1,5,"NewPuff1");
 		}
 	}
 	void A_BarneyGunsmoke()
 	{
 		for(int i=0;i<2;i++)
-			A_SpawnItemEx("GunSmoke",28,2,48);
+			A_SpawnItemEx("GunSmoke",28,2,47);
 	}
 	virtual void A_Chatter()
 	{
