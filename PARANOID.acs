@@ -26,7 +26,7 @@ script "AltHudAmmo" ENTER
 
 //Hint messages that are run when player uses the inventory item "MessageItem**"
 int playingmessage[8];
-str hintsnd[34][2]=
+str hintsnd[40][2]=
 {
 	{"MAP2VOX1","HINTMAN"},{"MAP2VOX2","HINTMAN"},
 	{"MAP2VOX3","HINTMAN"},{"MAP2VOX4","HINTMAN"},
@@ -45,9 +45,12 @@ str hintsnd[34][2]=
 	{"MAP15VX1","STINSON"},{"MAP16VX1","STINSON"},
 	{"MAP16VX2","UNDERNET"},{"MAP16VX3","STINSON"},
 	{"MAP17VX1","STINSON"},
-	{"MAP7VOX3",""},{"MAP11VX2",""}
+	{"MAP7VOX3",""},{"MAP11VX2",""},
+	{"MAP8VOX1",""},{"MAP8VOX2",""},
+	{"MAP5VOX4",""},{"MAP5VOX5",""},
+	{"MAP5VOX6",""},{"MAP5VOX7",""}
 };
-int delays[34][2]=
+int delays[40][2]=
 {
 	//duration of soundbyte
 	//# of characters
@@ -68,7 +71,10 @@ int delays[34][2]=
 	{18,270},{19,322},
 	{28,430},{23,345},
 	{15,228},
-	{17,178},{21,274}
+	{17,178},{21,274},
+	{32,334},{3,41},
+	{25,321},{2,14},
+	{3,20},{17,181}
 };
 script "HintMessage"(int msg,int source)
 {

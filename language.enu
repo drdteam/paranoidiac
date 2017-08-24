@@ -52,6 +52,20 @@ MAP5VOX3=
 	"Return to the Research Labs and use your\n"
 	"security clearance to gain access.\n\n"
 	"Take the bridge over the storage warehouse.";
+MAP5VOX4=
+	"Dr. Bellmer, isn't it? Rolf Bellmer? I'm impressed you made it this far.\n"
+	"You're probably here because those military bastards scrapped your clearance.\n"
+	"Mine too. But I didn't get promoted to Security Officer without knowing how\n"
+	"to hack my own system. You want your clearance back? You want a higher clearance?\n"
+	"No problemo.";
+MAP5VOX5=
+	"Workin' on it.";
+MAP5VOX6=
+	"Almost there, buddy.";
+MAP5VOX7=
+	"Okay. You're all set. Go out there and kick some butt! I'm going to stay behind\n"
+	"this bullet-proof glass. Where it's safe. Oh, hey! I almost forgot. Grab all\n"
+	"the stuff you can carry!";
 MAP6VOX1=
 	"You should be able to crawl under the door.";
 MAP6VOX2=
@@ -66,6 +80,13 @@ MAP7VOX3=
 	"Warning! Illegal Data Access In Progress. Please Cease Data\n"
 	"Upload Immediately and Surrender to the Enforcement Authorities.\n"
 	"All Exit Vestibules are Being Flooded with Nerve Gas.";
+MAP8VOX1=
+	"Who the hell are you? Ah, yes. Bellmer. The new fellow. What do you want? Hmmm...\n"
+	"the security override code, eh? What the heck! You're probably better off with it than me.\n"
+	"Listen carefully: It's 7-A-K-T-Z. Got it? And hey! It seems this other fellow .... Freeman.\n"
+	"He's been giving them hell, too. Perhaps you guys should hook up, eh?";
+MAP8VOX2=
+	"What're you waiting for? Get out of here!";
 MAP10VX1=
 	"Dr. Bellmer, my name is Colonel Stinson, with Legion: Earth. We don't have much time,\n"
 	"so listen carefully. The mission to extract you from Black Mesa was compromised,\n"
