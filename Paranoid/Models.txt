@@ -36,7 +36,6 @@ class keyboard1 : ModelBase
 		Height 4;
 		+shootable
 		+noblood
-		+FLOORCLIP
 		+NOTAUTOAIMED
 	}
 }
@@ -143,7 +142,6 @@ class Transformer : ModelBase
 		Radius 12;
 		Height 60;
 		Mass 0x7FFFFFFF;
-		+FLOORCLIP
 	}
 }
 
@@ -163,7 +161,6 @@ class Meter1 : Transformer
 		Radius 4;
 		Height 12;
 		+NOGRAVITY
-		-FLOORCLIP
 	}
 }
 
@@ -191,7 +188,6 @@ class light1 : ModelBase
 	{
 		Radius 6;
 		Height 8;
-		+FLOORCLIP
 		+NoGravity
 	}
 	States
@@ -234,7 +230,6 @@ class Forklift1 : ModelBase
 	{
 		Height 64;
 		Mass 0x7FFFFFFF;
-		+FLOORCLIP
 	}
 }
 
@@ -269,8 +264,7 @@ class Generator1 : ModelBase
 		Radius 24;
 		Height 64;
 		Mass 1200;
-		Scale 2.0;
-		+FLOORCLIP
+		Scale 2;
 	}
 }
 
@@ -301,7 +295,6 @@ class Generator3a : SwitchableDecoration
 		Radius 32;
 		Height 64;
 		Mass 0x7FFFFFFF;
-		+FLOORCLIP
 		+SOLID
 	}
 	States
@@ -356,7 +349,6 @@ class girder1 : ModelBase
 		Radius 34;
 		Height 416;
 		Mass 0x7FFFFFFF;
-		+FLOORCLIP
 	}
 }
 
@@ -395,7 +387,6 @@ class apache : ModelBase
 		Radius 48;
 		Height 128;
 		Mass 0x7FFFFFFF;
-		+FLOORCLIP
 	}
 }
 
@@ -406,7 +397,6 @@ class Tram : ModelBase
 		Radius 40;
 		Height 32;
 		Mass 0x7FFFFFFF;
-		+FLOORCLIP
 	}
 }
 
@@ -419,7 +409,6 @@ class Truck01 : ModelBase
 		Radius 58;
 		Height 122;
 		Mass 0x7FFFFFFF;
-		+FLOORCLIP
 	}
 }
 
@@ -435,7 +424,6 @@ class Toilet1 : ModelBase
 		Radius 16;
 		Height 28;
 		Mass 0x7FFFFFFF;
-		+FLOORCLIP
 	}
 }
 class Toilet2 : Toilet1{}
@@ -456,7 +444,6 @@ class Chair1 : ModelBase
 		Radius 10;
 		Height 29;
 		Mass 50;
-		+FLOORCLIP
 		+PUSHABLE
 	}
 }
@@ -503,7 +490,6 @@ class Desklamp1 : ModelBase
 		Radius 4;
 		Height 16;
 		Mass 10;
-		+FLOORCLIP
 		+PUSHABLE
 	}
 }
@@ -517,7 +503,6 @@ class Desk1 : ModelBase
 		Radius 18;
 		Height 32;
 		Mass 100;
-		+FLOORCLIP
 	}
 }
 
@@ -587,7 +572,6 @@ class Bed01 : ModelBase
 	{
 		Height 24;
 		Mass 150;
-		+FLOORCLIP
 	}
 }
 
@@ -628,7 +612,6 @@ class DeerHead : ModelBase
 		Height 40;
 		Mass 450;
 		Scale 1.25;
-		+FLOORCLIP
 		+NOGRAVITY
 	}
 }
@@ -639,7 +622,6 @@ class VidCam1 : ModelBase
 	{
 		Radius 16;
 		Height 56;
-		+FLOORCLIP
 	}
 }
 
@@ -674,7 +656,6 @@ class Pipe1 : ModelBase
 	{
 		Height 58;
 		Mass 0x7FFFFFFF;
-		+FLOORCLIP
 	}
 }
 
@@ -842,7 +823,6 @@ class Toolbox1 : ModelBase
 	{
 		Height 40;
 		Mass 200;
-		+FLOORCLIP
 		+PUSHABLE
 	}
 }
@@ -906,7 +886,6 @@ class Palm1a : ModelBase
 		Radius 8;
 		Height 340;
 		Mass 0x7FFFFFFF;
-		+FLOORCLIP
 	}
 }
 class Palm1b : Palm1a{}
@@ -985,7 +964,6 @@ class StreetLamp : SwitchableDecoration
 		Radius 4;
 		Height 160;
 		+SOLID
-		+Floorclip
 	}
     States
     {
@@ -1154,7 +1132,6 @@ class TechPillar1a : ModelBase
 		Radius 16;
 		Height 214;
 		Mass 0x7FFFFFFF;
-		+Floorclip
 	}
 }
 
@@ -1219,6 +1196,7 @@ class XenIsland1 : ModelBase
 		Height 128;
 		Mass 0x7FFFFFFF;
 		-SOLID
+		+NOGRAVITY
 	}
 }
 
@@ -1302,7 +1280,6 @@ class Barrier1 : ModelBase
 		Radius 4;
 		Height 32;
 		Mass 500;
-		+FLOORCLIP
 	}
 }
 
@@ -1430,7 +1407,6 @@ class Barrel1 : ModelBase
 		Radius 8;
 		Height 29;
 		Mass 50;
-		+FLOORCLIP
 		+PUSHABLE
 		+SHOOTABLE
 		+NOTAUTOAIMED
@@ -1513,11 +1489,16 @@ class Admin01 : ModelBase
 		Height 40;
 		Mass 200;
 		+SHOOTABLE
-		+FLOORCLIP
 		+NORADIUSDMG
 		+NODAMAGE
-		+FLOORCLIP
 		+USESPECIAL
 		+NOTAUTOAIMED
+	}
+	States
+	{
+	Spawn:
+		HLI1 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 2;
+		HLI2 AB 2;
+		Loop;
 	}
 }
