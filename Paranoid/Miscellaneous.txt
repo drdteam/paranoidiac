@@ -25,6 +25,30 @@ class HLTeleportFog : TeleportFog replaces TeleportFog
 	}
 }
 
+class BustedGrate : Actor
+{
+	States
+	{
+	Spawn:
+		TNT1 A 10 NODELAY
+		{
+			A_PlaySound("bustgrate");
+			actor debris;
+			for(int i=0;i<5;i++)
+			{
+				for(int j=-22;j<=22;j+=22)
+				{
+					debris=A_SpawnProjectile("Debris01",1,j,frandom(0,360),CMF_AIMDIRECTION);
+					debris.vel.x=frandom(10,40);
+					debris.vel.z=frandom(5,20);
+				}
+			}
+		}
+		TNT1 A 1 A_PlaySound("gratedebris");
+		Stop;
+	}
+}
+
 class Debris01 : Actor
 {
 	Default
@@ -34,7 +58,8 @@ class Debris01 : Actor
 		Mass 5;
 		RenderStyle "Add";
 		+FORCEXYBILLBOARD
-		PROJECTILE;
+		Projectile;
+		-NOGRAVITY
 	}
 	States
 	{
@@ -58,6 +83,7 @@ class NewBlood : Blood replaces Blood
 		+DONTSPLASH
 		+DONTBLAST
 		+CANNOTPUSH
+		+FORCEXYBILLBOARD
 	}
 	States
 	{
