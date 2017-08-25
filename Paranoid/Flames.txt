@@ -78,6 +78,7 @@ class OMGFire : SwitchableDecoration
 					thisember.angle=random(0,359);
 					thisember.vel.z+=random(3,6);
 					thisember.vel.x+=random(-1,1);
+					thisember.vel.y+=random(-1,1);
 				}
 			}
 		}

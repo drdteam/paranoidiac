@@ -43,7 +43,7 @@ class BustedGrate : Actor
 				for(int j=-22;j<=22;j+=22)
 				{
 					debris=A_SpawnProjectile("Debris01",0,j,frandom(0,360),CMF_AIMDIRECTION);
-					debris.vel.x=frandom(2.5,10);
+					debris.A_ScaleVelocity(frandom(2.5,10));
 					debris.vel.z=frandom(1.25,5);
 				}
 			}
@@ -57,6 +57,7 @@ class Debris01 : Actor
 {
 	Default
 	{
+		Speed 1;
 		Radius 7;
 		Height 7;
 		Mass 5;
