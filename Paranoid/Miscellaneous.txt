@@ -29,6 +29,7 @@ class BustedGrate : Actor
 {
 	Default
 	{
+		+NOGRAVITY
 		Height 64;
 	}
 	States
@@ -42,7 +43,7 @@ class BustedGrate : Actor
 			{
 				for(int j=-22;j<=22;j+=22)
 				{
-					debris=A_SpawnProjectile("Debris01",0,j,frandom(0,360),CMF_AIMDIRECTION);
+					debris=A_SpawnProjectile("Debris01",0,j,frandom(-180,180),CMF_AIMDIRECTION);
 					debris.A_ScaleVelocity(frandom(2.5,10));
 					debris.vel.z=frandom(1.25,5);
 				}
