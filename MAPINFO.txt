@@ -185,20 +185,21 @@ map map18 "Cavernicolous."
 adddefaultmap
 {
 	sky1=HLSKY6
-}
-map map19 "Island Hopping."
-{
 	AirControl=.25
 }
+map map19 "Island Hopping."{}
 map map20 "Monarch Gonarch."
 {
 	Music="20Xen"
-	AirControl=.25
 }
 map map21 "Xenophobia."
 {
-	AirControl=.25
 	next=EndSequence,"ParaEndScroll"
+}
+
+adddefaultmap
+{
+	AirControl=.00390625
 }
 map map22 "Six Ways to Die."
 {
@@ -332,6 +333,7 @@ Intermission ParaEndLogo
 
 DoomEdNums
 {
+	4040=NJTankSpark
 	4041=HLScientistSpawner
 	4053=HLScientistWandererSpawner
 	4054=HLScientistStillSpawner

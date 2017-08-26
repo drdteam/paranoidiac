@@ -389,10 +389,12 @@ class Spark_BB1 : Spark_O1
 }
 
 //Flares in Vacuum Tubes at the end of Map01
-class NJTankSpark : BlueTorch replaces BlueTorch
+class NJTankSpark : Actor
 {
 	Default
 	{
+		Radius 16;
+		Height 68;
 		scale .4;
 		RenderStyle "Add";
 		Alpha .9;
@@ -401,7 +403,7 @@ class NJTankSpark : BlueTorch replaces BlueTorch
 	States
 	{
 	Spawn:
-		TBLU ABCD 2 BRIGHT LIGHT("TANKSPARKEFFECT");
+		SPKT ABCD 2 BRIGHT LIGHT("TANKSPARKEFFECT");
 		Loop;
 	}
 }
