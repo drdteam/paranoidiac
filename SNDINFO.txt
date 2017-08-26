@@ -920,3 +920,81 @@ bossbat/attack			"sounds/bossbat/attack.ogg"
 bossbat/death			"sounds/bossbat/death.ogg"
 bossbat/pain			"sounds/bossbat/pain.ogg"
 bossbat/sight			"sounds/bossbat/see.ogg"
+
+//-------
+//	Otis
+//-------
+halflife/monsters/otis/death	"sounds/halflife/barney/ba_die1.ogg"
+$random halflife/monsters/otis/pain
+{
+	halflife/monsters/otis/pain1
+	halflife/monsters/otis/pain2
+	halflife/monsters/otis/pain3
+	halflife/monsters/otis/pain4
+	halflife/monsters/otis/pain5
+}
+halflife/monsters/otis/pain1	"sounds/halflife/otis/damn.ogg"
+halflife/monsters/otis/pain2	"sounds/halflife/otis/medic.ogg"
+halflife/monsters/otis/pain3	"sounds/halflife/otis/quitit.ogg"
+halflife/monsters/otis/pain4	"sounds/halflife/otis/scar.ogg"
+halflife/monsters/otis/pain5	"sounds/halflife/otis/tomb.ogg"
+$random halflife/monsters/otis/idle
+{
+	halflife/monsters/otis/idle1
+	halflife/monsters/otis/idle2
+	halflife/monsters/otis/idle3
+	halflife/monsters/otis/idle4
+}
+halflife/monsters/otis/idle1	"sounds/halflife/otis/die.ogg"
+halflife/monsters/otis/idle2	"sounds/halflife/otis/dontmake.ogg"
+halflife/monsters/otis/idle3	"sounds/halflife/otis/onry.ogg"
+halflife/monsters/otis/idle4`	"sounds/halflife/otis/somuch.ogg"
+
+$random otistaunt
+{
+	halflife/monsters/otis/idle1
+	halflife/monsters/otis/idle2
+	halflife/monsters/otis/idle3
+	halflife/monsters/otis/idle4
+	otistaunt1
+	otistaunt2
+	otistaunt3
+	otistaunt4
+	otistaunt5
+	otistaunt6
+	otistaunt7
+	otistaunt8
+	otistaunt9
+	otistaunt10
+	otistaunt11
+	otistaunt12
+	otistaunt13
+	otistaunt14
+	otistaunt15
+	otistaunt16
+	otistaunt17
+	otistaunt18
+}
+otistaunt1						"sounds/halflife/otis/aliens.ogg"
+otistaunt2						"sounds/halflife/otis/another.ogg"
+otistaunt3						"sounds/halflife/otis/beer.ogg"
+otistaunt4						"sounds/halflife/otis/bring.ogg"
+otistaunt5						"sounds/halflife/otis/bully.ogg"
+otistaunt6						"sounds/halflife/otis/buttugly.ogg"
+otistaunt7						"sounds/halflife/otis/chili.ogg"
+otistaunt8						"sounds/halflife/otis/close.ogg"
+otistaunt9						"sounds/halflife/otis/firepl.ogg"
+otistaunt10						"sounds/halflife/otis/getanyworse.ogg"
+otistaunt11						"sounds/halflife/otis/gotone.ogg"
+otistaunt12						"sounds/halflife/otis/janitor.ogg"
+otistaunt13						"sounds/halflife/otis/job.ogg"
+otistaunt14						"sounds/halflife/otis/mall.ogg"
+otistaunt15						"sounds/halflife/otis/of1a5_ot01.ogg"
+otistaunt16						"sounds/halflife/otis/reputation.ogg"
+otistaunt17						"sounds/halflife/otis/seethat.ogg"
+otistaunt18						"sounds/halflife/otis/wuss.ogg"
+
+//Desert Eagle
+halflife/weapons/deagleshot		"sounds/halflife/weapons/de_shot.wav"
+halflife/weapons/deaglelaser	"sounds/halflife/weapons/desert_eagle_sight.wav"
+halflife/weapons/deaglereload	"sounds/halflife/weapons/desert_eagle_reload.wav"

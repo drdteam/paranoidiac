@@ -1,5 +1,21 @@
 class RolfBellmer : PlayerPawn
 {
+	bool Otis;
+	override void Tick()
+	{
+		if(InStateSequence(CurState,SpawnState))
+		{
+			if(Otis)
+				SetStateLabel("OtisSpawn");
+			else if(CountInv("ScientistDisguise"))
+				SetStateLabel("ScientistSpawn");
+		}
+		else if(InStateSequence(CurState,FindState("ScientistSpawn"))&&!CountInv("ScientistDisguise"))
+			SetState(SpawnState);
+		else if(InStateSequence(CurState,FindState("ScientistSee"))&&!CountInv("ScientistDisguise"))
+			SetState(SeeState);
+		super.tick();
+	}
 	override void CheckCrouch(bool totallyfrozen)
 	{
 		//Prevent crouching when in disguise
@@ -25,26 +41,24 @@ class RolfBellmer : PlayerPawn
 	States
 	{
 	Spawn:
-		HLI1 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 2 A_JumpIf(CountInv("ScientistDisguise"),"Spawn2");
-		HLI2 AB 2 A_JumpIf(CountInv("ScientistDisguise"),"Spawn2");
+		HLI1 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 2;
+		HLI2 AB 2;
 		Loop;
 	See:
-		HLR1 A 1 A_JumpIf(CountInv("ScientistDisguise"),"See2");
-		HLR1 BCDEFGHIJKLMNOPQRSTUVW 1;
+		HLR1 ABCDEFGHIJKLMNOPQRSTUVW 1;
 		Loop;
 	Missile:
-		HLA1 Y 1 A_JumpIf(CountInv("ScientistDisguise"),"Missile2");
-		HLA1 Z[\] 1;
+		HLA1 YZ[\] 1;
 		HLA2 AB 1;
 		HLA1 VUTRSQPONMLKJIHGFEDCBA 1;
 		Goto Spawn;
 	Pain:
-		HLP1 A 0 A_JumpIf(CountInv("ScientistDisguise"),"Pain2");
+		HLP1 A 0 A_HLPainSelect;
 		HLP1 A 1 A_Pain;
 		HLP1 DGJMPSU 1;
 		Goto Spawn;
 	Death:
-		HLD1 A 0 A_JumpIf(CountInv("ScientistDisguise"),"Death2");
+		HLD1 A 0 A_HLDeathSelect;
 		HLD1 A 2
 		{
 			A_PlaySound("HLPlayerHEVFail",CHAN_VOICE);
@@ -55,20 +69,20 @@ class RolfBellmer : PlayerPawn
 		HLD1 IJKL 2;
 		HLD1 M -1;
 		Stop;
-	Spawn2:
-		HLI2 CCCCCDDDDDEEEEEFFFFFGGGGGHHHHHIIIIIJJJJJKKKKKLLLLLMMMMMNNNNNOOOOOPPPPPQQQQQ 1 A_JumpIf(vel.x!=0||vel.y!=0,"See");
-		Goto Spawn;
-	See2:
-		HLW2 AABBCCDDEEFFGGHHIIJJKKLLMMNNOOPP 1 A_JumpIf(vel.x==0&&vel.y==0,"Spawn");
-		Goto See;
-	Missile2:
+	ScientistSpawn:
+		HLI2 CDEFGHIJKLMNOPQ 5;
+		Loop;
+	ScientistSee:
+		HLW2 ABCDEFGHIJKLMNOP 2;
+		Loop;
+	ScientistMissile:
 		HLI2 C 12;
 		Goto Spawn;
-	Pain2:
+	ScientistPain:
 		HLP2 A 1 A_PlaySound("HLPlayerScientistPain",CHAN_VOICE);
 		HLP2 BCDEFGHI 1;
 		Goto Spawn;
-	Death2:
+	ScientistDeath:
 		HLD2 A 1 A_PlaySound("HLPlayerScientistDeath",CHAN_VOICE);
 		HLD2 BC 1;
 		HLD2 D 1 A_NoBlocking;
@@ -77,6 +91,79 @@ class RolfBellmer : PlayerPawn
 		HLD2 UVW 1;
 		HLD2 X -1;
 		Stop;
+	OtisSpawn:
+		BSI1 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 2;
+		BSI2 AB 2;
+		Loop;
+	OtisSee:
+		BSR1 ABCDEFGHIJKLMNOPQRSTUVW 1;
+		Loop;
+	OtisMissile:
+		BSA1 YZ[\] 1;
+		BSA2 AB 1;
+		BSA1 VUTRSQPONMLKJIHGFEDCBA 1;
+		Goto OtisSpawn;
+	OtisPain:
+		BSP1 A 1
+		{
+			if(random(0,3))
+				A_PlaySound("halflife/monsters/otis/pain",CHAN_VOICE);
+		}
+		BSP1 DGJMPSU 1;
+		Goto OtisSpawn;
+	OtisDeath:
+		BSD1 A 2
+		{
+			A_PlaySound("halflife/monsters/otis/death",CHAN_VOICE);
+			A_NoBlocking();
+		}
+		BSD1 BCDEFG 2;
+		BSD1 H 2 A_PlaySound("halflife/weapons/bodydrop");
+		BSD1 IJKL 2;
+		BSD1 M -1;
+		Stop;
+	}
+	override void PlayIdle()
+	{
+		if(otis&&InStateSequence(CurState,FindState("OtisSee")))
+			SetStateLabel("OtisSpawn");
+		else if(CountInv("ScientistDisguise")&&InStateSequence(CurState,FindState("ScientistSee")))
+			SetStateLabel("ScientistSpawn");
+		else if(InStateSequence(CurState,SeeState))
+			SetState(SpawnState);
+	}
+	override void PlayRunning()
+	{
+		if(otis&&InStateSequence(CurState,FindState("OtisSpawn")))
+			SetStateLabel("OtisSee");
+		else if(CountInv("ScientistDisguise")&&InStateSequence(CurState,FindState("ScientistSpawn")))
+			SetStateLabel("ScientistSee");
+		else if(InStateSequence(CurState,SpawnState))
+			SetState(SeeState);
+	}
+	override void PlayAttacking()
+	{
+		if(otis)
+			SetStateLabel("OtisMissile");
+		else if(CountInv("ScientistDisguise"))
+			SetStateLabel("ScientistMissile");
+		else
+			SetState(MissileState);
+	}
+
+	void A_HLPainSelect()
+	{
+		if(otis)
+			SetStateLabel("OtisPain");
+		else if(CountInv("ScientistDisguise"))
+			SetStateLabel("ScientistPain");
+	}
+	void A_HLDeathSelect()
+	{
+		if(otis)
+			SetStateLabel("OtisDeath");
+		else if(CountInv("ScientistDisguise"))
+			SetStateLabel("ScientistDeath");
 	}
 }
 class ScientistDisguise : Inventory
