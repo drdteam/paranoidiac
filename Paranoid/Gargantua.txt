@@ -258,7 +258,6 @@ class HLGargFlame : Actor
 		DamageType "Fire";
 		Alpha .67;
 		Scale .5;
-		+THRUGHOST
 		+DONTSPLASH
 		seesound "gargantua/flamestrm";
 		DamageFunction (random(1,4)*2);
@@ -269,7 +268,7 @@ class HLGargFlame : Actor
 	Spawn:
 		TNT1 A 1;
 		FRFX ABCD 1 Bright A_Explode(3,6);
-		FRFX D 0 Bright A_Lowgravity;
+		FRFX D 0 A_Lowgravity;
 		FRFX EFG 1 Bright A_Explode(3,12);
 		FRFX HIJ 1 Bright A_Explode(3,24);
 		FRFX KLM 1 Bright A_Explode(3,48);
