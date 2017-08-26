@@ -3182,3 +3182,348 @@ Model HLHornetGun
 	FrameIndex HLF1 J 0 168
 	FrameIndex HLF1 K 0 169
 }
+
+Model HLDesertEagle
+{
+	Path "Models"
+	Model 0 "w_desert_eagle.md2"
+	Skin 0 "w_desert_eagle.png"
+
+	FrameIndex POSS A 0 0
+}
+Model HLDesertEaglePickup
+{
+	Path "Models"
+	Model 0 "w_desert_eagle.md2"
+	Skin 0 "w_desert_eagle.png"
+
+	FrameIndex POSS A 0 0
+}
+Model HLDesertEagle
+{
+	Path "Models"
+	Model 0 "v_desert_eagle_main.md2"
+	Skin 0 "v_desert_eagle_main.png"
+	Model 1 "v_desert_eagle_hevarms.md2"
+	Skin 1 "v_hevarms.png"
+	Scale -1 1 1
+
+	Offset 1 0 -2
+
+	FrameIndex HLI1 A 0 1
+	FrameIndex HLI1 A 1 1
+
+	FrameIndex HLF1 A 0 325
+	FrameIndex HLF1 A 1 325
+	FrameIndex HLF1 B 0 326
+	FrameIndex HLF1 B 1 326
+	FrameIndex HLF1 C 0 327
+	FrameIndex HLF1 C 1 327
+	FrameIndex HLF1 D 0 328
+	FrameIndex HLF1 D 1 328
+	FrameIndex HLF1 E 0 329
+	FrameIndex HLF1 E 1 329
+	FrameIndex HLF1 F 0 330
+	FrameIndex HLF1 F 1 330
+	FrameIndex HLF1 G 0 331
+	FrameIndex HLF1 G 1 331
+	FrameIndex HLF1 H 0 332
+	FrameIndex HLF1 H 1 332
+	FrameIndex HLF1 I 0 333
+	FrameIndex HLF1 I 1 333
+	FrameIndex HLF1 J 0 334
+	FrameIndex HLF1 J 1 334
+	FrameIndex HLF1 K 0 335
+	FrameIndex HLF1 K 1 335
+	FrameIndex HLF1 L 0 336
+	FrameIndex HLF1 L 1 336
+	FrameIndex HLF1 M 0 337
+	FrameIndex HLF1 M 1 337
+	FrameIndex HLF1 N 0 338
+	FrameIndex HLF1 N 1 338
+	FrameIndex HLF1 O 0 339
+	FrameIndex HLF1 O 1 339
+	FrameIndex HLF1 P 0 340
+	FrameIndex HLF1 P 1 340
+	FrameIndex HLF1 Q 0 341
+	FrameIndex HLF1 Q 1 341
+	FrameIndex HLF1 R 0 342
+	FrameIndex HLF1 R 1 342
+	FrameIndex HLF1 S 0 343
+	FrameIndex HLF1 S 1 343
+	FrameIndex HLF1 T 0 344
+	FrameIndex HLF1 T 1 344
+
+	FrameIndex HLF1 U 0 345
+	FrameIndex HLF1 U 1 345
+	FrameIndex HLF1 V 0 346
+	FrameIndex HLF1 V 1 346
+	FrameIndex HLF1 W 0 347
+	FrameIndex HLF1 W 1 347
+	FrameIndex HLF1 X 0 348
+	FrameIndex HLF1 X 1 348
+	FrameIndex HLF1 Y 0 349
+	FrameIndex HLF1 Y 1 349
+	FrameIndex HLF1 Z 0 350
+	FrameIndex HLF1 Z 1 350
+	FrameIndex HLF1 [ 0 351
+	FrameIndex HLF1 [ 1 351
+	FrameIndex HLF1 \ 0 352
+	FrameIndex HLF1 \ 1 352
+	FrameIndex HLF1 ] 0 353
+	FrameIndex HLF1 ] 1 353
+	FrameIndex HLF2 A 0 354
+	FrameIndex HLF2 A 1 354
+	FrameIndex HLF2 B 0 355
+	FrameIndex HLF2 B 1 355
+	FrameIndex HLF2 C 0 356
+	FrameIndex HLF2 C 1 356
+	FrameIndex HLF2 D 0 357
+	FrameIndex HLF2 D 1 357
+	FrameIndex HLF2 E 0 358
+	FrameIndex HLF2 E 1 358
+	FrameIndex HLF2 F 0 359
+	FrameIndex HLF2 F 1 359
+	FrameIndex HLF2 G 0 360
+	FrameIndex HLF2 G 1 360
+	FrameIndex HLF2 H 0 361
+	FrameIndex HLF2 H 1 361
+	FrameIndex HLF2 I 0 362
+	FrameIndex HLF2 I 1 362
+	FrameIndex HLF2 J 0 363
+	FrameIndex HLF2 J 1 363
+	FrameIndex HLF2 K 0 364
+	FrameIndex HLF2 K 1 364
+
+	FrameIndex HLR1 A 0 407
+	FrameIndex HLR1 A 1 407
+	FrameIndex HLR1 B 0 408
+	FrameIndex HLR1 B 1 408
+	FrameIndex HLR1 C 0 409
+	FrameIndex HLR1 C 1 409
+	FrameIndex HLR1 D 0 410
+	FrameIndex HLR1 D 1 410
+	FrameIndex HLR1 E 0 411
+	FrameIndex HLR1 E 1 411
+	FrameIndex HLR1 F 0 412
+	FrameIndex HLR1 F 1 412
+	FrameIndex HLR1 G 0 413
+	FrameIndex HLR1 G 1 413
+	FrameIndex HLR1 H 0 414
+	FrameIndex HLR1 H 1 414
+	FrameIndex HLR1 I 0 415
+	FrameIndex HLR1 I 1 415
+	FrameIndex HLR1 J 0 416
+	FrameIndex HLR1 J 1 416
+	FrameIndex HLR1 K 0 417
+	FrameIndex HLR1 K 1 417
+	FrameIndex HLR1 L 0 418
+	FrameIndex HLR1 L 1 418
+	FrameIndex HLR1 M 0 419
+	FrameIndex HLR1 M 1 419
+	FrameIndex HLR1 N 0 420
+	FrameIndex HLR1 N 1 420
+	FrameIndex HLR1 O 0 421
+	FrameIndex HLR1 O 1 421
+	FrameIndex HLR1 P 0 422
+	FrameIndex HLR1 P 1 422
+	FrameIndex HLR1 Q 0 423
+	FrameIndex HLR1 Q 1 423
+	FrameIndex HLR1 R 0 424
+	FrameIndex HLR1 R 1 424
+	FrameIndex HLR1 S 0 425
+	FrameIndex HLR1 S 1 425
+	FrameIndex HLR1 T 0 426
+	FrameIndex HLR1 T 1 426
+	FrameIndex HLR1 U 0 427
+	FrameIndex HLR1 U 1 427
+	FrameIndex HLR1 V 0 428
+	FrameIndex HLR1 V 1 428
+	FrameIndex HLR1 W 0 429
+	FrameIndex HLR1 W 1 429
+	FrameIndex HLR1 X 0 430
+	FrameIndex HLR1 X 1 430
+	FrameIndex HLR1 Y 0 431
+	FrameIndex HLR1 Y 1 431
+	FrameIndex HLR1 Z 0 432
+	FrameIndex HLR1 Z 1 432
+	FrameIndex HLR1 [ 0 433
+	FrameIndex HLR1 [ 1 433
+	FrameIndex HLR1 \ 0 434
+	FrameIndex HLR1 \ 1 434
+	FrameIndex HLR1 ] 0 435
+	FrameIndex HLR1 ] 1 435
+	FrameIndex HLR2 A 0 436
+	FrameIndex HLR2 A 1 436
+	FrameIndex HLR2 B 0 437
+	FrameIndex HLR2 B 1 437
+	FrameIndex HLR2 C 0 438
+	FrameIndex HLR2 C 1 438
+	FrameIndex HLR2 D 0 439
+	FrameIndex HLR2 D 1 439
+	FrameIndex HLR2 E 0 440
+	FrameIndex HLR2 E 1 440
+	FrameIndex HLR2 F 0 441
+	FrameIndex HLR2 F 1 441
+	FrameIndex HLR2 G 0 442
+	FrameIndex HLR2 G 1 442
+	FrameIndex HLR2 H 0 443
+	FrameIndex HLR2 H 1 443
+	FrameIndex HLR2 I 0 444
+	FrameIndex HLR2 I 1 444
+	FrameIndex HLR2 J 0 445
+	FrameIndex HLR2 J 1 445
+	FrameIndex HLR2 K 0 446
+	FrameIndex HLR2 K 1 446
+	FrameIndex HLR2 L 0 447
+	FrameIndex HLR2 L 1 447
+	FrameIndex HLR2 M 0 448
+	FrameIndex HLR2 M 1 448
+
+	FrameIndex HLR2 N 0 365
+	FrameIndex HLR2 N 1 365
+	FrameIndex HLR2 O 0 366
+	FrameIndex HLR2 O 1 366
+	FrameIndex HLR2 P 0 367
+	FrameIndex HLR2 P 1 367
+	FrameIndex HLR2 Q 0 368
+	FrameIndex HLR2 Q 1 368
+	FrameIndex HLR2 R 0 369
+	FrameIndex HLR2 R 1 369
+	FrameIndex HLR2 S 0 370
+	FrameIndex HLR2 S 1 370
+	FrameIndex HLR2 T 0 371
+	FrameIndex HLR2 T 1 371
+	FrameIndex HLR2 U 0 372
+	FrameIndex HLR2 U 1 372
+	FrameIndex HLR2 V 0 373
+	FrameIndex HLR2 V 1 373
+	FrameIndex HLR2 W 0 374
+	FrameIndex HLR2 W 1 374
+	FrameIndex HLR2 X 0 375
+	FrameIndex HLR2 X 1 375
+	FrameIndex HLR2 Y 0 376
+	FrameIndex HLR2 Y 1 376
+	FrameIndex HLR2 Z 0 377
+	FrameIndex HLR2 Z 1 377
+	FrameIndex HLR2 [ 0 378
+	FrameIndex HLR2 [ 1 378
+	FrameIndex HLR2 \ 0 379
+	FrameIndex HLR2 \ 1 379
+	FrameIndex HLR2 ] 0 380
+	FrameIndex HLR2 ] 1 380
+	FrameIndex HLR3 A 0 381
+	FrameIndex HLR3 A 1 381
+	FrameIndex HLR3 B 0 382
+	FrameIndex HLR3 B 1 382
+	FrameIndex HLR3 C 0 383
+	FrameIndex HLR3 C 1 383
+	FrameIndex HLR3 D 0 384
+	FrameIndex HLR3 D 1 384
+	FrameIndex HLR3 E 0 385
+	FrameIndex HLR3 E 1 385
+	FrameIndex HLR3 F 0 386
+	FrameIndex HLR3 F 1 386
+	FrameIndex HLR3 G 0 387
+	FrameIndex HLR3 G 1 387
+	FrameIndex HLR3 H 0 388
+	FrameIndex HLR3 H 1 388
+	FrameIndex HLR3 I 0 389
+	FrameIndex HLR3 I 1 389
+	FrameIndex HLR3 J 0 390
+	FrameIndex HLR3 J 1 390
+	FrameIndex HLR3 K 0 391
+	FrameIndex HLR3 K 1 391
+	FrameIndex HLR3 L 0 392
+	FrameIndex HLR3 L 1 392
+	FrameIndex HLR3 M 0 393
+	FrameIndex HLR3 M 1 393
+	FrameIndex HLR3 N 0 394
+	FrameIndex HLR3 N 1 394
+	FrameIndex HLR3 O 0 395
+	FrameIndex HLR3 O 1 395
+	FrameIndex HLR3 P 0 396
+	FrameIndex HLR3 P 1 396
+	FrameIndex HLR3 Q 0 397
+	FrameIndex HLR3 Q 1 397
+	FrameIndex HLR3 R 0 398
+	FrameIndex HLR3 R 1 398
+	FrameIndex HLR3 S 0 399
+	FrameIndex HLR3 S 1 399
+	FrameIndex HLR3 T 0 400
+	FrameIndex HLR3 T 1 400
+	FrameIndex HLR3 U 0 401
+	FrameIndex HLR3 U 1 401
+	FrameIndex HLR3 V 0 402
+	FrameIndex HLR3 V 1 402
+	FrameIndex HLR3 W 0 403
+	FrameIndex HLR3 W 1 403
+	FrameIndex HLR3 X 0 404
+	FrameIndex HLR3 X 1 404
+	FrameIndex HLR3 Y 0 405
+	FrameIndex HLR3 Y 1 405
+	FrameIndex HLR3 Z 0 406
+	FrameIndex HLR3 Z 1 406
+
+	FrameIndex HLU1 A 0 449
+	FrameIndex HLU1 A 1 449
+	FrameIndex HLU1 B 0 450
+	FrameIndex HLU1 B 1 450
+	FrameIndex HLU1 C 0 451
+	FrameIndex HLU1 C 1 451
+	FrameIndex HLU1 D 0 452
+	FrameIndex HLU1 D 1 452
+	FrameIndex HLU1 E 0 453
+	FrameIndex HLU1 E 1 453
+	FrameIndex HLU1 F 0 454
+	FrameIndex HLU1 F 1 454
+	FrameIndex HLU1 G 0 455
+	FrameIndex HLU1 G 1 455
+	FrameIndex HLU1 H 0 456
+	FrameIndex HLU1 H 1 456
+	FrameIndex HLU1 I 0 457
+	FrameIndex HLU1 I 1 457
+	FrameIndex HLU1 J 0 458
+	FrameIndex HLU1 J 1 458
+	FrameIndex HLU1 K 0 459
+	FrameIndex HLU1 K 1 459
+	FrameIndex HLU1 L 0 460
+	FrameIndex HLU1 L 1 460
+	FrameIndex HLU1 M 0 461
+	FrameIndex HLU1 M 1 461
+	FrameIndex HLU1 N 0 462
+	FrameIndex HLU1 N 1 462
+	FrameIndex HLU1 O 0 463
+	FrameIndex HLU1 O 1 463
+
+	FrameIndex HLD1 A 0 465
+	FrameIndex HLD1 A 1 465
+	FrameIndex HLD1 B 0 466
+	FrameIndex HLD1 B 1 466
+	FrameIndex HLD1 C 0 467
+	FrameIndex HLD1 C 1 467
+	FrameIndex HLD1 D 0 468
+	FrameIndex HLD1 D 1 468
+	FrameIndex HLD1 E 0 469
+	FrameIndex HLD1 E 1 469
+	FrameIndex HLD1 F 0 470
+	FrameIndex HLD1 F 1 470
+	FrameIndex HLD1 G 0 471
+	FrameIndex HLD1 G 1 471
+	FrameIndex HLD1 H 0 472
+	FrameIndex HLD1 H 1 472
+	FrameIndex HLD1 I 0 473
+	FrameIndex HLD1 I 1 473
+	FrameIndex HLD1 J 0 474
+	FrameIndex HLD1 J 1 474
+	FrameIndex HLD1 K 0 475
+	FrameIndex HLD1 K 1 475
+	FrameIndex HLD1 L 0 476
+	FrameIndex HLD1 L 1 476
+	FrameIndex HLD1 M 0 477
+	FrameIndex HLD1 M 1 477
+	FrameIndex HLD1 N 0 478
+	FrameIndex HLD1 N 1 478
+	FrameIndex HLD1 O 0 479
+	FrameIndex HLD1 O 1 479
+}

@@ -188,10 +188,40 @@ class HLOtis : HLBarney
 		SeeSound "halflife/monsters/otis/idle";
 		PainSound "halflife/monsters/otis/pain";
 		DeathSound "halflife/monsters/otis/death";
+		DropItem "HLDesertEaglePickup";
 	}
 	override void A_Chatter()
 	{
 		if(!random(0,32))
 			A_PlaySound("halflife/monsters/otis/idle");
+	}
+	States
+	{
+	Missile:
+		HLA1 A 1 A_FaceTarget;
+		HLA1 BCD 1;
+		HLA1 E 1 A_FaceTarget;
+		HLA1 FGH 1;
+		HLA1 I 1 A_FaceTarget;
+		HLA1 JKL 1;
+		HLA1 M 1 A_FaceTarget;
+		HLA1 NOP 1;
+		HLA1 Q 1 A_FaceTarget;
+		HLA1 RST 1;
+		HLA1 U 1 A_FaceTarget;
+		HLA1 V 1;
+	Pistol:
+		HLA1 W 1 A_FaceTarget;
+		HLA1 X 1;
+		HLA1 Y 1 Light("ImShootingAGun")
+		{
+			A_PlaySound("halflife/weapons/deagleshot",CHAN_WEAPON);
+			A_CustomBulletAttack(1,1,1,18,"NewPuff1");
+		}
+		HLA1 Z[\] 1 Light("ImShootingAGun");
+		HLA2 AB 1;
+		HLA1 VVV 2 A_FaceTarget;
+		TNT1 A 0 A_MonsterRefire(0,"See");
+		Loop;
 	}
 }

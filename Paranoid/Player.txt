@@ -14,7 +14,7 @@ class RolfBellmer : PlayerPawn
 		Player.ViewHeight 56;
 		Player.AttackZOffset 24;
 		Player.WeaponSlot 1,"HLCrowbar";
-		Player.WeaponSlot 2,"HLPistol","HLMagnum";
+		Player.WeaponSlot 2,"HLPistol","HLDesertEagle","HLMagnum";
 		Player.WeaponSlot 3,"HLHornetGun","HLShotgun";
 		Player.WeaponSlot 4,"HLXBow","HLAssaultRifle";
 		Player.WeaponSlot 5,"HLRPG";
