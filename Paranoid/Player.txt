@@ -1,25 +1,27 @@
 class RolfBellmer : PlayerPawn
 {
-	bool Otis;
+	bool Scientist,Otis;
 	override void Tick()
 	{
+		if(CountInv("ScientistDisguise")&&!scientist)
+			Scientist=1;
 		if(InStateSequence(CurState,SpawnState))
 		{
 			if(Otis)
 				SetStateLabel("OtisSpawn");
-			else if(CountInv("ScientistDisguise"))
+			else if(Scientist)
 				SetStateLabel("ScientistSpawn");
 		}
-		else if(InStateSequence(CurState,FindState("ScientistSpawn"))&&!CountInv("ScientistDisguise"))
+		else if(InStateSequence(CurState,FindState("ScientistSpawn"))&&!Scientist)
 			SetState(SpawnState);
-		else if(InStateSequence(CurState,FindState("ScientistSee"))&&!CountInv("ScientistDisguise"))
+		else if(InStateSequence(CurState,FindState("ScientistSee"))&&!Scientist)
 			SetState(SeeState);
 		super.tick();
 	}
 	override void CheckCrouch(bool totallyfrozen)
 	{
 		//Prevent crouching when in disguise
-		if(!CountInv("ScientistDisguise"))
+		if(!Scientist)
 			super.CheckCrouch(totallyfrozen);
 	}
 	Default
@@ -127,7 +129,7 @@ class RolfBellmer : PlayerPawn
 	{
 		if(otis&&InStateSequence(CurState,FindState("OtisSee")))
 			SetStateLabel("OtisSpawn");
-		else if(CountInv("ScientistDisguise")&&InStateSequence(CurState,FindState("ScientistSee")))
+		else if(Scientist&&InStateSequence(CurState,FindState("ScientistSee")))
 			SetStateLabel("ScientistSpawn");
 		else if(InStateSequence(CurState,SeeState))
 			SetState(SpawnState);
@@ -136,7 +138,7 @@ class RolfBellmer : PlayerPawn
 	{
 		if(otis&&InStateSequence(CurState,FindState("OtisSpawn")))
 			SetStateLabel("OtisSee");
-		else if(CountInv("ScientistDisguise")&&InStateSequence(CurState,FindState("ScientistSpawn")))
+		else if(Scientist&&InStateSequence(CurState,FindState("ScientistSpawn")))
 			SetStateLabel("ScientistSee");
 		else if(InStateSequence(CurState,SpawnState))
 			SetState(SeeState);
@@ -145,7 +147,7 @@ class RolfBellmer : PlayerPawn
 	{
 		if(otis)
 			SetStateLabel("OtisMissile");
-		else if(CountInv("ScientistDisguise"))
+		else if(Scientist)
 			SetStateLabel("ScientistMissile");
 		else
 			SetState(MissileState);
@@ -155,14 +157,14 @@ class RolfBellmer : PlayerPawn
 	{
 		if(otis)
 			SetStateLabel("OtisPain");
-		else if(CountInv("ScientistDisguise"))
+		else if(Scientist)
 			SetStateLabel("ScientistPain");
 	}
 	void A_HLDeathSelect()
 	{
 		if(otis)
 			SetStateLabel("OtisDeath");
-		else if(CountInv("ScientistDisguise"))
+		else if(Scientist)
 			SetStateLabel("ScientistDeath");
 	}
 }
