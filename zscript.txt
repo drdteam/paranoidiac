@@ -90,6 +90,7 @@ class ParanoidAmmoHandler : StaticEventHandler
 		me=RolfBellmer(mon.target);
 		if(me==null||!me.otis)
 			return;
-		mon.target.A_PlaySound("otistaunt",CHAN_VOICE);
+		if(random(0,3))
+			mon.target.A_PlaySound("otistaunt",CHAN_VOICE);
 	}
 }
