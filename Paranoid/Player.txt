@@ -3,10 +3,6 @@ class RolfBellmer : PlayerPawn
 	bool Scientist,Otis;
 	override void Tick()
 	{
-		if(CountInv("ScientistDisguise")&&!scientist)
-			Scientist=1;
-		if(Scientist&&!CountInv("ScientistDisguise"))
-			Scientist=0;
 		if(InStateSequence(CurState,SpawnState))
 		{
 			if(Otis)
@@ -170,5 +166,3 @@ class RolfBellmer : PlayerPawn
 			SetStateLabel("ScientistDeath");
 	}
 }
-class ScientistDisguise : Inventory
-	{Default{+INVENTORY.UNDROPPABLE}}
