@@ -998,3 +998,25 @@ otistaunt18						"sounds/halflife/otis/wuss.ogg"
 halflife/weapons/deagleshot		"sounds/halflife/weapons/de_shot.wav"
 halflife/weapons/deaglelaser	"sounds/halflife/weapons/desert_eagle_sight.wav"
 halflife/weapons/deaglereload	"sounds/halflife/weapons/desert_eagle_reload.wav"
+
+//Nazi
+$random	halflife/monsters/nazi/sight
+{
+	halflife/monsters/nazi/sight1
+	halflife/monsters/nazi/sight2
+	halflife/monsters/nazi/sight3
+}
+halflife/monsters/nazi/sight1	"sounds/nazi/alert01.ogg"
+halflife/monsters/nazi/sight2	"sounds/nazi/alert02.ogg"
+halflife/monsters/nazi/sight3	"sounds/nazi/freeman!.ogg"
+halflife/monsters/nazi/pain		"sounds/nazi/gr_pain1.ogg"
+$random	halflife/monsters/nazi/death
+{
+	halflife/monsters/nazi/death1
+	halflife/monsters/nazi/death2
+	halflife/monsters/nazi/death3
+}
+halflife/monsters/nazi/death1	"sounds/nazi/gr_die1.ogg"
+halflife/monsters/nazi/death2	"sounds/nazi/gr_die2.ogg"
+halflife/monsters/nazi/death3	"sounds/nazi/gr_die3.ogg"
+halflife/weapons/mp40shot		"sounds/nazi/gr_mgun1.ogg"

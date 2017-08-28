@@ -3265,3 +3265,6 @@ class HLLaserSightPuff : Actor
 		Stop;
 	}
 }
+
+class HLMP40Ammo : HLAssaultRifleAmmo
+	{Default{Inventory.PickupMessage "Picked up an MP40 magazine.";}}
