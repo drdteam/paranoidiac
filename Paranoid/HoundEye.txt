@@ -19,6 +19,7 @@ class HLHoundEye : HLMonster
 		DeathSound "halflife/monsters/houndeye/death";
 		ActiveSound "halflife/monsters/houndeye/idle";
 		Species "Xen";
+		-DOHARMSPECIES
 	}
 	States
 	{
