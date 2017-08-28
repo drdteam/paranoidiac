@@ -845,7 +845,6 @@ class Radio1 : ModelBase
 		Mass 20;
 	}
 }
-
 class Radio2 : Radio1
 {
 	Default
@@ -855,7 +854,6 @@ class Radio2 : Radio1
 		Mass 30;
 	}
 }
-
 class Radio3 : Radio1
 {
 	Default
@@ -865,12 +863,20 @@ class Radio3 : Radio1
 		Mass 10;
 	}
 }
-
 class Radio4 : Radio1
 {
 	Default
 	{
 		Radius 10;
+	}
+}
+class Radio5 : Radio1
+{
+	Default
+	{
+		Radius 2;
+		Height 12;
+		Mass 5;
 	}
 }
 

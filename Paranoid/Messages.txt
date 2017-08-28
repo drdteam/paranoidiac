@@ -1,21 +1,3 @@
-class Radio5 : FakeInventory
-{
-	Default
-	{
-		Radius 2;
-		Height 12;
-		Mass 5;
-		Inventory.PickupSound "radiostatic";
-		Inventory.PickupMessage "New Message Received.";
-	}
-	States
-	{
-	Spawn:
-		POSS A -1;
-		Stop;
-	}
-}
-
 //Map02: Message 1
 class MessageItem01 : CustomInventory
 {
