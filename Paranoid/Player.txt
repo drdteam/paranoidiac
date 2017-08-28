@@ -5,6 +5,8 @@ class RolfBellmer : PlayerPawn
 	{
 		if(CountInv("ScientistDisguise")&&!scientist)
 			Scientist=1;
+		if(Scientist&&!CountInv("ScientistDisguise"))
+			Scientist=0;
 		if(InStateSequence(CurState,SpawnState))
 		{
 			if(Otis)
@@ -79,11 +81,11 @@ class RolfBellmer : PlayerPawn
 		Loop;
 	ScientistMissile:
 		HLI2 C 12;
-		Goto Spawn;
+		Goto ScientistSpawn;
 	ScientistPain:
 		HLP2 A 1 A_PlaySound("HLPlayerScientistPain",CHAN_VOICE);
 		HLP2 BCDEFGHI 1;
-		Goto Spawn;
+		Goto ScientistSpawn;
 	ScientistDeath:
 		HLD2 A 1 A_PlaySound("HLPlayerScientistDeath",CHAN_VOICE);
 		HLD2 BC 1;
