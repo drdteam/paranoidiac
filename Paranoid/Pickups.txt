@@ -208,6 +208,7 @@ class Key1 : FakeInventory
 {
 	Default
 	{
+		Scale .5;
 		Radius 4;
 		Height 2;
 		Inventory.PickupMessage "Picked up the blue security key.";

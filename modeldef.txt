@@ -188,19 +188,8 @@ Model HEVsuit
 Model HEVBattery
 {
 	Path "Models"
-	Model 0 "battery.md3"
-	Skin 0 "battery.png"
-	Scale 0.8 0.8 0.8
-
-	FrameIndex POSS A 0 0
-}
-
-Model key1
-{
-	Path "Models"
-	Model 0 "key1.md3"
-	Skin 0 "key1.png"
-	Scale 0.5 0.5 0.5
+	Model 0 "w_battery.md2"
+	Skin 0 "w_battery.png"
 
 	FrameIndex POSS A 0 0
 }
@@ -232,12 +221,20 @@ Model gascan1
 	FrameIndex POSS A 0 0
 }
 
+Model key1
+{
+	Path "Models"
+	Model 0 "w_security.md2"
+	Skin 0 "w_security.png"
+
+	FrameIndex POSS A 0 0
+}
+
 Model key2
 {
 	Path "Models"
-	Model 0 "key2.md3"
-	Skin 0 "key2.png"
-	Scale 0.5 0.5 0.5
+	Model 0 "w_security2.md3"
+	Skin 0 "w_security2.png"
 
 	FrameIndex POSS A 0 0
 }
