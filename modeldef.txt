@@ -2772,8 +2772,7 @@ Model HLGruntGunGrenade
 {
 	Path "Models"
 	Model 0 "grenade.md2"
-	Skin 0 "grenade.png"
-	Scale .65 .65 .65
+	Skin 0 "w_argrenade.png"
 	AngleOffset 90
 	USEACTORPITCH
 
