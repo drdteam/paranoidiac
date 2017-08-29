@@ -197,8 +197,8 @@ Model HEVBattery
 Model MedKit
 {
 	Path "Models"
-	Model 0 "medkit.md2"
-	Skin 0 "medkit.png"
+	Model 0 "w_medkit.md2"
+	Skin 0 "w_medkit.png"
 
 	FrameIndex POSS A 0 0
 }
@@ -206,8 +206,8 @@ Model MedKit
 Model MedKit1
 {
 	Path "Models"
-	Model 0 "medkit.md2"
-	Skin 0 "medkit1.png"
+	Model 0 "w_medkit.md2"
+	Skin 0 "w_medkit1.png"
 
 	FrameIndex POSS A 0 0
 }
@@ -1798,11 +1798,10 @@ Model TankGlass
 Model Truck01
 {
 	Path "Models"
-	Model 0 "truckresearch.md3"
-	Skin 0 "truckresearch.png"
-	Scale 0.95 0.95 0.95
+	Model 0 "truck_research.md2"
+	Skin 0 "truck_research.png"
 
-	FrameIndex POSS A 0 0
+	FrameIndex POSS A 0 1
 }
 
 Model SUV1
@@ -2759,10 +2758,9 @@ Model M16Grenade
 	Path "Models"
 	Model 0 "grenade.md2"
 	Skin 0 "w_argrenade.png"
-	AngleOffset 90
 	USEACTORPITCH
 
-	FrameIndex POSS A 0 0
+	FrameIndex POSS A 0 1
 }
 
 Model HLGruntGunGrenade
@@ -2770,10 +2768,9 @@ Model HLGruntGunGrenade
 	Path "Models"
 	Model 0 "grenade.md2"
 	Skin 0 "w_argrenade.png"
-	AngleOffset 90
 	USEACTORPITCH
 
-	FrameIndex POSS A 0 0
+	FrameIndex POSS A 0 1
 }
 
 Model HLRocket
@@ -2781,9 +2778,9 @@ Model HLRocket
 	Path "Models"
 	Model 0 "rpgrocket.md2"
 	Skin 0 "rpgrocket.png"
-	AngleOffset 90
+	USEACTORPITCH
 
-	FrameIndex POSS A 0 0
+	FrameIndex POSS A 0 1
 }
 
 Model Missile
@@ -2881,48 +2878,48 @@ Model HLGibs
 Model XenGibs
 {
 	Path "Models"
-	Model 0 "xengibs1.md2"
-	Skin 0 "xengibs1.png"
+	Model 0 "agibs1.md2"
+	Skin 0 "agibs1.png"
 
 	FrameIndex HLI1 A 0 0
 }
 Model XenGibs
 {
 	Path "Models"
-	Model 0 "xengibs2.md2"
-	Skin 0 "xengibs2.png"
+	Model 0 "agibs2.md2"
+	Skin 0 "agibs2.png"
 
 	FrameIndex HLI1 B 0 0
 }
 Model XenGibs
 {
 	Path "Models"
-	Model 0 "xengibs3.md2"
-	Skin 0 "xengibs3.png"
+	Model 0 "agibs3.md2"
+	Skin 0 "agibs3.png"
 
 	FrameIndex HLI1 C 0 0
 }
 Model XenGibs
 {
 	Path "Models"
-	Model 0 "xengibs4.md2"
-	Skin 0 "xengibs4.png"
+	Model 0 "agibs4.md2"
+	Skin 0 "agibs4.png"
 
 	FrameIndex HLI1 D 0 0
 }
 Model XenGibs
 {
 	Path "Models"
-	Model 0 "xengibs5.md2"
-	Skin 0 "xengibs5.png"
+	Model 0 "agibs5.md2"
+	Skin 0 "agibs5.png"
 
 	FrameIndex HLI1 E 0 0
 }
 Model XenGibs
 {
 	Path "Models"
-	Model 0 "xengibs6.md2"
-	Skin 0 "xengibs6.png"
+	Model 0 "agibs6.md2"
+	Skin 0 "agibs6.png"
 
 	FrameIndex HLI1 F 0 0
 }
