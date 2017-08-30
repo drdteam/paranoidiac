@@ -4,7 +4,7 @@ class SUV : ModelBase
 	override void postbeginplay()
 	{
 		glass=Spawn("SUVGlass",pos);
-		glass.tid=tid;
+		glass.ChangeTid(tid);
 		glass.master=self;
 		super.postbeginplay();
 	}
@@ -44,6 +44,7 @@ class SUV : ModelBase
 		POSS BBBB 6 A_SpawnItemEx("NewExploBigSmoke",frandom(-64,64),frandom(-48,48),frandom(32,64),0,0,frandom(1,4));
 		POSS B -1;
 		Stop;
+	}
 }
 
 class SUVGlass : ModelBase
