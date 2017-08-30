@@ -1,33 +1,18 @@
-class SUV1 : ModelBase
+class SUV : ModelBase
 {
+	actor glass;
+	override void postbeginplay()
+	{
+		glass=Spawn("SUVGlass",pos);
+		glass.tid=tid;
+		glass.master=self;
+		super.postbeginplay();
+	}
 	Default
 	{
 		Radius 38;
 		Height 66;
 		Mass 0x7FFFFFFF;
-		+FLOORCLIP
-	}
-}
-
-class SUV2 : SUV1{}
-
-class SUV3 : SUV1 //SUV with Glass
-{
-	override void postbeginplay()
-	{
-		Spawn("SUVGlass",pos);
-	}
-}
-
-class SUV4 : SUV1	//destroyable SUV
-{
-	override void postbeginplay()
-	{
-		actor myglass=Spawn("SUVGlassEx",pos);
-		myglass.master=self;
-	}
-	Default
-	{
 		DeathHeight 66;
 		Health 400;
 		PainChance 256;
@@ -38,7 +23,6 @@ class SUV4 : SUV1	//destroyable SUV
 	States
 	{
 	Pain:
-		POSS A 1;
 		POSS A -1 A_PlaySound("SUV/Hit",CHAN_AUTO);
 		Stop;
 	Death:
@@ -60,7 +44,6 @@ class SUV4 : SUV1	//destroyable SUV
 		POSS BBBB 6 A_SpawnItemEx("NewExploBigSmoke",frandom(-64,64),frandom(-48,48),frandom(32,64),0,0,frandom(1,4));
 		POSS B -1;
 		Stop;
-	}
 }
 
 class SUVGlass : ModelBase
@@ -71,19 +54,11 @@ class SUVGlass : ModelBase
 		Alpha .5;
 		Radius 16;
 		Height 56;
-		+FLOORCLIP
-		-SOLID
-	}
-}
-
-class SUVGlassEx : SUVGlass
-{
-	Default
-	{
 		Mass 0x7FFFFFFF;
-		+shootable
+		-SOLID
 		+NOTARGET
 		+NOBLOOD
+		+SHOOTABLE
 	}
 	States
 	{

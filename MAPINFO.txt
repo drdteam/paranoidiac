@@ -558,10 +558,7 @@ DoomEdNums
 	30336=Pipe1a
 	30337=Pipe3a
 	30339=Truck01
-	30340=SUV1
-	30341=SUVGlass
-	30342=SUV2
-	30344=SUV3
+	30340=SUV
 	30345=Monitor1
 	30346=Monitor2
 	30347=Monitor3
@@ -636,7 +633,6 @@ DoomEdNums
 	30416=XenIsland6
 	30417=Rock02g
 	30418=Rock03g
-	30420=SUV4
 	30421=PConsole4
 	30422=PConsole5
 	31000=HEVSuit
