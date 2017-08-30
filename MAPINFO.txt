@@ -617,7 +617,6 @@ DoomEdNums
 	30400=Rock03f
 	30401=XenIsland1
 	30402=XenIsland2
-	30403=OspreyDead
 	30404=XenIsland3
 	30405=HoverPad
 	30406=XenIsland4

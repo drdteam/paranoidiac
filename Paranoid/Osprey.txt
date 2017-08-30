@@ -170,17 +170,6 @@ class Osprey : ModelBase
 	}
 }
 
-class OspreyDead : ModelBase
-{
-	Default
-	{
-		-SOLID
-		Radius 2;
-		Height 2;
-		Mass 0x7FFFFFFF;
-	}
-}
-
 class OspreyBlade : ModelBase
 {
 	Default
