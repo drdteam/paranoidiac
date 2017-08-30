@@ -4,6 +4,7 @@ class SUV : ModelBase
 	override void postbeginplay()
 	{
 		glass=Spawn("SUVGlass",pos);
+		glass.angle=angle;
 		glass.ChangeTid(tid);
 		glass.master=self;
 		super.postbeginplay();
