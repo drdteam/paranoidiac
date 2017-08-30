@@ -9,7 +9,9 @@ enum ParanoidEnum
 
 #include "Paranoid/Base.txt"
 #include "Paranoid/Bubbles.txt"
+#include "Paranoid/Explosion.txt"
 #include "Paranoid/Flames.txt"
+#include "Paranoid/freezeritem.txt"
 #include "Paranoid/Messages.txt"
 #include "Paranoid/Miscellaneous.txt"
 #include "Paranoid/Pickups.txt"
@@ -19,34 +21,29 @@ enum ParanoidEnum
 #include "Paranoid/WaterFall.txt"
 #include "Paranoid/WeaponsAmmo.txt"
 
+#include "Paranoid/Barney.txt"
+#include "Paranoid/Scientists.txt"
+
 #include "Paranoid/Barnacle.txt"
 #include "Paranoid/BullSquid.txt"
 #include "Paranoid/Controller.txt"
 #include "Paranoid/Gargantua.txt"
+#include "Paranoid/Gonarch.txt"
 #include "Paranoid/Grunts.txt"
 #include "Paranoid/HeadCrab.txt"
 #include "Paranoid/HornetGrunt.txt"
 #include "Paranoid/HoundEye.txt"
+#include "Paranoid/Nihilanth.txt"
+#include "Paranoid/StukaBat.txt"
 #include "Paranoid/Vortigaunt.txt"
 #include "Paranoid/Zombie.txt"
 
 #include "Paranoid/Models.txt"
 #include "Paranoid/Osprey.txt"
 #include "Paranoid/SUV.txt"
-
 #include "Paranoid/ZenItems.txt"
 
-#include "Paranoid/Barney.txt"
-#include "Paranoid/Scientists.txt"
-
-#include "Paranoid/Explosion.txt"
-
-// paranoic
-#include "Paranoid/Gonarch.txt"
-#include "Paranoid/Nihilanth.txt"
-#include "Paranoid/StukaBat.txt"
-
-#include "Paranoid/freezeritem.txt"
+#include "Paranoid/Expansion.txt"
 
 class ParanoidAmmoHandler : StaticEventHandler
 {

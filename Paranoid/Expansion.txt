@@ -1,0 +1,132 @@
+class HLNazi : HLGrunt1
+{
+	override void PostBeginPlay()
+	{
+		handgren=1;
+		super.PostBeginPlay();
+	}
+	Default
+	{
+		Health 100;
+		GibHealth -150;
+		SeeSound "halflife/monsters/nazi/sight";
+		PainSound "halflife/monsters/nazi/pain";
+		DeathSound "halflife/monsters/nazi/death";
+		Species "Nazi";
+		DropItem "HLMP40Ammo";
+	}
+	States
+	{
+	Walking:
+		HLW1 A 0
+		{
+			bMISSILEEVENMORE=1;
+			bMISSILEMORE=1;
+			A_SetSpeed(1.75);
+		}
+		HLW1 A 1 A_GruntChase;
+		HLW1 BCD 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLW1 E 1 A_GruntChase;
+		HLW1 FGH 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLW1 I 1 A_GruntChase;
+		HLW1 JKL 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLW1 M 1 A_GruntChase;
+		HLW1 NOP 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLW1 Q 1 A_GruntChase;
+		HLW1 RST 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLW1 U 1 A_GruntChase;
+		HLW1 VWX 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLW1 Y 1 A_GruntChase;
+		HLW1 Z[\ 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLW1 ] 1 A_GruntChase;
+		HLW2 AB 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLW2 B 0 A_KeepWalking;
+		Goto See;
+	Missile:
+		HLA3 K 1
+		{
+			if(random(0,255)<200)
+				return resolvestate("Assault");
+			if(CheckIfCloser(target,600))
+			{
+				if(!CheckIfCloser(target,256))
+					return resolvestate("Melee");
+				return resolvestate("Assault");
+			}
+			return state(null);
+		}
+		Wait;
+	Death:
+		HLD1 A 1 A_ScreamAndUnblock;
+		Goto Super::Death+1;
+	}
+	override void A_GruntGunshot(int shots)
+	{
+		A_GruntGunsmoke();
+		A_PlaySound("halflife/weapons/mp40shot",5);
+		A_CustomBulletAttack(7,7,1,4,"NewPuff1");
+	}
+}
+
+class HLAlphaBarney : HLBarney replaces WolfensteinSS
+{
+	override void tick()
+		{Actor.Tick();}
+	Default
+	{
+		SeeSound "quiver/monsters/barney/idle";
+		PainSound "quiver/monsters/barney/pain";
+		DeathSound "quiver/monsters/barney/death";
+		-FRIENDLY
+		+COUNTKILL
+		Species "Quiver";
+	}
+	States
+	{
+	Spawn:
+		HLI1 ABCDEFGHIJKLMNOPQRSTU 2 A_Look;
+		Loop;
+	See:
+		HLR1 A 1 A_Chase;
+		HLR1 BCD 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLR1 E 1 A_Chase;
+		HLR1 FGH 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLR1 I 1 A_Chase;
+		HLR1 JKL 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLR1 M 1 A_Chase;
+		HLR1 NOP 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLR1 Q 1 A_Chase;
+		HLR1 RS 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLR1 A 0 A_Chatter;
+		Loop;
+	Missile:
+		HLA1 A 2 A_FaceTarget;
+		HLA1 BCD 2;
+		HLA1 E 2 A_FaceTarget;
+		HLA1 FG 2;
+	Pistol:
+		HLA1 H 3 A_FaceTarget;
+		HLA1 I 3;
+		HLA1 J 3 Light("ImShootingAGun") A_BarneyGunshot;
+		HLA1 KLM 3;
+		TNT1 A 0 A_MonsterRefire(0,"See");
+		Loop;
+	Pain:
+		HLP1 A 2 A_Pain;
+		HLP1 BCD 2;
+		Goto See;
+	Death:
+		HLD1 A 2 A_ScreamAndUnblock;
+		HLD1 BCDEFG 2;
+		HLD1 H 2 A_PlaySound("halflife/weapons/bodydrop");
+		HLD1 IJKLMNOPQRSTUVWXYZ[\] 2;
+		HLD2 ABCDEFGHIJKLMNOP 2;
+		HLD2 Q -1;
+		Stop;
+	}
+	override void A_Chatter()
+	{
+		if(!random(0,32))
+			A_PlaySound("quiver/monsters/barney/idle");
+	}
+}

@@ -1006,17 +1006,30 @@ $random	halflife/monsters/nazi/sight
 	halflife/monsters/nazi/sight2
 	halflife/monsters/nazi/sight3
 }
-halflife/monsters/nazi/sight1	"sounds/nazi/alert01.ogg"
-halflife/monsters/nazi/sight2	"sounds/nazi/alert02.ogg"
-halflife/monsters/nazi/sight3	"sounds/nazi/freeman!.ogg"
-halflife/monsters/nazi/pain		"sounds/nazi/gr_pain1.ogg"
+halflife/monsters/nazi/sight1	"sounds/expansion/alert01.ogg"
+halflife/monsters/nazi/sight2	"sounds/expansion/alert02.ogg"
+halflife/monsters/nazi/sight3	"sounds/expansion/freeman!.ogg"
+halflife/monsters/nazi/pain		"sounds/expansion/gr_pain1.ogg"
 $random	halflife/monsters/nazi/death
 {
 	halflife/monsters/nazi/death1
 	halflife/monsters/nazi/death2
 	halflife/monsters/nazi/death3
 }
-halflife/monsters/nazi/death1	"sounds/nazi/gr_die1.ogg"
-halflife/monsters/nazi/death2	"sounds/nazi/gr_die2.ogg"
-halflife/monsters/nazi/death3	"sounds/nazi/gr_die3.ogg"
-halflife/weapons/mp40shot		"sounds/nazi/gr_mgun1.ogg"
+halflife/monsters/nazi/death1	"sounds/expansion/gr_die1.ogg"
+halflife/monsters/nazi/death2	"sounds/expansion/gr_die2.ogg"
+halflife/monsters/nazi/death3	"sounds/expansion/gr_die3.ogg"
+halflife/weapons/mp40shot		"sounds/expansion/gr_mgun1.ogg"
+
+//Alpha Barney
+quiver/monsters/barney/idle		"sounds/expansion/ba_attack1.wav"
+quiver/monsters/barney/pain		"sounds/expansion/ba_pain1.wav"
+$random	quiver/monsters/barney/death
+{
+	quiver/monsters/barney/death1
+	quiver/monsters/barney/death2
+	quiver/monsters/barney/death3
+}
+quiver/monsters/barney/death1	"sounds/expansion/ba_die1.wav"
+quiver/monsters/barney/death2	"sounds/expansion/ba_die2.wav"
+quiver/monsters/barney/death3	"sounds/expansion/ba_die3.wav"
