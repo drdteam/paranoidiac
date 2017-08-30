@@ -59,8 +59,7 @@ class HLBarnacle : Actor
 		POSS K 5 {bNOCLIP=1;}  //stops you being able to jump up and push the model into the ceiling
 		POSS K 5 A_Scream;
 		POSS L 5 A_NoBlocking;
-		POSS LLL 2 A_SpawnItemEx("HLGibs",random(3,-3),random(3,-3),random(8,20),random(1,2),random(1,2),random(-1,-3),random(0,359));
-		POSS MMM 2 A_SpawnItemEx("HLGibs",random(3,-3),random(3,-3),random(12,24),random(1,2),random(1,2),random(-1,-3),random(0,359));
+		POSS LLLMMM 2 A_SpawnItemEx("HLGibs",random(3,-3),random(3,-3),random(8,24),random(1,2),random(1,2),random(-1,-3),random(0,359));
 		POSS NOPQR 5;
 		POSS S -1;
 		Stop;

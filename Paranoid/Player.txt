@@ -1,26 +1,20 @@
 class RolfBellmer : PlayerPawn
 {
-	bool Scientist,Otis;
+	bool scientist,otis;
 	override void Tick()
 	{
 		if(InStateSequence(CurState,SpawnState))
 		{
-			if(Otis)
+			if(otis)
 				SetStateLabel("OtisSpawn");
-			else if(Scientist)
+			else if(scientist)
 				SetStateLabel("ScientistSpawn");
 		}
-		else if(InStateSequence(CurState,FindState("ScientistSpawn"))&&!Scientist)
+		else if(InStateSequence(CurState,FindState("ScientistSpawn"))&&!scientist)
 			SetState(SpawnState);
-		else if(InStateSequence(CurState,FindState("ScientistSee"))&&!Scientist)
+		else if(InStateSequence(CurState,FindState("ScientistSee"))&&!scientist)
 			SetState(SeeState);
 		super.tick();
-	}
-	override void CheckCrouch(bool totallyfrozen)
-	{
-		//Prevent crouching when in disguise
-		if(!Scientist)
-			super.CheckCrouch(totallyfrozen);
 	}
 	Default
 	{
@@ -127,7 +121,7 @@ class RolfBellmer : PlayerPawn
 	{
 		if(otis&&InStateSequence(CurState,FindState("OtisSee")))
 			SetStateLabel("OtisSpawn");
-		else if(Scientist&&InStateSequence(CurState,FindState("ScientistSee")))
+		else if(scientist&&InStateSequence(CurState,FindState("ScientistSee")))
 			SetStateLabel("ScientistSpawn");
 		else if(InStateSequence(CurState,SeeState))
 			SetState(SpawnState);
@@ -136,7 +130,7 @@ class RolfBellmer : PlayerPawn
 	{
 		if(otis&&InStateSequence(CurState,FindState("OtisSpawn")))
 			SetStateLabel("OtisSee");
-		else if(Scientist&&InStateSequence(CurState,FindState("ScientistSpawn")))
+		else if(scientist&&InStateSequence(CurState,FindState("ScientistSpawn")))
 			SetStateLabel("ScientistSee");
 		else if(InStateSequence(CurState,SpawnState))
 			SetState(SeeState);
@@ -145,24 +139,23 @@ class RolfBellmer : PlayerPawn
 	{
 		if(otis)
 			SetStateLabel("OtisMissile");
-		else if(Scientist)
+		else if(scientist)
 			SetStateLabel("ScientistMissile");
 		else
 			SetState(MissileState);
 	}
-
 	void A_HLPainSelect()
 	{
 		if(otis)
 			SetStateLabel("OtisPain");
-		else if(Scientist)
+		else if(scientist)
 			SetStateLabel("ScientistPain");
 	}
 	void A_HLDeathSelect()
 	{
 		if(otis)
 			SetStateLabel("OtisDeath");
-		else if(Scientist)
+		else if(scientist)
 			SetStateLabel("ScientistDeath");
 	}
 }
