@@ -1532,24 +1532,75 @@ Model meter3
 	FrameIndex POSS A 0 0
 }
 
-Model loader1
+Model Loader
 {
 	Path "Models"
-	Model 0 "loader1.md3"
+	Model 0 "loader.md2"
 	Skin 0 "loader.png"
-	Scale 0.6 0.6 0.6
+	Offset 12 0 0
 
-	FrameIndex POSS A 0 0
+	FrameIndex HLI1 A 0 1
+
+	FrameIndex HLW1 A 0 62
+	FrameIndex HLW1 B 0 63
+	FrameIndex HLW1 C 0 64
+	FrameIndex HLW1 D 0 65
+	FrameIndex HLW1 E 0 66
+	FrameIndex HLW1 F 0 67
+	FrameIndex HLW1 G 0 68
+	FrameIndex HLW1 H 0 69
+	FrameIndex HLW1 I 0 70
+	FrameIndex HLW1 J 0 71
+	FrameIndex HLW1 K 0 72
+	FrameIndex HLW1 L 0 73
+	FrameIndex HLW1 M 0 74
+	FrameIndex HLW1 N 0 75
+	FrameIndex HLW1 O 0 76
+	FrameIndex HLW1 P 0 77
+	FrameIndex HLW1 Q 0 78
+	FrameIndex HLW1 R 0 79
+	FrameIndex HLW1 S 0 80
+	FrameIndex HLW1 T 0 81
+	FrameIndex HLW1 U 0 82
+	FrameIndex HLW1 V 0 83
+	FrameIndex HLW1 W 0 84
+	FrameIndex HLW1 X 0 85
+	FrameIndex HLW1 Y 0 86
+	FrameIndex HLW1 Z 0 87
+	FrameIndex HLW1 [ 0 88
+	FrameIndex HLW1 \ 0 89
+	FrameIndex HLW1 ] 0 90
+	FrameIndex HLW2 A 0 91
+	FrameIndex HLW2 B 0 92
+	FrameIndex HLW2 C 0 93
+	FrameIndex HLW2 D 0 94
+	FrameIndex HLW2 E 0 95
+	FrameIndex HLW2 F 0 96
+	FrameIndex HLW2 G 0 97
+	FrameIndex HLW2 H 0 98
+	FrameIndex HLW2 I 0 99
+	FrameIndex HLW2 J 0 100
+	FrameIndex HLW2 K 0 101
+	FrameIndex HLW2 L 0 102
+	FrameIndex HLW2 M 0 103
+	FrameIndex HLW2 N 0 104
+	FrameIndex HLW2 O 0 105
+	FrameIndex HLW2 P 0 106
+	FrameIndex HLW2 Q 0 107
+	FrameIndex HLW2 R 0 108
+	FrameIndex HLW2 S 0 109
+	FrameIndex HLW2 T 0 110
 }
 
-Model loader2
+Model LoaderNoBox
 {
 	Path "Models"
-	Model 0 "loader2.md3"
-	Skin 0 "loader.png"
-	Scale 0.6 0.6 0.6
+	Model 0 "loader.md2"
+	Skin 0 "loader2.png"
+	Offset 12 0 0
+	AngleOffset 90
 
-	FrameIndex POSS A 0 0
+	FrameIndex HLI1 B 0 0
 }
 
 Model Light1
@@ -1601,10 +1652,11 @@ Model PipeMaze
 Model apache
 {
 	Path "Models"
-	Model 0 "apache.md3"
+	Model 0 "apache.md2"
 	Skin 0 "apache.png"
+	Offset 12 0 144
 
-	FrameIndex POSS A 0 0
+	FrameIndex POSS A 0 1
 }
 
 Model Osprey
