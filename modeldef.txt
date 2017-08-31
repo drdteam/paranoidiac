@@ -2776,19 +2776,19 @@ Model HLRocket
 	Path "Models"
 	Model 0 "rpgrocket.md2"
 	Skin 0 "rpgrocket.png"
-	USEACTORPITCH
+	PITCHFROMMOMENTUM
 
 	FrameIndex POSS A 0 1
 }
 
 Model Missile
 {
-	PITCHFROMMOMENTUM
 	Path "Models"
 	Model 0 "missile.md3"
 	Skin 0 "missile.png"
 	Offset 0 0 6
 	Scale 6.0 6.0 6.0
+	PITCHFROMMOMENTUM
 
 	FrameIndex MISL A 0 0
 }
@@ -2798,6 +2798,7 @@ Model HGunHornet
 	Path "Models"
 	Model 0 "hornet.md2"
 	Skin 0 "hornet.png"
+	PITCHFROMMOMENTUM
 
 	FrameIndex HLI1 A 0 1
 	FrameIndex HLI1 B 0 2
@@ -2809,6 +2810,7 @@ Model HGunHornet2
 	Path "Models"
 	Model 0 "hornet.md2"
 	Skin 0 "hornet.png"
+	PITCHFROMMOMENTUM
 
 	FrameIndex HLI1 A 0 1
 	FrameIndex HLI1 B 0 2
@@ -2820,6 +2822,7 @@ Model HGruntHornet
 	Path "Models"
 	Model 0 "hornet.md2"
 	Skin 0 "hornet.png"
+	PITCHFROMMOMENTUM
 
 	FrameIndex HLI1 A 0 1
 	FrameIndex HLI1 B 0 2
@@ -2831,6 +2834,7 @@ Model HGruntHornetFake
 	Path "Models"
 	Model 0 "hornet.md2"
 	Skin 0 "hornet.png"
+	PITCHFROMMOMENTUM
 
 	FrameIndex HLI1 A 0 1
 	FrameIndex HLI1 B 0 2
