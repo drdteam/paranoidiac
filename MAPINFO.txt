@@ -499,8 +499,8 @@ DoomEdNums
 	30269=SoapDispenser
 	30270=ToiletStainless
 	30271=ToiletPaper
-	30272=Loader1
-	30273=loader2
+	30272=LoaderNoBox
+	30273=Loader
 	30274=light1
 	30275=light2
 	30276=pipe5

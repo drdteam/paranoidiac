@@ -220,8 +220,8 @@ class Tesla : Transformer
 
 //====================================================================
 // Non-spawnable models (some of which require 3D sectors)
-// Heavy Equipment: Loaders, fork lifts, backhoe, trailers, generators
-// Apache & Osprey helicopters; steel girders; trams
+// Heavy Equipment: Fork lifts, backhoe, trailers, generators
+// Apache helicopter; steel girders; trams
 //====================================================================
 
 class Forklift1 : ModelBase
@@ -242,16 +242,6 @@ class Forklift2 : Forklift1
 	}
 }
 
-class Loader1 : Forklift1
-{
-	Default
-	{
-		Radius 64;
-		Height 96;
-	}
-}
-
-class loader2 : Loader1{}
 class Backhoe1 : Forklift1{}
 class Bulldozer1 : Forklift1{}
 class Trailer1 : Forklift1{}

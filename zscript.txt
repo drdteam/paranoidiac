@@ -39,8 +39,7 @@ enum ParanoidEnum
 #include "Paranoid/Zombie.txt"
 
 #include "Paranoid/Models.txt"
-#include "Paranoid/Osprey.txt"
-#include "Paranoid/SUV.txt"
+#include "Paranoid/Vehicles.txt"
 #include "Paranoid/ZenItems.txt"
 
 #include "Paranoid/Expansion.txt"

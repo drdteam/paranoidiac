@@ -68,6 +68,9 @@ class HLNazi : HLGrunt1
 	}
 }
 
+class HLMP40Ammo : HLAssaultRifleAmmo
+	{Default{Inventory.PickupMessage "Picked up an MP40 magazine.";}}
+
 class HLAlphaBarney : HLBarney replaces WolfensteinSS
 {
 	override void tick()

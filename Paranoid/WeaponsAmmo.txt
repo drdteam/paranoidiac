@@ -48,7 +48,6 @@ class ParanoidWeapon : Weapon
 	Spawn:
 		POSS A -1;
 		Stop;
-
 	OtisSelect1:
 		BSU1 ABCDEFGHIJKLMNO 1 A_WeaponReady(WRF_NOBOB|WRF_NOFIRE);
 		BSU1 O 0 A_Jump(256,"Ready");
@@ -63,7 +62,6 @@ class ParanoidWeapon : Weapon
 				return ResolveState("OtisReload");
 			return ResolveState("OtisReady");
 		}
-
 	ScientistSelect1:
 		SCU1 ABCDEFGHIJKLMNO 1 A_WeaponReady(WRF_NOBOB|WRF_NOFIRE);
 		SCU1 O 0 A_Jump(256,"Ready");
@@ -3210,6 +3208,3 @@ class HLLaserSightPuff : Actor
 		Stop;
 	}
 }
-
-class HLMP40Ammo : HLAssaultRifleAmmo
-	{Default{Inventory.PickupMessage "Picked up an MP40 magazine.";}}
