@@ -46,7 +46,7 @@ class Osprey : OspreyBellmer
 		lblade=Spawn("OspreyBlade",pos);
 		rblade=Spawn("OspreyBlade",pos);
 		A_PlaySound("play/osprey",looping:1);
-		actor.postbeginplay();
+		super.postbeginplay();
 	}
 	override void tick()
 	{
@@ -262,6 +262,19 @@ class SUVGlass : ModelBase
 //MTM 8 Loader
 class Loader : ModelBase
 {
+	actor box;
+	override void postbeginplay()
+	{
+		bool num;
+		[num,box]=A_SpawnItemEx("LoaderBox",112,0,32,flags:SXF_SETMASTER,tid:tid);
+		super.postbeginplay();
+	}
+	override void tick()
+	{
+		if(box)
+			box.A_Warp(AAPTR_MASTER,112,0,32);
+		super.tick();
+	}
 	Default
 	{
 		Radius 64;
@@ -282,10 +295,38 @@ class Loader : ModelBase
 }
 class LoaderNoBox : Loader
 {
+	actor lclaw,rclaw;
+	override void postbeginplay()
+	{
+		bool num;
+		[num,lclaw]=A_SpawnItemEx("LoaderClaw",96,-32,32,flags:SXF_SETMASTER,tid:tid);
+		[num,rclaw]=A_SpawnItemEx("LoaderClaw",96,32,32,flags:SXF_SETMASTER,tid:tid);
+		actor.postbeginplay();
+	}
 	States
 	{
 	Spawn:
 		HLI1 B -1;
 		Stop;
+	}
+}
+class LoaderBox : Actor
+{
+	Default
+	{
+		Radius 32;
+		Height 64;
+		+SOLID
+		+NOGRAVITY
+		+NOLIFTDROP
+		+ACTLIKEBRIDGE
+	}
+}
+class LoaderClaw : LoaderBox
+{
+	Default
+	{
+		Radius 16;
+		Height 32;
 	}
 }
