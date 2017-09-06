@@ -57,7 +57,7 @@ Model HLBat
 	FrameIndex HLA1 G 0 6
 	FrameIndex HLA1 H 0 7
 	FrameIndex HLA1 I 0 8
-	FrameIndex HLA1 J 0 09
+	FrameIndex HLA1 J 0 9
 	FrameIndex HLA1 K 0 10
 	FrameIndex HLA1 L 0 11
 	FrameIndex HLA1 M 0 12
@@ -846,7 +846,7 @@ Model HLGargantua
 	FrameIndex HLD3 Q 0 212
 }
 
-Model HLGargantua1
+Model HLGargantua2
 {
 	Path "Models"
 	Model 0 "garg.md3"
@@ -1980,7 +1980,7 @@ Model HLController
 	FrameIndex HLD2 T 0 210
 }
 
-Model HLZombie0
+Model HLZombie1
 {
 	Path "Models"
 	Model 0 "zombie1.md3"
@@ -2124,7 +2124,7 @@ Model HLZombie0
 	FrameIndex HLD1 ] 0 305
 }
 
-Model HLZombie1
+Model HLZombie2
 {
 	Path "Models"
 	Model 0 "zombie2.md3"
@@ -2268,7 +2268,7 @@ Model HLZombie1
 	FrameIndex HLD1 ] 0 305
 }
 
-Model HLZombie2
+Model HLZombie3
 {
 	Path "Models"
 	Model 0 "zombie3.md3"

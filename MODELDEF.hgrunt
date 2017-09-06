@@ -876,7 +876,7 @@ Model HLGrunt1
 	FrameIndex HLD2 G 2 469
 }
 
-Model HLGrunt1
+Model HLGrunt2
 {
 	Path "Models"
 	Model 0 "hgruntbody.md3"
