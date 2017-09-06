@@ -397,7 +397,7 @@ DoomEdNums
 	30010=HLPistolPickup
 	30011=HLPistolAmmo
 	30012=HLMagnumPickup
-	30013=HLMagnumAmmoBox
+	30013=HLMagnumBox
 	30014=HLRPG
 	30015=HLRPGAmmo
 	30016=AmmoPack

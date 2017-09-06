@@ -83,6 +83,7 @@ class HLAlphaBarney : HLBarney replaces WolfensteinSS
 		-FRIENDLY
 		+COUNTKILL
 		Species "Quiver";
+		DropItem "HLPistolAmmo";
 	}
 	States
 	{

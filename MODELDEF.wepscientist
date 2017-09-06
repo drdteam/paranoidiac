@@ -271,314 +271,314 @@ Model HLPistol
 	FrameIndex SCI1 A 1 0
 
 	FrameIndex SCF1 A 0 150
-	FrameIndex SCF1 A 1 150
+	FrameIndex SCF1 A 1 163
 	FrameIndex SCF1 B 0 151
-	FrameIndex SCF1 B 1 151
+	FrameIndex SCF1 B 1 164
 	FrameIndex SCF1 C 0 152
-	FrameIndex SCF1 C 1 152
+	FrameIndex SCF1 C 1 165
 	FrameIndex SCF1 D 0 153
-	FrameIndex SCF1 D 1 153
+	FrameIndex SCF1 D 1 166
 	FrameIndex SCF1 E 0 154
-	FrameIndex SCF1 E 1 154
+	FrameIndex SCF1 E 1 167
 	FrameIndex SCF1 F 0 155
-	FrameIndex SCF1 F 1 155
+	FrameIndex SCF1 F 1 168
 	FrameIndex SCF1 G 0 156
-	FrameIndex SCF1 G 1 156
+	FrameIndex SCF1 G 1 169
 	FrameIndex SCF1 H 0 157
-	FrameIndex SCF1 H 1 157
+	FrameIndex SCF1 H 1 170
 	FrameIndex SCF1 I 0 158
-	FrameIndex SCF1 I 1 158
+	FrameIndex SCF1 I 1 171
 	FrameIndex SCF1 J 0 159
-	FrameIndex SCF1 J 1 159
+	FrameIndex SCF1 J 1 172
 	FrameIndex SCF1 K 0 160
-	FrameIndex SCF1 K 1 160
+	FrameIndex SCF1 K 1 173
 	FrameIndex SCF1 L 0 161
-	FrameIndex SCF1 L 1 161
+	FrameIndex SCF1 L 1 174
 	FrameIndex SCF1 M 0 162
-	FrameIndex SCF1 M 1 162
+	FrameIndex SCF1 M 1 175
 	FrameIndex SCF1 N 0 163
-	FrameIndex SCF1 N 1 163
+	FrameIndex SCF1 N 1 176
 	FrameIndex SCF1 O 0 164
-	FrameIndex SCF1 O 1 164
+	FrameIndex SCF1 O 1 177
 	FrameIndex SCF1 P 0 165
-	FrameIndex SCF1 P 1 165
+	FrameIndex SCF1 P 1 178
 	FrameIndex SCF1 Q 0 166
-	FrameIndex SCF1 Q 1 166
+	FrameIndex SCF1 Q 1 179
 	FrameIndex SCF1 R 0 167
-	FrameIndex SCF1 R 1 167
+	FrameIndex SCF1 R 1 180
 	FrameIndex SCF1 S 0 168
-	FrameIndex SCF1 S 1 168
+	FrameIndex SCF1 S 1 181
 
 	FrameIndex SCF1 U 0 170
-	FrameIndex SCF1 U 1 170
+	FrameIndex SCF1 U 1 183
 	FrameIndex SCF1 V 0 171
-	FrameIndex SCF1 V 1 171
+	FrameIndex SCF1 V 1 184
 	FrameIndex SCF1 W 0 172
-	FrameIndex SCF1 W 1 172
+	FrameIndex SCF1 W 1 185
 	FrameIndex SCF1 X 0 173
-	FrameIndex SCF1 X 1 173
+	FrameIndex SCF1 X 1 186
 	FrameIndex SCF1 Y 0 174
-	FrameIndex SCF1 Y 1 174
+	FrameIndex SCF1 Y 1 187
 	FrameIndex SCF1 Z 0 175
-	FrameIndex SCF1 Z 1 175
+	FrameIndex SCF1 Z 1 188
 	FrameIndex SCF1 [ 0 176
-	FrameIndex SCF1 [ 1 176
+	FrameIndex SCF1 [ 1 189
 	FrameIndex SCF1 \ 0 177
-	FrameIndex SCF1 \ 1 177
+	FrameIndex SCF1 \ 1 190
 	FrameIndex SCF1 ] 0 178
-	FrameIndex SCF1 ] 1 178
+	FrameIndex SCF1 ] 1 191
 	FrameIndex SCF2 A 0 179
-	FrameIndex SCF2 A 1 179
+	FrameIndex SCF2 A 1 192
 	FrameIndex SCF2 B 0 180
-	FrameIndex SCF2 B 1 180
+	FrameIndex SCF2 B 1 193
 	FrameIndex SCF2 C 0 181
-	FrameIndex SCF2 C 1 181
+	FrameIndex SCF2 C 1 194
 	FrameIndex SCF2 D 0 182
-	FrameIndex SCF2 D 1 182
+	FrameIndex SCF2 D 1 195
 	FrameIndex SCF2 E 0 183
-	FrameIndex SCF2 E 1 183
+	FrameIndex SCF2 E 1 196
 	FrameIndex SCF2 F 0 184
-	FrameIndex SCF2 F 1 184
+	FrameIndex SCF2 F 1 197
 	FrameIndex SCF2 G 0 185
-	FrameIndex SCF2 G 1 185
+	FrameIndex SCF2 G 1 198
 	FrameIndex SCF2 H 0 186
-	FrameIndex SCF2 H 1 186
+	FrameIndex SCF2 H 1 199
 	FrameIndex SCF2 I 0 187
-	FrameIndex SCF2 I 1 187
+	FrameIndex SCF2 I 1 200
 	FrameIndex SCF2 J 0 188
-	FrameIndex SCF2 J 1 188
+	FrameIndex SCF2 J 1 201
 
 	FrameIndex SCR1 A 0 232
-	FrameIndex SCR1 A 1 232
+	FrameIndex SCR1 A 1 245
 	FrameIndex SCR1 B 0 233
-	FrameIndex SCR1 B 1 233
+	FrameIndex SCR1 B 1 246
 	FrameIndex SCR1 C 0 234
-	FrameIndex SCR1 C 1 234
+	FrameIndex SCR1 C 1 247
 	FrameIndex SCR1 D 0 235
-	FrameIndex SCR1 D 1 235
+	FrameIndex SCR1 D 1 248
 	FrameIndex SCR1 E 0 236
-	FrameIndex SCR1 E 1 236
+	FrameIndex SCR1 E 1 249
 	FrameIndex SCR1 F 0 237
-	FrameIndex SCR1 F 1 237
+	FrameIndex SCR1 F 1 250
 	FrameIndex SCR1 G 0 238
-	FrameIndex SCR1 G 1 238
+	FrameIndex SCR1 G 1 251
 	FrameIndex SCR1 H 0 239
-	FrameIndex SCR1 H 1 239
+	FrameIndex SCR1 H 1 252
 	FrameIndex SCR1 I 0 240
-	FrameIndex SCR1 I 1 240
+	FrameIndex SCR1 I 1 253
 	FrameIndex SCR1 J 0 241
-	FrameIndex SCR1 J 1 241
+	FrameIndex SCR1 J 1 254
 	FrameIndex SCR1 K 0 242
-	FrameIndex SCR1 K 1 242
+	FrameIndex SCR1 K 1 255
 	FrameIndex SCR1 L 0 243
-	FrameIndex SCR1 L 1 243
+	FrameIndex SCR1 L 1 256
 	FrameIndex SCR1 M 0 244
-	FrameIndex SCR1 M 1 244
+	FrameIndex SCR1 M 1 257
 	FrameIndex SCR1 N 0 245
-	FrameIndex SCR1 N 1 245
+	FrameIndex SCR1 N 1 258
 	FrameIndex SCR1 O 0 246
-	FrameIndex SCR1 O 1 246
+	FrameIndex SCR1 O 1 259
 	FrameIndex SCR1 P 0 247
-	FrameIndex SCR1 P 1 247
+	FrameIndex SCR1 P 1 260
 	FrameIndex SCR1 Q 0 248
-	FrameIndex SCR1 Q 1 248
+	FrameIndex SCR1 Q 1 261
 	FrameIndex SCR1 R 0 249
-	FrameIndex SCR1 R 1 249
+	FrameIndex SCR1 R 1 262
 	FrameIndex SCR1 S 0 250
-	FrameIndex SCR1 S 1 250
+	FrameIndex SCR1 S 1 263
 	FrameIndex SCR1 T 0 251
-	FrameIndex SCR1 T 1 251
+	FrameIndex SCR1 T 1 264
 	FrameIndex SCR1 U 0 252
-	FrameIndex SCR1 U 1 252
+	FrameIndex SCR1 U 1 265
 	FrameIndex SCR1 V 0 253
-	FrameIndex SCR1 V 1 253
+	FrameIndex SCR1 V 1 266
 	FrameIndex SCR1 W 0 254
-	FrameIndex SCR1 W 1 254
+	FrameIndex SCR1 W 1 267
 	FrameIndex SCR1 X 0 255
-	FrameIndex SCR1 X 1 255
+	FrameIndex SCR1 X 1 268
 	FrameIndex SCR1 Y 0 256
-	FrameIndex SCR1 Y 1 256
+	FrameIndex SCR1 Y 1 269
 	FrameIndex SCR1 Z 0 257
-	FrameIndex SCR1 Z 1 257
+	FrameIndex SCR1 Z 1 270
 	FrameIndex SCR1 [ 0 258
-	FrameIndex SCR1 [ 1 258
+	FrameIndex SCR1 [ 1 271
 	FrameIndex SCR1 \ 0 259
-	FrameIndex SCR1 \ 1 259
+	FrameIndex SCR1 \ 1 272
 	FrameIndex SCR1 ] 0 260
-	FrameIndex SCR1 ] 1 260
+	FrameIndex SCR1 ] 1 273
 	FrameIndex SCR2 A 0 261
-	FrameIndex SCR2 A 1 261
+	FrameIndex SCR2 A 1 274
 	FrameIndex SCR2 B 0 262
-	FrameIndex SCR2 B 1 262
+	FrameIndex SCR2 B 1 275
 	FrameIndex SCR2 C 0 263
-	FrameIndex SCR2 C 1 263
+	FrameIndex SCR2 C 1 276
 	FrameIndex SCR2 D 0 264
-	FrameIndex SCR2 D 1 264
+	FrameIndex SCR2 D 1 277
 	FrameIndex SCR2 E 0 265
-	FrameIndex SCR2 E 1 265
+	FrameIndex SCR2 E 1 278
 	FrameIndex SCR2 F 0 266
-	FrameIndex SCR2 F 1 266
+	FrameIndex SCR2 F 1 279
 	FrameIndex SCR2 G 0 267
-	FrameIndex SCR2 G 1 267
+	FrameIndex SCR2 G 1 280
 	FrameIndex SCR2 H 0 268
-	FrameIndex SCR2 H 1 268
+	FrameIndex SCR2 H 1 281
 	FrameIndex SCR2 I 0 269
-	FrameIndex SCR2 I 1 269
+	FrameIndex SCR2 I 1 282
 	FrameIndex SCR2 J 0 270
-	FrameIndex SCR2 J 1 270
+	FrameIndex SCR2 J 1 283
 	FrameIndex SCR2 K 0 271
-	FrameIndex SCR2 K 1 271
+	FrameIndex SCR2 K 1 284
 	FrameIndex SCR2 L 0 272
-	FrameIndex SCR2 L 1 272
+	FrameIndex SCR2 L 1 285
 	FrameIndex SCR2 M 0 273
-	FrameIndex SCR2 M 1 273
+	FrameIndex SCR2 M 1 286
 
 	FrameIndex SCR2 N 0 190
-	FrameIndex SCR2 N 1 190
+	FrameIndex SCR2 N 1 203
 	FrameIndex SCR2 O 0 191
-	FrameIndex SCR2 O 1 191
+	FrameIndex SCR2 O 1 204
 	FrameIndex SCR2 P 0 192
-	FrameIndex SCR2 P 1 192
+	FrameIndex SCR2 P 1 205
 	FrameIndex SCR2 Q 0 193
-	FrameIndex SCR2 Q 1 193
+	FrameIndex SCR2 Q 1 206
 	FrameIndex SCR2 R 0 194
-	FrameIndex SCR2 R 1 194
+	FrameIndex SCR2 R 1 207
 	FrameIndex SCR2 S 0 195
-	FrameIndex SCR2 S 1 195
+	FrameIndex SCR2 S 1 208
 	FrameIndex SCR2 T 0 196
-	FrameIndex SCR2 T 1 196
+	FrameIndex SCR2 T 1 209
 	FrameIndex SCR2 U 0 197
-	FrameIndex SCR2 U 1 197
+	FrameIndex SCR2 U 1 210
 	FrameIndex SCR2 V 0 198
-	FrameIndex SCR2 V 1 198
+	FrameIndex SCR2 V 1 211
 	FrameIndex SCR2 W 0 199
-	FrameIndex SCR2 W 1 199
+	FrameIndex SCR2 W 1 212
 	FrameIndex SCR2 X 0 200
-	FrameIndex SCR2 X 1 200
+	FrameIndex SCR2 X 1 213
 	FrameIndex SCR2 Y 0 201
-	FrameIndex SCR2 Y 1 201
+	FrameIndex SCR2 Y 1 214
 	FrameIndex SCR2 Z 0 202
-	FrameIndex SCR2 Z 1 202
+	FrameIndex SCR2 Z 1 215
 	FrameIndex SCR2 [ 0 203
-	FrameIndex SCR2 [ 1 203
+	FrameIndex SCR2 [ 1 216
 	FrameIndex SCR2 \ 0 204
-	FrameIndex SCR2 \ 1 204
+	FrameIndex SCR2 \ 1 217
 	FrameIndex SCR2 ] 0 205
-	FrameIndex SCR2 ] 1 205
+	FrameIndex SCR2 ] 1 218
 	FrameIndex SCR3 A 0 206
-	FrameIndex SCR3 A 1 206
+	FrameIndex SCR3 A 1 219
 	FrameIndex SCR3 B 0 207
-	FrameIndex SCR3 B 1 207
+	FrameIndex SCR3 B 1 220
 	FrameIndex SCR3 C 0 208
-	FrameIndex SCR3 C 1 208
+	FrameIndex SCR3 C 1 221
 	FrameIndex SCR3 D 0 209
-	FrameIndex SCR3 D 1 209
+	FrameIndex SCR3 D 1 222
 	FrameIndex SCR3 E 0 210
-	FrameIndex SCR3 E 1 210
+	FrameIndex SCR3 E 1 223
 	FrameIndex SCR3 F 0 211
-	FrameIndex SCR3 F 1 211
+	FrameIndex SCR3 F 1 224
 	FrameIndex SCR3 G 0 212
-	FrameIndex SCR3 G 1 212
+	FrameIndex SCR3 G 1 225
 	FrameIndex SCR3 H 0 213
-	FrameIndex SCR3 H 1 213
+	FrameIndex SCR3 H 1 226
 	FrameIndex SCR3 I 0 214
-	FrameIndex SCR3 I 1 214
+	FrameIndex SCR3 I 1 227
 	FrameIndex SCR3 J 0 215
-	FrameIndex SCR3 J 1 215
+	FrameIndex SCR3 J 1 228
 	FrameIndex SCR3 K 0 216
-	FrameIndex SCR3 K 1 216
+	FrameIndex SCR3 K 1 229
 	FrameIndex SCR3 L 0 217
-	FrameIndex SCR3 L 1 217
+	FrameIndex SCR3 L 1 230
 	FrameIndex SCR3 M 0 218
-	FrameIndex SCR3 M 1 218
+	FrameIndex SCR3 M 1 231
 	FrameIndex SCR3 N 0 219
-	FrameIndex SCR3 N 1 219
+	FrameIndex SCR3 N 1 232
 	FrameIndex SCR3 O 0 220
-	FrameIndex SCR3 O 1 220
+	FrameIndex SCR3 O 1 233
 	FrameIndex SCR3 P 0 221
-	FrameIndex SCR3 P 1 221
+	FrameIndex SCR3 P 1 234
 	FrameIndex SCR3 Q 0 222
-	FrameIndex SCR3 Q 1 222
+	FrameIndex SCR3 Q 1 235
 	FrameIndex SCR3 R 0 223
-	FrameIndex SCR3 R 1 223
+	FrameIndex SCR3 R 1 236
 	FrameIndex SCR3 S 0 224
-	FrameIndex SCR3 S 1 224
+	FrameIndex SCR3 S 1 237
 	FrameIndex SCR3 T 0 225
-	FrameIndex SCR3 T 1 225
+	FrameIndex SCR3 T 1 238
 	FrameIndex SCR3 U 0 226
-	FrameIndex SCR3 U 1 226
+	FrameIndex SCR3 U 1 239
 	FrameIndex SCR3 V 0 227
-	FrameIndex SCR3 V 1 227
+	FrameIndex SCR3 V 1 240
 	FrameIndex SCR3 W 0 228
-	FrameIndex SCR3 W 1 228
+	FrameIndex SCR3 W 1 241
 	FrameIndex SCR3 X 0 229
-	FrameIndex SCR3 X 1 229
+	FrameIndex SCR3 X 1 242
 	FrameIndex SCR3 Y 0 230
-	FrameIndex SCR3 Y 1 230
+	FrameIndex SCR3 Y 1 243
 	FrameIndex SCR3 Z 0 231
-	FrameIndex SCR3 Z 1 231
+	FrameIndex SCR3 Z 1 244
 
 	FrameIndex SCU1 A 0 274
-	FrameIndex SCU1 A 1 274
+	FrameIndex SCU1 A 1 287
 	FrameIndex SCU1 B 0 275
-	FrameIndex SCU1 B 1 275
+	FrameIndex SCU1 B 1 288
 	FrameIndex SCU1 C 0 276
-	FrameIndex SCU1 C 1 276
+	FrameIndex SCU1 C 1 289
 	FrameIndex SCU1 D 0 277
-	FrameIndex SCU1 D 1 277
+	FrameIndex SCU1 D 1 290
 	FrameIndex SCU1 E 0 278
-	FrameIndex SCU1 E 1 278
+	FrameIndex SCU1 E 1 291
 	FrameIndex SCU1 F 0 279
-	FrameIndex SCU1 F 1 279
+	FrameIndex SCU1 F 1 292
 	FrameIndex SCU1 G 0 280
-	FrameIndex SCU1 G 1 280
+	FrameIndex SCU1 G 1 293
 	FrameIndex SCU1 H 0 281
-	FrameIndex SCU1 H 1 281
+	FrameIndex SCU1 H 1 294
 	FrameIndex SCU1 I 0 282
-	FrameIndex SCU1 I 1 282
+	FrameIndex SCU1 I 1 295
 	FrameIndex SCU1 J 0 283
-	FrameIndex SCU1 J 1 283
+	FrameIndex SCU1 J 1 296
 	FrameIndex SCU1 K 0 284
-	FrameIndex SCU1 K 1 284
+	FrameIndex SCU1 K 1 297
 	FrameIndex SCU1 L 0 285
-	FrameIndex SCU1 L 1 285
+	FrameIndex SCU1 L 1 298
 	FrameIndex SCU1 M 0 286
-	FrameIndex SCU1 M 1 286
+	FrameIndex SCU1 M 1 299
 	FrameIndex SCU1 N 0 287
-	FrameIndex SCU1 N 1 287
+	FrameIndex SCU1 N 1 300
 	FrameIndex SCU1 O 0 288
-	FrameIndex SCU1 O 1 288
+	FrameIndex SCU1 O 1 301
 
 	FrameIndex SCD1 A 0 290
-	FrameIndex SCD1 A 1 290
+	FrameIndex SCD1 A 1 303
 	FrameIndex SCD1 B 0 291
-	FrameIndex SCD1 B 1 291
+	FrameIndex SCD1 B 1 304
 	FrameIndex SCD1 C 0 292
-	FrameIndex SCD1 C 1 292
+	FrameIndex SCD1 C 1 305
 	FrameIndex SCD1 D 0 293
-	FrameIndex SCD1 D 1 293
+	FrameIndex SCD1 D 1 306
 	FrameIndex SCD1 E 0 294
-	FrameIndex SCD1 E 1 294
+	FrameIndex SCD1 E 1 307
 	FrameIndex SCD1 F 0 295
-	FrameIndex SCD1 F 1 295
+	FrameIndex SCD1 F 1 308
 	FrameIndex SCD1 G 0 296
-	FrameIndex SCD1 G 1 296
+	FrameIndex SCD1 G 1 309
 	FrameIndex SCD1 H 0 297
-	FrameIndex SCD1 H 1 297
+	FrameIndex SCD1 H 1 310
 	FrameIndex SCD1 I 0 298
-	FrameIndex SCD1 I 1 298
+	FrameIndex SCD1 I 1 311
 	FrameIndex SCD1 J 0 299
-	FrameIndex SCD1 J 1 299
+	FrameIndex SCD1 J 1 312
 	FrameIndex SCD1 K 0 300
-	FrameIndex SCD1 K 1 300
+	FrameIndex SCD1 K 1 313
 	FrameIndex SCD1 L 0 301
-	FrameIndex SCD1 L 1 301
+	FrameIndex SCD1 L 1 314
 	FrameIndex SCD1 M 0 302
-	FrameIndex SCD1 M 1 302
+	FrameIndex SCD1 M 1 315
 	FrameIndex SCD1 N 0 303
-	FrameIndex SCD1 N 1 303
+	FrameIndex SCD1 N 1 316
 	FrameIndex SCD1 O 0 304
-	FrameIndex SCD1 O 1 304
+	FrameIndex SCD1 O 1 317
 }
 
 Model HLMagnum

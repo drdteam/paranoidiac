@@ -95,9 +95,8 @@ class ZenTree : Actor
 		HLA2 AB 1;
 		Goto Spawn;
 	Pain:
-		POSS BC 1 A_Pain;
-		POSS D 6;
-		POSS CB 3;
+		HLA1 A 1 A_Pain;
+		HLA1 BCDEFEDCBA 1;
 		Goto Spawn;
 	}
 	void A_TreeLook()

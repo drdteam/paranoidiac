@@ -938,7 +938,7 @@ class HLMagnumAmmo : Ammo replaces Shell
 	}
 }
 
-class HLMagnumAmmoBox : HLMagnumAmmo
+class HLMagnumBox : HLMagnumAmmo
 {
 	Default
 	{

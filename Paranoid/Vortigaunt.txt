@@ -109,8 +109,7 @@ class HLVortigaunt : HLMonster
 		HLD1 CDEF 2;
 		HLD1 G 2 A_PlaySound("halflife/weapons/bodydrop");
 		HLD1 HIJKLMNOPQRSTUVWXYZ[\] 2;
-		HLD2 A 2;
-		HLD2 B -1;
+		HLD2 A -1;
 		Stop;
 	XDeath:
 	Crush:

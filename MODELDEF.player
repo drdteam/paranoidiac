@@ -10,6 +10,9 @@ Model RolfBellmer
 	SurfaceSkin 0 5 "hev_scientistbody_005.png"
 	SurfaceSkin 0 6 "hev_scientistbody_006.png"
 	SurfaceSkin 0 7 "hev_scientistbody_007.png"
+	SurfaceSkin 0 8 "hev_scientistbody_000.png"
+	SurfaceSkin 0 9 "hev_scientistbody_000.png"
+	SurfaceSkin 0 10 "hev_scientistbody_000.png"
 	Model 1 "hev_scientisthead.md3"
 	SurfaceSkin 1 0 "hev_scientistbody_003.png"
 	SurfaceSkin 1 1 "hev_scientisthead_001.png"
@@ -539,260 +542,382 @@ Model RolfBellmer
 Model RolfBellmer
 {
 	Path "Models"
-	Model 0 "otis.md3"
-	SurfaceSkin 0 0 "otis_000.png"
-	SurfaceSkin 0 1 "otis_001.png"
-	SurfaceSkin 0 2 "otis_002.png"
-	SurfaceSkin 0 3 "otis_003.png"
-	SurfaceSkin 0 4 "otis_004.png"
-	SurfaceSkin 0 5 "otis_005.png"
-	SurfaceSkin 0 6 "otis_006.png"
-	SurfaceSkin 0 7 "otis_007.png"
-	Model 1 "otisgun1.md3"
-	Skin 1 "v_desert_eagle_main_000.png"
+	Model 0 "otisbody.md3"
+	SurfaceSkin 0 0 "otisbody_000.png"
+	SurfaceSkin 0 1 "otisbody_001.png"
+	SurfaceSkin 0 2 "otisbody_002.png"
+	Model 1 "otishead.md3"
+	SurfaceSkin 1 0 "otishead_000.png"
+	SurfaceSkin 1 1 "otishead_001.png"
+	SurfaceSkin 1 2 "barney_005.png"
+	SurfaceSkin 1 3 "otishead_003.png"
+	SurfaceSkin 1 4 "otishead_004.png"
+	SurfaceSkin 1 5 "otisbody_000.png"
+	Model 2 "otisgun1.md3"
+	Skin 2 "v_desert_eagle_main_000.png"
 
 	FrameIndex BSI1 A 0 0
 	FrameIndex BSI1 A 1 0
+	FrameIndex BSI1 A 2 0
 	FrameIndex BSI1 B 0 1
 	FrameIndex BSI1 B 1 1
+	FrameIndex BSI1 B 2 1
 	FrameIndex BSI1 C 0 2
 	FrameIndex BSI1 C 1 2
+	FrameIndex BSI1 C 2 2
 	FrameIndex BSI1 D 0 3
 	FrameIndex BSI1 D 1 3
+	FrameIndex BSI1 D 2 3
 	FrameIndex BSI1 E 0 4
 	FrameIndex BSI1 E 1 4
+	FrameIndex BSI1 E 2 4
 	FrameIndex BSI1 F 0 5
 	FrameIndex BSI1 F 1 5
+	FrameIndex BSI1 F 2 5
 	FrameIndex BSI1 G 0 6
 	FrameIndex BSI1 G 1 6
+	FrameIndex BSI1 G 2 6
 	FrameIndex BSI1 H 0 7
 	FrameIndex BSI1 H 1 7
+	FrameIndex BSI1 H 2 7
 	FrameIndex BSI1 I 0 8
 	FrameIndex BSI1 I 1 8
+	FrameIndex BSI1 I 2 8
 	FrameIndex BSI1 J 0 9
 	FrameIndex BSI1 J 1 9
+	FrameIndex BSI1 J 2 9
 	FrameIndex BSI1 K 0 10
 	FrameIndex BSI1 K 1 10
+	FrameIndex BSI1 K 2 10
 	FrameIndex BSI1 L 0 11
 	FrameIndex BSI1 L 1 11
+	FrameIndex BSI1 L 2 11
 	FrameIndex BSI1 M 0 12
 	FrameIndex BSI1 M 1 12
+	FrameIndex BSI1 M 2 12
 	FrameIndex BSI1 N 0 13
 	FrameIndex BSI1 N 1 13
+	FrameIndex BSI1 N 2 13
 	FrameIndex BSI1 O 0 14
 	FrameIndex BSI1 O 1 14
+	FrameIndex BSI1 O 2 14
 	FrameIndex BSI1 P 0 15
 	FrameIndex BSI1 P 1 15
+	FrameIndex BSI1 P 2 15
 	FrameIndex BSI1 Q 0 16
 	FrameIndex BSI1 Q 1 16
+	FrameIndex BSI1 Q 2 16
 	FrameIndex BSI1 R 0 17
 	FrameIndex BSI1 R 1 17
+	FrameIndex BSI1 R 2 17
 	FrameIndex BSI1 S 0 18
 	FrameIndex BSI1 S 1 18
+	FrameIndex BSI1 S 2 18
 	FrameIndex BSI1 T 0 19
 	FrameIndex BSI1 T 1 19
+	FrameIndex BSI1 T 2 19
 	FrameIndex BSI1 U 0 20
 	FrameIndex BSI1 U 1 20
+	FrameIndex BSI1 U 2 20
 	FrameIndex BSI1 V 0 21
 	FrameIndex BSI1 V 1 21
+	FrameIndex BSI1 V 2 21
 	FrameIndex BSI1 W 0 22
 	FrameIndex BSI1 W 1 22
+	FrameIndex BSI1 W 2 22
 	FrameIndex BSI1 X 0 23
 	FrameIndex BSI1 X 1 23
+	FrameIndex BSI1 X 2 23
 	FrameIndex BSI1 Y 0 24
 	FrameIndex BSI1 Y 1 24
+	FrameIndex BSI1 Y 2 24
 	FrameIndex BSI1 Z 0 25
 	FrameIndex BSI1 Z 1 25
+	FrameIndex BSI1 Z 2 25
 	FrameIndex BSI1 [ 0 26
 	FrameIndex BSI1 [ 1 26
+	FrameIndex BSI1 [ 2 26
 	FrameIndex BSI1 \ 0 27
 	FrameIndex BSI1 \ 1 27
+	FrameIndex BSI1 \ 2 27
 	FrameIndex BSI1 ] 0 28
 	FrameIndex BSI1 ] 1 28
+	FrameIndex BSI1 ] 2 28
 	FrameIndex BSI2 A 0 29
 	FrameIndex BSI2 A 1 29
+	FrameIndex BSI2 A 2 29
 	FrameIndex BSI2 B 0 30
 	FrameIndex BSI2 B 1 30
+	FrameIndex BSI2 B 2 30
 
 	FrameIndex BSR1 A 0 63
 	FrameIndex BSR1 A 1 63
+	FrameIndex BSR1 A 2 63
 	FrameIndex BSR1 B 0 64
 	FrameIndex BSR1 B 1 64
+	FrameIndex BSR1 B 2 64
 	FrameIndex BSR1 C 0 65
 	FrameIndex BSR1 C 1 65
+	FrameIndex BSR1 C 2 65
 	FrameIndex BSR1 D 0 66
 	FrameIndex BSR1 D 1 66
+	FrameIndex BSR1 D 2 66
 	FrameIndex BSR1 E 0 67
 	FrameIndex BSR1 E 1 67
+	FrameIndex BSR1 E 2 67
 	FrameIndex BSR1 F 0 68
 	FrameIndex BSR1 F 1 68
+	FrameIndex BSR1 F 2 68
 	FrameIndex BSR1 G 0 69
 	FrameIndex BSR1 G 1 69
+	FrameIndex BSR1 G 2 69
 	FrameIndex BSR1 H 0 70
 	FrameIndex BSR1 H 1 70
+	FrameIndex BSR1 H 2 70
 	FrameIndex BSR1 I 0 71
 	FrameIndex BSR1 I 1 71
+	FrameIndex BSR1 I 2 71
 	FrameIndex BSR1 J 0 72
 	FrameIndex BSR1 J 1 72
+	FrameIndex BSR1 J 2 72
 	FrameIndex BSR1 K 0 73
 	FrameIndex BSR1 K 1 73
+	FrameIndex BSR1 K 2 73
 	FrameIndex BSR1 L 0 74
 	FrameIndex BSR1 L 1 74
+	FrameIndex BSR1 L 2 74
 	FrameIndex BSR1 M 0 75
 	FrameIndex BSR1 M 1 75
+	FrameIndex BSR1 M 2 75
 	FrameIndex BSR1 N 0 76
 	FrameIndex BSR1 N 1 76
+	FrameIndex BSR1 N 2 76
 	FrameIndex BSR1 O 0 77
 	FrameIndex BSR1 O 1 77
+	FrameIndex BSR1 O 2 77
 	FrameIndex BSR1 P 0 78
 	FrameIndex BSR1 P 1 78
+	FrameIndex BSR1 P 2 78
 	FrameIndex BSR1 Q 0 79
 	FrameIndex BSR1 Q 1 79
+	FrameIndex BSR1 Q 2 79
 	FrameIndex BSR1 R 0 80
 	FrameIndex BSR1 R 1 80
+	FrameIndex BSR1 R 2 80
 	FrameIndex BSR1 S 0 81
 	FrameIndex BSR1 S 1 81
+	FrameIndex BSR1 S 2 81
 	FrameIndex BSR1 T 0 82
 	FrameIndex BSR1 T 1 82
+	FrameIndex BSR1 T 2 82
 	FrameIndex BSR1 U 0 83
 	FrameIndex BSR1 U 1 83
+	FrameIndex BSR1 U 2 83
 	FrameIndex BSR1 V 0 84
 	FrameIndex BSR1 V 1 84
+	FrameIndex BSR1 V 2 84
 	FrameIndex BSR1 W 0 85
 	FrameIndex BSR1 W 1 85
+	FrameIndex BSR1 W 2 85
 
 	FrameIndex BSA1 A 0 216
 	FrameIndex BSA1 A 1 216
+	FrameIndex BSA1 A 2 216
 	FrameIndex BSA1 B 0 217
 	FrameIndex BSA1 B 1 217
+	FrameIndex BSA1 B 2 217
 	FrameIndex BSA1 C 0 218
 	FrameIndex BSA1 C 1 218
+	FrameIndex BSA1 C 2 218
 	FrameIndex BSA1 D 0 219
 	FrameIndex BSA1 D 1 219
+	FrameIndex BSA1 D 2 219
 	FrameIndex BSA1 E 0 220
 	FrameIndex BSA1 E 1 220
+	FrameIndex BSA1 E 2 220
 	FrameIndex BSA1 F 0 221
 	FrameIndex BSA1 F 1 221
+	FrameIndex BSA1 F 2 221
 	FrameIndex BSA1 G 0 222
 	FrameIndex BSA1 G 1 222
+	FrameIndex BSA1 G 2 222
 	FrameIndex BSA1 H 0 223
 	FrameIndex BSA1 H 1 223
+	FrameIndex BSA1 H 2 223
 	FrameIndex BSA1 I 0 224
 	FrameIndex BSA1 I 1 224
+	FrameIndex BSA1 I 2 224
 	FrameIndex BSA1 J 0 225
 	FrameIndex BSA1 J 1 225
+	FrameIndex BSA1 J 2 225
 	FrameIndex BSA1 K 0 226
 	FrameIndex BSA1 K 1 226
+	FrameIndex BSA1 K 2 226
 	FrameIndex BSA1 L 0 227
 	FrameIndex BSA1 L 1 227
+	FrameIndex BSA1 L 2 227
 	FrameIndex BSA1 M 0 228
 	FrameIndex BSA1 M 1 228
+	FrameIndex BSA1 M 2 228
 	FrameIndex BSA1 N 0 229
 	FrameIndex BSA1 N 1 229
+	FrameIndex BSA1 N 2 229
 	FrameIndex BSA1 O 0 230
 	FrameIndex BSA1 O 1 230
+	FrameIndex BSA1 O 2 230
 	FrameIndex BSA1 P 0 231
 	FrameIndex BSA1 P 1 231
+	FrameIndex BSA1 P 2 231
 	FrameIndex BSA1 Q 0 232
 	FrameIndex BSA1 Q 1 232
+	FrameIndex BSA1 Q 2 232
 	FrameIndex BSA1 R 0 233
 	FrameIndex BSA1 R 1 233
+	FrameIndex BSA1 R 2 233
 	FrameIndex BSA1 S 0 234
 	FrameIndex BSA1 S 1 234
+	FrameIndex BSA1 S 2 234
 	FrameIndex BSA1 T 0 235
 	FrameIndex BSA1 T 1 235
+	FrameIndex BSA1 T 2 235
 	FrameIndex BSA1 U 0 236
 	FrameIndex BSA1 U 1 236
+	FrameIndex BSA1 U 2 236
 	FrameIndex BSA1 V 0 237
 	FrameIndex BSA1 V 1 237
+	FrameIndex BSA1 V 2 237
 	FrameIndex BSA1 W 0 238
 	FrameIndex BSA1 W 1 238
+	FrameIndex BSA1 W 2 238
 	FrameIndex BSA1 X 0 239
 	FrameIndex BSA1 X 1 239
+	FrameIndex BSA1 X 2 239
 	FrameIndex BSA1 Y 0 240
 	FrameIndex BSA1 Y 1 240
+	FrameIndex BSA1 Y 2 240
 	FrameIndex BSA1 Z 0 241
 	FrameIndex BSA1 Z 1 241
+	FrameIndex BSA1 Z 2 241
 	FrameIndex BSA1 [ 0 242
 	FrameIndex BSA1 [ 1 242
+	FrameIndex BSA1 [ 2 242
 	FrameIndex BSA1 \ 0 243
 	FrameIndex BSA1 \ 1 243
+	FrameIndex BSA1 \ 2 243
 	FrameIndex BSA1 ] 0 244
 	FrameIndex BSA1 ] 1 244
+	FrameIndex BSA1 ] 2 244
 	FrameIndex BSA2 A 0 245
 	FrameIndex BSA2 A 1 245
+	FrameIndex BSA2 A 2 245
 	FrameIndex BSA2 B 0 246
 	FrameIndex BSA2 B 1 246
+	FrameIndex BSA2 B 2 246
 
-	FrameIndex BSP1 A 0 165
-	FrameIndex BSP1 A 1 165
-	FrameIndex BSP1 B 0 166
-	FrameIndex BSP1 B 1 166
-	FrameIndex BSP1 C 0 167
-	FrameIndex BSP1 C 1 167
-	FrameIndex BSP1 D 0 168
-	FrameIndex BSP1 D 1 168
-	FrameIndex BSP1 E 0 169
-	FrameIndex BSP1 E 1 169
-	FrameIndex BSP1 F 0 170
-	FrameIndex BSP1 F 1 170
-	FrameIndex BSP1 G 0 171
-	FrameIndex BSP1 G 1 171
-	FrameIndex BSP1 H 0 172
-	FrameIndex BSP1 H 1 172
-	FrameIndex BSP1 I 0 173
-	FrameIndex BSP1 I 1 173
-	FrameIndex BSP1 J 0 174
-	FrameIndex BSP1 J 1 174
-	FrameIndex BSP1 K 0 175
-	FrameIndex BSP1 K 1 175
-	FrameIndex BSP1 L 0 176
-	FrameIndex BSP1 L 1 176
-	FrameIndex BSP1 M 0 177
-	FrameIndex BSP1 M 1 177
-	FrameIndex BSP1 N 0 178
-	FrameIndex BSP1 N 1 178
-	FrameIndex BSP1 O 0 179
-	FrameIndex BSP1 O 1 179
-	FrameIndex BSP1 P 0 180
-	FrameIndex BSP1 P 1 180
-	FrameIndex BSP1 Q 0 181
-	FrameIndex BSP1 Q 1 181
-	FrameIndex BSP1 R 0 182
-	FrameIndex BSP1 R 1 182
-	FrameIndex BSP1 S 0 183
-	FrameIndex BSP1 S 1 183
-	FrameIndex BSP1 T 0 184
-	FrameIndex BSP1 T 1 184
-	FrameIndex BSP1 U 0 185
-	FrameIndex BSP1 U 1 185
+	FrameIndex BSP1 A 0 164
+	FrameIndex BSP1 A 1 164
+	FrameIndex BSP1 A 2 164
+	FrameIndex BSP1 B 0 165
+	FrameIndex BSP1 B 1 165
+	FrameIndex BSP1 B 2 165
+	FrameIndex BSP1 C 0 166
+	FrameIndex BSP1 C 1 166
+	FrameIndex BSP1 C 2 166
+	FrameIndex BSP1 D 0 167
+	FrameIndex BSP1 D 1 167
+	FrameIndex BSP1 D 2 167
+	FrameIndex BSP1 E 0 168
+	FrameIndex BSP1 E 1 168
+	FrameIndex BSP1 E 2 168
+	FrameIndex BSP1 F 0 169
+	FrameIndex BSP1 F 1 169
+	FrameIndex BSP1 F 2 169
+	FrameIndex BSP1 G 0 170
+	FrameIndex BSP1 G 1 170
+	FrameIndex BSP1 G 2 170
+	FrameIndex BSP1 H 0 171
+	FrameIndex BSP1 H 1 171
+	FrameIndex BSP1 H 2 171
+	FrameIndex BSP1 I 0 172
+	FrameIndex BSP1 I 1 172
+	FrameIndex BSP1 I 2 172
+	FrameIndex BSP1 J 0 173
+	FrameIndex BSP1 J 1 173
+	FrameIndex BSP1 J 2 173
+	FrameIndex BSP1 K 0 174
+	FrameIndex BSP1 K 1 174
+	FrameIndex BSP1 K 2 174
+	FrameIndex BSP1 L 0 175
+	FrameIndex BSP1 L 1 175
+	FrameIndex BSP1 L 2 175
+	FrameIndex BSP1 M 0 176
+	FrameIndex BSP1 M 1 176
+	FrameIndex BSP1 M 2 176
+	FrameIndex BSP1 N 0 177
+	FrameIndex BSP1 N 1 177
+	FrameIndex BSP1 N 2 177
+	FrameIndex BSP1 O 0 178
+	FrameIndex BSP1 O 1 178
+	FrameIndex BSP1 O 2 178
+	FrameIndex BSP1 P 0 179
+	FrameIndex BSP1 P 1 179
+	FrameIndex BSP1 P 2 179
+	FrameIndex BSP1 Q 0 180
+	FrameIndex BSP1 Q 1 180
+	FrameIndex BSP1 Q 2 180
+	FrameIndex BSP1 R 0 181
+	FrameIndex BSP1 R 1 181
+	FrameIndex BSP1 R 2 181
+	FrameIndex BSP1 S 0 182
+	FrameIndex BSP1 S 1 182
+	FrameIndex BSP1 S 2 182
+	FrameIndex BSP1 T 0 183
+	FrameIndex BSP1 T 1 183
+	FrameIndex BSP1 T 2 183
+	FrameIndex BSP1 U 0 184
+	FrameIndex BSP1 U 1 184
+	FrameIndex BSP1 U 2 184
 
 	FrameIndex BSD1 A 0 371
 	FrameIndex BSD1 A 1 371
+	FrameIndex BSD1 A 2 371
 	FrameIndex BSD1 B 0 372
 	FrameIndex BSD1 B 1 372
+	FrameIndex BSD1 B 2 372
 	FrameIndex BSD1 C 0 373
 	FrameIndex BSD1 C 1 373
+	FrameIndex BSD1 C 2 373
 	FrameIndex BSD1 D 0 374
 	FrameIndex BSD1 D 1 374
+	FrameIndex BSD1 D 2 374
 	FrameIndex BSD1 E 0 375
 	FrameIndex BSD1 E 1 375
+	FrameIndex BSD1 E 2 375
 	FrameIndex BSD1 F 0 376
 	FrameIndex BSD1 F 1 376
+	FrameIndex BSD1 F 2 376
 	FrameIndex BSD1 G 0 377
 	FrameIndex BSD1 G 1 377
+	FrameIndex BSD1 G 2 377
 	FrameIndex BSD1 H 0 378
 	FrameIndex BSD1 H 1 378
+	FrameIndex BSD1 H 2 378
 	FrameIndex BSD1 I 0 379
 	FrameIndex BSD1 I 1 379
+	FrameIndex BSD1 I 2 379
 	FrameIndex BSD1 J 0 380
 	FrameIndex BSD1 J 1 380
+	FrameIndex BSD1 J 2 380
 	FrameIndex BSD1 K 0 381
 	FrameIndex BSD1 K 1 381
+	FrameIndex BSD1 K 2 381
 	FrameIndex BSD1 L 0 382
 	FrameIndex BSD1 L 1 382
+	FrameIndex BSD1 L 2 382
 	FrameIndex BSD1 M 0 383
 	FrameIndex BSD1 M 1 383
+	FrameIndex BSD1 M 2 383
 	FrameIndex BSD1 N 0 384
 	FrameIndex BSD1 N 1 384
+	FrameIndex BSD1 N 2 384
 }

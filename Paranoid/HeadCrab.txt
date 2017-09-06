@@ -57,10 +57,11 @@ class HLHeadCrab : HLMonster
 		HLA1 I 1 A_PlaySound("halflife/monsters/headcrab/jump");
 		HLA1 KMOQS 1;
 		HLA1 U 1 A_HeadCrabAttack(5,8.75);
-		HLA1 WY[] 1;
-		HLA1 \ 3 A_CheckFloor(1);
+		HLA1 U 1 A_CheckFloor(1);
 		Wait;
-		HLA1 ] 60 A_stop;
+		HLA1 W 1 A_Stop;
+		HLA1 Y[] 1;
+		HLA2 B 60;
 		Goto See;
 	Pain:
 		HLP1 A 1 A_Pain;
@@ -80,11 +81,10 @@ class HLHeadCrab : HLMonster
 		}
 		Goto See;
 	Death:
-		HLD1 A 1 A_Scream;
-		HLD1 B 1;
-		HLD1 C 1 A_NoBlocking;
-		HLD1 DEFGHIJKLMNOPQRSTUVWXYZ[\ 1;
-		HLD1 ] 2
+		HLD1 A 1 A_ScreamAndUnblock;
+		HLD1 BCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1;
+		HLD2 AB 1;
+		HLD2 C 2
 		{
 			if(waterlevel>=3)
 				vel.z+=.75;

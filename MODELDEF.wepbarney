@@ -271,314 +271,314 @@ Model HLPistol
 	FrameIndex BSI1 A 1 0
 
 	FrameIndex BSF1 A 0 150
-	FrameIndex BSF1 A 1 150
+	FrameIndex BSF1 A 1 163
 	FrameIndex BSF1 B 0 151
-	FrameIndex BSF1 B 1 151
+	FrameIndex BSF1 B 1 164
 	FrameIndex BSF1 C 0 152
-	FrameIndex BSF1 C 1 152
+	FrameIndex BSF1 C 1 165
 	FrameIndex BSF1 D 0 153
-	FrameIndex BSF1 D 1 153
+	FrameIndex BSF1 D 1 166
 	FrameIndex BSF1 E 0 154
-	FrameIndex BSF1 E 1 154
+	FrameIndex BSF1 E 1 167
 	FrameIndex BSF1 F 0 155
-	FrameIndex BSF1 F 1 155
+	FrameIndex BSF1 F 1 168
 	FrameIndex BSF1 G 0 156
-	FrameIndex BSF1 G 1 156
+	FrameIndex BSF1 G 1 169
 	FrameIndex BSF1 H 0 157
-	FrameIndex BSF1 H 1 157
+	FrameIndex BSF1 H 1 170
 	FrameIndex BSF1 I 0 158
-	FrameIndex BSF1 I 1 158
+	FrameIndex BSF1 I 1 171
 	FrameIndex BSF1 J 0 159
-	FrameIndex BSF1 J 1 159
+	FrameIndex BSF1 J 1 172
 	FrameIndex BSF1 K 0 160
-	FrameIndex BSF1 K 1 160
+	FrameIndex BSF1 K 1 173
 	FrameIndex BSF1 L 0 161
-	FrameIndex BSF1 L 1 161
+	FrameIndex BSF1 L 1 174
 	FrameIndex BSF1 M 0 162
-	FrameIndex BSF1 M 1 162
+	FrameIndex BSF1 M 1 175
 	FrameIndex BSF1 N 0 163
-	FrameIndex BSF1 N 1 163
+	FrameIndex BSF1 N 1 176
 	FrameIndex BSF1 O 0 164
-	FrameIndex BSF1 O 1 164
+	FrameIndex BSF1 O 1 177
 	FrameIndex BSF1 P 0 165
-	FrameIndex BSF1 P 1 165
+	FrameIndex BSF1 P 1 178
 	FrameIndex BSF1 Q 0 166
-	FrameIndex BSF1 Q 1 166
+	FrameIndex BSF1 Q 1 179
 	FrameIndex BSF1 R 0 167
-	FrameIndex BSF1 R 1 167
+	FrameIndex BSF1 R 1 180
 	FrameIndex BSF1 S 0 168
-	FrameIndex BSF1 S 1 168
+	FrameIndex BSF1 S 1 181
 
 	FrameIndex BSF1 U 0 170
-	FrameIndex BSF1 U 1 170
+	FrameIndex BSF1 U 1 183
 	FrameIndex BSF1 V 0 171
-	FrameIndex BSF1 V 1 171
+	FrameIndex BSF1 V 1 184
 	FrameIndex BSF1 W 0 172
-	FrameIndex BSF1 W 1 172
+	FrameIndex BSF1 W 1 185
 	FrameIndex BSF1 X 0 173
-	FrameIndex BSF1 X 1 173
+	FrameIndex BSF1 X 1 186
 	FrameIndex BSF1 Y 0 174
-	FrameIndex BSF1 Y 1 174
+	FrameIndex BSF1 Y 1 187
 	FrameIndex BSF1 Z 0 175
-	FrameIndex BSF1 Z 1 175
+	FrameIndex BSF1 Z 1 188
 	FrameIndex BSF1 [ 0 176
-	FrameIndex BSF1 [ 1 176
+	FrameIndex BSF1 [ 1 189
 	FrameIndex BSF1 \ 0 177
-	FrameIndex BSF1 \ 1 177
+	FrameIndex BSF1 \ 1 190
 	FrameIndex BSF1 ] 0 178
-	FrameIndex BSF1 ] 1 178
+	FrameIndex BSF1 ] 1 191
 	FrameIndex BSF2 A 0 179
-	FrameIndex BSF2 A 1 179
+	FrameIndex BSF2 A 1 192
 	FrameIndex BSF2 B 0 180
-	FrameIndex BSF2 B 1 180
+	FrameIndex BSF2 B 1 193
 	FrameIndex BSF2 C 0 181
-	FrameIndex BSF2 C 1 181
+	FrameIndex BSF2 C 1 194
 	FrameIndex BSF2 D 0 182
-	FrameIndex BSF2 D 1 182
+	FrameIndex BSF2 D 1 195
 	FrameIndex BSF2 E 0 183
-	FrameIndex BSF2 E 1 183
+	FrameIndex BSF2 E 1 196
 	FrameIndex BSF2 F 0 184
-	FrameIndex BSF2 F 1 184
+	FrameIndex BSF2 F 1 197
 	FrameIndex BSF2 G 0 185
-	FrameIndex BSF2 G 1 185
+	FrameIndex BSF2 G 1 198
 	FrameIndex BSF2 H 0 186
-	FrameIndex BSF2 H 1 186
+	FrameIndex BSF2 H 1 199
 	FrameIndex BSF2 I 0 187
-	FrameIndex BSF2 I 1 187
+	FrameIndex BSF2 I 1 200
 	FrameIndex BSF2 J 0 188
-	FrameIndex BSF2 J 1 188
+	FrameIndex BSF2 J 1 201
 
 	FrameIndex BSR1 A 0 232
-	FrameIndex BSR1 A 1 232
+	FrameIndex BSR1 A 1 245
 	FrameIndex BSR1 B 0 233
-	FrameIndex BSR1 B 1 233
+	FrameIndex BSR1 B 1 246
 	FrameIndex BSR1 C 0 234
-	FrameIndex BSR1 C 1 234
+	FrameIndex BSR1 C 1 247
 	FrameIndex BSR1 D 0 235
-	FrameIndex BSR1 D 1 235
+	FrameIndex BSR1 D 1 248
 	FrameIndex BSR1 E 0 236
-	FrameIndex BSR1 E 1 236
+	FrameIndex BSR1 E 1 249
 	FrameIndex BSR1 F 0 237
-	FrameIndex BSR1 F 1 237
+	FrameIndex BSR1 F 1 250
 	FrameIndex BSR1 G 0 238
-	FrameIndex BSR1 G 1 238
+	FrameIndex BSR1 G 1 251
 	FrameIndex BSR1 H 0 239
-	FrameIndex BSR1 H 1 239
+	FrameIndex BSR1 H 1 252
 	FrameIndex BSR1 I 0 240
-	FrameIndex BSR1 I 1 240
+	FrameIndex BSR1 I 1 253
 	FrameIndex BSR1 J 0 241
-	FrameIndex BSR1 J 1 241
+	FrameIndex BSR1 J 1 254
 	FrameIndex BSR1 K 0 242
-	FrameIndex BSR1 K 1 242
+	FrameIndex BSR1 K 1 255
 	FrameIndex BSR1 L 0 243
-	FrameIndex BSR1 L 1 243
+	FrameIndex BSR1 L 1 256
 	FrameIndex BSR1 M 0 244
-	FrameIndex BSR1 M 1 244
+	FrameIndex BSR1 M 1 257
 	FrameIndex BSR1 N 0 245
-	FrameIndex BSR1 N 1 245
+	FrameIndex BSR1 N 1 258
 	FrameIndex BSR1 O 0 246
-	FrameIndex BSR1 O 1 246
+	FrameIndex BSR1 O 1 259
 	FrameIndex BSR1 P 0 247
-	FrameIndex BSR1 P 1 247
+	FrameIndex BSR1 P 1 260
 	FrameIndex BSR1 Q 0 248
-	FrameIndex BSR1 Q 1 248
+	FrameIndex BSR1 Q 1 261
 	FrameIndex BSR1 R 0 249
-	FrameIndex BSR1 R 1 249
+	FrameIndex BSR1 R 1 262
 	FrameIndex BSR1 S 0 250
-	FrameIndex BSR1 S 1 250
+	FrameIndex BSR1 S 1 263
 	FrameIndex BSR1 T 0 251
-	FrameIndex BSR1 T 1 251
+	FrameIndex BSR1 T 1 264
 	FrameIndex BSR1 U 0 252
-	FrameIndex BSR1 U 1 252
+	FrameIndex BSR1 U 1 265
 	FrameIndex BSR1 V 0 253
-	FrameIndex BSR1 V 1 253
+	FrameIndex BSR1 V 1 266
 	FrameIndex BSR1 W 0 254
-	FrameIndex BSR1 W 1 254
+	FrameIndex BSR1 W 1 267
 	FrameIndex BSR1 X 0 255
-	FrameIndex BSR1 X 1 255
+	FrameIndex BSR1 X 1 268
 	FrameIndex BSR1 Y 0 256
-	FrameIndex BSR1 Y 1 256
+	FrameIndex BSR1 Y 1 269
 	FrameIndex BSR1 Z 0 257
-	FrameIndex BSR1 Z 1 257
+	FrameIndex BSR1 Z 1 270
 	FrameIndex BSR1 [ 0 258
-	FrameIndex BSR1 [ 1 258
+	FrameIndex BSR1 [ 1 271
 	FrameIndex BSR1 \ 0 259
-	FrameIndex BSR1 \ 1 259
+	FrameIndex BSR1 \ 1 272
 	FrameIndex BSR1 ] 0 260
-	FrameIndex BSR1 ] 1 260
+	FrameIndex BSR1 ] 1 273
 	FrameIndex BSR2 A 0 261
-	FrameIndex BSR2 A 1 261
+	FrameIndex BSR2 A 1 274
 	FrameIndex BSR2 B 0 262
-	FrameIndex BSR2 B 1 262
+	FrameIndex BSR2 B 1 275
 	FrameIndex BSR2 C 0 263
-	FrameIndex BSR2 C 1 263
+	FrameIndex BSR2 C 1 276
 	FrameIndex BSR2 D 0 264
-	FrameIndex BSR2 D 1 264
+	FrameIndex BSR2 D 1 277
 	FrameIndex BSR2 E 0 265
-	FrameIndex BSR2 E 1 265
+	FrameIndex BSR2 E 1 278
 	FrameIndex BSR2 F 0 266
-	FrameIndex BSR2 F 1 266
+	FrameIndex BSR2 F 1 279
 	FrameIndex BSR2 G 0 267
-	FrameIndex BSR2 G 1 267
+	FrameIndex BSR2 G 1 280
 	FrameIndex BSR2 H 0 268
-	FrameIndex BSR2 H 1 268
+	FrameIndex BSR2 H 1 281
 	FrameIndex BSR2 I 0 269
-	FrameIndex BSR2 I 1 269
+	FrameIndex BSR2 I 1 282
 	FrameIndex BSR2 J 0 270
-	FrameIndex BSR2 J 1 270
+	FrameIndex BSR2 J 1 283
 	FrameIndex BSR2 K 0 271
-	FrameIndex BSR2 K 1 271
+	FrameIndex BSR2 K 1 284
 	FrameIndex BSR2 L 0 272
-	FrameIndex BSR2 L 1 272
+	FrameIndex BSR2 L 1 285
 	FrameIndex BSR2 M 0 273
-	FrameIndex BSR2 M 1 273
+	FrameIndex BSR2 M 1 286
 
 	FrameIndex BSR2 N 0 190
-	FrameIndex BSR2 N 1 190
+	FrameIndex BSR2 N 1 203
 	FrameIndex BSR2 O 0 191
-	FrameIndex BSR2 O 1 191
+	FrameIndex BSR2 O 1 204
 	FrameIndex BSR2 P 0 192
-	FrameIndex BSR2 P 1 192
+	FrameIndex BSR2 P 1 205
 	FrameIndex BSR2 Q 0 193
-	FrameIndex BSR2 Q 1 193
+	FrameIndex BSR2 Q 1 206
 	FrameIndex BSR2 R 0 194
-	FrameIndex BSR2 R 1 194
+	FrameIndex BSR2 R 1 207
 	FrameIndex BSR2 S 0 195
-	FrameIndex BSR2 S 1 195
+	FrameIndex BSR2 S 1 208
 	FrameIndex BSR2 T 0 196
-	FrameIndex BSR2 T 1 196
+	FrameIndex BSR2 T 1 209
 	FrameIndex BSR2 U 0 197
-	FrameIndex BSR2 U 1 197
+	FrameIndex BSR2 U 1 210
 	FrameIndex BSR2 V 0 198
-	FrameIndex BSR2 V 1 198
+	FrameIndex BSR2 V 1 211
 	FrameIndex BSR2 W 0 199
-	FrameIndex BSR2 W 1 199
+	FrameIndex BSR2 W 1 212
 	FrameIndex BSR2 X 0 200
-	FrameIndex BSR2 X 1 200
+	FrameIndex BSR2 X 1 213
 	FrameIndex BSR2 Y 0 201
-	FrameIndex BSR2 Y 1 201
+	FrameIndex BSR2 Y 1 214
 	FrameIndex BSR2 Z 0 202
-	FrameIndex BSR2 Z 1 202
+	FrameIndex BSR2 Z 1 215
 	FrameIndex BSR2 [ 0 203
-	FrameIndex BSR2 [ 1 203
+	FrameIndex BSR2 [ 1 216
 	FrameIndex BSR2 \ 0 204
-	FrameIndex BSR2 \ 1 204
+	FrameIndex BSR2 \ 1 217
 	FrameIndex BSR2 ] 0 205
-	FrameIndex BSR2 ] 1 205
+	FrameIndex BSR2 ] 1 218
 	FrameIndex BSR3 A 0 206
-	FrameIndex BSR3 A 1 206
+	FrameIndex BSR3 A 1 219
 	FrameIndex BSR3 B 0 207
-	FrameIndex BSR3 B 1 207
+	FrameIndex BSR3 B 1 220
 	FrameIndex BSR3 C 0 208
-	FrameIndex BSR3 C 1 208
+	FrameIndex BSR3 C 1 221
 	FrameIndex BSR3 D 0 209
-	FrameIndex BSR3 D 1 209
+	FrameIndex BSR3 D 1 222
 	FrameIndex BSR3 E 0 210
-	FrameIndex BSR3 E 1 210
+	FrameIndex BSR3 E 1 223
 	FrameIndex BSR3 F 0 211
-	FrameIndex BSR3 F 1 211
+	FrameIndex BSR3 F 1 224
 	FrameIndex BSR3 G 0 212
-	FrameIndex BSR3 G 1 212
+	FrameIndex BSR3 G 1 225
 	FrameIndex BSR3 H 0 213
-	FrameIndex BSR3 H 1 213
+	FrameIndex BSR3 H 1 226
 	FrameIndex BSR3 I 0 214
-	FrameIndex BSR3 I 1 214
+	FrameIndex BSR3 I 1 227
 	FrameIndex BSR3 J 0 215
-	FrameIndex BSR3 J 1 215
+	FrameIndex BSR3 J 1 228
 	FrameIndex BSR3 K 0 216
-	FrameIndex BSR3 K 1 216
+	FrameIndex BSR3 K 1 229
 	FrameIndex BSR3 L 0 217
-	FrameIndex BSR3 L 1 217
+	FrameIndex BSR3 L 1 230
 	FrameIndex BSR3 M 0 218
-	FrameIndex BSR3 M 1 218
+	FrameIndex BSR3 M 1 231
 	FrameIndex BSR3 N 0 219
-	FrameIndex BSR3 N 1 219
+	FrameIndex BSR3 N 1 232
 	FrameIndex BSR3 O 0 220
-	FrameIndex BSR3 O 1 220
+	FrameIndex BSR3 O 1 233
 	FrameIndex BSR3 P 0 221
-	FrameIndex BSR3 P 1 221
+	FrameIndex BSR3 P 1 234
 	FrameIndex BSR3 Q 0 222
-	FrameIndex BSR3 Q 1 222
+	FrameIndex BSR3 Q 1 235
 	FrameIndex BSR3 R 0 223
-	FrameIndex BSR3 R 1 223
+	FrameIndex BSR3 R 1 236
 	FrameIndex BSR3 S 0 224
-	FrameIndex BSR3 S 1 224
+	FrameIndex BSR3 S 1 237
 	FrameIndex BSR3 T 0 225
-	FrameIndex BSR3 T 1 225
+	FrameIndex BSR3 T 1 238
 	FrameIndex BSR3 U 0 226
-	FrameIndex BSR3 U 1 226
+	FrameIndex BSR3 U 1 239
 	FrameIndex BSR3 V 0 227
-	FrameIndex BSR3 V 1 227
+	FrameIndex BSR3 V 1 240
 	FrameIndex BSR3 W 0 228
-	FrameIndex BSR3 W 1 228
+	FrameIndex BSR3 W 1 241
 	FrameIndex BSR3 X 0 229
-	FrameIndex BSR3 X 1 229
+	FrameIndex BSR3 X 1 242
 	FrameIndex BSR3 Y 0 230
-	FrameIndex BSR3 Y 1 230
+	FrameIndex BSR3 Y 1 243
 	FrameIndex BSR3 Z 0 231
-	FrameIndex BSR3 Z 1 231
+	FrameIndex BSR3 Z 1 244
 
 	FrameIndex BSU1 A 0 274
-	FrameIndex BSU1 A 1 274
+	FrameIndex BSU1 A 1 287
 	FrameIndex BSU1 B 0 275
-	FrameIndex BSU1 B 1 275
+	FrameIndex BSU1 B 1 288
 	FrameIndex BSU1 C 0 276
-	FrameIndex BSU1 C 1 276
+	FrameIndex BSU1 C 1 289
 	FrameIndex BSU1 D 0 277
-	FrameIndex BSU1 D 1 277
+	FrameIndex BSU1 D 1 290
 	FrameIndex BSU1 E 0 278
-	FrameIndex BSU1 E 1 278
+	FrameIndex BSU1 E 1 291
 	FrameIndex BSU1 F 0 279
-	FrameIndex BSU1 F 1 279
+	FrameIndex BSU1 F 1 292
 	FrameIndex BSU1 G 0 280
-	FrameIndex BSU1 G 1 280
+	FrameIndex BSU1 G 1 293
 	FrameIndex BSU1 H 0 281
-	FrameIndex BSU1 H 1 281
+	FrameIndex BSU1 H 1 294
 	FrameIndex BSU1 I 0 282
-	FrameIndex BSU1 I 1 282
+	FrameIndex BSU1 I 1 295
 	FrameIndex BSU1 J 0 283
-	FrameIndex BSU1 J 1 283
+	FrameIndex BSU1 J 1 296
 	FrameIndex BSU1 K 0 284
-	FrameIndex BSU1 K 1 284
+	FrameIndex BSU1 K 1 297
 	FrameIndex BSU1 L 0 285
-	FrameIndex BSU1 L 1 285
+	FrameIndex BSU1 L 1 298
 	FrameIndex BSU1 M 0 286
-	FrameIndex BSU1 M 1 286
+	FrameIndex BSU1 M 1 299
 	FrameIndex BSU1 N 0 287
-	FrameIndex BSU1 N 1 287
+	FrameIndex BSU1 N 1 300
 	FrameIndex BSU1 O 0 288
-	FrameIndex BSU1 O 1 288
+	FrameIndex BSU1 O 1 301
 
 	FrameIndex BSD1 A 0 290
-	FrameIndex BSD1 A 1 290
+	FrameIndex BSD1 A 1 303
 	FrameIndex BSD1 B 0 291
-	FrameIndex BSD1 B 1 291
+	FrameIndex BSD1 B 1 304
 	FrameIndex BSD1 C 0 292
-	FrameIndex BSD1 C 1 292
+	FrameIndex BSD1 C 1 305
 	FrameIndex BSD1 D 0 293
-	FrameIndex BSD1 D 1 293
+	FrameIndex BSD1 D 1 306
 	FrameIndex BSD1 E 0 294
-	FrameIndex BSD1 E 1 294
+	FrameIndex BSD1 E 1 307
 	FrameIndex BSD1 F 0 295
-	FrameIndex BSD1 F 1 295
+	FrameIndex BSD1 F 1 308
 	FrameIndex BSD1 G 0 296
-	FrameIndex BSD1 G 1 296
+	FrameIndex BSD1 G 1 309
 	FrameIndex BSD1 H 0 297
-	FrameIndex BSD1 H 1 297
+	FrameIndex BSD1 H 1 310
 	FrameIndex BSD1 I 0 298
-	FrameIndex BSD1 I 1 298
+	FrameIndex BSD1 I 1 311
 	FrameIndex BSD1 J 0 299
-	FrameIndex BSD1 J 1 299
+	FrameIndex BSD1 J 1 312
 	FrameIndex BSD1 K 0 300
-	FrameIndex BSD1 K 1 300
+	FrameIndex BSD1 K 1 313
 	FrameIndex BSD1 L 0 301
-	FrameIndex BSD1 L 1 301
+	FrameIndex BSD1 L 1 314
 	FrameIndex BSD1 M 0 302
-	FrameIndex BSD1 M 1 302
+	FrameIndex BSD1 M 1 315
 	FrameIndex BSD1 N 0 303
-	FrameIndex BSD1 N 1 303
+	FrameIndex BSD1 N 1 316
 	FrameIndex BSD1 O 0 304
-	FrameIndex BSD1 O 1 304
+	FrameIndex BSD1 O 1 317
 }
 
 Model HLMagnum

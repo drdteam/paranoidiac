@@ -23,6 +23,11 @@ class HLBullSquid : HLMonster
 	}
 	States
 	{
+	Spawn:
+		HLI1 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 2 A_Look;
+		HLI2 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 2 A_Look;
+		HLI3 ABCDEFGHIJKLMNOPQR 2 A_Look;
+		Loop;
 	See:
 		HLR1 A 1 A_BullSquidChase;
 		HLR1 BCD 1 A_Chase(null,null,HLSMOOTHCHASE);
@@ -41,7 +46,7 @@ class HLBullSquid : HLMonster
 		HLR1 ] 1 A_BullSquidChase;
 		HLR2 ABC 1 A_Chase(null,null,HLSMOOTHCHASE);
 		HLR2 D 1 A_BullSquidChase;
-		HLR2 EFG 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLR2 EFGH 1 A_Chase(null,null,HLSMOOTHCHASE);
 		Loop;
 	Melee:
 		HLA1 A 1
@@ -56,14 +61,11 @@ class HLBullSquid : HLMonster
 		HLA1 I 1 A_FaceTarget;
 		HLA1 JKL 1;
 		HLA1 M 1 A_CustomMeleeAttack(8*random(1,8));
-		HLA1 NOPQRSTUVWX 1;
+		HLA1 NOPQRSTUVWXYZ[\] 1;
 		Goto See;
 	Missile:
-		HLA1 Y 1 A_FaceTarget;
-		HLA1 Z[\] 1;
-		HLA2 A 1;
-		HLA2 B 1 A_FaceTarget;
-		HLA2 CDEFG 1;
+		HLA2 A 1 A_FaceTarget;
+		HLA2 BCDEFG 1;
 		HLA2 H 1 A_FaceTarget;
 		HLA2 IJKLM 1;
 		HLA2 N 1
@@ -79,15 +81,15 @@ class HLBullSquid : HLMonster
 			A_SpawnProjectile("BullSquidSpit",20);
 		}
 		HLA2 UVWXYZ[\] 1;
-		HLA3 ABCDEFGHIJKL 1;
+		HLA3 ABCDEFGHIJKLM 1;
 		Goto See;
 	Pain:
-		HLP1 A 1
+		HLI1 A 1
 		{
 			A_Pain();
 			countdown=0;
 		}
-		HLP1 BCDEFGH 1;
+		HLI1 BCDEFGH 1;
 		Goto See;
 	Death:
 		HLD1 A 2 A_Scream;
@@ -95,8 +97,8 @@ class HLBullSquid : HLMonster
 		HLD1 C 2 A_NoBlocking;
 		HLD1 D 2;
 		HLD1 E 2 A_PlaySound("halflife/weapons/bodydrop");
-		HLD1 FGHIJ 2;
-		HLD1 K -1;
+		HLD1 FGHI 2;
+		HLD1 J -1;
 		Stop;
 	XDeath:
 	Crush:

@@ -241,7 +241,7 @@ class Gascan1 : Key1
 	}
 }
 
-class Explosive : Key1
+class Explosive : Gascan1
 {
 	Default
 	{

@@ -14,11 +14,6 @@ class HLGruntM16NoGrenades : RandomSpawner
 
 class HLGruntShotgunNoGrenade : RandomSpawner
 {
-	override void PostSpawn(Actor spawned)
-	{
-		let me=HLGrunt1(spawned);
-		me.shotgun=1;
-	}
 	Default
 	{
 		DropItem "HLGrunt4";
@@ -50,7 +45,6 @@ class HLGruntShotgun : HLGruntShotgunNoGrenade
 	override void PostSpawn(Actor spawned)
 	{
 		let me=HLGrunt1(spawned);
-		me.shotgun=1;
 		me.handgren=1;
 	}
 }
@@ -382,9 +376,16 @@ class HLGrunt1 : HLMonster
 }
 class HLGrunt2 : HLGrunt1{}
 class HLGrunt3 : HLGrunt1{}
-class HLGrunt4 : HLGrunt1{}
-class HLGrunt5 : HLGrunt1{}
-class HLGrunt6 : HLGrunt1{}
+class HLGrunt4 : HLGrunt1
+{
+	override void PostBeginPlay()
+	{
+		shotgun=1;
+		super.PostBeginPlay();
+	}
+}
+class HLGrunt5 : HLGrunt4{}
+class HLGrunt6 : HLGrunt4{}
 
 //********************************************
 class GruntHandGrenade : Actor
