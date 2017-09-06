@@ -18,7 +18,6 @@ Model RolfBellmer
 	Model 2 "barneygun1.md3"
 	SurfaceSkin 2 0 "barneygun1_000.png"
 	SurfaceSkin 2 1 "v_9mmhandgun_main_002.png"
-	INTERPOLATEDOUBLEDFRAMES
 
 	FrameIndex HLI1 A 0 0
 	FrameIndex HLI1 A 1 0
@@ -399,7 +398,6 @@ Model RolfBellmer
 	SurfaceSkin 1 0 "scientisthead3_000.png"
 	SurfaceSkin 1 1 "scientisthead1_001.png"
 	SurfaceSkin 1 2 "scientisthead3_002.png"
-	INTERPOLATEDOUBLEDFRAMES
 
 	FrameIndex HLI2 C 0 45
 	FrameIndex HLI2 C 1 45
@@ -552,7 +550,6 @@ Model RolfBellmer
 	SurfaceSkin 0 7 "otis_007.png"
 	Model 1 "otisgun1.md3"
 	Skin 1 "v_desert_eagle_main_000.png"
-	INTERPOLATEDOUBLEDFRAMES
 
 	FrameIndex BSI1 A 0 0
 	FrameIndex BSI1 A 1 0

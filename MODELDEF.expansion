@@ -452,7 +452,6 @@ Model HLAlphaBarney
 	SurfaceSkin 0 24 "oldbarney_024.png"
 	SurfaceSkin 0 25 "oldbarney_025.png"
 	SurfaceSkin 0 26 "oldbarney_026.png"
-	INTERPOLATEDOUBLEDFRAMES
 
 	FrameIndex HLI1 A 0 0
 	FrameIndex HLI1 B 0 1

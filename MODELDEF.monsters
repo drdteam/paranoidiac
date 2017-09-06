@@ -10,7 +10,6 @@ Model HLBat
 	SurfaceSkin 0 5 "stukabat_005.png"
 	SurfaceSkin 0 6 "stukabat_006.png"
 	SurfaceSkin 0 7 "stukabat_007.png"
-	INTERPOLATEDOUBLEDFRAMES
 
 	FrameIndex HLI1 A 0 111
 	FrameIndex HLI1 B 0 112
@@ -149,7 +148,6 @@ Model HLBossBat
 	SurfaceSkin 0 5 "stukabat_005.png"
 	SurfaceSkin 0 6 "stukabat2_006.png"
 	SurfaceSkin 0 7 "stukabat_007.png"
-	INTERPOLATEDOUBLEDFRAMES
 
 	FrameIndex HLI1 A 0 111
 	FrameIndex HLI1 B 0 112
@@ -282,7 +280,6 @@ Model HLVortigaunt
 	Model 0 "islave.md3"
 	SurfaceSkin 0 0 "islave_000.png"
 	SurfaceSkin 0 1 "islave_001.png"
-	INTERPOLATEDOUBLEDFRAMES
 
 	FrameIndex HLI1 A 0 0
 
@@ -1291,7 +1288,6 @@ Model HLGonarch
 	SurfaceSkin 0 3 "big_mom_003.png"
 	SurfaceSkin 0 4 "big_mom_004.png"
 	SurfaceSkin 0 5 "big_mom_005.png"
-	INTERPOLATEDOUBLEDFRAMES
 
 	FrameIndex HLI1 A 0 0
 
