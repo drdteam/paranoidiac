@@ -207,8 +207,8 @@ Model HLScientist2
 	SurfaceSkin 0 4 "scientistbody_004.png"
 	Model 1 "scientisthead2.md3"
 	SurfaceSkin 1 0 "scientisthead2_000.png"
-	SurfaceSkin 1 1 "scientisthead2_001.png"
-	SurfaceSkin 1 2 "scientisthead2_002.png"
+	SurfaceSkin 1 1 "scientisthead2_001x.png"
+	SurfaceSkin 1 2 "scientisthead2_002x.png"
 	SurfaceSkin 1 3 "scientisthead1_001.png"
 	SurfaceSkin 1 4 "scientisthead2_004.png"
 	INTERPOLATEDOUBLEDFRAMES
@@ -821,8 +821,8 @@ Model HLScientist2Dead
 	SurfaceSkin 0 4 "scientistbody_004.png"
 	Model 1 "scientisthead2.md3"
 	SurfaceSkin 1 0 "scientisthead2_000.png"
-	SurfaceSkin 1 1 "scientisthead2_001.png"
-	SurfaceSkin 1 2 "scientisthead2_002.png"
+	SurfaceSkin 1 1 "scientisthead2_001x.png"
+	SurfaceSkin 1 2 "scientisthead2_002x.png"
 	SurfaceSkin 1 3 "scientisthead1_001.png"
 	SurfaceSkin 1 4 "scientisthead2_004.png"
 

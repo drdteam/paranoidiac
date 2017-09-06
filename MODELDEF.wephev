@@ -588,7 +588,7 @@ Model HLMagnum
 	Path "Models"
 	Model 0 "v_357_main.md3"
 	SurfaceSkin 0 0 "v_357_main_000.png"
-	SurfaceSkin 0 1 "v_357_main_001.png"
+	SurfaceSkin 0 1 "v_357_main_001x.png"
 	Model 1 "v_357_hevarms.md3"
 	SurfaceSkin 1 0 "hev_scientistbody_004.png"
 	SurfaceSkin 1 1 "v_hevarms_001.png"
