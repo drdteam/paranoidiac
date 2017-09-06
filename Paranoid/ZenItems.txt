@@ -83,14 +83,16 @@ class ZenTree : Actor
 	States
 	{
 	Spawn:
-		POSS A 8 A_LookEx(LOF_NOSOUNDCHECK,0,112,112,60,"Melee");
+		HLI1 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 2 A_TreeLook();
+		HLI2 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 2 A_TreeLook();
+		HLI3 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 2 A_TreeLook();
+		HLI4 ABCDEFGHIJKLMN 2 A_TreeLook();
 		Loop;
 	Melee:
-		POSS BC 3;
-		POSS DEF 1;
-		POSS G 1 A_XenTreeAttack;
-		POSS HI 4;
-		POSS A 8;
+		HLA1 ABCDEFGHI 1;
+		HLA1 J 1 A_XenTreeAttack;
+		HLA1 KLMNOPQRSTUVWXYZ[\] 1;
+		HLA2 AB 1;
 		Goto Spawn;
 	Pain:
 		POSS BC 1 A_Pain;
@@ -98,6 +100,8 @@ class ZenTree : Actor
 		POSS CB 3;
 		Goto Spawn;
 	}
+	void A_TreeLook()
+		{A_LookEx(LOF_NOSOUNDCHECK,0,112,112,60,"Melee");}
 	void A_XenTreeAttack()
 	{
 		for(int i=0;i<12;i++)
