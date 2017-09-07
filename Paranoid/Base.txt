@@ -9,7 +9,8 @@ class HLMonster : Actor
 	States
 	{
 	Spawn:
-		HLI1 A 3 A_Look;
+		HLI1 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 2 A_Look;
+		HLI2 AB 2 A_Look;
 		Loop;
 	}
 	void A_HLGibs(int max=16,class<actor> gibs="HLGibs")

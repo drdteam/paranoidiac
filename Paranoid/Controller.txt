@@ -27,7 +27,26 @@ class HLController : HLMonster
 	{
 	See:
 		HLI1 A 1 A_Chase;
-		HLI1 AA 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLI1 BC 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLI1 D 1 A_Chase;
+		HLI1 EF 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLI1 G 1 A_Chase;
+		HLI1 HI 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLI1 J 1 A_Chase;
+		HLI1 KL 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLI1 M 1 A_Chase;
+		HLI1 NO 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLI1 P 1 A_Chase;
+		HLI1 QR 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLI1 S 1 A_Chase;
+		HLI1 TU 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLI1 V 1 A_Chase;
+		HLI1 WX 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLI1 Y 1 A_Chase;
+		HLI1 Z[ 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLI1 \ 1 A_Chase;
+		HLI1 ] 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLI2 AB 1 A_Chase(null,null,HLSMOOTHCHASE);
 		Loop;
 	Missile:
 		HLA1 A 0
@@ -57,10 +76,10 @@ class HLController : HLMonster
 		HLA4 JKLMNOPQRSTUVWXYZ[\] 1;
 		HLA5 ABC 1;
 		HLA5 D 1 A_Stop;
-		HLA5 EF 2;
+		HLA5 EF 1;
 		Goto See;
 	Pain:
-		HLP1 ABCDEFGH 1;
+		HLP1 ABCDEFGHI 1;
 		Goto See;
 	Death:
 		HLD1 A 2
@@ -71,12 +90,12 @@ class HLController : HLMonster
 		HLD1 BC 2;
 		Wait;
 	Crash:
-		HLD1 D 1 A_PlaySound("halflife/weapons/bodydrop");
-		HLD1 EFGHIJKLMNO 1;
-		HLD1 P 1 A_NoBlocking;
-		HLD1 QRSTUVWXYZ[\] 1;
-		HLD2 ABCDEFGHIJKLMNOPQRS 1;
-		HLD2 T -1;
+		HLD1 D 2 A_PlaySound("halflife/weapons/bodydrop");
+		HLD1 EFGHIJKLMNO 2;
+		HLD1 P 2 A_NoBlocking;
+		HLD1 QRSTUVWXYZ[\] 2;
+		HLD2 ABCDEFGHIJKLMNOPQRSTU 2;
+		HLD2 V -1;
 		Stop;
 	XDeath:
 	Crush:

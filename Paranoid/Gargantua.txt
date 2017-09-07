@@ -33,6 +33,10 @@ class HLGargantua : HLMonster
 	}
 	States
 	{
+	Spawn:
+		HLI1 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 3 A_Look;
+		HLI2 AB 3 A_Look;
+		Loop;
 	See:
 		HLR1 A 0 A_JumpIf(flametoken,"FlameEnd");	//to stop the looping sound in case player dies while "Flame"
 		HLR1 A 0 A_JumpIfCloser(400,"Walk");		//if is close enough, the gargantua will walk instead of run
