@@ -1,0 +1,172 @@
+class HLXenHair : Actor
+{
+	Default
+	{
+		Radius 4;
+		Height 20;
+		+RANDOMIZE
+		+DONTTHRUST
+	}
+	States
+	{
+	Spawn:
+		HLI1 A 35;
+		HLI1 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1;
+		HLI1 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1;
+		HLI1 ABC 1;
+		Goto Spawn+1;
+	}
+}
+
+class HLXenFungus : HLXenHair
+{
+	Default
+	{
+		Radius 8;
+		Height 16;
+		+NOTAUTOAIMED
+		+SHOOTABLE
+		+NOBLOOD
+		+NODAMAGE
+		+SOLID
+	}
+	States
+	{
+	Spawn:
+		HLI1 A 35;
+		HLI1 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1;
+		HLI2 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1;
+		HLI3 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1;
+		HLI4 ABCDEFGHIJKLMN 1;
+		Goto Spawn+1;
+	}
+}
+
+class HLXenLight : HLXenFungus
+{
+	Default
+	{
+		Height 32;
+		PainChance 256;
+	}
+	States
+	{
+	Spawn:
+		HLI1 A 35;
+		HLI1 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1 Bright LIGHT("XENLIGHT2") A_HLXenLightLook;
+		HLI2 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1 Bright LIGHT("XENLIGHT3") A_HLXenLightLook;
+		HLI3 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1 Bright LIGHT("XENLIGHT2") A_HLXenLightLook;
+		HLI4 ABCDEFGHIJKLMN 1 Bright LIGHT("XENLIGHT1") A_HLXenLightLook;
+		Goto Spawn+1;
+	Pain:
+		HLP1 BDF 1 Bright LIGHT("XENLIGHTFADE1");
+		HLP1 HJL 1 Bright LIGHT("XENLIGHTFADE2");
+		HLP1 NPR 1;
+	Shrunk:
+		HLP1 T 8 A_CheckRange(128,1);
+		Loop;
+		HLA1 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1;
+		HLA2 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1 Bright LIGHT("XENLIGHTFADE2");
+		HLA3 ABCDEFGHIJKLMNOP 1 Bright LIGHT("XENLIGHTFADE1");
+		Goto Spawn+1;
+	}
+	state A_HLXenLightLook()
+		{return CheckRange(128)?null:ResolveState("Pain");}
+}
+
+class HLXenTree : HLXenFungus
+{
+	Default
+	{
+		Radius 20;
+		Height 144;
+		MeleeRange 128;
+		PainChance 128;
+		PainChance "Crowbar",252;
+		PainSound "tree/pain";
+	}
+	States
+	{
+	Spawn:
+		HLI1 A 35;
+		HLI1 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 2 A_HLXenTreeLook();
+		HLI2 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 2 A_HLXenTreeLook();
+		HLI3 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 2 A_HLXenTreeLook();
+		HLI4 ABCDEFGHIJKLMN 2 A_HLXenTreeLook();
+		Goto Spawn+1;
+	Melee:
+		HLA1 ABCDEFGHI 1;
+		HLA1 J 1 A_HLXenTreeAttack;
+		HLA1 KLMNOPQRSTUVWXYZ[\] 1;
+		HLA2 AB 1;
+		Goto Spawn+1;
+	Pain:
+		HLA1 A 1 A_Pain;
+		HLA1 BCDEFEDCBA 1;
+		Goto Spawn+1;
+	}
+	void A_HLXenTreeLook()
+		{A_LookEx(LOF_NOSOUNDCHECK,0,112,112,60,"Melee");}
+	void A_HLXenTreeAttack()
+	{
+		for(int i=0;i<12;i++)
+		{
+			if(TryPunch(angle+i*(45./12))||TryPunch(angle-i*(45./12)))
+				return;
+		}
+	}
+	private action bool TryPunch(double angle)
+	{
+		FTranslatedLineTarget t;
+		double slope=AimLineAttack(angle,112,t);
+		if(t.linetarget!=null)
+		{
+			LineAttack(angle,112,slope,10,'Melee',"BulletPuff",true,t);
+			if(t.linetarget!=null)
+			{
+				A_PlaySound("tree/attack");
+				return true;
+			}
+		}
+		A_PlaySound("tree/swipe");
+		return false;
+	}
+}
+
+class HeadCrab : ModelBase //Dissected HeadCrab Model
+{
+	Default
+	{
+		Radius 8;
+		Height 16;
+		Mass 100;
+		+NOTAUTOAIMED
+		+SHOOTABLE
+		+NOBLOOD
+		+NODAMAGE
+	}
+}
+
+class XenIsland1 : ModelBase
+{
+	Default
+	{
+		Radius 96;
+		Height 128;
+		Mass 0x7FFFFFFF;
+		-SOLID
+		+NOGRAVITY
+	}
+}
+class XenIsland2 : XenIsland1{}
+class XenIsland3 : XenIsland1
+{
+	Default
+	{
+		Radius 288;
+		Height 384;
+	}
+}
+class XenIsland4 : XenIsland3{}
+class XenIsland5 : XenIsland3{}
+class XenIsland6 : XenIsland3{}

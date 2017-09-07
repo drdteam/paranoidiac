@@ -1184,33 +1184,6 @@ class TechClampa : TechClamp
 	}
 }
 
-class XenIsland1 : ModelBase
-{
-	Default
-	{
-		Radius 96;
-		Height 128;
-		Mass 0x7FFFFFFF;
-		-SOLID
-		+NOGRAVITY
-	}
-}
-
-class XenIsland2 : XenIsland1{}
-
-class XenIsland3 : XenIsland1
-{
-	Default
-	{
-		Radius 288;
-		Height 384;
-	}
-}
-
-class XenIsland4 : XenIsland3{}
-class XenIsland5 : XenIsland3{}
-class XenIsland6 : XenIsland3{}
-
 class HoverPad : ModelBase
 {
 	Default

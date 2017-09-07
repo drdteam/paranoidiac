@@ -40,11 +40,11 @@ enum ParanoidEnum
 
 #include "Paranoid/Models.txt"
 #include "Paranoid/Vehicles.txt"
-#include "Paranoid/ZenItems.txt"
+#include "Paranoid/XenItems.txt"
 
 #include "Paranoid/Expansion.txt"
 
-class ParanoidAmmoHandler : StaticEventHandler
+class ParanoidEventHandler : StaticEventHandler
 {
 	override void WorldTick()
 	{

@@ -1,6 +1,6 @@
 gameinfo
 {
-	AddEventHandlers="ParanoidAmmoHandler"
+	AddEventHandlers="ParanoidEventHandler"
 	playerclasses="RolfBellmer"
 	borderflat="XMETAL25"
 	infopage="HELP"
@@ -509,10 +509,10 @@ DoomEdNums
 	30279=girder2
 	30280=apache
 	30281=Osprey
-	30282=ZenHair
-	30283=ZenLight
-	30284=ZenTree
-	30285=Fungus
+	30282=HLXenHair
+	30283=HLXenLight
+	30284=HLXenTree
+	30285=HLXenFungus
 	30286=Bed01
 	30287=Bed02
 	30288=Bed03

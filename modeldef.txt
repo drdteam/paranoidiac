@@ -2192,65 +2192,397 @@ Model SUVGlass
 }
 
 //////////////////////
-//	Zen life forms  //
+//	Xen life forms  //
 //////////////////////
 
-Model Fungus
+Model HLXenFungus
 {
 	Path "Models"
-	Model 0 "fungus1.md3"
-	Skin 0 "fungus1.png"
-	Scale 0.5 0.5 0.5
+	Model 0 "fungus.md3"
+	SurfaceSkin 0 0 "fungus_000.png"
+	SurfaceSkin 0 1 "fungus_001.png"
+	SurfaceSkin 0 2 "fungus_002.png"
+	Scale .5 .5 .5
 
-	FrameIndex POSS A 0 0
+	FrameIndex HLI1 A 0 0
+	FrameIndex HLI1 B 0 1
+	FrameIndex HLI1 C 0 2
+	FrameIndex HLI1 D 0 3
+	FrameIndex HLI1 E 0 4
+	FrameIndex HLI1 F 0 5
+	FrameIndex HLI1 G 0 6
+	FrameIndex HLI1 H 0 7
+	FrameIndex HLI1 I 0 8
+	FrameIndex HLI1 J 0 9
+	FrameIndex HLI1 K 0 10
+	FrameIndex HLI1 L 0 11
+	FrameIndex HLI1 M 0 12
+	FrameIndex HLI1 N 0 13
+	FrameIndex HLI1 O 0 14
+	FrameIndex HLI1 P 0 15
+	FrameIndex HLI1 Q 0 16
+	FrameIndex HLI1 R 0 17
+	FrameIndex HLI1 S 0 18
+	FrameIndex HLI1 T 0 19
+	FrameIndex HLI1 U 0 20
+	FrameIndex HLI1 V 0 21
+	FrameIndex HLI1 W 0 22
+	FrameIndex HLI1 X 0 23
+	FrameIndex HLI1 Y 0 24
+	FrameIndex HLI1 Z 0 25
+	FrameIndex HLI1 [ 0 26
+	FrameIndex HLI1 \ 0 27
+	FrameIndex HLI1 ] 0 28
+	FrameIndex HLI2 A 0 29
+	FrameIndex HLI2 B 0 30
+	FrameIndex HLI2 C 0 31
+	FrameIndex HLI2 D 0 32
+	FrameIndex HLI2 E 0 33
+	FrameIndex HLI2 F 0 34
+	FrameIndex HLI2 G 0 35
+	FrameIndex HLI2 H 0 36
+	FrameIndex HLI2 I 0 37
+	FrameIndex HLI2 J 0 38
+	FrameIndex HLI2 K 0 39
+	FrameIndex HLI2 L 0 40
+	FrameIndex HLI2 M 0 41
+	FrameIndex HLI2 N 0 42
+	FrameIndex HLI2 O 0 43
+	FrameIndex HLI2 P 0 44
+	FrameIndex HLI2 Q 0 45
+	FrameIndex HLI2 R 0 46
+	FrameIndex HLI2 S 0 47
+	FrameIndex HLI2 T 0 48
+	FrameIndex HLI2 U 0 49
+	FrameIndex HLI2 V 0 50
+	FrameIndex HLI2 W 0 51
+	FrameIndex HLI2 X 0 52
+	FrameIndex HLI2 Y 0 53
+	FrameIndex HLI2 Z 0 54
+	FrameIndex HLI2 [ 0 55
+	FrameIndex HLI2 \ 0 56
+	FrameIndex HLI2 ] 0 57
+	FrameIndex HLI3 A 0 58
+	FrameIndex HLI3 B 0 59
+	FrameIndex HLI3 C 0 60
+	FrameIndex HLI3 D 0 61
+	FrameIndex HLI3 E 0 62
+	FrameIndex HLI3 F 0 63
+	FrameIndex HLI3 G 0 64
+	FrameIndex HLI3 H 0 65
+	FrameIndex HLI3 I 0 66
+	FrameIndex HLI3 J 0 67
+	FrameIndex HLI3 K 0 68
+	FrameIndex HLI3 L 0 69
+	FrameIndex HLI3 M 0 70
+	FrameIndex HLI3 N 0 71
+	FrameIndex HLI3 O 0 72
+	FrameIndex HLI3 P 0 73
+	FrameIndex HLI3 Q 0 74
+	FrameIndex HLI3 R 0 75
+	FrameIndex HLI3 S 0 76
+	FrameIndex HLI3 T 0 77
+	FrameIndex HLI3 U 0 78
+	FrameIndex HLI3 V 0 79
+	FrameIndex HLI3 W 0 80
+	FrameIndex HLI3 X 0 81
+	FrameIndex HLI3 Y 0 82
+	FrameIndex HLI3 Z 0 83
+	FrameIndex HLI3 [ 0 84
+	FrameIndex HLI3 \ 0 85
+	FrameIndex HLI3 ] 0 86
+	FrameIndex HLI4 A 0 87
+	FrameIndex HLI4 B 0 88
+	FrameIndex HLI4 C 0 89
+	FrameIndex HLI4 D 0 90
+	FrameIndex HLI4 E 0 91
+	FrameIndex HLI4 F 0 92
+	FrameIndex HLI4 G 0 93
+	FrameIndex HLI4 H 0 94
+	FrameIndex HLI4 I 0 95
+	FrameIndex HLI4 J 0 96
+	FrameIndex HLI4 K 0 97
+	FrameIndex HLI4 L 0 98
+	FrameIndex HLI4 M 0 99
+	FrameIndex HLI4 N 0 100
 }
 
-Model ZenHair
+Model HLXenHair
 {
 	Path "Models"
-	Model 0 "zenhair.md2"
-	Skin 0 "zenhair.png"
-	Scale 0.8 0.8 0.8
+	Model 0 "hair.md3"
+	Skin 0 "hair.png"
 
-	Frame POSS A 0 "frame01"
-	Frame POSS B 0 "frame02"
-	Frame POSS C 0 "frame03"
-	Frame POSS D 0 "frame04"
-	Frame POSS E 0 "frame05"
-	Frame POSS F 0 "frame06"
-	Frame POSS G 0 "frame07"
-	Frame POSS H 0 "frame08"
-	Frame POSS I 0 "frame09"
+	FrameIndex HLI1 A 0 0
+	FrameIndex HLI1 B 0 1
+	FrameIndex HLI1 C 0 2
+	FrameIndex HLI1 D 0 3
+	FrameIndex HLI1 E 0 4
+	FrameIndex HLI1 F 0 5
+	FrameIndex HLI1 G 0 6
+	FrameIndex HLI1 H 0 7
+	FrameIndex HLI1 I 0 8
+	FrameIndex HLI1 J 0 9
+	FrameIndex HLI1 K 0 10
+	FrameIndex HLI1 L 0 11
+	FrameIndex HLI1 M 0 12
+	FrameIndex HLI1 N 0 13
+	FrameIndex HLI1 O 0 14
+	FrameIndex HLI1 P 0 15
+	FrameIndex HLI1 Q 0 16
+	FrameIndex HLI1 R 0 17
+	FrameIndex HLI1 S 0 18
+	FrameIndex HLI1 T 0 19
+	FrameIndex HLI1 U 0 20
+	FrameIndex HLI1 V 0 21
+	FrameIndex HLI1 W 0 22
+	FrameIndex HLI1 X 0 23
+	FrameIndex HLI1 Y 0 24
+	FrameIndex HLI1 Z 0 25
+	FrameIndex HLI1 [ 0 26
+	FrameIndex HLI1 \ 0 27
+	FrameIndex HLI1 ] 0 28
+	FrameIndex HLI2 A 0 29
+	FrameIndex HLI2 B 0 30
+	FrameIndex HLI2 C 0 31
+	FrameIndex HLI2 D 0 32
+	FrameIndex HLI2 E 0 33
+	FrameIndex HLI2 F 0 34
+	FrameIndex HLI2 G 0 35
+	FrameIndex HLI2 H 0 36
+	FrameIndex HLI2 I 0 37
+	FrameIndex HLI2 J 0 38
+	FrameIndex HLI2 K 0 39
+	FrameIndex HLI2 L 0 40
+	FrameIndex HLI2 M 0 41
+	FrameIndex HLI2 N 0 42
+	FrameIndex HLI2 O 0 43
+	FrameIndex HLI2 P 0 44
+	FrameIndex HLI2 Q 0 45
+	FrameIndex HLI2 R 0 46
+	FrameIndex HLI2 S 0 47
+	FrameIndex HLI2 T 0 48
+	FrameIndex HLI2 U 0 49
+	FrameIndex HLI2 V 0 50
+	FrameIndex HLI2 W 0 51
+	FrameIndex HLI2 X 0 52
+	FrameIndex HLI2 Y 0 53
+	FrameIndex HLI2 Z 0 54
+	FrameIndex HLI2 [ 0 55
+	FrameIndex HLI2 \ 0 56
+	FrameIndex HLI2 ] 0 57
+	FrameIndex HLI3 A 0 58
+	FrameIndex HLI3 B 0 59
+	FrameIndex HLI3 C 0 60
 }
 
-Model ZenLight
+Model HLXenLight
 {
 	Path "Models"
-	Model 0 "zenlight.md2"
-	Skin 0 "zenlight.png"
-	Scale 0.8 0.8 0.8
+	Model 0 "light.md3"
+	Skin 0 "light.png"
 
-	Frame POSS A 0 "frame01"
-	Frame POSS B 0 "frame02"
-	Frame POSS C 0 "frame03"
-	Frame POSS D 0 "frame04"
-	Frame POSS E 0 "frame05"
-	Frame POSS F 0 "frame06"
-	Frame POSS G 0 "frame07"
-	Frame POSS H 0 "frame08"
-	Frame POSS I 0 "frame09"
-	Frame POSS J 0 "frame10"
-	Frame POSS K 0 "frame11"
+	FrameIndex HLI1 A 0 0
+	FrameIndex HLI1 B 0 1
+	FrameIndex HLI1 C 0 2
+	FrameIndex HLI1 D 0 3
+	FrameIndex HLI1 E 0 4
+	FrameIndex HLI1 F 0 5
+	FrameIndex HLI1 G 0 6
+	FrameIndex HLI1 H 0 7
+	FrameIndex HLI1 I 0 8
+	FrameIndex HLI1 J 0 9
+	FrameIndex HLI1 K 0 10
+	FrameIndex HLI1 L 0 11
+	FrameIndex HLI1 M 0 12
+	FrameIndex HLI1 N 0 13
+	FrameIndex HLI1 O 0 14
+	FrameIndex HLI1 P 0 15
+	FrameIndex HLI1 Q 0 16
+	FrameIndex HLI1 R 0 17
+	FrameIndex HLI1 S 0 18
+	FrameIndex HLI1 T 0 19
+	FrameIndex HLI1 U 0 20
+	FrameIndex HLI1 V 0 21
+	FrameIndex HLI1 W 0 22
+	FrameIndex HLI1 X 0 23
+	FrameIndex HLI1 Y 0 24
+	FrameIndex HLI1 Z 0 25
+	FrameIndex HLI1 [ 0 26
+	FrameIndex HLI1 \ 0 27
+	FrameIndex HLI1 ] 0 28
+	FrameIndex HLI2 A 0 29
+	FrameIndex HLI2 B 0 30
+	FrameIndex HLI2 C 0 31
+	FrameIndex HLI2 D 0 32
+	FrameIndex HLI2 E 0 33
+	FrameIndex HLI2 F 0 34
+	FrameIndex HLI2 G 0 35
+	FrameIndex HLI2 H 0 36
+	FrameIndex HLI2 I 0 37
+	FrameIndex HLI2 J 0 38
+	FrameIndex HLI2 K 0 39
+	FrameIndex HLI2 L 0 40
+	FrameIndex HLI2 M 0 41
+	FrameIndex HLI2 N 0 42
+	FrameIndex HLI2 O 0 43
+	FrameIndex HLI2 P 0 44
+	FrameIndex HLI2 Q 0 45
+	FrameIndex HLI2 R 0 46
+	FrameIndex HLI2 S 0 47
+	FrameIndex HLI2 T 0 48
+	FrameIndex HLI2 U 0 49
+	FrameIndex HLI2 V 0 50
+	FrameIndex HLI2 W 0 51
+	FrameIndex HLI2 X 0 52
+	FrameIndex HLI2 Y 0 53
+	FrameIndex HLI2 Z 0 54
+	FrameIndex HLI2 [ 0 55
+	FrameIndex HLI2 \ 0 56
+	FrameIndex HLI2 ] 0 57
+	FrameIndex HLI3 A 0 58
+	FrameIndex HLI3 B 0 59
+	FrameIndex HLI3 C 0 60
+	FrameIndex HLI3 D 0 61
+	FrameIndex HLI3 E 0 62
+	FrameIndex HLI3 F 0 63
+	FrameIndex HLI3 G 0 64
+	FrameIndex HLI3 H 0 65
+	FrameIndex HLI3 I 0 66
+	FrameIndex HLI3 J 0 67
+	FrameIndex HLI3 K 0 68
+	FrameIndex HLI3 L 0 69
+	FrameIndex HLI3 M 0 70
+	FrameIndex HLI3 N 0 71
+	FrameIndex HLI3 O 0 72
+	FrameIndex HLI3 P 0 73
+	FrameIndex HLI3 Q 0 74
+	FrameIndex HLI3 R 0 75
+	FrameIndex HLI3 S 0 76
+	FrameIndex HLI3 T 0 77
+	FrameIndex HLI3 U 0 78
+	FrameIndex HLI3 V 0 79
+	FrameIndex HLI3 W 0 80
+	FrameIndex HLI3 X 0 81
+	FrameIndex HLI3 Y 0 82
+	FrameIndex HLI3 Z 0 83
+	FrameIndex HLI3 [ 0 84
+	FrameIndex HLI3 \ 0 85
+	FrameIndex HLI3 ] 0 86
+	FrameIndex HLI4 A 0 87
+	FrameIndex HLI4 B 0 88
+	FrameIndex HLI4 C 0 89
+	FrameIndex HLI4 D 0 90
+	FrameIndex HLI4 E 0 91
+	FrameIndex HLI4 F 0 92
+	FrameIndex HLI4 G 0 93
+	FrameIndex HLI4 H 0 94
+	FrameIndex HLI4 I 0 95
+	FrameIndex HLI4 J 0 96
+	FrameIndex HLI4 K 0 97
+	FrameIndex HLI4 L 0 98
+	FrameIndex HLI4 M 0 99
+	FrameIndex HLI4 N 0 100
 
-	Frame POSS L 0 "frame12"
-	Frame POSS M 0 "frame13"
-	Frame POSS N 0 "frame14"
-	Frame POSS O 0 "frame15"
-	Frame POSS P 0 "frame16"
-	Frame POSS Q 0 "frame17"
+	FrameIndex HLP1 A 0 101
+	FrameIndex HLP1 B 0 102
+	FrameIndex HLP1 C 0 103
+	FrameIndex HLP1 D 0 104
+	FrameIndex HLP1 E 0 105
+	FrameIndex HLP1 F 0 106
+	FrameIndex HLP1 G 0 107
+	FrameIndex HLP1 H 0 108
+	FrameIndex HLP1 I 0 109
+	FrameIndex HLP1 J 0 110
+	FrameIndex HLP1 K 0 111
+	FrameIndex HLP1 L 0 112
+	FrameIndex HLP1 M 0 113
+	FrameIndex HLP1 N 0 114
+	FrameIndex HLP1 O 0 115
+	FrameIndex HLP1 P 0 116
+	FrameIndex HLP1 Q 0 117
+	FrameIndex HLP1 R 0 118
+	FrameIndex HLP1 S 0 119
+
+	FrameIndex HLP1 T 0 195
+
+	FrameIndex HLA1 A 0 121
+	FrameIndex HLA1 B 0 122
+	FrameIndex HLA1 C 0 123
+	FrameIndex HLA1 D 0 124
+	FrameIndex HLA1 E 0 125
+	FrameIndex HLA1 F 0 126
+	FrameIndex HLA1 G 0 127
+	FrameIndex HLA1 H 0 128
+	FrameIndex HLA1 I 0 129
+	FrameIndex HLA1 J 0 130
+	FrameIndex HLA1 K 0 131
+	FrameIndex HLA1 L 0 132
+	FrameIndex HLA1 M 0 133
+	FrameIndex HLA1 N 0 134
+	FrameIndex HLA1 O 0 135
+	FrameIndex HLA1 P 0 136
+	FrameIndex HLA1 Q 0 137
+	FrameIndex HLA1 R 0 138
+	FrameIndex HLA1 S 0 139
+	FrameIndex HLA1 T 0 140
+	FrameIndex HLA1 U 0 141
+	FrameIndex HLA1 V 0 142
+	FrameIndex HLA1 W 0 143
+	FrameIndex HLA1 X 0 144
+	FrameIndex HLA1 Y 0 145
+	FrameIndex HLA1 Z 0 146
+	FrameIndex HLA1 [ 0 147
+	FrameIndex HLA1 \ 0 148
+	FrameIndex HLA1 ] 0 149
+	FrameIndex HLA2 A 0 150
+	FrameIndex HLA2 B 0 151
+	FrameIndex HLA2 C 0 152
+	FrameIndex HLA2 D 0 153
+	FrameIndex HLA2 E 0 154
+	FrameIndex HLA2 F 0 155
+	FrameIndex HLA2 G 0 156
+	FrameIndex HLA2 H 0 157
+	FrameIndex HLA2 I 0 158
+	FrameIndex HLA2 J 0 159
+	FrameIndex HLA2 K 0 160
+	FrameIndex HLA2 L 0 161
+	FrameIndex HLA2 M 0 162
+	FrameIndex HLA2 N 0 163
+	FrameIndex HLA2 O 0 164
+	FrameIndex HLA2 P 0 165
+	FrameIndex HLA2 Q 0 166
+	FrameIndex HLA2 R 0 167
+	FrameIndex HLA2 S 0 168
+	FrameIndex HLA2 T 0 169
+	FrameIndex HLA2 U 0 170
+	FrameIndex HLA2 V 0 171
+	FrameIndex HLA2 W 0 172
+	FrameIndex HLA2 X 0 173
+	FrameIndex HLA2 Y 0 174
+	FrameIndex HLA2 Z 0 175
+	FrameIndex HLA2 [ 0 176
+	FrameIndex HLA2 \ 0 177
+	FrameIndex HLA2 ] 0 178
+	FrameIndex HLA3 A 0 179
+	FrameIndex HLA3 B 0 180
+	FrameIndex HLA3 C 0 181
+	FrameIndex HLA3 D 0 182
+	FrameIndex HLA3 E 0 183
+	FrameIndex HLA3 F 0 184
+	FrameIndex HLA3 G 0 185
+	FrameIndex HLA3 H 0 186
+	FrameIndex HLA3 I 0 187
+	FrameIndex HLA3 J 0 188
+	FrameIndex HLA3 K 0 189
+	FrameIndex HLA3 L 0 190
+	FrameIndex HLA3 M 0 191
+	FrameIndex HLA3 N 0 192
+	FrameIndex HLA3 O 0 193
+	FrameIndex HLA3 P 0 194
 }
 
-Model ZenTree
+Model HLXenTree
 {
 	Path "Models"
 	Model 0 "tree.md3"
@@ -2395,7 +2727,10 @@ Model HeadCrab
 {
 	Path "Models"
 	Model 0 "dissected_headcrab.md3"
-	Skin 0 "dissected_headcrab.png"
+	SurfaceSkin 0 0 "dissected_headcrab_000.png"
+	SurfaceSkin 0 1 "dissected_headcrab_001.png"
+	SurfaceSkin 0 2 "dissected_headcrab_002.png"
+	SurfaceSkin 0 3 "dissected_headcrab_003.png"
 
 	FrameIndex POSS A 0 0
 }

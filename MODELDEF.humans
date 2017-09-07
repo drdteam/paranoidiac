@@ -879,7 +879,7 @@ Model HLBarney
 	SurfaceSkin 0 6 "barney_006.png"
 	SurfaceSkin 0 7 "barney_007.png"
 	Model 1 "barneygun1.md3"
-	SurfaceSkin 1 0 "barneygun1_000.png"
+	SurfaceSkin 1 0 "w_9mmhandgun.png"
 	SurfaceSkin 1 1 "v_9mmhandgun_main_002.png"
 
 	FrameIndex HLI1 A 0 0
@@ -1204,7 +1204,7 @@ Model HLBarney
 	SurfaceSkin 0 6 "barney_006.png"
 	SurfaceSkin 0 7 "barney_007.png"
 	Model 1 "barneygun2.md3"
-	Skin 1 "barneygun1_000.png"
+	Skin 1 "w_9mmhandgun.png"
 
 	FrameIndex HLI3 E 0 186
 	FrameIndex HLI3 E 1 0

@@ -19,7 +19,7 @@ Model RolfBellmer
 	SurfaceSkin 1 2 "hev_scientisthead_002.png"
 	SurfaceSkin 1 3 "hev_scientisthead_003.png"
 	Model 2 "barneygun1.md3"
-	SurfaceSkin 2 0 "barneygun1_000.png"
+	SurfaceSkin 2 0 "w_9mmhandgun.png"
 	SurfaceSkin 2 1 "v_9mmhandgun_main_002.png"
 
 	FrameIndex HLI1 A 0 0

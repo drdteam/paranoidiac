@@ -127,27 +127,35 @@ class ZenTree : Actor
 	}
 }
 
-class Fungus : ModelBase
-{
-	Default
-	{
-		Radius 32;
-		Height 72;
-		Mass 0x7FFFFFFF;
-		+NOTAUTOAIMED
-		+FLOORCLIP
-		+SHOOTABLE
-		+NOBLOOD
-		+NODAMAGE
-	}
-}
-
-class HeadCrab : Fungus //Dissected HeadCrab Model
+class HeadCrab : ModelBase //Dissected HeadCrab Model
 {
 	Default
 	{
 		Radius 8;
 		Height 16;
 		Mass 100;
+		+NOTAUTOAIMED
+		+SHOOTABLE
+		+NOBLOOD
+		+NODAMAGE
+	}
+}
+
+class Fungus : HeadCrab
+{
+	Default
+	{
+		Radius 32;
+		Height 72;
+		Mass 0x7FFFFFFF;
+	}
+	States
+	{
+	Spawn:
+		HLI1 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1;
+		HLI2 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1;
+		HLI3 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1;
+		HLI4 ABCDEFGHIJKLMN 1;
+		Loop;
 	}
 }

@@ -1235,7 +1235,7 @@ flickerlight CRATE_X4
 	offset 0 40 0
 }
 
-pulselight ZENLIGHT1
+pulselight XENLIGHT1
 {
 	color 0.8 0.8 0.7
 	size 24
@@ -1244,7 +1244,7 @@ pulselight ZENLIGHT1
 	offset 24 40 0
 }
 
-pulselight ZENLIGHT2
+pulselight XENLIGHT2
 {
 	color 0.8 0.8 0.7
 	size 24
@@ -1253,7 +1253,7 @@ pulselight ZENLIGHT2
 	offset 24 36 0
 }
 
-pulselight ZENLIGHT3
+pulselight XENLIGHT3
 {
 	color 0.8 0.8 0.7
 	size 24
@@ -1262,7 +1262,7 @@ pulselight ZENLIGHT3
 	offset 24 32 0
 }
 
-pulselight ZENLIGHTFADE1
+pulselight XENLIGHTFADE1
 {
 	color 0.6 0.6 0.5
 	size 16
@@ -1271,7 +1271,7 @@ pulselight ZENLIGHTFADE1
 	offset 16 32 0
 }
 
-pulselight ZENLIGHTFADE2
+pulselight XENLIGHTFADE2
 {
 	color 0.4 0.4 0.3
 	size 8
