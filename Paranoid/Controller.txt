@@ -94,8 +94,8 @@ class HLController : HLMonster
 		HLD1 EFGHIJKLMNO 2;
 		HLD1 P 2 A_NoBlocking;
 		HLD1 QRSTUVWXYZ[\] 2;
-		HLD2 ABCDEFGHIJKLMNOPQRSTU 2;
-		HLD2 V -1;
+		HLD2 ABCDEFGHIJKLMNOPQRST 2;
+		HLD2 U -1;
 		Stop;
 	XDeath:
 	Crush:

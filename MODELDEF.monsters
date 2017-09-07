@@ -2497,7 +2497,6 @@ Model HLController
 	FrameIndex HLD2 S 0 209
 	FrameIndex HLD2 T 0 210
 	FrameIndex HLD2 U 0 211
-	FrameIndex HLD2 V 0 212
 }
 
 Model HLZombie1
