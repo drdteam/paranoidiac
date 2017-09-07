@@ -50,6 +50,10 @@ episode map01
 {
 	name="Paranoid: Infiltration"
 }
+episode map02
+{
+	name="Paranoid: Resonance"
+}
 episode map09
 {
 	name="Paranoiac: Extraction"
