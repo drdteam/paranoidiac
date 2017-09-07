@@ -1419,7 +1419,6 @@ Model HLHeadCrab
 	FrameIndex HLD1 ] 0	107
 	FrameIndex HLD2 A 0	108
 	FrameIndex HLD2 B 0	109
-	FrameIndex HLD2 C 0	110
 }
 
 Model HLBabyHeadCrab

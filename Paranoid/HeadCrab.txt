@@ -83,8 +83,8 @@ class HLHeadCrab : HLMonster
 	Death:
 		HLD1 A 1 A_ScreamAndUnblock;
 		HLD1 BCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1;
-		HLD2 AB 1;
-		HLD2 C 2
+		HLD2 A 1;
+		HLD2 B 2
 		{
 			if(waterlevel>=3)
 				vel.z+=.75;
