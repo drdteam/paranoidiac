@@ -205,9 +205,10 @@ class SUV : ModelBase
 		DeathHeight 66;
 		Health 400;
 		PainChance 256;
-		+ismonster
-		+shootable
+		+ISMONSTER
+		+SHOOTABLE
 		+NOBLOOD
+		+FRIENDLY
 	}
 	States
 	{

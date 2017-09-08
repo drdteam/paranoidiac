@@ -1,5 +1,66 @@
 [enu default]
 
+SKIPCUTSCENE1="Press Use (";
+SKIPCUTSCENE2=") to skip cutscene";
+
+NEWMESSAGE="New Message Received.";
+KEYREQUIRED="Access Denied.\n\nSecurity Key Required.";
+RESTRICTEDAREA="Access to this area has been temporarily restricted.";
+LOCKDOWN="This area has been locked down.\n\nPlease obtain the override access code.";
+
+WELCOME1="Welcome to the Black Mesa Research Complex.";
+WELCOME2="Welcome to the Black Mesa Research Facility.\n\n\n\nNow entering Sector C with access to the Anomalous Materials Laboratory.";
+WELCOME3="Welcome to the Black Mesa Research Facility.\n\n\n\nNow bypassing Sector C and Anomalous Materials Laboratory.";
+
+BELLMERTERMINATED="Subject: Dr. Rolf Bellmer\n\n\n\nStatus: Believed Terminated";
+BELLMERSURVIVOR="Subject: Dr. Rolf Bellmer\n\n\n\nStatus: Survivor of Earth Assault";
+BELLMERDISSOLUTION="Subject: Dr. Rolf Bellmer\n\n\n\nStatus: Imminent dissolution in Xen";
+BELLMERSURVIVOR2="Subject: Dr. Rolf Bellmer\n\n\n\nStatus: Survivor of Xen Assault";
+
+LABKEY="Laboratory access security key card.";
+SECURITYKEY="Security Key Acquired.\n\nAccess to Secure Areas Now Available.";
+LAMBDAKEY="CAcquired Security Key to the Lambda Complex.\n\nAccessible by returning to the elevators leading to the Rail Yard.";
+SEWERKEY="Acquired Security Key to Sewer Control.\n\nAccessible near the boiler room.";
+SEWERKEYREQUIRED="Sewer Control Access Denied.\n\nSecurity Key Required.";
+SEWEROPEN="Sewer Control Access Granted.";
+
+NEEDGAS1="Emergency power generator is inoperable.\n\nPlease fuel the turbine with gasoline.";
+NEEDGAS2="Generator Fuel Tank is Empty.\n\nPlease refuel generator fuel tank.";
+GOTGAS2="Acquired gasoline.\n\nProceed to refuel generator fuel tank near boiler room.";
+GATECONTROL1="Gate is open.";
+GATECONTROL2="Switch off Auxiliary Power to Activate Gate Control.";
+GATECONTROL3="Main Power Generators are off-line.";
+GATECONTROL4="Auxiliary Power Generator is Off-line.\n\nWarning: Secure Holding Facility Perimeter Controls Off-Line.\nSecurity Breach Likely.";
+SLUICE="Sluice gate is not operational.\n\nPlease switch on auxiliary power.";
+CIRCUITDAMAGE="Fuse Circuit damage detected.\n\nPlease switch to emergency power to open this door.";
+SECURITYCLEARANCE="All Civilian Security Clearances have been suspended.\n\nPlease report to your Sector's Security Officer.";
+LASERDOOR="CDoor Malfunction.\n\nAccess to Laser Control Room Temporarily Unavailable.";
+LASEROFF="Laser has been deactivated.";
+LIVESPECIMENS="Access Denied.\n\nLive Specimens Present.";
+BIOTHREAT1="\cCBiological Threat Mitigated. \nAccess to the Lambda Complex is now permitted.";
+BIOTHREAT2="Access Denied. Biological Threat Imminent.";
+BIOTHREAT3="Access Denied. \nObtain Security Key from Officer Widmark \nat the Test Lab.";
+TESTLAB1="Test Lab accessible. \nProceed through Test Lab and collect Security Key from Officer Widmark.";
+NERVEGAS="Nerve Gas is being pumped out of Exit Vestibules.\n\nStand by.";
+XENEXPLOSIVE1="Find an explosive device to blast through this rock.";
+XENEXPLOSIVE2="Explosive Device Acquired.\n\nReturn to Entry Portal & blast through the rock.";
+XENEXPLOSIVE3="Explosive charge laid.\n\nSeek cover immediately.";
+
+BRIEF01="Dr. Bellmer, this briefing will serve to recap your mission objective.";
+BRIEF02="As you know, the consortium I represent seeks to dominate the \nfield of Anomalous Materials Research.";
+BRIEF03="We believe that our supremacy in this field will allow us to \npioneer exploration of Extra-Dimensional Space.";
+BRIEF04="For many years now, the United States Government has been using \nthe Black Mesa Complex to move ahead in these areas.";
+BRIEF05="My employers wish to impose ... roadblocks in the path of the \nU.S. government, and set back their progress.";
+BRIEF06="Your objective is to damage their information systems so that \ndata recovery is difficult and time-consuming.";
+BRIEF07="You have been provided with a data device. \nUse it to introduce a virus into their data systems.";
+BRIEF08="Unfortunately, you do not have adequate security clearance \nfor access to Data Control Operations.";
+BRIEF09="Therefore, you will need to figure out a way to reach it on your own.";
+BRIEF10="However, to assist you, we have planned a little ... 'incident' \nin the Anomalous Materials Test Lab.";
+BRIEF11="This should cause just enough confusion to allow you to reach \nData Control Ops.";
+BRIEF12="Periodically, during your mission, you will receive transmissions from me.";
+BRIEF13="These messages will help you navigate the Black Mesa facility, \nand identify alternative paths.";
+BRIEF14="Good luck!";
+
 MAP2VOX1=
 	"You'll need to reach Dr. Zimmerman, the Sector Administrator,\n"
 	"to get the System Override code.";
