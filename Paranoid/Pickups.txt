@@ -40,7 +40,7 @@ class FirstAidStation : Actor
 		HLI1 A -1;
 		Stop;
 	Working:
-		HLI1 A 6 A_HLChargingStation;
+		HLI1 A 5 A_HLChargingStation;
 		Loop;
 	Death:
 		HLI1 B -1;
