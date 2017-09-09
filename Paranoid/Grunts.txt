@@ -222,7 +222,7 @@ class HLGrunt1 : HLMonster
 		HLA2 ABCDE 1 A_FaceTarget;
 		HLA2 F 1
 		{
-			actor gren=A_SpawnProjectile("GruntHandGrenade",40);
+			actor gren=A_SpawnProjectile("HLGruntHandGrenade",40);
 			if(CheckMeleeRange())
 			{
 				closegrencheck=1;
@@ -388,7 +388,7 @@ class HLGrunt5 : HLGrunt4{}
 class HLGrunt6 : HLGrunt4{}
 
 //********************************************
-class GruntHandGrenade : Actor
+class HLGruntHandGrenade : Actor
 {
 	int count;
 	override void tick()
@@ -404,7 +404,6 @@ class GruntHandGrenade : Actor
 		Radius 3;
 		Height 6;
 		Speed 20;
-		Scale .3;
 		Damage 1;
 		PROJECTILE;
 		BounceType "Doom";
@@ -416,10 +415,12 @@ class GruntHandGrenade : Actor
 	States
 	{
 	Spawn:
-		HGN1 ABCDE 2;
+		HLI1 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 2;
+		HLI2 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 2;
+		HLI3 ABC 2;
 		Loop;
 	Death:
-		HGN1 A -1;
+		HLD1 A -1;
 		Stop;
 	Explode:
 		TNT1 A 1
