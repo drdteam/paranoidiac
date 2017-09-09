@@ -26,6 +26,7 @@ SEWEROPEN="Sewer Control Access Granted.";
 
 NEEDGAS1="Emergency power generator is inoperable.\n\nPlease fuel the turbine with gasoline.";
 NEEDGAS2="Generator Fuel Tank is Empty.\n\nPlease refuel generator fuel tank.";
+GOTGAS1="Acquired gasoline.\n\nProceed to refuel generator fuel tank near sluice control room.";
 GOTGAS2="Acquired gasoline.\n\nProceed to refuel generator fuel tank near boiler room.";
 GATECONTROL1="Gate is open.";
 GATECONTROL2="Switch off Auxiliary Power to Activate Gate Control.";
