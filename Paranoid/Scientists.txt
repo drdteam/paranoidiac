@@ -106,48 +106,19 @@ class HLScientist1 : HLMonster
 				boredom=1;
 			return State(null);
 		}
-	Pondering:
-		HLI1 A 0 {self.frame=random(0,2);}
-		HLI1 # -1
-		{
-			if(wanderer)
-			{
-				A_SetTics(15);
-				Chatter(4);
-				if(random(0,255<6))
-					return ResolveState("See");
-			}
-			if(still)
-			{
-				A_SetTics(10);
-				Chatter(2);
-			}
-			else if(!quiet)
-			{
-				A_SetTics(5);
-				if(stay>=80)
-				{
-					stay=0;
-					if(random(0,1))
-					{
-						boredom=0;
-						return ResolveState("See");
-					}
-					return State(null);
-				}
-				stay++;
-				if(!boredom)
-				{
-					if(!greeting)
-						A_PlaySound("scientist/idle");
-					greeting=0;
-					return ResolveState("See");
-				}
-				Chatter(2);
-			}
-			return state(null);
-		}
-		Wait;
+	Idle:
+		HLI1 A 0 A_Jump(96,"Fidget1","Fidget2");
+		HLI1 ABCDEFGHIJKLMNOP 5 A_HLScientistPonderCheck;
+		Loop;
+	Fidget1:
+		HLI1 QRSTUVWXYZ[\] 3;
+		HLI2 ABCDEFGHIJKLMNOPQRSTUVW 3;
+		Goto Idle+1;
+	Fidget2:
+		HLI2 XYZ[\] 3;
+		HLI3 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 3;
+		HLI4 A 3;
+		Goto Idle+1;
 	See:
 		TNT1 A 0
 		{
@@ -157,7 +128,7 @@ class HLScientist1 : HLMonster
 				return ResolveState("SeeDecidePanic");
 			}
 			if(still)
-				return ResolveState("Pondering");
+				return ResolveState("Idle");
 			A_SetSpeed(5.0/3.0);
 			return state(null);
 		}
@@ -172,7 +143,7 @@ class HLScientist1 : HLMonster
 		HLW1 A 0
 		{
 			if(wanderer&&random(0,255)<32)
-				return ResolveState("Pondering");
+				return ResolveState("Idle");
 			return state(null);
 		}
 		Loop;
@@ -310,9 +281,26 @@ class HLScientist1 : HLMonster
 		HLS1 ABCDEFGHIJKLMNOP 5;
 		Loop;
 	}
-	void Chatter(int chance)
+	void A_HLScientistPonderCheck()
 	{
-		if(random(0,255)<chance)
+		if(wanderer&&!random(0,26))
+			SetStateLabel("See");
+		else if(!still&&!quiet)
+		{
+			if(!random(0,160))
+			{
+				boredom=0;
+				SetStateLabel("See");
+			}
+			else if(!boredom)
+			{
+				if(!greeting)
+					A_PlaySound("scientist/idle");
+				greeting=0;
+				SetStateLabel("See");
+			}
+		}
+		else if(!random(0,255))
 			A_PlaySound("scientist/idle");
 	}
 }
