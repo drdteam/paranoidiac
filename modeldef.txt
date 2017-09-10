@@ -198,26 +198,20 @@ Model HEVChargingStation
 Model HEVsuit
 {
 	Path "Models"
-	Model 0 "hev_scientistbody.md3"
-	SurfaceSkin 0 0 "hev_scientistbody_000.png"
-	SurfaceSkin 0 1 "hev_scientistbody_001.png"
-	SurfaceSkin 0 2 "hev_scientistbody_002.png"
-	SurfaceSkin 0 3 "hev_scientistbody_003.png"
-	SurfaceSkin 0 4 "hev_scientistbody_004.png"
-	SurfaceSkin 0 5 "hev_scientistbody_005.png"
-	SurfaceSkin 0 6 "hev_scientistbody_006.png"
-	SurfaceSkin 0 7 "hev_scientistbody_007.png"
-	SurfaceSkin 0 8 "hev_scientistbody_000.png"
-	SurfaceSkin 0 9 "hev_scientistbody_000.png"
-	SurfaceSkin 0 10 "hev_scientistbody_000.png"
-	Model 1 "hev_scientisthead.md3"
-	SurfaceSkin 1 0 "hev_scientistbody_003.png"
-	SurfaceSkin 1 1 "hev_scientisthead_001.png"
-	SurfaceSkin 1 2 "hev_scientisthead_002.png"
-	SurfaceSkin 1 3 "hev_scientisthead_003.png"
+	Model 0 "w_suit.md3"
+	SurfaceSkin 0 0 "w_suit_000.png"
+	SurfaceSkin 0 1 "w_suit_001.png"
+	SurfaceSkin 0 2 "w_suit_002.png"
+	SurfaceSkin 0 3 "w_suit_003.png"
+	SurfaceSkin 0 4 "w_suit_004.png"
+	SurfaceSkin 0 5 "w_suit_005.png"
+	SurfaceSkin 0 6 "w_suit_006.png"
+	SurfaceSkin 0 7 "w_suit_007.png"
+	SurfaceSkin 0 8 "w_suit_006.png"
+	SurfaceSkin 0 9 "w_suit_002.png"
+	SurfaceSkin 0 10 "w_suit_002.png"
 
-	FrameIndex POSS A 0 460
-	FrameIndex POSS A 1 460
+	FrameIndex POSS A 0 0
 }
 
 Model HEVBattery
@@ -1939,7 +1933,6 @@ Model Osprey
 	Model 0 "osprey1.md3"
 	Skin 0 "osprey.png"
 	Scale 2.0 2.0 2.0
-	NOINTERPOLATION
 
 	FrameIndex POSS A 0 0
 }
@@ -2006,21 +1999,21 @@ Model OspreyBellmer
 {
 	Path "Models"
 	Model 0 "hev_scientistbody.md3"
-	SurfaceSkin 0 0 "hev_scientistbody_000.png"
-	SurfaceSkin 0 1 "hev_scientistbody_001.png"
-	SurfaceSkin 0 2 "hev_scientistbody_002.png"
-	SurfaceSkin 0 3 "hev_scientistbody_003.png"
-	SurfaceSkin 0 4 "hev_scientistbody_004.png"
-	SurfaceSkin 0 5 "hev_scientistbody_005.png"
-	SurfaceSkin 0 6 "hev_scientistbody_006.png"
-	SurfaceSkin 0 7 "hev_scientistbody_007.png"
-	SurfaceSkin 0 8 "hev_scientistbody_000.png"
-	SurfaceSkin 0 9 "hev_scientistbody_000.png"
-	SurfaceSkin 0 10 "hev_scientistbody_000.png"
+	SurfaceSkin 0 0 "w_suit_002.png"
+	SurfaceSkin 0 1 "w_suit_000.png"
+	SurfaceSkin 0 2 "w_suit_001.png"
+	SurfaceSkin 0 3 "w_suit_003.png"
+	SurfaceSkin 0 4 "w_suit_005.png"
+	SurfaceSkin 0 5 "w_suit_007.png"
+	SurfaceSkin 0 6 "w_suit_004.png"
+	SurfaceSkin 0 7 "w_suit_006.png"
+	SurfaceSkin 0 8 "w_suit_002.png"
+	SurfaceSkin 0 9 "w_suit_002.png"
+	SurfaceSkin 0 10 "w_suit_002.png"
 	Model 1 "hev_scientisthead2.md3"
 	SurfaceSkin 1 0 "scientisthead3_000.png"
 	SurfaceSkin 1 1 "scientisthead1_001.png"
-	SurfaceSkin 1 2 "hev_scientistbody_007.png"
+	SurfaceSkin 1 2 "w_suit_002.png"
 
 	Offset -8 44 12
 	AngleOffset 90
@@ -2192,7 +2185,7 @@ Model SUVGlass
 }
 
 //////////////////////
-//  Xen life forms  //
+//	Xen life forms  //
 //////////////////////
 
 Model HLXenFungus
