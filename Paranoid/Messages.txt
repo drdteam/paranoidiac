@@ -1,22 +1,25 @@
 //Map02: Message 1
 class MessageItem01 : CustomInventory
 {
+	override bool TryPickup(in out Actor toucher)
+	{
+		toucher.A_PlaySound("radiostatic",6);
+		toucher.ACS_NamedExecuteAlways("HintMessage");
+		return Super.TryPickup(toucher);
+	}
 	int MessageNum;
 	Property MessageNum:MessageNum;
 	Default
 	{
 		Tag "Message";
 		Inventory.Icon "MAIL01";
-		Inventory.UseSound "misc/chat";
+		Inventory.UseSound "";
 		+INVENTORY.INVBAR
 		+INVENTORY.UNDROPPABLE
 		MessageItem01.MessageNum 1;
 	}
 	States
 	{
-	Spawn:
-		MAIL A -1;
-		Stop;
 	Use:
 		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,invoker.MessageNum);
 		Fail;
