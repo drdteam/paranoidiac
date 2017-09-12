@@ -4,7 +4,7 @@ Model HLCrowbar
 	Model 0 "v_crowbar_main.md3"
 	Skin 0 "v_crowbar_main.png"
 	Model 1 "v_crowbar_hevarms.md3"
-	SurfaceSkin 1 0 "hev_scientistbody_004.png"
+	SurfaceSkin 1 0 "v_hevarms_000.png"
 	SurfaceSkin 1 1 "v_hevarms_001.png"
 	SurfaceSkin 1 2 "v_hevarms_002.png"
 	Scale -1 1 1
@@ -262,7 +262,7 @@ Model HLPistol
 	SurfaceSkin 0 4 "v_9mmhandgun_main_004.png"
 	SurfaceSkin 0 5 "v_9mmhandgun_main_005.png"
 	Model 1 "v_9mmhandgun_hevarms.md3"
-	SurfaceSkin 1 0 "hev_scientistbody_004.png"
+	SurfaceSkin 1 0 "v_hevarms_000.png"
 	SurfaceSkin 1 1 "v_hevarms_001.png"
 	SurfaceSkin 1 2 "v_hevarms_002.png"
 	Scale -1 1 1
@@ -590,7 +590,7 @@ Model HLMagnum
 	SurfaceSkin 0 0 "v_357_main_000.png"
 	SurfaceSkin 0 1 "v_357_main_001x.png"
 	Model 1 "v_357_hevarms.md3"
-	SurfaceSkin 1 0 "hev_scientistbody_004.png"
+	SurfaceSkin 1 0 "v_hevarms_000.png"
 	SurfaceSkin 1 1 "v_hevarms_001.png"
 	SurfaceSkin 1 2 "v_hevarms_002.png"
 	Scale -1 1 1
@@ -953,7 +953,7 @@ Model HLShotgun
 	Model 0 "v_shotgun_main.md3"
 	Skin 0 "v_shotgun_main.png"
 	Model 1 "v_shotgun_hevarms.md3"
-	SurfaceSkin 1 0 "hev_scientistbody_004.png"
+	SurfaceSkin 1 0 "v_hevarms_000.png"
 	SurfaceSkin 1 1 "v_hevarms_001.png"
 	SurfaceSkin 1 2 "v_hevarms_002.png"
 	Scale -1 1 1
@@ -1255,7 +1255,7 @@ Model HLAssaultRifle
 	Model 0 "v_9mmar_main.md3"
 	Skin 0 "v_9mmar_main.png"
 	Model 1 "v_9mmar_hevarms.md3"
-	SurfaceSkin 1 0 "hev_scientistbody_004.png"
+	SurfaceSkin 1 0 "v_hevarms_000.png"
 	SurfaceSkin 1 1 "v_hevarms_001.png"
 	SurfaceSkin 1 2 "v_hevarms_002.png"
 	Scale -1 1 1
@@ -1477,7 +1477,7 @@ Model HLRPG
 	SurfaceSkin 0 2 "v_rpg_main_002.png"
 	SurfaceSkin 0 3 "v_rpg_main_003.png"
 	Model 1 "v_rpg_hevarms.md3"
-	SurfaceSkin 1 0 "hev_scientistbody_004.png"
+	SurfaceSkin 1 0 "v_hevarms_000.png"
 	SurfaceSkin 1 1 "v_hevarms_001.png"
 	SurfaceSkin 1 2 "v_hevarms_002.png"
 	Scale -1 1 1
@@ -1768,7 +1768,7 @@ Model HLXBow
 	SurfaceSkin 0 1 "v_crossbow_main_001.png"
 	SurfaceSkin 0 2 "v_crossbow_main_002.png"
 	Model 1 "v_crossbow_hevarms.md3"
-	SurfaceSkin 1 0 "hev_scientistbody_004.png"
+	SurfaceSkin 1 0 "v_hevarms_000.png"
 	SurfaceSkin 1 1 "v_hevarms_001.png"
 	SurfaceSkin 1 2 "v_hevarms_002.png"
 	Scale -1 1 1
@@ -2675,7 +2675,7 @@ Model HLGluonGun
 	Model 0 "v_egon_main.md3"
 	Skin 0 "v_egon_main.png"
 	Model 1 "v_egon_hevarms.md3"
-	SurfaceSkin 1 0 "hev_scientistbody_004.png"
+	SurfaceSkin 1 0 "v_hevarms_000.png"
 	SurfaceSkin 1 1 "v_hevarms_001.png"
 	SurfaceSkin 1 2 "v_hevarms_002.png"
 	Scale -1 1 1
@@ -3004,7 +3004,7 @@ Model HLDesertEagle
 	SurfaceSkin 0 2 "v_9mmhandgun_main_004.png"
 	SurfaceSkin 0 3 "v_9mmhandgun_main_005.png"
 	Model 1 "v_desert_eagle_hevarms.md3"
-	SurfaceSkin 1 0 "hev_scientistbody_004.png"
+	SurfaceSkin 1 0 "v_hevarms_000.png"
 	SurfaceSkin 1 1 "v_hevarms_001.png"
 	SurfaceSkin 1 2 "v_hevarms_002.png"
 	Scale -1 1 1
