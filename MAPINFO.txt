@@ -546,8 +546,8 @@ DoomEdNums
 	30312=tank04a
 	30313=Tram
 	30314=Tank02a
-	30315=Handler2Standing
-	30316=Handler2Sitting
+	30315=HintMan
+	30316=HintManSitting
 	30317=DeerHead
 	30318=VidCam1
 	30319=VidCam2

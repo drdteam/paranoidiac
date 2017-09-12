@@ -461,7 +461,6 @@ class Armchair : Chair1
 		Radius 20;
 		Mass 200;
 		-PUSHABLE
-		+NODAMAGE
 	}
 }
 
@@ -1435,19 +1434,31 @@ class XMetalBox : ModelBase
 // Administrator
 //==========================================
 
-class Handler2Standing : ModelBase
+class HintMan : ModelBase
 {
 	Default
 	{
 		Height 56;
 	}
+	States
+	{
+	Spawn:
+		HLI1 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 2;
+		HLI2 AB 2;
+		Loop;
+	Sit:
+		HLS1 ABCDEFGHIJKLMNOP 6;
+		Loop;
+	}
 }
-class Handler2Sitting : ModelBase
+class HintManSitting : RandomSpawner
 {
 	Default
 	{
-		Height 40;
+		DropItem "HintMan";
 	}
+	override void PostSpawn(Actor spawned)
+		{spawned.SetStateLabel("Sit");}
 }
 
 class Admin01 : ModelBase
