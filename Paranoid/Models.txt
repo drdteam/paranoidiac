@@ -1443,8 +1443,12 @@ class HintMan : ModelBase
 	States
 	{
 	Spawn:
-		HLI1 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 2;
-		HLI2 AB 2;
+		HLI2 CDEFGHIJKLMNOPQRSTUVWXYZ[\] 2;
+		HLI3 ABCD 2;
+		Loop;
+	Cam:
+		HLI1 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 4;
+		HLI2 AB 4;
 		Loop;
 	Sit:
 		HLS1 ABCDEFGHIJKLMNOP 6;
@@ -1459,6 +1463,11 @@ class HintManSitting : RandomSpawner
 	}
 	override void PostSpawn(Actor spawned)
 		{spawned.SetStateLabel("Sit");}
+}
+class HintManCam : HintManSitting
+{
+	override void PostSpawn(Actor spawned)
+		{spawned.SetStateLabel("Cam");}
 }
 
 class Admin01 : ModelBase

@@ -25,6 +25,14 @@ script "AltHudAmmo" ENTER
 }
 
 //Hint messages that are run when player uses the inventory item "MessageItem**"
+script "HintMan"(int camera)
+{
+	int camx=GetActorX(camera),camy=GetActorY(camera),camz=GetActorZ(camera);
+	SetActorPosition(camera,camx,camy,camz-0.5,0);
+	SetCameraToTexture(camera,"HINTMAN",90);
+	SpawnForced("HintManCam",camx-1.0,camy+4.0,camz-56.0,0,192);
+}
+
 int playingmessage[8];
 str hintsnd[40][2]=
 {

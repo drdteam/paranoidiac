@@ -1,76 +1,76 @@
-// - - - - - - - - - //
-// SWITCHES   //
-// - - - - - - - - - //
- 
-switch XSWIT01A  on  sound sw1 pic XSWIT01B  tics 8
-switch XSWIT02A  on  sound sw1 pic XSWIT02B  tics 8
-switch XSWIT04A  on  sound switches/sw3buttn pic XSWIT04B  tics 8
-switch XSWIT05A  on  sound switches/sw3buttn pic XSWIT05B  tics 8
-switch XSWIT06A  on  sound sw1 pic XSWIT06B  tics 8
-switch XSWIT07A  on  sound sw1 pic XSWIT07B  tics 8
-switch XSWIT08A  on  sound switches/sw2cntrl pic XSWIT08B  tics 8
-switch XSWIT09A  on  sound switches/sw2cntrl pic XSWIT09B  tics 8
-switch XSWIT10A  on  sound switches/sw2cntrl pic XSWIT10B  tics 8
-switch XSWIT11A  on  sound switches/sw2cntrl pic XSWIT11B  tics 8
-switch XSWIT12A  on  sound switches/sw1light pic XSWIT12B  tics 8
-switch XSWIT13A  on  sound switches/sw1light pic XSWIT13B  tics 8
-switch XSWIT14A  on  sound switches/sw1light pic XSWIT14B  tics 8
-switch XSWIT16A  on  sound switches/sw1light pic XSWIT16B  tics 8
-switch XSWIT17A  on  sound switches/sw1light pic XSWIT17B  tics 8
-switch XSWIT18A  on  sound switches/sw1light pic XSWIT18B  tics 8
-switch XSWIT20A  on  sound sw1 pic XSWIT20B  tics 8
-switch XSWIT21A  on  sound switches/sw3buttn pic XSWIT21B  tics 8
- 
-// ------------------------//
-// ANIMATED FLATS  //
-// ------------------------//
- 
-// flat 3CMPTR1  
-// pic 3CMPTR1   tics 8
-// pic 3CMPTR2   tics 8
-// pic 3CMPTR3   tics 8
+//----------//
+// SWITCHES //
+//----------//
 
-// ---------------------//
-// WARPED FLATS  //
-// ---------------------//
+switch XSWIT01A on sound sw1 pic XSWIT01B tics 8
+switch XSWIT02A on sound sw1 pic XSWIT02B tics 8
+switch XSWIT04A on sound switches/sw3buttn pic XSWIT04B tics 8
+switch XSWIT05A on sound switches/sw3buttn pic XSWIT05B tics 8
+switch XSWIT06A on sound sw1 pic XSWIT06B tics 8
+switch XSWIT07A on sound sw1 pic XSWIT07B tics 8
+switch XSWIT08A on sound switches/sw2cntrl pic XSWIT08B tics 8
+switch XSWIT09A on sound switches/sw2cntrl pic XSWIT09B tics 8
+switch XSWIT10A on sound switches/sw2cntrl pic XSWIT10B tics 8
+switch XSWIT11A on sound switches/sw2cntrl pic XSWIT11B tics 8
+switch XSWIT12A on sound switches/sw1light pic XSWIT12B tics 8
+switch XSWIT13A on sound switches/sw1light pic XSWIT13B tics 8
+switch XSWIT14A on sound switches/sw1light pic XSWIT14B tics 8
+switch XSWIT16A on sound switches/sw1light pic XSWIT16B tics 8
+switch XSWIT17A on sound switches/sw1light pic XSWIT17B tics 8
+switch XSWIT18A on sound switches/sw1light pic XSWIT18B tics 8
+switch XSWIT20A on sound sw1 pic XSWIT20B tics 8
+switch XSWIT21A on sound switches/sw3buttn pic XSWIT21B tics 8
 
- warp flat XWATER01
- warp flat XWATER02
- warp flat XWATER03
- warp flat XNUKE01
- 
-// -----------------------------//
-// ANIMATED TEXTURES   //
-// -----------------------------//
+//---------------//
+//ANIMATED FLATS //
+//---------------//
+
+// flat 3CMPTR1
+// pic 3CMPTR1 tics 8
+// pic 3CMPTR2 tics 8
+// pic 3CMPTR3 tics 8
+
+//-------------//
+//WARPED FLATS //
+//-------------//
+
+warp flat XWATER01
+warp flat XWATER02
+warp flat XWATER03
+warp flat XNUKE01
+
+//------------------//
+//ANIMATED TEXTURES //
+//------------------//
 
 texture XELECT1A
 
-pic XELECT1A tics 4 
-pic XELECT1B tics 4 
+pic XELECT1A tics 4
+pic XELECT1B tics 4
 pic XELECT1C tics 4
 
 texture XELECT2A
 
-pic XELECT2A tics 4 
-pic XELECT2B tics 4 
+pic XELECT2A tics 4
+pic XELECT2B tics 4
 pic XELECT2C tics 4
 
-texture X0LASER1 
+texture X0LASER1
 
-pic X0LASER1 tics 4 
-pic X0LASER2 tics 4 
-pic X0LASER3 tics 4 
+pic X0LASER1 tics 4
+pic X0LASER2 tics 4
+pic X0LASER3 tics 4
 pic X0LASER4 tics 4
 
 texture XOFFIC01
 
-pic XOFFIC01 tics 35 
+pic XOFFIC01 tics 35
 pic XOFFIC02 tics 35
 pic XOFFIC03 tics 35
 
 texture XOFFIC10
 
-pic XOFFIC10 tics 70 
+pic XOFFIC10 tics 70
 pic XOFFIC11 tics 70
 pic XOFFIC12 tics 70
 pic XOFFIC13 tics 70
@@ -87,7 +87,7 @@ pic XOFFIC14 tics 70
 pic XOFFIC15 tics 70
 pic XOFFIC16 tics 70
 pic XOFFIC17 tics 70
-pic XOFFIC10 tics 70 
+pic XOFFIC10 tics 70
 pic XOFFIC11 tics 70
 
 texture XOFFIC14
@@ -96,7 +96,7 @@ pic XOFFIC14 tics 70
 pic XOFFIC15 tics 70
 pic XOFFIC16 tics 70
 pic XOFFIC17 tics 70
-pic XOFFIC10 tics 70 
+pic XOFFIC10 tics 70
 pic XOFFIC11 tics 70
 pic XOFFIC12 tics 70
 pic XOFFIC13 tics 70
@@ -105,110 +105,110 @@ texture XOFFIC16
 
 pic XOFFIC16 tics 70
 pic XOFFIC17 tics 70
-pic XOFFIC10 tics 70 
+pic XOFFIC10 tics 70
 pic XOFFIC11 tics 70
 pic XOFFIC12 tics 70
 pic XOFFIC13 tics 70
 pic XOFFIC14 tics 70
 pic XOFFIC15 tics 70
 
-texture XCOMP02 
+texture XCOMP02
 
-pic XCOMP02 tics 4 
-pic XCOMP02A tics 4 
+pic XCOMP02 tics 4
+pic XCOMP02A tics 4
 pic XCOMP02B tics 4
 
-texture XCOMP03 
+texture XCOMP03
 
-pic XCOMP03 tics 4 
-pic XCOMP03A tics 4 
-pic XCOMP03B tics 4 
+pic XCOMP03 tics 4
+pic XCOMP03A tics 4
+pic XCOMP03B tics 4
 pic XCOMP03C tics 4
 pic XCOMP03D tics 4
 pic XCOMP03E tics 4
 pic XCOMP03F tics 4
 pic XCOMP03G tics 4
 
-texture XCOMP04 
+texture XCOMP04
 
-pic XCOMP04 tics 4 
-pic XCOMP04A tics 4 
+pic XCOMP04 tics 4
+pic XCOMP04A tics 4
 
-texture XCOMP05 
+texture XCOMP05
 
-pic XCOMP05 tics 4 
-pic XCOMP05A tics 4 
+pic XCOMP05 tics 4
+pic XCOMP05A tics 4
 
-texture XCOMP12 
+texture XCOMP12
 
-pic XCOMP12 tics 4 
-pic XCOMP12A tics 4 
+pic XCOMP12 tics 4
+pic XCOMP12A tics 4
 
-texture XCOMP14 
+texture XCOMP14
 
-pic XCOMP14 tics 4 
+pic XCOMP14 tics 4
 pic XCOMP14A tics 4
 
-texture XCOMP16 
+texture XCOMP16
 
-pic XCOMP16 tics 4 
-pic XCOMP16A tics 4 
+pic XCOMP16 tics 4
+pic XCOMP16A tics 4
 
-texture XCOMP17 
+texture XCOMP17
 
-pic XCOMP17 tics 4 
-pic XCOMP17A tics 4 
-pic XCOMP17B tics 4 
+pic XCOMP17 tics 4
+pic XCOMP17A tics 4
+pic XCOMP17B tics 4
 pic XCOMP17C tics 4
 
-texture XCOMP18 
+texture XCOMP18
 
-pic XCOMP18 tics 4 
-pic XCOMP18A tics 4 
+pic XCOMP18 tics 4
+pic XCOMP18A tics 4
 pic XCOMP18B tics 4
 
-texture XMICRO01 
+texture XMICRO01
 
-pic XMICRO01 tics 4 
-pic XMICRO02 tics 4 
+pic XMICRO01 tics 4
+pic XMICRO02 tics 4
 
-texture XMONI01 
+texture XMONI01
 
-pic XMONI01 tics 105 
+pic XMONI01 tics 105
 pic XMONI02 tics 105
 pic XMONI03 tics 105
 pic XMONI04 tics 105
 
-texture XMONI02 
+texture XMONI02
 
-pic XMONI02 tics 70 
+pic XMONI02 tics 70
 pic XMONI04 tics 70
 pic XMONI01 tics 70
 pic XMONI03 tics 70
 
-texture XMONI03 
+texture XMONI03
 
-pic XMONI03 tics 105 
+pic XMONI03 tics 105
 pic XMONI01 tics 70
 pic XMONI04 tics 105
 pic XMONI02 tics 70
 
-texture XMONI04 
+texture XMONI04
 
-pic XMONI04 tics 70 
+pic XMONI04 tics 70
 pic XMONI03 tics 105
 pic XMONI02 tics 70
 pic XMONI01 tics 105
 
-texture XMONI06 
+texture XMONI06
 
-pic XMONI06 tics 4 
-pic XMONI07 tics 4 
+pic XMONI06 tics 4
+pic XMONI07 tics 4
 
-texture XMONI08 
+texture XMONI08
 
-pic XMONI08 tics 4 
-pic XMONI09 tics 4 
+pic XMONI08 tics 4
+pic XMONI09 tics 4
 
 texture XMONI10
 
@@ -228,114 +228,114 @@ pic XMONI12 tics 70
 pic XMONI11 tics 105
 pic XMONI10 tics 70
 
-texture XMONI15 
+texture XMONI15
 
-pic XMONI15 tics 4 
-pic XMONI15A tics 4 
-pic XMONI15B tics 4 
-pic XMONI15C tics 4 
+pic XMONI15 tics 4
+pic XMONI15A tics 4
+pic XMONI15B tics 4
+pic XMONI15C tics 4
 
-texture XMONI17 
+texture XMONI17
 
-pic XMONI17 tics 4 
-pic XMONI17A tics 4 
+pic XMONI17 tics 4
+pic XMONI17A tics 4
 pic XMONI17B tics 4
 
-texture XMONI18 
+texture XMONI18
 
-pic XMONI18 tics 4 
-pic XMONI18A tics 4 
+pic XMONI18 tics 4
+pic XMONI18A tics 4
 pic XMONI18B tics 4
 
-texture XMONI19 
+texture XMONI19
 
-pic XMONI19 tics 4 
-pic XMONI19A tics 4 
-pic XMONI19B tics 4 
+pic XMONI19 tics 4
+pic XMONI19A tics 4
+pic XMONI19B tics 4
 pic XMONI19C tics 4
 pic XMONI19D tics 4
 
-texture XMONI20 
+texture XMONI20
 
-pic XMONI20 tics 4 
-pic XMONI20A tics 4 
-pic XMONI20B tics 4 
+pic XMONI20 tics 4
+pic XMONI20A tics 4
+pic XMONI20B tics 4
 pic XMONI20C tics 4
 pic XMONI20D tics 4
 pic XMONI20E tics 4
 pic XMONI20F tics 4
-pic XMONI20G tics 4 
+pic XMONI20G tics 4
 pic XMONI20H tics 4
 pic XMONI20I tics 4
 
-texture XMONI21A 
+texture XMONI21A
 
-pic XMONI21A tics 4 
-pic XMONI21B tics 4 
-pic XMONI21C tics 4 
+pic XMONI21A tics 4
+pic XMONI21B tics 4
+pic XMONI21C tics 4
 pic XMONI21D tics 4
 pic XMONI21E tics 4
 
-texture XMONI22 
+texture XMONI22
 
-pic XMONI22 tics 4 
-pic XMONI22A tics 4 
-pic XMONI22B tics 4 
+pic XMONI22 tics 4
+pic XMONI22A tics 4
+pic XMONI22B tics 4
 pic XMONI22C tics 4
 pic XMONI22D tics 4
 pic XMONI22E tics 4
 pic XMONI22F tics 4
 
-texture XMONI23 
+texture XMONI23
 
-pic XMONI23 tics 4 
-pic XMONI23A tics 4 
-pic XMONI23B tics 4 
+pic XMONI23 tics 4
+pic XMONI23A tics 4
+pic XMONI23B tics 4
 pic XMONI23C tics 4
 
-texture XMONI24 
+texture XMONI24
 
-pic XMONI24 tics 4 
-pic XMONI24A tics 4 
-pic XMONI24B tics 4 
+pic XMONI24 tics 4
+pic XMONI24A tics 4
+pic XMONI24B tics 4
 pic XMONI24C tics 4
 pic XMONI24D tics 4
 pic XMONI24E tics 4
 
-texture XMONI25 
+texture XMONI25
 
-pic XMONI25 tics 4 
-pic XMONI25A tics 4 
-pic XMONI25B tics 4 
+pic XMONI25 tics 4
+pic XMONI25A tics 4
+pic XMONI25B tics 4
 pic XMONI25C tics 4
 pic XMONI25D tics 4
 
-texture XMONI29 
+texture XMONI29
 
 pic XMONI29 tics 10
 pic XMONI30 tics 10
 
-texture XTECH01 
+texture XTECH01
 
-pic XTECH01 tics 4 
-pic XTECH01A tics 4 
-pic XTECH01B tics 4 
+pic XTECH01 tics 4
+pic XTECH01A tics 4
+pic XTECH01B tics 4
 pic XTECH01C tics 4
 pic XTECH01D tics 4
 pic XTECH01E tics 4
 pic XTECH01F tics 4
 pic XTECH01G tics 4
 
-texture XTECH02 
+texture XTECH02
 
-pic XTECH02 tics 4 
+pic XTECH02 tics 4
 pic XTECH02A tics 4
 
-texture XWFALL1 
+texture XWFALL1
 
-pic XWFALL1 tics 8 
-pic XWFALL2 tics 8 
-pic XWFALL3 tics 8 
+pic XWFALL1 tics 8
+pic XWFALL2 tics 8
+pic XWFALL3 tics 8
 pic XWFALL4 tics 8
 pic XWFALL5 tics 8
 
@@ -357,8 +357,8 @@ WARP2 FLAT XWATER06
 //******
 // SWITCHES
 //******
- 
-switch XSWITCH1  on  sound sw1 pic XSWITCH2  tics 8
+
+switch XSWITCH1 on sound sw1 pic XSWITCH2 tics 8
 
 //******
 // ANIMATED TEXTURES
@@ -375,68 +375,71 @@ pic XGLASS03 tics 7
 pic XGLASS1A tics 7
 pic XGLASS02 tics 7
 
-texture XMONI31A 
+texture XMONI31A
 
-pic XMONI31A tics 105 
-pic XMONI31B tics 105 
-pic XMONI31C tics 105 
+pic XMONI31A tics 105
+pic XMONI31B tics 105
+pic XMONI31C tics 105
 pic XMONI31D tics 105
 pic XMONI31E tics 105
 pic XMONI31F tics 105
 
-texture XMONI31B 
+texture XMONI31B
 
 pic XMONI31B tics 70
 pic XMONI31C tics 70
 pic XMONI31D tics 70
 pic XMONI31E tics 70
 pic XMONI31F tics 70
-pic XMONI31A tics 70 
+pic XMONI31A tics 70
 
-texture XMONI31C 
+texture XMONI31C
 
 pic XMONI31C tics 70
 pic XMONI31D tics 105
 pic XMONI31E tics 70
 pic XMONI31F tics 105
-pic XMONI31A tics 70 
+pic XMONI31A tics 70
 pic XMONI31B tics 105
 
-texture XMONI31D 
+texture XMONI31D
 
 pic XMONI31D tics 35
 pic XMONI31E tics 70
 pic XMONI31F tics 35
-pic XMONI31A tics 70 
+pic XMONI31A tics 70
 pic XMONI31B tics 35
 pic XMONI31C tics 70
 
-texture XMONI32B 
+texture XMONI32B
 
 pic XMONI32B tics 105
 pic XMONI32C tics 105
 pic XMONI32D tics 105
 
-texture XMONI32C 
+texture XMONI32C
 
 pic XMONI32C tics 70
 pic XMONI32D tics 70
 pic XMONI32B tics 70
 
-texture XMONI32D 
+texture XMONI32D
 
 pic XMONI32D tics 140
 pic XMONI32B tics 140
 pic XMONI32C tics 140
 
-texture XMONI33A 
+texture XMONI33A
 
-pic XMONI33A tics 105 
-pic XMONI33B tics 105 
-pic XMONI33C tics 105 
+pic XMONI33A tics 105
+pic XMONI33B tics 105
+pic XMONI33C tics 105
 pic XMONI33D tics 105
 pic XMONI33E tics 105
 pic XMONI33F tics 105
 pic XMONI33G tics 105
 pic XMONI33H tics 105
 pic XMONI33I tics 140
+
+//HUD Icons
+cameratexture HINTMAN 256 256 fit 64 64
