@@ -86,7 +86,7 @@ class ParanoidEventHandler : StaticEventHandler
 		me=RolfBellmer(mon.target);
 		if(me==null||!me.otis)
 			return;
-		if(random(0,1))
+		if(!random(0,3))
 			mon.target.A_PlaySound("otistaunt",CHAN_VOICE);
 	}
 }
