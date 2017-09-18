@@ -1,8 +1,8 @@
 IWad
 {
-	Name = "Paranoid: A GZDoom Mod for Doom II"
+	Name = "Paranoid: A Half-Life Adventure for GZDoom"
 	Autoname = "Paranoidiac"
-	Game = "Heretic"
+	Game = "Doom"
 	Config = "Paranoidiac"
 	Mapinfo = "mapinfo/doom2.txt"
 	Compatibility = "Shorttex"

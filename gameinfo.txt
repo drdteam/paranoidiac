@@ -1,4 +1,4 @@
 iwad = "doom2.wad"
-startuptitle = "Paranoid: A GZDoom Mod for Doom II"
+startuptitle = "Paranoid: A Half-Life Adventure for GZDoom"
 startupcolors = "ff c0 10", "10 10 10"
 startuptype = "Heretic"
