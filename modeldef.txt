@@ -2145,19 +2145,46 @@ Model Truck01
 Model SUV
 {
 	Path "Models"
-	Model 0 "suv01.md3"
-	Skin 0 "suv01.png"
-	Scale 0.95 0.95 0.95
+	Model 0 "suv.md3"
+	SurfaceSkin 0 0 "suv_000.png"
+	SurfaceSkin 0 1 "suv_001.png"
+	SurfaceSkin 0 2 "suv_002.png"
+	SurfaceSkin 0 3 "suv_003.png"
+	SurfaceSkin 0 4 "suv_004.png"
+	SurfaceSkin 0 5 "suv_005.png"
+	SurfaceSkin 0 6 "suv_006.png"
+	SurfaceSkin 0 7 "suv_007.png"
+	SurfaceSkin 0 8 "suv_008.png"
+	SurfaceSkin 0 9 "suv_009.png"
+	SurfaceSkin 0 10 "suv_010.png"
+	SurfaceSkin 0 11 "suv_011.png"
+	SurfaceSkin 0 12 "suv_012.png"
+	SurfaceSkin 0 13 "suv_013.png"
+	SurfaceSkin 0 14 "suv_014.png"
+	SurfaceSkin 0 15 "suv_015.png"
 
 	FrameIndex HLI1 A 0 0
 }
-
 Model SUV
 {
 	Path "Models"
-	Model 0 "suv02.md3"
-	Skin 0 "suv02.png"
-	Scale 0.95 0.95 0.95
+	Model 0 "suv2.md3"
+	SurfaceSkin 0 0 "suv2_000.png"
+	SurfaceSkin 0 1 "suv2_001.png"
+	SurfaceSkin 0 2 "suv2_002.png"
+	SurfaceSkin 0 3 "suv2_003.png"
+	SurfaceSkin 0 4 "suv2_004.png"
+	SurfaceSkin 0 5 "suv2_005.png"
+	SurfaceSkin 0 6 "suv_006.png"
+	SurfaceSkin 0 7 "suv2_007.png"
+	SurfaceSkin 0 8 "suv_015.png"
+	SurfaceSkin 0 9 "suv2_009.png"
+	SurfaceSkin 0 10 "suv_008.png"
+	SurfaceSkin 0 11 "suv_009.png"
+	SurfaceSkin 0 12 "suv2_012.png"
+	SurfaceSkin 0 13 "suv_011.png"
+	SurfaceSkin 0 14 "suv2_014.png"
+	SurfaceSkin 0 15 "suv2_015.png"
 
 	FrameIndex HLI1 B 0 0
 }
@@ -2167,7 +2194,6 @@ Model SUVGlass
 	Path "Models"
 	Model 0 "suv_glass.md3"
 	Skin 0 "suv_glass.png"
-	Scale 0.95 0.95 0.95
 
 	FrameIndex HLI1 A 0 0
 	FrameIndex HLI1 B 0 1

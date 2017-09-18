@@ -211,22 +211,13 @@ class Key1 : FakeInventory
 		Scale .5;
 		Radius 4;
 		Height 2;
-		Inventory.PickupMessage "Picked up the blue security key.";
+		Inventory.PickupMessage "Picked up a security key.";
 	}
 	States
 	{
 	Spawn:
-		HLI1 A -1;
+		HLI1 A -1 NODELAY {frame=random(0,1);}
 		Stop;
-	}
-}
-
-class Key2 : Key1
-{
-	Default
-	{
-		Height 4;
-		Inventory.PickupMessage "Picked up the red security key.";
 	}
 }
 
