@@ -34,7 +34,7 @@ skill Medium
 {
 	DefaultSkill
 	SpawnFilter="Normal"
-	Name="Normal"
+	Name="Medium"
 	PicName="M_MED"
 	ACSreturn=2
 	Key=m
@@ -43,7 +43,7 @@ skill Medium
 skill Difficult
 {
 	SpawnFilter="Hard"
-	Name="Hard"
+	Name="Difficult"
 	PicName="M_DIFF"
 	ACSreturn=3
 	Key=d
