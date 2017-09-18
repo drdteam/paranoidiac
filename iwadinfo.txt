@@ -1,0 +1,10 @@
+IWad
+{
+	Name = "Paranoid: A GZDoom Mod for Doom II"
+	Autoname = "Paranoidiac"
+	Game = "Heretic"
+	Config = "Paranoidiac"
+	Mapinfo = "mapinfo/doom2.txt"
+	Compatibility = "Shorttex"
+	BannerColors = "ff c0 10", "10 10 10"
+}
