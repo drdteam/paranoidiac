@@ -6,6 +6,7 @@ gameinfo
 	infopage="HELP"
 	menubackbutton="M_BACK"
 	statusbarclass="ParanoidStatusBar"
+	cursorpic="cursor"
 }
 
 clearskills
@@ -23,6 +24,7 @@ skill VeryEasy
 skill Easy
 {
 	SpawnFilter="Easy"
+	Name="Easy"
 	PicName="M_EASY"
 	ACSreturn=1
 	Key=e
@@ -32,6 +34,7 @@ skill Medium
 {
 	DefaultSkill
 	SpawnFilter="Normal"
+	Name="Normal"
 	PicName="M_MED"
 	ACSreturn=2
 	Key=m
@@ -40,6 +43,7 @@ skill Medium
 skill Difficult
 {
 	SpawnFilter="Hard"
+	Name="Hard"
 	PicName="M_DIFF"
 	ACSreturn=3
 	Key=d
@@ -110,19 +114,26 @@ map TITLEMAP "The Path to Perdition"
 map map01 "Walk Softly and Carry a Big Stick"
 {
 	PrecacheSounds="Music02"
+	Next=MAP02
 }
 map map02 "You Can Run..."
 {
 	PrecacheSounds="Music02"
+	Next=MAP03
 }
 map map03 "No Rest for the Wicked"
 {
 	PrecacheSounds="Music03"
+	Next=MAP04
 }
-map map04 "Finding Dr. Zimmerman"{}
+map map04 "Finding Dr. Zimmerman"
+{
+	Next=MAP08
+}
 map map08 "...But You Can't Hide."
 {
 	PrecacheSounds="Music04"
+	Next=MAP05
 }
 
 adddefaultmap
@@ -132,14 +143,17 @@ adddefaultmap
 map map05 "Mission Accomplished?"
 {
 	PrecacheSounds="Music07"
+	Next=MAP06
 }
 map map06 "Dirty. Little. Secret"
 {
 	PrecacheSounds="Music01"
+	Next=MAP07
 }
 map map07 "Out of the Frying Pan..."
 {
 	PrecacheSounds="Music03","Music07"
+	Next=MAP09
 }
 
 adddefaultmap
@@ -149,7 +163,7 @@ adddefaultmap
 map MAP09 "Flight of the Phoenix"
 {
 	NoIntermission
-	Next=map10
+	Next=MAP10
 	PrecacheSounds="30Title"
 }
 
@@ -161,6 +175,7 @@ map map10 "Smoke on the Water, The Fire in the Sky."
 {
 	ResetHealth
 	ResetInventory
+	Next=MAP11
 }
 
 adddefaultmap
@@ -170,8 +185,12 @@ adddefaultmap
 map map11 "Fly in a Web."
 {
 	PrecacheSounds="11Earth","32Trans","MAP11VX2"
+	Next=MAP12
 }
-map map12 "How Green, the Valley."{}
+map map12 "How Green, the Valley."
+{
+	Next=MAP13
+}
 
 adddefaultmap
 {
@@ -180,15 +199,18 @@ adddefaultmap
 map map13 "Sewer Rat."
 {
 	PrecacheSounds="13Earth"
+	Next=MAP14
 }
 map map14 "Run, Rabbit, Run!"
 {
 	PrecacheSounds="14Earth","34Trans"
+	Next=MAP15
 }
 map map15 "When Hell Freezes Over."
 {
 	hazardcolor="80 a0 ff"
 	hazardflash="40 80 ff"
+	Next=MAP16
 }
 
 adddefaultmap
@@ -198,14 +220,17 @@ adddefaultmap
 map map16 "Play the Mad Scientist."
 {
 	PrecacheSounds="16Earth"
+	Next=MAP17
 }
 map map17 "Painted into a Corner."
 {
 	PrecacheSounds="17Earth"
+	Next=MAP18
 }
 map map18 "Cavernicolous."
 {
 	PrecacheSounds="18ZEarth","36Trans"
+	Next=MAP19
 }
 
 adddefaultmap
@@ -213,10 +238,14 @@ adddefaultmap
 	sky1=HLSKY6
 	AirControl=.25
 }
-map map19 "Island Hopping."{}
+map map19 "Island Hopping."
+{
+	Next=MAP20
+}
 map map20 "Monarch Gonarch."
 {
 	Music="20Xen"
+	Next=MAP21
 }
 map map21 "Xenophobia."
 {
@@ -230,6 +259,7 @@ adddefaultmap
 map map22 "Six Ways to Die."
 {
 	Music="22SixWay"
+	Next=MAP23
 }
 map map23 "SpaceX."
 {
