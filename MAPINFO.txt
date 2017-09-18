@@ -672,7 +672,6 @@ DoomEdNums
 	31001=HEVbattery
 	31002=Key1
 	31003=Medkit
-	31004=Key2
 	31005=Medkit1
 	31599=OMGBubbles
 	31902=OMGOrangeSpark
