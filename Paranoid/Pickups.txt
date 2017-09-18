@@ -142,7 +142,7 @@ class HEVSuit : BasicArmorPickup
 	states
 	{
 	Spawn:
-		POSS A -1;
+		HLI1 A -1;
 		Stop;
 	}
 }
@@ -159,7 +159,7 @@ class HEVbattery : HEVCharge
 	States
 	{
 	Spawn:
-		POSS A -1 LIGHT("HevBattLight");
+		HLI1 A -1 LIGHT("HevBattLight");
 		Stop;
 	}
 }
@@ -176,7 +176,7 @@ class Medkit : Health
 	States
 	{
 	Spawn:
-		POSS A -1;
+		HLI1 A -1;
 		Stop;
 	}
 }
@@ -199,7 +199,7 @@ class Medkit1 : HealthPickup
 	States
 	{
 	Spawn:
-		POSS A -1;
+		HLI1 A -1;
 		Stop;
 	}
 }
@@ -216,7 +216,7 @@ class Key1 : FakeInventory
 	States
 	{
 	Spawn:
-		POSS A -1;
+		HLI1 A -1;
 		Stop;
 	}
 }

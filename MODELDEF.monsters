@@ -552,16 +552,16 @@ Model HLBarnacle
 	Skin 0 "barnacle.png"
 	Scale 0.8 0.8 0.7
 
-	Frame POSS A 0 "idle01"
-	Frame POSS B 0 "idle02"
-	Frame POSS C 0 "idle03"
-	Frame POSS D 0 "spit01"
-	Frame POSS E 0 "spit02"
-	Frame POSS F 0 "spit03"
-	Frame POSS G 0 "spit04"
-	Frame POSS H 0 "spit05"
-	Frame POSS I 0 "spit06"
-	Frame POSS J 0 "pain01"
+	Frame HLI1 A 0 "idle01"
+	Frame HLI1 B 0 "idle02"
+	Frame HLI1 C 0 "idle03"
+	Frame HLI1 D 0 "spit01"
+	Frame HLI1 E 0 "spit02"
+	Frame HLI1 F 0 "spit03"
+	Frame HLI1 G 0 "spit04"
+	Frame HLI1 H 0 "spit05"
+	Frame HLI1 I 0 "spit06"
+	Frame HLI1 J 0 "pain01"
 }
 
 Model HLBarnacle
@@ -571,15 +571,15 @@ Model HLBarnacle
 	Skin 1 "barnacle2.png"
 	Scale 0.8 0.8 0.7
 
-	Frame POSS K 1 "death01"
-	Frame POSS L 1 "death02"
-	Frame POSS M 1 "death03"
-	Frame POSS N 1 "death04"
-	Frame POSS O 1 "death05"
-	Frame POSS P 1 "death06"
-	Frame POSS Q 1 "death07"
-	Frame POSS R 1 "death08"
-	Frame POSS S 1 "death09"
+	Frame HLI1 K 1 "death01"
+	Frame HLI1 L 1 "death02"
+	Frame HLI1 M 1 "death03"
+	Frame HLI1 N 1 "death04"
+	Frame HLI1 O 1 "death05"
+	Frame HLI1 P 1 "death06"
+	Frame HLI1 Q 1 "death07"
+	Frame HLI1 R 1 "death08"
+	Frame HLI1 S 1 "death09"
 }
 
 Model HLHornetGrunt

@@ -29,39 +29,39 @@ class HLBarnacle : Actor
 	states
 	{
 	Spawn:
-		POSS AAA 8 A_Look;
-		POSS A 8 A_Jump(32,1);
+		HLI1 AAA 8 A_Look;
+		HLI1 A 8 A_Jump(32,1);
 		Loop;
-		POSS BCB 4 A_Look;
+		HLI1 BCB 4 A_Look;
 		Loop;
 	See:
-		POSS AA 4 A_BarnacleChase;
-		POSS A 4 A_Jump(96,1);
+		HLI1 AA 4 A_BarnacleChase;
+		HLI1 A 4 A_Jump(96,1);
 		Loop;
-		POSS BCB 4 A_BarnacleChase;
+		HLI1 BCB 4 A_BarnacleChase;
 		Loop;
 	Missile:
-		POSS DEF 3 A_FaceTarget;
-		POSS G 6
+		HLI1 DEF 3 A_FaceTarget;
+		HLI1 G 6
 		{
 			for(int i=0;i<7;i++)
 				A_SpawnItemEx("BarnacleSpitParticle",0,0,12,frandom(0.5,2),frandom(1.3,-1.3),frandom(-0.3,-1.2),random(0,359));
 			A_PlaySound("barnacle/attack");
 			A_SpawnProjectile("BarnacleSpitBall",12);
 		}
-		POSS HI 3;
+		HLI1 HI 3;
 		goto See;
 	Pain:
-		POSS J 2;
-		POSS J 2 A_Pain;
+		HLI1 J 2;
+		HLI1 J 2 A_Pain;
 		goto See;
 	Death:
-		POSS K 5 {bNOCLIP=1;}  //stops you being able to jump up and push the model into the ceiling
-		POSS K 5 A_Scream;
-		POSS L 5 A_NoBlocking;
-		POSS LLLMMM 2 A_SpawnItemEx("HLGibs",random(3,-3),random(3,-3),random(8,24),random(1,2),random(1,2),random(-1,-3),random(0,359));
-		POSS NOPQR 5;
-		POSS S -1;
+		HLI1 K 5 {bNOCLIP=1;}  //stops you being able to jump up and push the model into the ceiling
+		HLI1 K 5 A_Scream;
+		HLI1 L 5 A_NoBlocking;
+		HLI1 LLLMMM 2 A_SpawnItemEx("HLGibs",random(3,-3),random(3,-3),random(8,24),random(1,2),random(1,2),random(-1,-3),random(0,359));
+		HLI1 NOPQR 5;
+		HLI1 S -1;
 		Stop;
 	}
 	void A_BarnacleChase()

@@ -46,7 +46,7 @@ class ParanoidWeapon : Weapon
 			return ResolveState("Ready");
 		}
 	Spawn:
-		POSS A -1;
+		HLS1 A -1;
 		Stop;
 	OtisSelect1:
 		BSU1 ABCDEFGHIJKLMNO 1 A_WeaponReady(WRF_NOBOB|WRF_NOFIRE);
@@ -265,7 +265,7 @@ class ParanoidWeaponGiver : WeaponGiver
 	States
 	{
 	Spawn:
-		POSS A -1;
+		HLS1 A -1;
 		Stop;
 	}
 }
@@ -806,7 +806,7 @@ class HLPistolAmmo : Ammo replaces Clip
 	States
 	{
 	Spawn:
-		POSS A -1;
+		HLI1 A -1;
 		Stop;
 	}
 }
@@ -933,7 +933,7 @@ class HLMagnumAmmo : Ammo replaces Shell
 	States
 	{
 	Spawn:
-		POSS A -1;
+		HLI1 A -1;
 		Stop;
 	}
 }
@@ -967,6 +967,7 @@ class HLShotgunPickup2 : HLShotgunPickup
 		Height 32;
 	}
 }
+class HLShotgunPickup3 : HLShotgunPickup2{}
 
 class HLShotgun : ParanoidWeapon
 {
@@ -1163,7 +1164,7 @@ class HLShotgunAmmo : Ammo
 	States
 	{
 	Spawn:
-		POSS A -1;
+		HLI1 A -1;
 		Stop;
 	}
 }
@@ -1385,7 +1386,7 @@ class M16Grenade : Actor
 	States
 	{
 	Spawn:
-		POSS A 1
+		HLI1 A 1
 		{
 			A_SetPitch(pitch+10);
 			for(int i=0;i<2;i++)
@@ -1468,7 +1469,7 @@ class HLGrenadeLauncherAmmo : Ammo replaces RocketAmmo
 	States
 	{
 	Spawn:
-		POSS A -1;
+		HLI1 A -1;
 		Stop;
 	}
 }
@@ -1604,7 +1605,7 @@ class HLRocket : Actor
 	States
 	{
 	Spawn:
-		POSS A 1 Bright
+		HLI1 A 1 Bright
 		{
 			A_SpawnItemEx("RPGTrail2",random(3,-3),random(3,-3),random(3,-3),zvel:frandom(.25,1.25));
 			for(int i=0;i<2;i++)
@@ -1682,7 +1683,7 @@ class HLRPGAmmo : Ammo
 	States
 	{
 	Spawn:
-		POSS A -1;
+		HLI1 A -1;
 		Stop;
 	}
 }
@@ -1967,7 +1968,7 @@ class HLXBowAmmo : Ammo
 	states
 	{
 	Spawn:
-		POSS A -1;
+		HLI1 A -1;
 		Stop;
 	}
 }
@@ -1997,7 +1998,7 @@ class XbowBolt : FastProjectile
 	States
 	{
 	Spawn:
-		POSS A -1;
+		HLI1 A -1;
 		Loop;
 	Xdeath:
 		TNT1 A 4 A_PlaySound("HLCrossbow/Hitbody",7);
@@ -2609,7 +2610,7 @@ class HLGluonGunAmmo : Ammo replaces Cell
 	states
 	{
 	Spawn:
-		POSS A -1;
+		HLI1 A -1;
 		Loop;
 	}
 }
@@ -2875,7 +2876,7 @@ class AmmoPack : CustomInventory replaces Backpack
 	States
 	{
 	Spawn:
-		POSS A -1;
+		HLI1 A -1;
 		Stop;
 	Pickup:
 		TNT1 A 0

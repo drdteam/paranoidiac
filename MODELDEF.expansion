@@ -418,7 +418,7 @@ Model HLMP40Ammo
 	Model 0 "w_mp40clip.md3"
 	Skin 0 "w_mp40clip.png"
 
-	FrameIndex POSS A 0 0
+	FrameIndex HLI1 A 0 0
 }
 
 Model HLAlphaBarney
