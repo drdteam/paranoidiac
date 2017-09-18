@@ -6,14 +6,6 @@ graphic conback, 640,480
 	Patch credit,0,0
 }
 
-//Col. Stinson
-graphic STINSON, 128, 128
-{
-	XScale 2.0
-	YScale 2.0
-	Patch STINSON, 0, 0
-}
-
 //UnderNet
 graphic UNDERNET, 128, 128
 {

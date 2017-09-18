@@ -44,7 +44,36 @@ enum ParanoidEnum
 
 #include "Paranoid/Expansion.txt"
 
-class ParanoidEventHandler : StaticEventHandler
+class ParanoidEventHandler : EventHandler
+{
+	override void WorldLoaded(WorldEvent e)
+	{
+		Actor mo,cam;
+		name hintman;
+		ActorIterator iter=ActorIterator.Create(219);
+		mo=iter.Next();
+		if(mo==null)
+			return;
+		double camx=mo.pos.x,camy=mo.pos.y,camz=mo.pos.z;
+		if(level.levelnum>=1&&level.levelnum<=8)
+		{
+			mo.AddZ(-0.5,0);
+			TexMan.SetCameraToTexture(mo,"HINTMAN",80);
+			hintman='HintManCam';
+		}
+		else if(level.levelnum>=10&&level.levelnum<=17)
+		{
+			mo.AddZ(-4.0,0);
+			TexMan.SetCameraToTexture(mo,"STINSON",80);
+			hintman='Stinson';
+		}
+		else
+			return;
+		cam=Actor.Spawn(hintman,(camx-1.0,camy+5.0,camz-56.0));
+		cam.Angle=270.0;
+	}
+}
+class ParanoidStaticEventHandler : StaticEventHandler
 {
 	override void WorldTick()
 	{

@@ -1,6 +1,6 @@
 gameinfo
 {
-	AddEventHandlers="ParanoidEventHandler"
+	AddEventHandlers="ParanoidEventHandler","ParanoidStaticEventHandler"
 	playerclasses="RolfBellmer"
 	borderflat="XMETAL25"
 	infopage="HELP"

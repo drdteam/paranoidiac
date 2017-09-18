@@ -1431,7 +1431,7 @@ class XMetalBox : ModelBase
 
 //==========================================
 // Non-Player Character Models: Controller,
-// Administrator
+// Administrator, Col. Stinson
 //==========================================
 
 class HintMan : ModelBase
@@ -1488,6 +1488,22 @@ class Admin01 : ModelBase
 	Spawn:
 		HLI1 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 2;
 		HLI2 AB 2;
+		Loop;
+	}
+}
+
+class Stinson : HintMan
+{
+	States
+	{
+	Spawn:
+		HLI1 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 4;
+		HLI2 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 4;
+		HLI3 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 4;
+		HLI4 ABCBA 4;
+		HLI3 ]\[ZYXWVUTSRQPONMLKJIHGFEDCBA 4;
+		HLI2 ]\[ZYXWVUTSRQPONMLKJIHGFEDCBA 4;
+		HLI1 ]\[ZYXWVUTSRQPONMLKJIHGFEDCB 4;
 		Loop;
 	}
 }
