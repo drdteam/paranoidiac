@@ -232,6 +232,31 @@ MAP17VX1=
 	"You may find some fuel in the supply area in the North-East quadrant. But be careful:\n"
 	"the place is swarming with government and alien forces.";
 
+PARANOIDMAP_TITLE="The Path to Perdition";
+PARANOIDMAP_01="Walk Softly and Carry a Big Stick";
+PARANOIDMAP_02="You Can Run...";
+PARANOIDMAP_03="No Rest for the Wicked";
+PARANOIDMAP_04="Finding Dr. Zimmerman";
+PARANOIDMAP_08="...But You Can't Hide";
+PARANOIDMAP_05="Mission Accomplished?";
+PARANOIDMAP_06="Dirty... Little... Secret";
+PARANOIDMAP_07="Out of the Frying Pan...";
+PARANOIDMAP_09="Flight of the Phoenix";
+PARANOIDMAP_10="Smoke on the Water, Fire in the Sky";
+PARANOIDMAP_11="Fly in a Web;";
+PARANOIDMAP_12="How Green, the Valley";
+PARANOIDMAP_13="Sewer Rat;";
+PARANOIDMAP_14="Run, Rabbit, Run!";
+PARANOIDMAP_15="When Hell Freezes Over";
+PARANOIDMAP_16="Play the Mad Scientist";
+PARANOIDMAP_17="Painted into a Corner";
+PARANOIDMAP_18="Cavernicolous";
+PARANOIDMAP_19="Island Hopping";
+PARANOIDMAP_20="Monarch Gonarch";
+PARANOIDMAP_21="Xenophobia";
+PARANOIDMAP_22="Six Ways to Die";
+PARANOIDMAP_23="SpaceX";
+
 PARANOIDCREDITS01="Paranoid was a production of The Persecution Complex.";
 PARANOIDCREDITS02="The Team:";
 PARANOIDCREDITS03="Game & Level Design:\n\n"

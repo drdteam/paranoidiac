@@ -105,32 +105,32 @@ map map32 "Otis Force"
 	music = "$MUSIC_ULTIMA"
 }
 
-map TITLEMAP "The Path to Perdition"
+map TITLEMAP lookup "PARANOIDMAP_TITLE"
 {
 	sky1=HLSKY5
 	PrecacheSounds="Music01"
 }
 
-map map01 "Walk Softly and Carry a Big Stick"
+map map01 lookup "PARANOIDMAP_01"
 {
 	PrecacheSounds="Music02"
 	Next=MAP02
 }
-map map02 "You Can Run..."
+map map02 lookup "PARANOIDMAP_02"
 {
 	PrecacheSounds="Music02"
 	Next=MAP03
 }
-map map03 "No Rest for the Wicked"
+map map03 lookup "PARANOIDMAP_03"
 {
 	PrecacheSounds="Music03"
 	Next=MAP04
 }
-map map04 "Finding Dr. Zimmerman"
+map map04 lookup "PARANOIDMAP_04"
 {
 	Next=MAP08
 }
-map map08 "...But You Can't Hide."
+map map08 lookup "PARANOIDMAP_08"
 {
 	PrecacheSounds="Music04"
 	Next=MAP05
@@ -140,17 +140,17 @@ adddefaultmap
 {
 	sky1=HLSKY2
 }
-map map05 "Mission Accomplished?"
+map map05 lookup "PARANOIDMAP_05"
 {
 	PrecacheSounds="Music07"
 	Next=MAP06
 }
-map map06 "Dirty. Little. Secret"
+map map06 lookup "PARANOIDMAP_06"
 {
 	PrecacheSounds="Music01"
 	Next=MAP07
 }
-map map07 "Out of the Frying Pan..."
+map map07 lookup "PARANOIDMAP_07"
 {
 	PrecacheSounds="Music03","Music07"
 	Next=MAP09
@@ -160,7 +160,7 @@ adddefaultmap
 {
 	sky1=HLSKY3
 }
-map MAP09 "Flight of the Phoenix"
+map MAP09 lookup "PARANOIDMAP_09"
 {
 	NoIntermission
 	Next=MAP10
@@ -171,7 +171,7 @@ adddefaultmap
 {
 	cluster=2
 }
-map map10 "Smoke on the Water, The Fire in the Sky."
+map map10 lookup "PARANOIDMAP_10"
 {
 	ResetHealth
 	ResetInventory
@@ -182,12 +182,12 @@ adddefaultmap
 {
 	MonsterFallingDamage
 }
-map map11 "Fly in a Web."
+map map11 lookup "PARANOIDMAP_11"
 {
 	PrecacheSounds="11Earth","32Trans","MAP11VX2"
 	Next=MAP12
 }
-map map12 "How Green, the Valley."
+map map12 lookup "PARANOIDMAP_12"
 {
 	Next=MAP13
 }
@@ -196,17 +196,17 @@ adddefaultmap
 {
 	sky1=HLSKY4
 }
-map map13 "Sewer Rat."
+map map13 lookup "PARANOIDMAP_13"
 {
 	PrecacheSounds="13Earth"
 	Next=MAP14
 }
-map map14 "Run, Rabbit, Run!"
+map map14 lookup "PARANOIDMAP_14"
 {
 	PrecacheSounds="14Earth","34Trans"
 	Next=MAP15
 }
-map map15 "When Hell Freezes Over."
+map map15 lookup "PARANOIDMAP_15"
 {
 	hazardcolor="80 a0 ff"
 	hazardflash="40 80 ff"
@@ -217,17 +217,17 @@ adddefaultmap
 {
 	sky1=HLSKY5
 }
-map map16 "Play the Mad Scientist."
+map map16 lookup "PARANOIDMAP_16"
 {
 	PrecacheSounds="16Earth"
 	Next=MAP17
 }
-map map17 "Painted into a Corner."
+map map17 lookup "PARANOIDMAP_17"
 {
 	PrecacheSounds="17Earth"
 	Next=MAP18
 }
-map map18 "Cavernicolous."
+map map18 lookup "PARANOIDMAP_18"
 {
 	PrecacheSounds="18ZEarth","36Trans"
 	Next=MAP19
@@ -238,16 +238,16 @@ adddefaultmap
 	sky1=HLSKY6
 	AirControl=.25
 }
-map map19 "Island Hopping."
+map map19 lookup "PARANOIDMAP_19"
 {
 	Next=MAP20
 }
-map map20 "Monarch Gonarch."
+map map20 lookup "PARANOIDMAP_20"
 {
 	Music="20Xen"
 	Next=MAP21
 }
-map map21 "Xenophobia."
+map map21 lookup "PARANOIDMAP_21"
 {
 	next=EndSequence,"ParaEndScroll"
 }
@@ -256,12 +256,12 @@ adddefaultmap
 {
 	AirControl=.00390625
 }
-map map22 "Six Ways to Die."
+map map22 lookup "PARANOIDMAP_22"
 {
 	Music="22SixWay"
 	Next=MAP23
 }
-map map23 "SpaceX."
+map map23 lookup "PARANOIDMAP_23"
 {
 	Music="23Space"
 	PrecacheTextures="XMETL08","XMETL09","XMETL10","XMETL08A","XMETL08B","XMETL08C",
