@@ -69,7 +69,7 @@ class ParanoidEventHandler : EventHandler
 		}
 		else
 			return;
-		cam=Actor.Spawn(hintman,(camx-1.0,camy+5.0,camz-56.0));
+		cam=Actor.Spawn(hintman,(camx-1.0,camy+6.0,camz-56.0));
 		cam.Angle=270.0;
 	}
 }
