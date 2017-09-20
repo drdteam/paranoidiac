@@ -377,7 +377,6 @@ class HLCrowbar : ParanoidWeapon replaces Chainsaw
 		Height 4;
 		Weapon.SelectionOrder 2100;
 		Weapon.Kickback 0;
-		Inventory.PickupSound "misc/i_pkup";
 		Inventory.PickupMessage "Picked up a crowbar.";
 		Obituary "%k shoved %o's crowbar where the sun don't shine.";
 		+WEAPON.MELEEWEAPON
@@ -795,7 +794,6 @@ class HLPistolAmmo : Ammo replaces Clip
 		Tag "9mm";
 		Radius 8;
 		Height 4;
-		Inventory.PickupSound "misc/w_pkup";
 		Inventory.PickupMessage "Picked up a 9mm pistol magazine.";
 		Inventory.Amount 17;
 		Inventory.MaxAmount 250;
@@ -922,7 +920,6 @@ class HLMagnumAmmo : Ammo replaces Shell
 		Tag ".357";
 		Radius 4;
 		Height 4;
-		Inventory.PickupSound "misc/w_pkup";
 		Inventory.Amount 6;
 		Inventory.MaxAmount 36;
 		Ammo.BackpackAmount 6;
@@ -1154,7 +1151,6 @@ class HLShotgunAmmo : Ammo
 		Tag "Shell";
 		Radius 4;
 		Height 4;
-		Inventory.PickupSound "misc/w_pkup";
 		Inventory.PickupMessage "Picked up three shotgun shells.";
 		Inventory.Amount 3;
 		Inventory.MaxAmount 125;
@@ -1673,7 +1669,6 @@ class HLRPGAmmo : Ammo
 		Tag "RPG";
 		Radius 4;
 		Height 20;
-		Inventory.PickupSound "misc/w_pkup";
 		Inventory.PickupMessage "Picked up an RPG round.";
 		Inventory.MaxAmount 10;
 		Ammo.BackpackAmount 2;
@@ -1960,7 +1955,6 @@ class HLXBowAmmo : Ammo
 		Radius 8;
 		Height 4;
 		inventory.pickupmessage "Picked up a crossbow bolt.";
-		inventory.pickupsound "misc/w_pkup";
 		inventory.maxamount 50;
 		ammo.backpackamount 5;
 		inventory.icon "i_bolt1";
@@ -2602,7 +2596,6 @@ class HLGluonGunAmmo : Ammo replaces Cell
 		inventory.pickupmessage "Picked up some depleted U-235.";
 		inventory.amount 20;
 		inventory.maxamount 100;
-		inventory.pickupsound "misc/w_pkup";
 		ammo.backpackamount 20;
 		Scale .75;
 		inventory.icon "i_uran1";
@@ -2870,7 +2863,7 @@ class AmmoPack : CustomInventory replaces Backpack
 	{
 		Radius 6;
 		Height 24;
-		Inventory.PickupSound "misc/w_pkup";
+		Inventory.PickupSound "misc/ammo_pkup";
 		Inventory.PickupMessage "Picked up an AmmoPack!";
 	}
 	States

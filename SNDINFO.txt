@@ -293,7 +293,16 @@ $playeralias	player	Male	*poison		hlpcoff
 
 misc/health_pkup	medkit1
 misc/armor_pkup		HEVBatt1
-misc/ammo_pkup		ammopkup
+
+misc/ammo_pkup1		"sounds/HalfLife/items/9mmclip1.wav"
+misc/ammo_pkup2		"sounds/HalfLife/items/9mmclip2.wav"
+$random misc/ammo_pkup {misc/ammo_pkup1 misc/ammo_pkup2}
+
+misc/w_pkup1		"sounds/HalfLife/items/gunpickup1.wav"
+misc/w_pkup2		"sounds/HalfLife/items/gunpickup2.wav"
+misc/w_pkup3		"sounds/HalfLife/items/gunpickup3.wav"
+misc/w_pkup4		"sounds/HalfLife/items/gunpickup4.wav"
+$random misc/w_pkup {misc/w_pkup1 misc/w_pkup2 misc/w_pkup3 misc/w_pkup4}
 
 //****
 //Pain Sounds
