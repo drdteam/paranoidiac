@@ -46,7 +46,7 @@ class ParanoidWeapon : Weapon
 			return ResolveState("Ready");
 		}
 	Spawn:
-		HLI1 A -1;
+		HLS1 A -1;
 		Stop;
 	OtisSelect1:
 		BSU1 ABCDEFGHIJKLMNO 1 A_WeaponReady(WRF_NOBOB|WRF_NOFIRE);
@@ -265,7 +265,7 @@ class ParanoidWeaponGiver : WeaponGiver
 	States
 	{
 	Spawn:
-		HLI1 A -1;
+		HLS1 A -1;
 		Stop;
 	}
 }
