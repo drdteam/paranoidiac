@@ -137,39 +137,39 @@ class HLAlphaBarney : HLBarney
 
 //Spawners to replace Doom II actors
 class ParanoidClipSpawner : RandomSpawner replaces Clip
-	{Default{DropItem "HLPistolAmmo"}}
+	{Default{DropItem "HLPistolAmmo";}}
 class ParanoidClipBoxSpawner : RandomSpawner replaces ClipBox
-	{Default{DropItem "HLAssaultRifleBox"}}
+	{Default{DropItem "HLAssaultRifleBox";}}
 class ParanoidShellSpawner : RandomSpawner replaces Shell
-	{Default{DropItem "HLMagnumAmmo"}}
+	{Default{DropItem "HLMagnumAmmo";}}
 class ParanoidShellBoxSpawner : RandomSpawner replaces ShellBox
-	{Default{DropItem "HLShotgunBox"}}
+	{Default{DropItem "HLShotgunBox";}}
 class ParanoidRocketAmmoSpawner : RandomSpawner replaces RocketAmmo
-	{Default{DropItem "HLGrenadeLauncherAmmo"}}
+	{Default{DropItem "HLGrenadeLauncherAmmo";}}
 class ParanoidRocketBoxSpawner : RandomSpawner replaces RocketBox
-	{Default{DropItem "HLXBowBox"}}
+	{Default{DropItem "HLXBowBox";}}
 class ParanoidCellSpawner : RandomSpawner replaces Cell
-	{Default{DropItem "HLGluonGunAmmo"}}
+	{Default{DropItem "HLGluonGunAmmo";}}
 
 class ParanoidChainsawSpawner : RandomSpawner replaces Chainsaw
-	{Default{DropItem "HLCrowbar"}}
+	{Default{DropItem "HLCrowbar";}}
 class ParanoidPistolSpawner : RandomSpawner replaces Pistol
-	{Default{DropItem "HLPistolPickup"}}
+	{Default{DropItem "HLPistolPickup";}}
 class ParanoidShotgunSpawner : RandomSpawner replaces Shotgun
-	{Default{DropItem "HLShotgunPickup"}}
+	{Default{DropItem "HLShotgunPickup";}}
 class ParanoidSuperShotgunSpawner : RandomSpawner replaces SuperShotgun
-	{Default{DropItem "HLMagnumPickup"}}
+	{Default{DropItem "HLMagnumPickup";}}
 class ParanoidChaingunSpawner : RandomSpawner replaces Chaingun
-	{Default{DropItem "HLAssaultRiflePickup"}}
+	{Default{DropItem "HLAssaultRiflePickup";}}
 class ParanoidRocketLauncherSpawner : RandomSpawner replaces RocketLauncher
-	{Default{DropItem "HLXBowPickup"}}
+	{Default{DropItem "HLXBowPickup";}}
 class ParanoidPlasmaRifleSpawner : RandomSpawner replaces PlasmaRifle
-	{Default{DropItem "HLGluonGunPickup"}}
+	{Default{DropItem "HLGluonGunPickup";}}
 class ParanoidBFG9000Spawner : RandomSpawner replaces BFG9000
-	{Default{DropItem "HLRPG"}}
+	{Default{DropItem "HLRPG";}}
 
 class ParanoidBackpackSpawner : RandomSpawner replaces Backpack
-	{Default{DropItem "AmmoPack"}}
+	{Default{DropItem "AmmoPack";}}
 
 class ParanoidWolfensteinSSSpawner : RandomSpawner replaces WolfensteinSS
-	{Default{DropItem "HLAlphaBarney"}}
+	{Default{DropItem "HLAlphaBarney";}}
