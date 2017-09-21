@@ -369,7 +369,7 @@ class PuffSmoke : Actor
 // Weapons & Ammo
 //================
 
-class HLCrowbar : ParanoidWeapon replaces Chainsaw
+class HLCrowbar : ParanoidWeapon
 {
 	Default
 	{
@@ -569,7 +569,7 @@ class CrowbarPuff2 : NewPuff1
 // Beretta
 //=========
 
-class HLPistolPickup : ParanoidWeaponGiver replaces Pistol
+class HLPistolPickup : ParanoidWeaponGiver
 	{Default{DropItem "HLPistol";}}
 
 class HLPistol : ParanoidWeapon
@@ -782,7 +782,7 @@ class HLPistolMag : Ammo
 // Beretta Clip
 //====================
 
-class HLPistolAmmo : Ammo replaces Clip
+class HLPistolAmmo : Ammo
 {
 	override void PostBeginPlay()
 	{
@@ -813,7 +813,7 @@ class HLPistolAmmo : Ammo replaces Clip
 // Python (357 Magnum)
 //=====================
 
-class HLMagnumPickup : ParanoidWeaponGiver replaces SuperShotgun
+class HLMagnumPickup : ParanoidWeaponGiver
 	{Default{DropItem "HLMagnum";}}
 
 class HLMagnum : ParanoidWeapon
@@ -908,7 +908,7 @@ class HLMagnumMag : Ammo
 // Python Ammo
 //=============
 
-class HLMagnumAmmo : Ammo replaces Shell
+class HLMagnumAmmo : Ammo
 {
 	override void PostBeginPlay()
 	{
@@ -949,7 +949,7 @@ class HLMagnumBox : HLMagnumAmmo
 // Paranoid Shotgun
 //===================
 
-class HLShotgunPickup : ParanoidWeaponGiver replaces Shotgun
+class HLShotgunPickup : ParanoidWeaponGiver
 	{Default{DropItem "HLShotgun";}}
 
 //=============================
@@ -1165,7 +1165,7 @@ class HLShotgunAmmo : Ammo
 	}
 }
 
-class HLShotgunBox : HLShotgunAmmo replaces ShellBox
+class HLShotgunBox : HLShotgunAmmo
 {
 	Default
 	{
@@ -1179,7 +1179,7 @@ class HLShotgunBox : HLShotgunAmmo replaces ShellBox
 // 9mm Assault Rifle
 //===================
 
-class HLAssaultRiflePickup : ParanoidWeaponGiver replaces Chaingun
+class HLAssaultRiflePickup : ParanoidWeaponGiver
 {
 	Default
 	{
@@ -1430,7 +1430,7 @@ class HLAssaultRifleAmmo : HLPistolAmmo
 	}
 }
 
-class HLAssaultRifleBox : HLPistolAmmo replaces ClipBox
+class HLAssaultRifleBox : HLPistolAmmo
 {
 	Default
 	{
@@ -1445,7 +1445,7 @@ class HLAssaultRifleBox : HLPistolAmmo replaces ClipBox
 // M16Gren
 //=========
 
-class HLGrenadeLauncherAmmo : Ammo replaces RocketAmmo
+class HLGrenadeLauncherAmmo : Ammo
 {
 	override void PostBeginPlay()
 	{
@@ -1474,7 +1474,7 @@ class HLGrenadeLauncherAmmo : Ammo replaces RocketAmmo
 // RPG Launcher
 //=====================
 
-class HLRPG : ParanoidWeapon replaces BFG9000
+class HLRPG : ParanoidWeapon
 {
 	Default
 	{
@@ -1687,7 +1687,7 @@ class HLRPGAmmo : Ammo
 // Cross-Bow
 //=============
 
-class HLXBowPickup : ParanoidWeaponGiver replaces RocketLauncher
+class HLXBowPickup : ParanoidWeaponGiver
 	{Default{DropItem "HLXBow";}}
 
 class HLXBow : ParanoidWeapon
@@ -1967,7 +1967,7 @@ class HLXBowAmmo : Ammo
 	}
 }
 
-class HLXBowBox : HLXBowAmmo replaces RocketBox
+class HLXBowBox : HLXBowAmmo
 {
 	Default
 	{
@@ -2013,7 +2013,7 @@ class Missile : Rocket
 // Developed by Major Cooke for AeOD; modified by DBThanatos & Kappes Buur
 //=============
 
-class HLGluonGunPickup : ParanoidWeaponGiver replaces PlasmaRifle
+class HLGluonGunPickup : ParanoidWeaponGiver
 	{Default{DropItem "HLGluonGun";}}
 
 class HLGluonGun : ParanoidWeapon
@@ -2582,7 +2582,7 @@ class RipperEffect : Actor
 }
 
 //***************************************************************
-class HLGluonGunAmmo : Ammo replaces Cell
+class HLGluonGunAmmo : Ammo
 {
 	override void PostBeginPlay()
 	{
@@ -2857,7 +2857,7 @@ class HGHornetTrail2 : HGHornetTrail
 // Ammo Pack
 //============
 
-class AmmoPack : CustomInventory replaces Backpack
+class AmmoPack : CustomInventory
 {
 	Default
 	{

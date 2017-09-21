@@ -71,7 +71,7 @@ class HLNazi : HLGrunt1
 class HLMP40Ammo : HLAssaultRifleAmmo
 	{Default{Inventory.PickupMessage "Picked up an MP40 magazine.";}}
 
-class HLAlphaBarney : HLBarney replaces WolfensteinSS
+class HLAlphaBarney : HLBarney
 {
 	override void tick()
 		{Actor.Tick();}
@@ -134,3 +134,42 @@ class HLAlphaBarney : HLBarney replaces WolfensteinSS
 			A_PlaySound("quiver/monsters/barney/idle");
 	}
 }
+
+//Spawners to replace Doom II actors
+class ParanoidClipSpawner : RandomSpawner replaces Clip
+	{Default{DropItem "HLPistolAmmo"}}
+class ParanoidClipBoxSpawner : RandomSpawner replaces ClipBox
+	{Default{DropItem "HLAssaultRifleBox"}}
+class ParanoidShellSpawner : RandomSpawner replaces Shell
+	{Default{DropItem "HLMagnumAmmo"}}
+class ParanoidShellBoxSpawner : RandomSpawner replaces ShellBox
+	{Default{DropItem "HLShotgunBox"}}
+class ParanoidRocketAmmoSpawner : RandomSpawner replaces RocketAmmo
+	{Default{DropItem "HLGrenadeLauncherAmmo"}}
+class ParanoidRocketBoxSpawner : RandomSpawner replaces RocketBox
+	{Default{DropItem "HLXBowBox"}}
+class ParanoidCellSpawner : RandomSpawner replaces Cell
+	{Default{DropItem "HLGluonGunAmmo"}}
+
+class ParanoidChainsawSpawner : RandomSpawner replaces Chainsaw
+	{Default{DropItem "HLCrowbar"}}
+class ParanoidPistolSpawner : RandomSpawner replaces Pistol
+	{Default{DropItem "HLPistolPickup"}}
+class ParanoidShotgunSpawner : RandomSpawner replaces Shotgun
+	{Default{DropItem "HLShotgunPickup"}}
+class ParanoidSuperShotgunSpawner : RandomSpawner replaces SuperShotgun
+	{Default{DropItem "HLMagnumPickup"}}
+class ParanoidChaingunSpawner : RandomSpawner replaces Chaingun
+	{Default{DropItem "HLAssaultRiflePickup"}}
+class ParanoidRocketLauncherSpawner : RandomSpawner replaces RocketLauncher
+	{Default{DropItem "HLXBowPickup"}}
+class ParanoidPlasmaRifleSpawner : RandomSpawner replaces PlasmaRifle
+	{Default{DropItem "HLGluonGunPickup"}}
+class ParanoidBFG9000Spawner : RandomSpawner replaces BFG9000
+	{Default{DropItem "HLRPG"}}
+
+class ParanoidBackpackSpawner : RandomSpawner replaces Backpack
+	{Default{DropItem "AmmoPack"}}
+
+class ParanoidWolfensteinSSSpawner : RandomSpawner replaces WolfensteinSS
+	{Default{DropItem "HLAlphaBarney"}}
