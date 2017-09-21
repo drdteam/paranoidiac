@@ -49,14 +49,20 @@ class RolfBellmer : PlayerPawn
 		Goto Spawn;
 	Pain:
 		HLP1 A 0 A_HLPainSelect;
-		HLP1 A 1 A_Pain;
+		HLP1 A 1 A_HLHEVPain;
+		HLP1 DGJMPSU 1;
+		Goto Spawn;
+	Pain.Drowning:
+		HLP1 A 0 A_HLPainSelect;
+		HLP1 A 1 A_PlaySound("HLPlayerDrowning",6);
 		HLP1 DGJMPSU 1;
 		Goto Spawn;
 	Death:
 		HLD1 A 0 A_HLDeathSelect;
 		HLD1 A 2
 		{
-			A_PlaySound("HLPlayerHEVFail",CHAN_VOICE);
+			A_PlaySound("HLPlayerHEVFail",7);
+			A_PlaySound("HLPlayerHEVFailBeep",6);
 			A_NoBlocking();
 		}
 		HLD1 BCDEFG 2;
@@ -74,11 +80,11 @@ class RolfBellmer : PlayerPawn
 		HLI2 C 12;
 		Goto ScientistSpawn;
 	ScientistPain:
-		HLP2 A 1 A_PlaySound("HLPlayerScientistPain",CHAN_VOICE);
+		HLP2 A 1 A_PlaySound("scientist/pain",CHAN_VOICE);
 		HLP2 BCDEFGHI 1;
 		Goto ScientistSpawn;
 	ScientistDeath:
-		HLD2 A 1 A_PlaySound("HLPlayerScientistDeath",CHAN_VOICE);
+		HLD2 A 1 A_PlaySound("scientist/death",CHAN_VOICE);
 		HLD2 BC 1;
 		HLD2 D 1 A_NoBlocking;
 		HLD2 EFGHIJKLMNOPQRS 1;
@@ -158,5 +164,18 @@ class RolfBellmer : PlayerPawn
 			SetStateLabel("OtisDeath");
 		else if(scientist)
 			SetStateLabel("ScientistDeath");
+	}
+	void A_HLHEVPain()
+	{
+		A_Pain();
+		if(!random(0,3))
+		{
+			if(health<25)
+				A_PlaySound("HLPlayerPain25",7);
+			else if(health<50)
+				A_PlaySound("HLPlayerPain50",7);
+			else if(health<75)
+				A_PlaySound("HLPlayerPain75",7);
+		}
 	}
 }

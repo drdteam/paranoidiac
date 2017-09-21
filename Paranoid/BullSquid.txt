@@ -160,7 +160,7 @@ class BullSquidSpit : BSSpitExtra
 		Damage 7;
 		-NOCLIP
 		+NOGRAVITY
-		DeathSound "halflife/monsters/bullsquid/spitehit";
+		DeathSound "halflife/monsters/bullsquid/spithit";
 	}
 	States
 	{
