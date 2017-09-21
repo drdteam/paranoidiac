@@ -60,6 +60,7 @@ accessdenied		accessno
 accessgranted		accesyes
 liquidfill			liquid01
 chemical_detected	"sounds/fvox/chemical_detected.ogg"
+welcomesectorc		"sounds/tride/c0a0_tr_arrive.ogg"
 
 $rolloff zap 1024 2048
 
@@ -274,7 +275,7 @@ $playersound	player	male	*dive		hlpwin
 $playersound	player	male	*surface	hlpwout
 
 misc/health_pkup	"sounds/items/smallmedkit1.ogg"
-misc/armor_pkup		HEVBatt1
+misc/armor_pkup		"sounds/items/gunpickup2.wav"
 misc/ammo_pkup1		"sounds/items/9mmclip1.wav"
 misc/ammo_pkup2		"sounds/items/9mmclip2.wav"
 misc/w_pkup1		"sounds/items/gunpickup1.wav"
