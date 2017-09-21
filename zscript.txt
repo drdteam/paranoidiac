@@ -55,13 +55,27 @@ class ParanoidEventHandler : EventHandler
 		if(mo==null)
 			return;
 		double camx=mo.pos.x,camy=mo.pos.y,camz=mo.pos.z;
-		if(level.levelnum>=1&&level.levelnum<=8)
+		if(level.levelname==StringTable.Localize("$PARANOIDMAP_01")||
+		level.levelname==StringTable.Localize("$PARANOIDMAP_02")||
+		level.levelname==StringTable.Localize("$PARANOIDMAP_03")||
+		level.levelname==StringTable.Localize("$PARANOIDMAP_04")||
+		level.levelname==StringTable.Localize("$PARANOIDMAP_05")||
+		level.levelname==StringTable.Localize("$PARANOIDMAP_06")||
+		level.levelname==StringTable.Localize("$PARANOIDMAP_07")||
+		level.levelname==StringTable.Localize("$PARANOIDMAP_08"))
 		{
 			mo.AddZ(-0.5,0);
 			TexMan.SetCameraToTexture(mo,"HINTMAN",80);
 			hintman='HintManCam';
 		}
-		else if(level.levelnum>=10&&level.levelnum<=17)
+		else if(level.levelname==StringTable.Localize("$PARANOIDMAP_10")||
+		level.levelname==StringTable.Localize("$PARANOIDMAP_11")||
+		level.levelname==StringTable.Localize("$PARANOIDMAP_12")||
+		level.levelname==StringTable.Localize("$PARANOIDMAP_13")||
+		level.levelname==StringTable.Localize("$PARANOIDMAP_14")||
+		level.levelname==StringTable.Localize("$PARANOIDMAP_15")||
+		level.levelname==StringTable.Localize("$PARANOIDMAP_16")||
+		level.levelname==StringTable.Localize("$PARANOIDMAP_17"))
 		{
 			mo.AddZ(-4.0,0);
 			TexMan.SetCameraToTexture(mo,"STINSON",80);
