@@ -2854,6 +2854,13 @@ Model Stinson
 {
 	Path "models"
 	Model 0 "stinson.md3"
+	SurfaceSkin 0 0 "stinson_000.png"
+	SurfaceSkin 0 1 "stinson_001.png"
+	SurfaceSkin 0 2 "stinson_002.png"
+	SurfaceSkin 0 3 "stinson_003.png"
+	SurfaceSkin 0 4 "stinson_004.png"
+	SurfaceSkin 0 5 "stinson_005.png"
+	SurfaceSkin 0 6 "stinson_006.png"
 	Scale 4.2 4.2 4.2
 	Offset -14 -2 0
 	AngleOffset 90
