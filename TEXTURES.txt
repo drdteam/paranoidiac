@@ -4968,4 +4968,226 @@ Texture XDOOR27A, 128, 128
 	Patch XDOOR27A, 0, 0
 }
 
+walltexture XBORDR01, 128, 16
+{
+	Patch XBORDR01, 0, 0
+}
+
+walltexture XBORDR02, 64, 16
+{
+	Patch XBORDR02, 0, 0
+}
+
+walltexture XBORDR03, 64, 16
+{
+	Patch XBORDR03, 0, 0
+}
+
+walltexture XBORDR04, 64, 16
+{
+	Patch XBORDR04, 0, 0
+}
+
+walltexture XCOMP01, 128, 64
+{
+	Patch XCOMP01, 0, 0
+}
+
+walltexture XCABLE01, 64, 16
+{
+	Patch XCABLE01, 0, 0
+}
+
+walltexture XCABLE02, 64, 16
+{
+	Patch XCABLE02, 0, 0
+}
+
+walltexture XCRATE01, 96, 128
+{
+	Patch XCRATE01, 0, 0
+}
+
+walltexture XCRATE02, 96, 96
+{
+	Patch XCRATE02, 0, 0
+}
+
+walltexture XCRATE03, 64, 64
+{
+	Patch XCRATE03, 0, 0
+}
+
+walltexture XCRATE04, 64, 64
+{
+	Patch XCRATE04, 0, 0
+}
+
+walltexture XCRATE05, 64, 64
+{
+	Patch XCRATE05, 0, 0
+}
+
+walltexture XCRATE06, 64, 64
+{
+	Patch XCRATE06, 0, 0
+}
+
+walltexture XFREEZ10, 32, 32
+{
+	Patch XFREEZ10, 0, 0
+}
+
+walltexture XFREEZ11, 32, 32
+{
+	Patch XFREEZ11, 0, 0
+}
+
+walltexture XFREEZ12, 32, 32
+{
+	Patch XFREEZ12, 0, 0
+}
+
+walltexture XGRATE01, 96, 96
+{
+	Patch XGRATE01, 0, 0
+}
+
+walltexture XLITE01, 64, 16
+{
+	Patch XLITE01, 0, 0
+}
+
+walltexture XLITE02, 64, 16
+{
+	Patch XLITE02, 0, 0
+}
+
+walltexture XLITE03, 64, 16
+{
+	Patch XLITE03, 0, 0
+}
+
+walltexture XLITE04, 64, 16
+{
+	Patch XLITE04, 0, 0
+}
+
+walltexture XLITE05A, 64, 64
+{
+	Patch XLITE05A, 0, 0
+}
+
+walltexture XLITE05B, 64, 64
+{
+	Patch XLITE05B, 0, 0
+}
+
+walltexture XLITE06, 64, 16
+{
+	Patch XLITE06, 0, 0
+}
+
+walltexture XLITE07, 32, 16
+{
+	XScale 2.0
+	YScale 2.0
+	Patch XLITE07, 0, 0
+}
+
+walltexture XLITE08, 16, 64
+{
+	Patch XLITE08, 0, 0
+}
+
+walltexture XLITE09, 64, 80
+{
+	Patch XLITE09, 0, 0
+}
+
+walltexture XLITE10, 16, 64
+{
+	Patch XLITE10, 0, 0
+}
+
+walltexture XLITE11, 16, 16
+{
+	Patch XLITE11, 0, 0
+}
+
+walltexture XOFFIC06, 48, 48
+{
+	Patch XOFFIC06, 0, 0
+}
+
+walltexture XOFFIC07, 32, 32
+{
+	Patch XOFFIC07, 0, 0
+}
+
+walltexture XSTEP01, 128, 32
+{
+	Patch XSTEP01, 0, 0
+}
+
+walltexture XSTEP02, 128, 32
+{
+	Patch XSTEP02, 0, 0
+	Patch XSTEP02, 32, 0
+	Patch XSTEP02, 64, 0
+	Patch XSTEP02, 96, 0
+}
+
+walltexture XSTEP03, 128, 32
+{
+	Patch XSTEP03, 0, 0
+	Patch XSTEP03, 32, 0
+	Patch XSTEP03, 64, 0
+	Patch XSTEP03, 96, 0
+}
+
+walltexture XSTEP04, 128, 32
+{
+	Patch XSTEP04, 0, 0
+	Patch XSTEP04, 32, 0
+	Patch XSTEP04, 64, 0
+	Patch XSTEP04, 96, 0
+}
+
+walltexture XSTEP05, 128, 32
+{
+	Patch XSTEP05, 0, 0
+	Patch XSTEP05, 32, 0
+	Patch XSTEP05, 64, 0
+	Patch XSTEP05, 96, 0
+}
+
+walltexture XSTEP06, 128, 32
+{
+	Patch XSTEP06, 0, 0
+	Patch XSTEP06, 32, 0
+	Patch XSTEP06, 64, 0
+	Patch XSTEP06, 96, 0
+}
+
+walltexture XVEND01A, 48, 96
+{
+	Patch XVEND01A, 0, 0
+}
+
+walltexture XVEND02A, 32, 96
+{
+	Patch XVEND02A, 0, 0
+}
+
+walltexture XVEND15A, 48, 96
+{
+	Patch XVEND15A, 0, 0
+}
+
+walltexture XWALL01, 128, 128
+{
+	Patch XWALL01, 0, 0
+}
+
 // End of texture definitions
