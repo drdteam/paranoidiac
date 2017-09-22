@@ -134,6 +134,7 @@ class HEVSuit : BasicArmorPickup
 	{
 		Radius 16;
 		Height 52;
+		Inventory.PickupSound "HEVPickup";
 		Inventory.PickupMessage "Acquired the HEV Suit!";
 		Armor.SaveAmount 100;
 		Armor.SavePercent 50;

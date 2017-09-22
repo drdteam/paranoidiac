@@ -282,6 +282,7 @@ misc/w_pkup1		"sounds/items/gunpickup1.wav"
 misc/w_pkup2		"sounds/items/gunpickup2.wav"
 misc/w_pkup3		"sounds/items/gunpickup3.wav"
 misc/w_pkup4		"sounds/items/gunpickup4.wav"
+HEVPickup			"sounds/fvox/bell.wav"
 
 $random misc/ammo_pkup {misc/ammo_pkup1 misc/ammo_pkup2}
 $random misc/w_pkup {misc/w_pkup1 misc/w_pkup2 misc/w_pkup3 misc/w_pkup4}
