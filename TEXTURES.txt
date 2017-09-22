@@ -3109,7 +3109,7 @@ Graphic UNDERNET, 128, 128
 {
 	XScale 2.0
 	YScale 2.0
-	Patch UNDERNET, 0, 0
+	Patch UNDERNE1, 0, 0
 }
 
 Graphic MAIL01, 34, 37
@@ -3222,91 +3222,91 @@ Graphic HLSNUM0, 16, 24
 {
 	XScale 2.0
 	YScale 2.0
-	Patch HLSNUM0, 0, 0
+	Patch H1SNUM0, 0, 0
 }
 
 Graphic HLSNUM1, 16, 24
 {
 	XScale 2.0
 	YScale 2.0
-	Patch HLSNUM1, 0, 0
+	Patch H1SNUM1, 0, 0
 }
 
 Graphic HLSNUM2, 16, 24
 {
 	XScale 2.0
 	YScale 2.0
-	Patch HLSNUM2, 0, 0
+	Patch H1SNUM2, 0, 0
 }
 
 Graphic HLSNUM3, 16, 24
 {
 	XScale 2.0
 	YScale 2.0
-	Patch HLSNUM3, 0, 0
+	Patch H1SNUM3, 0, 0
 }
 
 Graphic HLSNUM4, 16, 24
 {
 	XScale 2.0
 	YScale 2.0
-	Patch HLSNUM4, 0, 0
+	Patch H1SNUM4, 0, 0
 }
 
 Graphic HLSNUM5, 16, 24
 {
 	XScale 2.0
 	YScale 2.0
-	Patch HLSNUM5, 0, 0
+	Patch H1SNUM5, 0, 0
 }
 
 Graphic HLSNUM6, 16, 24
 {
 	XScale 2.0
 	YScale 2.0
-	Patch HLSNUM6, 0, 0
+	Patch H1SNUM6, 0, 0
 }
 
 Graphic HLSNUM7, 16, 24
 {
 	XScale 2.0
 	YScale 2.0
-	Patch HLSNUM7, 0, 0
+	Patch H1SNUM7, 0, 0
 }
 
 Graphic HLSNUM8, 16, 24
 {
 	XScale 2.0
 	YScale 2.0
-	Patch HLSNUM8, 0, 0
+	Patch H1SNUM8, 0, 0
 }
 
 Graphic HLSNUM9, 16, 24
 {
 	XScale 2.0
 	YScale 2.0
-	Patch HLSNUM9, 0, 0
+	Patch H1SNUM9, 0, 0
 }
 
 Graphic HLSPRCNT, 16, 24
 {
 	XScale 2.0
 	YScale 2.0
-	Patch HLSPRCNT, 0, 0
+	Patch H1SPRCNT, 0, 0
 }
 
 Graphic HLSSLASH, 16, 24
 {
 	XScale 2.0
 	YScale 2.0
-	Patch HLSSLASH, 0, 0
+	Patch H1SSLASH, 0, 0
 }
 
 Graphic HLSMINUS, 16, 24
 {
 	XScale 2.0
 	YScale 2.0
-	Patch HLSMINUS, 0, 0
+	Patch H1SMINUS, 0, 0
 }
 
 //System number - small for ammo totals
@@ -3314,77 +3314,77 @@ Graphic HLSYNUM0, 4, 6
 {
 	XScale 2.0
 	YScale 2.0
-	Patch HLSYNUM0, 0, 0
+	Patch H1SYNUM0, 0, 0
 }
 
 Graphic HLSYNUM1, 4, 6
 {
 	XScale 2.0
 	YScale 2.0
-	Patch HLSYNUM1, 0, 0
+	Patch H1SYNUM1, 0, 0
 }
 
 Graphic HLSYNUM2, 4, 6
 {
 	XScale 2.0
 	YScale 2.0
-	Patch HLSYNUM2, 0, 0
+	Patch H1SYNUM2, 0, 0
 }
 
 Graphic HLSYNUM3, 4, 6
 {
 	XScale 2.0
 	YScale 2.0
-	Patch HLSYNUM3, 0, 0
+	Patch H1SYNUM3, 0, 0
 }
 
 Graphic HLSYNUM4, 4, 6
 {
 	XScale 2.0
 	YScale 2.0
-	Patch HLSYNUM4, 0, 0
+	Patch H1SYNUM4, 0, 0
 }
 
 Graphic HLSYNUM5, 4, 6
 {
 	XScale 2.0
 	YScale 2.0
-	Patch HLSYNUM5, 0, 0
+	Patch H1SYNUM5, 0, 0
 }
 
 Graphic HLSYNUM6, 4, 6
 {
 	XScale 2.0
 	YScale 2.0
-	Patch HLSYNUM6, 0, 0
+	Patch H1SYNUM6, 0, 0
 }
 
 Graphic HLSYNUM7, 4, 6
 {
 	XScale 2.0
 	YScale 2.0
-	Patch HLSYNUM7, 0, 0
+	Patch H1SYNUM7, 0, 0
 }
 
 Graphic HLSYNUM8, 4, 6
 {
 	XScale 2.0
 	YScale 2.0
-	Patch HLSYNUM8, 0, 0
+	Patch H1SYNUM8, 0, 0
 }
 
 Graphic HLSYNUM9, 4, 6
 {
 	XScale 2.0
 	YScale 2.0
-	Patch HLSYNUM9, 0, 0
+	Patch H1SYNUM9, 0, 0
 }
 
 Graphic "HLSYNUM-", 4, 6
 {
 	XScale 2.0
 	YScale 2.0
-	Patch "HLSYNUM-", 0, 0
+	Patch "H1SYNUM-", 0, 0
 }
 
 //Remap intermission numbers to hi-res status bar font
@@ -3392,91 +3392,91 @@ Graphic WINUM0, 16, 24
 {
 	XScale 2.0
 	YScale 2.0
-	Patch HLSNUM0, 0, 0
+	Patch H1SNUM0, 0, 0
 }
 
 Graphic WINUM1, 16, 24
 {
 	XScale 2.0
 	YScale 2.0
-	Patch HLSNUM1, 0, 0
+	Patch H1SNUM1, 0, 0
 }
 
 Graphic WINUM2, 16, 24
 {
 	XScale 2.0
 	YScale 2.0
-	Patch HLSNUM2, 0, 0
+	Patch H1SNUM2, 0, 0
 }
 
 Graphic WINUM3, 16, 24
 {
 	XScale 2.0
 	YScale 2.0
-	Patch HLSNUM3, 0, 0
+	Patch H1SNUM3, 0, 0
 }
 
 Graphic WINUM4, 16, 24
 {
 	XScale 2.0
 	YScale 2.0
-	Patch HLSNUM4, 0, 0
+	Patch H1SNUM4, 0, 0
 }
 
 Graphic WINUM5, 16, 24
 {
 	XScale 2.0
 	YScale 2.0
-	Patch HLSNUM5, 0, 0
+	Patch H1SNUM5, 0, 0
 }
 
 Graphic WINUM6, 16, 24
 {
 	XScale 2.0
 	YScale 2.0
-	Patch HLSNUM6, 0, 0
+	Patch H1SNUM6, 0, 0
 }
 
 Graphic WINUM7, 16, 24
 {
 	XScale 2.0
 	YScale 2.0
-	Patch HLSNUM7, 0, 0
+	Patch H1SNUM7, 0, 0
 }
 
 Graphic WINUM8, 16, 24
 {
 	XScale 2.0
 	YScale 2.0
-	Patch HLSNUM8, 0, 0
+	Patch H1SNUM8, 0, 0
 }
 
 Graphic WINUM9, 16, 24
 {
 	XScale 2.0
 	YScale 2.0
-	Patch HLSNUM9, 0, 0
+	Patch H1SNUM9, 0, 0
 }
 
 Graphic WIPCNT, 16, 24
 {
 	XScale 2.0
 	YScale 2.0
-	Patch HLSPRCNT, 0, 0
+	Patch H1SPRCNT, 0, 0
 }
 
 Graphic WISLASH, 16, 24
 {
 	XScale 2.0
 	YScale 2.0
-	Patch HLSSLASH, 0, 0
+	Patch H1SSLASH, 0, 0
 }
 
 Graphic WIMINUS, 16, 24
 {
 	XScale 2.0
 	YScale 2.0
-	Patch HLSMINUS, 0, 0
+	Patch H1SMINUS, 0, 0
 }
 
 //Intermission colon (no colon on status bar)
@@ -3664,28 +3664,28 @@ Graphic PEND0, 120, 100
 {
 	XScale 2.0
 	YScale 2.0
-	Patch PEND0, 0, 0
+	Patch PEND01, 0, 0
 }
 
 Graphic PEND1, 120, 100
 {
 	XScale 2.0
 	YScale 2.0
-	Patch PEND1, 0, 0
+	Patch PEND11, 0, 0
 }
 
 Graphic PEND2, 120, 100
 {
 	XScale 2.0
 	YScale 2.0
-	Patch PEND2, 0, 0
+	Patch PEND21, 0, 0
 }
 
 Graphic PEND3, 120, 100
 {
 	XScale 2.0
 	YScale 2.0
-	Patch PEND3, 0, 0
+	Patch PEND31, 0, 0
 }
 
 Graphic PNDMEND, 620, 128
