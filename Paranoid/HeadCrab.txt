@@ -109,7 +109,10 @@ class HLHeadCrab : HLMonster
 	}
 	void A_HLHeadCrabAttack(float min,float max)
 	{
-		A_SkullAttack();
+		if(target==null)
+			return;
+		bSkullfly=true;
+		VelFromAngle(20);
 		vel.z+=frandom(min,max);
 	}
 }
