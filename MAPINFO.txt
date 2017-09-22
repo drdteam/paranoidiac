@@ -50,29 +50,47 @@ skill Difficult
 }
 
 clearepisodes
-episode map01
+episode P1M1
 {
 	name="Paranoid: Infiltration"
 }
-episode map02
+episode P1M2
 {
 	name="Paranoid: Resonance"
 }
-episode map09
+episode P2M0
 {
 	name="Paranoiac: Extraction"
 }
-episode map19
+episode P3M1
 {
 	name="Paranoiac: Dissolution"
 }
-episode map22
+episode P3M4
 {
 	name="Paranoiac: Obliteration"
 }
 episode map31
 {
 	name="Otis Shift"
+}
+
+map map31 "Otis Shift"
+{
+	next=EndSequence,"ParaEndScroll"
+	secretnext = "MAP32"
+	sky1 = "SKY3"
+	cluster = 9
+	par = 120
+	music = "$MUSIC_EVIL"
+}
+map map32 "Otis Force"
+{
+	next=EndSequence,"ParaEndScroll"
+	sky1 = "SKY3"
+	cluster = 10
+	par = 30
+	music = "$MUSIC_ULTIMA"
 }
 
 defaultmap
@@ -84,153 +102,153 @@ defaultmap
 	fallingdamage
 	cluster=1
 	sky1=HLSKY1
+	NoIntermission
 	SpawnWithWeaponRaised
 }
-map map31 "Otis Shift"
-{
-	next=EndSequence,"ParaEndScroll"
-	secretnext = "MAP32"
-	sky1 = "SKY3"
-	cluster = 9
-	par = 120
-	music = "$MUSIC_EVIL"
-}
 
-map map32 "Otis Force"
-{
-	next=EndSequence,"ParaEndScroll"
-	sky1 = "SKY3"
-	cluster = 10
-	par = 30
-	music = "$MUSIC_ULTIMA"
-}
-
-map TITLEMAP lookup "PARANOIDMAP_TITLE"
+map TITLEMAP lookup "PARANOID_TITLEMAP"
 {
 	sky1=HLSKY5
 	PrecacheSounds="Music01"
 }
 
-map map01 lookup "PARANOIDMAP_01"
+map P1M1 lookup "PARANOID_P1M1"
 {
 	PrecacheSounds="Music02"
-	Next=MAP02
+	LevelNum=1
+	Next=P1M2
 }
-map map02 lookup "PARANOIDMAP_02"
+map P1M2 lookup "PARANOID_P1M2"
 {
 	PrecacheSounds="Music02"
-	Next=MAP03
+	LevelNum=2
+	Next=P1M3
 }
-map map03 lookup "PARANOIDMAP_03"
+map P1M3 lookup "PARANOID_P1M3"
 {
 	PrecacheSounds="Music03"
-	Next=MAP04
+	LevelNum=3
+	Next=P1M4
 }
-map map04 lookup "PARANOIDMAP_04"
+map P1M4 lookup "PARANOID_P1M4"
 {
-	Next=MAP08
+	LevelNum=4
+	Next=P1M5
 }
-map map08 lookup "PARANOIDMAP_08"
+map P1M5 lookup "PARANOID_P1M5"
 {
+	LevelNum=5
 	PrecacheSounds="Music04"
-	Next=MAP05
+	Next=P1M6
 }
 
 adddefaultmap
 {
 	sky1=HLSKY2
 }
-map map05 lookup "PARANOIDMAP_05"
+map P1M6 lookup "PARANOID_P1M6"
 {
+	LevelNum=6
 	PrecacheSounds="Music07"
-	Next=MAP06
+	Next=P1M7
 }
-map map06 lookup "PARANOIDMAP_06"
+map P1M7 lookup "PARANOID_P1M7"
 {
-	PrecacheSounds="Music01"
-	Next=MAP07
-}
-map map07 lookup "PARANOIDMAP_07"
-{
+	LevelNum=7
 	PrecacheSounds="Music03","Music07"
-	Next=MAP09
+	Next=P1M8
+}
+map P1M8 lookup "PARANOID_P1M8"
+{
+	LevelNum=8
+	PrecacheSounds="Music01"
+	Next=P2M0
 }
 
 adddefaultmap
 {
 	sky1=HLSKY3
 }
-map MAP09 lookup "PARANOIDMAP_09"
+map P2M0 lookup "PARANOID_P2M0"
 {
-	NoIntermission
-	Next=MAP10
 	PrecacheSounds="30Title"
+	LevelNum=9
+	Next=P2M1
 }
 
 adddefaultmap
 {
 	cluster=2
 }
-map map10 lookup "PARANOIDMAP_10"
+map P2M1 lookup "PARANOID_P2M1"
 {
 	ResetHealth
 	ResetInventory
-	Next=MAP11
+	LevelNum=10
+	Next=P2M2
 }
 
 adddefaultmap
 {
 	MonsterFallingDamage
 }
-map map11 lookup "PARANOIDMAP_11"
+map P2M2 lookup "PARANOID_P2M2"
 {
 	PrecacheSounds="11Earth","32Trans","MAP11VX2"
-	Next=MAP12
+	LevelNum=11
+	Next=P2M3
 }
-map map12 lookup "PARANOIDMAP_12"
+map P2M3 lookup "PARANOID_P2M3"
 {
-	Next=MAP13
+	LevelNum=12
+	Next=P2M4
 }
 
 adddefaultmap
 {
 	sky1=HLSKY4
 }
-map map13 lookup "PARANOIDMAP_13"
+map P2M4 lookup "PARANOID_P2M4"
 {
 	PrecacheSounds="13Earth"
-	Next=MAP14
+	LevelNum=13
+	Next=P2M5
 }
-map map14 lookup "PARANOIDMAP_14"
+map P2M5 lookup "PARANOID_P2M5"
 {
 	PrecacheSounds="14Earth","34Trans"
-	Next=MAP15
+	LevelNum=14
+	Next=P2M6
 }
-map map15 lookup "PARANOIDMAP_15"
+map P2M6 lookup "PARANOID_P2M6"
 {
 	hazardcolor="80 a0 ff"
 	hazardflash="40 80 ff"
-	Next=MAP16
+	LevelNum=15
+	Next=P2M7
 }
 
 adddefaultmap
 {
 	sky1=HLSKY5
 }
-map map16 lookup "PARANOIDMAP_16"
+map P2M7 lookup "PARANOID_P2M7"
 {
 	PrecacheSounds="16Earth"
-	Next=MAP17
+	LevelNum=16
+	Next=P2M8
 }
-map map17 lookup "PARANOIDMAP_17"
+map P2M8 lookup "PARANOID_P2M8"
 {
 	PrecacheSounds="17Earth"
-	Next=MAP18
+	LevelNum=17
+	Next=P2M9
 }
-map map18 lookup "PARANOIDMAP_18"
+map P2M9 lookup "PARANOID_P2M9"
 {
 	PrecacheSounds="18ZEarth","36Trans"
-	Next=MAP19
+	LevelNum=18
+	Next=P3M1
 }
 
 adddefaultmap
@@ -238,17 +256,20 @@ adddefaultmap
 	sky1=HLSKY6
 	AirControl=.25
 }
-map map19 lookup "PARANOIDMAP_19"
+map P3M1 lookup "PARANOID_P3M1"
 {
-	Next=MAP20
+	LevelNum=19
+	Next=P3M2
 }
-map map20 lookup "PARANOIDMAP_20"
+map P3M2 lookup "PARANOID_P3M2"
 {
 	Music="20Xen"
-	Next=MAP21
+	LevelNum=20
+	Next=P3M3
 }
-map map21 lookup "PARANOIDMAP_21"
+map P3M3 lookup "PARANOID_P3M3"
 {
+	LevelNum=21
 	next=EndSequence,"ParaEndScroll"
 }
 
@@ -256,14 +277,16 @@ adddefaultmap
 {
 	AirControl=.00390625
 }
-map map22 lookup "PARANOIDMAP_22"
+map P3M4 lookup "PARANOID_P3M4"
 {
 	Music="22SixWay"
-	Next=MAP23
+	LevelNum=22
+	Next=P3M5
 }
-map map23 lookup "PARANOIDMAP_23"
+map P3M5 lookup "PARANOID_P3M5"
 {
 	Music="23Space"
+	LevelNum=23
 	PrecacheTextures="XMETL08","XMETL09","XMETL10","XMETL08A","XMETL08B","XMETL08C",
 		"XMETL09A","XMETL09B","XMETL09C","XMETL09D","XMETL09E","XMETL09F","XMETL10A",
 		"XMETL10B","XMETL10C","XMETL10D","XMETL10E"
