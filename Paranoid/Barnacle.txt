@@ -29,43 +29,145 @@ class HLBarnacle : Actor
 	states
 	{
 	Spawn:
-		HLI1 AAA 8 A_Look;
-		HLI1 A 8 A_Jump(32,1);
-		Loop;
-		HLI1 BCB 4 A_Look;
-		Loop;
 	See:
-		HLI1 AA 4 A_BarnacleChase;
-		HLI1 A 4 A_Jump(96,1);
-		Loop;
-		HLI1 BCB 4 A_BarnacleChase;
+		HLI1 A 2 A_HLBarnacleChase;
+		HLI1 BCD 2;
+		HLI1 E 2 A_HLBarnacleChase;
+		HLI1 FGH 2;
+		HLI1 I 2 A_HLBarnacleChase;
+		HLI1 JKL 2;
+		HLI1 M 2 A_HLBarnacleChase;
+		HLI1 NOP 2;
+		HLI1 Q 2 A_HLBarnacleChase;
+		HLI1 RST 2;
+		HLI1 U 2 A_HLBarnacleChase;
+		HLI1 VWX 2;
+		HLI1 Y 2 A_HLBarnacleChase;
+		HLI1 Z[\ 2;
+		HLI1 ] 2 A_HLBarnacleChase;
+		HLI2 ABC 2;
+		HLI2 D 2 A_HLBarnacleChase;
+		HLI2 EFG 2;
+		HLI2 H 2 A_HLBarnacleChase;
+		HLI2 IJK 2;
+		HLI2 L 2 A_HLBarnacleChase;
+		HLI2 MNO 2;
+		HLI2 P 2 A_HLBarnacleChase;
+		HLI2 QRS 2;
+		HLI2 T 2 A_HLBarnacleChase;
+		HLI2 UVW 2;
+		HLI2 X 2 A_HLBarnacleChase;
+		HLI2 YZ[ 2;
+		HLI2 \ 2 A_HLBarnacleChase;
+		HLI2 ] 2;
+		HLI3 AB 2;
+		HLI3 C 2 A_HLBarnacleChase;
+		HLI3 DEF 2;
+		HLI3 G 2 A_HLBarnacleChase;
+		HLI3 HIJ 2;
+		HLI3 K 2 A_HLBarnacleChase;
+		HLI3 LMN 2;
+		HLI3 O 2 A_HLBarnacleChase;
+		HLI3 PQR 2;
+		HLI3 S 2 A_HLBarnacleChase;
+		HLI3 TUV 2;
+		HLI3 W 2 A_HLBarnacleChase;
+		HLI3 XYZ 2;
+		HLI3 [ 2 A_HLBarnacleChase;
+		HLI3 \] 2;
+		HLI4 A 2;
+		HLI4 B 2 A_HLBarnacleChase;
+		HLI4 CDE 2;
+		HLI4 F 2 A_HLBarnacleChase;
+		HLI4 GHI 2;
+		HLI4 J 2 A_HLBarnacleChase;
+		HLI4 KLM 2;
+		HLI4 N 2 A_HLBarnacleChase;
+		HLI4 OPQ 2;
+		HLI4 R 2 A_HLBarnacleChase;
+		HLI4 STU 2;
+		HLI4 V 2 A_HLBarnacleChase;
+		HLI4 WXY 2;
+		HLI4 Z 2 A_HLBarnacleChase;
+		HLI4 [\] 2;
+		HLI5 A 2 A_HLBarnacleChase;
+		HLI5 BCD 2;
+		HLI5 E 2 A_HLBarnacleChase;
+		HLI5 FGH 2;
+		HLI5 I 2 A_HLBarnacleChase;
+		HLI5 JKL 2;
+		HLI5 M 2 A_HLBarnacleChase;
+		HLI5 NOP 2;
+		HLI5 Q 2 A_HLBarnacleChase;
+		HLI5 RST 2;
+		HLI5 U 2 A_HLBarnacleChase;
+		HLI5 VWX 2;
+		HLI5 Y 2 A_HLBarnacleChase;
+		HLI5 Z[\ 2;
+		HLI5 ] 2 A_HLBarnacleChase;
+		HLI6 ABC 2;
+		HLI6 D 2 A_HLBarnacleChase;
+		HLI6 EF 2;
 		Loop;
 	Missile:
-		HLI1 DEF 3 A_FaceTarget;
-		HLI1 G 6
+		HLA1 ABCDEFGHI 1;
+		HLA1 J 1
 		{
 			for(int i=0;i<7;i++)
 				A_SpawnItemEx("BarnacleSpitParticle",0,0,12,frandom(0.5,2),frandom(1.3,-1.3),frandom(-0.3,-1.2),random(0,359));
 			A_PlaySound("barnacle/attack");
 			A_SpawnProjectile("BarnacleSpitBall",12);
 		}
-		HLI1 HI 3;
-		goto See;
+		HLA1 KLMNOPQRSTU 1;
+		HLA1 V 1 A_HLBarnacleChase;
+		HLA1 WXY 1;
+		HLA1 Z 1 A_HLBarnacleChase;
+		HLA1 [\] 1;
+		HLA2 A 1 A_HLBarnacleChase;
+		HLA2 BCD 1;
+		HLA2 E 1 A_HLBarnacleChase;
+		HLA2 FGH 1;
+		HLA2 I 1 A_HLBarnacleChase;
+		HLA2 JKL 1;
+		HLA2 M 1 A_HLBarnacleChase;
+		HLA2 NOP 1;
+		HLA2 Q 1 A_HLBarnacleChase;
+		HLA2 RST 1;
+		HLA2 U 1 A_HLBarnacleChase;
+		HLA2 V 1;
+		Goto See;
 	Pain:
-		HLI1 J 2;
-		HLI1 J 2 A_Pain;
-		goto See;
+		HLP1 A 1 A_Pain;
+		HLP1 BCD 1;
+		HLP1 E 1 A_HLBarnacleChase;
+		HLP1 FGH 1;
+		HLP1 I 1 A_HLBarnacleChase;
+		HLP1 JKL 1;
+		HLP1 M 1 A_HLBarnacleChase;
+		HLP1 NOP 1;
+		Goto See;
 	Death:
-		HLI1 K 5 {bNOCLIP=1;}  //stops you being able to jump up and push the model into the ceiling
-		HLI1 K 5 A_Scream;
-		HLI1 L 5 A_NoBlocking;
-		HLI1 LLLMMM 2 A_SpawnItemEx("HLGibs",random(3,-3),random(3,-3),random(8,24),random(1,2),random(1,2),random(-1,-3),random(0,359));
-		HLI1 NOPQR 5;
-		HLI1 S -1;
+		HLD1 A 2
+		{
+			bNOCLIP=1;				//stops you being able to jump up and push the model into the ceiling
+			A_ScreamAndUnblock();
+		}
+		HLD1 BCDEFGHI 2;
+		HLD1 JKLMNO 2 A_SpawnItemEx("HLGibs",random(3,-3),random(3,-3),random(8,24),random(1,2),random(1,2),random(-1,-3),random(0,359));
+		HLD1 PQRSTUVWXYZ[\] 2;
+		HLD2 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 2;
+		HLD3 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 2;
+		HLD4 ABCDEFGHIJKL 2;
+		HLD4 M -1;
 		Stop;
 	}
-	void A_BarnacleChase()
-		{A_Chase(null,"Missile",CHF_NODIRECTIONTURN);}
+	void A_HLBarnacleChase()
+	{
+		if(target)
+			A_Chase(null,"Missile",CHF_NODIRECTIONTURN);
+		else
+			A_Look();
+	}
 }
 
 class BarnacleSpitBall : Actor
