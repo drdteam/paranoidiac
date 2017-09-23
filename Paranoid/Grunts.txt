@@ -108,29 +108,29 @@ class HLGrunt1 : HLMonster
 			A_SetSpeed(3.5);
 			return state(null);
 		}
-		HLR1 A 1 A_GruntChase;
+		HLR1 A 1 A_Chase;
 		HLR1 B 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLR1 C 1 A_GruntChase;
+		HLR1 C 1 A_Chase;
 		HLR1 D 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLR1 E 1 A_GruntChase;
+		HLR1 E 1 A_Chase;
 		HLR1 F 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLR1 G 1 A_GruntChase;
+		HLR1 G 1 A_Chase;
 		HLR1 H 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLR1 I 1 A_GruntChase;
+		HLR1 I 1 A_Chase;
 		HLR1 J 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLR1 K 1 A_GruntChase;
+		HLR1 K 1 A_Chase;
 		HLR1 L 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLR1 M 1 A_GruntChase;
+		HLR1 M 1 A_Chase;
 		HLR1 N 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLR1 O 1 A_GruntChase;
+		HLR1 O 1 A_Chase;
 		HLR1 P 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLR1 Q 1 A_GruntChase;
+		HLR1 Q 1 A_Chase;
 		HLR1 R 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLR1 S 1 A_GruntChase;
+		HLR1 S 1 A_Chase;
 		HLR1 T 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLR1 U 1 A_GruntChase;
+		HLR1 U 1 A_Chase;
 		HLR1 V 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLR1 W 1 A_GruntChase;
+		HLR1 W 1 A_Chase;
 		HLR1 XY 1 A_Chase(null,null,HLSMOOTHCHASE);
 		Loop;
 	Walking:
@@ -140,53 +140,53 @@ class HLGrunt1 : HLMonster
 			bMISSILEMORE=1;
 			A_SetSpeed(1.75);
 		}
-		HLW1 A 1 A_GruntChase;
+		HLW1 A 1 A_Chase;
 		HLW1 BCD 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLW1 E 1 A_GruntChase;
+		HLW1 E 1 A_Chase;
 		HLW1 FGH 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLW1 I 1 A_GruntChase;
+		HLW1 I 1 A_Chase;
 		HLW1 JKL 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLW1 M 1 A_GruntChase;
+		HLW1 M 1 A_Chase;
 		HLW1 NOP 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLW1 Q 1 A_GruntChase;
+		HLW1 Q 1 A_Chase;
 		HLW1 RST 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLW1 U 1 A_GruntChase;
+		HLW1 U 1 A_Chase;
 		HLW1 VWX 1 A_Chase(null,null,HLSMOOTHCHASE);
 		HLW1 X 0 A_KeepWalking;
-		HLW1 Y 1 A_GruntChase;
+		HLW1 Y 1 A_Chase;
 		HLW1 Z[\ 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLW1 ] 1 A_GruntChase;
+		HLW1 ] 1 A_Chase;
 		HLW2 ABC 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLW2 D 1 A_GruntChase;
+		HLW2 D 1 A_Chase;
 		HLW2 EFG 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLW2 H 1 A_GruntChase;
+		HLW2 H 1 A_Chase;
 		HLW2 IJK 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLW2 L 1 A_GruntChase;
+		HLW2 L 1 A_Chase;
 		HLW2 MNO 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLW2 P 1 A_GruntChase;
+		HLW2 P 1 A_Chase;
 		HLW2 QRS 1 A_Chase(null,null,HLSMOOTHCHASE);
 		HLW2 S 0 A_KeepWalking;
-		HLW2 T 1 A_GruntChase;
+		HLW2 T 1 A_Chase;
 		HLW2 UVW 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLW2 X 1 A_GruntChase;
+		HLW2 X 1 A_Chase;
 		HLW2 YZ[ 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLW2 \ 1 A_GruntChase;
+		HLW2 \ 1 A_Chase;
 		HLW2 ] 1 A_Chase(null,null,HLSMOOTHCHASE);
 		HLW3 AB 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLW3 C 1 A_GruntChase;
+		HLW3 C 1 A_Chase;
 		HLW3 DEF 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLW3 G 1 A_GruntChase;
+		HLW3 G 1 A_Chase;
 		HLW3 HIJ 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLW3 K 1 A_GruntChase;
+		HLW3 K 1 A_Chase;
 		HLW3 LMN 1 A_Chase(null,null,HLSMOOTHCHASE);
 		HLW3 N 0 A_KeepWalking;
-		HLW3 O 1 A_GruntChase;
+		HLW3 O 1 A_Chase;
 		HLW3 PQR 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLW3 S 1 A_GruntChase;
+		HLW3 S 1 A_Chase;
 		HLW3 TUV 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLW3 W 1 A_GruntChase;
+		HLW3 W 1 A_Chase;
 		HLW3 XYZ 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLW3 [ 1 A_GruntChase;
+		HLW3 [ 1 A_Chase;
 		HLW3 \ 1 A_Chase(null,null,HLSMOOTHCHASE);
 		HLW3 \ 0 A_KeepWalking;
 		Goto See;
@@ -218,6 +218,12 @@ class HLGrunt1 : HLMonster
 		HLR1 XY 1 A_Chase(null,null,HLSMOOTHCHASE);
 		Goto See;
 	Melee:
+		HLA1 A 1
+		{
+			if(!handgren||random(0,255)>96)
+				return resolvestate("Missile");
+			return state(null);
+		}
 		HLA1 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1 A_FaceTarget;
 		HLA2 ABCDE 1 A_FaceTarget;
 		HLA2 F 1
@@ -339,13 +345,6 @@ class HLGrunt1 : HLMonster
 	Crush:
 		TNT1 A 0 A_HLGibs;
 		Stop;
-	}
-	void A_GruntChase()
-	{
-		if(handgren)
-			A_Chase();
-		else
-			A_Chase(null,"Missile");
 	}
 	state A_KeepWalking()
 	{
