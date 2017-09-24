@@ -1,5 +1,15 @@
 [enu default]
 
+PARANOID_EPISODE="Select Chapter";
+PARANOID_SKILL="Select Difficulty";
+PARANOID_NEWGAME="New Game";
+PARANOID_LOADGAME="Load Game";
+PARANOID_SAVEGAME="Save Game";
+PARANOID_QUIT="Quit";
+
+OPTMNU_TITLE="Options";
+PARANOID_MULTIOPTIONS="MP Options";
+
 SKIPCUTSCENE1="Press Use (";
 SKIPCUTSCENE2=") to skip cutscene";
 

@@ -3628,36 +3628,36 @@ Graphic M_SAVEG, 112, 22
 	Patch M_SAVEG, 0, 0
 }
 
-Graphic M_SKULL1, 46, 46
+Graphic P_SKULL1, 46, 46
 {
 	XScale 4.0
 	YScale 4.0
 	Offset -64, -16
-	Patch M_SKULL1, 0, 0
+	Patch P_SKULLA, 0, 0
 }
 
-Graphic M_SKULL2, 46, 46
+Graphic P_SKULL2, 46, 46
 {
 	XScale 4.0
 	YScale 4.0
 	Offset -64, -16
-	Patch M_SKULL2, 0, 0
+	Patch P_SKULLB, 0, 0
 }
 
-Graphic M_DOOM, 620, 128
+Graphic P_TITLE, 620, 128
 {
 	XScale 2.0
 	YScale 2.0
 	Offset 178, 4
-	Patch M_DOOM, 0, 0
+	Patch P_TITLE1, 0, 0
 }
 
-Graphic M_SKILL, 620, 128
+Graphic P_SKILL, 620, 128
 {
 	XScale 2.0
 	YScale 2.0
 	Offset 98, 76
-	Patch M_SKILL, 0, 0
+	Patch P_SKILL1, 0, 0
 }
 
 Graphic PEND0, 120, 100
@@ -3692,7 +3692,7 @@ Graphic PNDMEND, 620, 128
 {
 	XScale 2.0
 	YScale 2.0
-	Patch M_DOOM, 0, 0
+	Patch P_TITLE1, 0, 0
 }
 
 Texture X0LASERH, 128, 16
@@ -5189,5 +5189,17 @@ walltexture XWALL01, 128, 128
 {
 	Patch XWALL01, 0, 0
 }
+
+graphic HLHELMET,164,200
+{
+	XScale 2.5
+	YScale 2.5
+	Patch HLHELME1,0,0
+}
+
+graphic M_DOOM,0,0{}
+graphic M_SKILL,0,0{}
+graphic M_EPISOD,0,0{}
+graphic M_NEWG,0,0{}
 
 // End of texture definitions

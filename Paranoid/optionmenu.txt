@@ -1,0 +1,17 @@
+class ParanoidMultiOptionsMenu : OptionMenu
+{
+	override void Drawer()
+	{
+		let multiskin=CVar.GetCVar('v_multiskin',players[consoleplayer]);
+		int mskin=multiskin.GetInt();
+		let tex=TexMan.CheckForTexture("HLHELME1",0);
+		double x=-1,y=-1,alpha=1.0;
+		//if(mskin==0)
+			//tex='HLHELME1';
+
+		if(mskin==1)
+			tex=TexMan.CheckForTexture("HLADRIAN",0);
+		screen.DrawTexture(tex,false,x,y,DTA_Clean,true,DTA_Alpha,alpha);
+		super.drawer();
+	}
+}

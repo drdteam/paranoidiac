@@ -9,6 +9,11 @@ class RolfBellmer : PlayerPawn
 				SetStateLabel("OtisSpawn");
 			else if(scientist)
 				SetStateLabel("ScientistSpawn");
+			else if(multiplayer)
+			{
+				if(A_HLCheckSkin()==1)
+					SetStateLabel("ShephardSpawn");
+			}
 		}
 		else if(InStateSequence(CurState,FindState("ScientistSpawn"))&&!scientist)
 			SetState(SpawnState);
@@ -32,6 +37,7 @@ class RolfBellmer : PlayerPawn
 		Player.StartItem "HLCrowbar";
 		Player.StartItem "HEVSuit";
 		Player.Face "HEV";
+		Player.Portrait "HLHELMET";
 	}
 	States
 	{
@@ -123,6 +129,26 @@ class RolfBellmer : PlayerPawn
 		BSD1 IJKL 2;
 		BSD1 M -1;
 		Stop;
+	ShephardSpawn:
+		OFI1 ABCDEFGHIJK 2;
+		Loop;
+	ShephardSee:
+		OFR1 ABCDEFGHIJKLMNOPQRSTUVWXY 1;
+		Loop;
+	ShephardMissile:
+		OFA2 \] 1;
+		OFA3 ABCDEFGHIJK 1;
+		Goto ShephardSpawn;
+	ShephardPain:
+		OFP1 ABCDEFGH 1;
+		Goto ShephardSpawn;
+	ShephardDeath:
+		OFD1 A 1 A_NoBlocking;
+		OFD1 BCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1;
+		OFD2 A 1 A_PlaySound("halflife/weapons/bodydrop");
+		OFD2 BCDEF 1;
+		OFD2 G -1;
+		Stop;
 	}
 	override void PlayIdle()
 	{
@@ -130,6 +156,11 @@ class RolfBellmer : PlayerPawn
 			SetStateLabel("OtisSpawn");
 		else if(scientist&&InStateSequence(CurState,FindState("ScientistSee")))
 			SetStateLabel("ScientistSpawn");
+		else if(multiplayer)
+		{
+			if(A_HLCheckSkin()==1&&InStateSequence(CurState,FindState("ShephardSee")))
+				SetStateLabel("ShephardSpawn");
+		}
 		else if(InStateSequence(CurState,SeeState))
 			SetState(SpawnState);
 	}
@@ -139,6 +170,11 @@ class RolfBellmer : PlayerPawn
 			SetStateLabel("OtisSee");
 		else if(scientist&&InStateSequence(CurState,FindState("ScientistSpawn")))
 			SetStateLabel("ScientistSee");
+		else if(multiplayer)
+		{
+			if(A_HLCheckSkin()==1&&InStateSequence(CurState,FindState("ShephardSpawn")))
+				SetStateLabel("ShephardSee");
+		}
 		else if(InStateSequence(CurState,SpawnState))
 			SetState(SeeState);
 	}
@@ -148,6 +184,11 @@ class RolfBellmer : PlayerPawn
 			SetStateLabel("OtisMissile");
 		else if(scientist)
 			SetStateLabel("ScientistMissile");
+		else if(multiplayer)
+		{
+			if(A_HLCheckSkin()==1)
+				SetStateLabel("ShephardMissile");
+		}
 		else
 			SetState(MissileState);
 	}
@@ -157,6 +198,11 @@ class RolfBellmer : PlayerPawn
 			SetStateLabel("OtisPain");
 		else if(scientist)
 			SetStateLabel("ScientistPain");
+		else if(multiplayer)
+		{
+			if(A_HLCheckSkin()==1)
+				SetStateLabel("ShephardPain");
+		}
 	}
 	void A_HLDeathSelect()
 	{
@@ -164,6 +210,11 @@ class RolfBellmer : PlayerPawn
 			SetStateLabel("OtisDeath");
 		else if(scientist)
 			SetStateLabel("ScientistDeath");
+		else if(multiplayer)
+		{
+			if(A_HLCheckSkin()==1)
+				SetStateLabel("ShephardDeath");
+		}
 	}
 	void A_HLHEVPain()
 	{
@@ -178,4 +229,6 @@ class RolfBellmer : PlayerPawn
 				A_PlaySound("HLPlayerPain75",7);
 		}
 	}
+	int A_HLCheckSkin()
+		{return CVar.GetCVar("v_multiskin",player).GetInt();}
 }

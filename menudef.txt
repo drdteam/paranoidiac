@@ -1,0 +1,82 @@
+DEFAULTLISTMENU
+{
+	Font "BigFont","Untranslated"
+	Selector "P_SKULL1", -32, -5
+	Linespacing 16
+}
+
+ListMenu "MainMenu"
+{
+	StaticPatch 94, 2, "P_TITLE"
+	Position 97, 72
+	TextItem "$PARANOID_NEWGAME","n","PlayerclassMenu"
+	TextItem "$OPTMNU_TITLE","o","OptionsMenu"
+	TextItem "$PARANOID_MULTIOPTIONS","o","MultiOptionsMenu"
+	TextItem "$PARANOID_LOADGAME","l","LoadGameMenu"
+	TextItem "$PARANOID_SAVEGAME","s","SaveGameMenu"
+	TextItem "$PARANOID_QUIT","q","QuitMenu"
+}
+ListMenu "EpisodeMenu"
+{
+	NetgameMessage "$NEWGAME"
+	Position 48, 63
+	StaticTextCentered 100, 38, "$PARANOID_EPISODE"
+}
+ListMenu "SkillMenu"
+{
+	Position 48, 63
+	StaticPatch 54, 38, "P_SKILL"
+}
+ListMenu "LoadGameMenu"
+{
+	NetgameMessage "$LOADNET"
+	StaticTextCentered 160, -20, "$PARANOID_LOADGAME"
+	Position 80,54
+	Class "LoadMenu"
+}
+ListMenu "SaveGameMenu"
+{
+	StaticTextCentered 160, -20, "$PARANOID_SAVEGAME"
+	Position 80,54
+	Class "SaveMenu"
+}
+OptionMenu "MultiOptionsMenu"
+{
+	Title "$MNU_PLAYERSETUP"
+	Class "ParanoidMultiOptionsMenu"
+	Submenu "Advanced Player Setup","PlayerMenu"
+	Option "Multiplayer Character","v_multiskin","MultiSkin"
+}
+OptionValue "MultiSkin"
+{
+	0,"Helmet"
+	1,"Adrian Shephard"
+}
+
+ListMenu "PlayerMenu"
+{
+	StaticTextCentered 160, 6, "$MNU_PLAYERSETUP"
+	Font "SmallFont"
+	Linespacing 14
+	Position 48, 36
+
+	PlayerNameBox "$PLYRMNU_NAME", 0, "Playerbox"
+	Selector "-", -16, -1
+	MouseWindow 0, 220
+	PlayerDisplay 220, 80, "20 00 00", "80 00 40", 0, "PlayerDisplay"
+
+	ValueText "$PLYRMNU_TEAM", "Team"
+	ValueText "$PLYRMNU_PLAYERCOLOR", "Color"
+	Linespacing 10
+	Slider "$PLYRMNU_RED", "Red", 0, 255, 16
+	Slider "$PLYRMNU_GREEN", "Green", 0, 255, 16
+	Linespacing 14
+	Slider "$PLYRMNU_BLUE", "Blue", 0, 255, 16
+	ValueText "$PLYRMNU_PLAYERCLASS", "Class"
+	ValueText "$PLYRMNU_PLAYERSKIN", "Skin"
+	ValueText "$PLYRMNU_PLAYERGENDER", "Gender", "Gender"
+	Slider "$PLYRMNU_AUTOAIM", "Autoaim", 0, 35, 1
+	ValueText "$PLYRMNU_SWITCHONPICKUP", "Switch", "OffOn"
+	ValueText "$PLYRMNU_ALWAYSRUN", "AlwaysRun", "OnOff"
+	Class "PlayerMenu"
+}
