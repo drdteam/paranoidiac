@@ -1,0 +1,253 @@
+class ParanoidPlayerMenu : PlayerMenu
+{
+	Array<int> mPlayerMultiSkins;
+	override void Init(Menu parent,ListMenuDescriptor desc)
+	{
+		MenuItemBase li;
+		PlayerInfo p=players[consoleplayer];
+		ListMenu.Init(parent,desc);
+		PickPlayerClass();
+		mRotation=0;
+		li=GetItem('Playerdisplay');
+		if(li != NULL)
+		{
+			li.SetValue(ListMenuItemPlayerDisplay.PDF_ROTATION,0);
+			li.SetValue(ListMenuItemPlayerDisplay.PDF_MODE,1);
+			li.SetValue(ListMenuItemPlayerDisplay.PDF_TRANSLATE,1);
+			li.SetValue(ListMenuItemPlayerDisplay.PDF_CLASS,p.GetPlayerClassNum());
+			if(mPlayerClass!=NULL&&!(GetDefaultByType(mPlayerClass.Type).bNoSkin)&&
+				p.GetPlayerClassNum()!=-1)
+				li.SetValue(ListMenuItemPlayerDisplay.PDF_SKIN,p.GetSkin());
+		}
+		li=GetItem('Playerbox');
+		if(li != NULL)
+			li.SetString(0,p.GetUserName());
+		li=GetItem('Team');
+		if(li != NULL)
+		{
+			li.SetString(0,"None");
+			for(int i=0;i<Teams.Size(); i++)
+				li.SetString(i+1,Teams[i].mName);
+			int myteam=players[consoleplayer].GetTeam();
+			li.SetValue(0,myteam ==  Team.NoTeam? 0 : myteam + 1);
+		}
+		int mycolorset=p.GetColorSet();
+		Color colr=p.GetColor();
+		UpdateColorsets();
+		li=GetItem('Red');
+		if(li != NULL)
+		{
+			li.Enable(mycolorset == -1);
+			li.SetValue(0,colr.r);
+		}
+		li=GetItem('Green');
+		if(li != NULL)
+		{
+			li.Enable(mycolorset == -1);
+			li.SetValue(0,colr.g);
+		}
+		li=GetItem('Blue');
+		if(li != NULL)
+		{
+			li.Enable(mycolorset == -1);
+			li.SetValue(0,colr.b);
+		}
+		li=GetItem('Class');
+		if(li != NULL)
+		{
+			if(PlayerClasses.Size() == 1)
+			{
+				li.SetString(0,PlayerPawn.GetPrintableDisplayName(PlayerClasses[0].Type));
+				li.SetValue(0,0);
+			}
+			else
+			{
+				if(!gameinfo.norandomplayerclass)
+					li.SetString(0,"Random");
+				for(int i=0; i< PlayerClasses.Size(); i++)
+				{
+					let cls=PlayerPawn.GetPrintableDisplayName(PlayerClasses[i].Type);
+					li.SetString(gameinfo.norandomplayerclass ? i : i+1,cls);
+				}
+				int pclass=p.GetPlayerClassNum();
+				li.SetValue(0,gameinfo.norandomplayerclass && pclass >= 0 ? pclass : pclass + 1);
+			}
+		}
+		UpdateMultiSkins();
+		li=GetItem('Gender');
+		if(li != NULL)
+			li.SetValue(0,p.GetGender());
+		li=GetItem('Autoaim');
+		if(li != NULL)
+			li.SetValue(0,int(p.GetAutoaim()));
+		li=GetItem('Switch');
+		if(li != NULL)
+			li.SetValue(0,p.GetNeverSwitch());
+		li=GetItem('AlwaysRun');
+		if(li != NULL)
+			li.SetValue(0,cl_run);
+		if(mDesc.mSelectedItem < 0)
+			mDesc.mSelectedItem=1;
+	}
+	protected void ChangeMultiSkin(int v)
+	{
+		let multi=CVar.FindCVar('v_multiskin');
+		multi.SetInt(v);
+	}
+	protected void UpdateMultiSkins()
+	{
+		if(mPlayerClass.Type!="RolfBellmer")
+		{
+			super.UpdateSkins();
+			return;
+		}
+		let li=GetItem('MultiSkin');
+		if(li!=NULL)
+		{
+			let multi=CVar.FindCVar('v_multiskin');
+			li.SetValue(0,multi.GetInt());
+			return;
+		}
+	}
+	override bool OnUIEvent(UIEvent ev)
+	{
+		if(ev.Type==UIEvent.Type_Char&&ev.KeyChar==32&&mPlayerClass.Type!="RolfBellmer")
+		{
+			mRotation=8 - mRotation;
+			MenuItemBase li=GetItem('Playerdisplay');
+			if(li!=NULL)
+				li.SetValue(ListMenuItemPlayerDisplay.PDF_ROTATION,mRotation);
+			return true;
+		}
+		return ListMenu.OnUIEvent(ev);
+	}
+	override bool MenuEvent(int mkey,bool fromcontroller)
+	{
+		int v;
+		bool res;
+		String s;
+		if(mDesc.mSelectedItem >= 0)
+		{
+			let li=mDesc.mItems[mDesc.mSelectedItem];
+			if(li.MenuEvent(mkey,fromcontroller))
+			{
+				Name ctrl=li.GetAction();
+				switch(ctrl)
+				{
+				case 'Playerbox':
+					if(mkey == MKEY_Input)
+					{
+						[res,s]=li.GetString(0);
+						if(res)
+							PlayerNameChanged(s);
+					}
+					break;
+				case 'Team':
+					[res,v]=li.GetValue(0);
+					if(res)
+						TeamChanged(v);
+					break;
+				case 'Color':
+					[res,v]=li.GetValue(0);
+					if(res)
+					{
+						int mycolorset=-1;
+						if(v > 0)
+							mycolorset=PlayerColorSets[v - 1];
+						let red  =GetItem('Red');
+						let green=GetItem('Green');
+						let blue =GetItem('Blue');
+						if(red != NULL)
+							red.Enable(mycolorset == -1);
+						if(green != NULL)
+							green.Enable(mycolorset == -1);
+						if(blue != NULL)
+							blue.Enable(mycolorset == -1);
+						ColorSetChanged(v - 1);
+						UpdateTranslation();
+					}
+					break;
+				case 'Red':
+					[res,v]=li.GetValue(0);
+					if(res)
+					{
+						Color colr=players[consoleplayer].GetColor();
+						SendNewColor(v,colr.g,colr.b);
+					}
+					break;
+				case 'Green':
+					[res,v]=li.GetValue(0);
+					if(res)
+					{
+						Color colr=players[consoleplayer].GetColor();
+						SendNewColor(colr.r,v,colr.b);
+					}
+					break;
+				case 'Blue':
+					[res,v]=li.GetValue(0);
+					if(res)
+					{
+						Color colr=players[consoleplayer].GetColor();
+						SendNewColor(colr.r,colr.g,v);
+					}
+					break;
+				case 'Class':
+					[res,v]=li.GetValue(0);
+					if(res)
+						ChangeClass(li);
+					break;
+				case 'Skin':
+					ChangeSkin(li);
+					break;
+				case 'MultiSkin':
+					[res,v]=li.GetValue(0);
+					if(res)
+						ChangeMultiSkin(v);
+					break;
+				case 'Gender':
+					[res,v]=li.GetValue(0);
+					if(res)
+						GenderChanged(v);
+					break;
+				case 'Autoaim':
+					[res,v]=li.GetValue(0);
+					if(res)
+						AutoaimChanged(v);
+					break;
+				case 'Switch':
+					[res,v]=li.GetValue(0);
+					if(res)
+						SwitchOnPickupChanged(v);
+					break;
+				case 'AlwaysRun':
+					[res,v]=li.GetValue(0);
+					if(res)
+						AlwaysRunChanged(v);
+					break;
+				}
+				return true;
+			}
+		}
+		return ListMenu.MenuEvent(mkey,fromcontroller);
+	}
+	override void Drawer()
+	{
+		ListMenu.Drawer();
+		if(mPlayerClass.Type=="RolfBellmer")
+		{
+			let multiskin=CVar.GetCVar('v_multiskin',players[consoleplayer]);
+			int mskin=multiskin.GetInt();
+			let tex=TexMan.CheckForTexture("HLHELMET",0);
+			//if(mskin==0)
+				//tex='HLHELME1';
+			if(mskin==1)
+				tex=TexMan.CheckForTexture("HLADRIAN",0);
+			screen.DrawTexture(tex,false,220.0,80.0,DTA_Clean,true,DTA_Alpha,1.0);
+			return;
+		}
+		String str="PRESS "..TEXTCOLOR_WHITE.."SPACE";
+		screen.DrawText(SmallFont,Font.CR_GOLD,320-32-32-SmallFont.StringWidth(str)/2,50+48+70,str,DTA_Clean,true);
+		str=mRotation?"TO SEE FRONT":"TO SEE BACK";
+		screen.DrawText(SmallFont,Font.CR_GOLD,320-32-32-SmallFont.StringWidth(str)/2,50+48+70+SmallFont.GetHeight(),str,DTA_Clean,true);
+	}
+}

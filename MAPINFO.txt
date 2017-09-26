@@ -7,6 +7,7 @@ gameinfo
 	menubackbutton="M_BACK"
 	statusbarclass="ParanoidStatusBar"
 	cursorpic="cursor"
+	NoRandomPlayerClass=true
 }
 
 clearskills

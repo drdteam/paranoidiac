@@ -11,7 +11,6 @@ ListMenu "MainMenu"
 	Position 97, 72
 	TextItem "$PARANOID_NEWGAME","n","PlayerclassMenu"
 	TextItem "$OPTMNU_TITLE","o","OptionsMenu"
-	TextItem "$PARANOID_MULTIOPTIONS","o","MultiOptionsMenu"
 	TextItem "$PARANOID_LOADGAME","l","LoadGameMenu"
 	TextItem "$PARANOID_SAVEGAME","s","SaveGameMenu"
 	TextItem "$PARANOID_QUIT","q","QuitMenu"
@@ -40,13 +39,7 @@ ListMenu "SaveGameMenu"
 	Position 80,54
 	Class "SaveMenu"
 }
-OptionMenu "MultiOptionsMenu"
-{
-	Title "$MNU_PLAYERSETUP"
-	Class "ParanoidMultiOptionsMenu"
-	Submenu "Advanced Player Setup","PlayerMenu"
-	Option "Multiplayer Character","v_multiskin","MultiSkin"
-}
+
 OptionValue "MultiSkin"
 {
 	0,"Helmet"
@@ -65,6 +58,8 @@ ListMenu "PlayerMenu"
 	MouseWindow 0, 220
 	PlayerDisplay 220, 80, "20 00 00", "80 00 40", 0, "PlayerDisplay"
 
+	ValueText "$PLYRMNU_PLAYERCLASS", "Class"
+	ValueText "Multiplayer Character", "MultiSkin","MultiSkin"
 	ValueText "$PLYRMNU_TEAM", "Team"
 	ValueText "$PLYRMNU_PLAYERCOLOR", "Color"
 	Linespacing 10
@@ -72,11 +67,9 @@ ListMenu "PlayerMenu"
 	Slider "$PLYRMNU_GREEN", "Green", 0, 255, 16
 	Linespacing 14
 	Slider "$PLYRMNU_BLUE", "Blue", 0, 255, 16
-	ValueText "$PLYRMNU_PLAYERCLASS", "Class"
-	ValueText "$PLYRMNU_PLAYERSKIN", "Skin"
 	ValueText "$PLYRMNU_PLAYERGENDER", "Gender", "Gender"
 	Slider "$PLYRMNU_AUTOAIM", "Autoaim", 0, 35, 1
 	ValueText "$PLYRMNU_SWITCHONPICKUP", "Switch", "OffOn"
 	ValueText "$PLYRMNU_ALWAYSRUN", "AlwaysRun", "OnOff"
-	Class "PlayerMenu"
+	Class "ParanoidPlayerMenu"
 }
