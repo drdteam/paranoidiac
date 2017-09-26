@@ -5197,6 +5197,13 @@ graphic HLHELMET,164,200
 	Patch HLHELME1,0,0
 }
 
+graphic HLGORDON,164,200
+{
+	XScale 2.5
+	YScale 2.5
+	Patch HLGORDO1,0,0
+}
+
 graphic HLADRIAN,164,200
 {
 	XScale 2.5

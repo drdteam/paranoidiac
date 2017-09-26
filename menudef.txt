@@ -43,7 +43,8 @@ ListMenu "SaveGameMenu"
 OptionValue "MultiSkin"
 {
 	0,"Helmet"
-	1,"Adrian Shephard"
+	1,"Gordon Freeman"
+	2,"Adrian Shephard"
 }
 
 ListMenu "PlayerMenu"
