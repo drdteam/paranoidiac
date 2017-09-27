@@ -45,6 +45,7 @@ OptionValue "MultiSkin"
 	0,"Helmet"
 	1,"Gordon Freeman"
 	2,"Adrian Shephard"
+	3,"Black Ops"
 }
 
 ListMenu "PlayerMenu"

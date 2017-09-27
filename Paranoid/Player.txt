@@ -11,10 +11,12 @@ class RolfBellmer : PlayerPawn
 				SetStateLabel("ScientistSpawn");
 			else if(multiplayer)
 			{
-				if(A_HLCheckSkin()==1)
+				if(A_HLCheckSkin()=='Freeman')
 					SetStateLabel("FreemanSpawn");
-				else if(A_HLCheckSkin()==2)
+				else if(A_HLCheckSkin()=='Shephard')
 					SetStateLabel("ShephardSpawn");
+				else if(A_HLCheckSkin()=='BlackOps')
+					SetStateLabel("BlackOpsSpawn");
 			}
 		}
 		else if(InStateSequence(CurState,FindState("ScientistSpawn"))&&!scientist)
@@ -187,6 +189,27 @@ class RolfBellmer : PlayerPawn
 		OFD2 BCDEF 1;
 		OFD2 G -1;
 		Stop;
+
+	BlackOpsSpawn:
+		BOI1 ABCDEFGHIJK 2;
+		Loop;
+	BlackOpsSee:
+		BOR1 ABCDEFGHIJKLMNOPQRSTUVWXY 1;
+		Loop;
+	BlackOpsMissile:
+		BOA2 \] 1;
+		BOA3 ABCDEFGHIJK 1;
+		Goto BlackOpsSpawn;
+	BlackOpsPain:
+		BOP1 ABCDEFGH 1;
+		Goto BlackOpsSpawn;
+	BlackOpsDeath:
+		BOD1 A 1 A_NoBlocking;
+		BOD1 BCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1;
+		BOD2 A 1 A_PlaySound("halflife/weapons/bodydrop");
+		BOD2 BCDEF 1;
+		BOD2 G -1;
+		Stop;
 	}
 	override void PlayIdle()
 	{
@@ -196,10 +219,12 @@ class RolfBellmer : PlayerPawn
 			SetStateLabel("ScientistSpawn");
 		else if(multiplayer)
 		{
-			if(A_HLCheckSkin()==1&&InStateSequence(CurState,FindState("FreemanSee")))
+			if(A_HLCheckSkin()=='Freeman'&&InStateSequence(CurState,FindState("FreemanSee")))
 				SetStateLabel("FreemanSpawn");
-			else if(A_HLCheckSkin()==2&&InStateSequence(CurState,FindState("ShephardSee")))
+			else if(A_HLCheckSkin()=='Shephard'&&InStateSequence(CurState,FindState("ShephardSee")))
 				SetStateLabel("ShephardSpawn");
+			else if(A_HLCheckSkin()=='BlackOps'&&InStateSequence(CurState,FindState("BlackOpsSee")))
+				SetStateLabel("BlackOpsSpawn");
 		}
 		else if(InStateSequence(CurState,SeeState))
 			SetState(SpawnState);
@@ -212,10 +237,12 @@ class RolfBellmer : PlayerPawn
 			SetStateLabel("ScientistSee");
 		else if(multiplayer)
 		{
-			if(A_HLCheckSkin()==1&&InStateSequence(CurState,FindState("FreemanSpawn")))
+			if(A_HLCheckSkin()=='Freeman'&&InStateSequence(CurState,FindState("FreemanSpawn")))
 				SetStateLabel("FreemanSee");
-			else if(A_HLCheckSkin()==2&&InStateSequence(CurState,FindState("ShephardSpawn")))
+			else if(A_HLCheckSkin()=='Shephard'&&InStateSequence(CurState,FindState("ShephardSpawn")))
 				SetStateLabel("ShephardSee");
+			else if(A_HLCheckSkin()=='BlackOps'&&InStateSequence(CurState,FindState("BlackOpsSpawn")))
+				SetStateLabel("BlackOpsSee");
 		}
 		else if(InStateSequence(CurState,SpawnState))
 			SetState(SeeState);
@@ -228,10 +255,12 @@ class RolfBellmer : PlayerPawn
 			SetStateLabel("ScientistMissile");
 		else if(multiplayer)
 		{
-			if(A_HLCheckSkin()==1)
+			if(A_HLCheckSkin()=='Freeman')
 				SetStateLabel("FreemanMissile");
-			else if(A_HLCheckSkin()==2)
+			else if(A_HLCheckSkin()=='Shephard')
 				SetStateLabel("ShephardMissile");
+			else if(A_HLCheckSkin()=='BlackOps')
+				SetStateLabel("BlackOpsMissile");
 		}
 		else
 			SetState(MissileState);
@@ -244,10 +273,12 @@ class RolfBellmer : PlayerPawn
 			SetStateLabel("ScientistPain");
 		else if(multiplayer)
 		{
-			if(A_HLCheckSkin()==1)
+			if(A_HLCheckSkin()=='Freeman')
 				SetStateLabel("FreemanPain");
-			else if(A_HLCheckSkin()==2)
+			else if(A_HLCheckSkin()=='Shephard')
 				SetStateLabel("ShephardPain");
+			else if(A_HLCheckSkin()=='BlackOps')
+				SetStateLabel("BlackOpsPain");
 		}
 	}
 	void A_HLDrownPainSelect()
@@ -258,10 +289,12 @@ class RolfBellmer : PlayerPawn
 			SetStateLabel("ScientistPain");
 		else if(multiplayer)
 		{
-			if(A_HLCheckSkin()==1)
+			if(A_HLCheckSkin()=='Freeman')
 				SetStateLabel("FreemanPain.Drowning");
-			else if(A_HLCheckSkin()==2)
+			else if(A_HLCheckSkin()=='Shephard')
 				SetStateLabel("ShephardPain");
+			else if(A_HLCheckSkin()=='BlackOps')
+				SetStateLabel("BlackOpsPain");
 		}
 	}
 	void A_HLDeathSelect()
@@ -272,10 +305,12 @@ class RolfBellmer : PlayerPawn
 			SetStateLabel("ScientistDeath");
 		else if(multiplayer)
 		{
-			if(A_HLCheckSkin()==1)
+			if(A_HLCheckSkin()=='Freeman')
 				SetStateLabel("FreemanDeath");
-			else if(A_HLCheckSkin()==2)
+			else if(A_HLCheckSkin()=='Shephard')
 				SetStateLabel("ShephardDeath");
+			else if(A_HLCheckSkin()=='BlackOps')
+				SetStateLabel("BlackOpsDeath");
 		}
 	}
 	void A_HLHEVPain()
@@ -291,6 +326,17 @@ class RolfBellmer : PlayerPawn
 				A_PlaySound("HLPlayerPain75",7);
 		}
 	}
-	int A_HLCheckSkin()
-		{return CVar.GetCVar("v_multiskin",player).GetInt();}
+	name A_HLCheckSkin()
+	{
+		switch(CVar.GetCVar("v_multiskin",player).GetInt())
+		{
+		case 1:
+			return 'Freeman';
+		case 2:
+			return 'Shephard';
+		case 3:
+			return 'BlackOps';
+		}
+		return 'Helmet';
+	}
 }
