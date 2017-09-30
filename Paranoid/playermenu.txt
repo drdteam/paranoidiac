@@ -248,6 +248,8 @@ class ParanoidPlayerMenu : PlayerMenu
 				tex=TexMan.CheckForTexture("HLBLKOPS",0);
 			else if(mskin==4)
 				tex=TexMan.CheckForTexture("HLROBOT",0);
+			else if(mskin==5)
+				tex=TexMan.CheckForTexture("HLIVAN",0);
 			screen.DrawTexture(tex,false,220.0,80.0,DTA_Clean,true,DTA_Alpha,1.0);
 			return;
 		}

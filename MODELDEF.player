@@ -2341,3 +2341,115 @@ Model RolfBellmer
 	FrameIndex ROD2 G 2 469
 	FrameIndex ROD2 G 3 469
 }
+
+Model RolfBellmer
+{
+	Path "Models"
+	Model 0 "doctor.md3"
+	SurfaceSkin 0 0 "doctor_000.png"
+	SurfaceSkin 0 1 "doctor_001.png"
+	SurfaceSkin 0 2 "doctor_002.png"
+	SurfaceSkin 0 3 "doctor_003.png"
+	SurfaceSkin 0 4 "doctor_004.png"
+	SurfaceSkin 0 5 "doctor_005.png"
+	SurfaceSkin 0 6 "doctor_006.png"
+	SurfaceSkin 0 7 "doctor_007.png"
+	SurfaceSkin 0 8 "doctor_008.png"
+	SurfaceSkin 0 9 "doctor_009.png"
+	SurfaceSkin 0 10 "doctor_010.png"
+	SurfaceSkin 0 11 "doctor_011.png"
+	ZOffset 28
+
+	FrameIndex IVI1 A 0 0
+
+	FrameIndex IVR1 A 0 65
+	FrameIndex IVR1 B 0 66
+	FrameIndex IVR1 C 0 67
+	FrameIndex IVR1 D 0 68
+	FrameIndex IVR1 E 0 69
+	FrameIndex IVR1 F 0 70
+	FrameIndex IVR1 G 0 71
+	FrameIndex IVR1 H 0 72
+	FrameIndex IVR1 I 0 73
+	FrameIndex IVR1 J 0 74
+	FrameIndex IVR1 K 0 75
+	FrameIndex IVR1 L 0 76
+	FrameIndex IVR1 M 0 77
+	FrameIndex IVR1 N 0 78
+	FrameIndex IVR1 O 0 79
+	FrameIndex IVR1 P 0 80
+	FrameIndex IVR1 Q 0 81
+	FrameIndex IVR1 R 0 82
+	FrameIndex IVR1 S 0 83
+	FrameIndex IVR1 T 0 84
+
+	FrameIndex IVA1 A 0 46
+	FrameIndex IVA1 B 0 47
+	FrameIndex IVA1 C 0 48
+	FrameIndex IVA1 D 0 49
+	FrameIndex IVA1 E 0 50
+	FrameIndex IVA1 F 0 51
+	FrameIndex IVA1 G 0 52
+	FrameIndex IVA1 H 0 53
+	FrameIndex IVA1 I 0 54
+	FrameIndex IVA1 J 0 55
+	FrameIndex IVA1 K 0 56
+	FrameIndex IVA1 L 0 57
+	FrameIndex IVA1 M 0 58
+
+	FrameIndex IVP1 A 0 25
+	FrameIndex IVP1 B 0 26
+	FrameIndex IVP1 C 0 27
+	FrameIndex IVP1 D 0 28
+	FrameIndex IVP1 E 0 29
+	FrameIndex IVP1 F 0 30
+	FrameIndex IVP1 G 0 31
+	FrameIndex IVP1 H 0 32
+	FrameIndex IVP1 I 0 33
+	FrameIndex IVP1 J 0 34
+	FrameIndex IVP1 K 0 35
+	FrameIndex IVP1 L 0 36
+
+	FrameIndex IVD1 A 0 113
+	FrameIndex IVD1 B 0 114
+	FrameIndex IVD1 C 0 115
+	FrameIndex IVD1 D 0 116
+	FrameIndex IVD1 E 0 117
+	FrameIndex IVD1 F 0 118
+	FrameIndex IVD1 G 0 119
+	FrameIndex IVD1 H 0 120
+	FrameIndex IVD1 I 0 121
+	FrameIndex IVD1 J 0 122
+	FrameIndex IVD1 K 0 123
+	FrameIndex IVD1 L 0 124
+	FrameIndex IVD1 M 0 125
+	FrameIndex IVD1 N 0 126
+	FrameIndex IVD1 O 0 127
+	FrameIndex IVD1 P 0 128
+	FrameIndex IVD1 Q 0 129
+	FrameIndex IVD1 R 0 130
+	FrameIndex IVD1 S 0 131
+	FrameIndex IVD1 T 0 132
+	FrameIndex IVD1 U 0 133
+	FrameIndex IVD1 V 0 134
+	FrameIndex IVD1 W 0 135
+	FrameIndex IVD1 X 0 136
+	FrameIndex IVD1 Y 0 137
+	FrameIndex IVD1 Z 0 138
+	FrameIndex IVD1 [ 0 139
+	FrameIndex IVD1 \ 0 140
+	FrameIndex IVD1 ] 0 141
+	FrameIndex IVD2 A 0 142
+	FrameIndex IVD2 B 0 143
+	FrameIndex IVD2 C 0 144
+	FrameIndex IVD2 D 0 145
+	FrameIndex IVD2 E 0 146
+	FrameIndex IVD2 F 0 147
+	FrameIndex IVD2 G 0 148
+	FrameIndex IVD2 H 0 149
+	FrameIndex IVD2 I 0 150
+	FrameIndex IVD2 J 0 151
+	FrameIndex IVD2 K 0 152
+	FrameIndex IVD2 L 0 153
+	FrameIndex IVD2 M 0 154
+}

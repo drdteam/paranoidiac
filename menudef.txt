@@ -47,6 +47,7 @@ OptionValue "MultiSkin"
 	2,"Adrian Shephard"
 	3,"Black Ops"
 	4,"Robo"
+	5,"Ivan the Space Biker"
 }
 
 ListMenu "PlayerMenu"

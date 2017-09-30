@@ -4,7 +4,7 @@ class RolfBellmer : PlayerPawn
 	override void Tick()
 	{
 		if(InSpawnState())
-			HLSetState("Spawn");
+			HLSetState('Spawn');
 		super.tick();
 	}
 	Default
@@ -218,6 +218,27 @@ class RolfBellmer : PlayerPawn
 		ROD2 BCDEF 1;
 		ROD2 G -1;
 		Stop;
+
+	IvanSpawn:
+		IVI1 A 1;
+		Loop;
+	IvanSee:
+		IVR1 ABCDEFGHIJKLMNOPQRST 1;
+		Loop;
+	IvanMissile:
+		IVA1 ABCDEFGHIJKLM 1;
+		Goto IvanSpawn;
+	IvanPain:
+	IvanPain.Drowning:
+		IVP1 ABCDEFGHIJKL 1;
+		Goto IvanSpawn;
+	IvanDeath:
+		IVD1 A 1 A_NoBlocking;
+		IVD1 BCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1;
+		IVD2 A 1 A_PlaySound("halflife/weapons/bodydrop");
+		IVD2 BCDEFGHIJKL 1;
+		IVD2 M -1;
+		Stop;
 	}
 	override void PlayIdle()
 	{
@@ -257,6 +278,7 @@ class RolfBellmer : PlayerPawn
 	static const statelabel ShephardStates[]={"ShephardSpawn","ShephardSee","ShephardMissile","ShephardPain","ShephardPain.Drowning","ShephardDeath"};
 	static const statelabel BlackOpsStates[]={"BlackOpsSpawn","BlackOpsSee","BlackOpsMissile","BlackOpsPain","BlackOpsPain.Drowning","BlackOpsDeath"};
 	static const statelabel RoboStates[]={"RoboSpawn","RoboSee","RoboMissile","RoboPain","RoboPain.Drowning","RoboDeath"};
+	static const statelabel IvanStates[]={"IvanSpawn","IvanSee","IvanMissile","IvanPain","IvanPain.Drowning","IvanDeath"};
 	private void HLSetState(name statetype)
 	{
 		int mode;
@@ -284,13 +306,15 @@ class RolfBellmer : PlayerPawn
 				stlabel=BlackOpsStates[mode];
 			else if(A_HLCheckSkin()=='Robo')
 				stlabel=RoboStates[mode];
+			else if(A_HLCheckSkin()=='Ivan')
+				stlabel=IvanStates[mode];
 		}
 		else
 			stlabel=BaseStates[mode];
 		if(!InStateSequence(CurState,FindState(stlabel)))
 			SetStateLabel(stlabel);
 	}
-	static const name HLskin[]={'Helmet','Freeman','Shephard','BlackOps','Robo'};
+	static const name HLskin[]={'Helmet','Freeman','Shephard','BlackOps','Robo','Ivan'};
 	name A_HLCheckSkin()
 		{return HLskin[CVar.GetCVar("v_multiskin",player).GetInt()];}
 	bool InSpawnState()
@@ -301,7 +325,8 @@ class RolfBellmer : PlayerPawn
 		InStateSequence(CurState,FindState("FreemanSpawn"))||
 		InStateSequence(CurState,FindState("ShephardSpawn"))||
 		InStateSequence(CurState,FindState("BlackOpsSpawn"))||
-		InStateSequence(CurState,FindState("RoboSpawn")))
+		InStateSequence(CurState,FindState("RoboSpawn"))||
+		InStateSequence(CurState,FindState("IvanSpawn")))
 			return 1;
 		return 0;
 	}
@@ -313,7 +338,8 @@ class RolfBellmer : PlayerPawn
 		InStateSequence(CurState,FindState("FreemanSee"))||
 		InStateSequence(CurState,FindState("ShephardSee"))||
 		InStateSequence(CurState,FindState("BlackOpsSee"))||
-		InStateSequence(CurState,FindState("RoboSee")))
+		InStateSequence(CurState,FindState("RoboSee"))||
+		InStateSequence(CurState,FindState("IvanSee")))
 			return 1;
 		return 0;
 	}
