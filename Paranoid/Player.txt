@@ -3,26 +3,8 @@ class RolfBellmer : PlayerPawn
 	bool scientist,otis;
 	override void Tick()
 	{
-		if(InStateSequence(CurState,SpawnState))
-		{
-			if(otis)
-				SetStateLabel("OtisSpawn");
-			else if(scientist)
-				SetStateLabel("ScientistSpawn");
-			else if(multiplayer)
-			{
-				if(A_HLCheckSkin()=='Freeman')
-					SetStateLabel("FreemanSpawn");
-				else if(A_HLCheckSkin()=='Shephard')
-					SetStateLabel("ShephardSpawn");
-				else if(A_HLCheckSkin()=='BlackOps')
-					SetStateLabel("BlackOpsSpawn");
-			}
-		}
-		else if(InStateSequence(CurState,FindState("ScientistSpawn"))&&!scientist)
-			SetState(SpawnState);
-		else if(InStateSequence(CurState,FindState("ScientistSee"))&&!scientist)
-			SetState(SeeState);
+		if(InSpawnState())
+			HLSetState("Spawn");
 		super.tick();
 	}
 	Default
@@ -91,6 +73,7 @@ class RolfBellmer : PlayerPawn
 		HLI2 C 12;
 		Goto ScientistSpawn;
 	ScientistPain:
+	ScientistPain.Drowning:
 		HLP2 A 1 A_PlaySound("scientist/pain",CHAN_VOICE);
 		HLP2 BCDEFGHI 1;
 		Goto ScientistSpawn;
@@ -117,6 +100,7 @@ class RolfBellmer : PlayerPawn
 		BSA1 VUTRSQPONMLKJIHGFEDCBA 1;
 		Goto OtisSpawn;
 	OtisPain:
+	OtisPain.Drowning:
 		BSP1 A 1
 		{
 			if(random(0,3))
@@ -180,6 +164,7 @@ class RolfBellmer : PlayerPawn
 		OFA3 ABCDEFGHIJK 1;
 		Goto ShephardSpawn;
 	ShephardPain:
+	ShephardPain.Drowning:
 		OFP1 ABCDEFGH 1;
 		Goto ShephardSpawn;
 	ShephardDeath:
@@ -201,6 +186,7 @@ class RolfBellmer : PlayerPawn
 		BOA3 ABCDEFGHIJK 1;
 		Goto BlackOpsSpawn;
 	BlackOpsPain:
+	BlackOpsPain.Drowning:
 		BOP1 ABCDEFGH 1;
 		Goto BlackOpsSpawn;
 	BlackOpsDeath:
@@ -210,109 +196,47 @@ class RolfBellmer : PlayerPawn
 		BOD2 BCDEF 1;
 		BOD2 G -1;
 		Stop;
+
+	RoboSpawn:
+		ROI1 ABCDEFGHIJK 2;
+		Loop;
+	RoboSee:
+		ROR1 ABCDEFGHIJKLMNOPQRSTUVWXY 1;
+		Loop;
+	RoboMissile:
+		ROA2 \] 1;
+		ROA3 ABCDEFGHIJK 1;
+		Goto RoboSpawn;
+	RoboPain:
+	RoboPain.Drowning:
+		ROP1 ABCDEFGH 1;
+		Goto RoboSpawn;
+	RoboDeath:
+		ROD1 A 1 A_NoBlocking;
+		ROD1 BCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1;
+		ROD2 A 1 A_PlaySound("halflife/weapons/bodydrop");
+		ROD2 BCDEF 1;
+		ROD2 G -1;
+		Stop;
 	}
 	override void PlayIdle()
 	{
-		if(otis&&InStateSequence(CurState,FindState("OtisSee")))
-			SetStateLabel("OtisSpawn");
-		else if(scientist&&InStateSequence(CurState,FindState("ScientistSee")))
-			SetStateLabel("ScientistSpawn");
-		else if(multiplayer)
-		{
-			if(A_HLCheckSkin()=='Freeman'&&InStateSequence(CurState,FindState("FreemanSee")))
-				SetStateLabel("FreemanSpawn");
-			else if(A_HLCheckSkin()=='Shephard'&&InStateSequence(CurState,FindState("ShephardSee")))
-				SetStateLabel("ShephardSpawn");
-			else if(A_HLCheckSkin()=='BlackOps'&&InStateSequence(CurState,FindState("BlackOpsSee")))
-				SetStateLabel("BlackOpsSpawn");
-		}
-		else if(InStateSequence(CurState,SeeState))
-			SetState(SpawnState);
+		if(InSeeState())
+			HLSetState("Spawn");
 	}
 	override void PlayRunning()
 	{
-		if(otis&&InStateSequence(CurState,FindState("OtisSpawn")))
-			SetStateLabel("OtisSee");
-		else if(scientist&&InStateSequence(CurState,FindState("ScientistSpawn")))
-			SetStateLabel("ScientistSee");
-		else if(multiplayer)
-		{
-			if(A_HLCheckSkin()=='Freeman'&&InStateSequence(CurState,FindState("FreemanSpawn")))
-				SetStateLabel("FreemanSee");
-			else if(A_HLCheckSkin()=='Shephard'&&InStateSequence(CurState,FindState("ShephardSpawn")))
-				SetStateLabel("ShephardSee");
-			else if(A_HLCheckSkin()=='BlackOps'&&InStateSequence(CurState,FindState("BlackOpsSpawn")))
-				SetStateLabel("BlackOpsSee");
-		}
-		else if(InStateSequence(CurState,SpawnState))
-			SetState(SeeState);
+		if(InSpawnState())
+			HLSetState("See");
 	}
 	override void PlayAttacking()
-	{
-		if(otis)
-			SetStateLabel("OtisMissile");
-		else if(scientist)
-			SetStateLabel("ScientistMissile");
-		else if(multiplayer)
-		{
-			if(A_HLCheckSkin()=='Freeman')
-				SetStateLabel("FreemanMissile");
-			else if(A_HLCheckSkin()=='Shephard')
-				SetStateLabel("ShephardMissile");
-			else if(A_HLCheckSkin()=='BlackOps')
-				SetStateLabel("BlackOpsMissile");
-		}
-		else
-			SetState(MissileState);
-	}
+		{HLSetState("Missile");}
 	void A_HLPainSelect()
-	{
-		if(otis)
-			SetStateLabel("OtisPain");
-		else if(scientist)
-			SetStateLabel("ScientistPain");
-		else if(multiplayer)
-		{
-			if(A_HLCheckSkin()=='Freeman')
-				SetStateLabel("FreemanPain");
-			else if(A_HLCheckSkin()=='Shephard')
-				SetStateLabel("ShephardPain");
-			else if(A_HLCheckSkin()=='BlackOps')
-				SetStateLabel("BlackOpsPain");
-		}
-	}
+		{HLSetState("Pain");}
 	void A_HLDrownPainSelect()
-	{
-		if(otis)
-			SetStateLabel("OtisPain");
-		else if(scientist)
-			SetStateLabel("ScientistPain");
-		else if(multiplayer)
-		{
-			if(A_HLCheckSkin()=='Freeman')
-				SetStateLabel("FreemanPain.Drowning");
-			else if(A_HLCheckSkin()=='Shephard')
-				SetStateLabel("ShephardPain");
-			else if(A_HLCheckSkin()=='BlackOps')
-				SetStateLabel("BlackOpsPain");
-		}
-	}
+		{HLSetState("Pain.Drowning");}
 	void A_HLDeathSelect()
-	{
-		if(otis)
-			SetStateLabel("OtisDeath");
-		else if(scientist)
-			SetStateLabel("ScientistDeath");
-		else if(multiplayer)
-		{
-			if(A_HLCheckSkin()=='Freeman')
-				SetStateLabel("FreemanDeath");
-			else if(A_HLCheckSkin()=='Shephard')
-				SetStateLabel("ShephardDeath");
-			else if(A_HLCheckSkin()=='BlackOps')
-				SetStateLabel("BlackOpsDeath");
-		}
-	}
+		{HLSetState("Death");}
 	void A_HLHEVPain()
 	{
 		A_Pain();
@@ -326,17 +250,71 @@ class RolfBellmer : PlayerPawn
 				A_PlaySound("HLPlayerPain75",7);
 		}
 	}
-	name A_HLCheckSkin()
+	static const statelabel BaseStates[]={"Spawn","See","Missile","Pain","Pain.Drowning","Death"};
+	static const statelabel OtisStates[]={"OtisSpawn","OtisSee","OtisMissile","OtisPain","OtisPain.Drowning","OtisDeath"};
+	static const statelabel ScientistStates[]={"ScientistSpawn","ScientistSee","ScientistMissile","ScientistPain","ScientistPain.Drowning","ScientistDeath"};
+	static const statelabel FreemanStates[]={"FreemanSpawn","FreemanSee","FreemanMissile","FreemanPain","FreemanPain.Drowning","FreemanDeath"};
+	static const statelabel ShephardStates[]={"ShephardSpawn","ShephardSee","ShephardMissile","ShephardPain","ShephardPain.Drowning","ShephardDeath"};
+	static const statelabel BlackOpsStates[]={"BlackOpsSpawn","BlackOpsSee","BlackOpsMissile","BlackOpsPain","BlackOpsPain.Drowning","BlackOpsDeath"};
+	static const statelabel RoboStates[]={"RoboSpawn","RoboSee","RoboMissile","RoboPain","RoboPain.Drowning","RoboDeath"};
+	private void HLSetState(name statetype)
 	{
-		switch(CVar.GetCVar("v_multiskin",player).GetInt())
+		int mode;
+		switch(statetype)
 		{
-		case 1:
-			return 'Freeman';
-		case 2:
-			return 'Shephard';
-		case 3:
-			return 'BlackOps';
+		case 'Spawn':			mode=0;break;
+		case 'See':				mode=1;break;
+		case 'Missile':			mode=2;break;
+		case 'Pain':			mode=3;break;
+		case 'Pain.Drowning':	mode=4;break;
+		case 'Death':			mode=5;break;
 		}
-		return 'Helmet';
+		statelabel stlabel;
+		if(otis)
+			stlabel=OtisStates[mode];
+		else if(scientist)
+			stlabel=ScientistStates[mode];
+		else if(multiplayer)
+		{
+			if(A_HLCheckSkin()=='Freeman')
+				stlabel=FreemanStates[mode];
+			else if(A_HLCheckSkin()=='Shephard')
+				stlabel=ShephardStates[mode];
+			else if(A_HLCheckSkin()=='BlackOps')
+				stlabel=BlackOpsStates[mode];
+			else if(A_HLCheckSkin()=='Robo')
+				stlabel=RoboStates[mode];
+		}
+		else
+			stlabel=BaseStates[mode];
+		if(!InStateSequence(CurState,FindState(stlabel)))
+			SetStateLabel(stlabel);
+	}
+	static const name HLskin[]={'Helmet','Freeman','Shephard','BlackOps','Robo'};
+	name A_HLCheckSkin()
+		{return HLskin[CVar.GetCVar("v_multiskin",player).GetInt()];}
+	bool InSpawnState()
+	{
+		if(InStateSequence(CurState,FindState("Spawn"))||
+		InStateSequence(CurState,FindState("ScientistSpawn"))||
+		InStateSequence(CurState,FindState("OtisSpawn"))||
+		InStateSequence(CurState,FindState("FreemanSpawn"))||
+		InStateSequence(CurState,FindState("ShephardSpawn"))||
+		InStateSequence(CurState,FindState("BlackOpsSpawn"))||
+		InStateSequence(CurState,FindState("RoboSpawn")))
+			return 1;
+		return 0;
+	}
+	bool InSeeState()
+	{
+		if(InStateSequence(CurState,FindState("See"))||
+		InStateSequence(CurState,FindState("ScientistSee"))||
+		InStateSequence(CurState,FindState("OtisSee"))||
+		InStateSequence(CurState,FindState("FreemanSee"))||
+		InStateSequence(CurState,FindState("ShephardSee"))||
+		InStateSequence(CurState,FindState("BlackOpsSee"))||
+		InStateSequence(CurState,FindState("RoboSee")))
+			return 1;
+		return 0;
 	}
 }

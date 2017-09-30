@@ -5218,6 +5218,13 @@ graphic HLBLKOPS,164,200
 	Patch HLBLKOP1,0,0
 }
 
+graphic HLROBOT,164,200
+{
+	XScale 2.5
+	YScale 2.5
+	Patch HLROBOT1,0,0
+}
+
 graphic M_DOOM,0,0{}
 graphic M_SKILL,0,0{}
 graphic M_EPISOD,0,0{}

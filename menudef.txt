@@ -46,6 +46,7 @@ OptionValue "MultiSkin"
 	1,"Gordon Freeman"
 	2,"Adrian Shephard"
 	3,"Black Ops"
+	4,"Robo"
 }
 
 ListMenu "PlayerMenu"
