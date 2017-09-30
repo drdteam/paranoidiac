@@ -1633,8 +1633,8 @@ Model RolfBellmer
 	Model 1 "massn_head.md3"
 	SurfaceSkin 1 0 "massn_head_000.png"
 	SurfaceSkin 1 1 "massn_head_001.png"
-	Model 2 "massn_arifle.md3"
-	Skin 2 "massn_arifle.png"
+	Model 2 "hgruntarifle.md3"
+	Skin 2 "hgruntarifle.png"
 
 	FrameIndex BOI1 A 0 224
 	FrameIndex BOI1 A 1 224
