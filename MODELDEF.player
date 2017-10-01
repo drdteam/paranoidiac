@@ -2358,7 +2358,8 @@ Model RolfBellmer
 	SurfaceSkin 0 9 "doctor_009.png"
 	SurfaceSkin 0 10 "doctor_010.png"
 	SurfaceSkin 0 11 "doctor_011.png"
-	ZOffset 28
+	ZOffset 34
+	Scale 1.1 1.1 1.1
 
 	FrameIndex IVI1 A 0 0
 

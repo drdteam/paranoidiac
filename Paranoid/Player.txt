@@ -271,6 +271,7 @@ class RolfBellmer : PlayerPawn
 				A_PlaySound("HLPlayerPain75",7);
 		}
 	}
+	static const name HLskin[]={'Helmet','Freeman','Shephard','BlackOps','Robo','Ivan'};
 	static const statelabel BaseStates[]={"Spawn","See","Missile","Pain","Pain.Drowning","Death"};
 	static const statelabel OtisStates[]={"OtisSpawn","OtisSee","OtisMissile","OtisPain","OtisPain.Drowning","OtisDeath"};
 	static const statelabel ScientistStates[]={"ScientistSpawn","ScientistSee","ScientistMissile","ScientistPain","ScientistPain.Drowning","ScientistDeath"};
@@ -281,7 +282,8 @@ class RolfBellmer : PlayerPawn
 	static const statelabel IvanStates[]={"IvanSpawn","IvanSee","IvanMissile","IvanPain","IvanPain.Drowning","IvanDeath"};
 	private void HLSetState(name statetype)
 	{
-		int mode;
+		int mode,skinnum=CVar.GetCVar("v_multiskin",player).GetInt();
+		statelabel stlabel;
 		switch(statetype)
 		{
 		case 'Spawn':			mode=0;break;
@@ -291,32 +293,26 @@ class RolfBellmer : PlayerPawn
 		case 'Pain.Drowning':	mode=4;break;
 		case 'Death':			mode=5;break;
 		}
-		statelabel stlabel;
 		if(otis)
 			stlabel=OtisStates[mode];
+		else if(skinnum)//&&multiplayer)
+		{
+			switch(skinnum)
+			{
+			case 1:	stlabel=FreemanStates[mode];break;
+			case 2:	stlabel=ShephardStates[mode];break;
+			case 3:	stlabel=BlackOpsStates[mode];break;
+			case 4:	stlabel=RoboStates[mode];break;
+			case 5:	stlabel=IvanStates[mode];break;
+			}
+		}
 		else if(scientist)
 			stlabel=ScientistStates[mode];
-		else if(multiplayer)
-		{
-			if(A_HLCheckSkin()=='Freeman')
-				stlabel=FreemanStates[mode];
-			else if(A_HLCheckSkin()=='Shephard')
-				stlabel=ShephardStates[mode];
-			else if(A_HLCheckSkin()=='BlackOps')
-				stlabel=BlackOpsStates[mode];
-			else if(A_HLCheckSkin()=='Robo')
-				stlabel=RoboStates[mode];
-			else if(A_HLCheckSkin()=='Ivan')
-				stlabel=IvanStates[mode];
-		}
 		else
 			stlabel=BaseStates[mode];
 		if(!InStateSequence(CurState,FindState(stlabel)))
 			SetStateLabel(stlabel);
 	}
-	static const name HLskin[]={'Helmet','Freeman','Shephard','BlackOps','Robo','Ivan'};
-	name A_HLCheckSkin()
-		{return HLskin[CVar.GetCVar("v_multiskin",player).GetInt()];}
 	bool InSpawnState()
 	{
 		if(InStateSequence(CurState,FindState("Spawn"))||
