@@ -1102,6 +1102,19 @@ brightmap flat Xkeybrd4
 	map "brtmaps/Xkeybrd4.png"
 }
 
+brightmap texture "models/tram_panel01.jpg"
+{
+	map "models/tram_panel01glow.jpg"
+}
+brightmap texture "models/tram_panel02.jpg"
+{
+	map "models/tram_panel02glow.jpg"
+}
+brightmap texture "models/tram_supports.jpg"
+{
+	map "models/tram_supportslight.jpg"
+}
+
 skybox HLSKY1 //Noon Sky
 {
 	DESERTN

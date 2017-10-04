@@ -301,3 +301,41 @@ class LoaderClaw : LoaderBox
 		Height 32;
 	}
 }
+
+//Tram
+class Tram : ModelBase
+{
+	Default
+	{
+		Radius 40;
+		Height 32;
+		Mass 0x7FFFFFFF;
+	}
+}
+class TramBattery : Tram
+{
+	Default
+	{
+		-SOLID
+		+NOCLIP
+	}
+}
+class TramBellmer : TramBattery
+{
+	States
+	{
+	Spawn:
+		HLI1 ABCDEFGHIJKLMNOPQRSTU 7;
+		Loop;
+	}
+}
+class TramBarney : TramBattery
+{
+	States
+	{
+	Spawn:
+		HLI1 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 2;
+		HLI2 AB 2;
+		Loop;
+	}
+}

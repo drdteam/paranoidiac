@@ -380,18 +380,6 @@ class apache : ModelBase
 	}
 }
 
-class Tram : ModelBase
-{
-	Default
-	{
-		Radius 40;
-		Height 32;
-		Mass 0x7FFFFFFF;
-	}
-}
-
-class Tram2 : Tram{}
-
 class Truck01 : ModelBase
 {
 	Default
@@ -1477,11 +1465,6 @@ class Admin01 : ModelBase
 		Radius 22;
 		Height 40;
 		Mass 200;
-		+SHOOTABLE
-		+NORADIUSDMG
-		+NODAMAGE
-		+USESPECIAL
-		+NOTAUTOAIMED
 	}
 	States
 	{
