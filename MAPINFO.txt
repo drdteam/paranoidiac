@@ -422,7 +422,6 @@ DoomEdNums
 	7403=HLController
 	7404=HLBullSquid
 	7405=HLZombie
-	7406=HLZombieMoan
 	7407=HLVortigaunt
 	7413=HLNihilanth
 	7414=HLBarney

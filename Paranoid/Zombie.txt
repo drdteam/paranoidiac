@@ -6,13 +6,10 @@ class HLZombie : RandomSpawner
 		DropItem "HLZombie2";
 		DropItem "HLZombie3";
 	}
-}
-class HLZombieMoan : HLZombie
-{
 	override void PostSpawn(Actor spawned)
 	{
 		let me=HLZombie1(spawned);
-		me.moan=1;
+		me.moan=!random(0,4);
 	}
 }
 
