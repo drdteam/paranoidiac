@@ -487,12 +487,12 @@ class Desk2 : Desk1
 {
 	Default
 	{
-		Height 26;
+		Height 16;
 	}
 	override void postbeginplay()
 	{
-		A_SpawnItemEx("Desk2Surface",0,-20,26,flags:SXF_SETMASTER,tid:tid);
-		A_SpawnItemEx("Desk2Surface",0,20,26,flags:SXF_SETMASTER,tid:tid);
+		A_SpawnItemEx("Desk2Surface",0,-21,height+1,flags:SXF_SETMASTER,tid:tid);
+		A_SpawnItemEx("Desk2Surface",0,21,height+1,flags:SXF_SETMASTER,tid:tid);
 		super.postbeginplay();
 	}
 }
@@ -504,9 +504,8 @@ class Desk2Surface : Actor
 {
 	Default
 	{
-		Height 1;
+		Height 28;
 		+SOLID
-		+NOGRAVITY
 		+NOLIFTDROP
 		+ACTLIKEBRIDGE
 	}
@@ -806,7 +805,7 @@ class PipeMaze : ModelBase
 
 //===========================
 // Non-spawnable models
-// Radios, toolboxes, gas can
+// Radios, toolboxes
 //===========================
 
 class Toolbox1 : ModelBase
