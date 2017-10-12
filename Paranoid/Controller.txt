@@ -22,31 +22,13 @@ class HLController : HLMonster
 		DeathSound "halflife/monsters/controller/Death";
 		ActiveSound "halflife/monsters/controller/idle";
 		Species "Xen";
+		HLMonster.WalkTic 3;
 	}
 	States
 	{
 	See:
-		HLI1 A 1 A_Chase;
-		HLI1 BC 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLI1 D 1 A_Chase;
-		HLI1 EF 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLI1 G 1 A_Chase;
-		HLI1 HI 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLI1 J 1 A_Chase;
-		HLI1 KL 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLI1 M 1 A_Chase;
-		HLI1 NO 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLI1 P 1 A_Chase;
-		HLI1 QR 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLI1 S 1 A_Chase;
-		HLI1 TU 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLI1 V 1 A_Chase;
-		HLI1 WX 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLI1 Y 1 A_Chase;
-		HLI1 Z[ 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLI1 \ 1 A_Chase;
-		HLI1 ] 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLI2 AB 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLI1 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1 A_HLChase;
+		HLI2 AB 1 A_HLChase;
 		Loop;
 	Missile:
 		HLA1 A 0

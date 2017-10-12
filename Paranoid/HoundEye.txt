@@ -20,6 +20,7 @@ class HLHoundEye : HLMonster
 		ActiveSound "halflife/monsters/houndeye/idle";
 		Species "Xen";
 		-DOHARMSPECIES
+		HLMonster.WalkTic 3;
 	}
 	States
 	{
@@ -30,50 +31,15 @@ class HLHoundEye : HLMonster
 		HLI4 ABCDEFGHIJKLMN 1 A_Look;
 		Loop;
 	See:
-		HLR1 A 1 A_Chase;
-		HLR1 BC 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLR1 D 1 A_Chase;
-		HLR1 EF 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLR1 H 1 A_Chase;
-		HLR1 IJ 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLR1 K 1 A_Chase;
-		HLR1 LM 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLR1 N 1 A_Chase;
-		HLR1 OP 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLR1 Q 1 A_Chase;
-		HLR1 RS 1 A_Chase(null,null,HLSMOOTHCHASE);
-		TNT1 A 0
+		HLR1 ABCDEFGHIJKLMNOPQRS 1 A_HLChase;
+		HLR1 T 0
 		{
 			if(random(0,255)<32)
 				A_PlaySound("halflife/monsters/houndeye/idlefull");
 		}
-		HLR1 T 1 A_Chase;
-		HLR1 UV 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLR1 W 1 A_Chase;
-		HLR1 XY 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLR1 Z 1 A_Chase;
-		HLR1 [\ 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLR1 ] 1 A_Chase;
-		HLR2 AB 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLR2 C 1 A_Chase;
-		HLR2 DE 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLR2 F 1 A_Chase;
-		HLR2 GH 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLR2 I 1 A_Chase;
-		HLR2 JK 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLR2 L 1 A_Chase;
-		HLR2 MN 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLR2 O 1 A_Chase;
-		HLR2 PQ 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLR2 R 1 A_Chase;
-		HLR2 ST 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLR2 U 1 A_Chase;
-		HLR2 VW 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLR2 X 1 A_Chase;
-		HLR2 WZ 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLR2 [ 1 A_Chase;
-		HLR2 \] 1 A_Chase(null,null,HLSMOOTHCHASE);
-		TNT1 A 0
+		HLR1 TUVWXYZ[\] 1 A_HLChase;
+		HLR2 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1 A_HLChase;
+		HLR2 ] 0
 		{
 			if(random(0,1))
 				A_PlaySound("halflife/monsters/houndeye/idlefull");

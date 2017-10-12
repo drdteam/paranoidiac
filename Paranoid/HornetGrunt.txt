@@ -23,26 +23,7 @@ class HLHornetGrunt : HLMonster
 	States
 	{
 	See:
-		HLW1 A 1 A_Chase;
-		HLW1 ABB 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLW1 C 1 A_Chase;
-		HLW1 CDD 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLW1 E 1 A_Chase;
-		HLW1 EFF 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLW1 G 1 A_Chase;
-		HLW1 GHH 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLW1 I 1 A_Chase;
-		HLW1 IJJ 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLW1 K 1 A_Chase;
-		HLW1 KLL 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLW1 M 1 A_Chase;
-		HLW1 MNN 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLW1 O 1 A_Chase;
-		HLW1 OPP 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLW1 Q 1 A_Chase;
-		HLW1 QRR 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLW1 S 1 A_Chase;
-		HLW1 STT 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLW1 AABBCCDDEEFFGGHHIIJJKKLLMMNNOOPPQQRRSSTT 1 A_HLChase;
 		Loop;
 	Melee:
 		HLA2 ABCDEFGH 2 A_FaceTarget;

@@ -29,24 +29,8 @@ class HLBullSquid : HLMonster
 		HLI3 ABCDEFGHIJKLMNOPQR 2 A_Look;
 		Loop;
 	See:
-		HLR1 A 1 A_BullSquidChase;
-		HLR1 BCD 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLR1 E 1 A_BullSquidChase;
-		HLR1 FGH 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLR1 I 1 A_BullSquidChase;
-		HLR1 JKL 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLR1 M 1 A_BullSquidChase;
-		HLR1 NOP 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLR1 Q 1 A_BullSquidChase;
-		HLR1 RST 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLR1 U 1 A_BullSquidChase;
-		HLR1 VWX 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLR1 Y 1 A_BullSquidChase;
-		HLR1 Z[\ 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLR1 ] 1 A_BullSquidChase;
-		HLR2 ABC 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLR2 D 1 A_BullSquidChase;
-		HLR2 EFGH 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLR1 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1 A_HLChase;
+		HLR2 ABCDEFGH 1 A_HLChase;
 		Loop;
 	Melee:
 		HLA1 A 1
@@ -105,15 +89,22 @@ class HLBullSquid : HLMonster
 		TNT1 A 0 A_HLGibs(16,"XenGibs");
 		Stop;
 	}
-	void A_BullSquidChase()
+	override void A_HLChase(int walkticmax=0)
 	{
-		if(countdown)
+		if(!walkticmax)
+			walkticmax=walktic;
+		if(walkticcur)
+			A_Chase(null,null,HLSMOOTHCHASE);
+		else if(countdown)
 		{
 			countdown--;
 			A_Chase(null,null);
 		}
 		else
 			A_Chase();
+		walkticcur++;
+		if(walkticcur>=walktic-1)
+			walkticcur=0;
 	}
 }
 

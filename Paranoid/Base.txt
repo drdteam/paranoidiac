@@ -1,10 +1,13 @@
 class HLMonster : Actor
 {
+	int walktic,walkticcur;
+	Property WalkTic:walktic;
 	Default
 	{
 		Monster;
 		+NOINFIGHTSPECIES
 		+DOHARMSPECIES
+		HLMonster.WalkTic 4;
 	}
 	States
 	{
@@ -36,5 +39,17 @@ class HLMonster : Actor
 	{
 		A_PlaySound("halflife/monsters/zombie/attswing");
 		A_CustomMeleeAttack(dmg*random(1,8),"halflife/monsters/zombie/hit");
+	}
+	virtual void A_HLChase(int walkticmax=0)
+	{
+		if(!walkticmax)
+			walkticmax=walktic;
+		if(walkticcur)
+			A_Chase(null,null,HLSMOOTHCHASE);
+		else
+			A_Chase();
+		walkticcur++;
+		if(walkticcur>=walkticmax-1)
+			walkticcur=0;
 	}
 }

@@ -33,6 +33,7 @@ class HLHeadCrab : HLMonster
 		+DONTHARMCLASS;
 		DamageFactor "Gonarch",0;
 		Species "Xen";
+		HLMonster.WalkTic 5;
 	}
 	States
 	{
@@ -42,18 +43,7 @@ class HLHeadCrab : HLMonster
 		Loop;
 	See:
 		HLR1 A 0 A_JumpIf(waterlevel>=2,"Drown");
-		HLR1 A 1 A_Chase;
-		HLR1 BCDE 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLR1 F 1 A_Chase;
-		HLR1 GHIJ 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLR1 K 1 A_Chase;
-		HLR1 LMNO 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLR1 P 1 A_Chase;
-		HLR1 QRST 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLR1 U 1 A_Chase;
-		HLR1 VWXY 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLR1 Z 1 A_Chase;
-		HLR1 [\] 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLR1 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1 A_HLChase;
 		Loop;
 	Missile:
 		HLA1 A 0 A_JumpIf(waterlevel>=2,"Drown");
@@ -143,28 +133,12 @@ class HLBabyHeadCrab : HLHeadCrab
 		Goto HLMonster::Spawn;
 	See:
 		HLW1 A 0 A_JumpIf(gonarchbaby,"See2");
-		HLW1 A 1 A_Chase;
-		HLW1 CEGI 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLW1 K 1 A_Chase;
-		HLW1 MOQS 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLW1 U 1 A_Chase;
-		HLW1 WY[] 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLW2 B 1 A_Chase;
-		HLW2 DF 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLW1 ACEGIKMOQSUWY[] 1 A_HLChase;
+		HLW2 BDF 1 A_HLChase;
 		Loop;
 	See2:
-		HLW1 A 1 A_Chase;
-		HLW1 CE 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLW1 G 1 A_Chase;
-		HLW1 IK 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLW1 M 1 A_Chase;
-		HLW1 OQ 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLW1 S 1 A_Chase;
-		HLW1 UW 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLW1 Y 1 A_Chase;
-		HLW1 [] 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLW2 B 1 A_Chase;
-		HLW2 DF 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLW1 ACEGIKMOQSUWY[] 1 A_HLChase(3);
+		HLW2 BDF 1 A_HLChase(3);
 		Loop;
 	Missile:
 		HLA1 A 1 A_FaceTarget;

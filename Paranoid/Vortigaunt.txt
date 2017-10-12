@@ -23,18 +23,7 @@ class HLVortigaunt : HLMonster
 	States
 	{
 	See:
-		HLR1 A 1 A_Chase;
-		HLR1 BCD 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLR1 E 1 A_Chase;
-		HLR1 FGH 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLR1 I 1 A_Chase;
-		HLR1 JKL 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLR1 M 1 A_Chase;
-		HLR1 NOP 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLR1 Q 1 A_Chase;
-		HLR1 RST 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLR1 W 1 A_Chase;
-		HLR1 XY 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLR1 ABCDEFGHIJKLMNOPQRSTUVWX 1 A_HLChase;
 		Loop;
 	Melee:
 		HLI1 A 4 A_FaceTarget;

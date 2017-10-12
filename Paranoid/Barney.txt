@@ -88,18 +88,7 @@ class HLBarney : HLMonster
 		HLI4 ABCDEF 2;
 		Loop;
 	See:
-		HLR1 A 1 A_Chase;
-		HLR1 BCD 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLR1 E 1 A_Chase;
-		HLR1 FGH 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLR1 I 1 A_Chase;
-		HLR1 JKL 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLR1 M 1 A_Chase;
-		HLR1 NOP 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLR1 Q 1 A_Chase;
-		HLR1 RST 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLR1 U 1 A_Chase;
-		HLR1 VW 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLR1 ABCDEFGHIJKLMNOPQRSTUVW 1 A_HLChase;
 		HLR1 A 0 A_Chatter;
 		Loop;
 	Missile:

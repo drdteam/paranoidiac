@@ -28,20 +28,7 @@ class HLBat : HLMonster
 		HLI1 ABCDEFGH 2 A_Look;
 		Loop;
 	See:
-		HLW1 A 1 A_Chase;
-		HLW1 BCD 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLW1 E 1 A_Chase;
-		HLW1 FGH 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLW1 I 1 A_Chase;
-		HLW1 JKL 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLW1 M 1 A_Chase;
-		HLW1 NOP 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLW1 Q 1 A_Chase;
-		HLW1 RST 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLW1 U 1 A_Chase;
-		HLW1 VWX 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLW1 Y 1 A_Chase;
-		HLW1 Z 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLW1 ABCDEFGHIJKLMNOPQRSTUVWXYZ 1 A_HLChase;
 		Loop;
 	Missile:
 		HLA1 ABCDEF 2 A_FaceTarget;

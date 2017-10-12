@@ -34,41 +34,19 @@ class HLZombie1 : HLMonster
 		ActiveSound "halflife/monsters/zombie/idle";
 		maxdropoffheight 64;
 		Species "Xen";
+		HLMonster.WalkTic 5;
 	}
 	States
 	{
 	See:
-		HLW1 A 1
+		HLW1 A 0
 		{
 			if(moan)
 				A_PlaySound("halflife/monsters/zombie/moan",6,1,1,ATTN_STATIC);
-			A_Chase();
 		}
-		HLW1 BCDE 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLW1 F 1 A_Chase;
-		HLW1 GHIJ 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLW1 K 1 A_Chase;
-		HLW1 LMOP 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLW1 Q 1 A_Chase;
-		HLW1 RSTU 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLW1 V 1 A_Chase;
-		HLW1 WXYZ 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLW1 [ 1 A_Chase;
-		HLW1 \] 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLW2 AB 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLW2 C 1 A_Chase;
-		HLW2 DEFG 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLW2 H 1 A_Chase;
-		HLW2 IJKL 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLW2 M 1 A_Chase;
-		HLW2 NOPQ 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLW2 R 1 A_Chase;
-		HLW2 STUV 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLW2 W 1 A_Chase;
-		HLW2 XYZ[ 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLW2 \ 1 A_Chase;
-		HLW2 ] 1 A_Chase(null,null,HLSMOOTHCHASE);
-		HLW3 A 1 A_Chase(null,null,HLSMOOTHCHASE);
+		HLW1 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1 A_HLChase;
+		HLW2 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1 A_HLChase;
+		HLW3 A 1 A_HLChase;
 		Loop;
 	Melee:
 		HLA1 A 1 A_FaceTarget;
