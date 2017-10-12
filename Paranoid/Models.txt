@@ -2,6 +2,7 @@ class ModelBase : Actor
 {
 	Default
 	{
+		+CANPASS
 		+SOLID
 	}
 	States
@@ -477,7 +478,6 @@ class Desk1 : ModelBase
 {
 	Default
 	{
-		Radius 18;
 		Height 32;
 		Mass 100;
 	}
@@ -488,14 +488,29 @@ class Desk2 : Desk1
 	Default
 	{
 		Height 26;
-		Radius 24;
+	}
+	override void postbeginplay()
+	{
+		A_SpawnItemEx("Desk2Surface",0,-20,26,flags:SXF_SETMASTER,tid:tid);
+		A_SpawnItemEx("Desk2Surface",0,20,26,flags:SXF_SETMASTER,tid:tid);
+		super.postbeginplay();
 	}
 }
-
 class Desk3 : Desk2{}
 class Desk4 : Desk2{}
 class Desk5 : Desk2{}
 class Desk6 : Desk2{}
+class Desk2Surface : Actor
+{
+	Default
+	{
+		Height 1;
+		+SOLID
+		+NOGRAVITY
+		+NOLIFTDROP
+		+ACTLIKEBRIDGE
+	}
+}
 
 class HandDryer : ModelBase
 {
@@ -1450,7 +1465,10 @@ class HintManSitting : RandomSpawner
 		DropItem "HintMan";
 	}
 	override void PostSpawn(Actor spawned)
-		{spawned.SetStateLabel("Sit");}
+	{
+		spawned.bNOCLIP;
+		spawned.SetStateLabel("Sit");
+	}
 }
 class HintManCam : HintManSitting
 {
