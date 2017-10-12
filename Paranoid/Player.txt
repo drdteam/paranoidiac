@@ -236,8 +236,8 @@ class RolfBellmer : PlayerPawn
 		IVD1 A 1 A_NoBlocking;
 		IVD1 BCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1;
 		IVD2 A 1 A_PlaySound("halflife/weapons/bodydrop");
-		IVD2 BCDEFGHIJKL 1;
-		IVD2 M -1;
+		IVD2 BCDEFGHIJK 1;
+		IVD2 L -1;
 		Stop;
 	}
 	override void PlayIdle()
