@@ -115,7 +115,7 @@ class HLBarney : HLMonster
 		HLA1 RST 1;
 		HLA1 U 1 A_FaceTarget;
 		HLA1 V 1;
-		TNT1 A 0 A_Jump(64,"Magnum");
+		HLA1 V 0 A_Jump(256,"Pistol");
 	Pistol:
 		HLA1 W 1 A_FaceTarget;
 		HLA1 X 1;
@@ -125,21 +125,6 @@ class HLBarney : HLMonster
 		HLA1 VV 2 A_FaceTarget;
 		TNT1 A 0 A_MonsterRefire(0,"See");
 		Loop;
-	Magnum:
-		HLA1 W 1 A_FaceTarget;
-		HLA1 X 1;
-		HLA1 Y 1 Light("ImShootingAGun") A_BarneyGunshot(2);
-		HLA1 Z[\] 1 Light("ImShootingAGun");
-		HLA2 AB 1;
-		HLA1 V 6 A_FaceTarget;
-		HLA1 VVVV 8 A_FaceTarget;
-		TNT1 A 0 A_MonsterRefire(0,"See");
-		HLA1 Y 1 Light("ImShootingAGun") A_BarneyGunshot(2);
-		HLA1 Z[\] 1 Light("ImShootingAGun");
-		HLA2 AB 1;
-		HLA1 V 6 A_FaceTarget;
-		HLA1 VVVV 8 A_FaceTarget;
-		Goto See;
 	Pain:
 		HLP1 A 1 A_Pain;
 		HLP1 DGJMPSU 1;
@@ -157,19 +142,11 @@ class HLBarney : HLMonster
 		TNT1 A 0 A_HLGibs;
 		Stop;
 	}
-	void A_BarneyGunshot(int type=1)
+	void A_BarneyGunshot()
 	{
 		A_BarneyGunsmoke();
-		if(type==2)
-		{
-			A_PlaySound("halflife/weapons/magnumshot",CHAN_WEAPON);
-			A_CustomBulletAttack(2,2,1,25,"NewPuff1");
-		}
-		else
-		{
-			A_PlaySound("halflife/weapons/pistol",CHAN_WEAPON);
-			A_CustomBulletAttack(7,7,1,5,"NewPuff1");
-		}
+		A_PlaySound("halflife/weapons/pistol",CHAN_WEAPON);
+		A_CustomBulletAttack(7,7,1,5,"NewPuff1");
 	}
 	void A_BarneyGunsmoke()
 	{
@@ -178,7 +155,7 @@ class HLBarney : HLMonster
 	}
 	virtual void A_Chatter()
 	{
-		if(!random(0,32))
+		if(!guard&&!random(0,32))
 			A_PlaySound("halflife/monsters/barney/idle");
 	}
 }
@@ -194,29 +171,17 @@ class HLOtis : HLBarney
 	}
 	override void A_Chatter()
 	{
-		if(!random(0,32))
+		if(!guard&&!random(0,32))
 			A_PlaySound("halflife/monsters/otis/idle");
 	}
 	States
 	{
-	Missile:
-		HLA1 A 1 A_FaceTarget;
-		HLA1 BCD 1;
-		HLA1 E 1 A_FaceTarget;
-		HLA1 FGH 1;
-		HLA1 I 1 A_FaceTarget;
-		HLA1 JKL 1;
-		HLA1 M 1 A_FaceTarget;
-		HLA1 NOP 1;
-		HLA1 Q 1 A_FaceTarget;
-		HLA1 RST 1;
-		HLA1 U 1 A_FaceTarget;
-		HLA1 V 1;
 	Pistol:
 		HLA1 W 1 A_FaceTarget;
 		HLA1 X 1;
 		HLA1 Y 1 Light("ImShootingAGun")
 		{
+			A_BarneyGunsmoke();
 			A_PlaySound("halflife/weapons/deagleshot",CHAN_WEAPON);
 			A_CustomBulletAttack(1,1,1,18,"NewPuff1");
 		}
