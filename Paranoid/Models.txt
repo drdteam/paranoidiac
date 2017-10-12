@@ -1466,7 +1466,7 @@ class HintManSitting : RandomSpawner
 	}
 	override void PostSpawn(Actor spawned)
 	{
-		spawned.bNOCLIP;
+		spawned.bNOCLIP=1;
 		spawned.SetStateLabel("Sit");
 	}
 }
