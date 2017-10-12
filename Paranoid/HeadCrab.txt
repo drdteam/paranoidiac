@@ -7,8 +7,13 @@ class HLHeadCrab : HLMonster
 	int drowncounter;
 	override bool Slam(Actor victim)
 	{
-		A_PlaySound("halflife/monsters/headcrab/meleehit",CHAN_BODY);
-		return super.slam(victim);
+		SetStateLabel("Slam");
+		if(victim.bISMONSTER||(victim is "PlayerPawn"))
+		{
+			A_PlaySound("halflife/monsters/headcrab/meleehit",CHAN_BODY);
+			return super.slam(victim);
+		}
+		return 0;
 	}
 	Default
 	{
@@ -59,6 +64,7 @@ class HLHeadCrab : HLMonster
 		HLA1 U 1 A_HLHeadCrabAttack(5,8.75);
 		HLA1 U 1 A_CheckFloor(1);
 		Wait;
+	Slam:
 		HLA1 W 1 A_Stop;
 		HLA1 Y[] 1;
 		HLA2 B 60;
