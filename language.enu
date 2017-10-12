@@ -29,7 +29,7 @@ BELLMERSURVIVOR2="Subject: Dr. Rolf Bellmer\n\n\n\nStatus: Survivor of Xen Assau
 
 LABKEY="Laboratory access security key card.";
 SECURITYKEY="Security Key Acquired.\n\nAccess to Secure Areas Now Available.";
-LAMBDAKEY="CAcquired Security Key to the Lambda Complex.\n\nAccessible by returning to the elevators leading to the Rail Yard.";
+LAMBDAKEY="Acquired Security Key to the Lambda Complex.\n\nAccessible by returning to the elevators leading to the Rail Yard.";
 SEWERKEY="Acquired Security Key to Sewer Control.\n\nAccessible near the boiler room.";
 SEWERKEYREQUIRED="Sewer Control Access Denied.\n\nSecurity Key Required.";
 SEWEROPEN="Sewer Control Access Granted.";
@@ -48,7 +48,7 @@ SECURITYCLEARANCE="All Civilian Security Clearances have been suspended.\n\nPlea
 LASERDOOR="CDoor Malfunction.\n\nAccess to Laser Control Room Temporarily Unavailable.";
 LASEROFF="Laser has been deactivated.";
 LIVESPECIMENS="Access Denied.\n\nLive Specimens Present.";
-BIOTHREAT1="\cCBiological Threat Mitigated. \nAccess to the Lambda Complex is now permitted.";
+BIOTHREAT1="Biological Threat Mitigated. \nAccess to the Lambda Complex is now permitted.";
 BIOTHREAT2="Access Denied. Biological Threat Imminent.";
 BIOTHREAT3="Access Denied. \nObtain Security Key from Officer Widmark \nat the Test Lab.";
 TESTLAB1="Test Lab accessible. \nProceed through Test Lab and collect Security Key from Officer Widmark.";
