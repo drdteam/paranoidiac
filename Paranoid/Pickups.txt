@@ -222,14 +222,21 @@ class Key1 : FakeInventory
 	}
 }
 
-class Gascan1 : Key1
+class Gascan1 : FakeInventory
 {
 	Default
 	{
+		Radius 4;
 		Height 12;
 		Scale .75;
 		Mass 20;
 		Inventory.PickupMessage "Acquired gasoline can.";
+	}
+	States
+	{
+	Spawn:
+		HLI1 A -1;
+		Stop;
 	}
 }
 
