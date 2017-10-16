@@ -3,6 +3,7 @@ IWad
 	Name = "Paranoid: A Half-Life Adventure for GZDoom"
 	Autoname = "Paranoidiac"
 	Game = "Doom"
+	StartupType = "Heretic"
 	Config = "Paranoidiac"
 	Mapinfo = "mapinfo/doom2.txt"
 	Compatibility = "Shorttex"
