@@ -549,7 +549,7 @@ Model RolfBellmer
 	Model 1 "otishead.md3"
 	SurfaceSkin 1 0 "otishead_000.png"
 	SurfaceSkin 1 1 "otishead_001.png"
-	SurfaceSkin 1 2 "barney_005.png"
+	SurfaceSkin 1 2 "barney_head_001.png"
 	SurfaceSkin 1 3 "otishead_003.png"
 	SurfaceSkin 1 4 "otishead_004.png"
 	SurfaceSkin 1 5 "otisbody_000.png"
