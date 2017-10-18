@@ -5277,3 +5277,39 @@ Model HLGrunt1Dead
 	FrameIndex HLD2 G 1 469
 	FrameIndex HLD2 G 2 469
 }
+
+Model HLGrunt2Dead
+{
+	Path "Models"
+	Model 0 "hgruntbody.md3"
+	SurfaceSkin 0 0 "hgruntbody_000.png"
+	SurfaceSkin 0 1 "hgruntbody_001.png"
+	SurfaceSkin 0 2 "hgruntbody_002.png"
+	SurfaceSkin 0 3 "hgruntbody_003.png"
+	SurfaceSkin 0 4 "hgruntbody_004.png"
+	Model 1 "hgrunthead2.md3"
+	SurfaceSkin 1 0 "hgrunthead2_000.png"
+	SurfaceSkin 1 1 "hgrunthead2_001.png"
+
+	FrameIndex HLD2 G 0 469
+	FrameIndex HLD2 G 1 469
+	FrameIndex HLD2 G 2 469
+}
+
+Model HLGrunt3Dead
+{
+	Path "Models"
+	Model 0 "hgruntbody.md3"
+	SurfaceSkin 0 0 "hgruntbody_000.png"
+	SurfaceSkin 0 1 "hgruntbody_001.png"
+	SurfaceSkin 0 2 "hgruntbody_002.png"
+	SurfaceSkin 0 3 "hgruntbody_003.png"
+	SurfaceSkin 0 4 "hgruntbody_004.png"
+	Model 1 "hgrunthead3.md3"
+	SurfaceSkin 1 0 "hgrunthead3_000.png"
+	SurfaceSkin 1 1 "hgrunthead3_001.png"
+
+	FrameIndex HLD2 G 0 469
+	FrameIndex HLD2 G 1 469
+	FrameIndex HLD2 G 2 469
+}

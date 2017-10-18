@@ -702,7 +702,7 @@ DoomEdNums
 	31902=OMGOrangeSpark
 	31980=OMGSteam
 	31998=OMGFire
-	32001=HLGrunt1Dead
+	32001=HLGruntDead
 	32002=FirstAidStation
 	32003=HEVChargingStation
 	32004=OspreyBellmer

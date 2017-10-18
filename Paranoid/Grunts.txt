@@ -58,6 +58,16 @@ class HLGruntAny : RandomSpawner
 	}
 }
 
+class HLGruntDead : RandomSpawner
+{
+	Default
+	{
+		DropItem "HLGrunt1Dead";
+		DropItem "HLGrunt2Dead";
+		DropItem "HLGrunt3Dead";
+	}
+}
+
 //==========================================
 // Government Troops: M16 & Grenade Attack
 //==========================================
@@ -390,3 +400,5 @@ class HLGrunt1Dead : Actor
 		Stop;
 	}
 }
+class HLGrunt2Dead : HLGrunt1Dead{}
+class HLGrunt3Dead : HLGrunt1Dead{}
