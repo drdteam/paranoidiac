@@ -17,7 +17,7 @@ script "AltHudAmmo" ENTER
 		if(StrCmp(heldtype,""))
 		{
 			setfont("CONFONT");
-			HudMessage(d:CheckInventory(heldtype);HUDMSG_PLAIN,3,CR_RED,0.9,1.0,0.35);
+			HudMessage(d:CheckInventory(heldtype);HUDMSG_PLAIN,10,CR_RED,0.9,1.0,0.35);
 		}
 	}
 	delay(1);
