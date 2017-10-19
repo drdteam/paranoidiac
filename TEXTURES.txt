@@ -3105,13 +3105,6 @@ Graphic CONBACK, 640, 480
 	Patch CREDIT, 0, 0
 }
 
-Graphic UNDERNET, 128, 128
-{
-	XScale 2.0
-	YScale 2.0
-	Patch UNDERNE1, 0, 0
-}
-
 Graphic MAIL01, 34, 37
 {
 	XScale 2.0

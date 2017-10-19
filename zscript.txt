@@ -86,6 +86,20 @@ class ParanoidEventHandler : EventHandler
 			return;
 		cam=Actor.Spawn(hintman,(camx-1.0,camy+6.0,camz-56.0));
 		cam.Angle=270.0;
+		if(level.levelname==StringTable.Localize("$PARANOID_P2M3")||
+		level.levelname==StringTable.Localize("$PARANOID_P2M4")||
+		level.levelname==StringTable.Localize("$PARANOID_P2M7"))
+		{
+			iter=ActorIterator.Create(220);
+			mo=iter.Next();
+			if(mo==null)
+				return;
+			camy=mo.pos.y;
+			mo.AddZ(18.0,0);
+			TexMan.SetCameraToTexture(mo,"UNDERNET",80);
+			cam=Actor.Spawn('EarthGlobe',(camx,camy-70.0,camz));
+			cam.Angle=90.0;
+		}
 	}
 }
 class ParanoidStaticEventHandler : StaticEventHandler
