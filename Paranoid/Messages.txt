@@ -1,5 +1,4 @@
-//Map02: Message 1
-class MessageItem01 : CustomInventory
+class MessageItem : CustomInventory
 {
 	override bool TryPickup(in out Actor toucher)
 	{
@@ -12,11 +11,9 @@ class MessageItem01 : CustomInventory
 	Default
 	{
 		Tag "Message";
-		Inventory.Icon "MAIL01";
 		Inventory.UseSound "";
 		+INVENTORY.INVBAR
 		+INVENTORY.UNDROPPABLE
-		MessageItem01.MessageNum 1;
 	}
 	States
 	{
@@ -26,144 +23,154 @@ class MessageItem01 : CustomInventory
 	}
 }
 
-//Map02: Message 2
-class MessageItem02 : MessageItem01
+//P1M2: Message 1
+class MessageItemP1M2VOX1 : MessageItem
+{
+	Default
+	{
+		Inventory.Icon "MAIL01";
+		MessageItem.MessageNum 1;
+	}
+}
+
+//P1M2: Message 2
+class MessageItemP1M2VOX2 : MessageItem
 {
 	Default
 	{
 		Inventory.Icon "MAIL02";
-		MessageItem01.MessageNum 2;
+		MessageItem.MessageNum 2;
 	}
 }
 
-//Map02: Message 3
-class MessageItem03 : MessageItem01
+//P1M2: Message 3
+class MessageItemP1M2VOX3 : MessageItem
 {
 	Default
 	{
 		Inventory.Icon "MAIL03";
-		MessageItem01.MessageNum 3;
+		MessageItem.MessageNum 3;
 	}
 }
 
-//Map02: Message 4
-class MessageItem04 : MessageItem01
+//P1M2: Message 4
+class MessageItemP1M2VOX4 : MessageItem
 {
 	Default
 	{
 		Inventory.Icon "MAIL04";
-		MessageItem01.MessageNum 4;
+		MessageItem.MessageNum 4;
 	}
 }
 
-//Map03: Message 1
-class MessageItem05 : MessageItem01
-	{Default{MessageItem01.MessageNum 5;}}
+//P1M3: Message 1
+class MessageItemP1M3VOX1 : MessageItemP1M2VOX1
+	{Default{MessageItem.MessageNum 5;}}
 
-//Map03: Message 2
-class MessageItem06 : MessageItem02
-	{Default{MessageItem01.MessageNum 6;}}
+//P1M3: Message 2
+class MessageItemP1M3VOX2 : MessageItemP1M2VOX2
+	{Default{MessageItem.MessageNum 6;}}
 
-//Map03: Message 3
-class MessageItem07 : MessageItem03
-	{Default{MessageItem01.MessageNum 7;}}
+//P1M3: Message 3
+class MessageItemP1M3VOX3 : MessageItemP1M2VOX3
+	{Default{MessageItem.MessageNum 7;}}
 
-//Map04: Message 1
-class MessageItem08 : MessageItem01
-	{Default{MessageItem01.MessageNum 8;}}
+//P1M4: Message 1
+class MessageItemP1M4VOX1 : MessageItemP1M2VOX1
+	{Default{MessageItem.MessageNum 8;}}
 
-//Map04: Message 2
-class MessageItem09 : MessageItem02
-	{Default{MessageItem01.MessageNum 9;}}
+//P1M4: Message 2
+class MessageItemP1M4VOX2 : MessageItemP1M2VOX2
+	{Default{MessageItem.MessageNum 9;}}
 
-//Map04: Message 3
-class MessageItem10 : MessageItem03
-	{Default{MessageItem01.MessageNum 10;}}
+//P1M4: Message 3
+class MessageItemP1M4VOX3 : MessageItemP1M2VOX3
+	{Default{MessageItem.MessageNum 10;}}
 
-//Map08: Message 1
-class MessageItem11 : MessageItem01
-	{Default{MessageItem01.MessageNum 11;}}
+//P1M4: Message 4
+class MessageItemP1M4VOX4 : MessageItemP1M2VOX4
+	{Default{MessageItem.MessageNum 2;}}
 
-//Map05: Message 1
-class MessageItem12 : MessageItem01
-	{Default{MessageItem01.MessageNum 12;}}
+//P1M5: Message 1
+class MessageItemP1M5VOX1 : MessageItemP1M2VOX1
+	{Default{MessageItem.MessageNum 11;}}
 
-//Map05: Message 2
-class MessageItem13 : MessageItem02
-	{Default{MessageItem01.MessageNum 13;}}
+//P1M6: Message 1
+class MessageItemP1M6VOX1 : MessageItemP1M2VOX1
+	{Default{MessageItem.MessageNum 14;}}
 
-//Map05: Message 3
-class MessageItem14 : MessageItem03
-	{Default{MessageItem01.MessageNum 14;}}
+//P1M6: Message 2
+class MessageItemP1M6VOX2 : MessageItemP1M2VOX2
+	{Default{MessageItem.MessageNum 15;}}
 
-//Map06: Message 1
-class MessageItem15 : MessageItem01
-	{Default{MessageItem01.MessageNum 15;}}
+//P1M6: Message 3
+class MessageItemP1M6VOX3 : MessageItemP1M2VOX3
+	{Default{MessageItem.MessageNum 16;}}
 
-//Map06: Message 2
-class MessageItem16 : MessageItem02
-	{Default{MessageItem01.MessageNum 16;}}
+//P1M7: Message 1
+class MessageItemP1M7VOX1 : MessageItemP1M2VOX1
+	{Default{MessageItem.MessageNum 21;}}
 
-//Map07: Message 1
-class MessageItem17 : MessageItem01
-	{Default{MessageItem01.MessageNum 17;}}
+//P1M7: Message 2
+class MessageItemP1M7VOX2 : MessageItemP1M2VOX2
+	{Default{MessageItem.MessageNum 22;}}
 
-//Map07: Message 2
-class MessageItem18 : MessageItem02
-	{Default{MessageItem01.MessageNum 18;}}
+//P1M8: Message 1
+class MessageItemP1M8VOX1 : MessageItemP1M2VOX1
+	{Default{MessageItem.MessageNum 24;}}
 
-//Map04: Message 4
-class MessageItem19 : MessageItem04
-	{Default{MessageItem01.MessageNum 19;}}
+//P1M8: Message 2
+class MessageItemP1M8VOX2 : MessageItemP1M2VOX2
+	{Default{MessageItem.MessageNum 25;}}
 
-//Map10: Message 1
-class MessageItem20 : MessageItem01
-	{Default{MessageItem01.MessageNum 20;}}
+//P2M1: Message 1
+class MessageItemP2M1VOX1 : MessageItemP1M2VOX1
+	{Default{MessageItem.MessageNum 26;}}
 
-//Map11: Message 1
-class MessageItem21 : MessageItem01
-	{Default{MessageItem01.MessageNum 21;}}
+//P2M2: Message 1
+class MessageItemP2M2VOX1 : MessageItemP1M2VOX1
+	{Default{MessageItem.MessageNum 27;}}
 
-//Map12: Message 1
-class MessageItem22 : MessageItem01
-	{Default{MessageItem01.MessageNum 22;}}
+//P2M3: Message 1
+class MessageItemP2M3VOX1 : MessageItemP1M2VOX1
+	{Default{MessageItem.MessageNum 29;}}
 
-//Map12: Message 2
-class MessageItem23 : MessageItem02
-	{Default{MessageItem01.MessageNum 23;}}
+//P2M3: Message 2
+class MessageItemP2M3VOX2 : MessageItemP1M2VOX2
+	{Default{MessageItem.MessageNum 30;}}
 
-//Map13: Message 1
-class MessageItem24 : MessageItem01
-	{Default{MessageItem01.MessageNum 24;}}
+//P2M4: Message 1
+class MessageItemP2M4VOX1 : MessageItemP1M2VOX1
+	{Default{MessageItem.MessageNum 31;}}
 
-//Map13: Message 2
-class MessageItem25 : MessageItem02
-	{Default{MessageItem01.MessageNum 25;}}
+//P2M4: Message 2
+class MessageItemP2M4VOX2 : MessageItemP1M2VOX2
+	{Default{MessageItem.MessageNum 32;}}
 
-//Map14: Message 1
-class MessageItem26 : MessageItem01
-	{Default{MessageItem01.MessageNum 26;}}
+//P2M5: Message 1
+class MessageItemP2M5VOX1 : MessageItemP1M2VOX1
+	{Default{MessageItem.MessageNum 33;}}
 
-//Map14: Message 2
-class MessageItem27 : MessageItem02
-	{Default{MessageItem01.MessageNum 27;}}
+//P2M5: Message 2
+class MessageItemP2M5VOX2 : MessageItemP1M2VOX2
+	{Default{MessageItem.MessageNum 34;}}
 
-//Map15: Message 1
-class MessageItem28 : MessageItem01
-	{Default{MessageItem01.MessageNum 28;}}
+//P2M6: Message 1
+class MessageItemP2M6VOX1 : MessageItemP1M2VOX1
+	{Default{MessageItem.MessageNum 35;}}
 
-//Map16: Message 1
-class MessageItem29 : MessageItem01
-	{Default{MessageItem01.MessageNum 29;}}
+//P2M7: Message 1
+class MessageItemP2M7VOX1 : MessageItemP1M2VOX1
+	{Default{MessageItem.MessageNum 36;}}
 
-//Map16: Message 2
-class MessageItem30 : MessageItem02
-	{Default{MessageItem01.MessageNum 30;}}
+//P2M7: Message 2
+class MessageItemP2M7VOX2 : MessageItemP1M2VOX2
+	{Default{MessageItem.MessageNum 37;}}
 
-//Map16: Message 3
-class MessageItem31 : MessageItem03
-	{Default{MessageItem01.MessageNum 31;}}
+//P2M7: Message 3
+class MessageItemP2M7VOX3 : MessageItemP1M2VOX3
+	{Default{MessageItem.MessageNum 38;}}
 
-//Map17: Message 1
-class MessageItem32 : MessageItem01
-	{Default{MessageItem01.MessageNum 32;}}
+//P2M8: Message 1
+class MessageItemP2M8VOX1 : MessageItemP1M2VOX1
+	{Default{MessageItem.MessageNum 39;}}

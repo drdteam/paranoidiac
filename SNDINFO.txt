@@ -92,39 +92,39 @@ brief01 brief01
 //--------------------
 //Messages
 //--------------------
-map2vox1 map2vox1	//Controller
-map2vox2 map2vox2	//
-map2vox3 map2vox3	//
-map2vox4 map2vox4	//
-map3vox1 map3vox1	//
-map3vox2 map3vox2	//
-map3vox3 map3vox3	//
-map4vox1 map4vox1	//
-map4vox2 map4vox2	//
-map4vox3 map4vox3	//
-map5vox1 map5vox1	//
-map5vox2 map5vox2	//
-map5vox3 map5vox3	//
-map6vox1 map6vox1	//
-map6vox2 map6vox2	//
-map7vox1 map7vox1	//
-map7vox2 map7vox2	//
-map7vox3 map7vox3	//Computer
-map8vox1 map8vox1	//Controller
-map10vx1 map10vx1	//Col. Stinson
-map11vx1 map11vx1	//
-map11vx2 map11vx2	//Otis
-map12vx1 map12vx1	//Col. Stinson
-map12vx2 map12vx2	//UnderNet
-map13vx1 map13vx1	//Col. Stinson
-map13vx2 map13vx2	//UnderNet
-map14vx1 map14vx1	//Col. Stinson
-map14vx2 map14vx2	//
-map15vx1 map15vx1	//
-map16vx1 map16vx1	//
-map16vx2 map16vx2	//UnderNet
-map16vx3 map16vx3	//Col. Stinson
-map17vx1 map17vx1	//
+p1m2vox1 p1m2vox1	//Controller
+p1m2vox2 p1m2vox2	//
+p1m2vox3 p1m2vox3	//
+p1m2vox4 p1m2vox4	//
+p1m3vox1 p1m3vox1	//
+p1m3vox2 p1m3vox2	//
+p1m3vox3 p1m3vox3	//
+p1m4vox1 p1m4vox1	//
+p1m4vox2 p1m4vox2	//
+p1m4vox3 p1m4vox3	//
+p1m8vox1 p1m8vox1	//
+p1m6vox1 p1m6vox1	//
+p1m6vox2 p1m6vox2	//
+p1m6vox3 p1m6vox3	//
+p1m7vox1 p1m7vox1	//
+p1m7vox2 p1m7vox2	//
+p1m7vox3 p1m7vox3	//Computer
+p1m8vox1 p1m8vox1	//Controller
+p1m8vox2 p1m8vox2	//
+p2m1vox1 p2m1vox1	//Col. Stinson
+p2m2vox1 p2m2vox1	//
+p2m2vox2 p2m2vox2	//Otis
+p2m3vox1 p2m3vox1	//Col. Stinson
+p2m3vox2 p2m3vox2	//UnderNet
+p2m4vox1 p2m4vox1	//Col. Stinson
+p2m4vox2 p2m4vox2	//UnderNet
+p2m5vox1 p2m5vox1	//Col. Stinson
+p2m5vox2 p2m5vox2	//
+p2m6vox1 p2m6vox1	//
+p2m7vox1 p2m7vox1	//
+p2m7vox2 p2m7vox2	//UnderNet
+p2m7vox3 p2m7vox3	//Col. Stinson
+p2m8vox1 p2m8vox1	//
 
 //--------------------
 //Administrator (Map04)
