@@ -18,12 +18,7 @@ class HLBarneyGuardSpawner : RandomSpawner
 	}
 }
 class HLOtisGuardSpawner : HLBarneyGuardSpawner
-{
-	Default
-	{
-		DropItem "HLOtis";
-	}
-}
+	{Default{DropItem "HLOtis";}}
 
 class HLBarney : HLMonster
 {
@@ -131,7 +126,7 @@ class HLBarney : HLMonster
 		TNT1 A 0 A_HLGibs;
 		Stop;
 	}
-	void A_BarneyGunshot()
+	virtual void A_BarneyGunshot()
 	{
 		A_BarneyGunsmoke();
 		A_PlaySound("halflife/weapons/pistol",CHAN_WEAPON);
@@ -163,21 +158,10 @@ class HLOtis : HLBarney
 		if(!guard&&!random(0,32))
 			A_PlaySound("halflife/monsters/otis/idle");
 	}
-	States
+	override void A_BarneyGunshot()
 	{
-	Pistol:
-		HLA1 W 1 A_FaceTarget;
-		HLA1 X 1;
-		HLA1 Y 1 Light("ImShootingAGun")
-		{
-			A_BarneyGunsmoke();
-			A_PlaySound("halflife/weapons/deagleshot",CHAN_WEAPON);
-			A_CustomBulletAttack(1,1,1,18,"NewPuff1");
-		}
-		HLA1 Z[\] 1 Light("ImShootingAGun");
-		HLA2 AB 1;
-		HLA1 VVV 2 A_FaceTarget;
-		TNT1 A 0 A_MonsterRefire(0,"See");
-		Loop;
+		A_BarneyGunsmoke();
+		A_PlaySound("halflife/weapons/deagleshot",CHAN_WEAPON);
+		A_CustomBulletAttack(1,1,1,18,"NewPuff1");
 	}
 }

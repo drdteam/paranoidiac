@@ -595,7 +595,6 @@ barnacle/death3			bdie3
 barnacle/active1		bidle1
 barnacle/active2		bidle2
 barnacle/attack			bspit1
-barnaclespitball/splat	bspit2
 
 $random barnacle/death {barnacle/death1 barnacle/death2 barnacle/death3}
 $random barnacle/active	{barnacle/active1 barnacle/active2}

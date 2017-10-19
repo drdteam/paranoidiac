@@ -9,18 +9,18 @@ class HLTeleportFog : TeleportFog replaces TeleportFog
 	{
 	Spawn:
 		HTEL AB 2 Bright LIGHT("TeleportFogLth1");
-		HTEL C 2 Bright LIGHT("TeleportFogLth2");
-		HTEL D 2 Bright LIGHT("TeleportFogLth3");
-		HTEL EF 2 Bright LIGHT("TeleportFogLth4");
-		HTEL GH 2 Bright LIGHT("TeleportFogLth5");
-		HTEL IJ 2 Bright LIGHT("TeleportFogLth6");
-		HTEL K 2 Bright LIGHT("TeleportFogLth7");
-		HTEL LMN 2 Bright LIGHT("TeleportFogLth6");
-		HTEL OP 2 Bright LIGHT("TeleportFogLth5");
-		HTEL QR 2 Bright LIGHT("TeleportFogLth4");
-		HTEL ST 2 Bright LIGHT("TeleportFogLth3");
-		HTEL UV 2 Bright LIGHT("TeleportFogLth2");
-		HTEL WXY 2 Bright LIGHT("TeleportFogLth1");
+		HTEL CD 2 Bright LIGHT("TeleportFogLth2");
+		HTEL EF 2 Bright LIGHT("TeleportFogLth3");
+		HTEL GH 2 Bright LIGHT("TeleportFogLth4");
+		HTEL IJ 2 Bright LIGHT("TeleportFogLth5");
+		HTEL KL 2 Bright LIGHT("TeleportFogLth6");
+		HTEL MN 2 Bright LIGHT("TeleportFogLth7");
+		HTEL OP 2 Bright LIGHT("TeleportFogLth6");
+		HTEL QR 2 Bright LIGHT("TeleportFogLth5");
+		HTEL ST 2 Bright LIGHT("TeleportFogLth4");
+		HTEL UV 2 Bright LIGHT("TeleportFogLth3");
+		HTEL WX 2 Bright LIGHT("TeleportFogLth2");
+		HTEL Y 2 Bright LIGHT("TeleportFogLth1");
 		Stop;
 	}
 }

@@ -25,8 +25,8 @@ enum ParanoidEnum
 #include "Paranoid/Barney.txt"
 #include "Paranoid/Scientists.txt"
 
-#include "Paranoid/Barnacle.txt"
 #include "Paranoid/BullSquid.txt"
+#include "Paranoid/Barnacle.txt"
 #include "Paranoid/Controller.txt"
 #include "Paranoid/Gargantua.txt"
 #include "Paranoid/Gonarch.txt"
