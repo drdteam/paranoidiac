@@ -8,7 +8,6 @@ PARANOID_SAVEGAME="Save Game";
 PARANOID_QUIT="Quit";
 
 OPTMNU_TITLE="Options";
-PARANOID_MULTIOPTIONS="MP Options";
 
 SKIPCUTSCENE1="Press Use (";
 SKIPCUTSCENE2=") to skip cutscene";
@@ -18,7 +17,7 @@ KEYREQUIRED="Access Denied.\n\nSecurity Key Required.";
 RESTRICTEDAREA="Access to this area has been temporarily restricted.";
 LOCKDOWN="This area has been locked down.\n\nPlease obtain the override access code.";
 
-WELCOME1="Welcome to the Black Mesa Research Complex.";
+WELCOME1="Welcome to the Black Mesa Research Facility.";
 WELCOME2="Welcome to the Black Mesa Research Facility.\n\n\n\nNow entering Sector C with access to the Anomalous Materials Laboratory.";
 WELCOME3="Welcome to the Black Mesa Research Facility.\n\n\n\nNow bypassing Sector C and Anomalous Materials Laboratory.";
 
