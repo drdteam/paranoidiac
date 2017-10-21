@@ -1,29 +1,6 @@
 #library "PARANOID"
 #include "zcommon.acs"
 
-script "AltHudAmmo" ENTER
-{
-	if(GetCVar("screenblocks")==11&&GetCVar("hud_althud"))
-	{
-		str heldtype="";
-		if(CheckWeapon("HLPistol"))
-			heldtype="HLPistolMag";
-		else if(CheckWeapon("HLMagnum"))
-			heldtype="HLMagnumMag";
-		else if(CheckWeapon("HLShotgun"))
-			heldtype="HLShotgunMag";
-		else if(CheckWeapon("HLAssaultRifle"))
-			heldtype="HLAssaultRifleMag";
-		if(StrCmp(heldtype,""))
-		{
-			setfont("CONFONT");
-			HudMessage(d:CheckInventory(heldtype);HUDMSG_PLAIN,10,CR_RED,0.9,1.0,0.35);
-		}
-	}
-	delay(1);
-	restart;
-}
-
 //On-screen messages for in-game prompts and events
 script "ParanoidHUDMessage"(int msg,int bold)
 {

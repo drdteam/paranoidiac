@@ -1,6 +1,6 @@
 class ParanoidStatusBar : BaseStatusBar
 {
-	HUDFont HLSTAFONT,HLBARFONT;
+	HUDFont HLSTAFONT,HLBARFONT,HLCONFONT;
 	InventoryBarState diparms;
 	DynamicValueInterpolator HealthInterp,ArmorInterp;
 	override void NewGame()
@@ -23,6 +23,7 @@ class ParanoidStatusBar : BaseStatusBar
 		HLSTAFONT=HUDFont.Create(fnt,fnt.GetCharWidth("0"),true);
 		fnt="HLBARFONT";
 		HLBARFONT=HUDFont.Create(fnt,fnt.GetCharWidth("0"),true);
+		HLCONFONT=HUDFont.Create("CONFONT");
 		diparms=InventoryBarState.Create(HLBARFONT,Font.FindFontColor('HLYellow1'));
 		HealthInterp=DynamicValueInterpolator.Create(0,.25,1,10);
 		ArmorInterp=DynamicValueInterpolator.Create(0,.25,1,10);
@@ -39,6 +40,28 @@ class ParanoidStatusBar : BaseStatusBar
 		{
 			BeginHUD();
 			DrawFullScreenStuff();
+		}
+		else if(state==HUD_AltHud)
+		{
+			let me=CPlayer.mo;
+			Inventory ammotype1,ammotype2;
+			[ammotype1,ammotype2]=GetCurrentAmmo();
+			if(ammotype2!=null)
+			{
+				int ammotemp,ammolow,ammohigh,ammocolor;
+				if(ammotype2.GetClassName()=="HLAssaultRifleMagEx")
+				{
+					[ammolow,ammohigh]=ammolowhigh(50);
+					ammotemp=me.CountInv("HLAssaultRifleMag");
+				}
+				else if(ammotype2!=ammotype1)
+				{
+					[ammolow,ammohigh]=ammolowhigh(ammotype2.MaxAmount);
+					ammotemp=ammotype2.Amount;
+				}
+				//HudMessage(d:CheckInventory(heldtype);HUDMSG_PLAIN,10,CR_RED,0.9,1.0,0.35);
+				DrawString(HLCONFONT,FormatNumber(ammotemp,3),(272-320,182-24),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor2(ammotemp,ammolow,ammohigh));
+			}
 		}
 	}
 	void HEVMugShot(int yoff)
