@@ -195,7 +195,7 @@ adddefaultmap
 }
 map P2M2 lookup "PARANOID_P2M2"
 {
-	PrecacheSounds="11Earth","32Trans","MAP11VX2"
+	PrecacheSounds="11Earth","32Trans","P2M2VOX2"
 	LevelNum=11
 	Next=P2M3
 }

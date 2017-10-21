@@ -14,32 +14,38 @@ script "ParanoidHUDMessage"(int msg,int bold)
 
 //Hint messages that are run when player uses the inventory item "MessageItem**"
 int playingmessage[8];
-str hintsnd[40][2]=
+int hint[40][3]=
 {
-	{"P1M2VOX1","HINTMAN"},{"P1M2VOX2","HINTMAN"},{"P1M2VOX3","HINTMAN"},{"P1M2VOX4","HINTMAN"},{"P1M3VOX1","HINTMAN"},
-	{"P1M3VOX2","HINTMAN"},{"P1M3VOX3","HINTMAN"},{"P1M4VOX1","HINTMAN"},{"P1M4VOX2","HINTMAN"},{"P1M4VOX3","HINTMAN"},
-	{"P1M5VOX1","HINTMAN"},{"P1M5VOX2",""},{"P1M5VOX3",""},{"P1M6VOX1","HINTMAN"},{"P1M6VOX2","HINTMAN"},
-	{"P1M6VOX3","HINTMAN"},{"P1M6VOX4",""},{"P1M6VOX5",""},{"P1M6VOX6",""},{"P1M6VOX7",""},
-	{"P1M7VOX1","HINTMAN"},{"P1M7VOX2","HINTMAN"},{"P1M7VOX3",""},{"P1M8VOX1","HINTMAN"},{"P1M8VOX2","HINTMAN"},
-	{"P2M1VOX1","STINSON"},{"P2M2VOX1","STINSON"},{"P2M2VOX2",""},{"P2M3VOX1","STINSON"},{"P2M3VOX2","UNDERNET"},
-	{"P2M4VOX1","STINSON"},{"P2M4VOX2","UNDERNET"},{"P2M5VOX1","STINSON"},{"P2M5VOX2","STINSON"},{"P2M6VOX1","STINSON"},
-	{"P2M7VOX1","STINSON"},{"P2M7VOX2","UNDERNET"},{"P2M7VOX3","STINSON"},{"P2M8VOX1","STINSON"}
-};
-int delays[40][2]=
-{
+	//character icon number
 	//duration of soundbyte
 	//# of characters
-	{8,94},{6,54},{7,78},{9,116},{16,178},
-	{14,208},{10,101},{10,146},{15,265},{10,170},
-	{8,87},{30,332},{3,41},{6,79},{13,215},
-	{8,120},{25,321},{2,14},{3,20},{17,181},
-	{5,44},{8,97},{17,178},{5,43},{7,90},
-	{42,604},{17,260},{21,274},{29,468},{36,581},
-	{28,434},{37,561},{11,163},{26,410},{18,270},
-	{19,322},{28,430},{23,345},{15,228}
+	{1,8,94},{1,6,54},{1,7,78},{1,9,116},{1,16,178},
+	{1,14,208},{1,10,101},{1,10,146},{1,15,265},{1,10,170},
+	{1,8,87},{0,30,332},{0,3,41},{1,6,79},{1,13,215},
+	{1,8,120},{0,25,321},{0,2,14},{0,3,20},{0,17,181},
+	{1,5,44},{1,8,97},{0,17,178},{1,5,43},{1,7,90},
+	{2,42,604},{2,17,260},{0,21,274},{2,29,468},{3,36,581},
+	{2,28,434},{3,37,561},{2,11,163},{2,26,410},{2,18,270},
+	{2,19,322},{3,28,430},{2,23,345},{2,15,228}
 };
-script "HintMessage"(int msg,int source)
+str hinticons[3]={"HINTMAN","STINSON","UNDERNET"};
+str hintsnd[40]=
 {
+	"P1M2VOX1","P1M2VOX2","P1M2VOX3","P1M2VOX4","P1M3VOX1",
+	"P1M3VOX2","P1M3VOX3","P1M4VOX1","P1M4VOX2","P1M4VOX3",
+	"P1M5VOX1","P1M5VOX2","P1M5VOX3","P1M6VOX1","P1M6VOX2",
+	"P1M6VOX3","P1M6VOX4","P1M6VOX5","P1M6VOX6","P1M6VOX7",
+	"P1M7VOX1","P1M7VOX2","P1M7VOX3","P1M8VOX1","P1M8VOX2",
+	"P2M1VOX1","P2M2VOX1","P2M2VOX2","P2M3VOX1","P2M3VOX2",
+	"P2M4VOX1","P2M4VOX2","P2M5VOX1","P2M5VOX2","P2M6VOX1",
+	"P2M7VOX1","P2M7VOX2","P2M7VOX3","P2M8VOX1"
+};
+script "HintMessage"(int msg)
+{
+	if(!PlayerInGame(PlayerNumber()))
+		terminate;
+	if(playingmessage[PlayerNumber()]==2)
+		terminate;
 	SetHUDSize(640,480,1);
 	SetFont("smallfont");
 	if(!msg)
@@ -48,46 +54,30 @@ script "HintMessage"(int msg,int source)
 		HUDMessage(l:"NEWMESSAGE";HUDMSG_PLAIN|HUDMSG_LOG,2,CR_GOLD,80.1,30.1,6.0);
 		terminate;
 	}
-	str message;
-	int i,dur,typetime;
-	if(playingmessage[PlayerNumber()]==2)
-		terminate;
-	if(source)
-	{
-		for(i=0;i<8;i++)
-		{
-			SetActivator(0,AAPTR_PLAYER1>>i);
-			if(playingmessage[PlayerNumber()]==1)
-				StopMessage();
-			playingmessage[PlayerNumber()]=2;
-		}
-		message=hintsnd[msg-1][0];
-		dur=delays[msg-1][0];
-		typetime=FixedDiv(dur-1,delays[msg-1][1]);
-		AmbientSound(message,127);
-		HUDMessageBold(l:message;HUDMSG_TYPEON|HUDMSG_LOG,2,CR_GOLD,80.1,30.1,10.0,typetime,0.05);
-		for(i=3+dur*35;i;i--)
-			delay(1);
-		HUDMessageBold(s:"";HUDMSG_PLAIN,2,CR_UNTRANSLATED,0,0,0);
-		for(i=0;i<8;i++)
-		{
-			SetActivator(0,AAPTR_PLAYER1>>i);
-			playingmessage[PlayerNumber()]=0;
-		}
-		terminate;
-	}
+	int i,dur,typetime,playing=1;
 	if(playingmessage[PlayerNumber()]==1)
+	{
 		StopMessage();
+		if(hint[msg-1][0])
+			terminate;
+	}
+	if(!hint[msg-1][0])
+		playing=2;
+	playingmessage[PlayerNumber()]=playing;
+	str message=hintsnd[msg-1];
+	if(playing==2)
+		AmbientSound(message,127);
 	else
 	{
-		playingmessage[PlayerNumber()]=1;
-		message=hintsnd[msg-1][0];
-		dur=delays[msg-1][0];
-		typetime=FixedDiv(dur-1,delays[msg-1][1]);
 		LocalPlaySound("radiostatic",6);
 		LocalPlaySound(message,7);
-		HUDMessage(l:message;HUDMSG_TYPEON|HUDMSG_LOG,2,CR_GOLD,80.1,30.1,10.0,typetime,0.05);
-		SetFont(hintsnd[msg-1][1]);
+	}
+	dur=hint[msg-1][1];
+	typetime=FixedDiv(dur-1,hint[msg-1][2]);
+	HUDMessage(l:message;HUDMSG_TYPEON|HUDMSG_LOG,2,CR_GOLD,80.1,30.1,10.0,typetime,0.05);
+	if(hint[msg-1][0])
+	{
+		SetFont(hinticons[hint[msg-1][0]-1]);
 		HUDMessage(s:"A";HUDMSG_PLAIN,1,CR_UNTRANSLATED,0.1,30.1,(10+dur)*1.0);
 	}
 	for(i=3+dur*35;i;i--)
