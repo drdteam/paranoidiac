@@ -15,7 +15,7 @@ class NewExplosionMedium : Actor
 			for(i=0;i<32;i++)
 				A_SpawnItemEx("ExplosionMediumSprite",0,0,0,frandom(-1.1,1.1),frandom(-1.1,1.1),frandom(-1.1,1.1),random(0,359));
 			for(i=0;i<16;i++)
-				A_SpawnItemEx("NewExploMediumSmoke",0,0,0,frandom(1.25,-1.25),frandom(1.25,-1.25),frandom(1.25,-1.25),random(0,359));
+				A_SpawnItemEx("NewExploMediumSmoke",0,0,0,frandom(-1.25,1.25),frandom(-1.25,1.25),frandom(-1.25,1.25),random(0,359));
 			for(i=0;i<360;i+=20)
 				A_SpawnItemEx("NewExploMediumSmoke",0,0,0,frandom(-1.2,1.2),0,frandom(-1.2,1.2),i);
 		}
@@ -85,7 +85,7 @@ class NewExplosionMedium : Actor
 			for(i=0;i<32;i++)
 				A_SpawnItemEx("ExplosionMediumSprite",0,0,0,frandom(-1.1,1.1),frandom(-1.1,1.1),frandom(.1,1.1),random(0,359));
 			for(i=0;i<16;i++)
-				A_SpawnItemEx("NewExploMediumSmoke",0,0,0,frandom(1.25,-1.25),frandom(1.25,-1.25),frandom(.1,1.25),random(0,359));
+				A_SpawnItemEx("NewExploMediumSmoke",0,0,0,frandom(-1.25,1.25),frandom(-1.25,1.25),frandom(.1,1.25),random(0,359));
 			for(i=0;i<360;i+=20)
 				A_SpawnItemEx("NewExploMediumSmoke",0,0,0,frandom(-1.2,1.2),0,frandom(.1,1.2),i);
 		}
@@ -157,15 +157,13 @@ class NewExploMediumSmoke : Actor
 
 //***************************************************
 
-class ExplosionMediumSprite : Actor
+class ExplosionMediumSprite : NewExploMediumSmoke
 {
 	Default
 	{
-		+NOINTERACTION
 		Radius 3;
 		Height 5;
 		RenderStyle "Add";
-		+FORCEXYBILLBOARD
 		Alpha .7;
 		Scale .49;
 	}
@@ -198,11 +196,11 @@ class NewExplosionMediumBig : NewExplosionMedium
 		{
 			int i;
 			for(i=0;i<44;i++)
-				A_SpawnItemEx("ExplosionMediumBigSprite",0,0,0,frandom(2.5,-2.5),frandom(2.5,-2.5),frandom(2.5,-2.5));
+				A_SpawnItemEx("ExplosionMediumBigSprite",0,0,0,frandom(-2.5,2.5),frandom(-2.5,2.5),frandom(-2.5,2.5));
 			for(i=0;i<22;i++)
-				A_SpawnItemEx("NewExploMediumBigSmoke",0,0,0,frandom(2.5,-2.5),frandom(2.5,-2.5),frandom(2.5,-2.5));
+				A_SpawnItemEx("NewExploMediumBigSmoke",0,0,0,frandom(-2.5,2.5),frandom(-2.5,2.5),frandom(-2.5,2.5));
 			for(i=0;i<360;i+=20)
-				A_SpawnItemEx("NewExploMediumBigSmoke",0,0,0,frandom(2.5,-2.5),0,frandom(2.5,-2.5),i);
+				A_SpawnItemEx("NewExploMediumBigSmoke",0,0,0,frandom(-2.5,2.5),0,frandom(-2.5,2.5),i);
 		}
 		TNT1 A 0 A_Jump(255,"A1","A2","A3","A4");
 	A1:
@@ -268,11 +266,11 @@ class NewExplosionMediumBig : NewExplosionMedium
 		{
 			int i;
 			for(i=0;i<44;i++)
-				A_SpawnItemEx("ExplosionMediumBigSprite",0,0,0,frandom(2.5,-2.5),frandom(2.5,-2.5),frandom(3.1,0.3));
+				A_SpawnItemEx("ExplosionMediumBigSprite",0,0,0,frandom(-2.5,2.5),frandom(-2.5,2.5),frandom(0.3,3.1));
 			for(i=0;i<22;i++)
-				A_SpawnItemEx("NewExploMediumBigSmoke",0,0,0,frandom(2.5,-2.5),frandom(2.5,-2.5),frandom(3.1,0.3));
+				A_SpawnItemEx("NewExploMediumBigSmoke",0,0,0,frandom(-2.5,2.5),frandom(-2.5,2.5),frandom(0.3,3.1));
 			for(i=0;i<360;i+=20)
-				A_SpawnItemEx("NewExploMediumBigSmoke",0,0,0,frandom(2.5,-2.5),0,frandom(2.5,-2.5),i);
+				A_SpawnItemEx("NewExploMediumBigSmoke",0,0,0,frandom(-2.5,2.5),0,frandom(-2.5,2.5),i);
 		}
 		TNT1 A 0 A_Jump(255,"F1","F3");
 	F1:
@@ -329,11 +327,11 @@ class NewExplosionBig : NewExplosionMedium
 		{
 			int i;
 			for(i=0;i<26;i++)
-				A_SpawnItemEx("ExplosionBigSprite",0,0,0,random(4,-4),random(4,-4),random(4,-4));
+				A_SpawnItemEx("ExplosionBigSprite",0,0,0,random(-4,4),random(-4,4),random(-4,4));
 			for(i=0;i<32;i++)
-				A_SpawnItemEx("NewExploBigSmoke",0,0,0,random(4,-4),random(4,-4),random(4,-4));
+				A_SpawnItemEx("NewExploBigSmoke",0,0,0,random(-4,4),random(-4,4),random(-4,4));
 			for(i=0;i<360;i+=20)
-				A_SpawnItemEx("NewExploBigSmoke",0,0,0,random(4,-4),0,random(4,-4),i);
+				A_SpawnItemEx("NewExploBigSmoke",0,0,0,random(-4,4),0,random(-4,4),i);
 		}
 		TNT1 A 0 A_Jump(255,"A1","A2","A3","A4");
 	A1:
@@ -405,11 +403,11 @@ class NewExplosionBig : NewExplosionMedium
 		TNT1 A 0
 		{
 			for(int i=0;i<26;i++)
-				A_SpawnItemEx("ExplosionBigSprite",0,0,0,random(4,-4),random(4,-4),random(4,1));
+				A_SpawnItemEx("ExplosionBigSprite",0,0,0,random(-4,4),random(-4,4),random(1,4));
 			for(int i=0;i<32;i++)
-				A_SpawnItemEx("NewExploBigSmoke",0,0,0,random(4,-4),random(4,-4),random(4,1));
+				A_SpawnItemEx("NewExploBigSmoke",0,0,0,random(-4,4),random(-4,4),random(1,4));
 			for(int i=0;i<360;i+=20)
-				A_SpawnItemEx("NewExploBigSmoke",0,0,0,random(4,-4),0,random(4,1),i);
+				A_SpawnItemEx("NewExploBigSmoke",0,0,0,random(-4,4),0,random(1,4),i);
 		}
 		TNT1 A 0 A_Jump(255,"F1","F3");
 	F1:

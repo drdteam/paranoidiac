@@ -1189,7 +1189,7 @@ Model Generator1
 	Path "Models"
 	Model 0 "generator.md3"
 	Skin 0 "generator.png"
-	Scale 1.5 1.5 1.5
+	Scale 3.0 3.0 3.0
 
 	FrameIndex HLI1 A 0 0
 }
@@ -1199,6 +1199,7 @@ Model Generator2
 	Path "Models"
 	Model 0 "generator2.md2"
 	Skin 0 "generator2.png"
+	Scale 1.75 1.75 1.75
 
 	FrameIndex HLI1 A 0 0
 }

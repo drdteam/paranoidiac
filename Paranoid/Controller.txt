@@ -99,6 +99,7 @@ class ControllerFireball1 : Actor
 		RenderStyle "Add";
 		DeathSound "halflife/weapons/gausshit2";
 		Alpha .9;
+		+FORCEXYBILLBOARD
 	}
 	States
 	{
@@ -132,7 +133,7 @@ class ControllerFireballSpark : Actor
 	states
 	{
 	Spawn:
-		X099 A 0 NODELAY {fade=random(3,5)/100.0;}
+		X099 A 0 NODELAY {fade=frandom(.03,.05);}
 		X099 A 1 A_FadeOut(fade);
 		Wait;
 	}

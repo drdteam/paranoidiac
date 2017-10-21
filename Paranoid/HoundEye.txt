@@ -120,9 +120,4 @@ class HoundEyeShockWFast : Actor
 }
 
 class HoundEyeShockWSlow : HoundEyeShockWFast
-{
-	Default
-	{
-		Speed 12;
-	}
-}
+	{Default{Speed 12;}}

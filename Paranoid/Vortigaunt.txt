@@ -152,7 +152,7 @@ class VortiPlasma_Bolt : Actor
 		+NOGRAVITY
 		RenderStyle "Add";
 		Alpha .75;
-		scale .3;
+		Scale .3;
 	}
 	States
 	{

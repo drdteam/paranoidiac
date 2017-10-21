@@ -153,7 +153,6 @@ class XenIsland1 : ModelBase
 	{
 		Radius 96;
 		Height 128;
-		Mass 0x7FFFFFFF;
 		-SOLID
 		+NOGRAVITY
 	}

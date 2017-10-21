@@ -2,6 +2,7 @@ class HLTeleportFog : TeleportFog replaces TeleportFog
 {
 	Default
 	{
+		+FORCEXYBILLBOARD
 		RenderStyle "Add";
 		Alpha .6;
 	}

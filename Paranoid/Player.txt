@@ -1,12 +1,6 @@
 class RolfBellmer : PlayerPawn
 {
 	bool scientist,otis;
-	override void Tick()
-	{
-		if(InSpawnState())
-			HLSetState('Spawn');
-		super.tick();
-	}
 	Default
 	{
 		+NOSKIN
@@ -239,6 +233,12 @@ class RolfBellmer : PlayerPawn
 		IVD2 BCDEFGHIJK 1;
 		IVD2 L -1;
 		Stop;
+	}
+	override void Tick()
+	{
+		if(InSpawnState())
+			HLSetState('Spawn');
+		super.tick();
 	}
 	override void PlayIdle()
 	{

@@ -17,7 +17,7 @@ class OspreyBellmer : Actor
 	{
 		Radius 3;
 		Height 56;
-		Mass 0x7FFFFFFF;
+		+DONTTHRUST
 		+NOCLIP
 		+NOBLOCKMAP
 		+NOGRAVITY
@@ -165,7 +165,7 @@ class SUV : ModelBase
 	{
 		Radius 38;
 		Height 66;
-		Mass 0x7FFFFFFF;
+		+DONTTHRUST
 		DeathHeight 66;
 		Health 400;
 		PainChance 256;
@@ -212,7 +212,7 @@ class SUVGlass : ModelBase
 		Alpha .5;
 		Radius 16;
 		Height 56;
-		Mass 0x7FFFFFFF;
+		+DONTTHRUST
 		-SOLID
 		+NOTARGET
 		+NOBLOOD
@@ -250,7 +250,7 @@ class Loader : ModelBase
 	{
 		Radius 64;
 		Height 96;
-		Mass 0x7FFFFFFF;
+		+DONTTHRUST
 		Scale .6;
 	}
 	States
@@ -309,7 +309,7 @@ class Tram : ModelBase
 	{
 		Radius 40;
 		Height 32;
-		Mass 0x7FFFFFFF;
+		+DONTTHRUST
 	}
 }
 class TramBattery : Tram

@@ -2594,7 +2594,6 @@ class HLGluonGunAmmo : Ammo
 		inventory.amount 20;
 		inventory.maxamount 100;
 		ammo.backpackamount 20;
-		Scale .75;
 		inventory.icon "i_uran1";
 	}
 	states

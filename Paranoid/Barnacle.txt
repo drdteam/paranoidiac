@@ -9,7 +9,7 @@ class HLBarnacle : HLMonster
 		obituary "%o was spat on by a Barnacle.";
 		health 80;
 		height 32;
-		mass 0x7FFFFFFF;
+		+DONTTHRUST
 		maxtargetrange 384;
 		painchance 128;
 		PainChance "Crowbar",252;

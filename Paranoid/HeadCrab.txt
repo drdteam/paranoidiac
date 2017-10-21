@@ -46,7 +46,6 @@ class HLHeadCrab : HLMonster
 		HLR1 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1 A_HLChase;
 		Loop;
 	Missile:
-		HLA1 A 0 A_JumpIf(waterlevel>=2,"Drown");
 		HLA1 A 1 A_FaceTarget;
 		HLA1 CEG 1;
 		HLA1 I 1 A_PlaySound("halflife/monsters/headcrab/jump");
@@ -62,19 +61,6 @@ class HLHeadCrab : HLMonster
 	Pain:
 		HLP1 A 1 A_Pain;
 		HLP1 CEGIKMO 1;
-		Goto See;
-	Drown:
-		HLI1 A 12
-		{
-			if(drowncounter>=3)
-				A_Die();
-			else
-			{
-				A_Pain();
-				drowncounter++;
-				A_SetTics(random(3,5)*4);
-			}
-		}
 		Goto See;
 	Death:
 		HLD1 A 1 A_ScreamAndUnblock;
@@ -96,6 +82,19 @@ class HLHeadCrab : HLMonster
 				A_SpawnItemEx("XenGibs",random(5,-5),random(5,-5),random(10,40),random(1,7),random(1,7),random(5,13),random(0,359),SXF_TRANSFERSCALE);
 		}
 		Stop;
+	Drown:
+		HLI1 A 12
+		{
+			if(drowncounter>=3)
+				A_Die();
+			else
+			{
+				A_Pain();
+				drowncounter++;
+				A_SetTics(random(12,20));
+			}
+		}
+		Loop;
 	}
 	void A_HLHeadCrabLook()
 	{

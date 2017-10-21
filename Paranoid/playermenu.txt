@@ -238,8 +238,6 @@ class ParanoidPlayerMenu : PlayerMenu
 			let multi=CVar.FindCVar('v_multiskin');
 			int mskin=multi.GetInt();
 			let tex=TexMan.CheckForTexture("HLHELMET",0);
-			//if(mskin==0)
-				//tex='HLHELME1';
 			if(mskin==1)
 				tex=TexMan.CheckForTexture("HLGORDON",0);
 			else if(mskin==2)
