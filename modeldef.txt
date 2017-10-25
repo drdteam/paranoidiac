@@ -698,9 +698,9 @@ Model flatpanel9
 Model mouse3
 {
 	Path "Models"
-	Model 0 "br_mouse3.md3"
-	Skin 0 "br_mousekeybd3.jpg"
 	Scale 0.25 0.25 0.25
+	Model 0 "br_mouse1.md3"
+	Skin 0 "br_pcs2.jpg"
 
 	FrameIndex HLI1 A 0 0
 }
@@ -729,7 +729,7 @@ Model pc3
 {
 	Path "Models"
 	Model 0 "br_pc3.md3"
-	Skin 0 "br_pc3.jpg"
+	Skin 0 "br_pcs1.jpg"
 	Scale 0.5 0.5 0.5
 
 	FrameIndex HLI1 A 0 0
