@@ -4,7 +4,6 @@ class ModelBase : Actor
 	{
 		+CANPASS
 		+SOLID
-		+NOBLOOD
 	}
 	States
 	{
@@ -24,7 +23,6 @@ class Monitor : ModelBase
 		+PUSHABLE
 	}
 }
-
 class Monitor1 : Monitor{}
 class Monitor2 : Monitor{}
 class Monitor3 : Monitor{}
@@ -33,28 +31,25 @@ class keyboard1 : ModelBase
 {
 	Default
 	{
+		Scale .25;
 		Radius 8;
 		Height 2;
-		+SHOOTABLE
-		+NOTAUTOAIMED
-		+NODAMAGE
 	}
 }
-
 class keyboard3 : keyboard1{}
 
-class flatpanel1 : keyboard1
+class flatpanel1 : ModelBase
 {
 	Default
 	{
 		Radius 12;
 		Height 20;
+		Scale .8;
 	}
 }
-
 class flatpanel2 : flatpanel1{}
 
-class flatpanel3 : keyboard1
+class flatpanel3 : flatpanel1
 {
 	Default
 	{
@@ -62,19 +57,18 @@ class flatpanel3 : keyboard1
 		Height 16;
 	}
 }
-
 class flatpanel4 : flatpanel3{}
 
-class flatpanel5 : keyboard1
+class flatpanel5 : ModelBase
 {
 	Default
 	{
 		Radius 2;
 		Height 32;
-		+nogravity
+		+NOGRAVITY
+		Scale 1.2;
 	}
 }
-
 class flatpanel6 : flatpanel5{}
 
 class flatpanel7 : flatpanel5
@@ -86,7 +80,6 @@ class flatpanel7 : flatpanel5
 		Loop;
 	}
 }
-
 class flatpanel8 : flatpanel5{}
 class flatpanel9 : flatpanel5{}
 
@@ -99,34 +92,29 @@ class mouse3 : keyboard1
 	}
 }
 
-class pc1 : keyboard1
+class pc1 : ModelBase
 {
 	Default
 	{
+		Scale .5;
 		Radius 12;
 		Height 20;
 	}
 }
 class pc3 : pc1{}
 
-class modem : keyboard1
+class modem : ModelBase
 {
 	Default
 	{
+		Scale .75;
 		Radius 4;
 		Height 6;
 	}
 }
 
-class server1 : keyboard1
-{
-	Default
-	{
-		Radius 20;
-		Height 72;
-	}
-}
-
+class server1 : ModelBase
+	{Default{Height 72;}}
 class server2 : server1{}
 class server3 : server1{}
 
@@ -136,25 +124,17 @@ class server3 : server1{}
 // Lights, Tesla Coil
 //=============================================
 
-class Transformer : ModelBase
+class Transformer1 : ModelBase
 {
 	Default
 	{
-		Radius 12;
-		Height 60;
-	}
-}
-
-class Transformer1 : Transformer
-{
-	Default
-	{
+		Scale 2;
 		Radius 24;
 		Height 88;
 	}
 }
 
-class Meter1 : Transformer
+class Meter1 : ModelBase
 {
 	Default
 	{
@@ -177,18 +157,18 @@ class Meter3 : Meter1
 {
 	Default
 	{
+		Scale 1.5;
 		Radius 24;
 		Height 48;
 	}
 }
 
-class light1 : ModelBase
+class light2 : ModelBase
 {
 	Default
 	{
-		Radius 6;
-		Height 8;
-		+NoGravity
+		Radius 16;
+		Height 42;
 	}
 	States
 	{
@@ -198,17 +178,18 @@ class light1 : ModelBase
 	}
 }
 
-class light2 : light1
+class light1 : light2
 {
 	Default
 	{
-		Radius 16;
-		Height 42;
-		-nogravity
+		Scale .7;
+		Radius 6;
+		Height 8;
+		+NOGRAVITY
 	}
 }
 
-class Tesla : Transformer
+class Tesla : ModelBase
 {
 	Default
 	{
@@ -219,12 +200,14 @@ class Tesla : Transformer
 
 //====================================================================
 // Non-spawnable models (some of which require 3D sectors)
-// Heavy Equipment: Fork lifts, backhoe, trailers, generators
-// Apache helicopter; steel girders; trams
+// Heavy Equipment: Fork lifts, backhoe, trailers, generators,
+// Apache helicopter, steel girders
 //====================================================================
 
-class Forklift1 : ModelBase
+class Bulldozer1 : ModelBase
 	{Default{Height 64;}}
+class Forklift1 : Bulldozer1
+	{Default{Scale 1.2;}}
 
 class Forklift2 : ModelBase
 {
@@ -235,15 +218,17 @@ class Forklift2 : ModelBase
 	}
 }
 
-class Backhoe1 : Forklift1{}
-class Bulldozer1 : Forklift1{}
-class Trailer1 : Forklift1{}
-class Trailer2 : Forklift1{}
+class Backhoe1 : Bulldozer1
+	{Default{Scale 1.6;}}
+class Trailer1 : Bulldozer1
+	{Default{Scale 6;}}
+class Trailer2 : Trailer1{}
 
 class Generator1 : ModelBase
 {
 	Default
 	{
+		Scale 3;
 		Radius 24;
 		Height 64;
 	}
@@ -253,6 +238,7 @@ class Generator2 : ModelBase
 {
 	Default
 	{
+		Scale 1.75;
 		Height 48;
 		+PUSHABLE
 	}
@@ -271,6 +257,7 @@ class Generator4 : SwitchableDecoration
 {
 	Default
 	{
+		Scale .5;
 		Radius 32;
 		Height 64;
 		+SOLID
@@ -325,26 +312,26 @@ class girder2 : girder1
 	Default
 	{
 		Height 64;
-		+NoGravity
+		+NOGRAVITY
 	}
 }
 
-class girder3 : girder1
+class girder3 : girder2
 {
 	Default
 	{
+		Scale 4;
 		Radius 136;
 		Height 1664;
-		+NoGravity
 	}
 }
 
-class girder4 : girder1
+class girder4 : girder3
 {
 	Default
 	{
 		Radius 128;
-		+NoGravity
+		Height 416;
 	}
 }
 
@@ -375,38 +362,53 @@ class Toilet1 : ModelBase
 {
 	Default
 	{
+		Scale .83;
 		Radius 16;
 		Height 28;
 	}
 }
 class Toilet2 : Toilet1{}
-class ToiletStainless : Toilet1{}
+class ToiletStainless : Toilet1
+	{Default{Scale 1.8;}}
 class Urinal1 : Toilet1
-	{Default{Height 40;}}
+{
+	Default
+	{
+		Scale .6;
+		Height 40;
+	}
+}
 
 class Armchair : ModelBase
 	{Default{Height 29;}}
 class Sofa : Armchair{}
-
 class Chair1 : Armchair
 {
 	Default
 	{
+		Scale .9;
 		Radius 10;
 		+PUSHABLE
 	}
 }
-class Chair2 : Chair1{}
+class Chair2 : Chair1
+	{Default{Scale .7;}}
 class Chair3 : Chair1
-	{Default{Height 32;}}
-
-class Desklamp1 : ModelBase
 {
 	Default
 	{
+		Scale 1;
+		Height 32;
+	}
+}
+
+class Desklamp1 : Chair1
+{
+	Default
+	{
+		Scale .4;
 		Radius 4;
 		Height 16;
-		+PUSHABLE
 	}
 }
 class Desklamp2 : Desklamp1{}
@@ -414,11 +416,11 @@ class Desklamp2 : Desklamp1{}
 class Desk1 : ModelBase
 	{Default{Height 32;}}
 
-class Desk2 : Desk1
+class Desk2 : ModelBase
 {
 	Default
 	{
-		Height 16;
+		Scale .8;
 	}
 	override void postbeginplay()
 	{
@@ -446,6 +448,7 @@ class HandDryer : ModelBase
 {
 	Default
 	{
+		Scale 1.5;
 		Radius 4;
 		Height 8;
 		+NOGRAVITY
@@ -456,6 +459,7 @@ class Sink1 : HandDryer
 {
 	Default
 	{
+		Scale 1.75;
 		Radius 8;
 		Height 16;
 	}
@@ -465,6 +469,7 @@ class Sink2 : HandDryer
 {
 	Default
 	{
+		Scale 2.2;
 		Radius 16;
 		Height 20;
 	}
@@ -522,9 +527,9 @@ class DeerHead : ModelBase
 {
 	Default
 	{
+		Scale 1.25;
 		Radius 32;
 		Height 40;
-		Scale 1.25;
 		+NOGRAVITY
 	}
 }
@@ -560,142 +565,59 @@ class TankGlass : ModelBase
 
 class Pipe1 : ModelBase
 	{Default{Height 58;}}
-
 class Pipe1a : pipe1{}
 
-class Pipe2 : pipe1
+class Pipe2 : ModelBase
 	{Default{Height 66;}}
 
-class Tank01 : pipe1
+class Pipe3 : ModelBase
 {
 	Default
 	{
-		Radius 28;
-		Height 86;
-	}
-}
-
-class Tank02 : pipe1
-{
-	Default
-	{
-		Radius 15;
-		Height 36;
-	}
-}
-
-class Tank02a : pipe1
-{
-	Default
-	{
-		Radius 4;
-		Height 36;
-	}
-}
-
-class Valve1 : pipe1
-{
-	Default
-	{
-		Radius 24;
-		Height 50;
-	}
-}
-
-class Pipe3 : pipe1
-{
-	Default
-	{
+		Scale .5;
 		Radius 10;
 		Height 29;
 	}
 }
-
 class Pipe3a : Pipe3{}
+class Pipe4 : Pipe3
+	{Default{Height 33;}}
 
-class Pipe4 : pipe1
+class pipe5 : ModelBase
 {
 	Default
 	{
-		Radius 10;
-		Height 33;
-	}
-}
-
-class propane1a : pipe1
-{
-	Default
-	{
-		Height 40;
-	}
-}
-
-class propane1b : propane1a{}
-class propane1c : propane1a{}
-
-class propane2 : pipe1
-{
-	Default
-	{
-		Radius 10;
-		Height 36;
-	}
-}
-
-class tank03 : pipe1
-{
-	Default
-	{
-		Radius 6;
-		Height 16;
-	}
-}
-
-class tank04 : pipe1
-{
-	Default
-	{
-		Radius 72;
-		Height 264;
-	}
-}
-
-class tank04a : tank04{}
-
-class tank05 : pipe1
-{
-	Default
-	{
-		Radius 12;
-		Height 36;
-	}
-}
-
-class tank06 : pipe1
-{
-	Default
-	{
-		Radius 36;
-		Height 128;
-		scale 0.5;
-	}
-}
-
-class pipe5 : pipe1
-{
-	Default
-	{
+		Scale .75;
 		Radius 8;
 		Height 136;
 	}
 }
 
-class pipe6 : pipe1
+class pipe6 : Pipe3
 {
 	Default
 	{
 		Radius 6;
 		Height 68;
+	}
+}
+
+class pipe7 : ModelBase
+{
+	Default
+	{
+		Radius 12;
+		Height 181;
+	}
+}
+
+class pipe8 : ModelBase
+{
+	Default
+	{
+		Scale 1.5;
+		Radius 16;
+		Height 272;
 	}
 }
 
@@ -706,6 +628,94 @@ class PipeMaze : ModelBase
 		Radius 64;
 		Height 28;
 		+NOGRAVITY
+	}
+}
+
+class Tank01 : ModelBase
+{
+	Default
+	{
+		Radius 28;
+		Height 86;
+	}
+}
+
+class Tank02 : ModelBase
+{
+	Default
+	{
+		Radius 15;
+		Height 36;
+	}
+}
+class Tank02a : Tank02
+	{Default{Radius 4;}}
+
+class tank03 : ModelBase
+{
+	Default
+	{
+		Scale 5;
+		Radius 6;
+	}
+}
+
+class tank04 : ModelBase
+{
+	Default
+	{
+		Scale 6;
+		Radius 72;
+		Height 264;
+	}
+}
+
+class tank05 : Tank02
+{
+	Default
+	{
+		Scale 5;
+		Radius 12;
+	}
+}
+
+class tank06 : ModelBase
+{
+	Default
+	{
+		Scale 3;
+		Radius 36;
+		Height 128;
+	}
+}
+
+class propane1a : ModelBase
+{
+	Default
+	{
+		Scale 3;
+		Height 40;
+	}
+}
+class propane1b : propane1a{}
+class propane1c : propane1a{}
+
+class propane2 : ModelBase
+{
+	Default
+	{
+		Scale .8;
+		Radius 10;
+		Height 36;
+	}
+}
+
+class Valve1 : ModelBase
+{
+	Default
+	{
+		Radius 24;
+		Height 50;
 	}
 }
 
@@ -722,34 +732,54 @@ class Toolbox1 : ModelBase
 		+PUSHABLE
 	}
 }
-
 class Toolbox2 : Toolbox1
-	{Default{Height 48;}}
+{
+	Default
+	{
+		Height 48;
+		Scale .8;
+	}
+}
 
 class Radio1 : ModelBase
 {
 	Default
 	{
+		Scale .5;
 		Radius 8;
 		Height 8;
 	}
 }
 
-class Radio2 : Radio1
+class Radio2 : ModelBase
 {
 	Default
 	{
+		Scale .4;
 		Radius 16;
 		Height 12;
 	}
 }
 
-class Radio3 : Radio2
-	{Default{Radius 4;}}
+class Radio3 : Radio1
+{
+	Default
+	{
+		Radius 4;
+		Height 12;
+	}
+}
+
 class Radio4 : Radio1
 	{Default{Radius 10;}}
 class Radio5 : Radio2
-	{Default{Radius 2;}}
+{
+	Default
+	{
+		Scale 1;
+		Radius 2;
+	}
+}
 
 //====================================================================
 // Non-spawnable models
@@ -760,31 +790,32 @@ class Palm1a : ModelBase
 {
 	Default
 	{
+		Scale 20;
 		Radius 8;
 		Height 340;
 	}
 }
 class Palm1b : Palm1a{}
-class Palm2a : Palm1a
-	{Default{Height 256;}}
+class Palm2a : ModelBase
+	{Default{Radius 8;Height 256;}}
 class Palm2b : Palm2a{}
 class Palm3a : Palm1a
-	{Default{Height 160;}}
-class Palm3b : Palm3a{}
-class Palm3c : Palm3a{}
-class Cactus : Palm1a
-	{Default{Height 128;}}
-
-class Fern : Palm1a
 {
 	Default
 	{
-		Radius 16;
-		Height 16;
+		Scale .5;
+		Height 160;
 	}
 }
+class Palm3b : Palm3a{}
+class Palm3c : Palm3a{}
+class Cactus : Palm2a
+	{Default{Height 128;}}
 
-class Plant1 : Palm1a
+class Fern : ModelBase
+	{Default{Radius 16;}}
+
+class Plant1 : Palm2a
 {
 	Default
 	{
@@ -806,14 +837,8 @@ class Plant1 : Palm1a
 	state A_CheckRangeRev(double distance,statelabel label,bool two_dimension=false)
 		{return CheckRange(distance,two_dimension)?null:ResolveState(label);}
 }
-
 class Plant2 : Plant1
-{
-	Default
-	{
-		Radius 16;
-	}
-}
+	{Default{Radius 16;}}
 
 class StreetLamp : SwitchableDecoration
 {
@@ -845,57 +870,66 @@ class Glass01 : TankGlass
 	}
 }
 
-class BookShelf1a : ModelBase
+class RKive : ModelBase
 {
 	Default
 	{
+		Scale .8;
 		Radius 8;
-		Height 64;
 	}
 }
+
+class BookShelf1a : RKive
+	{Default{Height 64;}}
 class BookShelf1b : BookShelf1a{}
 class BookShelf2a : BookShelf1a{}
 class BookShelf2b : BookShelf1a{}
-
-class RKive : BookShelf1a
-	{Default{Height 16;}}
 
 class Credenza : ModelBase
 {
 	Default
 	{
+		Scale .68;
 		Radius 12;
 		Height 26;
 	}
 }
-
 class CredenzaShort : Credenza{}
-class Credenza2 : Credenza{}
+class Credenza2 : Credenza
+	{Default{Scale .57;}}
+class ConfTable : Credenza
+	{Default{Scale .46;}}
 
 class Ashtray : ModelBase
 {
 	Default
 	{
+		Scale .7;
 		Radius 2;
 		Height 2;
 	}
 }
-
 class AshtrayCig : Ashtray{}
-class ConfTable : Credenza{}
 
 class Phone1 : ModelBase
 {
 	Default
 	{
+		Scale .25;
 		Radius 4;
 		Height 4;
 	}
 }
-
-class Phone2 : Phone1{}
+class Phone2 : Phone1
+	{Default{Scale .2;}}
 class Phone3 : Phone1
-	{Default{+NOGRAVITY}}
+{
+	Default
+	{
+		Scale .7;
+		+NOGRAVITY
+	}
+}
 
 class Rock01 : ModelBase
 {
@@ -905,7 +939,6 @@ class Rock01 : ModelBase
 		Height 360;
 	}
 }
-
 class Rock01a : Rock01{}
 class Rock01b : Rock01{}
 class Rock01c : Rock01{}
@@ -920,6 +953,7 @@ class Rock02f : ModelBase
 {
 	Default
 	{
+		Scale 1.25;
 		Radius 60;
 		Height 450;
 	}
@@ -929,6 +963,7 @@ class Rock02g : ModelBase
 {
 	Default
 	{
+		Scale 1.5;
 		Radius 72;
 		Height 476;
 	}
@@ -951,12 +986,18 @@ class Rock04 : ModelBase
 		Height 148;
 	}
 }
-
 class Rock04a : Rock04{}
 class Rock04b : Rock04{}
 class Rock04c : Rock04{}
+
 class Rock05 : Rock04
-	{Default{Height 100;}}
+{
+	Default
+	{
+		Height 100;
+		Scale .125;
+	}
+}
 class Rock05a : Rock05{}
 class Rock06 : Rock05{}
 class Rock06a : Rock05{}
@@ -969,9 +1010,21 @@ class TechPillar1a : ModelBase
 		Height 214;
 	}
 }
-
 class TechPillar1b : TechPillar1a{}
 class TechPillar1c : TechPillar1a{}
+
+class TechPillar1aa : ModelBase
+{
+	Default
+	{
+		Scale .75;
+		Radius 12;
+		Height 160;
+	}
+}
+class TechPillar1bb : TechPillar1aa{}
+class TechPillar1cc : TechPillar1aa{}
+
 class TechPillar2 : TechPillar1a
 	{Default{Height 188;}}
 
@@ -986,30 +1039,11 @@ class TechClamp : ModelBase
 	}
 }
 
-class TechPillar1aa : TechPillar1a
-{
-	Default
-	{
-		Radius 12;
-		Height 160;
-	}
-}
-class TechPillar1bb : TechPillar1aa{}
-class TechPillar1cc : TechPillar1aa{}
-
-class TechPillar2a : TechPillar1a
-{
-	Default
-	{
-		Radius 8;
-		Height 94;
-	}
-}
-
 class TechClampa : TechClamp
 {
 	Default
 	{
+		Scale .5;
 		Radius 48;
 		Height 128;
 	}
@@ -1019,6 +1053,7 @@ class HoverPad : ModelBase
 {
 	Default
 	{
+		Scale 1.8;
 		Radius 28;
 		Height 1;
 		-SOLID
@@ -1031,41 +1066,14 @@ class PConsole : ModelBase
 	{
 		Radius 12;
 		Height 32;
+		Scale 2.2;
 	}
 }
-
 class PConsole1 : PConsole{}
 class PConsole2 : PConsole{}
 class PConsole3 : PConsole{}
 class PConsole4 : PConsole{}
 class PConsole5 : PConsole{}
-
-class pipe7 : pipe1
-{
-	Default
-	{
-		Radius 12;
-		Height 181;
-	}
-}
-
-class pipe8 : pipe1
-{
-	Default
-	{
-		Radius 16;
-		Height 272;
-	}
-}
-
-class XMetalBox1 : XMetalBox
-{
-	Default
-	{
-		Radius 136;
-		Height 256;
-	}
-}
 
 //======================================
 // Concrete Jersey Barriers:
@@ -1077,6 +1085,7 @@ class Barrier1 : ModelBase
 {
 	Default
 	{
+		Scale 1.8;
 		Radius 4;
 		Height 32;
 	}
@@ -1097,8 +1106,7 @@ class ExplosiveItemBangCrate : Actor
 		Height 4;
 		RenderStyle "Translucent";
 		Alpha .9;
-		+DONTSPLASH
-		+NOCLIP
+		+NOINTERACTION
 	}
 	States
 	{
@@ -1142,6 +1150,7 @@ class Xbarrel1 : ModelBase
 		Obituary "%o stood too close to an exploding barrel.";
 		+PUSHABLE
 		+SHOOTABLE
+		+NOBLOOD
 	}
 	States
 	{
@@ -1185,13 +1194,24 @@ class Xcrate02 : Xcrate01{}
 // Non-Explosive barrels/trashcan (plastic & heavy metal), crates
 //================================================================
 
-class Barrel1 : keyboard1
+class Trashcan1 : XBarrel1
 {
 	Default
 	{
+		Radius 10;
 		Height 29;
 		Mass 50;
-		+PUSHABLE
+		+NOTAUTOAIMED
+		+NODAMAGE
+	}
+}
+
+class Barrel1 : Trashcan1
+{
+	Default
+	{
+		Scale 2;
+		Radius 8;
 	}
 }
 class Barrel2 : Barrel1{}
@@ -1200,16 +1220,13 @@ class Barrel3 : Barrel1
 {
 	Default
 	{
+		Scale .3;
 		Radius 9;
-		Height 29;
 		Mass 200;
 	}
 }
 
-class Trashcan1 : Barrel1
-	{Default{Radius 10;}}
-
-class Xcrate03 : Barrel1
+class Xcrate03 : Trashcan1
 {
 	Default
 	{
@@ -1227,22 +1244,29 @@ class XMetalBox : ModelBase
 	{
 		Radius 34;
 		Height 64;
-		+NODAMAGE
 		+NOGRAVITY
 	}
 }
 
-//==========================================
+class XMetalBox1 : XMetalBox
+{
+	Default
+	{
+		Radius 136;
+		Height 256;
+	}
+}
+
+//============================================
 // Non-Player Character Models: Controller,
-// Administrator, Col. Stinson
-//==========================================
+// Administrator, Col. Stinson, Legion: Earth
+//============================================
 
 class HintMan : ModelBase
 {
 	Default
 	{
 		Height 56;
-		-NOBLOOD
 	}
 	States
 	{

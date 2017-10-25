@@ -289,7 +289,6 @@ Model Palm1a
 	Path "Models"
 	Model 0 "palm1.md3"
 	Skin 0 "palm1a.png"
-	Scale 20.0 20.0 20.0
 
 	FrameIndex HLI1 A 0 0
 }
@@ -299,7 +298,6 @@ Model Palm1b
 	Path "Models"
 	Model 0 "palm1.md3"
 	Skin 0 "palm1b.png"
-	Scale 20.0 20.0 20.0
 
 	FrameIndex HLI1 A 0 0
 }
@@ -327,7 +325,6 @@ Model Palm3a
 	Path "Models"
 	Model 0 "palm3.md3"
 	Skin 0 "palm3a.png"
-	Scale 0.5 0.5 0.5
 
 	FrameIndex HLI1 A 0 0
 }
@@ -337,7 +334,6 @@ Model Palm3b
 	Path "Models"
 	Model 0 "palm3.md3"
 	Skin 0 "palm3b.png"
-	Scale 0.5 0.5 0.5
 
 	FrameIndex HLI1 A 0 0
 }
@@ -347,7 +343,6 @@ Model Palm3c
 	Path "Models"
 	Model 0 "palm3.md3"
 	Skin 0 "palm3c.png"
-	Scale 0.5 0.5 0.5
 
 	FrameIndex HLI1 A 0 0
 }
@@ -542,7 +537,6 @@ Model keyboard1
 	Path "Models"
 	Model 0 "br_keyboard1.md3"
 	Skin 0 "br_keyboard1.jpg"
-	Scale 0.25 0.25 0.25
 
 	FrameIndex HLI1 A 0 0
 }
@@ -552,7 +546,6 @@ Model keyboard3
 	Path "Models"
 	Model 0 "br_keyboard3.md3"
 	Skin 0 "br_mousekeybd3.jpg"
-	Scale 0.25 0.25 0.25
 
 	FrameIndex HLI1 A 0 0
 }
@@ -560,7 +553,6 @@ Model keyboard3
 Model flatpanel1
 {
 	Path "Models"
-	Scale 0.8 0.8 0.8
 	Model 0 "br_monitor1.md3"
 	SurfaceSkin 0 0 "br_monitor1.jpg"
 	SurfaceSkin 0 1 "br_screen1.jpg"
@@ -571,7 +563,6 @@ Model flatpanel1
 Model flatpanel2
 {
 	Path "Models"
-	Scale 0.8 0.8 0.8
 	Model 0 "br_monitor1.md3"
 	SurfaceSkin 0 0 "br_monitor1.jpg"
 	SurfaceSkin 0 1 "br_screen2.png"
@@ -583,7 +574,6 @@ Model flatpanel3
 {
 	Path "Models"
 	Model 0 "br_monitor3.md3"
-	Scale 0.8 0.8 0.8
 	SurfaceSkin 0 0 "br_pcs1.jpg"
 	SurfaceSkin 0 1 "br_screen1.jpg"
 
@@ -594,7 +584,6 @@ Model flatpanel4
 {
 	Path "Models"
 	Model 0 "br_monitor3.md3"
-	Scale 0.8 0.8 0.8
 	SurfaceSkin 0 0 "br_pcs1.jpg"
 	SurfaceSkin 0 1 "br_screen2.png"
 
@@ -605,7 +594,6 @@ Model flatpanel5
 {
 	Path "Models"
 	Model 0 "br_monitor5.md3"
-	Scale 1.2 1.2 1.2
 	SurfaceSkin 0 0 "br_monitor5.png"
 	SurfaceSkin 0 1 "br_screen1.jpg"
 
@@ -616,22 +604,16 @@ Model flatpanel6
 {
 	Path "Models"
 	Model 0 "br_monitor5.md3"
-	Scale 1.2 1.2 1.2
 	SurfaceSkin 0 0 "br_monitor5.png"
 	SurfaceSkin 0 1 "br_screen2.png"
 
 	FrameIndex HLI1 A 0 0
 }
 
-//////////////////////
-// Animated Monitor //
-//////////////////////
-
 Model flatpanel7
 {
 	Path "Models"
 	Model 0 "br_monitor5.md3"
-	Scale 1.2 1.2 1.2
 	SurfaceSkin 0 0 "br_monitor5.png"
 	SurfaceSkin 0 1 "br_screen5.png"
 
@@ -641,7 +623,6 @@ Model flatpanel7
 Model flatpanel7
 {
 	Path "Models"
-	Scale 1.2 1.2 1.2
 	Model 0 "br_monitor5.md3"
 	SurfaceSkin 0 0 "br_monitor5.png"
 	SurfaceSkin 0 1 "br_screen6.png"
@@ -652,7 +633,6 @@ Model flatpanel7
 Model flatpanel7
 {
 	Path "Models"
-	Scale 1.2 1.2 1.2
 	Model 0 "br_monitor5.md3"
 	SurfaceSkin 0 0 "br_monitor5.png"
 	SurfaceSkin 0 1 "br_screen7.png"
@@ -663,7 +643,6 @@ Model flatpanel7
 Model flatpanel7
 {
 	Path "Models"
-	Scale 1.2 1.2 1.2
 	Model 0 "br_monitor5.md3"
 	SurfaceSkin 0 0 "br_monitor5.png"
 	SurfaceSkin 0 1 "br_screen9.png"
@@ -671,13 +650,10 @@ Model flatpanel7
 	FrameIndex HLI1 D 3 0
 }
 
-/////////////////////////////////
-
 Model flatpanel8
 {
 	Path "Models"
 	Model 0 "br_monitor5.md3"
-	Scale 1.2 1.2 1.2
 	SurfaceSkin 0 0 "br_monitor5.png"
 	SurfaceSkin 0 1 "br_screen8.png"
 
@@ -688,7 +664,6 @@ Model flatpanel9
 {
 	Path "Models"
 	Model 0 "br_monitor5.md3"
-	Scale 1.2 1.2 1.2
 	SurfaceSkin 0 0 "br_monitor5.png"
 	SurfaceSkin 0 1 "br_screen10.png"
 
@@ -698,7 +673,6 @@ Model flatpanel9
 Model mouse3
 {
 	Path "Models"
-	Scale 0.25 0.25 0.25
 	Model 0 "br_mouse1.md3"
 	Skin 0 "br_pcs2.jpg"
 
@@ -710,7 +684,6 @@ Model pc1
 	Path "Models"
 	Model 0 "br_pc1.md3"
 	Skin 0 "br_pc1.jpg"
-	Scale 0.5 0.5 0.5
 
 	FrameIndex HLI1 A 0 0
 }
@@ -720,7 +693,6 @@ Model modem
 	Path "Models"
 	Model 0 "br_pc2.md3"
 	Skin 0 "br_pc2.jpg"
-	Scale 0.75 0.75 0.75
 
 	FrameIndex HLI1 A 0 0
 }
@@ -730,7 +702,6 @@ Model pc3
 	Path "Models"
 	Model 0 "br_pc3.md3"
 	Skin 0 "br_pcs1.jpg"
-	Scale 0.5 0.5 0.5
 
 	FrameIndex HLI1 A 0 0
 }
@@ -771,7 +742,6 @@ Model Toilet1
 	Path "Models"
 	Model 0 "toilet1.md2"
 	Skin 0 "toilet1.png"
-	Scale 0.83 0.83 0.83
 
 	Frame HLI1 A 0 "idle"
 }
@@ -781,7 +751,6 @@ Model Toilet2
 	Path "Models"
 	Model 0 "toilet1.md2"
 	Skin 0 "toilet2.png"
-	Scale 0.83 0.83 0.83
 
 	Frame HLI1 A 0 "idle"
 }
@@ -791,7 +760,6 @@ Model Urinal1
 	Path "Models"
 	Model 0 "urinal.md2"
 	Skin 0 "urinal.png"
-	Scale 0.6 0.6 0.6
 
 	Frame HLI1 A 0 "1"
 }
@@ -801,7 +769,6 @@ Model HandDryer
 	Path "Models"
 	Model 0 "handdryer.md3"
 	Skin 0 "handdryer.png"
-	Scale 1.5 1.5 1.5
 
 	FrameIndex HLI1 A 0 0
 }
@@ -811,7 +778,6 @@ Model Sink1
 	Path "Models"
 	Model 0 "sink1.md3"
 	Skin 0 "sink1.png"
-	Scale 1.75 1.75 1.75
 
 	FrameIndex HLI1 A 0 0
 }
@@ -821,7 +787,6 @@ Model Sink2
 	Path "Models"
 	Model 0 "sink2.md3"
 	Skin 0 "sink2.png"
-	Scale 2.2 2.2 2.2
 
 	FrameIndex HLI1 A 0 0
 }
@@ -831,7 +796,6 @@ Model SoapDispenser
 	Path "Models"
 	Model 0 "soapdisp.md3"
 	Skin 0 "soapdisp.png"
-	Scale 1.5 1.5 1.5
 
 	FrameIndex HLI1 A 0 0
 }
@@ -841,7 +805,6 @@ Model ToiletStainless
 	Path "Models"
 	Model 0 "toiletst.md3"
 	Skin 0 "toiletst.png"
-	Scale 1.8 1.8 1.8
 
 	FrameIndex HLI1 A 0 0
 }
@@ -851,7 +814,6 @@ Model ToiletPaper
 	Path "Models"
 	Model 0 "tpaper.md3"
 	Skin 0 "tpaper09.png"
-	Scale 1.5 1.5 1.5
 
 	FrameIndex HLI1 A 0 0
 }
@@ -870,7 +832,6 @@ Model Chair1
 	Path "Models"
 	Model 0 "chair1.md3"
 	Skin 0 "chair1.png"
-	Scale 0.9 0.9 0.9
 
 	FrameIndex HLI1 A 0 0
 }
@@ -880,7 +841,6 @@ Model Chair2
 	Path "Models"
 	Model 0 "chair2.md2"
 	Skin 0 "chair2.png"
-	Scale 0.7 0.7 0.7
 
 	Frame HLI1 A 0 "frame01"
 }
@@ -909,7 +869,6 @@ Model Desk2
 	Path "Models"
 	Model 0 "desk2.md3"
 	Skin 0 "desk2.png"
-	Scale 0.8 0.8 0.8
 
 	FrameIndex HLI1 A 0 0
 }
@@ -919,7 +878,6 @@ Model Desk3
 	Path "Models"
 	Model 0 "desk3.md3"
 	Skin 0 "desk3.png"
-	Scale 0.8 0.8 0.8
 
 	FrameIndex HLI1 A 0 0
 }
@@ -929,7 +887,6 @@ Model Desk4
 	Path "Models"
 	Model 0 "desk4.md3"
 	Skin 0 "desk4.png"
-	Scale 0.8 0.8 0.8
 
 	FrameIndex HLI1 A 0 0
 }
@@ -939,7 +896,6 @@ Model Desk5
 	Path "Models"
 	Model 0 "desk5.md3"
 	Skin 0 "desk5.png"
-	Scale 0.8 0.8 0.8
 
 	FrameIndex HLI1 A 0 0
 }
@@ -949,7 +905,6 @@ Model Desk6
 	Path "Models"
 	Model 0 "desk6.md3"
 	Skin 0 "desk6.png"
-	Scale 0.8 0.8 0.8
 
 	FrameIndex HLI1 A 0 0
 }
@@ -977,7 +932,6 @@ Model Desklamp1
 	Path "Models"
 	Model 0 "desklamp1.md3"
 	Skin 0 "desklamp1.png"
-	Scale 0.4 0.4 0.4
 
 	FrameIndex HLI1 A 0 0
 }
@@ -987,7 +941,6 @@ Model Desklamp2
 	Path "Models"
 	Model 0 "desklamp2.md2"
 	Skin 0 "desklamp2.png"
-	Scale 0.4 0.4 0.4
 
 	Frame HLI1 A 0 "frame01"
 }
@@ -1018,7 +971,6 @@ Model Mattress01
 	FrameIndex HLI1 B 1 0
 }
 
-Model Bed03
 Model Bed02
 {
 	Path "Models"
@@ -1109,12 +1061,21 @@ Model XMetalBox
 	Frame HLI1 A 0 "frame01"
 }
 
+Model XMetalBox1
+{
+	Path "Models"
+	Model 0 "xcrate01.md2"
+	Skin 0 "xmetalbox.png"
+	Scale 4.48 4.68 4.0
+
+	Frame HLI1 A 0 "frame01"
+}
+
 Model Barrel1
 {
 	Path "Models"
 	Model 0 "br_barrel1.md3"
 	Skin 0 "br_barrell.png"
-	Scale 2.0 2.0 2.0
 
 	FrameIndex HLI1 A 0 0
 }
@@ -1124,7 +1085,6 @@ Model Barrel2
 	Path "Models"
 	Model 0 "br_barrel2.md3"
 	Skin 0 "br_barrell.png"
-	Scale 2.0 2.0 2.0
 
 	FrameIndex HLI1 A 0 0
 }
@@ -1134,7 +1094,6 @@ Model Barrel3
 	Path "Models"
 	Model 0 "utbarrel.md2"
 	Skin 0 "utbarrel.png"
-	Scale 0.3 0.3 0.3
 
 	Frame HLI1 A 0 "frame01"
 }
@@ -1144,7 +1103,6 @@ Model Forklift1
 	Path "Models"
 	Model 0 "forktruck.md2"
 	Skin 0 "forktruck.png"
-	Scale 1.2 1.2 1.2
 
 	FrameIndex HLI1 A 0 0
 }
@@ -1163,7 +1121,6 @@ Model Backhoe1
 	Path "Models"
 	Model 0 "backhoe.md3"
 	Skin 0 "backhoe.png"
-	Scale 1.6 1.6 1.6
 
 	FrameIndex HLI1 A 0 0
 }
@@ -1191,7 +1148,6 @@ Model Toolbox2
 	Path "Models"
 	Model 0 "toolbox2.md3"
 	Skin 0 "toolbox2.png"
-	Scale 0.8 0.8 0.8
 
 	FrameIndex HLI1 A 0 0
 }
@@ -1201,7 +1157,6 @@ Model Trailer1
 	Path "Models"
 	Model 0 "trailer1.md3"
 	Skin 0 "trailer1.png"
-	Scale 6.0 6.0 6.0
 
 	FrameIndex HLI1 A 0 0
 }
@@ -1211,7 +1166,6 @@ Model Trailer2
 	Path "Models"
 	Model 0 "trailer1.md3"
 	Skin 0 "trailer2.png"
-	Scale 6.0 6.0 6.0
 
 	FrameIndex HLI1 A 0 0
 }
@@ -1221,7 +1175,6 @@ Model Generator1
 	Path "Models"
 	Model 0 "generator.md3"
 	Skin 0 "generator.png"
-	Scale 3.0 3.0 3.0
 
 	FrameIndex HLI1 A 0 0
 }
@@ -1231,7 +1184,6 @@ Model Generator2
 	Path "Models"
 	Model 0 "generator2.md2"
 	Skin 0 "generator2.png"
-	Scale 1.75 1.75 1.75
 
 	FrameIndex HLI1 A 0 0
 }
@@ -1241,7 +1193,6 @@ Model Generator3
 	Path "Models"
 	Model 0 "generator3.md3"
 	Skin 0 "generator3.png"
-	Scale 0.5 0.5 0.5
 
 	FrameIndex HLI1 A 0 0
 }
@@ -1251,7 +1202,6 @@ Model Generator4
 	Path "Models"
 	Model 0 "generator3.md3"
 	Skin 0 "generator3.png"
-	Scale 0.5 0.5 0.5
 
 	FrameIndex HLI1 A 0 0
 	FrameIndex HLI1 B 0 1
@@ -1272,7 +1222,6 @@ Model Barrier1
 	Path "Models"
 	Model 0 "barrier1.md3"
 	Skin 0 "barrier1.png"
-	Scale 1.8 1.8 1.8
 
 	FrameIndex HLI1 A 0 0
 }
@@ -1282,7 +1231,6 @@ Model Barrier2
 	Path "Models"
 	Model 0 "barrier1.md3"
 	Skin 0 "barrier2.png"
-	Scale 1.8 1.8 1.8
 
 	FrameIndex HLI1 A 0 0
 }
@@ -1292,7 +1240,6 @@ Model Barrier3
 	Path "Models"
 	Model 0 "barrier1.md3"
 	Skin 0 "barrier3.png"
-	Scale 1.8 1.8 1.8
 
 	FrameIndex HLI1 A 0 0
 }
@@ -1329,7 +1276,6 @@ Model Pipe3
 	Path "Models"
 	Model 0 "xpipe1.md3"
 	Skin 0 "xptv.png"
-	Scale 0.5 0.5 0.5
 
 	FrameIndex HLI1 A 0 0
 }
@@ -1339,7 +1285,6 @@ Model Pipe3a
 	Path "Models"
 	Model 0 "xpipe1a.md3"
 	Skin 0 "xptv.png"
-	Scale 0.5 0.5 0.5
 
 	FrameIndex HLI1 A 0 0
 }
@@ -1349,7 +1294,6 @@ Model Pipe4
 	Path "Models"
 	Model 0 "xpipe2.md2"
 	Skin 0 "xptv.png"
-	Scale 0.5 0.5 0.5
 
 	FrameIndex HLI1 A 0 0
 }
@@ -1359,7 +1303,6 @@ Model Pipe5
 	Path "Models"
 	Model 0 "pipe5.md2"
 	Skin 0 "pipe5.png"
-	Scale 0.75 0.75 0.75
 
 	Frame HLI1 A 0 "frame01"
 }
@@ -1369,9 +1312,35 @@ Model Pipe6
 	Path "Models"
 	Model 0 "pipe5.md2"
 	Skin 0 "pipe5.png"
-	Scale 0.5 0.5 0.5
 
 	Frame HLI1 A 0 "frame01"
+}
+
+Model Pipe7
+{
+	Path "Models"
+	Model 0 "pipe5.md2"
+	Skin 0 "pipe5.png"
+
+	Frame HLI1 A 0 "frame01"
+}
+
+Model Pipe8
+{
+	Path "Models"
+	Model 0 "pipe5.md2"
+	Skin 0 "pipe5.png"
+
+	Frame HLI1 A 0 "frame01"
+}
+
+Model PipeMaze
+{
+	Path "Models"
+	Model 0 "pipemaze.md3"
+	Skin 0 "pipemaze.png"
+
+	FrameIndex HLI1 A 0 0
 }
 
 Model Tank01
@@ -1401,6 +1370,42 @@ Model Tank02a
 	FrameIndex HLI1 A 0 0
 }
 
+Model tank03
+{
+	Path "Models"
+	Model 0 "tank03.md3"
+	Skin 0 "tank03.png"
+
+	FrameIndex HLI1 A 0 0
+}
+
+Model tank04
+{
+	Path "Models"
+	Model 0 "tank04.md3"
+	Skin 0 "tank04.png"
+
+	FrameIndex HLI1 A 0 0
+}
+
+Model tank05
+{
+	Path "Models"
+	Model 0 "tank05.md3"
+	Skin 0 "tank05.png"
+
+	FrameIndex HLI1 A 0 0
+}
+
+Model tank06
+{
+	Path "Models"
+	Model 0 "tank04a.md3"
+	Skin 0 "tank04.png"
+
+	FrameIndex HLI1 A 0 0
+}
+
 Model Valve1
 {
 	Path "Models"
@@ -1415,7 +1420,6 @@ Model Radio1
 	Path "Models"
 	Model 0 "radio1.md3"
 	Skin 0 "radio.png"
-	Scale 0.5 0.5 0.5
 
 	FrameIndex HLI1 A 0 0
 }
@@ -1425,7 +1429,6 @@ Model Radio2
 	Path "Models"
 	Model 0 "radio2.md3"
 	Skin 0 "radio.png"
-	Scale 0.4 0.4 0.4
 
 	FrameIndex HLI1 A 0 0
 }
@@ -1435,7 +1438,6 @@ Model Radio3
 	Path "Models"
 	Model 0 "radio3.md3"
 	Skin 0 "radio.png"
-	Scale 0.5 0.5 0.5
 
 	FrameIndex HLI1 A 0 0
 }
@@ -1445,7 +1447,6 @@ Model Radio4
 	Path "Models"
 	Model 0 "radio4.md3"
 	Skin 0 "radio.png"
-	Scale 0.5 0.5 0.5
 
 	FrameIndex HLI1 A 0 0
 }
@@ -1464,7 +1465,6 @@ Model propane1a
 	Path "Models"
 	Model 0 "propane1.md3"
 	Skin 0 "propane1a.png"
-	Scale 3.0 3.0 3.0
 
 	FrameIndex HLI1 A 0 0
 }
@@ -1474,7 +1474,6 @@ Model propane1b
 	Path "Models"
 	Model 0 "propane1.md3"
 	Skin 0 "propane1b.png"
-	Scale 3.0 3.0 3.0
 
 	FrameIndex HLI1 A 0 0
 }
@@ -1484,7 +1483,6 @@ Model propane1c
 	Path "Models"
 	Model 0 "propane1.md3"
 	Skin 0 "propane1c.png"
-	Scale 3.0 3.0 3.0
 
 	FrameIndex HLI1 A 0 0
 }
@@ -1494,67 +1492,6 @@ Model propane2
 	Path "Models"
 	Model 0 "propane2.md3"
 	Skin 0 "propane2.png"
-	Scale 0.8 0.8 0.8
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model tank03
-{
-	Path "Models"
-	Model 0 "tank03.md3"
-	Skin 0 "tank03.png"
-	Scale 5.0 5.0 5.0
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model tank04
-{
-	Path "Models"
-	Model 0 "tank04.md3"
-	Skin 0 "tank04.png"
-	Scale 6.0 6.0 6.0
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model tank04a
-{
-	Path "Models"
-	Model 0 "tank04a.md3"
-	Skin 0 "tank04.png"
-	Scale 6.0 6.0 6.0
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model tank05
-{
-	Path "Models"
-	Model 0 "tank05.md3"
-	Skin 0 "tank05.png"
-	Scale 5.0 5.0 5.0
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model tank06
-{
-	Path "Models"
-	Model 0 "tank04a.md3"
-	Skin 0 "tank04.png"
-	Scale 6.0 6.0 6.0
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model transformer
-{
-	Path "Models"
-	Model 0 "transformer.md3"
-	Skin 0 "transformer.jpg"
-	Scale 1.5 1.5 1.5
 
 	FrameIndex HLI1 A 0 0
 }
@@ -1564,7 +1501,6 @@ Model transformer1
 	Path "Models"
 	Model 0 "transformer.md3"
 	Skin 0 "transformer.jpg"
-	Scale 2.0 2.0 2.0
 
 	FrameIndex HLI1 A 0 0
 }
@@ -1592,7 +1528,6 @@ Model meter3
 	Path "Models"
 	Model 0 "meter2.md3"
 	Skin 0 "meters.jpg"
-	Scale 1.5 1.5 1.5
 
 	FrameIndex HLI1 A 0 0
 }
@@ -1878,7 +1813,6 @@ Model Light1
 	Path "Models"
 	Model 0 "light1.md2"
 	Skin 0 "light1.png"
-	Scale 0.7 0.7 0.7
 
 	Frame HLI1 A 0 "frame01"
 }
@@ -1910,13 +1844,22 @@ Model girder2
 	Frame HLI1 A 0 "frame01"
 }
 
-Model PipeMaze
+Model girder3
 {
 	Path "Models"
-	Model 0 "pipemaze.md3"
-	Skin 0 "pipemaze.png"
+	Model 0 "girder1.md2"
+	Skin 0 "girder1.png"
 
-	FrameIndex HLI1 A 0 0
+	Frame HLI1 A 0 "frame01"
+}
+
+Model girder4
+{
+	Path "Models"
+	Model 0 "girder2.md2"
+	Skin 0 "girder2.png"
+
+	Frame HLI1 A 0 "frame01"
 }
 
 Model apache
@@ -1962,7 +1905,6 @@ Model Osprey
 	SurfaceSkin 0 4 "osprey_004.png"
 	SurfaceSkin 0 5 "osprey_005.png"
 	SurfaceSkin 0 6 "osprey_006.png"
-	Scale 10 10 10
 
 	FrameIndex HLI1 A 0 0
 	FrameIndex HLI1 B 0 1
@@ -2006,7 +1948,6 @@ Model Osprey
 	SurfaceSkin 0 11 "dead_osprey_011.png"
 	SurfaceSkin 0 12 "dead_osprey_012.png"
 	SurfaceSkin 0 13 "dead_osprey_013.png"
-	Scale 10 10 10
 	ZOffset 96
 	USEACTORPITCH
 
@@ -2087,7 +2028,6 @@ Model Tram
 	SurfaceSkin 0 3 "tram_supports.jpg"
 	SurfaceSkin 0 4 "tram_panel01.jpg"
 	SurfaceSkin 0 5 "tram_panel02.jpg"
-	Scale .8 .8 .8
 	ZOffset 26
 
 	FrameIndex HLI1 A 0 0
@@ -2103,7 +2043,6 @@ Model TramBattery
 	SurfaceSkin 0 3 "w_battery_003.png"
 	SurfaceSkin 0 4 "w_battery_004.png"
 	Offset -6 -1 44
-	Scale .6 .6 .6
 
 	FrameIndex HLI1 A 0 0
 }
@@ -2212,7 +2151,6 @@ Model HLXenFungus
 	SurfaceSkin 0 0 "fungus_000.png"
 	SurfaceSkin 0 1 "fungus_001.png"
 	SurfaceSkin 0 2 "fungus_002.png"
-	Scale .5 .5 .5
 
 	FrameIndex HLI1 A 0 0
 	FrameIndex HLI1 B 0 1
@@ -2783,7 +2721,6 @@ Model BookShelf1a
 	Path "Models"
 	Model 0 "bookshelf1a.md3"
 	Skin 0 "bookshelf1.png"
-	Scale 0.8 0.8 0.8
 
 	FrameIndex HLI1 A 0 0
 }
@@ -2793,7 +2730,6 @@ Model BookShelf1b
 	Path "Models"
 	Model 0 "bookshelf1b.md3"
 	Skin 0 "bookshelf1.png"
-	Scale 0.8 0.8 0.8
 
 	FrameIndex HLI1 A 0 0
 }
@@ -2803,7 +2739,6 @@ Model BookShelf2a
 	Path "Models"
 	Model 0 "bookshelf2a.md3"
 	Skin 0 "bookshelf2.png"
-	Scale 0.8 0.8 0.8
 
 	FrameIndex HLI1 A 0 0
 }
@@ -2813,7 +2748,6 @@ Model BookShelf2b
 	Path "Models"
 	Model 0 "bookshelf2b.md3"
 	Skin 0 "bookshelf2.png"
-	Scale 0.8 0.8 0.8
 
 	FrameIndex HLI1 A 0 0
 }
@@ -2823,7 +2757,6 @@ Model rkive
 	Path "Models"
 	Model 0 "rkive.md3"
 	Skin 0 "rkive.png"
-	Scale 0.8 0.8 0.8
 
 	FrameIndex HLI1 A 0 0
 }
@@ -2833,7 +2766,6 @@ Model Credenza
 	Path "Models"
 	Model 0 "credenza.md3"
 	Skin 0 "credenza.png"
-	Scale 0.68 0.68 0.68
 
 	FrameIndex HLI1 A 0 0
 }
@@ -2843,7 +2775,6 @@ Model CredenzaShort
 	Path "Models"
 	Model 0 "credenzashort.md3"
 	Skin 0 "credenza.png"
-	Scale 0.68 0.68 0.68
 
 	FrameIndex HLI1 A 0 0
 }
@@ -2853,7 +2784,6 @@ Model Credenza2
 	Path "Models"
 	Model 0 "credenza2.md3"
 	Skin 0 "credenza2.png"
-	Scale 0.57 0.57 0.57
 
 	FrameIndex HLI1 A 0 0
 }
@@ -2863,7 +2793,6 @@ Model Ashtray
 	Path "Models"
 	Model 0 "Ashtray.md3"
 	Skin 0 "Ashtray.jpg"
-	Scale 0.7 0.7 0.7
 
 	FrameIndex HLI1 A 0 0
 }
@@ -2873,7 +2802,6 @@ Model AshtrayCig
 	Path "Models"
 	Model 0 "Ashtray_Cig.md3"
 	Skin 0 "Ashtray.jpg"
-	Scale 0.7 0.7 0.7
 
 	FrameIndex HLI1 A 0 0
 }
@@ -2883,7 +2811,6 @@ Model ConfTable
 	Path "Models"
 	Model 0 "Conf_Table.md3"
 	Skin 0 "Conf_Table.jpg"
-	Scale 0.46 0.46 0.46
 
 	FrameIndex HLI1 A 0 0
 }
@@ -2893,7 +2820,6 @@ Model Phone1
 	Path "Models"
 	Model 0 "Phone1.md3"
 	Skin 0 "Phones.jpg"
-	Scale 0.25 0.25 0.25
 
 	FrameIndex HLI1 A 0 0
 }
@@ -2903,7 +2829,6 @@ Model Phone2
 	Path "Models"
 	Model 0 "Phone2.md3"
 	Skin 0 "Phones.jpg"
-	Scale 0.2 0.2 0.2
 
 	FrameIndex HLI1 A 0 0
 }
@@ -2913,58 +2838,8 @@ Model Phone3
 	Path "Models"
 	Model 0 "Phone3.md3"
 	Skin 0 "Phones.jpg"
-	Scale 0.7 0.7 0.7
 
 	FrameIndex HLI1 A 0 0
-}
-
-Model Pipe7
-{
-	Path "Models"
-	Model 0 "pipe5.md2"
-	Skin 0 "pipe5.png"
-
-	Frame HLI1 A 0 "frame01"
-}
-
-Model Pipe8
-{
-	Path "Models"
-	Model 0 "pipe5.md2"
-	Skin 0 "pipe5.png"
-	Scale 1.5 1.5 1.5
-
-	Frame HLI1 A 0 "frame01"
-}
-
-Model XMetalBox1
-{
-	Path "Models"
-	Model 0 "xcrate01.md2"
-	Skin 0 "xmetalbox.png"
-	Scale 4.48 4.68 4.0
-
-	Frame HLI1 A 0 "frame01"
-}
-
-Model girder3
-{
-	Path "Models"
-	Model 0 "girder1.md2"
-	Skin 0 "girder1.png"
-	Scale 4.0 4.0 4.0
-
-	Frame HLI1 A 0 "frame01"
-}
-
-Model girder4
-{
-	Path "Models"
-	Model 0 "girder2.md2"
-	Skin 0 "girder2.png"
-	Scale 4.0 4.0 4.0
-
-	Frame HLI1 A 0 "frame01"
 }
 
 //********
@@ -3076,7 +2951,6 @@ Model Rock02f
 	Path "Models"
 	Model 0 "rock_big_b.md3"
 	Skin 0 "xenrock3.png"
-	Scale 1.25 1.25 1.25
 	ZOffset 766
 
 	FrameIndex HLI1 A 0 0
@@ -3087,7 +2961,6 @@ Model Rock02g
 	Path "Models"
 	Model 0 "rock_big_b.md3"
 	Skin 0 "xenrock1.png"
-	Scale 1.5 1.5 1.5
 	ZOffset 160
 
 	FrameIndex HLI1 A 0 0
@@ -3158,7 +3031,6 @@ Model Rock03f
 	Path "Models"
 	Model 0 "rock_big_c.md3"
 	Skin 0 "xenrock3.png"
-	Scale 1.25 1.25 1.25
 	ZOffset 770
 
 	FrameIndex HLI1 A 0 0
@@ -3169,7 +3041,6 @@ Model Rock03g
 	Path "Models"
 	Model 0 "rock_big_c.md3"
 	Skin 0 "xenrock3.png"
-	Scale 1.5 1.5 1.5
 	ZOffset 128
 
 	FrameIndex HLI1 A 0 0
@@ -3220,7 +3091,6 @@ Model Rock05
 	Path "Models"
 	Model 0 "rock_small_a.md3"
 	Skin 0 "rock_big2.jpg"
-	Scale 0.125 0.125 0.125
 	ZOffset 48
 
 	FrameIndex HLI1 A 0 0
@@ -3231,7 +3101,6 @@ Model Rock05a
 	Path "Models"
 	Model 0 "rock_small_a.md3"
 	Skin 0 "rock_moss1.jpg"
-	Scale 0.125 0.125 0.125
 	ZOffset 48
 
 	FrameIndex HLI1 A 0 0
@@ -3242,7 +3111,6 @@ Model Rock06
 	Path "Models"
 	Model 0 "rock_small_b.md3"
 	Skin 0 "rock_big2.jpg"
-	Scale 0.125 0.125 0.125
 	ZOffset 48
 
 	FrameIndex HLI1 A 0 0
@@ -3253,7 +3121,6 @@ Model Rock06a
 	Path "Models"
 	Model 0 "rock_small_b.md3"
 	Skin 0 "rock_moss1.jpg"
-	Scale 0.125 0.125 0.125
 	ZOffset 48
 
 	FrameIndex HLI1 A 0 0
@@ -3265,7 +3132,6 @@ Model XenIsland1
 	Model 0 "island.md3"
 	Skin 0 "island.png"
 	ZOffset -84
-	Scale 500.0 500.0 500.0
 
 	FrameIndex HLI1 A 0 0
 }
@@ -3276,7 +3142,6 @@ Model XenIsland2
 	Model 0 "island.md3"
 	Skin 0 "xenrock2.png"
 	ZOffset -84
-	Scale 500.0 500.0 500.0
 
 	FrameIndex HLI1 A 0 0
 }
@@ -3287,7 +3152,6 @@ Model XenIsland3
 	Model 0 "island.md3"
 	Skin 0 "rock_big.jpg"
 	ZOffset -342
-	Scale 1800.0 1800.0 1800.0
 
 	FrameIndex HLI1 A 0 0
 }
@@ -3298,7 +3162,6 @@ Model XenIsland4
 	Model 0 "island.md3"
 	Skin 0 "rock_moss1.jpg"
 	ZOffset -342
-	Scale 1800.0 1800.0 1800.0
 
 	FrameIndex HLI1 A 0 0
 }
@@ -3309,7 +3172,6 @@ Model XenIsland5
 	Model 0 "island.md3"
 	Skin 0 "rock_big2.jpg"
 	ZOffset -342
-	Scale 1800.0 1800.0 1800.0
 
 	FrameIndex HLI1 A 0 0
 }
@@ -3320,7 +3182,6 @@ Model XenIsland6
 	Model 0 "island.md3"
 	Skin 0 "rock_moss2.jpg"
 	ZOffset -342
-	Scale 1800.0 1800.0 1800.0
 
 	FrameIndex HLI1 A 0 0
 }
@@ -3380,7 +3241,6 @@ Model TechPillar1aa	//Small version
 	Path "Models"
 	Model 0 "q4tech01.md3"
 	Skin 0 "q4tech1a.jpg"
-	Scale 0.75 0.75 0.75
 
 	FrameIndex HLI1 A 0 0
 }
@@ -3390,7 +3250,6 @@ Model TechPillar1bb	//Small version
 	Path "Models"
 	Model 0 "q4tech01.md3"
 	Skin 0 "q4tech1b.jpg"
-	Scale 0.75 0.75 0.75
 
 	FrameIndex HLI1 A 0 0
 }
@@ -3400,17 +3259,6 @@ Model TechPillar1cc	//Small version
 	Path "Models"
 	Model 0 "q4tech01.md3"
 	Skin 0 "q4tech1c.jpg"
-	Scale 0.75 0.75 0.75
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model TechPillar2a	//Small version
-{
-	Path "Models"
-	Model 0 "q4tech02.md3"
-	Skin 0 "q4tech02.jpg"
-	Scale 0.5 0.5 0.5
 
 	FrameIndex HLI1 A 0 0
 }
@@ -3420,7 +3268,7 @@ Model TechClampa	//Small version
 	Path "Models"
 	Model 0 "q4tech03.md3"
 	Skin 0 "q4tech03.jpg"
-	Scale 0.5 0.5 0.5
+
 	ZOffset -67
 	FrameIndex HLI1 A 0 0
 }
@@ -3435,7 +3283,6 @@ Model HoverPad
 	Model 0 "hover.md3"
 	ZOffset -24
 	Skin 0 "hover.jpg"
-	Scale 1.8 1.8 1.8
 
 	FrameIndex HLI1 A 0 0
 }
@@ -3449,7 +3296,6 @@ Model PConsole
 	Path "Models"
 	Model 0 "console.md3"
 	Skin 0 "console.png"
-	Scale 2.2 2.2 2.2
 
 	FrameIndex HLI1 A 0 0
 }
@@ -3459,7 +3305,6 @@ Model PConsole1
 	Path "Models"
 	Model 0 "console.md3"
 	Skin 0 "console1.png"
-	Scale 2.2 2.2 2.2
 
 	FrameIndex HLI1 A 0 0
 }
@@ -3469,7 +3314,6 @@ Model PConsole2
 	Path "Models"
 	Model 0 "console.md3"
 	Skin 0 "console2.png"
-	Scale 2.2 2.2 2.2
 
 	FrameIndex HLI1 A 0 0
 }
@@ -3479,7 +3323,6 @@ Model PConsole3
 	Path "Models"
 	Model 0 "console.md3"
 	Skin 0 "console3.png"
-	Scale 2.2 2.2 2.2
 
 	FrameIndex HLI1 A 0 0
 }
@@ -3489,7 +3332,6 @@ Model PConsole4
 	Path "Models"
 	Model 0 "console.md3"
 	Skin 0 "console4.png"
-	Scale 2.2 2.2 2.2
 
 	FrameIndex HLI1 A 0 0
 }
@@ -3499,7 +3341,6 @@ Model PConsole5
 	Path "Models"
 	Model 0 "consolebroke.md3"
 	Skin 0 "consolebroke.png"
-	Scale 2.2 2.2 2.2
 
 	FrameIndex HLI1 A 0 0
 }
@@ -3514,16 +3355,6 @@ Model XbowBolt
 }
 
 Model M16Grenade
-{
-	Path "Models"
-	Model 0 "grenade.md3"
-	Skin 0 "w_argrenade.png"
-	USEACTORPITCH
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model HLGruntGunGrenade
 {
 	Path "Models"
 	Model 0 "grenade.md3"
@@ -3621,7 +3452,6 @@ Model Missile
 	Model 0 "missile.md3"
 	Skin 0 "missile.png"
 	ZOffset 6
-	Scale 6.0 6.0 6.0
 	PITCHFROMMOMENTUM
 
 	FrameIndex MISL A 0 0

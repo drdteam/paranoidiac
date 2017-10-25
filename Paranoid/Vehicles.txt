@@ -46,6 +46,10 @@ class Osprey : OspreyBellmer
 		A_PlaySound("play/osprey",looping:1);
 		super.postbeginplay();
 	}
+	Default
+	{
+		Scale 10;
+	}
 	States
 	{
 	Spawn:
@@ -321,6 +325,7 @@ class Tram : ModelBase
 {
 	Default
 	{
+		Scale .8;
 		Radius 40;
 		Height 32;
 		+DONTTHRUST
@@ -330,12 +335,17 @@ class TramBattery : Tram
 {
 	Default
 	{
+		Scale .6;
 		-SOLID
 		+NOCLIP
 	}
 }
 class TramBellmer : TramBattery
 {
+	Default
+	{
+		Scale 1;
+	}
 	States
 	{
 	Spawn:

@@ -2000,9 +2000,7 @@ class XbowBolt : FastProjectile
 }
 
 class Missile : Rocket
-{
-//	Speed 40
-}
+	{Default{Scale 6;}}
 
 //=============
 // Gluon Gun
