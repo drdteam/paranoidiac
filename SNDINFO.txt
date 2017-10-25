@@ -441,6 +441,7 @@ $random halflife/weapons/randomexplo
 	halflife/weapons/hl2explo3
 }
 
+$limit halflife/weapons/randomexplo 4
 $rolloff halflife/weapons/randomexplo 200 3000
 
 //----------

@@ -26,9 +26,8 @@ class HLMonster : Actor
 	void A_XenGibsBig()
 	{
 		int i;
-		A_PlaySound("halflife/weapons/explode2");
 		for(i=0;i<10;i++)
-			A_SpawnItemEx("NewExplosionMedium",random(30,-30),random(30,-30),random(10,90),random(1,2),random(1,2),random(1,3));
+			A_SpawnItemEx("ParanoidExplosion",random(30,-30),random(30,-30),random(10,90),random(1,2),random(1,2),random(1,3));
 		for(i=0;i<9;i++)
 			A_SpawnItemEx("XenGibs",random(5,-5),random(5,-5),random(10,40),random(1,7),random(1,7),random(5,13),random(0,359));
 		scale=(2,2);

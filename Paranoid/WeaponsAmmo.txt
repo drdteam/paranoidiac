@@ -1373,7 +1373,6 @@ class M16Grenade : Actor
 		Height 20;
 		-NoGravity
 		Gravity .25;
-		DeathSound "halflife/weapons/randomexplo";
 		Decal "Scorch";
 	}
 	States
@@ -1390,7 +1389,7 @@ class M16Grenade : Actor
 		TNT1 A 1
 		{
 			A_Explode(170,140);
-			A_SpawnItemEx("NewExplosionMedium");
+			A_SpawnItemEx("ParanoidExplosion");
 		}
 		Stop;
 	}
@@ -1592,7 +1591,6 @@ class HLRocket : Actor
 		+EXTREMEDEATH
 		+ROCKETTRAIL
 		+FORCERADIUSDMG
-		DeathSound "halflife/weapons/randomexplo";
 		Decal "HugeScorch";
 	}
 	States
@@ -1609,7 +1607,8 @@ class HLRocket : Actor
 		TNT1 A 20
 		{
 			A_Explode(512,256);
-			A_SpawnItemEx("NewExplosionMediumBig");
+			A_SetScale(2);
+			A_SpawnItemEx("ParanoidExplosion",flags:SXF_TRANSFERSCALE);
 			Radius_Quake(8,20,0,35,0);
 		}
 		Stop;

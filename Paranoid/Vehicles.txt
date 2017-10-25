@@ -67,7 +67,7 @@ class Osprey : OspreyBellmer
 			for(int i=0;i<2;i++)
 			{
 				A_HLOspreyExplode();
-				A_HLOspreyExplode("NewExplosionBig");
+				A_HLOspreyExplode(3);
 			}
 			A_PlaySound("halflife/weapons/randomexplo",CHAN_AUTO,1.0,false,ATTN_NONE);
 			A_HLOspreyBigSmoke();
@@ -79,7 +79,7 @@ class Osprey : OspreyBellmer
 			for(int i=0;i<2;i++)
 			{
 				A_HLOspreyExplode();
-				A_HLOspreyExplode("NewExplosionBig");
+				A_HLOspreyExplode(3);
 			}
 			A_HLOspreyBigSmoke();
 		}
@@ -143,10 +143,20 @@ class Osprey : OspreyBellmer
 		for(int i=0;i<8;i++)
 			A_SpawnItemEx("Spark_O1",frandom(-96,96),frandom(-96,96),frandom(32,96),frandom(-4,4),frandom(-4,4),frandom(-4,4));
 	}
-	void A_HLOspreyExplode(name boom="NewExplosionMedium")
-		{A_SpawnItemEx(boom,frandom(-96,96),frandom(-96,96),frandom(0,96));}
+	void A_HLOspreyExplode(double scalar=1.0)
+	{
+		bool num;
+		actor boom;
+		[num,boom]=A_SpawnItemEx("ParanoidExplosion",frandom(-96,96),frandom(-96,96),frandom(0,96));
+		boom.A_SetScale(scalar);
+	}
 	void A_HLOspreyBigSmoke()
-		{A_SpawnItemEx("NewExploBigSmoke",frandom(-96,96),frandom(-96,96),frandom(0,96),0,0,frandom(5,8));}
+	{
+		bool num;
+		actor smoke;
+		[num,smoke]=A_SpawnItemEx("NewExploMediumSmoke",frandom(-96,96),frandom(-96,96),frandom(0,96),0,0,frandom(5,8));
+		smoke.A_SetScale(.83);
+	}
 }
 
 //SUV
@@ -183,24 +193,28 @@ class SUV : ModelBase
 		HLI1 A -1 A_PlaySound("SUV/Hit",CHAN_AUTO);
 		Stop;
 	Death:
-		HLI1 B 1
+		HLI1 B 8
 		{
 			A_KillChildren();
 			A_Explode(128,192);
 			A_PlaySound("SUV/Explode");
-		}
-		HLI1 B 1 A_SpawnItemEx("NewExplosionMedium",56,32,40);
-		HLI1 B 1 A_SpawnItemEx("NewExplosionMedium",-64,-40,56);
-		HLI1 B 1 A_SpawnItemEx("NewExplosionMedium",frandom(-16,16),-40,32);
-		HLI1 B 1 A_SpawnItemEx("NewExplosionMedium",frandom(-16,16),40,32);
-		HLI1 B 8
-		{
+			A_SpawnItemEx("ParanoidExplosion",56,32,40);
+			A_SpawnItemEx("ParanoidExplosion",-64,-40,56);
+			A_SpawnItemEx("ParanoidExplosion",frandom(-16,16),-40,32);
+			A_SpawnItemEx("ParanoidExplosion",frandom(-16,16),40,32);
 			for(int i=0;i<16;i++)
 				A_SpawnItemEx("Spark_O1",frandom(-96,96),frandom(-96,96),frandom(32,96),frandom(-4,4),frandom(-4,4),frandom(-4,4));
 		}
-		HLI1 BBBB 6 A_SpawnItemEx("NewExploBigSmoke",frandom(-64,64),frandom(-48,48),frandom(32,64),0,0,frandom(1,4));
+		HLI1 BBBB 6 A_HLSUVBigSmoke;
 		HLI1 B -1;
 		Stop;
+	}
+	void A_HLSUVBigSmoke()
+	{
+		bool num;
+		actor smoke;
+		[num,smoke]=A_SpawnItemEx("NewExploMediumSmoke",frandom(-64,64),frandom(-48,48),frandom(32,64),0,0,frandom(1,4));
+		smoke.A_SetScale(.83);
 	}
 }
 

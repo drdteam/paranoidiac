@@ -1371,6 +1371,14 @@ flickerlight YellowBigFlicker3
 	chance 0.4
 }
 
+flickerlight2 YellowBigFlickerEx
+{
+	color 1.0 0.8 0.0
+	size 90
+	secondarySize 150
+	interval .001
+}
+
 //***************************************
 flickerlight YellowMediumFlicker1
 {
@@ -1394,6 +1402,14 @@ flickerlight YellowMediumFlicker3
 	chance 0.4
 }
 
+flickerlight2 YellowMediumFlickerEx
+{
+	color 1.0 0.8 0.0
+	size 50
+	secondarySize 75
+	interval .001
+}
+
 //***************************************
 flickerlight YellowSmallFlicker1
 {
@@ -1415,6 +1431,14 @@ flickerlight YellowSmallFlicker3
 	size 10
 	secondarySize 15
 	chance 0.4
+}
+
+flickerlight2 YellowSmallFlickerEx
+{
+	color 1.0 0.8 0.0
+	size 10
+	secondarySize 25
+	interval .001
 }
 
 //***************************************

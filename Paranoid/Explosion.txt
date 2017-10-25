@@ -1,5 +1,32 @@
-class NewExplosionMedium : Actor
+class ParanoidExplosion : Actor
 {
+	void A_HLExplosionFX()
+	{
+		double factor=scale.x*1.5;
+		int i;
+		bool num;
+		actor boom;
+		for(i=0;i<32;i++)
+		{
+			[num,boom]=A_SpawnItemEx("ExplosionMediumSprite",0,0,0,frandom(-factor,factor),frandom(-factor,factor),frandom(-factor,factor),random(0,359));
+			boom.A_SetScale(scale.x*0.5);
+		}
+		for(i=0;i<16;i++)
+		{
+			[num,boom]=A_SpawnItemEx("NewExploMediumSmoke",0,0,0,frandom(-factor,factor),frandom(-factor,factor),frandom(-factor,factor),random(0,359));
+			boom.A_SetScale(scale.x*0.4);
+		}
+		for(i=0;i<360;i+=20)
+		{
+			[num,boom]=A_SpawnItemEx("NewExploMediumSmoke",0,0,0,frandom(-factor,factor),0,frandom(-factor,factor),i);
+			boom.A_SetScale(scale.x*0.4);
+		}
+	}
+	override void tick()
+	{
+		A_FadeOut(.03);
+		super.tick();
+	}
 	Default
 	{
 		RenderStyle "Add";
@@ -8,132 +35,101 @@ class NewExplosionMedium : Actor
 	States
 	{
 	Spawn:
-		TNT1 A 0 NODELAY A_CheckFloor("FloorSpawn");
-		TNT1 A 0
+		TNT1 A 0 NODELAY
 		{
-			int i;
-			for(i=0;i<32;i++)
-				A_SpawnItemEx("ExplosionMediumSprite",0,0,0,frandom(-1.1,1.1),frandom(-1.1,1.1),frandom(-1.1,1.1),random(0,359));
-			for(i=0;i<16;i++)
-				A_SpawnItemEx("NewExploMediumSmoke",0,0,0,frandom(-1.25,1.25),frandom(-1.25,1.25),frandom(-1.25,1.25),random(0,359));
-			for(i=0;i<360;i+=20)
-				A_SpawnItemEx("NewExploMediumSmoke",0,0,0,frandom(-1.2,1.2),0,frandom(-1.2,1.2),i);
+			A_PlaySound("halflife/weapons/randomexplo");
+			A_SetScale(scale.x*.8);
+			A_HLExplosionFX();
+			if(scale.x==1.6)
+				return ResolveState("SpawnB");
+			else if(scale.x==2.4)
+				return ResolveState("SpawnC");
+			return state(null);
 		}
-		TNT1 A 0 A_Jump(255,"A1","A2","A3","A4");
+		TNT1 A 0 A_CheckFloor("FloorSpawn");
+		TNT1 A 0 A_Jump(256,"A1","A2","A3","A4");
 	A1:
-		X004 A 2 Bright LIGHT("YellowSmallFlicker2")
-		{
-			A_SetScale(.8);
-			A_FadeOut(.03);
-		}
-		X004 BC 2 Bright LIGHT("YellowSmallFlicker1") A_FadeOut(.03);
-		X004 DE 2 Bright LIGHT("YellowMediumFlicker3") A_FadeOut(.03);
-		X004 FG 2 Bright LIGHT("YellowMediumFlicker2") A_FadeOut(.03);
-		X004 HI 2 Bright LIGHT("YellowMediumFlicker1") A_FadeOut(.03);
-		X004 JK 2 Bright LIGHT("YellowMediumFlicker2") A_FadeOut(.03);
-		X004 LM 2 Bright LIGHT("YellowMediumFlicker3") A_FadeOut(.03);
-		X004 NO 2 Bright LIGHT("YellowSmallFlicker1") A_FadeOut(.03);
-		X004 P 2 Bright LIGHT("YellowSmallFlicker2") A_FadeOut(.03);
-		X004 Q 2 Bright LIGHT("YellowSmallFlicker3") A_FadeOut(.03);
+		X004 ABCDEFGHIJKLMNOPQ 2 Bright LIGHT("YellowSmallFlickerEx");
 		Stop;
 	A2:
-		X005 A 0 A_SetScale(.68);
-		X005 ABCD 1 Bright LIGHT("YellowSmallFlicker2") A_FadeOut(.015);
-		X005 EFG 1 Bright LIGHT("YellowSmallFlicker1") A_FadeOut(.015);
-		X005 HI 1 Bright LIGHT("YellowMediumFlicker3") A_FadeOut(.015);
-		X005 J 2 Bright LIGHT("YellowMediumFlicker3") A_FadeOut(.03);
-		X005 KLM 2 Bright LIGHT("YellowMediumFlicker2") A_FadeOut(.03);
-		X005 NO 2 Bright LIGHT("YellowMediumFlicker1") A_FadeOut(.03);
-		X005 PQR 2 Bright LIGHT("YellowMediumFlicker2") A_FadeOut(.03);
-		X005 ST 2 Bright LIGHT("YellowMediumFlicker3") A_FadeOut(.03);
-		X005 U 2 Bright LIGHT("YellowSmallFlicker1") A_FadeOut(.03);
-		X005 VW 2 Bright LIGHT("YellowSmallFlicker2") A_FadeOut(.03);
-		X005 X 2 Bright LIGHT("YellowSmallFlicker3") A_FadeOut(.03);
+		X005 ABCDEFGHIJKLMNOPQRSTUVWX 2 Bright LIGHT("YellowSmallFlickerEx");
 		Stop;
 	A3:
-		X006 A 2 Bright LIGHT("YellowSmallFlicker2")
-		{
-			A_SetScale(.8);
-			A_FadeOut(.03);
-		}
-		X006 BC 2 Bright LIGHT("YellowSmallFlicker1") A_FadeOut(.03);
-		X006 DE 2 Bright LIGHT("YellowMediumFlicker3") A_FadeOut(.03);
-		X006 FG 2 Bright LIGHT("YellowMediumFlicker2") A_FadeOut(.03);
-		X006 HI 2 Bright LIGHT("YellowMediumFlicker1") A_FadeOut(.03);
-		X006 JK 2 Bright LIGHT("YellowMediumFlicker2") A_FadeOut(.03);
-		X006 LM 2 Bright LIGHT("YellowMediumFlicker3") A_FadeOut(.03);
-		X006 NO 2 Bright LIGHT("YellowSmallFlicker1") A_FadeOut(.03);
-		X006 P 2 Bright LIGHT("YellowSmallFlicker2") A_FadeOut(.03);
+		X006 ABCDEFGHIJKLMNOP 2 Bright LIGHT("YellowSmallFlickerEx");
 		Stop;
 	A4:
-		X015 A 0 A_SetScale(1.5);
-		X015 ABCD 2 Bright LIGHT("YellowSmallFlicker2") A_FadeOut(.042);
-		X015 EFG 2 Bright LIGHT("YellowSmallFlicker1") A_FadeOut(.042);
-		X015 HIJ 2 Bright LIGHT("YellowMediumFlicker3") A_FadeOut(.042);
-		X015 KLM 2 Bright LIGHT("YellowMediumFlicker2") A_FadeOut(.042);
-		X015 NO 2 Bright LIGHT("YellowMediumFlicker1") A_FadeOut(.042);
-		X015 PQR 2 Bright LIGHT("YellowMediumFlicker2") A_FadeOut(.042);
-		X015 ST 2 Bright LIGHT("YellowMediumFlicker3") A_FadeOut(.042);
-		X015 U 2 Bright LIGHT("YellowSmallFlicker1") A_FadeOut(.042);
-		X015 VW 2 Bright LIGHT("YellowSmallFlicker2") A_FadeOut(.042);
-		X015 X 2 Bright LIGHT("YellowSmallFlicker3") A_FadeOut(.042);
+		X015 A 0 A_SetScale(scale.x*2);
+		X015 ABCDEFGHIJKLMNOPQRSTUVWX 2 Bright LIGHT("YellowSmallFlickerEx");
 		Stop;
 	FloorSpawn:
-		TNT1 A 0
-		{
-			int i;
-			for(i=0;i<32;i++)
-				A_SpawnItemEx("ExplosionMediumSprite",0,0,0,frandom(-1.1,1.1),frandom(-1.1,1.1),frandom(.1,1.1),random(0,359));
-			for(i=0;i<16;i++)
-				A_SpawnItemEx("NewExploMediumSmoke",0,0,0,frandom(-1.25,1.25),frandom(-1.25,1.25),frandom(.1,1.25),random(0,359));
-			for(i=0;i<360;i+=20)
-				A_SpawnItemEx("NewExploMediumSmoke",0,0,0,frandom(-1.2,1.2),0,frandom(.1,1.2),i);
-		}
-		TNT1 A 0 A_Jump(255,"F1","F2","F3");
+		TNT1 A 0 A_Jump(256,"F1","F2","F3");
 	F1:
-		EXP3 A 2 Bright LIGHT("YellowSmallFlicker1")
-		{
-			A_SetScale(.81);
-			A_FadeOut(.04);
-		}
-		EXP3 B 2 Bright LIGHT("YellowMediumFlicker3") A_FadeOut(.04);
-		EXP3 CDEFGHIJ 2 Bright LIGHT("YellowMediumFlicker2") A_FadeOut(.04);
-		EXP3 KLMNOP 2 Bright LIGHT("YellowMediumFlicker3") A_FadeOut(.04);
-		EXP3 QRS 2 Bright LIGHT("YellowSmallFlicker1") A_FadeOut(.04);
-		EXP3 TUVW 2 Bright LIGHT("YellowSmallFlicker2") A_FadeOut(.04);
-		EXP3 XYZ 2 Bright LIGHT("YellowSmallFlicker3") A_FadeOut(.04);
+		EXP3 ABCDEFGHIJKLMNOPQRSTUVWXYZ 2 Bright LIGHT("YellowSmallFlickerEx");
 		Stop;
 	F2:
-		EXPL B 2 Bright LIGHT("YellowSmallFlicker1")
-		{
-			A_FadeOut(.04);
-			A_SetScale(.6);
-		}
-		EXPL CD 2 Bright LIGHT("YellowMediumFlicker3") A_FadeOut(.04);
-		EXPL EF 2 Bright LIGHT("YellowMediumFlicker2") A_FadeOut(.04);
-		EXPL GHI 2 Bright LIGHT("YellowMediumFlicker1") A_FadeOut(.04);
-		EXPL JKL 2 Bright LIGHT("YellowMediumFlicker2") A_FadeOut(.04);
-		EXPL MNO 2 Bright LIGHT("YellowMediumFlicker3") A_FadeOut(.04);
-		EXPL PQ 2 Bright LIGHT("YellowSmallFlicker1") A_FadeOut(.04);
-		EXPL RS 2 Bright LIGHT("YellowSmallFlicker2") A_FadeOut(.04);
-		EXPL TU 2 Bright LIGHT("YellowSmallFlicker3") A_FadeOut(.04);
+		EXPL ABCDEFGHIJKLMNOPQRSTU 2 Bright LIGHT("YellowSmallFlickerEx");
 		Stop;
 	F3:
-		BNG4 A 2 Bright LIGHT("YellowMediumFlicker3")
-		{
-			A_SetScale(.6);
-			A_FadeOut(.08);
-		}
-		BNG4 BC 2 Bright LIGHT("YellowMediumFlicker2") A_FadeOut(.08);
-		BNG4 DEFG 2 Bright LIGHT("YellowMediumFlicker1") A_FadeOut(.08);
-		BNG4 HIJ 2 Bright LIGHT("YellowMediumFlicker2") A_FadeOut(.08);
-		BNG4 K 2 Bright LIGHT("YellowMediumFlicker3") A_FadeOut(.08);
-		BNG4 L 2 Bright LIGHT("YellowSmallFlicker1") A_FadeOut(.08);
-		BNG4 MN 2 Bright LIGHT("YellowSmallFlicker2") A_FadeOut(.08);
+		BNG4 ABCDEFGHIJKLMN 2 Bright LIGHT("YellowSmallFlickerEx");
+		Stop;
+	SpawnB:
+		TNT1 A 0 A_CheckFloor("FloorSpawnB");
+		TNT1 A 0 A_Jump(256,"A1B","A2B","A3B","A4B");
+	A1B:
+		X004 ABCDEFGHIJKLMNOPQ 2 Bright LIGHT("YellowMediumFlickerEx");
+		Stop;
+	A2B:
+		X005 ABCDEFGHIJKLMNOPQRSTUVWX 2 Bright LIGHT("YellowMediumFlickerEx");
+		Stop;
+	A3B:
+		X006 ABCDEFGHIJKLMNOP 2 Bright LIGHT("YellowMediumFlickerEx");
+		Stop;
+	A4B:
+		X015 A 0 A_SetScale(scale.x*2);
+		X015 ABCDEFGHIJKLMNOPQRSTUVWX 2 Bright LIGHT("YellowMediumFlickerEx");
+		Stop;
+	FloorSpawnB:
+		TNT1 A 0 A_Jump(256,"F1B","F2B","F3B");
+	F1B:
+		EXP3 ABCDEFGHIJKLMNOPQRSTUVWXYZ 2 Bright LIGHT("YellowMediumFlickerEx");
+		Stop;
+	F2B:
+		EXPL ABCDEFGHIJKLMNOPQRSTU 2 Bright LIGHT("YellowMediumFlickerEx");
+		Stop;
+	F3B:
+		BNG4 ABCDEFGHIJKLMN 2 Bright LIGHT("YellowMediumFlickerEx");
+		Stop;
+	SpawnC:
+		TNT1 A 0 A_CheckFloor("FloorSpawnC");
+		TNT1 A 0 A_Jump(256,"A1C","A2C","A3C","A4C");
+	A1C:
+		X004 ABCDEFGHIJKLMNOPQ 2 Bright LIGHT("YellowBigFlickerEx");
+		Stop;
+	A2C:
+		X005 ABCDEFGHIJKLMNOPQRSTUVWX 2 Bright LIGHT("YellowBigFlickerEx");
+		Stop;
+	A3C:
+		X006 ABCDEFGHIJKLMNOP 2 Bright LIGHT("YellowBigFlickerEx");
+		Stop;
+	A4C:
+		X015 A 0 A_SetScale(scale.x*2);
+		X015 ABCDEFGHIJKLMNOPQRSTUVWX 2 Bright LIGHT("YellowBigFlickerEx");
+		Stop;
+	FloorSpawnC:
+		TNT1 A 0 A_Jump(256,"F1C","F2C","F3C");
+	F1C:
+		EXP3 ABCDEFGHIJKLMNOPQRSTUVWXYZ 2 Bright LIGHT("YellowBigFlickerEx");
+		Stop;
+	F2C:
+		EXPL ABCDEFGHIJKLMNOPQRSTU 2 Bright LIGHT("YellowBigFlickerEx");
+		Stop;
+	F3C:
+		BNG4 ABCDEFGHIJKLMN 2 Bright LIGHT("YellowBigFlickerEx");
 		Stop;
 	}
 }
 
+//***************************************************
 class NewExploMediumSmoke : Actor
 {
 	Default
@@ -150,308 +146,6 @@ class NewExploMediumSmoke : Actor
 	{
 	Spawn:
 		X037 A 0 NODELAY {frame=random(0,3);}
-		X037 # 3 A_FadeOut(.03);
-		Wait;
-	}
-}
-
-//***************************************************
-
-class ExplosionMediumSprite : NewExploMediumSmoke
-{
-	Default
-	{
-		Radius 3;
-		Height 5;
-		RenderStyle "Add";
-		Alpha .7;
-		Scale .49;
-	}
-	States
-	{
-	Spawn:
-		X003 ABCDE 2 Bright NODELAY A_FadeOut(.03);
-		TNT1 A 0 A_ScaleVelocity(.8);
-		X003 FGHIJ 2 Bright A_FadeOut(.03);
-		TNT1 A 0 A_ScaleVelocity(.8);
-		X003 KLMNO 2 Bright A_FadeOut(.03);
-		TNT1 A 0 A_ScaleVelocity(.7);
-		X003 PQRST 2 Bright A_FadeOut(.03);
-		TNT1 A 0 A_ScaleVelocity(.6);
-		X003 UVWXYZ 2 Bright A_FadeOut(.03);
-		Stop;
-	}
-}
-
-//**************************************************************************
-//**************************************************************************
-
-class NewExplosionMediumBig : NewExplosionMedium
-{
-	States
-	{
-	Spawn:
-		TNT1 A 0 NODELAY A_CheckFloor("FloorSpawn");
-		TNT1 A 0
-		{
-			int i;
-			for(i=0;i<44;i++)
-				A_SpawnItemEx("ExplosionMediumBigSprite",0,0,0,frandom(-2.5,2.5),frandom(-2.5,2.5),frandom(-2.5,2.5));
-			for(i=0;i<22;i++)
-				A_SpawnItemEx("NewExploMediumBigSmoke",0,0,0,frandom(-2.5,2.5),frandom(-2.5,2.5),frandom(-2.5,2.5));
-			for(i=0;i<360;i+=20)
-				A_SpawnItemEx("NewExploMediumBigSmoke",0,0,0,frandom(-2.5,2.5),0,frandom(-2.5,2.5),i);
-		}
-		TNT1 A 0 A_Jump(255,"A1","A2","A3","A4");
-	A1:
-		X004 A 2 Bright LIGHT("YellowSmallFlicker1")
-		{
-			A_SetScale(1.4);
-			A_FadeOut(.03);
-		}
-		X004 BC 2 Bright LIGHT("YellowMediumFlicker3") A_FadeOut(.03);
-		X004 DE 2 Bright LIGHT("YellowMediumFlicker2") A_FadeOut(.03);
-		X004 FG 2 Bright LIGHT("YellowMediumFlicker1") A_FadeOut(.03);
-		X004 HI 2 Bright LIGHT("YellowBigFlicker3") A_FadeOut(.03);
-		X004 JK 2 Bright LIGHT("YellowMediumFlicker1") A_FadeOut(.03);
-		X004 LM 2 Bright LIGHT("YellowMediumFlicker2") A_FadeOut(.03);
-		X004 NO 2 Bright LIGHT("YellowMediumFlicker3") A_FadeOut(.03);
-		X004 P 2 Bright LIGHT("YellowSmallFlicker1") A_FadeOut(.03);
-		X004 Q 2 Bright LIGHT("YellowSmallFlicker2") A_FadeOut(.03);
-		Stop;
-	A2:
-		X005 A 0 A_SetScale(1.3);
-		X005 ABCD 1 Bright LIGHT("YellowSmallFlicker1") A_FadeOut(.015);
-		X005 EFG 1 Bright LIGHT("YellowMediumFlicker3") A_FadeOut(.015);
-		X005 HI 1 Bright LIGHT("YellowMediumFlicker2") A_FadeOut(.015);
-		X005 J 2 Bright LIGHT("YellowMediumFlicker2") A_FadeOut(.03);
-		X005 KLM 2 Bright LIGHT("YellowMediumFlicker1") A_FadeOut(.03);
-		X005 NO 2 Bright LIGHT("YellowBigFlicker3") A_FadeOut(.03);
-		X005 PQR 2 Bright LIGHT("YellowMediumFlicker1") A_FadeOut(.03);
-		X005 ST 2 Bright LIGHT("YellowMediumFlicker2") A_FadeOut(.03);
-		X005 U 2 Bright LIGHT("YellowMediumFlicker3") A_FadeOut(.03);
-		X005 VW 2 Bright LIGHT("YellowSmallFlicker1") A_FadeOut(.03);
-		X005 X 2 Bright LIGHT("YellowSmallFlicker2") A_FadeOut(.03);
-		Stop;
-	A3:
-		X006 A 2 Bright LIGHT("YellowSmallFlicker1")
-		{
-			A_SetScale(1.3);
-			A_FadeOut(.03);
-		}
-		X006 BC 2 Bright LIGHT("YellowMediumFlicker3") A_FadeOut(.03);
-		X006 DE 2 Bright LIGHT("YellowMediumFlicker2") A_FadeOut(.03);
-		X006 FG 2 Bright LIGHT("YellowMediumFlicker1") A_FadeOut(.03);
-		X006 HI 2 Bright LIGHT("YellowBigFlicker3") A_FadeOut(.03);
-		X006 JK 2 Bright LIGHT("YellowMediumFlicker1") A_FadeOut(.03);
-		X006 LM 2 Bright LIGHT("YellowMediumFlicker2") A_FadeOut(.03);
-		X006 NO 2 Bright LIGHT("YellowMediumFlicker3") A_FadeOut(.03);
-		X006 P 2 Bright LIGHT("YellowSmallFlicker1") A_FadeOut(.03);
-		Stop;
-	A4:
-		X015 A 0 A_SetScale(2.7);
-		X015 ABCD 2 Bright LIGHT("YellowSmallFlicker1") A_FadeOut(.042);
-		X015 EFG 2 Bright LIGHT("YellowMediumFlicker3") A_FadeOut(.042);
-		X015 HIJ 2 Bright LIGHT("YellowMediumFlicker2") A_FadeOut(.042);
-		X015 KLM 2 Bright LIGHT("YellowMediumFlicker1") A_FadeOut(.042);
-		X015 NO 2 Bright LIGHT("YellowBigFlicker3") A_FadeOut(.042);
-		X015 PQR 2 Bright LIGHT("YellowMediumFlicker1") A_FadeOut(.042);
-		X015 ST 2 Bright LIGHT("YellowMediumFlicker2") A_FadeOut(.042);
-		X015 U 2 Bright LIGHT("YellowMediumFlicker3") A_FadeOut(.042);
-		X015 VW 2 Bright LIGHT("YellowSmallFlicker1") A_FadeOut(.042);
-		X015 X 2 Bright LIGHT("YellowSmallFlicker2") A_FadeOut(.042);
-		Stop;
-	FloorSpawn:
-		TNT1 A 0
-		{
-			int i;
-			for(i=0;i<44;i++)
-				A_SpawnItemEx("ExplosionMediumBigSprite",0,0,0,frandom(-2.5,2.5),frandom(-2.5,2.5),frandom(0.3,3.1));
-			for(i=0;i<22;i++)
-				A_SpawnItemEx("NewExploMediumBigSmoke",0,0,0,frandom(-2.5,2.5),frandom(-2.5,2.5),frandom(0.3,3.1));
-			for(i=0;i<360;i+=20)
-				A_SpawnItemEx("NewExploMediumBigSmoke",0,0,0,frandom(-2.5,2.5),0,frandom(-2.5,2.5),i);
-		}
-		TNT1 A 0 A_Jump(255,"F1","F3");
-	F1:
-		EXP3 A 2 Bright LIGHT("YellowMediumFlicker3")
-		{
-			A_SetScale(1.6);
-			A_FadeOut(.04);
-		}
-		EXP3 B 2 Bright LIGHT("YellowMediumFlicker2") A_FadeOut(.04);
-		EXP3 CDEFG 2 Bright LIGHT("YellowMediumFlicker1") A_FadeOut(.04);
-		EXP3 HI 2 Bright LIGHT("YellowBigFlicker3") A_FadeOut(.04);
-		EXP3 J 2 Bright LIGHT("YellowMediumFlicker1") A_FadeOut(.04);
-		EXP3 KLMNOP 2 Bright LIGHT("YellowMediumFlicker2") A_FadeOut(.04);
-		EXP3 QRS 2 Bright LIGHT("YellowMediumFlicker3") A_FadeOut(.04);
-		EXP3 TUVW 2 Bright LIGHT("YellowSmallFlicker1") A_FadeOut(.04);
-		EXP3 XYZ 2 Bright LIGHT("YellowSmallFlicker2") A_FadeOut(.04);
-		Stop;
-	F3:
-		BNG4 A 2 Bright LIGHT("YellowMediumFlicker2")
-		{
-			A_SetScale(1.6);
-			A_FadeOut(.08);
-		}
-		BNG4 BC 2 Bright LIGHT("YellowMediumFlicker1") A_FadeOut(.08);
-		BNG4 DEFG 2 Bright LIGHT("YellowBigFlicker3") A_FadeOut(.08);
-		BNG4 HIJ 2 Bright LIGHT("YellowMediumFlicker1") A_FadeOut(.08);
-		BNG4 K 2 Bright LIGHT("YellowMediumFlicker2") A_FadeOut(.08);
-		BNG4 L 2 Bright LIGHT("YellowMediumFlicker3") A_FadeOut(.08);
-		BNG4 MN 2 Bright LIGHT("YellowSmallFlicker1") A_FadeOut(.08);
-		Stop;
-	}
-}
-
-class NewExploMediumBigSmoke : NewExploMediumSmoke{Default{Scale .56;}}
-
-//***************************************************
-class ExplosionMediumBigSprite : ExplosionMediumSprite
-{
-	Default
-	{
-		Scale .73;
-	}
-}
-
-//************************************************************************************************
-//************************************************************************************************
-class NewExplosionBig : NewExplosionMedium
-{
-	States
-	{
-	Spawn:
-		TNT1 A 0 NODELAY A_CheckFloor("FloorSpawn");
-		TNT1 A 0
-		{
-			int i;
-			for(i=0;i<26;i++)
-				A_SpawnItemEx("ExplosionBigSprite",0,0,0,random(-4,4),random(-4,4),random(-4,4));
-			for(i=0;i<32;i++)
-				A_SpawnItemEx("NewExploBigSmoke",0,0,0,random(-4,4),random(-4,4),random(-4,4));
-			for(i=0;i<360;i+=20)
-				A_SpawnItemEx("NewExploBigSmoke",0,0,0,random(-4,4),0,random(-4,4),i);
-		}
-		TNT1 A 0 A_Jump(255,"A1","A2","A3","A4");
-	A1:
-		X004 A 2 Bright LIGHT("YellowMediumFlicker2")
-		{
-			A_SetScale(1.8);
-			A_FadeOut(.03);
-		}
-		X004 BC 2 Bright LIGHT("YellowMediumFlicker1") A_FadeOut(.03);
-		X004 DE 2 Bright LIGHT("YellowBigFlicker3") A_FadeOut(.03);
-		X004 FG 2 Bright LIGHT("YellowBigFlicker2") A_FadeOut(.03);
-		X004 HI 2 Bright LIGHT("YellowBigFlicker1") A_FadeOut(.03);
-		X004 JK 2 Bright LIGHT("YellowBigFlicker2") A_FadeOut(.03);
-		X004 LM 2 Bright LIGHT("YellowBigFlicker3") A_FadeOut(.03);
-		X004 NO 2 Bright LIGHT("YellowMediumFlicker1") A_FadeOut(.03);
-		X004 P 2 Bright LIGHT("YellowMediumFlicker2") A_FadeOut(.03);
-		X004 Q 2 Bright LIGHT("YellowMediumFlicker3") A_FadeOut(.03);
-		Stop;
-	A2:
-		X005 A 1 Bright LIGHT("YellowMediumFlicker3")
-		{
-			A_SetScale(1.7);
-			A_FadeOut(.015);
-		}
-		X005 BCDE 1 Bright LIGHT("YellowMediumFlicker2") A_FadeOut(.015);
-		X005 FG 1 Bright LIGHT("YellowMediumFlicker1") A_FadeOut(.015);
-		X005 HIJ 1 Bright LIGHT("YellowBigFlicker3") A_FadeOut(.015);
-		X005 KLM 2 Bright LIGHT("YellowBigFlicker2") A_FadeOut(.03);
-		X005 NO 2 Bright LIGHT("YellowBigFlicker1") A_FadeOut(.03);
-		X005 PQR 2 Bright LIGHT("YellowBigFlicker2") A_FadeOut(.03);
-		X005 ST 2 Bright LIGHT("YellowBigFlicker3") A_FadeOut(.03);
-		X005 UV 2 Bright LIGHT("YellowMediumFlicker1") A_FadeOut(.03);
-		X005 W 2 Bright LIGHT("YellowMediumFlicker2") A_FadeOut(.03);
-		X005 X 2 Bright LIGHT("YellowMediumFlicker3") A_FadeOut(.03);
-		Stop;
-	A3:
-		X006 A 2 Bright LIGHT("YellowMediumFlicker2")
-		{
-			A_SetScale(1.7);
-			A_FadeOut(.03);
-		}
-		X006 BC 2 Bright LIGHT("YellowMediumFlicker1") A_FadeOut(.03);
-		X006 DE 2 Bright LIGHT("YellowBigFlicker3") A_FadeOut(.03);
-		X006 FG 2 Bright LIGHT("YellowBigFlicker2") A_FadeOut(.03);
-		X006 HI 2 Bright LIGHT("YellowBigFlicker1") A_FadeOut(.03);
-		X006 JK 2 Bright LIGHT("YellowBigFlicker2") A_FadeOut(.03);
-		X006 LM 2 Bright LIGHT("YellowBigFlicker3") A_FadeOut(.03);
-		X006 NO 2 Bright LIGHT("YellowMediumFlicker1") A_FadeOut(.03);
-		X006 P 2 Bright LIGHT("YellowMediumFlicker2") A_FadeOut(.03);
-		Stop;
-	A4:
-		X015 A 2 Bright LIGHT("YellowMediumFlicker3")
-		{
-			A_SetScale(3.3);
-			A_FadeOut(.042);
-		}
-		X015 BCD 2 Bright LIGHT("YellowMediumFlicker2") A_FadeOut(.042);
-		X015 EFG 2 Bright LIGHT("YellowMediumFlicker1") A_FadeOut(.042);
-		X015 HIJ 2 Bright LIGHT("YellowBigFlicker3") A_FadeOut(.042);
-		X015 KLM 2 Bright LIGHT("YellowBigFlicker2") A_FadeOut(.042);
-		X015 NO 2 Bright LIGHT("YellowBigFlicker1") A_FadeOut(.042);
-		X015 PQR 2 Bright LIGHT("YellowBigFlicker2") A_FadeOut(.042);
-		X015 ST 2 Bright LIGHT("YellowBigFlicker3") A_FadeOut(.042);
-		X015 U 2 Bright LIGHT("YellowMediumFlicker1") A_FadeOut(.042);
-		X015 VW 2 Bright LIGHT("YellowMediumFlicker2") A_FadeOut(.042);
-		X015 X 2 Bright LIGHT("YellowMediumFlicker3") A_FadeOut(.042);
-		Stop;
-	FloorSpawn:
-		TNT1 A 0
-		{
-			for(int i=0;i<26;i++)
-				A_SpawnItemEx("ExplosionBigSprite",0,0,0,random(-4,4),random(-4,4),random(1,4));
-			for(int i=0;i<32;i++)
-				A_SpawnItemEx("NewExploBigSmoke",0,0,0,random(-4,4),random(-4,4),random(1,4));
-			for(int i=0;i<360;i+=20)
-				A_SpawnItemEx("NewExploBigSmoke",0,0,0,random(-4,4),0,random(1,4),i);
-		}
-		TNT1 A 0 A_Jump(255,"F1","F3");
-	F1:
-		EXP3 A 2 Bright LIGHT("YellowMediumFlicker1")
-		{
-			A_SetScale(2);
-			A_FadeOut(.04);
-		}
-		EXP3 B 2 Bright LIGHT("YellowBigFlicker3") A_FadeOut(.04);
-		EXP3 CDEFG 2 Bright LIGHT("YellowBigFlicker2") A_FadeOut(.04);
-		EXP3 HI 2 Bright LIGHT("YellowBigFlicker1") A_FadeOut(.04);
-		EXP3 JKL 2 Bright LIGHT("YellowBigFlicker2") A_FadeOut(.04);
-		EXP3 MNOP 2 Bright LIGHT("YellowBigFlicker3") A_FadeOut(.04);
-		EXP3 QRS 2 Bright LIGHT("YellowMediumFlicker1") A_FadeOut(.04);
-		EXP3 TUVW 2 Bright LIGHT("YellowMediumFlicker2") A_FadeOut(.04);
-		EXP3 XYZ 2 Bright LIGHT("YellowMediumFlicker3") A_FadeOut(.04);
-		Stop;
-	F3:
-		BNG4 A 2 Bright LIGHT("YellowMediumFlicker1")
-		{
-			A_SetScale(2.1);
-			A_FadeOut(.08);
-		}
-		BNG4 B 2 Bright LIGHT("YellowBigFlicker3") A_FadeOut(.08);
-		BNG4 CD 2 Bright LIGHT("YellowBigFlicker2") A_FadeOut(.08);
-		BNG4 EFG 2 Bright LIGHT("YellowBigFlicker1") A_FadeOut(.08);
-		BNG4 HIJ 2 Bright LIGHT("YellowBigFlicker2") A_FadeOut(.08);
-		BNG4 K 2 Bright LIGHT("YellowBigFlicker3") A_FadeOut(.08);
-		BNG4 L 2 Bright LIGHT("YellowMediumFlicker1") A_FadeOut(.08);
-		BNG4 MN 2 Bright LIGHT("YellowMediumFlicker3") A_FadeOut(.08);
-		Stop;
-	}
-}
-
-class NewExploBigSmoke : NewExploMediumSmoke
-{
-	Default
-	{
-		Scale .83;
-	}
-	States
-	{
-	Spawn:
-		X037 A 0 NODELAY {frame=random(0,3);}
 		X037 # 3
 		{
 			A_FadeOut(.02);
@@ -461,26 +155,29 @@ class NewExploBigSmoke : NewExploMediumSmoke
 	}
 }
 
-//***************************************************
-class ExplosionBigSprite : ExplosionMediumSprite
+class ExplosionMediumSprite : NewExploMediumSmoke
 {
 	Default
 	{
-		Scale .9;
+		Radius 3;
+		Height 5;
+		RenderStyle "Add";
+		Alpha .7;
+		Scale .5;
 	}
 	States
 	{
 	Spawn:
-		TNT1 A 0 NODELAY A_Jump(128,2,4,5);
-		X003 ABCDE 2 Bright A_FadeOut(.02);
+		TNT1 A 0 NODELAY A_Jump(256,1,2,3,4,5);
+		X003 ABCDE 2 Bright A_FadeOut(.03);
 		TNT1 A 0 A_ScaleVelocity(.9);
-		X003 FGHIJ 2 Bright A_FadeOut(.02);
+		X003 FGHIJ 2 Bright A_FadeOut(.03);
 		TNT1 A 0 A_ScaleVelocity(.8);
-		X003 KLMNO 2 Bright A_FadeOut(.02);
+		X003 KLMNO 2 Bright A_FadeOut(.03);
+		TNT1 A 0 A_ScaleVelocity(.7);
+		X003 PQRST 2 Bright A_FadeOut(.03);
 		TNT1 A 0 A_ScaleVelocity(.6);
-		X003 PQRST 2 Bright A_FadeOut(.02);
-		TNT1 A 0 A_ScaleVelocity(.5);
-		X003 UVWXYZ 2 Bright A_FadeOut(.05);
+		X003 UVWXYZ 2 Bright A_FadeOut(.03);
 		Stop;
 	}
 }

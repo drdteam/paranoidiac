@@ -249,7 +249,7 @@ class HLGrunt1 : HLMonster
 		{
 			A_PlaySound("halflife/weapons/grenadelaunch",5);
 			A_GruntGunsmoke();
-			actor gren=A_SpawnProjectile("HLGruntGunGrenade",38);
+			actor gren=A_SpawnProjectile("M16Grenade",38);
 			if(gren!=null)
 			{
 				if(CheckIfCloser(target,500))
@@ -367,29 +367,14 @@ class HLGruntHandGrenade : Actor
 	Explode:
 		TNT1 A 1
 		{
-			A_PlaySound("halflife/weapons/explode1");
 			A_Explode(128,64);
-			A_SpawnItemEx("NewExplosionMedium");
+			A_SpawnItemEx("ParanoidExplosion");
 		}
 		Stop;
 	}
 }
 
 //********************************************
-class HLGruntGunGrenade : M16Grenade
-{
-	States
-	{
-	Death:
-		TNT1 A 1
-		{
-			A_Explode(64);
-			A_SpawnItemEx("NewExplosionMedium");
-		}
-		Stop;
-	}
-}
-
 class HLGrunt1Dead : Actor
 {
 	States
