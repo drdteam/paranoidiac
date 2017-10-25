@@ -1388,7 +1388,7 @@ class M16Grenade : Actor
 	Death:
 		TNT1 A 1
 		{
-			A_Explode(170,140);
+			A_Explode();
 			A_SpawnItemEx("ParanoidExplosion");
 		}
 		Stop;
