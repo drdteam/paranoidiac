@@ -606,7 +606,7 @@ DoomEdNums
 	30326=TramBattery
 	30329=HLScientistQuietSpawner
 	30334=TankGlass
-	30335=HeadCrab
+	30335=DissectedHeadCrab
 	30336=Pipe1a
 	30337=Pipe3a
 	30339=Truck01

@@ -133,7 +133,7 @@ class HLXenTree : HLXenFungus
 	}
 }
 
-class HeadCrab : ModelBase //Dissected HeadCrab Model
+class DissectedHeadCrab : ModelBase //Dissected HeadCrab Model
 {
 	Default
 	{

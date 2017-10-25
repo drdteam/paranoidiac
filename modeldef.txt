@@ -2733,7 +2733,7 @@ Model HLXenTree
 	FrameIndex HLA2 B 0 131
 }
 
-Model HeadCrab
+Model DissectedHeadCrab
 {
 	Path "Models"
 	Model 0 "dissected_headcrab.md3"
