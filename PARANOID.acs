@@ -42,9 +42,7 @@ str hintsnd[40]=
 };
 script "HintMessage"(int msg)
 {
-	if(!PlayerInGame(PlayerNumber()))
-		terminate;
-	if(playingmessage[PlayerNumber()]==2)
+	if(!PlayerInGame(PlayerNumber())||playingmessage[PlayerNumber()]==2)
 		terminate;
 	SetHUDSize(640,480,1);
 	SetFont("smallfont");

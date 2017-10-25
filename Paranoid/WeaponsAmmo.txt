@@ -2732,9 +2732,9 @@ class HGruntHornet : HGunHornet2
 {
 	Default
 	{
+		HGunHornet.Trail "HGHornetTrail";
 		Radius 8;
 		Height 12;
-		Projectile;
 		Speed 17;
 		Damage 4;
 		DamageType "Hornet";

@@ -51,9 +51,8 @@ class SparkFlare_O1 : Actor
 {
 	Default
 	{
-		height 0;
-		radius 0;
-		mass 0;
+		height 1;
+		radius 2;
 		+MISSILE
 		+NOBLOCKMAP
 		+NOCLIP
@@ -77,8 +76,6 @@ class Spark_O1 : SparkFlare_O1
 {
 	Default
 	{
-		height 1;
-		radius 2;
 		speed .25;
 		-NOCLIP
 		-NOGRAVITY
@@ -388,14 +385,14 @@ class Spark_BB1 : Spark_O1
 	}
 }
 
-//Flares in Vacuum Tubes at the end of Map01
+//Flares in Vacuum Tubes at the end of P1M1
 class NJTankSpark : Actor
 {
 	Default
 	{
 		Radius 16;
 		Height 68;
-		scale .4;
+		Scale .4;
 		RenderStyle "Add";
 		Alpha .9;
 		+FORCEXYBILLBOARD

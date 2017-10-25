@@ -353,7 +353,7 @@ class TramBellmer : TramBattery
 		Loop;
 	}
 }
-class TramBarney : TramBattery
+class TramBarney : TramBellmer
 {
 	States
 	{

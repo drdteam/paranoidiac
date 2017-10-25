@@ -3268,8 +3268,8 @@ Model TechClampa	//Small version
 	Path "Models"
 	Model 0 "q4tech03.md3"
 	Skin 0 "q4tech03.jpg"
-
 	ZOffset -67
+
 	FrameIndex HLI1 A 0 0
 }
 

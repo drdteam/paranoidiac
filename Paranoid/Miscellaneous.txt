@@ -1,7 +1,10 @@
-class HLTeleportFog : TeleportFog replaces TeleportFog
+class HLTeleportFog : Actor replaces TeleportFog
 {
 	Default
 	{
+		+NOBLOCKMAP
+		+NOTELEPORT
+		+NOGRAVITY
 		+FORCEXYBILLBOARD
 		RenderStyle "Add";
 		Alpha .6;
@@ -9,6 +12,7 @@ class HLTeleportFog : TeleportFog replaces TeleportFog
 	States
 	{
 	Spawn:
+		HTEL A 0 NODELAY A_PlaySound("misc/teleport",CHAN_BODY);
 		HTEL AB 2 Bright LIGHT("TeleportFogLth1");
 		HTEL CD 2 Bright LIGHT("TeleportFogLth2");
 		HTEL EF 2 Bright LIGHT("TeleportFogLth3");
@@ -124,7 +128,6 @@ class HLGibs : Actor
 {
 	Default
 	{
-		Mass 100;
 		radius 6;
 		height 5;
 		+DROPOFF
@@ -155,11 +158,5 @@ class HLGibs : Actor
 		Wait;
 	}
 }
-
 class XenGibs : HLGibs
-{
-	Default
-	{
-		Translation "176:191=[222,254,114]:[43,55,0]";
-	}
-}
+	{Default{Translation "176:191=[222,254,114]:[43,55,0]";}}
