@@ -253,16 +253,21 @@ class Generator2 : ModelBase
 {
 	Default
 	{
-		Radius 20;
 		Height 48;
 		+PUSHABLE
 	}
 }
 
-class Generator3 : Forklift1
-	{Default{Radius 32;}}
+class Generator3 : ModelBase
+{
+	Default
+	{
+		Radius 64;
+		Height 128;
+	}
+}
 
-class Generator3a : SwitchableDecoration
+class Generator4 : SwitchableDecoration
 {
 	Default
 	{
@@ -303,15 +308,6 @@ class Generator3a : SwitchableDecoration
 		HLI1 L 12;
 		HLI1 A -1;
 		Stop;
-	}
-}
-
-class Generator4 : ModelBase
-{
-	Default
-	{
-		Radius 64;
-		Height 128;
 	}
 }
 

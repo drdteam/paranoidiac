@@ -1246,7 +1246,7 @@ Model Generator3
 	FrameIndex HLI1 A 0 0
 }
 
-Model Generator3a
+Model Generator4
 {
 	Path "Models"
 	Model 0 "generator3.md3"
@@ -1265,15 +1265,6 @@ Model Generator3a
 	FrameIndex HLI1 J 0 9
 	FrameIndex HLI1 K 0 10
 	FrameIndex HLI1 L 0 11
-}
-
-Model Generator4
-{
-	Path "Models"
-	Model 0 "generator3.md3"
-	Skin 0 "generator3.png"
-
-	FrameIndex HLI1 A 0 0
 }
 
 Model Barrier1

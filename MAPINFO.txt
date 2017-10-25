@@ -535,8 +535,7 @@ DoomEdNums
 	30248=tank06
 	30249=Chair3
 	30250=Desk1
-	30251=Generator3
-	30252=Generator4
+	30252=Generator3
 	30253=Toilet2
 	30254=Desk2
 	30255=Desk3
@@ -593,7 +592,6 @@ DoomEdNums
 	30308=Tesla
 	30309=FileCab2
 	30310=FileCab3
-	30311=Generator3a
 	30312=tank04a
 	30313=Tram
 	30314=Tank02a
