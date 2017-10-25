@@ -367,7 +367,7 @@ class HLGruntHandGrenade : Actor
 	Explode:
 		TNT1 A 1
 		{
-			A_Explode(128,64);
+			A_Explode();
 			A_SpawnItemEx("ParanoidExplosion");
 		}
 		Stop;
