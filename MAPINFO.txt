@@ -427,7 +427,6 @@ DoomEdNums
 	7414=HLBarney
 	7415=HLGonarch
 	7416=HLHornetGrunt
-	7418=HLBabyHeadCrab
 	7420=HLBat
 	7421=HLGargantua2
 	7422=HLBarnacle
@@ -463,7 +462,6 @@ DoomEdNums
 	30019=HLXBowPickup
 	30020=HLXBowBox
 	30021=HLXBowAmmo
-	30022=Missile
 	30023=HLGluonGunPickup
 	30024=HLGluonGunAmmo
 	30025=HLHornetGun
@@ -543,7 +541,6 @@ DoomEdNums
 	30257=Desk5
 	30258=Desk6
 	30259=Gascan1
-	30260=Transformer
 	30261=Meter1
 	30262=Meter2
 	30263=Transformer1
@@ -592,7 +589,7 @@ DoomEdNums
 	30308=Tesla
 	30309=FileCab2
 	30310=FileCab3
-	30312=tank04a
+	30311=Generator4
 	30313=Tram
 	30314=Tank02a
 	30315=HintMan
@@ -662,7 +659,6 @@ DoomEdNums
 	30390=TechPillar1aa
 	30391=TechPillar1bb
 	30392=TechPillar1cc
-	30393=TechPillar2a
 	30394=TechClampa
 	30395=Rock02d
 	30396=Rock03d
