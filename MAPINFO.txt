@@ -572,8 +572,6 @@ DoomEdNums
 	30285=HLXenFungus
 	30286=Bed01
 	30287=Bed02
-	30288=Bed03
-	30289=Bed04
 	30290=keyboard1
 	30291=keyboard3
 	30292=flatpanel1

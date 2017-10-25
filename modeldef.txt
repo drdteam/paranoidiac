@@ -984,36 +984,56 @@ Model Bed01
 {
 	Path "Models"
 	Model 0 "br_frame1.md3"
-	Skin 0 "br_frame1.png"
+	Skin 0 "br_frame1.jpg"
 
 	FrameIndex HLI1 A 0 0
 }
 
-Model Bed02
+Model Mattress01
 {
 	Path "Models"
-	Model 0 "br_frame2.md3"
-	Skin 0 "br_frame2.png"
+	Model 0 "br_mattress1.md3"
+	Skin 0 "br_mattress1.jpg"
+	Model 1 "br_mattress1.md3"
+	Skin 1 "br_mattress4.jpg"
+	AngleOffset 90
+	Scale 1.35 1.15 1.0
+	Offset -3 0 10
 
 	FrameIndex HLI1 A 0 0
+	FrameIndex HLI1 A 1 -1
+	FrameIndex HLI1 B 0 -1
+	FrameIndex HLI1 B 1 0
 }
 
 Model Bed03
+Model Bed02
 {
 	Path "Models"
 	Model 0 "br_frame1.md3"
-	Skin 0 "br_frame2.png"
+	Skin 0 "br_frame1.jpg"
+	RollOffset -90
+	ZOffset 20
 
 	FrameIndex HLI1 A 0 0
 }
 
-Model Bed04
+Model Mattress02
 {
 	Path "Models"
-	Model 0 "br_frame2.md3"
-	Skin 0 "br_frame1.png"
+	Model 0 "br_mattress2.md3"
+	Skin 0 "br_mattress1.jpg"
+	Model 1 "br_mattress2.md3"
+	Skin 1 "br_mattress4.jpg"
+	PitchOffset -70
+	AngleOffset 90
+	Scale 1.35 1.15 1.0
+	Offset -3 16 16
 
 	FrameIndex HLI1 A 0 0
+	FrameIndex HLI1 A 1 -1
+	FrameIndex HLI1 B 0 -1
+	FrameIndex HLI1 B 1 0
 }
 
 Model FileCab2

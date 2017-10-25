@@ -480,10 +480,25 @@ class ToiletPaper : HandDryer
 	{Default{Height 4;}}
 
 class Bed01 : ModelBase
-	{Default{Height 24;}}
+{
+	override void postbeginplay()
+	{
+		let matt=Spawn("Mattress01",(pos));
+		matt.frame=(random(0,1));
+	}
+	Default
+	{
+		Height 24;
+	}
+}
 
 class Bed02 : ModelBase
 {
+	override void postbeginplay()
+	{
+		let matt=Spawn("Mattress02",(pos));
+		matt.frame=(random(0,1));
+	}
 	Default
 	{
 		Radius 16;
@@ -491,8 +506,9 @@ class Bed02 : ModelBase
 	}
 }
 
-class Bed03 : Bed01{}
-class Bed04 : Bed02{}
+class Mattress01 : ModelBase
+	{Default{+NOCLIP}}
+class Mattress02 : Mattress01{}
 
 class FileCab2 : ModelBase
 {
