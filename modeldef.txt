@@ -560,9 +560,10 @@ Model keyboard3
 Model flatpanel1
 {
 	Path "Models"
-	Model 0 "br_monitor2.md3"
-	Skin 0 "br_monitor1.png"
 	Scale 0.8 0.8 0.8
+	Model 0 "br_monitor1.md3"
+	SurfaceSkin 0 0 "br_monitor1.jpg"
+	SurfaceSkin 0 1 "br_screen1.jpg"
 
 	FrameIndex HLI1 A 0 0
 }
@@ -570,9 +571,10 @@ Model flatpanel1
 Model flatpanel2
 {
 	Path "Models"
-	Model 0 "br_monitor2.md3"
-	Skin 0 "br_monitor2.png"
 	Scale 0.8 0.8 0.8
+	Model 0 "br_monitor1.md3"
+	SurfaceSkin 0 0 "br_monitor1.jpg"
+	SurfaceSkin 0 1 "br_screen2.png"
 
 	FrameIndex HLI1 A 0 0
 }
@@ -581,8 +583,9 @@ Model flatpanel3
 {
 	Path "Models"
 	Model 0 "br_monitor3.md3"
-	Skin 0 "br_monitor3.png"
 	Scale 0.8 0.8 0.8
+	SurfaceSkin 0 0 "br_pcs1.jpg"
+	SurfaceSkin 0 1 "br_screen1.jpg"
 
 	FrameIndex HLI1 A 0 0
 }
@@ -591,8 +594,9 @@ Model flatpanel4
 {
 	Path "Models"
 	Model 0 "br_monitor3.md3"
-	Skin 0 "br_monitor4.png"
 	Scale 0.8 0.8 0.8
+	SurfaceSkin 0 0 "br_pcs1.jpg"
+	SurfaceSkin 0 1 "br_screen2.png"
 
 	FrameIndex HLI1 A 0 0
 }
@@ -601,8 +605,9 @@ Model flatpanel5
 {
 	Path "Models"
 	Model 0 "br_monitor5.md3"
-	Skin 0 "br_monitor1.png"
 	Scale 1.2 1.2 1.2
+	SurfaceSkin 0 0 "br_monitor5.png"
+	SurfaceSkin 0 1 "br_screen1.jpg"
 
 	FrameIndex HLI1 A 0 0
 }
@@ -611,8 +616,9 @@ Model flatpanel6
 {
 	Path "Models"
 	Model 0 "br_monitor5.md3"
-	Skin 0 "br_monitor2.png"
 	Scale 1.2 1.2 1.2
+	SurfaceSkin 0 0 "br_monitor5.png"
+	SurfaceSkin 0 1 "br_screen2.png"
 
 	FrameIndex HLI1 A 0 0
 }
@@ -625,8 +631,9 @@ Model flatpanel7
 {
 	Path "Models"
 	Model 0 "br_monitor5.md3"
-	Skin 0 "br_monitor5.jpg"
 	Scale 1.2 1.2 1.2
+	SurfaceSkin 0 0 "br_monitor5.png"
+	SurfaceSkin 0 1 "br_screen5.png"
 
 	FrameIndex HLI1 A 0 0
 }
@@ -634,9 +641,10 @@ Model flatpanel7
 Model flatpanel7
 {
 	Path "Models"
-	Model 1 "br_monitor5.md3"
-	Skin 1 "br_monitor6.jpg"
 	Scale 1.2 1.2 1.2
+	Model 0 "br_monitor5.md3"
+	SurfaceSkin 0 0 "br_monitor5.png"
+	SurfaceSkin 0 1 "br_screen6.png"
 
 	FrameIndex HLI1 B 1 0
 }
@@ -644,9 +652,10 @@ Model flatpanel7
 Model flatpanel7
 {
 	Path "Models"
-	Model 2 "br_monitor5.md3"
-	Skin 2 "br_monitor7.jpg"
 	Scale 1.2 1.2 1.2
+	Model 0 "br_monitor5.md3"
+	SurfaceSkin 0 0 "br_monitor5.png"
+	SurfaceSkin 0 1 "br_screen7.png"
 
 	FrameIndex HLI1 C 2 0
 }
@@ -654,9 +663,10 @@ Model flatpanel7
 Model flatpanel7
 {
 	Path "Models"
-	Model 3 "br_monitor5.md3"
-	Skin 3 "br_monitor9.jpg"
 	Scale 1.2 1.2 1.2
+	Model 0 "br_monitor5.md3"
+	SurfaceSkin 0 0 "br_monitor5.png"
+	SurfaceSkin 0 1 "br_screen9.png"
 
 	FrameIndex HLI1 D 3 0
 }
@@ -667,8 +677,9 @@ Model flatpanel8
 {
 	Path "Models"
 	Model 0 "br_monitor5.md3"
-	Skin 0 "br_monitor8.jpg"
 	Scale 1.2 1.2 1.2
+	SurfaceSkin 0 0 "br_monitor5.png"
+	SurfaceSkin 0 1 "br_screen8.png"
 
 	FrameIndex HLI1 A 0 0
 }
@@ -677,8 +688,9 @@ Model flatpanel9
 {
 	Path "Models"
 	Model 0 "br_monitor5.md3"
-	Skin 0 "br_monitor10.jpg"
 	Scale 1.2 1.2 1.2
+	SurfaceSkin 0 0 "br_monitor5.png"
+	SurfaceSkin 0 1 "br_screen10.png"
 
 	FrameIndex HLI1 A 0 0
 }
