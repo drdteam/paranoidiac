@@ -878,14 +878,14 @@ Model HLBarnacle
 Model HLHornetGrunt
 {
 	Path "Models"
-	Model 0 "agruntbody.md3"
-	SurfaceSkin 0 0 "agruntbody_000.png"
-	SurfaceSkin 0 1 "agruntbody_001.png"
-	SurfaceSkin 0 2 "agruntbody_002.png"
-	Model 1 "agruntgun.md3"
-	SurfaceSkin 1 0 "agruntbody_000.png"
-	SurfaceSkin 1 1 "agruntbody_001.png"
-	SurfaceSkin 1 2 "agruntgun_002.png"
+	Model 0 "agrunt_body.md3"
+	SurfaceSkin 0 0 "agrunt_body_000.png"
+	SurfaceSkin 0 1 "agrunt_body_001.png"
+	SurfaceSkin 0 2 "agrunt_body_002.png"
+	Model 1 "agrunt_gun.md3"
+	SurfaceSkin 1 0 "agrunt_body_000.png"
+	SurfaceSkin 1 1 "agrunt_body_001.png"
+	SurfaceSkin 1 2 "agrunt_gun_002.png"
 	SurfaceSkin 1 3 "v_hgun_002.png"
 	INTERPOLATEDOUBLEDFRAMES
 

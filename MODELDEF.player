@@ -1,7 +1,7 @@
 Model RolfBellmer
 {
 	Path "Models"
-	Model 0 "hev_scientistbody.md3"
+	Model 0 "hev_scientist_body.md3"
 	SurfaceSkin 0 0 "w_suit_002.png"
 	SurfaceSkin 0 1 "w_suit_000.png"
 	SurfaceSkin 0 2 "w_suit_001.png"
@@ -13,12 +13,12 @@ Model RolfBellmer
 	SurfaceSkin 0 8 "w_suit_002.png"
 	SurfaceSkin 0 9 "w_suit_002.png"
 	SurfaceSkin 0 10 "w_suit_002.png"
-	Model 1 "hev_scientisthead.md3"
+	Model 1 "hev_scientist_head.md3"
 	SurfaceSkin 1 0 "w_suit_003.png"
-	SurfaceSkin 1 1 "hev_scientisthead_001.png"
-	SurfaceSkin 1 2 "hev_scientisthead_002.png"
-	SurfaceSkin 1 3 "hev_scientisthead_003.png"
-	Model 2 "barneygun1.md3"
+	SurfaceSkin 1 1 "hev_scientist_head_001.png"
+	SurfaceSkin 1 2 "hev_scientist_head_002.png"
+	SurfaceSkin 1 3 "hev_scientist_head_003.png"
+	Model 2 "barney_gun1.md3"
 	SurfaceSkin 2 0 "w_9mmhandgun.png"
 	SurfaceSkin 2 1 "v_9mmhandgun_main_002.png"
 
@@ -391,16 +391,16 @@ Model RolfBellmer
 Model RolfBellmer
 {
 	Path "Models"
-	Model 0 "scientistbody.md3"
-	SurfaceSkin 0 0 "scientistbody_000.png"
-	SurfaceSkin 0 1 "scientistbody_001.png"
-	SurfaceSkin 0 2 "scientistbody_002.png"
-	SurfaceSkin 0 3 "scientistbody_003.png"
-	SurfaceSkin 0 4 "scientistbody_004.png"
-	Model 1 "scientisthead3.md3"
-	SurfaceSkin 1 0 "scientisthead3_000.png"
-	SurfaceSkin 1 1 "scientisthead1_001.png"
-	SurfaceSkin 1 2 "scientisthead3_002.png"
+	Model 0 "scientist_body.md3"
+	SurfaceSkin 0 0 "scientist_body_000.png"
+	SurfaceSkin 0 1 "scientist_body_001.png"
+	SurfaceSkin 0 2 "scientist_body_002.png"
+	SurfaceSkin 0 3 "scientist_body_003.png"
+	SurfaceSkin 0 4 "scientist_body_004.png"
+	Model 1 "scientist_head3.md3"
+	SurfaceSkin 1 0 "scientist_head3_000.png"
+	SurfaceSkin 1 1 "scientist_head1_001.png"
+	SurfaceSkin 1 2 "scientist_head3_002.png"
 
 	FrameIndex HLI2 C 0 45
 	FrameIndex HLI2 C 1 45
@@ -542,18 +542,18 @@ Model RolfBellmer
 Model RolfBellmer
 {
 	Path "Models"
-	Model 0 "otisbody.md3"
+	Model 0 "otis_body.md3"
 	SurfaceSkin 0 0 "barney_body_002.png"
 	SurfaceSkin 0 1 "barney_body_003.png"
 	SurfaceSkin 0 2 "barney_body_001.png"
-	Model 1 "otishead.md3"
-	SurfaceSkin 1 0 "otishead_000.png"
-	SurfaceSkin 1 1 "otishead_001.png"
+	Model 1 "otis_head.md3"
+	SurfaceSkin 1 0 "otis_head_000.png"
+	SurfaceSkin 1 1 "otis_head_001.png"
 	SurfaceSkin 1 2 "barney_head_001.png"
 	SurfaceSkin 1 3 "barney_head_002.png"
-	SurfaceSkin 1 4 "otishead_004.png"
+	SurfaceSkin 1 4 "otis_head_004.png"
 	SurfaceSkin 1 5 "barney_body_002.png"
-	Model 2 "otisgun1.md3"
+	Model 2 "otis_gun1.md3"
 	Skin 2 "v_desert_eagle_main_000.png"
 
 	FrameIndex BSI1 A 0 0
@@ -925,7 +925,7 @@ Model RolfBellmer
 Model RolfBellmer
 {
 	Path "Models"
-	Model 0 "hev_scientistbody.md3"
+	Model 0 "hev_scientist_body.md3"
 	SurfaceSkin 0 0 "w_suit_002.png"
 	SurfaceSkin 0 1 "w_suit_000.png"
 	SurfaceSkin 0 2 "w_suit_001.png"
@@ -942,7 +942,7 @@ Model RolfBellmer
 	SurfaceSkin 1 1 "freeman_head_001.png"
 	SurfaceSkin 1 2 "nochrome.png"
 	SurfaceSkin 1 3 "nochrome.png"
-	Model 2 "barneygun1.md3"
+	Model 2 "barney_gun1.md3"
 	SurfaceSkin 2 0 "w_9mmhandgun.png"
 	SurfaceSkin 2 1 "v_9mmhandgun_main_002.png"
 
@@ -1315,19 +1315,19 @@ Model RolfBellmer
 Model RolfBellmer
 {
 	Path "Models"
-	Model 0 "hgruntbody.md3"
-	SurfaceSkin 0 0 "hgruntbody_000.png"
-	SurfaceSkin 0 1 "hgruntbody_001.png"
-	SurfaceSkin 0 2 "hgruntbody_002.png"
-	SurfaceSkin 0 3 "hgruntbody_003.png"
-	SurfaceSkin 0 4 "hgruntbody_004.png"
-	Model 1 "hgrunthead1.md3"
-	SurfaceSkin 1 0 "hgrunthead1_000.png"
-	SurfaceSkin 1 1 "hgrunthead1_001.png"
-	SurfaceSkin 1 2 "hgrunthead1_002.png"
-	SurfaceSkin 1 3 "hgrunthead1_003.png"
-	Model 2 "hgruntarifle.md3"
-	Skin 2 "hgruntarifle.png"
+	Model 0 "hgrunt_body.md3"
+	SurfaceSkin 0 0 "hgrunt_body_000.png"
+	SurfaceSkin 0 1 "hgrunt_body_001.png"
+	SurfaceSkin 0 2 "hgrunt_body_002.png"
+	SurfaceSkin 0 3 "hgrunt_body_003.png"
+	SurfaceSkin 0 4 "hgrunt_body_004.png"
+	Model 1 "hgrunt_head1.md3"
+	SurfaceSkin 1 0 "hgrunt_head1_000.png"
+	SurfaceSkin 1 1 "hgrunt_head1_001.png"
+	SurfaceSkin 1 2 "hgrunt_head1_002.png"
+	SurfaceSkin 1 3 "hgrunt_head1_003.png"
+	Model 2 "hgrunt_arifle.md3"
+	Skin 2 "hgrunt_arifle.png"
 
 	FrameIndex OFI1 A 0 224
 	FrameIndex OFI1 A 1 224
@@ -1633,8 +1633,8 @@ Model RolfBellmer
 	Model 1 "massn_head.md3"
 	SurfaceSkin 1 0 "massn_head_000.png"
 	SurfaceSkin 1 1 "massn_head_001.png"
-	Model 2 "hgruntarifle.md3"
-	Skin 2 "hgruntarifle.png"
+	Model 2 "hgrunt_arifle.md3"
+	Skin 2 "hgrunt_arifle.png"
 
 	FrameIndex BOI1 A 0 224
 	FrameIndex BOI1 A 1 224
@@ -1949,8 +1949,8 @@ Model RolfBellmer
 	SurfaceSkin 2 2 "nochrome.png"
 	SurfaceSkin 2 3 "robot_body_000.png"
 	SurfaceSkin 2 4 "robot_body_001.png"
-	Model 3 "hgruntarifle.md3"
-	Skin 3 "hgruntarifle.png"
+	Model 3 "hgrunt_arifle.md3"
+	Skin 3 "hgrunt_arifle.png"
 
 	FrameIndex ROI1 A 0 224
 	FrameIndex ROI1 A 1 224

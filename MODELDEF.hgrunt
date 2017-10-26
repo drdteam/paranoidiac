@@ -1,19 +1,19 @@
 Model HLGrunt1
 {
 	Path "Models"
-	Model 0 "hgruntbody.md3"
-	SurfaceSkin 0 0 "hgruntbody_000.png"
-	SurfaceSkin 0 1 "hgruntbody_001.png"
-	SurfaceSkin 0 2 "hgruntbody_002.png"
-	SurfaceSkin 0 3 "hgruntbody_003.png"
-	SurfaceSkin 0 4 "hgruntbody_004.png"
-	Model 1 "hgrunthead1.md3"
-	SurfaceSkin 1 0 "hgrunthead1_000.png"
-	SurfaceSkin 1 1 "hgrunthead1_001.png"
-	SurfaceSkin 1 2 "hgrunthead1_002.png"
-	SurfaceSkin 1 3 "hgrunthead1_003.png"
-	Model 2 "hgruntarifle.md3"
-	Skin 2 "hgruntarifle.png"
+	Model 0 "hgrunt_body.md3"
+	SurfaceSkin 0 0 "hgrunt_body_000.png"
+	SurfaceSkin 0 1 "hgrunt_body_001.png"
+	SurfaceSkin 0 2 "hgrunt_body_002.png"
+	SurfaceSkin 0 3 "hgrunt_body_003.png"
+	SurfaceSkin 0 4 "hgrunt_body_004.png"
+	Model 1 "hgrunt_head1.md3"
+	SurfaceSkin 1 0 "hgrunt_head1_000.png"
+	SurfaceSkin 1 1 "hgrunt_head1_001.png"
+	SurfaceSkin 1 2 "hgrunt_head1_002.png"
+	SurfaceSkin 1 3 "hgrunt_head1_003.png"
+	Model 2 "hgrunt_arifle.md3"
+	Skin 2 "hgrunt_arifle.png"
 
 	FrameIndex HLI1 A 0 224
 	FrameIndex HLI1 A 1 224
@@ -879,17 +879,17 @@ Model HLGrunt1
 Model HLGrunt2
 {
 	Path "Models"
-	Model 0 "hgruntbody.md3"
-	SurfaceSkin 0 0 "hgruntbody_000.png"
-	SurfaceSkin 0 1 "hgruntbody_001.png"
-	SurfaceSkin 0 2 "hgruntbody_002.png"
-	SurfaceSkin 0 3 "hgruntbody_003.png"
-	SurfaceSkin 0 4 "hgruntbody_004.png"
-	Model 1 "hgrunthead2.md3"
-	SurfaceSkin 1 0 "hgrunthead2_000.png"
-	SurfaceSkin 1 1 "hgrunthead2_001.png"
-	Model 2 "hgruntarifle.md3"
-	Skin 2 "hgruntarifle.png"
+	Model 0 "hgrunt_body.md3"
+	SurfaceSkin 0 0 "hgrunt_body_000.png"
+	SurfaceSkin 0 1 "hgrunt_body_001.png"
+	SurfaceSkin 0 2 "hgrunt_body_002.png"
+	SurfaceSkin 0 3 "hgrunt_body_003.png"
+	SurfaceSkin 0 4 "hgrunt_body_004.png"
+	Model 1 "hgrunt_head2.md3"
+	SurfaceSkin 1 0 "hgrunt_head2_000.png"
+	SurfaceSkin 1 1 "hgrunt_head2_001.png"
+	Model 2 "hgrunt_arifle.md3"
+	Skin 2 "hgrunt_arifle.png"
 
 	FrameIndex HLI1 A 0 224
 	FrameIndex HLI1 A 1 224
@@ -1755,17 +1755,17 @@ Model HLGrunt2
 Model HLGrunt3
 {
 	Path "Models"
-	Model 0 "hgruntbody.md3"
-	SurfaceSkin 0 0 "hgruntbody_000.png"
-	SurfaceSkin 0 1 "hgruntbody_001.png"
-	SurfaceSkin 0 2 "hgruntbody_002.png"
-	SurfaceSkin 0 3 "hgruntbody_003.png"
-	SurfaceSkin 0 4 "hgruntbody_004.png"
-	Model 1 "hgrunthead3.md3"
-	SurfaceSkin 1 0 "hgrunthead3_000.png"
-	SurfaceSkin 1 1 "hgrunthead3_001.png"
-	Model 2 "hgruntarifle.md3"
-	Skin 2 "hgruntarifle.png"
+	Model 0 "hgrunt_body.md3"
+	SurfaceSkin 0 0 "hgrunt_body_000.png"
+	SurfaceSkin 0 1 "hgrunt_body_001.png"
+	SurfaceSkin 0 2 "hgrunt_body_002.png"
+	SurfaceSkin 0 3 "hgrunt_body_003.png"
+	SurfaceSkin 0 4 "hgrunt_body_004.png"
+	Model 1 "hgrunt_head3.md3"
+	SurfaceSkin 1 0 "hgrunt_head3_000.png"
+	SurfaceSkin 1 1 "hgrunt_head3_001.png"
+	Model 2 "hgrunt_arifle.md3"
+	Skin 2 "hgrunt_arifle.png"
 
 	FrameIndex HLI1 A 0 224
 	FrameIndex HLI1 A 1 224
@@ -2631,19 +2631,19 @@ Model HLGrunt3
 Model HLGrunt4
 {
 	Path "Models"
-	Model 0 "hgruntbody.md3"
-	SurfaceSkin 0 0 "hgruntbody_000.png"
-	SurfaceSkin 0 1 "hgruntbody_001.png"
-	SurfaceSkin 0 2 "hgruntbody_002.png"
-	SurfaceSkin 0 3 "hgruntbody_003.png"
-	SurfaceSkin 0 4 "hgruntbody_004.png"
-	Model 1 "hgrunthead1.md3"
-	SurfaceSkin 1 0 "hgrunthead1_000.png"
-	SurfaceSkin 1 1 "hgrunthead1_001.png"
-	SurfaceSkin 1 2 "hgrunthead1_002.png"
-	SurfaceSkin 1 3 "hgrunthead1_003.png"
-	Model 2 "hgruntshotgun.md3"
-	Skin 2 "hgruntshotgun.png"
+	Model 0 "hgrunt_body.md3"
+	SurfaceSkin 0 0 "hgrunt_body_000.png"
+	SurfaceSkin 0 1 "hgrunt_body_001.png"
+	SurfaceSkin 0 2 "hgrunt_body_002.png"
+	SurfaceSkin 0 3 "hgrunt_body_003.png"
+	SurfaceSkin 0 4 "hgrunt_body_004.png"
+	Model 1 "hgrunt_head1.md3"
+	SurfaceSkin 1 0 "hgrunt_head1_000.png"
+	SurfaceSkin 1 1 "hgrunt_head1_001.png"
+	SurfaceSkin 1 2 "hgrunt_head1_002.png"
+	SurfaceSkin 1 3 "hgrunt_head1_003.png"
+	Model 2 "hgrunt_shotgun.md3"
+	Skin 2 "hgrunt_shotgun.png"
 
 	FrameIndex HLI1 A 0 224
 	FrameIndex HLI1 A 1 224
@@ -3509,17 +3509,17 @@ Model HLGrunt4
 Model HLGrunt5
 {
 	Path "Models"
-	Model 0 "hgruntbody.md3"
-	SurfaceSkin 0 0 "hgruntbody_000.png"
-	SurfaceSkin 0 1 "hgruntbody_001.png"
-	SurfaceSkin 0 2 "hgruntbody_002.png"
-	SurfaceSkin 0 3 "hgruntbody_003.png"
-	SurfaceSkin 0 4 "hgruntbody_004.png"
-	Model 1 "hgrunthead2.md3"
-	SurfaceSkin 1 0 "hgrunthead2_000.png"
-	SurfaceSkin 1 1 "hgrunthead2_001.png"
-	Model 2 "hgruntshotgun.md3"
-	Skin 2 "hgruntshotgun.png"
+	Model 0 "hgrunt_body.md3"
+	SurfaceSkin 0 0 "hgrunt_body_000.png"
+	SurfaceSkin 0 1 "hgrunt_body_001.png"
+	SurfaceSkin 0 2 "hgrunt_body_002.png"
+	SurfaceSkin 0 3 "hgrunt_body_003.png"
+	SurfaceSkin 0 4 "hgrunt_body_004.png"
+	Model 1 "hgrunt_head2.md3"
+	SurfaceSkin 1 0 "hgrunt_head2_000.png"
+	SurfaceSkin 1 1 "hgrunt_head2_001.png"
+	Model 2 "hgrunt_shotgun.md3"
+	Skin 2 "hgrunt_shotgun.png"
 
 	FrameIndex HLI1 A 0 224
 	FrameIndex HLI1 A 1 224
@@ -4385,17 +4385,17 @@ Model HLGrunt5
 Model HLGrunt6
 {
 	Path "Models"
-	Model 0 "hgruntbody.md3"
-	SurfaceSkin 0 0 "hgruntbody_000.png"
-	SurfaceSkin 0 1 "hgruntbody_001.png"
-	SurfaceSkin 0 2 "hgruntbody_002.png"
-	SurfaceSkin 0 3 "hgruntbody_003.png"
-	SurfaceSkin 0 4 "hgruntbody_004.png"
-	Model 1 "hgrunthead3.md3"
-	SurfaceSkin 1 0 "hgrunthead3_000.png"
-	SurfaceSkin 1 1 "hgrunthead3_001.png"
-	Model 2 "hgruntshotgun.md3"
-	Skin 2 "hgruntshotgun.png"
+	Model 0 "hgrunt_body.md3"
+	SurfaceSkin 0 0 "hgrunt_body_000.png"
+	SurfaceSkin 0 1 "hgrunt_body_001.png"
+	SurfaceSkin 0 2 "hgrunt_body_002.png"
+	SurfaceSkin 0 3 "hgrunt_body_003.png"
+	SurfaceSkin 0 4 "hgrunt_body_004.png"
+	Model 1 "hgrunt_head3.md3"
+	SurfaceSkin 1 0 "hgrunt_head3_000.png"
+	SurfaceSkin 1 1 "hgrunt_head3_001.png"
+	Model 2 "hgrunt_shotgun.md3"
+	Skin 2 "hgrunt_shotgun.png"
 
 	FrameIndex HLI1 A 0 224
 	FrameIndex HLI1 A 1 224
@@ -5261,17 +5261,17 @@ Model HLGrunt6
 Model HLGrunt1Dead
 {
 	Path "Models"
-	Model 0 "hgruntbody.md3"
-	SurfaceSkin 0 0 "hgruntbody_000.png"
-	SurfaceSkin 0 1 "hgruntbody_001.png"
-	SurfaceSkin 0 2 "hgruntbody_002.png"
-	SurfaceSkin 0 3 "hgruntbody_003.png"
-	SurfaceSkin 0 4 "hgruntbody_004.png"
-	Model 1 "hgrunthead1.md3"
-	SurfaceSkin 1 0 "hgrunthead1_000.png"
-	SurfaceSkin 1 1 "hgrunthead1_001.png"
-	SurfaceSkin 1 2 "hgrunthead1_002.png"
-	SurfaceSkin 1 3 "hgrunthead1_003.png"
+	Model 0 "hgrunt_body.md3"
+	SurfaceSkin 0 0 "hgrunt_body_000.png"
+	SurfaceSkin 0 1 "hgrunt_body_001.png"
+	SurfaceSkin 0 2 "hgrunt_body_002.png"
+	SurfaceSkin 0 3 "hgrunt_body_003.png"
+	SurfaceSkin 0 4 "hgrunt_body_004.png"
+	Model 1 "hgrunt_head1.md3"
+	SurfaceSkin 1 0 "hgrunt_head1_000.png"
+	SurfaceSkin 1 1 "hgrunt_head1_001.png"
+	SurfaceSkin 1 2 "hgrunt_head1_002.png"
+	SurfaceSkin 1 3 "hgrunt_head1_003.png"
 
 	FrameIndex HLD2 G 0 469
 	FrameIndex HLD2 G 1 469
@@ -5281,15 +5281,15 @@ Model HLGrunt1Dead
 Model HLGrunt2Dead
 {
 	Path "Models"
-	Model 0 "hgruntbody.md3"
-	SurfaceSkin 0 0 "hgruntbody_000.png"
-	SurfaceSkin 0 1 "hgruntbody_001.png"
-	SurfaceSkin 0 2 "hgruntbody_002.png"
-	SurfaceSkin 0 3 "hgruntbody_003.png"
-	SurfaceSkin 0 4 "hgruntbody_004.png"
-	Model 1 "hgrunthead2.md3"
-	SurfaceSkin 1 0 "hgrunthead2_000.png"
-	SurfaceSkin 1 1 "hgrunthead2_001.png"
+	Model 0 "hgrunt_body.md3"
+	SurfaceSkin 0 0 "hgrunt_body_000.png"
+	SurfaceSkin 0 1 "hgrunt_body_001.png"
+	SurfaceSkin 0 2 "hgrunt_body_002.png"
+	SurfaceSkin 0 3 "hgrunt_body_003.png"
+	SurfaceSkin 0 4 "hgrunt_body_004.png"
+	Model 1 "hgrunt_head2.md3"
+	SurfaceSkin 1 0 "hgrunt_head2_000.png"
+	SurfaceSkin 1 1 "hgrunt_head2_001.png"
 
 	FrameIndex HLD2 G 0 469
 	FrameIndex HLD2 G 1 469
@@ -5299,15 +5299,15 @@ Model HLGrunt2Dead
 Model HLGrunt3Dead
 {
 	Path "Models"
-	Model 0 "hgruntbody.md3"
-	SurfaceSkin 0 0 "hgruntbody_000.png"
-	SurfaceSkin 0 1 "hgruntbody_001.png"
-	SurfaceSkin 0 2 "hgruntbody_002.png"
-	SurfaceSkin 0 3 "hgruntbody_003.png"
-	SurfaceSkin 0 4 "hgruntbody_004.png"
-	Model 1 "hgrunthead3.md3"
-	SurfaceSkin 1 0 "hgrunthead3_000.png"
-	SurfaceSkin 1 1 "hgrunthead3_001.png"
+	Model 0 "hgrunt_body.md3"
+	SurfaceSkin 0 0 "hgrunt_body_000.png"
+	SurfaceSkin 0 1 "hgrunt_body_001.png"
+	SurfaceSkin 0 2 "hgrunt_body_002.png"
+	SurfaceSkin 0 3 "hgrunt_body_003.png"
+	SurfaceSkin 0 4 "hgrunt_body_004.png"
+	Model 1 "hgrunt_head3.md3"
+	SurfaceSkin 1 0 "hgrunt_head3_000.png"
+	SurfaceSkin 1 1 "hgrunt_head3_001.png"
 
 	FrameIndex HLD2 G 0 469
 	FrameIndex HLD2 G 1 469
