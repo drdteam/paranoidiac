@@ -247,7 +247,7 @@ Model MedKit1
 	SurfaceSkin 0 0 "w_medkit1_000.png"
 	SurfaceSkin 0 1 "w_medkit1_001.png"
 	SurfaceSkin 0 2 "w_medkit1_002.png"
-	SurfaceSkin 0 3 "w_medkit1_003.png"
+	SurfaceSkin 0 3 "w_medkit_003.png"
 	SurfaceSkin 0 4 "w_medkit1_004.png"
 
 	FrameIndex HLI1 A 0 0
@@ -545,7 +545,7 @@ Model keyboard3
 {
 	Path "Models"
 	Model 0 "br_keyboard3.md3"
-	Skin 0 "br_mousekeybd3.jpg"
+	Skin 0 "br_pcs2.jpg"
 
 	FrameIndex HLI1 A 0 0
 }
@@ -1075,7 +1075,7 @@ Model Barrel1
 {
 	Path "Models"
 	Model 0 "br_barrel1.md3"
-	Skin 0 "br_barrell.png"
+	Skin 0 "br_barrell.jpg"
 
 	FrameIndex HLI1 A 0 0
 }
@@ -1084,7 +1084,7 @@ Model Barrel2
 {
 	Path "Models"
 	Model 0 "br_barrel2.md3"
-	Skin 0 "br_barrell.png"
+	Skin 0 "br_barrell.jpg"
 
 	FrameIndex HLI1 A 0 0
 }
@@ -1220,8 +1220,8 @@ Model Generator4
 Model Barrier1
 {
 	Path "Models"
-	Model 0 "barrier1.md3"
-	Skin 0 "barrier1.png"
+	Model 0 "br_barrier1.md3"
+	Skin 0 "br_concrete1.jpg"
 
 	FrameIndex HLI1 A 0 0
 }
@@ -1229,8 +1229,8 @@ Model Barrier1
 Model Barrier2
 {
 	Path "Models"
-	Model 0 "barrier1.md3"
-	Skin 0 "barrier2.png"
+	Model 0 "br_barrier1.md3"
+	Skin 0 "br_concrete2.jpg"
 
 	FrameIndex HLI1 A 0 0
 }
@@ -1238,8 +1238,8 @@ Model Barrier2
 Model Barrier3
 {
 	Path "Models"
-	Model 0 "barrier1.md3"
-	Skin 0 "barrier3.png"
+	Model 0 "br_barrier1.md3"
+	Skin 0 "br_concrete4.jpg"
 
 	FrameIndex HLI1 A 0 0
 }
