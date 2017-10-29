@@ -1948,7 +1948,7 @@ Model Osprey
 	SurfaceSkin 0 11 "dead_osprey_011.png"
 	SurfaceSkin 0 12 "dead_osprey_012.png"
 	SurfaceSkin 0 13 "dead_osprey_013.png"
-	ZOffset 96
+	ZOffset 10
 	USEACTORPITCH
 
 	FrameIndex HLD1 A 0 0
@@ -2028,7 +2028,7 @@ Model Tram
 	SurfaceSkin 0 3 "tram_supports.jpg"
 	SurfaceSkin 0 4 "tram_panel01.jpg"
 	SurfaceSkin 0 5 "tram_panel02.jpg"
-	ZOffset 26
+	ZOffset 32
 
 	FrameIndex HLI1 A 0 0
 }
@@ -2042,7 +2042,7 @@ Model TramBattery
 	SurfaceSkin 0 2 "w_battery_002.png"
 	SurfaceSkin 0 3 "w_battery_003.png"
 	SurfaceSkin 0 4 "w_battery_004.png"
-	Offset -6 -1 44
+	Offset -10 -2 72
 
 	FrameIndex HLI1 A 0 0
 }
@@ -2951,7 +2951,7 @@ Model Rock02f
 	Path "Models"
 	Model 0 "rock_big_b.md3"
 	Skin 0 "xenrock3.png"
-	ZOffset 766
+	ZOffset 610
 
 	FrameIndex HLI1 A 0 0
 }
@@ -2961,7 +2961,7 @@ Model Rock02g
 	Path "Models"
 	Model 0 "rock_big_b.md3"
 	Skin 0 "xenrock1.png"
-	ZOffset 160
+	ZOffset 110
 
 	FrameIndex HLI1 A 0 0
 }
@@ -3031,7 +3031,7 @@ Model Rock03f
 	Path "Models"
 	Model 0 "rock_big_c.md3"
 	Skin 0 "xenrock3.png"
-	ZOffset 770
+	ZOffset 620
 
 	FrameIndex HLI1 A 0 0
 }
@@ -3041,7 +3041,7 @@ Model Rock03g
 	Path "Models"
 	Model 0 "rock_big_c.md3"
 	Skin 0 "xenrock3.png"
-	ZOffset 128
+	ZOffset 85
 
 	FrameIndex HLI1 A 0 0
 }
@@ -3091,7 +3091,7 @@ Model Rock05
 	Path "Models"
 	Model 0 "rock_small_a.md3"
 	Skin 0 "rock_big2.jpg"
-	ZOffset 48
+	ZOffset 384
 
 	FrameIndex HLI1 A 0 0
 }
@@ -3101,7 +3101,7 @@ Model Rock05a
 	Path "Models"
 	Model 0 "rock_small_a.md3"
 	Skin 0 "rock_moss1.jpg"
-	ZOffset 48
+	ZOffset 384
 
 	FrameIndex HLI1 A 0 0
 }
@@ -3111,7 +3111,7 @@ Model Rock06
 	Path "Models"
 	Model 0 "rock_small_b.md3"
 	Skin 0 "rock_big2.jpg"
-	ZOffset 48
+	ZOffset 384
 
 	FrameIndex HLI1 A 0 0
 }
@@ -3121,7 +3121,7 @@ Model Rock06a
 	Path "Models"
 	Model 0 "rock_small_b.md3"
 	Skin 0 "rock_moss1.jpg"
-	ZOffset 48
+	ZOffset 384
 
 	FrameIndex HLI1 A 0 0
 }
@@ -3131,7 +3131,7 @@ Model XenIsland1
 	Path "Models"
 	Model 0 "island.md3"
 	Skin 0 "island.png"
-	ZOffset -84
+	ZOffset -0.2
 
 	FrameIndex HLI1 A 0 0
 }
@@ -3141,7 +3141,7 @@ Model XenIsland2
 	Path "Models"
 	Model 0 "island.md3"
 	Skin 0 "xenrock2.png"
-	ZOffset -84
+	ZOffset -0.2
 
 	FrameIndex HLI1 A 0 0
 }
@@ -3151,7 +3151,7 @@ Model XenIsland3
 	Path "Models"
 	Model 0 "island.md3"
 	Skin 0 "rock_big.jpg"
-	ZOffset -342
+	ZOffset -0.2
 
 	FrameIndex HLI1 A 0 0
 }
@@ -3161,7 +3161,7 @@ Model XenIsland4
 	Path "Models"
 	Model 0 "island.md3"
 	Skin 0 "rock_moss1.jpg"
-	ZOffset -342
+	ZOffset -0.2
 
 	FrameIndex HLI1 A 0 0
 }
@@ -3171,7 +3171,7 @@ Model XenIsland5
 	Path "Models"
 	Model 0 "island.md3"
 	Skin 0 "rock_big2.jpg"
-	ZOffset -342
+	ZOffset -0.2
 
 	FrameIndex HLI1 A 0 0
 }
@@ -3181,7 +3181,7 @@ Model XenIsland6
 	Path "Models"
 	Model 0 "island.md3"
 	Skin 0 "rock_moss2.jpg"
-	ZOffset -342
+	ZOffset -0.2
 
 	FrameIndex HLI1 A 0 0
 }
@@ -3236,6 +3236,16 @@ Model TechClamp
 	FrameIndex HLI1 A 0 0
 }
 
+Model TechClampa	//Small version
+{
+	Path "Models"
+	Model 0 "q4tech03.md3"
+	Skin 0 "q4tech03.jpg"
+	ZOffset -134
+
+	FrameIndex HLI1 A 0 0
+}
+
 Model TechPillar1aa	//Small version
 {
 	Path "Models"
@@ -3263,16 +3273,6 @@ Model TechPillar1cc	//Small version
 	FrameIndex HLI1 A 0 0
 }
 
-Model TechClampa	//Small version
-{
-	Path "Models"
-	Model 0 "q4tech03.md3"
-	Skin 0 "q4tech03.jpg"
-	ZOffset -67
-
-	FrameIndex HLI1 A 0 0
-}
-
 //********
 //HoverPad
 //********
@@ -3282,7 +3282,7 @@ Model HoverPad
 	Path "Models"
 	Model 0 "hover.md3"
 	Skin 0 "hover.jpg"
-	ZOffset -24
+	ZOffset -13
 
 	FrameIndex HLI1 A 0 0
 }
@@ -3451,7 +3451,7 @@ Model Missile
 	Path "Models"
 	Model 0 "missile.md3"
 	Skin 0 "missile.png"
-	ZOffset 6
+	ZOffset 1
 	PITCHFROMMOMENTUM
 
 	FrameIndex MISL A 0 0
