@@ -14,19 +14,18 @@ script "ParanoidHUDMessage"(int msg,int bold)
 
 //Hint messages that are run when player uses the inventory item "MessageItem**"
 int playingmessage[8];
-int hint[40][3]=
+int hint[40][2]=
 {
 	//character icon number
 	//duration of soundbyte
-	//# of characters
-	{1,8,94},{1,6,54},{1,7,78},{1,9,116},{1,16,178},
-	{1,14,208},{1,10,101},{1,10,146},{1,15,265},{1,10,170},
-	{1,8,87},{0,30,332},{0,3,41},{1,6,79},{1,13,215},
-	{1,8,120},{0,25,321},{0,2,14},{0,3,20},{0,17,181},
-	{1,5,44},{1,8,97},{0,17,178},{1,5,43},{1,7,90},
-	{2,42,604},{2,17,260},{0,21,274},{2,29,468},{3,36,581},
-	{2,28,434},{3,37,561},{2,11,163},{2,26,410},{2,18,270},
-	{2,19,322},{3,28,430},{2,23,345},{2,15,228}
+	{1,8},{1,6},{1,7},{1,9},{1,16},
+	{1,14},{1,10},{1,10},{1,15},{1,10},
+	{1,8},{0,30},{0,3},{1,6},{1,13},
+	{1,8},{0,25},{0,2},{0,3},{0,17},
+	{1,5},{1,8},{0,17},{1,5},{1,7},
+	{2,42},{2,17},{0,21},{2,29},{3,36},
+	{2,28},{3,37},{2,11},{2,26},{2,18},
+	{2,19},{3,28},{2,23},{2,15}
 };
 str hinticons[3]={"HINTMAN","STINSON","UNDERNET"};
 str hintsnd[40]=
@@ -71,7 +70,7 @@ script "HintMessage"(int msg)
 		LocalPlaySound(message,7);
 	}
 	dur=hint[msg-1][1];
-	typetime=FixedDiv(dur-1,hint[msg-1][2]);
+	typetime=FixedDiv(dur-1,ScriptCall("MessageItem01","MessageLength",hintsnd[msg-1]));
 	HUDMessage(l:message;HUDMSG_TYPEON|HUDMSG_LOG,2,CR_GOLD,80.1,30.1,10.0,typetime,0.05);
 	if(hint[msg-1][0])
 	{

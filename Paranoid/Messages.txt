@@ -6,6 +6,11 @@ class MessageItem01 : CustomInventory
 		toucher.ACS_NamedExecuteAlways("HintMessage");
 		return Super.TryPickup(toucher);
 	}
+	static int MessageLength(string hintsnd)
+	{
+		string msg=StringTable.Localize("$"..hintsnd);
+		return msg.Length();
+	}
 	int MessageNum;
 	Property MessageNum:MessageNum;
 	Default
