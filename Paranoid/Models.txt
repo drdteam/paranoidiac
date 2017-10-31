@@ -53,6 +53,7 @@ class flatpanel3 : flatpanel1
 {
 	Default
 	{
+		Scale .5;
 		Radius 8;
 		Height 16;
 	}

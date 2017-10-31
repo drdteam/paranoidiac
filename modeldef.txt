@@ -576,6 +576,7 @@ Model flatpanel3
 	Model 0 "br_monitor3.md3"
 	SurfaceSkin 0 0 "br_pcs1.jpg"
 	SurfaceSkin 0 1 "br_screen1.jpg"
+	AngleOffset 180
 
 	FrameIndex HLI1 A 0 0
 }
@@ -586,6 +587,7 @@ Model flatpanel4
 	Model 0 "br_monitor3.md3"
 	SurfaceSkin 0 0 "br_pcs1.jpg"
 	SurfaceSkin 0 1 "br_screen2.png"
+	AngleOffset 180
 
 	FrameIndex HLI1 A 0 0
 }
