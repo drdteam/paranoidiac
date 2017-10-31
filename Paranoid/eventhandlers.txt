@@ -1,0 +1,124 @@
+enum ParanoidEnum
+{
+	HLSMOOTHCHASE=CHF_NOPLAYACTIVE+CHF_NORANDOMTURN+CHF_STOPIFBLOCKED
+}
+
+class ParanoidEventHandler : EventHandler
+{
+	override void WorldLoaded(WorldEvent e)
+	{
+		Actor mo,cam;
+		name hintman;
+		ActorIterator iter=ActorIterator.Create(219);
+		mo=iter.Next();
+		if(mo==null)
+			return;
+		double camx=mo.pos.x,camy=mo.pos.y,camz=mo.pos.z;
+		if(level.levelname==StringTable.Localize("$PARANOID_P1M1")||
+		level.levelname==StringTable.Localize("$PARANOID_P1M2")||
+		level.levelname==StringTable.Localize("$PARANOID_P1M3")||
+		level.levelname==StringTable.Localize("$PARANOID_P1M4")||
+		level.levelname==StringTable.Localize("$PARANOID_P1M5")||
+		level.levelname==StringTable.Localize("$PARANOID_P1M6")||
+		level.levelname==StringTable.Localize("$PARANOID_P1M7")||
+		level.levelname==StringTable.Localize("$PARANOID_P1M8"))
+		{
+			mo.AddZ(-0.5,0);
+			TexMan.SetCameraToTexture(mo,"HINTMAN",80);
+			hintman='HintManCam';
+		}
+		else if(level.levelname==StringTable.Localize("$PARANOID_P2M1")||
+		level.levelname==StringTable.Localize("$PARANOID_P2M2")||
+		level.levelname==StringTable.Localize("$PARANOID_P2M3")||
+		level.levelname==StringTable.Localize("$PARANOID_P2M4")||
+		level.levelname==StringTable.Localize("$PARANOID_P2M5")||
+		level.levelname==StringTable.Localize("$PARANOID_P2M6")||
+		level.levelname==StringTable.Localize("$PARANOID_P2M7")||
+		level.levelname==StringTable.Localize("$PARANOID_P2M8"))
+		{
+			mo.AddZ(-4.0,0);
+			TexMan.SetCameraToTexture(mo,"STINSON",80);
+			hintman='Stinson';
+		}
+		else
+			return;
+		cam=Actor.Spawn(hintman,(camx-1.0,camy+6.0,camz-56.0));
+		cam.Angle=270.0;
+		if(level.levelname==StringTable.Localize("$PARANOID_P2M3")||
+		level.levelname==StringTable.Localize("$PARANOID_P2M4")||
+		level.levelname==StringTable.Localize("$PARANOID_P2M7"))
+		{
+			iter=ActorIterator.Create(220);
+			mo=iter.Next();
+			if(mo==null)
+				return;
+			camy=mo.pos.y;
+			mo.AddZ(18.0,0);
+			TexMan.SetCameraToTexture(mo,"UNDERNET",80);
+			cam=Actor.Spawn('EarthGlobe',(camx,camy-70.0,camz));
+			cam.Angle=90.0;
+		}
+	}
+}
+class ParanoidStaticEventHandler : StaticEventHandler
+{
+	override void WorldTick()
+	{
+		if(level.mapname=="TITLEMAP")
+			return;
+		for(int i=0;i<MAXPLAYERS;i++)
+		{
+			if(playeringame[i])
+			{
+				let me=players[i].mo;
+				int should=me.CountInv("HLAssaultRifleMag")+me.CountInv("HLGrenadeLauncherAmmo");
+				if(me.CountInv("HLAssaultRifleMagEx")!=should)
+					me.SetInventory("HLAssaultRifleMagEx",should);
+			}
+		}
+	}
+	override void RenderOverlay(RenderEvent e)
+	{
+		PlayerInfo p=players[consoleplayer];
+		if(!p)
+			return;
+		let me=p.mo;
+		if(!me)
+			return;
+		let mytracker=ParanoidSoundTracker(me.FindInventory("ParanoidSoundTracker"));
+		if(mytracker==null)
+			return;
+		string icon=mytracker.icon;
+		int flags=BaseStatusBar.DI_SCREEN_TOP|BaseStatusBar.DI_SCREEN_HCENTER|BaseStatusBar.DI_NOSHADOW;
+		StatusBar.DrawImage(icon,(30,50),flags,1.0,scale:(.48,.4));
+	}
+	override void PlayerEntered(PlayerEvent e)
+	{
+		RolfBellmer me;
+		me=RolfBellmer(players[e.PlayerNumber].mo);
+		if(me==null)
+			return;
+		me.A_GiveInventory("ParanoidSoundTracker");
+		if(level.LevelName=='Otis Shift')
+		{
+			me.A_GiveInventory("HLDesertEagle");
+			me.A_GiveInventory("HLDesertEagleMag",7);
+			me.A_GiveInventory("HLMagnumAmmo",14);
+			me.A_TakeInventory("HLCrowbar");
+			me.A_TakeInventory("BasicArmor");
+			me.otis=1;
+		}
+	}
+    override void WorldThingDied(WorldEvent e)
+	{
+		let mon=e.Thing;
+		if(!mon.bISMONSTER||mon.bFRIENDLY||!mon.target)
+			return;
+		RolfBellmer me;
+		me=RolfBellmer(mon.target);
+		if(me==null||!me.otis)
+			return;
+		if(!random(0,3))
+			mon.target.A_PlaySound("otistaunt",CHAN_VOICE);
+	}
+}

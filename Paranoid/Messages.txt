@@ -1,164 +1,598 @@
-class MessageItem01 : CustomInventory
+class ParanoidSoundTracker : Inventory
+{
+	int playing,countdown;
+	string icon;
+	override void DoEffect()
+	{
+		if(countdown==1)
+			MessageItem.StopMessage(owner);
+		if(countdown)
+			countdown--;
+	}
+	Default
+		{+INVENTORY.UNDROPPABLE}
+}
+class MessageItem : CustomInventory
 {
 	override bool TryPickup(in out Actor toucher)
 	{
 		toucher.A_PlaySound("radiostatic",6);
-		toucher.ACS_NamedExecuteAlways("HintMessage");
+		PrintPickupMessage(1,"$NEWMESSAGE");
 		return Super.TryPickup(toucher);
 	}
-	static int MessageLength(string hintsnd)
+	static int GetMessageDuration(string hintsnd)
 	{
-		string msg=StringTable.Localize("$"..hintsnd);
-		return msg.Length();
+		string msg="MessageItem"..hintsnd;
+		class<Messageitem> msgitem;
+		msgitem=msg;
+		if(msgitem==null)
+			return 0;
+		return GetDefaultByType(msgitem).Duration;
 	}
-	int MessageNum;
+	static int GetMessageNum(string hintsnd)
+	{
+		string msg="MessageItem"..hintsnd;
+		class<Messageitem> msgitem;
+		msgitem=msg;
+		if(msgitem==null)
+			return 0;
+		return GetDefaultByType(msgitem).MessageNum;
+	}
+	static string GetMessageIcon(string hintsnd)
+	{
+		string msg="MessageItem"..hintsnd;
+		class<Messageitem> msgitem;
+		msgitem=msg;
+		if(msgitem==null)
+			return "TNT1A0";
+		return GetDefaultByType(msgitem).Portrait;
+	}
+	static string GetMessageFile(int hintsnd)
+	{
+		static const string hint[]=
+		{
+			"P1M2VOX1","P1M2VOX2","P1M2VOX3","P1M2VOX4","P1M3VOX1",
+			"P1M3VOX2","P1M3VOX3","P1M4VOX1","P1M4VOX2","P1M4VOX3",
+			"P1M5VOX1","P1M5VOX2","P1M5VOX3","P1M6VOX1","P1M6VOX2",
+			"P1M6VOX3","P1M6VOX4","P1M6VOX5","P1M6VOX6","P1M6VOX7",
+			"P1M7VOX1","P1M7VOX2","P1M7VOX3","P1M8VOX1","P1M8VOX2",
+			"P2M1VOX1","P2M2VOX1","P2M2VOX2","P2M3VOX1","P2M3VOX2",
+			"P2M4VOX1","P2M4VOX2","P2M5VOX1","P2M5VOX2","P2M6VOX1",
+			"P2M7VOX1","P2M7VOX2","P2M7VOX3","P2M8VOX1"
+		};
+		return hint[hintsnd];
+	}
+	static void StopMessage(actor thisplayer,int dud=0)
+	{
+		if(thisplayer==null)
+			return;
+		let mytracker=ParanoidSoundTracker(thisplayer.FindInventory("ParanoidSoundTracker"));
+		if(mytracker==null)
+			return;
+		if(!mytracker.playing)
+			return;
+		thisplayer.A_PlaySound("radiostatic",6,local:1);
+		thisplayer.A_StopSound(7);
+		//HUDMessage(s:"";HUDMSG_PLAIN,2,CR_UNTRANSLATED,0.0,0.0,0.0);
+		ACS_ExecuteAlways(-int('ClearHUDMessage'),0,2);
+		mytracker.playing=0;
+		mytracker.icon="TNT1A0";
+	}
+	static void PlayMessage(actor thisplayer,string message,int msgnum=0,string icon="TNT1A0")
+	{
+		if(!msgnum)
+			msgnum=GetMessageNum(message);
+		let mytracker=ParanoidSoundTracker(thisplayer.FindInventory("ParanoidSoundTracker"));
+		if(mytracker==null)
+			return;
+		int playing=mytracker.playing;
+		if(playing==2)
+			return;
+		if(playing==1)
+		{
+			StopMessage(thisplayer);
+			if(icon!="TNT1A0")
+				return;
+		}
+		if(icon=="TNT1A0")
+			playing=2;
+		else
+			playing=1;
+		mytracker.playing=playing;
+		mytracker.icon=icon;
+		if(playing!=2)
+			thisplayer.A_PlaySound("radiostatic",6,local:1);
+		thisplayer.A_PlaySound(message,7,attenuation:ATTN_STATIC);//,local:1);	//local makes it uninterruptible...
+		double dur=GetMessageDuration(message);
+		string msg=StringTable.Localize("$"..message);
+		double typetime=(dur-1.0)/double(msg.Length());
+		mytracker.countdown=3+dur*35;
+		//SetHUDSize(640,480,1);
+		//SetFont("smallfont");
+		//HUDMessage(l:message;HUDMSG_TYPEON|HUDMSG_LOG,2,CR_GOLD,80.1,30.1,10.0,typetime,0.05);
+		ACS_ExecuteAlways(-int('HintMessage'),0,msgnum,typetime*65536);
+	}
+	int MessageNum,Duration;
+	string Portrait,SoundByte;
 	Property MessageNum:MessageNum;
+	Property Duration:Duration;
+	Property Portrait:Portrait;
+	Property SoundByte:SoundByte;
 	Default
 	{
 		Tag "Message";
 		Inventory.UseSound "";
+		MessageItem.Portrait "TNT1A0";
 		+INVENTORY.INVBAR
 		+INVENTORY.UNDROPPABLE
-		Inventory.Icon "MAIL01";
 	}
 	States
 	{
 	Use:
-		TNT1 A 0 ACS_NamedExecuteAlways("HintMessage",0,invoker.MessageNum);
+		TNT1 A 0 PlayMessage(invoker.owner,invoker.SoundByte,invoker.MessageNum,invoker.Portrait);
 		Fail;
 	}
 }
-class MessageItem02 : MessageItem01
-	{Default{Inventory.Icon "MAIL02";}}
-class MessageItem03 : MessageItem01
-	{Default{Inventory.Icon "MAIL03";}}
-class MessageItem04 : MessageItem01
-	{Default{Inventory.Icon "MAIL04";}}
+
+class MessageItemHintman : MessageItem
+	{Default{MessageItem.Portrait "HINTMAN";}}
+class MessageItemStinson : MessageItem
+	{Default{MessageItem.Portrait "STINSON";}}
+class MessageItemUndernet : MessageItem
+	{Default{MessageItem.Portrait "UNDERNET";}}
 
 //P1M2: Message 1
-class MessageItemP1M2VOX1 : MessageItem01
-	{Default{MessageItem01.MessageNum 1;}}
+class MessageItemP1M2VOX1 : MessageItemHintman
+{
+	Default
+	{
+		Inventory.Icon "MAIL01";
+		MessageItem.SoundByte "P1M2VOX1";
+		MessageItem.Duration 8;
+		MessageItem.MessageNum 1;
+	}
+}
 
 //P1M2: Message 2
-class MessageItemP1M2VOX2 : MessageItem02
-	{Default{MessageItem01.MessageNum 2;}}
+class MessageItemP1M2VOX2 : MessageItemHintman
+{
+	Default
+	{
+		Inventory.Icon "MAIL02";
+		MessageItem.SoundByte "P1M2VOX2";
+		MessageItem.Duration 6;
+		MessageItem.MessageNum 2;
+	}
+}
 
 //P1M2: Message 3
-class MessageItemP1M2VOX3 : MessageItem03
-	{Default{MessageItem01.MessageNum 3;}}
+class MessageItemP1M2VOX3 : MessageItemHintman
+{
+	Default
+	{
+		Inventory.Icon "MAIL03";
+		MessageItem.SoundByte "P1M2VOX3";
+		MessageItem.Duration 7;
+		MessageItem.MessageNum 3;
+	}
+}
 
 //P1M2: Message 4
-class MessageItemP1M2VOX4 : MessageItem04
-	{Default{MessageItem01.MessageNum 4;}}
+class MessageItemP1M2VOX4 : MessageItemHintman
+{
+	Default
+	{
+		Inventory.Icon "MAIL04";
+		MessageItem.SoundByte "P1M2VOX4";
+		MessageItem.Duration 9;
+		MessageItem.MessageNum 4;
+	}
+}
 
 //P1M3: Message 1
-class MessageItemP1M3VOX1 : MessageItem01
-	{Default{MessageItem01.MessageNum 5;}}
+class MessageItemP1M3VOX1 : MessageItemHintman
+{
+	Default
+	{
+		Inventory.Icon "MAIL01";
+		MessageItem.SoundByte "P1M3VOX1";
+		MessageItem.Duration 16;
+		MessageItem.MessageNum 5;
+	}
+}
 
 //P1M3: Message 2
-class MessageItemP1M3VOX2 : MessageItem02
-	{Default{MessageItem01.MessageNum 6;}}
+class MessageItemP1M3VOX2 : MessageItemHintman
+{
+	Default
+	{
+		Inventory.Icon "MAIL02";
+		MessageItem.SoundByte "P1M3VOX2";
+		MessageItem.Duration 14;
+		MessageItem.MessageNum 6;
+	}
+}
 
 //P1M3: Message 3
-class MessageItemP1M3VOX3 : MessageItem03
-	{Default{MessageItem01.MessageNum 7;}}
+class MessageItemP1M3VOX3 : MessageItemHintman
+{
+	Default
+	{
+		Inventory.Icon "MAIL03";
+		MessageItem.SoundByte "P1M3VOX3";
+		MessageItem.Duration 10;
+		MessageItem.MessageNum 7;
+	}
+}
 
 //P1M4: Message 1
-class MessageItemP1M4VOX1 : MessageItem01
-	{Default{MessageItem01.MessageNum 8;}}
+class MessageItemP1M4VOX1 : MessageItemHintman
+{
+	Default
+	{
+		Inventory.Icon "MAIL01";
+		MessageItem.SoundByte "P1M4VOX1";
+		MessageItem.Duration 10;
+		MessageItem.MessageNum 8;
+	}
+}
 
 //P1M4: Message 2
-class MessageItemP1M4VOX2 : MessageItem02
-	{Default{MessageItem01.MessageNum 9;}}
+class MessageItemP1M4VOX2 : MessageItemHintman
+{
+	Default
+	{
+		Inventory.Icon "MAIL02";
+		MessageItem.SoundByte "P1M4VOX2";
+		MessageItem.Duration 15;
+		MessageItem.MessageNum 9;
+	}
+}
 
 //P1M4: Message 3
-class MessageItemP1M4VOX3 : MessageItem03
-	{Default{MessageItem01.MessageNum 10;}}
+class MessageItemP1M4VOX3 : MessageItemHintman
+{
+	Default
+	{
+		Inventory.Icon "MAIL03";
+		MessageItem.SoundByte "P1M4VOX3";
+		MessageItem.Duration 10;
+		MessageItem.MessageNum 10;
+	}
+}
 
 //P1M4: Message 4
-class MessageItemP1M4VOX4 : MessageItem04
-	{Default{MessageItem01.MessageNum 2;}}
+class MessageItemP1M4VOX4 : MessageItemP1M2VOX2
+	{Default{Inventory.Icon "MAIL04";}}
 
 //P1M5: Message 1
-class MessageItemP1M5VOX1 : MessageItem01
-	{Default{MessageItem01.MessageNum 11;}}
+class MessageItemP1M5VOX1 : MessageItemHintman
+{
+	Default
+	{
+		Inventory.Icon "MAIL01";
+		MessageItem.SoundByte "P1M5VOX1";
+		MessageItem.Duration 8;
+		MessageItem.MessageNum 11;
+	}
+}
+
+//P1M5: Message 2
+class MessageItemP1M5VOX2 : MessageItem
+{
+	Default
+	{
+		MessageItem.MessageNum 12;
+		MessageItem.Duration 30;
+	}
+}
+
+//P1M5: Message 3
+class MessageItemP1M5VOX3 : MessageItem
+{
+	Default
+	{
+		MessageItem.MessageNum 13;
+		MessageItem.Duration 3;
+	}
+}
 
 //P1M6: Message 1
-class MessageItemP1M6VOX1 : MessageItem01
-	{Default{MessageItem01.MessageNum 14;}}
+class MessageItemP1M6VOX1 : MessageItemHintman
+{
+	Default
+	{
+		Inventory.Icon "MAIL01";
+		MessageItem.SoundByte "P1M6VOX1";
+		MessageItem.Duration 6;
+		MessageItem.MessageNum 14;
+	}
+}
 
 //P1M6: Message 2
-class MessageItemP1M6VOX2 : MessageItem02
-	{Default{MessageItem01.MessageNum 15;}}
+class MessageItemP1M6VOX2 : MessageItemHintman
+{
+	Default
+	{
+		Inventory.Icon "MAIL02";
+		MessageItem.SoundByte "P1M6VOX2";
+		MessageItem.Duration 13;
+		MessageItem.MessageNum 15;
+	}
+}
 
 //P1M6: Message 3
-class MessageItemP1M6VOX3 : MessageItem03
-	{Default{MessageItem01.MessageNum 16;}}
+class MessageItemP1M6VOX3 : MessageItemHintman
+{
+	Default
+	{
+		Inventory.Icon "MAIL03";
+		MessageItem.SoundByte "P1M6VOX3";
+		MessageItem.Duration 8;
+		MessageItem.MessageNum 16;
+	}
+}
+
+//P1M6: Message 4
+class MessageItemP1M6VOX4 : MessageItem
+{
+	Default
+	{
+		MessageItem.MessageNum 17;
+		MessageItem.Duration 25;
+	}
+}
+
+//P1M6: Message 5
+class MessageItemP1M6VOX5 : MessageItem
+{
+	Default
+	{
+		MessageItem.MessageNum 18;
+		MessageItem.Duration 2;
+	}
+}
+
+//P1M6: Message 6
+class MessageItemP1M6VOX6 : MessageItem
+{
+	Default
+	{
+		MessageItem.MessageNum 19;
+		MessageItem.Duration 3;
+	}
+}
+
+//P1M6: Message 7
+class MessageItemP1M6VOX7 : MessageItem
+{
+	Default
+	{
+		MessageItem.MessageNum 20;
+		MessageItem.Duration 17;
+	}
+}
 
 //P1M7: Message 1
-class MessageItemP1M7VOX1 : MessageItem01
-	{Default{MessageItem01.MessageNum 21;}}
+class MessageItemP1M7VOX1 : MessageItemHintman
+{
+	Default
+	{
+		Inventory.Icon "MAIL01";
+		MessageItem.SoundByte "P1M7VOX1";
+		MessageItem.Duration 5;
+		MessageItem.MessageNum 21;
+	}
+}
 
 //P1M7: Message 2
-class MessageItemP1M7VOX2 : MessageItem02
-	{Default{MessageItem01.MessageNum 22;}}
+class MessageItemP1M7VOX2 : MessageItemHintman
+{
+	Default
+	{
+		Inventory.Icon "MAIL02";
+		MessageItem.SoundByte "P1M7VOX2";
+		MessageItem.Duration 8;
+		MessageItem.MessageNum 22;
+	}
+}
+
+//P1M7: Message 3
+class MessageItemP1M7VOX3 : MessageItem
+{
+	Default
+	{
+		MessageItem.MessageNum 23;
+		MessageItem.Duration 17;
+	}
+}
 
 //P1M8: Message 1
-class MessageItemP1M8VOX1 : MessageItem01
-	{Default{MessageItem01.MessageNum 24;}}
+class MessageItemP1M8VOX1 : MessageItemHintman
+{
+	Default
+	{
+		Inventory.Icon "MAIL01";
+		MessageItem.SoundByte "P1M8VOX1";
+		MessageItem.Duration 5;
+		MessageItem.MessageNum 24;
+	}
+}
 
 //P1M8: Message 2
-class MessageItemP1M8VOX2 : MessageItem02
-	{Default{MessageItem01.MessageNum 25;}}
+class MessageItemP1M8VOX2 : MessageItemHintman
+{
+	Default
+	{
+		Inventory.Icon "MAIL02";
+		MessageItem.SoundByte "P1M8VOX2";
+		MessageItem.Duration 7;
+		MessageItem.MessageNum 25;
+	}
+}
 
 //P2M1: Message 1
-class MessageItemP2M1VOX1 : MessageItem01
-	{Default{MessageItem01.MessageNum 26;}}
+class MessageItemP2M1VOX1 : MessageItemStinson
+{
+	Default
+	{
+		Inventory.Icon "MAIL01";
+		MessageItem.SoundByte "P2M1VOX1";
+		MessageItem.Duration 42;
+		MessageItem.MessageNum 26;
+	}
+}
 
 //P2M2: Message 1
-class MessageItemP2M2VOX1 : MessageItem01
-	{Default{MessageItem01.MessageNum 27;}}
+class MessageItemP2M2VOX1 : MessageItemStinson
+{
+	Default
+	{
+		Inventory.Icon "MAIL01";
+		MessageItem.SoundByte "P2M2VOX1";
+		MessageItem.Duration 17;
+		MessageItem.MessageNum 27;
+	}
+}
+
+//P2M2: Message 2
+class MessageItemP2M2VOX2 : MessageItem
+{
+	Default
+	{
+		MessageItem.MessageNum 28;
+		MessageItem.Duration 21;
+	}
+}
 
 //P2M3: Message 1
-class MessageItemP2M3VOX1 : MessageItem01
-	{Default{MessageItem01.MessageNum 29;}}
+class MessageItemP2M3VOX1 : MessageItemStinson
+{
+	Default
+	{
+		Inventory.Icon "MAIL01";
+		MessageItem.SoundByte "P2M3VOX1";
+		MessageItem.Duration 29;
+		MessageItem.MessageNum 29;
+	}
+}
 
 //P2M3: Message 2
-class MessageItemP2M3VOX2 : MessageItem02
-	{Default{MessageItem01.MessageNum 30;}}
+class MessageItemP2M3VOX2 : MessageItemUndernet
+{
+	Default
+	{
+		Inventory.Icon "MAIL02";
+		MessageItem.SoundByte "P2M3VOX2";
+		MessageItem.Duration 36;
+		MessageItem.MessageNum 30;
+	}
+}
 
 //P2M4: Message 1
-class MessageItemP2M4VOX1 : MessageItem01
-	{Default{MessageItem01.MessageNum 31;}}
+class MessageItemP2M4VOX1 : MessageItemStinson
+{
+	Default
+	{
+		Inventory.Icon "MAIL01";
+		MessageItem.SoundByte "P2M4VOX1";
+		MessageItem.Duration 28;
+		MessageItem.MessageNum 31;
+	}
+}
 
 //P2M4: Message 2
-class MessageItemP2M4VOX2 : MessageItem02
-	{Default{MessageItem01.MessageNum 32;}}
+class MessageItemP2M4VOX2 : MessageItemUndernet
+{
+	Default
+	{
+		Inventory.Icon "MAIL02";
+		MessageItem.SoundByte "P2M4VOX2";
+		MessageItem.Duration 37;
+		MessageItem.MessageNum 32;
+	}
+}
 
 //P2M5: Message 1
-class MessageItemP2M5VOX1 : MessageItem01
-	{Default{MessageItem01.MessageNum 33;}}
+class MessageItemP2M5VOX1 : MessageItemStinson
+{
+	Default
+	{
+		Inventory.Icon "MAIL01";
+		MessageItem.SoundByte "P2M5VOX1";
+		MessageItem.Duration 11;
+		MessageItem.MessageNum 33;
+	}
+}
 
 //P2M5: Message 2
-class MessageItemP2M5VOX2 : MessageItem02
-	{Default{MessageItem01.MessageNum 34;}}
+class MessageItemP2M5VOX2 : MessageItemStinson
+{
+	Default
+	{
+		Inventory.Icon "MAIL02";
+		MessageItem.SoundByte "P2M5VOX2";
+		MessageItem.Duration 26;
+		MessageItem.MessageNum 34;
+	}
+}
 
 //P2M6: Message 1
-class MessageItemP2M6VOX1 : MessageItem01
-	{Default{MessageItem01.MessageNum 35;}}
+class MessageItemP2M6VOX1 : MessageItemStinson
+{
+	Default
+	{
+		Inventory.Icon "MAIL01";
+		MessageItem.SoundByte "P2M6VOX1";
+		MessageItem.Duration 18;
+		MessageItem.MessageNum 35;
+	}
+}
 
 //P2M7: Message 1
-class MessageItemP2M7VOX1 : MessageItem01
-	{Default{MessageItem01.MessageNum 36;}}
+class MessageItemP2M7VOX1 : MessageItemStinson
+{
+	Default
+	{
+		Inventory.Icon "MAIL01";
+		MessageItem.SoundByte "P2M7VOX1";
+		MessageItem.Duration 19;
+		MessageItem.MessageNum 36;
+	}
+}
 
 //P2M7: Message 2
-class MessageItemP2M7VOX2 : MessageItem02
-	{Default{MessageItem01.MessageNum 37;}}
+class MessageItemP2M7VOX2 : MessageItemUndernet
+{
+	Default
+	{
+		Inventory.Icon "MAIL02";
+		MessageItem.SoundByte "P2M7VOX2";
+		MessageItem.Duration 28;
+		MessageItem.MessageNum 37;
+	}
+}
 
 //P2M7: Message 3
-class MessageItemP2M7VOX3 : MessageItem03
-	{Default{MessageItem01.MessageNum 38;}}
+class MessageItemP2M7VOX3 : MessageItemStinson
+{
+	Default
+	{
+		Inventory.Icon "MAIL03";
+		MessageItem.SoundByte "P2M7VOX3";
+		MessageItem.Duration 23;
+		MessageItem.MessageNum 38;
+	}
+}
 
 //P2M8: Message 1
-class MessageItemP2M8VOX1 : MessageItem01
-	{Default{MessageItem01.MessageNum 39;}}
+class MessageItemP2M8VOX1 : MessageItemStinson
+{
+	Default
+	{
+		Inventory.Icon "MAIL01";
+		MessageItem.SoundByte "P2M8VOX1";
+		MessageItem.Duration 15;
+		MessageItem.MessageNum 39;
+	}
+}
