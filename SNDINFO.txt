@@ -102,7 +102,7 @@ p1m3vox3 p1m3vox3	//
 p1m4vox1 p1m4vox1	//
 p1m4vox2 p1m4vox2	//
 p1m4vox3 p1m4vox3	//
-p1m8vox1 p1m8vox1	//
+p1m5vox1 p1m5vox1	//
 p1m6vox1 p1m6vox1	//
 p1m6vox2 p1m6vox2	//
 p1m6vox3 p1m6vox3	//
