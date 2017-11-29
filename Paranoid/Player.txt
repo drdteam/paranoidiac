@@ -18,6 +18,7 @@ class RolfBellmer : PlayerPawn
 		Player.StartItem "HEVSuit";
 		Player.Face "HEV";
 		Player.Portrait "HLHELMET";
+		BloodType "HLBlood";
 	}
 	States
 	{

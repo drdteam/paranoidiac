@@ -12,6 +12,8 @@ class ModelBase : Actor
 		Stop;
 	}
 }
+class ModelFloat : ModelBase
+	{Default{+NOGRAVITY}}
 
 class Monitor : ModelBase
 {
@@ -38,13 +40,22 @@ class keyboard1 : ModelBase
 }
 class keyboard3 : keyboard1{}
 
+class mouse3 : keyboard1
+{
+	Default
+	{
+		Radius 3;
+		Height 4;
+	}
+}
+
 class flatpanel1 : ModelBase
 {
 	Default
 	{
+		Scale .8;
 		Radius 12;
 		Height 20;
-		Scale .8;
 	}
 }
 class flatpanel2 : flatpanel1{}
@@ -60,18 +71,16 @@ class flatpanel3 : flatpanel1
 }
 class flatpanel4 : flatpanel3{}
 
-class flatpanel5 : ModelBase
+class flatpanel5 : ModelFloat
 {
 	Default
 	{
 		Radius 2;
 		Height 32;
-		+NOGRAVITY
 		Scale 1.2;
 	}
 }
 class flatpanel6 : flatpanel5{}
-
 class flatpanel7 : flatpanel5
 {
 	States
@@ -83,15 +92,6 @@ class flatpanel7 : flatpanel5
 }
 class flatpanel8 : flatpanel5{}
 class flatpanel9 : flatpanel5{}
-
-class mouse3 : keyboard1
-{
-	Default
-	{
-		Radius 3;
-		Height 4;
-	}
-}
 
 class pc1 : ModelBase
 {
@@ -135,17 +135,16 @@ class Transformer1 : ModelBase
 	}
 }
 
-class Meter1 : ModelBase
+class Meter1 : ModelFloat
 {
 	Default
 	{
 		Radius 4;
 		Height 12;
-		+NOGRAVITY
 	}
 }
 
-class Meter2 : Meter1
+class Meter2 : ModelFloat
 {
 	Default
 	{
@@ -154,7 +153,7 @@ class Meter2 : Meter1
 	}
 }
 
-class Meter3 : Meter1
+class Meter3 : ModelFloat
 {
 	Default
 	{
@@ -445,18 +444,17 @@ class Desk2Surface : Actor
 	}
 }
 
-class HandDryer : ModelBase
+class HandDryer : ModelFloat
 {
 	Default
 	{
 		Scale 1.5;
 		Radius 4;
 		Height 8;
-		+NOGRAVITY
 	}
 }
 
-class Sink1 : HandDryer
+class Sink1 : ModelFloat
 {
 	Default
 	{
@@ -466,7 +464,7 @@ class Sink1 : HandDryer
 	}
 }
 
-class Sink2 : HandDryer
+class Sink2 : ModelFloat
 {
 	Default
 	{
@@ -524,14 +522,13 @@ class FileCab2 : ModelBase
 class FileCab3: FileCab2
 	{Default{Height 48;}}
 
-class DeerHead : ModelBase
+class DeerHead : ModelFloat
 {
 	Default
 	{
 		Scale 1.25;
 		Radius 32;
 		Height 40;
-		+NOGRAVITY
 	}
 }
 
@@ -622,13 +619,12 @@ class pipe8 : ModelBase
 	}
 }
 
-class PipeMaze : ModelBase
+class PipeMaze : ModelFloat
 {
 	Default
 	{
 		Radius 64;
 		Height 28;
-		+NOGRAVITY
 	}
 }
 
@@ -1029,14 +1025,13 @@ class TechPillar1cc : TechPillar1aa{}
 class TechPillar2 : TechPillar1a
 	{Default{Height 188;}}
 
-class TechClamp : ModelBase
+class TechClamp : ModelFloat
 {
 	Default
 	{
 		Radius 96;
 		Height 256;
 		+SPAWNCEILING
-		+NOGRAVITY
 	}
 }
 
@@ -1239,17 +1234,16 @@ class Xcrate03 : Trashcan1
 }
 class Xcrate04 : Xcrate03{}
 
-class XMetalBox : ModelBase
+class XMetalBox : ModelFloat
 {
 	Default
 	{
 		Radius 34;
 		Height 64;
-		+NOGRAVITY
 	}
 }
 
-class XMetalBox1 : XMetalBox
+class XMetalBox1 : ModelFloat
 {
 	Default
 	{
@@ -1334,12 +1328,11 @@ class Stinson : HintMan
 	}
 }
 
-class EarthGlobe : ModelBase
+class EarthGlobe : ModelFloat
 {
 	Default
 	{
 		Height 82;
 		Radius 41;
-		+NOGRAVITY
 	}
 }

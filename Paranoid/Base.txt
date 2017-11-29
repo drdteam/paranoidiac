@@ -8,6 +8,7 @@ class HLMonster : Actor
 		+NOINFIGHTSPECIES
 		+DOHARMSPECIES
 		HLMonster.WalkTic 4;
+		BloodType "HLBlood";
 	}
 	States
 	{

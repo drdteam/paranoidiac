@@ -85,16 +85,19 @@ class Debris01 : Actor
 // Blood & Gibs
 //===============
 
-class NewBlood : Blood replaces Blood
+class NewBlood : Actor
 {
 	Default
 	{
 		Scale .15;
 		Gravity .44;
+		Mass 5;
 		+DONTSPLASH
 		+DONTBLAST
 		+CANNOTPUSH
 		+FORCEXYBILLBOARD
+		+NOBLOCKMAP
+		+NOTELEPORT
 	}
 	States
 	{

@@ -89,8 +89,11 @@ class ParanoidStaticEventHandler : StaticEventHandler
 		if(mytracker==null)
 			return;
 		string icon=mytracker.icon;
-		int flags=BaseStatusBar.DI_SCREEN_TOP|BaseStatusBar.DI_SCREEN_HCENTER|BaseStatusBar.DI_NOSHADOW;
-		StatusBar.DrawImage(icon,(30,50),flags,1.0,scale:(.48,.4));
+		if(icon!="TNT1A0")
+		{
+			int flags=BaseStatusBar.DI_SCREEN_TOP|BaseStatusBar.DI_SCREEN_HCENTER|BaseStatusBar.DI_NOSHADOW;
+			StatusBar.DrawImage(icon,(30,50),flags,1.0,scale:(.48,.4));
+		}
 	}
 	override void PlayerEntered(PlayerEvent e)
 	{

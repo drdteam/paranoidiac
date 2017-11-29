@@ -113,11 +113,10 @@ class MessageItem : CustomInventory
 		ACS_ExecuteAlways(-int('HintMessage'),0,msgnum,typetime*65536);
 	}
 	int MessageNum,Duration;
-	string Portrait,SoundByte;
+	string Portrait;
 	Property MessageNum:MessageNum;
 	Property Duration:Duration;
 	Property Portrait:Portrait;
-	Property SoundByte:SoundByte;
 	Default
 	{
 		Tag "Message";
@@ -129,7 +128,11 @@ class MessageItem : CustomInventory
 	States
 	{
 	Use:
-		TNT1 A 0 PlayMessage(invoker.owner,invoker.SoundByte,invoker.MessageNum,invoker.Portrait);
+		TNT1 A 0
+		{
+			String s=invoker.GetClassName();
+			PlayMessage(invoker.owner,s.Mid(11,8),invoker.MessageNum,invoker.Portrait);
+		}
 		Fail;
 	}
 }
@@ -147,7 +150,6 @@ class MessageItemP1M2VOX1 : MessageItemHintman
 	Default
 	{
 		Inventory.Icon "MAIL01";
-		MessageItem.SoundByte "P1M2VOX1";
 		MessageItem.Duration 8;
 		MessageItem.MessageNum 1;
 	}
@@ -159,7 +161,6 @@ class MessageItemP1M2VOX2 : MessageItemHintman
 	Default
 	{
 		Inventory.Icon "MAIL02";
-		MessageItem.SoundByte "P1M2VOX2";
 		MessageItem.Duration 6;
 		MessageItem.MessageNum 2;
 	}
@@ -171,7 +172,6 @@ class MessageItemP1M2VOX3 : MessageItemHintman
 	Default
 	{
 		Inventory.Icon "MAIL03";
-		MessageItem.SoundByte "P1M2VOX3";
 		MessageItem.Duration 7;
 		MessageItem.MessageNum 3;
 	}
@@ -183,7 +183,6 @@ class MessageItemP1M2VOX4 : MessageItemHintman
 	Default
 	{
 		Inventory.Icon "MAIL04";
-		MessageItem.SoundByte "P1M2VOX4";
 		MessageItem.Duration 9;
 		MessageItem.MessageNum 4;
 	}
@@ -195,7 +194,6 @@ class MessageItemP1M3VOX1 : MessageItemHintman
 	Default
 	{
 		Inventory.Icon "MAIL01";
-		MessageItem.SoundByte "P1M3VOX1";
 		MessageItem.Duration 16;
 		MessageItem.MessageNum 5;
 	}
@@ -207,7 +205,6 @@ class MessageItemP1M3VOX2 : MessageItemHintman
 	Default
 	{
 		Inventory.Icon "MAIL02";
-		MessageItem.SoundByte "P1M3VOX2";
 		MessageItem.Duration 14;
 		MessageItem.MessageNum 6;
 	}
@@ -219,7 +216,6 @@ class MessageItemP1M3VOX3 : MessageItemHintman
 	Default
 	{
 		Inventory.Icon "MAIL03";
-		MessageItem.SoundByte "P1M3VOX3";
 		MessageItem.Duration 10;
 		MessageItem.MessageNum 7;
 	}
@@ -231,7 +227,6 @@ class MessageItemP1M4VOX1 : MessageItemHintman
 	Default
 	{
 		Inventory.Icon "MAIL01";
-		MessageItem.SoundByte "P1M4VOX1";
 		MessageItem.Duration 10;
 		MessageItem.MessageNum 8;
 	}
@@ -243,7 +238,6 @@ class MessageItemP1M4VOX2 : MessageItemHintman
 	Default
 	{
 		Inventory.Icon "MAIL02";
-		MessageItem.SoundByte "P1M4VOX2";
 		MessageItem.Duration 15;
 		MessageItem.MessageNum 9;
 	}
@@ -255,7 +249,6 @@ class MessageItemP1M4VOX3 : MessageItemHintman
 	Default
 	{
 		Inventory.Icon "MAIL03";
-		MessageItem.SoundByte "P1M4VOX3";
 		MessageItem.Duration 10;
 		MessageItem.MessageNum 10;
 	}
@@ -271,7 +264,6 @@ class MessageItemP1M5VOX1 : MessageItemHintman
 	Default
 	{
 		Inventory.Icon "MAIL01";
-		MessageItem.SoundByte "P1M5VOX1";
 		MessageItem.Duration 8;
 		MessageItem.MessageNum 11;
 	}
@@ -303,7 +295,6 @@ class MessageItemP1M6VOX1 : MessageItemHintman
 	Default
 	{
 		Inventory.Icon "MAIL01";
-		MessageItem.SoundByte "P1M6VOX1";
 		MessageItem.Duration 6;
 		MessageItem.MessageNum 14;
 	}
@@ -315,7 +306,6 @@ class MessageItemP1M6VOX2 : MessageItemHintman
 	Default
 	{
 		Inventory.Icon "MAIL02";
-		MessageItem.SoundByte "P1M6VOX2";
 		MessageItem.Duration 13;
 		MessageItem.MessageNum 15;
 	}
@@ -327,7 +317,6 @@ class MessageItemP1M6VOX3 : MessageItemHintman
 	Default
 	{
 		Inventory.Icon "MAIL03";
-		MessageItem.SoundByte "P1M6VOX3";
 		MessageItem.Duration 8;
 		MessageItem.MessageNum 16;
 	}
@@ -379,7 +368,6 @@ class MessageItemP1M7VOX1 : MessageItemHintman
 	Default
 	{
 		Inventory.Icon "MAIL01";
-		MessageItem.SoundByte "P1M7VOX1";
 		MessageItem.Duration 5;
 		MessageItem.MessageNum 21;
 	}
@@ -391,7 +379,6 @@ class MessageItemP1M7VOX2 : MessageItemHintman
 	Default
 	{
 		Inventory.Icon "MAIL02";
-		MessageItem.SoundByte "P1M7VOX2";
 		MessageItem.Duration 8;
 		MessageItem.MessageNum 22;
 	}
@@ -413,7 +400,6 @@ class MessageItemP1M8VOX1 : MessageItemHintman
 	Default
 	{
 		Inventory.Icon "MAIL01";
-		MessageItem.SoundByte "P1M8VOX1";
 		MessageItem.Duration 5;
 		MessageItem.MessageNum 24;
 	}
@@ -425,7 +411,6 @@ class MessageItemP1M8VOX2 : MessageItemHintman
 	Default
 	{
 		Inventory.Icon "MAIL02";
-		MessageItem.SoundByte "P1M8VOX2";
 		MessageItem.Duration 7;
 		MessageItem.MessageNum 25;
 	}
@@ -437,7 +422,6 @@ class MessageItemP2M1VOX1 : MessageItemStinson
 	Default
 	{
 		Inventory.Icon "MAIL01";
-		MessageItem.SoundByte "P2M1VOX1";
 		MessageItem.Duration 42;
 		MessageItem.MessageNum 26;
 	}
@@ -449,7 +433,6 @@ class MessageItemP2M2VOX1 : MessageItemStinson
 	Default
 	{
 		Inventory.Icon "MAIL01";
-		MessageItem.SoundByte "P2M2VOX1";
 		MessageItem.Duration 17;
 		MessageItem.MessageNum 27;
 	}
@@ -471,7 +454,6 @@ class MessageItemP2M3VOX1 : MessageItemStinson
 	Default
 	{
 		Inventory.Icon "MAIL01";
-		MessageItem.SoundByte "P2M3VOX1";
 		MessageItem.Duration 29;
 		MessageItem.MessageNum 29;
 	}
@@ -483,7 +465,6 @@ class MessageItemP2M3VOX2 : MessageItemUndernet
 	Default
 	{
 		Inventory.Icon "MAIL02";
-		MessageItem.SoundByte "P2M3VOX2";
 		MessageItem.Duration 36;
 		MessageItem.MessageNum 30;
 	}
@@ -495,7 +476,6 @@ class MessageItemP2M4VOX1 : MessageItemStinson
 	Default
 	{
 		Inventory.Icon "MAIL01";
-		MessageItem.SoundByte "P2M4VOX1";
 		MessageItem.Duration 28;
 		MessageItem.MessageNum 31;
 	}
@@ -507,7 +487,6 @@ class MessageItemP2M4VOX2 : MessageItemUndernet
 	Default
 	{
 		Inventory.Icon "MAIL02";
-		MessageItem.SoundByte "P2M4VOX2";
 		MessageItem.Duration 37;
 		MessageItem.MessageNum 32;
 	}
@@ -519,7 +498,6 @@ class MessageItemP2M5VOX1 : MessageItemStinson
 	Default
 	{
 		Inventory.Icon "MAIL01";
-		MessageItem.SoundByte "P2M5VOX1";
 		MessageItem.Duration 11;
 		MessageItem.MessageNum 33;
 	}
@@ -531,7 +509,6 @@ class MessageItemP2M5VOX2 : MessageItemStinson
 	Default
 	{
 		Inventory.Icon "MAIL02";
-		MessageItem.SoundByte "P2M5VOX2";
 		MessageItem.Duration 26;
 		MessageItem.MessageNum 34;
 	}
@@ -543,7 +520,6 @@ class MessageItemP2M6VOX1 : MessageItemStinson
 	Default
 	{
 		Inventory.Icon "MAIL01";
-		MessageItem.SoundByte "P2M6VOX1";
 		MessageItem.Duration 18;
 		MessageItem.MessageNum 35;
 	}
@@ -555,7 +531,6 @@ class MessageItemP2M7VOX1 : MessageItemStinson
 	Default
 	{
 		Inventory.Icon "MAIL01";
-		MessageItem.SoundByte "P2M7VOX1";
 		MessageItem.Duration 19;
 		MessageItem.MessageNum 36;
 	}
@@ -567,7 +542,6 @@ class MessageItemP2M7VOX2 : MessageItemUndernet
 	Default
 	{
 		Inventory.Icon "MAIL02";
-		MessageItem.SoundByte "P2M7VOX2";
 		MessageItem.Duration 28;
 		MessageItem.MessageNum 37;
 	}
@@ -579,7 +553,6 @@ class MessageItemP2M7VOX3 : MessageItemStinson
 	Default
 	{
 		Inventory.Icon "MAIL03";
-		MessageItem.SoundByte "P2M7VOX3";
 		MessageItem.Duration 23;
 		MessageItem.MessageNum 38;
 	}
@@ -591,7 +564,6 @@ class MessageItemP2M8VOX1 : MessageItemStinson
 	Default
 	{
 		Inventory.Icon "MAIL01";
-		MessageItem.SoundByte "P2M8VOX1";
 		MessageItem.Duration 15;
 		MessageItem.MessageNum 39;
 	}
