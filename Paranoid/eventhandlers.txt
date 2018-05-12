@@ -5,7 +5,7 @@ enum ParanoidEnum
 
 class ParanoidEventHandler : EventHandler
 {
-	override void WorldLoaded(WorldEvent e)
+	/*override void WorldLoaded(WorldEvent e)
 	{
 		Actor mo,cam;
 		name hintman;
@@ -58,7 +58,7 @@ class ParanoidEventHandler : EventHandler
 			cam=Actor.Spawn('EarthGlobe',(camx,camy-70.0,camz));
 			cam.Angle=90.0;
 		}
-	}
+	}*/
 }
 class ParanoidStaticEventHandler : StaticEventHandler
 {

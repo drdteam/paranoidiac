@@ -2738,6 +2738,14 @@ Model HLOtis
 Model HintMan
 {
 	Path "Models"
+	Model 0 "military.md2"
+	Skin 0 "euro2.png"
+	Scale 1.55 1.55 1.55
+
+	Frame HLI1 A 0 "stand01"
+	Frame HLS1 A 0 "sit01"
+
+	/*Path "Models"
 	Model 0 "barney_body.md3"
 	SurfaceSkin 0 0 "barney_body_000.png"
 	SurfaceSkin 0 1 "barney_body_001.png"
@@ -2987,7 +2995,7 @@ Model HintMan
 	FrameIndex HLS1 O 2 -1
 	FrameIndex HLS1 P 0 463
 	FrameIndex HLS1 P 1 124
-	FrameIndex HLS1 P 2 -1
+	FrameIndex HLS1 P 2 -1*/
 }
 
 Model Admin01

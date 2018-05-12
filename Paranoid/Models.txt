@@ -1266,6 +1266,12 @@ class HintMan : ModelBase
 	States
 	{
 	Spawn:
+		HLI1 A -1;
+		Stop;
+	Sit:
+		HLS1 A -1 A_SetScale(scale.x*.9);
+		Stop;
+	/*Spawn:
 		HLI1 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 2;
 		HLI2 AB 2;
 		Loop;
@@ -1275,7 +1281,7 @@ class HintMan : ModelBase
 		Loop;
 	Sit:
 		HLS1 ABCDEFGHIJKLMNOP 6;
-		Loop;
+		Loop;*/
 	}
 }
 class HintManSitting : RandomSpawner
