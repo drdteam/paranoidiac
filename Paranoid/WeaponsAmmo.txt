@@ -1,5 +1,9 @@
 class ParanoidWeapon : Weapon
 {
+	meta bool UnderwaterWeapon;
+
+	Property Underwater: UnderwaterWeapon;
+
 	override void PostBeginPlay()
 	{
 		if(bTOSSED)
@@ -13,6 +17,7 @@ class ParanoidWeapon : Weapon
 		Weapon.BobRangeX 0;
 		Weapon.BobRangeY .25;
 		Weapon.BobStyle "Smooth";
+		ParanoidWeapon.Underwater false;
 	}
 	States
 	{
@@ -380,6 +385,7 @@ class HLCrowbar : ParanoidWeapon
 		-WEAPON.NOALERT
 		-WEAPON.AMMO_CHECKBOTH
 		Inventory.Icon "i_cbar1";
+		ParanoidWeapon.Underwater true;
 	}
 	States
 	{
@@ -1702,6 +1708,7 @@ class HLXBow : ParanoidWeapon
 		Tag "Crossbow";
 		+WEAPON.NOAUTOFIRE
 		Inventory.Icon "i_xbow1";
+		ParanoidWeapon.Underwater true;
 	}
 	States
 	{

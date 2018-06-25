@@ -235,11 +235,29 @@ class RolfBellmer : PlayerPawn
 		IVD2 L -1;
 		Stop;
 	}
+	ParanoidWeapon LastWeapon;
 	override void Tick()
 	{
 		if(InSpawnState())
 			HLSetState('Spawn');
 		super.tick();
+		if(!player || !player.mo || player.mo != self)
+			return;
+		if(waterlevel>=3){
+			let Weap = ParanoidWeapon(player.ReadyWeapon);
+			if(Weap && !Weap.UnderwaterWeapon){
+				for(let w = Inv; w != null; w = w.Inv)
+				{
+					let ActualWeapon = ParanoidWeapon(w);
+					if(ActualWeapon && ActualWeapon.UnderwaterWeapon && ActualWeapon!=LastWeapon)
+					{
+						player.PendingWeapon=ActualWeapon;
+						return;
+					}
+				}
+			}
+			LastWeapon = ParanoidWeapon(player.ReadyWeapon);
+		}
 	}
 	override void PlayIdle()
 	{
