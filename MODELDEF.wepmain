@@ -15,24 +15,8 @@ Model HLPistol
 
 	FrameIndex HLS1 A 0 0
 }
-Model HLPistolPickup
-{
-	Path "Models"
-	Model 0 "w_9mmhandgun.md3"
-	Skin 0 "w_9mmhandgun.png"
-
-	FrameIndex HLS1 A 0 0
-}
 
 Model HLMagnum
-{
-	Path "Models"
-	Model 0 "w_357.md3"
-	Skin 0 "w_357.png"
-
-	FrameIndex HLS1 A 0 0
-}
-Model HLMagnumPickup
 {
 	Path "Models"
 	Model 0 "w_357.md3"
@@ -48,22 +32,11 @@ Model HLShotgun
 	Skin 0 "w_shotgun.png"
 
 	FrameIndex HLS1 A 0 0
-}
-Model HLShotgunPickup
-{
-	Path "Models"
-	Model 0 "w_shotgun.md3"
-	Skin 0 "w_shotgun.png"
 
-	FrameIndex HLS1 A 0 0
-}
-Model HLShotgunPickup2
-{
-	Path "Models"
 	Model 0 "shotgun1.md3"
 	Skin 0 "w_shotgun.png"
 
-	FrameIndex HLS1 A 0 0
+	FrameIndex HLS1 B 0 0
 }
 Model HLShotgunPickup3
 {
@@ -85,22 +58,11 @@ Model HLAssaultRifle
 	Skin 0 "w_9mmar.png"
 
 	FrameIndex HLS1 A 0 0
-}
-Model HLAssaultRiflePickup
-{
-	Path "Models"
-	Model 0 "w_9mmar.md3"
-	Skin 0 "w_9mmar.png"
 
-	FrameIndex HLS1 A 0 0
-}
-Model HLAssaultRiflePickup2
-{
-	Path "Models"
 	Model 0 "9mmar1.md3"
 	Skin 0 "w_9mmar.png"
 
-	FrameIndex HLS1 A 0 0
+	FrameIndex HLS1 B 0 0
 }
 
 Model HLRPG
@@ -121,25 +83,8 @@ Model HLXBow
 
 	FrameIndex HLS1 A 0 0
 }
-Model HLXBowPickup
-{
-	Path "Models"
-	Model 0 "w_crossbow.md3"
-	SurfaceSkin 0 0 "w_crossbow_000.png"
-	SurfaceSkin 0 1 "w_crossbow_001.png"
-
-	FrameIndex HLS1 A 0 0
-}
 
 Model HLGluonGun
-{
-	Path "Models"
-	Model 0 "w_egon.md3"
-	Skin 0 "w_egon.png"
-
-	FrameIndex HLS1 A 0 0
-}
-Model HLGluonGunPickup
 {
 	Path "Models"
 	Model 0 "w_egon.md3"
@@ -158,14 +103,6 @@ Model HLHornetGun
 }
 
 Model HLDesertEagle
-{
-	Path "Models"
-	Model 0 "w_desert_eagle.md3"
-	Skin 0 "w_desert_eagle.png"
-
-	FrameIndex HLS1 A 0 0
-}
-Model HLDesertEaglePickup
 {
 	Path "Models"
 	Model 0 "w_desert_eagle.md3"

@@ -131,17 +131,17 @@ class ParanoidCellSpawner : RandomSpawner replaces Cell
 class ParanoidChainsawSpawner : RandomSpawner replaces Chainsaw
 	{Default{DropItem "HLCrowbar";}}
 class ParanoidPistolSpawner : RandomSpawner replaces Pistol
-	{Default{DropItem "HLPistolPickup";}}
+	{Default{DropItem "HLPistol";}}
 class ParanoidShotgunSpawner : RandomSpawner replaces Shotgun
-	{Default{DropItem "HLShotgunPickup";}}
+	{Default{DropItem "HLShotgun";}}
 class ParanoidSuperShotgunSpawner : RandomSpawner replaces SuperShotgun
-	{Default{DropItem "HLMagnumPickup";}}
+	{Default{DropItem "HLMagnum";}}
 class ParanoidChaingunSpawner : RandomSpawner replaces Chaingun
-	{Default{DropItem "HLAssaultRiflePickup";}}
+	{Default{DropItem "HLAssaultRifle";}}
 class ParanoidRocketLauncherSpawner : RandomSpawner replaces RocketLauncher
-	{Default{DropItem "HLXBowPickup";}}
+	{Default{DropItem "HLXBow";}}
 class ParanoidPlasmaRifleSpawner : RandomSpawner replaces PlasmaRifle
-	{Default{DropItem "HLGluonGunPickup";}}
+	{Default{DropItem "HLGluonGun";}}
 class ParanoidBFG9000Spawner : RandomSpawner replaces BFG9000
 	{Default{DropItem "HLRPG";}}
 

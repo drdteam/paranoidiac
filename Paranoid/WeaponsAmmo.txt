@@ -5,6 +5,28 @@ class ParanoidWeapon : Weapon
 		if(bTOSSED)
 			angle=random(0,359);
 	}
+	virtual class<ammo> GetMagAmmo()
+		{return GetDefaultByType(GetClass()).AmmoType2;}
+	override bool TryPickup(in out Actor toucher)
+	{
+		//If this is the first time I'm pickup up this weapon,
+		//Give me some in-mag ammo with it, please
+		let wep=GetClass();
+		let magammo=GetMagAmmo();
+		//Can't find the ammo? Give up and proceed as normal
+		if(!magammo)
+			return super.TryPickup(toucher);
+		let ammoamount=GetDefaultByType(magammo).MaxAmount;
+		if(!toucher.CountInv(wep))
+		{
+			toucher.A_GiveInventory(magammo,ammoamount);
+			return super.TryPickup(toucher);
+		}
+		let ammo=GetDefaultByType(wep).AmmoType1;
+		toucher.A_GiveInventory(ammo,ammoamount);
+		GoAwayAndDie();
+		return true;
+	}
 	Default
 	{
 		+WEAPON.NOALERT
@@ -207,63 +229,6 @@ class ParanoidWeapon : Weapon
 			break;
 		}
 		return State(null);
-	}
-}
-
-class ParanoidWeaponGiver : WeaponGiver
-{
-	class<ammo> Weapon1,Weapon2;
-	int Weapon1Amount;
-	Property Weapon1: Weapon1,Weapon1Amount;
-	Default
-	{
-		Radius 0;
-		Height 0;
-	}
-	override void PostBeginPlay()
-	{
-		class<weapon> wep;
-		wep=GetDropItems().Name;
-		if(wep==null)
-			return;
-		if(!height)
-			height=GetDefaultByType(wep).height;
-		if(!radius)
-			A_SetSize(GetDefaultByType(wep).radius);
-		if(Weapon1==null)
-			Weapon1=GetDefaultByType(wep).AmmoType2;
-		Weapon2=GetDefaultByType(wep).AmmoType1;
-		if(!Weapon1Amount)
-			Weapon1Amount=GetDefaultByType(Weapon1).MaxAmount;
-		if(bTOSSED)
-			angle=random(0,359);
-	}
-	override bool TryPickup(in out Actor toucher)
-	{
-		if(WeaponGiver.TryPickup(toucher))
-		{
-			toucher.A_GiveInventory(Weapon1,Weapon1Amount);
-			GoAwayAndDie();
-			return true;
-		}
-		if(toucher.A_GiveInventory(Weapon2,Weapon1Amount))
-		{
-			GoAwayAndDie();
-			return true;
-		}
-		return false;
-	}
-	override String PickupMessage()
-	{
-		class<inventory> wep;
-		wep=GetDropItems().Name;
-		return GetDefaultByType(wep).PickupMsg;
-	}
-	States
-	{
-	Spawn:
-		HLS1 A -1;
-		Stop;
 	}
 }
 
@@ -566,9 +531,6 @@ class CrowbarPuff2 : NewPuff1
 // Beretta
 //=========
 
-class HLPistolPickup : ParanoidWeaponGiver
-	{Default{DropItem "HLPistol";}}
-
 class HLPistol : ParanoidWeapon
 {
 	Default
@@ -810,9 +772,6 @@ class HLPistolAmmo : Ammo
 // Python (357 Magnum)
 //=====================
 
-class HLMagnumPickup : ParanoidWeaponGiver
-	{Default{DropItem "HLMagnum";}}
-
 class HLMagnum : ParanoidWeapon
 {
 	Default
@@ -946,19 +905,20 @@ class HLMagnumBox : HLMagnumAmmo
 // Paranoid Shotgun
 //===================
 
-class HLShotgunPickup : ParanoidWeaponGiver
-	{Default{DropItem "HLShotgun";}}
-
-//=============================
-// Paranoid Shotgun (Vertical)
-//=============================
-
-class HLShotgunPickup2 : HLShotgunPickup
+//Vertical
+class HLShotgunPickup2 : RandomSpawner
 {
 	Default
 	{
 		Radius 4;
 		Height 32;
+		DropItem "HLShotgun";
+	}
+	override void PostSpawn(Actor spawned)
+	{
+		spawned.height=height;
+		spawned.A_SetSize(radius);
+		spawned.frame=1;
 	}
 }
 class HLShotgunPickup3 : HLShotgunPickup2{}
@@ -1176,46 +1136,14 @@ class HLShotgunBox : HLShotgunAmmo
 // 9mm Assault Rifle
 //===================
 
-class HLAssaultRiflePickup : ParanoidWeaponGiver
-{
-	Default
-	{
-		ParanoidWeaponGiver.Weapon1 "HLAssaultRifleMag",25;
-		DropItem "HLAssaultRifle";
-	}
-	override bool TryPickup(in out Actor toucher)
-	{
-		if(WeaponGiver.TryPickup(toucher))
-		{
-			toucher.A_GiveInventory(Weapon1,Weapon1Amount);
-			toucher.A_GiveInventory("HLGrenadeLauncherAmmo");
-			GoAwayAndDie();
-			return true;
-		}
-		if(toucher.A_GiveInventory(Weapon2,Weapon1Amount))
-		{
-			GoAwayAndDie();
-			return true;
-		}
-		return false;
-	}
-}
-
-//=============================
-// 9mm Assault Rifle (Vertical)
-//=============================
-
-class HLAssaultRiflePickup2 : HLAssaultRiflePickup
-{
-	Default
-	{
-		Radius 4;
-		Height 32;
-	}
-}
+//Vertical
+class HLAssaultRiflePickup2 : HLShotgunPickup2
+	{Default{DropItem "HLAssaultRifle";}}
 
 class HLAssaultRifle : ParanoidWeapon
 {
+	override class<ammo> GetMagAmmo()
+		{return "HLAssaultRifleMag";}
 	Default
 	{
 		Tag "Assault Rifle";
@@ -1683,9 +1611,6 @@ class HLRPGAmmo : Ammo
 // Cross-Bow
 //=============
 
-class HLXBowPickup : ParanoidWeaponGiver
-	{Default{DropItem "HLXBow";}}
-
 class HLXBow : ParanoidWeapon
 {
 	bool zoomtoken;
@@ -2006,9 +1931,6 @@ class Missile : Rocket
 // Gluon Gun
 // Developed by Major Cooke for AeOD; modified by DBThanatos & Kappes Buur
 //=============
-
-class HLGluonGunPickup : ParanoidWeaponGiver
-	{Default{DropItem "HLGluonGun";}}
 
 class HLGluonGun : ParanoidWeapon
 {
@@ -2879,8 +2801,6 @@ class AmmoPack : CustomInventory
 }
 
 //Bonus: Desert Eagle
-class HLDesertEaglePickup : ParanoidWeaponGiver
-	{Default{DropItem "HLDesertEagle";}}
 
 class HLDesertEagle : HLMagnum
 {

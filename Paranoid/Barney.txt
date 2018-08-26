@@ -59,7 +59,7 @@ class HLBarney : HLMonster
 		PainSound "halflife/monsters/barney/pain";
 		DeathSound "halflife/monsters/barney/death";
 		MaxDropoffHeight 64;
-		DropItem "HLPistolPickup";
+		DropItem "HLPistol";
 		+FRIENDLY
 		-COUNTKILL
 		Species "BlackMesa";
@@ -151,7 +151,7 @@ class HLOtis : HLBarney
 		SeeSound "halflife/monsters/otis/idle";
 		PainSound "halflife/monsters/otis/pain";
 		DeathSound "halflife/monsters/otis/death";
-		DropItem "HLDesertEaglePickup";
+		DropItem "HLDesertEagle";
 	}
 	override void A_Chatter()
 	{
