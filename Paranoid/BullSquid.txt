@@ -89,7 +89,7 @@ class HLBullSquid : HLMonster
 		TNT1 A 0 A_HLGibs(16,"XenGibs");
 		Stop;
 	}
-	override void A_HLChase(int walkticmax=0)
+	override void A_HLChase(int walkticmax)
 	{
 		if(!walkticmax)
 			walkticmax=walktic;

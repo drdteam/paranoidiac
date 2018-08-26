@@ -68,7 +68,7 @@ class HLBarnacle : HLMonster
 		HLD4 M -1;
 		Stop;
 	}
-	override void A_HLChase(int walkticmax=0)
+	override void A_HLChase(int walkticmax)
 	{
 		if(!walkticmax)
 			walkticmax=walktic;
