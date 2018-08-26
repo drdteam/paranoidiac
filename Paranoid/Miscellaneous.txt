@@ -112,12 +112,10 @@ class HLBlood : Actor
 	}
 }
 
-class ExtraBlood : NewBlood
+class ExtraBlood : HLBlood
 {
 	Default
-	{
-		Scale .09;
-	}
+		{Scale .09;}
 	States
 	{
 	Spawn:
@@ -146,7 +144,7 @@ class HLGibs : Actor
 		{
 			bool num;
 			actor bld;
-			[num,bld]=A_SpawnItemEx("NewBlood",random(3,-3),random(3,-3),random(3,-3),flags:SXF_TRANSFERTRANSLATION);
+			[num,bld]=A_SpawnItemEx("HLBlood",random(3,-3),random(3,-3),random(3,-3),flags:SXF_TRANSFERTRANSLATION);
 			if(scale.x==2)
 				bld.scale=(.5,.5);
 			else if(scale.x==.75)
