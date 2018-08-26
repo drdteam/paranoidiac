@@ -106,11 +106,11 @@ class MessageItem : CustomInventory
 		double dur=GetMessageDuration(message);
 		string msg=StringTable.Localize("$"..message);
 		double typetime=(dur-1.0)/double(msg.Length());
-		mytracker.countdown=3+dur*35;
+		mytracker.countdown=int(3+dur*35);
 		//SetHUDSize(640,480,1);
 		//SetFont("smallfont");
 		//HUDMessage(l:message;HUDMSG_TYPEON|HUDMSG_LOG,2,CR_GOLD,80.1,30.1,10.0,typetime,0.05);
-		ACS_ExecuteAlways(-int('HintMessage'),0,msgnum,typetime*65536);
+		ACS_ExecuteAlways(-int('HintMessage'),0,msgnum,int(typetime*65536));
 	}
 	int MessageNum,Duration;
 	string Portrait;
