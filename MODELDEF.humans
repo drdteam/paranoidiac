@@ -2029,21 +2029,7 @@ Model HLBarney
 	FrameIndex HLD1 N 0 384
 	FrameIndex HLD1 N 1 384
 	FrameIndex HLD1 N 2 384
-}
 
-Model HLBarney
-{
-	Path "Models"
-	Model 0 "barney_body.md3"
-	SurfaceSkin 0 0 "barney_body_000.png"
-	SurfaceSkin 0 1 "barney_body_001.png"
-	SurfaceSkin 0 2 "barney_body_002.png"
-	SurfaceSkin 0 3 "barney_body_003.png"
-	Model 1 "barney_head.md3"
-	SurfaceSkin 1 0 "barney_head_000.png"
-	SurfaceSkin 1 1 "barney_head_001.png"
-	SurfaceSkin 1 2 "barney_head_002.png"
-	SurfaceSkin 1 3 "barney_head_003.png"
 	Model 2 "barney_gun2.md3"
 	Skin 2 "w_9mmhandgun.png"
 
@@ -2617,22 +2603,7 @@ Model HLOtis
 	FrameIndex HLD1 N 0 384
 	FrameIndex HLD1 N 1 384
 	FrameIndex HLD1 N 2 384
-}
 
-Model HLOtis
-{
-	Path "Models"
-	Model 0 "otis_body.md3"
-	SurfaceSkin 0 0 "barney_body_002.png"
-	SurfaceSkin 0 1 "barney_body_003.png"
-	SurfaceSkin 0 2 "barney_body_001.png"
-	Model 1 "otis_head.md3"
-	SurfaceSkin 1 0 "otis_head_000.png"
-	SurfaceSkin 1 1 "otis_head_001.png"
-	SurfaceSkin 1 2 "barney_head_001.png"
-	SurfaceSkin 1 3 "barney_head_002.png"
-	SurfaceSkin 1 4 "otis_head_004.png"
-	SurfaceSkin 1 5 "barney_body_002.png"
 	Model 2 "otis_gun2.md3"
 	Skin 2 "v_desert_eagle_main_000.png"
 
