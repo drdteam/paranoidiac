@@ -273,9 +273,6 @@ class Loader : ModelBase
 	}
 	States
 	{
-	Spawn:
-		HLI1 A -1;
-		Stop;
 	See:
 		HLW1 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1;
 		HLW2 ABCDEFGHIJKLMNOPQRST 1;
@@ -317,6 +314,77 @@ class LoaderClaw : LoaderBox
 	{
 		Radius 16;
 		Height 32;
+	}
+}
+
+//Bulldozer
+class Bulldozer1 : ModelBase
+{
+	override void postbeginplay()
+	{
+		A_SpawnItemEx("BulldozerRoof",-8,0,88);
+		A_SpawnItemEx("BulldozerFront",80,-32);
+		A_SpawnItemEx("BulldozerFront",80,-16);
+		A_SpawnItemEx("BulldozerFront",80,16);
+		A_SpawnItemEx("BulldozerFront",80,32);
+		A_SpawnItemEx("BulldozerFront",48,-16);
+		A_SpawnItemEx("BulldozerFront",48,16);
+		A_SpawnItemEx("BulldozerFront",-48,-16);
+		A_SpawnItemEx("BulldozerFront",-48,16);
+		A_SpawnItemEx("BulldozerSide",-48,-32);
+		A_SpawnItemEx("BulldozerSide",-16,-32);
+		A_SpawnItemEx("BulldozerSide",16,-32);
+		A_SpawnItemEx("BulldozerSide",48,-32);
+		A_SpawnItemEx("BulldozerSide",-48,32);
+		A_SpawnItemEx("BulldozerSide",-16,32);
+		A_SpawnItemEx("BulldozerSide",16,32);
+		A_SpawnItemEx("BulldozerSide",48,32);
+		A_SpawnItemEx("BulldozerRear",-32,0);
+		A_SpawnItemEx("BulldozerPillar",-48,-32);
+		A_SpawnItemEx("BulldozerPillar",-48,32);
+		super.postbeginplay();
+	}
+	Default
+		{Height 36;}
+}
+class BulldozerRoof : LoaderBox
+{
+	Default
+	{
+		Radius 36;
+		Height 2;
+	}
+}
+class BulldozerFront : LoaderBox
+{
+	Default
+	{
+		Radius 16;
+		Height 40;
+	}
+}
+class BulldozerSide : LoaderBox
+{
+	Default
+	{
+		Radius 16;
+		Height 24;
+	}
+}
+class BulldozerRear : LoaderBox
+{
+	Default
+	{
+		Radius 8;
+		Height 64;
+	}
+}
+class BulldozerPillar : LoaderBox
+{
+	Default
+	{
+		Radius 2;
+		Height 64;
 	}
 }
 

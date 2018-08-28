@@ -204,10 +204,14 @@ class Tesla : ModelBase
 // Apache helicopter, steel girders
 //====================================================================
 
-class Bulldozer1 : ModelBase
-	{Default{Height 64;}}
-class Forklift1 : Bulldozer1
-	{Default{Scale 1.2;}}
+class Forklift1 : ModelBase
+{
+	Default
+	{
+		Scale 1.2;
+		Height 64;
+	}
+}
 
 class Forklift2 : ModelBase
 {
@@ -218,9 +222,9 @@ class Forklift2 : ModelBase
 	}
 }
 
-class Backhoe1 : Bulldozer1
+class Backhoe1 : Forklift1
 	{Default{Scale 1.6;}}
-class Trailer1 : Bulldozer1
+class Trailer1 : Forklift1
 	{Default{Scale 6;}}
 class Trailer2 : Trailer1{}
 
