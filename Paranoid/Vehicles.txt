@@ -421,13 +421,3 @@ class TramBellmer : TramBattery
 		Loop;
 	}
 }
-class TramBarney : TramBellmer
-{
-	States
-	{
-	Spawn:
-		HLI1 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 2;
-		HLI2 AB 2;
-		Loop;
-	}
-}

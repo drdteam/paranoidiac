@@ -19,6 +19,14 @@ class HLBarneyGuardSpawner : RandomSpawner
 }
 class HLOtisGuardSpawner : HLBarneyGuardSpawner
 	{Default{DropItem "HLOtis";}}
+class TramBarney : HLBarneyGuardSpawner
+{
+	override void PostSpawn(Actor spawned)
+	{
+		spawned.SetStateLabel("Tram");
+		spawned.bNOCLIP=1;
+	}
+}
 
 class HLBarney : HLMonster
 {
@@ -81,6 +89,10 @@ class HLBarney : HLMonster
 	Guard:
 		HLI3 EFGHIJKLMNOPQRSTUVWXYZ[\] 2;
 		HLI4 ABCDEF 2;
+		Loop;
+	Tram:
+		HLI4 GHIJKLMNOPQRSTUVWXYZ[\] 2;
+		HLI5 ABCDEFGH 2;
 		Loop;
 	See:
 		HLR1 ABCDEFGHIJKLMNOPQRSTUVW 1 A_HLChase;
