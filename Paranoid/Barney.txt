@@ -136,12 +136,12 @@ class HLBarney : HLMonster
 	}
 	action void A_HLBarneyLook()
 	{
+		let self=HLBarney(self);
 		if(goal)
 		{
 			A_Face(goal);
 			return;
 		}
-		let self=HLBarney(self);
 		if(!self.follower)
 		{
 			A_Look();
@@ -163,12 +163,12 @@ class HLBarney : HLMonster
 	}
 	action void A_HLBarneyChase()
 	{
+		let self=HLBarney(self);
 		if(goal)
 		{
 			self.A_HLChase();
 			return;
 		}
-		let self=HLBarney(self);
 		if(!self.follower||self.target)
 		{
 			self.A_HLChase();
