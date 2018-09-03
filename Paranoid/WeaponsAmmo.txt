@@ -5,27 +5,16 @@ class ParanoidWeapon : Weapon
 		if(bTOSSED)
 			angle=random(0,359);
 	}
-	virtual class<ammo> GetMagAmmo()
-		{return GetDefaultByType(GetClass()).AmmoType2;}
 	override bool TryPickup(in out Actor toucher)
 	{
 		//If this is the first time I'm pickup up this weapon,
-		//Give me some in-mag ammo with it, please
-		let wep=GetClass();
-		let magammo=GetMagAmmo();
-		//Can't find the ammo? Give up and proceed as normal
-		if(!magammo)
-			return super.TryPickup(toucher);
-		let ammoamount=GetDefaultByType(magammo).MaxAmount;
-		if(!toucher.CountInv(wep))
+		//Give me some in-mag ammo with it instead
+		if(!toucher.CountInv(GetClass()))
 		{
-			toucher.A_GiveInventory(magammo,ammoamount);
-			return super.TryPickup(toucher);
+			AmmoGive2=AmmoGive1;
+			AmmoGive1=0;
 		}
-		let ammo=GetDefaultByType(wep).AmmoType1;
-		toucher.A_GiveInventory(ammo,ammoamount);
-		GoAwayAndDie();
-		return true;
+		return super.TryPickup(toucher);
 	}
 	Default
 	{
@@ -543,6 +532,7 @@ class HLPistol : ParanoidWeapon
 		Weapon.AmmoUse2 1;
 		Weapon.AmmoType "HLPistolAmmo";
 		Weapon.AmmoType2 "HLPistolMag";
+		Weapon.AmmoGive 17;
 		Inventory.PickupMessage "Picked up a 9mm pistol.";
 		Obituary "%o was out-gunned by %k's 9mm pistol.";
 		Inventory.Icon "i_pist1";
@@ -785,6 +775,7 @@ class HLMagnum : ParanoidWeapon
 		Weapon.AmmoUse2 1;
 		Weapon.AmmoType "HLMagnumAmmo";
 		Weapon.AmmoType2 "HLMagnumMag";
+		Weapon.AmmoGive 6;
 		Inventory.PickupMessage "Picked up a .357 Magnum revolver. You Feel Lucky, Punk!?";
 		Obituary "%o's armor was pierced by %k's Python.";
 		Inventory.Icon "i_pist2";
@@ -934,6 +925,7 @@ class HLShotgun : ParanoidWeapon
 		Weapon.AmmoUse2 1;
 		Weapon.AmmoType "HLShotgunAmmo";
 		Weapon.AmmoType2 "HLShotgunMag";
+		Weapon.AmmoGive 8;
 		Inventory.PickupMessage "Picked up a shotgun.";
 		Obituary "%o swallowed %k's lead pellets.";
 		Inventory.Icon "i_sgun1";
@@ -1142,8 +1134,17 @@ class HLAssaultRiflePickup2 : HLShotgunPickup2
 
 class HLAssaultRifle : ParanoidWeapon
 {
-	override class<ammo> GetMagAmmo()
-		{return "HLAssaultRifleMag";}
+	override bool TryPickup(in out Actor toucher)
+	{
+		//If this is the first time I'm pickup up this weapon,
+		//Give me some in-mag ammo with it instead
+		if(!toucher.CountInv(GetClass()))
+		{
+			AmmoGive1=0;
+			toucher.A_GiveInventory("HLAssaultRifleMag",50);
+		}
+		return weapon.TryPickup(toucher);
+	}
 	Default
 	{
 		Tag "Assault Rifle";
@@ -1153,6 +1154,7 @@ class HLAssaultRifle : ParanoidWeapon
 		Weapon.AmmoUse2 1;
 		Weapon.AmmoType "HLPistolAmmo";
 		Weapon.AmmoType2 "HLAssaultRifleMagEx";
+		Weapon.AmmoGive 50;
 		Inventory.PickupMessage "Picked up a 9mm assault rifle.";
 		Obituary "%o felt %k's M4.";
 		Inventory.Icon "i_arifl1";
@@ -1620,9 +1622,9 @@ class HLXBow : ParanoidWeapon
 		Height 8;
 		Weapon.AmmoType "HLXBowAmmo";
 		Weapon.AmmoType2 "HLXBowMag";
-		Weapon.AmmoGive 5;
 		Weapon.AmmoUse 1;
 		Weapon.AmmoUse2 1;
+		Weapon.AmmoGive 5;
 		Inventory.PickupMessage "Picked up a crossbow. Snipe and impale!";
 		Tag "Crossbow";
 		+WEAPON.NOAUTOFIRE
@@ -2536,9 +2538,9 @@ class HLHornetGun : ParanoidWeapon
 		-WEAPON.AMMO_CHECKBOTH
 		Weapon.AmmoType1 "HLHornetGunAmmo";
 		Weapon.AmmoType2 "HLHornetGunAmmo";
-		Weapon.AmmoGive1 10;
 		Weapon.AmmoUse1 1;
 		Weapon.AmmoUse2 1;
+		Weapon.AmmoGive 10;
 		Inventory.PickupMessage "Picked up an alien hornet gun.";
 		Tag "Hornet Gun";
 		Inventory.Icon "i_hhand1";
@@ -2810,6 +2812,7 @@ class HLDesertEagle : HLMagnum
 		Tag "Desert Eagle";
 		Weapon.SelectionOrder 1500;
 		Weapon.AmmoType2 "HLDesertEagleMag";
+		Weapon.AmmoGive 7;
 		Inventory.PickupMessage "Picked up a Desert Eagle .357 Magnum.";
 		Obituary "%o was blasted by %k's Desert Eagle.";
 		Inventory.Icon "i_pist3";
