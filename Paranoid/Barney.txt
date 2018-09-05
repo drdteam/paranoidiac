@@ -44,8 +44,8 @@ class HLBarney : HLMonster
 		DeathSound "halflife/monsters/barney/death";
 		MaxDropoffHeight 64;
 		DropItem "HLPistol";
-		+AMBUSH
 		+FRIENDLY
+		+STANDSTILL
 		-COUNTKILL
 		Species "BlackMesa";
 	}
@@ -115,10 +115,10 @@ class HLBarney : HLMonster
 		if(!guard&&!random(0,32))
 			A_PlaySound("halflife/monsters/barney/idle");
 	}
-	action actor ChooseBestFriend(actor oldfriend)
+	action actor ChooseBestFriend()
 	{
-		if(oldfriend&&oldfriend.health>0)
-			return oldfriend;
+		if(friendplayer)
+			return players[friendplayer].mo;
 		Actor mo;
 		PlayerInfo player;
 		double dist;
@@ -128,7 +128,7 @@ class HLBarney : HLMonster
 				continue;
 			player=players[i];
 			mo=player.mo;
-			if(mo.health<=0||Distance3D(mo)>256.0)
+			if(mo.health<=0||Distance3D(mo)>128.0+64.0)
 				continue;
 			return mo;
 		}
@@ -137,59 +137,42 @@ class HLBarney : HLMonster
 	action void A_HLBarneyLook()
 	{
 		let self=HLBarney(self);
-		if(goal)
-		{
-			A_Face(goal);
-			return;
-		}
 		if(!self.follower)
 		{
 			A_Look();
 			return;
 		}
-		self.bestfriend=ChooseBestFriend(self.bestfriend);
-		if(!self.bestfriend)
+		if(!goal)
+			goal=ChooseBestFriend();
+		if(!goal||Distance3D(goal)>256.0)
 		{
 			A_Look();
 			return;
 		}
-		if(target||Distance3D(self.bestfriend)>128.0)
-			SetStateLabel("See");
-		else
+		if(Distance3D(goal)>128.0)
 		{
-			A_Face(self.bestfriend);
-			A_LookEx(LOF_DONTCHASEGOAL|LOF_NOSEESOUND|LOF_NOJUMP,0,0,360);
+			SetStateLabel("See");
+			return;
 		}
+		A_Face(goal);
+		A_LookEx(LOF_DONTCHASEGOAL|LOF_NOSEESOUND|LOF_NOJUMP,0,0,360);
 	}
 	action void A_HLBarneyChase()
 	{
 		let self=HLBarney(self);
-		if(goal)
+		//If Barney is a follower but doesn't have a player to follow yet...
+		if(self.follower&&!goal)
+			goal=ChooseBestFriend();
+		//If Barney is a follower, doesn't have a target, and the player is close enough...
+		if(self.follower&&!self.target&&goal&&Distance3D(goal)<96.0)
 		{
-			self.A_HLChase();
+			if(random(0,1))
+				SetStateLabel("Spawn");
+			else
+				SetStateLabel("Spawn2");
 			return;
 		}
-		if(!self.follower||self.target)
-		{
-			self.A_HLChase();
-			return;
-		}
-		self.bestfriend=ChooseBestFriend(self.bestfriend);
-		if(!self.bestfriend)
-		{
-			self.A_HLChase();
-			return;
-		}
-		if(Distance3D(self.bestfriend)>96.0)
-		{
-			self.goal=self.bestfriend;
-			self.A_HLChase();
-			return;
-		}
-		if(random(0,1))
-			SetStateLabel("Spawn");
-		else
-			SetStateLabel("Spawn2");
+		self.A_HLChase();
 	}
 }
 
