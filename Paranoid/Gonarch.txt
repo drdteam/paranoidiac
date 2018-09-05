@@ -193,11 +193,11 @@ class GonarchAcidExtra : Actor
 	States
 	{
 	Spawn:
-		X023 AB 3;
+		X022 AC 3;
 		TNT1 A 0 A_Jump(100,"FadeOut");
 		Loop;
 	FadeOut:
-		X023 AB 3 A_FadeOut;
+		X022 AC 3 A_FadeOut;
 		Loop;
 	}
 }
