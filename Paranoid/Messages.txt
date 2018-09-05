@@ -64,14 +64,13 @@ class MessageItem : CustomInventory
 	}
 	static void StopMessage(actor thisplayer,int dud=0)
 	{
-		if(thisplayer==null)
+		if(!thisplayer)
 			return;
 		let mytracker=ParanoidSoundTracker(thisplayer.FindInventory("ParanoidSoundTracker"));
-		if(mytracker==null)
+		if(!mytracker||!mytracker.playing)
 			return;
-		if(!mytracker.playing)
-			return;
-		thisplayer.A_PlaySound("radiostatic",6,local:1);
+		if(mytracker.icon!="TNT1A0")
+			thisplayer.A_PlaySound("radiostatic",6,local:1);
 		thisplayer.A_StopSound(7);
 		//HUDMessage(s:"";HUDMSG_PLAIN,2,CR_UNTRANSLATED,0.0,0.0,0.0);
 		ACS_ExecuteAlways(-int('ClearHUDMessage'),0,2);
@@ -256,7 +255,16 @@ class MessageItemP1M4VOX3 : MessageItemHintman
 
 //P1M4: Message 4
 class MessageItemP1M4VOX4 : MessageItemP1M2VOX2
-	{Default{Inventory.Icon "MAIL04";}}
+{
+	Default
+		{Inventory.Icon "MAIL04";}
+	States
+	{
+	Use:
+		TNT1 A 0 {PlayMessage(invoker.owner,"P1M2VOX2",invoker.MessageNum,invoker.Portrait);}
+		Fail;
+	}
+}
 
 //P1M5: Message 1
 class MessageItemP1M5VOX1 : MessageItemHintman
