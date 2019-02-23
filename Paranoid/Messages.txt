@@ -79,6 +79,8 @@ class MessageItem : CustomInventory
 	}
 	static void PlayMessage(actor thisplayer,string message,int msgnum=0,string icon="TNT1A0")
 	{
+		if(!thisplayer)
+			return;
 		if(!msgnum)
 			msgnum=GetMessageNum(message);
 		let mytracker=ParanoidSoundTracker(thisplayer.FindInventory("ParanoidSoundTracker"));
