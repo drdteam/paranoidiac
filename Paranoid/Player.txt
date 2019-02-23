@@ -252,13 +252,13 @@ class RolfBellmer : PlayerPawn
 			HLSetState("See");
 	}
 	override void PlayAttacking()
-		{HLSetState("Missile");}
+		{HLSetState("Missile",1);}
 	void A_HLPainSelect()
-		{HLSetState("Pain");}
+		{HLSetState("Pain",1);}
 	void A_HLDrownPainSelect()
-		{HLSetState("Pain.Drowning");}
+		{HLSetState("Pain.Drowning",1);}
 	void A_HLDeathSelect()
-		{HLSetState("Death");}
+		{HLSetState("Death",1);}
 	void A_HLHEVPain()
 	{
 		A_Pain();
@@ -281,7 +281,7 @@ class RolfBellmer : PlayerPawn
 	static const statelabel BlackOpsStates[]={"BlackOpsSpawn","BlackOpsSee","BlackOpsMissile","BlackOpsPain","BlackOpsPain.Drowning","BlackOpsDeath"};
 	static const statelabel RoboStates[]={"RoboSpawn","RoboSee","RoboMissile","RoboPain","RoboPain.Drowning","RoboDeath"};
 	static const statelabel IvanStates[]={"IvanSpawn","IvanSee","IvanMissile","IvanPain","IvanPain.Drowning","IvanDeath"};
-	private void HLSetState(name statetype)
+	private void HLSetState(name statetype,bool forced=0)
 	{
 		int mode,skinnum=CVar.GetCVar("v_multiskin",player).GetInt();
 		statelabel stlabel;
@@ -311,7 +311,7 @@ class RolfBellmer : PlayerPawn
 			stlabel=ScientistStates[mode];
 		else
 			stlabel=BaseStates[mode];
-		if(!InStateSequence(CurState,FindState(stlabel)))
+		if(forced||!InStateSequence(CurState,FindState(stlabel)))
 			SetStateLabel(stlabel);
 	}
 	bool InSpawnState()
