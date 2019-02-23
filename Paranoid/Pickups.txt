@@ -130,6 +130,18 @@ class HEVCharge : BasicArmorBonus
 
 class HEVSuit : BasicArmorPickup
 {
+	Override bool TryPickup(in out Actor toucher)
+	{
+		//Remove the Scientist disguise upon pickup
+		if(super.TryPickup(toucher))
+		{
+			let me=RolfBellmer(toucher);
+			if(me)
+				me.Scientist=0;
+			return 1;
+		}
+		return 0;
+	}
 	Default
 	{
 		Radius 16;
