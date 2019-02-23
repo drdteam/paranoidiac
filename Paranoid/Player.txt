@@ -254,11 +254,11 @@ class RolfBellmer : PlayerPawn
 	override void PlayAttacking()
 		{HLSetState("Missile",1);}
 	void A_HLPainSelect()
-		{HLSetState("Pain",1);}
+		{HLSetState("Pain");}
 	void A_HLDrownPainSelect()
-		{HLSetState("Pain.Drowning",1);}
+		{HLSetState("Pain.Drowning");}
 	void A_HLDeathSelect()
-		{HLSetState("Death",1);}
+		{HLSetState("Death");}
 	void A_HLHEVPain()
 	{
 		A_Pain();
