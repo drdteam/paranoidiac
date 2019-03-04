@@ -35,7 +35,7 @@ class BustedGrate : Actor
 	Default
 	{
 		+NOGRAVITY
-		Height 64;
+		Height 8;
 	}
 	States
 	{
@@ -69,8 +69,10 @@ class Debris01 : Actor
 		Mass 5;
 		RenderStyle "Add";
 		+FORCEXYBILLBOARD
-		Projectile;
-		-NOGRAVITY
+		+NOBLOCKMAP
+		+DROPOFF
+		+MISSILE
+		+NOTELEPORT
 	}
 	States
 	{
