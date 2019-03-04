@@ -6,16 +6,10 @@ class HLZombie : RandomSpawner
 		DropItem "HLZombie2";
 		DropItem "HLZombie3";
 	}
-	override void PostSpawn(Actor spawned)
-	{
-		let me=HLZombie1(spawned);
-		me.moan=!random(0,4);
-	}
 }
 
 class HLZombie1 : HLMonster
 {
-	bool moan;
 	Default
 	{
 		Health 150;
@@ -36,11 +30,6 @@ class HLZombie1 : HLMonster
 	States
 	{
 	See:
-		HLW1 A 0
-		{
-			if(moan)
-				A_PlaySound("halflife/monsters/zombie/moan",6,1,1,ATTN_STATIC);
-		}
 		HLW1 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1 A_HLChase;
 		HLW2 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1 A_HLChase;
 		HLW3 A 1 A_HLChase;

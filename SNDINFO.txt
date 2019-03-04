@@ -735,10 +735,6 @@ halflife/monsters/zombie/pain		"sounds/zombie/zo_pain1.ogg"
 halflife/monsters/zombie/sight		"sounds/zombie/zo_alert20.ogg"
 halflife/monsters/zombie/idle1		"sounds/zombie/zo_idle3.wav"
 halflife/monsters/zombie/idle2		"sounds/zombie/zo_idle4.ogg"
-halflife/monsters/zombie/moan1		HLE_moa1
-halflife/monsters/zombie/moan2		HLE_moa2
-halflife/monsters/zombie/moan3		HLE_moa3
-halflife/monsters/zombie/moan4		HLE_moa4
 
 $random halflife/monsters/zombie/attswing
 {
@@ -749,13 +745,6 @@ $random halflife/monsters/zombie/idle
 {
 	halflife/monsters/zombie/idle1
 	halflife/monsters/zombie/idle2
-}
-$random halflife/monsters/zombie/moan
-{
-	halflife/monsters/zombie/moan1
-	halflife/monsters/zombie/moan2
-	halflife/monsters/zombie/moan3
-	halflife/monsters/zombie/moan4
 }
 
 //****
