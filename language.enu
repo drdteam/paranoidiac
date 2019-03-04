@@ -23,7 +23,7 @@ WELCOME3="Welcome to the Black Mesa Research Facility.\n\n\n\nNow bypassing Sect
 
 BELLMERTERMINATED="Subject: Dr. Rolf Bellmer\n\n\n\nStatus: Believed Terminated";
 BELLMERSURVIVOR="Subject: Dr. Rolf Bellmer\n\n\n\nStatus: Survivor of Earth Assault";
-BELLMERDISSOLUTION="Subject: Dr. Rolf Bellmer\n\n\n\nStatus: Imminent dissolution in Xen";
+BELLMERDISSOLUTION="Subject: Dr. Rolf Bellmer\n\n\n\nStatus: Imminent Dissolution in Xen";
 BELLMERSURVIVOR2="Subject: Dr. Rolf Bellmer\n\n\n\nStatus: Survivor of Xen Assault";
 
 LABKEY="Laboratory access security key card.";

@@ -9,7 +9,6 @@ A. WEAPONS
 * Shotgun: similar to double-barrel fire
 * M16 Assault Rifle: launches grenade
 * Cross-bow: Zoom
-* Gluon Gun: Reload
 * Hornet Gun: Rapid fire without homing projectiles
 
 3. All weapons except the crowbar and the rocket-propelled grenade launcher must periodically be reloaded. Be aware of this when planning an attack strategy. Please customize your configuration to allow for reloading.
@@ -43,10 +42,10 @@ C. GAMEPLAY
 
 D. HEADS UP DISPLAY
 
-Paranoid supports all HUD modes available in GZdoom.  
+Paranoid supports all HUD modes available in GZdoom.
 
 1. There is a new status bar and a new full screen HUD.  Both of these have had the Paranoid weapons and ammo fully integrated in to them and also feature a Half-Life like on-screen damage flash.
-2. The Alt-HUD has been tailored to support Paranoid. However, due to this feature being less customizable than the other two modes it has certain limitations.  
+2. The Alt-HUD has been tailored to support Paranoid. However, due to this feature being less customizable than the other two modes it has certain limitations.
 
 a) It does not feature the damage flash.
 

@@ -46,7 +46,7 @@ class ParanoidStatusBar : BaseStatusBar
 			let me=CPlayer.mo;
 			Inventory ammotype1,ammotype2;
 			[ammotype1,ammotype2]=GetCurrentAmmo();
-			if(ammotype2!=null)
+			if(ammotype2)
 			{
 				int ammotemp,ammolow,ammohigh,ammocolor;
 				if(ammotype2.GetClassName()=="HLAssaultRifleMagEx")
@@ -59,7 +59,6 @@ class ParanoidStatusBar : BaseStatusBar
 					[ammolow,ammohigh]=ammolowhigh(ammotype2.MaxAmount);
 					ammotemp=ammotype2.Amount;
 				}
-				//HudMessage(d:CheckInventory(heldtype);HUDMSG_PLAIN,10,CR_RED,0.9,1.0,0.35);
 				DrawString(HLCONFONT,FormatNumber(ammotemp,3),(272-320,182-24),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor2(ammotemp,ammolow,ammohigh));
 			}
 		}
@@ -97,7 +96,7 @@ class ParanoidStatusBar : BaseStatusBar
 		DrawInventoryIcon(CPlayer.ReadyWeapon,(132,176),DI_ITEM_OFFSETS,scale:(.5,.5));
 		[ammotype1,ammotype2]=GetCurrentAmmo();
 		int ammolow,ammohigh,ammocolor;
-		if(ammotype2!=null&&ammotype2.GetClassName()=="HLAssaultRifleMagEx")
+		if(ammotype2&&ammotype2.GetClassName()=="HLAssaultRifleMagEx")
 		{
 			DrawImage("i_gren1b",(230,195),DI_ITEM_OFFSETS,scale:(.25,.25));
 			[ammolow,ammohigh]=ammolowhigh(ammotype1.MaxAmount);
@@ -110,15 +109,15 @@ class ParanoidStatusBar : BaseStatusBar
 			ammotemp=me.CountInv("HLGrenadeLauncherAmmo");
 			DrawString(HLBARFONT,FormatNumber(ammotemp,3),(244,197),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor2(ammotemp,ammolow,ammohigh));
 		}
-		else if(ammotype2==null||ammotype2==ammotype1)
+		else if(!ammotype2||ammotype2==ammotype1)
 		{
-			if(ammotype1!=null)
+			if(ammotype1)
 			{
 				[ammolow,ammohigh]=ammolowhigh(ammotype1.MaxAmount);
 				DrawString(HLSTAFONT,FormatNumber(ammotype1.Amount,3),(236,182),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor1(ammotype1.Amount,ammolow,ammohigh));
 			}
 		}
-		else if(ammotype1!=null)
+		else if(ammotype1)
 		{
 			[ammolow,ammohigh]=ammolowhigh(ammotype1.MaxAmount);
 			DrawString(HLBARFONT,FormatNumber(ammotype1.Amount,3),(244,193),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor1(ammotype1.Amount,ammolow,ammohigh));
@@ -159,7 +158,7 @@ class ParanoidStatusBar : BaseStatusBar
 		DrawImage("i_horn1b",(285,184),DI_ITEM_OFFSETS,scale:(.25,.25));
 		AmmoColumn(2,"HLHornetGunAmmo",307,185);
 
-		if(me.InvSel!=null&&!level.NoInventoryBar)
+		if(me.InvSel&&!level.NoInventoryBar)
 		{
 			int xval=15,yval=161;
 			DrawInventoryIcon(me.InvSel,(xval,yval),DI_ITEM_CENTER);
@@ -217,14 +216,14 @@ class ParanoidStatusBar : BaseStatusBar
 		DrawImage(ArmorInterp.GetValue()>0?"i_arm2":"i_arm1",(54,176-24),DI_ITEM_OFFSETS,scale:(.5,.5));
 
 		//Ammo
-		if(ammotype1!=null)
+		if(ammotype1)
 			DrawInventoryIcon(ammotype1,(312-320,158),DI_ITEM_OFFSETS,scale:(.5,.5));
-		if(ammotype2!=null&&ammotype2!=ammotype1)
+		if(ammotype2&&ammotype2!=ammotype1)
 			DrawImage("divide",(280-320,152),DI_ITEM_OFFSETS,scale:(.5,.5));
 
 		[ammotype1,ammotype2]=GetCurrentAmmo();
 		int ammolow,ammohigh,ammocolor;
-		if(ammotype2!=null&&ammotype2.GetClassName()=="HLAssaultRifleMagEx")
+		if(ammotype2&&ammotype2.GetClassName()=="HLAssaultRifleMagEx")
 		{
 			DrawImage("i_gren1",(312-320,164-24),DI_ITEM_OFFSETS,scale:(.5,.5));
 			[ammolow,ammohigh]=ammolowhigh(ammotype1.MaxAmount);
@@ -239,12 +238,12 @@ class ParanoidStatusBar : BaseStatusBar
 		}
 		else
 		{
-			if(ammotype1!=null)
+			if(ammotype1)
 			{
 				[ammolow,ammohigh]=ammolowhigh(ammotype1.MaxAmount);
 				DrawString(HLSTAFONT,FormatNumber(ammotype1.Amount,3),(310-320,182-24),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor1(ammotype1.Amount,ammolow,ammohigh));
 			}
-			if(ammotype2!=null&&ammotype2!=ammotype1)
+			if(ammotype2&&ammotype2!=ammotype1)
 			{
 				[ammolow,ammohigh]=ammolowhigh(ammotype2.MaxAmount);
 				DrawString(HLSTAFONT,FormatNumber(ammotype2.Amount,3),(272-320,182-24),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor2(ammotype2.Amount,ammolow,ammohigh));
@@ -252,7 +251,7 @@ class ParanoidStatusBar : BaseStatusBar
 		}
 
 		//Current inventory item
-		if(me.InvSel!=null&&!level.NoInventoryBar)
+		if(me.InvSel&&!level.NoInventoryBar)
 		{
 			DrawInventoryIcon(me.InvSel,(146,27-24));
 			if(me.InvSel.Amount>1)
