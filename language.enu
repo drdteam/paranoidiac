@@ -72,77 +72,79 @@ BRIEF13="These messages will help you navigate the Black Mesa facility, \nand id
 BRIEF14="Good luck!";
 
 P1M2VOX1=
-	"You'll need to reach Dr. Zimmerman, the Sector Administrator,\n"
+	"You'll need to reach Dr. Zimmerman, the Sector Administrator, "
 	"to get the System Override code.";
 P1M2VOX2=
 	"Shoot the undamaged fuse to disable the laser barrier.";
 P1M2VOX3=
-	"Look for a gasoline can in the Fuel Room,\n"
+	"Look for a gasoline can in the Fuel Room, "
 	"which is near the Flow Control Room.";
 P1M2VOX4=
 	"Raise the crane and jump on it to ride it to the top.\n\n"
 	"If you miss, use the switch to lower the crane and try again.";
 P1M3VOX1=
-	"The security key is in Security Room B-102,\n"
+	"The security key is in Security Room B-102, "
 	"which overlooks Storage Bay A2.\n\n"
-	"Use the lift in Storage Bay A3 to reach the bridge\n"
+	"Use the lift in Storage Bay A3 to reach the bridge "
 	"over Storage Bay A2, which will take you to B-102.";
 P1M3VOX2=
 	"Find Hazardous Materials Bay B and exit to the East of the building.\n\n"
 	"The bay doors are operated from the control room overlooking HazMat Bay B.\n\n"
 	"To reach the control room, take the stairs from the Cafeteria.";
 P1M3VOX3=
-	"Go all the way to the rear of Supply Room D-301,\n"
+	"Go all the way to the rear of Supply Room D-301, "
 	"and find a duct that will take you back to Sector C.";
 P1M4VOX1=
 	"We just intercepted a Security Bulletin.\n\n"
-	"Dr. Zimmerman is being held in the Secure Holding Facility\n"
+	"Dr. Zimmerman is being held in the Secure Holding Facility "
 	"in the North-Eastern quadrant of this sector.";
 P1M4VOX2=
-	"Because of the emergency, the security systems have\n"
+	"Because of the emergency, the security systems have "
 	"automatically electrified the gate and the perimeter fence.\n\n"
 	"To safely access the gate you'll need to switch off auxiliary power.\n\n"
-	"You'll need to get to the Turbine Control Room\n"
+	"You'll need to get to the Turbine Control Room "
 	"in the Western part of this sector.";
 P1M4VOX3=
 	"Gate Control at the Secure Holding Facility has been restored.\n\n"
-	"Return to the Guard tower, reachable through the Storage Warehouse\n"
+	"Return to the Guard tower, reachable through the Storage Warehouse "
 	"in the Eastern quadrant of this sector.";
+P1M4VOX4=
+	"Shoot the undamaged fuse to disable the laser barrier.";
 P1M5VOX1=
-	"You will probably find Dr. Zimmerman in\n"
+	"You will probably find Dr. Zimmerman in "
 	"the sub-basement level of the Holding Facility.";
 P1M5VOX2=
-	"Who the hell are you? Ah, yes. Bellmer. The new fellow. What do you want? Hmmm...\n"
-	"the security override code, eh? What the heck! You're probably better off with it than me.\n"
-	"Listen carefully: It's 7-A-K-T-Z. Got it? And hey! It seems this other fellow... Freeman.\n"
+	"Who the hell are you? Ah, yes. Bellmer. The new fellow. What do you want? Hmmm... "
+	"the security override code, eh? What the heck! You're probably better off with it than me. "
+	"Listen carefully: It's 7-A-K-T-Z. Got it? And hey! It seems this other fellow... Freeman. "
 	"He's been giving them hell, too. Perhaps you guys should hook up, eh?";
 P1M5VOX3=
 	"What're you waiting for? Get out of here!";
 P1M6VOX1=
-	"There's a drainage tunnel near the dam\n"
+	"There's a drainage tunnel near the dam "
 	"that will take you to the Research Labs.";
 P1M6VOX2=
-	"Look for Sergeant Harrison, the Security Officer.\n"
+	"Look for Sergeant Harrison, the Security Officer. "
 	"He'll restore your security clearance.\n\n"
-	"You'll find him in the Office Block at the North-Western quadrant\n"
+	"You'll find him in the Office Block at the North-Western quadrant "
 	"of this sector. Take the bridge over the storage warehouse.";
 P1M6VOX3=
-	"Return to the Research Labs and use your\n"
+	"Return to the Research Labs and use your "
 	"security clearance to gain access.\n\n"
 	"Take the bridge over the storage warehouse.";
 P1M6VOX4=
-	"Dr. Bellmer, isn't it? Rolf Bellmer? I'm impressed you made it this far.\n"
-	"You're probably here because those military bastards scrapped your clearance.\n"
-	"Mine too. But I didn't get promoted to Security Officer without knowing how\n"
-	"to hack my own system. You want your clearance back? You want a higher clearance?\n"
+	"Dr. Bellmer, isn't it? Rolf Bellmer? I'm impressed you made it this far. "
+	"You're probably here because those military bastards scrapped your clearance. "
+	"Mine too. But I didn't get promoted to Security Officer without knowing how "
+	"to hack my own system. You want your clearance back? You want a higher clearance? "
 	"No problemo.";
 P1M6VOX5=
 	"Workin' on it.";
 P1M6VOX6=
 	"Almost there, buddy.";
 P1M6VOX7=
-	"Okay. You're all set. Go out there and kick some butt! I'm going to stay behind\n"
-	"this bullet-proof glass. Where it's safe. Oh, hey! I almost forgot. Grab all\n"
+	"Okay. You're all set. Go out there and kick some butt! I'm going to stay behind "
+	"this bullet-proof glass. Where it's safe. Oh, hey! I almost forgot. Grab all "
 	"the stuff you can carry!";
 P1M7VOX1=
 	"Keep pressing the switch to fry that sucker.";
@@ -150,95 +152,95 @@ P1M7VOX2=
 	"Use the terminal to upload the virus.\n\n"
 	"We have remotely disabled the critical security protocols.";
 P1M7VOX3=
-	"Warning! Illegal Data Access In Progress. Please Cease Data\n"
-	"Upload Immediately and Surrender to the Enforcement Authorities.\n"
+	"Warning! Illegal Data Access In Progress. Please Cease Data "
+	"Upload Immediately and Surrender to the Enforcement Authorities. "
 	"All Exit Vestibules are Being Flooded with Nerve Gas.";
 P1M8VOX1=
 	"You should be able to crawl under the door.";
 P1M8VOX2=
-	"This is a timed switch that will temporarily\n"
+	"This is a timed switch that will temporarily "
 	"raise the gate to the next reservoir chamber.";
 P2M1VOX1=
-	"Dr. Bellmer, my name is Colonel Stinson, with Legion: Earth. We don't have much time,\n"
-	"so listen carefully. The mission to extract you from Black Mesa was compromised,\n"
-	"and your Controller has gone AWOL, and possibly rogue. Unfortunately, we cannot\n"
-	"mobilize a rescue mission yet, so you're on your own for now. Our surveillance\n"
-	"indicates your crash site has only one way in or out. Therefore, your exit strategy\n"
-	"is to return to Black Mesa while we attempt another extraction. Meanwhile,\n"
-	"government and alien forces will continue to hunt you. There's a cavern nearby\n"
+	"Dr. Bellmer, my name is Colonel Stinson, with Legion: Earth. We don't have much time, "
+	"so listen carefully. The mission to extract you from Black Mesa was compromised, "
+	"and your Controller has gone AWOL, and possibly rogue. Unfortunately, we cannot "
+	"mobilize a rescue mission yet, so you're on your own for now. Our surveillance "
+	"indicates your crash site has only one way in or out. Therefore, your exit strategy "
+	"is to return to Black Mesa while we attempt another extraction. Meanwhile, "
+	"government and alien forces will continue to hunt you. There's a cavern nearby "
 	"where you can seek cover until we can...";
 P2M2VOX1=
-	"Dr. Bellmer, you're at the employee in-processing facility. You may recall you went through\n"
-	"here when you began your mission. The monorail will take you to back to Sector C.\n"
+	"Dr. Bellmer, you're at the employee in-processing facility. You may recall you went through "
+	"here when you began your mission. The monorail will take you to back to Sector C. "
 	"We'll try to regroup once you get there, and work out an effective way to extract you.";
 P2M2VOX2=
-	"That you, Dr. Bellmer? Looks like you're stuck here with the rest of us. They've \n"
-	"disabled monorail and gate control. You can't get out that way. [Whoa! Did I \n"
-	"just make a Han Solo reference?] You can try and make it through the canyon, \n"
+	"That you, Dr. Bellmer? Looks like you're stuck here with the rest of us. They've "
+	"disabled monorail and gate control. You can't get out that way. [Whoa! Did I "
+	"just make a Han Solo reference?] You can try and make it through the canyon, "
 	"but I wouldn't recommend it. Good luck.";
 P2M3VOX1=
-	"We didn't anticipate the total lockdown of Sector C. We can't send transport to your\n"
-	"current location because the winds make flying exceedingly treacherous. Proceed\n"
-	"through the canyon until you reach the dam. There are two ways out at that point,\n"
-	"and we'll figure out your best option. Meanwhile, you're probably wondering who we are.\n"
-	"I'm sending you an UnderNet link that provides some background. As to why we're\n"
+	"We didn't anticipate the total lockdown of Sector C. We can't send transport to your "
+	"current location because the winds make flying exceedingly treacherous. Proceed "
+	"through the canyon until you reach the dam. There are two ways out at that point, "
+	"and we'll figure out your best option. Meanwhile, you're probably wondering who we are. "
+	"I'm sending you an UnderNet link that provides some background. As to why we're "
 	"interested in you, that will be revealed in due time.";
 P2M3VOX2=
-	"Legion: Earth is an organization that was created to protect Earth from threats both\n"
-	"extra-terrestrial and home-grown. In recent years, that threat has increased as a\n"
-	"result of Anomalous Materials research at the Black Mesa facility in the United States\n"
-	"and by the European Space Consortium. The discovery of PortalTech, otherwise known as\n"
-	"teleportation, has allowed both these agencies to collaborate with an alien species\n"
-	"in a Borderworld known as Xen. We have evidence that human dealings with this species\n"
+	"Legion: Earth is an organization that was created to protect Earth from threats both "
+	"extra-terrestrial and home-grown. In recent years, that threat has increased as a "
+	"result of Anomalous Materials research at the Black Mesa facility in the United States "
+	"and by the European Space Consortium. The discovery of PortalTech, otherwise known as "
+	"teleportation, has allowed both these agencies to collaborate with an alien species "
+	"in a Borderworld known as Xen. We have evidence that human dealings with this species "
 	"are paving the way for an invasion of Earth. Our mandate is to stop it.";
 P2M4VOX1=
-	"Too bad you couldn't cross the dam and get out from there. It might have been easier\n"
-	"to extract you from the East. Your best chance now is to take the sewers to the\n"
-	"Weapons Test Lab. There's an open landing area there, and we can set a transport\n"
-	"helicopter down. Government forces control strategic points, while the Xen aliens\n"
-	"roam freely elsewhere. Watch your back. I'm sending you another UnderNet link with\n"
+	"Too bad you couldn't cross the dam and get out from there. It might have been easier "
+	"to extract you from the East. Your best chance now is to take the sewers to the "
+	"Weapons Test Lab. There's an open landing area there, and we can set a transport "
+	"helicopter down. Government forces control strategic points, while the Xen aliens "
+	"roam freely elsewhere. Watch your back. I'm sending you another UnderNet link with "
 	"more information on us.";
 P2M4VOX2=
-	"Legion: Earth was first aware of Xen and human collaboration about a year ago. Then,\n"
-	"we discovered that the European Space Consortium engineered an infiltration into\n"
-	"Black Mesa with the objective of sabotaging the research there. The operative,\n"
-	"one Dr. Rolf Bellmer, succeeded in corrupting vital data at Black Mesa. This gave\n"
-	"the Consortium an edge in the race to harness alien technology. But Dr. Bellmer was\n"
-	"a loose end, and the Consortium attempted to terminate him with extreme prejudice.\n"
+	"Legion: Earth was first aware of Xen and human collaboration about a year ago. Then, "
+	"we discovered that the European Space Consortium engineered an infiltration into "
+	"Black Mesa with the objective of sabotaging the research there. The operative, "
+	"one Dr. Rolf Bellmer, succeeded in corrupting vital data at Black Mesa. This gave "
+	"the Consortium an edge in the race to harness alien technology. But Dr. Bellmer was "
+	"a loose end, and the Consortium attempted to terminate him with extreme prejudice. "
 	"This attempt failed, but Dr. Bellmer continues to remain embattled.";
 P2M5VOX1=
-	"Dr. Bellmer, follow these instructions carefully. When you exit the sewers, proceed\n"
+	"Dr. Bellmer, follow these instructions carefully. When you exit the sewers, proceed "
 	"to the East Gate. We'll have helicopter transport waiting there to get you out.";
 P2M5VOX2=
-	"Damn! It seems your Controller is one step ahead of us. He has a lot to answer for;\n"
-	"those were good people we lost on that transport............................................\n"
-	"Okay, Plan B. You'll need to proceed through the Lambda Complex. The security key\n"
-	"will probably be in the Administrator's office. And make sure you collect the\n"
+	"Damn! It seems your Controller is one step ahead of us. He has a lot to answer for; "
+	"those were good people we lost on that transport............................................ "
+	"Okay, Plan B. You'll need to proceed through the Lambda Complex. The security key "
+	"will probably be in the Administrator's office. And make sure you collect the "
 	"experimental energy weapon they're developing before you head for Lambda.";
 P2M6VOX1=
-	"The Lambda Complex is a series of labs. Be mindful of the freezer section and\n"
-	"don't stay in there for too long. Also, there's a rumor that your Controller\n"
-	"may be trying to recruit other scientists to his cause. Do not engage him.\n"
+	"The Lambda Complex is a series of labs. Be mindful of the freezer section and "
+	"don't stay in there for too long. Also, there's a rumor that your Controller "
+	"may be trying to recruit other scientists to his cause. Do not engage him. "
 	"I repeat, do not engage your Controller.";
 P2M6VOX1=
-	"You're approaching the core of the Lambda Complex. This is where they conduct\n"
-	"experiments on live specimens. We'll try to set a transport down on the helipad\n"
-	"leading to the East entrance. But you'll need a security key to make it through\n"
+	"You're approaching the core of the Lambda Complex. This is where they conduct "
+	"experiments on live specimens. We'll try to set a transport down on the helipad "
+	"leading to the East entrance. But you'll need a security key to make it through "
 	"the checkpoint. I'm sending you a final UnderNet link that will make things clearer.";
 P2M7VOX2=
-	"Dr. Rolf Bellmer has proven to be extremely resourceful, both as an undercover operative,\n"
-	"and as a combat technician. Moreover, he possesses a rare combination of advanced scientific\n"
-	"knowledge and survivor's instinct, which makes him an ideal candidate for recruitment to\n"
-	"Legion: Earth. In addition, his time at Black Mesa will give us valuable insights into\n"
+	"Dr. Rolf Bellmer has proven to be extremely resourceful, both as an undercover operative, "
+	"and as a combat technician. Moreover, he possesses a rare combination of advanced scientific "
+	"knowledge and survivor's instinct, which makes him an ideal candidate for recruitment to "
+	"Legion: Earth. In addition, his time at Black Mesa will give us valuable insights into "
 	"operations at that facility, and will allow us to hobble their efforts.";
 P2M7VOX3=
-	"We think the security key is inside the central chamber where the Gargantua is in stasis.\n"
-	"You'll need to disable the laser barrier and drop into the chamber to retrieve the key.\n"
-	"With the malfunctioning door, the only way into the laser control room are the ducts.\n"
+	"We think the security key is inside the central chamber where the Gargantua is in stasis. "
+	"You'll need to disable the laser barrier and drop into the chamber to retrieve the key. "
+	"With the malfunctioning door, the only way into the laser control room are the ducts. "
 	"Find the Boiler Room next to the Fuel Storage area, and use the ventilation duct.";
 P2M8VOX1=
-	"They've cut power to most sectors, and drained the fuel from the emergency generators.\n"
-	"You may find some fuel in the supply area in the North-East quadrant. But be careful:\n"
+	"They've cut power to most sectors, and drained the fuel from the emergency generators. "
+	"You may find some fuel in the supply area in the North-East quadrant. But be careful: "
 	"the place is swarming with government and alien forces.";
 
 PARANOID_TITLEMAP="The Path to Perdition";

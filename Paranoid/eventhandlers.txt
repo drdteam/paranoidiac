@@ -77,31 +77,12 @@ class ParanoidStaticEventHandler : StaticEventHandler
 			}
 		}
 	}
-	override void RenderOverlay(RenderEvent e)
-	{
-		PlayerInfo p=players[consoleplayer];
-		if(!p)
-			return;
-		let me=p.mo;
-		if(!me)
-			return;
-		let mytracker=ParanoidSoundTracker(me.FindInventory("ParanoidSoundTracker"));
-		if(mytracker==null)
-			return;
-		string icon=mytracker.icon;
-		if(icon!="TNT1A0")
-		{
-			int flags=BaseStatusBar.DI_SCREEN_TOP|BaseStatusBar.DI_SCREEN_HCENTER|BaseStatusBar.DI_NOSHADOW;
-			StatusBar.DrawImage(icon,(30,50),flags,1.0,scale:(.48,.4));
-		}
-	}
 	override void PlayerEntered(PlayerEvent e)
 	{
 		RolfBellmer me;
 		me=RolfBellmer(players[e.PlayerNumber].mo);
 		if(me==null)
 			return;
-		me.A_GiveInventory("ParanoidSoundTracker");
 		if(level.LevelName=='Otis Shift')
 		{
 			me.A_GiveInventory("HLDesertEagle");
