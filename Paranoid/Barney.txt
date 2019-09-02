@@ -45,7 +45,6 @@ class HLBarney : HLMonster
 		MaxDropoffHeight 64;
 		DropItem "HLPistol";
 		+FRIENDLY
-		+STANDSTILL
 		-COUNTKILL
 		Species "BlackMesa";
 	}
