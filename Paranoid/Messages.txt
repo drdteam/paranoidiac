@@ -198,7 +198,7 @@ class MessageItem : CustomInventory
 		PrintPickupMessage(1,"$NEWMESSAGE");
 		return Super.TryPickup(toucher);
 	}
-	static void StopMessage(PlayerPawn thisplayer)
+	static void StopMessage(actor thisplayer)
 	{
 		if(!thisplayer)
 			return;
@@ -211,7 +211,7 @@ class MessageItem : CustomInventory
 		mytracker.playing=0;
 		ParanoidMessageHandler.StartDialogueSequence(thisplayer.player,"");
 	}
-	static void PlayMessage(PlayerPawn thisplayer,string message,string icon="TNT1A0")
+	static void PlayMessage(actor thisplayer,string message,string icon="TNT1A0",int dur=0)
 	{
 		if(!thisplayer)
 			return;
@@ -235,10 +235,14 @@ class MessageItem : CustomInventory
 		if(mytracker.playing!=2)
 			thisplayer.A_PlaySound("radiostatic",6,local:1);
 		thisplayer.A_PlaySound(message,7,attenuation:ATTN_STATIC);//,local:1);	//local makes it uninterruptible...
-		double dur=S_GetLength(message);
+		double doubledur;
+		if(dur)
+			doubledur=dur*1.0;
+		else
+			doubledur=S_GetLength(message);
 		string msg=StringTable.Localize("$"..message);
-		double typetime=dur/double(msg.Length());
-		mytracker.countdown=int(5+dur*35);
+		double typetime=doubledur/double(msg.Length());
+		mytracker.countdown=int(5+doubledur*35);
 		ParanoidMessageHandler.StartDialogueSequence(thisplayer.player,message,typetime,icon);
 	}
 	string Portrait;
