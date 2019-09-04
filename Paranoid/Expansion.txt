@@ -1,7 +1,5 @@
 class HLAlphaBarney : HLBarney
 {
-	override void tick()
-		{Actor.Tick();}
 	Default
 	{
 		SeeSound "quiver/monsters/barney/idle";
@@ -45,11 +43,6 @@ class HLAlphaBarney : HLBarney
 		HLD2 ABCDEFGHIJKLMNOP 2;
 		HLD2 Q -1;
 		Stop;
-	}
-	override void A_Chatter()
-	{
-		if(!random(0,32))
-			A_PlaySound("quiver/monsters/barney/idle");
 	}
 }
 
