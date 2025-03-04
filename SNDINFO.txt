@@ -128,7 +128,7 @@ p2m7vox3 p2m7vox3	//Col. Stinson
 p2m8vox1 p2m8vox1	//
 
 //--------------------
-//Administrator (Map04)
+//Administrator (P1M5)
 //--------------------
 admin01 admin01
 admin02 admin02
@@ -140,7 +140,7 @@ admin07 admin07
 admin08 admin08
 
 //--------------------
-//Sgt. Harrison (Map05)
+//Sgt. Harrison (P1M6)
 //--------------------
 harris01 harris01
 harris02 harris02

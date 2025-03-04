@@ -1,7 +1,7 @@
 Model HLBat
 {
 	Path "Models"
-	Model 0 "stukabat.md3"
+	Model 0 "stukabat.iqm"
 	SurfaceSkin 0 0 "stukabat_000.png"
 	SurfaceSkin 0 1 "stukabat_001.png"
 	SurfaceSkin 0 2 "stukabat_002.png"
@@ -139,7 +139,7 @@ Model HLBat
 Model HLBossBat
 {
 	Path "Models"
-	Model 0 "stukabat.md3"
+	Model 0 "stukabat.iqm"
 	SurfaceSkin 0 0 "stukabat2_000.png"
 	SurfaceSkin 0 1 "stukabat2_001.png"
 	SurfaceSkin 0 2 "stukabat2_002.png"
@@ -277,7 +277,7 @@ Model HLBossBat
 Model HLVortigaunt
 {
 	Path "Models"
-	Model 0 "islave.md3"
+	Model 0 "islave.iqm"
 	SurfaceSkin 0 0 "islave_000.png"
 	SurfaceSkin 0 1 "islave_001.png"
 
@@ -464,45 +464,27 @@ Model VortiLightning
 	Frame X098 E 0 "frame01"
 	Frame X098 I 0 "frame02"
 	Frame X098 M 0 "frame03"
-}
 
-Model VortiLightning
-{
-	Path "Models"
-	Model 1 "vorti.md2"
-	Skin 1 "spark1.png"
-	Scale 0.5 0.5 0.4
+	Skin 0 "spark1.png"
 
-	Frame X098 B 1 "frame00"
-	Frame X098 F 1 "frame01"
-	Frame X098 J 1 "frame02"
-	Frame X098 N 1 "frame03"
-}
+	Frame X098 B 0 "frame00"
+	Frame X098 F 0 "frame01"
+	Frame X098 J 0 "frame02"
+	Frame X098 N 0 "frame03"
 
-Model VortiLightning
-{
-	Path "Models"
-	Model 2 "vorti.md2"
-	Skin 2 "spark2.png"
-	Scale 0.5 0.5 0.4
+	Skin 0 "spark2.png"
 
-	Frame X098 C 2 "frame00"
-	Frame X098 G 2 "frame01"
-	Frame X098 K 2 "frame02"
-	Frame X098 O 2 "frame03"
-}
+	Frame X098 C 0 "frame00"
+	Frame X098 G 0 "frame01"
+	Frame X098 K 0 "frame02"
+	Frame X098 O 0 "frame03"
 
-Model VortiLightning
-{
-	Path "Models"
-	Model 3 "vorti.md2"
-	Skin 3 "spark3.png"
-	Scale 0.5 0.5 0.4
+	Skin 0 "spark3.png"
 
-	Frame X098 D 3 "frame00"
-	Frame X098 H 3 "frame01"
-	Frame X098 L 3 "frame02"
-	Frame X098 P 3 "frame03"
+	Frame X098 D 0 "frame00"
+	Frame X098 H 0 "frame01"
+	Frame X098 L 0 "frame02"
+	Frame X098 P 0 "frame03"
 }
 
 ////////////////////////////
@@ -548,7 +530,7 @@ model VortiPlasma_Bolt
 Model HLBarnacle
 {
 	Path "models"
-	Model 0 "barnacle.md3"
+	Model 0 "barnacle.iqm"
 	Skin 0 "barnacle.png"
 	ZOffset 32
 
@@ -878,11 +860,11 @@ Model HLBarnacle
 Model HLHornetGrunt
 {
 	Path "Models"
-	Model 0 "agrunt_body.md3"
+	Model 0 "agrunt_body.iqm"
 	SurfaceSkin 0 0 "agrunt_body_000.png"
 	SurfaceSkin 0 1 "agrunt_body_001.png"
 	SurfaceSkin 0 2 "agrunt_body_002.png"
-	Model 1 "agrunt_gun.md3"
+	Model 1 "agrunt_gun.iqm"
 	SurfaceSkin 1 0 "agrunt_body_000.png"
 	SurfaceSkin 1 1 "agrunt_body_001.png"
 	SurfaceSkin 1 2 "agrunt_gun_002.png"
@@ -1107,7 +1089,7 @@ Model HLHornetGrunt
 Model HLGargantua
 {
 	Path "Models"
-	Model 0 "garg.md3"
+	Model 0 "garg.iqm"
 	SurfaceSkin 0 0 "garg_000.png"
 	SurfaceSkin 0 1 "garg_001.png"
 	INTERPOLATEDOUBLEDFRAMES
@@ -1335,7 +1317,7 @@ Model HLGargantua
 Model HLGargantua2
 {
 	Path "Models"
-	Model 0 "garg.md3"
+	Model 0 "garg.iqm"
 	SurfaceSkin 0 0 "garg_000.png"
 	SurfaceSkin 0 1 "garg2_001.png"
 	INTERPOLATEDOUBLEDFRAMES
@@ -1563,7 +1545,7 @@ Model HLGargantua2
 Model HLHeadCrab
 {
 	Path "Models"
-	Model 0 "headcrab.md3"
+	Model 0 "headcrab.iqm"
 	SurfaceSkin 0 0 "headcrab_000.png"
 	SurfaceSkin 0 1 "headcrab_001.png"
 
@@ -1717,7 +1699,7 @@ Model HLHeadCrab
 Model HLBabyHeadCrab
 {
 	Path "Models"
-	Model 0 "baby_headcrab.md3"
+	Model 0 "baby_headcrab.iqm"
 	Skin 0 "baby_headcrab.png"
 
 	FrameIndex HLI1 A 0 0
@@ -1868,7 +1850,7 @@ Model HLBabyHeadCrab
 Model HLGonarch
 {
 	Path "Models"
-	Model 0 "big_mom.md3"
+	Model 0 "big_mom.iqm"
 	SurfaceSkin 0 0 "big_mom_000.png"
 	SurfaceSkin 0 1 "big_mom_001.png"
 	SurfaceSkin 0 2 "big_mom_002.png"
@@ -2073,7 +2055,7 @@ Model HLGonarch
 Model HLHoundEye
 {
 	Path "Models"
-	Model 0 "houndeye.md3"
+	Model 0 "houndeye.iqm"
 	SurfaceSkin 0 0 "houndeye_000.png"
 	SurfaceSkin 0 1 "houndeye_001.png"
 
@@ -2340,7 +2322,7 @@ Model HLHoundEye
 Model HLBullSquid
 {
 	Path "Models"
-	Model 0 "bullsquid.md3"
+	Model 0 "bullsquid.iqm"
 	SurfaceSkin 0 0 "bullsquid_000.png"
 	SurfaceSkin 0 1 "bullsquid_001.png"
 	SurfaceSkin 0 2 "bullsquid_002.png"
@@ -2549,7 +2531,7 @@ Model HLBullSquid
 Model HLController
 {
 	Path "Models"
-	Model 0 "controller.md3"
+	Model 0 "controller.iqm"
 	SurfaceSkin 0 0 "controller_000.png"
 	SurfaceSkin 0 1 "controller_001.png"
 	SurfaceSkin 0 2 "controller_002.png"
@@ -2795,7 +2777,7 @@ Model HLController
 Model HLZombie1
 {
 	Path "Models"
-	Model 0 "zombie1.md3"
+	Model 0 "zombie1.iqm"
 	SurfaceSkin 0 0 "zombie1_000.png"
 	SurfaceSkin 0 1 "zombie1_001.png"
 	SurfaceSkin 0 2 "zombie1_002.png"
@@ -2969,7 +2951,7 @@ Model HLZombie1
 Model HLZombie2
 {
 	Path "Models"
-	Model 0 "zombie2.md3"
+	Model 0 "zombie2.iqm"
 	SurfaceSkin 0 0 "zombie1_002.png"
 	SurfaceSkin 0 1 "zombie2_001.png"
 	SurfaceSkin 0 2 "zombie2_002.png"
@@ -3009,6 +2991,8 @@ Model HLZombie2
 	FrameIndex HLI1 ] 0 28
 	FrameIndex HLI2 A 0 29
 	FrameIndex HLI2 B 0 30
+
+	Offset -16 0 0
 
 	FrameIndex HLW1 A 0 109
 	FrameIndex HLW1 B 0 110
@@ -3069,6 +3053,8 @@ Model HLZombie2
 	FrameIndex HLW2 \ 0 165
 	FrameIndex HLW2 ] 0 166
 	FrameIndex HLW3 A 0 167
+
+	Offset 0 0 0
 
 	FrameIndex HLA1 A 0 56
 	FrameIndex HLA1 B 0 57
@@ -3143,7 +3129,7 @@ Model HLZombie2
 Model HLZombie3
 {
 	Path "Models"
-	Model 0 "zombie3.md3"
+	Model 0 "zombie3.iqm"
 	SurfaceSkin 0 0 "zombie1_002.png"
 	SurfaceSkin 0 1 "zombie2_001.png"
 	SurfaceSkin 0 2 "zombie2_002.png"
@@ -3184,6 +3170,8 @@ Model HLZombie3
 	FrameIndex HLI1 ] 0 28
 	FrameIndex HLI2 A 0 29
 	FrameIndex HLI2 B 0 30
+
+	Offset -16 0 0
 
 	FrameIndex HLW1 A 0 109
 	FrameIndex HLW1 B 0 110
@@ -3244,6 +3232,8 @@ Model HLZombie3
 	FrameIndex HLW2 \ 0 165
 	FrameIndex HLW2 ] 0 166
 	FrameIndex HLW3 A 0 167
+
+	Offset 0 0 0
 
 	FrameIndex HLA1 A 0 56
 	FrameIndex HLA1 B 0 57
@@ -3318,7 +3308,7 @@ Model HLZombie3
 Model HLNihilanth
 {
 	Path "Models"
-	Model 0 "nihilanth.md3"
+	Model 0 "nihilanth.iqm"
 	SurfaceSkin 0 0 "nihilanth_000.png"
 	SurfaceSkin 0 1 "nihilanth_001.png"
 	SurfaceSkin 0 2 "nihilanth_002.png"

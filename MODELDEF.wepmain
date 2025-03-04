@@ -60,7 +60,6 @@ Model HLAssaultRifle
 	FrameIndex HLS1 A 0 0
 
 	Model 0 "9mmar1.md3"
-	Skin 0 "w_9mmar.png"
 
 	FrameIndex HLS1 B 0 0
 }
@@ -114,7 +113,7 @@ Model HLDesertEagle
 Model HLHornetGun
 {
 	Path "Models"
-	Model 0 "v_hgun.md3"
+	Model 0 "v_hgun.iqm"
 	SurfaceSkin 0 0 "v_hgun_000.png"
 	SurfaceSkin 0 1 "v_hgun_001.png"
 	SurfaceSkin 0 2 "v_hgun_002.png"

@@ -93,7 +93,7 @@ Model HLRPGAmmo
 Model HLXBowAmmo
 {
 	Path "Models"
-	Model 0 "crossbow_bolt.md3"
+	Model 0 "crossbow_bolt.iqm"
 	Skin 0 "crossbow_bolt.png"
 
 	FrameIndex HLI1 A 0 0
@@ -120,7 +120,7 @@ Model HLGluonGunAmmo
 Model AmmoPack
 {
 	Path "Models"
-	Model 0 "w_weaponbox.md3"
+	Model 0 "w_weaponbox.iqm"
 	SurfaceSkin 0 0 "w_weaponbox_000.png"
 	SurfaceSkin 0 1 "w_weaponbox_001.png"
 	SurfaceSkin 0 2 "w_weaponbox_002.png"
@@ -155,18 +155,8 @@ Model FirstAidStation
 
 	FrameIndex HLI1 A 0 0
 	FrameIndex HLI1 A 1 0
-}
-Model FirstAidStation
-{
-	Path "Models"
-	Model 0 "medcharger.md3"
-	SurfaceSkin 0 0 "medcharger_000.png"
+
 	SurfaceSkin 0 1 "medcharger_004.png"
-	SurfaceSkin 0 2 "medcharger_002.png"
-	SurfaceSkin 0 3 "medcharger_003.png"
-	Model 1 "medchargerb.md3"
-	SurfaceSkin 1 0 "medchargerb_000.png"
-	SurfaceSkin 1 1 "medchargerb_001.png"
 
 	FrameIndex HLI1 B 0 0
 	FrameIndex HLI1 B 1 0
@@ -182,15 +172,8 @@ Model HEVChargingStation
 	SurfaceSkin 0 3 "hevcharger_003.png"
 
 	FrameIndex HLI1 A 0 0
-}
-Model HEVChargingStation
-{
-	Path "Models"
-	Model 0 "hevcharger.md3"
+
 	SurfaceSkin 0 0 "hevcharger_004.png"
-	SurfaceSkin 0 1 "hevcharger_001.png"
-	SurfaceSkin 0 2 "hevcharger_002.png"
-	SurfaceSkin 0 3 "hevcharger_003.png"
 
 	FrameIndex HLI1 B 0 0
 }
@@ -269,12 +252,7 @@ Model key1
 	Skin 0 "w_security.png"
 
 	FrameIndex HLI1 A 0 0
-}
 
-Model key1
-{
-	Path "Models"
-	Model 0 "w_security.md3"
 	Skin 0 "w_security2.png"
 
 	FrameIndex HLI1 B 0 0
@@ -620,33 +598,15 @@ Model flatpanel7
 	SurfaceSkin 0 1 "br_screen5.png"
 
 	FrameIndex HLI1 A 0 0
-}
 
-Model flatpanel7
-{
-	Path "Models"
-	Model 0 "br_monitor5.md3"
-	SurfaceSkin 0 0 "br_monitor5.png"
 	SurfaceSkin 0 1 "br_screen6.png"
 
 	FrameIndex HLI1 B 1 0
-}
 
-Model flatpanel7
-{
-	Path "Models"
-	Model 0 "br_monitor5.md3"
-	SurfaceSkin 0 0 "br_monitor5.png"
 	SurfaceSkin 0 1 "br_screen7.png"
 
 	FrameIndex HLI1 C 2 0
-}
 
-Model flatpanel7
-{
-	Path "Models"
-	Model 0 "br_monitor5.md3"
-	SurfaceSkin 0 0 "br_monitor5.png"
 	SurfaceSkin 0 1 "br_screen9.png"
 
 	FrameIndex HLI1 D 3 0
@@ -1537,7 +1497,7 @@ Model meter3
 Model Loader
 {
 	Path "Models"
-	Model 0 "loader_body.md3"
+	Model 0 "loader_body.iqm"
 	SurfaceSkin 0 0 "loader_body_000.png"
 	SurfaceSkin 0 1 "loader_body_001.png"
 	SurfaceSkin 0 2 "loader_body_002.png"
@@ -1560,7 +1520,7 @@ Model Loader
 	SurfaceSkin 0 19 "loader_body_019.png"
 	SurfaceSkin 0 20 "loader_body_020.png"
 	SurfaceSkin 0 21 "loader_body_021.png"
-	Model 1 "loader_leftlegs.md3"
+	Model 1 "loader_leftlegs.iqm"
 	SurfaceSkin 1 0 "loader_body_009.png"
 	SurfaceSkin 1 1 "loader_legs_001.png"
 	SurfaceSkin 1 2 "loader_legs_002.png"
@@ -1575,7 +1535,7 @@ Model Loader
 	SurfaceSkin 1 11 "loader_body_011.png"
 	SurfaceSkin 1 12 "loader_body_015.png"
 	SurfaceSkin 1 13 "loader_legs_006.png"
-	Model 2 "loader_rightlegs.md3"
+	Model 2 "loader_rightlegs.iqm"
 	SurfaceSkin 2 0 "loader_body_009.png"
 	SurfaceSkin 2 1 "loader_legs_001.png"
 	SurfaceSkin 2 2 "loader_legs_002.png"
@@ -1750,7 +1710,7 @@ Model LoaderNoBox
 	Path "Models"
 
 	Path "Models"
-	Model 0 "loader_body.md3"
+	Model 0 "loader_body.iqm"
 	SurfaceSkin 0 0 "loader_body_000.png"
 	SurfaceSkin 0 1 "loader_body_001.png"
 	SurfaceSkin 0 2 "loader_body_002.png"
@@ -1773,7 +1733,7 @@ Model LoaderNoBox
 	SurfaceSkin 0 19 "loader_body_019.png"
 	SurfaceSkin 0 20 "nochrome.png"
 	SurfaceSkin 0 21 "nochrome.png"
-	Model 1 "loader_leftlegs.md3"
+	Model 1 "loader_leftlegs.iqm"
 	SurfaceSkin 1 0 "loader_body_009.png"
 	SurfaceSkin 1 1 "loader_legs_001.png"
 	SurfaceSkin 1 2 "loader_legs_002.png"
@@ -1788,7 +1748,7 @@ Model LoaderNoBox
 	SurfaceSkin 1 11 "loader_body_011.png"
 	SurfaceSkin 1 12 "loader_body_015.png"
 	SurfaceSkin 1 13 "loader_legs_006.png"
-	Model 2 "loader_rightlegs.md3"
+	Model 2 "loader_rightlegs.iqm"
 	SurfaceSkin 2 0 "loader_body_009.png"
 	SurfaceSkin 2 1 "loader_legs_001.png"
 	SurfaceSkin 2 2 "loader_legs_002.png"
@@ -1899,7 +1859,7 @@ Model apache
 Model Osprey
 {
 	Path "Models"
-	Model 0 "osprey.md3"
+	Model 0 "osprey.iqm"
 	SurfaceSkin 0 0 "osprey_000.png"
 	SurfaceSkin 0 1 "osprey_001.png"
 	SurfaceSkin 0 2 "osprey_002.png"
@@ -1931,11 +1891,8 @@ Model Osprey
 	FrameIndex HLI1 L 0 19
 	FrameIndex HLI1 U 0 20
 	FrameIndex HLI1 V 0 21
-}
-Model Osprey
-{
-	Path "Models"
-	Model 0 "dead_osprey.md3"
+
+	Model 0 "dead_osprey.iqm"
 	SurfaceSkin 0 0 "dead_osprey_000.png"
 	SurfaceSkin 0 1 "dead_osprey_001.png"
 	SurfaceSkin 0 2 "dead_osprey_002.png"
@@ -2030,6 +1987,7 @@ Model Tram
 	SurfaceSkin 0 3 "tram_supports.jpg"
 	SurfaceSkin 0 4 "tram_panel01.jpg"
 	SurfaceSkin 0 5 "tram_panel02.jpg"
+	Scale .8 .8 .8
 	ZOffset 32
 
 	FrameIndex HLI1 A 0 0
@@ -2096,10 +2054,7 @@ Model SUV
 	SurfaceSkin 0 15 "suv_015.png"
 
 	FrameIndex HLI1 A 0 0
-}
-Model SUV
-{
-	Path "Models"
+
 	Model 0 "suv2.md3"
 	SurfaceSkin 0 0 "suv2_000.png"
 	SurfaceSkin 0 1 "suv2_001.png"
@@ -2124,7 +2079,7 @@ Model SUV
 Model SUVGlass
 {
 	Path "Models"
-	Model 0 "suv_glass.md3"
+	Model 0 "suv_glass.iqm"
 	Skin 0 "suv_glass.png"
 
 	FrameIndex HLI1 A 0 0
@@ -2149,7 +2104,7 @@ Model SUVGlass
 Model HLXenFungus
 {
 	Path "Models"
-	Model 0 "fungus.md3"
+	Model 0 "fungus.iqm"
 	SurfaceSkin 0 0 "fungus_000.png"
 	SurfaceSkin 0 1 "fungus_001.png"
 	SurfaceSkin 0 2 "fungus_002.png"
@@ -2260,7 +2215,7 @@ Model HLXenFungus
 Model HLXenHair
 {
 	Path "Models"
-	Model 0 "hair.md3"
+	Model 0 "hair.iqm"
 	Skin 0 "hair.png"
 
 	FrameIndex HLI1 A 0 0
@@ -2329,7 +2284,7 @@ Model HLXenHair
 Model HLXenLight
 {
 	Path "Models"
-	Model 0 "light.md3"
+	Model 0 "light.iqm"
 	Skin 0 "light.png"
 
 	FrameIndex HLI1 A 0 0
@@ -2535,7 +2490,7 @@ Model HLXenLight
 Model HLXenTree
 {
 	Path "Models"
-	Model 0 "tree.md3"
+	Model 0 "tree.iqm"
 	Skin 0 "tree.png"
 
 	FrameIndex HLI1 A 0 0
@@ -2697,16 +2652,10 @@ Model StreetLamp
 	Scale 1.0 1.0 1.5
 
 	FrameIndex HLI1 A 0 0
-}
 
-Model StreetLamp
-{
-	Path "Models"
-	Model 1 "lamp1x.md3"
-	Skin 1 "lamp1x3.png"
-	Scale 1.0 1.0 1.5
+	Skin 0 "lamp1x3.png"
 
-	FrameIndex HLI1 B 1 0
+	FrameIndex HLI1 B 0 0
 }
 
 Model Glass01
@@ -3350,7 +3299,7 @@ Model PConsole5
 Model XbowBolt
 {
 	Path "Models"
-	Model 0 "crossbow_bolt.md3"
+	Model 0 "crossbow_bolt.iqm"
 	Skin 0 "crossbow_bolt.png"
 
 	FrameIndex HLI1 A 0 0
@@ -3369,7 +3318,7 @@ Model M16Grenade
 Model HLGruntHandGrenade
 {
 	Path "Models"
-	Model 0 "w_grenade.md3"
+	Model 0 "w_grenade.iqm"
 	Skin 0 "w_grenade.png"
 
 	FrameIndex HLI1 A 0 245
@@ -3535,33 +3484,24 @@ Model HGruntHornetFake
 Model HLGibs
 {
 	Path "Models"
-	Model 0 "hlgibs1.md3"
-	Skin 0 "hlgibs1.png"
+	Model 0 "hlgibs1.iqm"
+	SurfaceSkin 0 0 "hlgibs1.png"
 
 	FrameIndex HLI1 A 0 0
 	FrameIndex HLI1 B 0 0
-}
-Model HLGibs
-{
-	Path "Models"
-	Model 0 "hlgibs2.md3"
-	Skin 0 "hlgibs2.png"
+
+	Model 0 "hlgibs2.iqm"
+	SurfaceSkin 0 0 "hlgibs2.png"
 
 	FrameIndex HLI1 C 0 0
 	FrameIndex HLI1 D 0 0
-}
-Model HLGibs
-{
-	Path "Models"
-	Model 0 "hlgibs3.md3"
-	Skin 0 "hlgibs3.png"
+
+	Model 0 "hlgibs3.iqm"
+	SurfaceSkin 0 0 "hlgibs3.png"
 
 	FrameIndex HLI1 E 0 0
-}
-Model HLGibs
-{
-	Path "Models"
-	Model 0 "hlgibs4.md3"
+
+	Model 0 "hlgibs4.iqm"
 	SurfaceSkin 0 0 "hlgibs4_000.png"
 	SurfaceSkin 0 1 "hlgibs4_001.png"
 
@@ -3575,44 +3515,24 @@ Model XenGibs
 	Skin 0 "agibs.png"
 
 	FrameIndex HLI1 A 0 0
-}
-Model XenGibs
-{
-	Path "Models"
+
 	Model 0 "agibs2.md3"
-	Skin 0 "agibs.png"
 
 	FrameIndex HLI1 B 0 0
-}
-Model XenGibs
-{
-	Path "Models"
+
 	Model 0 "agibs3.md3"
-	Skin 0 "agibs.png"
 
 	FrameIndex HLI1 C 0 0
-}
-Model XenGibs
-{
-	Path "Models"
+
 	Model 0 "agibs4.md3"
-	Skin 0 "agibs.png"
 
 	FrameIndex HLI1 D 0 0
-}
-Model XenGibs
-{
-	Path "Models"
+
 	Model 0 "agibs5.md3"
-	Skin 0 "agibs.png"
 
 	FrameIndex HLI1 E 0 0
-}
-Model XenGibs
-{
-	Path "Models"
+
 	Model 0 "agibs6.md3"
-	Skin 0 "agibs.png"
 
 	FrameIndex HLI1 F 0 0
 }
@@ -3620,7 +3540,7 @@ Model XenGibs
 Model EarthGlobe
 {
 	Path "Models"
-	Model 0 "sat_globe.md3"
+	Model 0 "sat_globe.iqm"
 	SurfaceSkin 0 0 "nochrome.png"
 	SurfaceSkin 0 1 "nochrome.png"
 	SurfaceSkin 0 2 "sat_globe.png"

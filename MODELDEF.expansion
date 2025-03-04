@@ -1,7 +1,7 @@
 Model HLAlphaBarney
 {
 	Path "Models/expansion"
-	Model 0 "oldbarney_body.md3"
+	Model 0 "oldbarney_body.iqm"
 	SurfaceSkin 0 0 "oldbarney_body_000.png"
 	SurfaceSkin 0 1 "oldbarney_body_001.png"
 	SurfaceSkin 0 2 "oldbarney_body_002.png"
@@ -27,7 +27,7 @@ Model HLAlphaBarney
 	SurfaceSkin 0 22 "oldbarney_body_022.png"
 	SurfaceSkin 0 23 "oldbarney_body_023.png"
 	SurfaceSkin 0 24 "oldbarney_body_024.png"
-	Model 1 "oldbarney_gun.md3"
+	Model 1 "oldbarney_gun.iqm"
 	SurfaceSkin 1 0 "oldbarney_gun_000.png"
 	SurfaceSkin 1 1 "oldbarney_gun_001.png"
 	SurfaceSkin 1 2 "oldbarney_body_004.png"

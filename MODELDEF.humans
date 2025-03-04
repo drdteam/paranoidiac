@@ -1,13 +1,13 @@
 Model HLScientist1
 {
 	Path "Models"
-	Model 0 "scientist_body.md3"
+	Model 0 "scientist_body.iqm"
 	SurfaceSkin 0 0 "scientist_body_000.png"
 	SurfaceSkin 0 1 "scientist_body_001.png"
 	SurfaceSkin 0 2 "scientist_body_002.png"
 	SurfaceSkin 0 3 "scientist_body_003.png"
 	SurfaceSkin 0 4 "scientist_body_004.png"
-	Model 1 "scientist_head1.md3"
+	Model 1 "scientist_head1.iqm"
 	SurfaceSkin 1 0 "scientist_head1_000.png"
 	SurfaceSkin 1 1 "scientist_head1_001.png"
 	SurfaceSkin 1 2 "scientist_head1_002.png"
@@ -371,13 +371,13 @@ Model HLScientist1
 Model HLScientist2
 {
 	Path "Models"
-	Model 0 "scientist_body.md3"
+	Model 0 "scientist_body.iqm"
 	SurfaceSkin 0 0 "scientist_body_000.png"
 	SurfaceSkin 0 1 "scientist_body_001.png"
 	SurfaceSkin 0 2 "scientist_body_002.png"
 	SurfaceSkin 0 3 "scientist_body_003.png"
 	SurfaceSkin 0 4 "scientist_body_004.png"
-	Model 1 "scientist_head2.md3"
+	Model 1 "scientist_head2.iqm"
 	SurfaceSkin 1 0 "scientist_head2_000.png"
 	SurfaceSkin 1 1 "nochrome.png"
 	SurfaceSkin 1 2 "scientist_head2_002x.png"
@@ -743,13 +743,13 @@ Model HLScientist2
 Model HLScientist3
 {
 	Path "Models"
-	Model 0 "scientist_body.md3"
+	Model 0 "scientist_body.iqm"
 	SurfaceSkin 0 0 "scientist_body_000.png"
 	SurfaceSkin 0 1 "scientist_body_001.png"
 	SurfaceSkin 0 2 "scientist_body_002.png"
 	SurfaceSkin 0 3 "scientist_body_003.png"
 	SurfaceSkin 0 4 "scientist_body_004.png"
-	Model 1 "scientist_head3.md3"
+	Model 1 "scientist_head3.iqm"
 	SurfaceSkin 1 0 "scientist_head3_000.png"
 	SurfaceSkin 1 1 "scientist_head1_001.png"
 	SurfaceSkin 1 2 "scientist_head3_002.png"
@@ -1113,13 +1113,13 @@ Model HLScientist3
 Model HLScientist4
 {
 	Path "Models"
-	Model 0 "scientist_body.md3"
+	Model 0 "scientist_body.iqm"
 	SurfaceSkin 0 0 "scientist_body_005.png"
 	SurfaceSkin 0 1 "scientist_body_001.png"
 	SurfaceSkin 0 2 "scientist_body_002.png"
 	SurfaceSkin 0 3 "scientist_body_003.png"
 	SurfaceSkin 0 4 "scientist_body_004.png"
-	Model 1 "scientist_head4.md3"
+	Model 1 "scientist_head4.iqm"
 	SurfaceSkin 1 0 "scientist_head4_000.png"
 	SurfaceSkin 1 1 "scientist_head1_001.png"
 	SurfaceSkin 1 2 "scientist_head4_002.png"
@@ -1483,13 +1483,13 @@ Model HLScientist4
 Model HLScientist1Dead
 {
 	Path "Models"
-	Model 0 "scientist_body.md3"
+	Model 0 "scientist_body.iqm"
 	SurfaceSkin 0 0 "scientist_body_000.png"
 	SurfaceSkin 0 1 "scientist_body_001.png"
 	SurfaceSkin 0 2 "scientist_body_002.png"
 	SurfaceSkin 0 3 "scientist_body_003.png"
 	SurfaceSkin 0 4 "scientist_body_004.png"
-	Model 1 "scientist_head1.md3"
+	Model 1 "scientist_head1.iqm"
 	SurfaceSkin 1 0 "scientist_head1_000.png"
 	SurfaceSkin 1 1 "scientist_head1_001.png"
 	SurfaceSkin 1 2 "scientist_head1_002.png"
@@ -1501,13 +1501,13 @@ Model HLScientist1Dead
 Model HLScientist2Dead
 {
 	Path "Models"
-	Model 0 "scientist_body.md3"
+	Model 0 "scientist_body.iqm"
 	SurfaceSkin 0 0 "scientist_body_000.png"
 	SurfaceSkin 0 1 "scientist_body_001.png"
 	SurfaceSkin 0 2 "scientist_body_002.png"
 	SurfaceSkin 0 3 "scientist_body_003.png"
 	SurfaceSkin 0 4 "scientist_body_004.png"
-	Model 1 "scientist_head2.md3"
+	Model 1 "scientist_head2.iqm"
 	SurfaceSkin 1 0 "scientist_head2_000.png"
 	SurfaceSkin 1 1 "nochrome.png"
 	SurfaceSkin 1 2 "scientist_head2_002x.png"
@@ -1521,13 +1521,13 @@ Model HLScientist2Dead
 Model HLScientist3Dead
 {
 	Path "Models"
-	Model 0 "scientist_body.md3"
+	Model 0 "scientist_body.iqm"
 	SurfaceSkin 0 0 "scientist_body_000.png"
 	SurfaceSkin 0 1 "scientist_body_001.png"
 	SurfaceSkin 0 2 "scientist_body_002.png"
 	SurfaceSkin 0 3 "scientist_body_003.png"
 	SurfaceSkin 0 4 "scientist_body_004.png"
-	Model 1 "scientist_head3.md3"
+	Model 1 "scientist_head3.iqm"
 	SurfaceSkin 1 0 "scientist_head3_000.png"
 	SurfaceSkin 1 1 "scientist_head1_001.png"
 	SurfaceSkin 1 2 "scientist_head3_002.png"
@@ -1539,13 +1539,13 @@ Model HLScientist3Dead
 Model HLScientist4Dead
 {
 	Path "Models"
-	Model 0 "scientist_body.md3"
+	Model 0 "scientist_body.iqm"
 	SurfaceSkin 0 0 "scientist_body_005.png"
 	SurfaceSkin 0 1 "scientist_body_001.png"
 	SurfaceSkin 0 2 "scientist_body_002.png"
 	SurfaceSkin 0 3 "scientist_body_003.png"
 	SurfaceSkin 0 4 "scientist_body_004.png"
-	Model 1 "scientist_head4.md3"
+	Model 1 "scientist_head4.iqm"
 	SurfaceSkin 1 0 "scientist_head4_000.png"
 	SurfaceSkin 1 1 "scientist_head1_001.png"
 	SurfaceSkin 1 2 "scientist_head4_002.png"
@@ -1557,17 +1557,17 @@ Model HLScientist4Dead
 Model HLBarney
 {
 	Path "Models"
-	Model 0 "barney_body.md3"
+	Model 0 "barney_body.iqm"
 	SurfaceSkin 0 0 "barney_body_000.png"
 	SurfaceSkin 0 1 "barney_body_001.png"
 	SurfaceSkin 0 2 "barney_body_002.png"
 	SurfaceSkin 0 3 "barney_body_003.png"
-	Model 1 "barney_head.md3"
+	Model 1 "barney_head.iqm"
 	SurfaceSkin 1 0 "barney_head_000.png"
 	SurfaceSkin 1 1 "barney_head_001.png"
 	SurfaceSkin 1 2 "barney_head_002.png"
 	SurfaceSkin 1 3 "barney_head_003.png"
-	Model 2 "barney_gun1.md3"
+	Model 2 "barney_gun1.iqm"
 	SurfaceSkin 2 0 "w_9mmhandgun.png"
 	SurfaceSkin 2 1 "v_9mmhandgun_main_002.png"
 
@@ -2030,7 +2030,7 @@ Model HLBarney
 	FrameIndex HLD1 N 1 384
 	FrameIndex HLD1 N 2 384
 
-	Model 2 "barney_gun2.md3"
+	Model 2 "barney_gun2.iqm"
 	Skin 2 "w_9mmhandgun.png"
 
 	FrameIndex HLI3 E 0 186
@@ -2227,18 +2227,18 @@ Model HLBarney
 Model HLOtis
 {
 	Path "Models"
-	Model 0 "otis_body.md3"
+	Model 0 "otis_body.iqm"
 	SurfaceSkin 0 0 "barney_body_002.png"
 	SurfaceSkin 0 1 "barney_body_003.png"
 	SurfaceSkin 0 2 "barney_body_001.png"
-	Model 1 "otis_head.md3"
+	Model 1 "otis_head.iqm"
 	SurfaceSkin 1 0 "otis_head_000.png"
 	SurfaceSkin 1 1 "otis_head_001.png"
 	SurfaceSkin 1 2 "barney_head_001.png"
 	SurfaceSkin 1 3 "barney_head_002.png"
 	SurfaceSkin 1 4 "otis_head_004.png"
 	SurfaceSkin 1 5 "barney_body_002.png"
-	Model 2 "otis_gun1.md3"
+	Model 2 "otis_gun1.iqm"
 	Skin 2 "v_desert_eagle_main_000.png"
 
 	FrameIndex HLI1 A 0 0
@@ -2700,7 +2700,7 @@ Model HLOtis
 	FrameIndex HLD1 N 1 384
 	FrameIndex HLD1 N 2 384
 
-	Model 2 "otis_gun2.md3"
+	Model 2 "otis_gun2.iqm"
 	Skin 2 "v_desert_eagle_main_000.png"
 
 	FrameIndex HLI3 E 0 186
@@ -2813,18 +2813,18 @@ Model HintMan
 	Frame HLS1 A 0 "sit01"
 
 	/*Path "Models"
-	Model 0 "barney_body.md3"
+	Model 0 "barney_body.iqm"
 	SurfaceSkin 0 0 "barney_body_000.png"
 	SurfaceSkin 0 1 "barney_body_001.png"
 	SurfaceSkin 0 2 "euro_body_002.png"
 	SurfaceSkin 0 3 "euro_body_003.png"
-	Model 1 "euro_head.md3"
+	Model 1 "euro_head.iqm"
 	SurfaceSkin 1 0 "nochrome.png"
 	SurfaceSkin 1 1 "nochrome.png"
 	SurfaceSkin 1 2 "euro_head_002.png"
 	SurfaceSkin 1 3 "euro_head_003.png"
 	SurfaceSkin 1 4 "euro_head_004.png"
-	Model 2 "barney_gun2.md3"
+	Model 2 "barney_gun2.iqm"
 	Skin 2 "w_9mmhandgun.png"
 
 	FrameIndex HLI1 A 0 186
@@ -3068,7 +3068,7 @@ Model HintMan
 Model Admin01
 {
 	Path "Models"
-	Model 0 "wheelchair_sci.md3"
+	Model 0 "wheelchair_sci.iqm"
 	SurfaceSkin 0 0 "wheelchair_sci_000.png"
 	SurfaceSkin 0 1 "wheelchair_sci_001.png"
 	SurfaceSkin 0 2 "wheelchair_sci_002.png"
@@ -3227,13 +3227,13 @@ Model Stinson
 Model TramBellmer
 {
 	Path "Models"
-	Model 0 "scientist_body.md3"
+	Model 0 "scientist_body.iqm"
 	SurfaceSkin 0 0 "scientist_body_000.png"
 	SurfaceSkin 0 1 "scientist_body_001.png"
 	SurfaceSkin 0 2 "scientist_body_002.png"
 	SurfaceSkin 0 3 "scientist_body_003.png"
 	SurfaceSkin 0 4 "scientist_body_004.png"
-	Model 1 "scientist_head3.md3"
+	Model 1 "scientist_head3.iqm"
 	SurfaceSkin 1 0 "scientist_head3_000.png"
 	SurfaceSkin 1 1 "scientist_head1_001.png"
 	SurfaceSkin 1 2 "scientist_head3_002.png"
@@ -3286,7 +3286,7 @@ Model TramBellmer
 Model OspreyBellmer
 {
 	Path "Models"
-	Model 0 "hev_scientist_body.md3"
+	Model 0 "hev_scientist_body.iqm"
 	SurfaceSkin 0 0 "w_suit_002.png"
 	SurfaceSkin 0 1 "w_suit_000.png"
 	SurfaceSkin 0 2 "w_suit_001.png"
@@ -3298,7 +3298,7 @@ Model OspreyBellmer
 	SurfaceSkin 0 8 "w_suit_002.png"
 	SurfaceSkin 0 9 "w_suit_002.png"
 	SurfaceSkin 0 10 "w_suit_002.png"
-	Model 1 "hev_scientist_head2.md3"
+	Model 1 "hev_scientist_head2.iqm"
 	SurfaceSkin 1 0 "scientist_head3_000.png"
 	SurfaceSkin 1 1 "scientist_head1_001.png"
 	SurfaceSkin 1 2 "w_suit_002.png"

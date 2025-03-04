@@ -1,9 +1,9 @@
 Model HLCrowbar
 {
 	Path "Models"
-	Model 0 "v_crowbar_main.md3"
+	Model 0 "v_crowbar_main.iqm"
 	Skin 0 "v_crowbar_main.png"
-	Model 1 "v_crowbar_hevarms.md3"
+	Model 1 "v_crowbar_hevarms.iqm"
 	SurfaceSkin 1 0 "v_hevarms_000.png"
 	SurfaceSkin 1 1 "v_hevarms_001.png"
 	SurfaceSkin 1 2 "v_hevarms_002.png"
@@ -254,14 +254,14 @@ Model HLCrowbar
 Model HLPistol
 {
 	Path "Models"
-	Model 0 "v_9mmhandgun_main.md3"
+	Model 0 "v_9mmhandgun_main.iqm"
 	SurfaceSkin 0 0 "v_9mmhandgun_main_000.png"
 	SurfaceSkin 0 1 "v_9mmhandgun_main_001.png"
 	SurfaceSkin 0 2 "v_9mmhandgun_main_002.png"
 	SurfaceSkin 0 3 "v_9mmhandgun_main_003.png"
 	SurfaceSkin 0 4 "v_9mmhandgun_main_004.png"
 	SurfaceSkin 0 5 "v_9mmhandgun_main_005.png"
-	Model 1 "v_9mmhandgun_hevarms.md3"
+	Model 1 "v_9mmhandgun_hevarms.iqm"
 	SurfaceSkin 1 0 "v_hevarms_000.png"
 	SurfaceSkin 1 1 "v_hevarms_001.png"
 	SurfaceSkin 1 2 "v_hevarms_002.png"
@@ -586,10 +586,10 @@ Model HLPistol
 Model HLMagnum
 {
 	Path "Models"
-	Model 0 "v_357_main.md3"
+	Model 0 "v_357_main.iqm"
 	SurfaceSkin 0 0 "v_357_main_000.png"
 	SurfaceSkin 0 1 "v_357_main_001x.png"
-	Model 1 "v_357_hevarms.md3"
+	Model 1 "v_357_hevarms.iqm"
 	SurfaceSkin 1 0 "v_hevarms_000.png"
 	SurfaceSkin 1 1 "v_hevarms_001.png"
 	SurfaceSkin 1 2 "v_hevarms_002.png"
@@ -950,9 +950,9 @@ Model HLMagnum
 Model HLShotgun
 {
 	Path "Models"
-	Model 0 "v_shotgun_main.md3"
+	Model 0 "v_shotgun_main.iqm"
 	Skin 0 "v_shotgun_main.png"
-	Model 1 "v_shotgun_hevarms.md3"
+	Model 1 "v_shotgun_hevarms.iqm"
 	SurfaceSkin 1 0 "v_hevarms_000.png"
 	SurfaceSkin 1 1 "v_hevarms_001.png"
 	SurfaceSkin 1 2 "v_hevarms_002.png"
@@ -1252,9 +1252,9 @@ Model HLShotgun
 Model HLAssaultRifle
 {
 	Path "Models"
-	Model 0 "v_9mmar_main.md3"
+	Model 0 "v_9mmar_main.iqm"
 	Skin 0 "v_9mmar_main.png"
-	Model 1 "v_9mmar_hevarms.md3"
+	Model 1 "v_9mmar_hevarms.iqm"
 	SurfaceSkin 1 0 "v_hevarms_000.png"
 	SurfaceSkin 1 1 "v_hevarms_001.png"
 	SurfaceSkin 1 2 "v_hevarms_002.png"
@@ -1471,12 +1471,12 @@ Model HLAssaultRifle
 Model HLRPG
 {
 	Path "Models"
-	Model 0 "v_rpg_main.md3"
+	Model 0 "v_rpg_main.iqm"
 	SurfaceSkin 0 0 "v_rpg_main_000.png"
 	SurfaceSkin 0 1 "v_rpg_main_001.png"
 	SurfaceSkin 0 2 "v_rpg_main_002.png"
 	SurfaceSkin 0 3 "v_rpg_main_003.png"
-	Model 1 "v_rpg_hevarms.md3"
+	Model 1 "v_rpg_hevarms.iqm"
 	SurfaceSkin 1 0 "v_hevarms_000.png"
 	SurfaceSkin 1 1 "v_hevarms_001.png"
 	SurfaceSkin 1 2 "v_hevarms_002.png"
@@ -1763,11 +1763,11 @@ Model HLRPG
 Model HLXBow
 {
 	Path "Models"
-	Model 0 "v_crossbow_main.md3"
+	Model 0 "v_crossbow_main.iqm"
 	SurfaceSkin 0 0 "v_crossbow_main_000.png"
 	SurfaceSkin 0 1 "v_crossbow_main_001.png"
 	SurfaceSkin 0 2 "v_crossbow_main_002.png"
-	Model 1 "v_crossbow_hevarms.md3"
+	Model 1 "v_crossbow_hevarms.iqm"
 	SurfaceSkin 1 0 "v_hevarms_000.png"
 	SurfaceSkin 1 1 "v_hevarms_001.png"
 	SurfaceSkin 1 2 "v_hevarms_002.png"
@@ -2672,9 +2672,9 @@ Model HLXBow
 Model HLGluonGun
 {
 	Path "Models"
-	Model 0 "v_egon_main.md3"
+	Model 0 "v_egon_main.iqm"
 	Skin 0 "v_egon_main.png"
-	Model 1 "v_egon_hevarms.md3"
+	Model 1 "v_egon_hevarms.iqm"
 	SurfaceSkin 1 0 "v_hevarms_000.png"
 	SurfaceSkin 1 1 "v_hevarms_001.png"
 	SurfaceSkin 1 2 "v_hevarms_002.png"
@@ -2998,12 +2998,12 @@ Model HLGluonGun
 Model HLDesertEagle
 {
 	Path "Models"
-	Model 0 "v_desert_eagle_main.md3"
+	Model 0 "v_desert_eagle_main.iqm"
 	SurfaceSkin 0 0 "v_desert_eagle_main_000.png"
 	SurfaceSkin 0 1 "v_9mmhandgun_main_003.png"
 	SurfaceSkin 0 2 "v_9mmhandgun_main_004.png"
 	SurfaceSkin 0 3 "v_9mmhandgun_main_005.png"
-	Model 1 "v_desert_eagle_hevarms.md3"
+	Model 1 "v_desert_eagle_hevarms.iqm"
 	SurfaceSkin 1 0 "v_hevarms_000.png"
 	SurfaceSkin 1 1 "v_hevarms_001.png"
 	SurfaceSkin 1 2 "v_hevarms_002.png"
