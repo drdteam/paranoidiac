@@ -67,6 +67,17 @@ class HLBat : HLMonster
 }
 class HLBossBat : HLBat
 {
+	override void HLModelSetup()
+	{
+		A_ChangeModel("HLBat", 0, "Models", "stukabat.iqm", 0, "Models", "stukabat2_000.png", CMDL_USESURFACESKIN);
+		A_ChangeModel("HLBat", 0, "Models", "", 1, "Models", "stukabat2_001.png", CMDL_USESURFACESKIN);
+		A_ChangeModel("HLBat", 0, "Models", "", 2, "Models", "stukabat2_002.png", CMDL_USESURFACESKIN);
+		A_ChangeModel("HLBat", 0, "Models", "", 3, "Models", "stukabat2_003.png", CMDL_USESURFACESKIN);
+		A_ChangeModel("HLBat", 0, "Models", "", 4, "Models", "stukabat_004.png", CMDL_USESURFACESKIN);
+		A_ChangeModel("HLBat", 0, "Models", "", 5, "Models", "stukabat_005.png", CMDL_USESURFACESKIN);
+		A_ChangeModel("HLBat", 0, "Models", "", 6, "Models", "stukabat2_006.png", CMDL_USESURFACESKIN);
+		A_ChangeModel("HLBat", 0, "Models", "", 7, "Models", "stukabat_007.png", CMDL_USESURFACESKIN);
+	}
 	Default
 	{
 		Health 1600;

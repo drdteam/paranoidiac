@@ -414,9 +414,9 @@ Intermission ParaEndLogo
 DoomEdNums
 {
 	4040=NJTankSpark
-	4041=HLScientistSpawner
-	4053=HLScientistWandererSpawner
-	4054=HLScientistStillSpawner
+	4041=HLScientist
+	4053=HLScientistWanderer
+	4054=HLScientistStill
 	7401=HLHoundEye
 	7402=HLHeadcrab
 	7403=HLController
@@ -430,13 +430,13 @@ DoomEdNums
 	7420=HLBat
 	7421=HLGargantua2
 	7422=HLBarnacle
-	7423=HLScientistDeadSpawner
+	7423=HLScientistDead
 	7439=HLGruntAny
 	7440=HLGruntM16
 	7441=HLGruntShotgun
 	7442=HLGruntNoGrenadesAny
 	7443=HLGruntM16NoGrenades
-	7444=HLGruntShotgunNoGrenade
+	7444=HLGruntShotgunNoGrenades
 	7445=HLGargantua
 	7800=HLBossBat
 	20000=Waterfall
@@ -601,10 +601,10 @@ DoomEdNums
 	30321=HLOtisGuardSpawner
 	30322=HLBarneyGuardSpawner
 	30323=Admin01
-	30324=HLScientistSlumpedSpawner
+	30324=HLScientistSlumped
 	30325=TramBellmer
 	30326=TramBattery
-	30329=HLScientistQuietSpawner
+	30329=HLScientistQuiet
 	30334=TankGlass
 	30335=DissectedHeadCrab
 	30336=Pipe1a

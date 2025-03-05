@@ -1,69 +1,7 @@
-class HLScientistSpawner : RandomSpawner
-{
-	Default
-	{
-		+FRIENDLY
-		DropItem "HLScientist1";
-		DropItem "HLScientist2";
-		DropItem "HLScientist3";
-		DropItem "HLScientist4";
-	}
-}
-
-class HLScientistWandererSpawner : HLScientistSpawner
-{
-	override void PostSpawn(Actor spawned)
-	{
-		let me=HLScientist1(spawned);
-		me.wanderer=1;
-	}
-}
-
-class HLScientistStillSpawner : HLScientistSpawner
-{
-	override void PostSpawn(Actor spawned)
-	{
-		let me=HLScientist1(spawned);
-		me.still=1;
-	}
-}
-
-class HLScientistQuietSpawner : HLScientistSpawner
-{
-	override void PostSpawn(Actor spawned)
-	{
-		let me=HLScientist1(spawned);
-		me.quiet=1;
-	}
-}
-
-class HLScientistSlumpedSpawner : HLScientistSpawner
-{
-	override void PostSpawn(Actor spawned)
-	{
-		let me=HLScientist1(spawned);
-		me.sit=1;
-		me.SetStateLabel("Sit");
-		me.Height=28;
-		me.bNOPAIN=1;
-	}
-}
-
-class HLScientistDeadSpawner : RandomSpawner
-{
-	Default
-	{
-		DropItem "HLScientist1Dead";
-		DropItem "HLScientist2Dead";
-		DropItem "HLScientist3Dead";
-		DropItem "HLScientist4Dead";
-	}
-}
-
 //**************************************************************************
 //**************************************************************************
 
-class HLScientist1 : HLMonster
+class HLScientist : HLMonster
 {
 	bool greeting,wanderer,still,quiet,sit;
 	int limit,limit2,boredom,stay,panic;
@@ -71,6 +9,48 @@ class HLScientist1 : HLMonster
 	{
 		limit=random(30,60);
 		limit2=random(30,60);
+
+		if(wanderer)
+			SetStateLabel("See");
+		if(!still)
+			boredom=1;
+
+		super.PostBeginPlay();
+	}
+	override void HLModelSetup()
+	{
+		A_ChangeModel("HLScientist", 0, "Models", "scientist_body.iqm", 0, "Models", "scientist_body_000.png", CMDL_USESURFACESKIN);
+		A_ChangeModel("HLScientist", 0, "Models", "", 1, "Models", "scientist_body_001.png", CMDL_USESURFACESKIN);
+		A_ChangeModel("HLScientist", 0, "Models", "", 2, "Models", "scientist_body_002.png", CMDL_USESURFACESKIN);
+		A_ChangeModel("HLScientist", 0, "Models", "", 3, "Models", "scientist_body_003.png", CMDL_USESURFACESKIN);
+		A_ChangeModel("HLScientist", 0, "Models", "", 4, "Models", "scientist_body_004.png", CMDL_USESURFACESKIN);
+
+		switch(random(1, 4))
+		{
+		case 1:
+			A_ChangeModel("HLScientist", 1, "Models", "scientist_head1.iqm", 0, "Models", "scientist_head1_000.png", CMDL_USESURFACESKIN, 0);
+			A_ChangeModel("HLScientist", 1, "Models", "", 1, "Models", "scientist_head1_001.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("HLScientist", 1, "Models", "", 2, "Models", "scientist_head1_002.png", CMDL_USESURFACESKIN);
+			break;
+		case 2:
+			A_ChangeModel("HLScientist", 1, "Models", "scientist_head2.iqm", 0, "Models", "scientist_head2_000.png", CMDL_USESURFACESKIN, 0);
+			A_ChangeModel("HLScientist", 1, "Models", "", 1, "Models", "nochrome.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("HLScientist", 1, "Models", "", 2, "Models", "scientist_head2_002x.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("HLScientist", 1, "Models", "", 3, "Models", "scientist_head1_001.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("HLScientist", 1, "Models", "", 4, "Models", "scientist_head2_004.png", CMDL_USESURFACESKIN);
+			break;
+		case 3:
+			A_ChangeModel("HLScientist", 1, "Models", "scientist_head3.iqm", 0, "Models", "scientist_head3_000.png", CMDL_USESURFACESKIN, 0);
+			A_ChangeModel("HLScientist", 1, "Models", "", 1, "Models", "scientist_head1_001.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("HLScientist", 1, "Models", "", 2, "Models", "scientist_head3_002.png", CMDL_USESURFACESKIN);
+			break;
+		case 4:
+			A_ChangeModel("HLScientist", 0, "Models", "scientist_body.iqm", 0, "Models", "scientist_body_005.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("HLScientist", 1, "Models", "scientist_head4.iqm", 0, "Models", "scientist_head4_000.png", CMDL_USESURFACESKIN, 0);
+			A_ChangeModel("HLScientist", 1, "Models", "", 1, "Models", "scientist_head1_001.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("HLScientist", 1, "Models", "", 2, "Models", "scientist_head4_002.png", CMDL_USESURFACESKIN);
+			break;
+		}
 	}
 	override bool Used(Actor user)
 	{
@@ -98,26 +78,18 @@ class HLScientist1 : HLMonster
 	States
 	{
 	Spawn:
-		HLI1 A 0 NODELAY
-		{
-			if(wanderer)
-				SetStateLabel("See");
-			if(!still)
-				boredom=1;
-		}
-	Idle:
 		HLI1 A 0 A_Jump(96,"Fidget1","Fidget2");
 		HLI1 ABCDEFGHIJKLMNOP 5 A_HLScientistPonderCheck;
 		Loop;
 	Fidget1:
 		HLI1 QRSTUVWXYZ[\] 3;
 		HLI2 ABCDEFGHIJKLMNOPQRSTUVW 3;
-		Goto Idle+1;
+		Goto Spawn+1;
 	Fidget2:
 		HLI2 XYZ[\] 3;
 		HLI3 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 3;
 		HLI4 A 3;
-		Goto Idle+1;
+		Goto Spawn+1;
 	See:
 		TNT1 A 0
 		{
@@ -141,7 +113,7 @@ class HLScientist1 : HLMonster
 		HLW1 A 0
 		{
 			if(wanderer&&random(0,255)<32)
-				SetStateLabel("Idle");
+				SetStateLabel("Spawn");
 		}
 		Loop;
 	Panic:
@@ -170,13 +142,13 @@ class HLScientist1 : HLMonster
 			if(!random(0,32))
 			{
 				A_PlaySound("scientist/panic");
-				return ResolveState("WanderPanic");
+				return FindState("WanderPanic");
 			}
 			if(!random(0,64))
 			{
 				if(random(0,255)<235)
-					return ResolveState("IdleRegPanic");	//stopmov, ironically also randomly starts the run seq
-				return ResolveState("WanderRunStartPanic");	//kind of rare to see them running just because of nothing.
+					return FindState("IdleRegPanic");	//stopmov, ironically also randomly starts the run seq
+				return FindState("WanderRunStartPanic");	//kind of rare to see them running just because of nothing.
 			}
 			return state(null);
 		}
@@ -274,9 +246,6 @@ class HLScientist1 : HLMonster
 	Crush:
 		TNT1 A 0 A_HLGibs;
 		Stop;
-	Sit:
-		HLS1 ABCDEFGHIJKLMNOP 5;
-		Loop;
 	}
 	void A_HLScientistPonderCheck()
 	{
@@ -302,21 +271,63 @@ class HLScientist1 : HLMonster
 	}
 }
 
-class HLScientist2 : HLScientist1{}
-class HLScientist3 : HLScientist1{}
-class HLScientist4 : HLScientist1{}
-
-class HLScientist1Dead : Actor
+class HLScientistQuiet : HLScientist
 {
+	override void PostBeginPlay()
+	{
+		quiet=1;
+		super.PostBeginPlay();
+	}
+}
+
+class HLScientistWanderer : HLScientist
+{
+	override void PostBeginPlay()
+	{
+		wanderer=1;
+		super.PostBeginPlay();
+	}
+}
+
+class HLScientistStill : HLScientist
+{
+	override void PostBeginPlay()
+	{
+		still=1;
+		super.PostBeginPlay();
+	}
+}
+
+class HLScientistSlumped : HLScientist
+{
+	override void PostBeginPlay()
+	{
+		sit=1;
+		Height=28;
+		bNOPAIN=1;
+		super.PostBeginPlay();
+	}
 	States
 	{
 	Spawn:
-		TNT1 A 0;
+		HLS1 ABCDEFGHIJKLMNOP 5;
+		Loop;
+	}
+}
+
+class HLScientistDead : HLScientist
+{
+	Default
+	{
+		-SHOOTABLE
+		-COUNTKILL
+		-SOLID
+		-ISMONSTER
+	}
+	States
+	{
+	Spawn:
 		HLD1 X -1;
 		Stop;
 	}
 }
-
-class HLScientist2Dead : HLScientist1Dead{}
-class HLScientist3Dead : HLScientist1Dead{}
-class HLScientist4Dead : HLScientist1Dead{}

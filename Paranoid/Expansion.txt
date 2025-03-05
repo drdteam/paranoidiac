@@ -1,5 +1,40 @@
 class HLAlphaBarney : HLBarney
 {
+	override void HLModelSetup()
+	{
+		A_ChangeModel("", 0, "Models/Expansion", "oldbarney_body.iqm", 0, "Models/Expansion", "oldbarney_body_000.png", CMDL_USESURFACESKIN);
+		A_ChangeModel("", 0, "Models/Expansion", "", 1, "Models/Expansion", "oldbarney_body_001.png", CMDL_USESURFACESKIN);
+		A_ChangeModel("", 0, "Models/Expansion", "", 2, "Models/Expansion", "oldbarney_body_002.png", CMDL_USESURFACESKIN);
+		A_ChangeModel("", 0, "Models/Expansion", "", 3, "Models/Expansion", "oldbarney_body_003.png", CMDL_USESURFACESKIN);
+		A_ChangeModel("", 0, "Models/Expansion", "", 4, "Models/Expansion", "oldbarney_body_004.png", CMDL_USESURFACESKIN);
+		A_ChangeModel("", 0, "Models/Expansion", "", 5, "Models/Expansion", "oldbarney_body_005.png", CMDL_USESURFACESKIN);
+		A_ChangeModel("", 0, "Models/Expansion", "", 6, "Models/Expansion", "oldbarney_body_006.png", CMDL_USESURFACESKIN);
+		A_ChangeModel("", 0, "Models/Expansion", "", 7, "Models/Expansion", "oldbarney_body_007.png", CMDL_USESURFACESKIN);
+		A_ChangeModel("", 0, "Models/Expansion", "", 8, "Models/Expansion", "oldbarney_body_008.png", CMDL_USESURFACESKIN);
+		A_ChangeModel("", 0, "Models/Expansion", "", 9, "Models/Expansion", "oldbarney_body_009.png", CMDL_USESURFACESKIN);
+		A_ChangeModel("", 0, "Models/Expansion", "", 10, "Models/Expansion", "oldbarney_body_010.png", CMDL_USESURFACESKIN);
+		A_ChangeModel("", 0, "Models/Expansion", "", 11, "Models/Expansion", "oldbarney_body_011.png", CMDL_USESURFACESKIN);
+		A_ChangeModel("", 0, "Models/Expansion", "", 12, "Models/Expansion", "oldbarney_body_012.png", CMDL_USESURFACESKIN);
+		A_ChangeModel("", 0, "Models/Expansion", "", 13, "Models/Expansion", "oldbarney_body_013.png", CMDL_USESURFACESKIN);
+		A_ChangeModel("", 0, "Models/Expansion", "", 14, "Models/Expansion", "oldbarney_body_014.png", CMDL_USESURFACESKIN);
+		A_ChangeModel("", 0, "Models/Expansion", "", 15, "Models/Expansion", "oldbarney_body_015.png", CMDL_USESURFACESKIN);
+		A_ChangeModel("", 0, "Models/Expansion", "", 16, "Models/Expansion", "oldbarney_body_016.png", CMDL_USESURFACESKIN);
+		A_ChangeModel("", 0, "Models/Expansion", "", 17, "Models/Expansion", "oldbarney_body_017.png", CMDL_USESURFACESKIN);
+		A_ChangeModel("", 0, "Models/Expansion", "", 18, "Models/Expansion", "oldbarney_body_018.png", CMDL_USESURFACESKIN);
+		A_ChangeModel("", 0, "Models/Expansion", "", 19, "Models/Expansion", "oldbarney_body_019.png", CMDL_USESURFACESKIN);
+		A_ChangeModel("", 0, "Models/Expansion", "", 20, "Models/Expansion", "oldbarney_body_020.png", CMDL_USESURFACESKIN);
+		A_ChangeModel("", 0, "Models/Expansion", "", 21, "Models/Expansion", "oldbarney_body_021.png", CMDL_USESURFACESKIN);
+		A_ChangeModel("", 0, "Models/Expansion", "", 22, "Models/Expansion", "oldbarney_body_022.png", CMDL_USESURFACESKIN);
+		A_ChangeModel("", 0, "Models/Expansion", "", 23, "Models/Expansion", "oldbarney_body_023.png", CMDL_USESURFACESKIN);
+		A_ChangeModel("", 0, "Models/Expansion", "", 24, "Models/Expansion", "oldbarney_body_024.png", CMDL_USESURFACESKIN);
+
+		A_ChangeModel("", 1, "Models/Expansion", "oldbarney_gun.iqm", 0, "Models/Expansion", "oldbarney_gun_000.png", CMDL_USESURFACESKIN, 0);
+		A_ChangeModel("", 1, "Models/Expansion", "", 1, "Models/Expansion", "oldbarney_gun_001.png", CMDL_USESURFACESKIN);
+		A_ChangeModel("", 1, "Models/Expansion", "", 2, "Models/Expansion", "oldbarney_body_004.png", CMDL_USESURFACESKIN);
+		A_ChangeModel("", 1, "Models/Expansion", "", 3, "Models/Expansion", "oldbarney_body_019.png", CMDL_USESURFACESKIN);
+		A_ChangeModel("", 1, "Models/Expansion", "", 4, "Models/Expansion", "oldbarney_body_018.png", CMDL_USESURFACESKIN);
+		A_ChangeModel("", 1, "Models/Expansion", "", 5, "Models/Expansion", "oldbarney_body_014.png", CMDL_USESURFACESKIN);
+	}
 	Default
 	{
 		SeeSound "quiver/monsters/barney/idle";
