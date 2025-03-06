@@ -7,16 +7,6 @@ brightmap texture X0LASERY
 	map "brtmaps/X0LASERY.png"
 }
 
-brightmap texture Xarmor01
-{
-	map "brtmaps/Xarmor01.png"
-}
-
-brightmap texture Xarmor02
-{
-	map "brtmaps/Xarmor02.png"
-}
-
 brightmap texture Xarmor03
 {
 	map "brtmaps/Xarmor03.png"
@@ -300,11 +290,6 @@ brightmap texture XLABPNL4
 brightmap flat Xlite07
 {
 	map "brtmaps/Xlite07.png"
-}
-
-brightmap texture Xmedic01
-{
-	map "brtmaps/Xmedic01.png"
 }
 
 brightmap texture Xmoni01

@@ -429,20 +429,6 @@ Texture ZIMMER7, 64, 128
 	Patch RW42_3, 0, 0
 }
 
-Texture XARMOR01, 128, 192
-{
-	XScale 4.0
-	YScale 4.0
-	Patch XARMOR01, 0, 0
-}
-
-Texture XARMOR02, 128, 192
-{
-	XScale 4.0
-	YScale 4.0
-	Patch XARMOR02, 0, 0
-}
-
 Texture XCOMP29, 32, 64
 {
 	XScale 2.0
@@ -469,20 +455,6 @@ Texture XLITE07, 32, 16
 	XScale 2.0
 	YScale 2.0
 	Patch XLITE07, 0, 0
-}
-
-Texture XMEDIC01, 64, 96
-{
-	XScale 2.0
-	YScale 2.0
-	Patch XMEDIC01, 0, 0
-}
-
-Texture XMEDIC02, 64, 96
-{
-	XScale 2.0
-	YScale 2.0
-	Patch XMEDIC02, 0, 0
 }
 
 Texture XMICRO03, 80, 48
@@ -3530,13 +3502,6 @@ Graphic WITIME, 120, 24
 	Patch WITIME, 0, 0
 }
 
-Graphic WISUCKS, 120, 24
-{
-	XScale 2.0
-	YScale 2.0
-	Patch WISUCKS, 0, 0
-}
-
 Graphic WIPAR, 120, 24
 {
 	XScale 2.0
@@ -5225,10 +5190,10 @@ graphic HLIVAN,164,200
 	Patch HLIVAN1,0,0
 }
 
-graphic M_DOOM,0,0{}
-graphic M_SKILL,0,0{}
-graphic M_EPISOD,0,0{}
-graphic M_NEWG,0,0{}
+graphic M_DOOM,1,1{}
+graphic M_SKILL,1,1{}
+graphic M_EPISOD,1,1{}
+graphic M_NEWG,1,1{}
 
 // End of texture definitions
 
