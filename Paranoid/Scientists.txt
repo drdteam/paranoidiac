@@ -327,6 +327,7 @@ class HLScientistDead : HLScientist
 	States
 	{
 	Spawn:
+		TNT1 A 0;
 		HLD1 X -1;
 		Stop;
 	}

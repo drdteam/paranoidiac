@@ -386,6 +386,7 @@ class HLGruntDead : HLGruntM16
 	States
 	{
 	Spawn:
+		TNT1 A 0;
 		HLD2 G -1;
 		Stop;
 	}
