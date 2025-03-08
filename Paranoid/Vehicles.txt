@@ -48,7 +48,7 @@ class Osprey : OspreyBellmer
 	}
 	Default
 	{
-		Scale 10;
+		//Scale 10;
 	}
 	States
 	{
