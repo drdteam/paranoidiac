@@ -2328,66 +2328,6 @@ Model HLZombie
 	FrameIndex HLI2 A 0 29
 	FrameIndex HLI2 B 0 30
 
-	FrameIndex HLW1 A 0 109
-	FrameIndex HLW1 B 0 110
-	FrameIndex HLW1 C 0 111
-	FrameIndex HLW1 D 0 112
-	FrameIndex HLW1 E 0 113
-	FrameIndex HLW1 F 0 114
-	FrameIndex HLW1 G 0 115
-	FrameIndex HLW1 H 0 116
-	FrameIndex HLW1 I 0 117
-	FrameIndex HLW1 J 0 118
-	FrameIndex HLW1 K 0 119
-	FrameIndex HLW1 L 0 120
-	FrameIndex HLW1 M 0 121
-	FrameIndex HLW1 N 0 122
-	FrameIndex HLW1 O 0 123
-	FrameIndex HLW1 P 0 124
-	FrameIndex HLW1 Q 0 125
-	FrameIndex HLW1 R 0 126
-	FrameIndex HLW1 S 0 127
-	FrameIndex HLW1 T 0 128
-	FrameIndex HLW1 U 0 129
-	FrameIndex HLW1 V 0 130
-	FrameIndex HLW1 W 0 131
-	FrameIndex HLW1 X 0 132
-	FrameIndex HLW1 Y 0 133
-	FrameIndex HLW1 Z 0 134
-	FrameIndex HLW1 [ 0 135
-	FrameIndex HLW1 \ 0 136
-	FrameIndex HLW1 ] 0 137
-	FrameIndex HLW2 A 0 138
-	FrameIndex HLW2 B 0 139
-	FrameIndex HLW2 C 0 140
-	FrameIndex HLW2 D 0 141
-	FrameIndex HLW2 E 0 142
-	FrameIndex HLW2 F 0 143
-	FrameIndex HLW2 G 0 144
-	FrameIndex HLW2 H 0 145
-	FrameIndex HLW2 I 0 146
-	FrameIndex HLW2 J 0 147
-	FrameIndex HLW2 K 0 148
-	FrameIndex HLW2 L 0 149
-	FrameIndex HLW2 M 0 150
-	FrameIndex HLW2 N 0 151
-	FrameIndex HLW2 O 0 152
-	FrameIndex HLW2 P 0 153
-	FrameIndex HLW2 Q 0 154
-	FrameIndex HLW2 R 0 155
-	FrameIndex HLW2 S 0 156
-	FrameIndex HLW2 T 0 157
-	FrameIndex HLW2 U 0 158
-	FrameIndex HLW2 V 0 159
-	FrameIndex HLW2 W 0 160
-	FrameIndex HLW2 X 0 161
-	FrameIndex HLW2 Y 0 162
-	FrameIndex HLW2 Z 0 163
-	FrameIndex HLW2 [ 0 164
-	FrameIndex HLW2 \ 0 165
-	FrameIndex HLW2 ] 0 166
-	FrameIndex HLW3 A 0 167
-
 	FrameIndex HLA1 A 0 56
 	FrameIndex HLA1 B 0 57
 	FrameIndex HLA1 C 0 58
@@ -2456,6 +2396,68 @@ Model HLZombie
 	FrameIndex HLD1 [ 0 303
 	FrameIndex HLD1 \ 0 304
 	FrameIndex HLD1 ] 0 305
+
+	//Offset -16 0 0
+
+	FrameIndex HLW1 A 0 109
+	FrameIndex HLW1 B 0 110
+	FrameIndex HLW1 C 0 111
+	FrameIndex HLW1 D 0 112
+	FrameIndex HLW1 E 0 113
+	FrameIndex HLW1 F 0 114
+	FrameIndex HLW1 G 0 115
+	FrameIndex HLW1 H 0 116
+	FrameIndex HLW1 I 0 117
+	FrameIndex HLW1 J 0 118
+	FrameIndex HLW1 K 0 119
+	FrameIndex HLW1 L 0 120
+	FrameIndex HLW1 M 0 121
+	FrameIndex HLW1 N 0 122
+	FrameIndex HLW1 O 0 123
+	FrameIndex HLW1 P 0 124
+	FrameIndex HLW1 Q 0 125
+	FrameIndex HLW1 R 0 126
+	FrameIndex HLW1 S 0 127
+	FrameIndex HLW1 T 0 128
+	FrameIndex HLW1 U 0 129
+	FrameIndex HLW1 V 0 130
+	FrameIndex HLW1 W 0 131
+	FrameIndex HLW1 X 0 132
+	FrameIndex HLW1 Y 0 133
+	FrameIndex HLW1 Z 0 134
+	FrameIndex HLW1 [ 0 135
+	FrameIndex HLW1 \ 0 136
+	FrameIndex HLW1 ] 0 137
+	FrameIndex HLW2 A 0 138
+	FrameIndex HLW2 B 0 139
+	FrameIndex HLW2 C 0 140
+	FrameIndex HLW2 D 0 141
+	FrameIndex HLW2 E 0 142
+	FrameIndex HLW2 F 0 143
+	FrameIndex HLW2 G 0 144
+	FrameIndex HLW2 H 0 145
+	FrameIndex HLW2 I 0 146
+	FrameIndex HLW2 J 0 147
+	FrameIndex HLW2 K 0 148
+	FrameIndex HLW2 L 0 149
+	FrameIndex HLW2 M 0 150
+	FrameIndex HLW2 N 0 151
+	FrameIndex HLW2 O 0 152
+	FrameIndex HLW2 P 0 153
+	FrameIndex HLW2 Q 0 154
+	FrameIndex HLW2 R 0 155
+	FrameIndex HLW2 S 0 156
+	FrameIndex HLW2 T 0 157
+	FrameIndex HLW2 U 0 158
+	FrameIndex HLW2 V 0 159
+	FrameIndex HLW2 W 0 160
+	FrameIndex HLW2 X 0 161
+	FrameIndex HLW2 Y 0 162
+	FrameIndex HLW2 Z 0 163
+	FrameIndex HLW2 [ 0 164
+	FrameIndex HLW2 \ 0 165
+	FrameIndex HLW2 ] 0 166
+	FrameIndex HLW3 A 0 167
 }
 
 Model HLNihilanth
