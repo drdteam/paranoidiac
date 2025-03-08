@@ -36,20 +36,43 @@ class RolfBellmer : PlayerPawn
 		Goto Spawn;
 	Pain:
 		HLP1 A 0 A_HLPainSelect;
-		HLP1 A 1 A_HLHEVPain;
+		HLP1 A 1
+		{
+			if(otis)
+			{
+				if(random(0,3))
+					A_PlaySound("halflife/monsters/otis/pain",CHAN_VOICE);
+			}
+			else
+				A_HLHEVPain();
+		}
 		HLP1 DGJMPSU 1;
 		Goto Spawn;
 	Pain.Drowning:
 		HLP1 A 0 A_HLDrownPainSelect;
-		HLP1 A 1 A_PlaySound("HLPlayerDrowning",6);
+		HLP1 A 1
+		{
+			if(otis)
+			{
+				if(random(0,3))
+					A_PlaySound("halflife/monsters/otis/pain",CHAN_VOICE);
+			}
+			else
+				A_PlaySound("HLPlayerDrowning",6);
+		}
 		HLP1 DGJMPSU 1;
 		Goto Spawn;
 	Death:
 		HLD1 A 0 A_HLDeathSelect;
 		HLD1 A 2
 		{
-			A_PlaySound("HLPlayerHEVFail",7);
-			A_PlaySound("HLPlayerHEVFailBeep",6);
+			if(otis)
+				A_PlaySound("halflife/monsters/otis/death",CHAN_VOICE);
+			else
+			{
+				A_PlaySound("HLPlayerHEVFail",7);
+				A_PlaySound("HLPlayerHEVFailBeep",6);
+			}
 			A_NoBlocking();
 		}
 		HLD1 BCDEFG 2;
@@ -82,72 +105,6 @@ class RolfBellmer : PlayerPawn
 		HLD2 X -1;
 		Stop;
 
-	OtisSpawn:
-		BSI1 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 2;
-		BSI2 AB 2;
-		Loop;
-	OtisSee:
-		BSR1 ABCDEFGHIJKLMNOPQRSTUVW 1;
-		Loop;
-	OtisMissile:
-		BSA1 YZ[\] 1;
-		BSA2 AB 1;
-		BSA1 VUTRSQPONMLKJIHGFEDCBA 1;
-		Goto OtisSpawn;
-	OtisPain:
-	OtisPain.Drowning:
-		BSP1 A 1
-		{
-			if(random(0,3))
-				A_PlaySound("halflife/monsters/otis/pain",CHAN_VOICE);
-		}
-		BSP1 DGJMPSU 1;
-		Goto OtisSpawn;
-	OtisDeath:
-		BSD1 A 2
-		{
-			A_PlaySound("halflife/monsters/otis/death",CHAN_VOICE);
-			A_NoBlocking();
-		}
-		BSD1 BCDEFG 2;
-		BSD1 H 2 A_PlaySound("halflife/weapons/bodydrop");
-		BSD1 IJKL 2;
-		BSD1 M -1;
-		Stop;
-
-	FreemanSpawn:
-		GFI1 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 2;
-		GFI2 AB 2;
-		Loop;
-	FreemanSee:
-		GFR1 ABCDEFGHIJKLMNOPQRSTUVW 1;
-		Loop;
-	FreemanMissile:
-		GFA1 YZ[\] 1;
-		GFA2 AB 1;
-		GFA1 VUTRSQPONMLKJIHGFEDCBA 1;
-		Goto FreemanSpawn;
-	FreemanPain:
-		GFP1 A 1 A_HLHEVPain;
-		GFP1 DGJMPSU 1;
-		Goto FreemanSpawn;
-	FreemanPain.Drowning:
-		HLP1 A 1 A_PlaySound("HLPlayerDrowning",6);
-		HLP1 DGJMPSU 1;
-		Goto FreemanSpawn;
-	FreemanDeath:
-		GFD1 A 2
-		{
-			A_PlaySound("HLPlayerHEVFail",7);
-			A_PlaySound("HLPlayerHEVFailBeep",6);
-			A_NoBlocking();
-		}
-		GFD1 BCDEFG 2;
-		GFD1 H 2 A_PlaySound("halflife/weapons/bodydrop");
-		GFD1 IJKL 2;
-		GFD1 M -1;
-		Stop;
-
 	ShephardSpawn:
 		OFI1 ABCDEFGHIJK 2;
 		Loop;
@@ -168,50 +125,6 @@ class RolfBellmer : PlayerPawn
 		OFD2 A 1 A_PlaySound("halflife/weapons/bodydrop");
 		OFD2 BCDEF 1;
 		OFD2 G -1;
-		Stop;
-
-	BlackOpsSpawn:
-		BOI1 ABCDEFGHIJK 2;
-		Loop;
-	BlackOpsSee:
-		BOR1 ABCDEFGHIJKLMNOPQRSTUVWXY 1;
-		Loop;
-	BlackOpsMissile:
-		BOA2 \] 1;
-		BOA3 ABCDEFGHIJK 1;
-		Goto BlackOpsSpawn;
-	BlackOpsPain:
-	BlackOpsPain.Drowning:
-		BOP1 ABCDEFGH 1;
-		Goto BlackOpsSpawn;
-	BlackOpsDeath:
-		BOD1 A 1 A_NoBlocking;
-		BOD1 BCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1;
-		BOD2 A 1 A_PlaySound("halflife/weapons/bodydrop");
-		BOD2 BCDEF 1;
-		BOD2 G -1;
-		Stop;
-
-	RoboSpawn:
-		ROI1 ABCDEFGHIJK 2;
-		Loop;
-	RoboSee:
-		ROR1 ABCDEFGHIJKLMNOPQRSTUVWXY 1;
-		Loop;
-	RoboMissile:
-		ROA2 \] 1;
-		ROA3 ABCDEFGHIJK 1;
-		Goto RoboSpawn;
-	RoboPain:
-	RoboPain.Drowning:
-		ROP1 ABCDEFGH 1;
-		Goto RoboSpawn;
-	RoboDeath:
-		ROD1 A 1 A_NoBlocking;
-		ROD1 BCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1;
-		ROD2 A 1 A_PlaySound("halflife/weapons/bodydrop");
-		ROD2 BCDEF 1;
-		ROD2 G -1;
 		Stop;
 
 	IvanSpawn:
@@ -274,13 +187,158 @@ class RolfBellmer : PlayerPawn
 	}
 	static const name HLskin[]={'Helmet','Freeman','Shephard','BlackOps','Robo','Ivan'};
 	static const statelabel BaseStates[]={"Spawn","See","Missile","Pain","Pain.Drowning","Death"};
-	static const statelabel OtisStates[]={"OtisSpawn","OtisSee","OtisMissile","OtisPain","OtisPain.Drowning","OtisDeath"};
 	static const statelabel ScientistStates[]={"ScientistSpawn","ScientistSee","ScientistMissile","ScientistPain","ScientistPain.Drowning","ScientistDeath"};
-	static const statelabel FreemanStates[]={"FreemanSpawn","FreemanSee","FreemanMissile","FreemanPain","FreemanPain.Drowning","FreemanDeath"};
 	static const statelabel ShephardStates[]={"ShephardSpawn","ShephardSee","ShephardMissile","ShephardPain","ShephardPain.Drowning","ShephardDeath"};
-	static const statelabel BlackOpsStates[]={"BlackOpsSpawn","BlackOpsSee","BlackOpsMissile","BlackOpsPain","BlackOpsPain.Drowning","BlackOpsDeath"};
-	static const statelabel RoboStates[]={"RoboSpawn","RoboSee","RoboMissile","RoboPain","RoboPain.Drowning","RoboDeath"};
 	static const statelabel IvanStates[]={"IvanSpawn","IvanSee","IvanMissile","IvanPain","IvanPain.Drowning","IvanDeath"};
+
+	void HLPlayerModelSetup(name skin)
+	{
+		switch(skin)
+		{
+		case 'Base':
+			A_ChangeModel("", 0, "Models", "hev_scientist_body.iqm", 0, "Models", "w_suit_002.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 0, "Models", "", 1, "Models", "w_suit_000.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 0, "Models", "", 2, "Models", "w_suit_001.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 0, "Models", "", 3, "Models", "w_suit_003.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 0, "Models", "", 4, "Models", "w_suit_005.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 0, "Models", "", 5, "Models", "w_suit_007.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 0, "Models", "", 6, "Models", "w_suit_004.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 0, "Models", "", 7, "Models", "w_suit_006.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 0, "Models", "", 8, "Models", "w_suit_002.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 0, "Models", "", 9, "Models", "w_suit_002.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 0, "Models", "", 10, "Models", "w_suit_002.png", CMDL_USESURFACESKIN);
+
+			A_ChangeModel("", 1, "Models", "hev_scientist_head.iqm", 0, "Models", "w_suit_003.png", CMDL_USESURFACESKIN, 0);
+			A_ChangeModel("", 1, "Models", "", 1, "Models", "hev_scientist_head_001.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 1, "Models", "", 2, "Models", "hev_scientist_head_002.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 1, "Models", "", 3, "Models", "hev_scientist_head_003.png", CMDL_USESURFACESKIN);
+
+			A_ChangeModel("", 2, "Models", "barney_gun1.iqm", 0, "Models", "w_9mmhandgun.png", CMDL_USESURFACESKIN, 0);
+			A_ChangeModel("", 2, "Models", "", 1, "Models", "v_9mmhandgun_main_002.png", CMDL_USESURFACESKIN);
+
+			A_ChangeModel("", 3, flags:CMDL_HIDEMODEL);
+			break;
+		case 'Scientist':
+			A_ChangeModel("", 0, "Models", "scientist_body.iqm", 0, "Models", "scientist_body_000.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 0, "Models", "", 1, "Models", "scientist_body_001.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 0, "Models", "", 2, "Models", "scientist_body_002.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 0, "Models", "", 3, "Models", "scientist_body_003.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 0, "Models", "", 4, "Models", "scientist_body_004.png", CMDL_USESURFACESKIN);
+
+			A_ChangeModel("", 1, "Models", "scientist_head3.iqm", 0, "Models", "scientist_head3_000.png", CMDL_USESURFACESKIN, 0);
+			A_ChangeModel("", 1, "Models", "", 1, "Models", "scientist_head1_001.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 1, "Models", "", 2, "Models", "scientist_head3_002.png", CMDL_USESURFACESKIN);
+
+			A_ChangeModel("", 2, flags:CMDL_HIDEMODEL);
+			A_ChangeModel("", 3, flags:CMDL_HIDEMODEL);
+			break;
+		case 'Freeman':
+			A_ChangeModel("", 0, "Models", "hev_scientist_body.iqm", 0, "Models", "w_suit_002.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 0, "Models", "", 1, "Models", "w_suit_000.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 0, "Models", "", 2, "Models", "w_suit_001.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 0, "Models", "", 3, "Models", "w_suit_003.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 0, "Models", "", 4, "Models", "w_suit_005.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 0, "Models", "", 5, "Models", "w_suit_007.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 0, "Models", "", 6, "Models", "w_suit_004.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 0, "Models", "", 7, "Models", "w_suit_006.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 0, "Models", "", 8, "Models", "w_suit_002.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 0, "Models", "", 9, "Models", "w_suit_002.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 0, "Models", "", 10, "Models", "w_suit_002.png", CMDL_USESURFACESKIN);
+
+			A_ChangeModel("", 1, "Models", "freeman_head.iqm", 0, "Models", "w_suit_002.png", CMDL_USESURFACESKIN, 0);
+			A_ChangeModel("", 1, "Models", "", 1, "Models", "freeman_head_001.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 1, "Models", "", 2, "Models", "nochrome.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 1, "Models", "", 3, "Models", "nochrome.png", CMDL_USESURFACESKIN);
+
+			A_ChangeModel("", 2, "Models", "barney_gun1.iqm", 0, "Models", "w_9mmhandgun.png", CMDL_USESURFACESKIN, 0);
+			A_ChangeModel("", 2, "Models", "", 1, "Models", "v_9mmhandgun_main_002.png", CMDL_USESURFACESKIN);
+
+			A_ChangeModel("", 3, flags:CMDL_HIDEMODEL);
+			break;
+		case 'Otis':
+			A_ChangeModel("", 0, "Models", "otis_body.iqm", 0, "Models", "barney_body_002.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 0, "Models", "", 1, "Models", "barney_body_003.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 0, "Models", "", 2, "Models", "barney_body_001.png", CMDL_USESURFACESKIN);
+
+			A_ChangeModel("", 1, "Models", "otis_head.iqm", 0, "Models", "otis_head_000.png", CMDL_USESURFACESKIN, 0);
+			A_ChangeModel("", 1, "Models", "", 1, "Models", "otis_head_001.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 1, "Models", "", 2, "Models", "barney_head_001.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 1, "Models", "", 3, "Models", "barney_head_002.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 1, "Models", "", 4, "Models", "otis_head_004.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 1, "Models", "", 5, "Models", "barney_body_002.png", CMDL_USESURFACESKIN);
+
+			A_ChangeModel("", 2, "Models", "otis_gun1.iqm", 2, "Models", "v_desert_eagle_main_000.png", 0, 0);
+
+			A_ChangeModel("", 3, flags:CMDL_HIDEMODEL);
+			break;
+		case 'Shepard':
+			A_ChangeModel("", 0, "Models", "hgrunt_body.iqm", 0, "Models", "hgrunt_body_000.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 0, "Models", "", 1, "Models", "hgrunt_body_001.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 0, "Models", "", 2, "Models", "hgrunt_body_002.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 0, "Models", "", 3, "Models", "hgrunt_body_003.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 0, "Models", "", 4, "Models", "hgrunt_body_004.png", CMDL_USESURFACESKIN);
+
+			A_ChangeModel("", 1, "Models", "hgrunt_head1.iqm", 0, "Models", "hgrunt_head1_000.png", CMDL_USESURFACESKIN, 0);
+			A_ChangeModel("", 1, "Models", "", 1, "Models", "hgrunt_head1_001.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 1, "Models", "", 2, "Models", "hgrunt_head1_002.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 1, "Models", "", 3, "Models", "hgrunt_head1_003.png", CMDL_USESURFACESKIN);
+
+			A_ChangeModel("", 2, "Models", "hgrunt_arifle.iqm", 2, "Models", "hgrunt_arifle.png", 0, 0);
+
+			A_ChangeModel("", 3, flags:CMDL_HIDEMODEL);
+			break;
+		case 'BlackOps':
+			A_ChangeModel("", 0, "Models", "massn_body.iqm", 0, "Models", "massn_body_000.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 0, "Models", "", 1, "Models", "massn_body_001.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 0, "Models", "", 2, "Models", "massn_body_002.png", CMDL_USESURFACESKIN);
+
+			A_ChangeModel("", 1, "Models", "massn_head.iqm", 0, "Models", "massn_head_000.png", CMDL_USESURFACESKIN, 0);
+			A_ChangeModel("", 1, "Models", "", 1, "Models", "massn_head_001.png", CMDL_USESURFACESKIN);
+
+			A_ChangeModel("", 2, "Models", "hgrunt_arifle.iqm", 2, "Models", "hgrunt_arifle.png", 0, 0);
+
+			A_ChangeModel("", 3, flags:CMDL_HIDEMODEL);
+			break;
+		case 'Robo':
+			A_ChangeModel("", 0, "Models", "robot_body.iqm", 0, "Models", "robot_body_000.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 0, "Models", "", 1, "Models", "robot_body_001.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 0, "Models", "", 2, "Models", "robot_body_002.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 0, "Models", "", 3, "Models", "robot_body_003.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 0, "Models", "", 4, "Models", "robot_body_004.png", CMDL_USESURFACESKIN);
+
+			A_ChangeModel("", 1, "Models", "robot_headlegs.iqm", 0, "Models", "robot_body_001.png", CMDL_USESURFACESKIN, 0);
+			A_ChangeModel("", 1, "Models", "", 1, "Models", "robot_body_002.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 1, "Models", "", 2, "Models", "robot_body_004.png", CMDL_USESURFACESKIN);
+
+			A_ChangeModel("", 2, "Models", "hgrunt_arifle.iqm", 2, "Models", "hgrunt_arifle.png", 0, 0);
+
+			A_ChangeModel("", 3, "Models", "robot_arms.iqm", 0, "Models", "robot_body_000.png", CMDL_USESURFACESKIN, 0);
+			A_ChangeModel("", 3, "Models", "", 1, "Models", "robot_body_001.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 3, "Models", "", 2, "Models", "nochrome.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 3, "Models", "", 3, "Models", "robot_body_000.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 3, "Models", "", 4, "Models", "robot_body_001.png", CMDL_USESURFACESKIN);
+			break;
+		case 'Ivan':
+			A_ChangeModel("", 0, "Models", "doctor.iqm", 0, "Models", "doctor_000.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 0, "Models", "", 1, "Models", "doctor_001.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 0, "Models", "", 2, "Models", "doctor_002.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 0, "Models", "", 3, "Models", "doctor_003.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 0, "Models", "", 4, "Models", "doctor_004.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 0, "Models", "", 5, "Models", "doctor_005.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 0, "Models", "", 6, "Models", "doctor_006.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 0, "Models", "", 7, "Models", "doctor_007.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 0, "Models", "", 8, "Models", "doctor_008.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 0, "Models", "", 9, "Models", "doctor_009.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 0, "Models", "", 10, "Models", "doctor_010.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 0, "Models", "", 11, "Models", "doctor_011.png", CMDL_USESURFACESKIN);
+
+			A_ChangeModel("", 1, flags:CMDL_HIDEMODEL);
+			A_ChangeModel("", 2, flags:CMDL_HIDEMODEL);
+			A_ChangeModel("", 3, flags:CMDL_HIDEMODEL);
+			break;
+		}
+	}
+
 	private void HLSetState(name statetype,bool forced=0)
 	{
 		int mode,skinnum=CVar.GetCVar("v_multiskin",player).GetInt();
@@ -295,22 +353,46 @@ class RolfBellmer : PlayerPawn
 		case 'Death':			mode=5;break;
 		}
 		if(otis)
-			stlabel=OtisStates[mode];
+		{
+			HLPlayerModelSetup('Otis');
+			stlabel=BaseStates[mode];
+		}
 		else if(skinnum)//&&multiplayer)
 		{
 			switch(skinnum)
 			{
-			case 1:	stlabel=FreemanStates[mode];break;
-			case 2:	stlabel=ShephardStates[mode];break;
-			case 3:	stlabel=BlackOpsStates[mode];break;
-			case 4:	stlabel=RoboStates[mode];break;
-			case 5:	stlabel=IvanStates[mode];break;
+			case 1:
+				HLPlayerModelSetup('Freeman');
+				stlabel=BaseStates[mode];
+				break;
+			case 2:
+				HLPlayerModelSetup('Shepard');
+				stlabel=ShephardStates[mode];
+				break;
+			case 3:
+				HLPlayerModelSetup('BlackOps');
+				stlabel=ShephardStates[mode];
+				break;
+			case 4:
+				HLPlayerModelSetup('Robo');
+				stlabel=ShephardStates[mode];
+				break;
+			case 5:
+				HLPlayerModelSetup('Ivan');
+				stlabel=IvanStates[mode];
+				break;
 			}
 		}
 		else if(scientist)
+		{
+			HLPlayerModelSetup('Scientist');
 			stlabel=ScientistStates[mode];
+		}
 		else
+		{
+			HLPlayerModelSetup('Base');
 			stlabel=BaseStates[mode];
+		}
 		if(forced||!InStateSequence(CurState,FindState(stlabel)))
 			SetStateLabel(stlabel);
 	}
@@ -318,11 +400,7 @@ class RolfBellmer : PlayerPawn
 	{
 		if(InStateSequence(CurState,FindState("Spawn"))||
 		InStateSequence(CurState,FindState("ScientistSpawn"))||
-		InStateSequence(CurState,FindState("OtisSpawn"))||
-		InStateSequence(CurState,FindState("FreemanSpawn"))||
 		InStateSequence(CurState,FindState("ShephardSpawn"))||
-		InStateSequence(CurState,FindState("BlackOpsSpawn"))||
-		InStateSequence(CurState,FindState("RoboSpawn"))||
 		InStateSequence(CurState,FindState("IvanSpawn")))
 			return 1;
 		return 0;
@@ -331,11 +409,7 @@ class RolfBellmer : PlayerPawn
 	{
 		if(InStateSequence(CurState,FindState("See"))||
 		InStateSequence(CurState,FindState("ScientistSee"))||
-		InStateSequence(CurState,FindState("OtisSee"))||
-		InStateSequence(CurState,FindState("FreemanSee"))||
 		InStateSequence(CurState,FindState("ShephardSee"))||
-		InStateSequence(CurState,FindState("BlackOpsSee"))||
-		InStateSequence(CurState,FindState("RoboSee"))||
 		InStateSequence(CurState,FindState("IvanSee")))
 			return 1;
 		return 0;
