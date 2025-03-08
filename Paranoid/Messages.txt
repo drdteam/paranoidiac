@@ -11,7 +11,7 @@ Class mkDialogueSequence : HUDMessageBase
 	{
 		self.p=p;
 		self.col=Font.CR_GOLD;
-		self.tspeed=int(typetime*35);
+		self.tspeed=int(typetime*35.0/1.5);
 		self.icon=icon;
 		self.msg=msg;
 		return self;
@@ -182,7 +182,7 @@ class ParanoidSoundTracker : Inventory
 	int playing,countdown;
 	override void DoEffect()
 	{
-		if(countdown==1)
+		if(countdown ==1 )
 			MessageItem.StopMessage(PlayerPawn(owner));
 		if(countdown)
 			countdown--;
@@ -235,14 +235,16 @@ class MessageItem : CustomInventory
 		if(mytracker.playing!=2)
 			thisplayer.A_PlaySound("radiostatic",6,local:1);
 		thisplayer.A_PlaySound(message,7,attenuation:ATTN_STATIC);//,local:1);	//local makes it uninterruptible...
-		double doubledur;
-		if(dur)
-			doubledur=dur*1.0;
-		else
-			doubledur=S_GetLength(message);
 		string msg=StringTable.Localize("$"..message);
-		double typetime=doubledur/double(msg.Length());
-		mytracker.countdown=int(5+doubledur*35);
+		int ticdur;
+		double doubledur, typetime;
+		if(dur)
+			doubledur = dur;
+		else
+			doubledur = S_GetLength(message);
+		typetime = doubledur / double(msg.Length());
+		ticdur = ceil(doubledur * TICRATE);
+		mytracker.countdown = ticdur;
 		ParanoidMessageHandler.StartDialogueSequence(thisplayer.player,message,typetime,icon);
 	}
 	string Portrait;

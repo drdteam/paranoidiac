@@ -68,8 +68,7 @@ BRIEF09="Therefore, you will need to figure out a way to reach it on your own.";
 BRIEF10="However, to assist you, we have planned a little... 'incident' \nin the Anomalous Materials Test Lab.";
 BRIEF11="This should cause just enough confusion to allow you to reach \nData Control Ops.";
 BRIEF12="Periodically, during your mission, you will receive transmissions from me.";
-BRIEF13="These messages will help you navigate the Black Mesa facility, \nand identify alternative paths.";
-BRIEF14="Good luck!";
+BRIEF13="These messages will help you navigate the Black Mesa facility, \nand identify alternative paths.\nGood luck!";
 
 P1M2VOX1=
 	"You'll need to reach Dr. Zimmerman, the Sector Administrator, "
@@ -101,7 +100,7 @@ P1M4VOX1=
 P1M4VOX2=
 	"Because of the emergency, the security systems have "
 	"automatically electrified the gate and the perimeter fence.\n\n"
-	"To safely access the gate you'll need to switch off auxiliary power.\n\n"
+	"To safely access the gate, you'll need to switch off auxiliary power.\n\n"
 	"You'll need to get to the Turbine Control Room "
 	"in the Western part of this sector.";
 P1M4VOX3=
