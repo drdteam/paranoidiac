@@ -598,12 +598,13 @@ DoomEdNums
 	30318=VidCam1
 	30319=VidCam2
 	30320=TramBarney
-	30321=HLOtisGuardSpawner
-	30322=HLBarneyGuardSpawner
+	30321=HLOtisGuard
+	30322=HLBarneyGuard
 	30323=Admin01
 	30324=HLScientistSlumped
 	30325=TramBellmer
 	30326=TramBattery
+	30327=SgtHarrison
 	30329=HLScientistQuiet
 	30334=TankGlass
 	30335=DissectedHeadCrab

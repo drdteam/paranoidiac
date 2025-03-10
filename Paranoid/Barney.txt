@@ -2,25 +2,13 @@
 // Barney
 //=========
 
-class HLBarneyGuardSpawner : RandomSpawner
+class TramBarney : RandomSpawner
 {
 	Default
 	{
 		+FRIENDLY
 		DropItem "HLBarney";
 	}
-	override void PostSpawn(Actor spawned)
-	{
-		let me=HLBarney(spawned);
-		me.guard=1;
-		me.SetStateLabel("guard");
-		me.bUSESPECIAL=1;
-	}
-}
-class HLOtisGuardSpawner : HLBarneyGuardSpawner
-	{Default{DropItem "HLOtis";}}
-class TramBarney : HLBarneyGuardSpawner
-{
 	override void PostSpawn(Actor spawned)
 	{
 		spawned.SetStateLabel("Tram");
@@ -85,9 +73,13 @@ class HLBarney : HLMonster
 		HLI3 AABBCCDD 1 A_HLBarneyLook;
 		Loop;
 	Guard:
-		HLI3 E 2 ResetGunModel(true);
-		HLI3 FGHIJKLMNOPQRSTUVWXYZ[\] 2;
-		HLI4 ABCDEF 2;
+		HLI3 E 2
+		{
+			ResetGunModel(true);
+			A_HLBarneyLook();
+		}
+		HLI3 FGHIJKLMNOPQRSTUVWXYZ[\] 2 A_HLBarneyLook;
+		HLI4 ABCDEF 2 A_HLBarneyLook;
 		Loop;
 	Tram:
 		HLI4 GHIJKLMNOPQRSTUVWXYZ[\] 2;
@@ -144,12 +136,7 @@ class HLBarney : HLMonster
 		for(int i=0;i<2;i++)
 			A_SpawnItemEx("GunSmoke",28,2,47);
 	}
-	virtual void A_Chatter()
-	{
-		if(!guard&&!random(0,32))
-			A_PlaySound("halflife/monsters/barney/idle");
-	}
-	action actor ChooseBestFriend()
+	actor ChooseBestFriend()
 	{
 		if(friendplayer)
 			return players[friendplayer].mo;
@@ -168,10 +155,9 @@ class HLBarney : HLMonster
 		}
 		return null;
 	}
-	action void A_HLBarneyLook()
+	virtual void A_HLBarneyLook()
 	{
-		let self=HLBarney(self);
-		if(!self.follower)
+		if(!follower)
 		{
 			A_Look();
 			return;
@@ -191,14 +177,18 @@ class HLBarney : HLMonster
 		A_Face(goal);
 		A_LookEx(LOF_DONTCHASEGOAL|LOF_NOSEESOUND|LOF_NOJUMP,0,0,360);
 	}
-	action void A_HLBarneyChase()
+	void A_Chatter()
 	{
-		let self=HLBarney(self);
+		if(!guard&&!random(0,32))
+			A_PlaySound(SeeSound);
+	}
+	virtual void A_HLBarneyChase()
+	{
 		//If Barney is a follower but doesn't have a player to follow yet...
-		if(self.follower&&!goal)
+		if(follower&&!goal)
 			goal=ChooseBestFriend();
 		//If Barney is a follower, doesn't have a target, and the player is close enough...
-		if(self.follower&&!self.target&&goal&&Distance3D(goal)<96.0)
+		if(follower&&!target&&goal&&Distance3D(goal)<96.0)
 		{
 			if(random(0,1))
 				SetStateLabel("Spawn");
@@ -206,7 +196,7 @@ class HLBarney : HLMonster
 				SetStateLabel("Spawn2");
 			return;
 		}
-		self.A_HLChase();
+		A_HLChase();
 	}
 }
 
@@ -241,16 +231,52 @@ class HLOtis : HLBarney
 		DeathSound "halflife/monsters/otis/death";
 		DropItem "HLDesertEagle";
 	}
-	override void A_Chatter()
-	{
-		if(!guard&&!random(0,32))
-			A_PlaySound("halflife/monsters/otis/idle");
-	}
 	override void A_BarneyGunshot()
 	{
 		A_FaceTarget();
 		A_BarneyGunsmoke();
 		A_PlaySound("halflife/weapons/deagleshot",CHAN_WEAPON);
 		A_CustomBulletAttack(1,1,1,18,"NewPuff1");
+	}
+}
+
+class HLBarneyGuard : HLBarney
+{
+	override void PostBeginPlay()
+	{
+		guard=1;
+		SetStateLabel("guard");
+		bUSESPECIAL=1;
+		super.PostBeginPlay();
+	}
+}
+
+class HLOtisGuard : HLOtis
+{
+	override void PostBeginPlay()
+	{
+		guard=1;
+		SetStateLabel("guard");
+		bUSESPECIAL=1;
+		super.PostBeginPlay();
+	}
+}
+
+class SgtHarrison : HLBarney
+{
+	Default
+	{
+		-ISMONSTER
+		-FRIENDLY
+	}
+	override void PostBeginPlay()
+	{
+		guard=1;
+		SetStateLabel("guard");
+		super.PostBeginPlay();
+	}
+	override void A_HLBarneyChase()
+	{
+		A_Chase(null,null,CHF_NOPLAYACTIVE);
 	}
 }
