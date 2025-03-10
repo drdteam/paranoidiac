@@ -65,54 +65,53 @@ class HLZombie : HLMonster
 		maxdropoffheight 64;
 		Species "Xen";
 		HLMonster.WalkTic 5;
+		+DECOUPLEDANIMATIONS
 	}
 	States
 	{
+	Spawn:
+		HLI1 A 2
+		{
+			SetAnimation('idle1', 15, flags: SAF_LOOP|SAF_NOOVERRIDE);
+			A_Look();
+		}
+		Loop;
 	See:
-		HLW1 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1 A_HLChase;
-		HLW2 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1 A_HLChase;
-		HLW3 A 1 A_HLChase;
+		HLI1 A 1
+		{
+			SetAnimation('walk', 22, flags: SAF_LOOP|SAF_NOOVERRIDE);
+			A_HLChase();
+		}
 		Loop;
 	Melee:
-		HLA1 A 1 A_FaceTarget;
-		HLA1 BCDEF 1;
-		HLA1 G 1 A_ZombieMelee;
-		HLA1 HI 1;
-		HLA1 J 1 A_FaceTarget;
-		HLA1 KLMNO 1;
-		HLA1 P 1 A_ZombieMelee;
-		HLA1 QR 1;
-		HLA1 S 1 A_FaceTarget;
-		HLA1 TUVWXYZ[\] 1;
+		HLA1 A 6
+		{
+			SetAnimation('attack1', 35);
+			A_FaceTarget();
+		}
+		HLA1 A 3 A_ZombieMelee;
+		HLA1 A 6 A_FaceTarget;
+		HLA1 A 3 A_ZombieMelee;
+		HLA1 A 11 A_FaceTarget;
 		Goto See;
 	Pain:
-		HLP1 A 1
+		HLI1 A 8
 		{
-			A_StopSound(6);
 			A_Pain();
+			SetAnimation('flinch', 22);
 		}
-		HLP1 BCDEFGH 1;
 		Goto See;
 	Death:
-		HLD1 A 1
+		HLI1 A 40
 		{
-			A_StopSound(6);
-			A_Scream();
+			A_ScreamAndUnblock();
+			SetAnimation('dieforward', 18, endframe:29);
 		}
-		HLD1 BC 1;
-		HLD1 D 1 A_NoBlocking;
-		HLD1 EFGHIJKLMNOPQR 1;
-		HLD1 S 1 A_PlaySound("halflife/weapons/bodydrop");
-		HLD1 TUVWXYZ[\ 1;
-		HLD1 ] -1;
+		HLI1 A -1 A_PlaySound("halflife/weapons/bodydrop");
 		Stop;
 	XDeath:
 	Crush:
-		TNT1 A 0
-		{
-			A_StopSound(6);
-			A_HLGibs(16,"XenGibs");
-		}
+		TNT1 A 0 A_HLGibs(16,"XenGibs");
 		Stop;
 	}
 }

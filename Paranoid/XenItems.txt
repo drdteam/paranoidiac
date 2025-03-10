@@ -6,15 +6,13 @@ class HLXenHair : Actor
 		Height 20;
 		+RANDOMIZE
 		+DONTTHRUST
+		+DECOUPLEDANIMATIONS
 	}
 	States
 	{
 	Spawn:
-		HLI1 A 35;
-		HLI1 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1;
-		HLI2 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1;
-		HLI3 ABC 1;
-		Goto Spawn+1;
+		HLI1 A -1 NODELAY SetAnimation('spin', 30, flags: SAF_LOOP|SAF_NOOVERRIDE);
+		Stop;
 	}
 }
 
@@ -34,12 +32,8 @@ class HLXenFungus : HLXenHair
 	States
 	{
 	Spawn:
-		HLI1 A 35;
-		HLI1 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1;
-		HLI2 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1;
-		HLI3 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1;
-		HLI4 ABCDEFGHIJKLMN 1;
-		Goto Spawn+1;
+		HLI1 A -1 NODELAY SetAnimation('idle1', 30, flags: SAF_LOOP|SAF_NOOVERRIDE);
+		Stop;
 	}
 }
 
@@ -50,6 +44,7 @@ class HLXenLight : HLXenFungus
 		Scale 1;
 		Height 32;
 		PainChance 256;
+		-DECOUPLEDANIMATIONS
 	}
 	States
 	{
@@ -87,26 +82,28 @@ class HLXenTree : HLXenFungus
 		PainChance 128;
 		PainChance "Crowbar",252;
 		PainSound "tree/pain";
+		+DECOUPLEDANIMATIONS
 	}
 	States
 	{
 	Spawn:
-		HLI1 A 35;
-		HLI1 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 2 A_HLXenTreeLook();
-		HLI2 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 2 A_HLXenTreeLook();
-		HLI3 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 2 A_HLXenTreeLook();
-		HLI4 ABCDEFGHIJKLMN 2 A_HLXenTreeLook();
-		Goto Spawn+1;
+		HLI1 A 2
+		{
+			SetAnimation('idle1', 20, flags: SAF_LOOP|SAF_NOOVERRIDE);
+			A_HLXenTreeLook();
+		}
+		Loop;
 	Melee:
-		HLA1 ABCDEFGHI 1;
-		HLA1 J 1 A_HLXenTreeAttack;
-		HLA1 KLMNOPQRSTUVWXYZ[\] 1;
-		HLA2 AB 1;
-		Goto Spawn+1;
+		HLI1 A 10 SetAnimation('attack', 35);
+		HLI1 A 21 A_HLXenTreeAttack;
+		Goto Spawn;
 	Pain:
-		HLA1 A 1 A_Pain;
-		HLA1 BCDEFEDCBA 1;
-		Goto Spawn+1;
+		HLI1 A 12
+		{
+			A_Pain();
+			SetAnimation('attack', 17.5, endFrame: 6);
+		}
+		Goto Spawn;
 	}
 	void A_HLXenTreeLook()
 		{A_LookEx(LOF_NOSOUNDCHECK,0,112,112,60,"Melee");}

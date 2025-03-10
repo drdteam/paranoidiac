@@ -337,13 +337,20 @@ class Loader : ModelBase
 		Height 96;
 		+DONTTHRUST
 		Scale .6;
+		//+DECOUPLEDANIMATIONS
 	}
 	States
 	{
+	/*Spawn:
+		HLI1 A -1 NODELAY SetAnimation('idle', 30, flags: SAF_LOOP|SAF_NOOVERRIDE);//endFrame: 1);
+		Stop;
 	See:
+		HLI1 A -1 SetAnimation('boxwalk', 24, flags: SAF_LOOP|SAF_NOOVERRIDE);
+		Stop;
+	/*See:
 		HLW1 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1;
 		HLW2 ABCDEFGHIJKLMNOPQRST 1;
-		Loop;
+		Loop;*/
 	}
 }
 class LoaderNoBox : Loader
