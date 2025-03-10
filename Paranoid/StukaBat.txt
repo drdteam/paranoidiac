@@ -69,14 +69,20 @@ class HLBossBat : HLBat
 {
 	override void HLModelSetup()
 	{
-		A_ChangeModel("HLBat", 0, "Models", "stukabat.iqm", 0, "Models", "stukabat2_000.png", CMDL_USESURFACESKIN);
-		A_ChangeModel("HLBat", 0, "Models", "", 1, "Models", "stukabat2_001.png", CMDL_USESURFACESKIN);
-		A_ChangeModel("HLBat", 0, "Models", "", 2, "Models", "stukabat2_002.png", CMDL_USESURFACESKIN);
-		A_ChangeModel("HLBat", 0, "Models", "", 3, "Models", "stukabat2_003.png", CMDL_USESURFACESKIN);
-		A_ChangeModel("HLBat", 0, "Models", "", 4, "Models", "stukabat_004.png", CMDL_USESURFACESKIN);
-		A_ChangeModel("HLBat", 0, "Models", "", 5, "Models", "stukabat_005.png", CMDL_USESURFACESKIN);
-		A_ChangeModel("HLBat", 0, "Models", "", 6, "Models", "stukabat2_006.png", CMDL_USESURFACESKIN);
-		A_ChangeModel("HLBat", 0, "Models", "", 7, "Models", "stukabat_007.png", CMDL_USESURFACESKIN);
+		static const name modelskin1[]=
+		{
+			'stukabat2_000.png"',
+			'stukabat2_001.png"',
+			'stukabat2_002.png"',
+			'stukabat2_003.png"',
+			'stukabat_004.png"',
+			'stukabat_005.png"',
+			'stukabat2_006.png"',
+			'stukabat_007.png"'
+		};
+
+		for(int i = 0; i <= 7; i++)
+			A_ChangeModel("HLBat", 0, "Models", "stukabat.iqm", i, "Models", modelskin1[i], CMDL_USESURFACESKIN);
 	}
 	Default
 	{

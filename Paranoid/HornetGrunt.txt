@@ -6,14 +6,24 @@ class HLHornetGrunt : HLMonster
 {
 	override void HLModelSetup()
 	{
-		A_ChangeModel("", 0, "Models", "agrunt_body.iqm", 0, "Models", "agrunt_body_000.png", CMDL_USESURFACESKIN);
-		A_ChangeModel("", 0, "Models", "", 1, "Models", "agrunt_body_001.png", CMDL_USESURFACESKIN);
-		A_ChangeModel("", 0, "Models", "", 2, "Models", "agrunt_body_002.png", CMDL_USESURFACESKIN);
+		static const name modelskin1[]=
+		{
+			'agrunt_body_000.png',
+			'agrunt_body_001.png',
+			'agrunt_body_002.png'
+		};
+		static const name modelskin2[]=
+		{
+			'agrunt_body_000.png',
+			'agrunt_body_001.png',
+			'agrunt_gun_002.png',
+			'v_hgun_002.png'
+		};
 
-		A_ChangeModel("", 1, "Models", "agrunt_gun.iqm", 0, "Models", "agrunt_body_000.png", CMDL_USESURFACESKIN, 0);
-		A_ChangeModel("", 1, "Models", "", 1, "Models", "agrunt_body_001.png", CMDL_USESURFACESKIN);
-		A_ChangeModel("", 1, "Models", "", 2, "Models", "agrunt_gun_002.png", CMDL_USESURFACESKIN);
-		A_ChangeModel("", 1, "Models", "", 3, "Models", "v_hgun_002.png", CMDL_USESURFACESKIN);
+		for(int i = 0; i <= 2; i++)
+			A_ChangeModel("", 0, "Models", "agrunt_body.iqm", i, "Models", modelskin1[i], CMDL_USESURFACESKIN);
+		for(int i = 0; i <= 3; i++)
+			A_ChangeModel("", 1, "Models", "agrunt_gun.iqm", i, "Models", modelskin2[i], CMDL_USESURFACESKIN, 0);
 	}
 	Default
 	{

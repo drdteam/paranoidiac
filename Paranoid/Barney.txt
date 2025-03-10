@@ -22,15 +22,26 @@ class HLBarney : HLMonster
 	actor bestfriend;
 	override void HLModelSetup()
 	{
-		A_ChangeModel("HLBarney", 0, "Models", "barney_body.iqm", 0, "Models", "barney_body_000.png", CMDL_USESURFACESKIN);
-		A_ChangeModel("HLBarney", 0, "Models", "", 1, "Models", "barney_body_001.png", CMDL_USESURFACESKIN);
-		A_ChangeModel("HLBarney", 0, "Models", "", 2, "Models", "barney_body_002.png", CMDL_USESURFACESKIN);
-		A_ChangeModel("HLBarney", 0, "Models", "", 3, "Models", "barney_body_003.png", CMDL_USESURFACESKIN);
+		static const name modelskin1[]=
+		{
+			'barney_body_000.png',
+			'barney_body_001.png',
+			'barney_body_002.png',
+			'barney_body_003.png'
+		};
+		static const name modelskin2[]=
+		{
+			'barney_head_000.png',
+			'barney_head_001.png',
+			'barney_head_002.png',
+			'barney_head_003.png'
+		};
 
-		A_ChangeModel("HLBarney", 1, "Models", "barney_head.iqm", 0, "Models", "barney_head_000.png", CMDL_USESURFACESKIN, 0);
-		A_ChangeModel("HLBarney", 1, "Models", "", 1, "Models", "barney_head_001.png", CMDL_USESURFACESKIN);
-		A_ChangeModel("HLBarney", 1, "Models", "", 2, "Models", "barney_head_002.png", CMDL_USESURFACESKIN);
-		A_ChangeModel("HLBarney", 1, "Models", "", 3, "Models", "barney_head_003.png", CMDL_USESURFACESKIN);
+		for(int i = 0; i <= 3; i++)
+		{
+			A_ChangeModel("HLBarney", 0, "Models", "barney_body.iqm", i, "Models", modelskin1[i], CMDL_USESURFACESKIN);
+			A_ChangeModel("HLBarney", 1, "Models", "barney_head.iqm", i, "Models", modelskin2[i], CMDL_USESURFACESKIN, 0);
+		}
 
 		ResetGunModel();
 	}
@@ -204,16 +215,26 @@ class HLOtis : HLBarney
 {
 	override void HLModelSetup()
 	{
-		A_ChangeModel("HLBarney", 0, "Models", "otis_body.iqm", 0, "Models", "barney_body_002.png", CMDL_USESURFACESKIN);
-		A_ChangeModel("HLBarney", 0, "Models", "", 1, "Models", "barney_body_003.png", CMDL_USESURFACESKIN);
-		A_ChangeModel("HLBarney", 0, "Models", "", 2, "Models", "barney_body_001.png", CMDL_USESURFACESKIN);
+		static const name modelskin1[]=
+		{
+			'barney_body_002.png',
+			'barney_body_003.png',
+			'barney_body_001.png'
+		};
+		static const name modelskin2[]=
+		{
+			'otis_head_000.png',
+			'otis_head_001.png',
+			'barney_head_001.png',
+			'barney_head_002.png',
+			'otis_head_004.png',
+			'barney_body_002.png'
+		};
 
-		A_ChangeModel("HLBarney", 1, "Models", "otis_head.iqm", 0, "Models", "otis_head_000.png", CMDL_USESURFACESKIN, 0);
-		A_ChangeModel("HLBarney", 1, "Models", "", 1, "Models", "otis_head_001.png", CMDL_USESURFACESKIN);
-		A_ChangeModel("HLBarney", 1, "Models", "", 2, "Models", "barney_head_001.png", CMDL_USESURFACESKIN);
-		A_ChangeModel("HLBarney", 1, "Models", "", 3, "Models", "barney_head_002.png", CMDL_USESURFACESKIN);
-		A_ChangeModel("HLBarney", 1, "Models", "", 4, "Models", "otis_head_004.png", CMDL_USESURFACESKIN);
-		A_ChangeModel("HLBarney", 1, "Models", "", 5, "Models", "barney_body_002.png", CMDL_USESURFACESKIN);
+		for(int i = 0; i <= 2; i++)
+			A_ChangeModel("HLBarney", 0, "Models", "otis_body.iqm", i, "Models", modelskin1[i], CMDL_USESURFACESKIN);
+		for(int i = 0; i <= 5; i++)
+			A_ChangeModel("HLBarney", 1, "Models", "otis_head.iqm", i, "Models", modelskin2[i], CMDL_USESURFACESKIN, 0);
 
 		ResetGunModel();
 	}

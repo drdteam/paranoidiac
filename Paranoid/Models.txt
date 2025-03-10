@@ -1,5 +1,6 @@
 class ModelBase : Actor
 {
+	virtual void HLModelSetup(){}
 	Default
 	{
 		+CANPASS

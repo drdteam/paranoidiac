@@ -238,9 +238,6 @@ class SUVGlass : ModelBase
 	}
 	States
 	{
-	Spawn:
-		HLI1 A -1;
-		Stop;
 	Death:
 		HLI1 BCDEFGHI 1;
 		HLI1 JKLM 1 A_FadeOut;
@@ -251,17 +248,87 @@ class SUVGlass : ModelBase
 //MTM 8 Loader
 class Loader : ModelBase
 {
-	actor box;
+	bool nobox;
+	actor box, lclaw, rclaw;
 	override void postbeginplay()
 	{
 		bool num;
-		[num,box]=A_SpawnItemEx("LoaderBox",112,0,32,flags:SXF_SETMASTER,tid:tid);
+		if(nobox)
+		{
+			[num,lclaw]=A_SpawnItemEx("LoaderClaw",96,-32,32,flags:SXF_SETMASTER,tid:tid);
+			[num,rclaw]=A_SpawnItemEx("LoaderClaw",96,32,32,flags:SXF_SETMASTER,tid:tid);
+		}
+		else
+			[num,box]=A_SpawnItemEx("LoaderBox",112,0,32,flags:SXF_SETMASTER,tid:tid);
+		HLModelSetup();
 		super.postbeginplay();
+	}
+	override void HLModelSetup()
+	{
+		static const name modelskin1[]=
+		{
+			'loader_body_000.png',
+			'loader_body_001.png',
+			'loader_body_002.png',
+			'loader_body_003.png',
+			'loader_body_004.png',
+			'loader_body_005.png',
+			'loader_body_006.png',
+			'loader_body_007.png',
+			'loader_body_008.png',
+			'loader_body_009.png',
+			'loader_body_010.png',
+			'loader_body_011.png',
+			'loader_body_012.png',
+			'loader_body_013.png',
+			'loader_body_014.png',
+			'loader_body_015.png',
+			'loader_body_016.png',
+			'loader_body_017.png',
+			'loader_body_018.png',
+			'loader_body_019.png',
+			'loader_body_020.png',
+			'loader_body_021.png'
+		};
+		static const name modelskin2[]=
+		{
+			'loader_body_009.png',
+			'loader_legs_001.png',
+			'loader_legs_002.png',
+			'loader_legs_003.png',
+			'loader_body_011.png',
+			'loader_body_015.png',
+			'loader_legs_006.png',
+			'loader_body_009.png',
+			'loader_legs_001.png',
+			'loader_legs_002.png',
+			'loader_legs_003.png',
+			'loader_body_011.png',
+			'loader_body_015.png',
+			'loader_legs_006.png'
+		};
+
+		int mod1max = 21;
+		if(nobox)
+			mod1max = 19;
+
+		for(int i = 0; i <= mod1max; i++)
+			A_ChangeModel("Loader", 0, "Models", "loader_body.iqm", i, "Models", modelskin1[i], CMDL_USESURFACESKIN);
+
+		for(int i = 0; i <= 13; i++)
+		{
+			A_ChangeModel("Loader", 1, "Models", "loader_leftlegs.iqm", i, "Models", modelskin2[i], CMDL_USESURFACESKIN, 0);
+			A_ChangeModel("Loader", 2, "Models", "loader_rightlegs.iqm", i, "Models", modelskin2[i], CMDL_USESURFACESKIN, 0);
+		}
 	}
 	override void tick()
 	{
 		if(box)
 			box.A_Warp(AAPTR_MASTER,112,0,32);
+		if(lclaw)
+			lclaw.A_Warp(AAPTR_MASTER,96,-32,32);
+		if(rclaw)
+			rclaw.A_Warp(AAPTR_MASTER,96,32,32);
 		super.tick();
 	}
 	Default
@@ -281,21 +348,13 @@ class Loader : ModelBase
 }
 class LoaderNoBox : Loader
 {
-	actor lclaw,rclaw;
 	override void postbeginplay()
 	{
-		bool num;
-		[num,lclaw]=A_SpawnItemEx("LoaderClaw",96,-32,32,flags:SXF_SETMASTER,tid:tid);
-		[num,rclaw]=A_SpawnItemEx("LoaderClaw",96,32,32,flags:SXF_SETMASTER,tid:tid);
-		actor.postbeginplay();
-	}
-	States
-	{
-	Spawn:
-		HLI1 B -1;
-		Stop;
+		nobox=1;
+		super.postbeginplay();
 	}
 }
+
 class LoaderBox : Actor
 {
 	Default

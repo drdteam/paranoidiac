@@ -19,36 +19,62 @@ class HLScientist : HLMonster
 	}
 	override void HLModelSetup()
 	{
-		A_ChangeModel("HLScientist", 0, "Models", "scientist_body.iqm", 0, "Models", "scientist_body_000.png", CMDL_USESURFACESKIN);
-		A_ChangeModel("HLScientist", 0, "Models", "", 1, "Models", "scientist_body_001.png", CMDL_USESURFACESKIN);
-		A_ChangeModel("HLScientist", 0, "Models", "", 2, "Models", "scientist_body_002.png", CMDL_USESURFACESKIN);
-		A_ChangeModel("HLScientist", 0, "Models", "", 3, "Models", "scientist_body_003.png", CMDL_USESURFACESKIN);
-		A_ChangeModel("HLScientist", 0, "Models", "", 4, "Models", "scientist_body_004.png", CMDL_USESURFACESKIN);
+		static const name modelskin1[]=
+		{
+			'scientist_body_000.png',
+			'scientist_body_001.png',
+			'scientist_body_002.png',
+			'scientist_body_003.png',
+			'scientist_body_004.png'
+		};
+		static const name modelskin2a[]=
+		{
+			'scientist_head1_000.png',
+			'scientist_head1_001.png',
+			'scientist_head1_002.png'
+		};
+		static const name modelskin2b[]=
+		{
+			'scientist_head2_000.png',
+			'nochrome.png',
+			'scientist_head2_002x.png',
+			'scientist_head1_001.png',
+			'scientist_head2_004.png'
+		};
+		static const name modelskin2c[]=
+		{
+			'scientist_head3_000.png',
+			'scientist_head1_001.png',
+			'scientist_head3_002.png'
+		};
+		static const name modelskin2d[]=
+		{
+			'scientist_head4_000.png',
+			'scientist_head1_001.png',
+			'scientist_head4_002.png'
+		};
+
+		for(int i = 0; i <= 4; i++)
+			A_ChangeModel("HLScientist", 0, "Models", "scientist_body.iqm", i, "Models", modelskin1[i], CMDL_USESURFACESKIN);
 
 		switch(random(1, 4))
 		{
 		case 1:
-			A_ChangeModel("HLScientist", 1, "Models", "scientist_head1.iqm", 0, "Models", "scientist_head1_000.png", CMDL_USESURFACESKIN, 0);
-			A_ChangeModel("HLScientist", 1, "Models", "", 1, "Models", "scientist_head1_001.png", CMDL_USESURFACESKIN);
-			A_ChangeModel("HLScientist", 1, "Models", "", 2, "Models", "scientist_head1_002.png", CMDL_USESURFACESKIN);
+			for(int i = 0; i <= 2; i++)
+				A_ChangeModel("HLScientist", 1, "Models", "scientist_head1.iqm", i, "Models", modelskin2a[i], CMDL_USESURFACESKIN, 0);
 			break;
 		case 2:
-			A_ChangeModel("HLScientist", 1, "Models", "scientist_head2.iqm", 0, "Models", "scientist_head2_000.png", CMDL_USESURFACESKIN, 0);
-			A_ChangeModel("HLScientist", 1, "Models", "", 1, "Models", "nochrome.png", CMDL_USESURFACESKIN);
-			A_ChangeModel("HLScientist", 1, "Models", "", 2, "Models", "scientist_head2_002x.png", CMDL_USESURFACESKIN);
-			A_ChangeModel("HLScientist", 1, "Models", "", 3, "Models", "scientist_head1_001.png", CMDL_USESURFACESKIN);
-			A_ChangeModel("HLScientist", 1, "Models", "", 4, "Models", "scientist_head2_004.png", CMDL_USESURFACESKIN);
+			for(int i = 0; i <= 4; i++)
+				A_ChangeModel("HLScientist", 1, "Models", "scientist_head2.iqm", i, "Models", modelskin2b[i], CMDL_USESURFACESKIN, 0);
 			break;
 		case 3:
-			A_ChangeModel("HLScientist", 1, "Models", "scientist_head3.iqm", 0, "Models", "scientist_head3_000.png", CMDL_USESURFACESKIN, 0);
-			A_ChangeModel("HLScientist", 1, "Models", "", 1, "Models", "scientist_head1_001.png", CMDL_USESURFACESKIN);
-			A_ChangeModel("HLScientist", 1, "Models", "", 2, "Models", "scientist_head3_002.png", CMDL_USESURFACESKIN);
+			for(int i = 0; i <= 2; i++)
+				A_ChangeModel("HLScientist", 1, "Models", "scientist_head3.iqm", i, "Models", modelskin2c[i], CMDL_USESURFACESKIN, 0);
 			break;
 		case 4:
 			A_ChangeModel("HLScientist", 0, "Models", "scientist_body.iqm", 0, "Models", "scientist_body_005.png", CMDL_USESURFACESKIN);
-			A_ChangeModel("HLScientist", 1, "Models", "scientist_head4.iqm", 0, "Models", "scientist_head4_000.png", CMDL_USESURFACESKIN, 0);
-			A_ChangeModel("HLScientist", 1, "Models", "", 1, "Models", "scientist_head1_001.png", CMDL_USESURFACESKIN);
-			A_ChangeModel("HLScientist", 1, "Models", "", 2, "Models", "scientist_head4_002.png", CMDL_USESURFACESKIN);
+			for(int i = 0; i <= 2; i++)
+				A_ChangeModel("HLScientist", 1, "Models", "scientist_head4.iqm", i, "Models", modelskin2d[i], CMDL_USESURFACESKIN, 0);
 			break;
 		}
 	}
