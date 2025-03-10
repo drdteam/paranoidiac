@@ -350,8 +350,7 @@ class NihThunderBallRailShooter : Actor
 		+NOGRAVITY
 		+NOCLIP
 		+LOOKALLAROUND
-		+MISSILEMORE
-		+MISSILEEVENMORE
+		MissileChanceMult 0.0625;
 		-SOLID
 		-SHOOTABLE
 		-COUNTKILL

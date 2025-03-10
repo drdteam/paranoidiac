@@ -13,7 +13,7 @@ class HLGonarch : HLMonster
 		PainChance 10;
 		PainChance "Crowbar",54;
 		+BOSS
-		+MISSILEEVENMORE
+		MissileChanceMult 0.125;
 		BloodColor "DE FE 72";
 		SeeSound "gonarch/sight";
 		PainSound "gonarch/pain";

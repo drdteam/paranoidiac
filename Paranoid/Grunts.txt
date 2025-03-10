@@ -128,8 +128,7 @@ class HLGruntM16 : HLMonster
 	Walking:
 		HLW1 A 0
 		{
-			bMISSILEEVENMORE=1;
-			bMISSILEMORE=1;
+			MissileChanceMult = 0.0625;
 			A_SetSpeed(1.75);
 		}
 		HLW1 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1 A_HLChase(4);
@@ -298,8 +297,7 @@ class HLGruntM16 : HLMonster
 	{
 		if(!CheckIfCloser(target,300))
 		{
-			bMISSILEEVENMORE=0;
-			bMISSILEMORE=0;
+			MissileChanceMult = 1.0;
 			return ResolveState("See");
 		}
 		return state(null);
