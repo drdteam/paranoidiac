@@ -575,14 +575,14 @@ class TramBellmer : Tram
 	}
 	Default
 	{
-		-SOLID
 		+NOCLIP
-		+DECOUPLEDANIMATIONS
+		//+DECOUPLEDANIMATIONS
 	}
 	States
 	{
 	Spawn:
-		HLI1 A -1 NODELAY SetAnimation('coffee', 7, flags: SAF_LOOP|SAF_NOOVERRIDE);
+		HLI1 ABCDEFGHIJKLMNOPQRSTU 5;
+		//HLI1 A -1 NODELAY SetAnimation('coffee', 7, flags: SAF_LOOP|SAF_NOOVERRIDE|SAF_INSTANT);
 		Loop;
 	}
 }
