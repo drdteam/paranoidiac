@@ -238,20 +238,21 @@ class RolfBellmer : PlayerPawn
 		'nochrome.png',
 		'nochrome.png'
 	};
+
 	static const name modelskinOtis1[]=
 	{
+		'barney_body_001.png',
 		'barney_body_002.png',
-		'barney_body_003.png',
-		'barney_body_001.png'
+		'barney_body_003.png'
 	};
 	static const name modelskinOtis2[]=
 	{
-		'otis_head_000.png',
-		'otis_head_001.png',
 		'barney_head_001.png',
 		'barney_head_002.png',
+		'otis_head_002.png',
+		'otis_head_003.png',
 		'otis_head_004.png',
-		'barney_body_002.png'
+		'otis_head_005.png'
 	};
 	static const name modelskinShepard1[]=
 	{
