@@ -236,14 +236,13 @@ class MessageItem : CustomInventory
 			thisplayer.A_PlaySound("radiostatic",6,local:1);
 		thisplayer.A_PlaySound(message,7,attenuation:ATTN_STATIC);//,local:1);	//local makes it uninterruptible...
 		string msg=StringTable.Localize("$"..message);
-		int ticdur;
-		double doubledur, typetime;
+		double doubledur;
 		if(dur)
 			doubledur = dur;
 		else
 			doubledur = S_GetLength(message);
-		typetime = doubledur / double(msg.Length());
-		ticdur = ceil(doubledur * TICRATE);
+		double typetime = doubledur / double(msg.Length());
+		int ticdur = ceil(doubledur * TICRATE);
 		mytracker.countdown = ticdur;
 		ParanoidMessageHandler.StartDialogueSequence(thisplayer.player,message,typetime,icon);
 	}

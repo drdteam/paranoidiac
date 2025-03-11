@@ -19,14 +19,14 @@ skill VeryEasy
 	SpawnFilter="Easy"
 	Name="Very Easy"
 	ACSreturn=0
-	Key="v"
+	Key=v
 }
 
 skill Easy
 {
 	SpawnFilter="Easy"
 	Name="Easy"
-	PicName="M_EASY"
+	//PicName="M_EASY"
 	ACSreturn=1
 	Key=e
 }
@@ -36,7 +36,7 @@ skill Medium
 	DefaultSkill
 	SpawnFilter="Normal"
 	Name="Medium"
-	PicName="M_MED"
+	//PicName="M_MED"
 	ACSreturn=2
 	Key=m
 }
@@ -45,7 +45,7 @@ skill Difficult
 {
 	SpawnFilter="Hard"
 	Name="Difficult"
-	PicName="M_DIFF"
+	//PicName="M_DIFF"
 	ACSreturn=3
 	Key=d
 }
@@ -73,7 +73,7 @@ episode P3M4
 }
 episode map31
 {
-	name="Otis Shift"
+	name="Density"
 }
 
 map map31 "Otis Shift"
@@ -105,6 +105,8 @@ defaultmap
 	sky1=HLSKY1
 	NoIntermission
 	SpawnWithWeaponRaised
+
+	//PixelRatio=1.0
 }
 
 map TITLEMAP lookup "PARANOID_TITLEMAP"

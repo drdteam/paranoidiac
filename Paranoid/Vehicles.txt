@@ -1,71 +1,4 @@
 //Osprey
-class OspreyBellmer : ModelBase
-{
-	int bobstate;
-	override void tick()
-	{
-		if(pos.z!=floorz)
-		{
-			double newz=pos.z-BobSin(bobstate)/2.;
-			bobstate=(bobstate+1)&63;
-			newz+=BobSin(bobstate)/2.;
-			SetZ(newz);
-		}
-		super.tick();
-	}
-	static const name modelskin1[]=
-	{
-		'w_suit_002.png',
-		'w_suit_000.png',
-		'w_suit_001.png',
-		'w_suit_003.png',
-		'w_suit_005.png',
-		'w_suit_007.png',
-		'w_suit_004.png',
-		'w_suit_006.png',
-		'w_suit_002.png',
-		'w_suit_002.png',
-		'w_suit_002.png'
-	};
-	static const name modelskin2[]=
-	{
-		'scientist_head3_000.png',
-		'scientist_head1_001.png',
-		'w_suit_002.png'
-	};
-	override void HLModelSetup()
-	{
-		for(int i = 0; i <= 10; i++)
-			A_ChangeModel("", 0, "Models", "hev_scientist_body.iqm", i, "Models", modelskin1[i], CMDL_USESURFACESKIN);
-		for(int i = 0; i <= 2; i++)
-			A_ChangeModel("", 1, "Models", "hev_scientist_head2.iqm", i, "Models", modelskin2[i], CMDL_USESURFACESKIN, 0);
-	}
-	Default
-	{
-		Radius 3;
-		Height 56;
-		+DONTTHRUST
-		-SOLID
-		+NOCLIP
-		+NOBLOCKMAP
-		+NOGRAVITY
-		+NOTARGET
-		+SHOOTABLE
-		+NONSHOOTABLE
-		+NOBLOOD
-		+NOTRIGGER
-		+NOTELEPORT
-		+ISMONSTER
-		+DECOUPLEDANIMATIONS
-	}
-	States
-	{
-	Spawn:
-		HLI1 A -1 NODELAY SetAnimation('idle1', 30, flags: SAF_LOOP|SAF_NOOVERRIDE);
-		Stop;
-	}
-}
-
 class Osprey : ModelBase
 {
 	int bobstate;
@@ -80,35 +13,18 @@ class Osprey : ModelBase
 		}
 		super.tick();
 	}
-	static const name modelskin1[]=
-	{
-		'osprey_000.png',
-		'osprey_001.png',
-		'osprey_002.png',
-		'osprey_003.png',
-		'osprey_004.png',
-		'osprey_005.png',
-		'osprey_006.png'
-	};
-	static const name modelskin2[]=
-	{
-		'dead_osprey_000.png',
-		'dead_osprey_001.png',
-		'dead_osprey_002.png',
-		'dead_osprey_003.png',
-		'dead_osprey_004.png',
-		'dead_osprey_005.png',
-		'dead_osprey_006.png',
-		'dead_osprey_007.png',
-		'dead_osprey_008.png',
-		'dead_osprey_009.png',
-		'dead_osprey_010.png',
-		'dead_osprey_011.png',
-		'dead_osprey_012.png',
-		'dead_osprey_013.png'
-	};
 	override void HLModelSetup()
 	{
+		static const name modelskin1[]=
+		{
+			'osprey_000.png',
+			'osprey_001.png',
+			'osprey_002.png',
+			'osprey_003.png',
+			'osprey_004.png',
+			'osprey_005.png',
+			'osprey_006.png'
+		};
 		for(int i = 0; i <= 6; i++)
 			A_ChangeModel("", 0, "Models", "osprey.iqm", i, "Models", modelskin1[i], CMDL_USESURFACESKIN);
 	}
@@ -117,7 +33,6 @@ class Osprey : ModelBase
 		Radius 3;
 		Height 56;
 		+DONTTHRUST
-		-SOLID
 		+NOCLIP
 		+NOBLOCKMAP
 		+NOGRAVITY
@@ -145,8 +60,26 @@ class Osprey : ModelBase
 	Death:
 		HLI1 A 0
 		{
+			static const name modelskin2[]=
+			{
+				'dead_osprey_000.png',
+				'dead_osprey_001.png',
+				'dead_osprey_002.png',
+				'dead_osprey_003.png',
+				'dead_osprey_004.png',
+				'dead_osprey_005.png',
+				'dead_osprey_006.png',
+				'dead_osprey_007.png',
+				'dead_osprey_008.png',
+				'dead_osprey_009.png',
+				'dead_osprey_010.png',
+				'dead_osprey_011.png',
+				'dead_osprey_012.png',
+				'dead_osprey_013.png'
+			};
 			for(int i = 0; i <= 13; i++)
 				A_ChangeModel("OspreyDead", 0, "Models", "dead_osprey.iqm", i, "Models", modelskin2[i], CMDL_USESURFACESKIN);
+
 			SetAnimation('fly', 45, flags: SAF_LOOP|SAF_NOOVERRIDE);
 			A_LowGravity();
 			A_Quake(9,16,0,1024);
@@ -247,6 +180,72 @@ class Osprey : ModelBase
 }
 
 class OspreyDead : Osprey{}
+
+class OspreyBellmer : ModelBase
+{
+	int bobstate;
+	override void tick()
+	{
+		if(pos.z!=floorz)
+		{
+			double newz=pos.z-BobSin(bobstate)/2.;
+			bobstate=(bobstate+1)&63;
+			newz+=BobSin(bobstate)/2.;
+			SetZ(newz);
+		}
+		super.tick();
+	}
+	override void HLModelSetup()
+	{
+		static const name modelskin1[]=
+		{
+			'w_suit_002.png',
+			'w_suit_000.png',
+			'w_suit_001.png',
+			'w_suit_003.png',
+			'w_suit_005.png',
+			'w_suit_007.png',
+			'w_suit_004.png',
+			'w_suit_006.png',
+			'w_suit_002.png',
+			'w_suit_002.png',
+			'w_suit_002.png'
+		};
+		static const name modelskin2[]=
+		{
+			'scientist_head3_000.png',
+			'scientist_head1_001.png',
+			'w_suit_002.png'
+		};
+		for(int i = 0; i <= 10; i++)
+			A_ChangeModel("", 0, "Models", "hev_scientist_body.iqm", i, "Models", modelskin1[i], CMDL_USESURFACESKIN);
+		for(int i = 0; i <= 2; i++)
+			A_ChangeModel("", 1, "Models", "hev_scientist_head2.iqm", i, "Models", modelskin2[i], CMDL_USESURFACESKIN, 0);
+	}
+	Default
+	{
+		Radius 3;
+		Height 56;
+		+DONTTHRUST
+		+NOCLIP
+		+NOBLOCKMAP
+		+NOGRAVITY
+		+NOTARGET
+		+SHOOTABLE
+		+NONSHOOTABLE
+		+NOBLOOD
+		+NOTRIGGER
+		+NOTELEPORT
+		+ISMONSTER
+		+DECOUPLEDANIMATIONS
+	}
+	States
+	{
+	Spawn:
+		HLI1 A -1 NODELAY SetAnimation('idle1', 30, flags: SAF_LOOP|SAF_NOOVERRIDE);
+		Stop;
+	}
+}
 
 //SUV
 class SUV : ModelBase
