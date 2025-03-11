@@ -1,5 +1,10 @@
 class ModelBase : Actor
 {
+	override void BeginPlay()
+	{
+		HLModelSetup();
+		super.BeginPlay();
+	}
 	virtual void HLModelSetup(){}
 	Default
 	{

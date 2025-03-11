@@ -1598,114 +1598,21 @@ Model apache
 
 Model Osprey
 {
-	Path "Models"
-	Model 0 "osprey.iqm"
-	SurfaceSkin 0 0 "osprey_000.png"
-	SurfaceSkin 0 1 "osprey_001.png"
-	SurfaceSkin 0 2 "osprey_002.png"
-	SurfaceSkin 0 3 "osprey_003.png"
-	SurfaceSkin 0 4 "osprey_004.png"
-	SurfaceSkin 0 5 "osprey_005.png"
-	SurfaceSkin 0 6 "osprey_006.png"
-
-	FrameIndex HLI1 A 0 0
-	FrameIndex HLI1 B 0 1
-	FrameIndex HLI1 C 0 2
-	FrameIndex HLI1 D 0 3
-	FrameIndex HLI1 E 0 4
-	FrameIndex HLI1 F 0 5
-	FrameIndex HLI1 G 0 6
-	FrameIndex HLI1 H 0 7
-	FrameIndex HLI1 I 0 8
-	FrameIndex HLI1 J 0 9
-	FrameIndex HLI1 K 0 10
-
-	FrameIndex HLI1 L 0 11
-	FrameIndex HLI1 M 0 12
-	FrameIndex HLI1 N 0 13
-	FrameIndex HLI1 O 0 14
-	FrameIndex HLI1 P 0 15
-	FrameIndex HLI1 Q 0 16
-	FrameIndex HLI1 R 0 17
-	FrameIndex HLI1 S 0 18
-	FrameIndex HLI1 L 0 19
-	FrameIndex HLI1 U 0 20
-	FrameIndex HLI1 V 0 21
-
-	Model 0 "dead_osprey.iqm"
-	SurfaceSkin 0 0 "dead_osprey_000.png"
-	SurfaceSkin 0 1 "dead_osprey_001.png"
-	SurfaceSkin 0 2 "dead_osprey_002.png"
-	SurfaceSkin 0 3 "dead_osprey_003.png"
-	SurfaceSkin 0 4 "dead_osprey_004.png"
-	SurfaceSkin 0 5 "dead_osprey_005.png"
-	SurfaceSkin 0 6 "dead_osprey_006.png"
-	SurfaceSkin 0 7 "dead_osprey_007.png"
-	SurfaceSkin 0 8 "dead_osprey_008.png"
-	SurfaceSkin 0 9 "dead_osprey_009.png"
-	SurfaceSkin 0 10 "dead_osprey_010.png"
-	SurfaceSkin 0 11 "dead_osprey_011.png"
-	SurfaceSkin 0 12 "dead_osprey_012.png"
-	SurfaceSkin 0 13 "dead_osprey_013.png"
-	ZOffset 10
 	USEACTORPITCH
+	BaseFrame
+}
 
-	FrameIndex HLD1 A 0 0
-	FrameIndex HLD1 B 0 1
-	FrameIndex HLD1 C 0 2
-	FrameIndex HLD1 D 0 3
-	FrameIndex HLD1 E 0 4
-	FrameIndex HLD1 F 0 5
-	FrameIndex HLD1 G 0 6
-	FrameIndex HLD1 H 0 7
-	FrameIndex HLD1 I 0 8
-	FrameIndex HLD1 J 0 9
-	FrameIndex HLD1 K 0 10
-	FrameIndex HLD1 L 0 11
-	FrameIndex HLD1 M 0 12
-	FrameIndex HLD1 N 0 13
-	FrameIndex HLD1 O 0 14
-	FrameIndex HLD1 P 0 15
-	FrameIndex HLD1 Q 0 16
-	FrameIndex HLD1 R 0 17
-	FrameIndex HLD1 S 0 18
-	FrameIndex HLD1 L 0 19
-	FrameIndex HLD1 U 0 20
-	FrameIndex HLD1 V 0 21
-	FrameIndex HLD1 W 0 22
-	FrameIndex HLD1 X 0 23
-	FrameIndex HLD1 Y 0 24
-	FrameIndex HLD1 Z 0 25
-	FrameIndex HLD1 [ 0 26
-	FrameIndex HLD1 \ 0 27
-	FrameIndex HLD1 ] 0 28
-	FrameIndex HLD2 A 0 29
-	FrameIndex HLD2 B 0 30
-	FrameIndex HLD2 C 0 31
-	FrameIndex HLD2 D 0 32
-	FrameIndex HLD2 E 0 33
-	FrameIndex HLD2 F 0 34
-	FrameIndex HLD2 G 0 35
-	FrameIndex HLD2 H 0 36
-	FrameIndex HLD2 I 0 37
-	FrameIndex HLD2 J 0 38
-	FrameIndex HLD2 K 0 39
-	FrameIndex HLD2 L 0 40
-	FrameIndex HLD2 M 0 41
-	FrameIndex HLD2 N 0 42
-	FrameIndex HLD2 O 0 43
-	FrameIndex HLD2 P 0 44
-	FrameIndex HLD2 Q 0 45
-	FrameIndex HLD2 R 0 46
-	FrameIndex HLD2 S 0 47
-	FrameIndex HLD2 T 0 48
-	FrameIndex HLD2 U 0 49
-	FrameIndex HLD2 V 0 50
-	FrameIndex HLD2 W 0 51
-	FrameIndex HLD2 X 0 52
-	FrameIndex HLD2 Y 0 53
-	FrameIndex HLD2 Z 0 54
-	FrameIndex HLD2 [ 0 55
+Model OspreyDead
+{
+	ZOffset 100
+	BaseFrame
+}
+
+Model OspreyBellmer
+{
+	Offset -8 44 30
+	AngleOffset 90
+	BaseFrame
 }
 
 Model Tesla
@@ -2856,131 +2763,12 @@ Model Missile
 
 Model HGunHornet
 {
-	Path "Models"
-	Model 0 "hornet.md3"
-	SurfaceSkin 0 0 "hornet_000.png"
-	SurfaceSkin 0 1 "hornet_001.png"
-	SurfaceSkin 0 2 "hornet_002.png"
-	SurfaceSkin 0 3 "hornet_003.png"
-	SurfaceSkin 0 4 "hornet_004.png"
-	SurfaceSkin 0 5 "hornet_005.png"
-	SurfaceSkin 0 6 "nochrome.png"
 	PITCHFROMMOMENTUM
 
 	FrameIndex HLI1 A 0 0
 	FrameIndex HLI1 B 0 1
 	FrameIndex HLI1 C 0 2
 	FrameIndex HLI1 D 0 3
-}
-Model HGunHornet2
-{
-	Path "Models"
-	Model 0 "hornet.md3"
-	SurfaceSkin 0 0 "hornet_000.png"
-	SurfaceSkin 0 1 "hornet_001.png"
-	SurfaceSkin 0 2 "hornet_002.png"
-	SurfaceSkin 0 3 "hornet_003.png"
-	SurfaceSkin 0 4 "hornet_004.png"
-	SurfaceSkin 0 5 "hornet_005.png"
-	SurfaceSkin 0 6 "nochrome.png"
-	PITCHFROMMOMENTUM
-
-	FrameIndex HLI1 A 0 0
-	FrameIndex HLI1 B 0 1
-	FrameIndex HLI1 C 0 2
-	FrameIndex HLI1 D 0 3
-}
-Model HGruntHornet
-{
-	Path "Models"
-	Model 0 "hornet.md3"
-	SurfaceSkin 0 0 "hornet_000.png"
-	SurfaceSkin 0 1 "hornet_001.png"
-	SurfaceSkin 0 2 "hornet_002.png"
-	SurfaceSkin 0 3 "hornet_003.png"
-	SurfaceSkin 0 4 "hornet_004.png"
-	SurfaceSkin 0 5 "hornet_005.png"
-	SurfaceSkin 0 6 "nochrome.png"
-	PITCHFROMMOMENTUM
-
-	FrameIndex HLI1 A 0 0
-	FrameIndex HLI1 B 0 1
-	FrameIndex HLI1 C 0 2
-	FrameIndex HLI1 D 0 3
-}
-Model HGruntHornetFake
-{
-	Path "Models"
-	Model 0 "hornet.md3"
-	SurfaceSkin 0 0 "hornet_000.png"
-	SurfaceSkin 0 1 "hornet_001.png"
-	SurfaceSkin 0 2 "hornet_002.png"
-	SurfaceSkin 0 3 "hornet_003.png"
-	SurfaceSkin 0 4 "hornet_004.png"
-	SurfaceSkin 0 5 "hornet_005.png"
-	SurfaceSkin 0 6 "nochrome.png"
-	PITCHFROMMOMENTUM
-
-	FrameIndex HLI1 A 0 0
-	FrameIndex HLI1 B 0 1
-	FrameIndex HLI1 C 0 2
-	FrameIndex HLI1 D 0 3
-}
-
-Model HLGibs
-{
-	Path "Models"
-	Model 0 "hlgibs1.iqm"
-	SurfaceSkin 0 0 "hlgibs1.png"
-
-	FrameIndex HLI1 A 0 0
-	FrameIndex HLI1 B 0 0
-
-	Model 0 "hlgibs2.iqm"
-	SurfaceSkin 0 0 "hlgibs2.png"
-
-	FrameIndex HLI1 C 0 0
-	FrameIndex HLI1 D 0 0
-
-	Model 0 "hlgibs3.iqm"
-	SurfaceSkin 0 0 "hlgibs3.png"
-
-	FrameIndex HLI1 E 0 0
-
-	Model 0 "hlgibs4.iqm"
-	SurfaceSkin 0 0 "hlgibs4_000.png"
-	SurfaceSkin 0 1 "hlgibs4_001.png"
-
-	FrameIndex HLI1 F 0 0
-}
-
-Model XenGibs
-{
-	Path "Models"
-	Model 0 "agibs1.md3"
-	Skin 0 "agibs.png"
-
-	FrameIndex HLI1 A 0 0
-
-	Model 0 "agibs2.md3"
-
-	FrameIndex HLI1 B 0 0
-
-	Model 0 "agibs3.md3"
-
-	FrameIndex HLI1 C 0 0
-
-	Model 0 "agibs4.md3"
-
-	FrameIndex HLI1 D 0 0
-
-	Model 0 "agibs5.md3"
-
-	FrameIndex HLI1 E 0 0
-
-	Model 0 "agibs6.md3"
-
-	FrameIndex HLI1 F 0 0
 }
 
 Model EarthGlobe

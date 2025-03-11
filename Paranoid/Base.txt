@@ -2,10 +2,10 @@ class HLMonster : Actor
 {
 	int walktic,walkticcur;
 	Property WalkTic:walktic;
-	override void PostBeginPlay()
+	override void BeginPlay()
 	{
 		HLModelSetup();
-		super.PostBeginPlay();
+		super.BeginPlay();
 	}
 	virtual void HLModelSetup(){}
 	Default

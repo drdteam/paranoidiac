@@ -2142,6 +2142,27 @@ class HLHornetGunAmmo : Ammo
 
 class HGunHornet : Actor
 {
+	override void BeginPlay()
+	{
+		HLModelSetup();
+		super.BeginPlay();
+	}
+	virtual void HLModelSetup()
+	{
+		static const name modelskin[]=
+		{
+			'hornet_000.png',
+			'hornet_001.png',
+			'hornet_002.png',
+			'hornet_003.png',
+			'hornet_004.png',
+			'hornet_005.png',
+			'nochrome.png'
+		};
+		for(int i = 0; i <= 6; i++)
+			A_ChangeModel("HGunHornet", 0, "Models", "hornet.md3", i, "Models", modelskin[i], CMDL_USESURFACESKIN);
+	}
+
 	class<actor> trail;
 	Property trail:trail;
 	Default

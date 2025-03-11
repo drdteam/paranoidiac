@@ -129,6 +129,32 @@ class ExtraBlood : HLBlood
 
 class HLGibs : Actor
 {
+	override void BeginPlay()
+	{
+		HLModelSetup();
+		super.BeginPlay();
+	}
+	virtual void HLModelSetup()
+	{
+		static const name models[]=
+		{
+			'hlgibs1.iqm',
+			'hlgibs2.iqm',
+			'hlgibs3.iqm',
+			'hlgibs4.iqm'
+		};
+		static const name modelskin[]=
+		{
+			'hlgibs1.png',
+			'hlgibs2.png',
+			'hlgibs3.png',
+			'hlgibs4_000.png'
+		};
+		int mode = random(1, 4);
+		A_ChangeModel("", 0, "Models", models[mode], 0, "Models", modelskin[mode], CMDL_USESURFACESKIN);
+		if(mode == 4)
+			A_ChangeModel("", 0, "Models", "", 1, "Models", 'hlgibs4_001.png', CMDL_USESURFACESKIN);
+	}
 	Default
 	{
 		radius 6;
@@ -138,11 +164,10 @@ class HLGibs : Actor
 		+CORPSE
 		+CANNOTPUSH
 	}
-	states
+	States
 	{
 	Spawn:
-		HLI1 A 0 NODELAY {self.frame=random(0,5);}
-		HLI1 "#" 2
+		HLI1 A 2 NODELAY
 		{
 			bool num;
 			actor bld;
@@ -154,12 +179,29 @@ class HLGibs : Actor
 			else
 				A_SpawnItemEx("ExtraBlood",random(3,-3),random(3,-3),random(3,-3),1,0,0,random(1,359),SXF_TRANSFERTRANSLATION);
 		}
-		Wait;
+		Loop;
 	Crash:
-		"####" # 300;
-		"####" # 2 A_FadeOut;
+		HLI1 A 300;
+		HLI1 A 2 A_FadeOut;
 		Wait;
 	}
 }
+
 class XenGibs : HLGibs
-	{Default{Translation "176:191=[222,254,114]:[43,55,0]";}}
+{
+	override void HLModelSetup()
+	{
+		static const name models[]=
+		{
+			'agibs1.md3',
+			'agibs2.md3',
+			'agibs3.md3',
+			'agibs4.md3',
+			'agibs5.md3',
+			'agibs6.md3'
+		};
+		A_ChangeModel("", 0, "Models", models[random(0, 5)], 0, "Models", 'agibs.png');
+	}
+	Default
+		{Translation "176:191=[222,254,114]:[43,55,0]";}
+}
