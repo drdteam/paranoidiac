@@ -31,14 +31,14 @@ class HLGonarch : HLMonster
 	{
 	See:
 		HLW1 ABCDEFGHIJKLMNOPQRSTUVWX 1 A_HLChase;
-		HLW1 Y 0 A_PlaySound("halflife/monsters/gonarch/step",6);
+		HLW1 Y 0 A_StartSound("halflife/monsters/gonarch/step", CHAN_6);
 		HLW1 Z[\] 1 A_HLChase;
 		HLW2 ABCDEFGHIJKLMNOPQRST 1 A_HLChase;
 		HLW2 T 0
 		{
-			A_PlaySound("halflife/monsters/gonarch/step",6);
+			A_StartSound("halflife/monsters/gonarch/step", CHAN_6);
 			if(random(0,255)<45)
-				A_PlaySound("halflife/monsters/gonarch/sight",5);
+				A_StartSound("halflife/monsters/gonarch/sight", CHAN_5);
 		}
 		Loop;
 	Melee:
@@ -46,22 +46,22 @@ class HLGonarch : HLMonster
 		HLA1 A 0
 		{
 			if(random(0,255)<80)
-				A_PlaySound("halflife/monsters/gonarch/sight",4);
+				A_StartSound("halflife/monsters/gonarch/sight");
 			else
-				A_PlaySound("halflife/monsters/gonarch/attack",5);
+				A_StartSound("halflife/monsters/gonarch/attack", CHAN_5);
 		}
 		HLA1 ABCDE 1 A_FaceTarget();
-		HLA1 F 0 A_PlaySound("halflife/monsters/zombie/attswing",6);
+		HLA1 F 0 A_StartSound("halflife/monsters/zombie/attswing", CHAN_6);
 		HLA1 FGHIJ 1 A_FaceTarget();
 		HLA1 K 1 A_CustomMeleeAttack(random(1,8)*25,"zombie/hit");
 		HLA1 LMNOPQRSTUVW 1;
 		Goto See;
 	Missile:
 		HLA1 X 0 A_Jump(145,"AcidSimple");
-		HLA1 X 2 A_PlaySound("halflife/monsters/gonarch/attack",5);
+		HLA1 X 2 A_StartSound("halflife/monsters/gonarch/attack", CHAN_5);
 		HLA1 YZ[\] 2;
 		HLA2 ABC 2;
-		HLA2 D 0 A_PlaySound("halflife/monsters/gonarch/spawnchild");
+		HLA2 D 0 A_StartSound("halflife/monsters/gonarch/spawnchild");
 		HLA2 DEF 2
 		{
 			bool num;
@@ -74,7 +74,7 @@ class HLGonarch : HLMonster
 		HLA2 GHIJKLMNOPQRSTUVWXY 2;
 		Goto See;
 	AcidSimple:
-		HLA2 Z 0 A_PlaySound("halflife/monsters/gonarch/attack",5);
+		HLA2 Z 0 A_StartSound("halflife/monsters/gonarch/attack", CHAN_5);
 		HLA2 Z[\] 2 A_FaceTarget;
 		HLA3 ABCDEFG 2 A_FaceTarget;
 		HLA3 H 2
@@ -102,7 +102,7 @@ class HLGonarch : HLMonster
 		HLD1 B 2;
 		HLD1 C 2 A_NoBlocking;
 		HLD1 DEFGH 2;
-		HLD1 I 2 A_PlaySound("halflife/monsters/gonarch/step",6);
+		HLD1 I 2 A_StartSound("halflife/monsters/gonarch/step", CHAN_6);
 		HLD1 JKLMNOPQ 2;
 		HLD1 R 80;
 		TNT1 A 10 A_XenGibsBig;

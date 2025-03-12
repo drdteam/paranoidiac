@@ -16,7 +16,7 @@ class OMGSteam : SwitchableDecoration
 	Active:
 		TNT1 A 1 NODELAY
 		{
-			A_PlaySound("Steam/Loop",7,1,1);
+			A_StartSound("Steam/Loop", CHAN_7, CHANF_LOOPING);
 			if(CheckSightOrRange(2560))
 			{
 				A_SetTics(10);

@@ -124,11 +124,11 @@ class HLXenTree : HLXenFungus
 			LineAttack(angle,112,slope,10,'Melee',"BulletPuff",true,t);
 			if(t.linetarget!=null)
 			{
-				A_PlaySound("tree/attack");
+				A_StartSound("tree/attack");
 				return true;
 			}
 		}
-		A_PlaySound("tree/swipe");
+		A_StartSound("tree/swipe");
 		return false;
 	}
 }

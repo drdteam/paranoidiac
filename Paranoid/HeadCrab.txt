@@ -10,7 +10,7 @@ class HLHeadCrab : HLMonster
 		SetStateLabel("Slam");
 		if(victim.bISMONSTER||(victim is "PlayerPawn"))
 		{
-			A_PlaySound("halflife/monsters/headcrab/meleehit",CHAN_BODY);
+			A_StartSound("halflife/monsters/headcrab/meleehit", CHAN_BODY);
 			return super.slam(victim);
 		}
 		return 0;
@@ -48,7 +48,7 @@ class HLHeadCrab : HLMonster
 	Missile:
 		HLA1 A 1 A_FaceTarget;
 		HLA1 CEG 1;
-		HLA1 I 1 A_PlaySound("halflife/monsters/headcrab/jump");
+		HLA1 I 1 A_StartSound("halflife/monsters/headcrab/jump");
 		HLA1 KMOQS 1;
 		HLA1 U 1 A_HLHeadCrabAttack(5,8.75);
 		HLA1 U 1 A_CheckFloor(1);

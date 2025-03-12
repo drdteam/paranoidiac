@@ -194,7 +194,7 @@ class MessageItem : CustomInventory
 {
 	override bool TryPickup(in out Actor toucher)
 	{
-		toucher.A_PlaySound("radiostatic",6,local:1);
+		toucher.A_StartSound("radiostatic", CHAN_6, CHANF_LOCAL );
 		PrintPickupMessage(1,"$NEWMESSAGE");
 		return Super.TryPickup(toucher);
 	}
@@ -206,7 +206,7 @@ class MessageItem : CustomInventory
 		if(!mytracker||!mytracker.playing)
 			return;
 		if(mytracker.playing!=2)
-			thisplayer.A_PlaySound("radiostatic",6,local:1);
+			thisplayer.A_StartSound("radiostatic", CHAN_6, CHANF_LOCAL );
 		thisplayer.A_StopSound(7);
 		mytracker.playing=0;
 		ParanoidMessageHandler.StartDialogueSequence(thisplayer.player,"");
@@ -233,8 +233,8 @@ class MessageItem : CustomInventory
 			playing=1;
 		mytracker.playing=playing;
 		if(mytracker.playing!=2)
-			thisplayer.A_PlaySound("radiostatic",6,local:1);
-		thisplayer.A_PlaySound(message,7,attenuation:ATTN_STATIC);//,local:1);	//local makes it uninterruptible...
+			thisplayer.A_StartSound("radiostatic", CHAN_6, CHANF_LOCAL);
+		thisplayer.A_StartSound(message, CHAN_7, CHANF_LOCAL);
 		string msg=StringTable.Localize("$"..message);
 		double doubledur;
 		if(dur)

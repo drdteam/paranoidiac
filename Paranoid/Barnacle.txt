@@ -42,7 +42,7 @@ class HLBarnacle : HLMonster
 		{
 			for(int i=0;i<7;i++)
 				A_SpawnItemEx("BarnacleSpitParticle2",0,0,12,frandom(0.5,2),frandom(1.3,-1.3),frandom(-0.3,-1.2),random(0,359));
-			A_PlaySound("barnacle/attack");
+			A_StartSound("barnacle/attack");
 			A_SpawnProjectile("BarnacleSpitBall",12);
 		}
 		HLA1 KLMNOPQRSTU 1;

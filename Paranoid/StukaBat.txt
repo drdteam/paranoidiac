@@ -45,7 +45,7 @@ class HLBat : HLMonster
 	Crash:
 		HLD1 V 3
 		{
-			A_PlaySound("halflife/weapons/bodydrop");
+			A_StartSound("halflife/weapons/bodydrop");
 			A_NoBlocking();
 		}
 		HLD1 WXYZ[\] 3;

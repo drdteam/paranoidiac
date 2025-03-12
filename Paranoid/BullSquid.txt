@@ -36,7 +36,7 @@ class HLBullSquid : HLMonster
 		HLA1 A 1
 		{
 			countdown=4;
-			A_PlaySound("halflife/monsters/bullsquid/growl");
+			A_StartSound("halflife/monsters/bullsquid/growl");
 			A_FaceTarget();
 		}
 		HLA1 BCD 1;
@@ -55,7 +55,7 @@ class HLBullSquid : HLMonster
 		HLA2 N 1
 		{
 			A_FaceTarget();
-			A_PlaySound("halflife/monsters/bullsquid/spit");
+			A_StartSound("halflife/monsters/bullsquid/spit");
 		}
 		HLA2 OPQRS 1;
 		HLA2 T 1
@@ -80,7 +80,7 @@ class HLBullSquid : HLMonster
 		HLD1 B 2;
 		HLD1 C 2 A_NoBlocking;
 		HLD1 D 2;
-		HLD1 E 2 A_PlaySound("halflife/weapons/bodydrop");
+		HLD1 E 2 A_StartSound("halflife/weapons/bodydrop");
 		HLD1 FGHI 2;
 		HLD1 J -1;
 		Stop;

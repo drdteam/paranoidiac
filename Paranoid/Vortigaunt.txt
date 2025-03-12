@@ -39,7 +39,7 @@ class HLVortigaunt : HLMonster
 	Missile:
 		HLA2 E 2
 		{
-			A_PlaySound("halflife/weapons/zap4",5);
+			A_StartSound("halflife/weapons/zap4", CHAN_5);
 			A_VortiLightning();
 		}
 		HLA2 F 2;
@@ -59,7 +59,7 @@ class HLVortigaunt : HLMonster
 		HLA2 U 2;
 		HLA2 V 2
 		{
-			A_PlaySound("halflife/weapons/zap4",5);
+			A_StartSound("halflife/weapons/zap4", CHAN_5);
 			A_VortiLightning();
 		}
 		HLA2 W 2;
@@ -73,7 +73,7 @@ class HLVortigaunt : HLMonster
 		HLA3 B 2;
 		HLA3 C 2
 		{
-			A_PlaySound("halflife/weapons/gausshit1",5);
+			A_StartSound("halflife/weapons/gausshit1", CHAN_5);
 			A_KillChildren(flags:KILS_KILLMISSILES);
 			A_SpawnProjectile("VortiPlasma",32,9);
 			A_SpawnProjectile("VortiPlasma",32,-9);
@@ -96,7 +96,7 @@ class HLVortigaunt : HLMonster
 		}
 		HLD1 B 2 A_NoBlocking;
 		HLD1 CDEF 2;
-		HLD1 G 2 A_PlaySound("halflife/weapons/bodydrop");
+		HLD1 G 2 A_StartSound("halflife/weapons/bodydrop");
 		HLD1 HIJKLMNOPQRSTUVWXYZ[\] 2;
 		HLD2 A -1;
 		Stop;

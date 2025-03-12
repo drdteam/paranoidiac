@@ -19,7 +19,7 @@ class FirstAidStation : Actor
 			return false;
 		if(!Health)
 		{
-			A_PlaySound("MEDCHARGEUSED");
+			A_StartSound("MEDCHARGEUSED");
 			SetStateLabel("Death");
 			return false;
 		}
@@ -50,13 +50,13 @@ class FirstAidStation : Actor
 	}
 	virtual void A_HLChargingStation()
 	{
-		A_PlaySound("MEDCHARGE",looping:1);
+		A_StartSound("MEDCHARGE", flags:CHANF_LOOPING);
 		target.GiveInventory("Health",1);
 		Health--;
 		if(!Health)
 		{
 			inuse=0;
-			A_PlaySound("MEDCHARGEUSED");
+			A_StartSound("MEDCHARGEUSED");
 			SetStateLabel("Death");
 		}
 		if(target.Health>=100||CheckRange(radius+30,0))
@@ -84,7 +84,7 @@ class HEVChargingStation : FirstAidStation
 			return false;
 		if(!Health)
 		{
-			A_PlaySound("HEVCHARGEUSED");
+			A_StartSound("HEVCHARGEUSED");
 			SetStateLabel("Death");
 			return false;
 		}
@@ -99,13 +99,13 @@ class HEVChargingStation : FirstAidStation
 	}
 	override void A_HLChargingStation()
 	{
-		A_PlaySound("HEVCHARGE",looping:1);
+		A_StartSound("HEVCHARGE", flags:CHANF_LOOPING);
 		target.GiveInventory("HEVCharge",1);
 		Health--;
 		if(!Health)
 		{
 			inuse=0;
-			A_PlaySound("HEVCHARGEUSED");
+			A_StartSound("HEVCHARGEUSED");
 			SetStateLabel("Death");
 		}
 		if(target.CountInv("BasicArmor")>=100||CheckRange(radius+30,0))

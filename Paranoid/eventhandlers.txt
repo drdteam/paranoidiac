@@ -103,6 +103,6 @@ class ParanoidStaticEventHandler : StaticEventHandler
 		if(me==null||!me.otis)
 			return;
 		if(!random(0,3))
-			mon.target.A_PlaySound("otistaunt",CHAN_VOICE);
+			mon.target.A_StartSound("otistaunt", CHAN_VOICE);
 	}
 }

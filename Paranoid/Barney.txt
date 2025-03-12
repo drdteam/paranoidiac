@@ -126,7 +126,7 @@ class HLBarney : HLMonster
 			A_ScreamAndUnblock();
 		}
 		HLD1 BCDEFG 2;
-		HLD1 H 2 A_PlaySound("halflife/weapons/bodydrop");
+		HLD1 H 2 A_StartSound("halflife/weapons/bodydrop");
 		HLD1 IJKL 2;
 		HLD1 M -1;
 		Stop;
@@ -139,7 +139,7 @@ class HLBarney : HLMonster
 	{
 		A_FaceTarget();
 		A_BarneyGunsmoke();
-		A_PlaySound("halflife/weapons/pistol",CHAN_WEAPON);
+		A_StartSound("halflife/weapons/pistol", CHAN_WEAPON);
 		A_CustomBulletAttack(7,7,1,5,"NewPuff1");
 	}
 	void A_BarneyGunsmoke()
@@ -191,7 +191,7 @@ class HLBarney : HLMonster
 	void A_Chatter()
 	{
 		if(!guard&&!random(0,32))
-			A_PlaySound(SeeSound);
+			A_StartSound(SeeSound);
 	}
 	virtual void A_HLBarneyChase()
 	{
@@ -255,7 +255,7 @@ class HLOtis : HLBarney
 	{
 		A_FaceTarget();
 		A_BarneyGunsmoke();
-		A_PlaySound("halflife/weapons/deagleshot",CHAN_WEAPON);
+		A_StartSound("halflife/weapons/deagleshot", CHAN_WEAPON);
 		A_CustomBulletAttack(1,1,1,18,"NewPuff1");
 	}
 }

@@ -50,7 +50,7 @@ class HLHornetGrunt : HLMonster
 		HLA2 ABCDEFGH 2 A_FaceTarget;
 		HLA2 I 2
 		{
-			A_PlaySound("halflife/monsters/zombie/attswing");
+			A_StartSound("halflife/monsters/zombie/attswing");
 			A_CustomMeleeAttack(12*random(1,8),"halflife/monsters/zombie/hit");
 		}
 		HLA2 JKLMNOP 2;
@@ -83,7 +83,7 @@ class HLHornetGrunt : HLMonster
 		HLD1 A 2 A_Scream;
 		HLD1 B 2 A_NoBlocking;
 		HLD1 CDE 3;
-		HLD1 F 3 A_PlaySound("halflife/weapons/bodydrop");
+		HLD1 F 3 A_StartSound("halflife/weapons/bodydrop");
 		HLD1 GHI 3;
 		HLD1 J -1;
 		Stop;

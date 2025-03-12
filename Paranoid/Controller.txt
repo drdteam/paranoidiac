@@ -33,7 +33,7 @@ class HLController : HLMonster
 	Missile:
 		HLA1 A 0
 		{
-			A_PlaySound("halflife/monsters/controller/attack");
+			A_StartSound("halflife/monsters/controller/attack");
 			switch(random(0,2))		//equal chance to go right, left or not move at all
 			{
 			case 1:
@@ -72,7 +72,7 @@ class HLController : HLMonster
 		HLD1 BC 2;
 		Wait;
 	Crash:
-		HLD1 D 2 A_PlaySound("halflife/weapons/bodydrop");
+		HLD1 D 2 A_StartSound("halflife/weapons/bodydrop");
 		HLD1 EFGHIJKLMNO 2;
 		HLD1 P 2 A_NoBlocking;
 		HLD1 QRSTUVWXYZ[\] 2;

@@ -81,7 +81,7 @@ class HLScientist : HLMonster
 	override bool Used(Actor user)
 	{
 		if(!bFRIGHTENED&&!sit)
-			A_PlaySound("scientist/greeting");
+			A_StartSound("scientist/greeting");
 		boredom=0;
 		greeting=1;
 		return false;
@@ -121,7 +121,7 @@ class HLScientist : HLMonster
 		{
 			if(bFRIGHTENED)//scream the 1st time they enter here
 			{
-				A_PlaySound("scientist/sight");
+				A_StartSound("scientist/sight");
 				SetStateLabel("SeeDecidePanic");
 			}
 			if(still)
@@ -167,7 +167,7 @@ class HLScientist : HLMonster
 		{
 			if(!random(0,32))
 			{
-				A_PlaySound("scientist/panic");
+				A_StartSound("scientist/panic");
 				return FindState("WanderPanic");
 			}
 			if(!random(0,64))
@@ -183,7 +183,7 @@ class HLScientist : HLMonster
 		TNT1 A 0
 		{
 			if(random(0,255)<3)
-				A_PlaySound("scientist/panic");
+				A_StartSound("scientist/panic");
 		}
 		HLI1 AAA 5 A_Look;
 		HLI1 A 0 A_Jump(5,"WanderPanic");
@@ -198,7 +198,7 @@ class HLScientist : HLMonster
 			panic++;
 			if(random(0,255)<4)//every once in a while it will say something
 			{
-				A_PlaySound("scientist/sight");
+				A_StartSound("scientist/sight");
 				SetStateLabel("SeeLoopPanic");
 			}
 		}
@@ -217,7 +217,7 @@ class HLScientist : HLMonster
 		}
 		Goto WanderPanic;
 	WanderRunStartPanic:		//scream the 1st time they enter here
-		TNT1 A 0 A_PlaySound("scientist/sight");
+		TNT1 A 0 A_StartSound("scientist/sight");
 	WanderRunDecidePanic:	//decide if they calm down or not
 		TNT1 A 0
 		{
@@ -250,7 +250,7 @@ class HLScientist : HLMonster
 			panic++;
 			if(random(0,255)<4)//every once in a while it will say something
 			{
-				A_PlaySound("scientist/sight");
+				A_StartSound("scientist/sight");
 				SetStateLabel("WanderRunPanic");
 			}
 		}
@@ -264,7 +264,7 @@ class HLScientist : HLMonster
 		HLD1 BC 1;
 		HLD1 D 1 A_NoBlocking;
 		HLD1 EFGHIJKLMNOPQRS 1;
-		HLD1 T 1 A_PlaySound("halflife/weapons/bodydrop");
+		HLD1 T 1 A_StartSound("halflife/weapons/bodydrop");
 		HLD1 UVW 1;
 		HLD1 X -1;
 		Stop;
@@ -287,13 +287,13 @@ class HLScientist : HLMonster
 			else if(!boredom)
 			{
 				if(!greeting)
-					A_PlaySound("scientist/idle");
+					A_StartSound("scientist/idle");
 				greeting=0;
 				SetStateLabel("See");
 			}
 		}
 		else if(!random(0,255))
-			A_PlaySound("scientist/idle");
+			A_StartSound("scientist/idle");
 	}
 }
 

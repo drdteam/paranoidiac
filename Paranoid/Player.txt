@@ -41,7 +41,7 @@ class RolfBellmer : PlayerPawn
 			if(otis)
 			{
 				if(random(0,3))
-					A_PlaySound("halflife/monsters/otis/pain",CHAN_VOICE);
+					A_StartSound("halflife/monsters/otis/pain", CHAN_VOICE);
 			}
 			else
 				A_HLHEVPain();
@@ -55,10 +55,10 @@ class RolfBellmer : PlayerPawn
 			if(otis)
 			{
 				if(random(0,3))
-					A_PlaySound("halflife/monsters/otis/pain",CHAN_VOICE);
+					A_StartSound("halflife/monsters/otis/pain", CHAN_VOICE);
 			}
 			else
-				A_PlaySound("HLPlayerDrowning",6);
+				A_StartSound("HLPlayerDrowning", CHAN_6);
 		}
 		HLP1 DGJMPSU 1;
 		Goto Spawn;
@@ -67,16 +67,16 @@ class RolfBellmer : PlayerPawn
 		HLD1 A 2
 		{
 			if(otis)
-				A_PlaySound("halflife/monsters/otis/death",CHAN_VOICE);
+				A_StartSound("halflife/monsters/otis/death", CHAN_VOICE);
 			else
 			{
-				A_PlaySound("HLPlayerHEVFail",7);
-				A_PlaySound("HLPlayerHEVFailBeep",6);
+				A_StartSound("HLPlayerHEVFail", CHAN_7);
+				A_StartSound("HLPlayerHEVFailBeep", CHAN_6);
 			}
 			A_NoBlocking();
 		}
 		HLD1 BCDEFG 2;
-		HLD1 H 2 A_PlaySound("halflife/weapons/bodydrop");
+		HLD1 H 2 A_StartSound("halflife/weapons/bodydrop");
 		HLD1 IJKL 2;
 		HLD1 M -1;
 		Stop;
@@ -92,15 +92,15 @@ class RolfBellmer : PlayerPawn
 		Goto ScientistSpawn;
 	ScientistPain:
 	ScientistPain.Drowning:
-		HLP2 A 1 A_PlaySound("scientist/pain",CHAN_VOICE);
+		HLP2 A 1 A_StartSound("scientist/pain", CHAN_VOICE);
 		HLP2 BCDEFGHI 1;
 		Goto ScientistSpawn;
 	ScientistDeath:
-		HLD2 A 1 A_PlaySound("scientist/death",CHAN_VOICE);
+		HLD2 A 1 A_StartSound("scientist/death", CHAN_VOICE);
 		HLD2 BC 1;
 		HLD2 D 1 A_NoBlocking;
 		HLD2 EFGHIJKLMNOPQRS 1;
-		HLD2 T 1 A_PlaySound("halflife/weapons/bodydrop");
+		HLD2 T 1 A_StartSound("halflife/weapons/bodydrop");
 		HLD2 UVW 1;
 		HLD2 X -1;
 		Stop;
@@ -122,7 +122,7 @@ class RolfBellmer : PlayerPawn
 	ShephardDeath:
 		OFD1 A 1 A_NoBlocking;
 		OFD1 BCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1;
-		OFD2 A 1 A_PlaySound("halflife/weapons/bodydrop");
+		OFD2 A 1 A_StartSound("halflife/weapons/bodydrop");
 		OFD2 BCDEF 1;
 		OFD2 G -1;
 		Stop;
@@ -143,7 +143,7 @@ class RolfBellmer : PlayerPawn
 	IvanDeath:
 		IVD1 A 1 A_NoBlocking;
 		IVD1 BCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1;
-		IVD2 A 1 A_PlaySound("halflife/weapons/bodydrop");
+		IVD2 A 1 A_StartSound("halflife/weapons/bodydrop");
 		IVD2 BCDEFGHIJK 1;
 		IVD2 L -1;
 		Stop;
@@ -178,11 +178,11 @@ class RolfBellmer : PlayerPawn
 		if(!random(0,3))
 		{
 			if(health<25)
-				A_PlaySound("HLPlayerPain25",7);
+				A_StartSound("HLPlayerPain25", CHAN_7);
 			else if(health<50)
-				A_PlaySound("HLPlayerPain50",7);
+				A_StartSound("HLPlayerPain50", CHAN_7);
 			else if(health<75)
-				A_PlaySound("HLPlayerPain75",7);
+				A_StartSound("HLPlayerPain75", CHAN_7);
 		}
 	}
 	static const name HLskin[]={'Helmet','Freeman','Shephard','BlackOps','Robo','Ivan'};

@@ -107,7 +107,7 @@ class HLZombie : HLMonster
 			A_ScreamAndUnblock();
 			SetAnimation('dieforward', 18, endframe:29);
 		}
-		HLI1 A -1 A_PlaySound("halflife/weapons/bodydrop");
+		HLI1 A -1 A_StartSound("halflife/weapons/bodydrop");
 		Stop;
 	XDeath:
 	Crush:

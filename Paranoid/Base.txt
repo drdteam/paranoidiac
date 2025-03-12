@@ -26,7 +26,7 @@ class HLMonster : Actor
 	void A_HLGibs(int max=16,class<actor> gibs="HLGibs")
 	{
 		A_NoBlocking();
-		A_PlaySound("other/gibdeath");
+		A_StartSound("other/gibdeath");
 		for(int i=0;i<max;i++)
 			A_SpawnItemEx(gibs,random(5,-5),random(5,-5),random(10,40),random(1,7),random(1,7),random(5,13),random(0,359));
 	}
@@ -43,7 +43,7 @@ class HLMonster : Actor
 	}
 	void A_ZombieMelee(int dmg=2)
 	{
-		A_PlaySound("halflife/monsters/zombie/attswing");
+		A_StartSound("halflife/monsters/zombie/attswing");
 		A_CustomMeleeAttack(dmg*random(1,8),"halflife/monsters/zombie/hit");
 	}
 	virtual void A_HLChase(int walkticmax=0)

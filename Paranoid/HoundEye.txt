@@ -35,28 +35,28 @@ class HLHoundEye : HLMonster
 		HLR1 T 0
 		{
 			if(random(0,255)<32)
-				A_PlaySound("halflife/monsters/houndeye/idlefull");
+				A_StartSound("halflife/monsters/houndeye/idlefull");
 		}
 		HLR1 TUVWXYZ[\] 1 A_HLChase;
 		HLR2 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1 A_HLChase;
 		HLR2 ] 0
 		{
 			if(random(0,1))
-				A_PlaySound("halflife/monsters/houndeye/idlefull");
+				A_StartSound("halflife/monsters/houndeye/idlefull");
 		}
 		Loop;
 	Melee:
 		HLA1 A 3
 		{
 			A_FaceTarget();
-			A_PlaySound("halflife/monsters/houndeye/attackcharge",5);
+			A_StartSound("halflife/monsters/houndeye/attackcharge", CHAN_5);
 		}
 		HLA1 BCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1;
 		HLA2 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1;
 		HLA1 A 7
 		{
 			A_StopSound(5);
-			A_PlaySound("halflife/monsters/houndeye/attackblast");
+			A_StartSound("halflife/monsters/houndeye/attackblast");
 			for(int i=0;i<360;i++)
 			{
 				A_SpawnProjectile("HoundEyeShockWFast",0,0,i,CMF_AIMDIRECTION|CMF_ABSOLUTEANGLE);
@@ -81,7 +81,7 @@ class HLHoundEye : HLMonster
 		HLD1 BCDE 1;
 		HLD1 F 1 A_NoBlocking;
 		HLD1 GHI 1;
-		HLD1 J 1 A_PlaySound("halflife/weapons/bodydrop");
+		HLD1 J 1 A_StartSound("halflife/weapons/bodydrop");
 		HLD1 KLMNOPQRSTUVWXYZ[\ 1;
 		HLD1 ] -1;
 		Stop;

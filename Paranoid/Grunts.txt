@@ -250,7 +250,7 @@ class HLGruntM16 : HLMonster
 		HLA4 ABCDEFGHIJ 1 A_FaceTarget;
 		HLA4 K 1 Light("ImShootingAGun")
 		{
-			A_PlaySound("halflife/weapons/grenadelaunch",5);
+			A_StartSound("halflife/weapons/grenadelaunch", CHAN_5);
 			A_GruntGunsmoke();
 			actor gren=A_SpawnProjectile("M16Grenade",38);
 			if(gren!=null)
@@ -284,7 +284,7 @@ class HLGruntM16 : HLMonster
 			bSolid=0;
 		}
 		HLD1 BCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1;
-		HLD2 A 1 A_PlaySound("halflife/weapons/bodydrop");
+		HLD2 A 1 A_StartSound("halflife/weapons/bodydrop");
 		HLD2 BCDEF 1;
 		HLD2 G -1;
 		Stop;
@@ -306,11 +306,11 @@ class HLGruntM16 : HLMonster
 	{
 		A_GruntGunsmoke();
 		if(shots==1)
-			A_PlaySound("halflife/weapons/machinegunshot",5);
+			A_StartSound("halflife/weapons/machinegunshot", CHAN_5);
 		else if(shots==5)
-			A_PlaySound("halflife/weapons/shotgunsingle",5);
+			A_StartSound("halflife/weapons/shotgunsingle", CHAN_5);
 		else if(shots==10)
-			A_PlaySound("halflife/weapons/shotgundouble",5);
+			A_StartSound("halflife/weapons/shotgundouble", CHAN_5);
 		A_CustomBulletAttack(7,7,shots,4,"NewPuff1");
 	}
 	void A_GruntGunsmoke()

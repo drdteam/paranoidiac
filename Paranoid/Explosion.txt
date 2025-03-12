@@ -37,7 +37,7 @@ class ParanoidExplosion : Actor
 	Spawn:
 		TNT1 A 0 NODELAY
 		{
-			A_PlaySound("halflife/weapons/randomexplo");
+			A_StartSound("halflife/weapons/randomexplo");
 			A_SetScale(scale.x*.8);
 			A_HLExplosionFX();
 			if(scale.x==1.6)
