@@ -211,8 +211,12 @@ class HLCrowbar : ParanoidWeapon
 {
 	action void A_HLWeaponModel()
 	{
-		let me=RolfBellmer(player.mo);
+		if(!player)
+			return;
+		A_ChangeModel("", 0, flags:CMDL_HIDEMODEL);
+
 		name mode;
+		let me=RolfBellmer(player.mo);
 		if(me.Scientist)
 			mode = 'Scientist';
 		else if(me.Otis)
@@ -221,22 +225,22 @@ class HLCrowbar : ParanoidWeapon
 		switch(mode)
 		{
 		case 'Scientist':
-			A_ChangeModel("", 0, "Models", "v_crowbar_barney.iqm", 0, "Models", "v_barneyarms_000.png", CMDL_USESURFACESKIN);
-			A_ChangeModel("", 0, "Models", "", 1, "Models", "v_scientistarms.png", CMDL_USESURFACESKIN);
-			A_ChangeModel("", 0, "Models", "", 2, "Models", "v_crowbar_main.png", CMDL_USESURFACESKIN);
-			A_ChangeModel("", 1, flags:CMDL_HIDEMODEL);
+			A_ChangeModel("", 1, "Models", "v_crowbar_barney.iqm", 0, "Models", "v_barneyarms_000.png", CMDL_USESURFACESKIN, 0);
+			A_ChangeModel("", 1, "Models", "", 1, "Models", "v_scientistarms.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 1, "Models", "", 2, "Models", "v_crowbar_main.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 2, flags:CMDL_HIDEMODEL);
 			break;
 		case 'Otis':
-			A_ChangeModel("", 0, "Models", "v_crowbar_barney.iqm", 0, "Models", "v_barneyarms_000.png", CMDL_USESURFACESKIN);
-			A_ChangeModel("", 0, "Models", "", 1, "Models", "v_barneyarms_001.png", CMDL_USESURFACESKIN);
-			A_ChangeModel("", 0, "Models", "", 2, "Models", "v_crowbar_main.png", CMDL_USESURFACESKIN);
-			A_ChangeModel("", 1, flags:CMDL_HIDEMODEL);
+			A_ChangeModel("", 1, "Models", "v_crowbar_barney.iqm", 0, "Models", "v_barneyarms_000.png", CMDL_USESURFACESKIN, 0);
+			A_ChangeModel("", 1, "Models", "", 1, "Models", "v_barneyarms_001.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 1, "Models", "", 2, "Models", "v_crowbar_main.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 2, flags:CMDL_HIDEMODEL);
 			break;
 		default:
-			A_ChangeModel("", 0, "Models", "v_crowbar_main.iqm", 0, "Models", "v_crowbar_main.png");
-			A_ChangeModel("", 1, "Models", "v_crowbar_hevarms.iqm", 0, "Models", "v_hevarms_000.png", CMDL_USESURFACESKIN, 0);
-			A_ChangeModel("", 1, "Models", "", 1, "Models", "v_hevarms_001.png", CMDL_USESURFACESKIN);
-			A_ChangeModel("", 1, "Models", "", 2, "Models", "v_hevarms_002.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 1, "Models", "v_crowbar_main.iqm", 1, "Models", "v_crowbar_main.png", 0, 0);
+			A_ChangeModel("", 2, "Models", "v_crowbar_hevarms.iqm", 0, "Models", "v_hevarms_000.png", CMDL_USESURFACESKIN, 0);
+			A_ChangeModel("", 2, "Models", "", 1, "Models", "v_hevarms_001.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 2, "Models", "", 2, "Models", "v_hevarms_002.png", CMDL_USESURFACESKIN);
 			break;
 		}
 	}
@@ -256,7 +260,12 @@ class HLCrowbar : ParanoidWeapon
 	States
 	{
 	Spawn:
-		HLS1 A -1 NODELAY A_ChangeModel("ModelBase", 0, "Models", "w_crowbar.md3", 0, "Models", 'w_crowbar.png');
+		HLS1 A -1 NODELAY
+		{
+			A_ChangeModel("", 0, "Models", "w_crowbar.md3", 0, "Models", 'w_crowbar.png');
+			A_ChangeModel("", 1, flags:CMDL_HIDEMODEL);
+			A_ChangeModel("", 2, flags:CMDL_HIDEMODEL);
+		}
 		Stop;
 	Select1:
 		TNT1 A 0 A_HLWeaponModel;
@@ -360,6 +369,17 @@ class HLPistol : ParanoidWeapon
 {
 	action void A_HLWeaponModel()
 	{
+		if(!player)
+			return;
+		A_ChangeModel("", 0, flags:CMDL_HIDEMODEL);
+
+		A_ChangeModel("", 1, "Models", "v_9mmhandgun_main.iqm", 0, "Models", "v_9mmhandgun_main_000.png", CMDL_USESURFACESKIN, 0);
+		A_ChangeModel("", 1, "Models", "", 1, "Models", "v_9mmhandgun_main_001.png", CMDL_USESURFACESKIN);
+		A_ChangeModel("", 1, "Models", "", 2, "Models", "v_9mmhandgun_main_002.png", CMDL_USESURFACESKIN);
+		A_ChangeModel("", 1, "Models", "", 3, "Models", "v_9mmhandgun_main_003.png", CMDL_USESURFACESKIN);
+		A_ChangeModel("", 1, "Models", "", 4, "Models", "v_9mmhandgun_main_004.png", CMDL_USESURFACESKIN);
+		A_ChangeModel("", 1, "Models", "", 5, "Models", "v_9mmhandgun_main_005.png", CMDL_USESURFACESKIN);
+
 		let me=RolfBellmer(player.mo);
 		name mode;
 		if(me.Scientist)
@@ -369,36 +389,18 @@ class HLPistol : ParanoidWeapon
 		switch(mode)
 		{
 		case 'Scientist':
-			A_ChangeModel("", 0, "Models", "v_9mmhandgun_main.iqm", 0, "Models", "v_9mmhandgun_main_000.png", CMDL_USESURFACESKIN);
-			A_ChangeModel("", 0, "Models", "", 1, "Models", "v_9mmhandgun_main_001.png", CMDL_USESURFACESKIN);
-			A_ChangeModel("", 0, "Models", "", 2, "Models", "v_9mmhandgun_main_002.png", CMDL_USESURFACESKIN);
-			A_ChangeModel("", 0, "Models", "", 3, "Models", "v_9mmhandgun_main_003.png", CMDL_USESURFACESKIN);
-			A_ChangeModel("", 0, "Models", "", 4, "Models", "v_9mmhandgun_main_004.png", CMDL_USESURFACESKIN);
-			A_ChangeModel("", 0, "Models", "", 5, "Models", "v_9mmhandgun_main_005.png", CMDL_USESURFACESKIN);
 			//Do not sync these hands to Index 0
-			A_ChangeModel("", 1, "Models", "v_9mmhandgun_barneyarms.iqm", 0, "Models", "v_barneyarms_000.png", CMDL_USESURFACESKIN);
-			A_ChangeModel("", 1, "Models", "", 1, "Models", "v_scientistarms.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 2, "Models", "v_9mmhandgun_barneyarms.iqm", 0, "Models", "v_barneyarms_000.png", CMDL_USESURFACESKIN, 0);
+			A_ChangeModel("", 2, "Models", "", 1, "Models", "v_scientistarms.png", CMDL_USESURFACESKIN);
 			break;
 		case 'Otis':
-			A_ChangeModel("", 0, "Models", "v_9mmhandgun_main.iqm", 0, "Models", "v_9mmhandgun_main_000.png", CMDL_USESURFACESKIN);
-			A_ChangeModel("", 0, "Models", "", 1, "Models", "v_9mmhandgun_main_001.png", CMDL_USESURFACESKIN);
-			A_ChangeModel("", 0, "Models", "", 2, "Models", "v_9mmhandgun_main_002.png", CMDL_USESURFACESKIN);
-			A_ChangeModel("", 0, "Models", "", 3, "Models", "v_9mmhandgun_main_003.png", CMDL_USESURFACESKIN);
-			A_ChangeModel("", 0, "Models", "", 4, "Models", "v_9mmhandgun_main_004.png", CMDL_USESURFACESKIN);
-			A_ChangeModel("", 0, "Models", "", 5, "Models", "v_9mmhandgun_main_005.png", CMDL_USESURFACESKIN);
 			//Do not sync these hands to Index 0
-			A_ChangeModel("", 1, "Models", "v_9mmhandgun_barneyarms.iqm", 0, "Models", "v_barneyarms_000.png", CMDL_USESURFACESKIN);
-			A_ChangeModel("", 1, "Models", "", 1, "Models", "v_barneyarms_001.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 2, "Models", "v_9mmhandgun_barneyarms.iqm", 0, "Models", "v_barneyarms_000.png", CMDL_USESURFACESKIN, 0);
+			A_ChangeModel("", 2, "Models", "", 1, "Models", "v_barneyarms_001.png", CMDL_USESURFACESKIN);
 		default:
-			A_ChangeModel("", 0, "Models", "v_9mmhandgun_main.iqm", 0, "Models", "v_9mmhandgun_main_000.png", CMDL_USESURFACESKIN);
-			A_ChangeModel("", 0, "Models", "", 1, "Models", "v_9mmhandgun_main_001.png", CMDL_USESURFACESKIN);
-			A_ChangeModel("", 0, "Models", "", 2, "Models", "v_9mmhandgun_main_002.png", CMDL_USESURFACESKIN);
-			A_ChangeModel("", 0, "Models", "", 3, "Models", "v_9mmhandgun_main_003.png", CMDL_USESURFACESKIN);
-			A_ChangeModel("", 0, "Models", "", 4, "Models", "v_9mmhandgun_main_004.png", CMDL_USESURFACESKIN);
-			A_ChangeModel("", 0, "Models", "", 5, "Models", "v_9mmhandgun_main_005.png", CMDL_USESURFACESKIN);
-			A_ChangeModel("", 1, "Models", "v_9mmhandgun_hevarms.iqm", 0, "Models", "v_hevarms_000.png", CMDL_USESURFACESKIN, 0);
-			A_ChangeModel("", 1, "Models", "", 1, "Models", "v_hevarms_001.png", CMDL_USESURFACESKIN);
-			A_ChangeModel("", 1, "Models", "", 2, "Models", "v_hevarms_002.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 2, "Models", "v_9mmhandgun_hevarms.iqm", 0, "Models", "v_hevarms_000.png", CMDL_USESURFACESKIN, 0);
+			A_ChangeModel("", 2, "Models", "", 1, "Models", "v_hevarms_001.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 2, "Models", "", 2, "Models", "v_hevarms_002.png", CMDL_USESURFACESKIN);
 			break;
 		}
 	}
@@ -420,7 +422,12 @@ class HLPistol : ParanoidWeapon
 	States
 	{
 	Spawn:
-		HLS1 A -1 NODELAY A_ChangeModel("ModelBase", 0, "Models", "w_9mmhandgun.md3", 0, "Models", 'w_9mmhandgun.png');
+		HLS1 A -1 NODELAY
+		{
+			A_ChangeModel("", 0, "Models", "w_9mmhandgun.md3", 0, "Models", 'w_9mmhandgun.png');
+			A_ChangeModel("", 1, flags:CMDL_HIDEMODEL);
+			A_ChangeModel("", 2, flags:CMDL_HIDEMODEL);
+		}
 		Stop;
 	Select1:
 		TNT1 A 0 A_HLWeaponModel;
@@ -550,8 +557,12 @@ class HLMagnum : ParanoidWeapon
 {
 	action void A_HLWeaponModel()
 	{
-		A_ChangeModel("", 0, "Models", "v_357_main.iqm", 0, "Models", "v_357_main_000.png", CMDL_USESURFACESKIN);
-		A_ChangeModel("", 0, "Models", "", 1, "Models", "v_357_main_001x.png", CMDL_USESURFACESKIN);
+		if(!player)
+			return;
+		A_ChangeModel("", 0, flags:CMDL_HIDEMODEL);
+
+		A_ChangeModel("", 1, "Models", "v_357_main.iqm", 0, "Models", "v_357_main_000.png", CMDL_USESURFACESKIN, 0);
+		A_ChangeModel("", 1, "Models", "", 1, "Models", "v_357_main_001.png", CMDL_USESURFACESKIN, 0);
 
 		let me=RolfBellmer(player.mo);
 		name mode;
@@ -563,17 +574,17 @@ class HLMagnum : ParanoidWeapon
 		switch(mode)
 		{
 		case 'Scientist':
-			A_ChangeModel("", 1, "Models", "v_357_barneyarms.iqm", 0, "Models", "v_barneyarms_000.png", CMDL_USESURFACESKIN, 0);
-			A_ChangeModel("", 1, "Models", "", 1, "Models", "v_scientistarms.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 2, "Models", "v_357_barneyarms.iqm", 0, "Models", "v_barneyarms_000.png", CMDL_USESURFACESKIN, 0);
+			A_ChangeModel("", 2, "Models", "", 1, "Models", "v_scientistarms.png", CMDL_USESURFACESKIN);
 			break;
 		case 'Otis':
-			A_ChangeModel("", 1, "Models", "v_357_barneyarms.iqm", 0, "Models", "v_barneyarms_000.png", CMDL_USESURFACESKIN, 0);
-			A_ChangeModel("", 1, "Models", "", 1, "Models", "v_barneyarms_001.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 2, "Models", "v_357_barneyarms.iqm", 0, "Models", "v_barneyarms_000.png", CMDL_USESURFACESKIN, 0);
+			A_ChangeModel("", 2, "Models", "", 1, "Models", "v_barneyarms_001.png", CMDL_USESURFACESKIN);
 			break;
 		default:
-			A_ChangeModel("", 1, "Models", "v_357_hevarms.iqm", 0, "Models", "v_hevarms_000.png", CMDL_USESURFACESKIN, 0);
-			A_ChangeModel("", 1, "Models", "", 1, "Models", "v_hevarms_001.png", CMDL_USESURFACESKIN);
-			A_ChangeModel("", 1, "Models", "", 2, "Models", "v_hevarms_002.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 2, "Models", "v_357_hevarms.iqm", 0, "Models", "v_hevarms_000.png", CMDL_USESURFACESKIN, 0);
+			A_ChangeModel("", 2, "Models", "", 1, "Models", "v_hevarms_001.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 2, "Models", "", 2, "Models", "v_hevarms_002.png", CMDL_USESURFACESKIN);
 			break;
 		}
 	}
@@ -596,7 +607,12 @@ class HLMagnum : ParanoidWeapon
 	States
 	{
 	Spawn:
-		HLS1 A -1 NODELAY A_ChangeModel("ModelBase", 0, "Models", "w_357.md3", 0, "Models", 'w_357.png');
+		HLS1 A -1 NODELAY
+		{
+			A_ChangeModel("", 0, "Models", "w_357.md3", 0, "Models", 'w_357.png');
+			A_ChangeModel("", 1, flags:CMDL_HIDEMODEL);
+			A_ChangeModel("", 2, flags:CMDL_HIDEMODEL);
+		}
 		Stop;
 	Select1:
 		TNT1 A 0 A_HLWeaponModel;
@@ -710,7 +726,10 @@ class HLShotgun : ParanoidWeapon
 {
 	action void A_HLWeaponModel()
 	{
-		A_ChangeModel("", 0, "Models", "v_shotgun_main.iqm", 0, "Models", "v_shotgun_main.png");
+		if(!player)
+			return;
+		A_ChangeModel("", 0, flags:CMDL_HIDEMODEL);
+		A_ChangeModel("", 1, "Models", "v_shotgun_main.iqm", 1, "Models", "v_shotgun_main.png", 0, 0);
 
 		let me=RolfBellmer(player.mo);
 		name mode;
@@ -722,17 +741,17 @@ class HLShotgun : ParanoidWeapon
 		switch(mode)
 		{
 		case 'Scientist':
-			A_ChangeModel("", 1, "Models", "v_shotgun_barneyarms.iqm", 0, "Models", "v_barneyarms_000.png", CMDL_USESURFACESKIN, 0);
-			A_ChangeModel("", 1, "Models", "", 1, "Models", "v_scientistarms.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 2, "Models", "v_shotgun_barneyarms.iqm", 0, "Models", "v_barneyarms_000.png", CMDL_USESURFACESKIN, 0);
+			A_ChangeModel("", 2, "Models", "", 1, "Models", "v_scientistarms.png", CMDL_USESURFACESKIN);
 			break;
 		case 'Otis':
-			A_ChangeModel("", 1, "Models", "v_shotgun_barneyarms.iqm", 0, "Models", "v_barneyarms_000.png", CMDL_USESURFACESKIN, 0);
-			A_ChangeModel("", 1, "Models", "", 1, "Models", "v_barneyarms_001.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 2, "Models", "v_shotgun_barneyarms.iqm", 0, "Models", "v_barneyarms_000.png", CMDL_USESURFACESKIN, 0);
+			A_ChangeModel("", 2, "Models", "", 1, "Models", "v_barneyarms_001.png", CMDL_USESURFACESKIN);
 			break;
 		default:
-			A_ChangeModel("", 1, "Models", "v_shotgun_hevarms.iqm", 0, "Models", "v_hevarms_000.png", CMDL_USESURFACESKIN, 0);
-			A_ChangeModel("", 1, "Models", "", 1, "Models", "v_hevarms_001.png", CMDL_USESURFACESKIN);
-			A_ChangeModel("", 1, "Models", "", 2, "Models", "v_hevarms_002.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 2, "Models", "v_shotgun_hevarms.iqm", 0, "Models", "v_hevarms_000.png", CMDL_USESURFACESKIN, 0);
+			A_ChangeModel("", 2, "Models", "", 1, "Models", "v_hevarms_001.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 2, "Models", "", 2, "Models", "v_hevarms_002.png", CMDL_USESURFACESKIN);
 			break;
 		}
 	}
@@ -753,7 +772,12 @@ class HLShotgun : ParanoidWeapon
 	States
 	{
 	Spawn:
-		HLS1 A -1 NODELAY A_ChangeModel("ModelBase", 0, "Models", "w_shotgun.md3", 0, "Models", 'w_shotgun.png');
+		HLS1 A -1 NODELAY
+		{
+			A_ChangeModel("", 0, "Models", "w_shotgun.md3", 0, "Models", 'w_shotgun.png');
+			A_ChangeModel("", 1, flags:CMDL_HIDEMODEL);
+			A_ChangeModel("", 2, flags:CMDL_HIDEMODEL);
+		}
 		Stop;
 	//Deselect:
 		//HLD1 ABCDEFGHIJKL 1;
@@ -894,7 +918,10 @@ class HLAssaultRifle : ParanoidWeapon
 {
 	action void A_HLWeaponModel()
 	{
-		A_ChangeModel("", 0, "Models", "v_9mmar_main.iqm", 0, "Models", "v_9mmar_main.png");
+		if(!player)
+			return;
+		A_ChangeModel("", 0, flags:CMDL_HIDEMODEL);
+		A_ChangeModel("", 1, "Models", "v_9mmar_main.iqm", 1, "Models", "v_9mmar_main.png", 0, 0);
 
 		let me=RolfBellmer(player.mo);
 		name mode;
@@ -906,17 +933,17 @@ class HLAssaultRifle : ParanoidWeapon
 		switch(mode)
 		{
 		case 'Scientist':
-			A_ChangeModel("", 1, "Models", "v_9mmar_barneyarms.iqm", 0, "Models", "v_barneyarms_000.png", CMDL_USESURFACESKIN, 0);
-			A_ChangeModel("", 1, "Models", "", 1, "Models", "v_scientistarms.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 2, "Models", "v_9mmar_barneyarms.iqm", 0, "Models", "v_barneyarms_000.png", CMDL_USESURFACESKIN, 0);
+			A_ChangeModel("", 2, "Models", "", 1, "Models", "v_scientistarms.png", CMDL_USESURFACESKIN);
 			break;
 		case 'Otis':
-			A_ChangeModel("", 1, "Models", "v_9mmar_barneyarms.iqm", 0, "Models", "v_barneyarms_000.png", CMDL_USESURFACESKIN, 0);
-			A_ChangeModel("", 1, "Models", "", 1, "Models", "v_barneyarms_001.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 2, "Models", "v_9mmar_barneyarms.iqm", 0, "Models", "v_barneyarms_000.png", CMDL_USESURFACESKIN, 0);
+			A_ChangeModel("", 2, "Models", "", 1, "Models", "v_barneyarms_001.png", CMDL_USESURFACESKIN);
 			break;
 		default:
-			A_ChangeModel("", 1, "Models", "v_9mmar_hevarms.iqm", 0, "Models", "v_hevarms_000.png", CMDL_USESURFACESKIN, 0);
-			A_ChangeModel("", 1, "Models", "", 1, "Models", "v_hevarms_001.png", CMDL_USESURFACESKIN);
-			A_ChangeModel("", 1, "Models", "", 2, "Models", "v_hevarms_002.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 2, "Models", "v_9mmar_hevarms.iqm", 0, "Models", "v_hevarms_000.png", CMDL_USESURFACESKIN, 0);
+			A_ChangeModel("", 2, "Models", "", 1, "Models", "v_hevarms_001.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 2, "Models", "", 2, "Models", "v_hevarms_002.png", CMDL_USESURFACESKIN);
 			break;
 		}
 	}
@@ -948,7 +975,12 @@ class HLAssaultRifle : ParanoidWeapon
 	States
 	{
 	Spawn:
-		HLS1 A -1 NODELAY A_ChangeModel("ModelBase", 0, "Models", "w_9mmar.md3", 0, "Models", 'w_9mmar.png');
+		HLS1 A -1 NODELAY
+		{
+			A_ChangeModel("", 0, "Models", "w_9mmar.md3", 0, "Models", 'w_9mmar.png');
+			A_ChangeModel("", 1, flags:CMDL_HIDEMODEL);
+			A_ChangeModel("", 2, flags:CMDL_HIDEMODEL);
+		}
 		Stop;
 	//Deselect:
 		//HLU1 KJIHGFEDCBA 1;
@@ -1150,10 +1182,14 @@ class HLRPG : ParanoidWeapon
 {
 	action void A_HLWeaponModel()
 	{
-		A_ChangeModel("", 0, "Models", "v_rpg_main.iqm", 0, "Models", "v_rpg_main_000.png", CMDL_USESURFACESKIN);
-		A_ChangeModel("", 0, "Models", "", 1, "Models", "v_rpg_main_001.png", CMDL_USESURFACESKIN);
-		A_ChangeModel("", 0, "Models", "", 2, "Models", "v_rpg_main_002.png", CMDL_USESURFACESKIN);
-		A_ChangeModel("", 0, "Models", "", 3, "Models", "v_rpg_main_003.png", CMDL_USESURFACESKIN);
+		if(!player)
+			return;
+		A_ChangeModel("", 0, flags:CMDL_HIDEMODEL);
+
+		A_ChangeModel("", 1, "Models", "v_rpg_main.iqm", 0, "Models", "v_rpg_main_000.png", CMDL_USESURFACESKIN, 0);
+		A_ChangeModel("", 1, "Models", "", 1, "Models", "v_rpg_main_001.png", CMDL_USESURFACESKIN);
+		A_ChangeModel("", 1, "Models", "", 2, "Models", "v_rpg_main_002.png", CMDL_USESURFACESKIN);
+		A_ChangeModel("", 1, "Models", "", 3, "Models", "v_rpg_main_003.png", CMDL_USESURFACESKIN);
 
 		let me=RolfBellmer(player.mo);
 		name mode;
@@ -1165,17 +1201,17 @@ class HLRPG : ParanoidWeapon
 		switch(mode)
 		{
 		case 'Scientist':
-			A_ChangeModel("", 1, "Models", "v_rpg_barneyarms.iqm", 0, "Models", "v_barneyarms_000.png", CMDL_USESURFACESKIN, 0);
-			A_ChangeModel("", 1, "Models", "", 1, "Models", "v_scientistarms.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 2, "Models", "v_rpg_barneyarms.iqm", 0, "Models", "v_barneyarms_000.png", CMDL_USESURFACESKIN, 0);
+			A_ChangeModel("", 2, "Models", "", 1, "Models", "v_scientistarms.png", CMDL_USESURFACESKIN);
 			break;
 		case 'Otis':
-			A_ChangeModel("", 1, "Models", "v_rpg_barneyarms.iqm", 0, "Models", "v_barneyarms_000.png", CMDL_USESURFACESKIN, 0);
-			A_ChangeModel("", 1, "Models", "", 1, "Models", "v_barneyarms_001.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 2, "Models", "v_rpg_barneyarms.iqm", 0, "Models", "v_barneyarms_000.png", CMDL_USESURFACESKIN, 0);
+			A_ChangeModel("", 2, "Models", "", 1, "Models", "v_barneyarms_001.png", CMDL_USESURFACESKIN);
 			break;
 		default:
-			A_ChangeModel("", 1, "Models", "v_rpg_hevarms.iqm", 0, "Models", "v_hevarms_000.png", CMDL_USESURFACESKIN, 0);
-			A_ChangeModel("", 1, "Models", "", 1, "Models", "v_hevarms_001.png", CMDL_USESURFACESKIN);
-			A_ChangeModel("", 1, "Models", "", 2, "Models", "v_hevarms_002.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 2, "Models", "v_rpg_hevarms.iqm", 0, "Models", "v_hevarms_000.png", CMDL_USESURFACESKIN, 0);
+			A_ChangeModel("", 2, "Models", "", 1, "Models", "v_hevarms_001.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 2, "Models", "", 2, "Models", "v_hevarms_002.png", CMDL_USESURFACESKIN);
 			break;
 		}
 	}
@@ -1195,7 +1231,12 @@ class HLRPG : ParanoidWeapon
 	States
 	{
 	Spawn:
-		HLS1 A -1 NODELAY A_ChangeModel("ModelBase", 0, "Models", "w_rpg.md3", 0, "Models", 'w_rpg.png');
+		HLS1 A -1 NODELAY
+		{
+			A_ChangeModel("", 0, "Models", "w_rpg.md3", 0, "Models", 'w_rpg.png');
+			A_ChangeModel("", 1, flags:CMDL_HIDEMODEL);
+			A_ChangeModel("", 2, flags:CMDL_HIDEMODEL);
+		}
 		Stop;
 	//Deselect:
 		//HLD1 A 1 A_JumpIf(!CountInv("HLRPGAmmo"),"DeselectEmpty");
@@ -1358,9 +1399,13 @@ class HLXBow : ParanoidWeapon
 {
 	action void A_HLWeaponModel()
 	{
-		A_ChangeModel("", 0, "Models", "v_crossbow_main.iqm", 0, "Models", "v_crossbow_main_000.png", CMDL_USESURFACESKIN);
-		A_ChangeModel("", 0, "Models", "", 1, "Models", "v_crossbow_main_001.png", CMDL_USESURFACESKIN);
-		A_ChangeModel("", 0, "Models", "", 2, "Models", "v_crossbow_main_002.png", CMDL_USESURFACESKIN);
+		if(!player)
+			return;
+		A_ChangeModel("", 0, flags:CMDL_HIDEMODEL);
+
+		A_ChangeModel("", 1, "Models", "v_crossbow_main.iqm", 0, "Models", "v_crossbow_main_000.png", CMDL_USESURFACESKIN, 0);
+		A_ChangeModel("", 1, "Models", "", 1, "Models", "v_crossbow_main_001.png", CMDL_USESURFACESKIN);
+		A_ChangeModel("", 1, "Models", "", 2, "Models", "v_crossbow_main_002.png", CMDL_USESURFACESKIN);
 
 		let me=RolfBellmer(player.mo);
 		name mode;
@@ -1372,17 +1417,17 @@ class HLXBow : ParanoidWeapon
 		switch(mode)
 		{
 		case 'Scientist':
-			A_ChangeModel("", 1, "Models", "v_crossbow_barneyarms.iqm", 0, "Models", "v_barneyarms_000.png", CMDL_USESURFACESKIN, 0);
-			A_ChangeModel("", 1, "Models", "", 1, "Models", "v_scientistarms.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 2, "Models", "v_crossbow_barneyarms.iqm", 0, "Models", "v_barneyarms_000.png", CMDL_USESURFACESKIN, 0);
+			A_ChangeModel("", 2, "Models", "", 1, "Models", "v_scientistarms.png", CMDL_USESURFACESKIN);
 			break;
 		case 'Otis':
-			A_ChangeModel("", 1, "Models", "v_crossbow_barneyarms.iqm", 0, "Models", "v_barneyarms_000.png", CMDL_USESURFACESKIN, 0);
-			A_ChangeModel("", 1, "Models", "", 1, "Models", "v_barneyarms_001.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 2, "Models", "v_crossbow_barneyarms.iqm", 0, "Models", "v_barneyarms_000.png", CMDL_USESURFACESKIN, 0);
+			A_ChangeModel("", 2, "Models", "", 1, "Models", "v_barneyarms_001.png", CMDL_USESURFACESKIN);
 			break;
 		default:
-			A_ChangeModel("", 1, "Models", "v_crossbow_hevarms.iqm", 0, "Models", "v_hevarms_000.png", CMDL_USESURFACESKIN, 0);
-			A_ChangeModel("", 1, "Models", "", 1, "Models", "v_hevarms_001.png", CMDL_USESURFACESKIN);
-			A_ChangeModel("", 1, "Models", "", 2, "Models", "v_hevarms_002.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 2, "Models", "v_crossbow_hevarms.iqm", 0, "Models", "v_hevarms_000.png", CMDL_USESURFACESKIN, 0);
+			A_ChangeModel("", 2, "Models", "", 1, "Models", "v_hevarms_001.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 2, "Models", "", 2, "Models", "v_hevarms_002.png", CMDL_USESURFACESKIN);
 			break;
 		}
 	}
@@ -1406,8 +1451,10 @@ class HLXBow : ParanoidWeapon
 	Spawn:
 		HLS1 A -1 NODELAY
 		{
-			A_ChangeModel("ModelBase", 0, "Models", "w_crossbow.md3", 0, "Models", 'w_crossbow_000.png', CMDL_USESURFACESKIN);
-			A_ChangeModel("ModelBase", 0, "Models", "", 0, "Models", 'w_crossbow_001.png', CMDL_USESURFACESKIN);
+			A_ChangeModel("", 0, "Models", "w_crossbow.md3", 0, "Models", 'w_crossbow_000.png', CMDL_USESURFACESKIN);
+			A_ChangeModel("", 0, "Models", "", 0, "Models", 'w_crossbow_001.png', CMDL_USESURFACESKIN);
+			A_ChangeModel("", 1, flags:CMDL_HIDEMODEL);
+			A_ChangeModel("", 2, flags:CMDL_HIDEMODEL);
 		}
 		Stop;
 	Deselect:
@@ -1640,7 +1687,11 @@ class HLGluonGun : ParanoidWeapon
 {
 	action void A_HLWeaponModel()
 	{
-		A_ChangeModel("", 0, "Models", "v_egon_main.iqm", 0, "Models", "v_egon_main.png");
+		if(!player)
+			return;
+		A_ChangeModel("", 0, flags:CMDL_HIDEMODEL);
+
+		A_ChangeModel("", 1, "Models", "v_egon_main.iqm", 1, "Models", "v_egon_main.png", 0, 0);
 
 		let me=RolfBellmer(player.mo);
 		name mode;
@@ -1652,17 +1703,17 @@ class HLGluonGun : ParanoidWeapon
 		switch(mode)
 		{
 		case 'Scientist':
-			A_ChangeModel("", 1, "Models", "v_egon_barneyarms.iqm", 0, "Models", "v_barneyarms_000.png", CMDL_USESURFACESKIN, 0);
-			A_ChangeModel("", 1, "Models", "", 1, "Models", "v_scientistarms.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 2, "Models", "v_egon_barneyarms.iqm", 0, "Models", "v_barneyarms_000.png", CMDL_USESURFACESKIN, 0);
+			A_ChangeModel("", 2, "Models", "", 1, "Models", "v_scientistarms.png", CMDL_USESURFACESKIN);
 			break;
 		case 'Otis':
-			A_ChangeModel("", 1, "Models", "v_egon_barneyarms.iqm", 0, "Models", "v_barneyarms_000.png", CMDL_USESURFACESKIN, 0);
-			A_ChangeModel("", 1, "Models", "", 1, "Models", "v_barneyarms_001.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 2, "Models", "v_egon_barneyarms.iqm", 0, "Models", "v_barneyarms_000.png", CMDL_USESURFACESKIN, 0);
+			A_ChangeModel("", 2, "Models", "", 1, "Models", "v_barneyarms_001.png", CMDL_USESURFACESKIN);
 			break;
 		default:
-			A_ChangeModel("", 1, "Models", "v_egon_hevarms.iqm", 0, "Models", "v_hevarms_000.png", CMDL_USESURFACESKIN, 0);
-			A_ChangeModel("", 1, "Models", "", 1, "Models", "v_hevarms_001.png", CMDL_USESURFACESKIN);
-			A_ChangeModel("", 1, "Models", "", 2, "Models", "v_hevarms_002.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 2, "Models", "v_egon_hevarms.iqm", 0, "Models", "v_hevarms_000.png", CMDL_USESURFACESKIN, 0);
+			A_ChangeModel("", 2, "Models", "", 1, "Models", "v_hevarms_001.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 2, "Models", "", 2, "Models", "v_hevarms_002.png", CMDL_USESURFACESKIN);
 			break;
 		}
 	}
@@ -1682,7 +1733,12 @@ class HLGluonGun : ParanoidWeapon
 	States
 	{
 	Spawn:
-		HLS1 A -1 NODELAY A_ChangeModel("ModelBase", 0, "Models", "w_egon.md3", 0, "Models", 'w_egon.png');
+		HLS1 A -1 NODELAY
+		{
+			A_ChangeModel("", 0, "Models", "w_egon.md3", 0, "Models", 'w_egon.png');
+			A_ChangeModel("", 1, flags:CMDL_HIDEMODEL);
+			A_ChangeModel("", 2, flags:CMDL_HIDEMODEL);
+		}
 		Stop;
 	//Deselect:
 		//HLD1 ABCDEFGHIJKLM 1;
@@ -2191,9 +2247,6 @@ class HLHornetGun : ParanoidWeapon
 	}
 	States
 	{
-	Spawn:
-		HLS1 A -1 NODELAY A_ChangeModel("ModelBase", 0, "Models", "w_hgun.md3", 0, "Models", 'w_hgun.png');
-		Stop;
 	//Deselect:
 		//HLD1 ABCDEFGHIJKLMNOPQR 2;
 		//TNT1 A 0 A_Lower;
@@ -2476,10 +2529,14 @@ class HLDesertEagle : ParanoidWeapon
 {
 	action void A_HLWeaponModel()
 	{
-		A_ChangeModel("", 0, "Models", "v_desert_eagle_main.iqm", 0, "Models", "v_desert_eagle_main_000.png", CMDL_USESURFACESKIN);
-		A_ChangeModel("", 0, "Models", "", 1, "Models", "v_9mmhandgun_main_003.png", CMDL_USESURFACESKIN);
-		A_ChangeModel("", 0, "Models", "", 2, "Models", "v_9mmhandgun_main_004.png", CMDL_USESURFACESKIN);
-		A_ChangeModel("", 0, "Models", "", 3, "Models", "v_9mmhandgun_main_005.png", CMDL_USESURFACESKIN);
+		if(!player)
+			return;
+		A_ChangeModel("", 0, flags:CMDL_HIDEMODEL);
+
+		A_ChangeModel("", 1, "Models", "v_desert_eagle_main.iqm", 0, "Models", "v_desert_eagle_main_000.png", CMDL_USESURFACESKIN, 0);
+		A_ChangeModel("", 1, "Models", "", 1, "Models", "v_9mmhandgun_main_003.png", CMDL_USESURFACESKIN);
+		A_ChangeModel("", 1, "Models", "", 2, "Models", "v_9mmhandgun_main_004.png", CMDL_USESURFACESKIN);
+		A_ChangeModel("", 1, "Models", "", 3, "Models", "v_9mmhandgun_main_005.png", CMDL_USESURFACESKIN);
 
 		let me=RolfBellmer(player.mo);
 		name mode;
@@ -2491,17 +2548,17 @@ class HLDesertEagle : ParanoidWeapon
 		switch(mode)
 		{
 		case 'Scientist':
-			A_ChangeModel("", 1, "Models", "v_desert_eagle_barneyarms.iqm", 0, "Models", "v_barneyarms_000.png", CMDL_USESURFACESKIN, 0);
-			A_ChangeModel("", 1, "Models", "", 1, "Models", "v_scientistarms.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 2, "Models", "v_desert_eagle_barneyarms.iqm", 0, "Models", "v_barneyarms_000.png", CMDL_USESURFACESKIN, 0);
+			A_ChangeModel("", 2, "Models", "", 1, "Models", "v_scientistarms.png", CMDL_USESURFACESKIN);
 			break;
 		case 'Otis':
-			A_ChangeModel("", 1, "Models", "v_desert_eagle_barneyarms.iqm", 0, "Models", "v_barneyarms_000.png", CMDL_USESURFACESKIN, 0);
-			A_ChangeModel("", 1, "Models", "", 1, "Models", "v_barneyarms_001.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 2, "Models", "v_desert_eagle_barneyarms.iqm", 0, "Models", "v_barneyarms_000.png", CMDL_USESURFACESKIN, 0);
+			A_ChangeModel("", 2, "Models", "", 1, "Models", "v_barneyarms_001.png", CMDL_USESURFACESKIN);
 			break;
 		default:
-			A_ChangeModel("", 1, "Models", "v_desert_eagle_hevarms.iqm", 0, "Models", "v_hevarms_000.png", CMDL_USESURFACESKIN, 0);
-			A_ChangeModel("", 1, "Models", "", 1, "Models", "v_hevarms_001.png", CMDL_USESURFACESKIN);
-			A_ChangeModel("", 1, "Models", "", 2, "Models", "v_hevarms_002.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 2, "Models", "v_desert_eagle_hevarms.iqm", 0, "Models", "v_hevarms_000.png", CMDL_USESURFACESKIN, 0);
+			A_ChangeModel("", 2, "Models", "", 1, "Models", "v_hevarms_001.png", CMDL_USESURFACESKIN);
+			A_ChangeModel("", 2, "Models", "", 2, "Models", "v_hevarms_002.png", CMDL_USESURFACESKIN);
 			break;
 		}
 	}
@@ -2525,7 +2582,12 @@ class HLDesertEagle : ParanoidWeapon
 	States
 	{
 	Spawn:
-		HLS1 A -1 NODELAY A_ChangeModel("ModelBase", 0, "Models", "w_desert_eagle.md3", 0, "Models", 'w_desert_eagle.png');
+		HLS1 A -1 NODELAY
+		{
+			A_ChangeModel("", 0, "Models", "w_desert_eagle.md3", 0, "Models", 'w_desert_eagle.png');
+			A_ChangeModel("", 1, flags:CMDL_HIDEMODEL);
+			A_ChangeModel("", 2, flags:CMDL_HIDEMODEL);
+		}
 		Stop;
 	Select1:
 		TNT1 A 0 A_HLWeaponModel;
