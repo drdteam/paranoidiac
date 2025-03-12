@@ -255,6 +255,9 @@ class HLCrowbar : ParanoidWeapon
 	}
 	States
 	{
+	Spawn:
+		HLS1 A -1 NODELAY A_ChangeModel("ModelBase", 0, "Models", "w_crowbar.md3", 0, "Models", 'w_crowbar.png');
+		Stop;
 	Select1:
 		TNT1 A 0 A_HLWeaponModel;
 		HLU1 ABCDEFGHIJKL 1 A_WeaponReady(WRF_NOBOB|WRF_NOFIRE);
@@ -416,6 +419,9 @@ class HLPistol : ParanoidWeapon
 	}
 	States
 	{
+	Spawn:
+		HLS1 A -1 NODELAY A_ChangeModel("ModelBase", 0, "Models", "w_9mmhandgun.md3", 0, "Models", 'w_9mmhandgun.png');
+		Stop;
 	Select1:
 		TNT1 A 0 A_HLWeaponModel;
 		HLU1 ABCDEFGHIJKLMNO 1 A_WeaponReady(WRF_NOBOB|WRF_NOFIRE);
@@ -579,6 +585,9 @@ class HLMagnum : ParanoidWeapon
 	}
 	States
 	{
+	Spawn:
+		HLS1 A -1 NODELAY A_ChangeModel("ModelBase", 0, "Models", "w_357.md3", 0, "Models", 'w_357.png');
+		Stop;
 	Select1:
 		TNT1 A 0 A_HLWeaponModel;
 		HLU1 ABCDEFGHIJKLMNO 1 A_WeaponReady(WRF_NOBOB|WRF_NOFIRE);
@@ -724,6 +733,9 @@ class HLShotgun : ParanoidWeapon
 	}
 	States
 	{
+	Spawn:
+		HLS1 A -1 NODELAY A_ChangeModel("ModelBase", 0, "Models", "w_shotgun.md3", 0, "Models", 'w_shotgun.png');
+		Stop;
 	//Deselect:
 		//HLD1 ABCDEFGHIJKL 1;
 		//TNT1 A 0 A_Lower;
@@ -905,6 +917,9 @@ class HLAssaultRifle : ParanoidWeapon
 	}
 	States
 	{
+	Spawn:
+		HLS1 A -1 NODELAY A_ChangeModel("ModelBase", 0, "Models", "w_9mmar.md3", 0, "Models", 'w_9mmar.png');
+		Stop;
 	//Deselect:
 		//HLU1 KJIHGFEDCBA 1;
 		//TNT1 A 0 A_Lower;
@@ -1132,6 +1147,9 @@ class HLRPG : ParanoidWeapon
 	}
 	States
 	{
+	Spawn:
+		HLS1 A -1 NODELAY A_ChangeModel("ModelBase", 0, "Models", "w_rpg.md3", 0, "Models", 'w_rpg.png');
+		Stop;
 	//Deselect:
 		//HLD1 A 1 A_JumpIf(!CountInv("HLRPGAmmo"),"DeselectEmpty");
 		//HLD1 BCDEFGHIJKLMNO 1;
@@ -1331,6 +1349,13 @@ class HLXBow : ParanoidWeapon
 	}
 	States
 	{
+	Spawn:
+		HLS1 A -1 NODELAY
+		{
+			A_ChangeModel("ModelBase", 0, "Models", "w_crossbow.md3", 0, "Models", 'w_crossbow_000.png', CMDL_USESURFACESKIN);
+			A_ChangeModel("ModelBase", 0, "Models", "", 0, "Models", 'w_crossbow_001.png', CMDL_USESURFACESKIN);
+		}
+		Stop;
 	Deselect:
 		HLD1 A 0
 		{
@@ -1591,6 +1616,9 @@ class HLGluonGun : ParanoidWeapon
 	}
 	States
 	{
+	Spawn:
+		HLS1 A -1 NODELAY A_ChangeModel("ModelBase", 0, "Models", "w_egon.md3", 0, "Models", 'w_egon.png');
+		Stop;
 	//Deselect:
 		//HLD1 ABCDEFGHIJKLM 1;
 		//TNT1 A 0 A_Lower;
@@ -2093,6 +2121,9 @@ class HLHornetGun : ParanoidWeapon
 	}
 	States
 	{
+	Spawn:
+		HLS1 A -1 NODELAY A_ChangeModel("ModelBase", 0, "Models", "w_hgun.md3", 0, "Models", 'w_hgun.png');
+		Stop;
 	//Deselect:
 		//HLD1 ABCDEFGHIJKLMNOPQR 2;
 		//TNT1 A 0 A_Lower;
@@ -2417,6 +2448,9 @@ class HLDesertEagle : HLMagnum
 	}
 	States
 	{
+	Spawn:
+		HLS1 A -1 NODELAY A_ChangeModel("ModelBase", 0, "Models", "w_desert_eagle.md3", 0, "Models", 'w_desert_eagle.png');
+		Stop;
 	Select1:
 		TNT1 A 0 A_HLWeaponModel;
 		HLU1 ABCDEFGHIJKLMNO 1 A_WeaponReady(WRF_NOBOB|WRF_NOFIRE);

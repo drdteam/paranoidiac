@@ -1,14 +1,5 @@
 Model HLCrowbar
 {
-	Path "Models"
-	Model 0 "w_crowbar.md3"
-	Skin 0 "w_crowbar.png"
-
-	FrameIndex HLS1 A 0 0
-}
-
-Model HLCrowbar
-{
 	Scale -1 1 1
 	Offset 1 0 -2
 
@@ -135,15 +126,6 @@ Model HLCrowbar
 	FrameIndex HLD1 K 0 59
 	FrameIndex HLD1 L 0 60
 	FrameIndex HLD1 M 0 61
-}
-
-Model HLPistol
-{
-	Path "Models"
-	Model 0 "w_9mmhandgun.md3"
-	Skin 0 "w_9mmhandgun.png"
-
-	FrameIndex HLS1 A 0 0
 }
 
 Model HLPistol
@@ -463,15 +445,6 @@ Model HLPistol
 	FrameIndex HLD1 N 1 316
 	FrameIndex HLD1 O 0 304
 	FrameIndex HLD1 O 1 317
-}
-
-Model HLMagnum
-{
-	Path "Models"
-	Model 0 "w_357.md3"
-	Skin 0 "w_357.png"
-
-	FrameIndex HLS1 A 0 0
 }
 
 Model HLMagnum
@@ -963,15 +936,6 @@ Model HLAssaultRifle
 
 Model HLRPG
 {
-	Path "Models"
-	Model 0 "w_rpg.md3"
-	Skin 0 "w_rpg.png"
-
-	FrameIndex HLS1 A 0 0
-}
-
-Model HLRPG
-{
 	Scale -1 1 1
 	Offset 1 0 -2
 
@@ -1115,16 +1079,6 @@ Model HLRPG
 	FrameIndex HLD1 ] 0 312
 	FrameIndex HLD2 A 0 313
 	FrameIndex HLD2 B 0 314
-}
-
-Model HLXBow
-{
-	Path "Models"
-	Model 0 "w_crossbow.md3"
-	SurfaceSkin 0 0 "w_crossbow_000.png"
-	SurfaceSkin 0 1 "w_crossbow_001.png"
-
-	FrameIndex HLS1 A 0 0
 }
 
 Model HLXBow
@@ -1585,15 +1539,6 @@ Model HLXBow
 
 Model HLGluonGun
 {
-	Path "Models"
-	Model 0 "w_egon.md3"
-	Skin 0 "w_egon.png"
-
-	FrameIndex HLS1 A 0 0
-}
-
-Model HLGluonGun
-{
 	Scale -1 1 1
 	Offset 1 0 -2
 
@@ -1761,15 +1706,6 @@ Model HLGluonGun
 Model HLHornetGun
 {
 	Path "Models"
-	Model 0 "w_hgun.md3"
-	Skin 0 "w_hgun.png"
-
-	FrameIndex HLS1 A 0 0
-}
-
-Model HLHornetGun
-{
-	Path "Models"
 	Model 0 "v_hgun.iqm"
 	SurfaceSkin 0 0 "v_hgun_000.png"
 	SurfaceSkin 0 1 "v_hgun_001.png"
@@ -1843,15 +1779,6 @@ Model HLHornetGun
 	FrameIndex HLF1 I 0 166
 	FrameIndex HLF1 J 0 167
 	FrameIndex HLF1 K 0 168
-}
-
-Model HLDesertEagle
-{
-	Path "Models"
-	Model 0 "w_desert_eagle.md3"
-	Skin 0 "w_desert_eagle.png"
-
-	FrameIndex HLS1 A 0 0
 }
 
 Model HLDesertEagle
