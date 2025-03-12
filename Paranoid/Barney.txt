@@ -87,10 +87,10 @@ class HLBarney : HLMonster
 		HLI3 E 2
 		{
 			ResetGunModel(true);
-			A_HLBarneyLook();
+			//A_HLBarneyLook();
 		}
-		HLI3 FGHIJKLMNOPQRSTUVWXYZ[\] 2 A_HLBarneyLook;
-		HLI4 ABCDEF 2 A_HLBarneyLook;
+		HLI3 FGHIJKLMNOPQRSTUVWXYZ[\] 2; //A_HLBarneyLook;
+		HLI4 ABCDEF 2; //A_HLBarneyLook;
 		Loop;
 	Tram:
 		HLI4 GHIJKLMNOPQRSTUVWXYZ[\] 2;
@@ -289,12 +289,12 @@ class SgtHarrison : HLBarney
 		-ISMONSTER
 		-FRIENDLY
 	}
-	override void PostBeginPlay()
+	/*override void PostBeginPlay()
 	{
 		guard=1;
 		SetStateLabel("guard");
 		super.PostBeginPlay();
-	}
+	}*/
 	override void A_HLBarneyChase()
 	{
 		A_Chase(null,null,CHF_NOPLAYACTIVE);
