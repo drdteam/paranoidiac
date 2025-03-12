@@ -206,7 +206,7 @@ class MessageItem : CustomInventory
 		if(!mytracker||!mytracker.playing)
 			return;
 		if(mytracker.playing!=2)
-			thisplayer.A_StartSound("radiostatic", CHAN_6, CHANF_LOCAL );
+			thisplayer.A_StartSound("radiostatic", CHAN_6, CHANF_LOCAL);
 		thisplayer.A_StopSound(7);
 		mytracker.playing=0;
 		ParanoidMessageHandler.StartDialogueSequence(thisplayer.player,"");
@@ -234,7 +234,7 @@ class MessageItem : CustomInventory
 		mytracker.playing=playing;
 		if(mytracker.playing!=2)
 			thisplayer.A_StartSound("radiostatic", CHAN_6, CHANF_LOCAL);
-		thisplayer.A_StartSound(message, CHAN_7, CHANF_LOCAL);
+		thisplayer.A_StartSound(message, CHAN_7, attenuation:ATTN_STATIC);
 		string msg=StringTable.Localize("$"..message);
 		double doubledur;
 		if(dur)
