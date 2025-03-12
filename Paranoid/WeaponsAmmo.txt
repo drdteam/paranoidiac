@@ -514,8 +514,13 @@ class HLPistolAmmo : Ammo
 {
 	override void PostBeginPlay()
 	{
+		HLModelSetup();
 		if(bTOSSED)
 			angle=random(0,359);
+	}
+	virtual void HLModelSetup()
+	{
+		A_ChangeModel("ModelBase", 0, "Models", "w_9mmclip.md3", 0, "Models", 'w_9mmclip.png');
 	}
 	Default
 	{
@@ -637,8 +642,14 @@ class HLMagnumAmmo : Ammo
 {
 	override void PostBeginPlay()
 	{
+		HLModelSetup();
 		if(bTOSSED)
 			angle=random(0,359);
+	}
+	virtual void HLModelSetup()
+	{
+		A_ChangeModel("ModelBase", 0, "Models", "w_357ammo.md3", 0, "Models", 'w_357ammo_000.png', CMDL_USESURFACESKIN);
+		A_ChangeModel("ModelBase", 0, "Models", "", 1, "Models", 'w_357ammo_001.png', CMDL_USESURFACESKIN);
 	}
 	Default
 	{
@@ -662,6 +673,10 @@ class HLMagnumAmmo : Ammo
 
 class HLMagnumBox : HLMagnumAmmo
 {
+	override void HLModelSetup()
+	{
+		A_ChangeModel("ModelBase", 0, "Models", "w_357ammobox.md3", 0, "Models", 'w_357ammobox.png');
+	}
 	Default
 	{
 		Radius 6;
@@ -824,8 +839,13 @@ class HLShotgunAmmo : Ammo
 {
 	override void PostBeginPlay()
 	{
+		HLModelSetup();
 		if(bTOSSED)
 			angle=random(0,359);
+	}
+	virtual void HLModelSetup()
+	{
+		A_ChangeModel("ModelBase", 0, "Models", "w_shotshell.md3", 0, "Models", 'w_shotshell.png');
 	}
 	Default
 	{
@@ -848,6 +868,12 @@ class HLShotgunAmmo : Ammo
 
 class HLShotgunBox : HLShotgunAmmo
 {
+	override void HLModelSetup()
+	{
+		A_ChangeModel("ModelBase", 0, "Models", "w_shotbox.md3", 0, "Models", 'w_shotbox_000.png', CMDL_USESURFACESKIN);
+		A_ChangeModel("ModelBase", 0, "Models", "", 1, "Models", 'w_shotbox_001.png', CMDL_USESURFACESKIN);
+		A_ChangeModel("ModelBase", 0, "Models", "", 2, "Models", 'w_shotbox_002.png', CMDL_USESURFACESKIN);
+	}
 	Default
 	{
 		Radius 6;
@@ -1052,6 +1078,10 @@ class GrenadeTrail : Actor
 
 class HLAssaultRifleAmmo : HLPistolAmmo
 {
+	override void HLModelSetup()
+	{
+		A_ChangeModel("ModelBase", 0, "Models", "w_9mmarclip.md3", 0, "Models", 'w_9mmarclip.png');
+	}
 	Default
 	{
 		Inventory.PickupMessage "Picked up a 9mm assault rifle magazine.";
@@ -1061,6 +1091,14 @@ class HLAssaultRifleAmmo : HLPistolAmmo
 
 class HLAssaultRifleBox : HLPistolAmmo
 {
+	override void HLModelSetup()
+	{
+		A_ChangeModel("ModelBase", 0, "Models", "w_chainammo.md3", 0, "Models", 'w_chainammo_000.png', CMDL_USESURFACESKIN);
+		A_ChangeModel("ModelBase", 0, "Models", "", 1, "Models", 'w_chainammo_001.png', CMDL_USESURFACESKIN);
+		A_ChangeModel("ModelBase", 0, "Models", "", 2, "Models", 'w_chainammo_002.png', CMDL_USESURFACESKIN);
+		A_ChangeModel("ModelBase", 0, "Models", "", 3, "Models", 'w_chainammo_003.png', CMDL_USESURFACESKIN);
+		A_ChangeModel("ModelBase", 0, "Models", "", 4, "Models", 'w_chainammo_004.png', CMDL_USESURFACESKIN);
+	}
 	Default
 	{
 		Radius 12;
@@ -1078,8 +1116,13 @@ class HLGrenadeLauncherAmmo : Ammo
 {
 	override void PostBeginPlay()
 	{
+		HLModelSetup();
 		if(bTOSSED)
 			angle=random(0,359);
+	}
+	virtual void HLModelSetup()
+	{
+		A_ChangeModel("ModelBase", 0, "Models", "w_argrenade.md3", 0, "Models", 'w_argrenade.png');
 	}
 	Default
 	{
@@ -1280,8 +1323,13 @@ class HLRPGAmmo : Ammo
 {
 	override void PostBeginPlay()
 	{
+		HLModelSetup();
 		if(bTOSSED)
 			angle=random(0,359);
+	}
+	virtual void HLModelSetup()
+	{
+		A_ChangeModel("ModelBase", 0, "Models", "w_rpgammo.md3", 0, "Models", 'w_rpgammo.png');
 	}
 	Default
 	{
@@ -1515,8 +1563,13 @@ class HLXBowAmmo : Ammo
 {
 	override void PostBeginPlay()
 	{
+		HLModelSetup();
 		if(bTOSSED)
 			angle=random(0,359);
+	}
+	virtual void HLModelSetup()
+	{
+		A_ChangeModel("ModelBase", 0, "Models", "crossbow_bolt.iqm", 0, "Models", 'crossbow_bolt.png');
 	}
 	Default
 	{
@@ -1537,6 +1590,10 @@ class HLXBowAmmo : Ammo
 
 class HLXBowBox : HLXBowAmmo
 {
+	override void HLModelSetup()
+	{
+		A_ChangeModel("ModelBase", 0, "Models", "w_crossbow_clip.md3", 0, "Models", 'w_crossbow_clip.png');
+	}
 	Default
 	{
 		inventory.amount 5;
@@ -2086,8 +2143,13 @@ class HLGluonGunAmmo : Ammo
 {
 	override void PostBeginPlay()
 	{
+		HLModelSetup();
 		if(bTOSSED)
 			angle=random(0,359);
+	}
+	virtual void HLModelSetup()
+	{
+		A_ChangeModel("ModelBase", 0, "Models", "w_gaussammo.md3", 0, "Models", 'w_gaussammo.png');
 	}
 	Default
 	{
