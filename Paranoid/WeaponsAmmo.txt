@@ -562,7 +562,7 @@ class HLMagnum : ParanoidWeapon
 		A_ChangeModel("", 0, flags:CMDL_HIDEMODEL);
 
 		A_ChangeModel("", 1, "Models", "v_357_main.iqm", 0, "Models", "v_357_main_000.png", CMDL_USESURFACESKIN, 0);
-		A_ChangeModel("", 1, "Models", "", 1, "Models", "v_357_main_001.png", CMDL_USESURFACESKIN, 0);
+		A_ChangeModel("", 1, "Models", "", 1, "Models", "v_357_main_001x.png", CMDL_USESURFACESKIN, 0);
 
 		let me=RolfBellmer(player.mo);
 		name mode;
