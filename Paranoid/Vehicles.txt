@@ -259,6 +259,12 @@ class SUV : ModelBase
 		glass.master=self;
 		super.postbeginplay();
 	}
+	override void tick()
+	{
+		if(glass)
+			glass.A_Warp(AAPTR_MASTER, 0, 0, 0);
+		super.tick();
+	}
 	Default
 	{
 		Radius 38;

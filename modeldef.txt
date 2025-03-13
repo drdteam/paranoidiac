@@ -1619,6 +1619,7 @@ Model SUVGlass
 	Path "Models"
 	Model 0 "suv_glass.iqm"
 	Skin 0 "suv_glass.png"
+	ZOffset 2
 
 	FrameIndex HLI1 A 0 0
 	FrameIndex HLI1 B 0 1
