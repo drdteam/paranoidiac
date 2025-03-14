@@ -207,7 +207,7 @@ class Tesla : ModelBase
 //====================================================================
 // Non-spawnable models (some of which require 3D sectors)
 // Heavy Equipment: Fork lifts, backhoe, trailers, generators,
-// Apache helicopter, steel girders
+// steel girders
 //====================================================================
 
 class Forklift1 : ModelBase
@@ -345,15 +345,6 @@ class girder4 : girder3
 	}
 }
 
-class apache : ModelBase
-{
-	Default
-	{
-		Radius 48;
-		Height 128;
-	}
-}
-
 //===================================================
 // Non-spawnable models
 // Commodes, urinals, desks, chairs, filing cabinets
@@ -419,31 +410,44 @@ class Desk1 : ModelBase
 
 class Desk2 : ModelBase
 {
+	actor block[2];
+	vector3 blockpos[2];
+	vector2 blocksize[2];
+	override void postbeginplay()
+	{
+		blockpos[0] = (0, 21, Height + 1);
+		blockpos[1] = (0, -21, Height + 1);
+		blocksize[0] = (20, 28);
+		blocksize[1] = (20, 28);
+
+		for(int i = 0; i <= 1; i++)
+		{
+			block[i] = Spawn("InvisibleBridge", pos);
+			block[i].A_SetSize(blocksize[i].x, blocksize[i].y);
+			block[i].angle = angle;
+			block[i].ChangeTid(tid);
+			block[i].master = self;
+		}
+		super.postbeginplay();
+	}
+	override void tick()
+	{
+		for(int i = 0; i <= 1; i++)
+		{
+			if(block[i])
+				block[i].A_Warp(AAPTR_MASTER, blockpos[i].x, blockpos[i].y, blockpos[i].z, 0, WARPF_NOCHECKPOSITION);
+		}
+		super.tick();
+	}
 	Default
 	{
 		Scale .8;
-	}
-	override void postbeginplay()
-	{
-		A_SpawnItemEx("Desk2Surface",0,-21,height+1,flags:SXF_SETMASTER,tid:tid);
-		A_SpawnItemEx("Desk2Surface",0,21,height+1,flags:SXF_SETMASTER,tid:tid);
-		super.postbeginplay();
 	}
 }
 class Desk3 : Desk2{}
 class Desk4 : Desk2{}
 class Desk5 : Desk2{}
 class Desk6 : Desk2{}
-class Desk2Surface : Actor
-{
-	Default
-	{
-		Height 28;
-		+SOLID
-		+NOLIFTDROP
-		+ACTLIKEBRIDGE
-	}
-}
 
 class HandDryer : ModelFloat
 {
