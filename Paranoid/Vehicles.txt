@@ -571,6 +571,55 @@ class Bulldozer1 : ModelBase
 	}
 }
 
+class Truck01 : ModelBase
+{
+	actor block[7];
+	vector3 blockpos[7];
+	vector2 blocksize[7];
+	override void postbeginplay()
+	{
+		blockpos[0] = (94, -28, 0);
+		blockpos[1] = (94, 28 ,0);
+		blockpos[2] = (-94, -28 ,0);
+		blockpos[3] = (-94, 28 ,0);
+		blockpos[4] = (-126, 34 ,40);
+		blockpos[5] = (-126, 0 ,40);
+		blockpos[6] = (-126, -34 ,40);
+
+		blocksize[0] = (30, 104);
+		blocksize[1] = (30, 104);
+		blocksize[2] = (30, 122);
+		blocksize[3] = (30, 122);
+		blocksize[4] = (10, 82);
+		blocksize[5] = (10, 82);
+		blocksize[6] = (10, 82);
+
+		for(int i = 0; i <= 6; i++)
+		{
+			block[i] = Spawn("InvisibleBridge", pos);
+			block[i].A_SetSize(blocksize[i].x, blocksize[i].y);
+			block[i].angle = angle;
+			block[i].ChangeTid(tid);
+			block[i].master = self;
+		}
+		super.postbeginplay();
+	}
+	override void tick()
+	{
+		for(int i = 0; i <= 6; i++)
+		{
+			if(block[i])
+				block[i].A_Warp(AAPTR_MASTER, blockpos[i].x, blockpos[i].y, blockpos[i].z, 0, WARPF_NOCHECKPOSITION);
+		}
+		super.tick();
+	}
+	Default
+	{
+		Radius 58;
+		Height 122;
+	}
+}
+
 //Tram
 class Tram : ModelBase
 {

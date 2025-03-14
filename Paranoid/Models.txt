@@ -354,15 +354,6 @@ class apache : ModelBase
 	}
 }
 
-class Truck01 : ModelBase
-{
-	Default
-	{
-		Radius 58;
-		Height 122;
-	}
-}
-
 //===================================================
 // Non-spawnable models
 // Commodes, urinals, desks, chairs, filing cabinets
