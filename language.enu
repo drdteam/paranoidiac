@@ -135,7 +135,7 @@ P1M6VOX4=
 	"You're probably here because those military bastards scrapped your \n"
 	"clearance. Mine too. But I didn't get promoted to Security Officer without \n"
 	"knowing how to hack my own system. You want your clearance back? You want a \n"
-	" higher clearance? No problemo.";
+	"higher clearance? No problemo.";
 P1M6VOX5=
 	"Workin' on it.";
 P1M6VOX6=
@@ -184,7 +184,7 @@ P2M3VOX1=
 	"exceedingly treacherous. Proceed through the canyon until you reach the \n"
 	"dam. There are two ways out at that point, and we'll figure out your best \n"
 	"option. Meanwhile, you're probably wondering who we are. I'm sending you an \n"
-	"UnderNet link that provides some background. As to why we're interested in \n"
+	"UnderNet link that will provide some background. As to why we're interested in \n"
 	"you, that will be revealed in due time.";
 P2M3VOX2=
 	"Legion: Earth is an organization that was created to protect Earth from \n"
@@ -213,11 +213,11 @@ P2M4VOX2=
 	"Dr. Bellmer continues to remain embattled.";
 P2M5VOX1=
 	"Dr. Bellmer, follow these instructions carefully. When you exit the sewers, \n"
-	"proceed to the East Gate. We'll have helicopter transport waiting there to \n"
+	"proceed to the East Gate. We'll have a helicopter transport waiting there to \n"
 	"get you out.";
 P2M5VOX2=
 	"Damn! It seems your Controller is one step ahead of us. He has a lot to \n"
-	"answer for; those were good people we lost on that \n"
+	"answer for. Those were good people we lost on that \n"
 	"transport............................................ Okay, Plan B. You'll \n"
 	"need to proceed through the Lambda Complex. The security key will probably \n"
 	"be in the Administrator's office. And make sure you collect the \n"
