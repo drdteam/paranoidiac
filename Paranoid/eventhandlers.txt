@@ -79,6 +79,7 @@ class ParanoidStaticEventHandler : StaticEventHandler
 	}
 	override void PlayerEntered(PlayerEvent e)
 	{
+		players[e.PlayerNumber].mo.A_GiveInventory("ParanoidSoundTracker");
 		RolfBellmer me;
 		me=RolfBellmer(players[e.PlayerNumber].mo);
 		if(me==null)

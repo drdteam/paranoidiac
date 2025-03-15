@@ -1,179 +1,280 @@
-// Dialogue sequences base class
-Class mkDialogueSequence : HUDMessageBase
+// ZScript HudMessage by Agent_Ash
+// (c) Agent_Ash aka Jekyll Grim Payne aka jekyllgrim
+class ParanoidHudMessageHandler : StaticEventHandler
 {
-	PlayerInfo p;
-	int curdelay,delaycnt,charcnt,col,tspeed;
-	bool bStarted,bInText;
-	transient BrokenLines lines;
-	String savedtext,msg,icon;
-	transient Font tfont;
-	mkDialogueSequence Init(string msg,PlayerInfo p,double typetime,string icon)
+	array < ParanoidHudMessage > hudmessages;
+
+	override void WorldTick()
 	{
-		self.p=p;
-		self.col=Font.CR_GOLD;
-		self.tspeed=int(typetime*35.0/1.5);
-		self.icon=icon;
-		self.msg=msg;
-		return self;
-	}
-	protected void StartText(string cont,bool rebuild=false)
-	{
-		String loc=cont;
-		savedtext=cont;
-		if(cont.CharAt(0)=="$")
-			loc=StringTable.Localize(cont);
-		if(!tfont)
-			tfont=Font.GetFont('smallfont');
-		lines=tfont.BreakLines(loc,360);
-		//these two mustn't be reset on BrokenLines rebuilding
-		if(!rebuild)
+		for (int i = 0; i < hudmessages.Size(); i++)
 		{
-			charcnt=0;
-			bInText=true;
-		}
-	}
-	protected virtual void DialogueSeq()
-	{
-		//Stop command
-		if(!msg.length())
-			StartText("");
-		else
-			StartText("$"..msg);
-	}
-	private int TotalLength()
-	{
-		if(!lines)
-			StartText(savedtext,true);
-		int len=0;
-		for(int i=0;i<lines.Count();i++)
-			len+=lines.StringAt(i).Length();
-		return len;
-	}
-	private String GetChar(int pos)
-	{
-		if(!lines)
-			StartText(savedtext,true);
-		int cur=pos;
-		for(int i=0;i<lines.Count();i++)
-		{
-			int len=lines.StringAt(i).Length();
-			if(cur<len)
-				return lines.StringAt(i).CharAt(cur);
-			cur-=len;
-		}
-		return "";
-	}
-	private void AdvanceText(bool bSkip)
-	{
-		String whitespace=" \t\n";
-		String punctuation=",;:.?!";
-		charcnt++;
-		String ch=GetChar(charcnt);
-		// skip over color escapes
-		if(ch=="\c")
-		{
-			ch=GetChar(++charcnt);
-			if(ch=="[")
+			let hmsg = hudmessages[i];
+			if (hmsg)
 			{
-				while((ch=GetChar(++charcnt))!="]");
-					charcnt++;
+				hmsg.Ticker();
+			}
+			else
+			{
+				hudmessages.Delete(i);
 			}
 		}
-		if(charcnt>=TotalLength())
-		{
-			if(!bSkip)
-				return;
-			bInText=false;
-			curdelay=5;
-			return;
-		}
-		if(bSkip)
-		{
-			charcnt=TotalLength();
-			curdelay=5;
-		}
-		else
-			curdelay=tspeed;
 	}
-	override bool Tick()
+
+	override void InterfaceProcess(ConsoleEvent e)
 	{
-		bool bSkip;
-		if(!p)
-			bSkip=true;	// emergency skip if player disconnects mid-dialogue (don't do this)
-		if(!bStarted)
-			bStarted=true;
-		// here comes the spaghetti code!
-		if(delaycnt<curdelay)
+		// test code (type "interfaceevent testhudmsg" in console to test):
+		if (e.name == "testhudmsg")
 		{
-			delaycnt++;
-			return false;
+			ParanoidHudMessage.CreateUI("$GOTSHOTGUN", id: 1, fontname: 'BigUpper', fontcolor: Font.CR_Green, alignment: ParanoidHudMessage.ALIGN_CENTER, fadeinTime: 0, typeTime: 2, holdtime: 35, fadeOutTime: 50, scale: (0.5, 0.5));
 		}
-		curdelay=0;
-		delaycnt=0;
-		if(bInText)
-			AdvanceText(bSkip);
-		else
-			DialogueSeq();
-		return false;
 	}
-	override void Draw(int bottom,int visibility)
+
+	override void NetworkProcess(ConsoleEvent e)
 	{
-		if(!tfont)
-			tfont=Font.GetFont('smallfont');
-		if(charcnt>0)
-			DrawText();
-	}
-	private void DrawText()
-	{
-		if(!lines)
-			StartText(savedtext,true);
-		if(!tfont)
-			tfont=Font.GetFont('smallfont');
-		int cur=charcnt;
-		Vector2 pos=(80*2,30);
-		int vwidth=640,vheight=400;
-		int flags=BaseStatusBar.DI_SCREEN_TOP|BaseStatusBar.DI_SCREEN_HCENTER|BaseStatusBar.DI_NOSHADOW;
-		StatusBar.DrawImage(icon,(30,50),flags,1.0,scale:(.48,.4));
-		for(int i=0;i<lines.Count();i++)
+		// test code (type "netevent testhudmsg" in console to test):
+		if (e.name == "testhudmsg")
 		{
-			if(cur<=0)
-				break;
-			String part=lines.StringAt(i).Left(cur);
-			Screen.DrawText(tfont,col,pos.x,pos.y,part,DTA_Bottom320x200,true,DTA_Alpha,1.0,
-			DTA_KeepRatio,true,DTA_VirtualWidth,vwidth,DTA_VirtualHeight,vheight);
-			pos.y+=tfont.GetHeight()+1;
-			cur-=lines.StringAt(i).Length();
+			ParanoidHudMessage.Create("$GOTSHOTGUN", id: 1, fontname: 'BigUpper', fontcolor: Font.CR_Green, alignment: ParanoidHudMessage.ALIGN_CENTER, fadeinTime: 0, typeTime: 2, holdtime: 35, fadeOutTime: 50, scale: (0.5, 0.5), playerNumber: e.Player);
+		}
+
+		if (e.name.IndexOf("createzshudmessage") >= 0)
+		{
+			array <string> msg;
+			e.name.Split(msg,":");
+			if (msg.Size() == 14)
+			{
+				ParanoidHudMessage.Create(
+					msg[1], //text
+					id: msg[2].ToInt(10),
+					fontname: msg[3],
+					fontcolor: msg[4].ToInt(10),
+					pos: (msg[5].ToDouble(), msg[6].ToDouble()),
+					alignment: msg[7].ToInt(10),
+					fadeInTime: msg[8].ToInt(10),
+					typeTime: msg[9].ToInt(10),
+					holdTime: msg[10].ToInt(10),
+					fadeOutTime: msg[11].ToInt(10),
+					scale: (msg[12].ToDouble(), msg[13].ToDouble()),
+					playerNumber: e.Player
+				);
+			}
+			else
+			{
+				console.printf("\cgHudMessage.CreateUI error. Expected \cd14\cg arguments, got \cd%d", msg.Size());
+			}
+		}
+	}
+
+	override void RenderUnderlay(RenderEvent e)
+	{
+		int iconflags = BaseStatusBar.DI_SCREEN_TOP|BaseStatusBar.DI_SCREEN_HCENTER|BaseStatusBar.DI_NOSHADOW;
+		for (int i = 0; i < hudmessages.Size(); i++)
+		{
+			let hmsg = hudmessages[i];
+			if (hmsg && (hmsg.playernumber < 0 || hmsg.playerNumber == consoleplayer))
+			{
+				//console.printf("Drawing message '%s' at %.1f, %.1f | alpha %.2f", text, pos.x, pos.y, alpha);
+				Screen.DrawText(
+					hmsg.msgFont, hmsg.fontColor,
+					hmsg.pos.x, hmsg.pos.y,
+					hmsg.text,
+					DTA_VirtualWidth, 320,
+					DTA_VirtualHeight, 200,
+					DTA_ScaleX, hmsg.scale.x,
+					DTA_ScaleY, hmsg.scale.y,
+					DTA_Alpha, hmsg.alpha,
+					DTA_FulLScreenScale, FSMode_ScaleToFit43
+				);
+				StatusBar.DrawImage(hmsg.icon, (30, 50), iconflags, 1.0, scale: (.48,.4));
+			}
 		}
 	}
 }
 
-Class ParanoidMessageHandler : EventHandler
+class ParanoidHudMessage play
 {
-	transient int seqtime;
-	string msg,icon;
-	double typetime;
-	PlayerInfo p;
-	override void PostUiTick()
+	int playerNumber;
+
+	protected uint id;
+	protected string fulltext;
+	protected uint characters;
+	protected uint curChar;
+
+	string text, icon;
+	Font msgFont;
+	vector2 pos;
+	int fontColor;
+	vector2 scale;
+	double alpha;
+
+	protected uint duration;
+	protected uint typeTime;
+	protected uint totalTypeTime;
+	protected uint fadeInTime;
+	protected uint totalfadeInTime;
+	protected uint fadeOutTime;
+	protected uint totalfadeOutTime;
+	protected vector2 virtualRes;
+
+	enum ETextAlignment
 	{
-		if(seqtime<gametic)
+		ALIGN_CENTER,
+		ALIGN_LEFT,
+		ALIGN_RIGHT
+	}
+
+	static clearscope double LinearMap(double val, double source_min, double source_max, double out_min, double out_max, bool clampIt = false) {
+		double d = (val - source_min) * (out_max - out_min) / (source_max - source_min) + out_min;
+		if (clampit) {
+			double truemax = out_max > out_min ? out_max : out_min;
+			double truemin = out_max > out_min ? out_min : out_max;
+			d = Clamp(d, truemin, truemax);
+		}
+		return d;
+	}
+
+	static ui void CreateUI(string text, uint id = 0, name fontname = 'NewSmallFont', int fontColor = Font.CR_Red, vector2 pos = (160, 50), int alignment = ALIGN_LEFT, uint fadeInTime = 0, uint typeTime = 0, uint holdTime = 35, uint fadeOutTime = 0, vector2 scale = (1,1))
+	{
+		EventHandler.SendNetworkEvent(
+			String.Format(
+				"createzshudmessage:%s:%d:%s:%d:%f:%f:%d:%d:%d:%d:%d:%f:%f",
+				text, id, fontname, fontcolor, pos.x, pos.y, alignment, fadeinTime, typeTime, holdTime, fadeOutTime, scale.x, scale.y
+			)
+		);
+	}
+
+	static ParanoidHudMessage Create(string text, string icon = "TNT1A0", uint id = 0, name fontname = 'NewSmallFont', int fontColor = Font.CR_Red, vector2 pos = (160, 50), int alignment = ALIGN_LEFT, uint fadeInTime = 0, uint typeTime = 0, uint holdTime = 35, uint fadeOutTime = 0, vector2 scale = (1,1), int playerNumber = -1)
+	{
+		let hmsg = ParanoidHudMessage(New("ParanoidHudMessage"));
+		let handler = ParanoidHudMessageHandler(StaticEventHandler.Find("ParanoidHudMessageHandler"));
+		if (!handler)
+		{
+			ThrowAbortException("HUDMessage handler not found");
+			return null;
+		}
+		if (hmsg)
+		{
+			hmsg.playerNumber = Clamp(playerNumber, -1, MAXPLAYERS);
+			hmsg.scale = scale;
+			// id:
+			hmsg.id = id;
+			if (id > 0)
+			{
+				for (int i = 0; i < handler.hudmessages.Size(); i++)
+				{
+					let othermsg = handler.hudmessages[i];
+					if (othermsg && othermsg.id == id)
+					{
+						othermsg.Purge();
+						break;
+					}
+				}
+			}
+			// icon:
+			hmsg.icon = icon;
+			// text:
+			hmsg.fulltext = StringTable.Localize(text);
+			hmsg.characters = hmsg.fulltext.Length();
+			hmsg.msgFont = Font.FindFont(fontname);
+			hmsg.fontColor = fontColor;
+			if (typeTime == 0)
+			{
+				hmsg.text = hmsg.fulltext;
+			}
+			// pos:
+			double textwidth = hmsg.msgFont.StringWidth(hmsg.fulltext) * scale.x;
+			switch (alignment)
+			{
+			case ALIGN_CENTER:
+				pos.x -= textwidth * 0.5;
+				break;
+			case ALIGN_RIGHT:
+				pos.x -= textwidth;
+				break;
+			}
+			hmsg.pos = pos;
+			// times:
+			hmsg.duration = holdTime;
+			hmsg.totalFadeInTime = fadeInTime;
+			hmsg.totalFadeOutTime = fadeOutTime;
+			hmsg.typeTime = typeTime;
+			hmsg.totalTypeTime = typeTime * hmsg.characters;
+			hmsg.duration += max(fadeInTime, hmsg.totalTypeTime);
+			if (fadeInTime <= 0)
+			{
+				hmsg.alpha = 1;
+			}
+			handler.hudmessages.Push(hmsg);
+		}
+		return hmsg;
+	}
+
+//	clearscope string, vector2, double, Font, int GetText()
+//	{
+//		return text, pos, alpha, msgFont, fontcolor;
+//	}
+
+	uint GetID()
+	{
+		return id;
+	}
+
+	void Purge()
+	{
+		fulltext = "";
+	}
+
+	void Ticker()
+	{
+		if (!fulltext)
+		{
+			Destroy();
 			return;
-		let s=mkDialogueSequence(new("mkDialogueSequence")).Init(msg,p,typetime,icon);
-		StatusBar.AttachMessage(s,2,BaseStatusBar.HUDMSGLayer_OverHUD);
-	}
-	static void StartDialogueSequence(PlayerInfo p,string msg,double typetime=0.0,string icon="TNT1A0")
-	{
-		let dh=ParanoidMessageHandler(EventHandler.Find("ParanoidMessageHandler"));
-		if(!dh)
-			ThrowAbortException("Dialogue Handler not found!");
-		dh.seqtime=gametic;
-		dh.p=p;
-		dh.msg=msg;
-		dh.icon=icon;
-		dh.typetime=typetime;
-	}
-	override void PlayerEntered(PlayerEvent e)
-	{
-		players[e.PlayerNumber].mo.A_GiveInventory("ParanoidSoundTracker");
+		}
+
+		// tic down duration:
+		if (duration > 0)
+		{
+			duration--;
+		}
+		// if duration has run out, tic down fade-out time
+		// and reduce alpha:
+		else if (totalFadeOutTime > 0 && fadeOutTime < totalFadeOutTime)
+		{
+			alpha = LinearMap(fadeOutTime, 0, totalFadeOutTime, 1., 0.);
+			fadeOutTime++;
+		}
+		// if both have run out, destroy this message:
+		else
+		{
+			Destroy();
+			return;
+		}
+
+		// fade-in time is handled separately because fade-in
+		// and typing may happen at the same time, and the bigger
+		// of the two values (totalTypeTime or fadeInTime) is
+		// automatically added to duration on initialization:
+		if (totalFadeInTime > 0 && fadeInTime < totalFadeInTime)
+		{
+			alpha = LinearMap(fadeInTime, 0, totalFadeInTime, 0., 1.);
+			fadeInTime++;
+		}
+
+		// type the next character:
+		if (totalTypeTime > 0 && curChar < characters)
+		{
+			if (totalTypeTime % typeTime == 0)
+			{
+				int codepoint, nextpos;
+				[codepoint, nextpos] = fulltext.GetNextCodePoint(curChar);
+				curChar = nextpos;
+				//curChar++;
+				//text = fulltext.Left(curChar);
+				text.AppendCharacter(codepoint);
+			}
+			totalTypeTime--;
+		}
 	}
 }
 
@@ -190,7 +291,7 @@ class ParanoidSoundTracker : Inventory
 	Default
 		{+INVENTORY.UNDROPPABLE}
 }
-class MessageItem : CustomInventory
+class MessageItem : CustomInventory abstract
 {
 	override bool TryPickup(in out Actor toucher)
 	{
@@ -209,7 +310,7 @@ class MessageItem : CustomInventory
 			thisplayer.A_StartSound("radiostatic", CHAN_6, CHANF_LOCAL);
 		thisplayer.A_StopSound(7);
 		mytracker.playing=0;
-		ParanoidMessageHandler.StartDialogueSequence(thisplayer.player,"");
+		ParanoidHudMessage.Create("", id: 1);
 	}
 	static void PlayMessage(actor thisplayer,string message,string icon="TNT1A0",int dur=0)
 	{
@@ -242,9 +343,12 @@ class MessageItem : CustomInventory
 		else
 			doubledur = S_GetLength(message);
 		double typetime = doubledur / double(msg.Length());
+		typetime = ceil(typetime * TICRATE);
 		int ticdur = ceil(doubledur * TICRATE);
-		mytracker.countdown = ticdur;
-		ParanoidMessageHandler.StartDialogueSequence(thisplayer.player,message,typetime,icon);
+		mytracker.countdown = ticdur + 35;
+		ParanoidHudMessage.Create(msg, icon: icon, id: 1, fontname: 'smallfont', fontcolor: Font.CR_GOLD,
+		pos: (40, 15), alignment: ParanoidHudMessage.ALIGN_LEFT, fadeinTime: 0, typeTime: typetime - 1,
+		holdtime: 35 * 5, fadeOutTime: 0, scale: (0.5, 0.5));
 	}
 	string Portrait;
 	Property Portrait:Portrait;
@@ -268,29 +372,29 @@ class MessageItem : CustomInventory
 	}
 }
 
-class MessageItemHintman : MessageItem
+class MessageItemHintman : MessageItem abstract
 	{Default{MessageItem.Portrait "HINTMAN";}}
-class MessageItemHintman01 : MessageItemHintman
+class MessageItemHintman01 : MessageItemHintman abstract
 	{Default{Inventory.Icon "MAIL01";}}
-class MessageItemHintman02 : MessageItemHintman
+class MessageItemHintman02 : MessageItemHintman abstract
 	{Default{Inventory.Icon "MAIL02";}}
-class MessageItemHintman03 : MessageItemHintman
+class MessageItemHintman03 : MessageItemHintman abstract
 	{Default{Inventory.Icon "MAIL03";}}
-class MessageItemHintman04 : MessageItemHintman
+class MessageItemHintman04 : MessageItemHintman abstract
 	{Default{Inventory.Icon "MAIL04";}}
 
-class MessageItemStinson : MessageItem
+class MessageItemStinson : MessageItem abstract
 	{Default{MessageItem.Portrait "STINSON";}}
-class MessageItemStinson01 : MessageItemStinson
+class MessageItemStinson01 : MessageItemStinson abstract
 	{Default{Inventory.Icon "MAIL01";}}
-class MessageItemStinson02 : MessageItemStinson
+class MessageItemStinson02 : MessageItemStinson abstract
 	{Default{Inventory.Icon "MAIL02";}}
-class MessageItemStinson03 : MessageItemStinson
+class MessageItemStinson03 : MessageItemStinson abstract
 	{Default{Inventory.Icon "MAIL03";}}
 
-class MessageItemUndernet : MessageItem
+class MessageItemUndernet : MessageItem abstract
 	{Default{MessageItem.Portrait "UNDERNET";}}
-class MessageItemUndernet02 : MessageItemUndernet
+class MessageItemUndernet02 : MessageItemUndernet abstract
 	{Default{Inventory.Icon "MAIL02";}}
 
 class MessageItemP1M2VOX1 : MessageItemHintman01{}	//P1M2: Message 1
