@@ -87,10 +87,10 @@ class HLBarney : HLMonster
 		HLI3 E 2
 		{
 			ResetGunModel(true);
-			//A_HLBarneyLook();
+			A_HLBarneyLook();
 		}
-		HLI3 FGHIJKLMNOPQRSTUVWXYZ[\] 2; //A_HLBarneyLook;
-		HLI4 ABCDEF 2; //A_HLBarneyLook;
+		HLI3 FGHIJKLMNOPQRSTUVWXYZ[\] 2 A_HLBarneyLook;
+		HLI4 ABCDEF 2 A_HLBarneyLook;
 		Loop;
 	Tram:
 		HLI4 GHIJKLMNOPQRSTUVWXYZ[\] 2;
@@ -168,6 +168,13 @@ class HLBarney : HLMonster
 	}
 	virtual void A_HLBarneyLook()
 	{
+		if(guard)
+		{
+			if(goal)
+				SetStateLabel("See");
+			A_LookEx(LOF_NOSIGHTCHECK|LOF_NOSOUNDCHECK|LOF_NOSEESOUND);
+			return;
+		}
 		if(!follower)
 		{
 			A_Look();
@@ -195,6 +202,13 @@ class HLBarney : HLMonster
 	}
 	virtual void A_HLBarneyChase()
 	{
+		if(guard)
+		{
+			if(!goal)
+				SetStateLabel("Guard");
+			A_Chase(null, null, CHF_NOPLAYACTIVE);
+			return;
+		}
 		//If Barney is a follower but doesn't have a player to follow yet...
 		if(follower&&!goal)
 			goal=ChooseBestFriend();
@@ -289,14 +303,10 @@ class SgtHarrison : HLBarney
 		-ISMONSTER
 		-FRIENDLY
 	}
-	/*override void PostBeginPlay()
+	override void PostBeginPlay()
 	{
 		guard=1;
 		SetStateLabel("guard");
 		super.PostBeginPlay();
-	}*/
-	override void A_HLBarneyChase()
-	{
-		A_Chase(null,null,CHF_NOPLAYACTIVE);
 	}
 }
