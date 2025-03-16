@@ -400,126 +400,147 @@ Model HLBarnacle
 
 Model HLHornetGrunt
 {
+	Path "models"
+	Model 0 "agrunt.iqm"
+	SurfaceSkin 0 0 "agrunt_000.png"
+	SurfaceSkin 0 1 "agrunt_001.png"
+	SurfaceSkin 0 2 "agrunt_002.png"
+	SurfaceSkin 0 3 "agrunt_003.png"
+	SurfaceSkin 0 4 "agrunt_004.png"
+	SurfaceSkin 0 5 "agrunt_005.png"
+	SurfaceSkin 0 6 "agrunt_006.png"
+	SurfaceSkin 0 7 "agrunt_005.png"
+	SurfaceSkin 0 8 "agrunt_007.png"
+	SurfaceSkin 0 9 "agrunt_000.png"
 	INTERPOLATEDOUBLEDFRAMES
 
-	FrameIndex HLI1 A 0 0
-	FrameIndex HLI1 B 0 1
-	FrameIndex HLI1 C 0 2
-	FrameIndex HLI1 D 0 3
-	FrameIndex HLI1 E 0 4
-	FrameIndex HLI1 F 0 5
-	FrameIndex HLI1 G 0 6
-	FrameIndex HLI1 H 0 7
-	FrameIndex HLI1 I 0 8
-	FrameIndex HLI1 J 0 9
-	FrameIndex HLI1 K 0 10
-	FrameIndex HLI1 L 0 11
-	FrameIndex HLI1 M 0 12
-	FrameIndex HLI1 N 0 13
-	FrameIndex HLI1 O 0 14
-	FrameIndex HLI1 P 0 15
-	FrameIndex HLI1 Q 0 16
-	FrameIndex HLI1 R 0 17
-	FrameIndex HLI1 S 0 18
-	FrameIndex HLI1 T 0 19
-	FrameIndex HLI1 U 0 20
-	FrameIndex HLI1 V 0 21
-	FrameIndex HLI1 W 0 22
-	FrameIndex HLI1 X 0 23
-	FrameIndex HLI1 Y 0 24
-	FrameIndex HLI1 Z 0 25
-	FrameIndex HLI1 [ 0 26
-	FrameIndex HLI1 \ 0 27
-	FrameIndex HLI1 ] 0 28
-	FrameIndex HLI2 A 0 29
-	FrameIndex HLI2 B 0 30
+	Frame HLI1 A 0 "idle1:0"
+	Frame HLI1 B 0 "idle1:1"
+	Frame HLI1 C 0 "idle1:2"
+	Frame HLI1 D 0 "idle1:3"
+	Frame HLI1 E 0 "idle1:4"
+	Frame HLI1 F 0 "idle1:5"
+	Frame HLI1 G 0 "idle1:6"
+	Frame HLI1 H 0 "idle1:7"
+	Frame HLI1 I 0 "idle1:8"
+	Frame HLI1 J 0 "idle1:9"
+	Frame HLI1 K 0 "idle1:10"
+	Frame HLI1 L 0 "idle1:11"
+	Frame HLI1 M 0 "idle1:12"
+	Frame HLI1 N 0 "idle1:13"
+	Frame HLI1 O 0 "idle1:14"
+	Frame HLI1 P 0 "idle1:15"
+	Frame HLI1 Q 0 "idle1:16"
+	Frame HLI1 R 0 "idle1:17"
+	Frame HLI1 S 0 "idle1:18"
+	Frame HLI1 T 0 "idle1:19"
+	Frame HLI1 U 0 "idle1:20"
+	Frame HLI1 V 0 "idle1:21"
+	Frame HLI1 W 0 "idle1:22"
+	Frame HLI1 X 0 "idle1:23"
+	Frame HLI1 Y 0 "idle1:24"
+	Frame HLI1 Z 0 "idle1:25"
+	Frame HLI1 [ 0 "idle1:26"
+	Frame HLI1 \ 0 "idle1:27"
+	Frame HLI1 ] 0 "idle1:28"
+	Frame HLI2 A 0 "idle1:29"
+	Frame HLI2 B 0 "idle1:30"
 
-	FrameIndex HLW1 A 0 31
-	FrameIndex HLW1 B 0 32
-	FrameIndex HLW1 C 0 33
-	FrameIndex HLW1 D 0 34
-	FrameIndex HLW1 E 0 35
-	FrameIndex HLW1 F 0 36
-	FrameIndex HLW1 G 0 37
-	FrameIndex HLW1 H 0 38
-	FrameIndex HLW1 I 0 39
-	FrameIndex HLW1 J 0 40
-	FrameIndex HLW1 K 0 41
-	FrameIndex HLW1 L 0 42
-	FrameIndex HLW1 M 0 43
-	FrameIndex HLW1 N 0 44
-	FrameIndex HLW1 O 0 45
-	FrameIndex HLW1 P 0 46
-	FrameIndex HLW1 Q 0 47
-	FrameIndex HLW1 R 0 48
-	FrameIndex HLW1 S 0 49
-	FrameIndex HLW1 T 0 50
+	Frame HLW1 A 0 "walk:0"
+	Frame HLW1 B 0 "walk:1"
+	Frame HLW1 C 0 "walk:2"
+	Frame HLW1 D 0 "walk:3"
+	Frame HLW1 E 0 "walk:4"
+	Frame HLW1 F 0 "walk:5"
+	Frame HLW1 G 0 "walk:6"
+	Frame HLW1 H 0 "walk:7"
+	Frame HLW1 I 0 "walk:8"
+	Frame HLW1 J 0 "walk:9"
+	Frame HLW1 K 0 "walk:10"
+	Frame HLW1 L 0 "walk:11"
+	Frame HLW1 M 0 "walk:12"
+	Frame HLW1 N 0 "walk:13"
+	Frame HLW1 O 0 "walk:14"
+	Frame HLW1 P 0 "walk:15"
+	Frame HLW1 Q 0 "walk:16"
+	Frame HLW1 R 0 "walk:17"
+	Frame HLW1 S 0 "walk:18"
+	Frame HLW1 T 0 "walk:19"
 
-	FrameIndex HLA2 A 0 61
-	FrameIndex HLA2 B 0 62
-	FrameIndex HLA2 C 0 63
-	FrameIndex HLA2 D 0 64
-	FrameIndex HLA2 E 0 65
-	FrameIndex HLA2 F 0 66
-	FrameIndex HLA2 G 0 67
-	FrameIndex HLA2 H 0 68
-	FrameIndex HLA2 I 0 69
-	FrameIndex HLA2 J 0 70
-	FrameIndex HLA2 K 0 71
-	FrameIndex HLA2 L 0 72
-	FrameIndex HLA2 M 0 73
-	FrameIndex HLA2 N 0 74
-	FrameIndex HLA2 O 0 75
-	FrameIndex HLA2 P 0 76
+	Frame HLA2 A 0 "mattack2:0"
+	Frame HLA2 B 0 "mattack2:1"
+	Frame HLA2 C 0 "mattack2:2"
+	Frame HLA2 D 0 "mattack2:3"
+	Frame HLA2 E 0 "mattack2:4"
+	Frame HLA2 F 0 "mattack2:5"
+	Frame HLA2 G 0 "mattack2:6"
+	Frame HLA2 H 0 "mattack2:7"
+	Frame HLA2 I 0 "mattack2:8"
+	Frame HLA2 J 0 "mattack2:9"
+	Frame HLA2 K 0 "mattack2:10"
+	Frame HLA2 L 0 "mattack2:11"
+	Frame HLA2 M 0 "mattack2:12"
+	Frame HLA2 N 0 "mattack2:13"
+	Frame HLA2 O 0 "mattack2:14"
+	Frame HLA2 P 0 "mattack2:15"
 
-	FrameIndex HLA1 A 0 77
-	FrameIndex HLA1 B 0 78
-	FrameIndex HLA1 C 0 79
-	FrameIndex HLA1 D 0 80
-	FrameIndex HLA1 E 0 81
-	FrameIndex HLA1 F 0 82
-	FrameIndex HLA1 G 0 83
-	FrameIndex HLA1 H 0 84
-	FrameIndex HLA1 I 0 85
-	FrameIndex HLA1 J 0 86
-	FrameIndex HLA1 K 0 87
-	FrameIndex HLA1 L 0 88
-	FrameIndex HLA1 M 0 89
-	FrameIndex HLA1 N 0 90
-	FrameIndex HLA1 O 0 91
-	FrameIndex HLA1 P 0 92
+	Frame HLA1 A 0 "hornetattack:0"
+	Frame HLA1 B 0 "hornetattack:1"
+	Frame HLA1 C 0 "hornetattack:2"
+	Frame HLA1 D 0 "hornetattack:3"
+	Frame HLA1 E 0 "hornetattack:4"
+	Frame HLA1 F 0 "hornetattack:5"
+	Frame HLA1 G 0 "hornetattack:6"
+	Frame HLA1 H 0 "hornetattack:7"
+	Frame HLA1 I 0 "hornetattack:8"
+	Frame HLA1 J 0 "hornetattack:9"
+	Frame HLA1 K 0 "hornetattack:10"
+	Frame HLA1 L 0 "hornetattack:11"
+	Frame HLA1 M 0 "hornetattack:12"
+	Frame HLA1 N 0 "hornetattack:13"
+	Frame HLA1 O 0 "hornetattack:14"
+	Frame HLA1 P 0 "hornetattack:15"
 
-	FrameIndex HLP1 A 0 51
-	FrameIndex HLP1 B 0 52
-	FrameIndex HLP1 C 0 53
-	FrameIndex HLP1 D 0 54
-	FrameIndex HLP1 E 0 55
-	FrameIndex HLP1 F 0 56
-	FrameIndex HLP1 G 0 57
-	FrameIndex HLP1 H 0 58
-	FrameIndex HLP1 I 0 59
-	FrameIndex HLP1 J 0 60
+	Frame HLP1 A 0 "smallflinch:0"
+	Frame HLP1 B 0 "smallflinch:1"
+	Frame HLP1 C 0 "smallflinch:2"
+	Frame HLP1 D 0 "smallflinch:3"
+	Frame HLP1 E 0 "smallflinch:4"
+	Frame HLP1 F 0 "smallflinch:5"
+	Frame HLP1 G 0 "smallflinch:6"
+	Frame HLP1 H 0 "smallflinch:7"
+	Frame HLP1 I 0 "smallflinch:8"
+	Frame HLP1 J 0 "smallflinch:9"
 
-	FrameIndex HLD1 A 0 93
-	FrameIndex HLD1 B 0 94
-	FrameIndex HLD1 C 0 95
-	FrameIndex HLD1 D 0 96
-	FrameIndex HLD1 E 0 97
-	FrameIndex HLD1 F 0 98
-	FrameIndex HLD1 G 0 99
-	FrameIndex HLD1 H 0 100
-	FrameIndex HLD1 I 0 101
-	FrameIndex HLD1 J 0 102
-	FrameIndex HLD1 K 0 103
+	Frame HLD1 A 0 "diesimple:0"
+	Frame HLD1 B 0 "diesimple:1"
+	Frame HLD1 C 0 "diesimple:2"
+	Frame HLD1 D 0 "diesimple:3"
+	Frame HLD1 E 0 "diesimple:4"
+	Frame HLD1 F 0 "diesimple:5"
+	Frame HLD1 G 0 "diesimple:6"
+	Frame HLD1 H 0 "diesimple:7"
+	Frame HLD1 I 0 "diesimple:8"
+	Frame HLD1 J 0 "diesimple:9"
+	//Frame HLD1 K 0 "diesimple:10"
+
+	Model 0 "agrunt2.iqm"
+	SurfaceSkin 0 0 "agrunt_000.png"
+	SurfaceSkin 0 1 "agrunt_001.png"
+	SurfaceSkin 0 2 "agrunt_002.png"
+	SurfaceSkin 0 3 "agrunt_003.png"
+	SurfaceSkin 0 4 "agrunt_004.png"
+	SurfaceSkin 0 5 "agrunt_005.png"
+	SurfaceSkin 0 6 "agrunt_006.png"
+	SurfaceSkin 0 7 "agrunt_000.png"
+
+	Frame HLD1 K 0 "diesimple:9"
 }
 
 Model HLGargantua
 {
-	Path "Models"
-	Model 0 "garg.iqm"
-	SurfaceSkin 0 0 "garg_000.png"
-	SurfaceSkin 0 1 "garg_001.png"
 	INTERPOLATEDOUBLEDFRAMES
+	//BaseFrame
 
 	FrameIndex HLI1 A 0 0
 	FrameIndex HLI1 B 0 1

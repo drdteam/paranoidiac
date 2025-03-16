@@ -429,6 +429,7 @@ DoomEdNums
 	7414=HLBarney
 	7415=HLGonarch
 	7416=HLHornetGrunt
+	7417=HLHornetGruntDead
 	7420=HLBat
 	7421=HLGargantua2
 	7422=HLBarnacle
