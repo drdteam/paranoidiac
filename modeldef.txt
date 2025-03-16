@@ -2662,19 +2662,3 @@ Model HGunHornet
 	FrameIndex HLI1 C 0 2
 	FrameIndex HLI1 D 0 3
 }
-
-Model EarthGlobe
-{
-	Path "Models"
-	Model 0 "sat_globe.iqm"
-	SurfaceSkin 0 0 "nochrome.png"
-	SurfaceSkin 0 1 "nochrome.png"
-	SurfaceSkin 0 2 "sat_globe.png"
-	SurfaceSkin 0 3 "nochrome.png"
-	SurfaceSkin 0 4 "nochrome.png"
-	ROTATING
-	Rotation-Speed -1.0
-	ZOffset 28
-
-	FrameIndex HLI1 A 0 0
-}

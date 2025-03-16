@@ -1276,19 +1276,9 @@ class HintMan : ModelBase
 	Sit:
 		HLS1 A -1 A_SetScale(scale.x*.9);
 		Stop;
-	/*Spawn:
-		HLI1 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 2;
-		HLI2 AB 2;
-		Loop;
-	Cam:
-		HLI2 CDEFGHIJKLMNOPQRSTUVWXYZ[\] 4;
-		HLI3 ABCD 4;
-		Loop;
-	Sit:
-		HLS1 ABCDEFGHIJKLMNOP 6;
-		Loop;*/
 	}
 }
+
 class HintManSitting : RandomSpawner
 {
 	Default
@@ -1300,11 +1290,6 @@ class HintManSitting : RandomSpawner
 		spawned.bNOCLIP=1;
 		spawned.SetStateLabel("Sit");
 	}
-}
-class HintManCam : HintManSitting
-{
-	override void PostSpawn(Actor spawned)
-		{spawned.SetStateLabel("Cam");}
 }
 
 class Admin01 : ModelBase
@@ -1320,30 +1305,5 @@ class Admin01 : ModelBase
 		HLI1 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 2;
 		HLI2 AB 2;
 		Loop;
-	}
-}
-
-class Stinson : HintMan
-{
-	States
-	{
-	Spawn:
-		HLI1 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 4;
-		HLI2 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 4;
-		HLI3 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 4;
-		HLI4 ABCBA 4;
-		HLI3 ]\[ZYXWVUTSRQPONMLKJIHGFEDCBA 4;
-		HLI2 ]\[ZYXWVUTSRQPONMLKJIHGFEDCBA 4;
-		HLI1 ]\[ZYXWVUTSRQPONMLKJIHGFEDCB 4;
-		Loop;
-	}
-}
-
-class EarthGlobe : ModelFloat
-{
-	Default
-	{
-		Height 82;
-		Radius 41;
 	}
 }
