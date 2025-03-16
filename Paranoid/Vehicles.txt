@@ -67,15 +67,15 @@ class Osprey : ModelBase
 				'dead_osprey_002.png',
 				'dead_osprey_003.png',
 				'dead_osprey_004.png',
-				'dead_osprey_005.png',
+				'nochrome.png',	//'dead_osprey_005.png',
 				'dead_osprey_006.png',
 				'dead_osprey_007.png',
 				'dead_osprey_008.png',
 				'dead_osprey_009.png',
-				'dead_osprey_010.png',
-				'dead_osprey_011.png',
-				'dead_osprey_012.png',
-				'dead_osprey_013.png'
+				'nochrome.png',	//'dead_osprey_010.png',
+				'nochrome.png',	//'dead_osprey_011.png',
+				'nochrome.png',	//'dead_osprey_012.png',
+				'nochrome.png'	//'dead_osprey_013.png'
 			};
 			for(int i = 0; i <= 13; i++)
 				A_ChangeModel("OspreyDead", 0, "Models", "dead_osprey.iqm", i, "Models", modelskin2[i], CMDL_USESURFACESKIN);
