@@ -71,28 +71,6 @@ episode P3M4
 {
 	name="Paranoiac: Obliteration"
 }
-episode map31
-{
-	name="Density"
-}
-
-map map31 "Otis Shift"
-{
-	next=EndSequence,"ParaEndScroll"
-	secretnext = "MAP32"
-	sky1 = "SKY3"
-	cluster = 9
-	par = 120
-	music = "$MUSIC_EVIL"
-}
-map map32 "Otis Force"
-{
-	next=EndSequence,"ParaEndScroll"
-	sky1 = "SKY3"
-	cluster = 10
-	par = 30
-	music = "$MUSIC_ULTIMA"
-}
 
 defaultmap
 {
