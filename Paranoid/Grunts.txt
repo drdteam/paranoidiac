@@ -406,7 +406,7 @@ class HLGruntDead : HLGruntM16
 	{
 	Spawn:
 		TNT1 A 0;
-		HLD2 G -1;
+		HLD2 G -1 A_ChangeModel("HLGruntM16", 2, flags:CMDL_HIDEMODEL);
 		Stop;
 	}
 }
