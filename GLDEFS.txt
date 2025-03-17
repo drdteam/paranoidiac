@@ -1239,7 +1239,7 @@ pulselight XENLIGHT1
 	size 24
 	secondarySize 32
 	interval 4.0
-	offset 24 40 0
+	offset 0 40 0
 }
 
 pulselight XENLIGHT2
@@ -1248,7 +1248,7 @@ pulselight XENLIGHT2
 	size 24
 	secondarySize 32
 	interval 4.0
-	offset 24 36 0
+	offset 0 36 0
 }
 
 pulselight XENLIGHT3
@@ -1257,7 +1257,7 @@ pulselight XENLIGHT3
 	size 24
 	secondarySize 32
 	interval 4.0
-	offset 24 32 0
+	offset 0 32 0
 }
 
 pulselight XENLIGHTFADE1
@@ -1266,7 +1266,7 @@ pulselight XENLIGHTFADE1
 	size 16
 	secondarySize 24
 	interval 4.0
-	offset 16 32 0
+	offset 0 32 0
 }
 
 pulselight XENLIGHTFADE2
@@ -1275,7 +1275,7 @@ pulselight XENLIGHTFADE2
 	size 8
 	secondarySize 16
 	interval 4.0
-	offset 8 24 0
+	offset 0 24 0
 }
 
 //****

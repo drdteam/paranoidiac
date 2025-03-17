@@ -44,31 +44,28 @@ class HLXenLight : HLXenFungus
 		Scale 1;
 		Height 32;
 		PainChance 256;
-		-DECOUPLEDANIMATIONS
 	}
 	States
 	{
 	Spawn:
-		HLI1 A 35;
-		HLI1 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1 Bright LIGHT("XENLIGHT2") A_HLXenLightLook;
-		HLI2 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1 Bright LIGHT("XENLIGHT3") A_HLXenLightLook;
-		HLI3 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1 Bright LIGHT("XENLIGHT2") A_HLXenLightLook;
-		HLI4 ABCDEFGHIJKLMN 1 Bright LIGHT("XENLIGHT1") A_HLXenLightLook;
-		Goto Spawn+1;
-	Pain:
-		HLP1 BDF 1 Bright LIGHT("XENLIGHTFADE1");
-		HLP1 HJL 1 Bright LIGHT("XENLIGHTFADE2");
-		HLP1 NPR 1;
-	Shrunk:
-		HLP1 T 8 A_CheckRange(128,1);
+		HLI1 A 1 NODELAY Bright LIGHT("XENLIGHT1")
+		{
+			SetAnimation('idle1', 30, flags: SAF_LOOP|SAF_NOOVERRIDE);
+			A_HLXenLightLook();
+		}
 		Loop;
-		HLA1 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1;
-		HLA2 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1 Bright LIGHT("XENLIGHTFADE2");
-		HLA3 ABCDEFGHIJKLMNOP 1 Bright LIGHT("XENLIGHTFADE1");
-		Goto Spawn+1;
+	Pain:
+		HLI1 A 10 LIGHT("XENLIGHTFADE2") SetAnimation('retract', 60, endframe: 18);
+		HLI1 A 10 A_CheckRange(128, 1);
+		Wait;
+		HLI1 A 73 LIGHT("XENLIGHTFADE2") SetAnimation('delpoy', 40, endframe: 73);
+		Goto Spawn;
 	}
-	state A_HLXenLightLook()
-		{return CheckRange(128)?null:ResolveState("Pain");}
+	void A_HLXenLightLook()
+	{
+		if(!CheckRange(128))
+			SetStateLabel("Pain");
+	}
 }
 
 class HLXenTree : HLXenFungus
@@ -82,7 +79,6 @@ class HLXenTree : HLXenFungus
 		PainChance 128;
 		PainChance "Crowbar",252;
 		PainSound "tree/pain";
-		+DECOUPLEDANIMATIONS
 	}
 	States
 	{
