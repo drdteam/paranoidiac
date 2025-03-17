@@ -56,19 +56,26 @@ XENEXPLOSIVE1="Find an explosive device to blast through this rock.";
 XENEXPLOSIVE2="Explosive Device Acquired.\n\nReturn to Entry Portal & blast through the rock.";
 XENEXPLOSIVE3="Explosive charge laid.\n\nSeek cover immediately.";
 
-BRIEF01="Dr. Bellmer, this briefing will serve to recap your mission objective.";
-BRIEF02="As you know, the consortium I represent seeks to dominate the \nfield of Anomalous Materials Research.";
-BRIEF03="We believe that our supremacy in this field will allow us to \npioneer exploration of Extra-Dimensional Space.";
-BRIEF04="For many years now, the United States Government has been using \nthe Black Mesa Complex to move ahead in these areas.";
-BRIEF05="My employers wish to impose ... roadblocks in the path of the \nU.S. government, and set back their progress.";
-BRIEF06="Your objective is to damage their information systems so that \ndata recovery is difficult and time-consuming.";
-BRIEF07="You have been provided with a data device. \nUse it to introduce a virus into their data systems.";
-BRIEF08="Unfortunately, you do not have adequate security clearance \nfor access to Data Control Operations.";
-BRIEF09="Therefore, you will need to figure out a way to reach it on your own.";
-BRIEF10="However, to assist you, we have planned a little... 'incident' \nin the Anomalous Materials Test Lab.";
-BRIEF11="This should cause just enough confusion to allow you to reach \nData Control Ops.";
-BRIEF12="Periodically, during your mission, you will receive transmissions from me.";
-BRIEF13="These messages will help you navigate the Black Mesa facility, \nand identify alternative paths.\nGood luck!";
+BRIEF01=
+	"Dr. Bellmer, this briefing will serve to recap your mission objective.\n\n"
+	"As you know, the consortium I represent seeks to dominate the field of \n"
+	"Anomalous Materials Research. We believe that our supremacy in this field \n"
+	"will allow us to pioneer exploration of Extra-Dimensional Space. For many \n"
+	"years now, the United States Government has been using the Black Mesa \n"
+	"Complex to move ahead in these areas. My employers wish to impose... \n"
+	"roadblocks in the path of the U.S. government, and set back their progress. \n"
+	"Your objective is to damage their information systems so that data recovery \n"
+	"is difficult and time-consuming. You have been provided with a data device. \n"
+	"Use it to introduce a virus into their data systems.\n\n"
+	"Unfortunately, you do not have adequate security clearance for access to \n"
+	"Data Control Operations. Therefore, you will need to figure out a way to \n"
+	"reach it on your own. However, to assist you, we have planned a little... \n"
+	"'incident' in the Anomalous Materials Test Lab. This should cause just \n"
+	"enough confusion to allow you to reach Data Control Ops.\n\n"
+	"Periodically, during your mission, you will receive transmissions from me. \n"
+	"These messages will help you navigate the Black Mesa facility, and identify \n"
+	"alternative paths.\n\n"
+	"Good luck!";
 
 P1M2VOX1=
 	"You'll need to reach Dr. Zimmerman, the Sector Administrator, to get the \n"

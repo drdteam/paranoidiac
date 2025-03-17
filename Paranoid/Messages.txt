@@ -280,10 +280,11 @@ class ParanoidHudMessage play
 
 class ParanoidSoundTracker : Inventory
 {
-	int playing,countdown;
+	bool playing, dontinterrupt;
+	int countdown;
 	override void DoEffect()
 	{
-		if(countdown ==1 )
+		if(countdown == 1)
 			MessageItem.StopMessage(PlayerPawn(owner));
 		if(countdown)
 			countdown--;
@@ -304,39 +305,35 @@ class MessageItem : CustomInventory abstract
 		if(!thisplayer)
 			return;
 		let mytracker=ParanoidSoundTracker(thisplayer.FindInventory("ParanoidSoundTracker"));
-		if(!mytracker||!mytracker.playing)
+		if(!mytracker || !mytracker.playing)
 			return;
-		if(mytracker.playing!=2)
+		if(mytracker.dontinterrupt == false)
 			thisplayer.A_StartSound("radiostatic", CHAN_6, CHANF_LOCAL);
 		thisplayer.A_StopSound(7);
-		mytracker.playing=0;
+		mytracker.playing = false;
+		mytracker.dontinterrupt = false;
 		ParanoidHudMessage.Create("", id: 1);
 	}
-	static void PlayMessage(actor thisplayer,string message,string icon="TNT1A0",int dur=0)
+	static void PlayMessage(actor thisplayer,string message,string icon="TNT1A0",int dur=0, bool dontinterrupt = 0)
 	{
 		if(!thisplayer)
 			return;
+		string msg=StringTable.Localize("$"..message);
+		if(!msg.Length())
+			return;
 		let mytracker=ParanoidSoundTracker(thisplayer.FindInventory("ParanoidSoundTracker"));
-		if(!mytracker)
+		if(!mytracker || mytracker.dontinterrupt)
 			return;
-		int playing=mytracker.playing;
-		if(playing==2)
-			return;
-		if(playing==1)
+		if(mytracker.playing == true)
 		{
 			StopMessage(thisplayer);
-			if(icon!="TNT1A0")
-				return;
+			return;
 		}
-		if(icon=="TNT1A0")
-			playing=2;
-		else
-			playing=1;
-		mytracker.playing=playing;
-		if(mytracker.playing!=2)
+		mytracker.playing = true;
+		mytracker.dontinterrupt = dontinterrupt;
+		if(dontinterrupt == false)
 			thisplayer.A_StartSound("radiostatic", CHAN_6, CHANF_LOCAL);
 		thisplayer.A_StartSound(message, CHAN_7, attenuation:ATTN_STATIC);
-		string msg=StringTable.Localize("$"..message);
 		double doubledur;
 		if(dur)
 			doubledur = dur;
@@ -409,24 +406,16 @@ class MessageItemP1M4VOX2 : MessageItemHintman02{}	//P1M4: Message 2
 class MessageItemP1M4VOX3 : MessageItemHintman03{}	//P1M4: Message 3
 class MessageItemP1M4VOX4 : MessageItemHintman04{}	//P1M4: Message 4
 class MessageItemP1M5VOX1 : MessageItemHintman01{}	//P1M5: Message 1
-class MessageItemP1M5VOX2 : MessageItem{}			//P1M5: Message 2
-class MessageItemP1M5VOX3 : MessageItem{}			//P1M5: Message 3
 class MessageItemP1M6VOX1 : MessageItemHintman01{}	//P1M6: Message 1
 class MessageItemP1M6VOX2 : MessageItemHintman02{}	//P1M6: Message 2
 class MessageItemP1M6VOX3 : MessageItemHintman03{}	//P1M6: Message 3
-class MessageItemP1M6VOX4 : MessageItem{}			//P1M6: Message 4
-class MessageItemP1M6VOX5 : MessageItem{}			//P1M6: Message 5
-class MessageItemP1M6VOX6 : MessageItem{}			//P1M6: Message 6
-class MessageItemP1M6VOX7 : MessageItem{}			//P1M6: Message 7
 class MessageItemP1M7VOX1 : MessageItemHintman01{}	//P1M7: Message 1
 class MessageItemP1M7VOX2 : MessageItemHintman02{}	//P1M7: Message 2
-class MessageItemP1M7VOX3 : MessageItem{}			//P1M7: Message 3
 class MessageItemP1M8VOX1 : MessageItemHintman01{}	//P1M8: Message 1
 class MessageItemP1M8VOX2 : MessageItemHintman02{}	//P1M8: Message 2
 
 class MessageItemP2M1VOX1 : MessageItemStinson01{}	//P2M1: Message 1
 class MessageItemP2M2VOX1 : MessageItemStinson01{}	//P2M2: Message 1
-class MessageItemP2M2VOX2 : MessageItem{}			//P2M2: Message 2
 class MessageItemP2M3VOX1 : MessageItemStinson01{}	//P2M3: Message 1
 class MessageItemP2M3VOX2 : MessageItemUndernet02{}	//P2M3: Message 2
 class MessageItemP2M4VOX1 : MessageItemStinson01{}	//P2M4: Message 1
