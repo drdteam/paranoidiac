@@ -1294,16 +1294,38 @@ class HintManSitting : RandomSpawner
 
 class Admin01 : ModelBase
 {
+	override void HLModelSetup()
+	{
+		static const name modelskin[]=
+		{
+			'wheelchair_sci_000.png',
+			'wheelchair_sci_001.png',
+			'wheelchair_sci_002.png',
+			'wheelchair_sci_003.png',
+			'wheelchair_sci_004.png',
+			'wheelchair_sci_005.png',
+			'wheelchair_sci_006.png',
+			'wheelchair_sci_007.png',
+			'wheelchair_sci_008.png',
+			'wheelchair_sci_009.png',
+			'wheelchair_sci_010.png',
+			'wheelchair_sci_011.png',
+			'wheelchair_sci_012.png',
+			'wheelchair_sci_013.png'
+		};
+		for(int i = 0; i <= 13; i++)
+			A_ChangeModel("", 0, "Models", "wheelchair_sci.iqm", i, "Models", modelskin[i], CMDL_USESURFACESKIN);
+	}
 	Default
 	{
 		Radius 22;
 		Height 40;
+		+DECOUPLEDANIMATIONS
 	}
 	States
 	{
 	Spawn:
-		HLI1 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 2;
-		HLI2 AB 2;
-		Loop;
+		HLI1 A -1 NODELAY SetAnimation('idle', 20, flags: SAF_LOOP|SAF_NOOVERRIDE);
+		Stop;
 	}
 }

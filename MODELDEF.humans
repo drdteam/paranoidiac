@@ -559,54 +559,7 @@ Model HintMan
 
 Model Admin01
 {
-	Path "Models"
-	Model 0 "wheelchair_sci.iqm"
-	SurfaceSkin 0 0 "wheelchair_sci_000.png"
-	SurfaceSkin 0 1 "wheelchair_sci_001.png"
-	SurfaceSkin 0 2 "wheelchair_sci_002.png"
-	SurfaceSkin 0 3 "wheelchair_sci_003.png"
-	SurfaceSkin 0 4 "wheelchair_sci_004.png"
-	SurfaceSkin 0 5 "wheelchair_sci_005.png"
-	SurfaceSkin 0 6 "wheelchair_sci_006.png"
-	SurfaceSkin 0 7 "wheelchair_sci_007.png"
-	SurfaceSkin 0 8 "wheelchair_sci_008.png"
-	SurfaceSkin 0 9 "wheelchair_sci_009.png"
-	SurfaceSkin 0 10 "wheelchair_sci_010.png"
-	SurfaceSkin 0 11 "wheelchair_sci_011.png"
-	SurfaceSkin 0 12 "wheelchair_sci_012.png"
-	SurfaceSkin 0 13 "wheelchair_sci_013.png"
-
-	FrameIndex HLI1 A 0 0
-	FrameIndex HLI1 B 0 1
-	FrameIndex HLI1 C 0 2
-	FrameIndex HLI1 D 0 3
-	FrameIndex HLI1 E 0 4
-	FrameIndex HLI1 F 0 5
-	FrameIndex HLI1 G 0 6
-	FrameIndex HLI1 H 0 7
-	FrameIndex HLI1 I 0 8
-	FrameIndex HLI1 J 0 9
-	FrameIndex HLI1 K 0 10
-	FrameIndex HLI1 L 0 11
-	FrameIndex HLI1 M 0 12
-	FrameIndex HLI1 N 0 13
-	FrameIndex HLI1 O 0 14
-	FrameIndex HLI1 P 0 15
-	FrameIndex HLI1 Q 0 16
-	FrameIndex HLI1 R 0 17
-	FrameIndex HLI1 S 0 18
-	FrameIndex HLI1 T 0 19
-	FrameIndex HLI1 U 0 20
-	FrameIndex HLI1 V 0 21
-	FrameIndex HLI1 W 0 22
-	FrameIndex HLI1 X 0 23
-	FrameIndex HLI1 Y 0 24
-	FrameIndex HLI1 Z 0 25
-	FrameIndex HLI1 [ 0 26
-	FrameIndex HLI1 \ 0 27
-	FrameIndex HLI1 ] 0 28
-	FrameIndex HLI2 A 0 29
-	FrameIndex HLI2 B 0 30
+	BaseFrame
 }
 
 Model TramBellmer
