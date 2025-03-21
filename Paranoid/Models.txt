@@ -121,7 +121,7 @@ class modem : ModelBase
 }
 
 class server1 : ModelBase
-	{Default{Height 72;}}
+	{Default{Height 60;}}
 class server2 : server1{}
 class server3 : server1{}
 
@@ -374,33 +374,30 @@ class Urinal1 : Toilet1
 class Armchair : ModelBase
 	{Default{Height 29;}}
 class Sofa : Armchair{}
-class Chair1 : Armchair
+
+class Chair1 : ModelBase
 {
 	Default
 	{
 		Scale .9;
 		Radius 10;
+		Height 32;
 		+PUSHABLE
 	}
 }
 class Chair2 : Chair1
 	{Default{Scale .7;}}
 class Chair3 : Chair1
-{
-	Default
-	{
-		Scale 1;
-		Height 32;
-	}
-}
+	{Default{Scale 1;}}
 
-class Desklamp1 : Chair1
+class Desklamp1 : ModelBase
 {
 	Default
 	{
 		Scale .4;
 		Radius 4;
 		Height 16;
+		+PUSHABLE
 	}
 }
 class Desklamp2 : Desklamp1{}

@@ -70,7 +70,7 @@ class HLZombie : HLMonster
 	States
 	{
 	Spawn:
-		HLI1 A 2
+		HLI1 A 2 NODELAY
 		{
 			SetAnimation('idle1', 15, flags: SAF_LOOP|SAF_NOOVERRIDE);
 			A_Look();
