@@ -17,6 +17,23 @@ class ModelBase : Actor
 		HLI1 A -1;
 		Stop;
 	}
+	actor BuildBridge(vector3 bridgepos, vector2 bridgesize, double bridgeangle, int bridgetid, actor bridgemaster)
+	{
+		let thisblock = Spawn("InvisibleBridge", bridgepos);
+		if(!thisblock)
+			return null;
+		thisblock.A_SetSize(bridgesize.x, bridgesize.y);
+		thisblock.angle = bridgeangle;
+		thisblock.ChangeTid(bridgetid);
+		thisblock.master = bridgemaster;
+		return thisblock;
+	}
+	void MoveBridge(actor thisblock, vector3 bridgepos)
+	{
+		if(!thisblock)
+			return;
+		thisblock.A_Warp(AAPTR_MASTER, bridgepos.x, bridgepos.y, bridgepos.z, 0, WARPF_NOCHECKPOSITION);
+	}
 }
 class ModelFloat : ModelBase
 	{Default{+NOGRAVITY}}
@@ -418,22 +435,14 @@ class Desk2 : ModelBase
 		blocksize[1] = (20, 11);
 
 		for(int i = 0; i <= 1; i++)
-		{
-			block[i] = Spawn("InvisibleBridge", pos);
-			block[i].A_SetSize(blocksize[i].x, blocksize[i].y);
-			block[i].angle = angle;
-			block[i].ChangeTid(tid);
-			block[i].master = self;
-		}
+			block[i] = BuildBridge(blockpos[i], blocksize[i], angle, tid, self);
+
 		super.postbeginplay();
 	}
 	override void tick()
 	{
 		for(int i = 0; i <= 1; i++)
-		{
-			if(block[i])
-				block[i].A_Warp(AAPTR_MASTER, blockpos[i].x, blockpos[i].y, blockpos[i].z, 0, WARPF_NOCHECKPOSITION);
-		}
+			MoveBridge(block[i], blockpos[i]);
 		super.tick();
 	}
 	Default

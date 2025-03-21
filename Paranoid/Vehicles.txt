@@ -269,14 +269,10 @@ class SUV : ModelBase
 		glass.angle = angle;
 		glass.ChangeTid(tid);
 		glass.master = self;
+
 		for(int i = 0; i <= 3; i++)
-		{
-			block[i] = Spawn("InvisibleBridge", pos);
-			block[i].A_SetSize(blocksize[i].x, blocksize[i].y);
-			block[i].angle = angle;
-			block[i].ChangeTid(tid);
-			block[i].master = self;
-		}
+			block[i] = BuildBridge(blockpos[i], blocksize[i], angle, tid, self);
+
 		super.postbeginplay();
 	}
 	override void tick()
@@ -284,10 +280,7 @@ class SUV : ModelBase
 		if(glass)
 			glass.A_Warp(AAPTR_MASTER, 0, 0, 0, 0, WARPF_NOCHECKPOSITION);
 		for(int i = 0; i <= 3; i++)
-		{
-			if(block[i])
-				block[i].A_Warp(AAPTR_MASTER, blockpos[i].x, blockpos[i].y, blockpos[i].z, 0, WARPF_NOCHECKPOSITION);
-		}
+			MoveBridge(block[i], blockpos[i]);
 		super.tick();
 	}
 	Default
@@ -380,23 +373,15 @@ class Loader : ModelBase
 		if(nobox)
 			i++;
 		for(i; i <= 2; i++)
-		{
-			block[i] = Spawn("InvisibleBridge", pos);
-			block[i].A_SetSize(blocksize[i].x, blocksize[i].y);
-			block[i].angle = angle;
-			block[i].ChangeTid(tid);
-			block[i].master = self;
-		}
+			block[i] = BuildBridge(blockpos[i], blocksize[i], angle, tid, self);
+
 		HLModelSetup();
 		super.postbeginplay();
 	}
 	override void tick()
 	{
 		for(int i = 0; i <= 2; i++)
-		{
-			if(block[i])
-				block[i].A_Warp(AAPTR_MASTER, blockpos[i].x, blockpos[i].y, blockpos[i].z, 0, WARPF_NOCHECKPOSITION);
-		}
+			MoveBridge(block[i], blockpos[i]);
 		super.tick();
 	}
 	override void HLModelSetup()
@@ -546,22 +531,14 @@ class Bulldozer1 : ModelBase
 		blocksize[19] = (2, 64);
 
 		for(int i = 0; i <= 19; i++)
-		{
-			block[i] = Spawn("InvisibleBridge", pos);
-			block[i].A_SetSize(blocksize[i].x, blocksize[i].y);
-			block[i].angle = angle;
-			block[i].ChangeTid(tid);
-			block[i].master = self;
-		}
+			block[i] = BuildBridge(blockpos[i], blocksize[i], angle, tid, self);
+
 		super.postbeginplay();
 	}
 	override void tick()
 	{
 		for(int i = 0; i <= 19; i++)
-		{
-			if(block[i])
-				block[i].A_Warp(AAPTR_MASTER, blockpos[i].x, blockpos[i].y, blockpos[i].z, 0, WARPF_NOCHECKPOSITION);
-		}
+			MoveBridge(block[i], blockpos[i]);
 		super.tick();
 	}
 	Default
@@ -595,22 +572,14 @@ class Truck01 : ModelBase
 		blocksize[6] = (10, 82);
 
 		for(int i = 0; i <= 6; i++)
-		{
-			block[i] = Spawn("InvisibleBridge", pos);
-			block[i].A_SetSize(blocksize[i].x, blocksize[i].y);
-			block[i].angle = angle;
-			block[i].ChangeTid(tid);
-			block[i].master = self;
-		}
+			block[i] = BuildBridge(blockpos[i], blocksize[i], angle, tid, self);
+
 		super.postbeginplay();
 	}
 	override void tick()
 	{
 		for(int i = 0; i <= 6; i++)
-		{
-			if(block[i])
-				block[i].A_Warp(AAPTR_MASTER, blockpos[i].x, blockpos[i].y, blockpos[i].z, 0, WARPF_NOCHECKPOSITION);
-		}
+			MoveBridge(block[i], blockpos[i]);
 		super.tick();
 	}
 	Default
@@ -653,22 +622,14 @@ class apache : ModelBase
 		blocksize[10] = (16, 96);
 
 		for(int i = 0; i <= 10; i++)
-		{
-			block[i] = Spawn("InvisibleBridge", pos);
-			block[i].A_SetSize(blocksize[i].x, blocksize[i].y);
-			block[i].angle = angle;
-			block[i].ChangeTid(tid);
-			block[i].master = self;
-		}
+			block[i] = BuildBridge(blockpos[i], blocksize[i], angle, tid, self);
+
 		super.postbeginplay();
 	}
 	override void tick()
 	{
 		for(int i = 0; i <= 10; i++)
-		{
-			if(block[i])
-				block[i].A_Warp(AAPTR_MASTER, blockpos[i].x, blockpos[i].y, blockpos[i].z, 0, WARPF_NOCHECKPOSITION);
-		}
+			MoveBridge(block[i], blockpos[i]);
 		super.tick();
 	}
 	Default
