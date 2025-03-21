@@ -84,7 +84,7 @@ defaultmap
 	NoIntermission
 	SpawnWithWeaponRaised
 
-	//PixelRatio=1.0
+	PixelRatio=1.0
 }
 
 map TITLEMAP lookup "PARANOID_TITLEMAP"

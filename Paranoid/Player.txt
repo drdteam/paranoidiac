@@ -4,9 +4,9 @@ class RolfBellmer : PlayerPawn
 	Default
 	{
 		+NOSKIN
-		Height 60;
+		Height 60 * ModelHeightMul;
 		Player.DisplayName "Rolf Bellmer";
-		Player.ViewHeight 56;
+		Player.ViewHeight 56 * ModelHeightMul;
 		Player.AttackZOffset 24;
 		Player.WeaponSlot 1,"HLCrowbar";
 		Player.WeaponSlot 2,"HLPistol","HLDesertEagle","HLMagnum";

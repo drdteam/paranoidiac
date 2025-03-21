@@ -1,3 +1,5 @@
+const ModelHeightMul = 1.2;
+
 class HLMonster : Actor
 {
 	int walktic,walkticcur;
@@ -5,6 +7,7 @@ class HLMonster : Actor
 	override void BeginPlay()
 	{
 		HLModelSetup();
+		Height = Height *  ModelHeightMul;
 		super.BeginPlay();
 	}
 	virtual void HLModelSetup(){}

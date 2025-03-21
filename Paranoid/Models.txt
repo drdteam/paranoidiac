@@ -3,6 +3,7 @@ class ModelBase : Actor
 	override void BeginPlay()
 	{
 		HLModelSetup();
+		Height = Height *  ModelHeightMul;
 		super.BeginPlay();
 	}
 	virtual void HLModelSetup(){}
@@ -22,7 +23,7 @@ class ModelBase : Actor
 		let thisblock = Spawn("InvisibleBridge", bridgepos);
 		if(!thisblock)
 			return null;
-		thisblock.A_SetSize(bridgesize.x, bridgesize.y);
+		thisblock.A_SetSize(bridgesize.x, bridgesize.y * ModelHeightMul);
 		thisblock.angle = bridgeangle;
 		thisblock.ChangeTid(bridgetid);
 		thisblock.master = bridgemaster;
@@ -32,7 +33,7 @@ class ModelBase : Actor
 	{
 		if(!thisblock)
 			return;
-		thisblock.A_Warp(AAPTR_MASTER, bridgepos.x, bridgepos.y, bridgepos.z, 0, WARPF_NOCHECKPOSITION);
+		thisblock.A_Warp(AAPTR_MASTER, bridgepos.x, bridgepos.y, bridgepos.z * ModelHeightMul, 0, WARPF_NOCHECKPOSITION);
 	}
 }
 class ModelFloat : ModelBase
