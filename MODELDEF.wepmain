@@ -650,15 +650,15 @@ Model HLMagnum
 
 Model HLShotgun
 {
+	USEACTORPITCH
+	CORRECTPIXELSTRETCH
 	Path "Models"
 	Model 0 "w_shotgun.md3"
 	Skin 0 "w_shotgun.png"
 
 	FrameIndex HLS1 A 0 0
 
-	Model 0 "shotgun1.md3"
-	Skin 0 "w_shotgun.png"
-
+	Offset -19 0 -5
 	FrameIndex HLS1 B 0 0
 
 	Scale -1 1 1
@@ -815,14 +815,15 @@ Model HLShotgun
 
 Model HLAssaultRifle
 {
+	USEACTORROLL
+	CORRECTPIXELSTRETCH
 	Path "Models"
 	Model 0 "w_9mmar.md3"
 	Skin 0 "w_9mmar.png"
 
 	FrameIndex HLS1 A 0 0
 
-	Model 0 "9mmar1.md3"
-
+	Offset 0 -26 2
 	FrameIndex HLS1 B 0 0
 
 	Scale -1 1 1

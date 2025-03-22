@@ -716,9 +716,11 @@ class HLShotgunPickup2 : RandomSpawner
 	}
 	override void PostSpawn(Actor spawned)
 	{
-		spawned.height=height;
+		spawned.height = height;
 		spawned.A_SetSize(radius);
-		spawned.frame=1;
+		spawned.angle += 270;
+		spawned.pitch = 100;
+		spawned.frame = 1;
 	}
 }
 
@@ -911,8 +913,22 @@ class HLShotgunBox : HLShotgunAmmo
 //===================
 
 //Vertical
-class HLAssaultRiflePickup2 : HLShotgunPickup2
-	{Default{DropItem "HLAssaultRifle";}}
+class HLAssaultRiflePickup2 : RandomSpawner
+{
+	Default
+	{
+		Radius 4;
+		Height 32;
+		DropItem "HLAssaultRifle";
+	}
+	override void PostSpawn(Actor spawned)
+	{
+		spawned.height = height;
+		spawned.A_SetSize(radius);
+		spawned.roll = -79;
+		spawned.frame = 1;
+	}
+}
 
 class HLAssaultRifle : ParanoidWeapon
 {
