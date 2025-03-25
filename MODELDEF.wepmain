@@ -1553,6 +1553,7 @@ Model HLXBow
 
 Model HLGluonGun
 {
+	INTERPOLATEDOUBLEDFRAMES
 	Path "Models"
 	Model 0 "w_egon.md3"
 	Skin 0 "w_egon.png"

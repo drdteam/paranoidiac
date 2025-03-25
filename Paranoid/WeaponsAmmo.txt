@@ -1768,41 +1768,20 @@ class HLGluonGun : ParanoidWeapon
 		HLI1 A 1 A_HLWeaponReady(40,1);
 		Loop;
 	Fire:
-		HLF1 A 0 A_HLDryFireCheck;
-		HLF1 A 0
+		HLF1 P 0 A_HLDryFireCheck;
+		HLF1 P 0
 		{
 			invoker.GluonSoundCountdown=35;
 			A_StartSound("weapons/gluonstart", CHAN_WEAPON);
 		}
-	ShotLoop:
-		TNT1 A 0 A_HLWeaponModel;
-		HLF1 A 1 BRIGHT A_HLEgon1;
-		HLF1 B 1 BRIGHT A_HLEgon2;
-		HLF1 C 1 BRIGHT A_HLEgon3;
-		HLF1 D 1 BRIGHT A_HLEgon2;
-		HLF1 D 0 A_HLEgon4;
-		HLF1 D 0 A_ReFire("ShotLoop2");
-	ShotLoop2:
-		HLF1 E 1 BRIGHT A_HLEgon1;
-		HLF1 F 1 BRIGHT A_HLEgon2;
-		HLF1 G 1 BRIGHT A_HLEgon3;
-		HLF1 H 1 BRIGHT A_HLEgon2;
-		HLF1 H 0 A_HLEgon4;
-		HLF1 H 0 A_ReFire("ShotLoop3");
-	ShotLoop3:
-		HLF1 I 1 BRIGHT A_HLEgon1;
-		HLF1 J 1 BRIGHT A_HLEgon2;
-		HLF1 K 1 BRIGHT A_HLEgon3;
-		HLF1 L 1 BRIGHT A_HLEgon2;
-		HLF1 L 0 A_HLEgon4;
-		HLF1 L 0 A_ReFire("ShotLoop4");
-	ShotLoop4:
-		HLF1 M 1 BRIGHT A_HLEgon1;
-		HLF1 N 1 BRIGHT A_HLEgon2;
-		HLF1 O 1 BRIGHT A_HLEgon3;
-		HLF1 P 1 BRIGHT A_HLEgon2;
-		HLF1 P 0 A_HLEgon4;
-		HLF1 P 0 A_ReFire("ShotLoop");
+	FireLoop:
+		HLF1 # 0 A_HLWeaponModel;
+		HLF1 # 1 BRIGHT A_HLEgon1;
+		HLF1 # 1 BRIGHT A_HLEgon2;
+		HLF1 # 1 BRIGHT A_HLEgon3;
+		HLF1 # 1 BRIGHT A_HLEgon2;
+		HLF1 # 0 A_HLEgon4;
+		HLF1 # 0 A_ReFire("FireLoop");
 	PowerDown:
 		HLI1 A 0 A_StartSound("weapons/gluonoff", CHAN_WEAPON);
 		HLI1 A 6 A_HLWeaponModel;
@@ -1831,15 +1810,20 @@ class HLGluonGun : ParanoidWeapon
 		A_FireProjectile("GluonFire",0,0,4,2);
 		A_FireProjectile("GluonFire2",0,0,4,2);
 		A_FireProjectile("GluonFire3",0,0,4,2);
+		A_HLEgonAnimate();
 		return state(null);
 	}
 	action void A_HLEgon2()
-		{A_FireProjectile("GluonFakeBurst",0,0,4,2);}
+	{
+		A_FireProjectile("GluonFakeBurst",0,0,4,2);
+		A_HLEgonAnimate();
+	}
 	action void A_HLEgon3()
 	{
 		A_FireProjectile("GluonPrimaryBurst",0,0,4,2);
 		A_FireProjectile("GluonFire4",0,0,4,2);
 		A_FireProjectile("GluonFire5",0,0,4,2);
+		A_HLEgonAnimate();
 	}
 	action void A_HLEgon4()
 	{
@@ -1849,6 +1833,7 @@ class HLGluonGun : ParanoidWeapon
 	}
 	action void A_HLEgonAnimate()
 	{
+		//Cycle through frames A-P
 		if(player==null)
 			return;
 		let weapon=player.ReadyWeapon;
@@ -1876,7 +1861,8 @@ class HLGluonGunMag : Ammo
 
 class GluonPrimaryBurst : Actor
 {
-	int life[2];
+	int life, lifemax;
+	Property lifemax:lifemax;
 	Default
 	{
 		Speed 2;
@@ -1894,31 +1880,31 @@ class GluonPrimaryBurst : Actor
 		+EXPLODEONWATER
 		+NOTIMEFREEZE
 		DamageType "PlasmaDisint";
+		GluonPrimaryBurst.lifemax 25000;
 	}
 	States
 	{
 	Spawn:
 		TNT1 A 0 NODELAY A_SpawnItemEx("GluonSpiral",0,0,8,vel.x,vel.y,vel.z,0,SXF_ABSOLUTEMOMENTUM|SXF_TRANSFERPOINTERS);
-		TNT1 A 0 A_Jump(256,"Movement");
 	Movement:
-		TNT1 A 0 A_JumpIf(life[0]>=25000,"Death");
-		//This must be done multiple times, or else it will jump beyond walls. This could
-		//easily cause an engine overload.
-		TNT1 A 0 A_Warp(AAPTR_DEFAULT,vel.x,vel.y,vel.z,0,WARPF_ABSOLUTEOFFSET,1);
-		Goto MoveOut;
-		TNT1 A 0 A_Warp(AAPTR_DEFAULT,vel.x,vel.y,vel.z,0,WARPF_ABSOLUTEOFFSET,1);
-		Goto MoveOut;
-		TNT1 A 0 A_Warp(AAPTR_DEFAULT,vel.x,vel.y,vel.z,0,WARPF_ABSOLUTEOFFSET,1);
-		Goto MoveOut;
-		TNT1 A 0 A_Warp(AAPTR_DEFAULT,vel.x,vel.y,vel.z,0,WARPF_ABSOLUTEOFFSET,1);
-		Goto MoveOut;
-		TNT1 A 0 A_Warp(AAPTR_DEFAULT,vel.x,vel.y,vel.z,0,WARPF_ABSOLUTEOFFSET,1);
-		Goto MoveOut;
 		TNT1 A 0
 		{
-			if(life[0]<400&&!CheckIfSeen())
+			state warpstate;
+			bool warpbool;
+			if(life >= lifemax)
+				return resolvestate("Death");
+			//This must be done multiple times, or else it will jump beyond walls.
+			//This could easily cause an engine overload.
+			for(int i = 0; i < 5; i++)
+			{
+				[warpstate, warpbool] = A_Warp(AAPTR_DEFAULT,vel.x,vel.y,vel.z,0,WARPF_ABSOLUTEOFFSET);
+				if(!warpbool)
+					return resolvestate("MoveOut");
+			}
+			if(life<4000&&!CheckIfSeen())
 				A_SpawnItemEx("GluonTrailV2",vel.x+frandom(-1.0,1.0),0,vel.z+frandom(-1.0,1.0),flags:SXF_ABSOLUTEMOMENTUM);
-			life[0]++;
+			life++;
+			return state(null);
 		}
 		Loop;
 	MoveOut:
@@ -1929,7 +1915,7 @@ class GluonPrimaryBurst : Actor
 		{
 			A_Explode(random(40,60),75,0);
 			A_SpawnItemEx("GluonTrail");
-			A_SpawnProjectile("RipperEffect",0,0,0,CMF_AIMDIRECTION|CMF_TRACKOWNER);
+			A_SpawnProjectile("GluonRipperEffect",0,0,0,CMF_AIMDIRECTION|CMF_TRACKOWNER);
 		}
 		Stop;
 	}
@@ -1943,28 +1929,10 @@ class GluonFakeBurst : GluonPrimaryBurst
 		+PAINLESS
 		+BLOODLESSIMPACT
 		+DONTSPLASH
+		GluonPrimaryBurst.lifemax 20000;
 	}
 	States
 	{
-	Movement:
-		TNT1 A 0 A_JumpIf(life[0]>=20000,"Death");
-		TNT1 A 0 A_Warp(AAPTR_DEFAULT,vel.x,vel.y,vel.z,0,WARPF_ABSOLUTEOFFSET,1);
-		Goto MoveOut;
-		TNT1 A 0 A_Warp(AAPTR_DEFAULT,vel.x,vel.y,vel.z,0,WARPF_ABSOLUTEOFFSET,1);
-		Goto MoveOut;
-		TNT1 A 0 A_Warp(AAPTR_DEFAULT,vel.x,vel.y,vel.z,0,WARPF_ABSOLUTEOFFSET,1);
-		Goto MoveOut;
-		TNT1 A 0 A_Warp(AAPTR_DEFAULT,vel.x,vel.y,vel.z,0,WARPF_ABSOLUTEOFFSET,1);
-		Goto MoveOut;
-		TNT1 A 0 A_Warp(AAPTR_DEFAULT,vel.x,vel.y,vel.z,0,WARPF_ABSOLUTEOFFSET,1);
-		Goto MoveOut;
-		TNT1 A 0
-		{
-			if(life[0]<4000&&!CheckIfSeen())
-				A_SpawnItemEx("GluonTrailV2",vel.x+frandom(-1.0,1.0),0,vel.z+frandom(-1.0,1.0),flags:SXF_ABSOLUTEMOMENTUM);
-			life[0]++;
-		}
-		Loop;
 	MoveOut:
 	Death:
 		TNT1 A 1;
@@ -2058,38 +2026,6 @@ class GluonTrailV3 : GluonTrailV2
 		Stop;
 	}
 }
-
-class GluonPrimaryBurst2 : GluonPrimaryBurst
-{
-	States
-	{
-	Spawn:
-		TNT1 A 1 A_SpawnProjectile("GluonOutsideTrailSpawner",0,0,90,CMF_AIMDIRECTION,30);
-		TNT1 A 1 A_SpawnProjectile("GluonOutsideTrailSpawner",0,0,90,CMF_AIMDIRECTION,60);
-		TNT1 A 1 A_SpawnProjectile("GluonOutsideTrailSpawner",0,0,90,CMF_AIMDIRECTION,90);
-		TNT1 A 1 A_SpawnProjectile("GluonOutsideTrailSpawner",0,0,-90,CMF_AIMDIRECTION,60);
-		TNT1 A 1 A_SpawnProjectile("GluonOutsideTrailSpawner",0,0,-90,CMF_AIMDIRECTION,30);
-		TNT1 A 1 A_SpawnProjectile("GluonOutsideTrailSpawner",0,0,-90,CMF_AIMDIRECTION,0);
-		TNT1 A 1 A_SpawnProjectile("GluonOutsideTrailSpawner",0,0,-90,CMF_AIMDIRECTION,-30);
-		TNT1 A 1 A_SpawnProjectile("GluonOutsideTrailSpawner",0,0,-90,CMF_AIMDIRECTION,-60);
-		TNT1 A 1 A_SpawnProjectile("GluonOutsideTrailSpawner",0,0,-90,CMF_AIMDIRECTION,-90);
-		TNT1 A 1 A_SpawnProjectile("GluonOutsideTrailSpawner",0,0,90,CMF_AIMDIRECTION,-60);
-		TNT1 A 1 A_SpawnProjectile("GluonOutsideTrailSpawner",0,0,90,CMF_AIMDIRECTION,-30);
-		TNT1 A 1 A_SpawnProjectile("GluonOutsideTrailSpawner",0,0,90,CMF_AIMDIRECTION,0);
-		Loop;
-	}
-}
-
-class GluonPrimaryBurst3 : GluonPrimaryBurst2{States{Spawn:Goto Super::Spawn+1;}}
-class GluonPrimaryBurst4 : GluonPrimaryBurst2{States{Spawn:Goto Super::Spawn+2;}}
-class GluonPrimaryBurst5 : GluonPrimaryBurst2{States{Spawn:Goto Super::Spawn+3;}}
-class GluonPrimaryBurst6 : GluonPrimaryBurst2{States{Spawn:Goto Super::Spawn+4;}}
-class GluonPrimaryBurst7 : GluonPrimaryBurst2{States{Spawn:Goto Super::Spawn+5;}}
-class GluonPrimaryBurst8 : GluonPrimaryBurst2{States{Spawn:Goto Super::Spawn+6;}}
-class GluonPrimaryBurst9 : GluonPrimaryBurst2{States{Spawn:Goto Super::Spawn+7;}}
-class GluonPrimaryBurst10 : GluonPrimaryBurst2{States{Spawn:Goto Super::Spawn+8;}}
-class GluonPrimaryBurst11 : GluonPrimaryBurst2{States{Spawn:Goto Super::Spawn+9;}}
-class GluonPrimaryBurst12 : GluonPrimaryBurst2{States{Spawn:Goto Super::Spawn+10;}}
 
 //The Gluon "flash", which up close, is deadly to those who get in front of the gun.
 class GluonFire : Actor
@@ -2187,7 +2123,7 @@ class GluonOutsideTrailSpawner : Actor
 	}
 }
 
-class RipperEffect : Actor
+class GluonRipperEffect : Actor
 {
 	Default
 	{
