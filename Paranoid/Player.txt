@@ -4,7 +4,7 @@ class RolfBellmer : PlayerPawn
 	Default
 	{
 		+NOSKIN
-		Height 60 * ModelHeightMul;
+		Height 60;
 		Player.DisplayName "Rolf Bellmer";
 		Player.ViewHeight 56 * ModelHeightMul;
 		Player.AttackZOffset 24;
