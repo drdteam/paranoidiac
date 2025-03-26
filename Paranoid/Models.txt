@@ -582,6 +582,31 @@ class Pipe2 : ModelBase
 
 class Pipe3 : ModelBase
 {
+	actor block[4];
+	vector3 blockpos[4];
+	vector2 blocksize[4];
+	override void postbeginplay()
+	{
+		blockpos[0] = (0, 32, 4);
+		blockpos[1] = (0, 72, 4);
+		blockpos[2] = (0, -32, 4);
+		blockpos[3] = (0, -72, 4);
+		blocksize[0] = (10, 24);
+		blocksize[1] = (10, 24);
+		blocksize[2] = (10, 24);
+		blocksize[3] = (10, 24);
+
+		for(int i = 0; i <= 1; i++)
+			block[i] = BuildBridge(blockpos[i], blocksize[i], angle, tid, self);
+
+		super.postbeginplay();
+	}
+	override void tick()
+	{
+		for(int i = 0; i <= 1; i++)
+			MoveBridge(block[i], blockpos[i]);
+		super.tick();
+	}
 	Default
 	{
 		Scale .5;
@@ -590,8 +615,15 @@ class Pipe3 : ModelBase
 	}
 }
 class Pipe3a : Pipe3{}
-class Pipe4 : Pipe3
-	{Default{Height 33;}}
+class Pipe4 : ModelBase
+{
+	Default
+	{
+		Scale .5;
+		Radius 10;
+		Height 33;
+	}
+}
 
 class pipe5 : ModelBase
 {
@@ -603,10 +635,11 @@ class pipe5 : ModelBase
 	}
 }
 
-class pipe6 : Pipe3
+class pipe6 : ModelBase
 {
 	Default
 	{
+		Scale .5;
 		Radius 6;
 		Height 68;
 	}
@@ -705,8 +738,8 @@ class propane1a : ModelBase
 	vector2 blocksize[2];
 	override void postbeginplay()
 	{
-		blockpos[0] = (0, 32, 0);
-		blockpos[1] = (0, -32, 0);
+		blockpos[0] = (32, 0, 0);
+		blockpos[1] = (-32, 0, 0);
 		blocksize[0] = (20, 40);
 		blocksize[1] = (20, 40);
 
