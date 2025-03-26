@@ -596,14 +596,14 @@ class Pipe3 : ModelBase
 		blocksize[2] = (10, 24);
 		blocksize[3] = (10, 24);
 
-		for(int i = 0; i <= 1; i++)
+		for(int i = 0; i <= 3; i++)
 			block[i] = BuildBridge(blockpos[i], blocksize[i], angle, tid, self);
 
 		super.postbeginplay();
 	}
 	override void tick()
 	{
-		for(int i = 0; i <= 1; i++)
+		for(int i = 0; i <= 3; i++)
 			MoveBridge(block[i], blockpos[i]);
 		super.tick();
 	}
