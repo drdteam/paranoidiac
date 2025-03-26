@@ -574,7 +574,40 @@ class TankGlass : ModelBase
 //=======================
 
 class Pipe1 : ModelBase
-	{Default{Height 58;}}
+{
+	actor block[6];
+	vector3 blockpos[6];
+	vector2 blocksize[6];
+	override void postbeginplay()
+	{
+		blockpos[0] = (0, 63, 0);
+		blockpos[1] = (0, 111, 0);
+		blockpos[2] = (0, 159, 0);
+		blockpos[3] = (0, -63, 0);
+		blockpos[4] = (0, -111, 0);
+		blockpos[5] = (0, -159, 0);
+
+		blocksize[0] = (20, 46);
+		blocksize[1] = (20, 46);
+		blocksize[2] = (20, 46);
+		blocksize[3] = (20, 46);
+		blocksize[4] = (20, 46);
+		blocksize[5] = (20, 46);
+
+		for(int i = 0; i <= 5; i++)
+			block[i] = BuildBridge(blockpos[i], blocksize[i], angle, tid, self);
+
+		super.postbeginplay();
+	}
+	override void tick()
+	{
+		for(int i = 0; i <= 5; i++)
+			MoveBridge(block[i], blockpos[i]);
+		super.tick();
+	}
+	Default
+		{Height 46;}
+}
 class Pipe1a : pipe1{}
 
 class Pipe2 : ModelBase
