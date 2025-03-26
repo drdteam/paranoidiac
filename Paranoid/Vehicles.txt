@@ -642,6 +642,64 @@ class apache : ModelBase
 //Tram
 class Tram : ModelBase
 {
+	actor block[20];
+	vector3 blockpos[20];
+	vector2 blocksize[20];
+	override void postbeginplay()
+	{
+		blockpos[0] = (48, 16, 0);
+		blockpos[1] = (48, -16, 0);
+		blockpos[2] = (-48, 16, 0);
+		blockpos[3] = (-48, -16, 0);
+		blockpos[4] = (24, 0, 0);
+		blockpos[5] = (24, 24, 0);
+		blockpos[6] = (24, -24, 0);
+		blockpos[7] = (-24, 0, 0);
+		blockpos[8] = (-24, 24, 0);
+		blockpos[9] = (-24, -24, 0);
+		blockpos[10] = (76, 0, 0);
+		blockpos[11] = (76, 16, 0);
+		blockpos[12] = (76, -16, 0);
+		blockpos[13] = (-76, 0, 0);
+		blockpos[14] = (-76, 16, 0);
+		blockpos[15] = (-76, -16, 0);
+		blockpos[16] = (76, 32, 0);
+		blockpos[17] = (76, -32, 0);
+		blockpos[18] = (-76, 32, 0);
+		blockpos[19] = (-76, -32, 0);
+
+		blocksize[0] = (20, 32);
+		blocksize[1] = (20, 32);
+		blocksize[2] = (20, 32);
+		blocksize[3] = (20, 32);
+		blocksize[4] = (1, 64);
+		blocksize[5] = (1, 64);
+		blocksize[6] = (1, 64);
+		blocksize[7] = (1, 64);
+		blocksize[8] = (1, 64);
+		blocksize[9] = (1, 64);
+		blocksize[10] = (2, 56);
+		blocksize[11] = (2, 56);
+		blocksize[12] = (2, 56);
+		blocksize[13] = (2, 56);
+		blocksize[14] = (2, 56);
+		blocksize[15] = (2, 56);
+		blocksize[16] = (1, 56);
+		blocksize[17] = (1, 56);
+		blocksize[18] = (1, 56);
+		blocksize[19] = (1, 56);
+
+		for(int i = 0; i <= 19; i++)
+			block[i] = BuildBridge(blockpos[i], blocksize[i], angle, tid, self);
+
+		super.postbeginplay();
+	}
+	override void tick()
+	{
+		for(int i = 0; i <= 19; i++)
+			MoveBridge(block[i], blockpos[i]);
+		super.tick();
+	}
 	Default
 	{
 		Radius 40;
