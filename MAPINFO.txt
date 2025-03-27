@@ -586,6 +586,7 @@ DoomEdNums
 	30325=TramBellmer
 	30326=TramBattery
 	30327=SgtHarrison
+	30328=TramIntro
 	30329=HLScientistQuiet
 	30334=TankGlass
 	30335=DissectedHeadCrab

@@ -1517,15 +1517,13 @@ Model Tesla
 
 Model Tram
 {
-	Path "Models"
-	Model 0 "tram.md3"
-	SurfaceSkin 0 0 "tram.jpg"
-	SurfaceSkin 0 1 "tram.jpg"
-	SurfaceSkin 0 2 "tram.jpg"
-	SurfaceSkin 0 3 "tram_supports.jpg"
-	SurfaceSkin 0 4 "tram_panel01.jpg"
-	SurfaceSkin 0 5 "tram_panel02.jpg"
-	Scale .8 .8 .8
+	ZOffset 32
+
+	FrameIndex HLI1 A 0 0
+}
+
+Model TramIntro
+{
 	ZOffset 32
 
 	FrameIndex HLI1 A 0 0
@@ -1540,7 +1538,8 @@ Model TramBattery
 	SurfaceSkin 0 2 "w_battery_002.png"
 	SurfaceSkin 0 3 "w_battery_003.png"
 	SurfaceSkin 0 4 "w_battery_004.png"
-	Offset -10 -2 72
+
+	Offset -10 0 84
 
 	FrameIndex HLI1 A 0 0
 }
