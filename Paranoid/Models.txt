@@ -18,6 +18,10 @@ class ModelBase : Actor
 		HLI1 A -1;
 		Stop;
 	}
+	int blockmax;
+	actor block[25];
+	vector3 blockpos[25];
+	vector2 blocksize[25];
 	actor BuildBridge(vector3 bridgepos, vector2 bridgesize, double bridgeangle, int bridgetid, actor bridgemaster)
 	{
 		let thisblock = Spawn("InvisibleBridge", bridgepos);
@@ -34,6 +38,18 @@ class ModelBase : Actor
 		if(!thisblock)
 			return;
 		thisblock.A_Warp(AAPTR_MASTER, bridgepos.x, bridgepos.y, bridgepos.z * ModelHeightMul, 0, WARPF_NOCHECKPOSITION);
+	}
+	override void PostBeginPlay()
+	{
+		for(int i = 0; i < blockmax; i++)
+			block[i] = BuildBridge(blockpos[i], blocksize[i], angle, tid, self);
+		super.PostBeginPlay();
+	}
+	override void tick()
+	{
+		for(int i = 0; i < blockmax; i++)
+			MoveBridge(block[i], blockpos[i]);
+		super.tick();
 	}
 }
 class ModelFloat : ModelBase
@@ -151,22 +167,13 @@ class server3 : server1{}
 
 class Transformer1 : ModelBase
 {
-	actor block;
-	vector3 blockpos;
-	vector2 blocksize;
 	override void postbeginplay()
 	{
-		blockpos = (-8, 8, 88);
-		blocksize = (4, 16);
-
-		block = BuildBridge(blockpos, blocksize, angle, tid, self);
+		blockmax = 1;
+		blockpos[0] = (-8, 8, 88);
+		blocksize[0] = (4, 16);
 
 		super.postbeginplay();
-	}
-	override void tick()
-	{
-		MoveBridge(block, blockpos);
-		super.tick();
 	}
 	Default
 	{
@@ -265,33 +272,21 @@ class Forklift2 : ModelBase
 
 class Backhoe1 : ModelBase
 {
-	actor block[5];
-	vector3 blockpos[5];
-	vector2 blocksize[5];
 	override void postbeginplay()
 	{
+		blockmax = 5;
 		blockpos[0] = (32, 0, 0);
 		blockpos[1] = (64, 0, 0);
 		blockpos[2] = (-16, 0, 0);
 		blockpos[3] = (-56, 0, 0);
 		blockpos[4] = (-88, 0, 0);
-
 		blocksize[0] = (32, 48);
 		blocksize[1] = (32, 32);
 		blocksize[2] = (32, 64);
 		blocksize[3] = (12, 64);
 		blocksize[4] = (12, 64);
 
-		for(int i = 0; i <= 4; i++)
-			block[i] = BuildBridge(blockpos[i], blocksize[i], angle, tid, self);
-
 		super.postbeginplay();
-	}
-	override void tick()
-	{
-		for(int i = 0; i <= 4; i++)
-			MoveBridge(block[i], blockpos[i]);
-		super.tick();
 	}
 	Default
 	{
@@ -302,27 +297,15 @@ class Backhoe1 : ModelBase
 
 class Trailer1 : ModelBase
 {
-	actor block[2];
-	vector3 blockpos[2];
-	vector2 blocksize[2];
 	override void postbeginplay()
 	{
+		blockmax = 2;
 		blockpos[0] = (144, 40, 0);
 		blockpos[1] = (144, -40, 0);
-
 		blocksize[0] = (2, 40);
 		blocksize[1] = (2, 40);
 
-		for(int i = 0; i <= 1; i++)
-			block[i] = BuildBridge(blockpos[i], blocksize[i], angle, tid, self);
-
 		super.postbeginplay();
-	}
-	override void tick()
-	{
-		for(int i = 0; i <= 1; i++)
-			MoveBridge(block[i], blockpos[i]);
-		super.tick();
 	}
 	Default
 	{
@@ -334,29 +317,17 @@ class Trailer2 : Trailer1{}
 
 class Generator1 : ModelBase
 {
-	actor block[3];
-	vector3 blockpos[3];
-	vector2 blocksize[3];
 	override void postbeginplay()
 	{
+		blockmax = 3;
 		blockpos[0] = (48, 0, 0);
 		blockpos[1] = (80, 0, 0);
 		blockpos[2] = (-24, 0, 0);
-
 		blocksize[0] = (8, 24);
 		blocksize[1] = (4, 12);
 		blocksize[2] = (24, 48);
 
-		for(int i = 0; i <= 2; i++)
-			block[i] = BuildBridge(blockpos[i], blocksize[i], angle, tid, self);
-
 		super.postbeginplay();
-	}
-	override void tick()
-	{
-		for(int i = 0; i <= 2; i++)
-			MoveBridge(block[i], blockpos[i]);
-		super.tick();
 	}
 	Default
 	{
@@ -378,27 +349,15 @@ class Generator2 : ModelBase
 
 class Generator3 : ModelBase
 {
-	actor block[2];
-	vector3 blockpos[2];
-	vector2 blocksize[2];
 	override void postbeginplay()
 	{
+		blockmax = 2;
 		blockpos[0] = (128, -8, 0);
 		blockpos[1] = (-112, -8, 0);
-
 		blocksize[0] = (64, 64);
 		blocksize[1] = (48, 48);
 
-		for(int i = 0; i <= 1; i++)
-			block[i] = BuildBridge(blockpos[i], blocksize[i], angle, tid, self);
-
 		super.postbeginplay();
-	}
-	override void tick()
-	{
-		for(int i = 0; i <= 1; i++)
-			MoveBridge(block[i], blockpos[i]);
-		super.tick();
 	}
 	Default
 	{
@@ -413,26 +372,15 @@ class Generator4 : ModelBase
 		{SetStateLabel("Active");}
 	override void Deactivate (Actor activator)
 		{SetStateLabel("Inactive");}
-	actor block[2];
-	vector3 blockpos[2];
-	vector2 blocksize[2];
 	override void postbeginplay()
 	{
+		blockmax = 2;
 		blockpos[0] = (0, 64, 0);
 		blockpos[1] = (0, -64, 0);
 		blocksize[0] = (32, 32);
 		blocksize[1] = (24, 24);
 
-		for(int i = 0; i <= 1; i++)
-			block[i] = BuildBridge(blockpos[i], blocksize[i], angle, tid, self);
-
 		super.postbeginplay();
-	}
-	override void tick()
-	{
-		for(int i = 0; i <= 1; i++)
-			MoveBridge(block[i], blockpos[i]);
-		super.tick();
 	}
 	Default
 	{
@@ -576,26 +524,15 @@ class Desk1 : ModelBase
 
 class Desk2 : ModelBase
 {
-	actor block[2];
-	vector3 blockpos[2];
-	vector2 blocksize[2];
 	override void postbeginplay()
 	{
+		blockmax = 2;
 		blockpos[0] = (0, 21, 16);
 		blockpos[1] = (0, -21, 16);
 		blocksize[0] = (20, 11);
 		blocksize[1] = (20, 11);
 
-		for(int i = 0; i <= 1; i++)
-			block[i] = BuildBridge(blockpos[i], blocksize[i], angle, tid, self);
-
 		super.postbeginplay();
-	}
-	override void tick()
-	{
-		for(int i = 0; i <= 1; i++)
-			MoveBridge(block[i], blockpos[i]);
-		super.tick();
 	}
 	Default
 	{
@@ -726,31 +663,19 @@ class TankGlass : ModelBase
 
 class Pipe1 : ModelBase
 {
-	actor block[6];
-	vector3 blockpos[6];
-	vector2 blocksize[6];
 	override void postbeginplay()
 	{
+		blockmax = 6;
 		blockpos[0] = (0, 63, 0);
 		blockpos[1] = (0, 111, 0);
 		blockpos[2] = (0, 159, 0);
 		blockpos[3] = (0, -63, 0);
 		blockpos[4] = (0, -111, 0);
 		blockpos[5] = (0, -159, 0);
-
-		for(int i = 0; i <= 5; i++)
+		for(int i = 0; i < blockmax; i++)
 			blocksize[i] = (20, 46);
 
-		for(int i = 0; i <= 5; i++)
-			block[i] = BuildBridge(blockpos[i], blocksize[i], angle, tid, self);
-
 		super.postbeginplay();
-	}
-	override void tick()
-	{
-		for(int i = 0; i <= 5; i++)
-			MoveBridge(block[i], blockpos[i]);
-		super.tick();
 	}
 	Default
 		{Height 46;}
@@ -762,29 +687,17 @@ class Pipe2 : ModelBase
 
 class Pipe3 : ModelBase
 {
-	actor block[4];
-	vector3 blockpos[4];
-	vector2 blocksize[4];
 	override void postbeginplay()
 	{
+		blockmax = 4;
 		blockpos[0] = (0, 32, 0);
 		blockpos[1] = (0, 72, 0);
 		blockpos[2] = (0, -32, 0);
 		blockpos[3] = (0, -72, 0);
-
-		for(int i = 0; i <= 3; i++)
+		for(int i = 0; i < blockmax; i++)
 			blocksize[i] = (10, 29);
 
-		for(int i = 0; i <= 3; i++)
-			block[i] = BuildBridge(blockpos[i], blocksize[i], angle, tid, self);
-
 		super.postbeginplay();
-	}
-	override void tick()
-	{
-		for(int i = 0; i <= 3; i++)
-			MoveBridge(block[i], blockpos[i]);
-		super.tick();
 	}
 	Default
 	{
@@ -893,27 +806,15 @@ class tank04 : ModelBase
 
 class tank05 : ModelBase
 {
-	actor block[2];
-	vector3 blockpos[2];
-	vector2 blocksize[2];
 	override void postbeginplay()
 	{
+		blockmax = 2;
 		blockpos[0] = (20, 0, 0);
 		blockpos[1] = (-20, 0, 0);
-
 		blocksize[0] = (12, 36);
 		blocksize[1] = (12, 36);
 
-		for(int i = 0; i <= 1; i++)
-			block[i] = BuildBridge(blockpos[i], blocksize[i], angle, tid, self);
-
 		super.postbeginplay();
-	}
-	override void tick()
-	{
-		for(int i = 0; i <= 1; i++)
-			MoveBridge(block[i], blockpos[i]);
-		super.tick();
 	}
 	Default
 	{
@@ -935,26 +836,15 @@ class tank06 : ModelBase
 
 class propane1a : ModelBase
 {
-	actor block[2];
-	vector3 blockpos[2];
-	vector2 blocksize[2];
 	override void postbeginplay()
 	{
+		blockmax = 2;
 		blockpos[0] = (32, 0, 0);
 		blockpos[1] = (-32, 0, 0);
 		blocksize[0] = (20, 40);
 		blocksize[1] = (20, 40);
 
-		for(int i = 0; i <= 1; i++)
-			block[i] = BuildBridge(blockpos[i], blocksize[i], angle, tid, self);
-
 		super.postbeginplay();
-	}
-	override void tick()
-	{
-		for(int i = 0; i <= 1; i++)
-			MoveBridge(block[i], blockpos[i]);
-		super.tick();
 	}
 	Default
 	{
@@ -977,22 +867,13 @@ class propane2 : ModelBase
 
 class Valve1 : ModelBase
 {
-	actor block;
-	vector3 blockpos;
-	vector2 blocksize;
 	override void postbeginplay()
 	{
-		blockpos = (0, 28, 32);
-		blocksize = (16, 48);
-
-		block = BuildBridge(blockpos, blocksize, angle, tid, self);
+		blockmax = 1;
+		blockpos[0] = (0, 28, 32);
+		blocksize[0] = (16, 48);
 
 		super.postbeginplay();
-	}
-	override void tick()
-	{
-		MoveBridge(block, blockpos);
-		super.tick();
 	}
 	Default
 	{
@@ -1163,27 +1044,15 @@ class RKive : ModelBase
 
 class BookShelf1a : RKive
 {
-	actor block[2];
-	vector3 blockpos[2];
-	vector2 blocksize[2];
 	override void postbeginplay()
 	{
+		blockmax = 2;
 		blockpos[0] = (0, 24, 0);
 		blockpos[1] = (0, -24, 0);
-
 		blocksize[0] = (8, 64);
 		blocksize[1] = (8, 64);
 
-		for(int i = 0; i <= 1; i++)
-			block[i] = BuildBridge(blockpos[i], blocksize[i], angle, tid, self);
-
 		super.postbeginplay();
-	}
-	override void tick()
-	{
-		for(int i = 0; i <= 1; i++)
-			MoveBridge(block[i], blockpos[i]);
-		super.tick();
 	}
 	Default
 		{Height 64;}
@@ -1389,26 +1258,15 @@ class PConsole5 : PConsole{}
 
 class Barrier1 : ModelBase
 {
-	actor block[2];
-	vector3 blockpos[2];
-	vector2 blocksize[2];
 	override void postbeginplay()
 	{
+		blockmax = 2;
 		blockpos[0] = (0, 20, 0);
 		blockpos[1] = (0, -20, 0);
 		blocksize[0] = (4, 40);
 		blocksize[1] = (4, 40);
 
-		for(int i = 0; i <= 1; i++)
-			block[i] = BuildBridge(blockpos[i], blocksize[i], angle, tid, self);
-
 		super.postbeginplay();
-	}
-	override void tick()
-	{
-		for(int i = 0; i <= 1; i++)
-			MoveBridge(block[i], blockpos[i]);
-		super.tick();
 	}
 	Default
 	{
