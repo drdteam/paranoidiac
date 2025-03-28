@@ -254,6 +254,30 @@ class Trailer2 : Trailer1{}
 
 class Generator1 : ModelBase
 {
+	actor block[3];
+	vector3 blockpos[3];
+	vector2 blocksize[3];
+	override void postbeginplay()
+	{
+		blockpos[0] = (48, 0, 0);
+		blockpos[1] = (80, 0, 0);
+		blockpos[2] = (-24, 0, 0);
+
+		blocksize[0] = (8, 24);
+		blocksize[1] = (4, 12);
+		blocksize[2] = (24, 48);
+
+		for(int i = 0; i <= 2; i++)
+			block[i] = BuildBridge(blockpos[i], blocksize[i], angle, tid, self);
+
+		super.postbeginplay();
+	}
+	override void tick()
+	{
+		for(int i = 0; i <= 2; i++)
+			MoveBridge(block[i], blockpos[i]);
+		super.tick();
+	}
 	Default
 	{
 		Scale 3;
@@ -274,6 +298,28 @@ class Generator2 : ModelBase
 
 class Generator3 : ModelBase
 {
+	actor block[2];
+	vector3 blockpos[2];
+	vector2 blocksize[2];
+	override void postbeginplay()
+	{
+		blockpos[0] = (128, -8, 0);
+		blockpos[1] = (-112, -8, 0);
+
+		blocksize[0] = (64, 64);
+		blocksize[1] = (48, 48);
+
+		for(int i = 0; i <= 1; i++)
+			block[i] = BuildBridge(blockpos[i], blocksize[i], angle, tid, self);
+
+		super.postbeginplay();
+	}
+	override void tick()
+	{
+		for(int i = 0; i <= 1; i++)
+			MoveBridge(block[i], blockpos[i]);
+		super.tick();
+	}
 	Default
 	{
 		Radius 64;
@@ -281,8 +327,33 @@ class Generator3 : ModelBase
 	}
 }
 
-class Generator4 : SwitchableDecoration
+class Generator4 : ModelBase
 {
+	override void Activate (Actor activator)
+		{SetStateLabel("Active");}
+	override void Deactivate (Actor activator)
+		{SetStateLabel("Inactive");}
+	actor block[2];
+	vector3 blockpos[2];
+	vector2 blocksize[2];
+	override void postbeginplay()
+	{
+		blockpos[0] = (0, 64, 0);
+		blockpos[1] = (0, -64, 0);
+		blocksize[0] = (32, 32);
+		blocksize[1] = (24, 24);
+
+		for(int i = 0; i <= 1; i++)
+			block[i] = BuildBridge(blockpos[i], blocksize[i], angle, tid, self);
+
+		super.postbeginplay();
+	}
+	override void tick()
+	{
+		for(int i = 0; i <= 1; i++)
+			MoveBridge(block[i], blockpos[i]);
+		super.tick();
+	}
 	Default
 	{
 		Scale .5;
@@ -587,12 +658,8 @@ class Pipe1 : ModelBase
 		blockpos[4] = (0, -111, 0);
 		blockpos[5] = (0, -159, 0);
 
-		blocksize[0] = (20, 46);
-		blocksize[1] = (20, 46);
-		blocksize[2] = (20, 46);
-		blocksize[3] = (20, 46);
-		blocksize[4] = (20, 46);
-		blocksize[5] = (20, 46);
+		for(int i = 0; i <= 5; i++)
+			blocksize[i] = (20, 46);
 
 		for(int i = 0; i <= 5; i++)
 			block[i] = BuildBridge(blockpos[i], blocksize[i], angle, tid, self);
@@ -624,10 +691,9 @@ class Pipe3 : ModelBase
 		blockpos[1] = (0, 72, 0);
 		blockpos[2] = (0, -32, 0);
 		blockpos[3] = (0, -72, 0);
-		blocksize[0] = (10, 29);
-		blocksize[1] = (10, 29);
-		blocksize[2] = (10, 29);
-		blocksize[3] = (10, 29);
+
+		for(int i = 0; i <= 3; i++)
+			blocksize[i] = (10, 29);
 
 		for(int i = 0; i <= 3; i++)
 			block[i] = BuildBridge(blockpos[i], blocksize[i], angle, tid, self);
@@ -976,7 +1042,32 @@ class RKive : ModelBase
 }
 
 class BookShelf1a : RKive
-	{Default{Height 64;}}
+{
+	actor block[2];
+	vector3 blockpos[2];
+	vector2 blocksize[2];
+	override void postbeginplay()
+	{
+		blockpos[0] = (0, 24, 0);
+		blockpos[1] = (0, -24, 0);
+
+		blocksize[0] = (8, 64);
+		blocksize[1] = (8, 64);
+
+		for(int i = 0; i <= 1; i++)
+			block[i] = BuildBridge(blockpos[i], blocksize[i], angle, tid, self);
+
+		super.postbeginplay();
+	}
+	override void tick()
+	{
+		for(int i = 0; i <= 1; i++)
+			MoveBridge(block[i], blockpos[i]);
+		super.tick();
+	}
+	Default
+		{Height 64;}
+}
 class BookShelf1b : BookShelf1a{}
 class BookShelf2a : BookShelf1a{}
 class BookShelf2b : BookShelf1a{}
@@ -1178,6 +1269,27 @@ class PConsole5 : PConsole{}
 
 class Barrier1 : ModelBase
 {
+	actor block[2];
+	vector3 blockpos[2];
+	vector2 blocksize[2];
+	override void postbeginplay()
+	{
+		blockpos[0] = (0, 20, 0);
+		blockpos[1] = (0, -20, 0);
+		blocksize[0] = (4, 40);
+		blocksize[1] = (4, 40);
+
+		for(int i = 0; i <= 1; i++)
+			block[i] = BuildBridge(blockpos[i], blocksize[i], angle, tid, self);
+
+		super.postbeginplay();
+	}
+	override void tick()
+	{
+		for(int i = 0; i <= 1; i++)
+			MoveBridge(block[i], blockpos[i]);
+		super.tick();
+	}
 	Default
 	{
 		Scale 1.8;
