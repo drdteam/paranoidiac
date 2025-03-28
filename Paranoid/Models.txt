@@ -263,6 +263,22 @@ class Forklift1 : ModelBase
 
 class Forklift2 : ModelBase
 {
+	override void postbeginplay()
+	{
+		blockmax = 5;
+		blockpos[0] = (28, 0, 0);
+		blockpos[1] = (32, 24, 0);
+		blockpos[2] = (32, -24, 0);
+		blockpos[3] = (44, 24, 0);
+		blockpos[4] = (44, -24, 0);
+		blocksize[0] = (2, 48);
+		blocksize[1] = (1, 48);
+		blocksize[2] = (1, 48);
+		blocksize[3] = (3, 48);
+		blocksize[4] = (3, 48);
+
+		super.postbeginplay();
+	}
 	Default
 	{
 		Radius 24;
@@ -434,22 +450,38 @@ class girder1 : ModelBase
 	}
 }
 
-class girder2 : girder1
+class girder2 : ModelBase
 {
+	override void postbeginplay()
+	{
+		blockmax = 6;
+		blockpos[0] = (0, 64, 0);
+		blockpos[1] = (0, 128, 0);
+		blockpos[2] = (0, 192, 0);
+		blockpos[3] = (0, -64, 0);
+		blockpos[4] = (0, -128, 0);
+		blockpos[5] = (0, -192, 0);
+		for(int i = 0; i<= 5; i++)
+			blocksize[i] = (32, 64);
+
+		super.postbeginplay();
+	}
 	Default
 	{
+		Radius 34;
 		Height 64;
 		+NOGRAVITY
 	}
 }
 
-class girder3 : girder2
+class girder3 : ModelBase
 {
 	Default
 	{
 		Scale 4;
 		Radius 136;
 		Height 1664;
+		+NOGRAVITY
 	}
 }
 
@@ -796,6 +828,22 @@ class tank03 : ModelBase
 
 class tank04 : ModelBase
 {
+	override void postbeginplay()
+	{
+		blockmax = 5;
+		blockpos[0] = (160, 0, 40);
+		blockpos[1] = (188, 0, 32);
+		blockpos[2] = (204, 0, 0);
+		blockpos[3] = (114, -56, 0);
+		blockpos[4] = (128, -64, 0);
+		blocksize[0] = (8, 16);
+		blocksize[1] = (8, 16);
+		blocksize[2] = (12, 28);
+		blocksize[3] = (3, 255);
+		blocksize[4] = (8, 32);
+
+		super.postbeginplay();
+	}
 	Default
 	{
 		Scale 6;
@@ -826,6 +874,16 @@ class tank05 : ModelBase
 
 class tank06 : ModelBase
 {
+	override void postbeginplay()
+	{
+		blockmax = 2;
+		blockpos[0] = (84, 0, 0);
+		blockpos[1] = (50, -24, 0);
+		blocksize[0] = (6, 14);
+		blocksize[1] = (1, 128);
+
+		super.postbeginplay();
+	}
 	Default
 	{
 		Scale 3;
@@ -1063,6 +1121,16 @@ class BookShelf2b : BookShelf1a{}
 
 class Credenza : ModelBase
 {
+	override void postbeginplay()
+	{
+		blockmax = 2;
+		blockpos[0] = (0, 32, 0);
+		blockpos[1] = (0, -32, 0);
+		blocksize[0] = (8, 32);
+		blocksize[1] = (8, 32);
+
+		super.postbeginplay();
+	}
 	Default
 	{
 		Scale .68;
@@ -1070,11 +1138,56 @@ class Credenza : ModelBase
 		Height 26;
 	}
 }
-class CredenzaShort : Credenza{}
-class Credenza2 : Credenza
-	{Default{Scale .57;}}
-class ConfTable : Credenza
-	{Default{Scale .46;}}
+
+class CredenzaShort : ModelBase
+{
+	override void postbeginplay()
+	{
+		blockmax = 2;
+		blockpos[0] = (0, 24, 0);
+		blockpos[1] = (0, -24, 0);
+		blocksize[0] = (8, 32);
+		blocksize[1] = (8, 32);
+
+		super.postbeginplay();
+	}
+	Default
+	{
+		Scale .68;
+		Radius 12;
+		Height 26;
+	}
+}
+
+class Credenza2 : ModelBase
+{
+	Default
+	{
+		Scale .57;
+		Radius 12;
+		Height 26;
+	}
+}
+
+class ConfTable : ModelBase
+{
+	override void postbeginplay()
+	{
+		blockmax = 2;
+		blockpos[0] = (0, 52, 0);
+		blockpos[1] = (0, -52, 0);
+		blocksize[0] = (8, 32);
+		blocksize[1] = (8, 32);
+
+		super.postbeginplay();
+	}
+	Default
+	{
+		Scale .46;
+		Radius 12;
+		Height 26;
+	}
+}
 
 class Ashtray : ModelBase
 {
@@ -1180,6 +1293,14 @@ class Rock06a : Rock05{}
 
 class TechPillar1a : ModelBase
 {
+	override void postbeginplay()
+	{
+		blockmax = 1;
+		blockpos[0] = (22, 0, 56);
+		blocksize[0] = (12, 160);
+
+		super.postbeginplay();
+	}
 	Default
 	{
 		Radius 16;
@@ -1191,6 +1312,14 @@ class TechPillar1c : TechPillar1a{}
 
 class TechPillar1aa : ModelBase
 {
+	override void postbeginplay()
+	{
+		blockmax = 1;
+		blockpos[0] = (22, 0, 56);
+		blocksize[0] = (12, 48);
+
+		super.postbeginplay();
+	}
 	Default
 	{
 		Scale .75;
@@ -1201,8 +1330,28 @@ class TechPillar1aa : ModelBase
 class TechPillar1bb : TechPillar1aa{}
 class TechPillar1cc : TechPillar1aa{}
 
-class TechPillar2 : TechPillar1a
-	{Default{Height 188;}}
+class TechPillar2 : ModelBase
+{
+	override void postbeginplay()
+	{
+		blockmax = 4;
+		blockpos[0] = (22, 0, 56);
+		blockpos[1] = (48, 0, 88);
+		blockpos[2] = (80, 0, 144);
+		blockpos[3] = (112, 0, 140);
+		blocksize[0] = (12, 128);
+		blocksize[1] = (12, 96);
+		blocksize[2] = (10, 28);
+		blocksize[3] = (10, 32);
+
+		super.postbeginplay();
+	}
+	Default
+	{
+		Radius 16;
+		Height 188;
+	}
+}
 
 class TechClamp : ModelFloat
 {
@@ -1237,6 +1386,22 @@ class HoverPad : ModelBase
 
 class PConsole : ModelBase
 {
+	override void postbeginplay()
+	{
+		blockmax = 5;
+		blockpos[0] = (0, 32, 12);
+		blockpos[1] = (0, -32, 12);
+		blockpos[2] = (-24, 0, 0);
+		blockpos[3] = (-24, 32, 0);
+		blockpos[4] = (-24, -32, 0);
+		blocksize[0] = (12, 16);
+		blocksize[1] = (12, 16);
+		blocksize[2] = (4, 56);
+		blocksize[3] = (4, 56);
+		blocksize[4] = (4, 56);
+
+		super.postbeginplay();
+	}
 	Default
 	{
 		Radius 12;
