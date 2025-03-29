@@ -445,7 +445,8 @@ class girder1 : ModelBase
 	Default
 	{
 		Radius 34;
-		Height 416;
+		Height (416.0/ModelHeightMul);
+		YScale (1.0/ModelHeightMul);
 	}
 }
 
@@ -468,8 +469,9 @@ class girder2 : ModelBase
 	Default
 	{
 		Radius 34;
-		Height 64;
+		Height (64.0/ModelHeightMul);
 		+NOGRAVITY
+		YScale (1.0/ModelHeightMul);
 	}
 }
 
@@ -479,8 +481,9 @@ class girder3 : ModelBase
 	{
 		Scale 4;
 		Radius 136;
-		Height 1664;
+		Height (1664.0/ModelHeightMul);
 		+NOGRAVITY
+		YScale (1.0/ModelHeightMul);
 	}
 }
 
@@ -1604,16 +1607,17 @@ class XMetalBox : ModelFloat
 	Default
 	{
 		Radius 34;
-		Height 64;
+		Height (64.0/ModelHeightMul);
+		YScale (1.0/ModelHeightMul);
 	}
 }
 
-class XMetalBox1 : ModelFloat
+class XMetalBox1 : XMetalBox
 {
 	Default
 	{
 		Radius 136;
-		Height 256;
+		Height (256/ModelHeightMul);
 	}
 }
 
