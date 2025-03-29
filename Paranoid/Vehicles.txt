@@ -470,7 +470,7 @@ class Bulldozer1 : ModelBase
 	override void postbeginplay()
 	{
 		blockmax = 20;
-		blockpos[0] = (-8, 0, 88);
+		blockpos[0] = (-16, 0, 88);
 		blockpos[1] = (80, -32, 4);
 		blockpos[2] = (80, -16, 4);
 		blockpos[3] = (80, 16, 4);

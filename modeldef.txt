@@ -983,6 +983,7 @@ Model Bulldozer1
 	Path "Models"
 	Model 0 "bulldozer.md3"
 	Skin 0 "bulldozer.png"
+	Offset 0 -6 0
 
 	FrameIndex HLI1 A 0 0
 }

@@ -368,17 +368,17 @@ class Generator3 : ModelBase
 	override void postbeginplay()
 	{
 		blockmax = 2;
-		blockpos[0] = (128, -8, 0);
-		blockpos[1] = (-112, -8, 0);
-		blocksize[0] = (64, 64);
-		blocksize[1] = (48, 48);
+		blockpos[0] = (128, 0, 0);
+		blockpos[1] = (-112, 0, 0);
+		blocksize[0] = (64, 96);
+		blocksize[1] = (48, 64);
 
 		super.postbeginplay();
 	}
 	Default
 	{
 		Radius 64;
-		Height 128;
+		Height 96;
 	}
 }
 
@@ -391,10 +391,10 @@ class Generator4 : ModelBase
 	override void postbeginplay()
 	{
 		blockmax = 2;
-		blockpos[0] = (0, 64, 0);
-		blockpos[1] = (0, -64, 0);
-		blocksize[0] = (32, 32);
-		blocksize[1] = (24, 24);
+		blockpos[0] = (64, 0, 0);
+		blockpos[1] = (-64, 0, 0);
+		blocksize[0] = (32, 48);
+		blocksize[1] = (24, 32);
 
 		super.postbeginplay();
 	}
@@ -402,8 +402,7 @@ class Generator4 : ModelBase
 	{
 		Scale .5;
 		Radius 32;
-		Height 64;
-		+SOLID
+		Height 48;
 	}
 	States
 	{
@@ -698,19 +697,19 @@ class Pipe1 : ModelBase
 	override void postbeginplay()
 	{
 		blockmax = 6;
-		blockpos[0] = (0, 63, 0);
-		blockpos[1] = (0, 111, 0);
-		blockpos[2] = (0, 159, 0);
-		blockpos[3] = (0, -63, 0);
-		blockpos[4] = (0, -111, 0);
-		blockpos[5] = (0, -159, 0);
+		blockpos[0] = (0, 60, 0);
+		blockpos[1] = (0, 120, 0);
+		blockpos[2] = (0, 180, 0);
+		blockpos[3] = (0, -60, 0);
+		blockpos[4] = (0, -120, 0);
+		blockpos[5] = (0, -180, 0);
 		for(int i = 0; i < blockmax; i++)
-			blocksize[i] = (20, 46);
+			blocksize[i] = (20, 56);
 
 		super.postbeginplay();
 	}
 	Default
-		{Height 46;}
+		{Height 56;}
 }
 class Pipe1a : pipe1{}
 
@@ -721,13 +720,15 @@ class Pipe3 : ModelBase
 {
 	override void postbeginplay()
 	{
-		blockmax = 4;
-		blockpos[0] = (0, 32, 0);
-		blockpos[1] = (0, 72, 0);
-		blockpos[2] = (0, -32, 0);
-		blockpos[3] = (0, -72, 0);
+		blockmax = 6;
+		blockpos[0] = (0, 30, 0);
+		blockpos[1] = (0, 60, 0);
+		blockpos[2] = (0, 90, 0);
+		blockpos[3] = (0, -30, 0);
+		blockpos[4] = (0, -60, 0);
+		blockpos[5] = (0, -90, 0);
 		for(int i = 0; i < blockmax; i++)
-			blocksize[i] = (10, 29);
+			blocksize[i] = (10, 28);
 
 		super.postbeginplay();
 	}
@@ -735,7 +736,7 @@ class Pipe3 : ModelBase
 	{
 		Scale .5;
 		Radius 10;
-		Height 29;
+		Height 28;
 	}
 }
 class Pipe3a : Pipe3{}
@@ -765,7 +766,7 @@ class pipe6 : ModelBase
 	{
 		Scale .5;
 		Radius 6;
-		Height 68;
+		Height 90;
 	}
 }
 
@@ -928,8 +929,8 @@ class Valve1 : ModelBase
 	override void postbeginplay()
 	{
 		blockmax = 1;
-		blockpos[0] = (0, 28, 32);
-		blocksize[0] = (16, 48);
+		blockpos[0] = (0, 36, 0);
+		blocksize[0] = (16, 50);
 
 		super.postbeginplay();
 	}
@@ -1013,12 +1014,12 @@ class Palm1a : ModelBase
 	{
 		Scale 20;
 		Radius 8;
-		Height 340;
+		Height 230;
 	}
 }
 class Palm1b : Palm1a{}
-class Palm2a : ModelBase
-	{Default{Radius 8;Height 256;}}
+class Palm2a : Palm1a
+	{Default{Scale 1;}}
 class Palm2b : Palm2a{}
 class Palm3a : Palm1a
 {
@@ -1066,7 +1067,7 @@ class StreetLamp : SwitchableDecoration
 	Default
 	{
 		Radius 4;
-		Height 160;
+		Height 180;
 		+SOLID
 	}
     States
@@ -1126,8 +1127,8 @@ class Credenza : ModelBase
 		blockmax = 2;
 		blockpos[0] = (0, 32, 0);
 		blockpos[1] = (0, -32, 0);
-		blocksize[0] = (8, 32);
-		blocksize[1] = (8, 32);
+		blocksize[0] = (12, 30);
+		blocksize[1] = (12, 30);
 
 		super.postbeginplay();
 	}
@@ -1135,7 +1136,7 @@ class Credenza : ModelBase
 	{
 		Scale .68;
 		Radius 12;
-		Height 26;
+		Height 30;
 	}
 }
 
@@ -1144,10 +1145,10 @@ class CredenzaShort : ModelBase
 	override void postbeginplay()
 	{
 		blockmax = 2;
-		blockpos[0] = (0, 24, 0);
-		blockpos[1] = (0, -24, 0);
-		blocksize[0] = (8, 32);
-		blocksize[1] = (8, 32);
+		blockpos[0] = (0, 20, 0);
+		blockpos[1] = (0, -20, 0);
+		blocksize[0] = (12, 30);
+		blocksize[1] = (12, 30);
 
 		super.postbeginplay();
 	}
@@ -1155,17 +1156,27 @@ class CredenzaShort : ModelBase
 	{
 		Scale .68;
 		Radius 12;
-		Height 26;
+		Height 30;
 	}
 }
 
 class Credenza2 : ModelBase
 {
+	override void postbeginplay()
+	{
+		blockmax = 2;
+		blockpos[0] = (0, 26, 0);
+		blockpos[1] = (0, -26, 0);
+		blocksize[0] = (12, 30);
+		blocksize[1] = (12, 30);
+
+		super.postbeginplay();
+	}
 	Default
 	{
 		Scale .57;
 		Radius 12;
-		Height 26;
+		Height 30;
 	}
 }
 
@@ -1176,8 +1187,8 @@ class ConfTable : ModelBase
 		blockmax = 2;
 		blockpos[0] = (0, 52, 0);
 		blockpos[1] = (0, -52, 0);
-		blocksize[0] = (8, 32);
-		blocksize[1] = (8, 32);
+		blocksize[0] = (8, 28);
+		blocksize[1] = (8, 28);
 
 		super.postbeginplay();
 	}
@@ -1185,7 +1196,7 @@ class ConfTable : ModelBase
 	{
 		Scale .46;
 		Radius 12;
-		Height 26;
+		Height 28;
 	}
 }
 
@@ -1426,10 +1437,10 @@ class Barrier1 : ModelBase
 	override void postbeginplay()
 	{
 		blockmax = 2;
-		blockpos[0] = (0, 20, 0);
-		blockpos[1] = (0, -20, 0);
-		blocksize[0] = (4, 40);
-		blocksize[1] = (4, 40);
+		blockpos[0] = (20, 0, 0);
+		blockpos[1] = (-20, 0, 0);
+		blocksize[0] = (4, 36);
+		blocksize[1] = (4, 36);
 
 		super.postbeginplay();
 	}
@@ -1437,7 +1448,7 @@ class Barrier1 : ModelBase
 	{
 		Scale 1.8;
 		Radius 4;
-		Height 32;
+		Height 36;
 	}
 }
 class Barrier2 : Barrier1{}
