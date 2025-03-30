@@ -40,3 +40,4 @@ version "4.14.1"
 #include "Paranoid/XenItems.txt"
 
 #include "Paranoid/Expansion.txt"
+#include "secretmaps/secretmapsactors.txt"

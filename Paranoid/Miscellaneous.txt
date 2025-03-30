@@ -87,7 +87,7 @@ class Debris01 : Actor
 // Blood & Gibs
 //===============
 
-class HLBlood : Actor
+class HLBlood : Actor replaces Blood
 {
 	Default
 	{
