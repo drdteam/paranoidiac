@@ -378,6 +378,18 @@ Texture SW1MARB, 64, 128
 	Patch SW2_7, 13, 55
 }
 
+Texture SW2LION, 64, 128
+{
+	Patch WALL47_2, 0, 0
+	Patch WALL47_4, 11, 62
+}
+
+Texture SW2MARB, 64, 128
+{
+	Patch MWALL1_1, 0, 0
+	Patch SW2_8, 13, 55
+}
+
 Texture TANROCK2, 64, 128
 {
 	Patch RW11_2, 0, 0

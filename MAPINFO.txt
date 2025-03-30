@@ -262,7 +262,8 @@ map P3M4 lookup "PARANOID_P3M4"
 {
 	Music="22SixWay"
 	LevelNum=22
-	Next=P3M5
+	next=EndSequence,"ParaEndScroll"
+	SecretNext=P3M5
 }
 map P3M5 lookup "PARANOID_P3M5"
 {
