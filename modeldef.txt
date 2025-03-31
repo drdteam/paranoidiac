@@ -19,15 +19,6 @@ Model AmmoPack
 	FrameIndex HLI1 A 0 0
 }
 
-Model Explosive
-{
-	Path "Models"
-	Model 0 "explosive.md3"
-	Skin 0 "explosive.jpg"
-
-	FrameIndex HLI1 A 0 0
-}
-
 ////////////////////////////////
 //  Powerups, pickups, keys   //
 ////////////////////////////////
@@ -127,131 +118,6 @@ Model MedKit1
 	FrameIndex HLI1 A 0 0
 }
 
-Model gascan1
-{
-	Path "Models"
-	Model 0 "gascan1.md3"
-	Skin 0 "gascan1.jpg"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model key1
-{
-	Path "Models"
-	Model 0 "w_security.md3"
-	Skin 0 "w_security.png"
-
-	FrameIndex HLI1 A 0 0
-
-	Skin 0 "w_security2.png"
-
-	FrameIndex HLI1 B 0 0
-}
-
-//////////////////
-//  Vegetation  //
-//////////////////
-
-Model Palm1a
-{
-	Path "Models"
-	Model 0 "palm1.md3"
-	Skin 0 "palm1a.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Palm1b
-{
-	Path "Models"
-	Model 0 "palm1.md3"
-	Skin 0 "palm1b.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Palm2a
-{
-	Path "Models"
-	Model 0 "palm2.md3"
-	Skin 0 "palm2a.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Palm2b
-{
-	Path "Models"
-	Model 0 "palm2.md3"
-	Skin 0 "palm2b.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Palm3a
-{
-	Path "Models"
-	Model 0 "palm3.md3"
-	Skin 0 "palm3a.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Palm3b
-{
-	Path "Models"
-	Model 0 "palm3.md3"
-	Skin 0 "palm3b.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Palm3c
-{
-	Path "Models"
-	Model 0 "palm3.md3"
-	Skin 0 "palm3c.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Cactus
-{
-	Path "Models"
-	Model 0 "cactus.md2"
-	Skin 0 "cactus.png"
-
-	Frame HLI1 A 0 "frame01"
-}
-
-Model Fern
-{
-	Path "Models"
-	Model 0 "fern.md2"
-	Skin 0 "fern.png"
-
-	Frame HLI1 A 0 "frame01"
-}
-
-Model Plant1
-{
-	Path "Models"
-	Model 0 "plant1.md2"
-	Skin 0 "plant1.png"
-
-	Frame HLI1 A 0 "frame01"
-}
-
-Model Plant2
-{
-	Path "Models"
-	Model 0 "plant2.md2"
-	Skin 0 "plant2.png"
-
-	Frame HLI1 A 0 "frame01"
-}
-
 ///////////////////////
 //  Exploding Items  //
 ///////////////////////
@@ -271,214 +137,13 @@ Model Xbarrel1
 	FrameIndex HLI1 G 0 6
 }
 
-Model Xbarrel2
-{
-	Path "Models"
-	Model 0 "nbarrel1.md3"
-	Skin 0 "nbarrel2.png"
-
-	FrameIndex HLI1 A 0 0
-	FrameIndex HLI1 B 0 1
-	FrameIndex HLI1 C 0 2
-	FrameIndex HLI1 D 0 3
-	FrameIndex HLI1 E 0 4
-	FrameIndex HLI1 F 0 5
-	FrameIndex HLI1 G 0 6
-}
-
-Model Xbarrel3
-{
-	Path "Models"
-	Model 0 "nbarrel1.md3"
-	Skin 0 "nbarrel3.png"
-
-	FrameIndex HLI1 A 0 0
-	FrameIndex HLI1 B 0 1
-	FrameIndex HLI1 C 0 2
-	FrameIndex HLI1 D 0 3
-	FrameIndex HLI1 E 0 4
-	FrameIndex HLI1 F 0 5
-	FrameIndex HLI1 G 0 6
-}
-
-Model Xcrate01
-{
-	Path "Models"
-	Model 0 "xcrate01.md3"
-	Skin 0 "xcrate01.png"
-
-	FrameIndex HLI1 A 0 0
-	FrameIndex HLI1 B 0 1
-	FrameIndex HLI1 C 0 2
-	FrameIndex HLI1 D 0 3
-	FrameIndex HLI1 E 0 4
-	FrameIndex HLI1 F 0 5
-	FrameIndex HLI1 G 0 6
-}
-
-Model Xcrate02
-{
-	Path "Models"
-	Model 0 "xcrate01.md3"
-	Skin 0 "xcrate02.png"
-
-	FrameIndex HLI1 A 0 0
-	FrameIndex HLI1 B 0 1
-	FrameIndex HLI1 C 0 2
-	FrameIndex HLI1 D 0 3
-	FrameIndex HLI1 E 0 4
-	FrameIndex HLI1 F 0 5
-	FrameIndex HLI1 G 0 6
-}
-
-Model Xcrate03
-{
-	Path "Models"
-	Model 0 "xcrate01.md3"
-	Skin 0 "xcrate03.png"
-
-	FrameIndex HLI1 A 0 0
-	FrameIndex HLI1 B 0 1
-	FrameIndex HLI1 C 0 2
-	FrameIndex HLI1 D 0 3
-	FrameIndex HLI1 E 0 4
-	FrameIndex HLI1 F 0 5
-	FrameIndex HLI1 G 0 6
-}
-
-Model Xcrate04
-{
-	Path "Models"
-	Model 0 "xcrate01.md3"
-	Skin 0 "xcrate04.png"
-
-	FrameIndex HLI1 A 0 0
-	FrameIndex HLI1 B 0 1
-	FrameIndex HLI1 C 0 2
-	FrameIndex HLI1 D 0 3
-	FrameIndex HLI1 E 0 4
-	FrameIndex HLI1 F 0 5
-	FrameIndex HLI1 G 0 6
-}
-
 /////////////////
 //  Computers  //
 /////////////////
 
-Model Monitor
-{
-	Path "Models"
-	Model 0 "monitor.md3"
-	Skin 0 "monitor.jpg"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Monitor1
-{
-	Path "Models"
-	Model 0 "monitor.md3"
-	Skin 0 "monitor1.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Monitor2
-{
-	Path "Models"
-	Model 0 "monitor.md3"
-	Skin 0 "monitor2.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Monitor3
-{
-	Path "Models"
-	Model 0 "monitor.md3"
-	Skin 0 "monitor3.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model keyboard1
-{
-	Path "Models"
-	Model 0 "br_keyboard1.md3"
-	Skin 0 "br_keyboard1.jpg"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model keyboard3
-{
-	Path "Models"
-	Model 0 "br_keyboard3.md3"
-	Skin 0 "br_pcs2.jpg"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model flatpanel1
-{
-	Path "Models"
-	Model 0 "br_monitor1.md3"
-	SurfaceSkin 0 0 "br_monitor1.jpg"
-	SurfaceSkin 0 1 "br_screen1.jpg"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model flatpanel2
-{
-	Path "Models"
-	Model 0 "br_monitor1.md3"
-	SurfaceSkin 0 0 "br_monitor1.jpg"
-	SurfaceSkin 0 1 "br_screen2.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
 Model flatpanel3
 {
-	Path "Models"
-	Model 0 "br_monitor3.md3"
-	SurfaceSkin 0 0 "br_pcs1.jpg"
-	SurfaceSkin 0 1 "br_screen1.jpg"
 	AngleOffset 180
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model flatpanel4
-{
-	Path "Models"
-	Model 0 "br_monitor3.md3"
-	SurfaceSkin 0 0 "br_pcs1.jpg"
-	SurfaceSkin 0 1 "br_screen2.png"
-	AngleOffset 180
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model flatpanel5
-{
-	Path "Models"
-	Model 0 "br_monitor5.md3"
-	SurfaceSkin 0 0 "br_monitor5.png"
-	SurfaceSkin 0 1 "br_screen1.jpg"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model flatpanel6
-{
-	Path "Models"
-	Model 0 "br_monitor5.md3"
-	SurfaceSkin 0 0 "br_monitor5.png"
-	SurfaceSkin 0 1 "br_screen2.png"
-
-	FrameIndex HLI1 A 0 0
 }
 
 Model flatpanel7
@@ -503,209 +168,9 @@ Model flatpanel7
 	FrameIndex HLI1 D 3 0
 }
 
-Model flatpanel8
-{
-	Path "Models"
-	Model 0 "br_monitor5.md3"
-	SurfaceSkin 0 0 "br_monitor5.png"
-	SurfaceSkin 0 1 "br_screen8.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model flatpanel9
-{
-	Path "Models"
-	Model 0 "br_monitor5.md3"
-	SurfaceSkin 0 0 "br_monitor5.png"
-	SurfaceSkin 0 1 "br_screen10.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model mouse3
-{
-	Path "Models"
-	Model 0 "br_mouse1.md3"
-	Skin 0 "br_pcs2.jpg"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model pc1
-{
-	Path "Models"
-	Model 0 "br_pc1.md3"
-	Skin 0 "br_pc1.jpg"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model modem
-{
-	Path "Models"
-	Model 0 "br_pc2.md3"
-	Skin 0 "br_pc2.jpg"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model pc3
-{
-	Path "Models"
-	Model 0 "br_pc3.md3"
-	Skin 0 "br_pcs1.jpg"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model server1
-{
-	Path "Models"
-	Model 0 "br_server1.md3"
-	Skin 0 "br_server1.jpg"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model server2
-{
-	Path "Models"
-	Model 0 "br_server2.md3"
-	Skin 0 "br_server2.jpg"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model server3
-{
-	Path "Models"
-	Model 0 "br_server3.md3"
-	Skin 0 "br_server3.jpg"
-
-	FrameIndex HLI1 A 0 0
-}
-
 /////////////////////////////////
 //  Office/Toilet Items, Beds  //
 /////////////////////////////////
-
-Model Toilet1
-{
-	Path "Models"
-	Model 0 "toilet1.md2"
-	Skin 0 "toilet1.png"
-
-	Frame HLI1 A 0 "idle"
-}
-
-Model Toilet2
-{
-	Path "Models"
-	Model 0 "toilet1.md2"
-	Skin 0 "toilet2.png"
-
-	Frame HLI1 A 0 "idle"
-}
-
-Model Urinal1
-{
-	Path "Models"
-	Model 0 "urinal.md2"
-	Skin 0 "urinal.png"
-
-	Frame HLI1 A 0 "1"
-}
-
-Model HandDryer
-{
-	Path "Models"
-	Model 0 "handdryer.md3"
-	Skin 0 "handdryer.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Sink1
-{
-	Path "Models"
-	Model 0 "sink1.md3"
-	Skin 0 "sink1.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Sink2
-{
-	Path "Models"
-	Model 0 "sink2.md3"
-	Skin 0 "sink2.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model SoapDispenser
-{
-	Path "Models"
-	Model 0 "soapdisp.md3"
-	Skin 0 "soapdisp.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model ToiletStainless
-{
-	Path "Models"
-	Model 0 "toiletst.md3"
-	Skin 0 "toiletst.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model ToiletPaper
-{
-	Path "Models"
-	Model 0 "tpaper.md3"
-	Skin 0 "tpaper09.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Trashcan1
-{
-	Path "Models"
-	Model 0 "trashcan.md2"
-	Skin 0 "trashcan.png"
-
-	Frame HLI1 A 0 "idle"
-}
-
-Model Chair1
-{
-	Path "Models"
-	Model 0 "chair1.md3"
-	Skin 0 "chair1.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Chair2
-{
-	Path "Models"
-	Model 0 "chair2.md2"
-	Skin 0 "chair2.png"
-
-	Frame HLI1 A 0 "frame01"
-}
-
-Model Chair3
-{
-	Path "Models"
-	Model 0 "chair3.md2"
-	Skin 0 "chair3.png"
-
-	Frame HLI1 A 0 "frame01"
-}
 
 Model Desk1
 {
@@ -715,96 +180,6 @@ Model Desk1
 	Scale 1.2 1.2 1.0
 
 	Frame HLI1 A 0 "frame01"
-}
-
-Model Desk2
-{
-	Path "Models"
-	Model 0 "desk2.md3"
-	Skin 0 "desk2.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Desk3
-{
-	Path "Models"
-	Model 0 "desk3.md3"
-	Skin 0 "desk3.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Desk4
-{
-	Path "Models"
-	Model 0 "desk4.md3"
-	Skin 0 "desk4.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Desk5
-{
-	Path "Models"
-	Model 0 "desk5.md3"
-	Skin 0 "desk5.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Desk6
-{
-	Path "Models"
-	Model 0 "desk6.md3"
-	Skin 0 "desk6.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Armchair
-{
-	Path "Models"
-	Model 0 "armchair.md2"
-	Skin 0 "armchair.png"
-
-	Frame HLI1 A 0 "frame01"
-}
-
-Model Sofa
-{
-	Path "Models"
-	Model 0 "sofa.md2"
-	Skin 0 "sofa.png"
-
-	Frame HLI1 A 0 "frame01"
-}
-
-Model Desklamp1
-{
-	Path "Models"
-	Model 0 "desklamp1.md3"
-	Skin 0 "desklamp1.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Desklamp2
-{
-	Path "Models"
-	Model 0 "desklamp2.md2"
-	Skin 0 "desklamp2.png"
-
-	Frame HLI1 A 0 "frame01"
-}
-
-Model Bed01
-{
-	Path "Models"
-	Model 0 "br_frame1.md3"
-	Skin 0 "br_frame1.jpg"
-
-	FrameIndex HLI1 A 0 0
 }
 
 Model Mattress01
@@ -873,33 +248,6 @@ Model FileCab3
 	Frame HLI1 A 0 "frame01"
 }
 
-Model DeerHead
-{
-	Path "Models"
-	Model 0 "br_deer.md3"
-	Skin 0 "br_deer.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model VidCam1
-{
-	Path "Models"
-	Model 0 "vidcam.md3"
-	Skin 0 "vidcam.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model VidCam2
-{
-	Path "Models"
-	Model 0 "vidcam2.md3"
-	Skin 0 "vidcam2.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
 ////////////////////////
 //  Decorative Items  //
 ////////////////////////
@@ -924,139 +272,15 @@ Model XMetalBox1
 	Frame HLI1 A 0 "frame01"
 }
 
-Model Barrel1
-{
-	Path "Models"
-	Model 0 "br_barrel1.md3"
-	Skin 0 "br_barrell.jpg"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Barrel2
-{
-	Path "Models"
-	Model 0 "br_barrel2.md3"
-	Skin 0 "br_barrell.jpg"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Barrel3
-{
-	Path "Models"
-	Model 0 "utbarrel.md2"
-	Skin 0 "utbarrel.png"
-
-	Frame HLI1 A 0 "frame01"
-}
-
-Model Forklift1
-{
-	Path "Models"
-	Model 0 "forktruck.md2"
-	Skin 0 "forktruck.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Forklift2
-{
-	Path "Models"
-	Model 0 "forklift.md3"
-	Skin 0 "forklift.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Backhoe1
-{
-	Path "Models"
-	Model 0 "backhoe.md3"
-	Skin 0 "backhoe.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
 Model Bulldozer1
 {
-	Path "Models"
-	Model 0 "bulldozer.md3"
-	Skin 0 "bulldozer.png"
 	Offset 0 -6 0
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Toolbox1
-{
-	Path "Models"
-	Model 0 "toolbox1.md3"
-	Skin 0 "toolbox1.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Toolbox2
-{
-	Path "Models"
-	Model 0 "toolbox2.md3"
-	Skin 0 "toolbox2.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Trailer1
-{
-	Path "Models"
-	Model 0 "trailer1.md3"
-	Skin 0 "trailer1.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Trailer2
-{
-	Path "Models"
-	Model 0 "trailer1.md3"
-	Skin 0 "trailer2.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Generator1
-{
-	Path "Models"
-	Model 0 "generator.md3"
-	Skin 0 "generator.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Generator2
-{
-	Path "Models"
-	Model 0 "generator2.md2"
-	Skin 0 "generator2.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Generator3
-{
-	Path "Models"
-	Model 0 "generator3.md3"
-	Skin 0 "generator3.png"
 
 	FrameIndex HLI1 A 0 0
 }
 
 Model Generator4
 {
-	Path "Models"
-	Model 0 "generator3.md3"
-	Skin 0 "generator3.png"
-
 	FrameIndex HLI1 A 0 0
 	FrameIndex HLI1 B 0 1
 	FrameIndex HLI1 C 0 2
@@ -1069,321 +293,6 @@ Model Generator4
 	FrameIndex HLI1 J 0 9
 	FrameIndex HLI1 K 0 10
 	FrameIndex HLI1 L 0 11
-}
-
-Model Barrier1
-{
-	Path "Models"
-	Model 0 "br_barrier1.md3"
-	Skin 0 "br_concrete1.jpg"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Barrier2
-{
-	Path "Models"
-	Model 0 "br_barrier1.md3"
-	Skin 0 "br_concrete2.jpg"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Barrier3
-{
-	Path "Models"
-	Model 0 "br_barrier1.md3"
-	Skin 0 "br_concrete4.jpg"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Pipe1
-{
-	Path "Models"
-	Model 0 "xpipe1.md3"
-	Skin 0 "xptv.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Pipe1a
-{
-	Path "Models"
-	Model 0 "xpipe1a.md3"
-	Skin 0 "xptv.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Pipe2
-{
-	Path "Models"
-	Model 0 "xpipe2.md2"
-	Skin 0 "xptv.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Pipe3
-{
-	Path "Models"
-	Model 0 "xpipe1.md3"
-	Skin 0 "xptv.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Pipe3a
-{
-	Path "Models"
-	Model 0 "xpipe1a.md3"
-	Skin 0 "xptv.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Pipe4
-{
-	Path "Models"
-	Model 0 "xpipe2.md2"
-	Skin 0 "xptv.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Pipe5
-{
-	Path "Models"
-	Model 0 "pipe5.md2"
-	Skin 0 "pipe5.png"
-
-	Frame HLI1 A 0 "frame01"
-}
-
-Model Pipe6
-{
-	Path "Models"
-	Model 0 "pipe5.md2"
-	Skin 0 "pipe5.png"
-
-	Frame HLI1 A 0 "frame01"
-}
-
-Model Pipe7
-{
-	Path "Models"
-	Model 0 "pipe5.md2"
-	Skin 0 "pipe5.png"
-
-	Frame HLI1 A 0 "frame01"
-}
-
-Model Pipe8
-{
-	Path "Models"
-	Model 0 "pipe5.md2"
-	Skin 0 "pipe5.png"
-
-	Frame HLI1 A 0 "frame01"
-}
-
-Model PipeMaze
-{
-	Path "Models"
-	Model 0 "pipemaze.md3"
-	Skin 0 "pipemaze.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Tank01
-{
-	Path "Models"
-	Model 0 "xtank.md3"
-	Skin 0 "xptv2.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Tank02
-{
-	Path "Models"
-	Model 0 "xtank1.md2"
-	Skin 0 "xptv.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Tank02a
-{
-	Path "Models"
-	Model 0 "xtank1a.md2"
-	Skin 0 "xptv.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model tank03
-{
-	Path "Models"
-	Model 0 "tank03.md3"
-	Skin 0 "tank03.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model tank04
-{
-	Path "Models"
-	Model 0 "tank04.md3"
-	Skin 0 "tank04.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model tank05
-{
-	Path "Models"
-	Model 0 "tank05.md3"
-	Skin 0 "tank05.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model tank06
-{
-	Path "Models"
-	Model 0 "tank04a.md3"
-	Skin 0 "tank04.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Valve1
-{
-	Path "Models"
-	Model 0 "xvalve1.md2"
-	Skin 0 "xptv.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Radio1
-{
-	Path "Models"
-	Model 0 "radio1.md3"
-	Skin 0 "radio.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Radio2
-{
-	Path "Models"
-	Model 0 "radio2.md3"
-	Skin 0 "radio.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Radio3
-{
-	Path "Models"
-	Model 0 "radio3.md3"
-	Skin 0 "radio.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Radio4
-{
-	Path "Models"
-	Model 0 "radio4.md3"
-	Skin 0 "radio.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Radio5
-{
-	Path "Models"
-	Model 0 "radio5.md3"
-	Skin 0 "radio.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model propane1a
-{
-	Path "Models"
-	Model 0 "propane1.md3"
-	Skin 0 "propane1a.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model propane1b
-{
-	Path "Models"
-	Model 0 "propane1.md3"
-	Skin 0 "propane1b.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model propane1c
-{
-	Path "Models"
-	Model 0 "propane1.md3"
-	Skin 0 "propane1c.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model propane2
-{
-	Path "Models"
-	Model 0 "propane2.md3"
-	Skin 0 "propane2.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model transformer1
-{
-	Path "Models"
-	Model 0 "transformer.md3"
-	Skin 0 "transformer.jpg"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model meter1
-{
-	Path "Models"
-	Model 0 "meter1.md3"
-	Skin 0 "meters.jpg"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model meter2
-{
-	Path "Models"
-	Model 0 "meter2.md3"
-	Skin 0 "meters.jpg"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model meter3
-{
-	Path "Models"
-	Model 0 "meter2.md3"
-	Skin 0 "meters.jpg"
-
-	FrameIndex HLI1 A 0 0
 }
 
 Model Loader
@@ -1402,87 +311,8 @@ Model LoaderNoBox
 	FrameIndex HLI1 A 0 0
 }
 
-Model Light1
-{
-	Path "Models"
-	Model 0 "light1.md2"
-	Skin 0 "light1.png"
-
-	Frame HLI1 A 0 "frame01"
-}
-
-Model Light2
-{
-	Path "Models"
-	Model 0 "light2.md2"
-	Skin 0 "light2.png"
-
-	Frame HLI1 A 0 "frame01"
-}
-
-Model girder1
-{
-	Path "Models"
-	Model 0 "girder1.md2"
-	Skin 0 "girder1.png"
-
-	Frame HLI1 A 0 "frame01"
-}
-
-Model girder2
-{
-	Path "Models"
-	Model 0 "girder2.md2"
-	Skin 0 "girder2.png"
-
-	Frame HLI1 A 0 "frame01"
-}
-
-Model girder3
-{
-	Path "Models"
-	Model 0 "girder1.md2"
-	Skin 0 "girder1.png"
-
-	Frame HLI1 A 0 "frame01"
-}
-
-Model girder4
-{
-	Path "Models"
-	Model 0 "girder2.md2"
-	Skin 0 "girder2.png"
-
-	Frame HLI1 A 0 "frame01"
-}
-
 Model apache
 {
-	Path "Models"
-	Model 0 "apache.md3"
-	SurfaceSkin 0 0 "apache_000.png"
-	SurfaceSkin 0 1 "apache_001.png"
-	SurfaceSkin 0 2 "apache_002.png"
-	SurfaceSkin 0 3 "apache_003.png"
-	SurfaceSkin 0 4 "apache_004.png"
-	SurfaceSkin 0 5 "apache_005.png"
-	SurfaceSkin 0 6 "apache_006.png"
-	SurfaceSkin 0 7 "apache_007.png"
-	SurfaceSkin 0 8 "apache_008.png"
-	SurfaceSkin 0 9 "apache_009.png"
-	SurfaceSkin 0 10 "apache_010.png"
-	SurfaceSkin 0 11 "apache_011.png"
-	SurfaceSkin 0 12 "apache_012.png"
-	SurfaceSkin 0 13 "apache_013.png"
-	SurfaceSkin 0 14 "apache_014.png"
-	SurfaceSkin 0 15 "apache_015.png"
-	SurfaceSkin 0 16 "apache_016.png"
-	SurfaceSkin 0 17 "apache_017.png"
-	SurfaceSkin 0 18 "apache_018.png"
-	SurfaceSkin 0 19 "apache_019.png"
-	SurfaceSkin 0 20 "apache_020.png"
-	SurfaceSkin 0 21 "apache_021.png"
-	SurfaceSkin 0 22 "apache_022.png"
 	Offset 12 0 144
 
 	FrameIndex HLI1 A 0 0
@@ -1507,23 +337,7 @@ Model OspreyBellmer
 	BaseFrame
 }
 
-Model Tesla
-{
-	Path "Models"
-	Model 0 "br_tesla.md3"
-	Skin 0 "br_tesla.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
 Model Tram
-{
-	ZOffset 32
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model TramIntro
 {
 	ZOffset 32
 
@@ -1541,31 +355,6 @@ Model TramBattery
 	SurfaceSkin 0 4 "w_battery_004.png"
 
 	Offset -10 0 84
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model TankGlass
-{
-	Path "Models"
-	Model 0 "tankglass.md3"
-	Skin 0 "suv_glass.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Truck01
-{
-	Path "Models"
-	Model 0 "truck_research.md3"
-	SurfaceSkin 0 0 "truck_research_000.png"
-	SurfaceSkin 0 1 "truck_research_001.png"
-	SurfaceSkin 0 2 "truck_research_002.png"
-	SurfaceSkin 0 3 "truck_research_003.png"
-	SurfaceSkin 0 4 "truck_research_004.png"
-	SurfaceSkin 0 5 "truck_research_005.png"
-	SurfaceSkin 0 6 "truck_research_006.png"
-	SurfaceSkin 0 7 "truck_research_007.png"
 
 	FrameIndex HLI1 A 0 0
 }
@@ -1642,48 +431,22 @@ Model SUVGlass
 
 Model HLXenFungus
 {
-	Path "Models"
-	Model 0 "fungus.iqm"
-	SurfaceSkin 0 0 "fungus_000.png"
-	SurfaceSkin 0 1 "fungus_001.png"
-	SurfaceSkin 0 2 "fungus_002.png"
 	BaseFrame
 }
 
 Model HLXenHair
 {
-	Path "Models"
-	Model 0 "hair.iqm"
-	Skin 0 "hair.png"
 	BaseFrame
 }
 
 Model HLXenLight
 {
-	Path "Models"
-	Model 0 "light.iqm"
-	Skin 0 "light.png"
 	BaseFrame
 }
 
 Model HLXenTree
 {
-	Path "Models"
-	Model 0 "tree.iqm"
-	Skin 0 "tree.png"
 	BaseFrame
-}
-
-Model DissectedHeadCrab
-{
-	Path "Models"
-	Model 0 "dissected_headcrab.md3"
-	SurfaceSkin 0 0 "dissected_headcrab_000.png"
-	SurfaceSkin 0 1 "dissected_headcrab_001.png"
-	SurfaceSkin 0 2 "dissected_headcrab_002.png"
-	SurfaceSkin 0 3 "dissected_headcrab_003.png"
-
-	FrameIndex HLI1 A 0 0
 }
 
 //********
@@ -1704,180 +467,12 @@ Model StreetLamp
 	FrameIndex HLI1 B 0 0
 }
 
-Model Glass01
-{
-	Path "Models"
-	Model 0 "glass01.md3"
-	Skin 0 "glass01.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model BookShelf1a
-{
-	Path "Models"
-	Model 0 "bookshelf1a.md3"
-	Skin 0 "bookshelf1.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model BookShelf1b
-{
-	Path "Models"
-	Model 0 "bookshelf1b.md3"
-	Skin 0 "bookshelf1.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model BookShelf2a
-{
-	Path "Models"
-	Model 0 "bookshelf2a.md3"
-	Skin 0 "bookshelf2.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model BookShelf2b
-{
-	Path "Models"
-	Model 0 "bookshelf2b.md3"
-	Skin 0 "bookshelf2.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model rkive
-{
-	Path "Models"
-	Model 0 "rkive.md3"
-	Skin 0 "rkive.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Credenza
-{
-	Path "Models"
-	Model 0 "credenza.md3"
-	Skin 0 "credenza.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model CredenzaShort
-{
-	Path "Models"
-	Model 0 "credenzashort.md3"
-	Skin 0 "credenza.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Credenza2
-{
-	Path "Models"
-	Model 0 "credenza2.md3"
-	Skin 0 "credenza2.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Ashtray
-{
-	Path "Models"
-	Model 0 "Ashtray.md3"
-	Skin 0 "Ashtray.jpg"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model AshtrayCig
-{
-	Path "Models"
-	Model 0 "Ashtray_Cig.md3"
-	Skin 0 "Ashtray.jpg"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model ConfTable
-{
-	Path "Models"
-	Model 0 "Conf_Table.md3"
-	Skin 0 "Conf_Table.jpg"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Phone1
-{
-	Path "Models"
-	Model 0 "Phone1.md3"
-	Skin 0 "Phones.jpg"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Phone2
-{
-	Path "Models"
-	Model 0 "Phone2.md3"
-	Skin 0 "Phones.jpg"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Phone3
-{
-	Path "Models"
-	Model 0 "Phone3.md3"
-	Skin 0 "Phones.jpg"
-
-	FrameIndex HLI1 A 0 0
-}
-
 //********
 //Rocks
 //********
 
 Model Rock01
 {
-	Path "Models"
-	Model 0 "rock_big_a.md3"
-	Skin 0 "rock_big.jpg"
-	ZOffset 192
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Rock01a
-{
-	Path "Models"
-	Model 0 "rock_big_a.md3"
-	Skin 0 "rock_big2.jpg"
-	ZOffset 192
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Rock01b
-{
-	Path "Models"
-	Model 0 "rock_big_a.md3"
-	Skin 0 "rock_moss1.jpg"
-	ZOffset 192
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Rock01c
-{
-	Path "Models"
-	Model 0 "rock_big_a.md3"
-	Skin 0 "rock_moss2.jpg"
 	ZOffset 192
 
 	FrameIndex HLI1 A 0 0
@@ -1885,39 +480,6 @@ Model Rock01c
 
 Model Rock02
 {
-	Path "Models"
-	Model 0 "rock_big_b.md3"
-	Skin 0 "rock_big.jpg"
-	ZOffset 172
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Rock02a
-{
-	Path "Models"
-	Model 0 "rock_big_b.md3"
-	Skin 0 "rock_big2.jpg"
-	ZOffset 172
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Rock02b
-{
-	Path "Models"
-	Model 0 "rock_big_b.md3"
-	Skin 0 "rock_moss1.jpg"
-	ZOffset 172
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Rock02c
-{
-	Path "Models"
-	Model 0 "rock_big_b.md3"
-	Skin 0 "rock_moss2.jpg"
 	ZOffset 172
 
 	FrameIndex HLI1 A 0 0
@@ -1925,9 +487,6 @@ Model Rock02c
 
 Model Rock02d
 {
-	Path "Models"
-	Model 0 "rock_big_b.md3"
-	Skin 0 "xenrock1.png"
 	ZOffset 596
 
 	FrameIndex HLI1 A 0 0
@@ -1935,9 +494,6 @@ Model Rock02d
 
 Model Rock02e
 {
-	Path "Models"
-	Model 0 "rock_big_b.md3"
-	Skin 0 "xenrock2.png"
 	ZOffset 676
 
 	FrameIndex HLI1 A 0 0
@@ -1945,9 +501,6 @@ Model Rock02e
 
 Model Rock02f
 {
-	Path "Models"
-	Model 0 "rock_big_b.md3"
-	Skin 0 "xenrock3.png"
 	ZOffset 610
 
 	FrameIndex HLI1 A 0 0
@@ -1955,9 +508,6 @@ Model Rock02f
 
 Model Rock02g
 {
-	Path "Models"
-	Model 0 "rock_big_b.md3"
-	Skin 0 "xenrock1.png"
 	ZOffset 110
 
 	FrameIndex HLI1 A 0 0
@@ -1965,39 +515,6 @@ Model Rock02g
 
 Model Rock03
 {
-	Path "Models"
-	Model 0 "rock_big_c.md3"
-	Skin 0 "rock_big.jpg"
-	ZOffset 184
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Rock03a
-{
-	Path "Models"
-	Model 0 "rock_big_c.md3"
-	Skin 0 "rock_big2.jpg"
-	ZOffset 184
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Rock03b
-{
-	Path "Models"
-	Model 0 "rock_big_c.md3"
-	Skin 0 "rock_moss1.jpg"
-	ZOffset 184
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Rock03c
-{
-	Path "Models"
-	Model 0 "rock_big_c.md3"
-	Skin 0 "rock_moss2.jpg"
 	ZOffset 184
 
 	FrameIndex HLI1 A 0 0
@@ -2005,9 +522,6 @@ Model Rock03c
 
 Model Rock03d
 {
-	Path "Models"
-	Model 0 "rock_big_c.md3"
-	Skin 0 "xenrock1.png"
 	ZOffset 608
 
 	FrameIndex HLI1 A 0 0
@@ -2015,9 +529,6 @@ Model Rock03d
 
 Model Rock03e
 {
-	Path "Models"
-	Model 0 "rock_big_c.md3"
-	Skin 0 "xenrock2.png"
 	ZOffset 680
 
 	FrameIndex HLI1 A 0 0
@@ -2025,9 +536,6 @@ Model Rock03e
 
 Model Rock03f
 {
-	Path "Models"
-	Model 0 "rock_big_c.md3"
-	Skin 0 "xenrock3.png"
 	ZOffset 620
 
 	FrameIndex HLI1 A 0 0
@@ -2035,9 +543,6 @@ Model Rock03f
 
 Model Rock03g
 {
-	Path "Models"
-	Model 0 "rock_big_c.md3"
-	Skin 0 "xenrock3.png"
 	ZOffset 85
 
 	FrameIndex HLI1 A 0 0
@@ -2045,39 +550,6 @@ Model Rock03g
 
 Model Rock04
 {
-	Path "Models"
-	Model 0 "rock_big_d.md3"
-	Skin 0 "rock_big.jpg"
-	ZOffset 72
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Rock04a
-{
-	Path "Models"
-	Model 0 "rock_big_d.md3"
-	Skin 0 "rock_big2.jpg"
-	ZOffset 72
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Rock04b
-{
-	Path "Models"
-	Model 0 "rock_big_d.md3"
-	Skin 0 "rock_moss1.jpg"
-	ZOffset 72
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Rock04c
-{
-	Path "Models"
-	Model 0 "rock_big_d.md3"
-	Skin 0 "rock_moss2.jpg"
 	ZOffset 72
 
 	FrameIndex HLI1 A 0 0
@@ -2085,39 +557,6 @@ Model Rock04c
 
 Model Rock05
 {
-	Path "Models"
-	Model 0 "rock_small_a.md3"
-	Skin 0 "rock_big2.jpg"
-	ZOffset 384
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Rock05a
-{
-	Path "Models"
-	Model 0 "rock_small_a.md3"
-	Skin 0 "rock_moss1.jpg"
-	ZOffset 384
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Rock06
-{
-	Path "Models"
-	Model 0 "rock_small_b.md3"
-	Skin 0 "rock_big2.jpg"
-	ZOffset 384
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model Rock06a
-{
-	Path "Models"
-	Model 0 "rock_small_b.md3"
-	Skin 0 "rock_moss1.jpg"
 	ZOffset 384
 
 	FrameIndex HLI1 A 0 0
@@ -2125,219 +564,21 @@ Model Rock06a
 
 Model XenIsland1
 {
-	Path "Models"
-	Model 0 "island.md3"
-	Skin 0 "island.png"
 	ZOffset -0.2
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model XenIsland2
-{
-	Path "Models"
-	Model 0 "island.md3"
-	Skin 0 "xenrock2.png"
-	ZOffset -0.2
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model XenIsland3
-{
-	Path "Models"
-	Model 0 "island.md3"
-	Skin 0 "rock_big.jpg"
-	ZOffset -0.2
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model XenIsland4
-{
-	Path "Models"
-	Model 0 "island.md3"
-	Skin 0 "rock_moss1.jpg"
-	ZOffset -0.2
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model XenIsland5
-{
-	Path "Models"
-	Model 0 "island.md3"
-	Skin 0 "rock_big2.jpg"
-	ZOffset -0.2
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model XenIsland6
-{
-	Path "Models"
-	Model 0 "island.md3"
-	Skin 0 "rock_moss2.jpg"
-	ZOffset -0.2
-
-	FrameIndex HLI1 A 0 0
-}
-
-//********
-//Tech Pillars & Clamps
-//********
-
-Model TechPillar1a
-{
-	Path "Models"
-	Model 0 "q4tech01.md3"
-	Skin 0 "q4tech1a.jpg"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model TechPillar1b
-{
-	Path "Models"
-	Model 0 "q4tech01.md3"
-	Skin 0 "q4tech1b.jpg"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model TechPillar1c
-{
-	Path "Models"
-	Model 0 "q4tech01.md3"
-	Skin 0 "q4tech1c.jpg"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model TechPillar2
-{
-	Path "Models"
-	Model 0 "q4tech02.md3"
-	Skin 0 "q4tech02.jpg"
 
 	FrameIndex HLI1 A 0 0
 }
 
 Model TechClamp
 {
-	Path "Models"
-	Model 0 "q4tech03.md3"
-	Skin 0 "q4tech03.jpg"
 	ZOffset -134
 
 	FrameIndex HLI1 A 0 0
 }
-
-Model TechClampa	//Small version
-{
-	Path "Models"
-	Model 0 "q4tech03.md3"
-	Skin 0 "q4tech03.jpg"
-	ZOffset -134
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model TechPillar1aa	//Small version
-{
-	Path "Models"
-	Model 0 "q4tech01.md3"
-	Skin 0 "q4tech1a.jpg"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model TechPillar1bb	//Small version
-{
-	Path "Models"
-	Model 0 "q4tech01.md3"
-	Skin 0 "q4tech1b.jpg"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model TechPillar1cc	//Small version
-{
-	Path "Models"
-	Model 0 "q4tech01.md3"
-	Skin 0 "q4tech1c.jpg"
-
-	FrameIndex HLI1 A 0 0
-}
-
-//********
-//HoverPad
-//********
 
 Model HoverPad
 {
-	Path "Models"
-	Model 0 "hover.md3"
-	Skin 0 "hover.jpg"
 	ZOffset -13
-
-	FrameIndex HLI1 A 0 0
-}
-
-//********
-//Computer Consoles
-//********
-
-Model PConsole
-{
-	Path "Models"
-	Model 0 "console.md3"
-	Skin 0 "console.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model PConsole1
-{
-	Path "Models"
-	Model 0 "console.md3"
-	Skin 0 "console1.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model PConsole2
-{
-	Path "Models"
-	Model 0 "console.md3"
-	Skin 0 "console2.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model PConsole3
-{
-	Path "Models"
-	Model 0 "console.md3"
-	Skin 0 "console3.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model PConsole4
-{
-	Path "Models"
-	Model 0 "console.md3"
-	Skin 0 "console4.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model PConsole5
-{
-	Path "Models"
-	Model 0 "consolebroke.md3"
-	Skin 0 "consolebroke.png"
 
 	FrameIndex HLI1 A 0 0
 }

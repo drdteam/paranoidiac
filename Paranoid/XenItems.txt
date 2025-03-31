@@ -1,5 +1,7 @@
 class HLXenHair : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("", 0, "Models", "hair.iqm", 0, "Models", "hair.png");}
 	Default
 	{
 		Radius 4;
@@ -20,6 +22,17 @@ class HLXenHair : ModelBase
 
 class HLXenFungus : HLXenHair
 {
+	override void HLModelSetup()
+	{
+		static const name modelskin[]=
+		{
+			'fungus_000.png',
+			'fungus_001.png',
+			'fungus_002.png'
+		};
+		for(int i = 0; i <= 2; i++)
+			A_ChangeModel("", 0, "Models", "fungus.iqm", i, "Models", modelskin[i], CMDL_USESURFACESKIN);
+	}
 	Default
 	{
 		Scale .5;
@@ -40,6 +53,8 @@ class HLXenFungus : HLXenHair
 
 class HLXenLight : HLXenFungus
 {
+	override void HLModelSetup()
+		{A_ChangeModel("", 0, "Models", "light.iqm", 0, "Models", "light.png");}
 	Default
 	{
 		Scale 1;
@@ -70,6 +85,8 @@ class HLXenLight : HLXenFungus
 
 class HLXenTree : HLXenFungus
 {
+	override void HLModelSetup()
+		{A_ChangeModel("", 0, "Models", "tree.iqm", 0, "Models", "tree.png");}
 	Default
 	{
 		Scale 1;
@@ -129,8 +146,20 @@ class HLXenTree : HLXenFungus
 	}
 }
 
-class DissectedHeadCrab : ModelBase //Dissected HeadCrab Model
+class DissectedHeadCrab : ModelBase
 {
+	override void HLModelSetup()
+	{
+		static const name modelskin[]=
+		{
+			'dissected_headcrab_000.png',
+			'dissected_headcrab_001.png',
+			'dissected_headcrab_002.png',
+			'dissected_headcrab_003.png'
+		};
+		for(int i = 0; i <= 2; i++)
+			A_ChangeModel("ModelBase", 0, "Models", "dissected_headcrab.md3", i, "Models", modelskin[i], CMDL_USESURFACESKIN);
+	}
 	Default
 	{
 		Radius 8;
@@ -145,6 +174,8 @@ class DissectedHeadCrab : ModelBase //Dissected HeadCrab Model
 
 class XenIsland1 : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("", 0, "Models", "island.md3", 0, "Models", "island.png");}
 	Default
 	{
 		Scale 500;
@@ -154,9 +185,15 @@ class XenIsland1 : ModelBase
 		+NOGRAVITY
 	}
 }
-class XenIsland2 : XenIsland1{}
+class XenIsland2 : XenIsland1
+{
+	override void HLModelSetup()
+		{A_ChangeModel("XenIsland1", 0, "Models", "island.md3", 0, "Models", "xenrock2.png");}
+}
 class XenIsland3 : XenIsland1
 {
+	override void HLModelSetup()
+		{A_ChangeModel("XenIsland1", 0, "Models", "island.md3", 0, "Models", "rock_big.jpg");}
 	Default
 	{
 		Scale 1800;
@@ -164,6 +201,18 @@ class XenIsland3 : XenIsland1
 		Height 384;
 	}
 }
-class XenIsland4 : XenIsland3{}
-class XenIsland5 : XenIsland3{}
-class XenIsland6 : XenIsland3{}
+class XenIsland4 : XenIsland3
+{
+	override void HLModelSetup()
+		{A_ChangeModel("XenIsland1", 0, "Models", "island.md3", 0, "Models", "rock_moss1.jpg");}
+}
+class XenIsland5 : XenIsland3
+{
+	override void HLModelSetup()
+		{A_ChangeModel("XenIsland1", 0, "Models", "island.md3", 0, "Models", "rock_big2.jpg");}
+}
+class XenIsland6 : XenIsland3
+{
+	override void HLModelSetup()
+		{A_ChangeModel("XenIsland1", 0, "Models", "island.md3", 0, "Models", "rock_moss2.jpg");}
+}

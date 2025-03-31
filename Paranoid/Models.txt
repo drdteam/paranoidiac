@@ -57,6 +57,8 @@ class ModelFloat : ModelBase
 
 class Monitor : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "monitor.md3", 0, "Models", "monitor.jpg");}
 	Default
 	{
 		Radius 15;
@@ -65,12 +67,26 @@ class Monitor : ModelBase
 		+PUSHABLE
 	}
 }
-class Monitor1 : Monitor{}
-class Monitor2 : Monitor{}
-class Monitor3 : Monitor{}
+class Monitor1 : Monitor
+{
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "monitor.md3", 0, "Models", "monitor1.png");}
+}
+class Monitor2 : Monitor
+{
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "monitor.md3", 0, "Models", "monitor2.png");}
+}
+class Monitor3 : Monitor
+{
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "monitor.md3", 0, "Models", "monitor3.png");}
+}
 
 class keyboard1 : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "br_keyboard1.md3", 0, "Models", "br_keyboard1.jpg");}
 	Default
 	{
 		Scale .25;
@@ -78,10 +94,16 @@ class keyboard1 : ModelBase
 		Height 2;
 	}
 }
-class keyboard3 : keyboard1{}
+class keyboard3 : keyboard1
+{
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "br_keyboard3.md3", 0, "Models", "br_pcs2.jpg");}
+}
 
 class mouse3 : keyboard1
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "br_mouse1.md3", 0, "Models", "br_pcs2.jpg");}
 	Default
 	{
 		Radius 3;
@@ -91,6 +113,16 @@ class mouse3 : keyboard1
 
 class flatpanel1 : ModelBase
 {
+	override void HLModelSetup()
+	{
+		static const name modelskin[]=
+		{
+			'br_monitor1.jpg',
+			'br_screen1.jpg'
+		};
+		for(int i = 0; i <= 2; i++)
+			A_ChangeModel("", 0, "Models", "br_monitor1.md3", i, "Models", modelskin[i], CMDL_USESURFACESKIN);
+	}
 	Default
 	{
 		Scale .8;
@@ -98,10 +130,33 @@ class flatpanel1 : ModelBase
 		Height 20;
 	}
 }
-class flatpanel2 : flatpanel1{}
+
+class flatpanel2 : flatpanel1
+{
+	override void HLModelSetup()
+	{
+		static const name modelskin[]=
+		{
+			'br_monitor1.jpg',
+			'br_screen2.png'
+		};
+		for(int i = 0; i <= 2; i++)
+			A_ChangeModel("", 0, "Models", "br_monitor1.md3", i, "Models", modelskin[i], CMDL_USESURFACESKIN);
+	}
+}
 
 class flatpanel3 : flatpanel1
 {
+	override void HLModelSetup()
+	{
+		static const name modelskin[]=
+		{
+			'br_pcs1.jpg',
+			'br_screen1.jpg'
+		};
+		for(int i = 0; i <= 2; i++)
+			A_ChangeModel("flatpanel3", 0, "Models", "br_monitor3.md3", i, "Models", modelskin[i], CMDL_USESURFACESKIN);
+	}
 	Default
 	{
 		Scale .5;
@@ -109,10 +164,33 @@ class flatpanel3 : flatpanel1
 		Height 16;
 	}
 }
-class flatpanel4 : flatpanel3{}
+
+class flatpanel4 : flatpanel3
+{
+	override void HLModelSetup()
+	{
+		static const name modelskin[]=
+		{
+			'br_pcs1.jpg',
+			'br_screen2.png'
+		};
+		for(int i = 0; i <= 2; i++)
+			A_ChangeModel("flatpanel3", 0, "Models", "br_monitor3.md3", i, "Models", modelskin[i], CMDL_USESURFACESKIN);
+	}
+}
 
 class flatpanel5 : ModelFloat
 {
+	override void HLModelSetup()
+	{
+		static const name modelskin[]=
+		{
+			'br_monitor5.png',
+			'br_screen1.jpg'
+		};
+		for(int i = 0; i <= 2; i++)
+			A_ChangeModel("", 0, "Models", "br_monitor5.md3", i, "Models", modelskin[i], CMDL_USESURFACESKIN);
+	}
 	Default
 	{
 		Radius 2;
@@ -120,9 +198,24 @@ class flatpanel5 : ModelFloat
 		Scale 1.2;
 	}
 }
-class flatpanel6 : flatpanel5{}
+
+class flatpanel6 : flatpanel5
+{
+	override void HLModelSetup()
+	{
+		static const name modelskin[]=
+		{
+			'br_monitor5.png',
+			'br_screen1.jpg'
+		};
+		for(int i = 0; i <= 2; i++)
+			A_ChangeModel("", 0, "Models", "br_monitor5.md3", i, "Models", modelskin[i], CMDL_USESURFACESKIN);
+	}
+}
+
 class flatpanel7 : flatpanel5
 {
+	override void HLModelSetup(){}
 	States
 	{
 	Spawn:
@@ -130,11 +223,39 @@ class flatpanel7 : flatpanel5
 		Loop;
 	}
 }
-class flatpanel8 : flatpanel5{}
-class flatpanel9 : flatpanel5{}
+
+class flatpanel8 : flatpanel5
+{
+	override void HLModelSetup()
+	{
+		static const name modelskin[]=
+		{
+			'br_monitor5.png',
+			'br_screen8.png'
+		};
+		for(int i = 0; i <= 2; i++)
+			A_ChangeModel("", 0, "Models", "br_monitor5.md3", i, "Models", modelskin[i], CMDL_USESURFACESKIN);
+	}
+}
+
+class flatpanel9 : flatpanel5
+{
+	override void HLModelSetup()
+	{
+		static const name modelskin[]=
+		{
+			'br_monitor5.png',
+			'br_screen10.png'
+		};
+		for(int i = 0; i <= 2; i++)
+			A_ChangeModel("", 0, "Models", "br_monitor5.md3", i, "Models", modelskin[i], CMDL_USESURFACESKIN);
+	}
+}
 
 class pc1 : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "br_pc1.md3", 0, "Models", "br_pc1.jpg");}
 	Default
 	{
 		Scale .5;
@@ -142,10 +263,17 @@ class pc1 : ModelBase
 		Height 20;
 	}
 }
-class pc3 : pc1{}
+
+class pc3 : pc1
+{
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "br_pc3.md3", 0, "Models", "br_pcs1.jpg");}
+}
 
 class modem : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "br_pc2.md3", 0, "Models", "br_pc2.jpg");}
 	Default
 	{
 		Scale .75;
@@ -155,9 +283,24 @@ class modem : ModelBase
 }
 
 class server1 : ModelBase
-	{Default{Height 60;}}
-class server2 : server1{}
-class server3 : server1{}
+{
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "br_server1.md3", 0, "Models", "br_server1.jpg");}
+	Default
+		{Height 60;}
+}
+
+class server2 : server1
+{
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "br_server2.md3", 0, "Models", "br_server2.jpg");}
+}
+
+class server3 : server1
+{
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "br_server3.md3", 0, "Models", "br_server3.jpg");}
+}
 
 //=============================================
 // Non-spawnable models
@@ -167,6 +310,8 @@ class server3 : server1{}
 
 class Transformer1 : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "transformer.md3", 0, "Models", "transformer.jpg");}
 	override void postbeginplay()
 	{
 		blockmax = 1;
@@ -185,6 +330,8 @@ class Transformer1 : ModelBase
 
 class Meter1 : ModelFloat
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "meter1.md3", 0, "Models", "meters.jpg");}
 	Default
 	{
 		Radius 4;
@@ -194,6 +341,8 @@ class Meter1 : ModelFloat
 
 class Meter2 : ModelFloat
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "meter2.md3", 0, "Models", "meters.jpg");}
 	Default
 	{
 		Radius 16;
@@ -203,6 +352,8 @@ class Meter2 : ModelFloat
 
 class Meter3 : ModelFloat
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "meter2.md3", 0, "Models", "meters.jpg");}
 	Default
 	{
 		Scale 1.5;
@@ -213,6 +364,8 @@ class Meter3 : ModelFloat
 
 class light2 : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "light2.md2", 0, "Models", "light2.png");}
 	Default
 	{
 		Radius 16;
@@ -228,6 +381,8 @@ class light2 : ModelBase
 
 class light1 : light2
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "light1.md2", 0, "Models", "light1.png");}
 	Default
 	{
 		Scale .7;
@@ -239,6 +394,8 @@ class light1 : light2
 
 class Tesla : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "br_tesla.md3", 0, "Models", "br_tesla.png");}
 	Default
 	{
 		Radius 16;
@@ -254,6 +411,8 @@ class Tesla : ModelBase
 
 class Forklift1 : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "forktruck.md2", 0, "Models", "forktruck.png");}
 	Default
 	{
 		Scale 1.2;
@@ -263,6 +422,8 @@ class Forklift1 : ModelBase
 
 class Forklift2 : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "forklift.md3", 0, "Models", "forklift.png");}
 	override void postbeginplay()
 	{
 		blockmax = 5;
@@ -288,6 +449,8 @@ class Forklift2 : ModelBase
 
 class Backhoe1 : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "backhoe.md3", 0, "Models", "backhoe.png");}
 	override void postbeginplay()
 	{
 		blockmax = 5;
@@ -313,6 +476,8 @@ class Backhoe1 : ModelBase
 
 class Trailer1 : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "trailer1.md3", 0, "Models", "trailer1.png");}
 	override void postbeginplay()
 	{
 		blockmax = 2;
@@ -329,10 +494,16 @@ class Trailer1 : ModelBase
 		Height 64;
 	}
 }
-class Trailer2 : Trailer1{}
+class Trailer2 : Trailer1
+{
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "trailer1.md3", 0, "Models", "trailer2.png");}
+}
 
 class Generator1 : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "generator.md3", 0, "Models", "generator.png");}
 	override void postbeginplay()
 	{
 		blockmax = 3;
@@ -355,6 +526,8 @@ class Generator1 : ModelBase
 
 class Generator2 : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "generator2.md2", 0, "Models", "generator2.png");}
 	Default
 	{
 		Scale 1.75;
@@ -365,6 +538,8 @@ class Generator2 : ModelBase
 
 class Generator3 : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "generator3.md3", 0, "Models", "generator3.png");}
 	override void postbeginplay()
 	{
 		blockmax = 2;
@@ -388,6 +563,8 @@ class Generator4 : ModelBase
 		{SetStateLabel("Active");}
 	override void Deactivate (Actor activator)
 		{SetStateLabel("Inactive");}
+	override void HLModelSetup()
+		{A_ChangeModel("", 0, "Models", "generator3.md3", 0, "Models", "generator3.png");}
 	override void postbeginplay()
 	{
 		blockmax = 2;
@@ -442,6 +619,8 @@ class Generator4 : ModelBase
 
 class girder1 : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "girder1.md2", 0, "Models", "girder1.png");}
 	Default
 	{
 		Radius 34;
@@ -452,6 +631,8 @@ class girder1 : ModelBase
 
 class girder2 : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "girder2.md2", 0, "Models", "girder2.png");}
 	override void postbeginplay()
 	{
 		blockmax = 6;
@@ -477,6 +658,8 @@ class girder2 : ModelBase
 
 class girder3 : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "girder1.md2", 0, "Models", "girder1.png");}
 	Default
 	{
 		Scale 4;
@@ -489,10 +672,175 @@ class girder3 : ModelBase
 
 class girder4 : girder3
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "girder2.md2", 0, "Models", "girder2.png");}
 	Default
 	{
 		Radius 128;
 		Height 416;
+	}
+}
+
+//====================================================================
+// Non-spawnable models (some of which require 3D sectors)
+// Simple Vehicles: Bulldozer, Cargo truck, Apache helicopter
+//====================================================================
+
+class Bulldozer1 : ModelBase
+{
+	override void HLModelSetup()
+		{A_ChangeModel("", 0, "Models", "bulldozer.md3", 0, "Models", "bulldozer.png");}
+	override void postbeginplay()
+	{
+		blockmax = 20;
+		blockpos[0] = (-16, 0, 88);
+		blockpos[1] = (80, -32, 4);
+		blockpos[2] = (80, -16, 4);
+		blockpos[3] = (80, 16, 4);
+		blockpos[4] = (80, 32, 4);
+		blockpos[5] = (48, -16, 4);
+		blockpos[6] = (48, 16, 4);
+		blockpos[7] = (-48, -16, 4);
+		blockpos[8] = (-48, 16, 4);
+		blockpos[9] = (-48, -32, 4);
+		blockpos[10] = (-16, -32, 4);
+		blockpos[11] = (16, -32, 4);
+		blockpos[12] = (48, -32, 4);
+		blockpos[13] = (-48, 32, 4);
+		blockpos[14] = (-16, 32, 4);
+		blockpos[15] = (16, 32, 4);
+		blockpos[16] = (48, 32, 4);
+		blockpos[17] = (-32, 0, 4);
+		blockpos[18] = (-48, -32, 4);
+		blockpos[19] = (-48, 32, 4);
+		blocksize[0] = (36, 2);
+		for(int i = 1; i <= 8; i++)
+			blocksize[i] = (16, 40);
+		for(int i = 9; i <= 16; i++)
+			blocksize[i] = (16, 24);
+		blocksize[17] = (8, 64);
+		blocksize[18] = (2, 64);
+		blocksize[19] = (2, 64);
+
+		super.postbeginplay();
+	}
+	Default
+	{
+		Radius 16;
+		Height 36;
+	}
+}
+
+class Truck01 : ModelBase
+{
+	override void HLModelSetup()
+	{
+		static const name modelskin[]=
+		{
+			'truck_research_000.png',
+			'truck_research_001.png',
+			'truck_research_002.png',
+			'truck_research_003.png',
+			'truck_research_004.png',
+			'truck_research_005.png',
+			'truck_research_006.png',
+			'truck_research_007.png'
+		};
+		for(int i = 0; i <= 7; i++)
+			A_ChangeModel("", 0, "Models", "truck_research.md3", i, "Models", modelskin[i], CMDL_USESURFACESKIN);
+	}
+	override void postbeginplay()
+	{
+		blockmax = 7;
+		blockpos[0] = (94, -28, 0);
+		blockpos[1] = (94, 28, 0);
+		blockpos[2] = (-94, -28, 0);
+		blockpos[3] = (-94, 28, 0);
+		blockpos[4] = (-126, 34, 40);
+		blockpos[5] = (-126, 0, 40);
+		blockpos[6] = (-126, -34, 40);
+		blocksize[0] = (30, 104);
+		blocksize[1] = (30, 104);
+		blocksize[2] = (30, 122);
+		blocksize[3] = (30, 122);
+		blocksize[4] = (10, 82);
+		blocksize[5] = (10, 82);
+		blocksize[6] = (10, 82);
+
+		super.postbeginplay();
+	}
+	Default
+	{
+		Radius 58;
+		Height 122;
+	}
+}
+
+class apache : ModelBase
+{
+	override void HLModelSetup()
+	{
+		static const name modelskin[]=
+		{
+			'apache_000.png',
+			'apache_001.png',
+			'apache_002.png',
+			'apache_003.png',
+			'apache_004.png',
+			'apache_005.png',
+			'apache_006.png',
+			'apache_007.png',
+			'apache_008.png',
+			'apache_009.png',
+			'apache_010.png',
+			'apache_011.png',
+			'apache_012.png',
+			'apache_013.png',
+			'apache_014.png',
+			'apache_015.png',
+			'apache_016.png',
+			'apache_017.png',
+			'apache_018.png',
+			'apache_019.png',
+			'apache_020.png',
+			'apache_021.png',
+			'apache_022.png'
+		};
+		for(int i = 0; i <= 22; i++)
+			A_ChangeModel("", 0, "Models", "apache.md3", i, "Models", modelskin[i], CMDL_USESURFACESKIN);
+	}
+	override void postbeginplay()
+	{
+		blockmax = 11;
+		blockpos[0] = (192, 0, 48);
+		blockpos[1] = (128, 0, 40);
+		blockpos[2] = (80, -8, 40);
+		blockpos[3] = (104, 0, 20);
+		blockpos[4] = (0, 80, 28);
+		blockpos[5] = (0, -80, 28);
+		blockpos[6] = (-96, 0, 28);
+		blockpos[7] = (-160, 0, 20);
+		blockpos[8] = (-224, 0, 20);
+		blockpos[9] = (-272, 0, 20);
+		blockpos[10] = (-320, -0, 20);
+		blocksize[0] = (20, 32);
+		blocksize[1] = (32, 64);
+		blocksize[2] = (64, 72);
+		blocksize[3] = (16, 24);
+		blocksize[4] = (32, 40);
+		blocksize[5] = (32, 40);
+		blocksize[6] = (48, 56);
+		blocksize[7] = (24, 48);
+		blocksize[8] = (24, 32);
+		blocksize[9] = (24, 24);
+		blocksize[10] = (16, 96);
+
+		super.postbeginplay();
+	}
+	Default
+	{
+		Radius 48;
+		Height 128;
 	}
 }
 
@@ -503,6 +851,8 @@ class girder4 : girder3
 
 class Toilet1 : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "toilet1.md2", 0, "Models", "toilet1.png");}
 	Default
 	{
 		Scale .83;
@@ -510,11 +860,22 @@ class Toilet1 : ModelBase
 		Height 28;
 	}
 }
-class Toilet2 : Toilet1{}
+class Toilet2 : Toilet1
+{
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "toilet1.md2", 0, "Models", "toilet2.png");}
+}
 class ToiletStainless : Toilet1
-	{Default{Scale 1.8;}}
+{
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "toiletst.md3", 0, "Models", "toiletst.png");}
+	Default
+		{Scale 1.8;}
+}
 class Urinal1 : Toilet1
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "urinal.md2", 0, "Models", "urinal.png");}
 	Default
 	{
 		Scale .6;
@@ -523,11 +884,22 @@ class Urinal1 : Toilet1
 }
 
 class Armchair : ModelBase
-	{Default{Height 29;}}
-class Sofa : Armchair{}
+{
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "armchair.md2", 0, "Models", "armchair.png");}
+	Default
+		{Height 29;}
+}
+class Sofa : Armchair
+{
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "sofa.md2", 0, "Models", "sofa.png");}
+}
 
 class Chair1 : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "chair1.md3", 0, "Models", "chair1.png");}
 	Default
 	{
 		Scale .9;
@@ -537,12 +909,24 @@ class Chair1 : ModelBase
 	}
 }
 class Chair2 : Chair1
-	{Default{Scale .7;}}
+{
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "chair2.md2", 0, "Models", "chair2.png");}
+	Default
+		{Scale .7;}
+}
 class Chair3 : Chair1
-	{Default{Scale 1;}}
+{
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "chair3.md2", 0, "Models", "chair3.png");}
+	Default
+		{Scale 1;}
+}
 
 class Desklamp1 : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "desklamp1.md3", 0, "Models", "desklamp1.png");}
 	Default
 	{
 		Scale .4;
@@ -551,13 +935,19 @@ class Desklamp1 : ModelBase
 		+PUSHABLE
 	}
 }
-class Desklamp2 : Desklamp1{}
+class Desklamp2 : Desklamp1
+{
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "desklamp2.md2", 0, "Models", "desklamp2.png");}
+}
 
 class Desk1 : ModelBase
 	{Default{Height 32;}}
 
 class Desk2 : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "desk2.md3", 0, "Models", "desk2.png");}
 	override void postbeginplay()
 	{
 		blockmax = 2;
@@ -573,13 +963,31 @@ class Desk2 : ModelBase
 		Scale .8;
 	}
 }
-class Desk3 : Desk2{}
-class Desk4 : Desk2{}
-class Desk5 : Desk2{}
-class Desk6 : Desk2{}
+class Desk3 : Desk2
+{
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "desk3.md3", 0, "Models", "desk3.png");}
+}
+class Desk4 : Desk2
+{
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "desk4.md3", 0, "Models", "desk4.png");}
+}
+class Desk5 : Desk2
+{
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "desk5.md3", 0, "Models", "desk5.png");}
+}
+class Desk6 : Desk2
+{
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "desk6.md3", 0, "Models", "desk6.png");}
+}
 
 class HandDryer : ModelFloat
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "handdryer.md3", 0, "Models", "handdryer.png");}
 	Default
 	{
 		Scale 1.5;
@@ -590,6 +998,8 @@ class HandDryer : ModelFloat
 
 class Sink1 : ModelFloat
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "sink1.md3", 0, "Models", "sink1.png");}
 	Default
 	{
 		Scale 1.75;
@@ -600,6 +1010,8 @@ class Sink1 : ModelFloat
 
 class Sink2 : ModelFloat
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "sink2.md3", 0, "Models", "sink2.png");}
 	Default
 	{
 		Scale 2.2;
@@ -608,13 +1020,25 @@ class Sink2 : ModelFloat
 	}
 }
 class SoapDispenser : HandDryer
-	{Default{Radius 8;}}
+{
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "soapdisp.md3", 0, "Models", "soapdisp.png");}
+	Default
+		{Radius 8;}
+}
 
 class ToiletPaper : HandDryer
-	{Default{Height 4;}}
+{
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "tpaper.md3", 0, "Models", "tpaper09.png");}
+	Default
+		{Height 4;}
+}
 
 class Bed01 : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "br_frame1.md3", 0, "Models", "br_frame1.jpg");}
 	override void postbeginplay()
 	{
 		let matt=Spawn("Mattress01",(pos));
@@ -658,6 +1082,8 @@ class FileCab3: FileCab2
 
 class DeerHead : ModelFloat
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "br_deer.md3", 0, "Models", "br_deer.png");}
 	Default
 	{
 		Scale 1.25;
@@ -668,6 +1094,8 @@ class DeerHead : ModelFloat
 
 class VidCam1 : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "vidcam.md3", 0, "Models", "vidcam.png");}
 	Default
 	{
 		Radius 16;
@@ -676,10 +1104,17 @@ class VidCam1 : ModelBase
 }
 
 class VidCam2 : VidCam1
-	{Default{Radius 10;}}
+{
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "vidcam2.md3", 0, "Models", "vidcam2.png");}
+	Default
+		{Radius 10;}
+}
 
 class TankGlass : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "tankglass.md3", 0, "Models", "suv_glass.png");}
 	Default
 	{
 		Radius 2;
@@ -697,6 +1132,8 @@ class TankGlass : ModelBase
 
 class Pipe1 : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "xpipe1.md3", 0, "Models", "xptv.png");}
 	override void postbeginplay()
 	{
 		blockmax = 6;
@@ -714,13 +1151,24 @@ class Pipe1 : ModelBase
 	Default
 		{Height 56;}
 }
-class Pipe1a : pipe1{}
+class Pipe1a : pipe1
+{
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "xpipe1a.md3", 0, "Models", "xptv.png");}
+}
 
 class Pipe2 : ModelBase
-	{Default{Height 66;}}
+{
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "xpipe2.md2", 0, "Models", "xptv.png");}
+	Default
+		{Height 66;}
+}
 
 class Pipe3 : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "xpipe1.md3", 0, "Models", "xptv.png");}
 	override void postbeginplay()
 	{
 		blockmax = 6;
@@ -742,9 +1190,15 @@ class Pipe3 : ModelBase
 		Height 28;
 	}
 }
-class Pipe3a : Pipe3{}
+class Pipe3a : Pipe3
+{
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "xpipe1a.md3", 0, "Models", "xptv.png");}
+}
 class Pipe4 : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "xpipe2.md2", 0, "Models", "xptv.png");}
 	Default
 	{
 		Scale .5;
@@ -755,6 +1209,8 @@ class Pipe4 : ModelBase
 
 class pipe5 : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "pipe5.md2", 0, "Models", "pipe5.png");}
 	Default
 	{
 		Scale .75;
@@ -765,6 +1221,8 @@ class pipe5 : ModelBase
 
 class pipe6 : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "pipe5.md2", 0, "Models", "pipe5.png");}
 	Default
 	{
 		Scale .5;
@@ -775,6 +1233,8 @@ class pipe6 : ModelBase
 
 class pipe7 : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "pipe5.md2", 0, "Models", "pipe5.png");}
 	Default
 	{
 		Radius 12;
@@ -784,6 +1244,8 @@ class pipe7 : ModelBase
 
 class pipe8 : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "pipe5.md2", 0, "Models", "pipe5.png");}
 	Default
 	{
 		Scale 1.5;
@@ -794,6 +1256,8 @@ class pipe8 : ModelBase
 
 class PipeMaze : ModelFloat
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "pipemaze.md3", 0, "Models", "pipemaze.png");}
 	Default
 	{
 		Radius 64;
@@ -803,6 +1267,9 @@ class PipeMaze : ModelFloat
 
 class Tank01 : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "xtank.md3", 0, "Models", "xptv2.png");}
+
 	Default
 	{
 		Radius 28;
@@ -812,6 +1279,8 @@ class Tank01 : ModelBase
 
 class Tank02 : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "xtank1.md2", 0, "Models", "xptv.png");}
 	Default
 	{
 		Radius 15;
@@ -819,10 +1288,17 @@ class Tank02 : ModelBase
 	}
 }
 class Tank02a : Tank02
-	{Default{Radius 4;}}
+{
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "xtank1a.md2", 0, "Models", "xptv.png");}
+	Default
+		{Radius 4;}
+}
 
 class tank03 : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "tank03.md3", 0, "Models", "tank03.png");}
 	Default
 	{
 		Scale 5;
@@ -832,6 +1308,8 @@ class tank03 : ModelBase
 
 class tank04 : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "tank04.md3", 0, "Models", "tank04.png");}
 	override void postbeginplay()
 	{
 		blockmax = 5;
@@ -858,6 +1336,8 @@ class tank04 : ModelBase
 
 class tank05 : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "tank05.md3", 0, "Models", "tank05.png");}
 	override void postbeginplay()
 	{
 		blockmax = 2;
@@ -878,6 +1358,8 @@ class tank05 : ModelBase
 
 class tank06 : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "tank04a.md3", 0, "Models", "tank04.png");}
 	override void postbeginplay()
 	{
 		blockmax = 2;
@@ -898,6 +1380,8 @@ class tank06 : ModelBase
 
 class propane1a : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "propane1.md3", 0, "Models", "propane1a.png");}
 	override void postbeginplay()
 	{
 		blockmax = 2;
@@ -914,11 +1398,21 @@ class propane1a : ModelBase
 		Height 40;
 	}
 }
-class propane1b : propane1a{}
-class propane1c : propane1a{}
+class propane1b : propane1a
+{
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "propane1.md3", 0, "Models", "propane1b.png");}
+}
+class propane1c : propane1a
+{
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "propane1.md3", 0, "Models", "propane1c.png");}
+}
 
 class propane2 : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "propane2.md3", 0, "Models", "propane2.png");}
 	Default
 	{
 		Scale .8;
@@ -929,6 +1423,8 @@ class propane2 : ModelBase
 
 class Valve1 : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "xvalve1.md2", 0, "Models", "xptv.png");}
 	override void postbeginplay()
 	{
 		blockmax = 1;
@@ -951,6 +1447,8 @@ class Valve1 : ModelBase
 
 class Toolbox1 : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "toolbox1.md3", 0, "Models", "toolbox1.png");}
 	Default
 	{
 		Height 40;
@@ -959,6 +1457,8 @@ class Toolbox1 : ModelBase
 }
 class Toolbox2 : Toolbox1
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "toolbox2.md3", 0, "Models", "toolbox2.png");}
 	Default
 	{
 		Height 48;
@@ -968,6 +1468,8 @@ class Toolbox2 : Toolbox1
 
 class Radio1 : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "radio1.md3", 0, "Models", "radio.png");}
 	Default
 	{
 		Scale .5;
@@ -978,6 +1480,8 @@ class Radio1 : ModelBase
 
 class Radio2 : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "radio2.md3", 0, "Models", "radio.png");}
 	Default
 	{
 		Scale .4;
@@ -988,6 +1492,8 @@ class Radio2 : ModelBase
 
 class Radio3 : Radio1
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "radio3.md3", 0, "Models", "radio.png");}
 	Default
 	{
 		Radius 4;
@@ -996,9 +1502,17 @@ class Radio3 : Radio1
 }
 
 class Radio4 : Radio1
-	{Default{Radius 10;}}
+{
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "radio4.md3", 0, "Models", "radio.png");}
+	Default
+		{Radius 10;}
+}
+
 class Radio5 : Radio2
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "radio5.md3", 0, "Models", "radio.png");}
 	Default
 	{
 		Scale 1;
@@ -1013,6 +1527,8 @@ class Radio5 : Radio2
 
 class Palm1a : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "palm1.md3", 0, "Models", "palm1a.png");}
 	Default
 	{
 		Scale 20;
@@ -1020,28 +1536,63 @@ class Palm1a : ModelBase
 		Height 230;
 	}
 }
-class Palm1b : Palm1a{}
+class Palm1b : Palm1a
+{
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "palm1.md3", 0, "Models", "palm1b.png");}
+}
 class Palm2a : Palm1a
-	{Default{Scale 1;}}
-class Palm2b : Palm2a{}
+{
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "palm2.md3", 0, "Models", "palm2a.png");}
+	Default
+		{Scale 1;}
+}
+class Palm2b : Palm2a
+{
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "palm2.md3", 0, "Models", "palm2b.png");}
+}
 class Palm3a : Palm1a
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "palm3.md3", 0, "Models", "palm3a.png");}
 	Default
 	{
 		Scale .5;
 		Height 160;
 	}
 }
-class Palm3b : Palm3a{}
-class Palm3c : Palm3a{}
+class Palm3b : Palm3a
+{
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "palm3.md3", 0, "Models", "palm3b.png");}
+}
+class Palm3c : Palm3a
+{
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "palm3.md3", 0, "Models", "palm3c.png");}
+}
 class Cactus : Palm2a
-	{Default{Height 128;}}
+{
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "cactus.md2", 0, "Models", "cactus.png");}
+	Default
+		{Height 128;}
+}
 
 class Fern : ModelBase
-	{Default{Radius 16;}}
+{
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "fern.md2", 0, "Models", "fern.png");}
+	Default
+		{Radius 16;}
+}
 
 class Plant1 : Palm2a
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "plant1.md2", 0, "Models", "plant1.png");}
 	Default
 	{
 		Height 8;
@@ -1063,7 +1614,12 @@ class Plant1 : Palm2a
 		{return CheckRange(distance,two_dimension)?null:ResolveState(label);}
 }
 class Plant2 : Plant1
-	{Default{Radius 16;}}
+{
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "plant2.md2", 0, "Models", "plant2.png");}
+	Default
+		{Radius 16;}
+}
 
 class StreetLamp : SwitchableDecoration
 {
@@ -1087,6 +1643,8 @@ class StreetLamp : SwitchableDecoration
 
 class Glass01 : TankGlass
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "glass01.md3", 0, "Models", "glass01.png");}
 	Default
 	{
 		Radius 16;
@@ -1097,6 +1655,8 @@ class Glass01 : TankGlass
 
 class RKive : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "rkive.md3", 0, "Models", "rkive.png");}
 	Default
 	{
 		Scale .8;
@@ -1106,6 +1666,8 @@ class RKive : ModelBase
 
 class BookShelf1a : RKive
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "bookshelf1a.md3", 0, "Models", "bookshelf1.png");}
 	override void postbeginplay()
 	{
 		blockmax = 2;
@@ -1119,12 +1681,26 @@ class BookShelf1a : RKive
 	Default
 		{Height 64;}
 }
-class BookShelf1b : BookShelf1a{}
-class BookShelf2a : BookShelf1a{}
-class BookShelf2b : BookShelf1a{}
+class BookShelf1b : BookShelf1a
+{
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "bookshelf1b.md3", 0, "Models", "bookshelf1.png");}
+}
+class BookShelf2a : BookShelf1a
+{
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "bookshelf2a.md3", 0, "Models", "bookshelf2.png");}
+}
+class BookShelf2b : BookShelf1a
+{
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "bookshelf2b.md3", 0, "Models", "bookshelf2.png");}
+}
 
 class Credenza : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "credenza.md3", 0, "Models", "credenza.png");}
 	override void postbeginplay()
 	{
 		blockmax = 2;
@@ -1145,6 +1721,8 @@ class Credenza : ModelBase
 
 class CredenzaShort : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "credenzashort.md3", 0, "Models", "credenza.png");}
 	override void postbeginplay()
 	{
 		blockmax = 2;
@@ -1165,6 +1743,8 @@ class CredenzaShort : ModelBase
 
 class Credenza2 : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "credenza2.md3", 0, "Models", "credenza2.png");}
 	override void postbeginplay()
 	{
 		blockmax = 2;
@@ -1185,6 +1765,8 @@ class Credenza2 : ModelBase
 
 class ConfTable : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "Conf_Table.md3", 0, "Models", "Conf_Table.jpg");}
 	override void postbeginplay()
 	{
 		blockmax = 2;
@@ -1205,6 +1787,8 @@ class ConfTable : ModelBase
 
 class Ashtray : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "Ashtray.md3", 0, "Models", "Ashtray.jpg");}
 	Default
 	{
 		Scale .7;
@@ -1212,10 +1796,16 @@ class Ashtray : ModelBase
 		Height 2;
 	}
 }
-class AshtrayCig : Ashtray{}
+class AshtrayCig : Ashtray
+{
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "Ashtray_Cig.md3", 0, "Models", "Ashtray.jpg");}
+}
 
 class Phone1 : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "Phone1.md3", 0, "Models", "Phones.jpg");}
 	Default
 	{
 		Scale .25;
@@ -1224,9 +1814,16 @@ class Phone1 : ModelBase
 	}
 }
 class Phone2 : Phone1
-	{Default{Scale .2;}}
+{
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "Phone2.md3", 0, "Models", "Phones.jpg");}
+	Default
+		{Scale .2;}
+}
 class Phone3 : Phone1
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "Phone3.md3", 0, "Models", "Phones.jpg");}
 	Default
 	{
 		Scale .7;
@@ -1236,24 +1833,64 @@ class Phone3 : Phone1
 
 class Rock01 : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("", 0, "Models", "rock_big_a.md3", 0, "Models", "rock_big.jpg");}
 	Default
 	{
 		Radius 24;
 		Height 360;
 	}
 }
-class Rock01a : Rock01{}
-class Rock01b : Rock01{}
-class Rock01c : Rock01{}
-class Rock02 : Rock01{}
-class Rock02a : Rock01{}
-class Rock02b : Rock01{}
-class Rock02c : Rock01{}
-class Rock02d : Rock01{}
-class Rock02e : Rock01{}
+class Rock01a : Rock01
+{
+	override void HLModelSetup()
+		{A_ChangeModel("Rock01", 0, "Models", "rock_big_a.md3", 0, "Models", "rock_big2.jpg");}
+}
+class Rock01b : Rock01
+{
+	override void HLModelSetup()
+		{A_ChangeModel("Rock01", 0, "Models", "rock_big_a.md3", 0, "Models", "rock_moss1.jpg");}
+}
+class Rock01c : Rock01
+{
+	override void HLModelSetup()
+		{A_ChangeModel("Rock01", 0, "Models", "rock_big_a.md3", 0, "Models", "rock_moss2.jpg");}
+}
+class Rock02 : Rock01
+{
+	override void HLModelSetup()
+		{A_ChangeModel("", 0, "Models", "rock_big_b.md3", 0, "Models", "rock_big.jpg");}
+}
+class Rock02a : Rock01
+{
+	override void HLModelSetup()
+		{A_ChangeModel("Rock02", 0, "Models", "rock_big_b.md3", 0, "Models", "rock_big2.jpg");}
+}
+class Rock02b : Rock01
+{
+	override void HLModelSetup()
+		{A_ChangeModel("Rock02", 0, "Models", "rock_big_b.md3", 0, "Models", "rock_moss1.jpg");}
+}
+class Rock02c : Rock01
+{
+	override void HLModelSetup()
+		{A_ChangeModel("Rock02", 0, "Models", "rock_big_b.md3", 0, "Models", "rock_moss2.jpg");}
+}
+class Rock02d : Rock01
+{
+	override void HLModelSetup()
+		{A_ChangeModel("", 0, "Models", "rock_big_b.md3", 0, "Models", "xenrock1.png");}
+}
+class Rock02e : Rock01
+{
+	override void HLModelSetup()
+		{A_ChangeModel("", 0, "Models", "rock_big_b.md3", 0, "Models", "xenrock2.png");}
+}
 
 class Rock02f : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("", 0, "Models", "rock_big_b.md3", 0, "Models", "xenrock3.png");}
 	Default
 	{
 		Scale 1.25;
@@ -1264,6 +1901,8 @@ class Rock02f : ModelBase
 
 class Rock02g : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("", 0, "Models", "rock_big_b.md3", 0, "Models", "xenrock1.png");}
 	Default
 	{
 		Scale 1.5;
@@ -1272,41 +1911,102 @@ class Rock02g : ModelBase
 	}
 }
 
-class Rock03 : Rock01{}
-class Rock03a : Rock01{}
-class Rock03b : Rock01{}
-class Rock03c : Rock01{}
-class Rock03d : Rock01{}
-class Rock03e : Rock01{}
-class Rock03f : Rock02f{}
-class Rock03g : Rock02g{}
-
+class Rock03 : Rock01
+{
+	override void HLModelSetup()
+		{A_ChangeModel("", 0, "Models", "rock_big_c.md3", 0, "Models", "rock_big.jpg");}
+}
+class Rock03a : Rock01
+{
+	override void HLModelSetup()
+		{A_ChangeModel("Rock03", 0, "Models", "rock_big_c.md3", 0, "Models", "rock_big2.jpg");}
+}
+class Rock03b : Rock01
+{
+	override void HLModelSetup()
+		{A_ChangeModel("Rock03", 0, "Models", "rock_big_c.md3", 0, "Models", "rock_moss1.jpg");}
+}
+class Rock03c : Rock01
+{
+	override void HLModelSetup()
+		{A_ChangeModel("Rock03", 0, "Models", "rock_big_c.md3", 0, "Models", "rock_moss2.jpg");}
+}
+class Rock03d : Rock01
+{
+	override void HLModelSetup()
+		{A_ChangeModel("", 0, "Models", "rock_big_c.md3", 0, "Models", "xenrock1.png");}
+}
+class Rock03e : Rock01
+{
+	override void HLModelSetup()
+		{A_ChangeModel("", 0, "Models", "rock_big_c.md3", 0, "Models", "xenrock2.png");}
+}
+class Rock03f : Rock02f
+{
+	override void HLModelSetup()
+		{A_ChangeModel("", 0, "Models", "rock_big_c.md3", 0, "Models", "xenrock3.png");}
+}
+class Rock03g : Rock02g
+{
+	override void HLModelSetup()
+		{A_ChangeModel("", 0, "Models", "rock_big_c.md3", 0, "Models", "xenrock3.png");}
+}
 class Rock04 : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("", 0, "Models", "rock_big_d.md3", 0, "Models", "rock_big.jpg");}
 	Default
 	{
 		Radius 48;
 		Height 148;
 	}
 }
-class Rock04a : Rock04{}
-class Rock04b : Rock04{}
-class Rock04c : Rock04{}
+class Rock04a : Rock04
+{
+	override void HLModelSetup()
+		{A_ChangeModel("Rock04", 0, "Models", "rock_big_d.md3", 0, "Models", "rock_big2.jpg");}
+}
+class Rock04b : Rock04
+{
+	override void HLModelSetup()
+		{A_ChangeModel("Rock04", 0, "Models", "rock_big_d.md3", 0, "Models", "rock_moss1.jpg");}
+}
+class Rock04c : Rock04
+{
+	override void HLModelSetup()
+		{A_ChangeModel("Rock04", 0, "Models", "rock_big_d.md3", 0, "Models", "rock_moss2.jpg");}
+}
 
 class Rock05 : Rock04
 {
+	override void HLModelSetup()
+		{A_ChangeModel("", 0, "Models", "rock_small_a.md3", 0, "Models", "rock_big2.jpg");}
 	Default
 	{
 		Height 100;
 		Scale .125;
 	}
 }
-class Rock05a : Rock05{}
-class Rock06 : Rock05{}
-class Rock06a : Rock05{}
+class Rock05a : Rock05
+{
+	override void HLModelSetup()
+		{A_ChangeModel("Rock05", 0, "Models", "rock_small_a.md3", 0, "Models", "rock_moss1.jpg");}
+}
+class Rock06 : Rock05
+{
+	override void HLModelSetup()
+		{A_ChangeModel("Rock05", 0, "Models", "rock_small_b.md3", 0, "Models", "rock_big2.jpg");}
+}
+class Rock06a : Rock05
+{
+	override void HLModelSetup()
+		{A_ChangeModel("Rock05", 0, "Models", "rock_small_b.md3", 0, "Models", "rock_moss1.jpg");}
+}
 
 class TechPillar1a : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "q4tech01.md3", 0, "Models", "q4tech1a.jpg");}
 	override void postbeginplay()
 	{
 		blockmax = 1;
@@ -1321,11 +2021,21 @@ class TechPillar1a : ModelBase
 		Height 214;
 	}
 }
-class TechPillar1b : TechPillar1a{}
-class TechPillar1c : TechPillar1a{}
+class TechPillar1b : TechPillar1a
+{
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "q4tech01.md3", 0, "Models", "q4tech1b.jpg");}
+}
+class TechPillar1c : TechPillar1a
+{
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "q4tech01.md3", 0, "Models", "q4tech1c.jpg");}
+}
 
 class TechPillar1aa : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "q4tech01.md3", 0, "Models", "q4tech1a.jpg");}
 	override void postbeginplay()
 	{
 		blockmax = 1;
@@ -1341,11 +2051,21 @@ class TechPillar1aa : ModelBase
 		Height 160;
 	}
 }
-class TechPillar1bb : TechPillar1aa{}
-class TechPillar1cc : TechPillar1aa{}
+class TechPillar1bb : TechPillar1aa
+{
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "q4tech01.md3", 0, "Models", "q4tech1b.jpg");}
+}
+class TechPillar1cc : TechPillar1aa
+{
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "q4tech01.md3", 0, "Models", "q4tech1c.jpg");}
+}
 
 class TechPillar2 : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "q4tech02.md3", 0, "Models", "q4tech02.jpg");}
 	override void postbeginplay()
 	{
 		blockmax = 4;
@@ -1369,6 +2089,8 @@ class TechPillar2 : ModelBase
 
 class TechClamp : ModelFloat
 {
+	override void HLModelSetup()
+		{A_ChangeModel("TechClamp", 0, "Models", "q4tech03.md3", 0, "Models", "q4tech03.jpg");}
 	Default
 	{
 		Radius 96;
@@ -1389,6 +2111,8 @@ class TechClampa : TechClamp
 
 class HoverPad : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("", 0, "Models", "hover.md3", 0, "Models", "hover.jpg");}
 	Default
 	{
 		Scale 1.8;
@@ -1400,6 +2124,8 @@ class HoverPad : ModelBase
 
 class PConsole : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "console.md3", 0, "Models", "console.png");}
 	override void postbeginplay()
 	{
 		blockmax = 5;
@@ -1423,11 +2149,31 @@ class PConsole : ModelBase
 		Scale 2.2;
 	}
 }
-class PConsole1 : PConsole{}
-class PConsole2 : PConsole{}
-class PConsole3 : PConsole{}
-class PConsole4 : PConsole{}
-class PConsole5 : PConsole{}
+class PConsole1 : PConsole
+{
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "console.md3", 0, "Models", "console1.png");}
+}
+class PConsole2 : PConsole
+{
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "console.md3", 0, "Models", "console2.png");}
+}
+class PConsole3 : PConsole
+{
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "console.md3", 0, "Models", "console3.png");}
+}
+class PConsole4 : PConsole
+{
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "console.md3", 0, "Models", "console4.png");}
+}
+class PConsole5 : PConsole
+{
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "consolebroke.md3", 0, "Models", "consolebroke.png");}
+}
 
 //======================================
 // Concrete Jersey Barriers:
@@ -1437,6 +2183,8 @@ class PConsole5 : PConsole{}
 
 class Barrier1 : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "br_barrier1.md3", 0, "Models", "br_concrete1.jpg");}
 	override void postbeginplay()
 	{
 		blockmax = 2;
@@ -1454,8 +2202,16 @@ class Barrier1 : ModelBase
 		Height 36;
 	}
 }
-class Barrier2 : Barrier1{}
-class Barrier3 : Barrier1{}
+class Barrier2 : Barrier1
+{
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "br_barrier1.md3", 0, "Models", "br_concrete2.jpg");}
+}
+class Barrier3 : Barrier1
+{
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "br_barrier1.md3", 0, "Models", "br_concrete4.jpg");}
+}
 
 //============================
 // Explosive barrels & crates
@@ -1505,6 +2261,8 @@ class ExplosiveItemBangBarrel : ExplosiveItemBangCrate
 
 class Xbarrel1 : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("Xbarrel1", 0, "Models", "nbarrel1.md3", 0, "Models", "nbarrel1.png");}
 	Default
 	{
 		Health 50;
@@ -1531,12 +2289,24 @@ class Xbarrel1 : ModelBase
 	}
 }
 class Xbarrel2 : Xbarrel1
-	{Default{Health 20;}}
+{
+	override void HLModelSetup()
+		{A_ChangeModel("Xbarrel1", 0, "Models", "nbarrel1.md3", 0, "Models", "nbarrel2.png");}
+	Default
+		{Health 20;}
+}
 class Xbarrel3 : Xbarrel1
-	{Default{Health 30;}}
+{
+	override void HLModelSetup()
+		{A_ChangeModel("Xbarrel1", 0, "Models", "nbarrel1.md3", 0, "Models", "nbarrel3.png");}
+	Default
+		{Health 30;}
+}
 
 class Xcrate01 : Xbarrel3
 {
+	override void HLModelSetup()
+		{A_ChangeModel("Xbarrel1", 0, "Models", "xcrate01.md3", 0, "Models", "xcrate01.png");}
 	Default
 	{
 		-PUSHABLE
@@ -1552,7 +2322,12 @@ class Xcrate01 : Xbarrel3
 		Goto Super::Death+1;
 	}
 }
-class Xcrate02 : Xcrate01{}
+
+class Xcrate02 : Xcrate01
+{
+	override void HLModelSetup()
+		{A_ChangeModel("Xbarrel1", 0, "Models", "xcrate01.md3", 0, "Models", "xcrate02.png");}
+}
 
 //================================================================
 // Non-Explosive barrels/trashcan (plastic & heavy metal), crates
@@ -1560,6 +2335,8 @@ class Xcrate02 : Xcrate01{}
 
 class Trashcan1 : XBarrel1
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "trashcan.md2", 0, "Models", "trashcan.png");}
 	Default
 	{
 		Radius 10;
@@ -1572,16 +2349,25 @@ class Trashcan1 : XBarrel1
 
 class Barrel1 : Trashcan1
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "br_barrel1.md3", 0, "Models", "br_barrell.jpg");}
 	Default
 	{
 		Scale 2;
 		Radius 8;
 	}
 }
-class Barrel2 : Barrel1{}
+
+class Barrel2 : Barrel1
+{
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "br_barrel2.md3", 0, "Models", "br_barrell.jpg");}
+}
 
 class Barrel3 : Barrel1
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "utbarrel.md2", 0, "Models", "utbarrel.png");}
 	Default
 	{
 		Scale .3;
@@ -1592,6 +2378,8 @@ class Barrel3 : Barrel1
 
 class Xcrate03 : Trashcan1
 {
+	override void HLModelSetup()
+		{A_ChangeModel("Xbarrel1", 0, "Models", "xcrate01.md3", 0, "Models", "xcrate03.png");}
 	Default
 	{
 		Health 30;
@@ -1600,7 +2388,11 @@ class Xcrate03 : Trashcan1
 		Mass 200;
 	}
 }
-class Xcrate04 : Xcrate03{}
+class Xcrate04 : Xcrate03
+{
+	override void HLModelSetup()
+		{A_ChangeModel("Xbarrel1", 0, "Models", "xcrate01.md3", 0, "Models", "xcrate04.png");}
+}
 
 class XMetalBox : ModelFloat
 {
@@ -1623,7 +2415,7 @@ class XMetalBox1 : XMetalBox
 
 //============================================
 // Non-Player Character Models: Controller,
-// Administrator, Col. Stinson, Legion: Earth
+// Administrator
 //============================================
 
 class HintMan : ModelBase

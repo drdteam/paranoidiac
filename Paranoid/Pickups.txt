@@ -221,33 +221,8 @@ class Medkit1 : HealthPickup
 	}
 }
 
-class Key1 : FakeInventory
+class HLFakeInventory : FakeInventory
 {
-	Default
-	{
-		Scale .5;
-		Radius 4;
-		Height 2;
-		Inventory.PickupMessage "Picked up a security key.";
-	}
-	States
-	{
-	Spawn:
-		HLI1 A -1 NODELAY {frame=random(0,1);}
-		Stop;
-	}
-}
-
-class Gascan1 : FakeInventory
-{
-	Default
-	{
-		Radius 4;
-		Height 12;
-		Scale .75;
-		Mass 20;
-		Inventory.PickupMessage "Acquired gasoline can.";
-	}
 	States
 	{
 	Spawn:
@@ -256,10 +231,55 @@ class Gascan1 : FakeInventory
 	}
 }
 
-class Explosive : Gascan1
+class Key1 : HLFakeInventory
 {
+	override void BeginPlay()
+	{
+		static const name modelskin[]=
+		{
+			'w_security.png',
+			'w_security2.png'
+		};
+		A_ChangeModel("ModelBase", 0, "Models", "w_security.md3", 0, "Models", modelskin[random(0, 1)]);
+		super.BeginPlay();
+	}
 	Default
 	{
+		Scale .5;
+		Radius 4;
+		Height 2;
+		Inventory.PickupMessage "Picked up a security key.";
+	}
+}
+
+class Gascan1 : HLFakeInventory
+{
+	override void BeginPlay()
+	{
+		A_ChangeModel("ModelBase", 0, "Models", "gascan1.md3", 0, "Models", "gascan1.jpg");
+		super.BeginPlay();
+	}
+	Default
+	{
+		Radius 4;
+		Height 12;
+		Scale .75;
+		Mass 20;
+		Inventory.PickupMessage "Acquired gasoline can.";
+	}
+}
+
+class Explosive : HLFakeInventory
+{
+	override void BeginPlay()
+	{
+		A_ChangeModel("ModelBase", 0, "Models", "explosive.md3", 0, "Models", "explosive.jpg");
+		super.BeginPlay();
+	}
+	Default
+	{
+		Radius 4;
+		Scale .75;
 		Height 8;
 		Mass 10;
 		Inventory.PickupMessage "Acquired explosive device.";
