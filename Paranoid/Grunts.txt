@@ -316,7 +316,7 @@ class HLGruntM16 : HLMonster
 	void A_GruntGunsmoke()
 	{
 		for(int i=0;i<2;i++)
-			A_SpawnItemEx("GunSmoke",35,3,49);
+			A_SpawnItemEx("GunSmoke",35,3,49*ModelHeightMul);
 	}
 }
 

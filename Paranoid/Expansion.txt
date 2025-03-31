@@ -89,6 +89,14 @@ class HLAlphaBarney : HLBarney
 		HLD2 Q -1;
 		Stop;
 	}
+	override void A_BarneyGunshot()
+	{
+		A_FaceTarget();
+		for(int i=0;i<2;i++)
+			A_SpawnItemEx("GunSmoke",20,-6,47*ModelHeightMul);
+		A_StartSound("halflife/weapons/pistol", CHAN_WEAPON);
+		A_CustomBulletAttack(7,7,1,5,"NewPuff1");
+	}
 }
 
 //Spawners to replace Doom II actors

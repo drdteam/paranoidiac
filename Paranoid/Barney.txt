@@ -145,7 +145,7 @@ class HLBarney : HLMonster
 	void A_BarneyGunsmoke()
 	{
 		for(int i=0;i<2;i++)
-			A_SpawnItemEx("GunSmoke",28,2,47);
+			A_SpawnItemEx("GunSmoke",28,2,47*ModelHeightMul);
 	}
 	actor ChooseBestFriend()
 	{
