@@ -1691,9 +1691,6 @@ class XbowBolt : FastProjectile
 	}
 }
 
-class Missile : Rocket
-	{Default{Scale 6;}}
-
 //=============
 // Gluon Gun
 // Developed by Major Cooke for AeOD; modified by DBThanatos & Kappes Buur
