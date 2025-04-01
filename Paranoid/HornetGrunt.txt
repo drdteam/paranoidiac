@@ -21,6 +21,7 @@ class HLHornetGrunt : HLMonster
 		};
 		for(int i = 0; i <= 9; i++)
 			A_ChangeModel("", 0, "Models", "agrunt.iqm", i, "Models", modelskin[i], CMDL_USESURFACESKIN);
+		SetModelFlag(MDL_INTERPOLATEDOUBLEDFRAMES);
 	}
 	Default
 	{

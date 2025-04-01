@@ -4,6 +4,31 @@
 
 class FirstAidStation : Actor
 {
+	override void BeginPlay()
+	{
+		HLModelSetup();
+		//Height = Height *  ModelHeightMul;
+		super.BeginPlay();
+	}
+	virtual void HLModelSetup()
+	{
+		static const name modelskin1[]=
+		{
+			'medcharger_000.png',
+			'medcharger_001.png',
+			'medcharger_002.png',
+			'medcharger_003.png'
+		};
+		static const name modelskin2[]=
+		{
+			'medchargerb_000.png',
+			'medchargerb_001.png'
+		};
+		for(int i = 0; i <= 3; i++)
+			A_ChangeModel("ModelBase", 0, "Models", "medcharger.md3", i, "Models", modelskin1[i], CMDL_USESURFACESKIN);
+		for(int i = 0; i <= 1; i++)
+			A_ChangeModel("ModelBase", 1, "Models", "medchargerb.md3", i, "Models", modelskin2[i], CMDL_USESURFACESKIN);
+	}
 	bool inuse;
 	override bool Used(Actor user)
 	{
@@ -45,7 +70,7 @@ class FirstAidStation : Actor
 		HLI1 A 5 A_HLChargingStation;
 		Loop;
 	Death:
-		HLI1 B -1;
+		HLI1 A -1 A_ChangeModel("ModelBase", 0, "Models", "medcharger.md3", 1, "Models", 'medcharger_004.png', CMDL_USESURFACESKIN);
 		Stop;
 	}
 	virtual void A_HLChargingStation()
@@ -70,6 +95,18 @@ class FirstAidStation : Actor
 
 class HEVChargingStation : FirstAidStation
 {
+	override void HLModelSetup()
+	{
+		static const name modelskin[]=
+		{
+			'hevcharger_000.png',
+			'hevcharger_001.png',
+			'hevcharger_002.png',
+			'hevcharger_003.png'
+		};
+		for(int i = 0; i <= 3; i++)
+			A_ChangeModel("ModelBase", 0, "Models", "hevcharger.md3", i, "Models", modelskin[i], CMDL_USESURFACESKIN);
+	}
 	override bool Used(Actor user)
 	{
 		user.A_StopSound(CHAN_VOICE);
@@ -115,6 +152,12 @@ class HEVChargingStation : FirstAidStation
 			SetStateLabel("Spawn");
 		}
 	}
+	States
+	{
+	Death:
+		HLI1 A -1 A_ChangeModel("ModelBase", 0, "Models", "hevcharger.md3", 0, "Models", 'hevcharger_004.png', CMDL_USESURFACESKIN);
+		Stop;
+	}
 }
 class HEVCharge : BasicArmorBonus
 {
@@ -134,6 +177,26 @@ class HEVCharge : BasicArmorBonus
 
 class HEVSuit : BasicArmorPickup
 {
+	override void BeginPlay()
+	{
+		static const name modelskin[]=
+		{
+			'w_suit_000.png',
+			'w_suit_001.png',
+			'w_suit_002.png',
+			'w_suit_003.png',
+			'w_suit_004.png',
+			'w_suit_005.png',
+			'w_suit_006.png',
+			'w_suit_007.png',
+			'w_suit_006.png',
+			'w_suit_002.png',
+			'w_suit_002.png'
+		};
+		for(int i = 0; i <= 10; i++)
+			A_ChangeModel("ModelBase", 0, "Models", "w_suit.md3", i, "Models", modelskin[i], CMDL_USESURFACESKIN);
+		super.BeginPlay();
+	}
 	Override bool TryPickup(in out Actor toucher)
 	{
 		//Remove the Scientist disguise upon pickup
@@ -166,6 +229,20 @@ class HEVSuit : BasicArmorPickup
 
 class HEVbattery : HEVCharge
 {
+	override void BeginPlay()
+	{
+		static const name modelskin[]=
+		{
+			'w_battery_000.png',
+			'w_battery_001.png',
+			'w_battery_002.png',
+			'w_battery_003.png',
+			'w_battery_004.png'
+		};
+		for(int i = 0; i <= 4; i++)
+			A_ChangeModel("ModelBase", 0, "Models", "w_battery.md3", i, "Models", modelskin[i], CMDL_USESURFACESKIN);
+		super.BeginPlay();
+	}
 	Default
 	{
 		Radius 4;
@@ -183,6 +260,20 @@ class HEVbattery : HEVCharge
 
 class Medkit : Health
 {
+	override void BeginPlay()
+	{
+		static const name modelskin[]=
+		{
+			'w_medkit_000.png',
+			'w_medkit_001.png',
+			'w_medkit_002.png',
+			'w_medkit_003.png',
+			'w_medkit_004.png'
+		};
+		for(int i = 0; i <= 4; i++)
+			A_ChangeModel("ModelBase", 0, "Models", "w_medkit.md3", i, "Models", modelskin[i], CMDL_USESURFACESKIN);
+		super.BeginPlay();
+	}
 	Default
 	{
 		Radius 8;
@@ -200,6 +291,20 @@ class Medkit : Health
 
 class Medkit1 : HealthPickup
 {
+	override void BeginPlay()
+	{
+		static const name modelskin[]=
+		{
+			'w_medkit1_000.png',
+			'w_medkit1_001.png',
+			'w_medkit1_002.png',
+			'w_medkit_003.png',
+			'w_medkit1_004.png'
+		};
+		for(int i = 0; i <= 4; i++)
+			A_ChangeModel("ModelBase", 0, "Models", "w_medkit.md3", i, "Models", modelskin[i], CMDL_USESURFACESKIN);
+		super.BeginPlay();
+	}
 	Default
 	{
 		Tag "Portable Medkit";

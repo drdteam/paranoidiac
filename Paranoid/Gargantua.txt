@@ -3,6 +3,12 @@
 //===========
 class HLGargantua : HLMonster
 {
+	override void HLModelSetup()
+	{
+		A_ChangeModel("HLGargantua", 0, "Models", "garg.iqm", 0, "Models", "garg_000.png", CMDL_USESURFACESKIN);
+		A_ChangeModel("HLGargantua", 0, "Models", "", 1, "Models", "garg_001.png", CMDL_USESURFACESKIN);
+		SetModelFlag(MDL_INTERPOLATEDOUBLEDFRAMES);
+	}
 	bool flametoken;
 	float defspeed;
 	override void BeginPlay()
@@ -34,6 +40,13 @@ class HLGargantua : HLMonster
 	}
 	States
 	{
+	/*Spawn:
+		HLI1 A 3
+		{
+			SetAnimation('idle3', 10, flags: SAF_LOOP|SAF_NOOVERRIDE);
+			A_Look();
+		}
+		Loop;*/
 	Spawn:
 		HLI1 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 3 A_Look;
 		HLI2 AB 3 A_Look;
@@ -125,6 +138,15 @@ class HLGargantua : HLMonster
 		HLP1 BCDEFGH 1;
 		Goto See;
 	Death:
+		/*HLI1 A 140
+		{
+			SetAnimation('die', 15);
+			A_StopSound(6);
+			A_ScreamAndUnblock();
+		}
+		HLI1 A 110 A_StartSound("gonarch/step", CHAN_7);
+		TNT1 A 10 A_XenGibsBig;
+		Stop;*/
 		HLD1 A 1
 		{
 			A_StopSound(6);
@@ -182,6 +204,7 @@ class HLGargantua2 : HLGargantua
 	{
 		A_ChangeModel("HLGargantua", 0, "Models", "garg.iqm", 0, "Models", "garg_000.png", CMDL_USESURFACESKIN);
 		A_ChangeModel("HLGargantua", 0, "Models", "", 1, "Models", "garg2_001.png", CMDL_USESURFACESKIN);
+		SetModelFlag(MDL_INTERPOLATEDOUBLEDFRAMES);
 	}
 	Default
 	{

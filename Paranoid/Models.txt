@@ -942,7 +942,15 @@ class Desklamp2 : Desklamp1
 }
 
 class Desk1 : ModelBase
-	{Default{Height 32;}}
+{
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "desk1.md2", 0, "Models", "desk1.png");}
+	Default
+	{
+		XScale 1.2;
+		Height 32;
+	}
+}
 
 class Desk2 : ModelBase
 {
@@ -1040,23 +1048,17 @@ class Bed01 : ModelBase
 	override void HLModelSetup()
 		{A_ChangeModel("ModelBase", 0, "Models", "br_frame1.md3", 0, "Models", "br_frame1.jpg");}
 	override void postbeginplay()
-	{
-		let matt=Spawn("Mattress01",(pos));
-		matt.frame=(random(0,1));
-	}
+		{let matt=Spawn("Mattress01",(pos));}
 	Default
-	{
-		Height 24;
-	}
+		{Height 24;}
 }
 
 class Bed02 : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("", 0, "Models", "br_frame1.md3", 0, "Models", "br_frame1.jpg");}
 	override void postbeginplay()
-	{
-		let matt=Spawn("Mattress02",(pos));
-		matt.frame=(random(0,1));
-	}
+		{let matt=Spawn("Mattress02",(pos));}
 	Default
 	{
 		Radius 16;
@@ -1065,20 +1067,41 @@ class Bed02 : ModelBase
 }
 
 class Mattress01 : ModelBase
-	{Default{+NOCLIP}}
+{
+	override void HLModelSetup()
+	{
+		static const name modelskin[]=
+		{
+			'br_mattress1.jpg',
+			'br_mattress4.jpg'
+		};
+		A_ChangeModel("", 0, "Models", "br_mattress1.md3", 0, "Models", modelskin[random(0, 1)]);
+	}
+	Default
+		{+NOCLIP}
+}
 class Mattress02 : Mattress01{}
 
 class FileCab2 : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "filec02.md2", 0, "Models", "filecab.png");}
 	Default
 	{
+		XScale .75;
+		YScale .5;
 		Radius 12;
 		Height 32;
 	}
 }
 
 class FileCab3: FileCab2
-	{Default{Height 48;}}
+{
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "filec03.md2", 0, "Models", "filecab.png");}
+	Default
+		{Height 48;}
+}
 
 class DeerHead : ModelFloat
 {
@@ -1627,6 +1650,7 @@ class StreetLamp : SwitchableDecoration
 	{
 		Radius 4;
 		Height 180;
+		YScale 1.5;
 		+SOLID
 	}
     States
@@ -2396,6 +2420,8 @@ class Xcrate04 : Xcrate03
 
 class XMetalBox : ModelFloat
 {
+	override void HLModelSetup()
+		{A_ChangeModel("XMetalBox", 0, "Models", "xcrate01.md2", 0, "Models", "xmetalbox.png");}
 	Default
 	{
 		Radius 34;
@@ -2408,6 +2434,7 @@ class XMetalBox1 : XMetalBox
 {
 	Default
 	{
+		Scale 4.0;
 		Radius 136;
 		Height (256/ModelHeightMul);
 	}
@@ -2420,9 +2447,12 @@ class XMetalBox1 : XMetalBox
 
 class HintMan : ModelBase
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "military.md2", 0, "Models", "euro2.png");}
 	Default
 	{
 		Height 56;
+		Scale 1.55;
 	}
 	States
 	{

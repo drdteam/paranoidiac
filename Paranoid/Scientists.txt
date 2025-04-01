@@ -77,6 +77,7 @@ class HLScientist : HLMonster
 				A_ChangeModel("HLScientist", 1, "Models", "scientist_head4.iqm", i, "Models", modelskin2d[i], CMDL_USESURFACESKIN, 0);
 			break;
 		}
+		SetModelFlag(MDL_INTERPOLATEDOUBLEDFRAMES);
 	}
 	override bool Used(Actor user)
 	{

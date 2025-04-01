@@ -4,130 +4,12 @@ Model ModelBase
 	FrameIndex HLS1 A 0 0
 }
 
-////////////
-//  Ammo  //
-////////////
-
-Model AmmoPack
-{
-	Path "Models"
-	Model 0 "w_weaponbox.iqm"
-	SurfaceSkin 0 0 "w_weaponbox_000.png"
-	SurfaceSkin 0 1 "w_weaponbox_001.png"
-	SurfaceSkin 0 2 "w_weaponbox_002.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-////////////////////////////////
-//  Powerups, pickups, keys   //
-////////////////////////////////
-
-Model FirstAidStation
-{
-	Path "Models"
-	Model 0 "medcharger.md3"
-	SurfaceSkin 0 0 "medcharger_000.png"
-	SurfaceSkin 0 1 "medcharger_001.png"
-	SurfaceSkin 0 2 "medcharger_002.png"
-	SurfaceSkin 0 3 "medcharger_003.png"
-	Model 1 "medchargerb.md3"
-	SurfaceSkin 1 0 "medchargerb_000.png"
-	SurfaceSkin 1 1 "medchargerb_001.png"
-
-	FrameIndex HLI1 A 0 0
-	FrameIndex HLI1 A 1 0
-
-	SurfaceSkin 0 1 "medcharger_004.png"
-
-	FrameIndex HLI1 B 0 0
-	FrameIndex HLI1 B 1 0
-}
-
-Model HEVChargingStation
-{
-	Path "Models"
-	Model 0 "hevcharger.md3"
-	SurfaceSkin 0 0 "hevcharger_000.png"
-	SurfaceSkin 0 1 "hevcharger_001.png"
-	SurfaceSkin 0 2 "hevcharger_002.png"
-	SurfaceSkin 0 3 "hevcharger_003.png"
-
-	FrameIndex HLI1 A 0 0
-
-	SurfaceSkin 0 0 "hevcharger_004.png"
-
-	FrameIndex HLI1 B 0 0
-}
-
-Model HEVsuit
-{
-	Path "Models"
-	Model 0 "w_suit.md3"
-	SurfaceSkin 0 0 "w_suit_000.png"
-	SurfaceSkin 0 1 "w_suit_001.png"
-	SurfaceSkin 0 2 "w_suit_002.png"
-	SurfaceSkin 0 3 "w_suit_003.png"
-	SurfaceSkin 0 4 "w_suit_004.png"
-	SurfaceSkin 0 5 "w_suit_005.png"
-	SurfaceSkin 0 6 "w_suit_006.png"
-	SurfaceSkin 0 7 "w_suit_007.png"
-	SurfaceSkin 0 8 "w_suit_006.png"
-	SurfaceSkin 0 9 "w_suit_002.png"
-	SurfaceSkin 0 10 "w_suit_002.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model HEVBattery
-{
-	Path "Models"
-	Model 0 "w_battery.md3"
-	SurfaceSkin 0 0 "w_battery_000.png"
-	SurfaceSkin 0 1 "w_battery_001.png"
-	SurfaceSkin 0 2 "w_battery_002.png"
-	SurfaceSkin 0 3 "w_battery_003.png"
-	SurfaceSkin 0 4 "w_battery_004.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model MedKit
-{
-	Path "Models"
-	Model 0 "w_medkit.md3"
-	SurfaceSkin 0 0 "w_medkit_000.png"
-	SurfaceSkin 0 1 "w_medkit_001.png"
-	SurfaceSkin 0 2 "w_medkit_002.png"
-	SurfaceSkin 0 3 "w_medkit_003.png"
-	SurfaceSkin 0 4 "w_medkit_004.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model MedKit1
-{
-	Path "Models"
-	Model 0 "w_medkit.md3"
-	SurfaceSkin 0 0 "w_medkit1_000.png"
-	SurfaceSkin 0 1 "w_medkit1_001.png"
-	SurfaceSkin 0 2 "w_medkit1_002.png"
-	SurfaceSkin 0 3 "w_medkit_003.png"
-	SurfaceSkin 0 4 "w_medkit1_004.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
 ///////////////////////
 //  Exploding Items  //
 ///////////////////////
 
 Model Xbarrel1
 {
-	Path "Models"
-	Model 0 "nbarrel1.md3"
-	Skin 0 "nbarrel1.png"
-
 	FrameIndex HLI1 A 0 0
 	FrameIndex HLI1 B 0 1
 	FrameIndex HLI1 C 0 2
@@ -168,42 +50,21 @@ Model flatpanel7
 	FrameIndex HLI1 D 3 0
 }
 
-/////////////////////////////////
-//  Office/Toilet Items, Beds  //
-/////////////////////////////////
-
-Model Desk1
-{
-	Path "Models"
-	Model 0 "desk1.md2"
-	Skin 0 "desk1.png"
-	Scale 1.2 1.2 1.0
-
-	Frame HLI1 A 0 "frame01"
-}
+////////////
+//  Beds  //
+////////////
 
 Model Mattress01
 {
-	Path "Models"
-	Model 0 "br_mattress1.md3"
-	Skin 0 "br_mattress1.jpg"
-	Model 1 "br_mattress1.md3"
-	Skin 1 "br_mattress4.jpg"
 	AngleOffset 90
 	Scale 1.35 1.15 1.0
 	Offset -3 0 10
 
 	FrameIndex HLI1 A 0 0
-	FrameIndex HLI1 A 1 -1
-	FrameIndex HLI1 B 0 -1
-	FrameIndex HLI1 B 1 0
 }
 
 Model Bed02
 {
-	Path "Models"
-	Model 0 "br_frame1.md3"
-	Skin 0 "br_frame1.jpg"
 	RollOffset -90
 	ZOffset 20
 
@@ -212,40 +73,12 @@ Model Bed02
 
 Model Mattress02
 {
-	Path "Models"
-	Model 0 "br_mattress2.md3"
-	Skin 0 "br_mattress1.jpg"
-	Model 1 "br_mattress2.md3"
-	Skin 1 "br_mattress4.jpg"
 	PitchOffset -70
 	AngleOffset 90
 	Scale 1.35 1.15 1.0
 	Offset -3 16 16
 
 	FrameIndex HLI1 A 0 0
-	FrameIndex HLI1 A 1 -1
-	FrameIndex HLI1 B 0 -1
-	FrameIndex HLI1 B 1 0
-}
-
-Model FileCab2
-{
-	Path "Models"
-	Model 0 "filec02.md2"
-	Skin 0 "filecab.png"
-	Scale 0.75 0.75 0.5
-
-	Frame HLI1 A 0 "frame01"
-}
-
-Model FileCab3
-{
-	Path "Models"
-	Model 0 "filec03.md2"
-	Skin 0 "filecab.png"
-	Scale 0.75 0.75 0.5
-
-	Frame HLI1 A 0 "frame01"
 }
 
 ////////////////////////
@@ -254,20 +87,7 @@ Model FileCab3
 
 Model XMetalBox
 {
-	Path "Models"
-	Model 0 "xcrate01.md2"
-	Skin 0 "xmetalbox.png"
 	Scale 1.12 1.17 1.0
-
-	Frame HLI1 A 0 "frame01"
-}
-
-Model XMetalBox1
-{
-	Path "Models"
-	Model 0 "xcrate01.md2"
-	Skin 0 "xmetalbox.png"
-	Scale 4.48 4.68 4.0
 
 	Frame HLI1 A 0 "frame01"
 }
@@ -303,14 +123,6 @@ Model Loader
 	FrameIndex HLI1 A 0 0
 }
 
-Model LoaderNoBox
-{
-	Offset 12 0 0
-	//BaseFrame
-
-	FrameIndex HLI1 A 0 0
-}
-
 Model apache
 {
 	Offset 12 0 144
@@ -320,7 +132,6 @@ Model apache
 
 Model Osprey
 {
-	USEACTORPITCH
 	BaseFrame
 }
 
@@ -346,68 +157,13 @@ Model Tram
 
 Model TramBattery
 {
-	Path "Models"
-	Model 0 "w_battery.md3"
-	SurfaceSkin 0 0 "w_battery_000.png"
-	SurfaceSkin 0 1 "w_battery_001.png"
-	SurfaceSkin 0 2 "w_battery_002.png"
-	SurfaceSkin 0 3 "w_battery_003.png"
-	SurfaceSkin 0 4 "w_battery_004.png"
-
 	Offset -10 0 84
 
 	FrameIndex HLI1 A 0 0
 }
 
-Model SUV
-{
-	Path "Models"
-	Model 0 "suv.md3"
-	SurfaceSkin 0 0 "suv_000.png"
-	SurfaceSkin 0 1 "suv_001.png"
-	SurfaceSkin 0 2 "suv_002.png"
-	SurfaceSkin 0 3 "suv_003.png"
-	SurfaceSkin 0 4 "suv_004.png"
-	SurfaceSkin 0 5 "suv_005.png"
-	SurfaceSkin 0 6 "suv_006.png"
-	SurfaceSkin 0 7 "suv_007.png"
-	SurfaceSkin 0 8 "suv_008.png"
-	SurfaceSkin 0 9 "suv_009.png"
-	SurfaceSkin 0 10 "suv_010.png"
-	SurfaceSkin 0 11 "suv_011.png"
-	SurfaceSkin 0 12 "suv_012.png"
-	SurfaceSkin 0 13 "suv_013.png"
-	SurfaceSkin 0 14 "suv_014.png"
-	SurfaceSkin 0 15 "suv_015.png"
-
-	FrameIndex HLI1 A 0 0
-
-	Model 0 "suv2.md3"
-	SurfaceSkin 0 0 "suv2_000.png"
-	SurfaceSkin 0 1 "suv2_001.png"
-	SurfaceSkin 0 2 "suv2_002.png"
-	SurfaceSkin 0 3 "suv2_003.png"
-	SurfaceSkin 0 4 "suv2_004.png"
-	SurfaceSkin 0 5 "suv2_005.png"
-	SurfaceSkin 0 6 "suv_006.png"
-	SurfaceSkin 0 7 "suv2_007.png"
-	SurfaceSkin 0 8 "suv_015.png"
-	SurfaceSkin 0 9 "suv2_009.png"
-	SurfaceSkin 0 10 "suv_008.png"
-	SurfaceSkin 0 11 "suv_009.png"
-	SurfaceSkin 0 12 "suv2_012.png"
-	SurfaceSkin 0 13 "suv_011.png"
-	SurfaceSkin 0 14 "suv2_014.png"
-	SurfaceSkin 0 15 "suv2_015.png"
-
-	FrameIndex HLI1 B 0 0
-}
-
 Model SUVGlass
 {
-	Path "Models"
-	Model 0 "suv_glass.iqm"
-	Skin 0 "suv_glass.png"
 	ZOffset 2
 
 	FrameIndex HLI1 A 0 0
@@ -449,16 +205,11 @@ Model HLXenTree
 	BaseFrame
 }
 
-//********
-//Office/Building Items
-//********
-
 Model StreetLamp
 {
 	Path "Models"
 	Model 0 "lamp1x.md3"
 	Skin 0 "lamp1x1.png"
-	Scale 1.0 1.0 1.5
 
 	FrameIndex HLI1 A 0 0
 
@@ -583,25 +334,6 @@ Model HoverPad
 	FrameIndex HLI1 A 0 0
 }
 
-Model XbowBolt
-{
-	Path "Models"
-	Model 0 "crossbow_bolt.iqm"
-	Skin 0 "crossbow_bolt.png"
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model M16Grenade
-{
-	Path "Models"
-	Model 0 "grenade.md3"
-	Skin 0 "w_argrenade.png"
-	USEACTORPITCH
-
-	FrameIndex HLI1 A 0 0
-}
-
 Model HLGruntHandGrenade
 {
 	Path "Models"
@@ -673,21 +405,8 @@ Model HLGruntHandGrenade
 	FrameIndex HLD1 A 0 1
 }
 
-Model HLRocket
-{
-	Path "Models"
-	Model 0 "rpgrocket.md3"
-	SurfaceSkin 0 0 "rpgrocket_000.png"
-	SurfaceSkin 0 1 "rpgrocket_001.png"
-	PITCHFROMMOMENTUM
-
-	FrameIndex HLI1 A 0 0
-}
-
 Model HGunHornet
 {
-	PITCHFROMMOMENTUM
-
 	FrameIndex HLI1 A 0 0
 	FrameIndex HLI1 B 0 1
 	FrameIndex HLI1 C 0 2

@@ -391,16 +391,12 @@ model VortiPlasma_Bolt
 
 Model HLBarnacle
 {
-	Path "models"
-	Model 0 "barnacle.iqm"
-	Skin 0 "barnacle.png"
 	ZOffset 32
 	BaseFrame
 }
 
 Model HLHornetGrunt
 {
-	INTERPOLATEDOUBLEDFRAMES
 	BaseFrame
 }
 
@@ -411,7 +407,6 @@ Model HLHornetGruntDead
 
 Model HLGargantua
 {
-	INTERPOLATEDOUBLEDFRAMES
 	//BaseFrame
 
 	FrameIndex HLI1 A 0 0

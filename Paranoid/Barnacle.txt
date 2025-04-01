@@ -4,6 +4,8 @@
 
 class HLBarnacle : HLMonster
 {
+	override void HLModelSetup()
+		{A_ChangeModel("", 0, "Models", "barnacle.iqm", 0, "Models", "barnacle.png");}
 	Default
 	{
 		obituary "%o was spat on by a Barnacle.";
