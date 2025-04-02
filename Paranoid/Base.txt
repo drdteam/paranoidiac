@@ -1,3 +1,8 @@
+enum ParanoidEnum
+{
+	HLSMOOTHCHASE=CHF_NOPLAYACTIVE+CHF_NORANDOMTURN+CHF_STOPIFBLOCKED
+}
+
 const ModelHeightMul = 1.2;
 
 class HLMonster : Actor
@@ -62,3 +67,77 @@ class HLMonster : Actor
 			walkticcur=0;
 	}
 }
+
+class ModelProjectile : Actor
+{
+	override void BeginPlay()
+	{
+		HLModelSetup();
+		//Height = Height *  ModelHeightMul;
+		super.BeginPlay();
+	}
+	virtual void HLModelSetup(){}
+	States
+	{
+	Spawn:
+		HLI1 A -1;
+		Stop;
+	}
+}
+
+class ModelBase : Actor
+{
+	override void BeginPlay()
+	{
+		HLModelSetup();
+		Height = Height *  ModelHeightMul;
+		super.BeginPlay();
+	}
+	virtual void HLModelSetup(){}
+	Default
+	{
+		+CANPASS
+		+SOLID
+	}
+	States
+	{
+	Spawn:
+		HLI1 A -1;
+		Stop;
+	}
+	int blockmax;
+	actor block[25];
+	vector3 blockpos[25];
+	vector2 blocksize[25];
+	actor BuildBridge(vector3 bridgepos, vector2 bridgesize, double bridgeangle, int bridgetid, actor bridgemaster)
+	{
+		let thisblock = Spawn("InvisibleBridge", bridgepos);
+		if(!thisblock)
+			return null;
+		thisblock.A_SetSize(bridgesize.x, bridgesize.y * ModelHeightMul);
+		thisblock.angle = bridgeangle;
+		thisblock.ChangeTid(bridgetid);
+		thisblock.master = bridgemaster;
+		return thisblock;
+	}
+	void MoveBridge(actor thisblock, vector3 bridgepos)
+	{
+		if(!thisblock)
+			return;
+		thisblock.A_Warp(AAPTR_MASTER, bridgepos.x, bridgepos.y, bridgepos.z * ModelHeightMul, 0, WARPF_NOCHECKPOSITION);
+	}
+	override void PostBeginPlay()
+	{
+		for(int i = 0; i < blockmax; i++)
+			block[i] = BuildBridge(blockpos[i], blocksize[i], angle, tid, self);
+		super.PostBeginPlay();
+	}
+	override void tick()
+	{
+		for(int i = 0; i < blockmax; i++)
+			MoveBridge(block[i], blockpos[i]);
+		super.tick();
+	}
+}
+class ModelFloat : ModelBase
+	{Default{+NOGRAVITY}}

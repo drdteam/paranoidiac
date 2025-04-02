@@ -1,20 +1,3 @@
-class ModelProjectile : Actor
-{
-	override void BeginPlay()
-	{
-		HLModelSetup();
-		//Height = Height *  ModelHeightMul;
-		super.BeginPlay();
-	}
-	virtual void HLModelSetup(){}
-	States
-	{
-	Spawn:
-		HLI1 A -1;
-		Stop;
-	}
-}
-
 class ParanoidWeapon : Weapon
 {
 	override void PostBeginPlay()
