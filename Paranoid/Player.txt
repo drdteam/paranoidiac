@@ -74,6 +74,7 @@ class RolfBellmer : PlayerPawn
 				A_StartSound("HLPlayerHEVFailBeep", CHAN_6);
 			}
 			A_NoBlocking();
+			A_ChangeModel("", 2, flags:CMDL_HIDEMODEL);
 		}
 		HLD1 BCDEFG 2;
 		HLD1 H 2 A_StartSound("halflife/weapons/bodydrop");
@@ -120,7 +121,11 @@ class RolfBellmer : PlayerPawn
 		OFP1 ABCDEFGH 1;
 		Goto ShephardSpawn;
 	ShephardDeath:
-		OFD1 A 1 A_NoBlocking;
+		OFD1 A 1
+		{
+			A_NoBlocking();
+			A_ChangeModel("", 2, flags:CMDL_HIDEMODEL);
+		}
 		OFD1 BCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1;
 		OFD2 A 1 A_StartSound("halflife/weapons/bodydrop");
 		OFD2 BCDEF 1;
@@ -356,7 +361,7 @@ class RolfBellmer : PlayerPawn
 			A_ChangeModel("", 3, flags:CMDL_HIDEMODEL);
 			break;
 		case 'Shepard':
-			for(int i = 0; i <= 10; i++)
+			for(int i = 0; i <= 4; i++)
 				A_ChangeModel("", 0, "Models", "hgrunt_body.iqm", i, "Models", modelskinShepard1[i], CMDL_USESURFACESKIN);
 			for(int i = 0; i <= 3; i++)
 				A_ChangeModel("", 1, "Models", "hgrunt_head1.iqm", i, "Models", modelskinShepard2[i], CMDL_USESURFACESKIN, 0);
@@ -364,7 +369,7 @@ class RolfBellmer : PlayerPawn
 			A_ChangeModel("", 3, flags:CMDL_HIDEMODEL);
 			break;
 		case 'BlackOps':
-			for(int i = 0; i <= 10; i++)
+			for(int i = 0; i <= 2; i++)
 				A_ChangeModel("", 0, "Models", "massn_body.iqm", i, "Models", modelskinBlackOps1[i], CMDL_USESURFACESKIN);
 			for(int i = 0; i <= 1; i++)
 				A_ChangeModel("", 1, "Models", "massn_head.iqm", i, "Models", modelskinBlackOps2[i], CMDL_USESURFACESKIN, 0);

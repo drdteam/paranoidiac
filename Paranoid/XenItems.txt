@@ -157,7 +157,7 @@ class DissectedHeadCrab : ModelBase
 			'dissected_headcrab_002.png',
 			'dissected_headcrab_003.png'
 		};
-		for(int i = 0; i <= 2; i++)
+		for(int i = 0; i <= 3; i++)
 			A_ChangeModel("ModelBase", 0, "Models", "dissected_headcrab.md3", i, "Models", modelskin[i], CMDL_USESURFACESKIN);
 	}
 	Default

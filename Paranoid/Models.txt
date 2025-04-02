@@ -63,7 +63,7 @@ class flatpanel1 : ModelBase
 			'br_monitor1.jpg',
 			'br_screen1.jpg'
 		};
-		for(int i = 0; i <= 2; i++)
+		for(int i = 0; i <= 1; i++)
 			A_ChangeModel("", 0, "Models", "br_monitor1.md3", i, "Models", modelskin[i], CMDL_USESURFACESKIN);
 	}
 	Default
@@ -83,7 +83,7 @@ class flatpanel2 : flatpanel1
 			'br_monitor1.jpg',
 			'br_screen2.png'
 		};
-		for(int i = 0; i <= 2; i++)
+		for(int i = 0; i <= 1; i++)
 			A_ChangeModel("", 0, "Models", "br_monitor1.md3", i, "Models", modelskin[i], CMDL_USESURFACESKIN);
 	}
 }
@@ -97,7 +97,7 @@ class flatpanel3 : flatpanel1
 			'br_pcs1.jpg',
 			'br_screen1.jpg'
 		};
-		for(int i = 0; i <= 2; i++)
+		for(int i = 0; i <= 1; i++)
 			A_ChangeModel("flatpanel3", 0, "Models", "br_monitor3.md3", i, "Models", modelskin[i], CMDL_USESURFACESKIN);
 	}
 	Default
@@ -117,7 +117,7 @@ class flatpanel4 : flatpanel3
 			'br_pcs1.jpg',
 			'br_screen2.png'
 		};
-		for(int i = 0; i <= 2; i++)
+		for(int i = 0; i <= 1; i++)
 			A_ChangeModel("flatpanel3", 0, "Models", "br_monitor3.md3", i, "Models", modelskin[i], CMDL_USESURFACESKIN);
 	}
 }
@@ -131,7 +131,7 @@ class flatpanel5 : ModelFloat
 			'br_monitor5.png',
 			'br_screen1.jpg'
 		};
-		for(int i = 0; i <= 2; i++)
+		for(int i = 0; i <= 1; i++)
 			A_ChangeModel("", 0, "Models", "br_monitor5.md3", i, "Models", modelskin[i], CMDL_USESURFACESKIN);
 	}
 	Default
@@ -151,7 +151,7 @@ class flatpanel6 : flatpanel5
 			'br_monitor5.png',
 			'br_screen1.jpg'
 		};
-		for(int i = 0; i <= 2; i++)
+		for(int i = 0; i <= 1; i++)
 			A_ChangeModel("", 0, "Models", "br_monitor5.md3", i, "Models", modelskin[i], CMDL_USESURFACESKIN);
 	}
 }
@@ -188,7 +188,7 @@ class flatpanel8 : flatpanel5
 			'br_monitor5.png',
 			'br_screen8.png'
 		};
-		for(int i = 0; i <= 2; i++)
+		for(int i = 0; i <= 1; i++)
 			A_ChangeModel("", 0, "Models", "br_monitor5.md3", i, "Models", modelskin[i], CMDL_USESURFACESKIN);
 	}
 }
@@ -202,7 +202,7 @@ class flatpanel9 : flatpanel5
 			'br_monitor5.png',
 			'br_screen10.png'
 		};
-		for(int i = 0; i <= 2; i++)
+		for(int i = 0; i <= 1; i++)
 			A_ChangeModel("", 0, "Models", "br_monitor5.md3", i, "Models", modelskin[i], CMDL_USESURFACESKIN);
 	}
 }
@@ -519,7 +519,7 @@ class Generator4 : ModelBase
 	override void Deactivate (Actor activator)
 		{SetStateLabel("Inactive");}
 	override void HLModelSetup()
-		{A_ChangeModel("", 0, "Models", "generator3.md3", 0, "Models", "generator3.png");}
+		{A_ChangeModel("ModelBase", 0, "Models", "generator3.md3", 0, "Models", "generator3.png");}
 	override void postbeginplay()
 	{
 		blockmax = 2;
