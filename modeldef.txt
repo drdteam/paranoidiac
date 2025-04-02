@@ -64,7 +64,7 @@ Model XMetalBox
 {
 	Scale 1.12 1.17 1.0
 
-	Frame HLI1 A 0 "frame01"
+	FrameIndex HLI1 A 0 0
 }
 
 Model Bulldozer1

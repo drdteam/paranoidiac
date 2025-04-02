@@ -542,12 +542,6 @@ Model HLOtis
 //	Non-Player Characters  //
 /////////////////////////////
 
-Model HintMan
-{
-	Frame HLI1 A 0 "stand01"
-	Frame HLS1 A 0 "sit01"
-}
-
 Model Admin01{BaseFrame}
 
 Model TramBellmer

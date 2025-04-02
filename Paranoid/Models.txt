@@ -2377,7 +2377,7 @@ class Xcrate04 : Xcrate03
 class XMetalBox : ModelFloat
 {
 	override void HLModelSetup()
-		{A_ChangeModel("XMetalBox", 0, "Models", "xcrate01.md2", 0, "Models", "xmetalbox.png");}
+		{A_ChangeModel("XMetalBox", 0, "Models", "xcrate01.md3", 0, "Models", "xmetalbox.png");}
 	Default
 	{
 		Radius 34;
@@ -2404,7 +2404,7 @@ class XMetalBox1 : XMetalBox
 class HintMan : ModelBase
 {
 	override void HLModelSetup()
-		{A_ChangeModel("", 0, "Models", "military.md2", 0, "Models", "euro2.png");}
+		{A_ChangeModel("ModelBase", 0, "Models", "military.md2", 0, "Models", "euro2.png");}
 	Default
 	{
 		Height 56;
@@ -2416,7 +2416,7 @@ class HintMan : ModelBase
 		HLI1 A -1;
 		Stop;
 	Sit:
-		HLS1 A -1 A_SetScale(scale.x*.9);
+		HLI1 B -1 A_SetScale(scale.x*.9);
 		Stop;
 	}
 }
