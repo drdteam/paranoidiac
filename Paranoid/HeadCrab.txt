@@ -4,6 +4,16 @@
 
 class HLHeadCrab : HLMonster
 {
+	override void HLModelSetup()
+	{
+		static const name modelskin[]=
+		{
+			'headcrab_000.png',
+			'headcrab_001.png'
+		};
+		for(int i = 0; i <= 1; i++)
+			A_ChangeModel("", 0, "Models", "headcrab.iqm", i, "Models", modelskin[i], CMDL_USESURFACESKIN);
+	}
 	int drowncounter;
 	override bool Slam(Actor victim)
 	{
@@ -114,6 +124,8 @@ class HLHeadCrab : HLMonster
 
 class HLBabyHeadCrab : HLHeadCrab
 {
+	override void HLModelSetup()
+		{A_ChangeModel("HLBarney", 0, "Models", "baby_headcrab.iqm", 0, "Models", 'baby_headcrab.png');}
 	bool gonarchbaby;
 	Default
 	{

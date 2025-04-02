@@ -288,7 +288,7 @@ class SUV : ModelBase
 		blocksize[2] = (20, 62);
 		blocksize[3] = (20, 62);
 
-		glass = Spawn("SUVGlass",pos);
+		glass = Spawn("SUVGlass",(0, 0, 2));
 		glass.angle = angle;
 		//glass.ChangeTid(tid);
 		glass.master = self;
@@ -298,7 +298,7 @@ class SUV : ModelBase
 	override void tick()
 	{
 		if(glass)
-			glass.A_Warp(AAPTR_MASTER, 0, 0, 0, 0, WARPF_NOCHECKPOSITION);
+			glass.A_Warp(AAPTR_MASTER, 0, 0, 2, 0, WARPF_NOCHECKPOSITION);
 		super.tick();
 	}
 	Default
@@ -344,7 +344,7 @@ class SUV : ModelBase
 			for(int i = 0; i <= 15; i++)
 				A_ChangeModel("ModelBase", 0, "Models", "suv2.md3", i, "Models", modelskin[i], CMDL_USESURFACESKIN);
 
-			A_KillChildren();
+			A_RemoveChildren(true, RMVF_EVERYTHING);
 			A_Explode(128,192);
 			A_StartSound("SUV/Explode");
 			A_SpawnItemEx("ParanoidExplosion",56,32,40);
@@ -370,7 +370,7 @@ class SUV : ModelBase
 class SUVGlass : ModelBase
 {
 	override void HLModelSetup()
-		{A_ChangeModel("", 0, "Models", "suv_glass.iqm", 0, "Models", "suv_glass.png");}
+		{A_ChangeModel("ModelBase", 0, "Models", "suv_glass.iqm", 0, "Models", "suv_glass.png");}
 	Default
 	{
 		Renderstyle "Translucent";
@@ -379,16 +379,6 @@ class SUVGlass : ModelBase
 		Height 56;
 		+DONTTHRUST
 		-SOLID
-		+NOTARGET
-		+NOBLOOD
-		+SHOOTABLE
-	}
-	States
-	{
-	Death:
-		HLI1 BCDEFGHI 1;
-		HLI1 JKLM 1 A_FadeOut;
-		Stop;
 	}
 }
 

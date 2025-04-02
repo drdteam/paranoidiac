@@ -1,4 +1,1 @@
-Model HLAlphaBarney
-{
-	BaseFrame
-}
+Model HLAlphaBarney{BaseFrame}

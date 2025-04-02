@@ -1,5 +1,19 @@
 class HLGonarch : HLMonster
 {
+	override void HLModelSetup()
+	{
+		static const name modelskin[]=
+		{
+			'big_mom_000.png',
+			'big_mom_001.png',
+			'big_mom_002.png',
+			'big_mom_003.png',
+			'big_mom_004.png',
+			'big_mom_005.png'
+		};
+		for(int i = 0; i <= 5; i++)
+			A_ChangeModel("", 0, "Models", "big_mom.iqm", i, "Models", modelskin[i], CMDL_USESURFACESKIN);
+	}
 	Default
 	{
 		Health 5000;

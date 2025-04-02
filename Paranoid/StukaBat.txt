@@ -1,5 +1,21 @@
 class HLBat : HLMonster
 {
+	override void HLModelSetup()
+	{
+		static const name modelskin1[]=
+		{
+			'stukabat_000.png"',
+			'stukabat_001.png"',
+			'stukabat_002.png"',
+			'stukabat_003.png"',
+			'stukabat_004.png"',
+			'stukabat_005.png"',
+			'stukabat_006.png"',
+			'stukabat_007.png"'
+		};
+		for(int i = 0; i <= 7; i++)
+			A_ChangeModel("HLBat", 0, "Models", "stukabat.iqm", i, "Models", modelskin1[i], CMDL_USESURFACESKIN);
+	}
 	Default
 	{
 		Health 200;
@@ -80,7 +96,6 @@ class HLBossBat : HLBat
 			'stukabat2_006.png"',
 			'stukabat_007.png"'
 		};
-
 		for(int i = 0; i <= 7; i++)
 			A_ChangeModel("HLBat", 0, "Models", "stukabat.iqm", i, "Models", modelskin1[i], CMDL_USESURFACESKIN);
 	}

@@ -158,11 +158,23 @@ class flatpanel6 : flatpanel5
 
 class flatpanel7 : flatpanel5
 {
-	override void HLModelSetup(){}
+	override void HLModelSetup()
+	{
+		static const name modelskin[]=
+		{
+			'br_monitor5.png',
+			'br_screen5.jpg'
+		};
+		for(int i = 0; i <= 1; i++)
+			A_ChangeModel("", 0, "Models", "br_monitor5.md3", i, "Models", modelskin[i], CMDL_USESURFACESKIN);
+	}
 	States
 	{
 	Spawn:
-		HLI1 ABCD 105;
+		HLI1 A 105 A_ChangeModel("", 0, "Models", "br_monitor5.md3", 1, "Models", 'br_screen5.png', CMDL_USESURFACESKIN);
+		HLI1 B 105 A_ChangeModel("", 0, "Models", "br_monitor5.md3", 1, "Models", 'br_screen6.png', CMDL_USESURFACESKIN);
+		HLI1 C 105 A_ChangeModel("", 0, "Models", "br_monitor5.md3", 1, "Models", 'br_screen7.png', CMDL_USESURFACESKIN);
+		HLI1 D 105 A_ChangeModel("", 0, "Models", "br_monitor5.md3", 1, "Models", 'br_screen9.png', CMDL_USESURFACESKIN);
 		Loop;
 	}
 }
@@ -585,7 +597,7 @@ class girder2 : ModelBase
 		blockpos[3] = (0, -64, 0);
 		blockpos[4] = (0, -128, 0);
 		blockpos[5] = (0, -192, 0);
-		for(int i = 0; i<= 5; i++)
+		for(int i = 0; i <= 5; i++)
 			blocksize[i] = (32, 64);
 
 		super.postbeginplay();
@@ -1235,7 +1247,6 @@ class Tank01 : ModelBase
 {
 	override void HLModelSetup()
 		{A_ChangeModel("ModelBase", 0, "Models", "xtank.md3", 0, "Models", "xptv2.png");}
-
 	Default
 	{
 		Radius 28;
@@ -1560,9 +1571,7 @@ class Plant1 : Palm2a
 	override void HLModelSetup()
 		{A_ChangeModel("ModelBase", 0, "Models", "plant1.md2", 0, "Models", "plant1.png");}
 	Default
-	{
-		Height 8;
-	}
+		{Height 8;}
 	States
 	{
 	Spawn:
@@ -1587,8 +1596,14 @@ class Plant2 : Plant1
 		{Radius 16;}
 }
 
-class StreetLamp : SwitchableDecoration
+class StreetLamp : ModelBase
 {
+	override void Activate (Actor activator)
+		{SetStateLabel("Active");}
+	override void Deactivate (Actor activator)
+		{SetStateLabel("Inactive");}
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "lamp1x.md3", 0, "Models", "lamp1x1.png");}
 	Default
 	{
 		Radius 4;
@@ -1600,10 +1615,10 @@ class StreetLamp : SwitchableDecoration
     {
     Spawn:
     Active:
-		HLI1 A -1 LIGHT("STREETLAMP");
+		HLI1 A -1 LIGHT("STREETLAMP") HLModelSetup();
 		Loop;
     Inactive:
-		HLI1 B -1;
+		HLI1 A -1 A_ChangeModel("ModelBase", 0, "Models", "lamp1x.md3", 0, "Models", "lamp1x3.png");
 		Stop;
     }
 }
@@ -2210,9 +2225,7 @@ class ExplosiveItemBangCrate : Actor
 class ExplosiveItemBangBarrel : ExplosiveItemBangCrate
 {
 	Default
-	{
-		Scale .4;
-	}
+		{Scale .4;}
 	States
 	{
 	Spawn:
@@ -2229,7 +2242,7 @@ class ExplosiveItemBangBarrel : ExplosiveItemBangCrate
 class Xbarrel1 : ModelBase
 {
 	override void HLModelSetup()
-		{A_ChangeModel("Xbarrel1", 0, "Models", "nbarrel1.md3", 0, "Models", "nbarrel1.png");}
+		{A_ChangeModel("ModelBase", 0, "Models", "nbarrel1.md3", 0, "Models", "nbarrel1.png");}
 	Default
 	{
 		Health 50;
@@ -2258,14 +2271,14 @@ class Xbarrel1 : ModelBase
 class Xbarrel2 : Xbarrel1
 {
 	override void HLModelSetup()
-		{A_ChangeModel("Xbarrel1", 0, "Models", "nbarrel1.md3", 0, "Models", "nbarrel2.png");}
+		{A_ChangeModel("ModelBase", 0, "Models", "nbarrel1.md3", 0, "Models", "nbarrel2.png");}
 	Default
 		{Health 20;}
 }
 class Xbarrel3 : Xbarrel1
 {
 	override void HLModelSetup()
-		{A_ChangeModel("Xbarrel1", 0, "Models", "nbarrel1.md3", 0, "Models", "nbarrel3.png");}
+		{A_ChangeModel("ModelBase", 0, "Models", "nbarrel1.md3", 0, "Models", "nbarrel3.png");}
 	Default
 		{Health 30;}
 }
@@ -2273,7 +2286,7 @@ class Xbarrel3 : Xbarrel1
 class Xcrate01 : Xbarrel3
 {
 	override void HLModelSetup()
-		{A_ChangeModel("Xbarrel1", 0, "Models", "xcrate01.md3", 0, "Models", "xcrate01.png");}
+		{A_ChangeModel("ModelBase", 0, "Models", "xcrate01.md3", 0, "Models", "xcrate01.png");}
 	Default
 	{
 		-PUSHABLE
@@ -2293,7 +2306,7 @@ class Xcrate01 : Xbarrel3
 class Xcrate02 : Xcrate01
 {
 	override void HLModelSetup()
-		{A_ChangeModel("Xbarrel1", 0, "Models", "xcrate01.md3", 0, "Models", "xcrate02.png");}
+		{A_ChangeModel("ModelBase", 0, "Models", "xcrate01.md3", 0, "Models", "xcrate02.png");}
 }
 
 //================================================================
@@ -2346,7 +2359,7 @@ class Barrel3 : Barrel1
 class Xcrate03 : Trashcan1
 {
 	override void HLModelSetup()
-		{A_ChangeModel("Xbarrel1", 0, "Models", "xcrate01.md3", 0, "Models", "xcrate03.png");}
+		{A_ChangeModel("ModelBase", 0, "Models", "xcrate01.md3", 0, "Models", "xcrate03.png");}
 	Default
 	{
 		Health 30;
@@ -2358,7 +2371,7 @@ class Xcrate03 : Trashcan1
 class Xcrate04 : Xcrate03
 {
 	override void HLModelSetup()
-		{A_ChangeModel("Xbarrel1", 0, "Models", "xcrate01.md3", 0, "Models", "xcrate04.png");}
+		{A_ChangeModel("ModelBase", 0, "Models", "xcrate01.md3", 0, "Models", "xcrate04.png");}
 }
 
 class XMetalBox : ModelFloat
@@ -2391,7 +2404,7 @@ class XMetalBox1 : XMetalBox
 class HintMan : ModelBase
 {
 	override void HLModelSetup()
-		{A_ChangeModel("ModelBase", 0, "Models", "military.md2", 0, "Models", "euro2.png");}
+		{A_ChangeModel("", 0, "Models", "military.md2", 0, "Models", "euro2.png");}
 	Default
 	{
 		Height 56;
@@ -2411,9 +2424,7 @@ class HintMan : ModelBase
 class HintManSitting : RandomSpawner
 {
 	Default
-	{
-		DropItem "HintMan";
-	}
+		{DropItem "HintMan";}
 	override void PostSpawn(Actor spawned)
 	{
 		spawned.bNOCLIP=1;

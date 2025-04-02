@@ -2,15 +2,9 @@
 // Charging Stations
 //==================
 
-class FirstAidStation : Actor
+class FirstAidStation : ModelBase
 {
-	override void BeginPlay()
-	{
-		HLModelSetup();
-		//Height = Height *  ModelHeightMul;
-		super.BeginPlay();
-	}
-	virtual void HLModelSetup()
+	override void HLModelSetup()
 	{
 		static const name modelskin1[]=
 		{
@@ -131,9 +125,7 @@ class HEVChargingStation : FirstAidStation
 		return false;
 	}
 	Default
-	{
-		Health 50;
-	}
+		{Health 50;}
 	override void A_HLChargingStation()
 	{
 		A_StartSound("HEVCHARGE", flags:CHANF_LOOPING);

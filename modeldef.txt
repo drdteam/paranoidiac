@@ -1,22 +1,19 @@
 Model ModelBase
 {
 	FrameIndex HLI1 A 0 0
-	FrameIndex HLS1 A 0 0
-}
-
-///////////////////////
-//  Exploding Items  //
-///////////////////////
-
-Model Xbarrel1
-{
-	FrameIndex HLI1 A 0 0
 	FrameIndex HLI1 B 0 1
 	FrameIndex HLI1 C 0 2
 	FrameIndex HLI1 D 0 3
 	FrameIndex HLI1 E 0 4
 	FrameIndex HLI1 F 0 5
 	FrameIndex HLI1 G 0 6
+	FrameIndex HLI1 H 0 7
+	FrameIndex HLI1 I 0 8
+	FrameIndex HLI1 J 0 9
+	FrameIndex HLI1 K 0 10
+	FrameIndex HLI1 L 0 11
+
+	FrameIndex HLS1 A 0 0
 }
 
 /////////////////
@@ -26,28 +23,6 @@ Model Xbarrel1
 Model flatpanel3
 {
 	AngleOffset 180
-}
-
-Model flatpanel7
-{
-	Path "Models"
-	Model 0 "br_monitor5.md3"
-	SurfaceSkin 0 0 "br_monitor5.png"
-	SurfaceSkin 0 1 "br_screen5.png"
-
-	FrameIndex HLI1 A 0 0
-
-	SurfaceSkin 0 1 "br_screen6.png"
-
-	FrameIndex HLI1 B 1 0
-
-	SurfaceSkin 0 1 "br_screen7.png"
-
-	FrameIndex HLI1 C 2 0
-
-	SurfaceSkin 0 1 "br_screen9.png"
-
-	FrameIndex HLI1 D 3 0
 }
 
 ////////////
@@ -99,22 +74,6 @@ Model Bulldozer1
 	FrameIndex HLI1 A 0 0
 }
 
-Model Generator4
-{
-	FrameIndex HLI1 A 0 0
-	FrameIndex HLI1 B 0 1
-	FrameIndex HLI1 C 0 2
-	FrameIndex HLI1 D 0 3
-	FrameIndex HLI1 E 0 4
-	FrameIndex HLI1 F 0 5
-	FrameIndex HLI1 G 0 6
-	FrameIndex HLI1 H 0 7
-	FrameIndex HLI1 I 0 8
-	FrameIndex HLI1 J 0 9
-	FrameIndex HLI1 K 0 10
-	FrameIndex HLI1 L 0 11
-}
-
 Model Loader
 {
 	Offset 12 0 0
@@ -130,10 +89,7 @@ Model apache
 	FrameIndex HLI1 A 0 0
 }
 
-Model Osprey
-{
-	BaseFrame
-}
+Model Osprey{BaseFrame}
 
 Model OspreyDead
 {
@@ -162,61 +118,14 @@ Model TramBattery
 	FrameIndex HLI1 A 0 0
 }
 
-Model SUVGlass
-{
-	ZOffset 2
-
-	FrameIndex HLI1 A 0 0
-	FrameIndex HLI1 B 0 1
-	FrameIndex HLI1 C 0 2
-	FrameIndex HLI1 D 0 3
-	FrameIndex HLI1 E 0 4
-	FrameIndex HLI1 F 0 5
-	FrameIndex HLI1 G 0 6
-	FrameIndex HLI1 H 0 7
-	FrameIndex HLI1 I 0 8
-	FrameIndex HLI1 J 0 9
-	FrameIndex HLI1 K 0 10
-	FrameIndex HLI1 L 0 11
-	FrameIndex HLI1 M 0 12
-}
-
 //////////////////////
 //	Xen life forms  //
 //////////////////////
 
-Model HLXenFungus
-{
-	BaseFrame
-}
-
-Model HLXenHair
-{
-	BaseFrame
-}
-
-Model HLXenLight
-{
-	BaseFrame
-}
-
-Model HLXenTree
-{
-	BaseFrame
-}
-
-Model StreetLamp
-{
-	Path "Models"
-	Model 0 "lamp1x.md3"
-	Skin 0 "lamp1x1.png"
-
-	FrameIndex HLI1 A 0 0
-
-	Skin 0 "lamp1x3.png"
-
-	FrameIndex HLI1 B 0 0
-}
+Model HLXenFungus{BaseFrame}
+Model HLXenHair{BaseFrame}
+Model HLXenLight{BaseFrame}
+Model HLXenTree{BaseFrame}
 
 //********
 //Rocks
@@ -336,10 +245,6 @@ Model HoverPad
 
 Model HLGruntHandGrenade
 {
-	Path "Models"
-	Model 0 "w_grenade.iqm"
-	Skin 0 "w_grenade.png"
-
 	FrameIndex HLI1 A 0 245
 	FrameIndex HLI1 B 0 246
 	FrameIndex HLI1 C 0 247

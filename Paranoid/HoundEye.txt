@@ -4,6 +4,16 @@
 
 class HLHoundEye : HLMonster
 {
+	override void HLModelSetup()
+	{
+		static const name modelskin[]=
+		{
+			'houndeye_000.png',
+			'houndeye_001.png'
+		};
+		for(int i = 0; i <= 1; i++)
+			A_ChangeModel("", 0, "Models", "houndeye.iqm", i, "Models", modelskin[i], CMDL_USESURFACESKIN);
+	}
 	Default
 	{
 		Health 100;

@@ -348,8 +348,10 @@ class HLGruntShotgunNoGrenades : HLGruntShotgun
 }
 
 //********************************************
-class HLGruntHandGrenade : Actor
+class HLGruntHandGrenade : ModelProjectile
 {
+	override void HLModelSetup()
+		{A_ChangeModel("ModelBase", 0, "Models", "w_grenade.iqm", 0, "Models", 'w_grenade.png');}
 	int count;
 	override void tick()
 	{

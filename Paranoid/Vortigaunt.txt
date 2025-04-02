@@ -4,6 +4,16 @@
 
 class HLVortigaunt : HLMonster
 {
+	override void HLModelSetup()
+	{
+		static const name modelskin[]=
+		{
+			'islave_000.png',
+			'islave_001.png'
+		};
+		for(int i = 0; i <= 1; i++)
+			A_ChangeModel("", 0, "Models", "islave.iqm", i, "Models", modelskin[i], CMDL_USESURFACESKIN);
+	}
 	Default
 	{
 		Health 175;

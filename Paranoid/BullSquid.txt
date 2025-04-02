@@ -4,6 +4,18 @@
 
 class HLBullSquid : HLMonster
 {
+	override void HLModelSetup()
+	{
+		static const name modelskin[]=
+		{
+			'bullsquid_000.png',
+			'bullsquid_001.png',
+			'bullsquid_002.png',
+			'bullsquid_003.png'
+		};
+		for(int i = 0; i <= 3; i++)
+			A_ChangeModel("", 0, "Models", "bullsquid.iqm", i, "Models", modelskin[i], CMDL_USESURFACESKIN);
+	}
 	int countdown;
 	Default
 	{

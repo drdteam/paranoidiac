@@ -36,7 +36,6 @@ class HLBarney : HLMonster
 			'barney_head_002.png',
 			'barney_head_003.png'
 		};
-
 		for(int i = 0; i <= 3; i++)
 		{
 			A_ChangeModel("HLBarney", 0, "Models", "barney_body.iqm", i, "Models", modelskin1[i], CMDL_USESURFACESKIN);
@@ -48,9 +47,7 @@ class HLBarney : HLMonster
 	virtual void ResetGunModel(bool holster = false)
 	{
 		if(holster)
-		{
 			A_ChangeModel("HLBarney", 2, "Models", "barney_gun2.iqm", 2, "Models", "w_9mmhandgun.png");
-		}
 		else
 		{
 			A_ChangeModel("HLBarney", 2, "Models", "barney_gun1.iqm", 0, "Models", "w_9mmhandgun.png", CMDL_USESURFACESKIN, 0);

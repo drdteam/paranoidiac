@@ -1,16 +1,5 @@
 Model HLBat
 {
-	Path "Models"
-	Model 0 "stukabat.iqm"
-	SurfaceSkin 0 0 "stukabat_000.png"
-	SurfaceSkin 0 1 "stukabat_001.png"
-	SurfaceSkin 0 2 "stukabat_002.png"
-	SurfaceSkin 0 3 "stukabat_003.png"
-	SurfaceSkin 0 4 "stukabat_004.png"
-	SurfaceSkin 0 5 "stukabat_005.png"
-	SurfaceSkin 0 6 "stukabat_006.png"
-	SurfaceSkin 0 7 "stukabat_007.png"
-
 	FrameIndex HLI1 A 0 111
 	FrameIndex HLI1 B 0 112
 	FrameIndex HLI1 C 0 113
@@ -138,11 +127,6 @@ Model HLBat
 
 Model HLVortigaunt
 {
-	Path "Models"
-	Model 0 "islave.iqm"
-	SurfaceSkin 0 0 "islave_000.png"
-	SurfaceSkin 0 1 "islave_001.png"
-
 	FrameIndex HLI1 A 0 0
 	FrameIndex HLI1 B 0 1
 	FrameIndex HLI1 C 0 2
@@ -395,15 +379,8 @@ Model HLBarnacle
 	BaseFrame
 }
 
-Model HLHornetGrunt
-{
-	BaseFrame
-}
-
-Model HLHornetGruntDead
-{
-	BaseFrame
-}
+Model HLHornetGrunt{BaseFrame}
+Model HLHornetGruntDead{BaseFrame}
 
 Model HLGargantua
 {
@@ -631,11 +608,6 @@ Model HLGargantua
 
 Model HLHeadCrab
 {
-	Path "Models"
-	Model 0 "headcrab.iqm"
-	SurfaceSkin 0 0 "headcrab_000.png"
-	SurfaceSkin 0 1 "headcrab_001.png"
-
 	FrameIndex HLI1 A 0 0
 	FrameIndex HLI1 B 0 1
 	FrameIndex HLI1 C 0 2
@@ -785,10 +757,6 @@ Model HLHeadCrab
 
 Model HLBabyHeadCrab
 {
-	Path "Models"
-	Model 0 "baby_headcrab.iqm"
-	Skin 0 "baby_headcrab.png"
-
 	FrameIndex HLI1 A 0 0
 	FrameIndex HLI1 B 0 1
 	FrameIndex HLI1 C 0 2
@@ -936,15 +904,6 @@ Model HLBabyHeadCrab
 
 Model HLGonarch
 {
-	Path "Models"
-	Model 0 "big_mom.iqm"
-	SurfaceSkin 0 0 "big_mom_000.png"
-	SurfaceSkin 0 1 "big_mom_001.png"
-	SurfaceSkin 0 2 "big_mom_002.png"
-	SurfaceSkin 0 3 "big_mom_003.png"
-	SurfaceSkin 0 4 "big_mom_004.png"
-	SurfaceSkin 0 5 "big_mom_005.png"
-
 	FrameIndex HLI1 A 0 0
 	FrameIndex HLI1 B 0 1
 	FrameIndex HLI1 C 0 2
@@ -1141,11 +1100,6 @@ Model HLGonarch
 
 Model HLHoundEye
 {
-	Path "Models"
-	Model 0 "houndeye.iqm"
-	SurfaceSkin 0 0 "houndeye_000.png"
-	SurfaceSkin 0 1 "houndeye_001.png"
-
 	FrameIndex HLI1 A 0 46
 	FrameIndex HLI1 B 0 47
 	FrameIndex HLI1 C 0 48
@@ -1408,13 +1362,6 @@ Model HLHoundEye
 
 Model HLBullSquid
 {
-	Path "Models"
-	Model 0 "bullsquid.iqm"
-	SurfaceSkin 0 0 "bullsquid_000.png"
-	SurfaceSkin 0 1 "bullsquid_001.png"
-	SurfaceSkin 0 2 "bullsquid_002.png"
-	SurfaceSkin 0 3 "bullsquid_003.png"
-
 	FrameIndex HLI1 A 0 88
 	FrameIndex HLI1 B 0 89
 	FrameIndex HLI1 C 0 90
@@ -1617,32 +1564,6 @@ Model HLBullSquid
 
 Model HLController
 {
-	Path "Models"
-	Model 0 "controller.iqm"
-	SurfaceSkin 0 0 "controller_000.png"
-	SurfaceSkin 0 1 "controller_001.png"
-	SurfaceSkin 0 2 "controller_002.png"
-	SurfaceSkin 0 3 "controller_003.png"
-	SurfaceSkin 0 4 "controller_004.png"
-	SurfaceSkin 0 5 "controller_005.png"
-	SurfaceSkin 0 6 "controller_006.png"
-	SurfaceSkin 0 7 "controller_007.png"
-	SurfaceSkin 0 8 "controller_008.png"
-	SurfaceSkin 0 9 "controller_009.png"
-	SurfaceSkin 0 10 "controller_010.png"
-	SurfaceSkin 0 11 "controller_011.png"
-	SurfaceSkin 0 12 "controller_012.png"
-	SurfaceSkin 0 13 "controller_013.png"
-	SurfaceSkin 0 14 "controller_014.png"
-	SurfaceSkin 0 15 "controller_015.png"
-	SurfaceSkin 0 16 "controller_016.png"
-	SurfaceSkin 0 17 "controller_017.png"
-	SurfaceSkin 0 18 "controller_018.png"
-	SurfaceSkin 0 19 "controller_019.png"
-	SurfaceSkin 0 20 "controller_020.png"
-	SurfaceSkin 0 21 "controller_021.png"
-	SurfaceSkin 0 22 "controller_022.png"
-
 	FrameIndex HLI1 A 0 131
 	FrameIndex HLI1 B 0 132
 	FrameIndex HLI1 C 0 133
@@ -1861,27 +1782,10 @@ Model HLController
 	FrameIndex HLD2 U 0 211
 }
 
-Model HLZombie
-{
-	BaseFrame
-}
+Model HLZombie{BaseFrame}
 
 Model HLNihilanth
 {
-	Path "Models"
-	Model 0 "nihilanth.iqm"
-	SurfaceSkin 0 0 "nihilanth_000.png"
-	SurfaceSkin 0 1 "nihilanth_001.png"
-	SurfaceSkin 0 2 "nihilanth_002.png"
-	SurfaceSkin 0 3 "nihilanth_003.png"
-	SurfaceSkin 0 4 "nihilanth_004.png"
-	SurfaceSkin 0 5 "nihilanth_005.png"
-	SurfaceSkin 0 6 "nihilanth_006.png"
-	SurfaceSkin 0 7 "nihilanth_007.png"
-	SurfaceSkin 0 8 "nihilanth_008.png"
-	SurfaceSkin 0 9 "nihilanth_009.png"
-	SurfaceSkin 0 10 "nihilanth_010.png"
-	SurfaceSkin 0 11 "nihilanth_011.png"
 	ZOffset 511
 
 	FrameIndex HLI1 A 0 0

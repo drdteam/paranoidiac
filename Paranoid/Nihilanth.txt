@@ -1,5 +1,25 @@
 class HLNihilanth : HLMonster
 {
+	override void HLModelSetup()
+	{
+		static const name modelskin[]=
+		{
+			'nihilanth_000.png',
+			'nihilanth_001.png',
+			'nihilanth_002.png',
+			'nihilanth_003.png',
+			'nihilanth_004.png',
+			'nihilanth_005.png',
+			'nihilanth_006.png',
+			'nihilanth_007.png',
+			'nihilanth_008.png',
+			'nihilanth_009.png',
+			'nihilanth_010.png',
+			'nihilanth_011.png'
+		};
+		for(int i = 0; i <= 11; i++)
+			A_ChangeModel("", 0, "Models", "nihilanth.iqm", i, "Models", modelskin[i], CMDL_USESURFACESKIN);
+	}
 	bool awake,mode;
 	int countdown;
 	override void tick()

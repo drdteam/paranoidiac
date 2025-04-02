@@ -4,6 +4,37 @@
 
 class HLController : HLMonster
 {
+	override void HLModelSetup()
+	{
+		static const name modelskin[]=
+		{
+			'controller_000.png',
+			'controller_001.png',
+			'controller_002.png',
+			'controller_003.png',
+			'controller_004.png',
+			'controller_005.png',
+			'controller_006.png',
+			'controller_007.png',
+			'controller_008.png',
+			'controller_009.png',
+			'controller_010.png',
+			'controller_011.png',
+			'controller_012.png',
+			'controller_013.png',
+			'controller_014.png',
+			'controller_015.png',
+			'controller_016.png',
+			'controller_017.png',
+			'controller_018.png',
+			'controller_019.png',
+			'controller_020.png',
+			'controller_021.png',
+			'controller_022.png'
+		};
+		for(int i = 0; i <= 22; i++)
+			A_ChangeModel("", 0, "Models", "controller.iqm", i, "Models", modelskin[i], CMDL_USESURFACESKIN);
+	}
 	Default
 	{
 		Health 200;
