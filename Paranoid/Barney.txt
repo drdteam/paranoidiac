@@ -47,7 +47,7 @@ class HLBarney : HLMonster
 	virtual void ResetGunModel(bool holster = false)
 	{
 		if(holster)
-			A_ChangeModel("HLBarney", 2, "Models", "barney_gun2.iqm", 2, "Models", "w_9mmhandgun.png");
+			A_ChangeModel("HLBarney", 2, "Models", "barney_gun2.iqm", 2, "Models", "w_9mmhandgun.png", 0, 2);
 		else
 		{
 			A_ChangeModel("HLBarney", 2, "Models", "barney_gun1.iqm", 0, "Models", "w_9mmhandgun.png", CMDL_USESURFACESKIN, 0);
@@ -251,7 +251,7 @@ class HLOtis : HLBarney
 	override void ResetGunModel(bool holster)
 	{
 		if(holster)
-			A_ChangeModel("HLBarney", 2, "Models", "otis_gun2.iqm", 2, "Models", "v_desert_eagle_main_000.png");
+			A_ChangeModel("HLBarney", 2, "Models", "otis_gun2.iqm", 2, "Models", "v_desert_eagle_main_000.png", 0, 2);
 		else
 			A_ChangeModel("HLBarney", 2, "Models", "otis_gun1.iqm", 2, "Models", "v_desert_eagle_main_000.png", 0, 0);
 	}
