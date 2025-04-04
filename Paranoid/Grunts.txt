@@ -351,7 +351,7 @@ class HLGruntShotgunNoGrenades : HLGruntShotgun
 class HLGruntHandGrenade : ModelProjectile
 {
 	override void HLModelSetup()
-		{A_ChangeModel("ModelBase", 0, "Models", "w_grenade.iqm", 0, "Models", 'w_grenade.png');}
+		{A_ChangeModel("", 0, "Models", "w_grenade.iqm", 0, "Models", 'w_grenade.png');}
 	int count;
 	override void tick()
 	{
@@ -373,16 +373,14 @@ class HLGruntHandGrenade : ModelProjectile
 		BounceFactor .6;
 		-NOGRAVITY
 		Gravity .5;
+		+DECOUPLEDANIMATIONS
 	}
 	States
 	{
 	Spawn:
-		HLI1 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 2;
-		HLI2 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 2;
-		HLI3 ABC 2;
-		Loop;
+		HLI1 A -1 NODELAY SetAnimation('toss_2', 10, flags: SAF_LOOP|SAF_NOOVERRIDE);
 	Death:
-		HLD1 A -1;
+		HLI1 A -1 SetAnimation('roll1', 10, endframe:1);
 		Stop;
 	Explode:
 		TNT1 A 1

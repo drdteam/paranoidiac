@@ -243,73 +243,7 @@ Model HoverPad
 	FrameIndex HLI1 A 0 0
 }
 
-Model HLGruntHandGrenade
-{
-	FrameIndex HLI1 A 0 245
-	FrameIndex HLI1 B 0 246
-	FrameIndex HLI1 C 0 247
-	FrameIndex HLI1 D 0 248
-	FrameIndex HLI1 E 0 249
-	FrameIndex HLI1 F 0 250
-	FrameIndex HLI1 G 0 251
-	FrameIndex HLI1 H 0 252
-	FrameIndex HLI1 I 0 253
-	FrameIndex HLI1 J 0 254
-	FrameIndex HLI1 K 0 255
-	FrameIndex HLI1 L 0 256
-	FrameIndex HLI1 M 0 257
-	FrameIndex HLI1 N 0 258
-	FrameIndex HLI1 O 0 259
-	FrameIndex HLI1 P 0 260
-	FrameIndex HLI1 Q 0 261
-	FrameIndex HLI1 R 0 262
-	FrameIndex HLI1 S 0 263
-	FrameIndex HLI1 T 0 264
-	FrameIndex HLI1 U 0 265
-	FrameIndex HLI1 V 0 266
-	FrameIndex HLI1 W 0 267
-	FrameIndex HLI1 X 0 268
-	FrameIndex HLI1 Y 0 269
-	FrameIndex HLI1 Z 0 270
-	FrameIndex HLI1 [ 0 271
-	FrameIndex HLI1 \ 0 272
-	FrameIndex HLI1 ] 0 273
-	FrameIndex HLI2 A 0 274
-	FrameIndex HLI2 B 0 275
-	FrameIndex HLI2 C 0 276
-	FrameIndex HLI2 D 0 277
-	FrameIndex HLI2 E 0 278
-	FrameIndex HLI2 F 0 279
-	FrameIndex HLI2 G 0 280
-	FrameIndex HLI2 H 0 281
-	FrameIndex HLI2 I 0 282
-	FrameIndex HLI2 J 0 283
-	FrameIndex HLI2 K 0 284
-	FrameIndex HLI2 L 0 285
-	FrameIndex HLI2 M 0 286
-	FrameIndex HLI2 N 0 287
-	FrameIndex HLI2 O 0 288
-	FrameIndex HLI2 P 0 289
-	FrameIndex HLI2 Q 0 290
-	FrameIndex HLI2 R 0 291
-	FrameIndex HLI2 S 0 292
-	FrameIndex HLI2 T 0 293
-	FrameIndex HLI2 U 0 294
-	FrameIndex HLI2 V 0 295
-	FrameIndex HLI2 W 0 296
-	FrameIndex HLI2 X 0 297
-	FrameIndex HLI2 Y 0 298
-	FrameIndex HLI2 Z 0 299
-	FrameIndex HLI2 [ 0 300
-	FrameIndex HLI2 \ 0 301
-	FrameIndex HLI2 ] 0 302
-	FrameIndex HLI3 A 0 303
-	FrameIndex HLI3 B 0 304
-	FrameIndex HLI3 C 0 305
-
-	FrameIndex HLD1 A 0 1
-}
-
+Model HLGruntHandGrenade{BaseFrame}
 Model HGunHornet{BaseFrame}
 Model HGunHornet2{BaseFrame}
 Model HGruntHornet{BaseFrame}
