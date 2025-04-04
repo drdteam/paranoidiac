@@ -3,17 +3,30 @@ enum ParanoidEnum
 	HLSMOOTHCHASE=CHF_NOPLAYACTIVE+CHF_NORANDOMTURN+CHF_STOPIFBLOCKED
 }
 
-const ModelHeightMul = 1.2;
-
 class HLMonster : Actor
 {
+	double ModelHeightMul;
+
 	int walktic,walkticcur;
 	Property WalkTic:walktic;
 	override void BeginPlay()
 	{
+		GetModelHeightMul();
+		ModelHeightSetup();
 		HLModelSetup();
-		//Height = Height *  ModelHeightMul;
 		super.BeginPlay();
+	}
+	void GetModelHeightMul()
+	{
+		if(level.PixelStretch == 1.0)
+			ModelHeightMul = 1.2;
+		else
+			ModelHeightMul = 1.0;
+	}
+	virtual void ModelHeightSetup()
+	{
+		//let defaultHeight  = GetDefaultByType(GetClass()).Height;
+		//Height = defaultHeight * ModelHeightMul;
 	}
 	virtual void HLModelSetup(){}
 	Default
@@ -70,11 +83,26 @@ class HLMonster : Actor
 
 class ModelProjectile : Actor
 {
+	double ModelHeightMul;
+
 	override void BeginPlay()
 	{
+		GetModelHeightMul();
+		ModelHeightSetup();
 		HLModelSetup();
-		//Height = Height *  ModelHeightMul;
 		super.BeginPlay();
+	}
+	void GetModelHeightMul()
+	{
+		if(level.PixelStretch == 1.0)
+			ModelHeightMul = 1.2;
+		else
+			ModelHeightMul = 1.0;
+	}
+	virtual void ModelHeightSetup()
+	{
+		//let defaultHeight  = GetDefaultByType(GetClass()).Height;
+		//Height = defaultHeight * ModelHeightMul;
 	}
 	virtual void HLModelSetup(){}
 	States
@@ -87,11 +115,26 @@ class ModelProjectile : Actor
 
 class ModelBase : Actor
 {
+	double ModelHeightMul;
+
 	override void BeginPlay()
 	{
+		GetModelHeightMul();
+		ModelHeightSetup();
 		HLModelSetup();
-		Height = Height *  ModelHeightMul;
 		super.BeginPlay();
+	}
+	void GetModelHeightMul()
+	{
+		if(level.PixelStretch == 1.0)
+			ModelHeightMul = 1.2;
+		else
+			ModelHeightMul = 1.0;
+	}
+	virtual void ModelHeightSetup()
+	{
+		let defaultHeight  = GetDefaultByType(GetClass()).Height;
+		Height = defaultHeight * ModelHeightMul;
 	}
 	virtual void HLModelSetup(){}
 	Default

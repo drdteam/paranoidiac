@@ -1,12 +1,31 @@
 class RolfBellmer : PlayerPawn
 {
+	double ModelHeightMul;
+
+	override void BeginPlay()
+	{
+		GetModelHeightMul();
+		ModelHeightSetup();
+		super.BeginPlay();
+	}
+	void GetModelHeightMul()
+	{
+		if(level.PixelStretch == 1.0)
+			ModelHeightMul = 1.2;
+		else
+			ModelHeightMul = 1.0;
+	}
+	virtual void ModelHeightSetup()
+	{
+		ViewHeight = 56 * ModelHeightMul;
+	}
 	bool scientist,otis;
 	Default
 	{
 		+NOSKIN
 		Height 60;
 		Player.DisplayName "Rolf Bellmer";
-		Player.ViewHeight 56 * ModelHeightMul;
+		Player.ViewHeight 56;
 		Player.AttackZOffset 24;
 		Player.WeaponSlot 1,"HLCrowbar";
 		Player.WeaponSlot 2,"HLPistol","HLDesertEagle","HLMagnum";

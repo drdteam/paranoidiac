@@ -565,17 +565,21 @@ class Generator4 : ModelBase
 
 class girder1 : ModelBase
 {
+	override void ModelHeightSetup()
+	{
+        let defaultScaley = GetDefaultByType(GetClass()).Scale.y;
+		Scale.y = defaultScaley / ModelHeightMul;
+	}
 	override void HLModelSetup()
 		{A_ChangeModel("ModelBase", 0, "Models", "girder1.md2", 0, "Models", "girder1.png");}
 	Default
 	{
 		Radius 34;
-		Height (416.0/ModelHeightMul);
-		YScale (1.0/ModelHeightMul);
+		Height 416;
 	}
 }
 
-class girder2 : ModelBase
+class girder2 : girder1
 {
 	override void HLModelSetup()
 		{A_ChangeModel("ModelBase", 0, "Models", "girder2.md2", 0, "Models", "girder2.png");}
@@ -593,14 +597,12 @@ class girder2 : ModelBase
 	}
 	Default
 	{
-		Radius 34;
-		Height (64.0/ModelHeightMul);
+		Height 64;
 		+NOGRAVITY
-		YScale (1.0/ModelHeightMul);
 	}
 }
 
-class girder3 : ModelBase
+class girder3 : girder2
 {
 	override void HLModelSetup()
 		{A_ChangeModel("ModelBase", 0, "Models", "girder1.md2", 0, "Models", "girder1.png");}
@@ -608,20 +610,20 @@ class girder3 : ModelBase
 	{
 		Scale 4;
 		Radius 136;
-		Height (1664.0/ModelHeightMul);
-		+NOGRAVITY
-		YScale (1.0/ModelHeightMul);
+		Height 1664;
 	}
 }
 
-class girder4 : girder3
+class girder4 : ModelBase
 {
 	override void HLModelSetup()
 		{A_ChangeModel("ModelBase", 0, "Models", "girder2.md2", 0, "Models", "girder2.png");}
 	Default
 	{
+		Scale 4;
 		Radius 128;
 		Height 416;
+		+NOGRAVITY
 	}
 }
 
@@ -2403,13 +2405,17 @@ class Xcrate04 : Xcrate03
 
 class XMetalBox : ModelFloat
 {
+	override void ModelHeightSetup()
+	{
+        let defaultScaley  = GetDefaultByType(GetClass()).Scale.y;
+		Scale.y = defaultScaley / ModelHeightMul;
+	}
 	override void HLModelSetup()
 		{A_ChangeModel("XMetalBox", 0, "Models", "xcrate01.md3", 0, "Models", "xmetalbox.png");}
 	Default
 	{
 		Radius 34;
-		Height (64.0/ModelHeightMul);
-		YScale (1.0/ModelHeightMul);
+		Height 64;
 	}
 }
 
@@ -2419,7 +2425,7 @@ class XMetalBox1 : XMetalBox
 	{
 		Scale 4.0;
 		Radius 136;
-		Height (256/ModelHeightMul);
+		Height 256;
 	}
 }
 
