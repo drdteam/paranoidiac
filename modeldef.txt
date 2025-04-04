@@ -310,10 +310,7 @@ Model HLGruntHandGrenade
 	FrameIndex HLD1 A 0 1
 }
 
-Model HGunHornet
-{
-	FrameIndex HLI1 A 0 0
-	FrameIndex HLI1 B 0 1
-	FrameIndex HLI1 C 0 2
-	FrameIndex HLI1 D 0 3
-}
+Model HGunHornet{BaseFrame}
+Model HGunHornet2{BaseFrame}
+Model HGruntHornet{BaseFrame}
+Model HGruntHornetFake{BaseFrame}

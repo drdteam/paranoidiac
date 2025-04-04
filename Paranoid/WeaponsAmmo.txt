@@ -2261,21 +2261,9 @@ class HGunHornet : ModelProjectile
 {
 	override void HLModelSetup()
 	{
-		static const name modelskin[]=
-		{
-			'hornet_000.png',
-			'hornet_001.png',
-			'hornet_002.png',
-			'hornet_003.png',
-			'hornet_004.png',
-			'hornet_005.png',
-			'nochrome.png'
-		};
-		for(int i = 0; i <= 6; i++)
-			A_ChangeModel("HGunHornet", 0, "Models", "hornet.md3", i, "Models", modelskin[i], CMDL_USESURFACESKIN);
+		A_ChangeModel("HGunHornet", 0, "Models", "hornet.iqm", 0, "Models", 'hornet.png');
 		SetModelFlag(MDL_PITCHFROMMOMENTUM);
 	}
-
 	class<actor> trail;
 	Property trail:trail;
 	Default
@@ -2287,11 +2275,15 @@ class HGunHornet : ModelProjectile
 		+SEEKERMISSILE
 		Projectile;
 		HGunHornet.Trail "HGHornetTrail";
+		+DECOUPLEDANIMATIONS
 	}
 	States
 	{
 	Spawn:
-		HLI1 ABCD 1 BRIGHT A_HornetFly(SMF_LOOK);
+		HLI1 A 1 BRIGHT NODELAY SetAnimation('idle', 30, flags: SAF_LOOP|SAF_NOOVERRIDE);
+		HLI1 A 0 A_Jump(256, "Fly");
+	Fly:
+		HLI1 A 1 BRIGHT A_HornetFly(SMF_LOOK);
 		Loop;
 	Death:
 	Crash:
@@ -2326,7 +2318,7 @@ class HGunHornet2 : HGunHornet
 	}
 	States
 	{
-	Spawn:
+	Fly:
 		HLI1 ABCD 1 BRIGHT A_HornetFly;
 		Loop;
 	}
@@ -2401,8 +2393,8 @@ class HGruntHornetFake : HGruntHornet
 	}
 	States
 	{
-	Spawn:
-		HLI1 ABCD 1 NODELAY
+	Fly:
+		HLI1 ABCD 1
 		{
 			if(countdown>=1)
 			{
