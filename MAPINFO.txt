@@ -579,13 +579,10 @@ DoomEdNums
 	30317=DeerHead
 	30318=VidCam1
 	30319=VidCam2
-	30320=TramBarney
 	30321=HLOtisGuard
 	30322=HLBarneyGuard
 	30323=Admin01
 	30324=HLScientistSlumped
-	30325=TramBellmer
-	30326=TramBattery
 	30327=SgtHarrison
 	30328=TramIntro
 	30329=HLScientistQuiet
@@ -681,5 +678,4 @@ DoomEdNums
 	32001=HLGruntDead
 	32002=FirstAidStation
 	32003=HEVChargingStation
-	32004=OspreyBellmer
 }

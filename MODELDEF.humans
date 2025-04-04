@@ -403,71 +403,6 @@ Model HLBarney
 	FrameIndex HLI4 E 2 60
 	FrameIndex HLI4 F 0 216
 	FrameIndex HLI4 F 2 61
-
-	Offset -56 0 24
-
-	FrameIndex HLI4 G 0 186
-	FrameIndex HLI4 G 2 31
-	FrameIndex HLI4 H 0 187
-	FrameIndex HLI4 H 2 32
-	FrameIndex HLI4 I 0 188
-	FrameIndex HLI4 I 2 33
-	FrameIndex HLI4 J 0 189
-	FrameIndex HLI4 J 2 34
-	FrameIndex HLI4 K 0 190
-	FrameIndex HLI4 K 2 35
-	FrameIndex HLI4 L 0 191
-	FrameIndex HLI4 L 2 36
-	FrameIndex HLI4 M 0 192
-	FrameIndex HLI4 M 2 37
-	FrameIndex HLI4 N 0 193
-	FrameIndex HLI4 N 2 38
-	FrameIndex HLI4 O 0 194
-	FrameIndex HLI4 O 2 39
-	FrameIndex HLI4 P 0 195
-	FrameIndex HLI4 P 2 40
-	FrameIndex HLI4 Q 0 196
-	FrameIndex HLI4 Q 2 41
-	FrameIndex HLI4 R 0 197
-	FrameIndex HLI4 R 2 42
-	FrameIndex HLI4 S 0 198
-	FrameIndex HLI4 S 2 43
-	FrameIndex HLI4 T 0 199
-	FrameIndex HLI4 T 2 44
-	FrameIndex HLI4 U 0 200
-	FrameIndex HLI4 U 2 45
-	FrameIndex HLI4 V 0 201
-	FrameIndex HLI4 V 2 46
-	FrameIndex HLI4 W 0 202
-	FrameIndex HLI4 W 2 47
-	FrameIndex HLI4 X 0 203
-	FrameIndex HLI4 X 2 48
-	FrameIndex HLI4 Y 0 204
-	FrameIndex HLI4 Y 2 49
-	FrameIndex HLI4 Z 0 205
-	FrameIndex HLI4 Z 2 50
-	FrameIndex HLI4 [ 0 206
-	FrameIndex HLI4 [ 2 51
-	FrameIndex HLI4 \ 0 207
-	FrameIndex HLI4 \ 2 52
-	FrameIndex HLI4 ] 0 208
-	FrameIndex HLI4 ] 2 53
-	FrameIndex HLI5 A 0 209
-	FrameIndex HLI5 A 2 54
-	FrameIndex HLI5 B 0 210
-	FrameIndex HLI5 B 2 55
-	FrameIndex HLI5 C 0 211
-	FrameIndex HLI5 C 2 56
-	FrameIndex HLI5 D 0 212
-	FrameIndex HLI5 D 2 57
-	FrameIndex HLI5 E 0 213
-	FrameIndex HLI5 E 2 58
-	FrameIndex HLI5 F 0 214
-	FrameIndex HLI5 F 2 59
-	FrameIndex HLI5 G 0 215
-	FrameIndex HLI5 G 2 60
-	FrameIndex HLI5 H 0 216
-	FrameIndex HLI5 H 2 61
 }
 
 //Otis' holstered gun has different frames,
@@ -546,7 +481,6 @@ Model Admin01{BaseFrame}
 
 Model TramBellmer
 {
-	Offset -32 0 22
 	FrameIndex HLI1 A 0 318
 	FrameIndex HLI1 B 0 319
 	FrameIndex HLI1 C 0 320

@@ -99,8 +99,8 @@ class Spark_O1 : SparkFlare_O1
 //****
 
 //Briefly showers sparks downwards
- class NJDownSpark : SwitchableDecoration replaces Spark
- {
+class NJDownSpark : SwitchableDecoration replaces Spark
+{
 	Default
 	{
 		Height 2;

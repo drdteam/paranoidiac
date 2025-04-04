@@ -109,6 +109,12 @@ class ModelBase : Actor
 	actor block[25];
 	vector3 blockpos[25];
 	vector2 blocksize[25];
+	int ridermax;
+	actor rider[25];
+	vector3 riderpos[25];
+	double riderangle[25];
+
+	virtual void BlockingSetup(){}
 	actor BuildBridge(vector3 bridgepos, vector2 bridgesize, double bridgeangle, int bridgetid, actor bridgemaster)
 	{
 		let thisblock = Spawn("InvisibleBridge", bridgepos);
@@ -122,12 +128,36 @@ class ModelBase : Actor
 	}
 	void MoveBridge(actor thisblock, vector3 bridgepos)
 	{
-		if(!thisblock)
-			return;
-		thisblock.A_Warp(AAPTR_MASTER, bridgepos.x, bridgepos.y, bridgepos.z * ModelHeightMul, 0, WARPF_NOCHECKPOSITION);
+		if(thisblock)
+			thisblock.A_Warp(AAPTR_MASTER, bridgepos.x, bridgepos.y, bridgepos.z * ModelHeightMul, 0, WARPF_STOP|WARPF_NOCHECKPOSITION|WARPF_INTERPOLATE);
+	}
+	actor BuildRider(class<Actor> type, vector3 riderpos = (0,0,0), double riderangle = 0)
+	{
+		actor rider = Spawn(type, pos + riderpos);
+		if(!rider)
+			return null;
+		rider.angle = angle + riderangle;
+		rider.master = self;
+		rider.bNOCLIP=1;
+		rider.bNOINTERACTION=1;
+		rider.bNOGRAVITY=1;
+		rider.bSOLID=0;
+		rider.bSHOOTABLE=0;
+		rider.bCOUNTKILL=0;
+		rider.bCANPUSHWALLS=0;
+		rider.bCANUSEWALLS=0;
+		rider.bACTIVATEMCROSS=0;
+		rider.bISMONSTER=0;
+		return rider;
+	}
+	void MoveRider(actor rider, vector3 riderpos = (0,0,0), double riderangle = 0)
+	{
+		if(rider)
+			rider.A_Warp(AAPTR_MASTER, riderpos.x, riderpos.y, riderpos.z, riderangle, WARPF_STOP|WARPF_NOCHECKPOSITION|WARPF_INTERPOLATE);
 	}
 	override void PostBeginPlay()
 	{
+		BlockingSetup();
 		for(int i = 0; i < blockmax; i++)
 			block[i] = BuildBridge(blockpos[i], blocksize[i], angle, tid, self);
 		super.PostBeginPlay();
@@ -136,6 +166,8 @@ class ModelBase : Actor
 	{
 		for(int i = 0; i < blockmax; i++)
 			MoveBridge(block[i], blockpos[i]);
+		for(int i = 0; i < ridermax; i++)
+			MoveRider(rider[i], riderpos[i], riderangle[i]);
 		super.tick();
 	}
 }

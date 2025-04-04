@@ -97,23 +97,11 @@ Model OspreyDead
 	BaseFrame
 }
 
-Model OspreyBellmer
-{
-	Offset -8 44 30
-	AngleOffset 90
-	BaseFrame
-}
+Model OspreyBellmer{BaseFrame}
 
 Model Tram
 {
 	ZOffset 32
-
-	FrameIndex HLI1 A 0 0
-}
-
-Model TramBattery
-{
-	Offset -10 0 84
 
 	FrameIndex HLI1 A 0 0
 }

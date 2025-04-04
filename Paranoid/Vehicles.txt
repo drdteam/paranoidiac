@@ -1,6 +1,7 @@
 //Osprey
 class Osprey : ModelBase
 {
+	bool BellmerOnBoard;
 	int bobstate;
 	override void tick()
 	{
@@ -10,6 +11,12 @@ class Osprey : ModelBase
 			bobstate=(bobstate+1)&63;
 			newz+=BobSin(bobstate)/2.;
 			SetZ(newz);
+		if(BellmerOnBoard && rider[0] == null)
+		{
+			ridermax = 1;
+			riderpos[0] = (44, -8, 36);
+			riderangle[0] = 90;
+			rider[0] = BuildRider("OspreyBellmer", riderpos[0], riderangle[0]);
 		}
 		super.tick();
 	}
@@ -28,6 +35,11 @@ class Osprey : ModelBase
 		for(int i = 0; i <= 6; i++)
 			A_ChangeModel("", 0, "Models", "osprey.iqm", i, "Models", modelskin1[i], CMDL_USESURFACESKIN);
 		SetModelFlag(MDL_USEACTORPITCH);
+	}
+	override void OnDestroy()
+	{
+		A_RemoveChildren(1, RMVF_EVERYTHING);
+		super.OnDestroy();
 	}
 	Default
 	{
@@ -130,8 +142,7 @@ class Osprey : ModelBase
 		HLI1 A 1 A_HLOspreyBigSmoke;
 		HLI1 AA 1 A_HLOspreySpark;
 		HLI1 A 1 A_HLOspreyBigSmoke;
-		HLI1 A 1 A_HLOspreySpark;
-		HLI1 A 1 A_HLOspreySpark;
+		HLI1 AA 1 A_HLOspreySpark;
 		HLI1 A 1 A_HLOspreyBigSmoke;
 		HLI1 AA 1 A_HLOspreySpark;
 		HLI1 A 1 A_HLOspreyBigSmoke;
@@ -219,9 +230,9 @@ class OspreyBellmer : ModelBase
 			'w_suit_002.png'
 		};
 		for(int i = 0; i <= 10; i++)
-			A_ChangeModel("", 0, "Models", "hev_scientist_body.iqm", i, "Models", modelskin1[i], CMDL_USESURFACESKIN);
+			A_ChangeModel("RolfBellmer", 0, "Models", "hev_scientist_body.iqm", i, "Models", modelskin1[i], CMDL_USESURFACESKIN);
 		for(int i = 0; i <= 2; i++)
-			A_ChangeModel("", 1, "Models", "hev_scientist_head2.iqm", i, "Models", modelskin2[i], CMDL_USESURFACESKIN, 0);
+			A_ChangeModel("RolfBellmer", 1, "Models", "hev_scientist_head2.iqm", i, "Models", modelskin2[i], CMDL_USESURFACESKIN, 0);
 	}
 	Default
 	{
@@ -238,20 +249,23 @@ class OspreyBellmer : ModelBase
 		+NOTRIGGER
 		+NOTELEPORT
 		+ISMONSTER
-		+DECOUPLEDANIMATIONS
+		//+DECOUPLEDANIMATIONS
 	}
 	States
 	{
 	Spawn:
+		HLI1 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 2;
+		HLI2 AB 2;
+		Loop;
+	/*Spawn:
 		HLI1 A -1 NODELAY SetAnimation('idle1', 30, flags: SAF_LOOP|SAF_NOOVERRIDE);
-		Stop;
+		Stop;*/
 	}
 }
 
 //SUV
 class SUV : ModelBase
 {
-	actor glass;
 	override void HLModelSetup()
 	{
 		static const name modelskin[]=
@@ -276,7 +290,7 @@ class SUV : ModelBase
 		for(int i = 0; i <= 15; i++)
 			A_ChangeModel("ModelBase", 0, "Models", "suv.md3", i, "Models", modelskin[i], CMDL_USESURFACESKIN);
 	}
-	override void postbeginplay()
+	override void BlockingSetup()
 	{
 		blockmax = 4;
 		blockpos[0] = (60, 18, 4);
@@ -288,18 +302,9 @@ class SUV : ModelBase
 		blocksize[2] = (20, 62);
 		blocksize[3] = (20, 62);
 
-		glass = Spawn("SUVGlass",(0, 0, 2));
-		glass.angle = angle;
-		//glass.ChangeTid(tid);
-		glass.master = self;
-
-		super.postbeginplay();
-	}
-	override void tick()
-	{
-		if(glass)
-			glass.A_Warp(AAPTR_MASTER, 0, 0, 2, 0, WARPF_NOCHECKPOSITION);
-		super.tick();
+		ridermax = 1;
+		riderpos[0] = (0, 0, 2);
+		rider[0] = BuildRider("SUVGlass", riderpos[0]);
 	}
 	Default
 	{
@@ -386,13 +391,11 @@ class SUVGlass : ModelBase
 class Loader : ModelBase
 {
 	bool nobox;
-	override void postbeginplay()
+	override void BlockingSetup()
 	{
 		blockmax = 1;
 		blockpos[0] = (112, 0, 32);
 		blocksize[0] = (32, 64);
-
-		super.postbeginplay();
 	}
 	override void HLModelSetup()
 	{
@@ -488,48 +491,44 @@ class LoaderNoBox : Loader
 		nobox=1;
 		super.BeginPlay();
 	}
-	override void postbeginplay()
+	override void BlockingSetup()
 	{
 		blockmax = 2;
 		blockpos[0] = (96, -32, 32);
 		blockpos[1] = (96, 32, 32);
 		blocksize[0] = (16, 32);
 		blocksize[1] = (16, 32);
-
-		ModelBase.postbeginplay();
 	}
 }
 
 //Tram
 class TramIntro : ModelBase
 {
-	static const name modelskin[]=
+	actor Tram, Barney, Bellmer, Battery;
+	override void BlockingSetup()
 	{
-		'tram.jpg',
-		'tram.jpg',
-		'tram.jpg',
-		'tram_supports.jpg',
-		'tram_panel01.jpg',
-		'tram_panel02.jpg'
-	};
-	override void HLModelSetup()
-	{
-		for(int i = 0; i <= 5; i++)
-			A_ChangeModel("Tram", 0, "Models", "tram.md3", i, "Models", modelskin[i], CMDL_USESURFACESKIN);
+		ridermax = 4;
+		riderpos[1] = (-56, 0, 24);
+		riderpos[2] = (-32, 0, 22);
+		riderpos[3] = (-4, -1, 50);
+		rider[0] = BuildRider("Tram");
+		rider[1] = BuildRider("HLBarney", riderpos[1]);
+		rider[1].SetStateLabel("Guard");
+		rider[2] = BuildRider("TramBellmer", riderpos[2]);
+		rider[3] = BuildRider("HEVBattery", riderpos[3]);
+		rider[3].Scale = (.5, .5);
 	}
 	Default
 	{
-		Scale .8;
-		Radius 40;
-		Height 32;
 		-SOLID
 		+NOCLIP
+		+NOGRAVITY
 	}
 }
 
-class Tram : TramIntro
+class Tram : ModelBase
 {
-	override void postbeginplay()
+	override void BlockingSetup()
 	{
 		blockmax = 20;
 		blockpos[0] = (48, 16, 0);
@@ -572,13 +571,26 @@ class Tram : TramIntro
 		blocksize[17] = (1, 56);
 		blocksize[18] = (1, 56);
 		blocksize[19] = (1, 56);
-
-		super.postbeginplay();
+	}
+	static const name modelskin[]=
+	{
+		'tram.jpg',
+		'tram.jpg',
+		'tram.jpg',
+		'tram_supports.jpg',
+		'tram_panel01.jpg',
+		'tram_panel02.jpg'
+	};
+	override void HLModelSetup()
+	{
+		for(int i = 0; i <= 5; i++)
+			A_ChangeModel("", 0, "Models", "tram.md3", i, "Models", modelskin[i], CMDL_USESURFACESKIN);
 	}
 	Default
 	{
-		+SOLID
-		-NOCLIP
+		Scale .8;
+		Radius 40;
+		Height 32;
 	}
 }
 
@@ -619,30 +631,5 @@ class TramBellmer : ModelBase
 		HLI1 ABCDEFGHIJKLMNOPQRSTU 5;
 		//HLI1 A -1 NODELAY SetAnimation('coffee', 7, flags: SAF_LOOP|SAF_NOOVERRIDE|SAF_INSTANT);
 		Loop;
-	}
-}
-
-class TramBattery : ModelBase
-{
-	override void HLModelSetup()
-	{
-		static const name modelskin[]=
-		{
-			'w_battery_000.png',
-			'w_battery_001.png',
-			'w_battery_002.png',
-			'w_battery_003.png',
-			'w_battery_004.png'
-		};
-		for(int i = 0; i <= 4; i++)
-			A_ChangeModel("", 0, "Models", "w_battery.md3", i, "Models", modelskin[i], CMDL_USESURFACESKIN);
-	}
-	Default
-	{
-		Radius 40;
-		Height 32;
-		Scale .6;
-		-SOLID
-		+NOCLIP
 	}
 }

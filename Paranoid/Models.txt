@@ -10,16 +10,19 @@ class Monitor : ModelBase
 		+PUSHABLE
 	}
 }
+
 class Monitor1 : Monitor
 {
 	override void HLModelSetup()
 		{A_ChangeModel("ModelBase", 0, "Models", "monitor.md3", 0, "Models", "monitor1.png");}
 }
+
 class Monitor2 : Monitor
 {
 	override void HLModelSetup()
 		{A_ChangeModel("ModelBase", 0, "Models", "monitor.md3", 0, "Models", "monitor2.png");}
 }
+
 class Monitor3 : Monitor
 {
 	override void HLModelSetup()
@@ -37,6 +40,7 @@ class keyboard1 : ModelBase
 		Height 2;
 	}
 }
+
 class keyboard3 : keyboard1
 {
 	override void HLModelSetup()
@@ -267,13 +271,11 @@ class Transformer1 : ModelBase
 {
 	override void HLModelSetup()
 		{A_ChangeModel("ModelBase", 0, "Models", "transformer.md3", 0, "Models", "transformer.jpg");}
-	override void postbeginplay()
+	override void BlockingSetup()
 	{
 		blockmax = 1;
 		blockpos[0] = (-8, 8, 88);
 		blocksize[0] = (4, 16);
-
-		super.postbeginplay();
 	}
 	Default
 	{
@@ -379,7 +381,7 @@ class Forklift2 : ModelBase
 {
 	override void HLModelSetup()
 		{A_ChangeModel("ModelBase", 0, "Models", "forklift.md3", 0, "Models", "forklift.png");}
-	override void postbeginplay()
+	override void BlockingSetup()
 	{
 		blockmax = 5;
 		blockpos[0] = (28, 0, 0);
@@ -392,8 +394,6 @@ class Forklift2 : ModelBase
 		blocksize[2] = (1, 48);
 		blocksize[3] = (3, 48);
 		blocksize[4] = (3, 48);
-
-		super.postbeginplay();
 	}
 	Default
 	{
@@ -406,7 +406,7 @@ class Backhoe1 : ModelBase
 {
 	override void HLModelSetup()
 		{A_ChangeModel("ModelBase", 0, "Models", "backhoe.md3", 0, "Models", "backhoe.png");}
-	override void postbeginplay()
+	override void BlockingSetup()
 	{
 		blockmax = 5;
 		blockpos[0] = (32, 0, 0);
@@ -419,8 +419,6 @@ class Backhoe1 : ModelBase
 		blocksize[2] = (32, 64);
 		blocksize[3] = (12, 64);
 		blocksize[4] = (12, 64);
-
-		super.postbeginplay();
 	}
 	Default
 	{
@@ -433,15 +431,13 @@ class Trailer1 : ModelBase
 {
 	override void HLModelSetup()
 		{A_ChangeModel("ModelBase", 0, "Models", "trailer1.md3", 0, "Models", "trailer1.png");}
-	override void postbeginplay()
+	override void BlockingSetup()
 	{
 		blockmax = 2;
 		blockpos[0] = (144, 40, 0);
 		blockpos[1] = (144, -40, 0);
 		blocksize[0] = (2, 40);
 		blocksize[1] = (2, 40);
-
-		super.postbeginplay();
 	}
 	Default
 	{
@@ -449,6 +445,7 @@ class Trailer1 : ModelBase
 		Height 64;
 	}
 }
+
 class Trailer2 : Trailer1
 {
 	override void HLModelSetup()
@@ -459,7 +456,7 @@ class Generator1 : ModelBase
 {
 	override void HLModelSetup()
 		{A_ChangeModel("ModelBase", 0, "Models", "generator.md3", 0, "Models", "generator.png");}
-	override void postbeginplay()
+	override void BlockingSetup()
 	{
 		blockmax = 3;
 		blockpos[0] = (48, 0, 0);
@@ -468,8 +465,6 @@ class Generator1 : ModelBase
 		blocksize[0] = (8, 24);
 		blocksize[1] = (4, 12);
 		blocksize[2] = (24, 48);
-
-		super.postbeginplay();
 	}
 	Default
 	{
@@ -495,15 +490,13 @@ class Generator3 : ModelBase
 {
 	override void HLModelSetup()
 		{A_ChangeModel("ModelBase", 0, "Models", "generator3.md3", 0, "Models", "generator3.png");}
-	override void postbeginplay()
+	override void BlockingSetup()
 	{
 		blockmax = 2;
 		blockpos[0] = (128, 0, 0);
 		blockpos[1] = (-112, 0, 0);
 		blocksize[0] = (64, 96);
 		blocksize[1] = (48, 64);
-
-		super.postbeginplay();
 	}
 	Default
 	{
@@ -520,15 +513,13 @@ class Generator4 : ModelBase
 		{SetStateLabel("Inactive");}
 	override void HLModelSetup()
 		{A_ChangeModel("ModelBase", 0, "Models", "generator3.md3", 0, "Models", "generator3.png");}
-	override void postbeginplay()
+	override void BlockingSetup()
 	{
 		blockmax = 2;
 		blockpos[0] = (64, 0, 0);
 		blockpos[1] = (-64, 0, 0);
 		blocksize[0] = (32, 48);
 		blocksize[1] = (24, 32);
-
-		super.postbeginplay();
 	}
 	Default
 	{
@@ -588,7 +579,7 @@ class girder2 : ModelBase
 {
 	override void HLModelSetup()
 		{A_ChangeModel("ModelBase", 0, "Models", "girder2.md2", 0, "Models", "girder2.png");}
-	override void postbeginplay()
+	override void BlockingSetup()
 	{
 		blockmax = 6;
 		blockpos[0] = (0, 64, 0);
@@ -599,8 +590,6 @@ class girder2 : ModelBase
 		blockpos[5] = (0, -192, 0);
 		for(int i = 0; i <= 5; i++)
 			blocksize[i] = (32, 64);
-
-		super.postbeginplay();
 	}
 	Default
 	{
@@ -645,7 +634,7 @@ class Bulldozer1 : ModelBase
 {
 	override void HLModelSetup()
 		{A_ChangeModel("", 0, "Models", "bulldozer.md3", 0, "Models", "bulldozer.png");}
-	override void postbeginplay()
+	override void BlockingSetup()
 	{
 		blockmax = 20;
 		blockpos[0] = (-16, 0, 88);
@@ -676,8 +665,6 @@ class Bulldozer1 : ModelBase
 		blocksize[17] = (8, 64);
 		blocksize[18] = (2, 64);
 		blocksize[19] = (2, 64);
-
-		super.postbeginplay();
 	}
 	Default
 	{
@@ -702,9 +689,9 @@ class Truck01 : ModelBase
 			'truck_research_007.png'
 		};
 		for(int i = 0; i <= 7; i++)
-			A_ChangeModel("", 0, "Models", "truck_research.md3", i, "Models", modelskin[i], CMDL_USESURFACESKIN);
+			A_ChangeModel("ModelBase", 0, "Models", "truck_research.md3", i, "Models", modelskin[i], CMDL_USESURFACESKIN);
 	}
-	override void postbeginplay()
+	override void BlockingSetup()
 	{
 		blockmax = 7;
 		blockpos[0] = (94, -28, 0);
@@ -721,8 +708,6 @@ class Truck01 : ModelBase
 		blocksize[4] = (10, 82);
 		blocksize[5] = (10, 82);
 		blocksize[6] = (10, 82);
-
-		super.postbeginplay();
 	}
 	Default
 	{
@@ -764,7 +749,7 @@ class apache : ModelBase
 		for(int i = 0; i <= 22; i++)
 			A_ChangeModel("", 0, "Models", "apache.md3", i, "Models", modelskin[i], CMDL_USESURFACESKIN);
 	}
-	override void postbeginplay()
+	override void BlockingSetup()
 	{
 		blockmax = 11;
 		blockpos[0] = (192, 0, 48);
@@ -789,8 +774,6 @@ class apache : ModelBase
 		blocksize[8] = (24, 32);
 		blocksize[9] = (24, 24);
 		blocksize[10] = (16, 96);
-
-		super.postbeginplay();
 	}
 	Default
 	{
@@ -815,11 +798,13 @@ class Toilet1 : ModelBase
 		Height 28;
 	}
 }
+
 class Toilet2 : Toilet1
 {
 	override void HLModelSetup()
 		{A_ChangeModel("ModelBase", 0, "Models", "toilet1.md2", 0, "Models", "toilet2.png");}
 }
+
 class ToiletStainless : Toilet1
 {
 	override void HLModelSetup()
@@ -827,6 +812,7 @@ class ToiletStainless : Toilet1
 	Default
 		{Scale 1.8;}
 }
+
 class Urinal1 : Toilet1
 {
 	override void HLModelSetup()
@@ -845,6 +831,7 @@ class Armchair : ModelBase
 	Default
 		{Height 29;}
 }
+
 class Sofa : Armchair
 {
 	override void HLModelSetup()
@@ -863,6 +850,7 @@ class Chair1 : ModelBase
 		+PUSHABLE
 	}
 }
+
 class Chair2 : Chair1
 {
 	override void HLModelSetup()
@@ -870,6 +858,7 @@ class Chair2 : Chair1
 	Default
 		{Scale .7;}
 }
+
 class Chair3 : Chair1
 {
 	override void HLModelSetup()
@@ -890,6 +879,7 @@ class Desklamp1 : ModelBase
 		+PUSHABLE
 	}
 }
+
 class Desklamp2 : Desklamp1
 {
 	override void HLModelSetup()
@@ -911,36 +901,38 @@ class Desk2 : ModelBase
 {
 	override void HLModelSetup()
 		{A_ChangeModel("ModelBase", 0, "Models", "desk2.md3", 0, "Models", "desk2.png");}
-	override void postbeginplay()
+	override void BlockingSetup()
 	{
 		blockmax = 2;
 		blockpos[0] = (0, 21, 16);
 		blockpos[1] = (0, -21, 16);
 		blocksize[0] = (20, 11);
 		blocksize[1] = (20, 11);
-
-		super.postbeginplay();
 	}
 	Default
 	{
 		Scale .8;
 	}
 }
+
 class Desk3 : Desk2
 {
 	override void HLModelSetup()
 		{A_ChangeModel("ModelBase", 0, "Models", "desk3.md3", 0, "Models", "desk3.png");}
 }
+
 class Desk4 : Desk2
 {
 	override void HLModelSetup()
 		{A_ChangeModel("ModelBase", 0, "Models", "desk4.md3", 0, "Models", "desk4.png");}
 }
+
 class Desk5 : Desk2
 {
 	override void HLModelSetup()
 		{A_ChangeModel("ModelBase", 0, "Models", "desk5.md3", 0, "Models", "desk5.png");}
 }
+
 class Desk6 : Desk2
 {
 	override void HLModelSetup()
@@ -982,6 +974,7 @@ class Sink2 : ModelFloat
 		Height 20;
 	}
 }
+
 class SoapDispenser : HandDryer
 {
 	override void HLModelSetup()
@@ -1002,8 +995,11 @@ class Bed01 : ModelBase
 {
 	override void HLModelSetup()
 		{A_ChangeModel("ModelBase", 0, "Models", "br_frame1.md3", 0, "Models", "br_frame1.jpg");}
-	override void postbeginplay()
-		{let matt=Spawn("Mattress01",(pos));}
+	override void BlockingSetup()
+	{
+		ridermax = 1;
+		rider[0] = BuildRider("Mattress01");
+	}
 	Default
 		{Height 24;}
 }
@@ -1012,8 +1008,11 @@ class Bed02 : ModelBase
 {
 	override void HLModelSetup()
 		{A_ChangeModel("", 0, "Models", "br_frame1.md3", 0, "Models", "br_frame1.jpg");}
-	override void postbeginplay()
-		{let matt=Spawn("Mattress02",(pos));}
+	override void BlockingSetup()
+	{
+		ridermax = 1;
+		rider[0] = BuildRider("Mattress02");
+	}
 	Default
 	{
 		Radius 16;
@@ -1112,7 +1111,7 @@ class Pipe1 : ModelBase
 {
 	override void HLModelSetup()
 		{A_ChangeModel("ModelBase", 0, "Models", "xpipe1.md3", 0, "Models", "xptv.png");}
-	override void postbeginplay()
+	override void BlockingSetup()
 	{
 		blockmax = 6;
 		blockpos[0] = (0, 60, 0);
@@ -1123,12 +1122,11 @@ class Pipe1 : ModelBase
 		blockpos[5] = (0, -180, 0);
 		for(int i = 0; i < blockmax; i++)
 			blocksize[i] = (20, 56);
-
-		super.postbeginplay();
 	}
 	Default
 		{Height 56;}
 }
+
 class Pipe1a : pipe1
 {
 	override void HLModelSetup()
@@ -1147,7 +1145,7 @@ class Pipe3 : ModelBase
 {
 	override void HLModelSetup()
 		{A_ChangeModel("ModelBase", 0, "Models", "xpipe1.md3", 0, "Models", "xptv.png");}
-	override void postbeginplay()
+	override void BlockingSetup()
 	{
 		blockmax = 6;
 		blockpos[0] = (0, 30, 0);
@@ -1158,8 +1156,6 @@ class Pipe3 : ModelBase
 		blockpos[5] = (0, -90, 0);
 		for(int i = 0; i < blockmax; i++)
 			blocksize[i] = (10, 28);
-
-		super.postbeginplay();
 	}
 	Default
 	{
@@ -1168,11 +1164,13 @@ class Pipe3 : ModelBase
 		Height 28;
 	}
 }
+
 class Pipe3a : Pipe3
 {
 	override void HLModelSetup()
 		{A_ChangeModel("ModelBase", 0, "Models", "xpipe1a.md3", 0, "Models", "xptv.png");}
 }
+
 class Pipe4 : ModelBase
 {
 	override void HLModelSetup()
@@ -1264,6 +1262,7 @@ class Tank02 : ModelBase
 		Height 36;
 	}
 }
+
 class Tank02a : Tank02
 {
 	override void HLModelSetup()
@@ -1287,7 +1286,7 @@ class tank04 : ModelBase
 {
 	override void HLModelSetup()
 		{A_ChangeModel("ModelBase", 0, "Models", "tank04.md3", 0, "Models", "tank04.png");}
-	override void postbeginplay()
+	override void BlockingSetup()
 	{
 		blockmax = 5;
 		blockpos[0] = (160, 0, 40);
@@ -1300,8 +1299,6 @@ class tank04 : ModelBase
 		blocksize[2] = (12, 28);
 		blocksize[3] = (3, 255);
 		blocksize[4] = (8, 32);
-
-		super.postbeginplay();
 	}
 	Default
 	{
@@ -1315,15 +1312,13 @@ class tank05 : ModelBase
 {
 	override void HLModelSetup()
 		{A_ChangeModel("ModelBase", 0, "Models", "tank05.md3", 0, "Models", "tank05.png");}
-	override void postbeginplay()
+	override void BlockingSetup()
 	{
 		blockmax = 2;
 		blockpos[0] = (20, 0, 0);
 		blockpos[1] = (-20, 0, 0);
 		blocksize[0] = (12, 36);
 		blocksize[1] = (12, 36);
-
-		super.postbeginplay();
 	}
 	Default
 	{
@@ -1337,15 +1332,13 @@ class tank06 : ModelBase
 {
 	override void HLModelSetup()
 		{A_ChangeModel("ModelBase", 0, "Models", "tank04a.md3", 0, "Models", "tank04.png");}
-	override void postbeginplay()
+	override void BlockingSetup()
 	{
 		blockmax = 2;
 		blockpos[0] = (84, 0, 0);
 		blockpos[1] = (50, -24, 0);
 		blocksize[0] = (6, 14);
 		blocksize[1] = (1, 128);
-
-		super.postbeginplay();
 	}
 	Default
 	{
@@ -1359,15 +1352,13 @@ class propane1a : ModelBase
 {
 	override void HLModelSetup()
 		{A_ChangeModel("ModelBase", 0, "Models", "propane1.md3", 0, "Models", "propane1a.png");}
-	override void postbeginplay()
+	override void BlockingSetup()
 	{
 		blockmax = 2;
 		blockpos[0] = (32, 0, 0);
 		blockpos[1] = (-32, 0, 0);
 		blocksize[0] = (20, 40);
 		blocksize[1] = (20, 40);
-
-		super.postbeginplay();
 	}
 	Default
 	{
@@ -1375,11 +1366,13 @@ class propane1a : ModelBase
 		Height 40;
 	}
 }
+
 class propane1b : propane1a
 {
 	override void HLModelSetup()
 		{A_ChangeModel("ModelBase", 0, "Models", "propane1.md3", 0, "Models", "propane1b.png");}
 }
+
 class propane1c : propane1a
 {
 	override void HLModelSetup()
@@ -1402,13 +1395,11 @@ class Valve1 : ModelBase
 {
 	override void HLModelSetup()
 		{A_ChangeModel("ModelBase", 0, "Models", "xvalve1.md2", 0, "Models", "xptv.png");}
-	override void postbeginplay()
+	override void BlockingSetup()
 	{
 		blockmax = 1;
 		blockpos[0] = (0, 36, 0);
 		blocksize[0] = (16, 50);
-
-		super.postbeginplay();
 	}
 	Default
 	{
@@ -1432,6 +1423,7 @@ class Toolbox1 : ModelBase
 		+PUSHABLE
 	}
 }
+
 class Toolbox2 : Toolbox1
 {
 	override void HLModelSetup()
@@ -1513,11 +1505,13 @@ class Palm1a : ModelBase
 		Height 230;
 	}
 }
+
 class Palm1b : Palm1a
 {
 	override void HLModelSetup()
 		{A_ChangeModel("ModelBase", 0, "Models", "palm1.md3", 0, "Models", "palm1b.png");}
 }
+
 class Palm2a : Palm1a
 {
 	override void HLModelSetup()
@@ -1525,11 +1519,13 @@ class Palm2a : Palm1a
 	Default
 		{Scale 1;}
 }
+
 class Palm2b : Palm2a
 {
 	override void HLModelSetup()
 		{A_ChangeModel("ModelBase", 0, "Models", "palm2.md3", 0, "Models", "palm2b.png");}
 }
+
 class Palm3a : Palm1a
 {
 	override void HLModelSetup()
@@ -1540,16 +1536,19 @@ class Palm3a : Palm1a
 		Height 160;
 	}
 }
+
 class Palm3b : Palm3a
 {
 	override void HLModelSetup()
 		{A_ChangeModel("ModelBase", 0, "Models", "palm3.md3", 0, "Models", "palm3b.png");}
 }
+
 class Palm3c : Palm3a
 {
 	override void HLModelSetup()
 		{A_ChangeModel("ModelBase", 0, "Models", "palm3.md3", 0, "Models", "palm3c.png");}
 }
+
 class Cactus : Palm2a
 {
 	override void HLModelSetup()
@@ -1588,6 +1587,7 @@ class Plant1 : Palm2a
 	state A_CheckRangeRev(double distance,statelabel label,bool two_dimension=false)
 		{return CheckRange(distance,two_dimension)?null:ResolveState(label);}
 }
+
 class Plant2 : Plant1
 {
 	override void HLModelSetup()
@@ -1650,29 +1650,30 @@ class BookShelf1a : RKive
 {
 	override void HLModelSetup()
 		{A_ChangeModel("ModelBase", 0, "Models", "bookshelf1a.md3", 0, "Models", "bookshelf1.png");}
-	override void postbeginplay()
+	override void BlockingSetup()
 	{
 		blockmax = 2;
 		blockpos[0] = (0, 24, 0);
 		blockpos[1] = (0, -24, 0);
 		blocksize[0] = (8, 64);
 		blocksize[1] = (8, 64);
-
-		super.postbeginplay();
 	}
 	Default
 		{Height 64;}
 }
+
 class BookShelf1b : BookShelf1a
 {
 	override void HLModelSetup()
 		{A_ChangeModel("ModelBase", 0, "Models", "bookshelf1b.md3", 0, "Models", "bookshelf1.png");}
 }
+
 class BookShelf2a : BookShelf1a
 {
 	override void HLModelSetup()
 		{A_ChangeModel("ModelBase", 0, "Models", "bookshelf2a.md3", 0, "Models", "bookshelf2.png");}
 }
+
 class BookShelf2b : BookShelf1a
 {
 	override void HLModelSetup()
@@ -1683,15 +1684,13 @@ class Credenza : ModelBase
 {
 	override void HLModelSetup()
 		{A_ChangeModel("ModelBase", 0, "Models", "credenza.md3", 0, "Models", "credenza.png");}
-	override void postbeginplay()
+	override void BlockingSetup()
 	{
 		blockmax = 2;
 		blockpos[0] = (0, 32, 0);
 		blockpos[1] = (0, -32, 0);
 		blocksize[0] = (12, 30);
 		blocksize[1] = (12, 30);
-
-		super.postbeginplay();
 	}
 	Default
 	{
@@ -1705,15 +1704,13 @@ class CredenzaShort : ModelBase
 {
 	override void HLModelSetup()
 		{A_ChangeModel("ModelBase", 0, "Models", "credenzashort.md3", 0, "Models", "credenza.png");}
-	override void postbeginplay()
+	override void BlockingSetup()
 	{
 		blockmax = 2;
 		blockpos[0] = (0, 20, 0);
 		blockpos[1] = (0, -20, 0);
 		blocksize[0] = (12, 30);
 		blocksize[1] = (12, 30);
-
-		super.postbeginplay();
 	}
 	Default
 	{
@@ -1727,15 +1724,13 @@ class Credenza2 : ModelBase
 {
 	override void HLModelSetup()
 		{A_ChangeModel("ModelBase", 0, "Models", "credenza2.md3", 0, "Models", "credenza2.png");}
-	override void postbeginplay()
+	override void BlockingSetup()
 	{
 		blockmax = 2;
 		blockpos[0] = (0, 26, 0);
 		blockpos[1] = (0, -26, 0);
 		blocksize[0] = (12, 30);
 		blocksize[1] = (12, 30);
-
-		super.postbeginplay();
 	}
 	Default
 	{
@@ -1749,15 +1744,13 @@ class ConfTable : ModelBase
 {
 	override void HLModelSetup()
 		{A_ChangeModel("ModelBase", 0, "Models", "Conf_Table.md3", 0, "Models", "Conf_Table.jpg");}
-	override void postbeginplay()
+	override void BlockingSetup()
 	{
 		blockmax = 2;
 		blockpos[0] = (0, 52, 0);
 		blockpos[1] = (0, -52, 0);
 		blocksize[0] = (8, 28);
 		blocksize[1] = (8, 28);
-
-		super.postbeginplay();
 	}
 	Default
 	{
@@ -1778,6 +1771,7 @@ class Ashtray : ModelBase
 		Height 2;
 	}
 }
+
 class AshtrayCig : Ashtray
 {
 	override void HLModelSetup()
@@ -1795,6 +1789,7 @@ class Phone1 : ModelBase
 		Height 4;
 	}
 }
+
 class Phone2 : Phone1
 {
 	override void HLModelSetup()
@@ -1802,6 +1797,7 @@ class Phone2 : Phone1
 	Default
 		{Scale .2;}
 }
+
 class Phone3 : Phone1
 {
 	override void HLModelSetup()
@@ -1823,46 +1819,55 @@ class Rock01 : ModelBase
 		Height 360;
 	}
 }
+
 class Rock01a : Rock01
 {
 	override void HLModelSetup()
 		{A_ChangeModel("Rock01", 0, "Models", "rock_big_a.md3", 0, "Models", "rock_big2.jpg");}
 }
+
 class Rock01b : Rock01
 {
 	override void HLModelSetup()
 		{A_ChangeModel("Rock01", 0, "Models", "rock_big_a.md3", 0, "Models", "rock_moss1.jpg");}
 }
+
 class Rock01c : Rock01
 {
 	override void HLModelSetup()
 		{A_ChangeModel("Rock01", 0, "Models", "rock_big_a.md3", 0, "Models", "rock_moss2.jpg");}
 }
+
 class Rock02 : Rock01
 {
 	override void HLModelSetup()
 		{A_ChangeModel("", 0, "Models", "rock_big_b.md3", 0, "Models", "rock_big.jpg");}
 }
+
 class Rock02a : Rock01
 {
 	override void HLModelSetup()
 		{A_ChangeModel("Rock02", 0, "Models", "rock_big_b.md3", 0, "Models", "rock_big2.jpg");}
 }
+
 class Rock02b : Rock01
 {
 	override void HLModelSetup()
 		{A_ChangeModel("Rock02", 0, "Models", "rock_big_b.md3", 0, "Models", "rock_moss1.jpg");}
 }
+
 class Rock02c : Rock01
 {
 	override void HLModelSetup()
 		{A_ChangeModel("Rock02", 0, "Models", "rock_big_b.md3", 0, "Models", "rock_moss2.jpg");}
 }
+
 class Rock02d : Rock01
 {
 	override void HLModelSetup()
 		{A_ChangeModel("", 0, "Models", "rock_big_b.md3", 0, "Models", "xenrock1.png");}
 }
+
 class Rock02e : Rock01
 {
 	override void HLModelSetup()
@@ -1898,41 +1903,49 @@ class Rock03 : Rock01
 	override void HLModelSetup()
 		{A_ChangeModel("", 0, "Models", "rock_big_c.md3", 0, "Models", "rock_big.jpg");}
 }
+
 class Rock03a : Rock01
 {
 	override void HLModelSetup()
 		{A_ChangeModel("Rock03", 0, "Models", "rock_big_c.md3", 0, "Models", "rock_big2.jpg");}
 }
+
 class Rock03b : Rock01
 {
 	override void HLModelSetup()
 		{A_ChangeModel("Rock03", 0, "Models", "rock_big_c.md3", 0, "Models", "rock_moss1.jpg");}
 }
+
 class Rock03c : Rock01
 {
 	override void HLModelSetup()
 		{A_ChangeModel("Rock03", 0, "Models", "rock_big_c.md3", 0, "Models", "rock_moss2.jpg");}
 }
+
 class Rock03d : Rock01
 {
 	override void HLModelSetup()
 		{A_ChangeModel("", 0, "Models", "rock_big_c.md3", 0, "Models", "xenrock1.png");}
 }
+
 class Rock03e : Rock01
 {
 	override void HLModelSetup()
 		{A_ChangeModel("", 0, "Models", "rock_big_c.md3", 0, "Models", "xenrock2.png");}
 }
+
 class Rock03f : Rock02f
 {
 	override void HLModelSetup()
 		{A_ChangeModel("", 0, "Models", "rock_big_c.md3", 0, "Models", "xenrock3.png");}
 }
+
 class Rock03g : Rock02g
 {
 	override void HLModelSetup()
 		{A_ChangeModel("", 0, "Models", "rock_big_c.md3", 0, "Models", "xenrock3.png");}
 }
+
 class Rock04 : ModelBase
 {
 	override void HLModelSetup()
@@ -1943,16 +1956,19 @@ class Rock04 : ModelBase
 		Height 148;
 	}
 }
+
 class Rock04a : Rock04
 {
 	override void HLModelSetup()
 		{A_ChangeModel("Rock04", 0, "Models", "rock_big_d.md3", 0, "Models", "rock_big2.jpg");}
 }
+
 class Rock04b : Rock04
 {
 	override void HLModelSetup()
 		{A_ChangeModel("Rock04", 0, "Models", "rock_big_d.md3", 0, "Models", "rock_moss1.jpg");}
 }
+
 class Rock04c : Rock04
 {
 	override void HLModelSetup()
@@ -1969,16 +1985,19 @@ class Rock05 : Rock04
 		Scale .125;
 	}
 }
+
 class Rock05a : Rock05
 {
 	override void HLModelSetup()
 		{A_ChangeModel("Rock05", 0, "Models", "rock_small_a.md3", 0, "Models", "rock_moss1.jpg");}
 }
+
 class Rock06 : Rock05
 {
 	override void HLModelSetup()
 		{A_ChangeModel("Rock05", 0, "Models", "rock_small_b.md3", 0, "Models", "rock_big2.jpg");}
 }
+
 class Rock06a : Rock05
 {
 	override void HLModelSetup()
@@ -1989,13 +2008,11 @@ class TechPillar1a : ModelBase
 {
 	override void HLModelSetup()
 		{A_ChangeModel("ModelBase", 0, "Models", "q4tech01.md3", 0, "Models", "q4tech1a.jpg");}
-	override void postbeginplay()
+	override void BlockingSetup()
 	{
 		blockmax = 1;
 		blockpos[0] = (22, 0, 56);
 		blocksize[0] = (12, 160);
-
-		super.postbeginplay();
 	}
 	Default
 	{
@@ -2003,11 +2020,13 @@ class TechPillar1a : ModelBase
 		Height 214;
 	}
 }
+
 class TechPillar1b : TechPillar1a
 {
 	override void HLModelSetup()
 		{A_ChangeModel("ModelBase", 0, "Models", "q4tech01.md3", 0, "Models", "q4tech1b.jpg");}
 }
+
 class TechPillar1c : TechPillar1a
 {
 	override void HLModelSetup()
@@ -2018,13 +2037,11 @@ class TechPillar1aa : ModelBase
 {
 	override void HLModelSetup()
 		{A_ChangeModel("ModelBase", 0, "Models", "q4tech01.md3", 0, "Models", "q4tech1a.jpg");}
-	override void postbeginplay()
+	override void BlockingSetup()
 	{
 		blockmax = 1;
 		blockpos[0] = (22, 0, 56);
 		blocksize[0] = (12, 48);
-
-		super.postbeginplay();
 	}
 	Default
 	{
@@ -2033,11 +2050,13 @@ class TechPillar1aa : ModelBase
 		Height 160;
 	}
 }
+
 class TechPillar1bb : TechPillar1aa
 {
 	override void HLModelSetup()
 		{A_ChangeModel("ModelBase", 0, "Models", "q4tech01.md3", 0, "Models", "q4tech1b.jpg");}
 }
+
 class TechPillar1cc : TechPillar1aa
 {
 	override void HLModelSetup()
@@ -2048,7 +2067,7 @@ class TechPillar2 : ModelBase
 {
 	override void HLModelSetup()
 		{A_ChangeModel("ModelBase", 0, "Models", "q4tech02.md3", 0, "Models", "q4tech02.jpg");}
-	override void postbeginplay()
+	override void BlockingSetup()
 	{
 		blockmax = 4;
 		blockpos[0] = (22, 0, 56);
@@ -2059,8 +2078,6 @@ class TechPillar2 : ModelBase
 		blocksize[1] = (12, 96);
 		blocksize[2] = (10, 28);
 		blocksize[3] = (10, 32);
-
-		super.postbeginplay();
 	}
 	Default
 	{
@@ -2108,7 +2125,7 @@ class PConsole : ModelBase
 {
 	override void HLModelSetup()
 		{A_ChangeModel("ModelBase", 0, "Models", "console.md3", 0, "Models", "console.png");}
-	override void postbeginplay()
+	override void BlockingSetup()
 	{
 		blockmax = 5;
 		blockpos[0] = (0, 32, 12);
@@ -2121,8 +2138,6 @@ class PConsole : ModelBase
 		blocksize[2] = (4, 56);
 		blocksize[3] = (4, 56);
 		blocksize[4] = (4, 56);
-
-		super.postbeginplay();
 	}
 	Default
 	{
@@ -2131,26 +2146,31 @@ class PConsole : ModelBase
 		Scale 2.2;
 	}
 }
+
 class PConsole1 : PConsole
 {
 	override void HLModelSetup()
 		{A_ChangeModel("ModelBase", 0, "Models", "console.md3", 0, "Models", "console1.png");}
 }
+
 class PConsole2 : PConsole
 {
 	override void HLModelSetup()
 		{A_ChangeModel("ModelBase", 0, "Models", "console.md3", 0, "Models", "console2.png");}
 }
+
 class PConsole3 : PConsole
 {
 	override void HLModelSetup()
 		{A_ChangeModel("ModelBase", 0, "Models", "console.md3", 0, "Models", "console3.png");}
 }
+
 class PConsole4 : PConsole
 {
 	override void HLModelSetup()
 		{A_ChangeModel("ModelBase", 0, "Models", "console.md3", 0, "Models", "console4.png");}
 }
+
 class PConsole5 : PConsole
 {
 	override void HLModelSetup()
@@ -2167,15 +2187,13 @@ class Barrier1 : ModelBase
 {
 	override void HLModelSetup()
 		{A_ChangeModel("ModelBase", 0, "Models", "br_barrier1.md3", 0, "Models", "br_concrete1.jpg");}
-	override void postbeginplay()
+	override void BlockingSetup()
 	{
 		blockmax = 2;
 		blockpos[0] = (20, 0, 0);
 		blockpos[1] = (-20, 0, 0);
 		blocksize[0] = (4, 36);
 		blocksize[1] = (4, 36);
-
-		super.postbeginplay();
 	}
 	Default
 	{
@@ -2184,11 +2202,13 @@ class Barrier1 : ModelBase
 		Height 36;
 	}
 }
+
 class Barrier2 : Barrier1
 {
 	override void HLModelSetup()
 		{A_ChangeModel("ModelBase", 0, "Models", "br_barrier1.md3", 0, "Models", "br_concrete2.jpg");}
 }
+
 class Barrier3 : Barrier1
 {
 	override void HLModelSetup()
@@ -2222,6 +2242,7 @@ class ExplosiveItemBangCrate : Actor
 		Stop;
 	}
 }
+
 class ExplosiveItemBangBarrel : ExplosiveItemBangCrate
 {
 	Default
@@ -2268,6 +2289,7 @@ class Xbarrel1 : ModelBase
 		Stop;
 	}
 }
+
 class Xbarrel2 : Xbarrel1
 {
 	override void HLModelSetup()
@@ -2275,6 +2297,7 @@ class Xbarrel2 : Xbarrel1
 	Default
 		{Health 20;}
 }
+
 class Xbarrel3 : Xbarrel1
 {
 	override void HLModelSetup()
@@ -2313,7 +2336,7 @@ class Xcrate02 : Xcrate01
 // Non-Explosive barrels/trashcan (plastic & heavy metal), crates
 //================================================================
 
-class Trashcan1 : XBarrel1
+class Trashcan1 : ModelBase
 {
 	override void HLModelSetup()
 		{A_ChangeModel("ModelBase", 0, "Models", "trashcan.md2", 0, "Models", "trashcan.png");}
@@ -2322,6 +2345,9 @@ class Trashcan1 : XBarrel1
 		Radius 10;
 		Height 29;
 		Mass 50;
+		+PUSHABLE
+		+SHOOTABLE
+		+NOBLOOD
 		+NOTAUTOAIMED
 		+NODAMAGE
 	}
@@ -2368,6 +2394,7 @@ class Xcrate03 : Trashcan1
 		Mass 200;
 	}
 }
+
 class Xcrate04 : Xcrate03
 {
 	override void HLModelSetup()
