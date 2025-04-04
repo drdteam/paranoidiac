@@ -2,15 +2,16 @@
 class Osprey : ModelBase
 {
 	bool BellmerOnBoard;
-	int bobstate;
+	//int bobstate;
 	override void tick()
 	{
-		if(bNOGRAVITY && pos.z != floorz)
+		/*if(bNOGRAVITY && pos.z != floorz)
 		{
 			double newz=pos.z-BobSin(bobstate)/2.;
 			bobstate=(bobstate+1)&63;
 			newz+=BobSin(bobstate)/2.;
 			SetZ(newz);
+		}*/
 		if(BellmerOnBoard && rider[0] == null)
 		{
 			ridermax = 1;
@@ -195,7 +196,7 @@ class OspreyDead : Osprey{}
 
 class OspreyBellmer : ModelBase
 {
-	int bobstate;
+	/*int bobstate;
 	override void tick()
 	{
 		if(pos.z!=floorz)
@@ -206,7 +207,7 @@ class OspreyBellmer : ModelBase
 			SetZ(newz);
 		}
 		super.tick();
-	}
+	}*/
 	override void HLModelSetup()
 	{
 		static const name modelskin1[]=
