@@ -16,15 +16,6 @@ Model ModelBase
 	FrameIndex HLS1 A 0 0
 }
 
-/////////////////
-//  Computers  //
-/////////////////
-
-Model flatpanel3
-{
-	AngleOffset 180
-}
-
 ////////////
 //  Beds  //
 ////////////
@@ -96,8 +87,6 @@ Model OspreyDead
 	ZOffset 100
 	BaseFrame
 }
-
-Model OspreyBellmer{BaseFrame}
 
 Model Tram
 {

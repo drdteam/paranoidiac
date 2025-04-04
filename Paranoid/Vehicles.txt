@@ -239,17 +239,6 @@ class OspreyBellmer : ModelBase
 	{
 		Radius 3;
 		Height 56;
-		+DONTTHRUST
-		+NOCLIP
-		+NOBLOCKMAP
-		+NOGRAVITY
-		+NOTARGET
-		+SHOOTABLE
-		+NONSHOOTABLE
-		+NOBLOOD
-		+NOTRIGGER
-		+NOTELEPORT
-		+ISMONSTER
 		//+DECOUPLEDANIMATIONS
 	}
 	States
@@ -384,7 +373,6 @@ class SUVGlass : ModelBase
 		Radius 16;
 		Height 56;
 		+DONTTHRUST
-		-SOLID
 	}
 }
 
@@ -622,8 +610,6 @@ class TramBellmer : ModelBase
 	{
 		Radius 40;
 		Height 32;
-		-SOLID
-		+NOCLIP
 		//+DECOUPLEDANIMATIONS
 	}
 	States

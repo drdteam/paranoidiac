@@ -2319,7 +2319,7 @@ class HGunHornet2 : HGunHornet
 	States
 	{
 	Fly:
-		HLI1 ABCD 1 BRIGHT A_HornetFly;
+		HLI1 A 1 BRIGHT A_HornetFly;
 		Loop;
 	}
 }
@@ -2394,7 +2394,7 @@ class HGruntHornetFake : HGruntHornet
 	States
 	{
 	Fly:
-		HLI1 ABCD 1
+		HLI1 A 1
 		{
 			if(countdown>=1)
 			{
