@@ -300,39 +300,39 @@ class HLScientist : HLMonster
 
 class HLScientistQuiet : HLScientist
 {
-	override void PostBeginPlay()
+	override void BeginPlay()
 	{
 		quiet=1;
-		super.PostBeginPlay();
+		super.BeginPlay();
 	}
 }
 
 class HLScientistWanderer : HLScientist
 {
-	override void PostBeginPlay()
+	override void BeginPlay()
 	{
 		wanderer=1;
-		super.PostBeginPlay();
+		super.BeginPlay();
 	}
 }
 
 class HLScientistStill : HLScientist
 {
-	override void PostBeginPlay()
+	override void BeginPlay()
 	{
 		still=1;
-		super.PostBeginPlay();
+		super.BeginPlay();
 	}
 }
 
 class HLScientistSlumped : HLScientist
 {
-	override void PostBeginPlay()
+	override void BeginPlay()
 	{
 		sit=1;
 		Height=28;
 		bNOPAIN=1;
-		super.PostBeginPlay();
+		super.BeginPlay();
 	}
 	States
 	{

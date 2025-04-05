@@ -82,13 +82,8 @@ class flatpanel2 : flatpanel1
 {
 	override void HLModelSetup()
 	{
-		static const name modelskin[]=
-		{
-			'br_monitor1.jpg',
-			'br_screen2.png'
-		};
-		for(int i = 0; i <= 1; i++)
-			A_ChangeModel("ModelBase", 0, "Models", "br_monitor1.md3", i, "Models", modelskin[i], CMDL_USESURFACESKIN);
+		super.HLModelSetup();
+		A_ChangeModel("ModelBase", 0, "Models", "br_monitor1.md3", 1, "Models", 'br_screen2.png', CMDL_USESURFACESKIN);
 	}
 }
 
@@ -117,14 +112,8 @@ class flatpanel4 : flatpanel3
 {
 	override void HLModelSetup()
 	{
-		static const name modelskin[]=
-		{
-			'br_pcs1.jpg',
-			'br_screen2.png'
-		};
-		for(int i = 0; i <= 1; i++)
-			A_ChangeModel("ModelBase", 0, "Models", "br_monitor3.md3", i, "Models", modelskin[i], CMDL_USESURFACESKIN);
-		A_SetSpriteRotation(180);
+		super.HLModelSetup();
+		A_ChangeModel("ModelBase", 0, "Models", "br_monitor3.md3", 1, "Models", 'br_screen2.png', CMDL_USESURFACESKIN);
 	}
 }
 
@@ -152,13 +141,8 @@ class flatpanel6 : flatpanel5
 {
 	override void HLModelSetup()
 	{
-		static const name modelskin[]=
-		{
-			'br_monitor5.png',
-			'br_screen2.jpg'
-		};
-		for(int i = 0; i <= 1; i++)
-			A_ChangeModel("ModelBase", 0, "Models", "br_monitor5.md3", i, "Models", modelskin[i], CMDL_USESURFACESKIN);
+		super.HLModelSetup();
+		A_ChangeModel("ModelBase", 0, "Models", "br_monitor5.md3", 1, "Models", 'br_screen2.jpg', CMDL_USESURFACESKIN);
 	}
 }
 
@@ -166,13 +150,8 @@ class flatpanel7 : flatpanel5
 {
 	override void HLModelSetup()
 	{
-		static const name modelskin[]=
-		{
-			'br_monitor5.png',
-			'br_screen5.jpg'
-		};
-		for(int i = 0; i <= 1; i++)
-			A_ChangeModel("ModelBase", 0, "Models", "br_monitor5.md3", i, "Models", modelskin[i], CMDL_USESURFACESKIN);
+		super.HLModelSetup();
+		A_ChangeModel("ModelBase", 0, "Models", "br_monitor5.md3", 1, "Models", 'br_screen5.jpg', CMDL_USESURFACESKIN);
 	}
 	States
 	{
@@ -189,13 +168,8 @@ class flatpanel8 : flatpanel5
 {
 	override void HLModelSetup()
 	{
-		static const name modelskin[]=
-		{
-			'br_monitor5.png',
-			'br_screen8.png'
-		};
-		for(int i = 0; i <= 1; i++)
-			A_ChangeModel("ModelBase", 0, "Models", "br_monitor5.md3", i, "Models", modelskin[i], CMDL_USESURFACESKIN);
+		super.HLModelSetup();
+		A_ChangeModel("ModelBase", 0, "Models", "br_monitor5.md3", 1, "Models", 'br_screen8.png', CMDL_USESURFACESKIN);
 	}
 }
 
@@ -203,13 +177,8 @@ class flatpanel9 : flatpanel5
 {
 	override void HLModelSetup()
 	{
-		static const name modelskin[]=
-		{
-			'br_monitor5.png',
-			'br_screen10.png'
-		};
-		for(int i = 0; i <= 1; i++)
-			A_ChangeModel("ModelBase", 0, "Models", "br_monitor5.md3", i, "Models", modelskin[i], CMDL_USESURFACESKIN);
+		super.HLModelSetup();
+		A_ChangeModel("ModelBase", 0, "Models", "br_monitor5.md3", 1, "Models", 'br_screen10.png', CMDL_USESURFACESKIN);
 	}
 }
 
@@ -914,9 +883,7 @@ class Desk2 : ModelBase
 		blocksize[1] = (20, 11);
 	}
 	Default
-	{
-		Scale .8;
-	}
+		{Scale .8;}
 }
 
 class Desk3 : Desk2
