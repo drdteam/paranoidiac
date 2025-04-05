@@ -322,28 +322,28 @@ class HLGruntM16 : HLMonster
 
 class HLGruntM16NoGrenades : HLGruntM16
 {
-	override void PostBeginPlay()
+	override void BeginPlay()
 	{
 		nohandgren=1;
-		super.PostBeginPlay();
+		super.BeginPlay();
 	}
 }
 
 class HLGruntShotgun : HLGruntM16
 {
-	override void PostBeginPlay()
+	override void BeginPlay()
 	{
 		shotgun=1;
-		super.PostBeginPlay();
+		super.BeginPlay();
 	}
 }
 
 class HLGruntShotgunNoGrenades : HLGruntShotgun
 {
-	override void PostBeginPlay()
+	override void BeginPlay()
 	{
 		nohandgren=1;
-		super.PostBeginPlay();
+		super.BeginPlay();
 	}
 }
 
