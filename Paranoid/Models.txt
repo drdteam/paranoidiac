@@ -1813,12 +1813,20 @@ class Phone3 : Phone1
 
 class Rock01 : ModelBase
 {
+	override void BlockingSetup()
+	{
+		blockmax = 2;
+		blockpos[0] = (64, 0, 0);
+		blockpos[1] = (-68, 0, 0);
+		blocksize[0] = (28, 320);
+		blocksize[1] = (28, 280);
+	}
 	override void HLModelSetup()
 		{A_ChangeModel("", 0, "Models", "rock_big_a.md3", 0, "Models", "rock_big.jpg");}
 	Default
 	{
-		Radius 24;
-		Height 360;
+		Radius 32;
+		Height 320;
 	}
 }
 
@@ -1842,11 +1850,19 @@ class Rock01c : Rock01
 
 class Rock02 : Rock01
 {
+	override void BlockingSetup()
+	{
+		blockmax = 2;
+		blockpos[0] = (64, 0, 0);
+		blockpos[1] = (-64, 0, 0);
+		blocksize[0] = (32, 300);
+		blocksize[1] = (32, 320);
+	}
 	override void HLModelSetup()
 		{A_ChangeModel("", 0, "Models", "rock_big_b.md3", 0, "Models", "rock_big.jpg");}
 }
 
-class Rock02a : Rock01
+class Rock02a : Rock02
 {
 	override void HLModelSetup()
 		{A_ChangeModel("Rock02", 0, "Models", "rock_big_b.md3", 0, "Models", "rock_big2.jpg");}
@@ -1866,11 +1882,12 @@ class Rock02c : Rock01
 
 class Rock02d : Rock01
 {
+	override void BlockingSetup(){}
 	override void HLModelSetup()
 		{A_ChangeModel("", 0, "Models", "rock_big_b.md3", 0, "Models", "xenrock1.png");}
 }
 
-class Rock02e : Rock01
+class Rock02e : Rock02d
 {
 	override void HLModelSetup()
 		{A_ChangeModel("", 0, "Models", "rock_big_b.md3", 0, "Models", "xenrock2.png");}
@@ -1902,36 +1919,50 @@ class Rock02g : ModelBase
 
 class Rock03 : Rock01
 {
+	override void BlockingSetup()
+	{
+		blockmax = 4;
+		blockpos[0] = (54, -20, 0);
+		blockpos[1] = (54, 20, 0);
+		blockpos[2] = (0, 64, 0);
+		blockpos[3] = (0, -64, 0);
+		blocksize[0] = (20, 300);
+		blocksize[1] = (20, 300);
+		blocksize[2] = (32, 320);
+		blocksize[3] = (32, 320);
+	}
 	override void HLModelSetup()
 		{A_ChangeModel("", 0, "Models", "rock_big_c.md3", 0, "Models", "rock_big.jpg");}
 }
 
-class Rock03a : Rock01
+class Rock03a : Rock03
 {
 	override void HLModelSetup()
 		{A_ChangeModel("Rock03", 0, "Models", "rock_big_c.md3", 0, "Models", "rock_big2.jpg");}
 }
 
-class Rock03b : Rock01
+class Rock03b : Rock03
 {
 	override void HLModelSetup()
 		{A_ChangeModel("Rock03", 0, "Models", "rock_big_c.md3", 0, "Models", "rock_moss1.jpg");}
 }
 
-class Rock03c : Rock01
+class Rock03c : Rock03
 {
 	override void HLModelSetup()
 		{A_ChangeModel("Rock03", 0, "Models", "rock_big_c.md3", 0, "Models", "rock_moss2.jpg");}
 }
 
-class Rock03d : Rock01
+class Rock03d : Rock03
 {
+	override void BlockingSetup(){}
 	override void HLModelSetup()
 		{A_ChangeModel("", 0, "Models", "rock_big_c.md3", 0, "Models", "xenrock1.png");}
 }
 
-class Rock03e : Rock01
+class Rock03e : Rock03
 {
+	override void BlockingSetup(){}
 	override void HLModelSetup()
 		{A_ChangeModel("", 0, "Models", "rock_big_c.md3", 0, "Models", "xenrock2.png");}
 }
@@ -1950,6 +1981,12 @@ class Rock03g : Rock02g
 
 class Rock04 : ModelBase
 {
+	override void BlockingSetup()
+	{
+		blockmax = 1;
+		blockpos[0] = (0, 48, 0);
+		blocksize[0] = (32, 80);
+	}
 	override void HLModelSetup()
 		{A_ChangeModel("", 0, "Models", "rock_big_d.md3", 0, "Models", "rock_big.jpg");}
 	Default
@@ -1977,12 +2014,13 @@ class Rock04c : Rock04
 		{A_ChangeModel("Rock04", 0, "Models", "rock_big_d.md3", 0, "Models", "rock_moss2.jpg");}
 }
 
-class Rock05 : Rock04
+class Rock05 : ModelBase
 {
 	override void HLModelSetup()
 		{A_ChangeModel("", 0, "Models", "rock_small_a.md3", 0, "Models", "rock_big2.jpg");}
 	Default
 	{
+		Radius 48;
 		Height 100;
 		Scale .125;
 	}
