@@ -18,6 +18,7 @@ class RolfBellmer : PlayerPawn
 	virtual void ModelHeightSetup()
 	{
 		ViewHeight = 56 * ModelHeightMul;
+		AttackZOffset = 24 * ModelHeightMul;
 	}
 	bool scientist,otis;
 	Default
