@@ -25,7 +25,7 @@ class HLMonster : Actor
 	}
 	virtual void ModelHeightSetup()
 	{
-		//let defaultHeight  = GetDefaultByType(GetClass()).Height;
+		//let defaultHeight = GetDefaultByType(GetClass()).Height;
 		//Height = defaultHeight * ModelHeightMul;
 	}
 	virtual void HLModelSetup(){}
@@ -101,7 +101,7 @@ class ModelProjectile : Actor
 	}
 	virtual void ModelHeightSetup()
 	{
-		//let defaultHeight  = GetDefaultByType(GetClass()).Height;
+		//let defaultHeight = GetDefaultByType(GetClass()).Height;
 		//Height = defaultHeight * ModelHeightMul;
 	}
 	virtual void HLModelSetup(){}
@@ -133,7 +133,7 @@ class ModelBase : Actor
 	}
 	virtual void ModelHeightSetup()
 	{
-		let defaultHeight  = GetDefaultByType(GetClass()).Height;
+		let defaultHeight = GetDefaultByType(GetClass()).Height;
 		Height = defaultHeight * ModelHeightMul;
 	}
 	virtual void HLModelSetup(){}

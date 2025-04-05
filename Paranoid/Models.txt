@@ -155,7 +155,7 @@ class flatpanel6 : flatpanel5
 		static const name modelskin[]=
 		{
 			'br_monitor5.png',
-			'br_screen1.jpg'
+			'br_screen2.jpg'
 		};
 		for(int i = 0; i <= 1; i++)
 			A_ChangeModel("ModelBase", 0, "Models", "br_monitor5.md3", i, "Models", modelskin[i], CMDL_USESURFACESKIN);
