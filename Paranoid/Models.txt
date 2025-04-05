@@ -177,10 +177,10 @@ class flatpanel7 : flatpanel5
 	States
 	{
 	Spawn:
-		HLI1 A 105 A_ChangeModel("", 0, "Models", "br_monitor5.md3", 1, "Models", 'br_screen5.png', CMDL_USESURFACESKIN);
-		HLI1 B 105 A_ChangeModel("", 0, "Models", "br_monitor5.md3", 1, "Models", 'br_screen6.png', CMDL_USESURFACESKIN);
-		HLI1 C 105 A_ChangeModel("", 0, "Models", "br_monitor5.md3", 1, "Models", 'br_screen7.png', CMDL_USESURFACESKIN);
-		HLI1 D 105 A_ChangeModel("", 0, "Models", "br_monitor5.md3", 1, "Models", 'br_screen9.png', CMDL_USESURFACESKIN);
+		HLI1 A 105 A_ChangeModel("ModelBase", 0, "Models", "br_monitor5.md3", 1, "Models", 'br_screen5.png', CMDL_USESURFACESKIN);
+		HLI1 B 105 A_ChangeModel("ModelBase", 0, "Models", "br_monitor5.md3", 1, "Models", 'br_screen6.png', CMDL_USESURFACESKIN);
+		HLI1 C 105 A_ChangeModel("ModelBase", 0, "Models", "br_monitor5.md3", 1, "Models", 'br_screen7.png', CMDL_USESURFACESKIN);
+		HLI1 D 105 A_ChangeModel("ModelBase", 0, "Models", "br_monitor5.md3", 1, "Models", 'br_screen9.png', CMDL_USESURFACESKIN);
 		Loop;
 	}
 }
