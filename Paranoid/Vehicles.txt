@@ -390,58 +390,58 @@ class Loader : ModelBase
 	{
 		static const name modelskin1[]=
 		{
-			'loader_body_000.png',
-			'loader_body_001.png',
-			'loader_body_002.png',
-			'loader_body_003.png',
-			'loader_body_004.png',
-			'loader_body_005.png',
-			'loader_body_006.png',
-			'loader_body_007.png',
-			'loader_body_008.png',
-			'loader_body_009.png',
-			'loader_body_010.png',
-			'loader_body_011.png',
-			'loader_body_012.png',
-			'loader_body_013.png',
-			'loader_body_014.png',
-			'loader_body_015.png',
-			'loader_body_016.png',
-			'loader_body_017.png',
-			'loader_body_018.png',
-			'loader_body_019.png',
-			'loader_body_020.png',
-			'loader_body_021.png'
+			'loader_000.png',
+			'loader_001.png',
+			'loader_002.png',
+			'loader_003.png',
+			'loader_004.png',
+			'loader_005.png',
+			'loader_006.png',
+			'loader_007.png',
+			'loader_008.png',
+			'loader_009.png',
+			'loader_010.png',
+			'loader_011.png',
+			'loader_012.png',
+			'loader_013.png',
+			'loader_014.png',
+			'loader_015.png',
+			'loader_016.png',
+			'loader_017.png',
+			'loader_018.png',
+			'loader_019.png',
+			'loader_020.png',
+			'loader_021.png'
 		};
 		static const name modelskin2[]=
 		{
-			'loader_body_009.png',
-			'loader_legs_001.png',
-			'loader_legs_002.png',
-			'loader_legs_003.png',
-			'loader_body_011.png',
-			'loader_body_015.png',
-			'loader_legs_006.png',
-			'loader_body_009.png',
-			'loader_legs_001.png',
-			'loader_legs_002.png',
-			'loader_legs_003.png',
-			'loader_body_011.png',
-			'loader_body_015.png',
-			'loader_legs_006.png'
+			'loader_009.png',
+			'loader_022.png',
+			'loader_023.png',
+			'loader_024.png',
+			'loader_011.png',
+			'loader_015.png',
+			'loader_025.png',
+			'loader_009.png',
+			'loader_022.png',
+			'loader_023.png',
+			'loader_024.png',
+			'loader_011.png',
+			'loader_015.png',
+			'loader_025.png'
 		};
 
 		for(int i = 0; i <= 21; i++)
 			A_ChangeModel("Loader", 0, "Models", "loader_body.iqm", i, "Models", modelskin1[i], CMDL_USESURFACESKIN);
-		if(nobox)
-		{
-			for(int i = 20; i <= 21; i++)
-				A_ChangeModel("Loader", 0, "Models", "loader_body.iqm", i, "Models", 'nochrome.png', CMDL_USESURFACESKIN);
-		}
 		for(int i = 0; i <= 13; i++)
 		{
 			A_ChangeModel("Loader", 1, "Models", "loader_leftlegs.iqm", i, "Models", modelskin2[i], CMDL_USESURFACESKIN, 0);
 			A_ChangeModel("Loader", 2, "Models", "loader_rightlegs.iqm", i, "Models", modelskin2[i], CMDL_USESURFACESKIN, 0);
+		}
+		if(nobox)
+		{
+			for(int i = 20; i <= 21; i++)
+				A_ChangeModel("Loader", 0, "Models", "loader_body.iqm", i, "Models", 'nochrome.png', CMDL_USESURFACESKIN);
 		}
 	}
 	Default
