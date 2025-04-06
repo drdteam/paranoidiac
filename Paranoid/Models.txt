@@ -1783,10 +1783,10 @@ class Rock01 : ModelBase
 	override void BlockingSetup()
 	{
 		blockmax = 2;
-		blockpos[0] = (64, 0, 0);
-		blockpos[1] = (-68, 0, 0);
-		blocksize[0] = (28, 320);
-		blocksize[1] = (28, 280);
+		blockpos[0] = (64, 0, 0 + (256.0 / ModelHeightMul));
+		blockpos[1] = (-68, 0, 0 + (256.0 / ModelHeightMul));
+		blocksize[0] = (28, 320 - (256.0 / ModelHeightMul));
+		blocksize[1] = (28, 280 - (256.0 / ModelHeightMul));
 	}
 	override void HLModelSetup()
 		{A_ChangeModel("", 0, "Models", "rock_big_a.md3", 0, "Models", "rock_big.jpg");}
@@ -1820,10 +1820,10 @@ class Rock02 : Rock01
 	override void BlockingSetup()
 	{
 		blockmax = 2;
-		blockpos[0] = (64, 0, 0);
-		blockpos[1] = (-64, 0, 0);
-		blocksize[0] = (32, 300);
-		blocksize[1] = (32, 320);
+		blockpos[0] = (64, 0, 0 + (256.0 / ModelHeightMul));
+		blockpos[1] = (-64, 0, 0 + (256.0 / ModelHeightMul));
+		blocksize[0] = (32, 300 - (256.0 / ModelHeightMul));
+		blocksize[1] = (32, 320 - (256.0 / ModelHeightMul));
 	}
 	override void HLModelSetup()
 		{A_ChangeModel("", 0, "Models", "rock_big_b.md3", 0, "Models", "rock_big.jpg");}
@@ -1854,8 +1854,9 @@ class Rock02d : Rock01
 		{A_ChangeModel("", 0, "Models", "rock_big_b.md3", 0, "Models", "xenrock1.png");}
 }
 
-class Rock02e : Rock02d
+class Rock02e : Rock01
 {
+	override void BlockingSetup(){}
 	override void HLModelSetup()
 		{A_ChangeModel("", 0, "Models", "rock_big_b.md3", 0, "Models", "xenrock2.png");}
 }
@@ -1889,14 +1890,14 @@ class Rock03 : Rock01
 	override void BlockingSetup()
 	{
 		blockmax = 4;
-		blockpos[0] = (54, -20, 0);
-		blockpos[1] = (54, 20, 0);
-		blockpos[2] = (0, 64, 0);
-		blockpos[3] = (0, -64, 0);
-		blocksize[0] = (20, 300);
-		blocksize[1] = (20, 300);
-		blocksize[2] = (32, 320);
-		blocksize[3] = (32, 320);
+		blockpos[0] = (54, -20, 0 + (256.0 / ModelHeightMul));
+		blockpos[1] = (54, 20, 0 + (256.0 / ModelHeightMul));
+		blockpos[2] = (0, 64, 0 + (256.0 / ModelHeightMul));
+		blockpos[3] = (0, -64, 0 + (256.0 / ModelHeightMul));
+		blocksize[0] = (20, 300 - (256.0 / ModelHeightMul));
+		blocksize[1] = (20, 300 - (256.0 / ModelHeightMul));
+		blocksize[2] = (32, 320 - (256.0 / ModelHeightMul));
+		blocksize[3] = (32, 320 - (256.0 / ModelHeightMul));
 	}
 	override void HLModelSetup()
 		{A_ChangeModel("", 0, "Models", "rock_big_c.md3", 0, "Models", "rock_big.jpg");}
