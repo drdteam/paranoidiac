@@ -201,7 +201,18 @@ class ModelBase : Actor
 	{
 		BlockingSetup();
 		for(int i = 0; i < blockmax; i++)
+		{
 			block[i] = BuildBridge(blockpos[i], blocksize[i], angle, tid, self);
+			//If a block would be placed beneath the floor, shrink it and move it up
+			let masterfloor = GetZAt();
+			let blockfloor = block[i].GetZAt();
+			if(blockfloor > masterfloor)
+			{
+				blockpos[i].z += (blockfloor - masterfloor) / ModelHeightMul;
+				blocksize[i].y -= blockpos[i].z;
+			}
+			block[i].A_SetSize(blocksize[i].x, blocksize[i].y * ModelHeightMul);
+		}
 		super.PostBeginPlay();
 	}
 	override void tick()
