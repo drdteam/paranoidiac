@@ -390,12 +390,12 @@ class HLPistol : ParanoidWeapon
 		{
 		case 'Scientist':
 			//Do not sync these hands to Index 0
-			A_ChangeModel("", 2, "Models", "v_9mmhandgun_barneyarms.iqm", 0, "Models", "v_barneyarms_000.png", CMDL_USESURFACESKIN, 0);
+			A_ChangeModel("", 2, "Models", "v_9mmhandgun_barneyarms.iqm", 0, "Models", "v_barneyarms_000.png", CMDL_USESURFACESKIN, 1);
 			A_ChangeModel("", 2, "Models", "", 1, "Models", "v_scientistarms.png", CMDL_USESURFACESKIN);
 			break;
 		case 'Otis':
 			//Do not sync these hands to Index 0
-			A_ChangeModel("", 2, "Models", "v_9mmhandgun_barneyarms.iqm", 0, "Models", "v_barneyarms_000.png", CMDL_USESURFACESKIN, 0);
+			A_ChangeModel("", 2, "Models", "v_9mmhandgun_barneyarms.iqm", 0, "Models", "v_barneyarms_000.png", CMDL_USESURFACESKIN, 1);
 			A_ChangeModel("", 2, "Models", "", 1, "Models", "v_barneyarms_001.png", CMDL_USESURFACESKIN);
 		default:
 			A_ChangeModel("", 2, "Models", "v_9mmhandgun_hevarms.iqm", 0, "Models", "v_hevarms_000.png", CMDL_USESURFACESKIN, 0);
