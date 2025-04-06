@@ -49,12 +49,7 @@ class ParanoidStatusBar : BaseStatusBar
 			if(ammotype2)
 			{
 				int ammotemp,ammolow,ammohigh,ammocolor;
-				if(ammotype2.GetClassName()=="HLAssaultRifleMagEx")
-				{
-					[ammolow,ammohigh]=ammolowhigh(50);
-					ammotemp=me.CountInv("HLAssaultRifleMag");
-				}
-				else if(ammotype2!=ammotype1)
+				if(ammotype2!=ammotype1)
 				{
 					[ammolow,ammohigh]=ammolowhigh(ammotype2.MaxAmount);
 					ammotemp=ammotype2.Amount;
@@ -96,20 +91,14 @@ class ParanoidStatusBar : BaseStatusBar
 		DrawInventoryIcon(CPlayer.ReadyWeapon,(132,176),DI_ITEM_OFFSETS,scale:(.5,.5));
 		[ammotype1,ammotype2]=GetCurrentAmmo();
 		int ammolow,ammohigh,ammocolor;
-		if(ammotype2&&ammotype2.GetClassName()=="HLAssaultRifleMagEx")
+		if(CheckWeaponSelected("HLAssaultRifle"))
 		{
 			DrawImage("i_gren1b",(230,195),DI_ITEM_OFFSETS,scale:(.25,.25));
-			[ammolow,ammohigh]=ammolowhigh(ammotype1.MaxAmount);
-			int ammotemp=me.CountInv("HLPistolAmmo");
-			DrawString(HLBARFONT,FormatNumber(ammotemp,3),(244,193),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor1(ammotemp,ammolow,ammohigh));
-			[ammolow,ammohigh]=ammolowhigh(50);
-			ammotemp=me.CountInv("HLAssaultRifleMag");
-			DrawString(HLSTAFONT,FormatNumber(ammotemp,3),(236,182),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor2(ammotemp,ammolow,ammohigh));
 			[ammolow,ammohigh]=ammolowhigh(10);
-			ammotemp=me.CountInv("HLGrenadeLauncherAmmo");
+			int ammotemp=me.CountInv("HLGrenadeLauncherAmmo");
 			DrawString(HLBARFONT,FormatNumber(ammotemp,3),(244,197),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor2(ammotemp,ammolow,ammohigh));
 		}
-		else if(!ammotype2||ammotype2==ammotype1)
+		if(!ammotype2||ammotype2==ammotype1)
 		{
 			if(ammotype1)
 			{
