@@ -160,13 +160,12 @@ class ModelBase : Actor
 	virtual void BlockingSetup(){}
 	actor BuildBridge(vector3 bridgepos, vector2 bridgesize, double bridgeangle, int bridgetid, actor bridgemaster)
 	{
-		let thisblock = Spawn("InvisibleBridge", bridgepos);
+		bool num;
+		actor thisblock;
+		[num, thisblock] = A_SpawnItemEx("InvisibleBridge", bridgepos.x, bridgepos.y, bridgepos.z * ModelHeightMul, angle: bridgeangle, flags: SXF_SETMASTER, tid: bridgetid);
 		if(!thisblock)
 			return null;
 		thisblock.A_SetSize(bridgesize.x, bridgesize.y * ModelHeightMul);
-		thisblock.angle = bridgeangle;
-		thisblock.ChangeTid(bridgetid);
-		thisblock.master = bridgemaster;
 		return thisblock;
 	}
 	void MoveBridge(actor thisblock, vector3 bridgepos)
