@@ -877,10 +877,10 @@ class Desk2 : ModelBase
 	override void BlockingSetup()
 	{
 		blockmax = 2;
-		blockpos[0] = (0, 21, 16);
-		blockpos[1] = (0, -21, 16);
-		blocksize[0] = (20, 11);
-		blocksize[1] = (20, 11);
+		blockpos[0] = (0, 24, 16);
+		blockpos[1] = (0, -24, 16);
+		blocksize[0] = (16, 11);
+		blocksize[1] = (16, 11);
 	}
 	Default
 		{Scale .8;}
