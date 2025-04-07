@@ -879,13 +879,13 @@ class Desk2 : ModelBase
 		blockmax = 2;
 		blockpos[0] = (0, 24, 0);
 		blockpos[1] = (0, -24, 0);
-		blocksize[0] = (14, 28);
-		blocksize[1] = (14, 28);
+		blocksize[0] = (12, 28);
+		blocksize[1] = (12, 28);
 	}
 	Default
 	{
 		Scale .8;
-		Radius 14;
+		Radius 12;
 		Height 28;
 	}
 }
@@ -1376,7 +1376,7 @@ class Valve1 : ModelBase
 	}
 	Default
 	{
-		Radius 24;
+		Radius 20;
 		Height 50;
 	}
 }
