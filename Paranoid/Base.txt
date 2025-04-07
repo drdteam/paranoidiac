@@ -160,6 +160,14 @@ class ModelBase : Actor
 	virtual void BlockingSetup(){}
 	actor BuildBridge(vector3 bridgepos, vector2 bridgesize, double bridgeangle, int bridgetid, actor bridgemaster)
 	{
+		//If a block would be placed beneath the floor, shrink it and move it up
+		let masterfloor = bridgemaster.GetZAt(flags: GZF_3DRESTRICT);
+		let blockfloor = GetZAt(bridgepos.x, bridgepos.y, flags: GZF_3DRESTRICT);
+		if(blockfloor > masterfloor)
+		{
+			bridgepos.z += (blockfloor - masterfloor) / ModelHeightMul;
+			bridgesize.y -= bridgepos.z;
+		}
 		bool num;
 		actor thisblock;
 		[num, thisblock] = A_SpawnItemEx("InvisibleBridge", bridgepos.x, bridgepos.y, bridgepos.z * ModelHeightMul, angle: bridgeangle, flags: SXF_SETMASTER, tid: bridgetid);
@@ -201,18 +209,7 @@ class ModelBase : Actor
 	{
 		BlockingSetup();
 		for(int i = 0; i < blockmax; i++)
-		{
 			block[i] = BuildBridge(blockpos[i], blocksize[i], angle, tid, self);
-			//If a block would be placed beneath the floor, shrink it and move it up
-			let masterfloor = GetZAt();
-			let blockfloor = block[i].GetZAt();
-			if(blockfloor > masterfloor)
-			{
-				blockpos[i].z += (blockfloor - masterfloor) / ModelHeightMul;
-				blocksize[i].y -= blockpos[i].z;
-			}
-			block[i].A_SetSize(blocksize[i].x, blocksize[i].y * ModelHeightMul);
-		}
 		super.PostBeginPlay();
 	}
 	override void tick()
