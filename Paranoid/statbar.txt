@@ -212,31 +212,23 @@ class ParanoidStatusBar : BaseStatusBar
 
 		[ammotype1,ammotype2]=GetCurrentAmmo();
 		int ammolow,ammohigh,ammocolor;
-		if(ammotype2&&ammotype2.GetClassName()=="HLAssaultRifleMagEx")
+
+		if(CheckWeaponSelected("HLAssaultRifle"))
 		{
 			DrawImage("i_gren1",(312-320,164-24),DI_ITEM_OFFSETS,scale:(.5,.5));
-			[ammolow,ammohigh]=ammolowhigh(ammotype1.MaxAmount);
-			int ammotemp=me.CountInv("HLPistolAmmo");
-			DrawString(HLSTAFONT,FormatNumber(ammotemp,3),(310-320,182-24),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor1(ammotemp,ammolow,ammohigh));
-			[ammolow,ammohigh]=ammolowhigh(50);
-			ammotemp=me.CountInv("HLAssaultRifleMag");
-			DrawString(HLSTAFONT,FormatNumber(ammotemp,3),(272-320,182-24),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor2(ammotemp,ammolow,ammohigh));
 			[ammolow,ammohigh]=ammolowhigh(10);
-			ammotemp=me.CountInv("HLGrenadeLauncherAmmo");
+			int ammotemp=me.CountInv("HLGrenadeLauncherAmmo");
 			DrawString(HLSTAFONT,FormatNumber(ammotemp,3),(310-320,166-24),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor2(ammotemp,ammolow,ammohigh));
 		}
-		else
+		if(ammotype1)
 		{
-			if(ammotype1)
-			{
-				[ammolow,ammohigh]=ammolowhigh(ammotype1.MaxAmount);
-				DrawString(HLSTAFONT,FormatNumber(ammotype1.Amount,3),(310-320,182-24),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor1(ammotype1.Amount,ammolow,ammohigh));
-			}
-			if(ammotype2&&ammotype2!=ammotype1)
-			{
-				[ammolow,ammohigh]=ammolowhigh(ammotype2.MaxAmount);
-				DrawString(HLSTAFONT,FormatNumber(ammotype2.Amount,3),(272-320,182-24),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor2(ammotype2.Amount,ammolow,ammohigh));
-			}
+			[ammolow,ammohigh]=ammolowhigh(ammotype1.MaxAmount);
+			DrawString(HLSTAFONT,FormatNumber(ammotype1.Amount,3),(310-320,182-24),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor1(ammotype1.Amount,ammolow,ammohigh));
+		}
+		if(ammotype2&&ammotype2!=ammotype1)
+		{
+			[ammolow,ammohigh]=ammolowhigh(ammotype2.MaxAmount);
+			DrawString(HLSTAFONT,FormatNumber(ammotype2.Amount,3),(272-320,182-24),DI_TEXT_ALIGN_RIGHT,ParanoidHudColor2(ammotype2.Amount,ammolow,ammohigh));
 		}
 
 		//Current inventory item
