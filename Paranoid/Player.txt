@@ -294,16 +294,14 @@ class RolfBellmer : PlayerPawn
 		'hgrunt_head1_002.png',
 		'hgrunt_head1_003.png'
 	};
-	static const name modelskinBlackOps1[]=
+	static const name modelskinBlackOps[]=
 	{
-		'massn_body_000.png',
-		'massn_body_001.png',
-		'massn_body_002.png'
-	};
-	static const name modelskinBlackOps2[]=
-	{
-		'massn_head_000.png',
-		'massn_head_001.png'
+		'massn_000.png',
+		'massn_001.png',
+		'massn_002.png',
+		'massn_003.png',
+		'massn_004.png',
+		'massn_005.png'
 	};
 	static const name modelskinRobo[]=
 	{
@@ -372,11 +370,10 @@ class RolfBellmer : PlayerPawn
 			A_ChangeModel("", 2, "Models", "hgrunt_arifle.iqm", 2, "Models", "hgrunt_arifle.png", 0, 0);
 			break;
 		case 'BlackOps':
-			for(int i = 0; i <= 2; i++)
-				A_ChangeModel("", 0, "Models", "massn_body.iqm", i, "Models", modelskinBlackOps1[i], CMDL_USESURFACESKIN);
-			for(int i = 0; i <= 1; i++)
-				A_ChangeModel("", 1, "Models", "massn_head.iqm", i, "Models", modelskinBlackOps2[i], CMDL_USESURFACESKIN, 0);
-			A_ChangeModel("", 2, "Models", "hgrunt_arifle.iqm", 2, "Models", "hgrunt_arifle.png", 0, 0);
+			for(int i = 0; i <= 5; i++)
+				A_ChangeModel("", 0, "Models", "massn.iqm", i, "Models", modelskinBlackOps[i], CMDL_USESURFACESKIN);
+			A_ChangeModel("", 1, flags:CMDL_HIDEMODEL);
+			A_ChangeModel("", 2, flags:CMDL_HIDEMODEL);
 			break;
 		case 'Robo':
 			for(int i = 0; i <= 6; i++)
