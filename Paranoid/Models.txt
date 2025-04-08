@@ -1158,6 +1158,14 @@ class Pipe4 : ModelBase
 
 class pipe5 : ModelBase
 {
+	override void ModelHeightSetup()
+	{
+        let defaultScalex = GetDefaultByType(GetClass()).Scale.x;
+		Scale.x = defaultScalex / ModelHeightMul;
+        let defaultScaley = GetDefaultByType(GetClass()).Scale.y;
+		Scale.y = defaultScaley / ModelHeightMul;
+		A_Warp(AAPTR_DEFAULT, -10 * defaultScalex / ModelHeightMul);
+	}
 	override void HLModelSetup()
 		{A_ChangeModel("ModelBase", 0, "Models", "pipe5.md2", 0, "Models", "pipe5.png");}
 	Default
@@ -1168,10 +1176,8 @@ class pipe5 : ModelBase
 	}
 }
 
-class pipe6 : ModelBase
+class pipe6 : pipe5
 {
-	override void HLModelSetup()
-		{A_ChangeModel("ModelBase", 0, "Models", "pipe5.md2", 0, "Models", "pipe5.png");}
 	Default
 	{
 		Scale .5;
@@ -1180,21 +1186,18 @@ class pipe6 : ModelBase
 	}
 }
 
-class pipe7 : ModelBase
+class pipe7 : pipe5
 {
-	override void HLModelSetup()
-		{A_ChangeModel("ModelBase", 0, "Models", "pipe5.md2", 0, "Models", "pipe5.png");}
 	Default
 	{
+		Scale 1;
 		Radius 12;
 		Height 181;
 	}
 }
 
-class pipe8 : ModelBase
+class pipe8 : pipe5
 {
-	override void HLModelSetup()
-		{A_ChangeModel("ModelBase", 0, "Models", "pipe5.md2", 0, "Models", "pipe5.png");}
 	Default
 	{
 		Scale 1.5;
