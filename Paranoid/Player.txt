@@ -239,7 +239,7 @@ class RolfBellmer : PlayerPawn
 	};
 	static const name modelskinBase3[]=
 	{
-		'w_9mmhandgun.png',
+		'barney_008.png',
 		'v_9mmhandgun_main_002.png'
 	};
 	static const name modelskinScientist1[]=
@@ -335,7 +335,7 @@ class RolfBellmer : PlayerPawn
 			for(int i = 0; i <= 3; i++)
 				A_ChangeModel("", 1, "Models", "hev_scientist_head.iqm", i, "Models", modelskinBase2[i], CMDL_USESURFACESKIN, 0);
 			for(int i = 0; i <= 1; i++)
-				A_ChangeModel("", 2, "Models", "barney_gun1.iqm", i, "Models", modelskinBase3[i], CMDL_USESURFACESKIN, 0);
+				A_ChangeModel("", 2, "Models", "barney_gun.iqm", i, "Models", modelskinBase3[i], CMDL_USESURFACESKIN, 0);
 			break;
 		case 'Scientist':
 			for(int i = 0; i <= 4; i++)
@@ -350,7 +350,7 @@ class RolfBellmer : PlayerPawn
 			for(int i = 0; i <= 3; i++)
 				A_ChangeModel("", 1, "Models", "freeman_head.iqm", i, "Models", modelskinFreeman2[i], CMDL_USESURFACESKIN, 0);
 			for(int i = 0; i <= 1; i++)
-				A_ChangeModel("", 2, "Models", "barney_gun1.iqm", i, "Models", modelskinBase3[i], CMDL_USESURFACESKIN, 0);
+				A_ChangeModel("", 2, "Models", "barney_gun.iqm", i, "Models", modelskinBase3[i], CMDL_USESURFACESKIN, 0);
 			break;
 		case 'Otis':
 			for(int i = 0; i <= 9; i++)
