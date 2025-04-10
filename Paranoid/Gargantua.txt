@@ -151,6 +151,7 @@ class HLGargantua : HLMonster
 		{
 			A_StopSound(6);
 			A_Scream();
+			A_KillChildren(flags: KILS_KILLMISSILES|KILS_NOMONSTERS);
 		}
 		HLD1 BCDE 1;
 		HLD1 F 1 A_NoBlocking;
@@ -167,6 +168,7 @@ class HLGargantua : HLMonster
 		{
 			A_StopSound(6);
 			A_Scream();
+			A_KillChildren(flags: KILS_KILLMISSILES|KILS_NOMONSTERS);
 		}
 		HLD1 BCDEFGHIJKLMNOPQRSTUVWXY 1;
 		HLD1 ZZZZZZZ 1 {scale.x+=.025;}
@@ -192,7 +194,11 @@ class HLGargantua : HLMonster
 		A_StartSound("halflife/weapons/shockroachdischarge");
 	}
 	virtual void A_HLGargFloorBoom()
-		{A_SpawnProjectile("GargFloorBoomSeeker",0);}	//aimed at target
+	{
+		let floorboom = A_SpawnProjectile("GargFloorBoomSeeker",0);	//aimed at target
+		if(floorboom)
+			floorboom.master = self;
+	}
 }
 
 //=================
