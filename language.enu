@@ -157,9 +157,9 @@ P1M7VOX2=
 	"Use the terminal to upload the virus.\n\n"
 	"We have remotely disabled the critical security protocols.";
 P1M7VOX3=
-	"Warning! Illegal Data Access In Progress. Please Cease Data Upload \n"
-	"Immediately and Surrender to the Enforcement Authorities. All Exit \n"
-	"Vestibules are Being Flooded with Nerve Gas.";
+	"Warning! Illegal Data Access In Progress. Please Cease Upload Immediately\n"
+	"and Surrender to the Authorities. All Exit Vestibules are Being Flooded \n"
+	"with Nerve Gas.";
 P1M8VOX1=
 	"You should be able to crawl under the door.";
 P1M8VOX2=
@@ -170,29 +170,29 @@ P2M1VOX1=
 	"much time, so listen carefully. The mission to extract you from Black Mesa \n"
 	"was compromised, and your Controller has gone AWOL, and possibly rogue. \n"
 	"Unfortunately, we cannot mobilize a rescue mission yet, so you're on your \n"
-	"own for now. Our surveillance indicates your crash site has only one way in \n"
-	"or out. Therefore, your exit strategy is to return to Black Mesa while we \n"
-	"attempt another extraction. Meanwhile, government and alien forces will \n"
-	"continue to hunt you. There's a cavern nearby where you can seek cover \n"
-	"until we can...";
+	"own for now. Our surveillance indicates that your crash site has only one \n"
+	" way inor out. Therefore, your exit strategy is to return to Black Mesa \n"
+	"while we attempt another extraction. Meanwhile, the government and alien \n"
+	"forces will continue to hunt you. There's a cavern nearby where you can \n"
+	"seek cover until we can...";
 P2M2VOX1=
 	"Dr. Bellmer, you're at the employee in-processing facility. You may recall \n"
 	"you went through here when you began your mission. The monorail will take \n"
-	"you to back to Sector C. We'll try to regroup once you get there, and work \n"
-	"out an effective way to extract you.";
+	"you back to Sector C. We'll try to regroup once you get there, and work out \n"
+	"an effective way to extract you.";
 P2M2VOX2=
 	"That you, Dr. Bellmer? Looks like you're stuck here with the rest of us. \n"
-	"They've disabled monorail and gate control. You can't get out that way. \n"
-	"[Whoa! Did I just make a Han Solo reference?] You can try and make it \n"
-	"through the canyon, but I wouldn't recommend it. Good luck.";
+	"They've disabled monorail and gate control. Can't get out that way. [Whoa! \n"
+	"Did I just make a Han Solo reference?] You can try and make it through the \n"
+	"canyon, but I wouldn't recommend it. Good luck.";
 P2M3VOX1=
-	"We didn't anticipate the total lockdown of Sector C. We can't send \n"
-	"transport to your current location because the winds make flying \n"
-	"exceedingly treacherous. Proceed through the canyon until you reach the \n"
-	"dam. There are two ways out at that point, and we'll figure out your best \n"
-	"option. Meanwhile, you're probably wondering who we are. I'm sending you an \n"
-	"UnderNet link that will provide some background. As to why we're interested in \n"
-	"you, that will be revealed in due time.";
+	"We didn't anticipate total lockdown of Sector C. We can't send transport to \n"
+	"your current location because the winds make flying exceedingly treacherous. \n"
+	"Proceed through the canyon until you reach the dam. There are two ways out \n"
+	"at that point, and we'll figure out your best option. Meanwhile, you're \n"
+	"probably wondering who we are. I'm sending you an UnderNet link that will \n"
+	"provide some background. As to why we're interested in you, that will be \n"
+	"revealed in due time.";
 P2M3VOX2=
 	"Legion: Earth is an organization that was created to protect Earth from \n"
 	"threats both extra-terrestrial and home-grown. In recent years, that threat \n"
