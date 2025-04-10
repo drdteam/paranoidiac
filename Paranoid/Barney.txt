@@ -8,37 +8,24 @@ class HLBarney : HLMonster
 	actor bestfriend;
 	override void HLModelSetup()
 	{
-		static const name modelskin1[]=
+		static const name modelskin[]=
 		{
-			'barney_body_000.png',
-			'barney_body_001.png',
-			'barney_body_002.png',
-			'barney_body_003.png'
+			'barney_000.png',
+			'barney_001.png',
+			'barney_002.png',
+			'barney_003.png',
+			'barney_004.png',
+			'barney_005.png',
+			'barney_006.png',
+			'barney_007.png',
+			'barney_008.png',
+			'v_9mmhandgun_main_002.png'
 		};
-		static const name modelskin2[]=
-		{
-			'barney_head_000.png',
-			'barney_head_001.png',
-			'barney_head_002.png',
-			'barney_head_003.png'
-		};
-		for(int i = 0; i <= 3; i++)
-		{
-			A_ChangeModel("HLBarney", 0, "Models", "barney_body.iqm", i, "Models", modelskin1[i], CMDL_USESURFACESKIN);
-			A_ChangeModel("HLBarney", 1, "Models", "barney_head.iqm", i, "Models", modelskin2[i], CMDL_USESURFACESKIN, 0);
-		}
-
-		ResetGunModel();
-	}
-	virtual void ResetGunModel(bool holster = false)
-	{
-		if(holster)
-			A_ChangeModel("HLBarney", 2, "Models", "barney_gun2.iqm", 2, "Models", "w_9mmhandgun.png", 0, 2);
-		else
-		{
-			A_ChangeModel("HLBarney", 2, "Models", "barney_gun1.iqm", 0, "Models", "w_9mmhandgun.png", CMDL_USESURFACESKIN, 0);
-			A_ChangeModel("HLBarney", 2, "Models", "", 1, "Models", "v_9mmhandgun_main_002.png", CMDL_USESURFACESKIN);
-		}
+		string modelname = "barney.iqm";
+		if(guard)
+			modelname = "barney_holstered.iqm";
+		for(int i = 0; i <= 9; i++)
+			A_ChangeModel("HLBarney", 0, "Models", modelname, i, "Models", modelskin[i], CMDL_USESURFACESKIN);
 	}
 	Default
 	{
@@ -67,11 +54,7 @@ class HLBarney : HLMonster
 		HLI3 AABBCCDD 1 A_HLBarneyLook;
 		Loop;
 	Guard:
-		HLI3 E 2
-		{
-			ResetGunModel(true);
-			A_HLBarneyLook();
-		}
+		HLI3 E 2 A_HLBarneyLook();
 		HLI3 FGHIJKLMNOPQRSTUVWXYZ[\] 2 A_HLBarneyLook;
 		HLI4 ABCDEF 2 A_HLBarneyLook;
 		Loop;
@@ -90,18 +73,15 @@ class HLBarney : HLMonster
 		TNT1 A 0 A_MonsterRefire(0,"See");
 		Loop;
 	Pain:
-		HLP1 A 1
-		{
-			ResetGunModel();
-			A_Pain();
-		}
+		HLP1 A 1 A_Pain;
 		HLP1 DGJMPSU 1;
 		HLP1 U 0 A_JumpIf(guard,"Guard");
 		Goto See;
 	Death:
 		HLD1 A 2
 		{
-			A_ChangeModel("HLBarney", 2, flags:CMDL_HIDEMODEL);
+			for(int i = 8; i <= 9; i++)
+				A_ChangeModel("HLBarney", 0, "Models", "barney.iqm", i, "Models", 'nochrome.png', CMDL_USESURFACESKIN);
 			A_ScreamAndUnblock();
 		}
 		HLD1 BCDEFG 2;
@@ -208,34 +188,24 @@ class HLOtis : HLBarney
 {
 	override void HLModelSetup()
 	{
-		static const name modelskin1[]=
+		static const name modelskin[]=
 		{
-			'barney_body_001.png',
-			'barney_body_002.png',
-			'barney_body_003.png'
+			'otis_000.png',
+			'otis_001.png',
+			'otis_002.png',
+			'v_desert_eagle_main_000.png',
+			'otis_003.png',
+			'otis_004.png',
+			'barney_005.png',
+			'otis_005.png',
+			'otis_006.png',
+			'otis_000.png'
 		};
-		static const name modelskin2[]=
-		{
-			'barney_head_001.png',
-			'barney_head_002.png',
-			'otis_head_002.png',
-			'otis_head_003.png',
-			'otis_head_004.png',
-			'otis_head_005.png'
-		};
-		for(int i = 0; i <= 2; i++)
-			A_ChangeModel("HLBarney", 0, "Models", "otis_body.iqm", i, "Models", modelskin1[i], CMDL_USESURFACESKIN);
-		for(int i = 0; i <= 5; i++)
-			A_ChangeModel("HLBarney", 1, "Models", "otis_head.iqm", i, "Models", modelskin2[i], CMDL_USESURFACESKIN, 0);
-
-		ResetGunModel();
-	}
-	override void ResetGunModel(bool holster)
-	{
-		if(holster)
-			A_ChangeModel("HLBarney", 2, "Models", "otis_gun2.iqm", 2, "Models", "v_desert_eagle_main_000.png", 0, 2);
-		else
-			A_ChangeModel("HLBarney", 2, "Models", "otis_gun1.iqm", 2, "Models", "v_desert_eagle_main_000.png", 0, 0);
+		string modelname = "otis.iqm";
+		if(guard)
+			modelname = "otis_holstered.iqm";
+		for(int i = 0; i <= 9; i++)
+			A_ChangeModel("HLBarney", 0, "Models", modelname, i, "Models", modelskin[i], CMDL_USESURFACESKIN);
 	}
 	Default
 	{
@@ -255,37 +225,31 @@ class HLOtis : HLBarney
 
 class HLBarneyGuard : HLBarney
 {
-	override void PostBeginPlay()
+	override void BeginPlay()
 	{
 		guard=1;
 		SetStateLabel("guard");
 		bUSESPECIAL=1;
-		super.PostBeginPlay();
+		super.BeginPlay();
 	}
 }
 
 class HLOtisGuard : HLOtis
 {
-	override void PostBeginPlay()
+	override void BeginPlay()
 	{
 		guard=1;
 		SetStateLabel("guard");
 		bUSESPECIAL=1;
-		super.PostBeginPlay();
+		super.BeginPlay();
 	}
 }
 
-class SgtHarrison : HLBarney
+class SgtHarrison : HLBarneyGuard
 {
 	Default
 	{
 		-ISMONSTER
 		-FRIENDLY
-	}
-	override void PostBeginPlay()
-	{
-		guard=1;
-		SetStateLabel("guard");
-		super.PostBeginPlay();
 	}
 }

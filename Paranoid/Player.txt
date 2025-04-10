@@ -263,21 +263,18 @@ class RolfBellmer : PlayerPawn
 		'nochrome.png',
 		'nochrome.png'
 	};
-
-	static const name modelskinOtis1[]=
+	static const name modelskinOtis[]=
 	{
-		'barney_body_001.png',
-		'barney_body_002.png',
-		'barney_body_003.png'
-	};
-	static const name modelskinOtis2[]=
-	{
-		'barney_head_001.png',
-		'barney_head_002.png',
-		'otis_head_002.png',
-		'otis_head_003.png',
-		'otis_head_004.png',
-		'otis_head_005.png'
+		'otis_000.png',
+		'otis_001.png',
+		'otis_002.png',
+		'v_desert_eagle_main_000.png',
+		'otis_003.png',
+		'otis_004.png',
+		'barney_005.png',
+		'otis_005.png',
+		'otis_006.png',
+		'otis_000.png'
 	};
 	static const name modelskinShepard1[]=
 	{
@@ -356,11 +353,10 @@ class RolfBellmer : PlayerPawn
 				A_ChangeModel("", 2, "Models", "barney_gun1.iqm", i, "Models", modelskinBase3[i], CMDL_USESURFACESKIN, 0);
 			break;
 		case 'Otis':
-			for(int i = 0; i <= 10; i++)
-				A_ChangeModel("", 0, "Models", "otis_body.iqm", i, "Models", modelskinOtis1[i], CMDL_USESURFACESKIN);
-			for(int i = 0; i <= 5; i++)
-				A_ChangeModel("", 1, "Models", "otis_head.iqm", i, "Models", modelskinOtis2[i], CMDL_USESURFACESKIN, 0);
-			A_ChangeModel("", 2, "Models", "otis_gun1.iqm", 2, "Models", "v_desert_eagle_main_000.png", 0, 0);
+			for(int i = 0; i <= 9; i++)
+				A_ChangeModel("", 0, "Models", 'otis.iqm', i, "Models", modelskinOtis[i], CMDL_USESURFACESKIN);
+			A_ChangeModel("", 1, flags:CMDL_HIDEMODEL);
+			A_ChangeModel("", 2, flags:CMDL_HIDEMODEL);
 			break;
 		case 'Shepard':
 			for(int i = 0; i <= 4; i++)
