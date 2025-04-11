@@ -5,7 +5,7 @@ IWad
 	Game = "Doom"
 	StartupType = "Heretic"
 	Config = "Paranoidiac"
-	Mapinfo = "mapinfo/doom2.txt"
+	Mapinfo = "mapinfo/doomcommon.txt"
 	Compatibility = "Shorttex"
 	BannerColors = "ff c0 10", "10 10 10"
 }

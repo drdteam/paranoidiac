@@ -7,6 +7,8 @@ PARANOID_LOADGAME="Load Game";
 PARANOID_SAVEGAME="Save Game";
 PARANOID_QUIT="Quit";
 
+PARANOID_QUITMSG = "Are you sure you want to quit?";
+
 OPTMNU_TITLE="Options";
 
 SKIPCUTSCENE1="Press Use (";
