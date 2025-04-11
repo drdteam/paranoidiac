@@ -97,7 +97,11 @@ class HLHoundEye : HLMonster
 		Stop;
 	XDeath:
 	Crush:
-		TNT1 A 0 A_HLGibs(14,"XenGibs");
+		TNT1 A 0
+		{
+			A_StopSound(5);
+			A_HLGibs(14,"XenGibs");
+		}
 		Stop;
 	}
 }
