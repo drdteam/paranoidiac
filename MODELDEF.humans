@@ -342,135 +342,36 @@ Model HLBarney
 	FrameIndex HLD1 N 0 384
 
 	FrameIndex HLI3 E 0 186
-	FrameIndex HLI3 E 2 31
 	FrameIndex HLI3 F 0 187
-	FrameIndex HLI3 F 2 32
 	FrameIndex HLI3 G 0 188
-	FrameIndex HLI3 G 2 33
 	FrameIndex HLI3 H 0 189
-	FrameIndex HLI3 H 2 34
 	FrameIndex HLI3 I 0 190
-	FrameIndex HLI3 I 2 35
 	FrameIndex HLI3 J 0 191
-	FrameIndex HLI3 J 2 36
 	FrameIndex HLI3 K 0 192
-	FrameIndex HLI3 K 2 37
 	FrameIndex HLI3 L 0 193
-	FrameIndex HLI3 L 2 38
 	FrameIndex HLI3 M 0 194
-	FrameIndex HLI3 M 2 39
 	FrameIndex HLI3 N 0 195
-	FrameIndex HLI3 N 2 40
 	FrameIndex HLI3 O 0 196
-	FrameIndex HLI3 O 2 41
 	FrameIndex HLI3 P 0 197
-	FrameIndex HLI3 P 2 42
 	FrameIndex HLI3 Q 0 198
-	FrameIndex HLI3 Q 2 43
 	FrameIndex HLI3 R 0 199
-	FrameIndex HLI3 R 2 44
 	FrameIndex HLI3 S 0 200
-	FrameIndex HLI3 S 2 45
 	FrameIndex HLI3 T 0 201
-	FrameIndex HLI3 T 2 46
 	FrameIndex HLI3 U 0 202
-	FrameIndex HLI3 U 2 47
 	FrameIndex HLI3 V 0 203
-	FrameIndex HLI3 V 2 48
 	FrameIndex HLI3 W 0 204
-	FrameIndex HLI3 W 2 49
 	FrameIndex HLI3 X 0 205
-	FrameIndex HLI3 X 2 50
 	FrameIndex HLI3 Y 0 206
-	FrameIndex HLI3 Y 2 51
 	FrameIndex HLI3 Z 0 207
-	FrameIndex HLI3 Z 2 52
 	FrameIndex HLI3 [ 0 208
-	FrameIndex HLI3 [ 2 53
 	FrameIndex HLI3 \ 0 209
-	FrameIndex HLI3 \ 2 54
 	FrameIndex HLI3 ] 0 210
-	FrameIndex HLI3 ] 2 55
 	FrameIndex HLI4 A 0 211
-	FrameIndex HLI4 A 2 56
 	FrameIndex HLI4 B 0 212
-	FrameIndex HLI4 B 2 57
 	FrameIndex HLI4 C 0 213
-	FrameIndex HLI4 C 2 58
 	FrameIndex HLI4 D 0 214
-	FrameIndex HLI4 D 2 59
 	FrameIndex HLI4 E 0 215
-	FrameIndex HLI4 E 2 60
 	FrameIndex HLI4 F 0 216
-	FrameIndex HLI4 F 2 61
-}
-
-//Otis' holstered gun has different frames,
-//so it has to be separate from HLBarney MODELDEF
-Model HLOtis
-{
-	FrameIndex HLI3 E 0 186
-	FrameIndex HLI3 E 2 0
-	FrameIndex HLI3 F 0 187
-	FrameIndex HLI3 F 2 1
-	FrameIndex HLI3 G 0 188
-	FrameIndex HLI3 G 2 2
-	FrameIndex HLI3 H 0 189
-	FrameIndex HLI3 H 2 3
-	FrameIndex HLI3 I 0 190
-	FrameIndex HLI3 I 2 4
-	FrameIndex HLI3 J 0 191
-	FrameIndex HLI3 J 2 5
-	FrameIndex HLI3 K 0 192
-	FrameIndex HLI3 K 2 6
-	FrameIndex HLI3 L 0 193
-	FrameIndex HLI3 L 2 7
-	FrameIndex HLI3 M 0 194
-	FrameIndex HLI3 M 2 8
-	FrameIndex HLI3 N 0 195
-	FrameIndex HLI3 N 2 9
-	FrameIndex HLI3 O 0 196
-	FrameIndex HLI3 O 2 10
-	FrameIndex HLI3 P 0 197
-	FrameIndex HLI3 P 2 11
-	FrameIndex HLI3 Q 0 198
-	FrameIndex HLI3 Q 2 12
-	FrameIndex HLI3 R 0 199
-	FrameIndex HLI3 R 2 13
-	FrameIndex HLI3 S 0 200
-	FrameIndex HLI3 S 2 14
-	FrameIndex HLI3 T 0 201
-	FrameIndex HLI3 T 2 15
-	FrameIndex HLI3 U 0 202
-	FrameIndex HLI3 U 2 16
-	FrameIndex HLI3 V 0 203
-	FrameIndex HLI3 V 2 17
-	FrameIndex HLI3 W 0 204
-	FrameIndex HLI3 W 2 18
-	FrameIndex HLI3 X 0 205
-	FrameIndex HLI3 X 2 19
-	FrameIndex HLI3 Y 0 206
-	FrameIndex HLI3 Y 2 20
-	FrameIndex HLI3 Z 0 207
-	FrameIndex HLI3 Z 2 21
-	FrameIndex HLI3 [ 0 208
-	FrameIndex HLI3 [ 2 22
-	FrameIndex HLI3 \ 0 209
-	FrameIndex HLI3 \ 2 23
-	FrameIndex HLI3 ] 0 210
-	FrameIndex HLI3 ] 2 24
-	FrameIndex HLI4 A 0 211
-	FrameIndex HLI4 A 2 25
-	FrameIndex HLI4 B 0 212
-	FrameIndex HLI4 B 2 26
-	FrameIndex HLI4 C 0 213
-	FrameIndex HLI4 C 2 27
-	FrameIndex HLI4 D 0 214
-	FrameIndex HLI4 D 2 28
-	FrameIndex HLI4 E 0 215
-	FrameIndex HLI4 E 2 29
-	FrameIndex HLI4 F 0 216
-	FrameIndex HLI4 F 2 30
 }
 
 /////////////////////////////
