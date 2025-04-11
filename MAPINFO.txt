@@ -85,29 +85,25 @@ defaultmap
 	SpawnWithWeaponRaised
 
 	PixelRatio=1.0
+	PauseMusicInMenus
 }
 
 map TITLEMAP lookup "PARANOID_TITLEMAP"
 {
 	sky1=HLSKY5
-	PrecacheSounds="Music01"
 }
-
 map P1M1 lookup "PARANOID_P1M1"
 {
-	PrecacheSounds="Music02"
 	LevelNum=1
 	Next=P1M2
 }
 map P1M2 lookup "PARANOID_P1M2"
 {
-	PrecacheSounds="Music02"
 	LevelNum=2
 	Next=P1M3
 }
 map P1M3 lookup "PARANOID_P1M3"
 {
-	PrecacheSounds="Music03"
 	LevelNum=3
 	Next=P1M4
 }
@@ -119,7 +115,6 @@ map P1M4 lookup "PARANOID_P1M4"
 map P1M5 lookup "PARANOID_P1M5"
 {
 	LevelNum=5
-	PrecacheSounds="Music04"
 	Next=P1M6
 }
 
@@ -130,19 +125,16 @@ adddefaultmap
 map P1M6 lookup "PARANOID_P1M6"
 {
 	LevelNum=6
-	PrecacheSounds="Music07"
 	Next=P1M7
 }
 map P1M7 lookup "PARANOID_P1M7"
 {
 	LevelNum=7
-	PrecacheSounds="Music03","Music07"
 	Next=P1M8
 }
 map P1M8 lookup "PARANOID_P1M8"
 {
 	LevelNum=8
-	PrecacheSounds="Music01"
 	Next=P2M0
 }
 
@@ -152,7 +144,6 @@ adddefaultmap
 }
 map P2M0 lookup "PARANOID_P2M0"
 {
-	PrecacheSounds="30Title"
 	LevelNum=9
 	Next=P2M1
 }
@@ -175,7 +166,7 @@ adddefaultmap
 }
 map P2M2 lookup "PARANOID_P2M2"
 {
-	PrecacheSounds="11Earth","32Trans","P2M2VOX2"
+	PrecacheSounds="P2M2VOX2"
 	LevelNum=11
 	Next=P2M3
 }
@@ -191,13 +182,11 @@ adddefaultmap
 }
 map P2M4 lookup "PARANOID_P2M4"
 {
-	PrecacheSounds="13Earth"
 	LevelNum=13
 	Next=P2M5
 }
 map P2M5 lookup "PARANOID_P2M5"
 {
-	PrecacheSounds="14Earth","34Trans"
 	LevelNum=14
 	Next=P2M6
 }
@@ -215,19 +204,16 @@ adddefaultmap
 }
 map P2M7 lookup "PARANOID_P2M7"
 {
-	PrecacheSounds="16Earth"
 	LevelNum=16
 	Next=P2M8
 }
 map P2M8 lookup "PARANOID_P2M8"
 {
-	PrecacheSounds="17Earth"
 	LevelNum=17
 	Next=P2M9
 }
 map P2M9 lookup "PARANOID_P2M9"
 {
-	PrecacheSounds="18ZEarth","36Trans"
 	LevelNum=18
 	Next=P3M1
 }

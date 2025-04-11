@@ -1,36 +1,38 @@
 //=====
 //MUSIC
 //=====
-Music01 =	D_TITLE		//TitleMap
-30Title =	D_TITLMP	//
-Music02 =	D_MAP02
-Music03 =	D_MAP03
-Music04 =	D_MAP04
-Music07 =	D_MAP07
-11Earth =	D_MAP11		//Event Music for Map11
-13Earth =	D_MAP13		//Start Music for Map13
-14Earth =	D_MAP14		//Event Music for Map14
-16Earth =	D_MAP16		//First Event Music for Map16
-17Earth =	D_MAP17		//Event Music for Map17
-18ZEarth =	D_MAP18A	//Event Music for Map18
-31Trans	=	D_TRANS1	//Transition music 1 (no percussion)
-32Trans	=	D_TRANS2	//Transition music 1 (with percussion)
-33Trans	=	D_TRANS3
-34Trans	=	D_TRANS4
-35Trans	=	D_TRANS5
-36Trans	=	D_TRANS6
-37Trans	=	D_TRANS7
+/*
+Music01		//TitleMap
+30Title		//
+Music02
+Music03
+Music04
+Music07
+11Earth		//Event Music for Map11
+13Earth		//Start Music for Map13
+14Earth		//Event Music for Map14
+16Earth 	//First Event Music for Map16
+17Earth		//Event Music for Map17
+18ZEarth	//Event Music for Map18
+31Trans		//Transition music 1 (no percussion)
+32Trans		//Transition music 1 (with percussion)
+33Trans
+34Trans
+35Trans
+36Trans
+37Trans
 
-01Earth =	D_EARTH		//Main "background" music for Earth hub
-10Earth =	D_MAP10		//Map10
-18Earth =	D_MAP18		//Background Music for Map18
-19Xen =		D_MAP19		//Map 19
-20Xen =		D_MAP20		//Map 20
-21Xen =		D_MAP21		//Map 21
-21YXen =	D_MAP21A	//Event Music for Map21
-21ZXen =	D_MAP21B	//End Credits Music
-22SixWay =	D_MAP22		//Map 22
-23Space =	D_MAP23		//Map 23
+01Earth		//Main "background" music for Earth hub
+10Earth		//Map10
+18Earth		//Background Music for Map18
+19Xen		//Map 19
+20Xen		//Map 20
+21Xen		//Map 21
+21YXen		//Event Music for Map21
+21ZXen		//End Credits Music
+22SixWay	//Map 22
+23Space		//Map 23
+*/
 
 //======
 //SOUNDS
