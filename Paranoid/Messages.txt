@@ -314,7 +314,7 @@ class MessageItem : CustomInventory abstract
 		mytracker.dontinterrupt = false;
 		ParanoidHudMessage.Create("", id: 1);
 	}
-	static void PlayMessage(actor thisplayer,string message,string icon="TNT1A0",int dur=0, bool dontinterrupt = 0)
+	static void PlayMessage(actor thisplayer, string message, string icon = "TNT1A0", int dur = 0, bool dontinterrupt = 0, bool bold = 0)
 	{
 		if(!thisplayer)
 			return;
@@ -345,7 +345,30 @@ class MessageItem : CustomInventory abstract
 		mytracker.countdown = ticdur + 35;
 		ParanoidHudMessage.Create(msg, icon: icon, id: 1, fontname: 'smallfont', fontcolor: Font.CR_GOLD,
 		pos: (40, 15), alignment: ParanoidHudMessage.ALIGN_LEFT, fadeinTime: 0, typeTime: typetime,
-		holdtime: 35 * 10, fadeOutTime: 0, scale: (0.5, 0.5));
+		holdtime: 35 * 10, fadeOutTime: 0, scale: (0.5, 0.5), playernumber: thisplayer.PlayerNumber());
+		console.printfEx(PRINT_NONOTIFY, "********");
+		console.printfEx(PRINT_NONOTIFY, msg);
+		console.printfEx(PRINT_NONOTIFY, "********");
+	}
+	static void PrintedMessage(actor thisplayer, string message, bool bold = false)
+	{
+		if(!thisplayer)
+			return;
+		string msg=StringTable.Localize("$"..message);
+		if(!msg.Length())
+			return;
+		int playnum;
+		if(bold)
+			playnum = -1;
+		else
+			playnum = thisplayer.PlayerNumber();
+		ParanoidHudMessage.Create(msg, id: 3, fontname: 'smallfont', fontcolor: Font.CR_GOLD,
+		pos: (0, 125), alignment: ParanoidHudMessage.ALIGN_LEFT,
+		holdtime: 35 * 6, scale: (0.5, 0.5), playernumber: playnum);
+		if(bold)
+			console.printfEx(PRINT_BOLD|PRINT_NONOTIFY, msg);
+		else
+			console.printfEx(PRINT_NONOTIFY, msg);
 	}
 	string Portrait;
 	Property Portrait:Portrait;
