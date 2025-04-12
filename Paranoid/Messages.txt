@@ -386,9 +386,14 @@ class MessageItem : CustomInventory abstract
 		if(result == true)
 			return;
 
+		int playnum;
+		if(bold)
+			playnum = -1;
+		else if(thisplayer)
+			playnum = thisplayer.PlayerNumber();
 		ParanoidHudMessage.Create(msg, icon: icon, id: 1, fontname: 'smallfont', fontcolor: Font.CR_GOLD,
 		pos: (40, 15), alignment: ParanoidHudMessage.ALIGN_LEFT, fadeinTime: 0, typeTime: typetime,
-		holdtime: 35 * 10, fadeOutTime: 0, scale: (0.5, 0.5), playernumber: bold? -1 : thisplayer.PlayerNumber());
+		holdtime: 35 * 10, fadeOutTime: 0, scale: (0.5, 0.5), playernumber: playnum);
 		LogMessage(msg, bold);
 	}
 	static void PrintedMessage(actor thisplayer, string message, bool bold = false)
@@ -396,9 +401,14 @@ class MessageItem : CustomInventory abstract
 		string msg=StringTable.Localize("$"..message);
 		if(!msg.Length())
 			return;
+		int playnum;
+		if(bold)
+			playnum = -1;
+		else if(thisplayer)
+			playnum = thisplayer.PlayerNumber();
 		ParanoidHudMessage.Create(msg, id: 3, fontname: 'smallfont', fontcolor: Font.CR_GOLD,
 		pos: (0, 125), alignment: ParanoidHudMessage.ALIGN_LEFT,
-		holdtime: 35 * 6, scale: (0.5, 0.5), playernumber: bold? -1 : thisplayer.PlayerNumber());
+		holdtime: 35 * 6, scale: (0.5, 0.5), playernumber: playnum);
 		LogMessage(msg, bold);
 	}
 	static void LogMessage(string msg, bool bold = false)
