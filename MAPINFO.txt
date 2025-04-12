@@ -9,6 +9,7 @@ gameinfo
 	cursorpic="cursor"
 	NoRandomPlayerClass=true
 	quitmessages = "$PARANOID_QUITMSG"
+	quitsound = ""
 }
 
 clearskills
