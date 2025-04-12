@@ -338,46 +338,29 @@ class MessageItem : CustomInventory abstract
 		mytracker.dontinterrupt = false;
 		ParanoidHudMessage.Create("", id: 1);
 	}
-	static bool PlayMessageSound(actor thisplayer, string message, bool dontinterrupt = 0, int step = 1, int ticdur = 0)
+	static bool PlayMessageSound(actor thisplayer, string message, bool dontinterrupt = 0, int ticdur = 0)
 	{
 		let mytracker=ParanoidSoundTracker(thisplayer.FindInventory("ParanoidSoundTracker"));
 		if(!mytracker || mytracker.dontinterrupt)
 			return true;
-		if(step == 1)
+		if(mytracker.playing == true)
 		{
-			if(mytracker.playing == true)
-			{
-				StopMessage(thisplayer);
+			StopMessage(thisplayer);
+			if(!dontinterrupt)
 				return true;
-			}
-			mytracker.playing = true;
-			mytracker.dontinterrupt = dontinterrupt;
-			if(dontinterrupt == false)
-				thisplayer.A_StartSound("radiostatic", CHAN_6, CHANF_LOCAL);
-			thisplayer.A_StartSound(message, CHAN_7, attenuation:ATTN_STATIC);
 		}
-		else if (step == 2)
-			mytracker.countdown = ticdur + 35;
+		mytracker.playing = true;
+		mytracker.dontinterrupt = dontinterrupt;
+		if(dontinterrupt == false)
+			thisplayer.A_StartSound("radiostatic", CHAN_6, CHANF_LOCAL);
+		thisplayer.A_StartSound(message, CHAN_7, attenuation:ATTN_STATIC);
+		mytracker.countdown = ticdur + 35;
 		return false;
 	}
 	static void PlayMessage(actor thisplayer, string message, string icon = "TNT1A0", int dur = 0, bool dontinterrupt = 0, bool bold = 0)
 	{
 		string msg=StringTable.Localize("$"..message);
 		if(!msg.Length())
-			return;
-
-		int result;
-		if(bold)
-		{
-			for (int i = 0; i < MAXPLAYERS; ++i)
-			{
-				if(playeringame[i])
-					PlayMessageSound(players[i].mo, message, dontinterrupt);
-			}
-		}
-		else
-			result = PlayMessageSound(thisplayer, message, dontinterrupt);
-		if(result == true)
 			return;
 
 		double doubledur;
@@ -389,25 +372,23 @@ class MessageItem : CustomInventory abstract
 		typetime = min(ceil(typetime * TICRATE) - 1, 3);
 		int ticdur = ceil(doubledur * TICRATE);
 
+		int result;
 		if(bold)
 		{
 			for (int i = 0; i < MAXPLAYERS; ++i)
 			{
 				if(playeringame[i])
-					PlayMessageSound(players[i].mo, message, dontinterrupt, 2, ticdur);
+					PlayMessageSound(players[i].mo, message, dontinterrupt, ticdur);
 			}
 		}
 		else
-			result = PlayMessageSound(thisplayer, message, dontinterrupt, 2, ticdur);
+			result = PlayMessageSound(thisplayer, message, dontinterrupt, ticdur);
+		if(result == true)
+			return;
 
-		int playnum;
-		if(bold)
-			playnum = -1;
-		else
-			playnum = thisplayer.PlayerNumber();
 		ParanoidHudMessage.Create(msg, icon: icon, id: 1, fontname: 'smallfont', fontcolor: Font.CR_GOLD,
 		pos: (40, 15), alignment: ParanoidHudMessage.ALIGN_LEFT, fadeinTime: 0, typeTime: typetime,
-		holdtime: 35 * 10, fadeOutTime: 0, scale: (0.5, 0.5), playernumber: playnum);
+		holdtime: 35 * 10, fadeOutTime: 0, scale: (0.5, 0.5), playernumber: bold? -1 : thisplayer.PlayerNumber());
 		LogMessage(msg, bold);
 	}
 	static void PrintedMessage(actor thisplayer, string message, bool bold = false)
@@ -415,14 +396,9 @@ class MessageItem : CustomInventory abstract
 		string msg=StringTable.Localize("$"..message);
 		if(!msg.Length())
 			return;
-		int playnum;
-		if(bold)
-			playnum = -1;
-		else if(thisplayer)
-			playnum = thisplayer.PlayerNumber();
 		ParanoidHudMessage.Create(msg, id: 3, fontname: 'smallfont', fontcolor: Font.CR_GOLD,
 		pos: (0, 125), alignment: ParanoidHudMessage.ALIGN_LEFT,
-		holdtime: 35 * 6, scale: (0.5, 0.5), playernumber: playnum);
+		holdtime: 35 * 6, scale: (0.5, 0.5), playernumber: bold? -1 : thisplayer.PlayerNumber());
 		LogMessage(msg, bold);
 	}
 	static void LogMessage(string msg, bool bold = false)
