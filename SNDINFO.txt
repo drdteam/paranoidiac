@@ -62,6 +62,7 @@ accessdenied =			accessno
 accessgranted =			accesyes
 liquidfill =			liquid01
 chemical_detected =		"sounds/fvox/chemical_detected.ogg"
+welcomeblackmesa =		"sounds/Paranoid/bmwelcome.ogg"
 welcomesectorc =		"sounds/tride/c0a0_tr_arrive.ogg"
 
 $rolloff zap 1024 2048
