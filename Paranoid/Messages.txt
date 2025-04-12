@@ -105,13 +105,8 @@ class ParanoidHudMessageHandler : StaticEventHandler
 				if(!me)
 					continue;
 				let mytracker = ParanoidSoundTracker(me.FindInventory("ParanoidSoundTracker"));
-				if(mytracker)
-					console.printf("I have a tracker");
 				if(mytracker && mytracker.playing == true)
-				{
-					console.printf("Changing map, stopping message!");
 					MessageItem.StopMessage(me);
-				}
 			}
 		}
 	}
