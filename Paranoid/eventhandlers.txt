@@ -1,20 +1,18 @@
-class ParanoidStaticEventHandler : StaticEventHandler
+class ParanoidOtisHandler : StaticEventHandler
 {
 	override void PlayerEntered(PlayerEvent e)
 	{
-		players[e.PlayerNumber].mo.A_GiveInventory("ParanoidSoundTracker");
-		RolfBellmer me;
-		me=RolfBellmer(players[e.PlayerNumber].mo);
-		if(me==null)
+		RolfBellmer me = RolfBellmer(players[e.PlayerNumber].mo);
+		if(me == null)
 			return;
-		if(level.LevelName=='Otis Shift')
+		if(level.LevelName == 'Otis Shift')
 		{
 			me.A_GiveInventory("HLDesertEagle");
-			me.A_GiveInventory("HLDesertEagleMag",7);
-			me.A_GiveInventory("HLMagnumAmmo",14);
+			me.A_GiveInventory("HLDesertEagleMag", 7);
+			me.A_GiveInventory("HLMagnumAmmo", 14);
 			me.A_TakeInventory("HLCrowbar");
 			me.A_TakeInventory("BasicArmor");
-			me.otis=1;
+			me.otis = 1;
 		}
 	}
     override void WorldThingDied(WorldEvent e)
@@ -22,8 +20,7 @@ class ParanoidStaticEventHandler : StaticEventHandler
 		let mon=e.Thing;
 		if(!mon.bISMONSTER||mon.bFRIENDLY||!mon.target)
 			return;
-		RolfBellmer me;
-		me=RolfBellmer(mon.target);
+		RolfBellmer me = RolfBellmer(mon.target);
 		if(me==null||!me.otis)
 			return;
 		if(!random(0,3))
