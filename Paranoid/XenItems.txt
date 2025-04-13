@@ -37,6 +37,7 @@ class HLXenFungus : HLXenHair
 	{
 		Scale .5;
 		Radius 8;
+		Height 44;
 		+NOTAUTOAIMED
 		+SHOOTABLE
 		+NOBLOOD
@@ -58,6 +59,7 @@ class HLXenLight : HLXenFungus
 	Default
 	{
 		Scale 1;
+		Height 28;
 		PainChance 256;
 	}
 	States
@@ -163,7 +165,7 @@ class DissectedHeadCrab : ModelBase
 	Default
 	{
 		Radius 8;
-		Height 16;
+		Height 10;
 		Mass 100;
 		+NOTAUTOAIMED
 		+SHOOTABLE

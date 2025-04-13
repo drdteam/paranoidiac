@@ -384,7 +384,7 @@ class Loader : ModelBase
 	{
 		blockmax = 1;
 		blockpos[0] = (112, 0, 32);
-		blocksize[0] = (32, 64);
+		blocksize[0] = (32, 50);
 	}
 	override void HLModelSetup()
 	{
@@ -447,7 +447,7 @@ class Loader : ModelBase
 	Default
 	{
 		Radius 64;
-		Height 96;
+		Height 80;
 		+DONTTHRUST
 		Scale .6;
 		//+DECOUPLEDANIMATIONS

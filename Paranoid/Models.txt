@@ -4,8 +4,8 @@ class Monitor : ModelBase
 		{A_ChangeModel("ModelBase", 0, "Models", "monitor.md3", 0, "Models", "monitor.jpg");}
 	Default
 	{
-		Radius 15;
-		Height 20;
+		Radius 14;
+		Height 18;
 		Scale .25;
 		+PUSHABLE
 	}
@@ -54,7 +54,7 @@ class mouse3 : keyboard1
 	Default
 	{
 		Radius 3;
-		Height 4;
+		Height 2;
 	}
 }
 
@@ -74,7 +74,7 @@ class flatpanel1 : ModelBase
 	{
 		Scale .8;
 		Radius 12;
-		Height 20;
+		Height 26;
 	}
 }
 
@@ -104,7 +104,6 @@ class flatpanel3 : flatpanel1
 	{
 		Scale .5;
 		Radius 8;
-		Height 16;
 	}
 }
 
@@ -128,6 +127,20 @@ class flatpanel5 : ModelFloat
 		};
 		for(int i = 0; i <= 1; i++)
 			A_ChangeModel("ModelBase", 0, "Models", "br_monitor5.md3", i, "Models", modelskin[i], CMDL_USESURFACESKIN);
+	}
+	override void BlockingSetup()
+	{
+		blockmax = 8;
+		blockpos[0] = (0, 6, 0);
+		blockpos[1] = (0, 12, 0);
+		blockpos[2] = (0, 18, 0);
+		blockpos[3] = (0, 24, 0);
+		blockpos[4] = (0, -6, 0);
+		blockpos[5] = (0, -12, 0);
+		blockpos[6] = (0, -18, 0);
+		blockpos[7] = (0, -24, 0);
+		for(int i = 0; i < blockmax; i++)
+			blocksize[i] = (2, 32);
 	}
 	Default
 	{
@@ -190,7 +203,7 @@ class pc1 : ModelBase
 	{
 		Scale .5;
 		Radius 12;
-		Height 20;
+		Height 26;
 	}
 }
 
@@ -198,6 +211,8 @@ class pc3 : pc1
 {
 	override void HLModelSetup()
 		{A_ChangeModel("ModelBase", 0, "Models", "br_pc3.md3", 0, "Models", "br_pcs1.jpg");}
+	Default
+		{Height 22;}
 }
 
 class modem : ModelBase
@@ -207,8 +222,8 @@ class modem : ModelBase
 	Default
 	{
 		Scale .75;
-		Radius 4;
-		Height 6;
+		Radius 6;
+		Height 4;
 	}
 }
 
@@ -217,7 +232,10 @@ class server1 : ModelBase
 	override void HLModelSetup()
 		{A_ChangeModel("ModelBase", 0, "Models", "br_server1.md3", 0, "Models", "br_server1.jpg");}
 	Default
-		{Height 60;}
+	{
+		Radius 16;
+		Height 60;
+	}
 }
 
 class server2 : server1
@@ -245,14 +263,14 @@ class Transformer1 : ModelBase
 	override void BlockingSetup()
 	{
 		blockmax = 1;
-		blockpos[0] = (-8, 8, 88);
-		blocksize[0] = (4, 16);
+		blockpos[0] = (-7, 7, 84);
+		blocksize[0] = (7, 16);
 	}
 	Default
 	{
 		Scale 2;
 		Radius 24;
-		Height 88;
+		Height 84;
 	}
 }
 
@@ -262,8 +280,8 @@ class Meter1 : ModelFloat
 		{A_ChangeModel("ModelBase", 0, "Models", "meter1.md3", 0, "Models", "meters.jpg");}
 	Default
 	{
-		Radius 4;
-		Height 12;
+		Radius 6;
+		Height 16;
 	}
 }
 
@@ -274,7 +292,7 @@ class Meter2 : ModelFloat
 	Default
 	{
 		Radius 16;
-		Height 32;
+		Height 28;
 	}
 }
 
@@ -286,7 +304,7 @@ class Meter3 : ModelFloat
 	{
 		Scale 1.5;
 		Radius 24;
-		Height 48;
+		Height 42;
 	}
 }
 
@@ -327,7 +345,7 @@ class Tesla : ModelBase
 	Default
 	{
 		Radius 16;
-		Height 72;
+		Height 68;
 	}
 }
 
@@ -429,19 +447,21 @@ class Generator1 : ModelBase
 		{A_ChangeModel("ModelBase", 0, "Models", "generator.md3", 0, "Models", "generator.png");}
 	override void BlockingSetup()
 	{
-		blockmax = 3;
-		blockpos[0] = (48, 0, 0);
-		blockpos[1] = (80, 0, 0);
-		blockpos[2] = (-24, 0, 0);
-		blocksize[0] = (8, 24);
-		blocksize[1] = (4, 12);
-		blocksize[2] = (24, 48);
+		blockmax = 4;
+		blockpos[0] = (-20, 0, 0);
+		blockpos[1] = (20, 0, 0);
+		blockpos[2] = (56, 0, 0);
+		blockpos[3] = (80, 0, 0);
+		blocksize[0] = (24, 60);
+		blocksize[1] = (24, 60);
+		blocksize[2] = (8, 40);
+		blocksize[3] = (4, 24);
 	}
 	Default
 	{
 		Scale 3;
 		Radius 24;
-		Height 64;
+		Height 60;
 	}
 }
 
@@ -453,6 +473,7 @@ class Generator2 : ModelBase
 	{
 		Scale 1.75;
 		Height 48;
+		Radius 22;
 		+PUSHABLE
 	}
 }
@@ -563,7 +584,7 @@ class girder2 : girder1
 		blockpos[3] = (0, -64, 0);
 		blockpos[4] = (0, -128, 0);
 		blockpos[5] = (0, -192, 0);
-		for(int i = 0; i <= 5; i++)
+		for(int i = 0; i < blockmax; i++)
 			blocksize[i] = (32, 64);
 	}
 	Default
@@ -767,7 +788,7 @@ class Toilet1 : ModelBase
 	Default
 	{
 		Scale .83;
-		Radius 16;
+		Radius 14;
 		Height 28;
 	}
 }
@@ -793,6 +814,7 @@ class Urinal1 : Toilet1
 	Default
 	{
 		Scale .6;
+		Radius 12;
 		Height 40;
 	}
 }
@@ -802,7 +824,10 @@ class Armchair : ModelBase
 	override void HLModelSetup()
 		{A_ChangeModel("ModelBase", 0, "Models", "armchair.md2", 0, "Models", "armchair.png");}
 	Default
-		{Height 29;}
+	{
+		Radius 22;
+		Height 30;
+	}
 }
 
 class Sofa : Armchair
@@ -1396,7 +1421,8 @@ class Toolbox1 : ModelBase
 		{A_ChangeModel("ModelBase", 0, "Models", "toolbox1.md3", 0, "Models", "toolbox1.png");}
 	Default
 	{
-		Height 40;
+		Height 34;
+		Radius 16;
 		+PUSHABLE
 	}
 }
@@ -1407,7 +1433,8 @@ class Toolbox2 : Toolbox1
 		{A_ChangeModel("ModelBase", 0, "Models", "toolbox2.md3", 0, "Models", "toolbox2.png");}
 	Default
 	{
-		Height 48;
+		Height 44;
+		Radius 18;
 		Scale .8;
 	}
 }
@@ -1584,7 +1611,7 @@ class StreetLamp : ModelBase
 	Default
 	{
 		Radius 4;
-		Height 180;
+		Height 152;
 		YScale 1.5;
 		+SOLID
 	}
@@ -1620,6 +1647,7 @@ class RKive : ModelBase
 	{
 		Scale .8;
 		Radius 8;
+		Height 12;
 	}
 }
 
@@ -1630,13 +1658,13 @@ class BookShelf1a : RKive
 	override void BlockingSetup()
 	{
 		blockmax = 2;
-		blockpos[0] = (0, 24, 0);
-		blockpos[1] = (0, -24, 0);
-		blocksize[0] = (8, 64);
-		blocksize[1] = (8, 64);
+		blockpos[0] = (0, 26, 0);
+		blockpos[1] = (0, -26, 0);
+		blocksize[0] = (8, 63);
+		blocksize[1] = (8, 63);
 	}
 	Default
-		{Height 64;}
+		{Height 63;}
 }
 
 class BookShelf1b : BookShelf1a
@@ -1666,38 +1694,35 @@ class Credenza : ModelBase
 		blockmax = 2;
 		blockpos[0] = (0, 32, 0);
 		blockpos[1] = (0, -32, 0);
-		blocksize[0] = (12, 30);
-		blocksize[1] = (12, 30);
+		blocksize[0] = (12, 28);
+		blocksize[1] = (12, 28);
 	}
 	Default
 	{
 		Scale .68;
 		Radius 12;
-		Height 30;
+		Height 28;
 	}
 }
 
-class CredenzaShort : ModelBase
+class CredenzaShort : Credenza
 {
 	override void HLModelSetup()
 		{A_ChangeModel("ModelBase", 0, "Models", "credenzashort.md3", 0, "Models", "credenza.png");}
 	override void BlockingSetup()
 	{
-		blockmax = 2;
-		blockpos[0] = (0, 20, 0);
-		blockpos[1] = (0, -20, 0);
-		blocksize[0] = (12, 30);
-		blocksize[1] = (12, 30);
+		blockmax = 3;
+		blockpos[0] = (0, 0, 0);
+		blockpos[1] = (0, 20, 0);
+		blockpos[2] = (0, -20, 0);
+		for(int i = 0; i < blockmax; i++)
+			blocksize[i] = (12, 28);
 	}
 	Default
-	{
-		Scale .68;
-		Radius 12;
-		Height 30;
-	}
+		{+NOCLIP}
 }
 
-class Credenza2 : ModelBase
+class Credenza2 : Credenza
 {
 	override void HLModelSetup()
 		{A_ChangeModel("ModelBase", 0, "Models", "credenza2.md3", 0, "Models", "credenza2.png");}
@@ -1706,15 +1731,11 @@ class Credenza2 : ModelBase
 		blockmax = 2;
 		blockpos[0] = (0, 26, 0);
 		blockpos[1] = (0, -26, 0);
-		blocksize[0] = (12, 30);
-		blocksize[1] = (12, 30);
+		blocksize[0] = (12, 28);
+		blocksize[1] = (12, 28);
 	}
 	Default
-	{
-		Scale .57;
-		Radius 12;
-		Height 30;
-	}
+		{Scale .57;}
 }
 
 class ConfTable : ModelBase
@@ -1723,11 +1744,15 @@ class ConfTable : ModelBase
 		{A_ChangeModel("ModelBase", 0, "Models", "Conf_Table.md3", 0, "Models", "Conf_Table.jpg");}
 	override void BlockingSetup()
 	{
-		blockmax = 2;
-		blockpos[0] = (0, 52, 0);
-		blockpos[1] = (0, -52, 0);
-		blocksize[0] = (8, 28);
+		blockmax = 4;
+		blockpos[0] = (0, 26, 24);
+		blockpos[1] = (0, 52, 0);
+		blockpos[2] = (0, -26, 24);
+		blockpos[3] = (0, -52, 0);
+		blocksize[0] = (8, 4);
 		blocksize[1] = (8, 28);
+		blocksize[2] = (8, 4);
+		blocksize[3] = (8, 28);
 	}
 	Default
 	{
@@ -1843,13 +1868,13 @@ class Rock02a : Rock02
 		{A_ChangeModel("Rock02", 0, "Models", "rock_big_b.md3", 0, "Models", "rock_big2.jpg");}
 }
 
-class Rock02b : Rock01
+class Rock02b : Rock02
 {
 	override void HLModelSetup()
 		{A_ChangeModel("Rock02", 0, "Models", "rock_big_b.md3", 0, "Models", "rock_moss1.jpg");}
 }
 
-class Rock02c : Rock01
+class Rock02c : Rock02
 {
 	override void HLModelSetup()
 		{A_ChangeModel("Rock02", 0, "Models", "rock_big_b.md3", 0, "Models", "rock_moss2.jpg");}
@@ -2144,13 +2169,13 @@ class PConsole : ModelBase
 	override void BlockingSetup()
 	{
 		blockmax = 5;
-		blockpos[0] = (0, 32, 12);
-		blockpos[1] = (0, -32, 12);
+		blockpos[0] = (0, 32, 0);
+		blockpos[1] = (0, -32, 0);
 		blockpos[2] = (-24, 0, 0);
 		blockpos[3] = (-24, 32, 0);
 		blockpos[4] = (-24, -32, 0);
-		blocksize[0] = (12, 16);
-		blocksize[1] = (12, 16);
+		blocksize[0] = (12, 32);
+		blocksize[1] = (12, 32);
 		blocksize[2] = (4, 56);
 		blocksize[3] = (4, 56);
 		blocksize[4] = (4, 56);
@@ -2205,11 +2230,13 @@ class Barrier1 : ModelBase
 		{A_ChangeModel("ModelBase", 0, "Models", "br_barrier1.md3", 0, "Models", "br_concrete1.jpg");}
 	override void BlockingSetup()
 	{
-		blockmax = 2;
-		blockpos[0] = (20, 0, 0);
-		blockpos[1] = (-20, 0, 0);
-		blocksize[0] = (4, 36);
-		blocksize[1] = (4, 36);
+		blockmax = 4;
+		blockpos[0] = (10, 0, 0);
+		blockpos[1] = (20, 0, 0);
+		blockpos[2] = (-10, 0, 0);
+		blockpos[3] = (-20, 0, 0);
+		for(int i = 0; i < blockmax; i++)
+			blocksize[i] = (4, 36);
 	}
 	Default
 	{
@@ -2284,7 +2311,7 @@ class Xbarrel1 : ModelBase
 	{
 		Health 50;
 		Radius 12;
-		Height 32;
+		Height 30;
 		DeathSound "world/barrelx";
 		Obituary "%o stood too close to an exploding barrel.";
 		+PUSHABLE
@@ -2359,7 +2386,7 @@ class Trashcan1 : ModelBase
 	Default
 	{
 		Radius 10;
-		Height 29;
+		Height 26;
 		Mass 50;
 		+PUSHABLE
 		+SHOOTABLE
