@@ -324,8 +324,17 @@ class MessageItem : CustomInventory abstract
 		PrintPickupMessage(1,"$NEWMESSAGE");
 		return Super.TryPickup(toucher);
 	}
-	static void StopMessage(actor thisplayer)
+	static void StopMessage(actor thisplayer, bool bold = 0)
 	{
+		if(bold)
+		{
+			for (int i = 0; i < MAXPLAYERS; ++i)
+			{
+				if(playeringame[i])
+					StopMessage(players[i].mo);
+			}
+			return;
+		}
 		if(!thisplayer)
 			return;
 		let mytracker=ParanoidSoundTracker(thisplayer.FindInventory("ParanoidSoundTracker"));
