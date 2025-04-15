@@ -963,17 +963,6 @@ class HLAssaultRifle : ParanoidWeapon
 			break;
 		}
 	}
-	override bool TryPickup(in out Actor toucher)
-	{
-		//If this is the first time I'm pickup up this weapon,
-		//Give me some in-mag ammo with it instead
-		if(!toucher.CountInv(GetClass()))
-		{
-			AmmoGive1=0;
-			toucher.A_GiveInventory("HLAssaultRifleMag",50);
-		}
-		return weapon.TryPickup(toucher);
-	}
 	Default
 	{
 		Tag "Assault Rifle";
