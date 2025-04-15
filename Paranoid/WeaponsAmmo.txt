@@ -9,7 +9,7 @@ class ParanoidWeapon : Weapon
 	{
 		//If this is the first time I'm pickup up this weapon,
 		//Give me some in-mag ammo with it instead
-		if(!toucher.CountInv(GetClass()))
+		if(!toucher.CountInv(GetClass()) && ammotype2 && ammotype2 != ammotype1)
 		{
 			AmmoGive2=AmmoGive1;
 			AmmoGive1=0;
