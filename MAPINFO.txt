@@ -74,22 +74,26 @@ episode P3M4
 	name="Paranoiac: Obliteration"
 }
 
-defaultmap
+gamedefaults
 {
-	lightmode=0
-	fogdensity=1
+	enableskyboxao
+	lightmode = 0
+	fogdensity = 1
 	evenlighting
 	nolightfade
 	fallingdamage
-	cluster=1
-	sky1=HLSKY1
-	NoIntermission
 	SpawnWithWeaponRaised
 
-	PixelRatio=1.0
+	PixelRatio = 1.0
 	PauseMusicInMenus
 }
 
+defaultmap
+{
+	cluster = 1
+	sky1 = HLSKY1
+	NoIntermission
+}
 map TITLEMAP lookup "PARANOID_TITLEMAP"
 {
 	sky1=HLSKY5
