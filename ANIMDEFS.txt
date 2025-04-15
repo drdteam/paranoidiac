@@ -441,10 +441,5 @@ pic XMONI33G tics 105
 pic XMONI33H tics 105
 pic XMONI33I tics 140
 
-//HUD Icons
-cameratexture HINTMAN 256 256 fit 64 64
-cameratexture STINSON 256 256 fit 64 64
-cameratexture UNDERNET 256 256 fit 64 64
-
 switch SW1LION on pic SW2LION tics 0
 switch SW1MARB on pic SW2MARB tics 0
