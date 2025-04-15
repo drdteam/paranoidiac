@@ -44,13 +44,13 @@ class BustedGrate : Actor
 		{
 			A_StartSound("bustgrate");
 			actor debris;
-			for(int i=0;i<5;i++)
+			for(int i = 0; i < 5; i++)
 			{
-				for(int j=-22;j<=22;j+=22)
+				for(int j = -22; j <= 22; j += 22)
 				{
-					debris=A_SpawnProjectile("Debris01",0,j,frandom(-180,180),CMF_AIMDIRECTION);
-					debris.A_ScaleVelocity(frandom(2.5,10));
-					debris.vel.z=frandom(1.25,5);
+					debris = A_SpawnProjectile("Debris01", 0, j, frandom(-180, 180), CMF_AIMDIRECTION);
+					debris.A_ScaleVelocity(frandom(2.5, 10));
+					debris.vel.z = frandom(1.25, 5);
 				}
 			}
 		}
@@ -77,7 +77,7 @@ class Debris01 : Actor
 	States
 	{
 	Spawn:
-		DEBA A 2 NODELAY {self.frame=random(0,4);}
+		DEBA A 2 NODELAY {self.frame = random(0, 4);}
 		DEBA # 2 A_FadeOut;
 		Wait;
 	}
@@ -106,8 +106,8 @@ class HLBlood : Actor replaces Blood
 	Spawn:
 		TNT1 A 0 NODELAY
 		{
-			for(int i=0;i<3;i++)
-				A_SpawnItemEx("ExtraBlood",random(3,-3),random(3,-3),random(3,-3),1,0,frandom(1.25,3),random(1,359),SXF_TRANSFERTRANSLATION);
+			for(int i = 0; i < 3; i++)
+				A_SpawnItemEx("ExtraBlood", random(3, -3), random(3, -3), random(3, -3), 1, 0, frandom(1.25, 3), random(1, 359), SXF_TRANSFERTRANSLATION);
 		}
 		BLD1 ABCD 6;
 		Stop;
@@ -136,14 +136,14 @@ class HLGibs : Actor
 	}
 	virtual void HLModelSetup()
 	{
-		static const name models[]=
+		static const name models[] =
 		{
 			'hlgibs1.iqm',
 			'hlgibs2.iqm',
 			'hlgibs3.iqm',
 			'hlgibs4.iqm'
 		};
-		static const name modelskin[]=
+		static const name modelskin[] =
 		{
 			'hlgibs1.png',
 			'hlgibs2.png',
@@ -171,13 +171,13 @@ class HLGibs : Actor
 		{
 			bool num;
 			actor bld;
-			[num,bld]=A_SpawnItemEx("HLBlood",random(3,-3),random(3,-3),random(3,-3),flags:SXF_TRANSFERTRANSLATION);
-			if(scale.x==2)
-				bld.scale=(.5,.5);
-			else if(scale.x==.75)
-				bld.scale=(.06,.06);
+			[num, bld] = A_SpawnItemEx("HLBlood", random(3, -3), random(3, -3), random(3, -3), flags: SXF_TRANSFERTRANSLATION);
+			if(scale.x == 2)
+				bld.scale = (.5, .5);
+			else if(scale.x == .75)
+				bld.scale = (.06, .06);
 			else
-				A_SpawnItemEx("ExtraBlood",random(3,-3),random(3,-3),random(3,-3),1,0,0,random(1,359),SXF_TRANSFERTRANSLATION);
+				A_SpawnItemEx("ExtraBlood", random(3, -3), random(3, -3), random(3, -3), 1, 0, 0, random(1, 359), SXF_TRANSFERTRANSLATION);
 		}
 		Loop;
 	Crash:
@@ -191,7 +191,7 @@ class XenGibs : HLGibs
 {
 	override void HLModelSetup()
 	{
-		static const name models[]=
+		static const name models[] =
 		{
 			'agibs1.md3',
 			'agibs2.md3',
@@ -203,5 +203,5 @@ class XenGibs : HLGibs
 		A_ChangeModel("ModelBase", 0, "Models", models[random(0, 5)], 0, "Models", 'agibs.png');
 	}
 	Default
-		{Translation "176:191=[222,254,114]:[43,55,0]";}
+		{Translation "176:191 = [222, 254, 114]:[43, 55, 0]";}
 }

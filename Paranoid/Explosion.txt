@@ -2,24 +2,24 @@ class ParanoidExplosion : Actor
 {
 	void A_HLExplosionFX()
 	{
-		double factor=scale.x*1.5;
+		double factor = scale.x * 1.5;
 		int i;
 		bool num;
 		actor boom;
-		for(i=0;i<32;i++)
+		for(i = 0; i < 32; i++)
 		{
-			[num,boom]=A_SpawnItemEx("ExplosionMediumSprite",0,0,0,frandom(-factor,factor),frandom(-factor,factor),frandom(-factor,factor),random(0,359));
-			boom.A_SetScale(scale.x*0.5);
+			[num, boom] = A_SpawnItemEx("ExplosionMediumSprite", 0, 0, 0, frandom(-factor, factor), frandom(-factor, factor), frandom(-factor, factor), random(0, 359));
+			boom.A_SetScale(scale.x * 0.5);
 		}
-		for(i=0;i<16;i++)
+		for(i = 0; i < 16; i++)
 		{
-			[num,boom]=A_SpawnItemEx("NewExploMediumSmoke",0,0,0,frandom(-factor,factor),frandom(-factor,factor),frandom(-factor,factor),random(0,359));
-			boom.A_SetScale(scale.x*0.4);
+			[num, boom] = A_SpawnItemEx("NewExploMediumSmoke", 0, 0, 0, frandom(-factor, factor), frandom(-factor, factor), frandom(-factor, factor), random(0, 359));
+			boom.A_SetScale(scale.x * 0.4);
 		}
-		for(i=0;i<360;i+=20)
+		for(i = 0; i < 360; i += 20)
 		{
-			[num,boom]=A_SpawnItemEx("NewExploMediumSmoke",0,0,0,frandom(-factor,factor),0,frandom(-factor,factor),i);
-			boom.A_SetScale(scale.x*0.4);
+			[num, boom] = A_SpawnItemEx("NewExploMediumSmoke", 0, 0, 0, frandom(-factor, factor), 0, frandom(-factor, factor), i);
+			boom.A_SetScale(scale.x * 0.4);
 		}
 	}
 	override void tick()
@@ -38,16 +38,16 @@ class ParanoidExplosion : Actor
 		TNT1 A 0 NODELAY
 		{
 			A_StartSound("halflife/weapons/randomexplo");
-			A_SetScale(scale.x*.8);
+			A_SetScale(scale.x * .8);
 			A_HLExplosionFX();
-			if(scale.x==1.6)
+			if(scale.x == 1.6)
 				return ResolveState("SpawnB");
-			else if(scale.x==2.4)
+			else if(scale.x == 2.4)
 				return ResolveState("SpawnC");
 			return state(null);
 		}
 		TNT1 A 0 A_CheckFloor("FloorSpawn");
-		TNT1 A 0 A_Jump(256,"A1","A2","A3","A4");
+		TNT1 A 0 A_Jump(256, "A1", "A2", "A3", "A4");
 	A1:
 		X004 ABCDEFGHIJKLMNOPQ 2 Bright LIGHT("YellowSmallFlickerEx");
 		Stop;
@@ -58,11 +58,11 @@ class ParanoidExplosion : Actor
 		X006 ABCDEFGHIJKLMNOP 2 Bright LIGHT("YellowSmallFlickerEx");
 		Stop;
 	A4:
-		X015 A 0 A_SetScale(scale.x*2);
+		X015 A 0 A_SetScale(scale.x * 2);
 		X015 ABCDEFGHIJKLMNOPQRSTUVWX 2 Bright LIGHT("YellowSmallFlickerEx");
 		Stop;
 	FloorSpawn:
-		TNT1 A 0 A_Jump(256,"F1","F2","F3");
+		TNT1 A 0 A_Jump(256, "F1", "F2", "F3");
 	F1:
 		EXP3 ABCDEFGHIJKLMNOPQRSTUVWXYZ 2 Bright LIGHT("YellowSmallFlickerEx");
 		Stop;
@@ -74,7 +74,7 @@ class ParanoidExplosion : Actor
 		Stop;
 	SpawnB:
 		TNT1 A 0 A_CheckFloor("FloorSpawnB");
-		TNT1 A 0 A_Jump(256,"A1B","A2B","A3B","A4B");
+		TNT1 A 0 A_Jump(256, "A1B", "A2B", "A3B", "A4B");
 	A1B:
 		X004 ABCDEFGHIJKLMNOPQ 2 Bright LIGHT("YellowMediumFlickerEx");
 		Stop;
@@ -85,11 +85,11 @@ class ParanoidExplosion : Actor
 		X006 ABCDEFGHIJKLMNOP 2 Bright LIGHT("YellowMediumFlickerEx");
 		Stop;
 	A4B:
-		X015 A 0 A_SetScale(scale.x*2);
+		X015 A 0 A_SetScale(scale.x * 2);
 		X015 ABCDEFGHIJKLMNOPQRSTUVWX 2 Bright LIGHT("YellowMediumFlickerEx");
 		Stop;
 	FloorSpawnB:
-		TNT1 A 0 A_Jump(256,"F1B","F2B","F3B");
+		TNT1 A 0 A_Jump(256, "F1B", "F2B", "F3B");
 	F1B:
 		EXP3 ABCDEFGHIJKLMNOPQRSTUVWXYZ 2 Bright LIGHT("YellowMediumFlickerEx");
 		Stop;
@@ -101,7 +101,7 @@ class ParanoidExplosion : Actor
 		Stop;
 	SpawnC:
 		TNT1 A 0 A_CheckFloor("FloorSpawnC");
-		TNT1 A 0 A_Jump(256,"A1C","A2C","A3C","A4C");
+		TNT1 A 0 A_Jump(256, "A1C", "A2C", "A3C", "A4C");
 	A1C:
 		X004 ABCDEFGHIJKLMNOPQ 2 Bright LIGHT("YellowBigFlickerEx");
 		Stop;
@@ -112,11 +112,11 @@ class ParanoidExplosion : Actor
 		X006 ABCDEFGHIJKLMNOP 2 Bright LIGHT("YellowBigFlickerEx");
 		Stop;
 	A4C:
-		X015 A 0 A_SetScale(scale.x*2);
+		X015 A 0 A_SetScale(scale.x * 2);
 		X015 ABCDEFGHIJKLMNOPQRSTUVWX 2 Bright LIGHT("YellowBigFlickerEx");
 		Stop;
 	FloorSpawnC:
-		TNT1 A 0 A_Jump(256,"F1C","F2C","F3C");
+		TNT1 A 0 A_Jump(256, "F1C", "F2C", "F3C");
 	F1C:
 		EXP3 ABCDEFGHIJKLMNOPQRSTUVWXYZ 2 Bright LIGHT("YellowBigFlickerEx");
 		Stop;
@@ -145,7 +145,7 @@ class NewExploMediumSmoke : Actor
 	States
 	{
 	Spawn:
-		X037 A 0 NODELAY {frame=random(0,3);}
+		X037 A 0 NODELAY {frame = random(0, 3);}
 		X037 # 3
 		{
 			A_FadeOut(.02);
@@ -168,7 +168,7 @@ class ExplosionMediumSprite : NewExploMediumSmoke
 	States
 	{
 	Spawn:
-		TNT1 A 0 NODELAY A_Jump(256,1,2,3,4,5);
+		TNT1 A 0 NODELAY A_Jump(256, 1, 2, 3, 4, 5);
 		X003 ABCDE 2 Bright A_FadeOut(.03);
 		TNT1 A 0 A_ScaleVelocity(.9);
 		X003 FGHIJ 2 Bright A_FadeOut(.03);

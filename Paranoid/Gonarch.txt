@@ -2,7 +2,7 @@ class HLGonarch : HLMonster
 {
 	override void HLModelSetup()
 	{
-		static const name modelskin[]=
+		static const name modelskin[] =
 		{
 			'big_mom_000.png',
 			'big_mom_001.png',
@@ -25,7 +25,7 @@ class HLGonarch : HLMonster
 		MaxStepHeight 48;
 		MaxDropOffHeight 48;
 		PainChance 10;
-		PainChance "Crowbar",54;
+		PainChance "Crowbar", 54;
 		+BOSS
 		MissileChanceMult 0.125;
 		BloodColor "DE FE 72";
@@ -51,15 +51,15 @@ class HLGonarch : HLMonster
 		HLW2 T 0
 		{
 			A_StartSound("halflife/monsters/gonarch/step", CHAN_6);
-			if(random(0,255)<45)
+			if(random(0, 255) < 45)
 				A_StartSound("halflife/monsters/gonarch/sight", CHAN_5);
 		}
 		Loop;
 	Melee:
-		HLA1 A 0 A_Jump(100,"AcidSimple");
+		HLA1 A 0 A_Jump(100, "AcidSimple");
 		HLA1 A 0
 		{
-			if(random(0,255)<80)
+			if(random(0, 255) < 80)
 				A_StartSound("halflife/monsters/gonarch/sight");
 			else
 				A_StartSound("halflife/monsters/gonarch/attack", CHAN_5);
@@ -67,11 +67,11 @@ class HLGonarch : HLMonster
 		HLA1 ABCDE 1 A_FaceTarget();
 		HLA1 F 0 A_StartSound("halflife/monsters/zombie/attswing", CHAN_6);
 		HLA1 FGHIJ 1 A_FaceTarget();
-		HLA1 K 1 A_CustomMeleeAttack(random(1,8)*25,"zombie/hit");
+		HLA1 K 1 A_CustomMeleeAttack(random(1, 8) * 25, "zombie/hit");
 		HLA1 LMNOPQRSTUVW 1;
 		Goto See;
 	Missile:
-		HLA1 X 0 A_Jump(145,"AcidSimple");
+		HLA1 X 0 A_Jump(145, "AcidSimple");
 		HLA1 X 2 A_StartSound("halflife/monsters/gonarch/attack", CHAN_5);
 		HLA1 YZ[\] 2;
 		HLA2 ABC 2;
@@ -80,10 +80,10 @@ class HLGonarch : HLMonster
 		{
 			bool num;
 			actor baby;
-			[num,baby]=A_SpawnItemEx("HLBabyHeadCrab",random(10,-10),random(10,-10),flags:SXF_NOCHECKPOSITION);
-			let me=HLBabyHeadCrab(baby);
-			me.Speed=10.0/3.0;
-			me.gonarchbaby=1;
+			[num, baby] = A_SpawnItemEx("HLBabyHeadCrab", random(10, -10), random(10, -10), flags: SXF_NOCHECKPOSITION);
+			let me = HLBabyHeadCrab(baby);
+			me.Speed = 10.0 / 3.0;
+			me.gonarchbaby = 1;
 		}
 		HLA2 GHIJKLMNOPQRSTUVWXY 2;
 		Goto See;
@@ -93,17 +93,17 @@ class HLGonarch : HLMonster
 		HLA3 ABCDEFG 2 A_FaceTarget;
 		HLA3 H 2
 		{
-			class<actor> acid="GonarchAcid",acidextra="GonarchAcidExtra";
-			if(random(0,255)<80)
+			class<actor> acid = "GonarchAcid", acidextra = "GonarchAcidExtra";
+			if(random(0, 255) < 80)
 			{
-				acid="GonarchAcid2";
-				acidextra="GonarchAcid2Extra";
+				acid = "GonarchAcid2";
+				acidextra = "GonarchAcid2Extra";
 			}
-			let thisacid=A_SpawnProjectile(acid,80);
-			if(thisacid!=null)
-				thisacid.vel.z+=3;
-			for(int i=0;i<15;i++)
-				A_SpawnItemEx(acidextra,0,0,80,random(2,-2),random(2,-2),random(1,8));
+			let thisacid = A_SpawnProjectile(acid, 80);
+			if(thisacid != null)
+				thisacid.vel.z += 3;
+			for(int i = 0; i < 15; i++)
+				A_SpawnItemEx(acidextra, 0, 0, 80, random(2, -2), random(2, -2), random(1, 8));
 		}
 		HLA3 IJKLM 2;
 		Goto See;
@@ -152,16 +152,16 @@ class GonarchAcid : Actor
 		TNT1 A 0 AcidDeath;
 		Stop;
 	}
-	void AcidExtra(class<actor> acid="GonarchAcidExtra")
+	void AcidExtra(class<actor> acid = "GonarchAcidExtra")
 	{
-		for(int i=0;i<2;i++)
-			A_SpawnItemEx(acid,random(5,-5),random(5,-5),random(5,-5));
+		for(int i = 0; i < 2; i++)
+			A_SpawnItemEx(acid, random(5, -5), random(5, -5), random(5, -5));
 	}
-	void AcidDeath(int exp=128,class<actor> acid="GonarchAcidExtra",int cnt=10)
+	void AcidDeath(int exp = 128, class<actor> acid = "GonarchAcidExtra", int cnt = 10)
 	{
-		A_Explode(exp,exp,0);
-		for(int i=0;i<cnt;i++)
-			A_SpawnItemEx(acid,0,0,0,random(2,-2),random(2,-2),random(0,4));
+		A_Explode(exp, exp, 0);
+		for(int i = 0; i < cnt; i++)
+			A_SpawnItemEx(acid, 0, 0, 0, random(2, -2), random(2, -2), random(0, 4));
 	}
 }
 
@@ -174,7 +174,7 @@ class GonarchAcid2 : GonarchAcid
 		Damage 30;
 		RenderStyle "Translucent";
 		Alpha .8;
-		Translation "80:111=152:159";
+		Translation "80:111 = 152:159";
 	}
 	States
 	{
@@ -184,9 +184,9 @@ class GonarchAcid2 : GonarchAcid
 	Death:
 		TNT1 A 0
 		{
-			AcidDeath(256,"GonarchAcid2Extra",12);
-			for(int i=0;i<8;i++)
-				A_SpawnItemEx("GonarchAcid2MiniExplosive",0,0,5,random(-3,3),random(-3,3),random(2,7),random(0,359));
+			AcidDeath(256, "GonarchAcid2Extra", 12);
+			for(int i = 0; i < 8; i++)
+				A_SpawnItemEx("GonarchAcid2MiniExplosive", 0, 0, 5, random(-3, 3), random(-3, 3), random(2, 7), random(0, 359));
 		}
 		Stop;
 	}
@@ -208,7 +208,7 @@ class GonarchAcidExtra : Actor
 	{
 	Spawn:
 		X022 AC 3;
-		TNT1 A 0 A_Jump(100,"FadeOut");
+		TNT1 A 0 A_Jump(100, "FadeOut");
 		Loop;
 	FadeOut:
 		X022 AC 3 A_FadeOut;
@@ -222,7 +222,7 @@ class GonarchAcid2Extra : GonarchAcidExtra
 	{
 		RenderStyle "Translucent";
 		Alpha .8;
-		Translation "80:111=152:159";
+		Translation "80:111 = 152:159";
 	}
 }
 
@@ -248,8 +248,8 @@ class GonarchAcid2MiniExplosive : GonarchAcid2
 	Death:
 		TNT1 A 0
 		{
-			for(int i=0;i<8;i++)
-				A_SpawnItemEx("GonarchAcid2Mini",0,0,0,random(3,-3),random(3,-3),random(1,5),random(0,359));
+			for(int i = 0; i < 8; i++)
+				A_SpawnItemEx("GonarchAcid2Mini", 0, 0, 0, random(3, -3), random(3, -3), random(1, 5), random(0, 359));
 		}
 		Stop;
 	}

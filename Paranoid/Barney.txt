@@ -4,11 +4,11 @@
 
 class HLBarney : HLMonster
 {
-	bool follower,guard;
+	bool follower, guard;
 	actor bestfriend;
 	override void HLModelSetup()
 	{
-		static const name modelskin[]=
+		static const name modelskin[] =
 		{
 			'barney_000.png',
 			'barney_001.png',
@@ -33,7 +33,7 @@ class HLBarney : HLMonster
 		Speed 4;
 		Height 63;
 		PainChance 128;
-		PainChance "Crowbar",252;
+		PainChance "Crowbar", 252;
 		SeeSound "halflife/monsters/barney/idle";
 		PainSound "halflife/monsters/barney/pain";
 		DeathSound "halflife/monsters/barney/death";
@@ -70,12 +70,12 @@ class HLBarney : HLMonster
 		HLA1 Z[\] 1 Light("ImShootingAGun") A_FaceTarget;
 		HLA2 AB 1 A_FaceTarget;
 		HLA1 VVVV 1 A_FaceTarget;
-		TNT1 A 0 A_MonsterRefire(0,"See");
+		TNT1 A 0 A_MonsterRefire(0, "See");
 		Loop;
 	Pain:
 		HLP1 A 1 A_Pain;
 		HLP1 DGJMPSU 1;
-		HLP1 U 0 A_JumpIf(guard,"Guard");
+		HLP1 U 0 A_JumpIf(guard, "Guard");
 		Goto See;
 	Death:
 		HLD1 A 2
@@ -99,12 +99,12 @@ class HLBarney : HLMonster
 		A_FaceTarget();
 		A_BarneyGunsmoke();
 		A_StartSound("halflife/weapons/pistol", CHAN_WEAPON);
-		A_CustomBulletAttack(7,7,1,5,"NewPuff1");
+		A_CustomBulletAttack(7, 7, 1, 5, "NewPuff1");
 	}
 	void A_BarneyGunsmoke()
 	{
-		for(int i=0;i<2;i++)
-			A_SpawnItemEx("GunSmoke",28,2,47*ModelHeightMul);
+		for(int i = 0; i < 2; i++)
+			A_SpawnItemEx("GunSmoke", 28, 2, 47 * ModelHeightMul);
 	}
 	actor ChooseBestFriend()
 	{
@@ -113,13 +113,13 @@ class HLBarney : HLMonster
 		Actor mo;
 		PlayerInfo player;
 		double dist;
-		for(int i=0;i<MAXPLAYERS;i++)
+		for(int i = 0; i < MAXPLAYERS; i++)
 		{
 			if(!playeringame[i])
 				continue;
-			player=players[i];
-			mo=player.mo;
-			if(mo.health<=0||Distance3D(mo)>128.0+64.0)
+			player = players[i];
+			mo = player.mo;
+			if(mo.health <= 0 || Distance3D(mo) > 128.0 + 64.0)
 				continue;
 			return mo;
 		}
@@ -140,23 +140,23 @@ class HLBarney : HLMonster
 			return;
 		}
 		if(!goal)
-			goal=ChooseBestFriend();
-		if(!goal||Distance3D(goal)>256.0)
+			goal = ChooseBestFriend();
+		if(!goal || Distance3D(goal) > 256.0)
 		{
 			A_Look();
 			return;
 		}
-		if(Distance3D(goal)>128.0)
+		if(Distance3D(goal) > 128.0)
 		{
 			SetStateLabel("See");
 			return;
 		}
 		A_Face(goal);
-		A_LookEx(LOF_DONTCHASEGOAL|LOF_NOSEESOUND|LOF_NOJUMP,0,0,360);
+		A_LookEx(LOF_DONTCHASEGOAL|LOF_NOSEESOUND|LOF_NOJUMP, 0, 0, 360);
 	}
 	void A_Chatter()
 	{
-		if(!guard&&!random(0,32))
+		if(!guard && !random(0, 32))
 			A_StartSound(SeeSound);
 	}
 	virtual void A_HLBarneyChase()
@@ -169,12 +169,12 @@ class HLBarney : HLMonster
 			return;
 		}
 		//If Barney is a follower but doesn't have a player to follow yet...
-		if(follower&&!goal)
-			goal=ChooseBestFriend();
+		if(follower && !goal)
+			goal = ChooseBestFriend();
 		//If Barney is a follower, doesn't have a target, and the player is close enough...
-		if(follower&&!target&&goal&&Distance3D(goal)<96.0)
+		if(follower && !target && goal && Distance3D(goal) < 96.0)
 		{
-			if(random(0,1))
+			if(random(0, 1))
 				SetStateLabel("Spawn");
 			else
 				SetStateLabel("Spawn2");
@@ -188,7 +188,7 @@ class HLOtis : HLBarney
 {
 	override void HLModelSetup()
 	{
-		static const name modelskin[]=
+		static const name modelskin[] =
 		{
 			'otis_000.png',
 			'otis_001.png',
@@ -219,7 +219,7 @@ class HLOtis : HLBarney
 		A_FaceTarget();
 		A_BarneyGunsmoke();
 		A_StartSound("halflife/weapons/deagleshot", CHAN_WEAPON);
-		A_CustomBulletAttack(1,1,1,18,"NewPuff1");
+		A_CustomBulletAttack(1, 1, 1, 18, "NewPuff1");
 	}
 }
 
@@ -227,9 +227,9 @@ class HLBarneyGuard : HLBarney
 {
 	override void BeginPlay()
 	{
-		guard=1;
+		guard = 1;
 		SetStateLabel("guard");
-		bUSESPECIAL=1;
+		bUSESPECIAL = 1;
 		super.BeginPlay();
 	}
 }
@@ -238,9 +238,9 @@ class HLOtisGuard : HLOtis
 {
 	override void BeginPlay()
 	{
-		guard=1;
+		guard = 1;
 		SetStateLabel("guard");
-		bUSESPECIAL=1;
+		bUSESPECIAL = 1;
 		super.BeginPlay();
 	}
 }

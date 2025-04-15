@@ -20,7 +20,7 @@ class RolfBellmer : PlayerPawn
 		ViewHeight = 56 * ModelHeightMul;
 		AttackZOffset = 24 * ModelHeightMul;
 	}
-	bool scientist,otis;
+	bool scientist, otis;
 	Default
 	{
 		+NOSKIN
@@ -28,12 +28,12 @@ class RolfBellmer : PlayerPawn
 		Player.DisplayName "Rolf Bellmer";
 		Player.ViewHeight 56;
 		Player.AttackZOffset 24;
-		Player.WeaponSlot 1,"HLCrowbar";
-		Player.WeaponSlot 2,"HLPistol","HLDesertEagle","HLMagnum";
-		Player.WeaponSlot 3,"HLHornetGun","HLShotgun";
-		Player.WeaponSlot 4,"HLXBow","HLAssaultRifle";
-		Player.WeaponSlot 5,"HLRPG";
-		Player.WeaponSlot 6,"HLGluonGun";
+		Player.WeaponSlot 1, "HLCrowbar";
+		Player.WeaponSlot 2, "HLPistol", "HLDesertEagle", "HLMagnum";
+		Player.WeaponSlot 3, "HLHornetGun", "HLShotgun";
+		Player.WeaponSlot 4, "HLXBow", "HLAssaultRifle";
+		Player.WeaponSlot 5, "HLRPG";
+		Player.WeaponSlot 6, "HLGluonGun";
 		Player.StartItem "HLCrowbar";
 		Player.StartItem "HEVSuit";
 		Player.Face "HEV";
@@ -60,7 +60,7 @@ class RolfBellmer : PlayerPawn
 		{
 			if(otis)
 			{
-				if(random(0,3))
+				if(random(0, 3))
 					A_StartSound("halflife/monsters/otis/pain", CHAN_VOICE);
 			}
 			else
@@ -74,7 +74,7 @@ class RolfBellmer : PlayerPawn
 		{
 			if(otis)
 			{
-				if(random(0,3))
+				if(random(0, 3))
 					A_StartSound("halflife/monsters/otis/pain", CHAN_VOICE);
 			}
 			else
@@ -94,7 +94,7 @@ class RolfBellmer : PlayerPawn
 				A_StartSound("HLPlayerHEVFailBeep", CHAN_6);
 			}
 			A_NoBlocking();
-			A_ChangeModel("", 2, flags:CMDL_HIDEMODEL);
+			A_ChangeModel("", 2, flags: CMDL_HIDEMODEL);
 		}
 		HLD1 BCDEFG 2;
 		HLD1 H 2 A_StartSound("halflife/weapons/bodydrop");
@@ -144,7 +144,7 @@ class RolfBellmer : PlayerPawn
 		OFD1 A 1
 		{
 			A_NoBlocking();
-			A_ChangeModel("", 2, flags:CMDL_HIDEMODEL);
+			A_ChangeModel("", 2, flags: CMDL_HIDEMODEL);
 		}
 		OFD1 BCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1;
 		OFD2 A 1 A_StartSound("halflife/weapons/bodydrop");
@@ -190,7 +190,7 @@ class RolfBellmer : PlayerPawn
 			HLSetState("See");
 	}
 	override void PlayAttacking()
-		{HLSetState("Missile",1);}
+		{HLSetState("Missile", 1);}
 	void A_HLPainSelect()
 		{HLSetState("Pain");}
 	void A_HLDrownPainSelect()
@@ -200,23 +200,23 @@ class RolfBellmer : PlayerPawn
 	void A_HLHEVPain()
 	{
 		A_Pain();
-		if(!random(0,3))
+		if(!random(0, 3))
 		{
-			if(health<25)
+			if(health < 25)
 				A_StartSound("HLPlayerPain25", CHAN_7);
-			else if(health<50)
+			else if(health < 50)
 				A_StartSound("HLPlayerPain50", CHAN_7);
-			else if(health<75)
+			else if(health < 75)
 				A_StartSound("HLPlayerPain75", CHAN_7);
 		}
 	}
-	static const name HLskin[]={'Helmet','Freeman','Shephard','BlackOps','Robo','Ivan'};
-	static const statelabel BaseStates[]={"Spawn","See","Missile","Pain","Pain.Drowning","Death"};
-	static const statelabel ScientistStates[]={"ScientistSpawn","ScientistSee","ScientistMissile","ScientistPain","ScientistPain.Drowning","ScientistDeath"};
-	static const statelabel ShephardStates[]={"ShephardSpawn","ShephardSee","ShephardMissile","ShephardPain","ShephardPain.Drowning","ShephardDeath"};
-	static const statelabel IvanStates[]={"IvanSpawn","IvanSee","IvanMissile","IvanPain","IvanPain.Drowning","IvanDeath"};
+	static const name HLskin[] = {'Helmet', 'Freeman', 'Shephard', 'BlackOps', 'Robo', 'Ivan'};
+	static const statelabel BaseStates[] = {"Spawn", "See", "Missile", "Pain", "Pain.Drowning", "Death"};
+	static const statelabel ScientistStates[] = {"ScientistSpawn", "ScientistSee", "ScientistMissile", "ScientistPain", "ScientistPain.Drowning", "ScientistDeath"};
+	static const statelabel ShephardStates[] = {"ShephardSpawn", "ShephardSee", "ShephardMissile", "ShephardPain", "ShephardPain.Drowning", "ShephardDeath"};
+	static const statelabel IvanStates[] = {"IvanSpawn", "IvanSee", "IvanMissile", "IvanPain", "IvanPain.Drowning", "IvanDeath"};
 
-	static const name modelskinBase1[]=
+	static const name modelskinBase1[] =
 	{
 		'w_suit_002.png',
 		'w_suit_000.png',
@@ -230,19 +230,19 @@ class RolfBellmer : PlayerPawn
 		'w_suit_002.png',
 		'w_suit_002.png'
 	};
-	static const name modelskinBase2[]=
+	static const name modelskinBase2[] =
 	{
 		'w_suit_003.png',
 		'hev_scientist_head_001.png',
 		'hev_scientist_head_002.png',
 		'hev_scientist_head_003.png'
 	};
-	static const name modelskinBase3[]=
+	static const name modelskinBase3[] =
 	{
 		'barney_008.png',
 		'v_9mmhandgun_main_002.png'
 	};
-	static const name modelskinScientist1[]=
+	static const name modelskinScientist1[] =
 	{
 		'scientist_body_000.png',
 		'scientist_body_001.png',
@@ -250,20 +250,20 @@ class RolfBellmer : PlayerPawn
 		'scientist_body_003.png',
 		'scientist_body_004.png'
 	};
-	static const name modelskinScientist2[]=
+	static const name modelskinScientist2[] =
 	{
 		'scientist_head3_000.png',
 		'scientist_head1_001.png',
 		'scientist_head3_002.png'
 	};
-	static const name modelskinFreeman2[]=
+	static const name modelskinFreeman2[] =
 	{
 		'w_suit_002.png',
 		'freeman_head_001.png',
 		'nochrome.png',
 		'nochrome.png'
 	};
-	static const name modelskinOtis[]=
+	static const name modelskinOtis[] =
 	{
 		'otis_000.png',
 		'otis_001.png',
@@ -276,7 +276,7 @@ class RolfBellmer : PlayerPawn
 		'otis_006.png',
 		'otis_000.png'
 	};
-	static const name modelskinShepard1[]=
+	static const name modelskinShepard1[] =
 	{
 		'hgrunt_body_000.png',
 		'hgrunt_body_001.png',
@@ -284,14 +284,14 @@ class RolfBellmer : PlayerPawn
 		'hgrunt_body_003.png',
 		'hgrunt_body_004.png'
 	};
-	static const name modelskinShepard2[]=
+	static const name modelskinShepard2[] =
 	{
 		'hgrunt_head1_000.png',
 		'hgrunt_head1_001.png',
 		'hgrunt_head1_002.png',
 		'hgrunt_head1_003.png'
 	};
-	static const name modelskinBlackOps[]=
+	static const name modelskinBlackOps[] =
 	{
 		'massn_000.png',
 		'massn_001.png',
@@ -300,7 +300,7 @@ class RolfBellmer : PlayerPawn
 		'massn_004.png',
 		'massn_005.png'
 	};
-	static const name modelskinRobo[]=
+	static const name modelskinRobo[] =
 	{
 		'rgrunt_000.png',
 		'rgrunt_001.png',
@@ -310,7 +310,7 @@ class RolfBellmer : PlayerPawn
 		'rgrunt_001.png',
 		'rgrunt_005.png'
 	};
-	static const name modelskinIvan[]=
+	static const name modelskinIvan[] =
 	{
 		'doctor_000.png',
 		'doctor_001.png',
@@ -342,7 +342,7 @@ class RolfBellmer : PlayerPawn
 				A_ChangeModel("", 0, "Models", "scientist_body.iqm", i, "Models", modelskinScientist1[i], CMDL_USESURFACESKIN);
 			for(int i = 0; i <= 2; i++)
 				A_ChangeModel("", 1, "Models", "scientist_head3.iqm", i, "Models", modelskinScientist2[i], CMDL_USESURFACESKIN, 0);
-			A_ChangeModel("", 2, flags:CMDL_HIDEMODEL);
+			A_ChangeModel("", 2, flags: CMDL_HIDEMODEL);
 			break;
 		case 'Freeman':
 			for(int i = 0; i <= 10; i++)
@@ -355,8 +355,8 @@ class RolfBellmer : PlayerPawn
 		case 'Otis':
 			for(int i = 0; i <= 9; i++)
 				A_ChangeModel("", 0, "Models", 'otis.iqm', i, "Models", modelskinOtis[i], CMDL_USESURFACESKIN);
-			A_ChangeModel("", 1, flags:CMDL_HIDEMODEL);
-			A_ChangeModel("", 2, flags:CMDL_HIDEMODEL);
+			A_ChangeModel("", 1, flags: CMDL_HIDEMODEL);
+			A_ChangeModel("", 2, flags: CMDL_HIDEMODEL);
 			break;
 		case 'Shepard':
 			for(int i = 0; i <= 4; i++)
@@ -368,41 +368,41 @@ class RolfBellmer : PlayerPawn
 		case 'BlackOps':
 			for(int i = 0; i <= 5; i++)
 				A_ChangeModel("", 0, "Models", "massn.iqm", i, "Models", modelskinBlackOps[i], CMDL_USESURFACESKIN);
-			A_ChangeModel("", 1, flags:CMDL_HIDEMODEL);
-			A_ChangeModel("", 2, flags:CMDL_HIDEMODEL);
+			A_ChangeModel("", 1, flags: CMDL_HIDEMODEL);
+			A_ChangeModel("", 2, flags: CMDL_HIDEMODEL);
 			break;
 		case 'Robo':
 			for(int i = 0; i <= 6; i++)
 				A_ChangeModel("", 0, "Models", "rgrunt.iqm", i, "Models", modelskinRobo[i], CMDL_USESURFACESKIN);
-			A_ChangeModel("", 1, flags:CMDL_HIDEMODEL);
-			A_ChangeModel("", 2, flags:CMDL_HIDEMODEL);
+			A_ChangeModel("", 1, flags: CMDL_HIDEMODEL);
+			A_ChangeModel("", 2, flags: CMDL_HIDEMODEL);
 			break;
 		case 'Ivan':
 			for(int i = 0; i <= 11; i++)
 				A_ChangeModel("", 0, "Models", "doctor.iqm", i, "Models", modelskinIvan[i], CMDL_USESURFACESKIN);
-			A_ChangeModel("", 1, flags:CMDL_HIDEMODEL);
-			A_ChangeModel("", 2, flags:CMDL_HIDEMODEL);
+			A_ChangeModel("", 1, flags: CMDL_HIDEMODEL);
+			A_ChangeModel("", 2, flags: CMDL_HIDEMODEL);
 			break;
 		}
 	}
 
-	private void HLSetState(name statetype,bool forced=0)
+	private void HLSetState(name statetype, bool forced=0)
 	{
-		int mode,skinnum=CVar.GetCVar("v_multiskin",player).GetInt();
+		int mode, skinnum = CVar.GetCVar("v_multiskin", player).GetInt();
 		statelabel stlabel;
 		switch(statetype)
 		{
-		case 'Spawn':			mode=0;break;
-		case 'See':				mode=1;break;
-		case 'Missile':			mode=2;break;
-		case 'Pain':			mode=3;break;
-		case 'Pain.Drowning':	mode=4;break;
-		case 'Death':			mode=5;break;
+		case 'Spawn':			mode = 0;	break;
+		case 'See':				mode = 1;	break;
+		case 'Missile':			mode = 2;	break;
+		case 'Pain':			mode = 3;	break;
+		case 'Pain.Drowning':	mode = 4;	break;
+		case 'Death':			mode = 5;	break;
 		}
 		if(otis)
 		{
 			HLPlayerModelSetup('Otis');
-			stlabel=BaseStates[mode];
+			stlabel = BaseStates[mode];
 		}
 		else if(skinnum)//&&multiplayer)
 		{
@@ -410,54 +410,54 @@ class RolfBellmer : PlayerPawn
 			{
 			case 1:
 				HLPlayerModelSetup('Freeman');
-				stlabel=BaseStates[mode];
+				stlabel = BaseStates[mode];
 				break;
 			case 2:
 				HLPlayerModelSetup('Shepard');
-				stlabel=ShephardStates[mode];
+				stlabel = ShephardStates[mode];
 				break;
 			case 3:
 				HLPlayerModelSetup('BlackOps');
-				stlabel=ShephardStates[mode];
+				stlabel = ShephardStates[mode];
 				break;
 			case 4:
 				HLPlayerModelSetup('Robo');
-				stlabel=ShephardStates[mode];
+				stlabel = ShephardStates[mode];
 				break;
 			case 5:
 				HLPlayerModelSetup('Ivan');
-				stlabel=IvanStates[mode];
+				stlabel = IvanStates[mode];
 				break;
 			}
 		}
 		else if(scientist)
 		{
 			HLPlayerModelSetup('Scientist');
-			stlabel=ScientistStates[mode];
+			stlabel = ScientistStates[mode];
 		}
 		else
 		{
 			HLPlayerModelSetup('Base');
-			stlabel=BaseStates[mode];
+			stlabel = BaseStates[mode];
 		}
-		if(forced||!InStateSequence(CurState,FindState(stlabel)))
+		if(forced || !InStateSequence(CurState, FindState(stlabel)))
 			SetStateLabel(stlabel);
 	}
 	bool InSpawnState()
 	{
-		if(InStateSequence(CurState,FindState("Spawn"))||
-		InStateSequence(CurState,FindState("ScientistSpawn"))||
-		InStateSequence(CurState,FindState("ShephardSpawn"))||
-		InStateSequence(CurState,FindState("IvanSpawn")))
+		if(InStateSequence(CurState, FindState("Spawn")) ||
+		InStateSequence(CurState, FindState("ScientistSpawn")) ||
+		InStateSequence(CurState, FindState("ShephardSpawn")) ||
+		InStateSequence(CurState, FindState("IvanSpawn")))
 			return 1;
 		return 0;
 	}
 	bool InSeeState()
 	{
-		if(InStateSequence(CurState,FindState("See"))||
-		InStateSequence(CurState,FindState("ScientistSee"))||
-		InStateSequence(CurState,FindState("ShephardSee"))||
-		InStateSequence(CurState,FindState("IvanSee")))
+		if(InStateSequence(CurState, FindState("See")) ||
+		InStateSequence(CurState, FindState("ScientistSee")) ||
+		InStateSequence(CurState, FindState("ShephardSee")) ||
+		InStateSequence(CurState, FindState("IvanSee")))
 			return 1;
 		return 0;
 	}

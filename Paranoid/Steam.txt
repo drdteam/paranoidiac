@@ -24,36 +24,36 @@ class OMGSteam : SwitchableDecoration
 			}
 			bool num;
 			actor me;
-			[num,me]=A_SpawnItemEx("Steam1",0,0,0,
-			(0.1)*steamscript(args[0],args[1],0),
-			(0.1)*steamscript(args[0],args[1],1),
-			(0.1)*steamscript(args[0],args[1],2));
-			me.scale.x=(args[0]+1)/10.0;
-			me.scale.y=me.scale.x;
+			[num, me] = A_SpawnItemEx("Steam1", 0, 0, 0,
+			(0.1) * steamscript(args[0], args[1], 0),
+			(0.1) * steamscript(args[0], args[1], 1),
+			(0.1) * steamscript(args[0], args[1], 2));
+			me.scale.x = (args[0] + 1) / 10.0;
+			me.scale.y = me.scale.x;
 		}
 		Loop;
 	Inactive:
 		TNT1 A -1 A_StopSound(7);
 		Stop;
 	}
-	float steamscript(int size,int thispitch,int plane)
+	float steamscript(int size, int thispitch, int plane)
 	{
 		float momentum;
-		thispitch+=random(-4,4);
-		float r=frandom(30.0,35.0);
+		thispitch += random(-4, 4);
+		float r = frandom(30.0, 35.0);
 		switch(plane)
 		{
 		case 0:
-			momentum=cos(angle)*(cos(thispitch)*r);
+			momentum = cos(angle) * (cos(thispitch) * r);
 			break;
 		case 1:
-			momentum=sin(angle)*(cos(thispitch)*r);
+			momentum = sin(angle) * (cos(thispitch) * r);
 			break;
 		case 2:
-			momentum=-sin(thispitch)*r;
+			momentum = -sin(thispitch) * r;
 			break;
 		}
-		return momentum*(size+1)/5.0;
+		return momentum * (size + 1) / 5.0;
 	}
 }
 

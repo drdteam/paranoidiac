@@ -96,7 +96,7 @@ class HLXenTree : HLXenFungus
 		Height 144;
 		MeleeRange 128;
 		PainChance 128;
-		PainChance "Crowbar",252;
+		PainChance "Crowbar", 252;
 		PainSound "tree/pain";
 	}
 	States
@@ -121,23 +121,23 @@ class HLXenTree : HLXenFungus
 		Goto Spawn;
 	}
 	void A_HLXenTreeLook()
-		{A_LookEx(LOF_NOSOUNDCHECK,0,112,112,60,"Melee");}
+		{A_LookEx(LOF_NOSOUNDCHECK, 0, 112, 112, 60, "Melee");}
 	void A_HLXenTreeAttack()
 	{
-		for(int i=0;i<12;i++)
+		for(int i = 0; i < 12; i++)
 		{
-			if(TryPunch(angle+i*(45./12))||TryPunch(angle-i*(45./12)))
+			if(TryPunch(angle + i * (45. / 12)) || TryPunch(angle - i * (45. / 12)))
 				return;
 		}
 	}
 	private action bool TryPunch(double angle)
 	{
 		FTranslatedLineTarget t;
-		double slope=AimLineAttack(angle,112,t);
-		if(t.linetarget!=null)
+		double slope=AimLineAttack(angle, 112, t);
+		if(t.linetarget != null)
 		{
-			LineAttack(angle,112,slope,10,'Melee',"BulletPuff",true,t);
-			if(t.linetarget!=null)
+			LineAttack(angle, 112, slope, 10, 'Melee', "BulletPuff", true, t);
+			if(t.linetarget != null)
 			{
 				A_StartSound("tree/attack");
 				return true;

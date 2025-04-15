@@ -17,40 +17,40 @@ class OMGBubbles : SwitchableDecoration
 				A_SetTics(10);
 				return;
 			}
-			float area=args[0]+random(0,8);
-			int intensity=args[1]+1;
-			int shape=args[2];
-			if(shape!=2)
-				area/=2;
+			float area = args[0]+random(0, 8);
+			int intensity = args[1] + 1;
+			int shape = args[2];
+			if(shape != 2)
+				area /= 2;
 			actor bub;
 			switch(shape)
 			{
 			case 0:	//square
-				for(int i=0;i<intensity;i++)
-					bub=Spawn("Bubble1",(pos.x+frandom(-area,area),pos.y+frandom(-area,area),pos.z));
+				for(int i = 0; i < intensity; i++)
+					bub = Spawn("Bubble1", (pos.x + frandom(-area, area), pos.y + frandom(-area, area), pos.z));
 				break;
 			case 1:	//circle
-				float a=frandom(0.0,1.0);
-				for(int i=0;i<intensity;i++)
+				float a = frandom(0.0, 1.0);
+				for(int i = 0; i < intensity; i++)
 				{
-					float r=frandom(0,area);
-					bub=Spawn("Bubble1",(pos.x+(cos(a)*r),pos.y+(sin(a)*r),pos.z));
+					float r = frandom(0, area);
+					bub = Spawn("Bubble1", (pos.x + (cos(a) * r), pos.y + (sin(a) * r), pos.z));
 				}
 				break;
 			case 2:	//line
-				for(int i=0;i<intensity;i++)
+				for(int i = 0; i < intensity; i++)
 				{
-					float r=frandom(0,area);
-					bub=Spawn("Bubble1",(pos.x+(cos(angle)*r),pos.y+(sin(angle)*r),pos.z));
+					float r = frandom(0, area);
+					bub = Spawn("Bubble1", (pos.x + (cos(angle) * r), pos.y + (sin(angle) * r), pos.z));
 				}
 				break;
 			}
-			bub.vel.z=random(2,3);
-			bub.angle=random(0,359);
-			bub.scale.x=.0125*random(2,6);
-			bub.scale.y=bub.scale.x;
-			if(bub.scale.y>.05625)
-				bub.scale.y=.05625;
+			bub.vel.z = random(2, 3);
+			bub.angle = random(0, 359);
+			bub.scale.x = .0125 * random(2, 6);
+			bub.scale.y = bub.scale.x;
+			if(bub.scale.y > .05625)
+				bub.scale.y = .05625;
 		}
 		Loop;
 	Inactive:
@@ -77,11 +77,11 @@ class Bubble1 : Actor
 	Spawn:
 		BUBL A 1 NODELAY
 		{
-			if(waterlevel==0)
+			if(waterlevel == 0)
 				return resolvestate("Death");
-			angle+=45;
-			float r=frandom(0.0,1.0);
-			SetOrigin((pos.x+(cos(angle)*r),pos.y+(sin(angle)*r),pos.z),1);
+			angle += 45;
+			float r = frandom(0.0, 1.0);
+			SetOrigin((pos.x + (cos(angle) * r), pos.y + (sin(angle) * r), pos.z), 1);
 			return state(null);
 		}
 		Loop;

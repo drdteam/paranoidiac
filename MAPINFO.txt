@@ -1,13 +1,13 @@
 gameinfo
 {
 	AddEventHandlers = "ParanoidOtisHandler", "ParanoidHudMessageHandler"
-	playerclasses="RolfBellmer"
-	borderflat="XMETAL25"
-	infopage="HELP"
-	menubackbutton="M_BACK"
-	statusbarclass="ParanoidStatusBar"
-	cursorpic="cursor"
-	NoRandomPlayerClass=true
+	playerclasses = "RolfBellmer"
+	borderflat = "XMETAL25"
+	infopage = "HELP"
+	menubackbutton = "M_BACK"
+	statusbarclass = "ParanoidStatusBar"
+	cursorpic = "cursor"
+	NoRandomPlayerClass = true
 	quitmessages = "$PARANOID_QUITMSG"
 	quitsound = ""
 }
@@ -16,62 +16,66 @@ clearskills
 skill VeryEasy
 {
 	AutoUseHealth
-	AmmoFactor=2
-	DamageFactor=.5
-	SpawnFilter="Easy"
-	Name="Very Easy"
-	ACSreturn=0
-	Key=v
+	AmmoFactor = 2
+	DamageFactor = .5
+	SpawnFilter = "Easy"
+	Name = "Very Easy"
+	ACSreturn = 0
+	Key = v
 }
 
 skill Easy
 {
-	SpawnFilter="Easy"
-	Name="Easy"
-	//PicName="M_EASY"
-	ACSreturn=1
-	Key=e
+	SpawnFilter = "Easy"
+	Name = "Easy"
+	//PicName = "M_EASY"
+	ACSreturn = 1
+	Key = e
 }
 
 skill Medium
 {
 	DefaultSkill
-	SpawnFilter="Normal"
-	Name="Medium"
-	//PicName="M_MED"
-	ACSreturn=2
-	Key=m
+	SpawnFilter = "Normal"
+	Name = "Medium"
+	//PicName = "M_MED"
+	ACSreturn = 2
+	Key = m
 }
 
 skill Difficult
 {
-	SpawnFilter="Hard"
-	Name="Difficult"
-	//PicName="M_DIFF"
-	ACSreturn=3
-	Key=d
+	SpawnFilter = "Hard"
+	Name = "Difficult"
+	//PicName = "M_DIFF"
+	ACSreturn = 3
+	Key = d
 }
 
 clearepisodes
 episode P1M1
 {
-	name="Paranoid: Infiltration"
+	name = "Paranoid: Infiltration"
 }
+
 episode P1M2
 {
-	name="Paranoid: Resonance"
+	name = "Paranoid: Resonance"
 }
+
 episode P2M0
 {
-	name="Paranoiac: Extraction"
+	name = "Paranoiac: Extraction"
 }
+
 episode P3M1
 {
-	name="Paranoiac: Dissolution"
+	name = "Paranoiac: Dissolution"
 }
+
 episode P3M4
 {
-	name="Paranoiac: Obliteration"
+	name = "Paranoiac: Obliteration"
 }
 
 gamedefaults
@@ -96,74 +100,81 @@ defaultmap
 }
 map TITLEMAP lookup "PARANOID_TITLEMAP"
 {
-	sky1=HLSKY5
+	sky1 = HLSKY5
 }
+
 map P1M1 lookup "PARANOID_P1M1"
 {
-	LevelNum=1
-	Next=P1M2
+	LevelNum = 1
+	Next = P1M2
 }
+
 map P1M2 lookup "PARANOID_P1M2"
 {
-	LevelNum=2
-	Next=P1M3
+	LevelNum = 2
+	Next = P1M3
 }
+
 map P1M3 lookup "PARANOID_P1M3"
 {
-	LevelNum=3
-	Next=P1M4
+	LevelNum = 3
+	Next = P1M4
 }
+
 map P1M4 lookup "PARANOID_P1M4"
 {
-	LevelNum=4
-	Next=P1M5
+	LevelNum = 4
+	Next = P1M5
 }
+
 map P1M5 lookup "PARANOID_P1M5"
 {
-	LevelNum=5
-	Next=P1M6
+	LevelNum = 5
+	Next = P1M6
 }
 
 adddefaultmap
 {
-	sky1=HLSKY2
+	sky1 = HLSKY2
 }
 map P1M6 lookup "PARANOID_P1M6"
 {
-	LevelNum=6
-	Next=P1M7
+	LevelNum = 6
+	Next = P1M7
 }
+
 map P1M7 lookup "PARANOID_P1M7"
 {
-	LevelNum=7
-	Next=P1M8
+	LevelNum = 7
+	Next = P1M8
 }
+
 map P1M8 lookup "PARANOID_P1M8"
 {
-	LevelNum=8
-	Next=P2M0
+	LevelNum = 8
+	Next = P2M0
 }
 
 adddefaultmap
 {
-	sky1=HLSKY3
+	sky1 = HLSKY3
 }
 map P2M0 lookup "PARANOID_P2M0"
 {
-	LevelNum=9
-	Next=P2M1
+	LevelNum = 9
+	Next = P2M1
 }
 
 adddefaultmap
 {
-	cluster=2
+	cluster = 2
 }
 map P2M1 lookup "PARANOID_P2M1"
 {
 	ResetHealth
 	ResetInventory
-	LevelNum=10
-	Next=P2M2
+	LevelNum = 10
+	Next = P2M2
 }
 
 adddefaultmap
@@ -172,110 +183,113 @@ adddefaultmap
 }
 map P2M2 lookup "PARANOID_P2M2"
 {
-	PrecacheSounds="P2M2VOX2"
-	LevelNum=11
-	Next=P2M3
+	PrecacheSounds = "P2M2VOX2"
+	LevelNum = 11
+	Next = P2M3
 }
+
 map P2M3 lookup "PARANOID_P2M3"
 {
-	LevelNum=12
-	Next=P2M4
+	LevelNum = 12
+	Next = P2M4
 }
 
 adddefaultmap
 {
-	sky1=HLSKY4
+	sky1 = HLSKY4
 }
 map P2M4 lookup "PARANOID_P2M4"
 {
-	LevelNum=13
-	Next=P2M5
+	LevelNum = 13
+	Next = P2M5
 }
 map P2M5 lookup "PARANOID_P2M5"
 {
-	LevelNum=14
-	Next=P2M6
+	LevelNum = 14
+	Next = P2M6
 }
 map P2M6 lookup "PARANOID_P2M6"
 {
-	hazardcolor="80 a0 ff"
-	hazardflash="40 80 ff"
-	LevelNum=15
-	Next=P2M7
+	hazardcolor = "80 a0 ff"
+	hazardflash = "40 80 ff"
+	LevelNum = 15
+	Next = P2M7
 }
 
 adddefaultmap
 {
-	sky1=HLSKY5
+	sky1 = HLSKY5
 }
 map P2M7 lookup "PARANOID_P2M7"
 {
-	LevelNum=16
-	Next=P2M8
+	LevelNum = 16
+	Next = P2M8
 }
 map P2M8 lookup "PARANOID_P2M8"
 {
-	LevelNum=17
-	Next=P2M9
+	LevelNum = 17
+	Next = P2M9
 }
 map P2M9 lookup "PARANOID_P2M9"
 {
-	LevelNum=18
-	Next=P3M1
+	LevelNum = 18
+	Next = P3M1
 }
 
 adddefaultmap
 {
-	sky1=HLSKY6
-	AirControl=.25
+	sky1 = HLSKY6
+	AirControl = .25
 }
 map P3M1 lookup "PARANOID_P3M1"
 {
-	LevelNum=19
-	Next=P3M2
+	LevelNum = 19
+	Next = P3M2
 }
 map P3M2 lookup "PARANOID_P3M2"
 {
-	Music="20Xen"
-	LevelNum=20
-	Next=P3M3
+	Music = "20Xen"
+	LevelNum = 20
+	Next = P3M3
 }
 map P3M3 lookup "PARANOID_P3M3"
 {
-	LevelNum=21
-	next=EndSequence,"ParaEndScroll"
+	LevelNum = 21
+	next = EndSequence, "ParaEndScroll"
 }
 
 adddefaultmap
 {
-	AirControl=.00390625
+	AirControl = .00390625
 }
 map P3M4 lookup "PARANOID_P3M4"
 {
-	Music="22SixWay"
-	LevelNum=22
-	next=EndSequence,"ParaEndScroll"
-	SecretNext=P3M5
+	Music = "22SixWay"
+	LevelNum = 22
+	next = EndSequence, "ParaEndScroll"
+	SecretNext = P3M5
 }
 map P3M5 lookup "PARANOID_P3M5"
 {
-	Music="23Space"
-	LevelNum=23
-	PrecacheTextures="XMETL08","XMETL09","XMETL10","XMETL08A","XMETL08B","XMETL08C",
-		"XMETL09A","XMETL09B","XMETL09C","XMETL09D","XMETL09E","XMETL09F","XMETL10A",
-		"XMETL10B","XMETL10C","XMETL10D","XMETL10E"
-	next=EndSequence,"ParaEndScroll"
+	Music = "23Space"
+	LevelNum = 23
+	PrecacheTextures =
+		"XMETL08", "XMETL09", "XMETL10", "XMETL08A", "XMETL08B", "XMETL08C", "XMETL09A",
+		"XMETL09B", "XMETL09C", "XMETL09D", "XMETL09E", "XMETL09F", "XMETL10A",
+		"XMETL10B", "XMETL10C", "XMETL10D", "XMETL10E"
+	next = EndSequence, "ParaEndScroll"
 }
 
 cluster 1
 {
 	hub
 }
+
 cluster 2
 {
 	hub
-	pic=TITLEPIC
-	exittext=
+	pic = TITLEPIC
+	exittext =
 	"Paranoid Gold: A production of",
 	"'The Persecution Complex'.",
 	"Other Work by the Team:",
@@ -289,16 +303,16 @@ Intermission ParaEndScroll
 {
 	Scroller
 	{
-		ScrollDirection=Left
-		Background="PNEND1"
-		Background2="PNEND2"
-		Music="D_PNDEND"
-		InitialDelay=-35
-//		InitialDelay=-105
-		Scrolltime=-640
-		Time=-760
+		ScrollDirection = Left
+		Background = "PNEND1"
+		Background2 = "PNEND2"
+		Music = "D_PNDEND"
+		InitialDelay = -35
+//		InitialDelay = -105
+		Scrolltime = -640
+		Time = -760
 	}
-	Link=ParaEndLogo
+	Link = ParaEndLogo
 }
 
 Intermission ParaEndLogo
@@ -386,288 +400,288 @@ Intermission ParaEndLogo
 
 DoomEdNums
 {
-	4040=NJTankSpark
-	4041=HLScientist
-	4053=HLScientistWanderer
-	4054=HLScientistStill
-	7401=HLHoundEye
-	7402=HLHeadcrab
-	7403=HLController
-	7404=HLBullSquid
-	7405=HLZombie
-	7407=HLVortigaunt
-	7413=HLNihilanth
-	7414=HLBarney
-	7415=HLGonarch
-	7416=HLHornetGrunt
-	7417=HLHornetGruntDead
-	7420=HLBat
-	7421=HLGargantua2
-	7422=HLBarnacle
-	7423=HLScientistDead
-	7439=HLGruntAny
-	7440=HLGruntM16
-	7441=HLGruntShotgun
-	7442=HLGruntNoGrenadesAny
-	7443=HLGruntM16NoGrenades
-	7444=HLGruntShotgunNoGrenades
-	7445=HLGargantua
-	7800=HLBossBat
-	20000=Waterfall
-	20012=BigBlueSpark
-	30001=HLCrowbar
-	30002=HLShotgun
-	30003=HLShotgunAmmo
-	30004=HLShotgunBox
-	30005=HLShotgunPickup2
-	30006=HLAssaultRifle
-	30007=HLAssaultRifleAmmo
-	30008=HLAssaultRifleBox
-	30009=HLAssaultRiflePickup2
-	30010=HLPistol
-	30011=HLPistolAmmo
-	30012=HLMagnum
-	30013=HLMagnumBox
-	30014=HLRPG
-	30015=HLRPGAmmo
-	30016=AmmoPack
-	30017=HLGrenadeLauncherAmmo
-	30018=HLMagnumAmmo
-	30019=HLXBow
-	30020=HLXBowBox
-	30021=HLXBowAmmo
-	30023=HLGluonGun
-	30024=HLGluonGunAmmo
-	30025=HLHornetGun
-	30026=Explosive
-	30100=Xbarrel1
-	30101=Xbarrel2
-	30102=Xbarrel3
-	30103=Barrel1
-	30104=Barrel2
-	30105=Barrel3
-	30106=Trashcan1
-	30107=Barrier1
-	30108=Barrier2
-	30109=Barrier3
-	30110=Xcrate01
-	30111=Xcrate02
-	30112=Xcrate03
-	30113=Xcrate04
-	30114=XMetalBox
-	30115=XMetalBox1
-	30200=Forklift1
-	30201=Backhoe1
-	30202=Bulldozer1
-	30203=Trailer1
-	30204=Trailer2
-	30205=Generator1
-	30206=Toilet1
-	30207=Urinal1
-	30208=Toolbox1
-	30209=Toolbox2
-	30210=Chair1
-	30211=Chair2
-	30212=Armchair
-	30213=Sofa
-	30214=Desklamp1
-	30215=Desklamp2
-	30216=Palm1a
-	30217=Palm1b
-	30218=Palm2a
-	30219=Palm2b
-	30220=Palm3a
-	30221=Palm3b
-	30222=Palm3c
-	30223=Cactus
-	30224=Fern
-	30225=Plant1
-	30226=Plant2
-	30227=Generator2
-	30228=Monitor
-	30229=Pipe1
-	30230=Pipe2
-	30231=Tank01
-	30232=Tank02
-	30233=Valve1
-	30234=Pipe3
-	30235=Pipe4
-	30236=Radio1
-	30237=Radio2
-	30238=Radio3
-	30239=Radio4
-	30240=Radio5
-	30241=propane1a
-	30242=propane1b
-	30243=propane1c
-	30244=propane2
-	30245=tank03
-	30246=tank04
-	30247=tank05
-	30248=tank06
-	30249=Chair3
-	30250=Desk1
-	30252=Generator3
-	30253=Toilet2
-	30254=Desk2
-	30255=Desk3
-	30256=Desk4
-	30257=Desk5
-	30258=Desk6
-	30259=Gascan1
-	30261=Meter1
-	30262=Meter2
-	30263=Transformer1
-	30264=Meter3
-	30265=Forklift2
-	30266=HandDryer
-	30267=Sink1
-	30268=Sink2
-	30269=SoapDispenser
-	30270=ToiletStainless
-	30271=ToiletPaper
-	30272=LoaderNoBox
-	30273=Loader
-	30274=light1
-	30275=light2
-	30276=pipe5
-	30277=pipe6
-	30278=girder1
-	30279=girder2
-	30280=apache
-	30281=Osprey
-	30282=HLXenHair
-	30283=HLXenLight
-	30284=HLXenTree
-	30285=HLXenFungus
-	30286=Bed01
-	30287=Bed02
-	30290=keyboard1
-	30291=keyboard3
-	30292=flatpanel1
-	30293=flatpanel2
-	30294=flatpanel3
-	30295=flatpanel4
-	30296=flatpanel5
-	30297=flatpanel6
-	30298=flatpanel7
-	30299=flatpanel8
-	30300=flatpanel9
-	30301=mouse3
-	30302=pc1
-	30303=modem
-	30304=pc3
-	30305=server1
-	30306=server2
-	30307=server3
-	30308=Tesla
-	30309=FileCab2
-	30310=FileCab3
-	30311=Generator4
-	30313=Tram
-	30314=Tank02a
-	30315=HintMan
-	30316=HintManSitting
-	30317=DeerHead
-	30318=VidCam1
-	30319=VidCam2
-	30321=HLOtisGuard
-	30322=HLBarneyGuard
-	30323=Admin01
-	30324=HLScientistSlumped
-	30327=SgtHarrison
-	30328=TramIntro
-	30329=HLScientistQuiet
-	30334=TankGlass
-	30335=DissectedHeadCrab
-	30336=Pipe1a
-	30337=Pipe3a
-	30339=Truck01
-	30340=SUV
-	30345=Monitor1
-	30346=Monitor2
-	30347=Monitor3
-	30348=PipeMaze
-	30349=StreetLamp
-	30350=Glass01
-	30351=BookShelf1a
-	30352=BookShelf1b
-	30353=BookShelf2a
-	30354=BookShelf2b
-	30355=RKive
-	30356=Credenza
-	30357=CredenzaShort
-	30358=Credenza2
-	30359=Ashtray
-	30360=AshtrayCig
-	30361=ConfTable
-	30362=Phone1
-	30363=Phone2
-	30364=Phone3
-	30365=Rock01
-	30366=Rock01a
-	30367=Rock01b
-	30368=Rock01c
-	30369=Rock02
-	30370=Rock02a
-	30371=Rock02b
-	30372=Rock02c
-	30373=Rock03
-	30374=Rock03a
-	30375=Rock03b
-	30376=Rock03c
-	30377=Rock04
-	30378=Rock04a
-	30379=Rock04b
-	30380=Rock04c
-	30381=Rock05
-	30382=Rock05a
-	30383=Rock06
-	30384=Rock06a
-	30385=TechPillar1a
-	30386=TechPillar1b
-	30387=TechPillar1c
-	30388=TechPillar2
-	30389=TechClamp
-	30390=TechPillar1aa
-	30391=TechPillar1bb
-	30392=TechPillar1cc
-	30394=TechClampa
-	30395=Rock02d
-	30396=Rock03d
-	30397=Rock02e
-	30398=Rock03e
-	30399=Rock02f
-	30400=Rock03f
-	30401=XenIsland1
-	30402=XenIsland2
-	30404=XenIsland3
-	30405=HoverPad
-	30406=XenIsland4
-	30407=XenIsland5
-	30408=PConsole
-	30409=PConsole1
-	30410=PConsole2
-	30411=PConsole3
-	30412=pipe7
-	30413=pipe8
-	30414=girder3
-	30415=girder4
-	30416=XenIsland6
-	30417=Rock02g
-	30418=Rock03g
-	30421=PConsole4
-	30422=PConsole5
-	31000=HEVSuit
-	31001=HEVbattery
-	31002=Key1
-	31003=Medkit
-	31005=Medkit1
-	31599=OMGBubbles
-	31902=OMGOrangeSpark
-	31980=OMGSteam
-	31998=OMGFire
-	32001=HLGruntDead
-	32002=FirstAidStation
-	32003=HEVChargingStation
+	4040 = NJTankSpark
+	4041 = HLScientist
+	4053 = HLScientistWanderer
+	4054 = HLScientistStill
+	7401 = HLHoundEye
+	7402 = HLHeadcrab
+	7403 = HLController
+	7404 = HLBullSquid
+	7405 = HLZombie
+	7407 = HLVortigaunt
+	7413 = HLNihilanth
+	7414 = HLBarney
+	7415 = HLGonarch
+	7416 = HLHornetGrunt
+	7417 = HLHornetGruntDead
+	7420 = HLBat
+	7421 = HLGargantua2
+	7422 = HLBarnacle
+	7423 = HLScientistDead
+	7439 = HLGruntAny
+	7440 = HLGruntM16
+	7441 = HLGruntShotgun
+	7442 = HLGruntNoGrenadesAny
+	7443 = HLGruntM16NoGrenades
+	7444 = HLGruntShotgunNoGrenades
+	7445 = HLGargantua
+	7800 = HLBossBat
+	20000 = Waterfall
+	20012 = BigBlueSpark
+	30001 = HLCrowbar
+	30002 = HLShotgun
+	30003 = HLShotgunAmmo
+	30004 = HLShotgunBox
+	30005 = HLShotgunPickup2
+	30006 = HLAssaultRifle
+	30007 = HLAssaultRifleAmmo
+	30008 = HLAssaultRifleBox
+	30009 = HLAssaultRiflePickup2
+	30010 = HLPistol
+	30011 = HLPistolAmmo
+	30012 = HLMagnum
+	30013 = HLMagnumBox
+	30014 = HLRPG
+	30015 = HLRPGAmmo
+	30016 = AmmoPack
+	30017 = HLGrenadeLauncherAmmo
+	30018 = HLMagnumAmmo
+	30019 = HLXBow
+	30020 = HLXBowBox
+	30021 = HLXBowAmmo
+	30023 = HLGluonGun
+	30024 = HLGluonGunAmmo
+	30025 = HLHornetGun
+	30026 = Explosive
+	30100 = Xbarrel1
+	30101 = Xbarrel2
+	30102 = Xbarrel3
+	30103 = Barrel1
+	30104 = Barrel2
+	30105 = Barrel3
+	30106 = Trashcan1
+	30107 = Barrier1
+	30108 = Barrier2
+	30109 = Barrier3
+	30110 = Xcrate01
+	30111 = Xcrate02
+	30112 = Xcrate03
+	30113 = Xcrate04
+	30114 = XMetalBox
+	30115 = XMetalBox1
+	30200 = Forklift1
+	30201 = Backhoe1
+	30202 = Bulldozer1
+	30203 = Trailer1
+	30204 = Trailer2
+	30205 = Generator1
+	30206 = Toilet1
+	30207 = Urinal1
+	30208 = Toolbox1
+	30209 = Toolbox2
+	30210 = Chair1
+	30211 = Chair2
+	30212 = Armchair
+	30213 = Sofa
+	30214 = Desklamp1
+	30215 = Desklamp2
+	30216 = Palm1a
+	30217 = Palm1b
+	30218 = Palm2a
+	30219 = Palm2b
+	30220 = Palm3a
+	30221 = Palm3b
+	30222 = Palm3c
+	30223 = Cactus
+	30224 = Fern
+	30225 = Plant1
+	30226 = Plant2
+	30227 = Generator2
+	30228 = Monitor
+	30229 = Pipe1
+	30230 = Pipe2
+	30231 = Tank01
+	30232 = Tank02
+	30233 = Valve1
+	30234 = Pipe3
+	30235 = Pipe4
+	30236 = Radio1
+	30237 = Radio2
+	30238 = Radio3
+	30239 = Radio4
+	30240 = Radio5
+	30241 = propane1a
+	30242 = propane1b
+	30243 = propane1c
+	30244 = propane2
+	30245 = tank03
+	30246 = tank04
+	30247 = tank05
+	30248 = tank06
+	30249 = Chair3
+	30250 = Desk1
+	30252 = Generator3
+	30253 = Toilet2
+	30254 = Desk2
+	30255 = Desk3
+	30256 = Desk4
+	30257 = Desk5
+	30258 = Desk6
+	30259 = Gascan1
+	30261 = Meter1
+	30262 = Meter2
+	30263 = Transformer1
+	30264 = Meter3
+	30265 = Forklift2
+	30266 = HandDryer
+	30267 = Sink1
+	30268 = Sink2
+	30269 = SoapDispenser
+	30270 = ToiletStainless
+	30271 = ToiletPaper
+	30272 = LoaderNoBox
+	30273 = Loader
+	30274 = light1
+	30275 = light2
+	30276 = pipe5
+	30277 = pipe6
+	30278 = girder1
+	30279 = girder2
+	30280 = apache
+	30281 = Osprey
+	30282 = HLXenHair
+	30283 = HLXenLight
+	30284 = HLXenTree
+	30285 = HLXenFungus
+	30286 = Bed01
+	30287 = Bed02
+	30290 = keyboard1
+	30291 = keyboard3
+	30292 = flatpanel1
+	30293 = flatpanel2
+	30294 = flatpanel3
+	30295 = flatpanel4
+	30296 = flatpanel5
+	30297 = flatpanel6
+	30298 = flatpanel7
+	30299 = flatpanel8
+	30300 = flatpanel9
+	30301 = mouse3
+	30302 = pc1
+	30303 = modem
+	30304 = pc3
+	30305 = server1
+	30306 = server2
+	30307 = server3
+	30308 = Tesla
+	30309 = FileCab2
+	30310 = FileCab3
+	30311 = Generator4
+	30313 = Tram
+	30314 = Tank02a
+	30315 = HintMan
+	30316 = HintManSitting
+	30317 = DeerHead
+	30318 = VidCam1
+	30319 = VidCam2
+	30321 = HLOtisGuard
+	30322 = HLBarneyGuard
+	30323 = Admin01
+	30324 = HLScientistSlumped
+	30327 = SgtHarrison
+	30328 = TramIntro
+	30329 = HLScientistQuiet
+	30334 = TankGlass
+	30335 = DissectedHeadCrab
+	30336 = Pipe1a
+	30337 = Pipe3a
+	30339 = Truck01
+	30340 = SUV
+	30345 = Monitor1
+	30346 = Monitor2
+	30347 = Monitor3
+	30348 = PipeMaze
+	30349 = StreetLamp
+	30350 = Glass01
+	30351 = BookShelf1a
+	30352 = BookShelf1b
+	30353 = BookShelf2a
+	30354 = BookShelf2b
+	30355 = RKive
+	30356 = Credenza
+	30357 = CredenzaShort
+	30358 = Credenza2
+	30359 = Ashtray
+	30360 = AshtrayCig
+	30361 = ConfTable
+	30362 = Phone1
+	30363 = Phone2
+	30364 = Phone3
+	30365 = Rock01
+	30366 = Rock01a
+	30367 = Rock01b
+	30368 = Rock01c
+	30369 = Rock02
+	30370 = Rock02a
+	30371 = Rock02b
+	30372 = Rock02c
+	30373 = Rock03
+	30374 = Rock03a
+	30375 = Rock03b
+	30376 = Rock03c
+	30377 = Rock04
+	30378 = Rock04a
+	30379 = Rock04b
+	30380 = Rock04c
+	30381 = Rock05
+	30382 = Rock05a
+	30383 = Rock06
+	30384 = Rock06a
+	30385 = TechPillar1a
+	30386 = TechPillar1b
+	30387 = TechPillar1c
+	30388 = TechPillar2
+	30389 = TechClamp
+	30390 = TechPillar1aa
+	30391 = TechPillar1bb
+	30392 = TechPillar1cc
+	30394 = TechClampa
+	30395 = Rock02d
+	30396 = Rock03d
+	30397 = Rock02e
+	30398 = Rock03e
+	30399 = Rock02f
+	30400 = Rock03f
+	30401 = XenIsland1
+	30402 = XenIsland2
+	30404 = XenIsland3
+	30405 = HoverPad
+	30406 = XenIsland4
+	30407 = XenIsland5
+	30408 = PConsole
+	30409 = PConsole1
+	30410 = PConsole2
+	30411 = PConsole3
+	30412 = pipe7
+	30413 = pipe8
+	30414 = girder3
+	30415 = girder4
+	30416 = XenIsland6
+	30417 = Rock02g
+	30418 = Rock03g
+	30421 = PConsole4
+	30422 = PConsole5
+	31000 = HEVSuit
+	31001 = HEVbattery
+	31002 = Key1
+	31003 = Medkit
+	31005 = Medkit1
+	31599 = OMGBubbles
+	31902 = OMGOrangeSpark
+	31980 = OMGSteam
+	31998 = OMGFire
+	32001 = HLGruntDead
+	32002 = FirstAidStation
+	32003 = HEVChargingStation
 }

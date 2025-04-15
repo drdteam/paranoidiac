@@ -1,13 +1,13 @@
 enum ParanoidEnum
 {
-	HLSMOOTHCHASE=CHF_NOPLAYACTIVE+CHF_NORANDOMTURN+CHF_STOPIFBLOCKED
+	HLSMOOTHCHASE = CHF_NOPLAYACTIVE + CHF_NORANDOMTURN + CHF_STOPIFBLOCKED
 }
 
 class HLMonster : Actor
 {
 	double ModelHeightMul;
 
-	int walktic,walkticcur;
+	int walktic, walkticcur;
 	Property WalkTic:walktic;
 	override void BeginPlay()
 	{
@@ -44,40 +44,40 @@ class HLMonster : Actor
 		HLI2 AB 2 A_Look;
 		Loop;
 	}
-	void A_HLGibs(int max=16,class<actor> gibs="HLGibs")
+	void A_HLGibs(int max = 16, class<actor> gibs = "HLGibs")
 	{
 		A_NoBlocking();
 		A_StartSound("other/gibdeath");
-		for(int i=0;i<max;i++)
-			A_SpawnItemEx(gibs,random(5,-5),random(5,-5),random(10,40),random(1,7),random(1,7),random(5,13),random(0,359));
+		for(int i = 0; i < max; i++)
+			A_SpawnItemEx(gibs, random(5, -5), random(5, -5), random(10, 40), random(1, 7), random(1, 7), random(5, 13), random(0, 359));
 	}
 	void A_XenGibsBig()
 	{
 		int i;
-		for(i=0;i<10;i++)
-			A_SpawnItemEx("ParanoidExplosion",random(30,-30),random(30,-30),random(10,90),random(1,2),random(1,2),random(1,3));
-		for(i=0;i<9;i++)
-			A_SpawnItemEx("XenGibs",random(5,-5),random(5,-5),random(10,40),random(1,7),random(1,7),random(5,13),random(0,359));
-		scale=(2,2);
-		for(i=0;i<22;i++)
-			A_SpawnItemEx("XenGibs",random(30,-30),random(30,-30),random(10,60),random(1,7),random(1,7),random(5,18),random(0,359),SXF_TRANSFERSCALE);
+		for(i = 0; i < 10; i++)
+			A_SpawnItemEx("ParanoidExplosion", random(30, -30), random(30, -30), random(10, 90), random(1, 2), random(1, 2), random(1, 3));
+		for(i = 0; i < 9; i++)
+			A_SpawnItemEx("XenGibs", random(5, -5), random(5, -5), random(10, 40), random(1, 7), random(1, 7), random(5, 13), random(0, 359));
+		scale = (2, 2);
+		for(i = 0; i < 22; i++)
+			A_SpawnItemEx("XenGibs", random(30, -30), random(30, -30), random(10, 60), random(1, 7), random(1, 7), random(5, 18), random(0, 359), SXF_TRANSFERSCALE);
 	}
-	void A_ZombieMelee(int dmg=2)
+	void A_ZombieMelee(int dmg = 2)
 	{
 		A_StartSound("halflife/monsters/zombie/attswing");
-		A_CustomMeleeAttack(dmg*random(1,8),"halflife/monsters/zombie/hit");
+		A_CustomMeleeAttack(dmg * random(1, 8), "halflife/monsters/zombie/hit");
 	}
-	virtual void A_HLChase(int walkticmax=0)
+	virtual void A_HLChase(int walkticmax = 0)
 	{
 		if(!walkticmax)
-			walkticmax=walktic;
+			walkticmax = walktic;
 		if(walkticcur)
-			A_Chase(null,null,HLSMOOTHCHASE);
+			A_Chase(null, null, HLSMOOTHCHASE);
 		else
 			A_Chase();
 		walkticcur++;
-		if(walkticcur>=walkticmax-1)
-			walkticcur=0;
+		if(walkticcur >= walkticmax - 1)
+			walkticcur = 0;
 	}
 }
 
@@ -181,26 +181,26 @@ class ModelBase : Actor
 		if(thisblock)
 			thisblock.A_Warp(AAPTR_MASTER, bridgepos.x, bridgepos.y, bridgepos.z * ModelHeightMul, 0, WARPF_STOP|WARPF_NOCHECKPOSITION|WARPF_INTERPOLATE);
 	}
-	actor BuildRider(class<Actor> type, vector3 riderpos = (0,0,0), double riderangle = 0)
+	actor BuildRider(class<Actor> type, vector3 riderpos = (0, 0, 0), double riderangle = 0)
 	{
 		actor rider = Spawn(type, pos + riderpos);
 		if(!rider)
 			return null;
 		rider.angle = angle + riderangle;
 		rider.master = self;
-		rider.bNOCLIP=1;
-		rider.bNOINTERACTION=1;
-		rider.bNOGRAVITY=1;
-		rider.bSOLID=0;
-		rider.bSHOOTABLE=0;
-		rider.bCOUNTKILL=0;
-		rider.bCANPUSHWALLS=0;
-		rider.bCANUSEWALLS=0;
-		rider.bACTIVATEMCROSS=0;
-		rider.bISMONSTER=0;
+		rider.bNOCLIP = 1;
+		rider.bNOINTERACTION = 1;
+		rider.bNOGRAVITY = 1;
+		rider.bSOLID = 0;
+		rider.bSHOOTABLE = 0;
+		rider.bCOUNTKILL = 0;
+		rider.bCANPUSHWALLS = 0;
+		rider.bCANUSEWALLS = 0;
+		rider.bACTIVATEMCROSS = 0;
+		rider.bISMONSTER = 0;
 		return rider;
 	}
-	void MoveRider(actor rider, vector3 riderpos = (0,0,0), double riderangle = 0)
+	void MoveRider(actor rider, vector3 riderpos = (0, 0, 0), double riderangle = 0)
 	{
 		if(rider)
 			rider.A_Warp(AAPTR_MASTER, riderpos.x, riderpos.y, riderpos.z, riderangle, WARPF_STOP|WARPF_NOCHECKPOSITION|WARPF_INTERPOLATE);

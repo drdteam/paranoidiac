@@ -40,7 +40,7 @@ class ParanoidHudMessageHandler : StaticEventHandler
 		if (e.name.IndexOf("createzshudmessage") >= 0)
 		{
 			array <string> msg;
-			e.name.Split(msg,":");
+			e.name.Split(msg, ":");
 			if (msg.Size() == 14)
 			{
 				ParanoidHudMessage.Create(
@@ -85,7 +85,7 @@ class ParanoidHudMessageHandler : StaticEventHandler
 					DTA_Alpha, hmsg.alpha,
 					DTA_FulLScreenScale, FSMode_ScaleToFit43
 				);
-				StatusBar.DrawImage(hmsg.icon, (30, 50), iconflags, 1.0, scale: (.48,.4));
+				StatusBar.DrawImage(hmsg.icon, (30, 50), iconflags, 1.0, scale: (.48, .4));
 			}
 		}
 	}
@@ -157,7 +157,7 @@ class ParanoidHudMessage play
 		return d;
 	}
 
-	static ui void CreateUI(string text, uint id = 0, name fontname = 'NewSmallFont', int fontColor = Font.CR_Red, vector2 pos = (160, 50), int alignment = ALIGN_LEFT, uint fadeInTime = 0, uint typeTime = 0, uint holdTime = 35, uint fadeOutTime = 0, vector2 scale = (1,1))
+	static ui void CreateUI(string text, uint id = 0, name fontname = 'NewSmallFont', int fontColor = Font.CR_Red, vector2 pos = (160, 50), int alignment = ALIGN_LEFT, uint fadeInTime = 0, uint typeTime = 0, uint holdTime = 35, uint fadeOutTime = 0, vector2 scale = (1, 1))
 	{
 		EventHandler.SendNetworkEvent(
 			String.Format(
@@ -167,7 +167,7 @@ class ParanoidHudMessage play
 		);
 	}
 
-	static ParanoidHudMessage Create(string text, string icon = "TNT1A0", uint id = 0, name fontname = 'NewSmallFont', int fontColor = Font.CR_Red, vector2 pos = (160, 50), int alignment = ALIGN_LEFT, uint fadeInTime = 0, uint typeTime = 0, uint holdTime = 35, uint fadeOutTime = 0, vector2 scale = (1,1), int playerNumber = -1)
+	static ParanoidHudMessage Create(string text, string icon = "TNT1A0", uint id = 0, name fontname = 'NewSmallFont', int fontColor = Font.CR_Red, vector2 pos = (160, 50), int alignment = ALIGN_LEFT, uint fadeInTime = 0, uint typeTime = 0, uint holdTime = 35, uint fadeOutTime = 0, vector2 scale = (1, 1), int playerNumber = -1)
 	{
 		let hmsg = ParanoidHudMessage(New("ParanoidHudMessage"));
 		let handler = ParanoidHudMessageHandler(StaticEventHandler.Find("ParanoidHudMessageHandler"));
@@ -321,7 +321,7 @@ class MessageItem : CustomInventory abstract
 	override bool TryPickup(in out Actor toucher)
 	{
 		toucher.A_StartSound("radiostatic", CHAN_6, CHANF_LOCAL );
-		PrintPickupMessage(1,"$NEWMESSAGE");
+		PrintPickupMessage(1, "$NEWMESSAGE");
 		return Super.TryPickup(toucher);
 	}
 	static void StopMessage(actor thisplayer, bool bold = 0)
@@ -337,7 +337,7 @@ class MessageItem : CustomInventory abstract
 		}
 		if(!thisplayer)
 			return;
-		let mytracker=ParanoidSoundTracker(thisplayer.FindInventory("ParanoidSoundTracker"));
+		let mytracker = ParanoidSoundTracker(thisplayer.FindInventory("ParanoidSoundTracker"));
 		if(!mytracker || !mytracker.playing)
 			return;
 		if(mytracker.dontinterrupt == false)
@@ -349,7 +349,7 @@ class MessageItem : CustomInventory abstract
 	}
 	static bool PlayMessageSound(actor thisplayer, string message, bool dontinterrupt = 0, int ticdur = 0)
 	{
-		let mytracker=ParanoidSoundTracker(thisplayer.FindInventory("ParanoidSoundTracker"));
+		let mytracker = ParanoidSoundTracker(thisplayer.FindInventory("ParanoidSoundTracker"));
 		if(!mytracker || mytracker.dontinterrupt)
 			return true;
 		if(mytracker.playing == true)
@@ -368,7 +368,7 @@ class MessageItem : CustomInventory abstract
 	}
 	static void PlayMessage(actor thisplayer, string message, string icon = "TNT1A0", int dur = 0, bool dontinterrupt = 0, bool bold = 0)
 	{
-		string msg=StringTable.Localize("$"..message);
+		string msg = StringTable.Localize("$"..message);
 		if(!msg.Length())
 			return;
 
@@ -407,7 +407,7 @@ class MessageItem : CustomInventory abstract
 	}
 	static void PrintedMessage(actor thisplayer, string message, bool bold = false)
 	{
-		string msg=StringTable.Localize("$"..message);
+		string msg = StringTable.Localize("$"..message);
 		if(!msg.Length())
 			return;
 		int playnum;
@@ -444,8 +444,8 @@ class MessageItem : CustomInventory abstract
 	Use:
 		TNT1 A 0
 		{
-			String s=invoker.GetClassName();
-			PlayMessage(PlayerPawn(invoker.owner),s.Mid(11,8),invoker.Portrait);
+			String s = invoker.GetClassName();
+			PlayMessage(PlayerPawn(invoker.owner), s.Mid(11, 8), invoker.Portrait);
 		}
 		Fail;
 	}

@@ -1,64 +1,64 @@
 [enu default]
 
-PARANOID_EPISODE="Select Chapter";
-PARANOID_SKILL="Select Difficulty";
-PARANOID_NEWGAME="New Game";
-PARANOID_LOADGAME="Load Game";
-PARANOID_SAVEGAME="Save Game";
-PARANOID_QUIT="Quit";
+PARANOID_EPISODE = "Select Chapter";
+PARANOID_SKILL = "Select Difficulty";
+PARANOID_NEWGAME = "New Game";
+PARANOID_LOADGAME = "Load Game";
+PARANOID_SAVEGAME = "Save Game";
+PARANOID_QUIT = "Quit";
 
 PARANOID_QUITMSG = "Are you sure you want to quit?";
 
-OPTMNU_TITLE="Options";
+OPTMNU_TITLE = "Options";
 
-SKIPCUTSCENE1="Press Use (";
-SKIPCUTSCENE2=") to skip cutscene";
+SKIPCUTSCENE1 = "Press Use (";
+SKIPCUTSCENE2 = ") to skip cutscene";
 
-NEWMESSAGE="New Message Received.";
-KEYREQUIRED="Access Denied.\n\nSecurity Key Required.";
-RESTRICTEDAREA="Access to this area has been temporarily restricted.";
-LOCKDOWN="This area has been locked down.\n\nPlease obtain the override access code.";
+NEWMESSAGE = "New Message Received.";
+KEYREQUIRED = "Access Denied.\n\nSecurity Key Required.";
+RESTRICTEDAREA = "Access to this area has been temporarily restricted.";
+LOCKDOWN = "This area has been locked down.\n\nPlease obtain the override access code.";
 
-WELCOME1="Welcome to the Black Mesa Research Facility.";
-WELCOME2="Welcome to the Black Mesa Research Facility.\n\n\n\nNow entering Sector C with access to the Anomalous Materials Laboratory.";
-WELCOME3="Welcome to the Black Mesa Research Facility.\n\n\n\nNow bypassing Sector C and Anomalous Materials Laboratory.";
+WELCOME1 = "Welcome to the Black Mesa Research Facility.";
+WELCOME2 = "Welcome to the Black Mesa Research Facility.\n\n\n\nNow entering Sector C with access to the Anomalous Materials Laboratory.";
+WELCOME3 = "Welcome to the Black Mesa Research Facility.\n\n\n\nNow bypassing Sector C and Anomalous Materials Laboratory.";
 
-BELLMERTERMINATED="Subject: Dr. Rolf Bellmer\n\n\n\nStatus: Believed Terminated";
-BELLMERSURVIVOR="Subject: Dr. Rolf Bellmer\n\n\n\nStatus: Survivor of Earth Assault";
-BELLMERDISSOLUTION="Subject: Dr. Rolf Bellmer\n\n\n\nStatus: Imminent Dissolution in Xen";
-BELLMERSURVIVOR2="Subject: Dr. Rolf Bellmer\n\n\n\nStatus: Survivor of Xen Assault";
+BELLMERTERMINATED = "Subject: Dr. Rolf Bellmer\n\n\n\nStatus: Believed Terminated";
+BELLMERSURVIVOR = "Subject: Dr. Rolf Bellmer\n\n\n\nStatus: Survivor of Earth Assault";
+BELLMERDISSOLUTION = "Subject: Dr. Rolf Bellmer\n\n\n\nStatus: Imminent Dissolution in Xen";
+BELLMERSURVIVOR2 = "Subject: Dr. Rolf Bellmer\n\n\n\nStatus: Survivor of Xen Assault";
 
-LABKEY="Laboratory access security key card.";
-SECURITYKEY="Security Key Acquired.\n\nAccess to Secure Areas Now Available.";
-LAMBDAKEY="Acquired Security Key to the Lambda Complex.\n\nAccessible by returning to the elevators leading to the Rail Yard.";
-SEWERKEY="Acquired Security Key to Sewer Control.\n\nAccessible near the boiler room.";
-SEWERKEYREQUIRED="Sewer Control Access Denied.\n\nSecurity Key Required.";
-SEWEROPEN="Sewer Control Access Granted.";
+LABKEY = "Laboratory access security key card.";
+SECURITYKEY = "Security Key Acquired.\n\nAccess to Secure Areas Now Available.";
+LAMBDAKEY = "Acquired Security Key to the Lambda Complex.\n\nAccessible by returning to the elevators leading to the Rail Yard.";
+SEWERKEY = "Acquired Security Key to Sewer Control.\n\nAccessible near the boiler room.";
+SEWERKEYREQUIRED = "Sewer Control Access Denied.\n\nSecurity Key Required.";
+SEWEROPEN = "Sewer Control Access Granted.";
 
-NEEDGAS1="Emergency power generator is inoperable.\n\nPlease fuel the turbine with gasoline.";
-NEEDGAS2="Generator Fuel Tank is Empty.\n\nPlease refuel generator fuel tank.";
-GOTGAS1="Acquired gasoline.\n\nProceed to refuel generator fuel tank near sluice control room.";
-GOTGAS2="Acquired gasoline.\n\nProceed to refuel generator fuel tank near boiler room.";
-GATECONTROL1="Gate is open.";
-GATECONTROL2="Switch off Auxiliary Power to Activate Gate Control.";
-GATECONTROL3="Main Power Generators are off-line.";
-GATECONTROL4="Auxiliary Power Generator is Off-line.\n\nWarning: Secure Holding Facility Perimeter Controls Off-Line.\nSecurity Breach Likely.";
-SLUICE="Sluice gate is not operational.\n\nPlease switch on auxiliary power.";
-CIRCUITDAMAGE="Fuse Circuit damage detected.\n\nPlease switch to emergency power to open this door.";
-SECURITYCLEARANCE="All Civilian Security Clearances have been suspended.\n\nPlease report to your Sector's Security Officer.";
-LASERDOOR="Door Malfunction.\n\nAccess to Laser Control Room Temporarily Unavailable.";
-LASEROFF="Laser has been deactivated.";
-LIVESPECIMENS="Access Denied.\n\nLive Specimens Present.";
-BIOTHREAT1="Biological Threat Mitigated. \nAccess to the Lambda Complex is now permitted.";
-BIOTHREAT2="Access Denied. Biological Threat Imminent.";
-BIOTHREAT3="Access Denied. \nObtain Security Key from Officer Widmark \nat the Test Lab.";
-TESTLAB1="Test Lab accessible. \nProceed through Test Lab and collect Security Key from Officer Widmark.";
-NERVEGAS="Nerve Gas is being pumped out of Exit Vestibules.\n\nStand by.";
-XENEXPLOSIVE1="Find an explosive device to blast through this rock.";
-XENEXPLOSIVE2="Explosive Device Acquired.\n\nReturn to Entry Portal & blast through the rock.";
-XENEXPLOSIVE3="Explosive charge laid.\n\nSeek cover immediately.";
+NEEDGAS1 = "Emergency power generator is inoperable.\n\nPlease fuel the turbine with gasoline.";
+NEEDGAS2 = "Generator Fuel Tank is Empty.\n\nPlease refuel generator fuel tank.";
+GOTGAS1 = "Acquired gasoline.\n\nProceed to refuel generator fuel tank near sluice control room.";
+GOTGAS2 = "Acquired gasoline.\n\nProceed to refuel generator fuel tank near boiler room.";
+GATECONTROL1 = "Gate is open.";
+GATECONTROL2 = "Switch off Auxiliary Power to Activate Gate Control.";
+GATECONTROL3 = "Main Power Generators are off-line.";
+GATECONTROL4 = "Auxiliary Power Generator is Off-line.\n\nWarning: Secure Holding Facility Perimeter Controls Off-Line.\nSecurity Breach Likely.";
+SLUICE = "Sluice gate is not operational.\n\nPlease switch on auxiliary power.";
+CIRCUITDAMAGE = "Fuse Circuit damage detected.\n\nPlease switch to emergency power to open this door.";
+SECURITYCLEARANCE = "All Civilian Security Clearances have been suspended.\n\nPlease report to your Sector's Security Officer.";
+LASERDOOR = "Door Malfunction.\n\nAccess to Laser Control Room Temporarily Unavailable.";
+LASEROFF = "Laser has been deactivated.";
+LIVESPECIMENS = "Access Denied.\n\nLive Specimens Present.";
+BIOTHREAT1 = "Biological Threat Mitigated. \nAccess to the Lambda Complex is now permitted.";
+BIOTHREAT2 = "Access Denied. Biological Threat Imminent.";
+BIOTHREAT3 = "Access Denied. \nObtain Security Key from Officer Widmark \nat the Test Lab.";
+TESTLAB1 = "Test Lab accessible. \nProceed through Test Lab and collect Security Key from Officer Widmark.";
+NERVEGAS = "Nerve Gas is being pumped out of Exit Vestibules.\n\nStand by.";
+XENEXPLOSIVE1 = "Find an explosive device to blast through this rock.";
+XENEXPLOSIVE2 = "Explosive Device Acquired.\n\nReturn to Entry Portal & blast through the rock.";
+XENEXPLOSIVE3 = "Explosive charge laid.\n\nSeek cover immediately.";
 
-BRIEF01=
+BRIEF01 =
 	"Dr. Bellmer, this briefing will serve to recap your mission objective.\n\n"
 	"As you know, the consortium I represent seeks to dominate the field of \n"
 	"Anomalous Materials Research. We believe that our supremacy in this field \n"
@@ -79,95 +79,95 @@ BRIEF01=
 	"alternative paths.\n\n"
 	"Good luck!";
 
-P1M2VOX1=
+P1M2VOX1 =
 	"You'll need to reach Dr. Zimmerman, the Sector Administrator, to get the \n"
 	"System Override code.";
-P1M2VOX2=
+P1M2VOX2 =
 	"Shoot the undamaged fuse to disable the laser barrier.";
-P1M2VOX3=
+P1M2VOX3 =
 	"Look for a gasoline can in the Fuel Room, which is near the Flow Control \n"
 	"Room.";
-P1M2VOX4=
+P1M2VOX4 =
 	"Raise the crane and jump on it to ride it to the top.\n\n"
 	"If you miss, use the switch to lower the crane and try again.";
-P1M3VOX1=
+P1M3VOX1 =
 	"The security key is in Security Room B-102, which overlooks Storage Bay A2. \n\n"
 	"Use the lift in Storage Bay A3 to reach the bridge over Storage Bay A2, \n"
 	"which will take you to B-102.";
-P1M3VOX2=
+P1M3VOX2 =
 	"Find Hazardous Materials Bay B and exit to the East of the building.\n\n"
 	"The bay doors are operated from the control room overlooking HazMat Bay B.\n\n"
 	"To reach the control room, take the stairs from the Cafeteria.";
-P1M3VOX3=
+P1M3VOX3 =
 	"Go all the way to the rear of Supply Room D-301, and find a duct that will \n"
 	"take you back to Sector C.";
-P1M4VOX1=
+P1M4VOX1 =
 	"We just intercepted a Security Bulletin.\n\n"
 	"Dr. Zimmerman is being held in the Secure Holding Facility in the \n"
 	"North-Eastern quadrant of this sector.";
-P1M4VOX2=
+P1M4VOX2 =
 	"Because of the emergency, the security systems have automatically \n"
 	"electrified the gate and the perimeter fence.\n\n"
 	"To safely access the gate, you'll need to switch off auxiliary power.\n\n"
 	"You'll need to get to the Turbine Control Room in the Western part of this \n"
 	"sector.";
-P1M4VOX3=
+P1M4VOX3 =
 	"Gate Control at the Secure Holding Facility has been restored.\n\n"
 	"Return to the Guard tower, reachable through the Storage Warehouse in the \n"
 	"Eastern quadrant of this sector.";
-P1M4VOX4=
+P1M4VOX4 =
 	"Shoot the undamaged fuse to disable the laser barrier.";
-P1M5VOX1=
+P1M5VOX1 =
 	"You will probably find Dr. Zimmerman in the sub-basement level of the \n"
 	"Holding Facility.";
-P1M5VOX2=
+P1M5VOX2 =
 	"Who the hell are you? Ah, yes. Bellmer. The new fellow. What do you want? \n"
 	"Hmmm... the security override code, eh? What the heck! You're probably \n"
 	"better off with it than me. Listen carefully: It's 7-A-K-T-Z. Got it? And \n"
 	"hey! It seems this other fellow... Freeman. He's been giving them hell, \n"
 	"too. Perhaps you guys should hook up, eh?";
-P1M5VOX3=
+P1M5VOX3 =
 	"What're you waiting for? Get out of here!";
-P1M6VOX1=
+P1M6VOX1 =
 	"There's a drainage tunnel near the dam that will take you to the Research \n"
 	"Labs.";
-P1M6VOX2=
+P1M6VOX2 =
 	"Look for Sergeant Harrison, the Security Officer. He'll restore your \n"
 	"security clearance.\n\n"
 	"You'll find him in the Office Block at the North-Western quadrant of this \n"
 	"sector. Take the bridge over the storage warehouse.";
-P1M6VOX3=
+P1M6VOX3 =
 	"Return to the Research Labs and use your security clearance to gain access.\n\n"
 	"Take the bridge over the storage warehouse.";
-P1M6VOX4=
+P1M6VOX4 =
 	"Dr. Bellmer, isn't it? Rolf Bellmer? I'm impressed you made it this far. \n"
 	"You're probably here because those military bastards scrapped your \n"
 	"clearance. Mine too. But I didn't get promoted to Security Officer without \n"
 	"knowing how to hack my own system. You want your clearance back? You want a \n"
 	"higher clearance? No problemo.";
-P1M6VOX5=
+P1M6VOX5 =
 	"Workin' on it.";
-P1M6VOX6=
+P1M6VOX6 =
 	"Almost there, buddy.";
-P1M6VOX7=
+P1M6VOX7 =
 	"Okay. You're all set. Go out there and kick some butt! I'm going to stay \n"
 	"behind this bullet-proof glass. Where it's safe. Oh, hey! I almost forgot. \n"
 	"Grab all the stuff you can carry!";
-P1M7VOX1=
+P1M7VOX1 =
 	"Keep pressing the switch to fry that sucker.";
-P1M7VOX2=
+P1M7VOX2 =
 	"Use the terminal to upload the virus.\n\n"
 	"We have remotely disabled the critical security protocols.";
-P1M7VOX3=
+P1M7VOX3 =
 	"Warning! Illegal Data Access In Progress. Please Cease Upload Immediately\n"
 	"and Surrender to the Authorities. All Exit Vestibules are Being Flooded \n"
 	"with Nerve Gas.";
-P1M8VOX1=
+P1M8VOX1 =
 	"You should be able to crawl under the door.";
-P1M8VOX2=
+P1M8VOX2 =
 	"This is a timed switch that will temporarily raise the gate to the next \n"
 	"reservoir chamber.";
-P2M1VOX1=
+P2M1VOX1 =
 	"Dr. Bellmer, my name is Colonel Stinson, with Legion: Earth. We don't have \n"
 	"much time, so listen carefully. The mission to extract you from Black Mesa \n"
 	"was compromised, and your Controller has gone AWOL, and possibly rogue. \n"
@@ -177,17 +177,17 @@ P2M1VOX1=
 	"while we attempt another extraction. Meanwhile, the government and alien \n"
 	"forces will continue to hunt you. There's a cavern nearby where you can \n"
 	"seek cover until we can...";
-P2M2VOX1=
+P2M2VOX1 =
 	"Dr. Bellmer, you're at the employee in-processing facility. You may recall \n"
 	"you went through here when you began your mission. The monorail will take \n"
 	"you back to Sector C. We'll try to regroup once you get there, and work out \n"
 	"an effective way to extract you.";
-P2M2VOX2=
+P2M2VOX2 =
 	"That you, Dr. Bellmer? Looks like you're stuck here with the rest of us. \n"
 	"They've disabled monorail and gate control. Can't get out that way. [Whoa! \n"
 	"Did I just make a Han Solo reference?] You can try and make it through the \n"
 	"canyon, but I wouldn't recommend it. Good luck.";
-P2M3VOX1=
+P2M3VOX1 =
 	"We didn't anticipate total lockdown of Sector C. We can't send transport to \n"
 	"your current location because the winds make flying exceedingly treacherous. \n"
 	"Proceed through the canyon until you reach the dam. There are two ways out \n"
@@ -195,7 +195,7 @@ P2M3VOX1=
 	"probably wondering who we are. I'm sending you an UnderNet link that will \n"
 	"provide some background. As to why we're interested in you, that will be \n"
 	"revealed in due time.";
-P2M3VOX2=
+P2M3VOX2 =
 	"Legion: Earth is an organization that was created to protect Earth from \n"
 	"threats both extra-terrestrial and home-grown. In recent years, that threat \n"
 	"has increased as a result of Anomalous Materials research at the Black Mesa \n"
@@ -204,14 +204,14 @@ P2M3VOX2=
 	"these agencies to collaborate with an alien species in a Borderworld known \n"
 	"as Xen. We have evidence that human dealings with this species are paving \n"
 	"the way for an invasion of Earth. Our mandate is to stop it.";
-P2M4VOX1=
+P2M4VOX1 =
 	"Too bad you couldn't cross the dam and get out from there. It might have \n"
 	"been easier to extract you from the East. Your best chance now is to take \n"
 	"the sewers to the Weapons Test Lab. There's an open landing area there, and \n"
 	"we can set a transport helicopter down. Government forces control strategic \n"
 	"points, while the Xen aliens roam freely elsewhere. Watch your back. I'm \n"
 	"sending you another UnderNet link with more information on us.";
-P2M4VOX2=
+P2M4VOX2 =
 	"Legion: Earth was first aware of Xen and human collaboration about a year \n"
 	"ago. Then, we discovered that the European Space Consortium engineered an \n"
 	"infiltration into Black Mesa with the objective of sabotaging the research \n"
@@ -220,68 +220,68 @@ P2M4VOX2=
 	"alien technology. But Dr. Bellmer was a loose end, and the Consortium \n"
 	"attempted to terminate him with extreme prejudice. This attempt failed, but \n"
 	"Dr. Bellmer continues to remain embattled.";
-P2M5VOX1=
+P2M5VOX1 =
 	"Dr. Bellmer, follow these instructions carefully. When you exit the sewers, \n"
 	"proceed to the East Gate. We'll have a helicopter transport waiting there to \n"
 	"get you out.";
-P2M5VOX2=
+P2M5VOX2 =
 	"Damn! It seems your Controller is one step ahead of us. He has a lot to \n"
 	"answer for. Those were good people we lost on that \n"
 	"transport............................................ Okay, Plan B. You'll \n"
 	"need to proceed through the Lambda Complex. The security key will probably \n"
 	"be in the Administrator's office. And make sure you collect the \n"
 	"experimental energy weapon they're developing before you head for Lambda.";
-P2M6VOX1=
+P2M6VOX1 =
 	"The Lambda Complex is a series of labs. Be mindful of the freezer section \n"
 	"and don't stay in there for too long. Also, there's a rumor that your \n"
 	"Controller may be trying to recruit other scientists to his cause. Do not \n"
 	"engage him. I repeat, do not engage your Controller.";
-P2M7VOX1=
+P2M7VOX1 =
 	"You're approaching the core of the Lambda Complex. This is where they \n"
 	"conduct experiments on live specimens. We'll try to set a transport down on \n"
 	"the helipad leading to the East entrance. But you'll need a security key to \n"
 	"make it through the checkpoint. I'm sending you a final UnderNet link that \n"
 	"will make things clearer.";
-P2M7VOX2=
+P2M7VOX2 =
 	"Dr. Rolf Bellmer has proven to be extremely resourceful, both as an \n"
 	"undercover operative, and as a combat technician. Moreover, he possesses a \n"
 	"rare combination of advanced scientific knowledge and survivor's instinct, \n"
 	"which makes him an ideal candidate for recruitment to Legion: Earth. In \n"
 	"addition, his time at Black Mesa will give us valuable insights into \n"
 	"operations at that facility, and will allow us to hobble their efforts.";
-P2M7VOX3=
+P2M7VOX3 =
 	"We think the security key is inside the central chamber where the Gargantua \n"
 	"is in stasis. You'll need to disable the laser barrier and drop into the \n"
 	"chamber to retrieve the key. With the malfunctioning door, the only way \n"
 	"into the laser control room are the ducts. Find the Boiler Room next to the \n"
 	"Fuel Storage area, and use the ventilation duct.";
-P2M8VOX1=
+P2M8VOX1 =
 	"They've cut power to most sectors, and drained the fuel from the emergency \n"
 	"generators. You may find some fuel in the supply area in the North-East \n"
 	"quadrant. But be careful: the place is swarming with government and alien \n"
 	"forces.";
 
-PARANOID_TITLEMAP="The Path to Perdition";
-PARANOID_P1M1="Walk Softly and Carry a Big Stick";
-PARANOID_P1M2="You Can Run...";
-PARANOID_P1M3="No Rest for the Wicked";
-PARANOID_P1M4="Finding Dr. Zimmerman";
-PARANOID_P1M5="...But You Can't Hide";
-PARANOID_P1M6="Mission Accomplished?";
-PARANOID_P1M7="Out of the Frying Pan...";
-PARANOID_P1M8="Dirty... Little... Secret";
-PARANOID_P2M0="Flight of the Phoenix";
-PARANOID_P2M1="Smoke on the Water, Fire in the Sky";
-PARANOID_P2M2="Fly in a Web";
-PARANOID_P2M3="How Green, the Valley";
-PARANOID_P2M4="Sewer Rat";
-PARANOID_P2M5="Run, Rabbit, Run!";
-PARANOID_P2M6="When Hell Freezes Over";
-PARANOID_P2M7="Play the Mad Scientist";
-PARANOID_P2M8="Painted into a Corner";
-PARANOID_P2M9="Cavernicolous";
-PARANOID_P3M1="Island Hopping";
-PARANOID_P3M2="Monarch Gonarch";
-PARANOID_P3M3="Xenophobia";
-PARANOID_P3M4="Six Ways to Die";
-PARANOID_P3M5="SpaceX";
+PARANOID_TITLEMAP = "The Path to Perdition";
+PARANOID_P1M1 = "Walk Softly and Carry a Big Stick";
+PARANOID_P1M2 = "You Can Run...";
+PARANOID_P1M3 = "No Rest for the Wicked";
+PARANOID_P1M4 = "Finding Dr. Zimmerman";
+PARANOID_P1M5 = "...But You Can't Hide";
+PARANOID_P1M6 = "Mission Accomplished?";
+PARANOID_P1M7 = "Out of the Frying Pan...";
+PARANOID_P1M8 = "Dirty... Little... Secret";
+PARANOID_P2M0 = "Flight of the Phoenix";
+PARANOID_P2M1 = "Smoke on the Water, Fire in the Sky";
+PARANOID_P2M2 = "Fly in a Web";
+PARANOID_P2M3 = "How Green, the Valley";
+PARANOID_P2M4 = "Sewer Rat";
+PARANOID_P2M5 = "Run, Rabbit, Run!";
+PARANOID_P2M6 = "When Hell Freezes Over";
+PARANOID_P2M7 = "Play the Mad Scientist";
+PARANOID_P2M8 = "Painted into a Corner";
+PARANOID_P2M9 = "Cavernicolous";
+PARANOID_P3M1 = "Island Hopping";
+PARANOID_P3M2 = "Monarch Gonarch";
+PARANOID_P3M3 = "Xenophobia";
+PARANOID_P3M4 = "Six Ways to Die";
+PARANOID_P3M5 = "SpaceX";

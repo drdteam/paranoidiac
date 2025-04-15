@@ -2,7 +2,7 @@ class HLAlphaBarney : HLBarney
 {
 	override void HLModelSetup()
 	{
-		static const name modelskin[]=
+		static const name modelskin[] =
 		{
 			'oldbarney_000.png',
 			'oldbarney_001.png',
@@ -80,7 +80,7 @@ class HLAlphaBarney : HLBarney
 			A_FaceTarget();
 		}
 		HLA1 A 12 Light("ImShootingAGun") A_BarneyGunshot;
-		HLA1 A 0 A_MonsterRefire(0,"See");
+		HLA1 A 0 A_MonsterRefire(0, "See");
 		Loop;
 
 	Pain:
@@ -102,10 +102,10 @@ class HLAlphaBarney : HLBarney
 	override void A_BarneyGunshot()
 	{
 		A_FaceTarget();
-		for(int i=0;i<2;i++)
-			A_SpawnItemEx("GunSmoke",20,-6,47*ModelHeightMul);
+		for(int i = 0; i < 2; i++)
+			A_SpawnItemEx("GunSmoke", 20, -6, 47 * ModelHeightMul);
 		A_StartSound("halflife/weapons/pistol", CHAN_WEAPON);
-		A_CustomBulletAttack(7,7,1,5,"NewPuff1");
+		A_CustomBulletAttack(7, 7, 1, 5, "NewPuff1");
 	}
 }
 

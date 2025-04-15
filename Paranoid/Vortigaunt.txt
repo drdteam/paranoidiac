@@ -6,7 +6,7 @@ class HLVortigaunt : HLMonster
 {
 	override void HLModelSetup()
 	{
-		static const name modelskin[]=
+		static const name modelskin[] =
 		{
 			'islave_000.png',
 			'islave_001.png'
@@ -21,7 +21,7 @@ class HLVortigaunt : HLMonster
 		Speed 3.5;
 		Height 63;
 		PainChance 100;
-		PainChance "Crowbar",243;
+		PainChance "Crowbar", 243;
 		BloodColor "DE FE 72";
 		SeeSound "halflife/monsters/slave/sight";
 		PainSound "halflife/monsters/slave/pain";
@@ -84,16 +84,16 @@ class HLVortigaunt : HLMonster
 		HLA3 C 2
 		{
 			A_StartSound("halflife/weapons/gausshit1", CHAN_5);
-			A_KillChildren(flags:KILS_KILLMISSILES);
-			A_SpawnProjectile("VortiPlasma",32,9);
-			A_SpawnProjectile("VortiPlasma",32,-9);
+			A_KillChildren(flags: KILS_KILLMISSILES);
+			A_SpawnProjectile("VortiPlasma", 32, 9);
+			A_SpawnProjectile("VortiPlasma", 32, -9);
 		}
 		HLA3 DEFGHI 2;
 		Goto See;
 	Pain:
 		HLP1 A 1
 		{
-			A_KillChildren(flags:KILS_KILLMISSILES);
+			A_KillChildren(flags: KILS_KILLMISSILES);
 			A_Pain();
 		}
 		HLP1 BCDEFG 1;
@@ -101,7 +101,7 @@ class HLVortigaunt : HLMonster
 	Death:
 		HLD1 A 2
 		{
-			A_KillChildren(flags:KILS_KILLMISSILES);
+			A_KillChildren(flags: KILS_KILLMISSILES);
 			A_Scream();
 		}
 		HLD1 B 2 A_NoBlocking;
@@ -114,7 +114,7 @@ class HLVortigaunt : HLMonster
 	Crush:
 		TNT1 A 0
 		{
-			A_HLGibs(14,"XenGibs");
+			A_HLGibs(14, "XenGibs");
 			A_KillChildren(flags:KILS_KILLMISSILES);
 		}
 		Stop;
@@ -122,7 +122,7 @@ class HLVortigaunt : HLMonster
 	void A_VortiLightning()
 	{
 		A_FaceTarget();
-		A_SpawnItemEx("VortiLightning",flags:SXF_SETMASTER|SXF_NOCHECKPOSITION);
+		A_SpawnItemEx("VortiLightning", flags: SXF_SETMASTER|SXF_NOCHECKPOSITION);
 	}
 }
 
@@ -142,7 +142,7 @@ class VortiLightning : Actor
 	States
 	{
 	Spawn:
-		X098 A 2 Bright LIGHT("GreenMediumFlicker2") NODELAY {self.frame=random(0,7)*2;}
+		X098 A 2 Bright LIGHT("GreenMediumFlicker2") NODELAY {self.frame = random(0, 7) * 2;}
 		XO98 A 2 Bright LIGHT("GreenMediumFlicker2") {self.frame++;}
 		Stop;
 	Death:
@@ -167,7 +167,7 @@ class VortiPlasma_Bolt : Actor
 	States
 	{
 	Spawn:
-		VPLS A 0 NODELAY {self.frame=random(0,3);}
+		VPLS A 0 NODELAY {self.frame = random(0, 3);}
 		VPLS # 1 A_FadeOut;
 		Wait;
 	}
@@ -180,7 +180,7 @@ class VortiPlasma : VortiPlasma_Bolt
 		Radius 6;
 		Height 8;
 		Speed 36;
-		DamageFunction (random(1,4)*10);
+		DamageFunction (random(1, 4) * 10);
 		Projectile;
 		+RANDOMIZE
 		Alpha .55;

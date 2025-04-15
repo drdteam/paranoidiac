@@ -1,7 +1,7 @@
 DEFAULTLISTMENU
 {
-	Font "SmallFont","Untranslated"
-	//Font "BigFont","Untranslated"
+	Font "SmallFont", "Untranslated"
+	//Font "BigFont", "Untranslated"
 	Selector "P_SKULL1", -32, -5
 	Linespacing 16
 }
@@ -10,11 +10,11 @@ ListMenu "MainMenu"
 {
 	StaticPatch 94, 2, "P_TITLE"
 	Position 97, 72
-	TextItem "$PARANOID_NEWGAME","n","PlayerclassMenu"
-	TextItem "$OPTMNU_TITLE","o","OptionsMenu"
-	TextItem "$PARANOID_LOADGAME","l","LoadGameMenu"
-	TextItem "$PARANOID_SAVEGAME","s","SaveGameMenu"
-	TextItem "$PARANOID_QUIT","q","QuitMenu"
+	TextItem "$PARANOID_NEWGAME", "n", "PlayerclassMenu"
+	TextItem "$OPTMNU_TITLE", "o", "OptionsMenu"
+	TextItem "$PARANOID_LOADGAME", "l", "LoadGameMenu"
+	TextItem "$PARANOID_SAVEGAME", "s", "SaveGameMenu"
+	TextItem "$PARANOID_QUIT", "q", "QuitMenu"
 }
 ListMenu "EpisodeMenu"
 {
@@ -43,18 +43,18 @@ ListMenu "SaveGameMenu"
 
 OptionValue "MultiSkin"
 {
-	0,"Helmet"
-	1,"Gordon Freeman"
-	2,"Adrian Shephard"
-	3,"Black Ops"
-	4,"Robo"
-	5,"Ivan the Space Biker"
+	0, "Helmet"
+	1, "Gordon Freeman"
+	2, "Adrian Shephard"
+	3, "Black Ops"
+	4, "Robo"
+	5, "Ivan the Space Biker"
 }
 
 AddOptionMenu "OptionsMenu"
 {
 	StaticText " "
-	Submenu "Paranoid Player Options","ParanoidPlayerMenu"
+	Submenu "Paranoid Player Options", "ParanoidPlayerMenu"
 }
 
 ListMenu "ParanoidPlayerMenu"
@@ -67,6 +67,6 @@ ListMenu "ParanoidPlayerMenu"
 	MouseWindow 0, 220
 	PlayerDisplay 220, 80, "20 00 00", "80 00 40", 0, "PlayerDisplay"
 
-	ValueText "Multiplayer Character", "MultiSkin","MultiSkin"
+	ValueText "Multiplayer Character", "MultiSkin", "MultiSkin"
 	Class "ParanoidPlayerMenu"
 }

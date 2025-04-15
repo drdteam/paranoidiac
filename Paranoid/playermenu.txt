@@ -1,73 +1,73 @@
 class ParanoidPlayerMenu : PlayerMenu
 {
 	Array<int> mPlayerMultiSkins;
-	override void Init(Menu parent,ListMenuDescriptor desc)
+	override void Init(Menu parent, ListMenuDescriptor desc)
 	{
 		MenuItemBase li;
-		PlayerInfo p=players[consoleplayer];
-		ListMenu.Init(parent,desc);
+		PlayerInfo p = players[consoleplayer];
+		ListMenu.Init(parent, desc);
 		PickPlayerClass();
-		mRotation=0;
-		li=GetItem('Playerdisplay');
+		mRotation = 0;
+		li = GetItem('Playerdisplay');
 		if(li != NULL)
 		{
-			li.SetValue(ListMenuItemPlayerDisplay.PDF_MODE,1);
-			li.SetValue(ListMenuItemPlayerDisplay.PDF_CLASS,p.GetPlayerClassNum());
-			if(mPlayerClass!=NULL&&!(GetDefaultByType(mPlayerClass.Type).bNoSkin)&&
-				p.GetPlayerClassNum()!=-1)
-				li.SetValue(ListMenuItemPlayerDisplay.PDF_SKIN,p.GetSkin());
+			li.SetValue(ListMenuItemPlayerDisplay.PDF_MODE, 1);
+			li.SetValue(ListMenuItemPlayerDisplay.PDF_CLASS, p.GetPlayerClassNum());
+			if(mPlayerClass != NULL && !(GetDefaultByType(mPlayerClass.Type).bNoSkin) &&
+				p.GetPlayerClassNum() != -1)
+				li.SetValue(ListMenuItemPlayerDisplay.PDF_SKIN, p.GetSkin());
 		}
 		UpdateMultiSkins();
 		if(mDesc.mSelectedItem < 0)
-			mDesc.mSelectedItem=1;
+			mDesc.mSelectedItem = 1;
 	}
 	protected void ChangeMultiSkin(int v)
 	{
-		let multi=CVar.FindCVar('v_multiskin');
+		let multi = CVar.FindCVar('v_multiskin');
 		multi.SetInt(v);
 	}
 	protected void UpdateMultiSkins()
 	{
-		if(mPlayerClass.Type!="RolfBellmer")
+		if(mPlayerClass.Type != "RolfBellmer")
 		{
 			super.UpdateSkins();
 			return;
 		}
-		let li=GetItem('MultiSkin');
-		if(li!=NULL)
+		let li = GetItem('MultiSkin');
+		if(li != NULL)
 		{
-			let multi=CVar.FindCVar('v_multiskin');
-			li.SetValue(0,multi.GetInt());
+			let multi = CVar.FindCVar('v_multiskin');
+			li.SetValue(0, multi.GetInt());
 			return;
 		}
 	}
 	override bool OnUIEvent(UIEvent ev)
 	{
-		if(ev.Type==UIEvent.Type_Char&&ev.KeyChar==32&&mPlayerClass.Type!="RolfBellmer")
+		if(ev.Type == UIEvent.Type_Char && ev.KeyChar == 32 && mPlayerClass.Type != "RolfBellmer")
 		{
-			mRotation=8 - mRotation;
-			MenuItemBase li=GetItem('Playerdisplay');
-			if(li!=NULL)
-				li.SetValue(ListMenuItemPlayerDisplay.PDF_ROTATION,mRotation);
+			mRotation = 8 - mRotation;
+			MenuItemBase li = GetItem('Playerdisplay');
+			if(li != NULL)
+				li.SetValue(ListMenuItemPlayerDisplay.PDF_ROTATION, mRotation);
 			return true;
 		}
 		return ListMenu.OnUIEvent(ev);
 	}
-	override bool MenuEvent(int mkey,bool fromcontroller)
+	override bool MenuEvent(int mkey, bool fromcontroller)
 	{
 		int v;
 		bool res;
 		String s;
 		if(mDesc.mSelectedItem >= 0)
 		{
-			let li=mDesc.mItems[mDesc.mSelectedItem];
-			if(li.MenuEvent(mkey,fromcontroller))
+			let li = mDesc.mItems[mDesc.mSelectedItem];
+			if(li.MenuEvent(mkey, fromcontroller))
 			{
-				Name ctrl=li.GetAction();
+				Name ctrl = li.GetAction();
 				switch(ctrl)
 				{
 				case 'MultiSkin':
-					[res,v]=li.GetValue(0);
+					[res, v] = li.GetValue(0);
 					if(res)
 						ChangeMultiSkin(v);
 					break;
@@ -75,27 +75,27 @@ class ParanoidPlayerMenu : PlayerMenu
 				return true;
 			}
 		}
-		return ListMenu.MenuEvent(mkey,fromcontroller);
+		return ListMenu.MenuEvent(mkey, fromcontroller);
 	}
 	override void Drawer()
 	{
 		ListMenu.Drawer();
-		if(mPlayerClass.Type=="RolfBellmer")
+		if(mPlayerClass.Type == "RolfBellmer")
 		{
-			let multi=CVar.FindCVar('v_multiskin');
-			int mskin=multi.GetInt();
-			let tex=TexMan.CheckForTexture("HLHELMET",0);
-			if(mskin==1)
-				tex=TexMan.CheckForTexture("HLGORDON",0);
-			else if(mskin==2)
-				tex=TexMan.CheckForTexture("HLADRIAN",0);
-			else if(mskin==3)
-				tex=TexMan.CheckForTexture("HLBLKOPS",0);
-			else if(mskin==4)
-				tex=TexMan.CheckForTexture("HLROBOT",0);
-			else if(mskin==5)
-				tex=TexMan.CheckForTexture("HLIVAN",0);
-			screen.DrawTexture(tex,false,220.0,80.0,DTA_Clean,true,DTA_Alpha,1.0);
+			let multi = CVar.FindCVar('v_multiskin');
+			int mskin = multi.GetInt();
+			let tex = TexMan.CheckForTexture("HLHELMET", 0);
+			if(mskin == 1)
+				tex = TexMan.CheckForTexture("HLGORDON", 0);
+			else if(mskin == 2)
+				tex = TexMan.CheckForTexture("HLADRIAN", 0);
+			else if(mskin == 3)
+				tex = TexMan.CheckForTexture("HLBLKOPS", 0);
+			else if(mskin == 4)
+				tex = TexMan.CheckForTexture("HLROBOT", 0);
+			else if(mskin == 5)
+				tex = TexMan.CheckForTexture("HLIVAN", 0);
+			screen.DrawTexture(tex, false, 220.0, 80.0, DTA_Clean, true, DTA_Alpha, 1.0);
 			return;
 		}
 	}

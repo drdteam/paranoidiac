@@ -6,7 +6,7 @@ class HLBullSquid : HLMonster
 {
 	override void HLModelSetup()
 	{
-		static const name modelskin[]=
+		static const name modelskin[] =
 		{
 			'bullsquid_000.png',
 			'bullsquid_001.png',
@@ -25,7 +25,7 @@ class HLBullSquid : HLMonster
 		Height 32;
 		Radius 28;
 		PainChance 40;
-		PainChance "Crowbar",164;
+		PainChance "Crowbar", 164;
 		BloodColor "DE FE 72";
 		SeeSound "halflife/monsters/bullsquid/sight";
 		PainSound "halflife/monsters/bullsquid/pain";
@@ -47,7 +47,7 @@ class HLBullSquid : HLMonster
 	Melee:
 		HLA1 A 1
 		{
-			countdown=4;
+			countdown = 4;
 			A_StartSound("halflife/monsters/bullsquid/growl");
 			A_FaceTarget();
 		}
@@ -56,7 +56,7 @@ class HLBullSquid : HLMonster
 		HLA1 FGH 1;
 		HLA1 I 1 A_FaceTarget;
 		HLA1 JKL 1;
-		HLA1 M 1 A_CustomMeleeAttack(8*random(1,8));
+		HLA1 M 1 A_CustomMeleeAttack(8 * random(1, 8));
 		HLA1 NOPQRSTUVWXYZ[\] 1;
 		Goto See;
 	Missile:
@@ -72,9 +72,9 @@ class HLBullSquid : HLMonster
 		HLA2 OPQRS 1;
 		HLA2 T 1
 		{
-			for(int i=0;i<7;i++)
-				A_SpawnItemEx("BullSquidSpitParticle2",0,0,20,random(2,5),random(2,-2),random(1,3));
-			A_SpawnProjectile("BullSquidSpitBall",20);
+			for(int i = 0; i < 7; i++)
+				A_SpawnItemEx("BullSquidSpitParticle2", 0, 0, 20, random(2, 5), random(2, -2), random(1, 3));
+			A_SpawnProjectile("BullSquidSpitBall", 20);
 		}
 		HLA2 UVWXYZ[\] 1;
 		HLA3 ABCDEFGHIJKLM 1;
@@ -83,7 +83,7 @@ class HLBullSquid : HLMonster
 		HLI1 A 1
 		{
 			A_Pain();
-			countdown=0;
+			countdown = 0;
 		}
 		HLI1 BCDEFGH 1;
 		Goto See;
@@ -98,25 +98,25 @@ class HLBullSquid : HLMonster
 		Stop;
 	XDeath:
 	Crush:
-		TNT1 A 0 A_HLGibs(16,"XenGibs");
+		TNT1 A 0 A_HLGibs(16, "XenGibs");
 		Stop;
 	}
 	override void A_HLChase(int walkticmax)
 	{
 		if(!walkticmax)
-			walkticmax=walktic;
+			walkticmax = walktic;
 		if(walkticcur)
-			A_Chase(null,null,HLSMOOTHCHASE);
+			A_Chase(null, null, HLSMOOTHCHASE);
 		else if(countdown)
 		{
 			countdown--;
-			A_Chase(null,null);
+			A_Chase(null, null);
 		}
 		else
 			A_Chase();
 		walkticcur++;
-		if(walkticcur>=walktic-1)
-			walkticcur=0;
+		if(walkticcur >= walktic - 1)
+			walkticcur = 0;
 	}
 }
 
@@ -126,7 +126,7 @@ class BullSquidSpitParticle : Actor
 	{
 		RenderStyle "Add";
 		Alpha .9;
-		Translation "80:111=118:127";
+		Translation "80:111 = 118:127";
 		+FORCEXYBILLBOARD
 		Scale .15;
 		Projectile;
@@ -140,7 +140,7 @@ class BullSquidSpitParticle : Actor
 	{
 	Spawn:
 		X022 AC 3;
-		TNT1 A 0 A_Jump(128,"FadeOut");
+		TNT1 A 0 A_Jump(128, "FadeOut");
 		Loop;
 	FadeOut:
 		X022 AAACCC 1 A_FadeOut(.03);
@@ -166,12 +166,12 @@ class BullSquidSpitBall : BullSquidSpitParticle
 		X022 ABCD 4;
 		Loop;
 	Death:
-		TNT1 A 0 A_HLSpitParticle("BullSquidSpitParticle",4);
+		TNT1 A 0 A_HLSpitParticle("BullSquidSpitParticle", 4);
 		Stop;
 	}
-	void A_HLSpitParticle(class<actor> particle,int num)
+	void A_HLSpitParticle(class<actor> particle, int num)
 	{
-		for(int i=0;i<num;i++)
-			A_SpawnItemEx(particle,0,0,0,random(1,-1),random(1,-1),random(0,2));
+		for(int i = 0; i < num; i++)
+			A_SpawnItemEx(particle, 0, 0, 0, random(1, -1), random(1, -1), random(0, 2));
 	}
 }

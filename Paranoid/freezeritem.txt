@@ -2,15 +2,15 @@ class PowerParanoicFreezer : PowerProtection
 {
 	Default
 	{
-		DamageFactor "Ice",.2;
+		DamageFactor "Ice", .2;
 		Inventory.Icon "";
 	}
 	override void DoEffect()
 	{
-		if(Owner&&Owner.Player)
+		if(Owner && Owner.Player)
 		{
-			if(Owner.Player.hazardcount>=20*35)
-				Owner.Player.hazardcount=20*35;
+			if(Owner.Player.hazardcount >= 20 * 35)
+				Owner.Player.hazardcount = 20 * 35;
 		}
 		Super.DoEffect();
 	}

@@ -2,7 +2,7 @@ class HLNihilanth : HLMonster
 {
 	override void HLModelSetup()
 	{
-		static const name modelskin[]=
+		static const name modelskin[] =
 		{
 			'nihilanth_000.png',
 			'nihilanth_001.png',
@@ -20,7 +20,7 @@ class HLNihilanth : HLMonster
 		for(int i = 0; i <= 11; i++)
 			A_ChangeModel("", 0, "Models", "nihilanth.iqm", i, "Models", modelskin[i], CMDL_USESURFACESKIN);
 	}
-	bool awake,mode;
+	bool awake, mode;
 	int countdown;
 	override void tick()
 	{
@@ -30,23 +30,23 @@ class HLNihilanth : HLMonster
 				countdown--;
 			else
 			{
-				countdown=35*12;
+				countdown = 35 * 12;
 				A_StartSound("halflife/monsters/nihilant/idle_sight", CHAN_7, attenuation:ATTN_NONE);
 			}
 		}
-		else if(health<=0)
+		else if(health <= 0)
 		{
 			countdown++;
-			if(countdown==4||countdown==8||countdown==12)
+			if(countdown == 4 || countdown == 8 || countdown == 12)
 			{
-				A_SpawnItemEx("NihDeathFX1",0,0,100,random(-2,2),random(-2,2),random(2,6),random(0,359));
-				A_SpawnItemEx("NihDeathFX2",0,0,100,random(-2,2),random(-2,2),random(2,6),random(0,359));
+				A_SpawnItemEx("NihDeathFX1", 0, 0, 100, random(-2, 2), random(-2, 2), random(2, 6), random(0, 359));
+				A_SpawnItemEx("NihDeathFX2", 0, 0, 100, random(-2, 2), random(-2, 2), random(2, 6), random(0, 359));
 				A_FadeOut(.01);
 			}
-			if(countdown>=12)
+			if(countdown >= 12)
 			{
-				A_SpawnItemEx("NihDeathFX3",random(60,-60),random(60,-60),random(20,130));
-				countdown=0;
+				A_SpawnItemEx("NihDeathFX3", random(60, -60), random(60, -60), random(20, 130));
+				countdown = 0;
 			}
 		}
 		super.tick();
@@ -63,8 +63,8 @@ class HLNihilanth : HLMonster
 		Height 200;
 		Radius 80;
 		+BOSS
-		DamageFactor "Normal",.1;
-		DamageFactor "NihDamage",1;
+		DamageFactor "Normal", .1;
+		DamageFactor "NihDamage", 1;
 		BloodColor "Yellow";
 		PainSound "nihilant/pain";
 		DeathSound "nihilant/death";
@@ -77,7 +77,7 @@ class HLNihilanth : HLMonster
 		HLI2 AB 4 A_Look;
 		Loop;
 	See:
-		HLI1 A 0 {awake=1;}
+		HLI1 A 0 {awake = 1;}
 		HLI1 AAAABBBBCCCCDDDDEEEEFFFFGGGGHHHHIIIIJJJJKKKKLLLLMMMMNNNNOOOOPPPPQQQQRRRRSSSSTTTTUUUUVVVVWWWWXXXXYYYYZZZZ[[[[\\\\]]]] 1 A_Chase;
 		HLI2 AAAABBBB 1 A_Chase;
 		Goto See+1;
@@ -86,7 +86,7 @@ class HLNihilanth : HLMonster
 		{
 			A_Stop();
 			A_StartSound("nihilant/attackrandom", CHAN_6);
-			if(random(0,255)<100)
+			if(random(0, 255) < 100)
 				return resolvestate("Vulnerable");
 			return state(null);
 		}
@@ -95,9 +95,9 @@ class HLNihilanth : HLMonster
 		HLA2 ABCD 2 A_FaceTarget;
 		HLA2 E 1
 		{
-			if(random(0,1))
+			if(random(0, 1))
 				return resolvestate("Missile2");
-			A_SpawnProjectile("NihThunderBall",40);
+			A_SpawnProjectile("NihThunderBall", 40);
 			return state(null);
 		}
 	MissileFin:
@@ -107,10 +107,10 @@ class HLNihilanth : HLMonster
 		HLA2 EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE 4
 		{
 			A_StartSound("halflife/weapons/shockroachdischarge", CHAN_5);
-			for(int i=0;i<2;i++)
+			for(int i = 0; i < 2; i++)
 			{
-				A_SpawnProjectile("NihFireballSmallNoSound",random(30,80),random(20,-20),random(-5,5));
-				A_SpawnProjectile("NihFireballSmall",random(30,80),random(20,-20),random(-5,5));
+				A_SpawnProjectile("NihFireballSmallNoSound", random(30, 80), random(20, -20), random(-5, 5));
+				A_SpawnProjectile("NihFireballSmall", random(30, 80), random(20, -20), random(-5, 5));
 			}
 			A_FaceTarget();
 		}
@@ -120,15 +120,14 @@ class HLNihilanth : HLMonster
 		HLA3 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1 A_FaceTarget;
 		HLA4 A 0
 		{
-			mode=random(0,1);
-			A_SpawnItemEx("NihilantVulFX",10,0,110,flags:SXF_SETMASTER);
-			A_SpawnItemEx("NihilantVulFX",-10,0,110,flags:SXF_SETMASTER);
-			A_SpawnItemEx("NihilantVulFX",0,10,110,flags:SXF_SETMASTER);
-			A_SpawnItemEx("NihilantVulFX",0,-10,110,flags:SXF_SETMASTER);
-			A_SpawnItemEx("NihilantVul",0,0,80,flags:SXF_SETMASTER|SXF_NOCHECKPOSITION);
+			mode = random(0, 1);
+			A_SpawnItemEx("NihilantVulFX", 10, 0, 110, flags:SXF_SETMASTER);
+			A_SpawnItemEx("NihilantVulFX", -10, 0, 110, flags:SXF_SETMASTER);
+			A_SpawnItemEx("NihilantVulFX", 0, 10, 110, flags:SXF_SETMASTER);
+			A_SpawnItemEx("NihilantVulFX", 0, -10, 110, flags:SXF_SETMASTER);
+			A_SpawnItemEx("NihilantVul", 0, 0, 80, flags: SXF_SETMASTER|SXF_NOCHECKPOSITION);
 			if(!mode)
 				A_NihProj("NihProjFake");
-
 		}
 		HLA4 ABCDEFGHIJKLMNOPQRSTU 1 A_FaceTarget;
 		HLA4 V 0
@@ -137,9 +136,9 @@ class HLNihilanth : HLMonster
 				A_NihProj("NihProjStrong");
 			else
 			{
-				A_SpawnProjectile("NihMonsterSpawner",60,0,60);
-				A_SpawnProjectile("NihMonsterSpawner",60,0,-60);
-				A_SpawnProjectile("NihMonsterSpawner",60);
+				A_SpawnProjectile("NihMonsterSpawner", 60, 0, 60);
+				A_SpawnProjectile("NihMonsterSpawner", 60, 0, -60);
+				A_SpawnProjectile("NihMonsterSpawner", 60);
 			}
 		}
 		HLA4 VWXYZ[\] 5 A_FaceTarget;
@@ -148,8 +147,8 @@ class HLNihilanth : HLMonster
 	Death:
 		TNT1 A 0
 		{
-			awake=0;
-			countdown=0;
+			awake = 0;
+			countdown = 0;
 			A_StopSound(7);
 			A_Scream();
 			A_NoBlocking();
@@ -159,12 +158,12 @@ class HLNihilanth : HLMonster
 	}
 	void A_NihProj(class<actor> proj)
 	{
-		A_SpawnProjectile(proj,60,-45);
-		A_SpawnProjectile(proj,50,-30);
-		A_SpawnProjectile(proj,40,-15);
-		A_SpawnProjectile(proj,60,45);
-		A_SpawnProjectile(proj,50,30);
-		A_SpawnProjectile(proj,40,15);
+		A_SpawnProjectile(proj, 60, -45);
+		A_SpawnProjectile(proj, 50, -30);
+		A_SpawnProjectile(proj, 40, -15);
+		A_SpawnProjectile(proj, 60, 45);
+		A_SpawnProjectile(proj, 50, 30);
+		A_SpawnProjectile(proj, 40, 15);
 	}
 }
 
@@ -186,9 +185,9 @@ class NihilantVul : Actor
 		Radius 50;
 		Height 56;
 		PainChance 255;
-		DamageFactor "Railgun",.6;
-		DamageFactor "BFGSplash",.5;
-		DamageFactor "Normal",1.5;
+		DamageFactor "Railgun", .6;
+		DamageFactor "BFGSplash", .5;
+		DamageFactor "Normal", 1.5;
 		BloodColor "Green";
 	}
 	States
@@ -200,18 +199,18 @@ class NihilantVul : Actor
 	Pain:
 		TNT1 A 2
 		{
-			if(PainCounter>=8)
-				bNOPAIN=1;
+			if(PainCounter >= 8)
+				bNOPAIN = 1;
 			PainCounter++;
 		}
 	Death:
 		TNT1 A 1
 		{
 			A_UnSetShootable();
-			if(health<0)
-				health=0;
+			if(health < 0)
+				health = 0;
 			master.A_Pain();
-			A_DamageMaster(2000-health,"NihDamage");
+			A_DamageMaster(2000-health, "NihDamage");
 		}
 		Stop;
 	}
@@ -279,7 +278,7 @@ class NihDeathFX3 : NihDeathFX1
 		Scale 1;
 		Alpha .8;
 		SeeSound "halflife/weapons/explode2";
-		TRANSLATION "112:127=[155,170,120]:[18,20,8]";
+		TRANSLATION "112:127 = [155, 170, 120]:[18, 20, 8]";
 	}
 	States
 	{
@@ -311,16 +310,16 @@ class NihMonsterSpawner : Actor
 	Death:
 		X010 A 0
 		{
-			bNOGRAVITY=1;
+			bNOGRAVITY = 1;
 			A_Stop();
-			vel.z+=8;
-			scale=(1,1);
+			vel.z += 8;
+			scale = (1, 1);
 			A_StartSound("halflife/weapons/tport2");
 		}
 		X010 ABCDEFGHIJ 1 BRIGHT;
 		X010 K 1 BRIGHT
 		{
-			if(random(0,1))
+			if(random(0, 1))
 				A_SpawnItemEx("HLController");
 			else
 				A_SpawnItemEx("HLVortigaunt");
@@ -352,8 +351,8 @@ class NihThunderBall : Actor
 	Death:
 		TNT1 A 0
 		{
-			for(int i=0;i<14;i++)
-				A_SpawnItemEx("VoltShotParticle",0,0,0,random(-4,4),random(4,-4),random(4,-4));
+			for(int i = 0; i < 14; i++)
+				A_SpawnItemEx("VoltShotParticle", 0, 0, 0, random(-4, 4), random(4, -4), random(4, -4));
 			A_SpawnItemEx("NihThunderBallRailShooter");
 		}
 		Stop;
@@ -385,8 +384,8 @@ class NihThunderBallRailShooter : Actor
 		{
 			A_Chase();
 			A_FaceTarget();
-			if(CheckIfCloser(target,400))
-				A_CustomRailgun(random(50,110),0,-1,"SkyBlue",1,10,3);
+			if(CheckIfCloser(target, 400))
+				A_CustomRailgun(random(50, 110), 0, -1, "SkyBlue", 1, 10, 3);
 		}
 		Stop;
 	}
@@ -413,12 +412,12 @@ class NihProjStrong : Actor
 	Spawn:
 		X024 ABCDEFGHIJK 3 Bright NODELAY
 		{
-			A_SpawnItemEx("VoltShotParticle",0,0,0,random(-4,15),random(4,-4),random(4,-4));
-			A_SeekerMissile(8,8);
+			A_SpawnItemEx("VoltShotParticle", 0, 0, 0, random(-4, 15), random(4, -4), random(4, -4));
+			A_SeekerMissile(8, 8);
 		}
 		Loop;
 	Death:
-		TNT1 AAAAAAAAAAAAAA 0 A_SpawnItemEx("VoltShotParticle",0,0,0,random(-4,4),random(4,-4),random(4,-4));
+		TNT1 AAAAAAAAAAAAAA 0 A_SpawnItemEx("VoltShotParticle", 0, 0, 0, random(-4, 4), random(4, -4), random(4, -4));
 		TNT1 A 1;
 		Stop;
 	}
@@ -438,8 +437,8 @@ class NihProjFake : NihProjStrong
 	Spawn:
 		X024 ABCDEFGH 3 Bright NODELAY
 		{
-			for(int i=0;i<2;i++)
-				A_SpawnItemEx("VoltShotParticle",0,0,0,random(-4,4),random(4,-4),random(4,-4));
+			for(int i = 0; i < 2; i++)
+				A_SpawnItemEx("VoltShotParticle", 0, 0, 0, random(-4, 4), random(4, -4), random(4, -4));
 			A_FadeIn(0.2);
 		}
 		Stop;
@@ -462,8 +461,8 @@ class VoltShotParticle : Actor
 	States
 	{
 	Spawn:
-		X024 ABCDEFGHIJK 1 Bright A_SpawnItem("VSPTrail",1);
-		X027 P 0 A_Jump(180,1);
+		X024 ABCDEFGHIJK 1 Bright A_SpawnItem("VSPTrail", 1);
+		X027 P 0 A_Jump(180, 1);
 		Loop;
 		X024 ABCDEFGHIJK 1 Bright A_FadeOut;
 		Wait;

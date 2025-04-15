@@ -6,7 +6,7 @@ class HLHornetGrunt : HLMonster
 {
 	override void HLModelSetup()
 	{
-		static const name modelskin[]=
+		static const name modelskin[] =
 		{
 			'agrunt_000.png',
 			'agrunt_001.png',
@@ -30,9 +30,9 @@ class HLHornetGrunt : HLMonster
 		Speed 2.5;
 		Height 64;
 		PainChance 40;
-		PainChance "Crowbar",164;
+		PainChance "Crowbar", 164;
 		BloodColor "DE FE 72";
-		DamageFactor "Hornet",0;
+		DamageFactor "Hornet", 0;
 		SeeSound "halflife/monsters/hornetgrunt/sight";
 		PainSound "halflife/monsters/hornetgrunt/pain";
 		DeathSound "halflife/monsters/hornetgrunt/death";
@@ -66,7 +66,7 @@ class HLHornetGrunt : HLMonster
 		HLI1 I 16
 		{
 			A_StartSound("halflife/monsters/zombie/attswing");
-			A_CustomMeleeAttack(12*random(1,8),"halflife/monsters/zombie/hit");
+			A_CustomMeleeAttack(12*random(1, 8), "halflife/monsters/zombie/hit");
 		}
 		Goto See;
 	Missile:
@@ -84,13 +84,13 @@ class HLHornetGrunt : HLMonster
 		HLI1 A 4 A_FaceTarget;
 		HLI1 A 4 A_SpawnProjectile("HGruntHornet", 36, 12);
 		HLI1 A 4 A_FaceTarget;
-		HLI1 A 0 A_Jump(80,"See");
+		HLI1 A 0 A_Jump(80, "See");
 		HLI1 A 4 A_SpawnProjectile("HGruntHornet", 36, 12);
-		HLI1 A 0 A_Jump(100,"See");
+		HLI1 A 0 A_Jump(100, "See");
 		HLI1 A 4 A_SpawnProjectile("HGruntHornet", 36, 12);
-		HLI1 A 0 A_Jump(120,"See");
+		HLI1 A 0 A_Jump(120, "See");
 		HLI1 A 4 A_SpawnProjectile("HGruntHornet", 36, 12);
-		HLI1 A 0 A_Jump(140,"See");
+		HLI1 A 0 A_Jump(140, "See");
 		HLI1 A 4 A_SpawnProjectile("HGruntHornet", 36, 12);
 		HLI1 A 4 A_FaceTarget;
 		Goto See;
@@ -111,7 +111,7 @@ class HLHornetGrunt : HLMonster
 		Stop;
 	XDeath:
 	Crush:
-		TNT1 A 0 A_HLGibs(20,"XenGibs");
+		TNT1 A 0 A_HLGibs(20, "XenGibs");
 		Stop;
 	}
 }
@@ -120,7 +120,7 @@ class HLHornetGruntDead : HLHornetGrunt
 {
 	override void HLModelSetup()
 	{
-		static const name modelskin1[]=
+		static const name modelskin1[] =
 		{
 			'agrunt_000.png',
 			'agrunt_001.png',
@@ -145,7 +145,7 @@ class HLHornetGruntDead : HLHornetGrunt
 	{
 	Spawn:
 		TNT1 A 0;
-		HLA1 A -1 SetAnimation('diesimple', 10, 9, endframe:9);
+		HLA1 A -1 SetAnimation('diesimple', 10, 9, endframe: 9);
 		Stop;
 	}
 }

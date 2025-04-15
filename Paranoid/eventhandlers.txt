@@ -18,12 +18,12 @@ class ParanoidOtisHandler : StaticEventHandler
     override void WorldThingDied(WorldEvent e)
 	{
 		let mon=e.Thing;
-		if(!mon.bISMONSTER||mon.bFRIENDLY||!mon.target)
+		if(!mon.bISMONSTER || mon.bFRIENDLY || !mon.target)
 			return;
 		RolfBellmer me = RolfBellmer(mon.target);
-		if(me==null||!me.otis)
+		if(me == null || !me.otis)
 			return;
-		if(!random(0,3))
+		if(!random(0, 3))
 			mon.target.A_StartSound("otistaunt", CHAN_VOICE);
 	}
 }

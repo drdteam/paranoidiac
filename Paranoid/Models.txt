@@ -62,7 +62,7 @@ class flatpanel1 : ModelBase
 {
 	override void HLModelSetup()
 	{
-		static const name modelskin[]=
+		static const name modelskin[] =
 		{
 			'br_monitor1.jpg',
 			'br_screen1.jpg'
@@ -91,7 +91,7 @@ class flatpanel3 : flatpanel1
 {
 	override void HLModelSetup()
 	{
-		static const name modelskin[]=
+		static const name modelskin[] =
 		{
 			'br_pcs1.jpg',
 			'br_screen1.jpg'
@@ -120,7 +120,7 @@ class flatpanel5 : ModelFloat
 {
 	override void HLModelSetup()
 	{
-		static const name modelskin[]=
+		static const name modelskin[] =
 		{
 			'br_monitor5.png',
 			'br_screen1.jpg'
@@ -671,7 +671,7 @@ class Truck01 : ModelBase
 {
 	override void HLModelSetup()
 	{
-		static const name modelskin[]=
+		static const name modelskin[] =
 		{
 			'truck_research_000.png',
 			'truck_research_001.png',
@@ -714,7 +714,7 @@ class apache : ModelBase
 {
 	override void HLModelSetup()
 	{
-		static const name modelskin[]=
+		static const name modelskin[] =
 		{
 			'apache_000.png',
 			'apache_001.png',
@@ -1024,7 +1024,7 @@ class Mattress01 : ModelBase
 {
 	override void HLModelSetup()
 	{
-		static const name modelskin[]=
+		static const name modelskin[] =
 		{
 			'br_mattress1.jpg',
 			'br_mattress4.jpg'
@@ -1578,18 +1578,18 @@ class Plant1 : Palm2a
 	States
 	{
 	Spawn:
-		HLI1 A 1 A_CheckRangeRev(radius+30,"Shrink");
+		HLI1 A 1 A_CheckRangeRev(radius + 30, "Shrink");
 		Loop;
 	Shrink:
-		HLI1 A 1 {scale.y=.8;}
-		HLI1 A 1 A_CheckRange(radius+30,"Grow");
+		HLI1 A 1 {scale.y = .8;}
+		HLI1 A 1 A_CheckRange(radius + 30, "Grow");
 		Wait;
 	Grow:
-		HLI1 A 1 {scale.y=1;}
+		HLI1 A 1 {scale.y = 1;}
 		Goto Spawn;
 	}
-	state A_CheckRangeRev(double distance,statelabel label,bool two_dimension=false)
-		{return CheckRange(distance,two_dimension)?null:ResolveState(label);}
+	state A_CheckRangeRev(double distance, statelabel label, bool two_dimension=false)
+		{return CheckRange(distance, two_dimension) ? null : ResolveState(label);}
 }
 
 class Plant2 : Plant1
@@ -2325,7 +2325,7 @@ class Xbarrel1 : ModelBase
 		HLI1 B 2 A_AlertMonsters;
 		HLI1 C 2 A_Scream;
 		HLI1 D 1 A_Explode;
-		HLI1 D 1 A_SetRenderStyle(.5,STYLE_Translucent);
+		HLI1 D 1 A_SetRenderStyle(.5, STYLE_Translucent);
 		HLI1 EE 1 A_FadeOut;
 		HLI1 F 2 A_NoBlocking;
 		HLI1 GG 1 A_FadeOut;
@@ -2490,7 +2490,7 @@ class HintMan : ModelBase
 		HLI1 A -1;
 		Stop;
 	Sit:
-		HLI1 B -1 A_SetScale(scale.x*.9);
+		HLI1 B -1 A_SetScale(scale.x * .9);
 		Stop;
 	}
 }
@@ -2501,7 +2501,7 @@ class HintManSitting : RandomSpawner
 		{DropItem "HintMan";}
 	override void PostSpawn(Actor spawned)
 	{
-		spawned.bNOCLIP=1;
+		spawned.bNOCLIP = 1;
 		spawned.SetStateLabel("Sit");
 	}
 }
@@ -2510,7 +2510,7 @@ class Admin01 : ModelBase
 {
 	override void HLModelSetup()
 	{
-		static const name modelskin[]=
+		static const name modelskin[] =
 		{
 			'wheelchair_sci_000.png',
 			'wheelchair_sci_001.png',
