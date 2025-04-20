@@ -413,6 +413,7 @@ class Backhoe1 : ModelBase
 	{
 		Scale 1.6;
 		Height 64;
+		+NOCLIP
 	}
 }
 
@@ -462,6 +463,7 @@ class Generator1 : ModelBase
 		Scale 3;
 		Radius 24;
 		Height 60;
+		+NOCLIP
 	}
 }
 
@@ -980,7 +982,10 @@ class SoapDispenser : HandDryer
 	override void HLModelSetup()
 		{A_ChangeModel("ModelBase", 0, "Models", "soapdisp.md3", 0, "Models", "soapdisp.png");}
 	Default
-		{Radius 8;}
+	{
+		Height 24;
+		Radius 8;
+	}
 }
 
 class ToiletPaper : HandDryer
@@ -1327,6 +1332,7 @@ class tank05 : ModelBase
 		Scale 5;
 		Radius 12;
 		Height 36;
+		+NOCLIP
 	}
 }
 
@@ -1356,16 +1362,18 @@ class propane1a : ModelBase
 		{A_ChangeModel("ModelBase", 0, "Models", "propane1.md3", 0, "Models", "propane1a.png");}
 	override void BlockingSetup()
 	{
-		blockmax = 2;
-		blockpos[0] = (32, 0, 0);
-		blockpos[1] = (-32, 0, 0);
-		blocksize[0] = (20, 40);
-		blocksize[1] = (20, 40);
+		blockmax = 3;
+		blockpos[0] = (0, 0, 0);
+		blockpos[1] = (32, 0, 0);
+		blockpos[2] = (-32, 0, 0);
+		for(int i = 0; i < blockmax; i++)
+			blocksize[i] = (20, 40);
 	}
 	Default
 	{
 		Scale 3;
 		Height 40;
+		+NOCLIP
 	}
 }
 
