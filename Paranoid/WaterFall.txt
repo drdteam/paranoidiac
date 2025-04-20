@@ -69,9 +69,8 @@ class WFallParticle1A : WFallSplash
 	Spawn:
 		WFS1 A 0 NODELAY
 		{
-			if(random(0, 1))
-				scale.x = -1;
-			self.frame=random(0, 4);
+			bSPRITEFLIP = random(0, 1);
+			self.frame = random(0, 4);
 		}
 		WFS1 "######" 1 A_FadeIn(.125);
 		WFS1 # -1;

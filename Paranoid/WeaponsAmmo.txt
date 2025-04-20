@@ -175,8 +175,7 @@ class NewPuff1 : Actor replaces BulletPuff
 		TNT1 A 0 NODELAY
 		{
 			A_SpawnItemEx("PuffSmoke", zvel: frandom(.25, 1));
-			if(random(0, 1))
-				scale.x = -scale.x;
+			bSPRITEFLIP = random(0, 1);
 		}
 		FX57 ABCDEFGHIJ 2 Bright A_FadeOut;
 		Stop;
@@ -688,9 +687,7 @@ class HLMagnumAmmo : Ammo
 class HLMagnumBox : HLMagnumAmmo
 {
 	override void HLModelSetup()
-	{
-		A_ChangeModel("ModelBase", 0, "Models", "w_357ammobox.md3", 0, "Models", 'w_357ammobox.png');
-	}
+		{A_ChangeModel("ModelBase", 0, "Models", "w_357ammobox.md3", 0, "Models", 'w_357ammobox.png');}
 	Default
 	{
 		Radius 6;
@@ -868,9 +865,7 @@ class HLShotgunAmmo : Ammo
 			angle = random(0, 359);
 	}
 	virtual void HLModelSetup()
-	{
-		A_ChangeModel("ModelBase", 0, "Models", "w_shotshell.md3", 0, "Models", 'w_shotshell.png');
-	}
+		{A_ChangeModel("ModelBase", 0, "Models", "w_shotshell.md3", 0, "Models", 'w_shotshell.png');}
 	Default
 	{
 		Tag "Shell";
@@ -1181,9 +1176,7 @@ class GrenadeTrail : Actor
 class HLAssaultRifleAmmo : HLPistolAmmo
 {
 	override void HLModelSetup()
-	{
-		A_ChangeModel("ModelBase", 0, "Models", "w_9mmarclip.md3", 0, "Models", 'w_9mmarclip.png');
-	}
+		{A_ChangeModel("ModelBase", 0, "Models", "w_9mmarclip.md3", 0, "Models", 'w_9mmarclip.png');}
 	Default
 	{
 		Inventory.PickupMessage "Picked up a 9mm assault rifle magazine.";
@@ -1223,9 +1216,7 @@ class HLGrenadeLauncherAmmo : Ammo
 			angle = random(0, 359);
 	}
 	virtual void HLModelSetup()
-	{
-		A_ChangeModel("ModelBase", 0, "Models", "w_argrenade.md3", 0, "Models", 'w_argrenade.png');
-	}
+		{A_ChangeModel("ModelBase", 0, "Models", "w_argrenade.md3", 0, "Models", 'w_argrenade.png');}
 	Default
 	{
 		Tag "Grenade";
@@ -2171,9 +2162,7 @@ class GluonExplosion : GluonTrail
 class GluonOutsideTrailSpawner : Actor
 {
 	Default
-	{
-		+NOINTERACTION
-	}
+		{+NOINTERACTION}
 	States
 	{
 	Spawn:

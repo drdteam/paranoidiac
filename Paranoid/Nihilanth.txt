@@ -120,7 +120,7 @@ class HLNihilanth : HLMonster
 		HLA3 ABCDEFGHIJKLMNOPQRSTUVWXYZ[\] 1 A_FaceTarget;
 		HLA4 A 0
 		{
-			mode = random(0, 1);
+			mode=random(0, 1);
 			A_SpawnItemEx("NihilantVulFX", 10, 0, 110, flags:SXF_SETMASTER);
 			A_SpawnItemEx("NihilantVulFX", -10, 0, 110, flags:SXF_SETMASTER);
 			A_SpawnItemEx("NihilantVulFX", 0, 10, 110, flags:SXF_SETMASTER);
@@ -313,7 +313,7 @@ class NihMonsterSpawner : Actor
 			bNOGRAVITY = 1;
 			A_Stop();
 			vel.z += 8;
-			scale = (1, 1);
+			scale=(1, 1);
 			A_StartSound("halflife/weapons/tport2");
 		}
 		X010 ABCDEFGHIJ 1 BRIGHT;

@@ -17,7 +17,7 @@ class OMGBubbles : SwitchableDecoration
 				A_SetTics(10);
 				return;
 			}
-			float area = args[0]+random(0, 8);
+			float area = args[0] + random(0, 8);
 			int intensity = args[1] + 1;
 			int shape = args[2];
 			if(shape != 2)

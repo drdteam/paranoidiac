@@ -66,7 +66,7 @@ class HLHornetGrunt : HLMonster
 		HLI1 I 16
 		{
 			A_StartSound("halflife/monsters/zombie/attswing");
-			A_CustomMeleeAttack(12*random(1, 8), "halflife/monsters/zombie/hit");
+			A_CustomMeleeAttack(12 * random(1, 8), "halflife/monsters/zombie/hit");
 		}
 		Goto See;
 	Missile:

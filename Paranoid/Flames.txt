@@ -136,9 +136,8 @@ class Flame1A_01 : FlameGlow_02
 		FLM1 A 1 NODELAY
 		{
 			startscale = scale.x / 26.0;
-			if(random(0, 1))
-				bSPRITEFLIP = 1;
-			frame=random(0, 4);
+			bSPRITEFLIP = random(0, 1);
+			frame = random(0, 4);
 			switch(random(0, 2))
 			{
 			case 1:
