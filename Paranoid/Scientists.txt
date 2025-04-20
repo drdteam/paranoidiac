@@ -350,6 +350,7 @@ class HLScientistDead : HLScientist
 		-COUNTKILL
 		-SOLID
 		-ISMONSTER
+		Height (56.0 / 4.0);
 	}
 	States
 	{
