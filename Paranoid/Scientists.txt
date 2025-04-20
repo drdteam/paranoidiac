@@ -81,6 +81,8 @@ class HLScientist : HLMonster
 	}
 	override bool Used(Actor user)
 	{
+		if(!health)
+			return false;
 		if(!bFRIGHTENED && !sit)
 			A_StartSound("scientist/greeting");
 		boredom = 0;
@@ -344,6 +346,8 @@ class HLScientistSlumped : HLScientist
 
 class HLScientistDead : HLScientist
 {
+	override bool Used(Actor user)
+		{return false;}
 	Default
 	{
 		-SHOOTABLE
