@@ -3461,7 +3461,7 @@ Graphic WICOLON, 6, 24
 {
 	XScale 2.0
 	YScale 2.0
-	Patch WICOLON, 0, 0
+	Patch H1COLON, 0, 0
 }
 
 //Other intermission graphics
@@ -3469,133 +3469,140 @@ Graphic WIENTER, 208, 24
 {
 	XScale 2.0
 	YScale 2.0
-	Patch WIENTER, 0, 0
+	Patch H1ENTER, 0, 0
 }
 
 Graphic WIF, 208, 24
 {
 	XScale 2.0
 	YScale 2.0
-	Patch WIF, 0, 0
+	Patch H1F, 0, 0
 }
 
 Graphic WIOSTI, 120, 24
 {
 	XScale 2.0
 	YScale 2.0
-	Patch WIOSTI, 0, 0
+	Patch H1OSTI, 0, 0
 }
 
 Graphic WIOSTK, 120, 24
 {
 	XScale 2.0
 	YScale 2.0
-	Patch WIOSTK, 0, 0
+	Patch H1OSTK, 0, 0
 }
 
 Graphic WIOSTS, 120, 24
 {
 	XScale 2.0
 	YScale 2.0
-	Patch WIOSTS, 0, 0
+	Patch H1OSTS, 0, 0
 }
 
 Graphic WISCRT2, 120, 24
 {
 	XScale 2.0
 	YScale 2.0
-	Patch WIOSTS, 0, 0
+	Patch H1OSTS, 0, 0
 }
 
 Graphic WITIME, 120, 24
 {
 	XScale 2.0
 	YScale 2.0
-	Patch WITIME, 0, 0
+	Patch H1TIME, 0, 0
 }
 
 Graphic WIPAR, 120, 24
 {
 	XScale 2.0
 	YScale 2.0
-	Patch WIPAR, 0, 0
+	Patch H1PAR, 0, 0
 }
 
 Graphic WIMSTT, 120, 24
 {
 	XScale 2.0
 	YScale 2.0
-	Patch WIMSTT, 0, 0
+	Patch H1MSTT, 0, 0
+}
+
+Graphic WISUCKS, 120, 24
+{
+	XScale 2.0
+	YScale 2.0
+	Patch H1SUCKS, 0, 0
 }
 
 Graphic M_BACK, 64, 52
 {
 	XScale 4.0
 	YScale 4.0
-	Patch M_BACK, 0, 0
+	Patch M_BACK1, 0, 0
 }
 
 Graphic M_DIFF, 112, 22
 {
 	XScale 2.0
 	YScale 2.0
-	Patch M_DIFF, 0, 0
+	Patch M_DIFF1, 0, 0
 }
 
 Graphic M_EASY, 112, 22
 {
 	XScale 2.0
 	YScale 2.0
-	Patch M_EASY, 0, 0
+	Patch M_EASY1, 0, 0
 }
 
 Graphic M_LOADG, 112, 22
 {
 	XScale 2.0
 	YScale 2.0
-	Patch M_LOADG, 0, 0
+	Patch M_LOADG1, 0, 0
 }
 
 Graphic M_MED, 112, 22
 {
 	XScale 2.0
 	YScale 2.0
-	Patch M_MED, 0, 0
+	Patch M_MED1, 0, 0
 }
 
 Graphic M_NGAME, 112, 22
 {
 	XScale 2.0
 	YScale 2.0
-	Patch M_NGAME, 0, 0
+	Patch M_NGAME1, 0, 0
 }
 
 Graphic M_OPTION, 112, 22
 {
 	XScale 2.0
 	YScale 2.0
-	Patch M_OPTION, 0, 0
+	Patch M_OPTIO1, 0, 0
 }
 
 Graphic M_PAUSE, 69, 22
 {
 	XScale 2.0
 	YScale 2.0
-	Patch M_PAUSE, 0, 0
+	Patch M_PAUSE1, 0, 0
 }
 
 Graphic M_QUITG, 112, 22
 {
 	XScale 2.0
 	YScale 2.0
-	Patch M_QUITG, 0, 0
+	Patch M_QUITG1, 0, 0
 }
 
 Graphic M_SAVEG, 112, 22
 {
 	XScale 2.0
 	YScale 2.0
-	Patch M_SAVEG, 0, 0
+	Patch M_SAVEG1, 0, 0
 }
 
 Graphic P_SKULL1, 46, 46
@@ -5206,6 +5213,11 @@ graphic M_DOOM,1,1{}
 graphic M_SKILL,1,1{}
 graphic M_EPISOD,1,1{}
 graphic M_NEWG,1,1{}
+graphic M_NGAME,1,1{}
+graphic M_OPTION,1,1{}
+graphic M_LOADG,1,1{}
+graphic M_SAVEG,1,1{}
+graphic M_QUITG,1,1{}
 
 // End of texture definitions
 
