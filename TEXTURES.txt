@@ -5222,15 +5222,7 @@ graphic M_QUITG,1,1{}
 // End of texture definitions
 
 // Hint Messages
-// For reasons I'm too tired to figure out right now, both a Graphic and a Sprite
-// block are needed for these to work...
 Graphic HINTMAN, 128, 128
-{
-	XScale 2.0
-	YScale 2.0
-	Patch hint1, 0, 0
-}
-Sprite HINTMAN, 128, 128
 {
 	XScale 2.0
 	YScale 2.0
@@ -5243,20 +5235,8 @@ Graphic STINSON, 128, 128
 	YScale 2.0
 	Patch hint2, 0, 0
 }
-Sprite STINSON, 128, 128
-{
-	XScale 2.0
-	YScale 2.0
-	Patch hint2, 0, 0
-}
 
 Graphic UNDERNET, 128, 128
-{
-	XScale 2.0
-	YScale 2.0
-	Patch hint3, 0, 0
-}
-Sprite UNDERNET, 128, 128
 {
 	XScale 2.0
 	YScale 2.0

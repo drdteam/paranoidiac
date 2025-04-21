@@ -2503,14 +2503,13 @@ class HintMan : ModelBase
 	}
 }
 
-class HintManSitting : RandomSpawner
+class HintManSitting : HintMan
 {
-	Default
-		{DropItem "HintMan";}
-	override void PostSpawn(Actor spawned)
+	override void BeginPlay()
 	{
-		spawned.bNOCLIP = 1;
-		spawned.SetStateLabel("Sit");
+		bNOCLIP = 1;
+		SetStateLabel("Sit");
+		super.BeginPlay();
 	}
 }
 
