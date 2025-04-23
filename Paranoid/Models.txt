@@ -424,8 +424,8 @@ class Trailer1 : ModelBase
 	override void BlockingSetup()
 	{
 		blockmax = 2;
-		blockpos[0] = (144, 40, 0);
-		blockpos[1] = (144, -40, 0);
+		blockpos[0] = (154, 40, 0);
+		blockpos[1] = (154, -40, 0);
 		blocksize[0] = (2, 40);
 		blocksize[1] = (2, 40);
 	}

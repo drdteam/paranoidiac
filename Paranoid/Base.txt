@@ -165,8 +165,9 @@ class ModelBase : Actor
 		let blockfloor = GetZAt(bridgepos.x, bridgepos.y, flags: GZF_3DRESTRICT);
 		if(blockfloor > masterfloor)
 		{
-			bridgepos.z += (blockfloor - masterfloor) / ModelHeightMul;
-			bridgesize.y -= bridgepos.z;
+			let floordelta = (blockfloor - masterfloor) / ModelHeightMul;
+			bridgepos.z += floordelta;
+			bridgesize.y -= floordelta;
 		}
 		bool num;
 		actor thisblock;
@@ -179,7 +180,7 @@ class ModelBase : Actor
 	void MoveBridge(actor thisblock, vector3 bridgepos)
 	{
 		if(thisblock)
-			thisblock.A_Warp(AAPTR_MASTER, bridgepos.x, bridgepos.y, bridgepos.z * ModelHeightMul, 0, WARPF_STOP|WARPF_NOCHECKPOSITION|WARPF_INTERPOLATE);
+			thisblock.Warp(self, bridgepos.x, bridgepos.y, bridgepos.z * ModelHeightMul, 0, WARPF_STOP|WARPF_NOCHECKPOSITION|WARPF_INTERPOLATE);
 	}
 	actor BuildRider(class<Actor> type, vector3 riderpos = (0, 0, 0), double riderangle = 0)
 	{
@@ -203,7 +204,7 @@ class ModelBase : Actor
 	void MoveRider(actor rider, vector3 riderpos = (0, 0, 0), double riderangle = 0)
 	{
 		if(rider)
-			rider.A_Warp(AAPTR_MASTER, riderpos.x, riderpos.y, riderpos.z, riderangle, WARPF_STOP|WARPF_NOCHECKPOSITION|WARPF_INTERPOLATE);
+			rider.warp(self, riderpos.x, riderpos.y, riderpos.z, riderangle, WARPF_STOP|WARPF_NOCHECKPOSITION|WARPF_INTERPOLATE);
 	}
 	override void PostBeginPlay()
 	{
