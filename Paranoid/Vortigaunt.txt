@@ -192,8 +192,8 @@ class VortiPlasma : VortiPlasma_Bolt
 		VPLS FG 6 BRIGHT LIGHT("GreenMediumFlicker3");
 		Loop;
 	Death:
-		VPLS A 3 BRIGHT LIGHT("GreenMediumFlicker3") LIGHT("GreenMediumFlicker2") A_SpawnItemEx("VortiPlasma_Bolt");
-		VPLS B 3 BRIGHT LIGHT("GreenMediumFlicker3");
+		VPLS A 3 BRIGHT LIGHT("GreenMediumFlicker3") A_SpawnItemEx("VortiPlasma_Bolt");
+		VPLS B 3 BRIGHT LIGHT("GreenMediumFlicker2");
 		VPLS C 3 BRIGHT LIGHT("GreenSmallFlicker1");
 		VPLS D 3 BRIGHT LIGHT("GreenSmallFlicker2");
 		VPLS E 3 BRIGHT LIGHT("GreenSmallFlicker3");
