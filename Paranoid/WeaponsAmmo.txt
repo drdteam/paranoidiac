@@ -721,6 +721,15 @@ class HLShotgunPickup2 : RandomSpawner
 
 class HLShotgun : ParanoidWeapon
 {
+	override void AttachToOwner (Actor other)
+	{
+		height = 4;
+		A_SetSize(20);
+		angle = 0;
+		pitch = 0;
+		frame = 0;
+		super.AttachToOwner(other);
+	}
 	action void A_HLWeaponModel()
 	{
 		if(!player)
@@ -925,6 +934,15 @@ class HLAssaultRiflePickup2 : RandomSpawner
 
 class HLAssaultRifle : ParanoidWeapon
 {
+	override void AttachToOwner (Actor other)
+	{
+		height = 4;
+		A_SetSize(20);
+		angle = 0;
+		roll = 0;
+		frame = 0;
+		super.AttachToOwner(other);
+	}
 	action void A_HLWeaponModel()
 	{
 		if(!player)
