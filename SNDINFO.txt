@@ -457,6 +457,62 @@ barney/sentry3 =					"sounds/barney/ba_raincheck.ogg"
 barney/airlock =					bairlock
 barney/nohev =						bnohev
 barney/yeshev =						byeshev
+
+barney/hired1 =						"sounds/barney/c1a2_ba_goforit.ogg"
+barney/hired2 =						"sounds/barney/dobettertogether.ogg"
+barney/hired3 =						"sounds/barney/gladtolendhand.ogg"
+barney/hired4 =						"sounds/barney/imwithyou.ogg"
+barney/hired5 =						"sounds/barney/letsgo.ogg"
+barney/hired6 =						"sounds/barney/letsmoveit.ogg"
+barney/hired7 =						"sounds/barney/teamup1.ogg"
+barney/hired8 =						"sounds/barney/teamup2.ogg"
+
+barney/fired1 =						"sounds/barney/aintgoin.ogg"
+barney/fired2 =						"sounds/barney/ba_later.ogg"
+barney/fired3 =						"sounds/barney/helpothers.ogg"
+barney/fired4 =						"sounds/barney/illwait.ogg"
+barney/fired5 =						"sounds/barney/seeya.ogg"
+barney/fired6 =						"sounds/barney/slowingyoudown.ogg"
+barney/fired7 =						"sounds/barney/standguard.ogg"
+barney/fired8 =						"sounds/barney/waitin.ogg"
+
+barney/abandoned1 =					"sounds/barney/c3a2_ba_stay.ogg"
+barney/abandoned2 =					"sounds/barney/iwaithere.ogg"
+barney/abandoned3 =					"sounds/barney/stop1.ogg"
+barney/abandoned4 =					"sounds/barney/stop2.ogg"
+barney/abandoned5 =					"sounds/barney/stophere.ogg"
+
+$random barney/hired
+{
+	barney/hired1
+	barney/hired2
+	barney/hired3
+	barney/hired4
+	barney/hired5
+	barney/hired6
+	barney/hired7
+	barney/hired8
+}
+$random barney/fired
+{
+	barney/fired1
+	barney/fired2
+	barney/fired3
+	barney/fired4
+	barney/fired5
+	barney/fired6
+	barney/fired7
+	barney/fired8
+}
+$random barney/abandoned
+{
+	barney/abandoned1
+	barney/abandoned2
+	barney/abandoned3
+	barney/abandoned4
+	barney/abandoned5
+}
+
 halflife/monsters/barney/death =	"sounds/barney/ba_die2.ogg"
 halflife/monsters/barney/pain =		"sounds/barney/ba_pain3.wav"
 halflife/monsters/barney/idle1 =	"sounds/barney/ba_bring.ogg"

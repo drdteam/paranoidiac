@@ -4,8 +4,13 @@
 
 class HLBarney : HLMonster
 {
-	bool follower, guard;
+	const BARNEYFRIENDDIST = 192.0;
+	bool guard;
 	actor bestfriend;
+	string hiredsound, firedsound, abandonedsound;
+	Property HiredSound:hiredsound;
+	Property FiredSound:firedsound;
+	Property AbandonedSound:abandonedsound;
 	override void HLModelSetup()
 	{
 		static const name modelskin[] =
@@ -42,6 +47,9 @@ class HLBarney : HLMonster
 		+FRIENDLY
 		-COUNTKILL
 		Species "BlackMesa";
+		HLBarney.HiredSound "barney/hired";
+		HLBarney.FiredSound "barney/fired";
+		HLBarney.AbandonedSound "barney/abandoned";
 	}
 	States
 	{
@@ -54,7 +62,7 @@ class HLBarney : HLMonster
 		HLI3 AABBCCDD 1 A_HLBarneyLook;
 		Loop;
 	Guard:
-		HLI3 E 2 A_HLBarneyLook();
+		HLI3 E 2 A_HLBarneyLook;
 		HLI3 FGHIJKLMNOPQRSTUVWXYZ[\] 2 A_HLBarneyLook;
 		HLI4 ABCDEF 2 A_HLBarneyLook;
 		Loop;
@@ -106,27 +114,30 @@ class HLBarney : HLMonster
 		for(int i = 0; i < 2; i++)
 			A_SpawnItemEx("GunSmoke", 28, 2, 47 * ModelHeightMul);
 	}
-	actor ChooseBestFriend()
+	override bool Used(Actor user)
 	{
-		if(friendplayer)
-			return players[friendplayer].mo;
-		Actor mo;
-		PlayerInfo player;
-		double dist;
-		for(int i = 0; i < MAXPLAYERS; i++)
+		if(!health)
+			return false;
+		if(!user || !user.player)
+			return false;
+		if(bestfriend && bestfriend == user)
 		{
-			if(!playeringame[i])
-				continue;
-			player = players[i];
-			mo = player.mo;
-			if(mo.health <= 0 || Distance3D(mo) > 128.0 + 64.0)
-				continue;
-			return mo;
+			bestfriend = null;
+			if(!target || target == BestFriend)
+				A_StartSound(FiredSound, CHAN_VOICE, attenuation: 0.25);
 		}
-		return null;
+		else
+		{
+			bestfriend = user;
+			if(!target || target == BestFriend)
+				A_StartSound(HiredSound, CHAN_VOICE, attenuation: 0.25);
+		}
+		return true;
 	}
 	virtual void A_HLBarneyLook()
 	{
+		//Guards are setpieces and should not normally seek targets, but they
+		//will chase after goals, as in Sgt. Harrison's scripted scene
 		if(guard)
 		{
 			if(goal)
@@ -134,33 +145,59 @@ class HLBarney : HLMonster
 			A_LookEx(LOF_NOSIGHTCHECK|LOF_NOSOUNDCHECK|LOF_NOSEESOUND);
 			return;
 		}
-		if(!follower)
+
+		/*if(TIDtoHate)
 		{
-			A_Look();
-			return;
-		}
-		if(!goal)
-			goal = ChooseBestFriend();
-		if(!goal || Distance3D(goal) > 256.0)
-		{
-			A_Look();
-			return;
-		}
-		if(Distance3D(goal) > 128.0)
-		{
+			console.printf("I have a hatee");
 			SetStateLabel("See");
-			return;
 		}
-		A_Face(goal);
-		A_LookEx(LOF_DONTCHASEGOAL|LOF_NOSEESOUND|LOF_NOJUMP, 0, 0, 360);
+		else */
+		//Look for enemies to target and chase
+		if(!target)
+		{
+			LookExParams params;
+			params.fov = 180;
+			params.flags = 0;
+			params.minDist = 0;
+			params.maxDist = 1024;
+			params.maxHearDist = 0;
+			//This will also look for goals, which we may be manually setting to
+			//the bestfriend
+			bool success = LookForEnemies(false, params);
+			if(success)
+			{
+				if(target != BestFriend)
+					A_StartSound(SeeSound, CHAN_VOICE, CHANF_NOSTOP);
+				SetStateLabel("See");
+			}
+		}
+		//If no targets are seen, and he has a friend, he should run after that
+		//friend unless he's already close
+		if(bestfriend && Distance3D(bestfriend) > BARNEYFRIENDDIST)
+			goal = bestfriend;
+		CheckFriendshipEnd();
+	}
+	void CheckFriendshipEnd()
+	{
+		//If he has a friend but he got too far away, end the friendship
+		if(bestfriend && Distance3D(bestfriend) > (BARNEYFRIENDDIST * 3.0))
+		{
+			if(goal == bestfriend)
+				goal = null;
+			if(!target || target == BestFriend)
+				A_StartSound(AbandonedSound, CHAN_VOICE, attenuation: 0.25);
+			bestfriend = null;
+		}
 	}
 	void A_Chatter()
 	{
-		if(!guard && !random(0, 32))
-			A_StartSound(SeeSound);
+		if(!guard && target && target != Bestfriend && !random(0, 32))
+			A_StartSound(SeeSound, CHAN_VOICE, CHANF_NOSTOP);
 	}
 	virtual void A_HLBarneyChase()
 	{
+		//Guards are setpieces and should not normally seek targets, but they
+		//will chase after goals, as in Sgt. Harrison's scripted scene
 		if(guard)
 		{
 			if(!goal)
@@ -168,18 +205,19 @@ class HLBarney : HLMonster
 			A_Chase(null, null, CHF_NOPLAYACTIVE);
 			return;
 		}
-		//If Barney is a follower but doesn't have a player to follow yet...
-		if(follower && !goal)
-			goal = ChooseBestFriend();
-		//If Barney is a follower, doesn't have a target, and the player is close enough...
-		if(follower && !target && goal && Distance3D(goal) < 96.0)
+		//If no targets are seen, and he doesn't have a friend, or he has a friend
+		//but he's already close, he should stand still
+		if(!target && (!bestfriend || Distance3D(bestfriend) <= BARNEYFRIENDDIST))
 		{
+			if(bestfriend)
+				A_Face(bestfriend);
 			if(random(0, 1))
 				SetStateLabel("Spawn");
 			else
 				SetStateLabel("Spawn2");
 			return;
 		}
+		CheckFriendshipEnd();
 		A_HLChase();
 	}
 }
@@ -213,6 +251,9 @@ class HLOtis : HLBarney
 		PainSound "halflife/monsters/otis/pain";
 		DeathSound "halflife/monsters/otis/death";
 		DropItem "HLDesertEagle";
+		HLBarney.HiredSound "";
+		HLBarney.FiredSound "";
+		HLBarney.AbandonedSound "";
 	}
 	override void A_BarneyGunshot()
 	{
