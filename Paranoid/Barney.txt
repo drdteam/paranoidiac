@@ -251,9 +251,9 @@ class HLOtis : HLBarney
 		PainSound "halflife/monsters/otis/pain";
 		DeathSound "halflife/monsters/otis/death";
 		DropItem "HLDesertEagle";
-		HLBarney.HiredSound "";
-		HLBarney.FiredSound "";
-		HLBarney.AbandonedSound "";
+		HLBarney.HiredSound "otis/hired";
+		HLBarney.FiredSound "otis/fired";
+		HLBarney.AbandonedSound "otis/abandoned";
 	}
 	override void A_BarneyGunshot()
 	{

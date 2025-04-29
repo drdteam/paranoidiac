@@ -881,6 +881,57 @@ halflife/weapons/gausshit3 =	"sounds/weapons/electro6.ogg"
 //-------
 //	Otis
 //-------
+otis/hired1 =						"sounds/otis/behind.ogg"
+otis/hired2 =						"sounds/otis/diealone.ogg"
+otis/hired3 =						"sounds/otis/gladof.ogg"
+otis/hired4 =						"sounds/otis/joinyou.ogg"
+otis/hired5 =						"sounds/otis/letsgo.ogg"
+otis/hired6 =						"sounds/otis/live.ogg"
+otis/hired7 =						"sounds/otis/teamup.ogg"
+otis/hired8 =						"sounds/otis/together.ogg"
+otis/hired9 =						"sounds/otis/yourback.ogg"
+
+otis/fired1 =						"sounds/otis/help.ogg"
+otis/fired2 =						"sounds/otis/illwait.ogg"
+otis/fired3 =						"sounds/otis/seeya.ogg"
+
+otis/abandoned1 =		 			"sounds/otis/closet.ogg"
+otis/abandoned2 =					"sounds/otis/friends.ogg"
+otis/abandoned3 =					"sounds/otis/go_on.ogg"
+otis/abandoned4 =					"sounds/otis/notalone.ogg"
+otis/abandoned5 =					"sounds/otis/rightdirection.ogg"
+otis/abandoned6 =					"sounds/otis/slowingyoudown.ogg"
+otis/abandoned7 =					"sounds/otis/standguard.ogg"
+
+$random otis/hired
+{
+	otis/hired1
+	otis/hired2
+	otis/hired3
+	otis/hired4
+	otis/hired5
+	otis/hired6
+	otis/hired7
+	otis/hired8
+	otis/hired9
+}
+$random otis/fired
+{
+	otis/fired1
+	otis/fired2
+	otis/fired3
+}
+$random otis/abandoned
+{
+	otis/abandoned1
+	otis/abandoned2
+	otis/abandoned3
+	otis/abandoned4
+	otis/abandoned5
+	otis/abandoned6
+	otis/abandoned7
+}
+
 halflife/monsters/otis/death =	"sounds/barney/ba_die1.ogg"
 halflife/monsters/otis/pain1 =	"sounds/otis/damn.ogg"
 halflife/monsters/otis/pain2 =	"sounds/otis/medic.ogg"
